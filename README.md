@@ -1,4 +1,4 @@
-public_analytics
-================
 
-A collaboration to publish government website analytics 
+## Projects
+* [First minimum viable project](https://github.com/GSA/public_analytics/blob/master/MVP-1.md)
+
