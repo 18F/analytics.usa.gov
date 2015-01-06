@@ -38,7 +38,7 @@ a:active {
     /* XXX wide enough to accomodate all label text */
     margin-left: 12rem;
     /* XXX wide enough to accomodate all value text */
-    margin-right: 10rem;
+    margin-right: 6rem;
     margin-bottom: .25rem;
   }
 
@@ -68,3 +68,27 @@ a:active {
         width: 10rem;
         padding-left: .25rem;
       }
+
+.big-number {
+  font-size: 500%;
+  line-height: 1em;
+  margin: 0;
+}
+
+#charts {
+  position: relative;
+}
+
+  #charts:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  #charts > .chart {
+    float: left;
+    width: 50%;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+  }
