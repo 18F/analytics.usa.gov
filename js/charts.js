@@ -4,14 +4,19 @@
       formatCommas = d3.format(","),
       charts = [
         {
-          title: "Devices",
-          source: "devices",
-          render: renderDevices
+          title: "Users",
+          source: "users",
+          render: renderUsers
         },
         {
           title: "OS",
           source: "os",
           render: renderOS
+        },
+        {
+          title: "Devices",
+          source: "devices",
+          render: renderDevices
         },
         {
           title: "Windows",
@@ -77,7 +82,8 @@
     selection.append("p")
       .attr("class", "description")
       .text(function(d) {
-        return d.data.meta.description;
+        // FIXME
+        return d.data.meta.description || d.data.meta["description:"];
       });
 
     if (typeof chart.render === "function") {
@@ -101,6 +107,12 @@
 
   function renderWindows(selection, data) {
     return selection.call(totalsRenderer("os_version"), data);
+  }
+
+  function renderUsers(selection, data) {
+    selection.append("h3")
+      .attr("class", "total big-number")
+      .text(formatCommas(data.totals.visitors));
   }
 
   function renderSources(selection, data) {
