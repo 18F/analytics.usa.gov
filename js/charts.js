@@ -114,11 +114,20 @@
           .map(data.data)
         }
     };
-    return selection.call(totalsRenderer("sources"), _data);
+
+    var render = totalsRenderer("sources")
+      .href(function(d) {
+        return d.label.match(/\.[a-z]{2,3}$/)
+          ? "http://" + d.label
+          : null;
+      });
+    return selection.call(render, _data);
   }
 
   function totalsRenderer(key) {
-    return function(selection, data) {
+    var href;
+
+    var render = function(selection, data) {
       var graph = selection.append("div")
         .attr("class", "graph bars vertical");
 
@@ -142,10 +151,19 @@
       var chart = barChart()
         .rows(rows)
         .value(function(d) { return d.visits; })
+        .href(href)
         .scale(scale);
 
       graph.call(chart);
     };
+
+    render.href = function(x) {
+      if (!arguments.length) return href;
+      href = d3.functor(x);
+      return render;
+    };
+
+    return render;
   }
 
   function renderTopPages(selection, data) {
