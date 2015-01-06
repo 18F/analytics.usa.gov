@@ -70,7 +70,7 @@ a:active {
       }
 
 .big-number {
-  font-size: 500%;
+  font-size: 400%;
   line-height: 1em;
   margin: 0;
 }
@@ -78,6 +78,11 @@ a:active {
 #charts {
   position: relative;
 }
+
+@media (min-width: 800px) {
+  .big-number {
+    font-size: 500%;
+  }
 
   #charts:after {
     content: " ";
@@ -92,3 +97,4 @@ a:active {
     padding-right: 1rem;
     margin-bottom: 1rem;
   }
+}
