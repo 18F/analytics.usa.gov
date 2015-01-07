@@ -205,7 +205,7 @@
 
     var rows = data.data.map(function(d) {
           return {
-            page: d["undefined"], // FIXME
+            domain: d.domain,
             visits: +d.visits
           };
         }),
@@ -218,9 +218,9 @@
 
     var chart = barChart()
       .rows(rows)
-      .label(function(d) { return d.page; })
+      .label(function(d) { return d.domain; })
       .value(function(d) { return d.visits; })
-      .href(function(d) { return "http://" + d.page; })
+      .href(function(d) { return "http://" + d.domain; })
       .scale(scale);
 
     graph.call(chart);
