@@ -140,7 +140,7 @@
     var _data = {
       totals: {
         sources: d3.nest()
-          .key(function(d) { return d["undefined"]; }) // FIXME
+          .key(function(d) { return d.source; })
           .rollup(function(d) {
             return +d[0].visits;
           })
