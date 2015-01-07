@@ -103,8 +103,7 @@
     selection.append("p")
       .attr("class", "description")
       .text(function(d) {
-        // FIXME
-        return d.data.meta.description || d.data.meta["description:"];
+        return d.data.meta.description;
       });
 
     if (typeof chart.render === "function") {
