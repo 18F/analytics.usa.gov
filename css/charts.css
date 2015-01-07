@@ -79,6 +79,14 @@ a:active {
   position: relative;
 }
 
+  #charts > .chart.loading:after {
+    content: "Loading...";
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #888;
+  }
+
   #charts > .chart .dates {
     color: #888;
     font-size: .8em;
