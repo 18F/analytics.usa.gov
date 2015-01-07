@@ -2,6 +2,11 @@
 
   var sourceUrl = "https://dap.18f.us/bulk/{source}.json",
       formatCommas = d3.format(","),
+      parseDate = d3.time.format("%Y-%m-%d").parse,
+      formatDate = d3.time.format("%A, %b %e"),
+      reformatDate = function(d) {
+        return formatDate(parseDate(d));
+      },
       charts = [
         {
           title: "Users",
@@ -75,9 +80,25 @@
     });
 
   function render(selection, chart, data) {
-    selection.append("h2")
+
+    var title = selection.append("h2")
       .attr("class", "title")
       .text(function(d) { return d.title; });
+
+    if (data.totals.start_date && data.totals.end_date) {
+      selection.append("div")
+        .attr("class", "dates")
+        .html(function(d) {
+          var start = d.data.totals.start_date,
+              end = d.data.totals.end_date;
+          return [
+            '<datetime timestamp="', start, '">', reformatDate(start), '</datetime>',
+            " &rarr; ",
+            '<datetime timestamp="', end, '">', reformatDate(end), '</datetime>',
+          ].join("");
+        });
+    }
+
 
     selection.append("p")
       .attr("class", "description")
