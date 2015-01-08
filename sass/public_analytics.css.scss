@@ -1,6 +1,35 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+// Colors:
+
+$background_color: #F7F7F7;
+$container_background: #FFF;
+$mockup: #ccc;
+
+
 body {
-  background: blue;
+  background: $background_color;
+}
+
+.container {
+  @include outer-container;
+
+  box-shadow: 0px 0px 14px 0px #CCC;
+  background: $container_background;
+  border-radius: 6px;
+
+  #usa_dot_gov_header {
+    border-bottom: 1px solid $mockup;
+  }
+
+  .chart_area {
+    background: $mockup;
+    height: 200px;
+  }
+}
+
+section, header {
+  padding: 1em;
+  @include span-columns(12);
 }
