@@ -9,6 +9,7 @@
     <![endif]-->
     <script src="js/vendor/d3.v3.min.js"></script>
     <link rel="stylesheet" href="css/public_analytics.css">
+    <link rel="stylesheet" href="css/charts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
@@ -24,57 +25,112 @@
         <p><strong>Please note:</strong> We only have data for 34% of federal websites. <a href="#" title="More information about this data">Click here</a> to learn more.</p>
       </section>
 
-      <section id="time_series">
+      <!--
+      JavaScript block hooks look for any element with both data-block and
+      data-source attributes:
+
+      <section data-block="users" data-source="path/to/data.json">
+        The "loading", "loaded", and "error" classes are set on this element
+        the data-source URL is loaded. Then the renderer is called on the first
+        child of the block with the "data" class:
+
+        <div class="data">
+        </div>
+
+        Some renderers want to be tables, in which case you would use:
+
+        <table class="data">
+        </table>
+
+      </section>
+      -->
+
+      <section id="time_series"
+        data-block="users"
+        data-source="https://dap.18f.us/bulk/users.json">
         <h3>Visitors Over Time</h3>
+        <h4>Total: <span id="big_number" class="data">(big number)</span></h4>
         <div id="chart_visitors_over_time" class="chart_area">
           This will be a 24-hour time series chart of traffic to all DAP sites, in 5 minute increments (or maybe hourly, depends on API stuff).
         </div>
-        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+        <a href="#">Download this data (JSON)</a>
       </section>
 
       <section id="top_100_table">
         <h3>Top 100 Sites</h3>
-        <h5>By number of sessions over the past 90 days</h5>
-        <div id="chart_top_100" class="chart_area">
-          This will be a table of the most popular sites ranked by traffic over the past 7/30/90. 90 to start.
-        </div>
-        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+        <h4>By number of sessions over the past 90 days</h4>
+
+        <!-- see: http://heydonworks.com/practical_aria_examples/ -->
+        <ul role="tablist">
+          <li><a role="tab" aria-selected="true" href="#top-pages-7-days">7 Days</a></li>
+          <li><a role="tab" href="#top-pages-30-days">30 Days</a></li>
+          <li><a role="tab" href="#top-pages-90-days">90 Days</a></li>
+        </ul>
+
+        <figure id="top-pages-7-days" role="tabpanel"
+          data-block="top-pages"
+          data-source="https://dap.18f.us/bulk/top-pages-7-days.json">
+          <table class="data">
+          </table>
+          <a href="https://dap.18f.us/bulk/top-pages-7-days.json">Download this data (JSON)</a>
+        </figure>
+
+        <figure id="top-pages-30-days" role="tabpanel"
+          data-block="top-pages"
+          data-source="https://dap.18f.us/bulk/top-pages-30-days.json">
+          <table class="data">
+          </table>
+          <a href="https://dap.18f.us/bulk/top-pages-30-days.json">Download this data (JSON)</a>
+        </figure>
+
+        <figure id="top-pages-90-days" role="tabpanel"
+          data-block="top-pages"
+          data-source="https://dap.18f.us/bulk/top-pages-90-days.json">
+          <table class="data">
+          </table>
+          <a href="https://dap.18f.us/bulk/top-pages-90-days.json">Download this data (JSON)</a>
+        </figure>
       </section>
 
-      <section id="devices">
+      <section id="devices" data-block="devices"
+        data-source="https://dap.18f.us/bulk/devices.json">
         <h3>Traffic by Device Type</h3>
         <h5>Percentage of All Visitors, Past 90 days</h5>
-        <div id="chart_device_types" class="chart_area">
-          This will be a stacked bar to 100% chart showing how people access federal websites, based on the past 90 days of traffic.
-        </div>
-        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+        <figure id="chart_device_types">
+          <figcaption>This will be a stacked bar to 100% chart showing how people access federal websites, based on the past 90 days of traffic.</figcaption>
+          <table class="data">
+          </table>
+        </figure>
+        <a href="#">Download this data (JSON)</a>
       </section>
 
-      <section id="browsers">
+      <section id="browsers"
+        data-block="browsers"
+        data-source="https://dap.18f.us/bulk/browsers.json">
         <h3>Traffic by Browser</h3>
         <h5>Percentage of All Visitors, Past 90 days</h5>
-        <div id="chart_browsers" class="chart_area">
-          This chart will show breakdown of browsers from past 90 days. Most important is to show what % of traffic comes from XP.
-        </div>
-        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+        <figure id="chart_browsers">
+          <figcaption>This chart will show breakdown of browsers from past 90 days. Most important is to show what % of traffic comes from IE.</figcaption>
+          <table class="data">
+          </table>
+        </figure>
+        <a href="#">Download this data (JSON)</a>
       </section>
 
-      <section id="operating_systems">
+      <section id="operating_systems"
+        data-block="os"
+        data-source="https://dap.18f.us/bulk/os.json">
         <h3>Traffic by Operating System</h3>
         <h5>Percentage of All Visitors, Past 90 days</h5>
-        <div id="chart_operating_system" class="chart_area">
-          This chart will show breakdown of operating systems from past 90 days. Most important is to show what % of traffic comes from XP.
-        </div>
-        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+        <figure id="chart_operating_system">
+          <figcaption>This chart will show breakdown of operating systems from past 90 days. Most important is to show what % of traffic comes from XP.</figcaption>
+          <table class="data">
+          </table>
+        </figure>
+        <a href="#">Download this data (JSON)</a>
       </section>
-      
-      <!-- This can be removed, but wanted to keep for now to show progress -->
-      <section id="old_charts">
-        <div id="charts">
-        </div>    
-      </section>
+
     </div>
   </body>
-  <script src="js/charts.js"></script>
-
+  <script src="js/index.js"></script>
 </html>
