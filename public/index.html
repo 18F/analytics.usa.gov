@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="description" content="[TO ADD DESCRIPTION]">
-  <title>Public Analytics</title>
-  <meta property="og:title" content="[TO ADD TITLE]">
-  <link href="assets/css/public_analytics.css" media="all" rel="stylesheet" type="text/css"/>
-  <!-- <script type="text/javascript" src="assets/js/inventory.js"></script> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<html lang="en">
+  <head>
+    <title>GSA Public Analytics</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!--[if lte IE 9]>
+    <script src="js/vendor/aight.min.js"></script>
+    <![endif]-->
+    <script src="js/vendor/d3.v3.min.js"></script>
+    <link rel="stylesheet" href="css/charts.css">
+    <link rel="stylesheet" href="css/public_analytics.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 
-<body>
-  <h1>Container for Analytics</h1>
-</body>
+  <body>
+    <div class="container">
+      <header id="usa_dot_gov_header">
+        <h1>USA.gov Header</h1>
+      </header>
+
+      <section id="title">
+        <h2>Digital Services Dashboard</h2>
+        <p>This page provides a summary of federal government website traffic data. It is updated every 5 minutes.</p>
+        <p><strong>Please note:</strong> We only have data for 34% of federal websites. <a href="#" title="More information about this data">Click here</a> to learn more.</p>
+      </section>
+
+      <section id="time_series">
+        <h3>Visitors Over Time</h3>
+        <div id="chart_visitors_over_time" class="chart_area">
+          This will be a 24-hour time series chart of traffic to all DAP sites, in 5 minute increments (or maybe hourly, depends on API stuff).
+        </div>
+        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+      </section>
+
+      <section id="top_100_table">
+        <h3>Top 100 Sites</h3>
+        <h5>By number of sessions over the past 90 days</h5>
+        <div id="chart_top_100" class="chart_area">
+          This will be a table of the most popular sites ranked by traffic over the past 7/30/90. 90 to start.
+        </div>
+        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+      </section>
+
+      <section id="devices">
+        <h3>Traffic by Device Type</h3>
+        <h5>Percentage of All Visitors, Past 90 days</h5>
+        <div id="chart_device_types" class="chart_area">
+          This will be a stacked bar to 100% chart showing how people access federal websites, based on the past 90 days of traffic.
+        </div>
+        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+      </section>
+
+      <section id="browsers">
+        <h3>Traffic by Browser</h3>
+        <h5>Percentage of All Visitors, Past 90 days</h5>
+        <div id="chart_browsers" class="chart_area">
+          This chart will show breakdown of browsers from past 90 days. Most important is to show what % of traffic comes from XP.
+        </div>
+        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+      </section>
+
+      <section id="operating_systems">
+        <h3>Traffic by Operating System</h3>
+        <h5>Percentage of All Visitors, Past 90 days</h5>
+        <div id="chart_operating_system" class="chart_area">
+          This chart will show breakdown of operating systems from past 90 days. Most important is to show what % of traffic comes from XP.
+        </div>
+        <a href="#" title="Download this data as a JSON file">Download this data (JSON)</a>
+      </section>
+      
+      <!-- This can be removed, but wanted to keep for now to show progress -->
+      <section id="old_charts">
+        <div id="charts">
+        </div>    
+      </section>
+    </div>
+  </body>
+  <script src="js/charts.js"></script>
+
+</html>
