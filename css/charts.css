@@ -1,0 +1,37 @@
+table.data {
+  border-collapse: collapse;
+  min-width: 25rem;
+  margin: 1rem 0;
+}
+
+  table.data tbody tr:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+  table.data th,
+  table.data td {
+    text-align: left;
+    padding: .25rem .5rem;
+  }
+
+  table.data td.name,
+  table.data th.name,
+  table.data td.visits,
+  table.data th.visits {
+    text-align: right;
+  }
+
+  table.data th.visits {
+    min-width: 4em;
+  }
+
+table.data td.chart {
+  position: relative;
+  min-width: 10rem;
+}
+
+  table.data td.chart .bar {
+    padding-left: .25em;
+    line-height: 1em;
+    height: 1em;
+  }
