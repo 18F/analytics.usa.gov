@@ -1,36 +1,90 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
 
 // Colors:
 
-$background_color: #f7f7f7;
+$background_color: #fff;
 $container_background: #fff;
 $mockup: #eee;
+$red: #921B1E;
+$blue: #022945;
 
-$data: #f0f; // FIXME
+$data: $red; // FIXME
 
 body {
   font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
   background: $background_color;
+  margin: 0;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+form {
+  .hidden {
+    display: none;
+  }
+}
+
+header {
+  background: $blue;
+
+  .header_container {
+    @include outer-container;
+    padding: 0 1em;
+  }
+
+  #red_bar {
+    background: $red;
+    height: 6px;
+  }
+
+  #logo {
+    height: 60px;
+  }
+
+  h1 {
+    @include span-columns(7);
+  }
+
+  form {
+    @include span-columns(5);
+    input {
+      height: 40px;
+      font-size: 1em;
+    }
+    input.query {
+      width: 70%;
+    }
+    input.submit {
+      width: 25%;
+      padding: 0;
+    }
+    margin: 35px 0;
+    height: 40px;
+  }
+}
+
+section {
+  @include span-columns(12);
+
+  h2 {
+    font-size: 4em;
+    @include span-columns(7);
+    margin: 0;
+  }
+
+  p {
+    @include span-columns(8);
+  }
 }
 
 .container {
   @include outer-container;
-
-  box-shadow: 0px 0px 14px 0px #CCC;
-  background: $container_background;
-  border-radius: 6px;
-
-  #usa_dot_gov_header {
-    border-bottom: 1px solid $mockup;
-  }
-}
-
-section, header {
   padding: 1em;
-  @include span-columns(12);
 }
 
 #big_number {
