@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,27 +10,22 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #F7F7F7; }
+  font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
+  background: #f7f7f7; }
 
 .container {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 0px 14px 0px #CCC;
-  background: #FFF;
+  background: #fff;
   border-radius: 6px; }
   .container::after {
     clear: both;
     content: "";
     display: table; }
   .container #usa_dot_gov_header {
-    border-bottom: 1px solid #ccc; }
-  .container .chart_area {
-    background: #ccc;
-    height: 200px;
-    padding: 1em;
-    color: #888;
-    font-size: 0.8em; }
+    border-bottom: 1px solid #eee; }
 
 section, header {
   padding: 1em;
@@ -39,5 +35,14 @@ section, header {
   width: 100%; }
   section:last-child, header:last-child {
     margin-right: 0; }
+
+#big_number {
+  color: #f0f; }
+
+table.data td.chart .bar {
+  background: #f0f; }
+
+figure {
+  margin: 0; }
 
 /*# sourceMappingURL=public_analytics.css.map */

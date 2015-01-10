@@ -1,14 +1,18 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
+
 // Colors:
 
-$background_color: #F7F7F7;
-$container_background: #FFF;
-$mockup: #ccc;
+$background_color: #f7f7f7;
+$container_background: #fff;
+$mockup: #eee;
 
+$data: #f0f; // FIXME
 
 body {
+  font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
   background: $background_color;
 }
 
@@ -22,17 +26,21 @@ body {
   #usa_dot_gov_header {
     border-bottom: 1px solid $mockup;
   }
-
-  .chart_area {
-    background: $mockup;
-    height: 200px;
-    padding: 1em;
-    color: #888;
-    font-size: 0.8em;
-  }
 }
 
 section, header {
   padding: 1em;
   @include span-columns(12);
+}
+
+#big_number {
+  color: $data;
+}
+
+table.data td.chart .bar {
+  background: $data;
+}
+
+figure {
+  margin: 0;
 }
