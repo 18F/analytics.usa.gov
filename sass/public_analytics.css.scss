@@ -149,3 +149,42 @@ ul.pills {
     }
   }
 }
+
+.bar-chart {
+  margin: 2rem 0;
+  position: relative;
+  @include clearfix;
+
+  .bin {
+    float: left;
+    width: 5rem;
+    margin-right: .5rem;
+    max-width: 20%;
+    height: 5rem;
+    position: relative;
+  }
+
+  .bar {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+    background: $data;
+
+    .value,
+    .label {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+    }
+
+    .value {
+      bottom: 100%;
+    }
+
+    .label {
+      font-weight: bold;
+      top: 100%;
+    }
+  }
+}

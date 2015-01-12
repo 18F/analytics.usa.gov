@@ -139,4 +139,35 @@ ul.pills > li {
     border-top-right-radius: 5px;
     border-right: none; }
 
+.bar-chart {
+  margin: 2rem 0;
+  position: relative; }
+  .bar-chart::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .bar-chart .bin {
+    float: left;
+    width: 5rem;
+    margin-right: .5rem;
+    max-width: 20%;
+    height: 5rem;
+    position: relative; }
+  .bar-chart .bar {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+    background: #921B1E; }
+    .bar-chart .bar .value,
+    .bar-chart .bar .label {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute; }
+    .bar-chart .bar .value {
+      bottom: 100%; }
+    .bar-chart .bar .label {
+      font-weight: bold;
+      top: 100%; }
+
 /*# sourceMappingURL=public_analytics.css.map */
