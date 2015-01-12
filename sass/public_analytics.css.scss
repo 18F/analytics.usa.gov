@@ -95,11 +95,6 @@ section {
 }
 
 table.data td.chart .bar {
-  background: $data;
-}
-
-.stack .bin {
-  background-color: $data;
 }
 
 figure {
@@ -223,6 +218,7 @@ table.data {
       line-height: 1em;
       height: 1em;
       position: relative;
+      background: $data;
 
       .value {
         font-size: 75%;
@@ -239,9 +235,8 @@ table.data {
   padding-bottom: 1rem;
   height: 2.5rem;
   position: relative;
-}
 
-  .stack .bin {
+  .bin {
     float: left;
     top: 1rem;
     position: relative;
@@ -250,22 +245,24 @@ table.data {
     -webkit-box-sizing: border-box;
     height: 100%;
     border: 2px solid white;
-  }
+    background-color: $data;
 
-  .stack .bin:first-child { border-left: none; }
-  .stack .bin:last-child { border-right: none; }
+    &:first-child { border-left: none; }
+    &:last-child { border-right: none; }
 
-  .stack .bin .label {
-    position: absolute;
-    bottom: 100%;
-  }
+    .label {
+      position: absolute;
+      bottom: 100%;
+    }
 
-  .stack .bin .value {
-    position: absolute;
-    top: 100%;
-  }
+    .value {
+      position: absolute;
+      top: 100%;
+    }
 
-  .stack .bin:last-child .label,
-  .stack .bin:last-child .value {
-    right: 0;
+    &:last-child .label,
+    &:last-child .value {
+      right: 0;
+    }
   }
+}

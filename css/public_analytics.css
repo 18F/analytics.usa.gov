@@ -98,12 +98,6 @@ section {
 #big_number {
   color: #921B1E; }
 
-table.data td.chart .bar {
-  background: #921B1E; }
-
-.stack .bin {
-  background-color: #921B1E; }
-
 figure {
   margin: 0; }
 
@@ -193,7 +187,8 @@ table.data {
     table.data td.chart .bar {
       line-height: 1em;
       height: 1em;
-      position: relative; }
+      position: relative;
+      background: #921B1E; }
       table.data td.chart .bar .value {
         font-size: 75%;
         position: absolute;
@@ -205,33 +200,27 @@ table.data {
   padding-bottom: 1rem;
   height: 2.5rem;
   position: relative; }
-
-.stack .bin {
-  float: left;
-  top: 1rem;
-  position: relative;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  height: 100%;
-  border: 2px solid white; }
-
-.stack .bin:first-child {
-  border-left: none; }
-
-.stack .bin:last-child {
-  border-right: none; }
-
-.stack .bin .label {
-  position: absolute;
-  bottom: 100%; }
-
-.stack .bin .value {
-  position: absolute;
-  top: 100%; }
-
-.stack .bin:last-child .label,
-.stack .bin:last-child .value {
-  right: 0; }
+  .stack .bin {
+    float: left;
+    top: 1rem;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 100%;
+    border: 2px solid white;
+    background-color: #921B1E; }
+    .stack .bin:first-child {
+      border-left: none; }
+    .stack .bin:last-child {
+      border-right: none; }
+    .stack .bin .label {
+      position: absolute;
+      bottom: 100%; }
+    .stack .bin .value {
+      position: absolute;
+      top: 100%; }
+    .stack .bin:last-child .label, .stack .bin:last-child .value {
+      right: 0; }
 
 /*# sourceMappingURL=public_analytics.css.map */
