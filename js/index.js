@@ -602,8 +602,8 @@
 
       var max = d3.max(bin.data().map(value)),
           scale = d3.scale.linear()
-            .domain([0, max])
-            .range([0, 100]);
+            .domain([0, 1, max])
+            .range([0, 1, 100]);
 
       var t = updated
         ? bin.transition().duration(500)
