@@ -188,3 +188,84 @@ ul.pills {
     }
   }
 }
+
+table.data {
+  border-collapse: collapse;
+  min-width: 25rem;
+  margin: 1rem 0;
+
+  th,
+  td {
+    text-align: left;
+    padding: .25rem .5rem;
+  }
+
+  tbody tr:nth-child(odd) > td {
+    background: #f9f9f9;
+  }
+
+  td.name,
+  th.name,
+  td.visits,
+  th.visits {
+    text-align: right;
+  }
+
+  th.visits {
+    min-width: 4em;
+  }
+
+  td.chart {
+    position: relative;
+    min-width: 10rem;
+
+    .bar {
+      line-height: 1em;
+      height: 1em;
+      position: relative;
+
+      .value {
+        font-size: 75%;
+        position: absolute;
+        left: 100%;
+        margin-left: .25em;
+      }
+    }
+  }
+}
+
+.stack {
+  margin: 1rem 0 2rem;
+  padding-bottom: 1rem;
+  height: 2.5rem;
+  position: relative;
+}
+
+  .stack .bin {
+    float: left;
+    top: 1rem;
+    position: relative;
+            box-sizing: border-box;
+       -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 100%;
+    border: 2px solid white;
+  }
+
+  .stack .bin:first-child { border-left: none; }
+  .stack .bin:last-child { border-right: none; }
+
+  .stack .bin .label {
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .stack .bin .value {
+    position: absolute;
+    top: 100%;
+  }
+
+  .stack .bin:last-child .label,
+  .stack .bin:last-child .value {
+    right: 0;
+  }
