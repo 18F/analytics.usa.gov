@@ -19,11 +19,11 @@
             : formatCommas(visits);
         };
       })(),
-      percent = function(fraction) {
+      percent = function(fraction, precision) {
         var pct = fraction * 100;
-        return pct > 1
-          ? (pct.toFixed(3) + "%")
-          : "1px";
+        return pct >= 1
+          ? (pct.toFixed(precision || 1) + "%").replace(/\.0+\%$/, "%")
+          : "< 1%";
       };
 
   /*
@@ -60,18 +60,22 @@
     // the windows block is a stack layout
     "windows": renderBlock()
       .transform(function(d) {
-        return listify(d.totals.os_version);
+        return addShares(listify(d.totals.os_version));
       })
-      .render(stack()),
+      .render(barChart()
+        .format(function(visits, d) {
+          return percent(d.share);
+        })),
 
     // the devices block is a stack layout
     "devices": renderBlock()
       .transform(function(d) {
-        return listify(d.totals.devices);
+        var devices = listify(d.totals.devices);
+        return addShares(devices);
       })
-      .render(stack()
+      .render(barChart()
         .format(function(visits, d) {
-          return percent(d._share);
+          return percent(d.share);
         })),
 
     // the browsers block is a table
@@ -98,10 +102,25 @@
             return d3.sum(d, function(x) { return x.visits; });
           })
           .map(d.data);
-        return listify(totals)
+        var ie = listify(totals)
           .slice(0, 5);
+        return addShares(ie);
       })
-      .render(stack()),
+      .render(barChart()
+        .format(function(visits, d) {
+          return percent(d.share);
+        }))
+      .on("render", function(selection) {
+        // we can add IE icons this way:
+        /*
+        selection.selectAll(".bar .label")
+          .append("img")
+            .attr("src", function(d) {
+              // e.g. "ie-11.png"
+              return "images/ie-" + Math.floor(+d.key) + ".png";
+            });
+        */
+      }),
 
     // the top pages block(s)
     "top-pages": renderBlock()
@@ -394,19 +413,23 @@
       var bar = element(td.filter(".chart"), "div.bar");
       element(bar, "span.value");
 
+      var total = 0;
       try {
-        var total = d3.sum(tr.data(), value);
+        total = d3.sum(tr.data(), value);
       } catch (error) {
-        total = 0;
+        // XXX
       }
+
       td.select(".bar")
         .style("width", function(d) {
-          d._share = value(d.data) / total;
-          return percent(d._share);
+          d.share = value(d.data) / total;
+          return d.share >= .01
+            ? percent(d.share)
+            : "1px";
         })
         .select(".value")
           .text(function(d) {
-            return (d._share * 100).toFixed(1) + "%";
+            return percent(d.share);
           });
     };
 
@@ -496,7 +519,7 @@
 
       var enter = bin.enter().append("div")
         .attr("class", "bin");
-      enter.append("b")
+      enter.append("span")
         .attr("class", "label");
       enter.append("span")
         .attr("class", "value");
@@ -549,6 +572,83 @@
     return stack;
   }
 
+  function barChart() {
+    var bars = function(d) {
+          return d;
+        },
+        value = function(d) {
+          return d.value;
+        },
+        format = String,
+        label = function(d) {
+          return d.key;
+        },
+        updated = false;
+
+    var chart = function(selection) {
+      var bin = selection.selectAll(".bin")
+        .data(bars);
+
+      bin.exit().remove();
+
+      var enter = bin.enter().append("div")
+        .attr("class", "bin")
+          .append("div")
+            .attr("class", "bar");
+      enter.append("span")
+        .attr("class", "label");
+      enter.append("span")
+        .attr("class", "value");
+
+      var max = d3.max(bin.data().map(value)),
+          scale = d3.scale.linear()
+            .domain([0, max])
+            .range([0, 100]);
+
+      var t = updated
+        ? bin.transition().duration(500)
+        : bin;
+
+      t.select(".bar")
+        .style("height", function(d) {
+          return scale(value(d)).toFixed(1) + "%";
+        });
+
+      bin.select(".label").text(label);
+      bin.select(".value").text(function(d, i) {
+        return format.call(this, value(d), d, i);
+      });
+
+      updated = true;
+    };
+
+    chart.bars = function(x) {
+      if (!arguments.length) return bars;
+      bars = d3.functor(x);
+      return chart;
+    };
+
+    chart.label = function(x) {
+      if (!arguments.length) return label;
+      label = d3.functor(x);
+      return chart;
+    };
+
+    chart.value = function(x) {
+      if (!arguments.length) return value;
+      value = d3.functor(x);
+      return chart;
+    };
+
+    chart.format = function(x) {
+      if (!arguments.length) return format;
+      format = d3.functor(x);
+      return chart;
+    };
+
+    return chart;
+  }
+
   function element(selection, selector) {
     var el = selection.select(selector);
     if (!el.empty()) return el;
@@ -558,6 +658,15 @@
         klass = bits.slice(1).join(" ");
     return selection.append(name)
       .attr("class", klass);
+  }
+
+  function addShares(list, value) {
+    if (!value) value = function(d) { return d.value; };
+    var total = d3.sum(list.map(value));
+    list.forEach(function(d) {
+      d.share = value(d) / total;
+    });
+    return list;
   }
 
   function collapseOther(list, threshold) {
