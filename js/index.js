@@ -40,13 +40,16 @@
     // the OS block is a stack layout
     "os": renderBlock()
       .transform(function(d) {
-        return listify(d.totals.os);
+        var values = listify(d.totals.os),
+            total = d3.sum(values.map(function(d) { return d.value; }));
+        return collapseOther(values, total * .01);
       })
       .render(renderTable()
         .format(formatVisits)
         .column(0, function(column) {
           column.label = "OS";
-        })),
+        })
+        .column(1, false)),
 
     // the windows block is a stack layout
     "windows": renderBlock()
@@ -60,22 +63,24 @@
       .transform(function(d) {
         return listify(d.totals.devices);
       })
-      .render(renderTable()
-        .format(formatVisits)
-        .column(0, function(column) {
-          column.label = "Form factor";
+      .render(stack()
+        .format(function(visits, d) {
+          return percent(d._share);
         })),
 
     // the browsers block is a table
     "browsers": renderBlock()
       .transform(function(d) {
-        return listify(d.totals.browser);
+        var values = listify(d.totals.browser),
+            total = d3.sum(values.map(function(d) { return d.value; }));
+        return collapseOther(values, total * .015);
       })
       .render(renderTable()
         .format(formatVisits)
         .column(0, function(column) {
           column.label = "Browser";
-        })),
+        })
+        .column(1, false)),
 
     // the IE block is a stack, but with some extra work done to transform the 
     // data beforehand to match the expected object format
@@ -427,9 +432,16 @@
       if (arguments.length < 2) return columns[i];
       if (typeof column === "function") {
         var out = column(columns[i]);
-        columns[i] = out || columns[i];
+        if (out) {
+          columns[i] = out;
+        } else if (out === false) {
+          columns.splice(i, 1);
+        }
       } else {
         columns[i] = column;
+        if (!columns[i]) {
+          columns.splice(i, 1);
+        }
       }
       return table;
     };
@@ -491,8 +503,8 @@
       });
 
       bin.select(".label").text(label);
-      bin.select(".value").text(function(d) {
-        return format(value(d));
+      bin.select(".value").text(function(d, i) {
+        return format.call(this, value(d), d, i);
       });
 
       updated = true;
@@ -536,10 +548,17 @@
       .attr("class", klass);
   }
 
-  function addLinks(href) {
-    if (!href) href = function(d) { return "http://" + d.domain; };
-    return function(selection) {
-    };
+  function collapseOther(list, threshold) {
+    var other = {key: "Other", value: 0, children: []},
+        last = list.length - 1;
+    while (last > 0 && list[last].value < threshold) {
+      other.value += list[last].value;
+      other.children.push(list[last]);
+      list.splice(last, 1);
+      last--;
+    }
+    list.push(other);
+    return list;
   }
 
 })(this);
