@@ -10,8 +10,11 @@ $container_background: #fff;
 $mockup: #eee;
 $red: #921B1E;
 $blue: #022945;
+$light_gray: #f9f9f9;
 
 $data: $red; // FIXME
+
+$border_radius: 5px;
 
 body {
   font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
@@ -101,4 +104,48 @@ table.data td.chart .bar {
 
 figure {
   margin: 0;
+}
+
+ul.pills {
+  @include clearfix;
+
+  &, & > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  & > li {
+    display: inline-block;
+
+    & > a {
+      color: $blue;
+      background: $light_gray;
+      font-weight: bold;
+      display: inline-block;
+      padding: .5em 1em;
+      text-decoration: none;
+
+      border-right: 1px solid #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &[aria-selected='true'] {
+        color: #fff;
+        background: $red;
+      }
+    }
+
+    &:first-child > a {
+      @include border-left-radius($border_radius);
+    }
+
+    &:last-child > a {
+      @include border-right-radius($border_radius);
+      border-right: none;
+    }
+  }
 }

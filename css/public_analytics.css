@@ -107,4 +107,36 @@ table.data td.chart .bar {
 figure {
   margin: 0; }
 
+ul.pills::after {
+  clear: both;
+  content: "";
+  display: table; }
+ul.pills, ul.pills > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block; }
+ul.pills > li {
+  display: inline-block; }
+  ul.pills > li > a {
+    color: #022945;
+    background: #f9f9f9;
+    font-weight: bold;
+    display: inline-block;
+    padding: .5em 1em;
+    text-decoration: none;
+    border-right: 1px solid #fff; }
+    ul.pills > li > a:hover {
+      text-decoration: underline; }
+    ul.pills > li > a[aria-selected='true'] {
+      color: #fff;
+      background: #921B1E; }
+  ul.pills > li:first-child > a {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px; }
+  ul.pills > li:last-child > a {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-right: none; }
+
 /*# sourceMappingURL=public_analytics.css.map */
