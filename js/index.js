@@ -37,6 +37,12 @@
         selection.text(formatCommas(data.totals.visitors));
       }),
 
+    // the realtime block is just `data.totals.active_visitors` formatted with commas
+    "realtime": renderBlock()
+      .render(function(selection, data) {
+        selection.text(formatCommas(data.totals.active_visitors));
+      }),
+
     // the OS block is a stack layout
     "os": renderBlock()
       .transform(function(d) {
@@ -289,6 +295,12 @@
     };
 
     function render(selection, data) {
+      // populate meta elements
+      selection.select(".meta-name")
+        .text(function(d) { return d.meta.name; });
+      selection.select(".meta-desc")
+        .text(function(d) { return d.meta.description; });
+
       selection.select(".data")
         .datum(data)
         .call(renderer, data);
