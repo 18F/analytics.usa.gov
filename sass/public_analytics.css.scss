@@ -1,7 +1,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
 
 // Colors:
 
@@ -10,8 +10,11 @@ $container_background: #fff;
 $mockup: #eee;
 $red: #921B1E;
 $blue: #022945;
+$light_gray: #f9f9f9;
 
 $data: $red; // FIXME
+
+$border_radius: 5px;
 
 body {
   font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
@@ -92,9 +95,174 @@ section {
 }
 
 table.data td.chart .bar {
-  background: $data;
 }
 
 figure {
   margin: 0;
+}
+
+ul.pills {
+  @include clearfix;
+
+  &, & > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  & > li {
+    float: left;
+
+    & > a {
+      color: $blue;
+      background: $light_gray;
+      font-weight: bold;
+      display: inline-block;
+      padding: .5em 1em;
+      text-decoration: none;
+
+      border-right: 1px solid #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &[aria-selected='true'] {
+        color: #fff;
+        background: $blue;
+      }
+    }
+
+    &:first-child > a {
+      @include border-left-radius($border_radius);
+    }
+
+    &:last-child > a {
+      @include border-right-radius($border_radius);
+      border-right: none;
+    }
+  }
+}
+
+.bar-chart {
+  margin: 2rem 0;
+  position: relative;
+  @include clearfix;
+
+  .bin {
+    float: left;
+    width: 5rem;
+    margin-right: .5rem;
+    max-width: 20%;
+    height: 5rem;
+    position: relative;
+  }
+
+  .bar {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
+    background: $data;
+
+    .value,
+    .label {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+    }
+
+    .value {
+      bottom: 100%;
+    }
+
+    .label {
+      font-weight: bold;
+      top: 100%;
+    }
+  }
+}
+
+table.data {
+  border-collapse: collapse;
+  min-width: 25rem;
+  margin: 1rem 0;
+
+  th,
+  td {
+    text-align: left;
+    padding: .25rem .5rem;
+  }
+
+  tbody tr:nth-child(odd) > td {
+    background: #f9f9f9;
+  }
+
+  td.name,
+  th.name,
+  td.visits,
+  th.visits {
+    text-align: right;
+  }
+
+  th.visits {
+    min-width: 4em;
+  }
+
+  td.chart {
+    position: relative;
+    min-width: 10rem;
+
+    .bar {
+      line-height: 1em;
+      height: 1em;
+      position: relative;
+      background: $data;
+
+      .value {
+        font-size: 75%;
+        position: absolute;
+        left: 100%;
+        margin-left: .25em;
+      }
+    }
+  }
+}
+
+.stack {
+  margin: 1rem 0 2rem;
+  padding-bottom: 1rem;
+  height: 2.5rem;
+  position: relative;
+
+  .bin {
+    float: left;
+    top: 1rem;
+    position: relative;
+            box-sizing: border-box;
+       -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 100%;
+    border: 2px solid white;
+    background-color: $data;
+
+    &:first-child { border-left: none; }
+    &:last-child { border-right: none; }
+
+    .label {
+      position: absolute;
+      bottom: 100%;
+    }
+
+    .value {
+      position: absolute;
+      top: 100%;
+    }
+
+    &:last-child .label,
+    &:last-child .value {
+      right: 0;
+    }
+  }
 }
