@@ -14,13 +14,20 @@
   </head>
 
   <body>
-    <div class="container">
-      <header id="usa_dot_gov_header">
-        <h1>USA.gov Header</h1>
-      </header>
 
+    <header id="usa_dot_gov_header">
+      <div id="red_bar"></div>
+      <div class="header_container">
+        <h1><a href="http://www.usa.gov"><img src="images/usa_gov_logo_white.png" alt="USA.gov: Government Made Easy" id="logo"></a></h1>
+        
+        <form action="http://search.usa.gov/search" method="get" name="search_form" accept-charset="UTF-8"><input id="affiliate" name="affiliate" type="hidden" value="usagov"> <label class="hidden">Search</label> <input type="text" class="query" id="query" role="textbox" placeholder="Search USA.gov..."> <input type="submit" class="submit" value="Search"></form>
+      </div>
+
+    </header>
+
+    <div class="container">
       <section id="title">
-        <h2>Digital Services Dashboard</h2>
+        <h2>Digital Analytics Dashboard</h2>
         <p>This page provides a summary of federal government website traffic data. It is updated every 5 minutes.</p>
         <p><strong>Please note:</strong> We only have data for 34% of federal websites. <a href="#" title="More information about this data">Click here</a> to learn more.</p>
       </section>

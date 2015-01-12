@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,38 +11,95 @@ html {
 
 body {
   font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
-  background: #f7f7f7; }
+  background: #fff;
+  margin: 0; }
+
+h2 {
+  font-size: 4em; }
+
+form .hidden {
+  display: none; }
+
+header {
+  background: #022945; }
+  header .header_container {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em; }
+    header .header_container::after {
+      clear: both;
+      content: "";
+      display: table; }
+  header #red_bar {
+    background: #921B1E;
+    height: 6px; }
+  header #logo {
+    height: 60px; }
+  header h1 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%; }
+    header h1:last-child {
+      margin-right: 0; }
+  header form {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    margin: 35px 0;
+    height: 40px; }
+    header form:last-child {
+      margin-right: 0; }
+    header form input {
+      height: 40px;
+      font-size: 1em; }
+    header form input.query {
+      width: 70%; }
+    header form input.submit {
+      width: 25%;
+      padding: 0; }
+
+section {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  section:last-child {
+    margin-right: 0; }
+  section h2 {
+    font-size: 4em;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+    margin: 0; }
+    section h2:last-child {
+      margin-right: 0; }
+  section p {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    section p:last-child {
+      margin-right: 0; }
 
 .container {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0px 0px 14px 0px #CCC;
-  background: #fff;
-  border-radius: 6px; }
+  padding: 1em; }
   .container::after {
     clear: both;
     content: "";
     display: table; }
-  .container #usa_dot_gov_header {
-    border-bottom: 1px solid #eee; }
-
-section, header {
-  padding: 1em;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%; }
-  section:last-child, header:last-child {
-    margin-right: 0; }
 
 #big_number {
-  color: #f0f; }
+  color: #921B1E; }
 
 table.data td.chart .bar {
-  background: #f0f; }
+  background: #921B1E; }
 
 figure {
   margin: 0; }
-
-/*# sourceMappingURL=public_analytics.css.map */
