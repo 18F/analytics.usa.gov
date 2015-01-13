@@ -40,7 +40,10 @@
     // the realtime block is just `data.totals.active_visitors` formatted with commas
     "realtime": renderBlock()
       .render(function(selection, data) {
-        selection.text(formatCommas(data.totals.active_visitors));
+        // XXX temporary fix for <https://github.com/18F/analytics-reporter/issues/57>
+        var totals = data.totals[0] || data.totals;
+        // console.log("realtime totals:", totals);
+        selection.text(formatCommas(+totals.active_visitors));
       }),
 
     // the OS block is a stack layout
