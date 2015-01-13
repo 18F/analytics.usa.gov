@@ -34,6 +34,7 @@ $small-screen:  new-breakpoint(max-width  768px  1);
 $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
+$gray: #ccc;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -43,9 +44,6 @@ $container_background: $white;
 $bold_weight: 600;
 
 $data: $light_blue;
-
-
-
 
 // Other Setup:
 $border_radius: 5px;
@@ -58,6 +56,22 @@ body {
 
 h2 {
   font-size: 4em;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+h4 {
+  margin: 1em 0;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 0.8em;
+  font-weight: 400;
 }
 
 header {
@@ -93,7 +107,7 @@ header {
   #datetime {
     font-size: 1em;
     font-weight: 300;
-    @include span-columns(5);
+    @include span-columns(7);
     padding-top: 2em;
     text-align: right;
     @include media($small-screen)  {
@@ -132,10 +146,22 @@ section {
   }
 }
 
+.section_headline {
+  border-top: 1px solid $gray;
+}
+
 .three_column {
   @include span-columns(3 of 9);
   @include media($small-screen)  {
     @include span-columns(1);
+  }
+  h4 {
+    text-align: center;
+    margin: 0;
+  }
+  h5 {
+    margin-top: 0;
+    text-align: center;
   }
 }
 
