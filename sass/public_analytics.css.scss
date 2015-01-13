@@ -1,7 +1,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
 // Colors:
 
@@ -17,7 +17,7 @@ $data: $red; // FIXME
 $border_radius: 5px;
 
 body {
-  font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
+  font-family: "Open Sans", Helvetica, arial, sans-serif;
   background: $background_color;
   margin: 0;
 }
@@ -72,16 +72,9 @@ header {
 }
 
 section {
-  @include span-columns(12);
-
   h2 {
-    font-size: 4em;
-    @include span-columns(7);
+    font-size: 8em;
     margin: 0;
-  }
-
-  p {
-    @include span-columns(8);
   }
 }
 
@@ -90,8 +83,32 @@ section {
   padding: 1em;
 }
 
+#main_data {
+  @include span-columns(9);
+}
+
+#secondary_data {
+  @include span-columns(3);
+  background: $light_gray;
+}
+
+.three_column {
+  @include span-columns(3 of 9);
+}
+
+
+#time_series {
+  text-align: center;
+  .chart_subtitle {
+    font-size: 3em;
+    font-weight: 300;
+  }
+  margin-bottom: 60px;
+}
+
 #big_number {
   color: $data;
+  text-align: center;
 }
 
 table.data td.chart .bar {
