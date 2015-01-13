@@ -17,14 +17,11 @@ body {
 h2 {
   font-size: 4em; }
 
-form .hidden {
-  display: none; }
-
 header {
   background: #36435A;
   color: white; }
   header .header_container {
-    max-width: 68em;
+    max-width: 1560px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1em; }
@@ -32,6 +29,18 @@ header {
       clear: both;
       content: "";
       display: table; }
+    @media screen and (max-width: 1600px) {
+      header .header_container {
+        max-width: 1560px; } }
+    @media screen and (max-width: 1200px) {
+      header .header_container {
+        max-width: 1170px; } }
+    @media screen and (max-width: 992px) {
+      header .header_container {
+        max-width: 970px; } }
+    @media screen and (max-width: 768px) {
+      header .header_container {
+        max-width: 750px; } }
   header #color_bar {
     background: #3A96B7;
     height: 6px; }
@@ -49,6 +58,14 @@ header {
       text-decoration: none; }
     header h1 a:hover {
       text-decoration: underline; }
+    @media screen and (max-width: 768px) {
+      header h1 {
+        float: left;
+        display: block;
+        margin-right: 38.19821%;
+        width: 100%; }
+        header h1:last-child {
+          margin-right: 0; } }
   header #datetime {
     font-size: 1em;
     font-weight: 300;
@@ -60,13 +77,23 @@ header {
     text-align: right; }
     header #datetime:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      header #datetime {
+        float: left;
+        display: block;
+        margin-right: 38.19821%;
+        width: 100%;
+        text-align: left;
+        padding-top: 0; }
+        header #datetime:last-child {
+          margin-right: 0; } }
 
 section h2 {
   font-size: 8em;
   margin: 0; }
 
 .container {
-  max-width: 68em;
+  max-width: 1560px;
   margin-left: auto;
   margin-right: auto;
   padding: 1em; }
@@ -74,6 +101,18 @@ section h2 {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (max-width: 1600px) {
+    .container {
+      max-width: 1560px; } }
+  @media screen and (max-width: 1200px) {
+    .container {
+      max-width: 1170px; } }
+  @media screen and (max-width: 992px) {
+    .container {
+      max-width: 970px; } }
+  @media screen and (max-width: 768px) {
+    .container {
+      max-width: 750px; } }
 
 #main_data {
   float: left;
@@ -82,6 +121,14 @@ section h2 {
   width: 74.41059%; }
   #main_data:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    #main_data {
+      float: left;
+      display: block;
+      margin-right: 38.19821%;
+      width: 100%; }
+      #main_data:last-child {
+        margin-right: 0; } }
 
 #secondary_data {
   float: left;
@@ -91,6 +138,14 @@ section h2 {
   background: #f9f9f9; }
   #secondary_data:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    #secondary_data {
+      float: left;
+      display: block;
+      margin-right: 38.19821%;
+      width: 100%; }
+      #secondary_data:last-child {
+        margin-right: 0; } }
 
 .three_column {
   float: left;
@@ -99,6 +154,14 @@ section h2 {
   width: 31.22104%; }
   .three_column:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    .three_column {
+      float: left;
+      display: block;
+      margin-right: 38.19821%;
+      width: 100%; }
+      .three_column:last-child {
+        margin-right: 0; } }
 
 #time_series {
   text-align: center;
@@ -108,7 +171,7 @@ section h2 {
     font-weight: 300; }
 
 #big_number {
-  color: #3A96B7;
+  font-weight: 600;
   text-align: center; }
 
 figure {

@@ -1,22 +1,51 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+// Screen Sizes: 
+
+$xlarge-screen:  new-breakpoint(max-width  1600px  12);
+$large-screen:  new-breakpoint(max-width 1200px 12);
+$medium-screen: new-breakpoint(max-width  992px 12);
+$small-screen:  new-breakpoint(max-width  768px  1);
+
+$max-width: 1560px;
+
+@mixin responsive_container {
+    @include outer-container;
+
+    @include media($xlarge-screen) {
+      max-width: 1560px;
+    }
+    @include media($large-screen)  {
+      max-width: 1170px;
+    }
+    @include media($medium-screen) {
+      max-width:  970px;
+    }
+    @include media($small-screen)  {
+      max-width:  750px;
+    }
+  }
+
+
+// Fonts & Colors:
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 
-// Colors:
-
-$background_color: #fff;
-$container_background: #fff;
-$mockup: #eee;
+$background_color: $white;
+$container_background: $white;
 $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
-
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
+$white: #fff;
 
-$data: $light_blue; // FIXME
+$bold_weight: 600;
 
+$data: $light_blue;
+
+
+// Other Setup:
 $border_radius: 5px;
 
 body {
@@ -29,18 +58,12 @@ h2 {
   font-size: 4em;
 }
 
-form {
-  .hidden {
-    display: none;
-  }
-}
-
 header {
   background: $dark_blue;
   color: white;
 
   .header_container {
-    @include outer-container;
+    @include responsive_container;
     padding: 0 1em;
   }
 
@@ -49,17 +72,19 @@ header {
     height: 6px;
   }
 
-
   h1 {
     @include span-columns(7);
     font-weight: 300;
     a {
-      font-weight: 600;
+      font-weight: $bold_weight;
       color: white;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
+    }
+    @include media($small-screen)  {
+      @include span-columns(1);
     }
   }
 
@@ -69,30 +94,12 @@ header {
     @include span-columns(5);
     padding-top: 2em;
     text-align: right;
+    @include media($small-screen)  {
+      @include span-columns(1);
+      text-align: left;
+      padding-top: 0;
+    }
   }
-
-
-  // Unused for now:
-  // #logo {
-  //   height: 60px;
-  // }
-  
-  // form {
-  //   @include span-columns(5);
-  //   input {
-  //     height: 40px;
-  //     font-size: 1em;
-  //   }
-  //   input.query {
-  //     width: 70%;
-  //   }
-  //   input.submit {
-  //     width: 25%;
-  //     padding: 0;
-  //   }
-  //   margin: 35px 0;
-  //   height: 40px;
-  // }
 }
 
 section {
@@ -103,21 +110,31 @@ section {
 }
 
 .container {
-  @include outer-container;
+  @include responsive_container;
   padding: 1em;
 }
 
 #main_data {
   @include span-columns(9);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
 }
 
 #secondary_data {
   @include span-columns(3);
   background: $light_gray;
+
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
 }
 
 .three_column {
   @include span-columns(3 of 9);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
 }
 
 
@@ -131,7 +148,7 @@ section {
 }
 
 #big_number {
-  color: $data;
+  font-weight: $bold_weight;
   text-align: center;
 }
 
@@ -307,3 +324,4 @@ table.data {
     }
   }
 }
+
