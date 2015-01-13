@@ -9,8 +9,9 @@
       formatDate = d3.time.format("%A, %b %e"),
       formatVisits = (function() {
         var suffix = {
-          "k": "k",
-          "M": "m"
+          "k": "k", // thousands
+          "M": "m", // millions
+          "G": "b"  // billions
         };
         return function(visits) {
           var prefix = d3.formatPrefix(visits);
@@ -22,8 +23,11 @@
       percent = function(fraction, precision) {
         var pct = fraction * 100;
         return pct >= 1
-          ? (pct.toFixed(precision || 1) + "%").replace(/\.0+\%$/, "%")
+          ? formatPercent(pct)
           : "< 1%";
+      },
+      formatPercent = function(p) {
+        return (p.toFixed(1) + "%").replace(/\.0+\%$/, "%");
       };
 
   /*
@@ -51,14 +55,11 @@
       .transform(function(d) {
         var values = listify(d.totals.os),
             total = d3.sum(values.map(function(d) { return d.value; }));
-        return collapseOther(values, total * .01);
+        return addShares(collapseOther(values, total * .01));
       })
-      .render(renderTable()
-        .format(formatVisits)
-        .column(0, function(column) {
-          column.label = "OS";
-        })
-        .column(1, false)),
+      .render(barChart()
+        .value(function(d) { return d.share * 100; })
+        .format(formatPercent)),
 
     // the windows block is a stack layout
     "windows": renderBlock()
@@ -66,9 +67,8 @@
         return addShares(listify(d.totals.os_version));
       })
       .render(barChart()
-        .format(function(visits, d) {
-          return percent(d.share);
-        })),
+        .value(function(d) { return d.share * 100; })
+        .format(formatPercent)),
 
     // the devices block is a stack layout
     "devices": renderBlock()
@@ -77,23 +77,19 @@
         return addShares(devices);
       })
       .render(barChart()
-        .format(function(visits, d) {
-          return percent(d.share);
-        })),
+        .value(function(d) { return d.share * 100; })
+        .format(formatPercent)),
 
     // the browsers block is a table
     "browsers": renderBlock()
       .transform(function(d) {
         var values = listify(d.totals.browser),
             total = d3.sum(values.map(function(d) { return d.value; }));
-        return collapseOther(values, total * .015);
+        return addShares(collapseOther(values, total * .015));
       })
-      .render(renderTable()
-        .format(formatVisits)
-        .column(0, function(column) {
-          column.label = "Browser";
-        })
-        .column(1, false)),
+      .render(barChart()
+        .value(function(d) { return d.share * 100; })
+        .format(formatPercent)),
 
     // the IE block is a stack, but with some extra work done to transform the 
     // data beforehand to match the expected object format
@@ -109,10 +105,11 @@
           .slice(0, 5);
         return addShares(ie);
       })
-      .render(barChart()
-        .format(function(visits, d) {
-          return percent(d.share);
-        }))
+      .render(
+        barChart()
+          .value(function(d) { return d.share * 100; })
+          .format(formatPercent)
+       )
       .on("render", function(selection) {
         // we can add IE icons this way:
         /*
@@ -139,13 +136,16 @@
             })
             .text(function(d) { return d.data.domain; });
       })
-      .render(renderTable()
+      .render(barChart()
         .label(function(d) { return d.domain; })
         .value(function(d) { return +d.visits; })
-        .format(formatVisits)
-        .column(0, function(column) {
-          column.label = "Domain";
-        })),
+        .scale(function(values) {
+          var max = d3.max(values);
+          return d3.scale.linear()
+            .domain([0, 1, d3.max(values)])
+            .rangeRound([0, 1, 100]);
+        })
+        .format(formatVisits)),
 
     // the sources block is a table
     "sources": renderBlock()
@@ -586,7 +586,10 @@
         label = function(d) {
           return d.key;
         },
-        updated = false;
+        scale = null,
+        size = function(n) {
+          return (n || 0).toFixed(1) + "%";
+        };
 
     var chart = function(selection) {
       var bin = selection.selectAll(".bin")
@@ -595,34 +598,32 @@
       bin.exit().remove();
 
       var enter = bin.enter().append("div")
-        .attr("class", "bin")
-          .append("div")
-            .attr("class", "bar");
-      enter.append("span")
+        .attr("class", "bin");
+      enter.append("div")
         .attr("class", "label");
-      enter.append("span")
+      enter.append("div")
         .attr("class", "value");
+      enter.append("div")
+        .attr("class", "bar")
+        .style("width", "0%");
 
-      var max = d3.max(bin.data().map(value)),
-          scale = d3.scale.linear()
-            .domain([0, 1, max])
-            .range([0, 1, 100]);
-
-      var t = updated
-        ? bin.transition().duration(500)
-        : bin;
-
-      t.select(".bar")
-        .style("height", function(d) {
-          return scale(value(d)).toFixed(1) + "%";
-        });
+      var _scale = scale
+        ? scale.call(selection, bin.data().map(value))
+        : null;
+      // console.log("scale:", _scale ? _scale.domain() : "(none)");
+      bin.select(".bar")
+        .style("width", _scale
+          ? function(d) {
+            return size(_scale(value(d)));
+          }
+          : function(d) {
+            return size(value(d));
+          });
 
       bin.select(".label").text(label);
       bin.select(".value").text(function(d, i) {
         return format.call(this, value(d), d, i);
       });
-
-      updated = true;
     };
 
     chart.bars = function(x) {
@@ -646,6 +647,12 @@
     chart.format = function(x) {
       if (!arguments.length) return format;
       format = d3.functor(x);
+      return chart;
+    };
+
+    chart.scale = function(x) {
+      if (!arguments.length) return scale;
+      scale = d3.functor(x);
       return chart;
     };
 
