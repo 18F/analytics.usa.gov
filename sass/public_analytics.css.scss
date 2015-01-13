@@ -19,7 +19,6 @@ $max-width: em(1560);
   }
   @include media($small-screen)  {
     max-width:  750px;
-    $em-base: 12px;
   }
 }
 
@@ -50,8 +49,16 @@ $border_radius: 5px;
 
 body {
   font-family: "Open Sans", Helvetica, arial, sans-serif;
+  font-size: 16px;
+  $em-size: 16px;
   background: $background_color;
   margin: 0;
+  @include media($medium-screen) {
+    font-size: 14px;
+  }
+  @include media($small-screen) {
+    font-size: 14px;
+  }
 }
 
 h2 {
@@ -139,10 +146,15 @@ section {
 
 #secondary_data {
   @include span-columns(5);
-  background: $light_gray;
-
   @include media($small-screen)  {
     @include span-columns(1);
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+  h5 {
+    margin-top: 0;
   }
 }
 

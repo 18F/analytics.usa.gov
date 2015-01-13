@@ -11,8 +11,15 @@ html {
 
 body {
   font-family: "Open Sans", Helvetica, arial, sans-serif;
+  font-size: 16px;
   background: #fff;
   margin: 0; }
+  @media screen and (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px; } }
 
 h2 {
   font-size: 4em; }
@@ -147,8 +154,7 @@ section h2 {
   float: left;
   display: block;
   margin-right: 2.01406%;
-  width: 34.41953%;
-  background: #f9f9f9; }
+  width: 34.41953%; }
   #secondary_data:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
@@ -159,6 +165,10 @@ section h2 {
       width: 100%; }
       #secondary_data:last-child {
         margin-right: 0; } }
+  #secondary_data h3 {
+    margin-bottom: 0; }
+  #secondary_data h5 {
+    margin-top: 0; }
 
 .section_headline {
   border-top: 1px solid #ccc; }
