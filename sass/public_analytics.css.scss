@@ -1,7 +1,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 
 // Colors:
 
@@ -37,6 +37,7 @@ form {
 
 header {
   background: $dark_blue;
+  color: white;
 
   .header_container {
     @include outer-container;
@@ -48,30 +49,50 @@ header {
     height: 6px;
   }
 
-  #logo {
-    height: 60px;
-  }
 
   h1 {
     @include span-columns(7);
+    font-weight: 300;
+    a {
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
-  form {
+  #datetime {
+    font-size: 1em;
+    font-weight: 300;
     @include span-columns(5);
-    input {
-      height: 40px;
-      font-size: 1em;
-    }
-    input.query {
-      width: 70%;
-    }
-    input.submit {
-      width: 25%;
-      padding: 0;
-    }
-    margin: 35px 0;
-    height: 40px;
+    padding-top: 2em;
+    text-align: right;
   }
+
+
+  // Unused for now:
+  // #logo {
+  //   height: 60px;
+  // }
+  
+  // form {
+  //   @include span-columns(5);
+  //   input {
+  //     height: 40px;
+  //     font-size: 1em;
+  //   }
+  //   input.query {
+  //     width: 70%;
+  //   }
+  //   input.submit {
+  //     width: 25%;
+  //     padding: 0;
+  //   }
+  //   margin: 35px 0;
+  //   height: 40px;
+  // }
 }
 
 section {

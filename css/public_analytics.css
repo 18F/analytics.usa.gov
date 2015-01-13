@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -21,7 +21,8 @@ form .hidden {
   display: none; }
 
 header {
-  background: #36435A; }
+  background: #36435A;
+  color: white; }
   header .header_container {
     max-width: 68em;
     margin-left: auto;
@@ -34,32 +35,31 @@ header {
   header #color_bar {
     background: #3A96B7;
     height: 6px; }
-  header #logo {
-    height: 60px; }
   header h1 {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 57.35098%; }
+    width: 57.35098%;
+    font-weight: 300; }
     header h1:last-child {
       margin-right: 0; }
-  header form {
+    header h1 a {
+      font-weight: 600;
+      color: white;
+      text-decoration: none; }
+    header h1 a:hover {
+      text-decoration: underline; }
+  header #datetime {
+    font-size: 1em;
+    font-weight: 300;
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 40.29137%;
-    margin: 35px 0;
-    height: 40px; }
-    header form:last-child {
+    padding-top: 2em;
+    text-align: right; }
+    header #datetime:last-child {
       margin-right: 0; }
-    header form input {
-      height: 40px;
-      font-size: 1em; }
-    header form input.query {
-      width: 70%; }
-    header form input.submit {
-      width: 25%;
-      padding: 0; }
 
 section h2 {
   font-size: 8em;
