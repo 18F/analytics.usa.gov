@@ -233,6 +233,10 @@ ul.pills {
     display: block;
   }
 
+  & {
+    margin: .5rem 0;
+  }
+
   & > li {
     float: left;
 
@@ -268,47 +272,55 @@ ul.pills {
 }
 
 .bar-chart {
-  margin: 2rem 0;
+  margin: 1rem 0;
   position: relative;
-  @include clearfix;
+  font-size: 80%;
 
   .bin {
-    float: left;
-    width: 5rem;
-    margin-right: .5rem;
-    max-width: 20%;
-    height: 5rem;
     position: relative;
+    @include clearfix;
+    margin: 0 0 1rem 0;
+
+    &:after {
+      content: " ";
+      display: block;
+      background: #f9f9f9;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: .5rem;
+      z-index: 1;
+    }
   }
 
   .bar {
-    position: absolute !important;
-    bottom: 0;
-    width: 100%;
+    height: .5rem;
     background: $data;
+    position: relative;
+    z-index: 2;
+  }
 
-    .value,
-    .label {
-      display: block;
-      width: 100%;
-      text-align: center;
-      position: absolute;
-    }
+  .label,
+  .value {
+  }
 
-    .value {
-      bottom: 100%;
-    }
+  .label {
+    white-space: nowrap;
+    height: 1.5rem;
+  }
 
-    .label {
-      font-weight: bold;
-      top: 100%;
-    }
+  .value {
+    text-align: right;
+    height: 1rem;
+    white-space: nowrap;
+    margin-top: -1.5rem;
+    margin-bottom: .25rem;
   }
 }
 
 table.data {
   border-collapse: collapse;
-  min-width: 25rem;
   margin: 1rem 0;
 
   th,
