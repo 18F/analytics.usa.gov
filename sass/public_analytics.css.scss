@@ -12,7 +12,10 @@ $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
 
-$data: $red; // FIXME
+$light_blue: #3A96B7;
+$dark_blue: #36435A;
+
+$data: $light_blue; // FIXME
 
 $border_radius: 5px;
 
@@ -33,15 +36,15 @@ form {
 }
 
 header {
-  background: $blue;
+  background: $dark_blue;
 
   .header_container {
     @include outer-container;
     padding: 0 1em;
   }
 
-  #red_bar {
-    background: $red;
+  #color_bar {
+    background: $light_blue;
     height: 6px;
   }
 
@@ -132,7 +135,7 @@ ul.pills {
     float: left;
 
     & > a {
-      color: $blue;
+      color: $dark_blue;
       background: $light_gray;
       font-weight: bold;
       display: inline-block;
@@ -147,7 +150,7 @@ ul.pills {
 
       &[aria-selected='true'] {
         color: #fff;
-        background: $blue;
+        background: $dark_blue;
       }
     }
 
