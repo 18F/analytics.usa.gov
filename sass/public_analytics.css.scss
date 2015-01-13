@@ -1,48 +1,50 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-// Screen Sizes: 
-
-$xlarge-screen:  new-breakpoint(max-width  1600px  12);
-$large-screen:  new-breakpoint(max-width 1200px 12);
-$medium-screen: new-breakpoint(max-width  992px 12);
-$small-screen:  new-breakpoint(max-width  768px  1);
-
-$max-width: 1560px;
+//Grid Settings:
+$grid-columns: 14;
+$max-width: em(1560);
 
 @mixin responsive_container {
-    @include outer-container;
+  @include outer-container;
 
-    @include media($xlarge-screen) {
-      max-width: 1560px;
-    }
-    @include media($large-screen)  {
-      max-width: 1170px;
-    }
-    @include media($medium-screen) {
-      max-width:  970px;
-    }
-    @include media($small-screen)  {
-      max-width:  750px;
-    }
+  @include media($xlarge-screen) {
+    max-width: 1560px;
   }
+  @include media($large-screen)  {
+    max-width: 1170px;
+  }
+  @include media($medium-screen) {
+    max-width:  970px;
+  }
+  @include media($small-screen)  {
+    max-width:  750px;
+    $em-base: 12px;
+  }
+}
 
+$xlarge-screen:  new-breakpoint(max-width  1600px  14);
+$large-screen:  new-breakpoint(max-width 1200px 14);
+$medium-screen: new-breakpoint(max-width  992px 14);
+$small-screen:  new-breakpoint(max-width  768px  1);
 
 // Fonts & Colors:
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 
-$background_color: $white;
-$container_background: $white;
 $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
+$background_color: $white;
+$container_background: $white;
 
 $bold_weight: 600;
 
 $data: $light_blue;
+
+
 
 
 // Other Setup:
@@ -122,7 +124,7 @@ section {
 }
 
 #secondary_data {
-  @include span-columns(3);
+  @include span-columns(5);
   background: $light_gray;
 
   @include media($small-screen)  {
