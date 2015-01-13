@@ -13,7 +13,7 @@ body {
   font-family: "Open Sans", Helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
-  background: #fff;
+  background: #f9f9f9;
   margin: 0; }
   @media screen and (max-width: 992px) {
     body {
@@ -68,8 +68,8 @@ header {
   header h1 {
     float: left;
     display: block;
-    margin-right: 2.01406%;
-    width: 48.99297%;
+    margin-right: 0%;
+    width: 50%;
     font-weight: 300; }
     header h1:last-child {
       margin-right: 0; }
@@ -83,7 +83,7 @@ header {
       header h1 {
         float: left;
         display: block;
-        margin-right: 38.19821%;
+        margin-right: 0%;
         width: 100%; }
         header h1:last-child {
           margin-right: 0; } }
@@ -92,32 +92,37 @@ header {
     font-weight: 300;
     float: left;
     display: block;
-    margin-right: 2.01406%;
-    width: 48.99297%;
+    margin-right: 0%;
+    width: 50%;
     padding-top: 2em;
-    text-align: right; }
+    text-align: right;
+    border: none; }
     header #datetime:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
       header #datetime {
         float: left;
         display: block;
-        margin-right: 38.19821%;
+        margin-right: 0%;
         width: 100%;
         text-align: left;
         padding-top: 0; }
         header #datetime:last-child {
           margin-right: 0; } }
 
-section h2 {
-  font-size: 8em;
-  margin: 0; }
+section {
+  background: #fff;
+  padding: 1em; }
+  section h2 {
+    font-size: 8em;
+    margin: 0; }
+  section h3 {
+    margin: 10px 0; }
 
 .container {
   max-width: 97.5em;
   margin-left: auto;
-  margin-right: auto;
-  padding: 1em; }
+  margin-right: auto; }
   .container::after {
     clear: both;
     content: "";
@@ -138,32 +143,37 @@ section h2 {
 #main_data {
   float: left;
   display: block;
-  margin-right: 2.01406%;
-  width: 63.56641%; }
+  margin-right: 0%;
+  width: 64.28571%; }
   #main_data:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
     #main_data {
       float: left;
       display: block;
-      margin-right: 38.19821%;
+      margin-right: 0%;
       width: 100%; }
       #main_data:last-child {
         margin-right: 0; } }
 
 #secondary_data {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
   float: left;
   display: block;
-  margin-right: 2.01406%;
-  width: 34.41953%; }
+  margin-right: 0%;
+  width: 35.71429%; }
   #secondary_data:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
     #secondary_data {
       float: left;
       display: block;
-      margin-right: 38.19821%;
-      width: 100%; }
+      margin-right: 0%;
+      width: 100%;
+      border-top: 1px solid #ccc;
+      border-left: none;
+      border-right: none; }
       #secondary_data:last-child {
         margin-right: 0; } }
   #secondary_data h3 {
@@ -172,21 +182,30 @@ section h2 {
     margin-top: 0; }
 
 .section_headline {
-  border-top: 1px solid #ccc; }
+  padding: 0 1em;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
+  @media screen and (max-width: 768px) {
+    .section_headline {
+      border-bottom: none; } }
 
 .three_column {
   float: left;
   display: block;
-  margin-right: 3.16844%;
-  width: 31.22104%; }
+  margin-right: 0%;
+  width: 33.33333%;
+  border-left: 1px solid #ccc; }
   .three_column:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
     .three_column {
       float: left;
       display: block;
-      margin-right: 38.19821%;
-      width: 100%; }
+      margin-right: 0%;
+      width: 100%;
+      border-left: none;
+      border-top: 1px solid #ccc; }
       .three_column:last-child {
         margin-right: 0; } }
   .three_column h4 {
@@ -197,8 +216,8 @@ section h2 {
     text-align: center; }
 
 #time_series {
-  text-align: center;
-  margin-bottom: 60px; }
+  border-left: 1px solid #ccc;
+  text-align: center; }
   #time_series .chart_subtitle {
     font-size: 3em;
     font-weight: 300; }

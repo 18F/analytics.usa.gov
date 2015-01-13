@@ -1,9 +1,12 @@
 @import "bourbon/bourbon";
-@import "neat/neat";
 
 //Grid Settings:
 $grid-columns: 14;
 $max-width: em(1560);
+$gutter: 0em !global;
+
+@import "neat/neat";
+
 
 @mixin responsive_container {
   @include outer-container;
@@ -37,7 +40,7 @@ $gray: #ccc;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
-$background_color: $white;
+$background_color: $light_gray;
 $container_background: $white;
 
 $bold_weight: 600;
@@ -118,6 +121,7 @@ header {
     @include span-columns(7);
     padding-top: 2em;
     text-align: right;
+    border: none;
     @include media($small-screen)  {
       @include span-columns(1);
       text-align: left;
@@ -127,15 +131,19 @@ header {
 }
 
 section {
+  background: $white;
+  padding: 1em;
   h2 {
     font-size: 8em;
     margin: 0;
+  }
+  h3 {
+    margin: 10px 0;
   }
 }
 
 .container {
   @include responsive_container;
-  padding: 1em;
 }
 
 #main_data {
@@ -146,9 +154,14 @@ section {
 }
 
 #secondary_data {
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
+    border-top: 1px solid $gray;
+    border-left: none;
+    border-right: none;
   }
 
   h3 {
@@ -160,13 +173,24 @@ section {
 }
 
 .section_headline {
+  padding: 0 1em;
+  border-left: 1px solid $gray;
   border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  @include media($small-screen)  {
+    border-bottom: none;
+  }
+  // border-left: 1px solid $gray;
 }
 
 .three_column {
   @include span-columns(3 of 9);
+  border-left: 1px solid $gray;
+
   @include media($small-screen)  {
     @include span-columns(1);
+    border-left: none;
+    border-top: 1px solid $gray;
   }
   h4 {
     text-align: center;
@@ -178,14 +202,13 @@ section {
   }
 }
 
-
 #time_series {
+  border-left: 1px solid $gray;
   text-align: center;
   .chart_subtitle {
     font-size: 3em;
     font-weight: 300;
   }
-  margin-bottom: 60px;
 }
 
 #big_number {
