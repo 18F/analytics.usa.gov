@@ -1,97 +1,219 @@
 @import "bourbon/bourbon";
+
+//Grid Settings:
+$grid-columns: 14;
+$max-width: em(1560);
+$gutter: 0em !global;
+
 @import "neat/neat";
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
 
-// Colors:
+@mixin responsive_container {
+  @include outer-container;
 
-$background_color: #fff;
-$container_background: #fff;
-$mockup: #eee;
+  @include media($xlarge-screen) {
+    max-width: 1560px;
+  }
+  @include media($large-screen)  {
+    max-width: 1170px;
+  }
+  @include media($medium-screen) {
+    max-width:  970px;
+  }
+  @include media($small-screen)  {
+    max-width:  750px;
+  }
+}
+
+$xlarge-screen:  new-breakpoint(max-width  1600px  14);
+$large-screen:  new-breakpoint(max-width 1200px 14);
+$medium-screen: new-breakpoint(max-width  992px 14);
+$small-screen:  new-breakpoint(max-width  768px  1);
+
+// Fonts & Colors:
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+
 $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
+$gray: #ccc;
+$light_blue: #3A96B7;
+$dark_blue: #36435A;
+$white: #fff;
+$background_color: $light_gray;
+$container_background: $white;
 
-$data: $red; // FIXME
+$bold_weight: 600;
 
+$data: $light_blue;
+
+// Other Setup:
 $border_radius: 5px;
 
 body {
-  font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
+  font-family: "Open Sans", Helvetica, arial, sans-serif;
+  font-size: 16px;
+  $em-size: 16px;
+  font-weight: 300;
   background: $background_color;
   margin: 0;
+  @include media($medium-screen) {
+    font-size: 14px;
+  }
+  @include media($small-screen) {
+    font-size: 14px;
+  }
 }
 
 h2 {
   font-size: 4em;
 }
 
-form {
-  .hidden {
-    display: none;
-  }
+h3 {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+h4 {
+  margin: 1em 0;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 0.8em;
+  font-weight: 400;
 }
 
 header {
-  background: $blue;
+  background: $dark_blue;
+  color: white;
 
   .header_container {
-    @include outer-container;
+    @include responsive_container;
     padding: 0 1em;
   }
 
-  #red_bar {
-    background: $red;
+  #color_bar {
+    background: $light_blue;
     height: 6px;
-  }
-
-  #logo {
-    height: 60px;
   }
 
   h1 {
     @include span-columns(7);
+    font-weight: 300;
+    a {
+      font-weight: $bold_weight;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @include media($small-screen)  {
+      @include span-columns(1);
+    }
   }
 
-  form {
-    @include span-columns(5);
-    input {
-      height: 40px;
-      font-size: 1em;
+  #datetime {
+    font-size: 1em;
+    font-weight: 300;
+    @include span-columns(7);
+    padding-top: 2em;
+    text-align: right;
+    border: none;
+    @include media($small-screen)  {
+      @include span-columns(1);
+      text-align: left;
+      padding-top: 0;
     }
-    input.query {
-      width: 70%;
-    }
-    input.submit {
-      width: 25%;
-      padding: 0;
-    }
-    margin: 35px 0;
-    height: 40px;
   }
 }
 
 section {
-  @include span-columns(12);
-
+  background: $white;
+  padding: 1em;
   h2 {
-    font-size: 4em;
-    @include span-columns(7);
+    font-size: 8em;
     margin: 0;
   }
-
-  p {
-    @include span-columns(8);
+  h3 {
+    margin: 10px 0;
   }
 }
 
 .container {
-  @include outer-container;
-  padding: 1em;
+  @include responsive_container;
+}
+
+#main_data {
+  @include span-columns(9);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
+}
+
+#secondary_data {
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
+  @include span-columns(5);
+  @include media($small-screen)  {
+    @include span-columns(1);
+    border-top: 1px solid $gray;
+    border-left: none;
+    border-right: none;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+  h5 {
+    margin-top: 0;
+  }
+}
+
+.section_headline {
+  padding: 0 1em;
+  border-left: 1px solid $gray;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  @include media($small-screen)  {
+    border-bottom: none;
+  }
+  // border-left: 1px solid $gray;
+}
+
+.three_column {
+  @include span-columns(3 of 9);
+  border-left: 1px solid $gray;
+
+  @include media($small-screen)  {
+    @include span-columns(1);
+    border-left: none;
+    border-top: 1px solid $gray;
+  }
+  h4 {
+    text-align: center;
+    margin: 0;
+  }
+  h5 {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+#time_series {
+  border-left: 1px solid $gray;
+  text-align: center;
+  .chart_subtitle {
+    font-size: 3em;
+    font-weight: 300;
+  }
 }
 
 #big_number {
-  color: $data;
+  font-weight: $bold_weight;
+  text-align: center;
 }
 
 table.data td.chart .bar {
@@ -115,7 +237,7 @@ ul.pills {
     float: left;
 
     & > a {
-      color: $blue;
+      color: $dark_blue;
       background: $light_gray;
       font-weight: bold;
       display: inline-block;
@@ -130,7 +252,7 @@ ul.pills {
 
       &[aria-selected='true'] {
         color: #fff;
-        background: $blue;
+        background: $dark_blue;
       }
     }
 
@@ -266,3 +388,4 @@ table.data {
     }
   }
 }
+
