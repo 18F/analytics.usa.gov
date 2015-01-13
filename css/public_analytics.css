@@ -270,9 +270,8 @@ ul.pills > li {
     display: table; }
   .bar-chart .bin {
     float: left;
-    width: 5rem;
+    width: 2rem;
     margin-right: .5rem;
-    max-width: 20%;
     height: 5rem;
     position: relative; }
   .bar-chart .bar {
@@ -287,14 +286,15 @@ ul.pills > li {
       text-align: center;
       position: absolute; }
     .bar-chart .bar .value {
-      bottom: 100%; }
+      bottom: 100%;
+      font-size: 75%;
+      white-space: nowrap; }
     .bar-chart .bar .label {
       font-weight: bold;
       top: 100%; }
 
 table.data {
   border-collapse: collapse;
-  min-width: 25rem;
   margin: 1rem 0; }
   table.data th,
   table.data td {
@@ -350,3 +350,5 @@ table.data {
       top: 100%; }
     .stack .bin:last-child .label, .stack .bin:last-child .value {
       right: 0; }
+
+/*# sourceMappingURL=public_analytics.css.map */
