@@ -163,7 +163,7 @@
               return "http://" + d.domain;
             })
             .text(function(d) {
-              return d.text;
+              return d.domain;
             });
       })
       .render(barChart()
