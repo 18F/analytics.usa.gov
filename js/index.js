@@ -112,12 +112,54 @@
         return d.data;
       })
       .on("render", function(selection, data) {
-        selection.selectAll("td.name")
-          .text(function(d) { return d.data.domain; });
+        // turn the labels into links
+        selection.selectAll(".label")
+          .each(function(d) {
+            d.text = this.innerText;
+          })
+          .html("")
+          .append("a")
+            .attr("href", function(d) {
+              return "http://" + d.domain;
+            })
+            .text(function(d) {
+              return d.text;
+            });
       })
       .render(barChart()
         .label(function(d) { return d.domain; })
         .value(function(d) { return +d.visits; })
+        .scale(function(values) {
+          var max = d3.max(values);
+          return d3.scale.linear()
+            .domain([0, 1, d3.max(values)])
+            .rangeRound([0, 1, 100]);
+        })
+        .format(formatVisits)),
+
+    // the top pages block(s)
+    "top-pages-realtime": renderBlock()
+      .transform(function(d) {
+        return d.data;
+      })
+      .on("render", function(selection, data) {
+        // turn the labels into links
+        selection.selectAll(".label")
+          .each(function(d) {
+            d.text = this.innerText;
+          })
+          .html("")
+          .append("a")
+            .attr("href", function(d) {
+              return "http://" + d.page;
+            })
+            .text(function(d) {
+              return d.text;
+            });
+      })
+      .render(barChart()
+        .label(function(d) { return d.page_title; })
+        .value(function(d) { return +d.active_visitors; })
         .scale(function(values) {
           var max = d3.max(values);
           return d3.scale.linear()
