@@ -600,8 +600,8 @@
 
       bar.select(".label")
         .attr("text-anchor", "middle")
-        .attr("alignment-baseline", "before-edge")
-        .attr("dy", 4)
+        // .attr("alignment-baseline", "before-edge")
+        .attr("dy", 10)
         .attr("dx", barWidth / 2)
         .text(label);
 
