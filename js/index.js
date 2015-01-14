@@ -212,6 +212,9 @@
 
   };
 
+  // store a promise for each block
+  var PROMISES = {};
+
   /*
    * Now, initialize all of the blocks by:
    *
@@ -227,6 +230,12 @@
         return console.warn("no block registered for: %s", blockId);
       }
 
+      // each block's promise is resolved when the block renders
+      PROMISES[blockId] = Q.Promise(function(resolve, reject) {
+        block.on("render.promise", resolve);
+        block.on("error.promise", reject);
+      });
+
       d3.select(this)
         .datum({
           source: this.getAttribute("data-source"),
@@ -234,6 +243,22 @@
         })
         .call(block);
     });
+
+  // nest the windows chart inside the OS chart once they're both rendered
+  whenRendered(["os", "windows"], function() {
+    d3.select("#chart_os")
+      .call(nestCharts, function(d) {
+        return d.key === "Windows";
+      }, d3.select("#chart_windows"));
+  });
+
+  // nest the IE chart inside the browsers chart once they're both rendered
+  whenRendered(["browsers", "ie"], function() {
+    d3.select("#chart_browsers")
+      .call(nestCharts, function(d) {
+        return d.key === "Internet Explorer";
+      }, d3.select("#chart_ie"));
+  });
 
   /*
    * A very primitive, aria-based tab system!
@@ -670,6 +695,49 @@
     }
     list.push(other);
     return list;
+  }
+
+  function whenRendered(blockIds, callback) {
+    var promises = blockIds.map(function(id) {
+      return PROMISES[id];
+    });
+    return Q.all(promises).then(callback);
+  }
+
+  /*
+   * nested chart helper function:
+   *
+   * 1. finds the selection's `.bin` child with data matching the parentFilter
+   *    function (the "parent bin")
+   * 2. determines that bin's share of the total
+   * 3. grabs all of the child `.bin`s of the child selection and updates their
+   *    share (by multiplying it by the parent's)
+   * 4. updates the `.bar` width  and `.value` text for each child bin
+   * 5. moves the child node into the parent bin
+   */
+  function nestCharts(selection, parentFilter, child) {
+    var parent = selection.selectAll(".bin")
+          .filter(parentFilter),
+        share = parent.datum().share,
+        bins = child.selectAll(".bin")
+          .each(function(d) {
+            d.share *= share;
+          })
+          .attr("data-share", function(d) {
+            return d.share;
+          });
+
+    // XXX we *could* call the renderer again here, but this works, so...
+    bins.select(".bar")
+      .style("width", function(d) {
+        return (d.share * 100).toFixed(1) + "%";
+      });
+    bins.select(".value")
+      .text(function(d) {
+        return formatPercent(d.share * 100);
+      });
+
+    parent.node().appendChild(child.node());
   }
 
 })(this);
