@@ -202,7 +202,7 @@ section {
   }
 }
 
-#time_series {
+#realtime {
   border-left: 1px solid $gray;
   text-align: center;
   .chart_subtitle {
@@ -401,3 +401,28 @@ table.data {
   }
 }
 
+g.axis {
+  path,
+  line {
+    fill: none;
+    stroke: none; // #ccc;
+  }
+
+  .tick text {
+    fill: #999;
+    font-size: .75rem;
+  }
+}
+
+.time-series {
+  rect {
+    fill: $data;
+    stroke: #fff;
+    stroke-width: 1;
+  }
+
+  text.label {
+    fill: #999;
+    font-size: .5rem;
+  }
+}
