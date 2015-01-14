@@ -101,9 +101,9 @@ header {
 
   h1 {
     @include span-columns(7);
-    font-weight: 300;
+    font-weight: $bold_weight;
     a {
-      font-weight: $bold_weight;
+      font-weight: 300;
       color: white;
       text-decoration: none;
     }
@@ -173,19 +173,29 @@ section {
 }
 
 .section_headline {
-  padding: 0 1em;
+  padding: 0.1em 1em;
   border-left: 1px solid $gray;
   border-top: 1px solid $gray;
-  border-bottom: 1px solid $gray;
   @include media($small-screen)  {
     border-bottom: none;
   }
+}
+
+.section_subheadline {
+  padding: 0.5em 1em;
+  border-top: 1px solid $gray;
+  // border-bottom: 1px solid $gray;
   // border-left: 1px solid $gray;
+  text-align: center;
+  font-size: 1.5em;
+  #total_visitors {
+    font-weight: $bold_weight;
+  }
 }
 
 .three_column {
   @include span-columns(3 of 9);
-  border-left: 1px solid $gray;
+  // border-left: 1px solid $gray;
 
   @include media($small-screen)  {
     @include span-columns(1);

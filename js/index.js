@@ -35,17 +35,10 @@
    */
   var BLOCKS = {
 
-    // the users block is just `data.totals.visitors` formatted with commas
-    "users": renderBlock()
-      .render(function(selection, data) {
-        selection.text(formatCommas(data.totals.visitors));
-      }),
-
     // the realtime block is just `data.totals.active_visitors` formatted with commas
     "realtime": renderBlock()
       .render(function(selection, data) {
-        // XXX temporary fix for <https://github.com/18F/analytics-reporter/issues/57>
-        var totals = data.totals[0] || data.totals;
+        var totals = data.data[0];
         // console.log("realtime totals:", totals);
         selection.text(formatCommas(+totals.active_visitors));
       }),
@@ -91,7 +84,7 @@
         .value(function(d) { return d.share * 100; })
         .format(formatPercent)),
 
-    // the IE block is a stack, but with some extra work done to transform the 
+    // the IE block is a stack, but with some extra work done to transform the
     // data beforehand to match the expected object format
     "ie": renderBlock()
       .transform(function(d) {
@@ -129,12 +122,7 @@
       })
       .on("render", function(selection, data) {
         selection.selectAll("td.name")
-          .text("")
-          .append("a")
-            .attr("href", function(d) {
-              return "http://" + d.data.domain;
-            })
-            .text(function(d) { return d.data.domain; });
+          .text(function(d) { return d.data.domain; });
       })
       .render(barChart()
         .label(function(d) { return d.domain; })
@@ -145,19 +133,6 @@
             .domain([0, 1, d3.max(values)])
             .rangeRound([0, 1, 100]);
         })
-        .format(formatVisits)),
-
-    // the sources block is a table
-    "sources": renderBlock()
-      .transform(function(d) {
-        return d.data.map(function(x) {
-          return {
-            key: x.source,
-            value: +x.visits
-          };
-        });
-      })
-      .render(renderTable()
         .format(formatVisits))
 
   };
