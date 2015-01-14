@@ -113,10 +113,20 @@
           <!-- see: http://heydonworks.com/practical_aria_examples/ -->
           <h3>Top Sites</h3>
           <ul class="pills" role="tablist">
-            <li><a role="tab" aria-selected="true" href="#top-pages-7-days">7 Days</a></li>
+            <li><a role="tab" aria-selected="true" href="#top-pages-realtime">Live</a></li>
+            <li><a role="tab" href="#top-pages-7-days">7 Days</a></li>
             <li><a role="tab" href="#top-pages-30-days">30 Days</a></li>
-            <li><a role="tab" href="#top-pages-90-days">90 Days</a></li>
+            <!-- <li><a role="tab" href="#top-pages-90-days">90 Days</a></li> -->
           </ul>
+
+          <figure id="top-pages-realtime" role="tabpanel"
+            data-block="top-pages-realtime"
+            data-source="https://dap.18f.us/data/live/top-pages-realtime.json">
+            <h5>By number of active sessions in the last <b>??? hours/minutes?</b></h5>
+            <div class="data bar-chart">
+            </div>
+            <a href="https://dap.18f.us/data/live/top-pages-realtime.json">Download this data (JSON)</a>
+          </figure>
 
           <figure id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
@@ -134,6 +144,7 @@
             </div>
           </figure>
 
+          <!--
           <figure id="top-pages-90-days" role="tabpanel"
             data-block="top-pages"
             data-source="https://dap.18f.us/data/live/top-pages-90-days.json">
@@ -141,6 +152,8 @@
             <div class="data bar-chart">
             </div>
           </figure>
+          -->
+
         </section>
       </div>
 
