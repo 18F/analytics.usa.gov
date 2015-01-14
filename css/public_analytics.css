@@ -238,6 +238,8 @@ ul.pills, ul.pills > li {
   margin: 0;
   padding: 0;
   display: block; }
+ul.pills {
+  margin: .5rem 0; }
 ul.pills > li {
   float: left; }
   ul.pills > li > a {
@@ -262,39 +264,43 @@ ul.pills > li {
     border-right: none; }
 
 .bar-chart {
-  margin: 2rem 0;
-  position: relative; }
-  .bar-chart::after {
-    clear: both;
-    content: "";
-    display: table; }
+  margin: 1rem 0;
+  position: relative;
+  font-size: 80%; }
   .bar-chart .bin {
-    float: left;
-    width: 5rem;
-    margin-right: .5rem;
-    max-width: 20%;
-    height: 5rem;
-    position: relative; }
-  .bar-chart .bar {
-    position: absolute !important;
-    bottom: 0;
-    width: 100%;
-    background: #3A96B7; }
-    .bar-chart .bar .value,
-    .bar-chart .bar .label {
+    position: relative;
+    margin: 0 0 1rem 0; }
+    .bar-chart .bin::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .bar-chart .bin:after {
+      content: " ";
       display: block;
+      background: #f9f9f9;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      text-align: center;
-      position: absolute; }
-    .bar-chart .bar .value {
-      bottom: 100%; }
-    .bar-chart .bar .label {
-      font-weight: bold;
-      top: 100%; }
+      height: .5rem;
+      z-index: 1; }
+  .bar-chart .bar {
+    height: .5rem;
+    background: #3A96B7;
+    position: relative;
+    z-index: 2; }
+  .bar-chart .label {
+    white-space: nowrap;
+    height: 1.5rem; }
+  .bar-chart .value {
+    text-align: right;
+    height: 1rem;
+    white-space: nowrap;
+    margin-top: -1.5rem;
+    margin-bottom: .25rem; }
 
 table.data {
   border-collapse: collapse;
-  min-width: 25rem;
   margin: 1rem 0; }
   table.data th,
   table.data td {
@@ -350,3 +356,5 @@ table.data {
       top: 100%; }
     .stack .bin:last-child .label, .stack .bin:last-child .value {
       right: 0; }
+
+/*# sourceMappingURL=public_analytics.css.map */
