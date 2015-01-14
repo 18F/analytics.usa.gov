@@ -70,11 +70,11 @@ header {
     display: block;
     margin-right: 0%;
     width: 50%;
-    font-weight: 300; }
+    font-weight: 600; }
     header h1:last-child {
       margin-right: 0; }
     header h1 a {
-      font-weight: 600;
+      font-weight: 300;
       color: white;
       text-decoration: none; }
     header h1 a:hover {
@@ -184,18 +184,24 @@ section {
 .section_headline {
   padding: 0.1em 1em;
   border-left: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; }
+  border-top: 1px solid #ccc; }
   @media screen and (max-width: 768px) {
     .section_headline {
       border-bottom: none; } }
+
+.section_subheadline {
+  padding: 0.5em 1em;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 1.5em; }
+  .section_subheadline #total_visitors {
+    font-weight: 600; }
 
 .three_column {
   float: left;
   display: block;
   margin-right: 0%;
-  width: 33.33333%;
-  border-left: 1px solid #ccc; }
+  width: 33.33333%; }
   .three_column:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
@@ -356,5 +362,3 @@ table.data {
       top: 100%; }
     .stack .bin:last-child .label, .stack .bin:last-child .value {
       right: 0; }
-
-/*# sourceMappingURL=public_analytics.css.map */

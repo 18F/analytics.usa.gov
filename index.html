@@ -16,7 +16,7 @@
 
     <header id="usa_dot_gov_header">
       <div class="header_container">
-        <h1><a href="http://www.usa.gov">USA.GOV</a> / Analytics</h1>
+        <h1>analytics<a href="http://www.usa.gov">.usa.gov</a></h1>
         <time id="datetime"></time>
         <!--
         <form action="http://search.usa.gov/search" method="get" name="search_form" accept-charset="UTF-8"><input id="affiliate" name="affiliate" type="hidden" value="usagov"> <label class="hidden">Search</label> <input type="text" class="query" id="query" role="textbox" placeholder="Search USA.gov..."> <input type="submit" class="submit" value="Search"></form>
@@ -26,12 +26,6 @@
     </header>
 
     <div class="container">
-      <!-- <section id="title">
-        <h2>Digital Analytics Dashboard</h2>
-        <p>This page provides a summary of federal government website traffic data. It is updated every 5 minutes.</p>
-        <p><strong>Please note:</strong> We only have data for 34% of federal websites. <a href="#" title="More information about this data">Click here</a> to learn more.</p>
-      </section>
- -->
       <!--
       JavaScript block hooks look for any element with both data-block and
       data-source attributes:
@@ -64,10 +58,11 @@
 
         
         <section class="section_headline"><h3>Technology</h3></section>
+        <section class="section_subheadline">We had <span id="total_visitors">1.05 billion</span> visitors over the past 90 days.<br>Learn more about how they accessed our sites:</section>
 
         <section id="devices" class="three_column" data-block="devices"
           data-source="https://dap.18f.us/bulk/devices.json">
-          <h4>Device</h4>
+          <h4>Devices</h4>
           <h5>Percentage of All Visitors, Past 90 days</h5>
           <figure id="chart_device_types">
             <div class="data bar-chart">
@@ -77,7 +72,7 @@
         </section>
 
         <section id="browsers" class="three_column">
-          <h4>Browser</h4>
+          <h4>Browsers</h4>
           <h5>Percentage of All Visitors, Past 90 days</h5>
 
           <figure id="chart_browsers"
@@ -100,7 +95,7 @@
         </section>
 
         <section id="operating_systems" class="three_column">
-          <h4>Operating System</h4>
+          <h4>Operating Systems</h4>
           <h5>Percentage of All Visitors, Past 90 days</h5>
 
           <figure id="chart_operating_system"
