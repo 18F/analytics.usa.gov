@@ -46,8 +46,8 @@
       .render(function(selection, data) {
         // XXX temporary fix for <https://github.com/18F/analytics-reporter/issues/57>
         var totals = data.totals[0] || data.totals;
-        // console.log("realtime totals:", totals);
-        selection.text(formatCommas(+totals.active_visitors));
+        d3.select("#current_visitors")
+          .text(formatCommas(+totals.active_visitors));
       }),
 
     // the OS block is a stack layout
