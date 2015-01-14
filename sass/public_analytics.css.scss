@@ -125,19 +125,22 @@ header {
     }
   }
 
-  #datetime {
+  #about {
     font-size: 1em;
     font-weight: 300;
     @include span-columns(7);
     padding-top: 2em;
     text-align: right;
+    text-decoration: none;
     border: none;
     @include media($small-screen)  {
       @include span-columns(1);
       text-align: left;
       padding-top: 0;
+      padding-bottom: 10px;
     }
   }
+  #about:hover {text-decoration: underline;}
 }
 
 section {
@@ -146,6 +149,9 @@ section {
   h2 {
     font-size: 8em;
     margin: 0;
+    @include media($small-screen) {
+      font-size: 6em;
+    }
   }
   h3 {
     margin: 10px 0;
