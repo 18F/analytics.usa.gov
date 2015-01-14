@@ -8,15 +8,18 @@
       parseDate = d3.time.format("%Y-%m-%d").parse,
       formatDate = d3.time.format("%A, %b %e"),
       formatVisits = (function() {
-        var suffix = {
-          "k": "k", // thousands
-          "M": "m", // millions
-          "G": "b"  // billions
+        var suffixes = {
+          "k": ["k", 0], // thousands
+          "M": ["m", 1], // millions
+          "G": ["b", 2]  // billions
         };
         return function(visits) {
-          var prefix = d3.formatPrefix(visits);
-          return prefix && suffix.hasOwnProperty(prefix.symbol)
-            ? prefix.scale(visits).toFixed(1) + suffix[prefix.symbol]
+          var prefix = d3.formatPrefix(visits),
+              suffix = suffixes[prefix.symbol];
+          return prefix && suffix
+            ? prefix.scale(visits)
+                .toFixed(suffix[1])
+                .replace(/\.0+$/, "") + suffix[0]
             : formatCommas(visits);
         };
       })(),
@@ -27,6 +30,11 @@
         return p >= 1
           ? trimZeroes(p.toFixed(1)) + "%"
           : "< 1%";
+      },
+      formatHour = function(hour) {
+        var n = +hour,
+            suffix = n >= 12 ? "p" : "a";
+        return (n % 12 || 12) + suffix;
       };
 
   /*
@@ -38,8 +46,42 @@
     "realtime": renderBlock()
       .render(function(selection, data) {
         var totals = data.data[0];
-        // console.log("realtime totals:", totals);
         selection.text(formatCommas(+totals.active_visitors));
+      }),
+
+    "today": renderBlock()
+      .transform(function(data) {
+        return data;
+      })
+      .render(function(svg, data) {
+        var days = data.data;
+        days.forEach(function(d) {
+          d.visits = +d.visits;
+        });
+
+        var y = function(d) { return d.visits; },
+            series = timeSeries()
+              .series([data.data])
+              .y(y)
+              .label(function(d) {
+                return formatHour(d.hour);
+              })
+              .title(function(d) {
+                return formatVisits(d.visits)
+                  + " visits during the hour of "
+                  + formatHour(d.hour);
+              });
+
+        series.xScale()
+          .domain(d3.range(0, days.length + 1));
+
+        series.yScale()
+          .domain([0, d3.max(days, y)]);
+
+        series.yAxis()
+          .tickFormat(formatVisits);
+
+        svg.call(series);
       }),
 
     // the OS block is a stack layout
@@ -441,6 +483,160 @@
     };
 
     return chart;
+  }
+
+  function timeSeries() {
+    var series = function(d) { return [d]; },
+        bars = function(d) { return d; },
+        width = 700,
+        height = 150,
+        padding = 40,
+        margin = {
+          top:    10,
+          right:  padding,
+          bottom: 25,
+          left:   padding
+        },
+        x = function(d, i) { return i; },
+        y = function(d, i) { return d; },
+        label = function(d, i) { return i; },
+        title = function(d) { return d; },
+        xScale = d3.scale.ordinal(),
+        yScale = d3.scale.linear(),
+        yAxis = d3.svg.axis()
+          .scale(yScale)
+          .ticks(5),
+        innerTickSize = yAxis.innerTickSize(),
+        xAxis;
+
+    var timeSeries = function(svg) {
+      var left = margin.left,
+          right = width - margin.right,
+          top = margin.top,
+          bottom = height - margin.bottom;
+
+      yScale.range([bottom, top]);
+      xScale.rangeRoundBands([left, right], 0, 0);
+
+      svg.attr("viewBox", [0, 0, width, height].join(" "));
+
+      element(svg, "g.axis.y0")
+        .attr("transform", "translate(" + [left, 0] + ")")
+        .call(yAxis
+          // .innerTickSize(left - right)
+          .orient("left"));
+
+      element(svg, "g.axis.y1")
+        .attr("transform", "translate(" + [right, 0] + ")")
+        .call(yAxis
+          .innerTickSize(innerTickSize)
+          .orient("right"));
+
+      var g = svg.selectAll(".series")
+        .data(series);
+      g.exit().remove();
+      g.enter().append("g")
+        .attr("class", "series");
+
+      var bar = g.selectAll(".bar")
+        .data(bars);
+      bar.exit().remove();
+      var enter = bar.enter().append("g")
+        .attr("class", "bar");
+      enter.append("rect");
+      enter.append("text")
+        .attr("class", "label");
+      enter.append("title");
+
+      bar
+        .datum(function(d) {
+          d = d || {};
+          d.x = xScale(d.u = x.apply(this, arguments));
+          d.y0 = yScale(d.v = y.apply(this, arguments));
+          d.y1 = bottom;
+          d.height = d.y1 - d.y0;
+          return d;
+        })
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y1] + ")";
+        });
+
+      var barWidth = xScale.rangeBand();
+      bar.select("rect")
+        .attr("y", function(d) {
+          return -d.height;
+        })
+        .attr("width", barWidth)
+        .attr("height", function(d) {
+          return d.height;
+        });
+
+      bar.select(".label")
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "before-edge")
+        .attr("dy", 4)
+        .attr("dx", barWidth / 2)
+        .text(label);
+
+      bar.select("title")
+        .text(title);
+    };
+
+    timeSeries.series = function(fs) {
+      if (!arguments.length) return series;
+      series = d3.functor(fs);
+      return timeSeries;
+    };
+
+    timeSeries.bars = function(fb) {
+      if (!arguments.length) return bars;
+      bars = d3.functor(fb);
+      return timeSeries;
+    };
+
+    timeSeries.x = function(fx) {
+      if (!arguments.length) return x;
+      x = d3.functor(fx);
+      return timeSeries;
+    };
+
+    timeSeries.y = function(fy) {
+      if (!arguments.length) return y;
+      y = d3.functor(fy);
+      return timeSeries;
+    };
+
+    timeSeries.xScale = function(xs) {
+      if (!arguments.length) return xScale;
+      xScale = xs;
+      return timeSeries;
+    };
+
+    timeSeries.yScale = function(xs) {
+      if (!arguments.length) return yScale;
+      yScale = xs;
+      return timeSeries;
+    };
+
+    timeSeries.yAxis = function(ya) {
+      if (!arguments.length) return yAxis;
+      yAxis = ya;
+      return timeSeries;
+    };
+
+    timeSeries.label = function(fl) {
+      if (!arguments.length) return label;
+      label = fl;
+      return timeSeries;
+    };
+
+    timeSeries.title = function(ft) {
+      if (!arguments.length) return title;
+      title = ft;
+      return timeSeries;
+    };
+
+    return timeSeries;
   }
 
   function element(selection, selector) {

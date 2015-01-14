@@ -222,17 +222,20 @@ section {
     margin-top: 0;
     text-align: center; }
 
-#time_series {
+#realtime {
   border-left: 1px solid #ccc;
-  text-align: center; }
-  #time_series .chart_subtitle {
+  text-align: center;
+  padding-top: 0em;
+  padding-bottom: 2em; }
+  #realtime .chart_subtitle {
     font-size: 3em;
     font-weight: 300; }
 
-#time_series, .section_subheadline {
+#time_series,
+.section_subheadline {
   color: #36435A; }
 
-#big_number {
+#current_visitors {
   font-weight: 600;
   text-align: center; }
 
@@ -323,5 +326,21 @@ ul.pills > li {
   margin-top: 20px; }
   .explanation:last-child {
     margin-right: 0; }
+
+g.axis path,
+g.axis line {
+  fill: none;
+  stroke: none; }
+g.axis .tick text {
+  fill: #999;
+  font-size: .75rem; }
+
+.time-series rect {
+  fill: #3A96B7;
+  stroke: #fff;
+  stroke-width: 1; }
+.time-series text.label {
+  fill: #999;
+  font-size: .5rem; }
 
 /*# sourceMappingURL=public_analytics.css.map */

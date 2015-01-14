@@ -213,20 +213,23 @@ section {
   }
 }
 
-#time_series {
+#realtime {
   border-left: 1px solid $gray;
   text-align: center;
+  padding-top: 0em;
+  padding-bottom: 2em;
   .chart_subtitle {
     font-size: 3em;
     font-weight: 300;
   }
 }
 
-#time_series, .section_subheadline {
+#time_series,
+.section_subheadline {
   color: $dark_blue;
 }
 
-#big_number {
+#current_visitors {
   font-weight: $bold_weight;
   text-align: center;
 }
@@ -342,4 +345,30 @@ ul.pills {
 .explanation {
   @include span-columns(14);
   margin-top: 20px;
+}
+
+g.axis {
+  path,
+  line {
+    fill: none;
+    stroke: none; // #ccc;
+  }
+
+  .tick text {
+    fill: #999;
+    font-size: .75rem;
+  }
+}
+
+.time-series {
+  rect {
+    fill: $data;
+    stroke: #fff;
+    stroke-width: 1;
+  }
+
+  text.label {
+    fill: #999;
+    font-size: .5rem;
+  }
 }
