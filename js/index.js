@@ -198,7 +198,7 @@
               return "http://" + d.page;
             })
             .text(function(d) {
-              return d.text;
+              return d.page_title;
             });
       })
       .render(barChart()
