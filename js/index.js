@@ -24,9 +24,9 @@
         return str.replace(/\.0+$/, '');
       },
       formatPercent = function(p) {
-        return p >= 1
+        return p >= .1
           ? trimZeroes(p.toFixed(1)) + "%"
-          : "< 1%";
+          : "< 0.1%";
       },
       formatHour = function(hour) {
         var n = +hour,
