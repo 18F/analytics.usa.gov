@@ -205,6 +205,14 @@
       }
     });
 
+  var updateTime = function() {
+    var stamp = moment().format('MMMM Do YYYY, h:mma')
+    d3.select("time#datetime")
+      .text(stamp)
+  };
+  updateTime();
+  setInterval(updateTime, 1 * 1000)
+
   /*
    * our block renderer is a d3 selection manipulator that does a bunch of
    * stuff:
