@@ -9,7 +9,7 @@
       formatDate = d3.time.format("%A, %b %e"),
       formatVisits = (function() {
         var suffixes = {
-          "k": ["k", 0], // thousands
+          "k": ["k", 1], // thousands
           "M": ["m", 1], // millions
           "G": ["b", 2]  // billions
         };
@@ -24,7 +24,7 @@
         };
       })(),
       trimZeroes = function(str) {
-        return str.replace(/0+$/, '');
+        return str.replace(/\.0+$/, '');
       },
       formatPercent = function(p) {
         return p >= 1
