@@ -158,6 +158,7 @@
           })
           .html("")
           .append("a")
+            .attr("target", "_blank")
             .attr("href", function(d) {
               return "http://" + d.domain;
             })
@@ -189,6 +190,7 @@
           })
           .html("")
           .append("a")
+            .attr("target", "_blank")
             .attr("href", function(d) {
               return "http://" + d.page;
             })
