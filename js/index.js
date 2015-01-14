@@ -20,14 +20,13 @@
             : formatCommas(visits);
         };
       })(),
-      percent = function(fraction, precision) {
-        var pct = fraction * 100;
-        return pct >= 1
-          ? formatPercent(pct)
-          : "< 1%";
+      trimZeroes = function(str) {
+        return str.replace(/0+$/, '');
       },
       formatPercent = function(p) {
-        return (p.toFixed(1) + "%").replace(/\.0+\%$/, "%");
+        return p >= 1
+          ? trimZeroes(p.toFixed(1)) + "%"
+          : "< 1%";
       };
 
   /*
