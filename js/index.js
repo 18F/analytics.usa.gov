@@ -211,7 +211,7 @@
       .text(stamp)
   };
   updateTime();
-  setInterval(updateTime, 1 * 1000)
+  setInterval(updateTime, 5 * 1000)
 
   /*
    * our block renderer is a d3 selection manipulator that does a bunch of
