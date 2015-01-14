@@ -1,7 +1,7 @@
 (function(exports) {
 
   // some constants
-  var DATA_URL_FORMAT = "https://dap.18f.us/bulk/{source}.json";
+  var DATA_URL_FORMAT = "https://dap.18f.us/data/live/{source}.json";
 
   // common parsing and formatting functions
   var formatCommas = d3.format(","),
