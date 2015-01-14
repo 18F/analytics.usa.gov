@@ -224,6 +224,18 @@ section {
   }
 }
 
+#chart_windows .bar-chart,
+#chart_ie .bar-chart {
+  .bin {
+    margin-left: 2em;
+    margin-bottom: 0rem;
+
+    .bar {
+      display: none
+    }
+  }
+}
+
 #time_series,
 .section_subheadline {
   color: $dark_blue;
@@ -294,17 +306,18 @@ ul.pills {
   .bin {
     position: relative;
     @include clearfix;
+    overflow: hidden;
     margin: 0 0 1rem 0;
 
-    &:after {
+    .bar:after {
       content: " ";
       display: block;
-      background: #f9f9f9;
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: .5rem;
+      background: #f9f9f9;
+      top: 0;
+      left: 100%;
+      width: 1000px;
+      height: 100%;
       z-index: 1;
     }
   }
@@ -314,10 +327,7 @@ ul.pills {
     background: $data;
     position: relative;
     z-index: 2;
-  }
-
-  .label,
-  .value {
+    min-width: 1px;
   }
 
   .label {
@@ -370,5 +380,22 @@ g.axis {
   text.label {
     fill: #999;
     font-size: .5rem;
+  }
+}
+
+// nested charts
+figure figure {
+  // margin-left: 2rem;
+
+  h4 {
+    display: none;
+  }
+
+  .bar-chart {
+    margin: .5rem 0;
+
+    .bin {
+      margin-bottom: .5rem;
+    }
   }
 }

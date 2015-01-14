@@ -231,6 +231,14 @@ section {
     font-size: 3em;
     font-weight: 300; }
 
+#chart_windows .bar-chart .bin,
+#chart_ie .bar-chart .bin {
+  margin-left: 2em;
+  margin-bottom: 0rem; }
+  #chart_windows .bar-chart .bin .bar,
+  #chart_ie .bar-chart .bin .bar {
+    display: none; }
+
 #time_series,
 .section_subheadline {
   color: #36435A; }
@@ -282,26 +290,28 @@ ul.pills > li {
   font-size: 80%; }
   .bar-chart .bin {
     position: relative;
+    overflow: hidden;
     margin: 0 0 1rem 0; }
     .bar-chart .bin::after {
       clear: both;
       content: "";
       display: table; }
-    .bar-chart .bin:after {
+    .bar-chart .bin .bar:after {
       content: " ";
       display: block;
-      background: #f9f9f9;
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: .5rem;
+      background: #f9f9f9;
+      top: 0;
+      left: 100%;
+      width: 1000px;
+      height: 100%;
       z-index: 1; }
   .bar-chart .bar {
     height: .5rem;
     background: #3A96B7;
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    min-width: 1px; }
   .bar-chart .label {
     white-space: nowrap;
     height: 1.5rem;
@@ -342,5 +352,12 @@ g.axis .tick text {
 .time-series text.label {
   fill: #999;
   font-size: .5rem; }
+
+figure figure h4 {
+  display: none; }
+figure figure .bar-chart {
+  margin: .5rem 0; }
+  figure figure .bar-chart .bin {
+    margin-bottom: .5rem; }
 
 /*# sourceMappingURL=public_analytics.css.map */
