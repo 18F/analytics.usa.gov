@@ -191,6 +191,9 @@
           .html("")
           .append("a")
             .attr("target", "_blank")
+            .attr("title", function(d) {
+              return d.page;
+            })
             .attr("href", function(d) {
               return "http://" + d.page;
             })
