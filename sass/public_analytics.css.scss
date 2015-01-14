@@ -205,6 +205,7 @@ section {
   h4 {
     text-align: center;
     margin: 0;
+    font-size: 90%;
   }
   h5 {
     margin-top: 0;
@@ -219,6 +220,10 @@ section {
     font-size: 3em;
     font-weight: 300;
   }
+}
+
+#time_series, .section_subheadline {
+  color: $dark_blue;
 }
 
 #big_number {
@@ -372,6 +377,11 @@ table.data {
       }
     }
   }
+}
+
+.explanation {
+  @include span-columns(14);
+  margin-top: 20px;
 }
 
 .stack {

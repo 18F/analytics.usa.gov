@@ -1,6 +1,6 @@
 (function(exports) {
 
-  var sourceUrl = "https://dap.18f.us/bulk/{source}.json",
+  var sourceUrl = "https://dap.18f.us/data/live/{source}.json",
       formatCommas = d3.format(","),
       parseDate = d3.time.format("%Y-%m-%d").parse,
       formatDate = d3.time.format("%A, %b %e"),
@@ -27,6 +27,11 @@
           title: "Windows",
           source: "windows",
           render: renderWindows
+        },
+        {
+          title: "Internet Explorer",
+          source: "ie",
+          render: renderIE
         },
         {
           title: "Sources",
@@ -127,6 +132,10 @@
 
   function renderWindows(selection, data) {
     return selection.call(totalsRenderer("os_version"), data);
+  }
+
+  function renderIE(selection, data) {
+    return selection.call(totalsRenderer("ie_version"), data);
   }
 
   function renderUsers(selection, data) {

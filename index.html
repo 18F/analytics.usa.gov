@@ -48,70 +48,60 @@
       <div id="main_data">
         <section id="time_series"
           data-block="realtime"
-          data-source="https://dap.18f.us/bulk/realtime.json">
+          data-source="https://dap.18f.us/data/live/realtime.json">
           <h2><span id="big_number" class="data">...</span></h2>
-          <div id="chart_visitors_over_time" class="chart_subtitle">people are online right now
+          <div id="chart_visitors_over_time" class="chart_subtitle">people online right now
           </div>
         </section>
 
 
         <section class="section_headline"><h3>Technology</h3></section>
-        <section class="section_subheadline">We had <span id="total_visitors">1.05 billion</span> visitors over the past 90 days.<br>Learn more about how they accessed our sites:</section>
+        <section class="section_subheadline">There were <span id="total_visitors">1.05 billion</span> visitors over the past 90 days.</section>
 
         <section id="devices" class="three_column" data-block="devices"
-          data-source="https://dap.18f.us/bulk/devices.json">
+          data-source="https://dap.18f.us/data/live/devices.json">
           <h4>Devices</h4>
-          <h5>Percentage of All Visitors, Past 90 days</h5>
           <figure id="chart_device_types">
             <div class="data bar-chart">
             </div>
           </figure>
-          <a href="https://dap.18f.us/bulk/devices.json">Download this data (JSON)</a>
         </section>
 
         <section id="browsers" class="three_column">
           <h4>Browsers</h4>
-          <h5>Percentage of All Visitors, Past 90 days</h5>
 
           <figure id="chart_browsers"
             data-block="browsers"
-            data-source="https://dap.18f.us/bulk/browsers.json">
+            data-source="https://dap.18f.us/data/live/browsers.json">
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/browsers.json">Download this data (JSON)</a>
           </figure>
 
           <figure id="chart_ie"
             data-block="ie"
-            data-source="https://dap.18f.us/bulk/ie.json">
+            data-source="https://dap.18f.us/data/live/ie.json">
             <h4>Internet Explorer</h4>
-            <figcaption>This chart will show breakdown of browsers from past 90 days. Most important is to show what % of traffic comes from IE.</figcaption>
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/browsers.json">Download this data (JSON)</a>
           </figure>
         </section>
 
         <section id="operating_systems" class="three_column">
           <h4>Operating Systems</h4>
-          <h5>Percentage of All Visitors, Past 90 days</h5>
 
           <figure id="chart_operating_system"
             data-block="os"
-            data-source="https://dap.18f.us/bulk/os.json">
-            <figcaption>This chart will show breakdown of operating systems from past 90 days.</figcaption>
+            data-source="https://dap.18f.us/data/live/os.json">
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/os.json">Download this data (JSON)</a>
           </figure>
 
           <figure id="chart_windows"
             data-block="windows"
-            data-source="https://dap.18f.us/bulk/windows.json">
+            data-source="https://dap.18f.us/data/live/windows.json">
             <h4>Windows</h4>
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/windows.json">Download this data (JSON)</a>
           </figure>
         </section>
       </div>
@@ -130,34 +120,43 @@
 
           <figure id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
-            data-source="https://dap.18f.us/bulk/top-pages-7-days.json">
+            data-source="https://dap.18f.us/data/live/top-pages-7-days.json">
             <h5>By number of sessions over the past 7 days</h5>
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/top-pages-7-days.json">Download this data (JSON)</a>
           </figure>
 
           <figure id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
-            data-source="https://dap.18f.us/bulk/top-pages-30-days.json">
+            data-source="https://dap.18f.us/data/live/top-pages-30-days.json">
             <h5>By number of sessions over the past 30 days</h5>
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/top-pages-30-days.json">Download this data (JSON)</a>
           </figure>
 
           <figure id="top-pages-90-days" role="tabpanel"
             data-block="top-pages"
-            data-source="https://dap.18f.us/bulk/top-pages-90-days.json">
+            data-source="https://dap.18f.us/data/live/top-pages-90-days.json">
             <h5>By number of sessions over the past 90 days</h5>
             <div class="data bar-chart">
             </div>
-            <a href="https://dap.18f.us/bulk/top-pages-90-days.json">Download this data (JSON)</a>
           </figure>
         </section>
       </div>
 
+      <section class="explanation">
+        <p>
+          This data is from a unified Google Analytics account for US federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/">Digital Analytics Program</a>.
+        </p>
 
+        <p>
+          Currently, the Digital Analytics Program collects web traffic from ________ .gov domains out of <a href="https://catalog.data.gov/dataset/gov-domains-api">roughly 1,200 federal agency domains</a> total. This data is not a representative sample of all web traffic to government domains because it only includes agencies that currently participating in the program.
+        </p>
+
+        <p>
+          This open source project is dedicated to the international public domain, which means that this website and its data are free for you to use without restriction. You can find the <a href="https://github.com/GSA/public_analytics">code for this website</a> and the <a href="https://github.com/18F/analytics-reporter">code behind the data collection</a> on GitHub.
+        </p>
+      </section>
 
     </div>
   </body>

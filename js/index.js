@@ -1,7 +1,7 @@
 (function(exports) {
 
   // some constants
-  var DATA_URL_FORMAT = "https://dap.18f.us/bulk/{source}.json";
+  var DATA_URL_FORMAT = "https://dap.18f.us/data/live/{source}.json";
 
   // common parsing and formatting functions
   var formatCommas = d3.format(","),
@@ -88,15 +88,7 @@
     // data beforehand to match the expected object format
     "ie": renderBlock()
       .transform(function(d) {
-        var totals = d3.nest()
-          .key(function(d) { return d.browser_version; })
-          .rollup(function(d) {
-            return d3.sum(d, function(x) { return x.visits; });
-          })
-          .map(d.data);
-        var ie = listify(totals)
-          .slice(0, 5);
-        return addShares(ie);
+        return addShares(listify(d.totals.ie_version));
       })
       .render(
         barChart()
