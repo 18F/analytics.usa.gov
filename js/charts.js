@@ -29,6 +29,11 @@
           render: renderWindows
         },
         {
+          title: "Internet Explorer",
+          source: "ie",
+          render: renderIE
+        },
+        {
           title: "Sources",
           source: "sources",
           render: renderSources
@@ -127,6 +132,10 @@
 
   function renderWindows(selection, data) {
     return selection.call(totalsRenderer("os_version"), data);
+  }
+
+  function renderIE(selection, data) {
+    return selection.call(totalsRenderer("ie_version"), data);
   }
 
   function renderUsers(selection, data) {
