@@ -294,17 +294,18 @@ ul.pills {
   .bin {
     position: relative;
     @include clearfix;
+    overflow: hidden;
     margin: 0 0 1rem 0;
 
-    &:after {
+    .bar:after {
       content: " ";
       display: block;
-      background: #f9f9f9;
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: .5rem;
+      background: #f9f9f9;
+      top: 0;
+      left: 100%;
+      width: 1000px;
+      height: 100%;
       z-index: 1;
     }
   }
@@ -314,10 +315,7 @@ ul.pills {
     background: $data;
     position: relative;
     z-index: 2;
-  }
-
-  .label,
-  .value {
+    min-width: 1px;
   }
 
   .label {
