@@ -70,11 +70,11 @@ header {
     display: block;
     margin-right: 0%;
     width: 50%;
-    font-weight: 300; }
+    font-weight: 600; }
     header h1:last-child {
       margin-right: 0; }
     header h1 a {
-      font-weight: 600;
+      font-weight: 300;
       color: white;
       text-decoration: none; }
     header h1 a:hover {
@@ -182,20 +182,26 @@ section {
     margin-top: 0; }
 
 .section_headline {
-  padding: 0 1em;
+  padding: 0.1em 1em;
   border-left: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; }
+  border-top: 1px solid #ccc; }
   @media screen and (max-width: 768px) {
     .section_headline {
       border-bottom: none; } }
+
+.section_subheadline {
+  padding: 0.5em 1em;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 1.5em; }
+  .section_subheadline #total_visitors {
+    font-weight: 600; }
 
 .three_column {
   float: left;
   display: block;
   margin-right: 0%;
-  width: 33.33333%;
-  border-left: 1px solid #ccc; }
+  width: 33.33333%; }
   .three_column:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
@@ -210,7 +216,8 @@ section {
         margin-right: 0; } }
   .three_column h4 {
     text-align: center;
-    margin: 0; }
+    margin: 0;
+    font-size: 90%; }
   .three_column h5 {
     margin-top: 0;
     text-align: center; }
@@ -221,6 +228,10 @@ section {
   #realtime .chart_subtitle {
     font-size: 3em;
     font-weight: 300; }
+
+#time_series,
+.section_subheadline {
+  color: #36435A; }
 
 #current_visitors {
   font-weight: 600;
@@ -291,7 +302,13 @@ ul.pills > li {
     z-index: 2; }
   .bar-chart .label {
     white-space: nowrap;
-    height: 1.5rem; }
+    height: 1.5rem;
+    margin-right: 4em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .bar-chart .label a {
+      text-decoration: none; }
   .bar-chart .value {
     text-align: right;
     height: 1rem;
@@ -299,63 +316,14 @@ ul.pills > li {
     margin-top: -1.5rem;
     margin-bottom: .25rem; }
 
-table.data {
-  border-collapse: collapse;
-  margin: 1rem 0; }
-  table.data th,
-  table.data td {
-    text-align: left;
-    padding: .25rem .5rem; }
-  table.data tbody tr:nth-child(odd) > td {
-    background: #f9f9f9; }
-  table.data td.name,
-  table.data th.name,
-  table.data td.visits,
-  table.data th.visits {
-    text-align: right; }
-  table.data th.visits {
-    min-width: 4em; }
-  table.data td.chart {
-    position: relative;
-    min-width: 10rem; }
-    table.data td.chart .bar {
-      line-height: 1em;
-      height: 1em;
-      position: relative;
-      background: #3A96B7; }
-      table.data td.chart .bar .value {
-        font-size: 75%;
-        position: absolute;
-        left: 100%;
-        margin-left: .25em; }
-
-.stack {
-  margin: 1rem 0 2rem;
-  padding-bottom: 1rem;
-  height: 2.5rem;
-  position: relative; }
-  .stack .bin {
-    float: left;
-    top: 1rem;
-    position: relative;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    height: 100%;
-    border: 2px solid white;
-    background-color: #3A96B7; }
-    .stack .bin:first-child {
-      border-left: none; }
-    .stack .bin:last-child {
-      border-right: none; }
-    .stack .bin .label {
-      position: absolute;
-      bottom: 100%; }
-    .stack .bin .value {
-      position: absolute;
-      top: 100%; }
-    .stack .bin:last-child .label, .stack .bin:last-child .value {
-      right: 0; }
+.explanation {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 100%;
+  margin-top: 20px; }
+  .explanation:last-child {
+    margin-right: 0; }
 
 g.axis path,
 g.axis line {

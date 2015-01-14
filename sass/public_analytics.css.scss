@@ -101,9 +101,9 @@ header {
 
   h1 {
     @include span-columns(7);
-    font-weight: 300;
+    font-weight: $bold_weight;
     a {
-      font-weight: $bold_weight;
+      font-weight: 300;
       color: white;
       text-decoration: none;
     }
@@ -173,19 +173,29 @@ section {
 }
 
 .section_headline {
-  padding: 0 1em;
+  padding: 0.1em 1em;
   border-left: 1px solid $gray;
   border-top: 1px solid $gray;
-  border-bottom: 1px solid $gray;
   @include media($small-screen)  {
     border-bottom: none;
   }
+}
+
+.section_subheadline {
+  padding: 0.5em 1em;
+  border-top: 1px solid $gray;
+  // border-bottom: 1px solid $gray;
   // border-left: 1px solid $gray;
+  text-align: center;
+  font-size: 1.5em;
+  #total_visitors {
+    font-weight: $bold_weight;
+  }
 }
 
 .three_column {
   @include span-columns(3 of 9);
-  border-left: 1px solid $gray;
+  // border-left: 1px solid $gray;
 
   @include media($small-screen)  {
     @include span-columns(1);
@@ -195,6 +205,7 @@ section {
   h4 {
     text-align: center;
     margin: 0;
+    font-size: 90%;
   }
   h5 {
     margin-top: 0;
@@ -211,12 +222,14 @@ section {
   }
 }
 
+#time_series,
+.section_subheadline {
+  color: $dark_blue;
+}
+
 #current_visitors {
   font-weight: $bold_weight;
   text-align: center;
-}
-
-table.data td.chart .bar {
 }
 
 figure {
@@ -308,6 +321,14 @@ ul.pills {
   .label {
     white-space: nowrap;
     height: 1.5rem;
+    margin-right: 4em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .value {
@@ -319,86 +340,9 @@ ul.pills {
   }
 }
 
-table.data {
-  border-collapse: collapse;
-  margin: 1rem 0;
-
-  th,
-  td {
-    text-align: left;
-    padding: .25rem .5rem;
-  }
-
-  tbody tr:nth-child(odd) > td {
-    background: #f9f9f9;
-  }
-
-  td.name,
-  th.name,
-  td.visits,
-  th.visits {
-    text-align: right;
-  }
-
-  th.visits {
-    min-width: 4em;
-  }
-
-  td.chart {
-    position: relative;
-    min-width: 10rem;
-
-    .bar {
-      line-height: 1em;
-      height: 1em;
-      position: relative;
-      background: $data;
-
-      .value {
-        font-size: 75%;
-        position: absolute;
-        left: 100%;
-        margin-left: .25em;
-      }
-    }
-  }
-}
-
-.stack {
-  margin: 1rem 0 2rem;
-  padding-bottom: 1rem;
-  height: 2.5rem;
-  position: relative;
-
-  .bin {
-    float: left;
-    top: 1rem;
-    position: relative;
-            box-sizing: border-box;
-       -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    height: 100%;
-    border: 2px solid white;
-    background-color: $data;
-
-    &:first-child { border-left: none; }
-    &:last-child { border-right: none; }
-
-    .label {
-      position: absolute;
-      bottom: 100%;
-    }
-
-    .value {
-      position: absolute;
-      top: 100%;
-    }
-
-    &:last-child .label,
-    &:last-child .value {
-      right: 0;
-    }
-  }
+.explanation {
+  @include span-columns(14);
+  margin-top: 20px;
 }
 
 g.axis {

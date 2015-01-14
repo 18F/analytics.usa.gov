@@ -1,7 +1,7 @@
 (function(exports) {
 
   // some constants
-  var DATA_URL_FORMAT = "https://dap.18f.us/bulk/{source}.json";
+  var DATA_URL_FORMAT = "https://dap.18f.us/data/live/{source}.json";
 
   // common parsing and formatting functions
   var formatCommas = d3.format(","),
@@ -23,14 +23,13 @@
             : formatCommas(visits);
         };
       })(),
-      percent = function(fraction, precision) {
-        var pct = fraction * 100;
-        return pct >= 1
-          ? formatPercent(pct)
-          : "< 1%";
+      trimZeroes = function(str) {
+        return str.replace(/0+$/, '');
       },
       formatPercent = function(p) {
-        return (p.toFixed(1) + "%").replace(/\.0+\%$/, "%");
+        return p >= 1
+          ? trimZeroes(p.toFixed(1)) + "%"
+          : "< 1%";
       },
       formatHour = function(hour) {
         var n = +hour,
@@ -43,17 +42,10 @@
    */
   var BLOCKS = {
 
-    // the users block is just `data.totals.visitors` formatted with commas
-    "users": renderBlock()
-      .render(function(selection, data) {
-        selection.text(formatCommas(data.totals.visitors));
-      }),
-
     // the realtime block is just `data.totals.active_visitors` formatted with commas
     "realtime": renderBlock()
       .render(function(selection, data) {
-        // XXX temporary fix for <https://github.com/18F/analytics-reporter/issues/57>
-        var totals = data.totals[0] || data.totals;
+        var totals = data.data[0];
         selection.text(formatCommas(+totals.active_visitors));
       }),
 
@@ -133,19 +125,11 @@
         .value(function(d) { return d.share * 100; })
         .format(formatPercent)),
 
-    // the IE block is a stack, but with some extra work done to transform the 
+    // the IE block is a stack, but with some extra work done to transform the
     // data beforehand to match the expected object format
     "ie": renderBlock()
       .transform(function(d) {
-        var totals = d3.nest()
-          .key(function(d) { return d.browser_version; })
-          .rollup(function(d) {
-            return d3.sum(d, function(x) { return x.visits; });
-          })
-          .map(d.data);
-        var ie = listify(totals)
-          .slice(0, 5);
-        return addShares(ie);
+        return addShares(listify(d.totals.ie_version));
       })
       .render(
         barChart()
@@ -170,13 +154,19 @@
         return d.data;
       })
       .on("render", function(selection, data) {
-        selection.selectAll("td.name")
-          .text("")
+        // turn the labels into links
+        selection.selectAll(".label")
+          .each(function(d) {
+            d.text = this.innerText;
+          })
+          .html("")
           .append("a")
             .attr("href", function(d) {
-              return "http://" + d.data.domain;
+              return "http://" + d.domain;
             })
-            .text(function(d) { return d.data.domain; });
+            .text(function(d) {
+              return d.text;
+            });
       })
       .render(barChart()
         .label(function(d) { return d.domain; })
@@ -189,17 +179,35 @@
         })
         .format(formatVisits)),
 
-    // the sources block is a table
-    "sources": renderBlock()
+    // the top pages block(s)
+    "top-pages-realtime": renderBlock()
       .transform(function(d) {
-        return d.data.map(function(x) {
-          return {
-            key: x.source,
-            value: +x.visits
-          };
-        });
+        return d.data;
       })
-      .render(renderTable()
+      .on("render", function(selection, data) {
+        // turn the labels into links
+        selection.selectAll(".label")
+          .each(function(d) {
+            d.text = this.innerText;
+          })
+          .html("")
+          .append("a")
+            .attr("href", function(d) {
+              return "http://" + d.page;
+            })
+            .text(function(d) {
+              return d.text;
+            });
+      })
+      .render(barChart()
+        .label(function(d) { return d.page_title; })
+        .value(function(d) { return +d.active_visitors; })
+        .scale(function(values) {
+          var max = d3.max(values);
+          return d3.scale.linear()
+            .domain([0, 1, d3.max(values)])
+            .rangeRound([0, 1, 100]);
+        })
         .format(formatVisits))
 
   };
@@ -271,6 +279,14 @@
         });
       }
     });
+
+  var updateTime = function() {
+    var stamp = moment().format('MMMM Do YYYY, h:mma')
+    d3.select("time#datetime")
+      .text(stamp)
+  };
+  updateTime();
+  setInterval(updateTime, 5 * 1000)
 
   /*
    * our block renderer is a d3 selection manipulator that does a bunch of
@@ -375,161 +391,6 @@
   }
 
   /*
-   * This is a tabular data renderer that defaults to a 3-column layout:
-   *
-   * 1. "Name" -> `label(d)`
-   * 2. "Visits" -> `format(value(d))`
-   * 3. (chart) -> a `div.bar` with a width corresponding to `value(d) / total`
-   *
-   * Tables are configurable with the following accessors:
-   *
-   * - table.rows([setter]): the rows accessor, defaults to identity function
-   * - table.label([setter]): the label accessor
-   * - table.value([setter]): the numeric value ("Visits") accessor
-   * - table.format([setter]): the value formatting function
-   * - table.columns([columns]): get or set the column configuration, which
-   *   should be an array of objects with the signature:
-   *
-   *   {label: String, klass: String, value: function}
-   *
-   * - table.column(index [, column]): get or configure an indexed column,
-   *   where `column` may either be an object with the above signature or a
-   *   function that takes a column object and modifies it in place.
-   */
-  function renderTable() {
-    var rows = function(d) {
-          return d;
-        },
-        label = function(d) {
-          return d.key;
-        },
-        value = function(d) {
-          return +d.value;
-        },
-        format = String,
-        columns = [
-          {label: "Name", klass: "name",
-            value: function(d) { return label(d); }},
-          {label: "Visits", klass: "visits",
-            value: function(d) { return format(value(d)); }},
-          {label: "", klass: "chart", value: d3.functor("")}
-        ];
-
-    var table = function(selection) {
-      var thead = element(selection, "thead"),
-          tbody = element(selection, "tbody");
-
-      var th = element(thead, "tr")
-        .selectAll("th")
-          .data(columns);
-      th.exit().remove();
-      th.enter().append("th");
-
-      th.attr("class", function(d) { return d.klass; })
-        .text(function(d) { return d.label; });
-
-      var tr = tbody.selectAll("tr")
-        .data(rows);
-      tr.exit().remove();
-      tr.enter().append("tr");
-
-      var td = tr.selectAll("td")
-        .data(function(d) {
-          return columns.map(function(column) {
-            return {
-              column: column,
-              data: d,
-              value: column.value(d)
-            };
-          });
-        });
-
-      td.exit().remove();
-
-      td.enter().append("td");
-
-      td.attr("class", function(d) {
-          return d.column.klass;
-        })
-        .html(function(d, i) {
-          return d.value;
-        });
-
-      var bar = element(td.filter(".chart"), "div.bar");
-      element(bar, "span.value");
-
-      var total = 0;
-      try {
-        total = d3.sum(tr.data(), value);
-      } catch (error) {
-        // XXX
-      }
-
-      td.select(".bar")
-        .style("width", function(d) {
-          d.share = value(d.data) / total;
-          return d.share >= .01
-            ? percent(d.share)
-            : "1px";
-        })
-        .select(".value")
-          .text(function(d) {
-            return percent(d.share);
-          });
-    };
-
-    table.label = function(x) {
-      if (!arguments.length) return label;
-      label = d3.functor(x);
-      return table;
-    };
-
-    table.href = function(x) {
-      if (!arguments.length) return href;
-      href = d3.functor(x);
-      return table;
-    };
-
-    table.value = function(x) {
-      if (!arguments.length) return value;
-      value = d3.functor(x);
-      return table;
-    };
-
-    table.format = function(x) {
-      if (!arguments.length) return format;
-      format = x;
-      return table;
-    };
-
-    table.columns = function(x) {
-      if (!arguments.length) return columns;
-      columns = x;
-      return table;
-    };
-
-    table.column = function(i, column) {
-      if (arguments.length < 2) return columns[i];
-      if (typeof column === "function") {
-        var out = column(columns[i]);
-        if (out) {
-          columns[i] = out;
-        } else if (out === false) {
-          columns.splice(i, 1);
-        }
-      } else {
-        columns[i] = column;
-        if (!columns[i]) {
-          columns.splice(i, 1);
-        }
-      }
-      return table;
-    };
-
-    return table;
-  }
-
-  /*
    * listify an Object into its key/value pairs (entries) and sorting by
    * numeric value descending.
    */
@@ -538,80 +399,6 @@
       .sort(function(a, b) {
         return d3.descending(+a.value, +b.value);
       });
-  }
-
-  /*
-   * TODO: document
-   */
-  function stack() {
-    var bins = function(d) {
-          return d;
-        },
-        value = function(d) {
-          return d.value;
-        },
-        format = String,
-        label = function(d) {
-          return d.key;
-        },
-        updated = false;
-
-    var stack = function(selection) {
-      var bin = selection.selectAll(".bin")
-        .data(bins);
-
-      bin.exit().remove();
-
-      var enter = bin.enter().append("div")
-        .attr("class", "bin")
-        .style("width", "0%");
-      enter.append("span")
-        .attr("class", "label");
-      enter.append("span")
-        .attr("class", "value");
-
-      var total = d3.sum(bin.data().map(value));
-      bin.each(function(d) {
-        d._share = value(d) / total;
-      });
-
-      bin.style("width", function(d) {
-        return percent(d._share);
-      });
-
-      bin.select(".label").text(label);
-      bin.select(".value").text(function(d, i) {
-        return format.call(this, value(d), d, i);
-      });
-
-      updated = true;
-    };
-
-    stack.bins = function(x) {
-      if (!arguments.length) return bins;
-      bins = d3.functor(x);
-      return stack;
-    };
-
-    stack.label = function(x) {
-      if (!arguments.length) return label;
-      label = d3.functor(x);
-      return stack;
-    };
-
-    stack.value = function(x) {
-      if (!arguments.length) return value;
-      value = d3.functor(x);
-      return stack;
-    };
-
-    stack.format = function(x) {
-      if (!arguments.length) return format;
-      format = d3.functor(x);
-      return stack;
-    };
-
-    return stack;
   }
 
   function barChart() {
