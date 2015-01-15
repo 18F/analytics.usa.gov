@@ -472,3 +472,15 @@ figure figure {
     }
   }
 }
+
+*[data-block] {
+  opacity: 1;
+  // transition opacity over a fraction of a second, with a delay
+  // (the delay guards against flashes when content switches really quickly
+  // from loading -> loaded -> loading again, e.g. when data loads quickly)
+  @include transition(opacity .3s ease-in .5s);
+
+  &.loading {
+    opacity: .8;
+  }
+}
