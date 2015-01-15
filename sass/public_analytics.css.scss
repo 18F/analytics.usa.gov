@@ -37,6 +37,7 @@ $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
 $gray: #aaa;
+$dark_gray: #666;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -285,8 +286,14 @@ section {
     @include span-columns(2 of 5);
   }
   h5 {
-    color: $gray;
+    color: $dark_gray;
     font-weight: 300;
+  }
+}
+
+.top-pages {
+  .bar-chart {
+    margin-top: 0;
   }
 }
 
@@ -330,6 +337,7 @@ ul.pills {
       text-decoration: none;
 
       border-right: 1px solid $gray;
+      border-bottom: 1px solid $gray;
 
       &:hover {
         text-decoration: underline;
