@@ -297,7 +297,8 @@ ul.pills {
   display: block;
   margin-right: 0%;
   width: 60%;
-  display: inline-block; }
+  display: inline-block;
+  border-right: 1px solid #aaa; }
   ul.pills::after {
     clear: both;
     content: "";
@@ -312,7 +313,6 @@ ul.pills {
     padding: 0;
     display: block; }
   ul.pills {
-    border: 1px solid #aaa;
     margin: .60rem 0; }
   ul.pills > li {
     float: left; }
@@ -326,8 +326,9 @@ ul.pills {
       display: inline-block;
       padding: .32em 0em;
       text-decoration: none;
-      border-right: 1px solid #aaa;
-      border-bottom: 1px solid #aaa; }
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      border-right: 1px solid #aaa; }
       ul.pills > li > a:hover {
         text-decoration: underline; }
       ul.pills > li > a[aria-selected='true'] {

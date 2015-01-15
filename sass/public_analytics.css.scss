@@ -306,6 +306,8 @@ ul.pills {
   @include span-columns(3 of 5);
   display: inline-block;
 
+  border-right: 1px solid $gray;
+
   li {
     width: 33.3333%;
   }
@@ -318,7 +320,6 @@ ul.pills {
   }
 
   & {
-    border: 1px solid $gray;
     margin: .60rem 0;
   }
 
@@ -336,8 +337,9 @@ ul.pills {
       padding: .32em 0em;
       text-decoration: none;
 
-      border-right: 1px solid $gray;
+      border-top: 1px solid $gray;
       border-bottom: 1px solid $gray;
+      border-right: 1px solid $gray;
 
       &:hover {
         text-decoration: underline;
