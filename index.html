@@ -50,10 +50,10 @@
       <div id="main_data">
         <section id="realtime"
           data-block="realtime"
-          data-source="https://dap.18f.us/data/live/realtime.json">
+          data-source="https://dap.18f.us/data/live/realtime.json"
+          data-refresh="15">
           <h2 id="current_visitors" class="data">...</h2>
-          <div id="chart_visitors_over_time" class="chart_subtitle">people online right now
-          </div>
+          <div class="chart_subtitle">people online right now</div>
         </section>
 
         <section class="section_headline visits_today">
@@ -62,14 +62,16 @@
         </section>
         <section id="time_series"
           data-block="today"
-          data-source="https://dap.18f.us/data/live/today.json">
-          <svg class="data time-series" width="100%" height="200">
+          data-source="https://dap.18f.us/data/live/today.json"
+          data-refresh="15">
+          <svg class="data time-series">
           </svg>
         </section>
 
         <section class="section_subheadline">There were <span id="total_visitors">1.05 billion</span> visits over the past 90 days.</section>
 
-        <section id="devices" class="three_column" data-block="devices"
+        <section id="devices" class="three_column"
+          data-block="devices"
           data-source="https://dap.18f.us/data/live/devices.json">
           <h4>Devices</h4>
           <figure id="chart_device_types">
@@ -132,7 +134,8 @@
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
             data-block="top-pages-realtime"
-            data-source="https://dap.18f.us/data/live/top-pages-realtime.json">
+            data-source="https://dap.18f.us/data/live/top-pages-realtime.json"
+            data-refresh="15">
             <h5>People online right now, visiting specific pages.</h5>
             <div class="data bar-chart">
             </div>

@@ -340,29 +340,41 @@
 
     var block = function(selection) {
       selection
+        .each(load)
+        .filter(function(d) {
+          d.refresh = +this.getAttribute("data-refresh")
+          return !isNaN(d.refresh) && d.refresh > 0;
+        })
         .each(function(d) {
-          if (d._request) d._request.abort();
-
-          var that = d3.select(this)
-            .classed("loading", true)
-            .classed("loaded error", false);
-
-          dispatch.loading(selection, d);
-
-          var json = url.apply(this, arguments);
-          if (!json) {
-            return console.error("no data source found:", this, d);
-          }
-
-          d._request = d3.json(json, function(error, data) {
-            that.classed("loading", false);
-            if (error) return that.call(onerror, error);
-
-            that.classed("loaded", true);
-            dispatch.load(selection, data);
-            that.call(render, d._data = transform(data));
-          });
+          var that = d3.select(this);
+          d.interval = setInterval(function refresh() {
+            that.each(load);
+          }, d.refresh * 1000);
         });
+
+      function load(d) {
+        if (d._request) d._request.abort();
+
+        var that = d3.select(this)
+          .classed("loading", true)
+          .classed("loaded error", false);
+
+        dispatch.loading(selection, d);
+
+        var json = url.apply(this, arguments);
+        if (!json) {
+          return console.error("no data source found:", this, d);
+        }
+
+        d._request = d3.json(json, function(error, data) {
+          that.classed("loading", false);
+          if (error) return that.call(onerror, error);
+
+          that.classed("loaded", true);
+          dispatch.load(selection, data);
+          that.call(render, d._data = transform(data));
+        });
+      }
     };
 
     function onerror(selection, request) {
