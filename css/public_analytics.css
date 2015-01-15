@@ -138,7 +138,11 @@ section {
 .container {
   max-width: 97.5em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  background: #fff; }
   .container::after {
     clear: both;
     content: "";
@@ -184,8 +188,7 @@ section {
   color: #888; }
 
 #secondary_data {
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid #aaa;
   float: left;
   display: block;
   margin-right: 0%;
@@ -198,7 +201,7 @@ section {
       display: block;
       margin-right: 0%;
       width: 100%;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid #aaa;
       border-left: none;
       border-right: none; }
       #secondary_data:last-child {
@@ -210,15 +213,14 @@ section {
 
 .section_headline {
   padding: 0.1em 1em;
-  border-left: 1px solid #ccc;
-  border-top: 1px solid #ccc; }
+  border-top: 1px solid #aaa; }
   @media screen and (max-width: 768px) {
     .section_headline {
       border-bottom: none; } }
 
 .section_subheadline {
   padding: 0.5em 1em;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #aaa;
   text-align: center;
   font-size: 1.5em; }
   .section_subheadline #total_visitors {
@@ -238,7 +240,7 @@ section {
       margin-right: 0%;
       width: 100%;
       border-left: none;
-      border-top: 1px solid #ccc; }
+      border-top: 1px solid #aaa; }
       .three_column:last-child {
         margin-right: 0; } }
   .three_column h4 {
@@ -250,7 +252,6 @@ section {
     text-align: center; }
 
 #realtime {
-  border-left: 1px solid #ccc;
   text-align: center;
   padding-top: 0em;
   padding-bottom: 2em; }
@@ -274,42 +275,67 @@ section {
   font-weight: 600;
   text-align: center; }
 
+#top_100_table h3 {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 40%; }
+  #top_100_table h3:last-child {
+    margin-right: 0; }
+#top_100_table h5 {
+  color: #666;
+  font-weight: 300; }
+
+.top-pages .bar-chart {
+  margin-top: 0; }
+
 figure {
   margin: 0; }
 
-ul.pills::after {
-  clear: both;
-  content: "";
-  display: table; }
-ul.pills, ul.pills > li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block; }
 ul.pills {
-  margin: .5rem 0; }
-ul.pills > li {
-  float: left; }
-  ul.pills > li > a {
-    color: #36435A;
-    background: #f9f9f9;
-    font-weight: bold;
-    display: inline-block;
-    padding: .5em 1em;
-    text-decoration: none;
-    border-right: 1px solid #fff; }
-    ul.pills > li > a:hover {
-      text-decoration: underline; }
-    ul.pills > li > a[aria-selected='true'] {
-      color: #fff;
-      background: #36435A; }
-  ul.pills > li:first-child > a {
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px; }
-  ul.pills > li:last-child > a {
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    border-right: none; }
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 60%;
+  display: inline-block;
+  border-right: 1px solid #aaa; }
+  ul.pills::after {
+    clear: both;
+    content: "";
+    display: table; }
+  ul.pills:last-child {
+    margin-right: 0; }
+  ul.pills li {
+    width: 33.3333%; }
+  ul.pills, ul.pills > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block; }
+  ul.pills {
+    margin: .60rem 0; }
+  ul.pills > li {
+    float: left; }
+    ul.pills > li > a {
+      color: #36435A;
+      background: #fff;
+      width: 100%;
+      text-align: center;
+      font-weight: 300;
+      font-size: 0.8em;
+      display: inline-block;
+      padding: .32em 0em;
+      text-decoration: none;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      border-right: 1px solid #aaa; }
+      ul.pills > li > a:hover {
+        text-decoration: underline; }
+      ul.pills > li > a[aria-selected='true'] {
+        color: #fff;
+        background: #3A96B7; }
+    ul.pills > li:last-child > a {
+      border-right: none; }
 
 .bar-chart {
   margin: 1rem 0;
@@ -369,7 +395,7 @@ g.axis line {
   fill: none;
   stroke: none; }
 g.axis .tick text {
-  fill: #999;
+  fill: #aaa;
   font-size: .75rem; }
 
 .time-series rect {
@@ -377,7 +403,7 @@ g.axis .tick text {
   stroke: #fff;
   stroke-width: 1; }
 .time-series text.label {
-  fill: #999;
+  fill: #aaa;
   font-size: .5rem; }
 
 figure figure h4 {
