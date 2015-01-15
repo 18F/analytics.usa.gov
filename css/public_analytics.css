@@ -93,7 +93,7 @@ header {
         width: 100%; }
         header h1:last-child {
           margin-right: 0; } }
-  header #datetime {
+  header #about {
     font-size: 1em;
     font-weight: 300;
     float: left;
@@ -102,19 +102,23 @@ header {
     width: 50%;
     padding-top: 2em;
     text-align: right;
+    text-decoration: none;
     border: none; }
-    header #datetime:last-child {
+    header #about:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
-      header #datetime {
+      header #about {
         float: left;
         display: block;
         margin-right: 0%;
         width: 100%;
         text-align: left;
-        padding-top: 0; }
-        header #datetime:last-child {
+        padding-top: 0;
+        padding-bottom: 10px; }
+        header #about:last-child {
           margin-right: 0; } }
+  header #about:hover {
+    text-decoration: underline; }
 
 section {
   background: #fff;
@@ -122,6 +126,9 @@ section {
   section h2 {
     font-size: 8em;
     margin: 0; }
+    @media screen and (max-width: 768px) {
+      section h2 {
+        font-size: 6em; } }
   section h3 {
     margin: 10px 0; }
 
@@ -168,6 +175,17 @@ section {
       width: 100%; }
       #main_data:last-child {
         margin-right: 0; } }
+
+.visits_today h3 {
+  display: block;
+  height: 2.5rem;
+  margin-bottom: 0; }
+.visits_today h4 {
+  display: block;
+  text-align: right;
+  margin-top: -2.5rem;
+  font-size: 1.0em;
+  color: #888; }
 
 #secondary_data {
   border-left: 1px solid #aaa;
@@ -358,13 +376,13 @@ ul.pills {
     margin-top: -1.5rem;
     margin-bottom: .25rem; }
 
-.explanation {
+.explanation, .data {
   float: left;
   display: block;
   margin-right: 0%;
   width: 100%;
   margin-top: 20px; }
-  .explanation:last-child {
+  .explanation:last-child, .data:last-child {
     margin-right: 0; }
 
 g.axis path,

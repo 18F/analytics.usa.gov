@@ -307,14 +307,6 @@
       }
     });
 
-  var updateTime = function() {
-    var stamp = moment().format('MMMM Do YYYY, h:mma')
-    d3.select("time#datetime")
-      .text(stamp)
-  };
-  updateTime();
-  setInterval(updateTime, 5 * 1000)
-
   /*
    * our block renderer is a d3 selection manipulator that does a bunch of
    * stuff:
@@ -600,8 +592,8 @@
 
       bar.select(".label")
         .attr("text-anchor", "middle")
-        .attr("alignment-baseline", "before-edge")
-        .attr("dy", 4)
+        // .attr("alignment-baseline", "before-edge")
+        .attr("dy", 10)
         .attr("dx", barWidth / 2)
         .text(label);
 
