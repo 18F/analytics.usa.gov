@@ -276,6 +276,13 @@ section {
   color: $dark_blue;
 }
 
+#time_series svg {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
 #current_visitors {
   font-weight: $bold_weight;
   text-align: center;
@@ -288,6 +295,17 @@ section {
   h5 {
     color: $dark_gray;
     font-weight: 300;
+  }
+}
+
+#explanation {
+  margin-top: 20px;
+
+  &:before {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
   }
 }
 
@@ -410,11 +428,6 @@ ul.pills {
     margin-top: -1.5rem;
     margin-bottom: .25rem;
   }
-}
-
-.explanation, .data {
-  @include span-columns(14);
-  margin-top: 20px;
 }
 
 g.axis {

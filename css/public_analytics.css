@@ -271,6 +271,12 @@ section {
 .section_subheadline {
   color: #36435A; }
 
+#time_series svg {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto; }
+
 #current_visitors {
   font-weight: 600;
   text-align: center; }
@@ -285,6 +291,14 @@ section {
 #top_100_table h5 {
   color: #666;
   font-weight: 300; }
+
+#explanation {
+  margin-top: 20px; }
+  #explanation:before {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0; }
 
 .top-pages .bar-chart {
   margin-top: 0; }
@@ -381,15 +395,6 @@ ul.pills {
     white-space: nowrap;
     margin-top: -1.5rem;
     margin-bottom: .25rem; }
-
-.explanation, .data {
-  float: left;
-  display: block;
-  margin-right: 0%;
-  width: 100%;
-  margin-top: 20px; }
-  .explanation:last-child, .data:last-child {
-    margin-right: 0; }
 
 g.axis path,
 g.axis line {
