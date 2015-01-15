@@ -36,7 +36,7 @@ $small-screen:  new-breakpoint(max-width  768px  1);
 $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
-$gray: #ccc;
+$gray: #aaa;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -259,12 +259,28 @@ section {
   text-align: center;
 }
 
+#top_100_table {
+  h3 {
+    @include span-columns(2 of 5);
+  }
+  h5 {
+    color: $gray;
+    font-weight: 300;
+  }
+}
+
 figure {
   margin: 0;
 }
 
 ul.pills {
   @include clearfix;
+  @include span-columns(3 of 5);
+  display: inline-block;
+
+  li {
+    width: 33.3333%;
+  }
 
   &, & > li {
     list-style: none;
@@ -274,7 +290,8 @@ ul.pills {
   }
 
   & {
-    margin: .5rem 0;
+    border: 1px solid $gray;
+    margin: .60rem 0;
   }
 
   & > li {
@@ -282,13 +299,16 @@ ul.pills {
 
     & > a {
       color: $dark_blue;
-      background: $light_gray;
-      font-weight: bold;
+      background: $white;
+      width: 100%;
+      text-align: center;
+      font-weight: 300;
+      font-size: 0.8em;
       display: inline-block;
-      padding: .5em 1em;
+      padding: .32em 0em;
       text-decoration: none;
 
-      border-right: 1px solid #fff;
+      border-right: 1px solid $gray;
 
       &:hover {
         text-decoration: underline;
@@ -296,16 +316,11 @@ ul.pills {
 
       &[aria-selected='true'] {
         color: #fff;
-        background: $dark_blue;
+        background: $light_blue;
       }
     }
 
-    &:first-child > a {
-      @include border-left-radius($border_radius);
-    }
-
     &:last-child > a {
-      @include border-right-radius($border_radius);
       border-right: none;
     }
   }
@@ -378,7 +393,7 @@ g.axis {
   }
 
   .tick text {
-    fill: #999;
+    fill: $gray;
     font-size: .75rem;
   }
 }
@@ -391,7 +406,7 @@ g.axis {
   }
 
   text.label {
-    fill: #999;
+    fill: $gray;
     font-size: .5rem;
   }
 }
