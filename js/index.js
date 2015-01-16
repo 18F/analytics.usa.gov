@@ -32,7 +32,8 @@
         var n = +hour,
             suffix = n >= 12 ? "p" : "a";
         return (n % 12 || 12) + suffix;
-      };
+      },
+      TRANSITION_DURATION = 500;
 
   /*
    * Define block renderers for each of the different data types.
@@ -538,7 +539,8 @@
           .scale(yScale)
           .ticks(5),
         innerTickSize = yAxis.innerTickSize(),
-        xAxis;
+        xAxis,
+        duration = TRANSITION_DURATION;
 
     var timeSeries = function(svg) {
       var left = margin.left,
@@ -553,15 +555,19 @@
 
       element(svg, "g.axis.y0")
         .attr("transform", "translate(" + [left, 0] + ")")
-        .call(yAxis
-          // .innerTickSize(left - right)
-          .orient("left"));
+        .transition()
+          .duration(duration)
+          .call(yAxis
+            // .innerTickSize(left - right)
+            .orient("left"));
 
       element(svg, "g.axis.y1")
         .attr("transform", "translate(" + [right, 0] + ")")
-        .call(yAxis
-          .innerTickSize(innerTickSize)
-          .orient("right"));
+        .transition()
+          .duration(duration)
+          .call(yAxis
+            .innerTickSize(innerTickSize)
+            .orient("right"));
 
       var g = svg.selectAll(".series")
         .data(series);
@@ -569,12 +575,17 @@
       g.enter().append("g")
         .attr("class", "series");
 
+      var barWidth = xScale.rangeBand();
+
       var bar = g.selectAll(".bar")
         .data(bars);
       bar.exit().remove();
       var enter = bar.enter().append("g")
         .attr("class", "bar");
-      enter.append("rect");
+      enter.append("rect")
+        .attr("width", barWidth)
+        .attr("y", 0)
+        .attr("height", 0);
       enter.append("text")
         .attr("class", "label");
       enter.append("title");
@@ -592,15 +603,16 @@
           return "translate(" + [d.x, d.y1] + ")";
         });
 
-      var barWidth = xScale.rangeBand();
       bar.select("rect")
-        .attr("y", function(d) {
-          return -d.height;
-        })
         .attr("width", barWidth)
-        .attr("height", function(d) {
-          return d.height;
-        });
+        .transition()
+          .duration(duration)
+          .attr("y", function(d) {
+            return -d.height;
+          })
+          .attr("height", function(d) {
+            return d.height;
+          });
 
       bar.select(".label")
         .attr("text-anchor", "middle")
