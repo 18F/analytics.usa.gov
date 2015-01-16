@@ -266,7 +266,7 @@ section {
     margin-bottom: 0rem;
 
     .bar {
-      display: none
+      display: none;
     }
   }
 }
@@ -406,6 +406,8 @@ ul.pills {
     position: relative;
     z-index: 2;
     min-width: 1px;
+
+    @include transition(width .5s linear);
   }
 
   .label {
