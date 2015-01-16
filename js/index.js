@@ -175,7 +175,7 @@
             .domain([0, 1, d3.max(values)])
             .rangeRound([0, 1, 100]);
         })
-        .format(formatVisits)),
+        .format(formatCommas)),
 
     // the top pages block(s)
     "top-pages-realtime": renderBlock()
@@ -210,7 +210,7 @@
             .domain([0, 1, d3.max(values)])
             .rangeRound([0, 1, 100]);
         })
-        .format(formatVisits))
+        .format(formatCommas))
 
   };
 
