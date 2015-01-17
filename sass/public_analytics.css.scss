@@ -286,6 +286,41 @@ section {
   }
 }
 
+#coming_soon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: $dark_blue;
+  color: white;
+  vertical-align: middle;
+  padding: 10em;
+
+  a {
+    color: white;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h1, h2 {
+    text-align: center;
+    font-weight: 300;
+  }
+  h2 {
+    font-size: 2em;
+    margin: 2em auto;
+  }
+
+  @include media($small-screen) {
+    font-size: 12px;
+    padding: 2em;
+  }
+}
+
 #chart_windows .bar-chart,
 #chart_ie .bar-chart {
   .bin {
