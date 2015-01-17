@@ -174,9 +174,12 @@ section {
 }
 
 #main_data {
+  border-right: 1px solid $gray;
+
   @include span-columns(9);
   @include media($small-screen)  {
     @include span-columns(1);
+    border-right: none;
   }
 }
 
@@ -196,7 +199,6 @@ section {
 }
 
 #secondary_data {
-  border-left: 1px solid $gray;
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
@@ -223,6 +225,7 @@ section {
 
 #explanation {
   @include span-columns(9);
+
   @include media($small-screen)  {
     @include span-columns(1);
   }
@@ -230,10 +233,8 @@ section {
 
 #data_download {
   @include span-columns(5);
-  border-left: $border_width solid $gray;
   @include media($small-screen)  {
     @include span-columns(1);
-    border-left: none;
   }
 }
 
