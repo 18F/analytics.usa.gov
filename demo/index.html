@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Analytics | USA.GOV</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="stylesheet" href="../css/public_analytics.css">
+
+    <!--[if lte IE 9]>
+    <script src="js/vendor/aight.v2.min.js"></script>
+    <![endif]-->
+    <script src="../js/vendor/d3.v3.min.js"></script>
+    <script src="../js/vendor/q.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+    <header id="usa_dot_gov_header">
+      <div class="header_container">
+        <h1>analytics<a href="http://www.usa.gov">.usa.gov</a></h1>
+        <a id="about" href="#explanation">About this site</a>
+      </div>
+      <div id="color_bar"></div>
+    </header>
+
+    <div class="container">
+      <!--
+      JavaScript block hooks look for any element with both data-block and
+      data-source attributes:
+
+      <section data-block="users" data-source="path/to/data.json">
+        The "loading", "loaded", and "error" classes are set on this element
+        the data-source URL is loaded. Then the renderer is called on the first
+        child of the block with the "data" class:
+
+        <div class="data">
+        </div>
+
+        Some renderers expect to be called on HTML tables, in which
+        case you would use:
+
+        <table class="data">
+        </table>
+
+      </section>
+      -->
+
+      <div id="main_data">
+        <section id="realtime"
+          data-block="realtime"
+          data-source="https://analytics.usa.gov/data/live/realtime.json"
+          data-refresh="15">
+          <h2 id="current_visitors" class="data">...</h2>
+          <div class="chart_subtitle">people on government websites now</div>
+        </section>
+
+        <section class="section_headline visits_today">
+          <h3>Visits Today</h3>
+          <h4>Eastern Time</h4>
+        </section>
+        <section id="time_series"
+          data-block="today"
+          data-source="https://analytics.usa.gov/data/live/today.json"
+          data-refresh="15">
+          <svg class="data time-series">
+          </svg>
+        </section>
+
+        <section class="section_headline">
+          <h3> Visits in the Past 90 Days</h3>
+        </section>
+
+        <section class="section_subheadline">There were <span id="total_visitors">1.05 billion</span> visits over the past 90 days.</section>
+
+        <section id="devices" class="three_column"
+          data-block="devices"
+          data-source="https://analytics.usa.gov/data/live/devices.json">
+          <h4>Devices</h4>
+          <figure id="chart_device_types">
+            <div class="data bar-chart">
+            </div>
+          </figure>
+        </section>
+
+        <section id="browsers" class="three_column">
+          <h4>Browsers</h4>
+
+          <figure id="chart_browsers"
+            data-block="browsers"
+            data-source="https://analytics.usa.gov/data/live/browsers.json">
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+          <figure id="chart_ie"
+            data-block="ie"
+            data-source="https://analytics.usa.gov/data/live/ie.json">
+            <h4>Internet Explorer</h4>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+        </section>
+
+        <section id="operating_systems" class="three_column">
+          <h4>Operating Systems</h4>
+
+          <figure id="chart_os"
+            data-block="os"
+            data-source="https://analytics.usa.gov/data/live/os.json">
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+          <figure id="chart_windows"
+            data-block="windows"
+            data-source="https://analytics.usa.gov/data/live/windows.json">
+            <h4>Windows</h4>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+        </section>
+      </div>
+
+      <div id="secondary_data">
+        <section id="top_100_table">
+
+          <!-- see: http://heydonworks.com/practical_aria_examples/ -->
+          <h3>Top 20</h3>
+          <ul class="pills" role="tablist">
+            <li><a role="tab" aria-selected="true" href="#top-pages-realtime">Now</a></li>
+            <li><a role="tab" href="#top-pages-7-days">7 Days</a></li>
+            <li><a role="tab" href="#top-pages-30-days">30 Days</a></li>
+          </ul>
+
+          <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
+            data-block="top-pages-realtime"
+            data-source="https://analytics.usa.gov/data/live/top-pages-realtime.json"
+            data-refresh="15">
+            <h5>People online right now, visiting specific pages.</h5>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+          <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
+            data-block="top-pages"
+            data-source="https://analytics.usa.gov/data/live/top-pages-7-days.json">
+            <h5>Total visits over the last week to government domains.</h5>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+          <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
+            data-block="top-pages"
+            data-source="https://analytics.usa.gov/data/live/top-pages-30-days.json">
+            <h5>Total visits over the last month to government domains.</h5>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+        </section>
+      </div>
+
+      <section id="explanation">
+        <h3>About this Data</h3>
+        <p>
+          This data provides a window into how people are interacting with the government online. The information comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/">Digital Analytics Program</a>. This program helps government agenices understand how people find, access and use governmnet services online. The program does not collect any personal information from individual users.
+        </p>
+
+        <p>
+          Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from almost 300 executive branch government domains out of <a href="https://catalog.data.gov/dataset/gov-domains-api">around 1,350 domains</a> total. This data is not a representative sample of all web traffic to government websites because it only includes agencies that are participating in the program.
+        </p>
+
+        <p>
+          This open source project is in the public domain, which means that this website and its data are free for you to use without restriction. You can find the <a href="https://github.com/GSA/analytics.usa.gov">code for this website</a> and the <a href="https://github.com/18F/analytics-reporter">code behind the data collection</a> on GitHub.
+        </p>
+
+        <p>
+          We plan to expand and document the data made available here. If you have any suggestions, or spot any issues or bugs, please <a href="https://github.com/GSA/analytics.usa.gov/issues">open an issue on GitHub</a>.
+        </p>
+      </section>
+
+      <section id="data_download">
+        <h3>Download the Data</h3>
+
+        <p>
+          You can download the data that powers the charts above, in JSON format.
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/realtime.json">
+              People online right now</a>
+            (Updated every minute)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/today.json">
+              Visits every hour today</a>
+            (Updated every hour)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/devices.json">
+              Visits by desktop/mobile/tablet devices over 90 days</a>
+            (Updated every day)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/os.json">
+              Visits broken down by Operating System over 90 days</a>
+            (Updated every day)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/windows.json">
+              Visits broken down by Windows version over 90 days</a>
+            (Updated every day)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/browsers.json">
+              Visits broken down by browser over 90 days</a>
+            (Updated every day)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/ie.json">
+              Visits broken down by Internet Explorer version over 90 days</a>
+            (Updated every day)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/top-pages-realtime.json">
+              Top 20 pages, ranked by visitors online now</a>
+            (Updated every minute)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/top-pages-7-days.json">
+              Top 20 domains, ranked by visits over 7 days</a>
+            (Updated every day)
+          </li>
+          <li>
+            <a href="https://analytics.usa.gov/data/live/top-pages-realtime.json">
+              Top 20 domains, ranked by visits over 30 days</a>
+            (Updated every day)
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </body>
+  <script src="../js/index.js"></script>
+</html>
