@@ -43,6 +43,7 @@ $dark_blue: #36435A;
 $white: #fff;
 $background_color: $light_gray;
 $container_background: $white;
+$border_width: 1px;
 
 $bold_weight: 600;
 
@@ -147,7 +148,7 @@ header {
 section {
   background: $white;
   padding: 1em;
-  h2 {
+    h2 {
     font-size: 8em;
     margin: 0;
     @include media($small-screen) {
@@ -208,6 +209,24 @@ section {
   }
   h5 {
     margin-top: 0;
+  }
+}
+
+#explanation, #data_download {
+  border-top: $border_width solid $gray;
+}
+
+#explanation {
+  @include span-columns(9);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
+}
+
+#data_download {
+  @include span-columns(5);
+  @include media($small-screen)  {
+    @include span-columns(1);
   }
 }
 
@@ -298,17 +317,6 @@ section {
   h5 {
     color: $dark_gray;
     font-weight: 300;
-  }
-}
-
-#explanation {
-  margin-top: 20px;
-
-  &:before {
-    content: " ";
-    display: block;
-    clear: both;
-    height: 0;
   }
 }
 
