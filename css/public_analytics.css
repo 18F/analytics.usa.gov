@@ -213,7 +213,10 @@ section {
     margin-top: 0; }
 
 #explanation, #data_download {
-  border-top: 1px solid #aaa; }
+  border-top: 1px solid #aaa;
+  line-height: 1.3em; }
+  #explanation li, #data_download li {
+    margin: 1em 0; }
 
 #explanation {
   float: left;
@@ -235,7 +238,8 @@ section {
   float: left;
   display: block;
   margin-right: 0%;
-  width: 35.71429%; }
+  width: 35.71429%;
+  border-left: 1px solid #aaa; }
   #data_download:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
@@ -243,7 +247,8 @@ section {
       float: left;
       display: block;
       margin-right: 0%;
-      width: 100%; }
+      width: 100%;
+      border-left: none; }
       #data_download:last-child {
         margin-right: 0; } }
 
