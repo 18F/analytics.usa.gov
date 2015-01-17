@@ -32,7 +32,8 @@
         var n = +hour,
             suffix = n >= 12 ? "p" : "a";
         return (n % 12 || 12) + suffix;
-      };
+      },
+      TRANSITION_DURATION = 500;
 
   /*
    * Define block renderers for each of the different data types.
@@ -175,7 +176,7 @@
             .domain([0, 1, d3.max(values)])
             .rangeRound([0, 1, 100]);
         })
-        .format(formatVisits)),
+        .format(formatCommas)),
 
     // the top pages block(s)
     "top-pages-realtime": renderBlock()
@@ -210,7 +211,7 @@
             .domain([0, 1, d3.max(values)])
             .rangeRound([0, 1, 100]);
         })
-        .format(formatVisits))
+        .format(formatCommas))
 
   };
 
@@ -340,29 +341,41 @@
 
     var block = function(selection) {
       selection
+        .each(load)
+        .filter(function(d) {
+          d.refresh = +this.getAttribute("data-refresh")
+          return !isNaN(d.refresh) && d.refresh > 0;
+        })
         .each(function(d) {
-          if (d._request) d._request.abort();
-
-          var that = d3.select(this)
-            .classed("loading", true)
-            .classed("loaded error", false);
-
-          dispatch.loading(selection, d);
-
-          var json = url.apply(this, arguments);
-          if (!json) {
-            return console.error("no data source found:", this, d);
-          }
-
-          d._request = d3.json(json, function(error, data) {
-            that.classed("loading", false);
-            if (error) return that.call(onerror, error);
-
-            that.classed("loaded", true);
-            dispatch.load(selection, data);
-            that.call(render, d._data = transform(data));
-          });
+          var that = d3.select(this);
+          d.interval = setInterval(function refresh() {
+            that.each(load);
+          }, d.refresh * 1000);
         });
+
+      function load(d) {
+        if (d._request) d._request.abort();
+
+        var that = d3.select(this)
+          .classed("loading", true)
+          .classed("loaded error", false);
+
+        dispatch.loading(selection, d);
+
+        var json = url.apply(this, arguments);
+        if (!json) {
+          return console.error("no data source found:", this, d);
+        }
+
+        d._request = d3.json(json, function(error, data) {
+          that.classed("loading", false);
+          if (error) return that.call(onerror, error);
+
+          that.classed("loaded", true);
+          dispatch.load(selection, data);
+          that.call(render, d._data = transform(data));
+        });
+      }
     };
 
     function onerror(selection, request) {
@@ -526,7 +539,8 @@
           .scale(yScale)
           .ticks(5),
         innerTickSize = yAxis.innerTickSize(),
-        xAxis;
+        xAxis,
+        duration = TRANSITION_DURATION;
 
     var timeSeries = function(svg) {
       var left = margin.left,
@@ -541,15 +555,19 @@
 
       element(svg, "g.axis.y0")
         .attr("transform", "translate(" + [left, 0] + ")")
-        .call(yAxis
-          // .innerTickSize(left - right)
-          .orient("left"));
+        .transition()
+          .duration(duration)
+          .call(yAxis
+            // .innerTickSize(left - right)
+            .orient("left"));
 
       element(svg, "g.axis.y1")
         .attr("transform", "translate(" + [right, 0] + ")")
-        .call(yAxis
-          .innerTickSize(innerTickSize)
-          .orient("right"));
+        .transition()
+          .duration(duration)
+          .call(yAxis
+            .innerTickSize(innerTickSize)
+            .orient("right"));
 
       var g = svg.selectAll(".series")
         .data(series);
@@ -557,12 +575,17 @@
       g.enter().append("g")
         .attr("class", "series");
 
+      var barWidth = xScale.rangeBand();
+
       var bar = g.selectAll(".bar")
         .data(bars);
       bar.exit().remove();
       var enter = bar.enter().append("g")
         .attr("class", "bar");
-      enter.append("rect");
+      enter.append("rect")
+        .attr("width", barWidth)
+        .attr("y", 0)
+        .attr("height", 0);
       enter.append("text")
         .attr("class", "label");
       enter.append("title");
@@ -580,15 +603,16 @@
           return "translate(" + [d.x, d.y1] + ")";
         });
 
-      var barWidth = xScale.rangeBand();
       bar.select("rect")
-        .attr("y", function(d) {
-          return -d.height;
-        })
         .attr("width", barWidth)
-        .attr("height", function(d) {
-          return d.height;
-        });
+        .transition()
+          .duration(duration)
+          .attr("y", function(d) {
+            return -d.height;
+          })
+          .attr("height", function(d) {
+            return d.height;
+          });
 
       bar.select(".label")
         .attr("text-anchor", "middle")

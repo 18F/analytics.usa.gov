@@ -273,6 +273,12 @@ section {
 #time_series {
   padding: 0; }
 
+#time_series svg {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto; }
+
 #current_visitors {
   font-weight: 600;
   text-align: center; }
@@ -287,6 +293,14 @@ section {
 #top_100_table h5 {
   color: #666;
   font-weight: 300; }
+
+#explanation {
+  margin-top: 20px; }
+  #explanation:before {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0; }
 
 .top-pages .bar-chart {
   margin-top: 0; }
@@ -367,7 +381,10 @@ ul.pills {
     background: #3A96B7;
     position: relative;
     z-index: 2;
-    min-width: 1px; }
+    min-width: 1px;
+    -webkit-transition: width 0.5s linear;
+    -moz-transition: width 0.5s linear;
+    transition: width 0.5s linear; }
   .bar-chart .label {
     white-space: nowrap;
     height: 1.5rem;
@@ -383,15 +400,6 @@ ul.pills {
     white-space: nowrap;
     margin-top: -1.5rem;
     margin-bottom: .25rem; }
-
-.explanation, .data {
-  float: left;
-  display: block;
-  margin-right: 0%;
-  width: 100%;
-  margin-top: 20px; }
-  .explanation:last-child, .data:last-child {
-    margin-right: 0; }
 
 g.axis path,
 g.axis line {
@@ -415,3 +423,11 @@ figure figure .bar-chart {
   margin: .5rem 0; }
   figure figure .bar-chart .bin {
     margin-bottom: .5rem; }
+
+*[data-block] {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in 0.5s;
+  -moz-transition: opacity 0.3s ease-in 0.5s;
+  transition: opacity 0.3s ease-in 0.5s; }
+  *[data-block].loading {
+    opacity: .8; }

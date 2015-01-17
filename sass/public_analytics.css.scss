@@ -266,7 +266,7 @@ section {
     margin-bottom: 0rem;
 
     .bar {
-      display: none
+      display: none;
     }
   }
 }
@@ -277,6 +277,13 @@ section {
 
 #time_series {
   padding: 0;
+}
+
+#time_series svg {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
 }
 
 #current_visitors {
@@ -291,6 +298,17 @@ section {
   h5 {
     color: $dark_gray;
     font-weight: 300;
+  }
+}
+
+#explanation {
+  margin-top: 20px;
+
+  &:before {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
   }
 }
 
@@ -391,6 +409,8 @@ ul.pills {
     position: relative;
     z-index: 2;
     min-width: 1px;
+
+    @include transition(width .5s linear);
   }
 
   .label {
@@ -413,11 +433,6 @@ ul.pills {
     margin-top: -1.5rem;
     margin-bottom: .25rem;
   }
-}
-
-.explanation, .data {
-  @include span-columns(14);
-  margin-top: 20px;
 }
 
 g.axis {
@@ -460,5 +475,17 @@ figure figure {
     .bin {
       margin-bottom: .5rem;
     }
+  }
+}
+
+*[data-block] {
+  opacity: 1;
+  // transition opacity over a fraction of a second, with a delay
+  // (the delay guards against flashes when content switches really quickly
+  // from loading -> loaded -> loading again, e.g. when data loads quickly)
+  @include transition(opacity .3s ease-in .5s);
+
+  &.loading {
+    opacity: .8;
   }
 }
