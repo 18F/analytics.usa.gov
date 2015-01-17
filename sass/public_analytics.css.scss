@@ -12,16 +12,16 @@ $gutter: 0em !global;
   @include outer-container;
 
   @include media($xlarge-screen) {
-    max-width: 1560px;
+    max-width: 1600px;
   }
   @include media($large-screen)  {
-    max-width: 1170px;
+    max-width: 1200px;
   }
   @include media($medium-screen) {
-    max-width:  970px;
+    max-width:  992px;
   }
   @include media($small-screen)  {
-    max-width:  750px;
+    max-width:  768px;
   }
 }
 
@@ -37,12 +37,13 @@ $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
 $gray: #aaa;
-$dark_gray: #666;
+$dark_gray: #222;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
 $background_color: $light_gray;
 $container_background: $white;
+$border_width: 1px;
 
 $bold_weight: 600;
 
@@ -56,6 +57,7 @@ body {
   font-size: 16px;
   $em-size: 16px;
   font-weight: 300;
+  color: $dark_gray;
   background: $background_color;
   margin: 0;
   @include media($medium-screen) {
@@ -147,7 +149,7 @@ header {
 section {
   background: $white;
   padding: 1em;
-  h2 {
+    h2 {
     font-size: 8em;
     margin: 0;
     @include media($small-screen) {
@@ -159,7 +161,7 @@ section {
   }
 }
 
-#realtime, .section_subheadline, .section_headline {
+#realtime {
   color: $dark_blue;
 }
 
@@ -172,9 +174,12 @@ section {
 }
 
 #main_data {
+  border-right: 1px solid $gray;
+
   @include span-columns(9);
   @include media($small-screen)  {
     @include span-columns(1);
+    border-right: none;
   }
 }
 
@@ -194,7 +199,6 @@ section {
 }
 
 #secondary_data {
-  border-left: 1px solid $gray;
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
@@ -208,6 +212,29 @@ section {
   }
   h5 {
     margin-top: 0;
+  }
+}
+
+#explanation, #data_download {
+  border-top: $border_width solid $gray;
+  line-height: 1.3em;
+  li {
+    margin: 1em 0;
+  }
+}
+
+#explanation {
+  @include span-columns(9);
+
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
+}
+
+#data_download {
+  @include span-columns(5);
+  @include media($small-screen)  {
+    @include span-columns(1);
   }
 }
 
@@ -271,9 +298,8 @@ section {
   }
 }
 
-#time_series,
-.section_subheadline {
-  color: $dark_blue;
+#time_series {
+  padding: 0;
 }
 
 #time_series svg {
@@ -295,17 +321,6 @@ section {
   h5 {
     color: $dark_gray;
     font-weight: 300;
-  }
-}
-
-#explanation {
-  margin-top: 20px;
-
-  &:before {
-    content: " ";
-    display: block;
-    clear: both;
-    height: 0;
   }
 }
 
