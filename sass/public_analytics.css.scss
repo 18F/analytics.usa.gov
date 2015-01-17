@@ -37,7 +37,7 @@ $red: #921B1E;
 $blue: #022945;
 $light_gray: #f9f9f9;
 $gray: #aaa;
-$dark_gray: #666;
+$dark_gray: #222;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -57,6 +57,7 @@ body {
   font-size: 16px;
   $em-size: 16px;
   font-weight: 300;
+  color: $dark_gray;
   background: $background_color;
   margin: 0;
   @include media($medium-screen) {
@@ -160,7 +161,7 @@ section {
   }
 }
 
-#realtime, .section_subheadline, .section_headline {
+#realtime {
   color: $dark_blue;
 }
 
@@ -288,10 +289,6 @@ section {
       display: none;
     }
   }
-}
-
-#time_series, .section_subheadline {
-  color: $dark_blue;
 }
 
 #time_series {
