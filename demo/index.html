@@ -69,7 +69,7 @@
         </section>
 
         <section class="section_headline">
-          <h3> Visits in the Past 90 Days</h3>
+          <h3>Visits in the Past 90 Days</h3>
         </section>
 
         <section class="section_subheadline">There were <span id="total_visitors">1.05 billion</span> visits over the past 90 days.</section>
@@ -138,7 +138,8 @@
             data-block="top-pages-realtime"
             data-source="https://analytics.usa.gov/data/live/top-pages-realtime.json"
             data-refresh="15">
-            <h5>People online right now, visiting specific pages.</h5>
+            <h5><strong>Pages</strong><br/>
+            <em>People on a single, specific government page now.</em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -146,7 +147,8 @@
           <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
             data-source="https://analytics.usa.gov/data/live/top-pages-7-days.json">
-            <h5>Total visits over the last week to government domains.</h5>
+            <h5><strong>Domains</strong><br/>
+            <em>Total visits over the last week to government domains, which includes traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -154,7 +156,8 @@
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
             data-source="https://analytics.usa.gov/data/live/top-pages-30-days.json">
-            <h5>Total visits over the last month to government domains.</h5>
+            <h5><strong>Domains</strong><br/>
+              <em>Total visits over the last month to government domains, which includes traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -163,13 +166,16 @@
       </div>
 
       <section id="explanation">
-        <h3>About this Data</h3>
+        <h3>About this Site</h3>
         <p>
-          This data provides a window into how people are interacting with the government online. The information comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/">Digital Analytics Program</a>. This program helps government agenices understand how people find, access and use governmnet services online. The program does not collect any personal information from individual users.
+          This data provides a window into how people are interacting with the government online. The data comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/">Digital Analytics Program</a>. This program helps government agenices understand how people find, access, and use government services online. The program does not collect any personal information about individual users.
         </p>
 
         <p>
-          Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from almost 300 executive branch government domains out of <a href="https://catalog.data.gov/dataset/gov-domains-api">around 1,350 domains</a> total. This data is not a representative sample of all web traffic to government websites because it only includes agencies that are participating in the program.
+          Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from almost 300 executive branch government domains out of <a href="https://catalog.data.gov/dataset/gov-domains-api">about 1,350 domains</a> total. This data is not a representative sample of all web traffic to government domains.
+        </p>
+
+        <p><strong>Top 20 data:</strong> "Now" data includes traffic to a specific, single page, whereas "7 Days" and "30 Days" data includes traffic to a domain AND all pages within that domain. This is how the Google Analytics API releases the data.
         </p>
 
         <p>
@@ -177,7 +183,7 @@
         </p>
 
         <p>
-          We plan to expand and document the data made available here. If you have any suggestions, or spot any issues or bugs, please <a href="https://github.com/GSA/analytics.usa.gov/issues">open an issue on GitHub</a>.
+          We plan to expand and document the data made available here. If you have any suggestions, or spot any issues or bugs, please <a href="https://github.com/GSA/analytics.usa.gov/issues">open an issue on GitHub</a> or contact the <a href="mailto:DAP@gsa.gov">Digital Analytics Program</a>.
         </p>
       </section>
 
