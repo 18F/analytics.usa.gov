@@ -13,8 +13,6 @@ To follow along with these instructions, you'll need:
 * The `s3cmd` command line tool for pushing files to Amazon S3.
 * Authorized access to the `analytics.usa.gov` S3 bucket.
 
-We might consider looking into making a single Node script that does all of this at once.
-
 ### Getting the official snippet
 
 Download the current, unminified DAP snippet to `dap.js` from its [GitHub repository](https://github.com/GSA/DAP-Gov-wide-GA-Code):
@@ -42,10 +40,10 @@ npm install -g uglifyjs
 Then run it, specifying the source map:
 
 ```bash
-uglifyjs dap-1.0.js --source-map=dap-1.0.min.js.map > dap-1.0.min.js
+uglifyjs dap.js --source-map=dap.min.js.map > dap.min.js
 ```
 
-This gives you three files: `dap-1.0.js`, `dap-1.0.min.js` (minified), and `dap-1.0.min.js.map` (source map).
+This gives you three files: `dap.js`, `dap.min.js` (minified), and `dap.min.js.map` (source map).
 
 ### Compressing
 
@@ -54,9 +52,9 @@ Most file servers will automatically bake compression (gzip) into the process, a
 Create a compressed (gzipped) version of all 3 files:
 
 ```bash
-gzip -c dap-1.0.min.js > dap-1.0.min.js.gz
-gzip -c dap-1.0.min.js.map > dap-1.0.min.js.map.gz
-gzip -c dap-1.0.js > dap-1.0.js.gz
+gzip -c dap.min.js > dap.min.js.gz
+gzip -c dap.min.js.map > dap.min.js.map.gz
+gzip -c dap.js > dap.js.gz
 ```
 
 ### Uploading
@@ -66,11 +64,16 @@ Upload each gzipped file to the Amazon S3 bucket, using [`s3cmd`](https://github
 The below commands instruct Amazon S3 to serve files as JavaScript, and to mark their encoding as `gzip`, so that browsers will know to automatically unzip the files before reading them. Note that **the files are renamed upon upload** to remove the `.gz` suffix.
 
 ```
-s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" dap-1.0.js.gz s3://18f-dap/dap/dap.js
-s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" dap-1.0.min.js.gz s3://18f-dap/dap/dap.min.js
-s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" dap-1.0.min.js.map.gz s3://18f-dap/dap/dap.min.js.map
+s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" dap.js.gz s3://18f-dap/dap/dap.js
+s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" dap.min.js.gz s3://18f-dap/dap/dap.min.js
+s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" dap.min.js.map.gz s3://18f-dap/dap/dap.min.js.map
 ```
 
 This bucket is served by CloudFront, at `https://analytics.usa.gov`. So the final URL for the compressed, minified DAP snippet is:
 
 > https://analytics.usa.gov/dap/dap.js
+
+### Possible future TODOs
+
+* Look into making a single Node script that does all of this at once, similar to [`analytics-reporter`](https://github.com/18F/analytics-reporter/blob/f2183ded024b58033aa89662fd24b3e3c7533387/bin/analytics).
+* Commit the DAP results directly to this repository. This would also mean we could include it in automated webhook-based deployments.
