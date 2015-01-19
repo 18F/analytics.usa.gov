@@ -250,7 +250,29 @@
 
     </div>
   </body>
+
+
+  <!--
+    IE detection, used to guide console formatting in subsequent include
+  -->
+  <script type="text/javascript">window._ie9 = false;</script>
+
+  <!--[if IE 9 ]>
+    <script type="text/javascript">window._ie9 = true;</script>
+  <![endif]-->
+
+  <!--
+   IE10 JS targeting: http://stackoverflow.com/a/17099988
+   IE11 JS targeting: http://stackoverflow.com/a/17447695
+  -->
+  <script type="text/javascript">
+    window._ie10 = ("onpropertychange" in document && !!window.matchMedia);
+    window._ie11 = !!navigator.userAgent.match(/Trident\/7.0; rv 11/);
+    window._ie = window._ie9 || window._ie10 || window._ie11;
+  </script>
+
   <script src="../js/index.js"></script>
 
+  <!-- This is all it takes to report an agency's traffic to the DAP. -->
   <script id="_fed_an_ua_tag" src="https://analytics.usa.gov/dap/dap.min.js"></script>
 </html>
