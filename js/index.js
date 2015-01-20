@@ -117,6 +117,11 @@
         .value(function(d) { return d.share * 100; })
         .format(formatPercent))
       .on("render", function(selection, data) {
+        /*
+         * XXX this is an optimization. Rather than loading
+         * users.json, we total up the device numbers to get the "big
+         * number", saving us an extra XHR load.
+         */
         var total = d3.sum(data.map(function(d) { return d.value; }));
         d3.select("#total_visitors")
           .text(formatBigNumber(total));
