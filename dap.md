@@ -71,7 +71,7 @@ s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding
 
 This bucket is served by CloudFront, at `https://analytics.usa.gov`. So the final URL for the compressed, minified DAP snippet is:
 
-> https://analytics.usa.gov/dap/dap.js
+> https://analytics.usa.gov/dap/dap.min.js
 
 ### Possible future TODOs
 
