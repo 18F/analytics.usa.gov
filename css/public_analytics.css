@@ -11,17 +11,17 @@ html {
 
 body {
   font-family: "Open Sans", Helvetica, arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   color: #222;
   background: #f9f9f9;
   margin: 0; }
   @media screen and (max-width: 992px) {
     body {
-      font-size: 14px; } }
+      font-size: 16px; } }
   @media screen and (max-width: 768px) {
     body {
-      font-size: 14px; } }
+      font-size: 16px; } }
 
 a, a:visited {
   color: #36435A; }
@@ -215,6 +215,7 @@ section {
 
 #explanation, #data_download, #agencies {
   border-top: 1px solid #aaa;
+  font-size: 90%;
   line-height: 1.6em; }
   #explanation li, #data_download li, #agencies li {
     margin: 1em 0; }
@@ -412,7 +413,9 @@ ul.pills {
 .bar-chart {
   margin: 1rem 0;
   position: relative;
-  font-size: 80%; }
+  font-size: 90%; }
+  .bar-chart .bar-chart {
+    font-size: 80%; }
   .bar-chart .bin {
     position: relative;
     overflow: hidden;
@@ -454,7 +457,7 @@ ul.pills {
     height: 1rem;
     white-space: nowrap;
     margin-top: -1.5rem;
-    margin-bottom: .25rem; }
+    margin-bottom: .45rem; }
 
 g.axis path,
 g.axis line {
@@ -470,7 +473,7 @@ g.axis .tick text {
   stroke-width: 1; }
 .time-series text.label {
   fill: #aaa;
-  font-size: .5rem; }
+  font-size: .6rem; }
 
 figure figure h4 {
   display: none; }
