@@ -522,7 +522,7 @@
         bars = function(d) { return d; },
         width = 700,
         height = 150,
-        padding = 40,
+        padding = 50,
         margin = {
           top:    10,
           right:  padding,
