@@ -4,12 +4,8 @@
   var formatCommas = d3.format(","),
       parseDate = d3.time.format("%Y-%m-%d").parse,
       formatDate = d3.time.format("%A, %b %e"),
-      formatVisits = (function() {
-        var suffixes = {
-          "k": ["k", 1], // thousands
-          "M": ["m", 1], // millions
-          "G": ["b", 2]  // billions
-        };
+      formatPrefix = function(suffixes) {
+        if (!suffixes) return formatCommas;
         return function(visits) {
           var prefix = d3.formatPrefix(visits),
               suffix = suffixes[prefix.symbol];
@@ -19,7 +15,16 @@
                 .replace(/\.0+$/, "") + suffix[0]
             : formatCommas(visits);
         };
-      })(),
+      },
+      formatVisits = formatPrefix({
+        "k": ["k", 1], // thousands
+        "M": ["m", 1], // millions
+        "G": ["b", 2]  // billions
+      }),
+      formatBigNumber = formatPrefix({
+        "M": [" million", 1], // millions
+        "G": [" billion", 2]  // billions
+      }),
       trimZeroes = function(str) {
         return str.replace(/\.0+$/, '');
       },
@@ -110,7 +115,17 @@
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
-        .format(formatPercent)),
+        .format(formatPercent))
+      .on("render", function(selection, data) {
+        /*
+         * XXX this is an optimization. Rather than loading
+         * users.json, we total up the device numbers to get the "big
+         * number", saving us an extra XHR load.
+         */
+        var total = d3.sum(data.map(function(d) { return d.value; }));
+        d3.select("#total_visitors")
+          .text(formatBigNumber(total));
+      }),
 
     // the browsers block is a table
     "browsers": renderBlock()
