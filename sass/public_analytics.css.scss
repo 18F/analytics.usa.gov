@@ -54,17 +54,17 @@ $border_radius: 5px;
 
 body {
   font-family: "Open Sans", Helvetica, arial, sans-serif;
-  font-size: 16px;
-  $em-size: 16px;
+  font-size: 18px;
+  $em-size: 18px;
   font-weight: 300;
   color: $dark_gray;
   background: $background_color;
   margin: 0;
   @include media($medium-screen) {
-    font-size: 14px;
+    font-size: 16px;
   }
   @include media($small-screen) {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -217,6 +217,7 @@ section {
 
 #explanation, #data_download, #agencies {
   border-top: $border_width solid $gray;
+  font-size: 90%;
   line-height: 1.6em;
   li {
     margin: 1em 0;
@@ -429,7 +430,11 @@ ul.pills {
 .bar-chart {
   margin: 1rem 0;
   position: relative;
-  font-size: 80%;
+  font-size: 90%;
+
+  .bar-chart {
+    font-size: 80%;
+  }
 
   .bin {
     position: relative;
@@ -478,7 +483,7 @@ ul.pills {
     height: 1rem;
     white-space: nowrap;
     margin-top: -1.5rem;
-    margin-bottom: .25rem;
+    margin-bottom: .45rem;
   }
 }
 
@@ -504,7 +509,7 @@ g.axis {
 
   text.label {
     fill: $dark_gray;
-    font-size: .5rem;
+    font-size: .6rem;
   }
 }
 
