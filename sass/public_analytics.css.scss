@@ -64,10 +64,10 @@ body {
   background: $background_color;
   margin: 0;
   @include media($medium-screen) {
-    font-size: 16px;
+    font-size: 14px;
   }
   @include media($small-screen) {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -166,6 +166,9 @@ section {
 
 #realtime {
   color: $dark_blue;
+  @include media($small-screen)  {
+    font-size: 12px;
+  }
 }
 
 .container {
