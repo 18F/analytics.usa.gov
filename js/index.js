@@ -1,5 +1,23 @@
 (function(exports) {
 
+  // some hardcoded exceptions for consistently high-traffic
+  // infrastructure. we will not add exceptions for any site
+  // that happens to have trouble keeping permalinks.
+  var exceptions = {
+    // for the Now tab
+    "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
+    "forecast.weather.gov/mapclick.php": "http://www.weather.gov/",
+    "egov.uscis.gov/casestatus/mycasestatus.do": "https://egov.uscis.gov/casestatus/",
+    "irs.gov/individuals/electronic-filing-pin-request": " http://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
+    "ebenefits.va.gov/ebenefits-portal/ebenefits.portal": "https://www.ebenefits.va.gov/ebenefits-portal/ebenefits.portal",
+    "www.irs.gov/forms-&-pubs": "http://www.irs.gov/Forms-&-Pubs",
+
+    // for 7/30 days tabs
+    "egov.uscis.gov": "https://egov.uscis.gov/casestatus/",
+    "wrh.noaa.gov": "http://www.wrh.noaa.gov"
+  };
+
+
   // common parsing and formatting functions
   var formatCommas = d3.format(","),
       parseDate = d3.time.format("%Y-%m-%d").parse,
@@ -148,18 +166,7 @@
         barChart()
           .value(function(d) { return d.share * 100; })
           .format(formatPercent)
-       )
-      .on("render", function(selection) {
-        // we can add IE icons this way:
-        /*
-        selection.selectAll(".bar .label")
-          .append("img")
-            .attr("src", function(d) {
-              // e.g. "ie-11.png"
-              return "images/ie-" + Math.floor(+d.key) + ".png";
-            });
-        */
-      }),
+      ),
 
     // the top pages block(s)
     "top-pages": renderBlock()
@@ -176,7 +183,7 @@
           .append("a")
             .attr("target", "_blank")
             .attr("href", function(d) {
-              return "http://" + d.domain;
+              return exceptions[d.domain] || ("http://" + d.domain);
             })
             .text(function(d) {
               return d.domain;
@@ -208,10 +215,10 @@
           .append("a")
             .attr("target", "_blank")
             .attr("title", function(d) {
-              return d.page;
+              return d.page_title;
             })
             .attr("href", function(d) {
-              return "http://" + d.page;
+              return exceptions[d.page] || ("http://" + d.page);
             })
             .text(function(d) {
               return d.page_title;
