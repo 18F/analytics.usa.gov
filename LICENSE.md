@@ -1,3 +1,21 @@
+This project uses several third-party tools, each of which has its own license.
+
+In `js/vendor/`:
+
+* [`aight.js`](https://github.com/shawnbot/aight/blob/73a5bce48e0c4a15deca17767278c437afa548b0/LICENSE)
+* [`d3.js`](https://github.com/mbostock/d3/blob/4e4709ce47d5c9406290dc2a467cef08002fc9b7/LICENSEhttps://github.com/mbostock/d3/blob/master/LICENSE)
+* [`moment.js`](https://github.com/moment/moment/blob/78a53b8cb53e967c6dac2e7325e18da2a472fc2d/LICENSE)
+* [`q.js`](https://github.com/kriskowal/q/blob/3159ac47c46cb7e2200191736ca430a011615523/LICENSE)
+
+In `sass/`:
+
+* [Bourbon](https://github.com/thoughtbot/bourbon/blob/9d89e3f5af10ee39bfccb7be15b147448c670825/LICENSE.md)
+* [Neat](https://github.com/thoughtbot/neat/blob/ba9c78933a7d18e0e6aa3bcf035c486a04b8c8a6/LICENSE.md)
+
+Everything else is covered by the following text.
+
+## Public domain
+
 As a work of the United States Government, this project is in the
 public domain within the United States.
 
