@@ -25,10 +25,10 @@ $gutter: 0em !global;
   }
 }
 
-$xlarge-screen:  new-breakpoint(max-width  1600px  14);
-$large-screen:  new-breakpoint(max-width 1200px 14);
-$medium-screen: new-breakpoint(max-width  992px 14);
-$small-screen:  new-breakpoint(max-width  768px  1);
+$xlarge-screen: new-breakpoint(max-width  1600px  14);
+$large-screen:  new-breakpoint(max-width  1200px  14);
+$medium-screen: new-breakpoint(max-width  992px   14);
+$small-screen:  new-breakpoint(max-width  768px   1);
 
 // Fonts & Colors:
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
@@ -349,6 +349,7 @@ section {
   margin: 0;
   width: 100%;
   height: auto;
+  max-height: 300px;
 }
 
 #current_visitors {
