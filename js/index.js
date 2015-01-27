@@ -70,9 +70,9 @@
                 return formatHour(d.hour);
               })
               .title(function(d) {
-                return formatVisits(d.visits)
+                return formatCommas(d.visits)
                   + " visits during the hour of "
-                  + formatHour(d.hour);
+                  + formatHour(d.hour) + "m";
               });
 
         series.xScale()
@@ -570,6 +570,7 @@
 
       element(svg, "g.axis.y0")
         .attr("transform", "translate(" + [left, 0] + ")")
+        .attr("aria-hidden", "true")
         .transition()
           .duration(duration)
           .call(yAxis
@@ -578,6 +579,7 @@
 
       element(svg, "g.axis.y1")
         .attr("transform", "translate(" + [right, 0] + ")")
+        .attr("aria-hidden", "true")
         .transition()
           .duration(duration)
           .call(yAxis
@@ -596,7 +598,8 @@
         .data(bars);
       bar.exit().remove();
       var enter = bar.enter().append("g")
-        .attr("class", "bar");
+        .attr("class", "bar")
+        .attr("tabindex", 0);
       enter.append("rect")
         .attr("width", barWidth)
         .attr("y", 0)
@@ -614,6 +617,7 @@
           d.height = d.y1 - d.y0;
           return d;
         })
+        .attr("aria-label", title)
         .attr("transform", function(d) {
           return "translate(" + [d.x, d.y1] + ")";
         });
