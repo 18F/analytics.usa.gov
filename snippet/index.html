@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="../js/vendor/d3.v3.min.js"></script>
+    <style>
+
+      textarea {
+        font-family: Monaco, monospace;
+        display: block;
+        width: 100%;
+        min-height: 200px;
+      }
+
+      .progress .error {
+        color: red;
+      }
+
+      .progress .loading {
+        color: #999;
+      }
+
+      .progress .done {
+        color: black;
+      }
+
+      caption, th, td {
+        text-align: left;
+        padding: .2em .5em;
+      }
+
+      .download .size {
+        color: #999;
+        margin-left: .5em;
+      }
+
+    </style>
+    <script src="bundle.js"></script>
+    <script src="../js/vendor/d3.v3.min.js"></script>
+  </head>
+  <body>
+    <ol id="progress" class="progress">
+    </ol>
+    <table id="downloads">
+      <caption>Downloads</caption>
+      <tbody></tbody>
+    </table>
+  </body>
+  <script>
+
+    var url = "https://api.github.com/repos/GSA/DAP-Gov-wide-GA-Code/contents/Universal-Federated-Analytics.1.0.js";
+
+    var steps = [],
+        next = function(step) {
+          step.start = step.time = Date.now();
+          steps.push(step);
+          list.call(render);
+        },
+        update = function(step) {
+          step.time = Date.now();
+          var last = steps[steps.length - 1];
+          for (var k in step) last[k] = step[k];
+          list.call(render);
+        },
+        list = d3.select("#progress"),
+        render = function() {
+          var item = list.selectAll("li")
+            .data(steps);
+          item.exit().remove();
+          var enter = item.enter().append("li");
+          enter.append("span")
+            .attr("class", "message");
+          enter.append("span")
+            .attr("class", "time");
+          item
+            .attr("class", function(d) { return d.type; })
+            .select(".message")
+              .html(function(d) { return d.message; });
+          item.select(".time")
+            .text(function(d) {
+              return formatTime(d.total || d.time - d.start);
+            });
+        },
+        formatSize = (function() {
+          var x = 1024,
+              suffixes = "b KB MB GB TB PB EB".split(" ");
+          return function formatSize(size, precision) {
+            var base = Math.log(size) / Math.log(x),
+                n = Math.pow(x, base - Math.floor(base));
+            return [n.toFixed(precision || 0), suffixes[Math.floor(base)]].join(" ");
+          };
+        })(),
+        formatTime = function(delta) {
+          return (delta / 1000).toFixed(2) + "s";
+        };
+
+    next({type: "loading", message: "Loading <tt>dap.js</tt>..."});
+
+    d3.json(url, function(error, data) {
+      if (error) {
+        return next({type: "error", message: "Error: " + error.statusText});
+      }
+
+      var source = atob(data.content);
+      console.log("we got source:", source.length, "chars");
+
+      update({type: "done"});
+      next({type: "loading", message: "Minifying <tt>dap.js</tt>..."});
+
+      snippet.pack(source, "dap.js", function(error, files) {
+        if (error) return console.error("Pack error:", error);
+
+        console.log("packed", files.length, "files:");
+        files.forEach(function(file, i) {
+          console.log((i + 1) + ".", file.name, "@", file.content.length, "chars");
+        });
+
+        update({type: "done"});
+        next({type: "loading", message: "Zipping <tt>dap.js</tt>..."});
+
+        snippet.gzip(files, function(error) {
+          if (error) return console.error("gzip error:", error);
+          console.log("zipped", files.length, "files:");
+          files.forEach(function(file, i) {
+            console.log((i + 1) + ".", file.name, "@", file.zipped.length, "chars");
+          });
+
+          allDone(files);
+        });
+      });
+    });
+
+    function allDone(files) {
+      update({type: "done"});
+      next({
+        type: "done",
+        message: "All done!",
+        total: steps[steps.length - 1].time - steps[0].start
+      });
+
+      var formats = [
+        {
+          label: "as text",
+          key: "content",
+          type: "text/javascript",
+          ext: ""
+        },
+        {
+          label: "gzipped",
+          key: "zipped",
+          type: "application/x-gzip",
+          ext: ".gz"
+        }
+      ];
+
+      var tr = d3.select("#downloads tbody")
+        .selectAll("tr")
+        .data(files)
+        .enter()
+        .append("tr");
+
+      tr.append("th")
+        .text(function(d) { return d.name; });
+
+      var td = tr.selectAll("td")
+        .data(function(file) {
+          return formats.map(function(fmt) {
+            var content = file[fmt.key];
+            return {
+              label:    fmt.label,
+              filename: file.name + fmt.ext,
+              type:     fmt.type,
+              content:  content,
+              size:     content.length
+            };
+          });
+        })
+        .enter()
+        .append("td")
+          .attr("class", "download");
+
+      td.append("a")
+        .text(function(d) {
+          return d.label;
+        })
+        .attr("href", "#")
+        .attr("download", function(d) {
+          return d.filename;
+        })
+        .on("mouseover", function(d) {
+          if (this.href.match(/#$/)) {
+            this.href = encodeDataURI(d.content, d.type || "text/plain");
+          }
+        });
+
+      td.append("span")
+        .attr("class", "size")
+        .text(function(d) {
+          return formatSize(d.size, 1);
+        });
+    }
+
+    function encodeDataURI(content, type) {
+      return [
+        "data:", type,
+        ";base64,", btoa(unescape(encodeURIComponent(content)))
+      ].join("");
+    }
+
+  </script>
+</html>
