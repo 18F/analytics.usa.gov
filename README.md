@@ -4,10 +4,10 @@ A collaboration to publish government website analytics.
 
 ### Building the Stylesheets
 
-* Install [Sass](http://sass-lang.com/):
+* Install [Sass](http://sass-lang.com/), Bourbon, and Neat:
 
 ```bash
-gem install sass
+gem install sass bourbon neat
 ```
 
 * To watch the Sass source for changes and build the stylesheets automatically, run:
