@@ -6,7 +6,10 @@
   var exceptions = {
     // for the Now tab
     "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
-    "forecast.weather.gov/mapclick.php": "http://www.weather.gov/",
+    "forecast.weather.gov/mapclick.php": {
+      "page": "http://www.weather.gov/",
+      "page_title": "National Weather Service - Map of Forecast Area"
+    },
     "egov.uscis.gov/casestatus/mycasestatus.do": "https://egov.uscis.gov/casestatus/",
     "irs.gov/individuals/electronic-filing-pin-request": " http://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
     "ebenefits.va.gov/ebenefits-portal/ebenefits.portal": "https://www.ebenefits.va.gov/ebenefits-portal/ebenefits.portal",
@@ -182,11 +185,17 @@
           .html("")
           .append("a")
             .attr("target", "_blank")
+            .attr("title", function(d) {
+              var except = exceptions[d.domain];
+              return except && except.page_title || d.domain;
+            })
             .attr("href", function(d) {
-              return exceptions[d.domain] || ("http://" + d.domain);
+              var except = exceptions[d.domain];
+              return except && except.page || except || ("http://" + d.domain);
             })
             .text(function(d) {
-              return d.domain;
+              var except = exceptions[d.domain];
+              return except && except.page_title || d.domain;
             });
       })
       .render(barChart()
@@ -215,13 +224,16 @@
           .append("a")
             .attr("target", "_blank")
             .attr("title", function(d) {
-              return d.page_title;
+              var except = exceptions[d.page];
+              return except && except.page_title || d.page_title;
             })
             .attr("href", function(d) {
-              return exceptions[d.page] || ("http://" + d.page);
+              var except = exceptions[d.page];
+              return except && except.page || except || ("http://" + d.page);
             })
             .text(function(d) {
-              return d.page_title;
+              var except = exceptions[d.page];
+              return except && except.page_title || d.page_title;
             });
       })
       .render(barChart()
