@@ -6,7 +6,7 @@
   var exceptions = {
     // for the Now tab
     "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
-    "forecast.weather.gov/mapclick.php": "http://www.weather.gov/",
+    "forecast.weather.gov/mapclick.php": "http://forecast.weather.gov/",
     "egov.uscis.gov/casestatus/mycasestatus.do": "https://egov.uscis.gov/casestatus/",
     "irs.gov/individuals/electronic-filing-pin-request": " http://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
     "ebenefits.va.gov/ebenefits-portal/ebenefits.portal": "https://www.ebenefits.va.gov/ebenefits-portal/ebenefits.portal",
@@ -20,6 +20,10 @@
     // for 7/30 days tabs
     "egov.uscis.gov": "https://egov.uscis.gov/casestatus/",
     "wrh.noaa.gov": "http://www.wrh.noaa.gov"
+  };
+
+  var title_exceptions = {
+    "forecast.weather.gov/mapclick.php": "National Weather Service - Forecasts by Region",
   };
 
 
@@ -191,7 +195,7 @@
               return exceptions[d.domain] || ("http://" + d.domain);
             })
             .text(function(d) {
-              return d.domain;
+              return title_exceptions[d.domain] || d.domain;
             });
       })
       .render(barChart()
@@ -226,7 +230,7 @@
               return exceptions[d.page] || ("http://" + d.page);
             })
             .text(function(d) {
-              return d.page_title;
+              return title_exceptions[d.page] || d.page_title;
             });
       })
       .render(barChart()
