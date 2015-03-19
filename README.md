@@ -39,12 +39,6 @@ If using `s3cmd`, the command to deploy the site is:
 s3cmd put --recursive -P --add-header="Cache-Control:max-age=0" *.html images js css s3://18f-dap/
 ```
 
-But temporarily, the command is:
-
-```bash
-s3cmd put --recursive -P --add-header="Cache-Control:max-age=0" *.html demo images js css s3://18f-dap/
-```
-
 This deploys `index.html`, and the relevant static assets, to the bucket. For now, it sets a cache time of 0, though we may increase this.
 
 ### Public domain
