@@ -66,9 +66,9 @@ The below commands instruct Amazon S3 to serve files as JavaScript, and to mark 
 **Note**: The cache time of 0 is *temporary* while we finalize the process. This should normally have a cache time of an hour or a day.
 
 ```
-s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=0" dap.js.gz s3://18f-dap/dap/dap.js
-s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=0" dap.min.js.gz s3://18f-dap/dap/dap.min.js
-s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=0" dap.min.js.map.gz s3://18f-dap/dap/dap.min.js.map
+s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=3600" dap.js.gz s3://18f-dap/dap/dap.js
+s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=3600" dap.min.js.gz s3://18f-dap/dap/dap.min.js
+s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=3600" dap.min.js.map.gz s3://18f-dap/dap/dap.min.js.map
 ```
 
 This bucket is served by CloudFront, at `https://analytics.usa.gov`. So the final URL for the compressed, minified DAP snippet is:
