@@ -13,6 +13,8 @@
     "irs.gov/forms-&-pubs": "http://www.irs.gov/Forms-&-Pubs",
     "ebenefits.va.gov/ebenefits/homepage": "https://www.ebenefits.va.gov/ebenefits/homepage",
 
+    "faa.gov/news/updates/?newsid=82225": "http://www.faa.gov/news/updates/?newsid=82225",
+
     // individual petitions
     "petitions.whitehouse.gov/petition/file-charges-against-47-us-senators-violation-logan-act-attempting-undermine-nuclear-agreement/nkqnpjs9": "https://petitions.whitehouse.gov/petition/file-charges-against-47-us-senators-violation-logan-act-attempting-undermine-nuclear-agreement/",
     "petitions.whitehouse.gov/petition/take-out-alejandro-garcía-padilla-governorship-puerto-rico-now/b0jgb8sv" : "https://petitions.whitehouse.gov/petition/take-out-alejandro-garc%C3%ADa-padilla-governorship-puerto-rico-now/",
