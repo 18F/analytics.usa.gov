@@ -33,10 +33,10 @@ make -B
 
 To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
 
-If using `s3cmd`, the command to deploy the site is:
+If using `s3cmd`, the command to deploy the site with a **5 minute cache time** is:
 
 ```bash
-s3cmd put --recursive -P --add-header="Cache-Control:max-age=0" *.html images js css s3://18f-dap/
+s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" *.html images js css s3://18f-dap/
 ```
 
 This deploys `index.html`, and the relevant static assets, to the bucket. For now, it sets a cache time of 0, though we may increase this.
