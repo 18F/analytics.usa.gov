@@ -41,6 +41,10 @@ s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" *.html images 
 
 This deploys `index.html`, and the relevant static assets, to the bucket. For now, it sets a cache time of 0, though we may increase this.
 
+### Fixing links in the Top 20
+
+Links pulled directly from Google Analytics are occasionally broken (this is most common in the Top 20 section). For now, we're hard coding the fix in the `index.js` file [here](https://github.com/GSA/analytics.usa.gov/blob/master/js/index.js#L6) in the format: `"broken link" : "working link",`.
+
 ### Public domain
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
