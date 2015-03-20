@@ -69,10 +69,11 @@
       },
       TRANSITION_DURATION = 500;
 
-  var CURRENT_VISITORS,_ANIMATOR = new Odometer({
+  var CURRENT_VISITORS_ANIMATOR = new Odometer({
     el: document.querySelector('#current_visitors'),
     theme: 'minimal',
-    duration: 1100
+    value: '',
+    duration: 500
   });
 
   /*
