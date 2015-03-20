@@ -797,13 +797,26 @@
 
   // friendly console message
 
+  var consoleMessages = [
+    "Hi! Please poke around to your heart's content.",
+    [
+      "If you find a bug or something, please report it at",
+      "https://github.com/GSA/analytics.usa.gov/issues"
+    ],
+    [
+      "Like it, but want a different front-end? The data reporting is its own tool:",
+      "https://github.com/18f/analytics-reporter"
+    ],
+    "This is an open source, public domain project, and your contributions are very welcome."
+  ];
+
   // plain text for IE
   if (window._ie) {
-    console.log("Hi! Please poke around to your heart's content.");
+    console.log(consoleMessages[0]);
     console.log("");
-    console.log("If you find a bug or something, please report it at https://github.com/GSA/analytics.usa.gov/issues");
-    console.log("Like it, but want a different front-end? The data reporting is its own tool: https://github.com/18f/analytics-reporter");
-    console.log("This is an open source, public domain project, and your contributions are very welcome.");
+    console.log(consoleMessages[1][0] + " " + consoleMessages[1][1]);
+    console.log(consoleMessages[2][0] + " " + consoleMessages[2][1]);
+    console.log(consoleMessages[3]);
   }
 
   // otherwise, let's get fancy
@@ -814,11 +827,11 @@
       medium_bold: "font-size: 10pt; font-weight: bold",
       medium_link: "font-size: 10pt; font-weight: bold; color: #18f",
     };
-    console.log("%cHi! Please poke around to your heart's content.", styles.big);
+    console.log("%c" + consoleMessages[0], styles.big);
     console.log(" ");
-    console.log("%cIf you find a bug or something, please report it over at %chttps://github.com/GSA/analytics.usa.gov/issues", styles.medium, styles.medium_link);
-    console.log("%cLike it, but want a different front-end? The data reporting is its own tool: %chttps://github.com/18f/analytics-reporter", styles.medium, styles.medium_link);
-    console.log("%cThis is an open source, public domain project, and your contributions are very welcome.", styles.medium);
+    console.log("%c" + consoleMessages[1][0] + " %c" + consoleMessages[1][1], styles.medium, styles.medium_link);
+    console.log("%c" + consoleMessages[2][0] + " %c" + consoleMessages[2][1], styles.medium, styles.medium_link);
+    console.log("%c" + consoleMessages[3][0], styles.medium);
 
   }
 
