@@ -22,13 +22,6 @@ make watch
 make clean all
 ```
 
-or:
-
-```bash
-# -B tells make to run even if the .css file exists
-make -B
-```
-
 ### Deploying the app
 
 To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
