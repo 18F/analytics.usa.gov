@@ -69,6 +69,12 @@
       },
       TRANSITION_DURATION = 500;
 
+  var CURRENT_VISITORS,_ANIMATOR = new Odometer({
+    el: document.querySelector('#current_visitors'),
+    theme: 'minimal',
+    duration: 1100
+  });
+
   /*
    * Define block renderers for each of the different data types.
    */
@@ -78,7 +84,7 @@
     "realtime": renderBlock()
       .render(function(selection, data) {
         var totals = data.data[0];
-        selection.text(formatCommas(+totals.active_visitors));
+        selection.text(totals.active_visitors);
       }),
 
     "today": renderBlock()
