@@ -78,7 +78,7 @@
     "realtime": renderBlock()
       .render(function(selection, data) {
         var totals = data.data[0];
-        selection.text(formatCommas(+totals.active_visitors));
+        selection.text(formatCommas(totals.active_visitors));
       }),
 
     "today": renderBlock()
