@@ -25108,7 +25108,7 @@ module.exports={
   "main": "src/index.js",
   "scripts": {
     "test": "mocha",
-    "watch": "watchy -w index.js,index-browserify.js -- make -B"
+    "watch": "watchy -w src -- make -B"
   },
   "author": "Shawn Allen <shawn.allen@gsa.gov>",
   "license": "???",
@@ -25128,10 +25128,7 @@ window.snippet = require("./index");
 
 },{"./index":64}],64:[function(require,module,exports){
 var uglify = require("uglify-js"),
-    browser = (typeof window === "object"),
-    http = browser
-      ? require("http")
-      : require("https"),
+    https = require("https"),
     async = require("async"),
     url = require("url"),
     atob = require("atob"),
@@ -25167,18 +25164,15 @@ function grab(path, done) {
     bits.slice(2).join("/")
   ].join("/");
 
-  if (typeof window === "object") {
-    req = "http://jsonp.jit.su/?url=" + req;
-  } else {
-    var req = url.parse(u);
-    req.headers = {
-      "User-Agent": "DAP snippet generator v" + version
-    };
-  }
-
   console.log("fetching:", req);
 
-  http.get(req, function(res) {
+  req = url.parse(req);
+  req.withCredentials = false;
+  req.headers = {
+    "User-Agent": "DAP snippet generator v" + version
+  };
+
+  https.get(req, function(res) {
     if (res.statusCode !== 200) {
       var error = [res.statusCode, res.statusText].join(": ");
       return done(error);
@@ -25226,4 +25220,4 @@ function pack(source, filename, callback) {
   ], callback);
 }
 
-},{"../package.json":62,"async":1,"atob":2,"http":22,"https":26,"uglify-js":61,"url":48,"zlib":16}]},{},[63]);
+},{"../package.json":62,"async":1,"atob":2,"https":26,"uglify-js":61,"url":48,"zlib":16}]},{},[63]);
