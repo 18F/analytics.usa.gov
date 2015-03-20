@@ -1,8 +1,5 @@
 var uglify = require("uglify-js"),
-    browser = (typeof window === "object"),
-    http = browser
-      ? require("http")
-      : require("https"),
+    https = require("https"),
     async = require("async"),
     url = require("url"),
     atob = require("atob"),
@@ -46,7 +43,7 @@ function grab(path, done) {
     "User-Agent": "DAP snippet generator v" + version
   };
 
-  http.get(req, function(res) {
+  https.get(req, function(res) {
     if (res.statusCode !== 200) {
       var error = [res.statusCode, res.statusText].join(": ");
       return done(error);
