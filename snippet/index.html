@@ -34,8 +34,18 @@
         margin-left: .5em;
       }
 
+      tt {
+        font-size: inherit !important;
+      }
+
+      .time {
+        margin-left: 1em;
+        font-family: Monaco, monospace;
+        font-size: inherit;
+      }
+
     </style>
-    <script src="bundle.js"></script>
+    <script src="js/bundle.js"></script>
     <script src="../js/vendor/d3.v3.min.js"></script>
   </head>
   <body>
@@ -67,7 +77,8 @@
           var item = list.selectAll("li")
             .data(steps);
           item.exit().remove();
-          var enter = item.enter().append("li");
+          var enter = item.enter()
+            .append("li");
           enter.append("span")
             .attr("class", "message");
           enter.append("span")
