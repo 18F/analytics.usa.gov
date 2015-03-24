@@ -36,7 +36,7 @@ To deploy this app to `analytics.usa.gov`, you will need authorized access to 18
 If using `s3cmd`, the command to deploy the site with a **5 minute cache time** is:
 
 ```bash
-s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" *.html images js css s3://18f-dap/
+s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" *.html images data js css s3://18f-dap/
 ```
 
 This deploys `index.html`, and the relevant static assets, to the bucket.
