@@ -29,6 +29,14 @@ or:
 make -B
 ```
 
+* To serve the site locally for testing, run:
+
+```bash
+make serve
+```
+
+Then navigate to localhost:8000 in your browser of choice
+
 ### Deploying the app
 
 To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
