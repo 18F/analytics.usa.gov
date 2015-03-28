@@ -67,6 +67,12 @@
             suffix = n >= 12 ? "p" : "a";
         return (n % 12 || 12) + suffix;
       },
+      domainFromPage = function(page) {
+        // page is a URL without a scheme, return just the domain before the '/'
+        var i = page.indexOf('/');
+        if (i > 0) return page.substring(0, i);
+        return page;
+      },
       TRANSITION_DURATION = 500;
 
   /*
@@ -226,14 +232,19 @@
           .append("a")
             .attr("target", "_blank")
             .attr("title", function(d) {
-              return d.page_title;
+              return d.page_title + " (" + domainFromPage(d.page) + ")";
             })
             .attr("href", function(d) {
               return exceptions[d.page] || ("http://" + d.page);
             })
             .text(function(d) {
-              return title_exceptions[d.page] || d.page_title;
-            });
+              return (title_exceptions[d.page] || d.page_title) + " ";
+            })
+            .append("span")
+              .attr("class", "domain")
+              .text(function(d) {
+                return domainFromPage(d.page);
+              });
       })
       .render(barChart()
         .label(function(d) { return d.page_title; })
