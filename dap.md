@@ -75,6 +75,5 @@ This bucket is served by CloudFront, at `https://analytics.usa.gov`. So the fina
 
 ### Possible future TODOs
 
-* Definite TODO: up the cache time once we're sure this works.
 * Look into making a single Node script that does all of this at once, similar to [`analytics-reporter`](https://github.com/18F/analytics-reporter/blob/f2183ded024b58033aa89662fd24b3e3c7533387/bin/analytics).
 * Commit the DAP results directly to this repository. This would also mean we could include it in automated webhook-based deployments.
