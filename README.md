@@ -32,7 +32,9 @@ To compile the Sass stylesheets once, run `make clean all`, or `make -B` to comp
 
 The development settings assume data is available at `http://localhost:3000`.
 
-If also working off of local data, e.g. using `analytics-reporter`, you will need to make the data available over HTTP and CORS. It's recommended to use the Node module `serve`:
+If also working off of local data, e.g. using `analytics-reporter`, you will need to make the data available over HTTP _and_ through CORS.
+
+Various tools can do this. This project recommends using the Node module `serve`:
 
 ```bash
 npm install -g serve

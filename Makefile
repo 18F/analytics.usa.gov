@@ -9,8 +9,5 @@ styles:
 watch:
 	sass --watch $(scss):$(css)
 
-serve:
-	make all && python -m SimpleHTTPServer 8000
-
 clean:
 	rm -f $(css)
