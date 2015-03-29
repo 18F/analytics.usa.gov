@@ -57,19 +57,17 @@ The data will be available at `http://localhost:3000` over CORS, with no path pr
 
 ### Deploying the app to production
 
-In production, the site's base URL is set to `https://analytics.usa.gov` and the data's base URL is set to `https://analytics.usa.gov/data/live`. Build the site in production mode with:
+In production, the site's base URL is set to `https://analytics.usa.gov` and the data's base URL is set to `https://analytics.usa.gov/data/live`.
 
-```
-bundle exec jekyll build
-```
+To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
 
-**18F/GSA only:** To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
-
-If using `s3cmd`, the command to deploy the site with a **5 minute cache time** is:
+To deploy the site using `s3cmd`, production settings, and a **5 minute cache time**, run:
 
 ```bash
-s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" _site/* s3://18f-dap/
+bundle exec jekyll build && s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" _site/* s3://18f-dap/
 ```
+
+**Use the full command above.** The full command ensures that the build completes successfully, with production settings, _before_ triggering an upload to the production bucket.
 
 ### Fixing links in the Top 20
 
