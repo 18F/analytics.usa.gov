@@ -17,8 +17,10 @@ bundle install
 Run Jekyll with development settings:
 
 ```bash
-bundle exec jekyll serve --watch --config _.yml,_development.yml
+make dev
 ```
+
+(This runs `bundle exec jekyll serve --watch --config _.yml,_development.yml`.)
 
 Sass can watch the .scss source files for changes, and build the .css files automatically:
 
@@ -64,7 +66,7 @@ To deploy this app to `analytics.usa.gov`, you will need authorized access to 18
 To deploy the site using `s3cmd`, production settings, and a **5 minute cache time**, run:
 
 ```bash
-bundle exec jekyll build && s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" _site/* s3://18f-dap/
+make production && s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" _site/* s3://18f-dap/
 ```
 
 **Use the full command above.** The full command ensures that the build completes successfully, with production settings, _before_ triggering an upload to the production bucket.
