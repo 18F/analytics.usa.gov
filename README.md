@@ -1,53 +1,73 @@
-## Public analytics
+## analytics.usa.gov
 
-A collaboration to publish government website analytics.
+A project to publish website analytics for the US federal government.
 
-### Building the Stylesheets
+### Setup
 
-* Install [Sass](http://sass-lang.com/), Bourbon, and Neat:
+Ths app uses [Jekyll](http://jekyllrb.com) to build the site, and [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io), and [Neat](http://neat.bourbon.io) for CSS.
+
+Install them all:
 
 ```bash
-gem install sass bourbon neat
+bundle install
 ```
 
-* To watch the Sass source for changes and build the stylesheets automatically, run:
+### Developing locally
+
+Run Jekyll with development settings:
+
+```bash
+bundle exec jekyll serve --watch --config _.yml,_development.yml
+```
+
+Sass can watch the .scss source files for changes, and build the .css files automatically:
 
 ```bash
 make watch
 ```
 
-* To compile the Sass stylesheets once, run:
+To compile the Sass stylesheets once, run `make clean all`, or `make -B` to compile even if the .css file already exists.
+
+### Developing with local data
+
+The development settings assume data is available at `http://localhost:3000`.
+
+If also working off of local data, e.g. using `analytics-reporter`, you will need to make the data available over HTTP and CORS. It's recommended to use the Node module `serve`:
 
 ```bash
-make clean all
+npm install -g serve
 ```
 
-or:
+Generate data to a directory:
+
+```
+analytics --output [dir]
+```
+
+Then run `serve` from the output directory:
 
 ```bash
-# -B tells make to run even if the .css file exists
-make -B
+serve --cors
 ```
 
-* To serve the site locally for testing, run:
+The data will be available at `http://localhost:3000` over CORS, with no path prefix. For example, device data will be at `http://localhost:3000/devices.json`.
 
-```bash
-make serve
+
+### Deploying the app to production
+
+In production, the site's base URL is set to `https://analytics.usa.gov` and the data's base URL is set to `https://analytics.usa.gov/data/live`. Build the site in production mode with:
+
+```
+bundle exec jekyll build
 ```
 
-Then navigate to localhost:8000 in your browser of choice
-
-### Deploying the app
-
-To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
+**18F/GSA only:** To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
 
 If using `s3cmd`, the command to deploy the site with a **5 minute cache time** is:
 
 ```bash
 s3cmd put --recursive -P --add-header="Cache-Control:max-age=300" _site/* s3://18f-dap/
 ```
-
-This deploys `index.html`, and the relevant static assets, to the bucket.
 
 ### Fixing links in the Top 20
 
