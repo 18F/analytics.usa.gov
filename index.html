@@ -1,3 +1,7 @@
+---
+permalink: /
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,22 +31,22 @@
 
     <link rel="stylesheet" href="/css/public_analytics.css">
 
-    <meta name="twitter:site" content="@usgsa">
-    <meta name="twitter:creator" content="@usgsa">
+    <meta name="twitter:site" content="@{{ site.twitter }}">
+    <meta name="twitter:creator" content="@{{ site.twitter }}">
     <meta property="og:type" content="website" />
 
-    <meta property="og:url" content="https://analytics.usa.gov" />
-    <link rel="canonical" href="https://analytics.usa.gov" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <link rel="canonical" href="{{ site.url }}" />
 
-    <title>analytics.usa.gov | The US government's web traffic.</title>
-    <meta property="og:title" content="analytics.usa.gov | The US government's web traffic." />
-    <meta property="og:site_name" content="analytics.usa.gov | The US government's web traffic." />
+    <title>{{ site.title }}</title>
+    <meta property="og:title" content="{{ site.title }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
 
-    <meta name="description" content="Official data on web traffic to hundreds of US federal government websites. Published by the Digital Analytics Program.">
-    <meta property="og:description" content="Official data on web traffic to hundreds of US federal government websites. Published by the Digital Analytics Program." />
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description }}" />
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="https://analytics.usa.gov/images/share-image.png" />
+    <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
 
 
 
@@ -89,7 +93,7 @@
       <div id="main_data">
         <section id="realtime"
           data-block="realtime"
-          data-source="https://analytics.usa.gov/data/live/realtime.json"
+          data-source="{{ site.data_url }}/realtime.json"
           data-refresh="15">
           <h2 id="current_visitors" class="data">...</h2>
           <div class="chart_subtitle">people on government websites now</div>
@@ -101,7 +105,7 @@
         </section>
         <section id="time_series"
           data-block="today"
-          data-source="https://analytics.usa.gov/data/live/today.json"
+          data-source="{{ site.data_url }}/today.json"
           data-refresh="15">
           <svg class="data time-series">
           </svg>
@@ -117,7 +121,7 @@
 
         <section id="devices" class="three_column"
           data-block="devices"
-          data-source="https://analytics.usa.gov/data/live/devices.json">
+          data-source="{{ site.data_url }}/devices.json">
           <h4>Devices</h4>
           <figure id="chart_device_types">
             <div class="data bar-chart">
@@ -130,14 +134,14 @@
 
           <figure id="chart_browsers"
             data-block="browsers"
-            data-source="https://analytics.usa.gov/data/live/browsers.json">
+            data-source="{{ site.data_url }}/browsers.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_ie"
             data-block="ie"
-            data-source="https://analytics.usa.gov/data/live/ie.json">
+            data-source="{{ site.data_url }}/ie.json">
             <h4>Internet Explorer</h4>
             <div class="data bar-chart">
             </div>
@@ -149,14 +153,14 @@
 
           <figure id="chart_os"
             data-block="os"
-            data-source="https://analytics.usa.gov/data/live/os.json">
+            data-source="{{ site.data_url }}/os.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_windows"
             data-block="windows"
-            data-source="https://analytics.usa.gov/data/live/windows.json">
+            data-source="{{ site.data_url }}/windows.json">
             <h4>Windows</h4>
             <div class="data bar-chart">
             </div>
@@ -177,7 +181,7 @@
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
             data-block="top-pages-realtime"
-            data-source="https://analytics.usa.gov/data/live/top-pages-realtime.json"
+            data-source="{{ site.data_url }}/top-pages-realtime.json"
             data-refresh="15">
             <h5><strong>Pages</strong><br/>
             <em>People on a single, specific government page now.</em></h5>
@@ -187,7 +191,7 @@
 
           <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
-            data-source="https://analytics.usa.gov/data/live/top-domains-7-days.json">
+            data-source="{{ site.data_url }}/top-domains-7-days.json">
             <h5><strong>Domains</strong><br/>
             <em>Total visits over the last week to government domains, which includes traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
@@ -196,7 +200,7 @@
 
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
-            data-source="https://analytics.usa.gov/data/live/top-domains-30-days.json">
+            data-source="{{ site.data_url }}/top-domains-30-days.json">
             <h5><strong>Domains</strong><br/>
               <em>Total visits over the last month to government domains, which includes traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
@@ -238,52 +242,52 @@
 
         <ul>
           <li>
-            <a href="https://analytics.usa.gov/data/live/realtime.json">
+            <a href="{{ site.data_url }}/realtime.json">
               People online right now</a>
             (Updated every minute)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/today.json">
+            <a href="{{ site.data_url }}/today.json">
               Visits every hour today</a>
             (Updated every hour)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/devices.json">
+            <a href="{{ site.data_url }}/devices.json">
               Visits by desktop/mobile/tablet devices over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/os.json">
+            <a href="{{ site.data_url }}/os.json">
               Visits broken down by Operating System over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/windows.json">
+            <a href="{{ site.data_url }}/windows.json">
               Visits broken down by Windows version over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/browsers.json">
+            <a href="{{ site.data_url }}/browsers.json">
               Visits broken down by browser over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/ie.json">
+            <a href="{{ site.data_url }}/ie.json">
               Visits broken down by Internet Explorer version over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/top-pages-realtime.json">
+            <a href="{{ site.data_url }}/top-pages-realtime.json">
               Top 20 pages, ranked by visitors online now</a>
             (Updated every minute)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/top-domains-7-days.json">
+            <a href="{{ site.data_url }}/top-domains-7-days.json">
               Top 20 domains, ranked by visits over 7 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="https://analytics.usa.gov/data/live/top-domains-30-days.json">
+            <a href="{{ site.data_url }}/top-domains-30-days.json">
               Top 20 domains, ranked by visits over 30 days</a>
             (Updated every day)
           </li>
@@ -315,5 +319,6 @@
 
   <script src="/js/index.js"></script>
 
+  <!-- report to oneself -->
   <script id="_fed_an_ua_tag" src="https://analytics.usa.gov/dap/dap.min.js"></script>
 </html>
