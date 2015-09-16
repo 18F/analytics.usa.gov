@@ -1,0 +1,1 @@
+window.snippet = require("./index");
