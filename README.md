@@ -68,7 +68,7 @@ To deploy this app to `analytics.usa.gov`, you will need authorized access to 18
 To deploy the site using `s3cmd`, production settings, and a **5 minute cache time**, run:
 
 ```bash
-make production && s3cmd put --recursive -P -M --add-header="Cache-Control:max-age=0" _site/* s3://18f-dap/
+make production && s3cmd put --recursive -P -M --add-header="Cache-Control:max-age=0" _site/* s3://18f-dap/ && s3cmd put -P --mime-type="text/css" --add-header="Cache-Control:max-age=0" _site/css/*.css s3://18f-dap/css/
 ```
 
 **Use the full command above.** The full command ensures that the build completes successfully, with production settings, _before_ triggering an upload to the production bucket.
