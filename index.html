@@ -49,7 +49,8 @@ permalink: /
 
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/js/vendor/d3.v3.min.js"></script>
+
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -61,25 +62,29 @@ permalink: /
     ga('set', 'forceSSL', true);
     ga('send', 'pageview');
 
+    document.addEventListener("DOMContentLoaded", function(event) { 
 
-    $(document).ready(function(){
-      $('.download-data').click(function(e){
-        var link = e.target.href;
-        var text = e.target.text;
+      d3.selectAll('.download-data').on('click', function() {
+        var link = this.href;
+        var text = this.text;
         ga('send','event','Download Data', link, text);
       });
-      $('.site-nav').click(function(e){
-        var link = e.target.href;
-        var text = e.target.text;
-        ga('send','event','Site Navigation', link, text);
-      });
-      $('.external-link').click(function(e){
-        var link = e.target.href;
-        var text = e.target.text;
-        ga('send','event','External Link', link, text);
-      });
-    });
 
+      d3.selectAll('.site-nav').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Site Navigation', link, text);
+        alert('hi2');
+      });
+
+      d3.selectAll('.external-link').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','External Link', link, text);
+        alert('hi3');
+      });
+
+    });
   </script>
 
 
@@ -87,7 +92,7 @@ permalink: /
     <!--[if lte IE 9]>
     <script src="/js/vendor/aight.v2.min.js"></script>
     <![endif]-->
-    <script src="/js/vendor/d3.v3.min.js"></script>
+    
     <script src="/js/vendor/q.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
