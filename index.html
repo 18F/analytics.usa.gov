@@ -74,14 +74,12 @@ permalink: /
         var link = this.href;
         var text = this.text;
         ga('send','event','Site Navigation', link, text);
-        alert('hi2');
       });
 
       d3.selectAll('.external-link').on('click', function() {
         var link = this.href;
         var text = this.text;
         ga('send','event','External Link', link, text);
-        alert('hi3');
       });
 
     });
