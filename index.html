@@ -183,6 +183,7 @@ permalink: /
           </figure>
         </section>
 
+        
         <section id="cities" class="three_column"
           data-block="cities"
           data-source="{{ site.data_url }}/top-cities-90-days.json">
@@ -193,12 +194,12 @@ permalink: /
           </figure>
         </section>
 
-        <section id="countries" class="three_column"
-          data-block="countries"
-          data-source="{{ site.data_url }}/top-countries-90-days.json">
-
+        <section id="countries" class="three_column">
           <h4>Country</h4>
-          <figure id="chart_us">
+
+          <figure id="chart_us"
+            data-block="countries"
+            data-source="{{ site.data_url }}/top-countries-90-days.json">
             <div class="data bar-chart">
             </div>
           </figure>
@@ -211,6 +212,7 @@ permalink: /
             </div>
           </figure>
         </section>
+
 
       </div>
 
