@@ -182,13 +182,11 @@
     "cities": renderBlock()
       .transform(function(d) {
         var total = d.totals.visits;
-
+        var city_list = d.data.slice(0, 15);
         // remove "(not set) from the data"
-        var city_list = d.data.slice(0, 11);
-        city_list_filtered = city_list.filter(function (c) {
-          return c.city != "(not set)";
-        });
-        return addShares(city_list_filtered, function(d){return d.visits;});
+        city_list = city_list.filter(function (c) { return c.city != "(not set)"; });
+
+        return addShares(city_list.slice(0, 10), function(d){return d.visits;});
       })
       .render(
         barChart()
@@ -196,10 +194,14 @@
           .label(function(d) { return d.city; })
           .format(formatPercent)
       ),
+
     "countries": renderBlock()
       .transform(function(d) {
         var international = d.totals.visits - d.totals.us_visits;
-        var data = {"United States": d.totals.us_visits, "International":international};
+        var data = {
+          "United States": d.totals.us_visits, 
+          "International":international
+        };
         return addShares(listify(data));
       })
       .render(
@@ -209,13 +211,13 @@
       ),
     "international_visits": renderBlock()
       .transform(function(d) {
-        
-        return addShares(d.data.slice(0, 10), function(d){return d.visits;});
+
+        return addShares(d.data.slice(0, 10), function(d){ return d.visits; });
       })
       .render(
         barChart()
           .value(function(d) { return d.share * 100; })
-          .label(function(d) {return d.country;})
+          .label(function(d) { return d.country; })
           .format(formatPercent)
       ),
 
