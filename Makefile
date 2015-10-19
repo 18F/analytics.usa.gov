@@ -17,3 +17,7 @@ dev:
 
 clean:
 	rm -f $(css)
+
+deploy:
+	make production && s3cmd put --recursive -P -M --add-header="Cache-Control:max-age=0" _site/* s3://18f-dap/ && s3cmd put -P --mime-type="text/css" --add-header="Cache-Control:max-age=0" _site/css/*.css s3://18f-dap/css/
+	
