@@ -49,6 +49,7 @@ permalink: /
 
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
+    <script src="/js/vendor/d3.v3.min.js"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -60,6 +61,28 @@ permalink: /
     ga('set', 'anonymizeIp', true);
     ga('set', 'forceSSL', true);
     ga('send', 'pageview');
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+
+      d3.selectAll('.download-data').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Download Data', link, text);
+      });
+
+      d3.selectAll('.site-nav').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Site Navigation', link, text);
+      });
+
+      d3.selectAll('.external-link').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','External Link', link, text);
+      });
+
+    });
   </script>
 
 
@@ -67,7 +90,7 @@ permalink: /
     <!--[if lte IE 9]>
     <script src="/js/vendor/aight.v2.min.js"></script>
     <![endif]-->
-    <script src="/js/vendor/d3.v3.min.js"></script>
+    
     <script src="/js/vendor/q.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -78,8 +101,8 @@ permalink: /
 
     <header id="usa_dot_gov_header">
       <div class="header_container">
-        <h1>analytics<a href="http://www.usa.gov">.usa.gov</a></h1>
-        <a id="about" href="#explanation">About this site</a>
+        <h1>analytics<a href="http://www.usa.gov" class="external-link">.usa.gov</a></h1>
+        <a id="about" href="#explanation" class="site-nav">About this site</a>
       </div>
       <div id="color_bar"></div>
     </header>
@@ -222,9 +245,9 @@ permalink: /
           <!-- see: http://heydonworks.com/practical_aria_examples/ -->
           <h3>Top 20</h3>
           <ul class="pills" role="tablist">
-            <li><a role="tab" aria-selected="true" href="#top-pages-realtime">Now</a></li>
-            <li><a role="tab" href="#top-pages-7-days">7 Days</a></li>
-            <li><a role="tab" href="#top-pages-30-days">30 Days</a></li>
+            <li><a role="tab" aria-selected="true" href="#top-pages-realtime" class="site-nav">Now</a></li>
+            <li><a role="tab" href="#top-pages-7-days" class="site-nav">7 Days</a></li>
+            <li><a role="tab" href="#top-pages-30-days" class="site-nav">30 Days</a></li>
           </ul>
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
@@ -261,11 +284,11 @@ permalink: /
       <section id="explanation">
         <h3>About this Site</h3>
         <p>
-          This data provides a window into how people are interacting with the government online. The data comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/">Digital Analytics Program</a>. This program helps government agencies understand how people find, access, and use government services online. The program <a href="https://www.digitalgov.gov/services/dap/common-questions-about-dap-faq/#part-4">does not track individuals</a>, and <a href="https://support.google.com/analytics/answer/2763052?hl=en">anonymizes the IP addresses</a> of visitors.
+          This data provides a window into how people are interacting with the government online. The data comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/" class="external-link">Digital Analytics Program</a>. This program helps government agencies understand how people find, access, and use government services online. The program <a href="https://www.digitalgov.gov/services/dap/common-questions-about-dap-faq/#part-4" class="external-link">does not track individuals</a>, and <a href="https://support.google.com/analytics/answer/2763052?hl=en" class="external-link">anonymizes the IP addresses</a> of visitors.
         </p>
 
         <p>
-          Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from around <a href="https://analytics.usa.gov/data/live/second-level-domains.csv">400 executive branch government domains</a>, across <a href="https://analytics.usa.gov/data/sites.csv">over 4000 total websites</a>, including every cabinet department. We continue to pursue and add more sites frequently; to add your site, <a href="mailto:DAP@support.digitalgov.gov">email the Digital Analytics Program</a>.
+          Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from around <a href="https://analytics.usa.gov/data/live/second-level-domains.csv" class="external-link">400 executive branch government domains</a>, across <a href="https://analytics.usa.gov/data/sites.csv" class="external-link">over 4000 total websites</a>, including every cabinet department. We continue to pursue and add more sites frequently; to add your site, <a href="mailto:DAP@support.digitalgov.gov" class="external-link">email the Digital Analytics Program</a>.
         </p>
 
         <p>
@@ -273,11 +296,11 @@ permalink: /
         </p>
 
         <p>
-          This open source project is in the public domain, which means that this website and its data are free for you to use without restriction. You can find the <a href="https://github.com/GSA/analytics.usa.gov">code for this website</a> and the <a href="https://github.com/18F/analytics-reporter">code behind the data collection</a> on GitHub.
+          This open source project is in the public domain, which means that this website and its data are free for you to use without restriction. You can find the <a href="https://github.com/GSA/analytics.usa.gov" class="external-link">code for this website</a> and the <a href="https://github.com/18F/analytics-reporter" class="external-link">code behind the data collection</a> on GitHub.
         </p>
 
         <p>
-          We plan to expand the data made available here. If you have any suggestions, or spot any issues or bugs, please <a href="https://github.com/GSA/analytics.usa.gov/issues">open an issue on GitHub</a> or contact the <a href="mailto:DAP@support.digitalgov.gov">Digital Analytics Program</a>.
+          We plan to expand the data made available here. If you have any suggestions, or spot any issues or bugs, please <a href="https://github.com/GSA/analytics.usa.gov/issues" class="external-link">open an issue on GitHub</a> or contact the <a href="mailto:DAP@support.digitalgov.gov" class="external-link">Digital Analytics Program</a>.
         </p>
       </section>
 
@@ -290,52 +313,52 @@ permalink: /
 
         <ul>
           <li>
-            <a href="{{ site.data_url }}/realtime.json">
+            <a href="{{ site.data_url }}/realtime.json" class="download-data">
               People online right now</a>
             (Updated every minute)
           </li>
           <li>
-            <a href="{{ site.data_url }}/today.json">
+            <a href="{{ site.data_url }}/today.json" class="download-data">
               Visits every hour today</a>
             (Updated every hour)
           </li>
           <li>
-            <a href="{{ site.data_url }}/devices.json">
+            <a href="{{ site.data_url }}/devices.json" class="download-data">
               Visits by desktop/mobile/tablet devices over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="{{ site.data_url }}/os.json">
+            <a href="{{ site.data_url }}/os.json" id="visits" class="download-data">
               Visits broken down by Operating System over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="{{ site.data_url }}/windows.json">
+            <a href="{{ site.data_url }}/windows.json" class="download-data">
               Visits broken down by Windows version over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="{{ site.data_url }}/browsers.json">
+            <a href="{{ site.data_url }}/browsers.json" class="download-data">
               Visits broken down by browser over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="{{ site.data_url }}/ie.json">
+            <a href="{{ site.data_url }}/ie.json" class="download-data">
               Visits broken down by Internet Explorer version over 90 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="{{ site.data_url }}/top-pages-realtime.json">
+            <a href="{{ site.data_url }}/top-pages-realtime.json" class="download-data">
               Top 20 pages, ranked by visitors online now</a>
             (Updated every minute)
           </li>
           <li>
-            <a href="{{ site.data_url }}/top-domains-7-days.json">
+            <a href="{{ site.data_url }}/top-domains-7-days.json" class="download-data">
               Top 20 domains, ranked by visits over 7 days</a>
             (Updated every day)
           </li>
           <li>
-            <a href="{{ site.data_url }}/top-domains-30-days.json">
+            <a href="{{ site.data_url }}/top-domains-30-days.json" class="download-data">
               Top 20 domains, ranked by visits over 30 days</a>
             (Updated every day)
           </li>
