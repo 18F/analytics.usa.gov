@@ -70,12 +70,6 @@ permalink: /
         ga('send','event','Download Data', link, text);
       });
 
-      d3.selectAll('.site-nav').on('click', function() {
-        var link = this.href;
-        var text = this.text;
-        ga('send','event','Site Navigation', link, text);
-      });
-
       d3.selectAll('.external-link').on('click', function() {
         var link = this.href;
         var text = this.text;

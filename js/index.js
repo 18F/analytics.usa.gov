@@ -171,8 +171,6 @@
     // data beforehand to match the expected object format
     "ie": renderBlock()
       .transform(function(d) {
-        console.log(d.totals.ie_version);
-        console.log(listify(d.totals.ie_version));
         return addShares(listify(d.totals.ie_version));
       })
       .render(
@@ -200,7 +198,6 @@
       ),
     "countries": renderBlock()
       .transform(function(d) {
-        console.log(d.totals);
         var international = d.totals.visits - d.totals.us_visits;
         var data = {"United States": d.totals.us_visits, "International":international};
         return addShares(listify(data));
@@ -212,7 +209,6 @@
       ),
     "international_visits": renderBlock()
       .transform(function(d) {
-        console.log(d);
         return addShares(d.data.slice(0, 10), function(d){return d.visits;});
       })
       .render(
@@ -359,10 +355,16 @@
 
       // when a tab is clicked, update the panels
       tabs.on("click", function(d) {
-        d3.event.preventDefault();
+        d3.event.preventDefault();        
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
         update();
+                
+        // track in google analytics
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Site Navigation', link, text);
+
       });
 
       // update them to start
@@ -852,17 +854,17 @@
 
   // otherwise, let's get fancy
   else {
-    // var styles = {
-    //   big: "font-size: 24pt; font-weight: bold;",
-    //   medium: "font-size: 10pt",
-    //   medium_bold: "font-size: 10pt; font-weight: bold",
-    //   medium_link: "font-size: 10pt; font-weight: bold; color: #18f",
-    // };
-    // console.log("%cHi! Please poke around to your heart's content.", styles.big);
-    // console.log(" ");
-    // console.log("%cIf you find a bug or something, please report it over at %chttps://github.com/GSA/analytics.usa.gov/issues", styles.medium, styles.medium_link);
-    // console.log("%cLike it, but want a different front-end? The data reporting is its own tool: %chttps://github.com/18f/analytics-reporter", styles.medium, styles.medium_link);
-    // console.log("%cThis is an open source, public domain project, and your contributions are very welcome.", styles.medium);
+    var styles = {
+      big: "font-size: 24pt; font-weight: bold;",
+      medium: "font-size: 10pt",
+      medium_bold: "font-size: 10pt; font-weight: bold",
+      medium_link: "font-size: 10pt; font-weight: bold; color: #18f",
+    };
+    console.log("%cHi! Please poke around to your heart's content.", styles.big);
+    console.log(" ");
+    console.log("%cIf you find a bug or something, please report it over at %chttps://github.com/GSA/analytics.usa.gov/issues", styles.medium, styles.medium_link);
+    console.log("%cLike it, but want a different front-end? The data reporting is its own tool: %chttps://github.com/18f/analytics-reporter", styles.medium, styles.medium_link);
+    console.log("%cThis is an open source, public domain project, and your contributions are very welcome.", styles.medium);
 
   }
 
