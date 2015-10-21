@@ -372,6 +372,11 @@
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
         update();
+
+        // track in google analytics
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Site Navigation', link, text);
       });
 
       // update them to start
