@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 scss ?= sass/public_analytics.css.scss
 css ?= css/public_analytics.css
 
