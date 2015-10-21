@@ -70,12 +70,6 @@ permalink: /
         ga('send','event','Download Data', link, text);
       });
 
-      d3.selectAll('.site-nav').on('click', function() {
-        var link = this.href;
-        var text = this.text;
-        ga('send','event','Site Navigation', link, text);
-      });
-
       d3.selectAll('.external-link').on('click', function() {
         var link = this.href;
         var text = this.text;
@@ -205,7 +199,39 @@ permalink: /
             </div>
           </figure>
         </section>
+
+        <section id="cities" class="three_column"
+          data-block="cities"
+          data-source="{{ site.data_url }}/top-cities-90-days.json">
+          <h4>Cities</h4>
+          <figure id="chart_top-cities-90-days">
+            <div class="data bar-chart">
+            </div>
+          </figure>
+        </section>
+
+        <section id="countries" class="three_column"
+          data-block="countries"
+          data-source="{{ site.data_url }}/top-countries-90-days.json">
+
+          <h4>Country</h4>
+          <figure id="chart_us">
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+          <figure id="chart_countries"
+            data-block="international_visits"
+            data-source="{{ site.data_url }}/international-visits-90-days.json">
+            <h4>International</h4>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+        </section>
+
       </div>
+
+
 
       <div id="secondary_data">
         <section id="top_100_table">

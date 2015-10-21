@@ -179,6 +179,45 @@
           .format(formatPercent)
       ),
 
+    "cities": renderBlock()
+      .transform(function(d) {
+        var total = d.totals.visits;
+
+        // remove "(not set) from the data"
+        var city_list = d.data.slice(0, 11);
+        city_list_filtered = city_list.filter(function (c) {
+          return c.city != "(not set)";
+        });
+        return addShares(city_list_filtered, function(d){return d.visits;});
+      })
+      .render(
+        barChart()
+          .value(function(d) { return d.share * 100; })
+          .label(function(d) { return d.city; })
+          .format(formatPercent)
+      ),
+    "countries": renderBlock()
+      .transform(function(d) {
+        var international = d.totals.visits - d.totals.us_visits;
+        var data = {"United States": d.totals.us_visits, "International":international};
+        return addShares(listify(data));
+      })
+      .render(
+        barChart()
+          .value(function(d) {return d.share * 100; })
+          .format(formatPercent)
+      ),
+    "international_visits": renderBlock()
+      .transform(function(d) {
+        return addShares(d.data.slice(0, 10), function(d){return d.visits;});
+      })
+      .render(
+        barChart()
+          .value(function(d) { return d.share * 100; })
+          .label(function(d) {return d.country;})
+          .format(formatPercent)
+      ),
+
     // the top pages block(s)
     "top-pages": renderBlock()
       .transform(function(d) {
@@ -316,10 +355,16 @@
 
       // when a tab is clicked, update the panels
       tabs.on("click", function(d) {
-        d3.event.preventDefault();
+        d3.event.preventDefault();        
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
         update();
+                
+        // track in google analytics
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Site Navigation', link, text);
+
       });
 
       // update them to start
@@ -736,6 +781,7 @@
     list.forEach(function(d) {
       d.share = value(d) / total;
     });
+
     return list;
   }
 
