@@ -181,12 +181,14 @@
 
     "cities": renderBlock()
       .transform(function(d) {
-        var total = d.totals.visits;
-        var city_list = d.data.slice(0, 15);
-        // remove "(not set) from the data"
-        city_list = city_list.filter(function (c) { return c.city != "(not set)"; });
 
-        return addShares(city_list.slice(0, 10), function(d){return d.visits;});
+        // remove "(not set) from the data"
+        var city_list = d.data;
+        city_list_filtered = city_list.filter(function (c) {
+          return c.city != "(not set)";
+        });
+        city_list_filtered = addShares(city_list_filtered, function(d){return d.visits;});
+        return city_list_filtered.slice(0, 10);
       })
       .render(
         barChart()
