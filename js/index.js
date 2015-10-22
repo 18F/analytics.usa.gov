@@ -67,6 +67,24 @@
             suffix = n >= 12 ? "p" : "a";
         return (n % 12 || 12) + suffix;
       },
+      formatURL = function(url) {
+        var domain;
+        //find & remove protocol (http, ftp, etc.) and get domain
+        if (url.indexOf("://") > -1) {
+          domain = url.split("/")[2];
+        }
+        else {
+          domain = url.split("/")[0];
+        }
+        //find & remove port number
+        domain = domain.split(":")[0];
+        return domain.replace(new RegExp("%20", "g"), " ");
+      }
+      formatFile = function(url) {
+        var split_urls = url.split("/");
+        var domain = split_urls[split_urls.length-1];
+        return domain.replace(new RegExp("%20", "g"), " ");
+      }
       TRANSITION_DURATION = 500;
 
   /*
@@ -240,7 +258,13 @@
       .render(
         barChart()
           .value(function(d) { return +d.total_events; })
-          .label(function(d) { return d.page_title; })
+          .label(function(d) {
+            return [
+              '<span class="name">', d.page_title, '</span> ',
+              '<br /><span class="domain">', formatURL(d.page), '</span> ',
+              '| <span class="filename">', formatFile(d.event_label), '</span>'
+            ].join('');
+          })
           .scale(function(values) {
             var max = d3.max(values);
             return d3.scale.linear()
@@ -595,7 +619,7 @@
             return size(value(d));
           });
 
-      bin.select(".label").text(label);
+      bin.select(".label").html(label);
       bin.select(".value").text(function(d, i) {
         return format.call(this, value(d), d, i);
       });
