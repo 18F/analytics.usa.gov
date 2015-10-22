@@ -181,13 +181,12 @@
 
     "cities": renderBlock()
       .transform(function(d) {
-
         // remove "(not set) from the data"
         var city_list = d.data;
-        city_list_filtered = city_list.filter(function (c) {
-          return c.city != "(not set)";
+        var city_list_filtered = city_list.filter(function (c) {
+          return (c.city != "(not set)") && (c.city != "zz");
         });
-        city_list_filtered = addShares(city_list_filtered, function(d){return d.visits;});
+        city_list_filtered = addShares(city_list_filtered, function(d){return d.active_visitors;});
         return city_list_filtered.slice(0, 10);
       })
       .render(
@@ -199,12 +198,20 @@
 
     "countries": renderBlock()
       .transform(function(d) {
-        var international = d.totals.visits - d.totals.us_visits;
+        var total_visits = 0;
+        d.data.forEach(function(c){
+          total_visits += parseInt(c.active_visitors);
+          if (c.country == "United States") {
+            us_visits = c.active_visitors;
+          }
+        });
+        var international = total_visits - us_visits;
         var data = {
-          "United States": d.totals.us_visits, 
-          "International":international
+          "United States": us_visits, 
+          "International": international
         };
         return addShares(listify(data));
+
       })
       .render(
         barChart()
@@ -213,8 +220,11 @@
       ),
     "international_visits": renderBlock()
       .transform(function(d) {
-
-        return addShares(d.data.slice(0, 10), function(d){ return d.visits; });
+        var countries = addShares(d.data, function(d){ return d.active_visitors; });        
+        countries = countries.filter(function(c) {
+          return c.country != "United States";
+        });
+        return countries.slice(0, 15);
       })
       .render(
         barChart()

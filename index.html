@@ -200,10 +200,13 @@ permalink: /
           </figure>
         </section>
 
+        <section class="section_headline">
+          <h3>Visitors Online Now</h3>
+        </section>
         
         <section id="cities" class="three_column"
           data-block="cities"
-          data-source="{{ site.data_url }}/top-cities-90-days.json">
+          data-source="{{ site.data_url }}/top-cities-realtime.json">
           <h4>Cities</h4>
           <figure id="chart_top-cities-90-days">
             <div class="data bar-chart">
@@ -216,14 +219,14 @@ permalink: /
 
           <figure id="chart_us"
             data-block="countries"
-            data-source="{{ site.data_url }}/top-countries-90-days.json">
+            data-source="{{ site.data_url }}/top-countries-realtime.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_countries"
             data-block="international_visits"
-            data-source="{{ site.data_url }}/international-visits-90-days.json">
+            data-source="{{ site.data_url }}/top-countries-realtime.json">
             <h4>International</h4>
             <div class="data bar-chart">
             </div>
