@@ -179,6 +179,23 @@
           .format(formatPercent)
       ),
 
+    "top-downloads": renderBlock()
+      .transform(function(d) {
+        return d.data.slice(0, 10);
+      })
+      .render(
+        barChart()
+          .value(function(d) { return +d.total_events; })
+          .label(function(d) { return d.page_title; })
+          .scale(function(values) {
+            var max = d3.max(values);
+            return d3.scale.linear()
+              .domain([0, 1, d3.max(values)])
+              .rangeRound([0, 1, 100]);
+          })
+          .format(formatCommas)
+      ),
+
     // the top pages block(s)
     "top-pages": renderBlock()
       .transform(function(d) {
@@ -244,7 +261,7 @@
             .domain([0, 1, d3.max(values)])
             .rangeRound([0, 1, 100]);
         })
-        .format(formatCommas))
+        .format(formatCommas)),
 
   };
 
