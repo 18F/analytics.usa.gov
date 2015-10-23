@@ -179,6 +179,60 @@
           .format(formatPercent)
       ),
 
+    "cities": renderBlock()
+      .transform(function(d) {
+        // remove "(not set) from the data"
+        var city_list = d.data;
+        var city_list_filtered = city_list.filter(function (c) {
+          return (c.city != "(not set)") && (c.city != "zz");
+        });
+        city_list_filtered = addShares(city_list_filtered, function(d){return d.active_visitors;});
+        return city_list_filtered.slice(0, 10);
+      })
+      .render(
+        barChart()
+          .value(function(d) { return d.share * 100; })
+          .label(function(d) { return d.city; })
+          .format(formatPercent)
+      ),
+
+    "countries": renderBlock()
+      .transform(function(d) {
+        var total_visits = 0;
+        d.data.forEach(function(c){
+          total_visits += parseInt(c.active_visitors);
+          if (c.country == "United States") {
+            us_visits = c.active_visitors;
+          }
+        });
+        var international = total_visits - us_visits;
+        var data = {
+          "United States": us_visits, 
+          "International": international
+        };
+        return addShares(listify(data));
+
+      })
+      .render(
+        barChart()
+          .value(function(d) {return d.share * 100; })
+          .format(formatPercent)
+      ),
+    "international_visits": renderBlock()
+      .transform(function(d) {
+        var countries = addShares(d.data, function(d){ return d.active_visitors; });        
+        countries = countries.filter(function(c) {
+          return c.country != "United States";
+        });
+        return countries.slice(0, 15);
+      })
+      .render(
+        barChart()
+          .value(function(d) { return d.share * 100; })
+          .label(function(d) { return d.country; })
+          .format(formatPercent)
+      ),
+
     // the top pages block(s)
     "top-pages": renderBlock()
       .transform(function(d) {
@@ -294,6 +348,14 @@
       .call(nestCharts, function(d) {
         return d.key === "Internet Explorer";
       }, d3.select("#chart_ie"));
+  });
+
+  // nest the international countries chart inside the "International" chart once they're both rendered
+  whenRendered(["countries", "international_visits"], function() {
+    d3.select("#chart_us")
+      .call(nestCharts, function(d) {
+        return d.key === "International";
+      }, d3.select("#chart_countries"));
   });
 
   /*
@@ -741,6 +803,7 @@
     list.forEach(function(d) {
       d.share = value(d) / total;
     });
+
     return list;
   }
 

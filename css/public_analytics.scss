@@ -1,3 +1,6 @@
+---
+# Jekyll needs the front matter to render this in Sass
+---
 @import "bourbon/bourbon";
 
 //Grid Settings:
@@ -327,18 +330,6 @@ section {
   }
 }
 
-#chart_windows .bar-chart,
-#chart_ie .bar-chart {
-  .bin {
-    margin-left: 2em;
-    margin-bottom: 0rem;
-
-    .bar {
-      display: none;
-    }
-  }
-}
-
 .bar:focus{
   outline: 0;
 }
@@ -444,6 +435,15 @@ ul.pills {
 
   .bar-chart {
     font-size: 80%;
+
+    .bin {
+      margin-left: 2em;
+      margin-bottom: 0rem;
+
+      .bar {
+        display: none;
+      }
+    }
   }
 
   .bin {
