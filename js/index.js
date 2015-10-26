@@ -258,11 +258,11 @@
       .render(
         barChart()
           .value(function(d) { return +d.total_events; })
-          .label(function(d) {            
+          .label(function(d) { 
             return [
-              '<span class="name">', d.page_title, '</span> ',
+              '<span class="name"><b>', d.page_title, '</b></span> ',
               '<br /><span class="domain" >', formatURL(d.page), '</span> ',
-              '| <span class="filename">', formatFile(d.event_label), '</span>'
+              '/ <span class="filename"><a href=', d.event_label, ">", formatFile(d.event_label), '</a></span>'
             ].join('');
           })
           .scale(function(values) {
