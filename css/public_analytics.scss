@@ -1,3 +1,6 @@
+---
+# Jekyll needs the front matter to render this in Sass
+---
 @import "bourbon/bourbon";
 
 //Grid Settings:
@@ -34,12 +37,14 @@ $small-screen:  new-breakpoint(max-width  768px   1);
 
 $red: #921B1E;
 $blue: #022945;
+
 $light_gray: #f9f9f9;
+$dark_gray: #222;
+$medium_gray: #555;
 
 // used only for borders
 $gray: #e4e4e4;
 
-$dark_gray: #222;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -220,10 +225,13 @@ section {
   }
 }
 
-#explanation, #data_download, #agencies {
+#explanation,
+#data_download,
+#agencies {
   border-top: $border_width solid $gray;
   font-size: 90%;
-  line-height: 1.6em;
+  line-height: 1.6;
+
   li {
     margin: 1em 0;
   }
@@ -324,18 +332,6 @@ section {
   @include media($small-screen) {
     font-size: 12px;
     padding: 2em;
-  }
-}
-
-#chart_windows .bar-chart,
-#chart_ie .bar-chart {
-  .bin {
-    margin-left: 2em;
-    margin-bottom: 0rem;
-
-    .bar {
-      display: none;
-    }
   }
 }
 
@@ -444,6 +440,15 @@ ul.pills {
 
   .bar-chart {
     font-size: 80%;
+
+    .bin {
+      margin-left: 2em;
+      margin-bottom: 0rem;
+
+      .bar {
+        display: none;
+      }
+    }
   }
 
   .bin {
@@ -497,6 +502,19 @@ ul.pills {
     white-space: nowrap;
     margin-top: -1.5rem;
     margin-bottom: .45rem;
+  }
+}
+
+#top-downloads .bar-chart .label {
+  height: auto;
+  line-height: 1.6;
+
+  .name {
+    display: block;
+  }
+
+  .domain {
+    color: $medium_gray;
   }
 }
 
