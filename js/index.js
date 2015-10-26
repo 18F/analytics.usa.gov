@@ -79,12 +79,12 @@
         //find & remove port number
         domain = domain.split(":")[0];
         return domain.replace(new RegExp("%20", "g"), " ");
-      }
+      },
       formatFile = function(url) {
         var split_urls = url.split("/");
         var domain = split_urls[split_urls.length-1];
         return domain.replace(new RegExp("%20", "g"), " ");
-      }
+      },
       TRANSITION_DURATION = 500;
 
   /*
