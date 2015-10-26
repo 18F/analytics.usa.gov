@@ -178,6 +178,7 @@ section {
     height: 2.5rem;
     margin-bottom: 0;
   }
+
   h4 {
     display: block;
     text-align: right;
@@ -189,7 +190,7 @@ section {
 
 #secondary_data {
   @include span-columns(5);
-  @include media($small-screen)  {
+  @include media($small-screen) {
     @include span-columns(1);
     border-top: 1px solid $gray;
     border-left: none;
@@ -204,16 +205,20 @@ section {
   }
 }
 
-#explanation, #data_download, #agencies {
+#explanation,
+#data_download,
+#agencies {
   border-top: $border_width solid $gray;
   font-size: 90%;
   line-height: 1.6em;
+
   li {
     margin: 1em 0;
   }
 }
 
-#explanation, #agencies {
+#explanation,
+#agencies {
   @include span-columns(9);
 
   @include media($small-screen)  {
@@ -296,10 +301,12 @@ section {
     font-size: 4em;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
     font-weight: 300;
   }
+
   h2 {
     font-size: 2em;
     margin: 2em auto;
@@ -311,7 +318,7 @@ section {
   }
 }
 
-.bar:focus{
+.bar:focus {
   outline: 0;
 }
 
