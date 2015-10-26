@@ -37,12 +37,14 @@ $small-screen:  new-breakpoint(max-width  768px   1);
 
 $red: #921B1E;
 $blue: #022945;
+
 $light_gray: #f9f9f9;
+$dark_gray: #222;
+$medium_gray: #555;
 
 // used only for borders
 $gray: #e4e4e4;
 
-$dark_gray: #222;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -503,6 +505,14 @@ ul.pills {
 #top-downloads .bar-chart .label {
   height: auto;
   line-height: 1.6;
+
+  .name {
+    display: block;
+  }
+
+  .domain {
+    color: $medium_gray;
+  }
 }
 
 g.axis {
