@@ -852,7 +852,7 @@
   }
 
   function collapseOther(list, threshold) {
-    var other_present = false;
+    var otherPresent = false;
     var other = {key: "Other", value: 0, children: []},
         last = list.length - 1;
     while (last > 0 && list[last].value < threshold) {
