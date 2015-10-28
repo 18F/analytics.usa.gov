@@ -218,7 +218,7 @@
     "countries": renderBlock()
       .transform(function(d) {
         var total_visits = 0;
-        d.data.forEach(function(c){
+        d.data.forEach(function(c) {
           total_visits += parseInt(c.active_visitors);
           if (c.country == "United States") {
             us_visits = c.active_visitors;
@@ -862,12 +862,12 @@
       last--;
     }
     for (var i = 0; i < list.length; i++) {
-      if (list[i].key == "Other"){
+      if (list[i].key == "Other") {
         otherPresent = true;
         list[i].value += other.value;
       }
     }
-    if (!otherPresent){
+    if (!otherPresent) {
       list.push(other);
     }
     return list;
