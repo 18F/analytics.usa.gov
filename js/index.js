@@ -139,6 +139,7 @@
       .transform(function(d) {
         var values = listify(d.totals.os),
             total = d3.sum(values.map(function(d) { return d.value; }));
+//        return addShares(values, total * .01);
         return addShares(collapseOther(values, total * .01));
       })
       .render(barChart()
@@ -260,10 +261,10 @@
           .value(function(d) { return +d.total_events; })
           .label(function(d) { 
             return [
-              '<span class="name">', d.page_title, '</span> ',
+              '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
               '<span class="domain" >', formatURL(d.page), '</span> ',
               '<span class="divider">/</span> ',
-              '<span class="filename"><a href=', d.event_label, '>',
+              '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
               formatFile(d.event_label), '</a></span>'
             ].join('');
           })
@@ -851,6 +852,7 @@
   }
 
   function collapseOther(list, threshold) {
+    var other_present = false;
     var other = {key: "Other", value: 0, children: []},
         last = list.length - 1;
     while (last > 0 && list[last].value < threshold) {
@@ -859,7 +861,16 @@
       list.splice(last, 1);
       last--;
     }
-    list.push(other);
+    for (i = 0; i < list.length; i++){
+      if (list[i].key == "Other"){
+        other_present = true;
+        list[i].value += other.value;
+      }
+    }
+    if (!other_present){
+      list.push(other);
+    }
+//    list.push(other);
     return list;
   }
 
