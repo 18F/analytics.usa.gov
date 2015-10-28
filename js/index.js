@@ -870,7 +870,6 @@
     if (!other_present){
       list.push(other);
     }
-//    list.push(other);
     return list;
   }
 
