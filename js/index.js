@@ -861,13 +861,13 @@
       list.splice(last, 1);
       last--;
     }
-    for (i = 0; i < list.length; i++){
+    for (var i = 0; i < list.length; i++) {
       if (list[i].key == "Other"){
         other_present = true;
         list[i].value += other.value;
       }
     }
-    if (!other_present){
+    if (!otherPresent){
       list.push(other);
     }
     return list;
