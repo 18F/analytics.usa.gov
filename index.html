@@ -77,10 +77,20 @@ permalink: /
         ga('send','event','External Link', link, text);
       });
 
+      d3.selectAll('.top-download-page').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Top-Download Page', link, text);
+      });
+
+      d3.selectAll('.top-download-file').on('click', function() {
+        var link = this.href;
+        var text = this.text;
+        ga('send','event','Top-Download File', link, text);
+      });
+
     });
   </script>
-
-
 
     <!--[if lte IE 9]>
     <script src="{{ site.baseurl }}/js/vendor/aight.v2.min.js"></script>
@@ -201,8 +211,11 @@ permalink: /
           </figure>
         </section>
 
+        <!-- forces section to wrap, couldn't find a better way -->
+        <div style="clear: both"></div>
+
         <section class="section_headline">
-          <h3>Visitors Online Now</h3>
+          <h3>Visitor Locations Right Now</h3>
         </section>
         
         <section id="cities" class="three_column"
@@ -234,10 +247,7 @@ permalink: /
           </figure>
         </section>
 
-
       </div>
-
-
 
       <div id="secondary_data">
         <section id="top_100_table">
@@ -282,7 +292,7 @@ permalink: /
 
         <section id="top_downloads_table">
 
-          <h3>Top Downloads</h3>
+          <h3>Top 10 Downloads</h3>
             <h5><em>Total file downloads over the last week on government domains.</em></h5>
           <figure id="top-downloads" 
             data-block="top-downloads"

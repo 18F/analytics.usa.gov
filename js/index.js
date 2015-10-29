@@ -217,7 +217,7 @@
     "countries": renderBlock()
       .transform(function(d) {
         var total_visits = 0;
-        d.data.forEach(function(c){
+        d.data.forEach(function(c) {
           total_visits += parseInt(c.active_visitors);
           if (c.country == "United States") {
             us_visits = c.active_visitors;
@@ -260,10 +260,10 @@
           .value(function(d) { return +d.total_events; })
           .label(function(d) { 
             return [
-              '<span class="name">', d.page_title, '</span> ',
+              '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
               '<span class="domain" >', formatURL(d.page), '</span> ',
               '<span class="divider">/</span> ',
-              '<span class="filename"><a href=', d.event_label, '>',
+              '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
               formatFile(d.event_label), '</a></span>'
             ].join('');
           })
@@ -851,6 +851,7 @@
   }
 
   function collapseOther(list, threshold) {
+    var otherPresent = false;
     var other = {key: "Other", value: 0, children: []},
         last = list.length - 1;
     while (last > 0 && list[last].value < threshold) {
@@ -859,7 +860,15 @@
       list.splice(last, 1);
       last--;
     }
-    list.push(other);
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].key == "Other") {
+        otherPresent = true;
+        list[i].value += other.value;
+      }
+    }
+    if (!otherPresent) {
+      list.push(other);
+    }
     return list;
   }
 
