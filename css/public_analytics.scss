@@ -184,7 +184,6 @@ section {
 }
 
 #main_data {
-  border-right: 1px solid $gray;
 
   @include span-columns(9);
   @include media($small-screen)  {
@@ -209,6 +208,8 @@ section {
 }
 
 #secondary_data {
+  border-left: 1px solid $gray;
+
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
