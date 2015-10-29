@@ -231,6 +231,18 @@ section {
   border-top: $border_width solid $gray;
   line-height: 1.6;
 
+  h4 {font-size: 90%}
+
+  ul {
+    font-size: 80%;
+    padding: 0;
+  }
+
+  ul, li {
+    list-style-type: none;
+    list-style-position: inside;
+  }
+
   li {
     margin: 1em 0;
   }
@@ -245,7 +257,7 @@ section {
 }
 
 #data_download {
-  @include span-columns(9);
+  @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
   }
@@ -274,34 +286,6 @@ section {
 .three_column {
   @include span-columns(3 of 9);
   
-  @include media($small-screen)  {
-    @include span-columns(1);
-    border-left: none;
-    border-top: 1px solid $gray;
-  }
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-  h5 {
-    margin-top: 0;
-    text-align: center;
-  }
-}
-
-.data_column {
-  @include span-columns(4 of 9);
-
-  ul {
-    font-size: 80%;
-  }
-
-  ul, li {
-    list-style-type: none;
-    list-style-position: inside;
-  }
-
   @include media($small-screen)  {
     @include span-columns(1);
     border-left: none;

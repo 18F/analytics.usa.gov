@@ -264,8 +264,10 @@ permalink: /
             data-block="top-pages-realtime"
             data-source="{{ site.data_url }}/top-pages-realtime.json"
             data-refresh="15">
-            <h5><strong>Pages</strong><br/>
-            <em>People on a single, specific government page now.</em></h5>
+            <h5><em>
+              People on a <strong>single, specific page</strong> now.
+              <a href="{{ site.data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
+            </em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -273,8 +275,7 @@ permalink: /
           <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
             data-source="{{ site.data_url }}/top-domains-7-days.json">
-            <h5><strong>Domains</strong><br/>
-            <em>Total visits over the last week to government domains, which includes traffic to all pages within that domain.</em></h5>
+            <h5><em>Total visits over the last week to <strong>domains</strong>, including traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -282,8 +283,10 @@ permalink: /
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
             data-source="{{ site.data_url }}/top-domains-30-days.json">
-            <h5><strong>Domains</strong><br/>
-              <em>Total visits over the last month to government domains, which includes traffic to all pages within that domain.</em></h5>
+            <h5><em>
+              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain.
+              <a href="{{ site.data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
+            </em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -304,59 +307,6 @@ permalink: /
         </section>
       </div>
 
-      <section id="data_download">
-        
-        <section class="section_subheadline">
-          Download the data.
-        </section>
-
-        <section class="data_column">
-          <h4>Updated daily (CSV)</h4>
-          <ul>
-            <li>
-              <a href="{{ site.data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/top-downloads-7-days.csv" class="download-data">Top downloads over 7 days</a>
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/browsers.csv" class="download-data">Web browsers</a>
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/ie.csv" class="download-data">Versions of Internet Explorer</a>
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/os.csv" class="download-data">Operating systems</a>
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/windows.csv" class="download-data">Versions of Windows</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="data_column">
-          <h4>Updated every minute</h4>
-
-          <ul>
-            <li>
-              <a href="{{ site.data_url }}/all-pages-realtime.csv" class="download-data">All pages people are visiting</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/top-countries-realtime.json" class="download-data">Visitors per country</a> (JSON)
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/top-cities-realtime.json" class="download-data">Visitors per city</a> (JSON)
-            </li>
-            <li>
-              <a href="{{ site.data_url }}/realtime.json" class="download-data">Total people online</a> (JSON)
-            </li>
-          </ul>
-
-        </section>
-      </section>
       <section id="explanation">
 
         <h3>About this Site</h3>
@@ -381,6 +331,53 @@ permalink: /
         </p>
       </section>
 
+      <section id="data_download">
+        
+        <h3>Download the Data</h3>
+
+          <h4>Updated daily (CSV)</h4>
+          <ul>
+            <li>
+              <a href="{{ site.data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/top-downloads-7-days.csv" class="download-data">Top downloads over 7 days</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/browsers.csv" class="download-data">Web browsers</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/ie.csv" class="download-data">Versions of Internet Explorer</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/os.csv" class="download-data">Operating systems</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/windows.csv" class="download-data">Versions of Windows</a>
+            </li>
+          </ul>
+          <h4>Updated every minute</h4>
+
+          <ul>
+            <li>
+              <a href="{{ site.data_url }}/all-pages-realtime.csv" class="download-data">All pages people are visiting</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/top-countries-realtime.json" class="download-data">Visitors per country</a> (JSON)
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/top-cities-realtime.json" class="download-data">Visitors per city</a> (JSON)
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/realtime.json" class="download-data">Total people online</a> (JSON)
+            </li>
+          </ul>
+
+        </section>
+      </section>
       
 
     </div>
