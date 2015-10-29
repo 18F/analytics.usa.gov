@@ -173,25 +173,6 @@ permalink: /
           </figure>
         </section>
 
-        <section id="operating_systems" class="three_column">
-          <h4>Operating Systems</h4>
-
-          <figure id="chart_os"
-            data-block="os"
-            data-source="{{ site.data_url }}/os.json">
-            <div class="data bar-chart">
-            </div>
-          </figure>
-
-          <figure id="chart_windows"
-            data-block="windows"
-            data-source="{{ site.data_url }}/windows.json">
-            <h4>Windows</h4>
-            <div class="data bar-chart">
-            </div>
-          </figure>
-        </section>
-
         <section id="browsers" class="three_column">
           <h4>Browsers</h4>
 
@@ -211,10 +192,30 @@ permalink: /
           </figure>
         </section>
 
+        <section id="operating_systems" class="three_column">
+          <h4>Operating Systems</h4>
 
+          <figure id="chart_os"
+            data-block="os"
+            data-source="{{ site.data_url }}/os.json">
+            <div class="data bar-chart">
+            </div>
+          </figure>
+
+          <figure id="chart_windows"
+            data-block="windows"
+            data-source="{{ site.data_url }}/windows.json">
+            <h4>Windows</h4>
+            <div class="data bar-chart">
+            </div>
+          </figure>
+        </section>
+
+        <!-- forces section to wrap, couldn't find a better way -->
+        <div style="clear: both"></div>
 
         <section class="section_headline">
-          <h3>People Online Now</h3>
+          <h3>Visitor Locations Right Now</h3>
         </section>
         
         <section id="cities" class="three_column"
@@ -246,10 +247,7 @@ permalink: /
           </figure>
         </section>
 
-
       </div>
-
-
 
       <div id="secondary_data">
         <section id="top_100_table">

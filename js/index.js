@@ -139,7 +139,6 @@
       .transform(function(d) {
         var values = listify(d.totals.os),
             total = d3.sum(values.map(function(d) { return d.value; }));
-//        return addShares(values, total * .01);
         return addShares(collapseOther(values, total * .01));
       })
       .render(barChart()
