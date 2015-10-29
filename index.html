@@ -264,8 +264,10 @@ permalink: /
             data-block="top-pages-realtime"
             data-source="{{ site.data_url }}/top-pages-realtime.json"
             data-refresh="15">
-            <h5><strong>Pages</strong><br/>
-            <em>People on a single, specific government page now.</em></h5>
+            <h5><em>
+              People on a <strong>single, specific page</strong> now.
+              <a href="{{ site.data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
+            </em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -273,8 +275,7 @@ permalink: /
           <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
             data-source="{{ site.data_url }}/top-domains-7-days.json">
-            <h5><strong>Domains</strong><br/>
-            <em>Total visits over the last week to government domains, which includes traffic to all pages within that domain.</em></h5>
+            <h5><em>Total visits over the last week to <strong>domains</strong>, including traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -282,8 +283,10 @@ permalink: /
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
             data-source="{{ site.data_url }}/top-domains-30-days.json">
-            <h5><strong>Domains</strong><br/>
-              <em>Total visits over the last month to government domains, which includes traffic to all pages within that domain.</em></h5>
+            <h5><em>
+              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain.
+              <a href="{{ site.data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
+            </em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -293,7 +296,7 @@ permalink: /
         <section id="top_downloads_table">
 
           <h3>Top 10 Downloads</h3>
-            <h5><em>Total file downloads over the last week on government domains.</em></h5>
+          <h5><em>Total file downloads over the last week on government domains.</em></h5>
           <figure id="top-downloads" 
             data-block="top-downloads"
             data-source="{{ site.data_url }}/top-downloads-7-days.json">
@@ -305,6 +308,7 @@ permalink: /
       </div>
 
       <section id="explanation">
+
         <h3>About this Site</h3>
         <p>
           This data provides a window into how people are interacting with the government online. The data comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/" class="external-link">Digital Analytics Program</a>. This program helps government agencies understand how people find, access, and use government services online. The program <a href="https://www.digitalgov.gov/services/dap/common-questions-about-dap-faq/#part-4" class="external-link">does not track individuals</a>, and <a href="https://support.google.com/analytics/answer/2763052?hl=en" class="external-link">anonymizes the IP addresses</a> of visitors.
@@ -328,95 +332,53 @@ permalink: /
       </section>
 
       <section id="data_download">
+        
         <h3>Download the Data</h3>
 
-        <p>
-          You can download the data that powers the charts above, in JSON format.
-        </p>
+          <h4>Updated daily (CSV)</h4>
+          <ul>
+            <li>
+              <a href="{{ site.data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/top-downloads-7-days.csv" class="download-data">Top downloads over 7 days</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/browsers.csv" class="download-data">Web browsers</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/ie.csv" class="download-data">Versions of Internet Explorer</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/os.csv" class="download-data">Operating systems</a>
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/windows.csv" class="download-data">Versions of Windows</a>
+            </li>
+          </ul>
+          <h4>Updated every minute</h4>
 
-        <ul>
-          <li>
-            <a href="{{ site.data_url }}/realtime.json" class="download-data">
-              People online right now</a>
-            (Updated every minute)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/all-pages-realtime.json" class="download-data">
-              People visiting each site, right now</a>
-            (Updated every minute)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/today.json" class="download-data">
-              Visits every hour today</a>
-            (Updated every hour)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/all-domains-30-days.json" class="download-data">
-              Visits to each site over the last 30 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/devices.json" class="download-data">
-              Visits by desktop/mobile/tablet devices over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/os.json" id="visits" class="download-data">
-              Visits broken down by Operating System over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/windows.json" class="download-data">
-              Visits broken down by Windows version over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/browsers.json" class="download-data">
-              Visits broken down by browser over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/ie.json" class="download-data">
-              Visits broken down by Internet Explorer version over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-cities-90-days.json" class="download-data">
-              Visits broken down by city over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-countries-90-days.json" class="download-data">
-              Visits broken down by country over 90 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-pages-realtime.json" class="download-data">
-              Top 20 pages, ranked by visitors online now</a>
-            (Updated every minute)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-domains-7-days.json" class="download-data">
-              Top 20 domains, ranked by visits over 7 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-domains-30-days.json" class="download-data">
-              Top 20 domains, ranked by visits over 30 days</a>
-            (Updated every day)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-downloads-realtime.json" class="download-data">
-              Top 100 downloads right now</a>
-            (Updated every minute)
-          </li>
-          <li>
-            <a href="{{ site.data_url }}/top-downloads-30-days.json" class="download-data">
-              Top 100 downloads over 30 days</a>
-            (Updated every day)
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <a href="{{ site.data_url }}/all-pages-realtime.csv" class="download-data">All pages people are visiting</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/top-countries-realtime.json" class="download-data">Visitors per country</a> (JSON)
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/top-cities-realtime.json" class="download-data">Visitors per city</a> (JSON)
+            </li>
+            <li>
+              <a href="{{ site.data_url }}/realtime.json" class="download-data">Total people online</a> (JSON)
+            </li>
+          </ul>
+
+        </section>
       </section>
+      
 
     </div>
   </body>

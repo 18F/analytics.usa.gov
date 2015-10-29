@@ -184,7 +184,6 @@ section {
 }
 
 #main_data {
-  border-right: 1px solid $gray;
 
   @include span-columns(9);
   @include media($small-screen)  {
@@ -209,6 +208,8 @@ section {
 }
 
 #secondary_data {
+  border-left: 1px solid $gray;
+
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
@@ -226,18 +227,28 @@ section {
 }
 
 #explanation,
-#data_download,
-#agencies {
+#data_download {
   border-top: $border_width solid $gray;
-  font-size: 90%;
   line-height: 1.6;
+
+  h4 {font-size: 90%}
+
+  ul {
+    font-size: 80%;
+    padding: 0;
+  }
+
+  ul, li {
+    list-style-type: none;
+    list-style-position: inside;
+  }
 
   li {
     margin: 1em 0;
   }
 }
 
-#explanation, #agencies {
+#explanation {
   @include span-columns(9);
 
   @include media($small-screen)  {
@@ -250,6 +261,8 @@ section {
   @include media($small-screen)  {
     @include span-columns(1);
   }
+
+
 }
 
 .section_headline {
@@ -272,8 +285,7 @@ section {
 
 .three_column {
   @include span-columns(3 of 9);
-  // border-left: 1px solid $gray;
-
+  
   @include media($small-screen)  {
     @include span-columns(1);
     border-left: none;
