@@ -6,18 +6,12 @@
   var exceptions = {
     // for the Now tab
     "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
-    "forecast.weather.gov/mapclick.php": "http://forecast.weather.gov/",
+    "forecast.weather.gov/mapclick.php": "http://www.weather.gov/",
     "egov.uscis.gov/casestatus/mycasestatus.do": "https://egov.uscis.gov/casestatus/",
-    "irs.gov/individuals/electronic-filing-pin-request": " http://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
+    "irs.gov/individuals/electronic-filing-pin-request": " https://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
     "ebenefits.va.gov/ebenefits-portal/ebenefits.portal": "https://www.ebenefits.va.gov/ebenefits-portal/ebenefits.portal",
-    "irs.gov/forms-&-pubs": "http://www.irs.gov/Forms-&-Pubs",
+    "irs.gov/forms-&-pubs": "https://www.irs.gov/Forms-&-Pubs",
     "ebenefits.va.gov/ebenefits/homepage": "https://www.ebenefits.va.gov/ebenefits/homepage",
-
-    "faa.gov/news/updates/?newsid=82225": "http://www.faa.gov/news/updates/?newsid=82225",
-
-    // individual petitions
-    "petitions.whitehouse.gov/petition/file-charges-against-47-us-senators-violation-logan-act-attempting-undermine-nuclear-agreement/nkqnpjs9": "https://petitions.whitehouse.gov/petition/file-charges-against-47-us-senators-violation-logan-act-attempting-undermine-nuclear-agreement/",
-    "petitions.whitehouse.gov/petition/take-out-alejandro-garcía-padilla-governorship-puerto-rico-now/b0jgb8sv" : "https://petitions.whitehouse.gov/petition/take-out-alejandro-garc%C3%ADa-padilla-governorship-puerto-rico-now/",
 
     // for 7/30 days tabs
     "egov.uscis.gov": "https://egov.uscis.gov/casestatus/",
@@ -225,7 +219,7 @@
         });
         var international = total_visits - us_visits;
         var data = {
-          "United States": us_visits, 
+          "United States": us_visits,
           "International": international
         };
         return addShares(listify(data));
@@ -238,7 +232,7 @@
       ),
     "international_visits": renderBlock()
       .transform(function(d) {
-        var countries = addShares(d.data, function(d){ return d.active_visitors; });        
+        var countries = addShares(d.data, function(d){ return d.active_visitors; });
         countries = countries.filter(function(c) {
           return c.country != "United States";
         });
@@ -258,7 +252,7 @@
       .render(
         barChart()
           .value(function(d) { return +d.total_events; })
-          .label(function(d) { 
+          .label(function(d) {
             return [
               '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
               '<span class="domain" >', formatURL(d.page), '</span> ',
