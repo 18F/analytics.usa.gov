@@ -285,7 +285,7 @@ section {
 
 .three_column {
   @include span-columns(3 of 9);
-  
+
   @include media($small-screen)  {
     @include span-columns(1);
     border-left: none;
@@ -371,6 +371,18 @@ section {
 #top_100_table {
   h3 {
     @include span-columns(2 of 5);
+  }
+}
+
+#top_downloads_table {
+  h5 {
+    margin-top: 10px;
+  }
+}
+
+#top_100_table, #top_downloads_table {
+  h3 {
+    font-size: 1.0em;
   }
   h5 {
     color: $dark_gray;

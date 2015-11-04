@@ -63,7 +63,7 @@ permalink: /
     ga('set', 'forceSSL', true);
     ga('send', 'pageview');
 
-    document.addEventListener("DOMContentLoaded", function(event) { 
+    document.addEventListener("DOMContentLoaded", function(event) {
 
       d3.selectAll('.download-data').on('click', function() {
         var link = this.href;
@@ -95,7 +95,7 @@ permalink: /
     <!--[if lte IE 9]>
     <script src="{{ site.baseurl }}/js/vendor/aight.v2.min.js"></script>
     <![endif]-->
-    
+
     <script src="{{ site.baseurl }}/js/vendor/q.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -217,7 +217,7 @@ permalink: /
         <section class="section_headline">
           <h3>Visitor Locations Right Now</h3>
         </section>
-        
+
         <section id="cities" class="three_column"
           data-block="cities"
           data-source="{{ site.data_url }}/top-cities-realtime.json">
@@ -253,11 +253,11 @@ permalink: /
         <section id="top_100_table">
 
           <!-- see: http://heydonworks.com/practical_aria_examples/ -->
-          <h3>Top 20</h3>
+          <h3>Top <span id="top_table_type">Pages</span></h3>
           <ul class="pills" role="tablist">
-            <li><a role="tab" aria-selected="true" href="#top-pages-realtime" class="site-nav">Now</a></li>
-            <li><a role="tab" href="#top-pages-7-days" class="site-nav">7 Days</a></li>
-            <li><a role="tab" href="#top-pages-30-days" class="site-nav">30 Days</a></li>
+            <li><a role="tab" data-type="Pages" aria-selected="true" href="#top-pages-realtime" class="site-nav">Now</a></li>
+            <li><a role="tab" data-type="Domains" href="#top-pages-7-days" class="site-nav">7 Days</a></li>
+            <li><a role="tab" data-type="Domains" href="#top-pages-30-days" class="site-nav">30 Days</a></li>
           </ul>
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
@@ -295,15 +295,15 @@ permalink: /
 
         <section id="top_downloads_table">
 
-          <h3>Top 10 Downloads</h3>
+          <h3>Top Downloads</h3>
           <h5><em>Total file downloads over the last week on government domains.</em></h5>
-          <figure id="top-downloads" 
+          <figure id="top-downloads"
             data-block="top-downloads"
             data-source="{{ site.data_url }}/top-downloads-7-days.json">
             <div class="data bar-chart">
             </div>
           </figure>
-        
+
         </section>
       </div>
 
@@ -332,7 +332,7 @@ permalink: /
       </section>
 
       <section id="data_download">
-        
+
         <h3>Download the Data</h3>
 
           <h4>Updated daily (CSV)</h4>
@@ -378,7 +378,7 @@ permalink: /
 
         </section>
       </section>
-      
+
 
     </div>
   </body>
