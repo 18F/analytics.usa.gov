@@ -225,7 +225,7 @@
         });
         var international = total_visits - us_visits;
         var data = {
-          "United States": us_visits, 
+          "United States": us_visits,
           "International": international
         };
         return addShares(listify(data));
@@ -238,7 +238,7 @@
       ),
     "international_visits": renderBlock()
       .transform(function(d) {
-        var countries = addShares(d.data, function(d){ return d.active_visitors; });        
+        var countries = addShares(d.data, function(d){ return d.active_visitors; });
         countries = countries.filter(function(c) {
           return c.country != "United States";
         });
@@ -258,7 +258,7 @@
       .render(
         barChart()
           .value(function(d) { return +d.total_events; })
-          .label(function(d) { 
+          .label(function(d) {
             return [
               '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
               '<span class="domain" >', formatURL(d.page), '</span> ',
@@ -413,7 +413,8 @@
                   target = document.getElementById(href.split("#").pop());
               return {
                 selected: this.getAttribute("aria-selected") === "true",
-                target: target
+                target: target,
+                tab: this
               };
             }),
           panels = d3.select(this.parentNode)
@@ -424,6 +425,10 @@
         d3.event.preventDefault();
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
+
+        // Update the type of the objects
+        d3.select("#top_table_type").text(d3.select(d.tab).attr("data-type"));
+
         update();
 
         // track in google analytics
