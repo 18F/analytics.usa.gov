@@ -179,7 +179,7 @@
       .transform(function(d) {
         var values = listify(d.totals.browser),
             total = d3.sum(values.map(function(d) { return d.value; }));
-        return addShares(collapseOther(values, total * .015));
+        return addShares(collapseOther(values, total * .013));
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
