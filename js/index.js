@@ -889,7 +889,7 @@
    *
    * 1. finds the selection's `.bin` child with data matching the parentFilter
    *    function (the "parent bin")
-   * 2. determines that bin's share of the total
+   * 2. determines that bin's share of the total (if `data-scale-to-parent` is "true")
    * 3. grabs all of the child `.bin`s of the child selection and updates their
    *    share (by multiplying it by the parent's)
    * 4. updates the `.bar` width  and `.value` text for each child bin
@@ -898,10 +898,13 @@
   function nestCharts(selection, parentFilter, child) {
     var parent = selection.selectAll(".bin")
           .filter(parentFilter),
+        scale = (child.attr("data-scale-to-parent") == "true"),
         share = parent.datum().share,
         bins = child.selectAll(".bin")
+          // If the child data should be scaled to be %'s of its parent bin,
+          // then multiple each child item's % share by its parent's % share.
           .each(function(d) {
-            d.share *= share;
+            if (scale) d.share *= share;
           })
           .attr("data-share", function(d) {
             return d.share;
