@@ -1,4 +1,14 @@
 (function(exports) {
+  // var source_base_set = null;
+  var url_source_base = data_sources[0].url;
+  var dropDown = d3.select("#table_container").append("select").attr("name", "data-source-list");
+  var options = dropDown.selectAll("option").data(data_sources).enter().append("option");
+  options.text(function (d) { return d.title; })
+       .attr("value", function (d) { return d.url; });
+  dropDown.on("change", function () {
+    url_source_base = data_sources[this.selectedIndex].url;
+    console.log(url_source_base);
+  });
 
   // some hardcoded exceptions for consistently high-traffic
   // infrastructure. we will not add exceptions for any site
@@ -362,7 +372,6 @@
       if (!block) {
         return console.warn("no block registered for: %s", blockId);
       }
-
       // each block's promise is resolved when the block renders
       PROMISES[blockId] = Q.Promise(function(resolve, reject) {
         block.on("render.promise", resolve);
@@ -509,8 +518,7 @@
           .classed("loaded error", false);
 
         dispatch.loading(selection, d);
-
-        var json = url.apply(this, arguments);
+        var json = url_source_base + url.apply(this, arguments);
         if (!json) {
           return console.error("no data source found:", this, d);
         }
@@ -903,7 +911,7 @@
           .each(function(d) {
             d.share *= share;
           })
-          .attr("data-share", function(d) {
+          .attr("hare", function(d) {
             return d.share;
           });
 
