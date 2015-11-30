@@ -955,9 +955,11 @@ function load_charts(exports) {
     url_source_base = data_sources[this.selectedIndex].url;
     console.log(url_source_base);
     // load chart on switch
-    load_charts(this)
+    load_charts(this);
     // Change title function here
+    document.getElementById("domain_title").innerHTML = data_sources[this.selectedIndex].title;
 
   });
 // Load charts first time
-  load_charts(this)
+  load_charts(this);
+  document.getElementById("domain_title").innerHTML = data_sources[0].title;
