@@ -99,12 +99,29 @@
   </head>
 
   <body>
-
+    <!-- Initalize title and data source variables -->
+    {% if page.url == '/' %}
+      {% capture data_url %}{{ site.data_url }}{% endcapture %}
+      {% capture page_title %}{{ '' }}{% endcapture %}
+    {% else %}
+      {% capture data_url %}{{ page.data_url }}{% endcapture %}
+      {% capture page_title %} - {{ page.name }}{% endcapture %}
+    {% endif %}
     <header id="usa_dot_gov_header">
       <div class="header_container">
-        <h1>analytics<a href="http://www.usa.gov" class="external-link">.usa.gov</a></h1>
+        <h1>analytics<a href="http://www.usa.gov" class="external-link">.usa.gov</a>&nbsp;{{page_title}}</h1>
         <a id="about" href="#explanation" class="site-nav">About this site</a>
+        <!-- Init a dropdown if the there are different agencies -->
+        {% if site.agencies.size > 0 %}
+        <select id="agency-selector">
+          <option value="/">{{site.dropdown_title}}</option>
+          {% for agency in site.agencies %}
+            <option value="{{agency.url}}">{{agency.name}}</option>
+          {% endfor %}
+        </select>
+        {% endif %}
       </div>
+
       <div id="color_bar"></div>
     </header>
 
@@ -133,7 +150,7 @@
       <div id="main_data">
         <section id="realtime"
           data-block="realtime"
-          data-source="{{ site.data_url }}/realtime.json"
+          data-source="{{ data_url }}/realtime.json"
           data-refresh="15">
           <h2 id="current_visitors" class="data">...</h2>
           <div class="chart_subtitle">people on government websites now</div>
@@ -145,7 +162,7 @@
         </section>
         <section id="time_series"
           data-block="today"
-          data-source="{{ site.data_url }}/today.json"
+          data-source="{{ data_url }}/today.json"
           data-refresh="15">
           <svg class="data time-series">
           </svg>
@@ -161,7 +178,7 @@
 
         <section id="devices" class="three_column"
           data-block="devices"
-          data-source="{{ site.data_url }}/devices.json">
+          data-source="{{ data_url }}/devices.json">
           <h4>Devices</h4>
           <figure id="chart_device_types">
             <div class="data bar-chart">
@@ -174,14 +191,14 @@
 
           <figure id="chart_browsers"
             data-block="browsers"
-            data-source="{{ site.data_url }}/browsers.json">
+            data-source="{{ data_url }}/browsers.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_ie"
             data-block="ie"
-            data-source="{{ site.data_url }}/ie.json"
+            data-source="{{ data_url }}/ie.json"
             data-scale-to-parent="true">
             <h4>Internet Explorer</h4>
             <div class="data bar-chart">
@@ -194,14 +211,14 @@
 
           <figure id="chart_os"
             data-block="os"
-            data-source="{{ site.data_url }}/os.json">
+            data-source="{{ data_url }}/os.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_windows"
             data-block="windows"
-            data-source="{{ site.data_url }}/windows.json"
+            data-source="{{ data_url }}/windows.json"
             data-scale-to-parent="true">
             <h4>Windows</h4>
             <div class="data bar-chart">
@@ -218,7 +235,7 @@
 
         <section id="cities" class="three_column"
           data-block="cities"
-          data-source="{{ site.data_url }}/top-cities-realtime.json">
+          data-source="{{ data_url }}/top-cities-realtime.json">
           <h4>Cities</h4>
           <figure id="chart_top-cities-90-days">
             <div class="data bar-chart">
@@ -231,14 +248,14 @@
 
           <figure id="chart_us"
             data-block="countries"
-            data-source="{{ site.data_url }}/top-countries-realtime.json">
+            data-source="{{ data_url }}/top-countries-realtime.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_countries"
             data-block="international_visits"
-            data-source="{{ site.data_url }}/top-countries-realtime.json">
+            data-source="{{ data_url }}/top-countries-realtime.json">
             <h4>International</h4>
             <div class="data bar-chart">
             </div>
@@ -260,11 +277,11 @@
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
             data-block="top-pages-realtime"
-            data-source="{{ site.data_url }}/top-pages-realtime.json"
+            data-source="{{ data_url }}/top-pages-realtime.json"
             data-refresh="15">
             <h5><em>
               People on a <strong>single, specific page</strong> now.
-              <a href="{{ site.data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
+              <a href="{{ data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
             </div>
@@ -272,7 +289,7 @@
 
           <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
-            data-source="{{ site.data_url }}/top-domains-7-days.json">
+            data-source="{{ data_url }}/top-domains-7-days.json">
             <h5><em>Visits over the last week to <strong>domains</strong>, including traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
             </div>
@@ -280,10 +297,10 @@
 
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
-            data-source="{{ site.data_url }}/top-domains-30-days.json">
+            data-source="{{ data_url }}/top-domains-30-days.json">
             <h5><em>
               Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain.
-              <a href="{{ site.data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
+              <a href="{{ data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
             </div>
@@ -297,7 +314,7 @@
           <h5><em>Total file downloads over the last week on government domains.</em></h5>
           <figure id="top-downloads"
             data-block="top-downloads"
-            data-source="{{ site.data_url }}/top-downloads-7-days.json">
+            data-source="{{ data_url }}/top-downloads-7-days.json">
             <div class="data bar-chart">
             </div>
           </figure>
@@ -336,41 +353,41 @@
           <h4>Updated daily (CSV)</h4>
           <ul>
             <li>
-              <a href="{{ site.data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
+              <a href="{{ data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
             </li>
             <li>
-              <a href="{{ site.data_url }}/top-downloads-7-days.csv" class="download-data">Top downloads over 7 days</a>
+              <a href="{{ data_url }}/top-downloads-7-days.csv" class="download-data">Top downloads over 7 days</a>
             </li>
             <li>
-              <a href="{{ site.data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
+              <a href="{{ data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
             </li>
             <li>
-              <a href="{{ site.data_url }}/browsers.csv" class="download-data">Web browsers</a>
+              <a href="{{ data_url }}/browsers.csv" class="download-data">Web browsers</a>
             </li>
             <li>
-              <a href="{{ site.data_url }}/ie.csv" class="download-data">Versions of Internet Explorer</a>
+              <a href="{{ data_url }}/ie.csv" class="download-data">Versions of Internet Explorer</a>
             </li>
             <li>
-              <a href="{{ site.data_url }}/os.csv" class="download-data">Operating systems</a>
+              <a href="{{ data_url }}/os.csv" class="download-data">Operating systems</a>
             </li>
             <li>
-              <a href="{{ site.data_url }}/windows.csv" class="download-data">Versions of Windows</a>
+              <a href="{{ data_url }}/windows.csv" class="download-data">Versions of Windows</a>
             </li>
           </ul>
           <h4>Updated every minute</h4>
 
           <ul>
             <li>
-              <a href="{{ site.data_url }}/all-pages-realtime.csv" class="download-data">All pages people are visiting</a> (CSV)
+              <a href="{{ data_url }}/all-pages-realtime.csv" class="download-data">All pages people are visiting</a> (CSV)
             </li>
             <li>
-              <a href="{{ site.data_url }}/top-countries-realtime.json" class="download-data">Visitors per country</a> (JSON)
+              <a href="{{ data_url }}/top-countries-realtime.json" class="download-data">Visitors per country</a> (JSON)
             </li>
             <li>
-              <a href="{{ site.data_url }}/top-cities-realtime.json" class="download-data">Visitors per city</a> (JSON)
+              <a href="{{ data_url }}/top-cities-realtime.json" class="download-data">Visitors per city</a> (JSON)
             </li>
             <li>
-              <a href="{{ site.data_url }}/realtime.json" class="download-data">Total people online</a> (JSON)
+              <a href="{{ data_url }}/realtime.json" class="download-data">Total people online</a> (JSON)
             </li>
           </ul>
 
