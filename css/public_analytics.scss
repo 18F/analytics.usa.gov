@@ -1,3 +1,6 @@
+---
+# Jekyll needs the front matter to render this in Sass
+---
 @import "bourbon/bourbon";
 
 //Grid Settings:
@@ -31,16 +34,17 @@ $medium-screen: new-breakpoint(max-width  992px   14);
 $small-screen:  new-breakpoint(max-width  768px   1);
 
 // Fonts & Colors:
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 
 $red: #921B1E;
 $blue: #022945;
+
 $light_gray: #f9f9f9;
+$dark_gray: #222;
+$medium_gray: #555;
 
 // used only for borders
 $gray: #e4e4e4;
 
-$dark_gray: #222;
 $light_blue: #3A96B7;
 $dark_blue: #36435A;
 $white: #fff;
@@ -180,7 +184,6 @@ section {
 }
 
 #main_data {
-  border-right: 1px solid $gray;
 
   @include span-columns(9);
   @include media($small-screen)  {
@@ -205,6 +208,8 @@ section {
 }
 
 #secondary_data {
+  border-left: 1px solid $gray;
+
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
@@ -221,16 +226,29 @@ section {
   }
 }
 
-#explanation, #data_download, #agencies {
+#explanation,
+#data_download {
   border-top: $border_width solid $gray;
-  font-size: 90%;
-  line-height: 1.6em;
+  line-height: 1.6;
+
+  h4 {font-size: 90%}
+
+  ul {
+    font-size: 80%;
+    padding: 0;
+  }
+
+  ul, li {
+    list-style-type: none;
+    list-style-position: inside;
+  }
+
   li {
     margin: 1em 0;
   }
 }
 
-#explanation, #agencies {
+#explanation {
   @include span-columns(9);
 
   @include media($small-screen)  {
@@ -243,6 +261,8 @@ section {
   @include media($small-screen)  {
     @include span-columns(1);
   }
+
+
 }
 
 .section_headline {
@@ -265,7 +285,6 @@ section {
 
 .three_column {
   @include span-columns(3 of 9);
-  // border-left: 1px solid $gray;
 
   @include media($small-screen)  {
     @include span-columns(1);
@@ -328,16 +347,8 @@ section {
   }
 }
 
-#chart_windows .bar-chart,
-#chart_ie .bar-chart {
-  .bin {
-    margin-left: 2em;
-    margin-bottom: 0rem;
-
-    .bar {
-      display: none;
-    }
-  }
+.bar:focus{
+  outline: 0;
 }
 
 #time_series {
@@ -360,6 +371,18 @@ section {
 #top_100_table {
   h3 {
     @include span-columns(2 of 5);
+  }
+}
+
+#top_downloads_table {
+  h5 {
+    margin-top: 10px;
+  }
+}
+
+#top_100_table, #top_downloads_table {
+  h3 {
+    font-size: 1.0em;
   }
   h5 {
     color: $dark_gray;
@@ -441,6 +464,15 @@ ul.pills {
 
   .bar-chart {
     font-size: 80%;
+
+    .bin {
+      margin-left: 2em;
+      margin-bottom: 0rem;
+
+      .bar {
+        display: none;
+      }
+    }
   }
 
   .bin {
@@ -483,6 +515,9 @@ ul.pills {
     a {
       text-decoration: none;
     }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .value {
@@ -491,6 +526,19 @@ ul.pills {
     white-space: nowrap;
     margin-top: -1.5rem;
     margin-bottom: .45rem;
+  }
+}
+
+#top-downloads .bar-chart .label {
+  height: auto;
+  line-height: 1.6;
+
+  .name {
+    display: block;
+  }
+
+  .domain {
+    color: $medium_gray;
   }
 }
 

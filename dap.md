@@ -63,8 +63,6 @@ Upload each gzipped file to the Amazon S3 bucket, using [`s3cmd`](https://github
 
 The below commands instruct Amazon S3 to serve files as JavaScript, and to mark their encoding as `gzip`, so that browsers will know to automatically unzip the files before reading them. Note that **the files are renamed upon upload** to remove the `.gz` suffix.
 
-**Note**: The cache time of 0 is *temporary* while we finalize the process. This should normally have a cache time of an hour or a day.
-
 ```
 s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=3600" dap.js.gz s3://18f-dap/dap/dap.js
 s3cmd put -P --mime-type="application/javascript" --add-header="Content-Encoding: gzip" --add-header="Cache-Control:max-age=3600" dap.min.js.gz s3://18f-dap/dap/dap.min.js
@@ -77,6 +75,5 @@ This bucket is served by CloudFront, at `https://analytics.usa.gov`. So the fina
 
 ### Possible future TODOs
 
-* Definite TODO: up the cache time once we're sure this works.
 * Look into making a single Node script that does all of this at once, similar to [`analytics-reporter`](https://github.com/18F/analytics-reporter/blob/f2183ded024b58033aa89662fd24b3e3c7533387/bin/analytics).
 * Commit the DAP results directly to this repository. This would also mean we could include it in automated webhook-based deployments.
