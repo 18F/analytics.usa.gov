@@ -504,7 +504,11 @@
 
         dispatch.loading(selection, d);
 
-        var json = url.apply(this, arguments);
+        var url_source_base = data_sources.filter(function (element) {
+          return window.location.hash == element.endpoint;
+        })[0].url;
+
+        var json = url_source_base + url.apply(this, arguments);
         if (!json) {
           return console.error("no data source found:", this, d);
         }
@@ -944,5 +948,25 @@
 
   }
 
-
 })(this);
+
+// Initalize dropdown
+var dropDown = d3.select("#table_container").append("select").attr("name", "data-source-list");
+var options = dropDown.selectAll("option").data(data_sources).enter().append("option");
+options.text(function (d) { return d.title; })
+     .attr("value", function (d) { return d.endpoint; });
+
+// Set the dropdown and the title
+for (var i = 0; i < data_sources.length; i++) {
+  if (data_sources[i].endpoint === window.location.hash){
+    d3.select("[name=data-source-list]")[0][0].selectedIndex = i;
+    d3.select('#domain_title').html(data_sources[i].title);
+    break;
+  }
+}
+
+// Initalize on change action
+dropDown.on("change", function () {
+  window.location.hash=data_sources[this.selectedIndex].endpoint;
+  location.reload();
+});
