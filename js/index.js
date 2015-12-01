@@ -955,6 +955,15 @@ var options = dropDown.selectAll("option").data(data_sources).enter().append("op
 options.text(function (d) { return d.title; })
      .attr("value", function (d) { return d.endpoint; });
 
+// filter
+for (var i = 0; i < data_sources.length; i++) {
+  if (data_sources[i].endpoint === window.location.hash){
+    document.getElementsByName('data-source-list')[0].selectedIndex = i;
+    document.getElementById("domain_title").innerHTML = data_sources[i].title;
+    break;
+  }
+}
+
 dropDown.on("change", function () {
   window.location.hash=data_sources[this.selectedIndex].endpoint;
   location.reload();
