@@ -114,9 +114,9 @@
         <!-- Init a dropdown if the there are different agencies -->
         {% if site.agencies.size > 0 %}
         <select id="agency-selector">
-          <option value="/">{{site.dropdown_title}}</option>
+          <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
           {% for agency in site.agencies %}
-            <option value="{{agency.url}}">{{agency.name}}</option>
+            <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
           {% endfor %}
         </select>
         {% endif %}
