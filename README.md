@@ -20,6 +20,9 @@ Install them all:
 bundle install
 ```
 
+[`analytics-reporter`](https://github.com/18F/analytics-reporter) is the code that powers the analytics dashboard.
+Please clone the `analytics-reporter` next to a local copy of this github repository.
+
 ### Developing locally
 
 Run Jekyll with development settings:
