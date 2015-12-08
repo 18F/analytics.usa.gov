@@ -51,6 +51,7 @@ permalink: /
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
     <script src="{{ site.baseurl }}/js/vendor/d3.v3.min.js"></script>
+    <script src="{{ site.baseurl }}/js/vendor/odometer.0.4.6.min.js"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -100,6 +101,8 @@ permalink: /
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="{{ site.baseurl }}/css/google-fonts.css" rel="stylesheet" />
+    <link href="{{ site.baseurl }}/css/odometer.0.4.6.min.css" rel="stylesheet" />
+
   </head>
 
   <body>
@@ -139,7 +142,7 @@ permalink: /
           data-block="realtime"
           data-source="{{ site.data_url }}/realtime.json"
           data-refresh="15">
-          <h2 id="current_visitors" class="data">...</h2>
+          <h2 id="current_visitors" class="data odometer"></h2>
           <div class="chart_subtitle">people on government websites now</div>
         </section>
 
