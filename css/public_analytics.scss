@@ -50,7 +50,7 @@ $dark_blue: #36435A;
 $white: #fff;
 $background_color: $light_gray;
 $container_background: $white;
-$border_width: 1px;
+$border_width: 4px;
 
 $bold_weight: 600;
 
@@ -208,12 +208,12 @@ section {
 }
 
 #secondary_data {
-  border-left: 1px solid $gray;
+  border-left: 4px solid $gray;
 
   @include span-columns(5);
   @include media($small-screen)  {
     @include span-columns(1);
-    border-top: 1px solid $gray;
+    border-top: 4px solid $gray;
     border-left: none;
     border-right: none;
   }
@@ -267,7 +267,7 @@ section {
 
 .section_headline {
   padding: 0.1em 1em;
-  border-top: 1px solid $gray;
+  border-top: 4px solid $gray;
   @include media($small-screen)  {
     border-bottom: none;
   }
