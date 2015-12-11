@@ -82,10 +82,6 @@ make deploy
 
 **Use the full command above.** The full command ensures that the build completes successfully, with production settings, _before_ triggering an upload to the production bucket.
 
-### Fixing links in the Top 20
-
-Links pulled directly from Google Analytics are occasionally broken (this is most common in the Top 20 section). For now, we're hard coding the fix in the `index.js` file [here](https://github.com/GSA/analytics.usa.gov/blob/master/js/index.js#L6) in the format: `"broken link" : "working link",`.
-
 ### Public domain
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
