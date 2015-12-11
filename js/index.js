@@ -944,5 +944,7 @@
 
   }
 
+// Add anchor urls to all sections
+anchors.add()
 
 })(this);
