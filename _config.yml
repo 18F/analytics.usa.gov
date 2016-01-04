@@ -15,12 +15,31 @@ exclude:
 - work
 - ".sass-cache"
 
-# Site metadata
+# defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: agencies
+    values:
+      layout: default
+
+collections:
+  agencies:
+    output: true
+    permalink: /:path/
+
+# Site title and description 
 title: "analytics.usa.gov | The US government's web traffic."
 description: "Official data on web traffic to hundreds of US federal government websites. Published by the Digital Analytics Program."
 
-# site's own URL, and data root
-url: https://analytics.usa.gov
+# Site's own URL
+url: https://analytics.usa.gov 
+
+# Default dropdown title, will not appear if there are no sub-pages
+dropdown_title: All Agencies 
+
+# Default data url
 data_url: https://analytics.usa.gov/data/live
 
 # GitHub information

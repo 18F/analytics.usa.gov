@@ -944,5 +944,17 @@
 
   }
 
+// Set the dropdown
+var dropDown = document.getElementById('agency-selector');
+for (var i = 0; i < dropDown.options.length; i++) {
+  if (dropDown.options[i].value === window.location.pathname){
+    dropDown.selectedIndex = i;
+    break;
+  }
+}
+// Start on change listener to load new page
+d3.select(dropDown).on("change", function () {
+  window.location= d3.select(this).property('value');
+});
 
 })(this);
