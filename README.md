@@ -8,6 +8,8 @@ Other government agencies who have reused this project for their analytics dashb
 * http://analytics.phila.gov/
 * https://bouldercolorado.gov/stats
 * http://analytics.tdec.tn.gov/
+  
+[This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).  
 
 
 ### Setup
