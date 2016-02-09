@@ -109,7 +109,7 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MQSGZS');</script>
     <!-- End Google Tag Manager -->
-    
+
     <!-- Initalize title and data source variables -->
     {% if page.url == '/' %}
       {% capture data_url %}{{ site.data_url }}{% endcapture %}
@@ -321,10 +321,10 @@
         <section id="top_downloads_table">
 
           <h3>Top Downloads</h3>
-          <h5><em>Total file downloads over the last week on government domains.</em></h5>
+          <h5><em>Total file downloads yesterday on government domains.</em></h5>
           <figure id="top-downloads"
             data-block="top-downloads"
-            data-source="{{ data_url }}/top-downloads-7-days.json">
+            data-source="{{ data_url }}/top-downloads-yesterday.json">
             <div class="data bar-chart">
             </div>
           </figure>
@@ -366,7 +366,7 @@
               <a href="{{ data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
             </li>
             <li>
-              <a href="{{ data_url }}/top-downloads-7-days.csv" class="download-data">Top downloads over 7 days</a>
+              <a href="{{ data_url }}/top-downloads-yesterday.csv" class="download-data">Top downloads yesterday</a>
             </li>
             <li>
               <a href="{{ data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
@@ -429,5 +429,5 @@
   </script>
 
   <script src="{{ site.baseurl }}/js/index.js"></script>
-  
+
 </html>
