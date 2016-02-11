@@ -79,6 +79,48 @@ a, a:visited {
   color: $dark_blue;
 }
 
+.anlytics-title {
+  float:left;
+}
+
+#agency-selector {
+  background: url(../images/white-arrow-down.png) 98% no-repeat white ;
+  background-size: 7%;
+  background-color: #36435A;
+  color: white;
+  font-size: .8em;
+  font-weight: 600;
+  padding: 2px 2px 2px 20px;
+  max-width:90%;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  left:50px;
+}
+
+#agency-selector-wrap {
+  float:right;
+  padding-right:50px;
+  max-width:70%;
+  float:left; 
+  display:inline;
+  @include media($xlarge-screen) {
+    max-width: 70%;
+  }
+  @include media($large-screen)  {
+    max-width: 60%;
+  }
+  @include media($medium-screen) {
+    max-width:  50%;
+  }
+  @include media($small-screen)  {
+    max-width:  40%;
+  }
+}
+
+
 #usa_dot_gov_header {
   a, a:visited {
     color: $white;
