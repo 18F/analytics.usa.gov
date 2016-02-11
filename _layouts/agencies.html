@@ -109,16 +109,22 @@
     {% endif %}
     <header id="usa_dot_gov_header">
       <div class="header_container">
-	      <h1><a href="/" class="external-link"><b>analytics</b>.usa.gov</a>&nbsp;{{page_title}}</h1>
+	      <h1>
+          <a href="/" class="external-link"><b>analytics</b>.usa.gov</a>
+          {% if site.agencies.size > 0 %}
+          <div id="agency-selector-wrap">
+            -
+            <select id="agency-selector">
+              <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+              {% for agency in site.agencies %}
+                <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endif %}
+        </h1>
+
         <a id="about" href="#explanation" class="site-nav">About this site</a>
-        {% if site.agencies.size > 0 %}
-        <select id="agency-selector">
-          <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-          {% for agency in site.agencies %}
-            <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-          {% endfor %}
-        </select>
-        {% endif %}
       </div>
 
       <div id="color_bar"></div>
