@@ -79,13 +79,17 @@ a, a:visited {
   color: $dark_blue;
 }
 
+.anlytics-title {
+  float:left;
+}
+
 #agency-selector {
   background-color: transparent;
   color: white;
   font-size: .8em;
   font-weight: 600;
   padding: 2px 2px 2px 20px;
-  max-width:95%;
+  max-width:90%;
   border: none;
   border: 1px solid white;
   left:50px;
@@ -94,6 +98,21 @@ a, a:visited {
 #agency-selector-wrap {
   float:right;
   padding-right:50px;
+  max-width:70%;
+  float:left; 
+  display:inline;
+  @include media($xlarge-screen) {
+    max-width: 70%;
+  }
+  @include media($large-screen)  {
+    max-width: 60%;
+  }
+  @include media($medium-screen) {
+    max-width:  50%;
+  }
+  @include media($small-screen)  {
+    max-width:  40%;
+  }
 }
 
 
