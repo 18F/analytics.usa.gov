@@ -28,6 +28,7 @@ $gutter: 0em !global;
   }
 }
 
+$xxlarge-screen: new-breakpoint(max-width  4000px  14);
 $xlarge-screen: new-breakpoint(max-width  1600px  14);
 $large-screen:  new-breakpoint(max-width  1200px  14);
 $medium-screen: new-breakpoint(max-width  992px   14);
@@ -109,6 +110,9 @@ a, a:visited {
   width:100%;
   float:left; 
   display:inline;
+  @include media($xxlarge-screen) {
+    width: 60%;
+  }
   @include media($xlarge-screen) {
     width: 70%;
   }
@@ -133,6 +137,9 @@ a, a:visited {
   font-size:1.4em;
   display:inline;
   max-width:400px;
+  @include media($xxlarge-screen) {
+    display:none;
+  }
   @include media($xlarge-screen) {
     width: 60%;
     display:none;
