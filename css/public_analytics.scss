@@ -28,10 +28,12 @@ $gutter: 0em !global;
   }
 }
 
+$xxlarge-screen: new-breakpoint(max-width  4000px  14);
 $xlarge-screen: new-breakpoint(max-width  1600px  14);
 $large-screen:  new-breakpoint(max-width  1200px  14);
 $medium-screen: new-breakpoint(max-width  992px   14);
 $small-screen:  new-breakpoint(max-width  768px   1);
+$mobile-small-screen:  new-breakpoint(max-width  500px   1);
 
 // Fonts & Colors:
 
@@ -83,40 +85,88 @@ a, a:visited {
   float:left;
 }
 
-#agency-selector {
+.agency-selector {
   background: url(../images/white-arrow-down.png) 98% no-repeat white ;
   background-size: 7%;
   background-color: #36435A;
   color: white;
   font-size: .8em;
   font-weight: 600;
-  padding: 2px 2px 2px 20px;
-  max-width:90%;
+  padding: 2px 2px 2px 10px;
+  width:95%;
   border: 1px solid white;
   border-radius: 5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   left:50px;
+  @include media($small-screen) {
+    padding: 2px 2px 2px 5px;
+  }
 }
 
 #agency-selector-wrap {
   float:right;
-  padding-right:50px;
-  max-width:70%;
+  width:100%;
   float:left; 
   display:inline;
+  @include media($xxlarge-screen) {
+    width: 60%;
+  }
   @include media($xlarge-screen) {
-    max-width: 70%;
+    width: 70%;
   }
   @include media($large-screen)  {
-    max-width: 60%;
+    width: 60%;
+    display:none;
   }
   @include media($medium-screen) {
-    max-width:  50%;
+    width:  50%;
+    display:none;
   }
   @include media($small-screen)  {
-    max-width:  40%;
+    width:  40%;
+    display:none;
+  }
+}
+
+#agency-selector-wrap-small {
+  float:right;
+  width:100%;
+  float:left;
+  font-size:1.4em;
+  display:inline;
+  max-width:400px;
+  @include media($xxlarge-screen) {
+    display:none;
+  }
+  @include media($xlarge-screen) {
+    width: 60%;
+    display:none;
+  }
+  @include media($large-screen)  {
+    width: 50%;
+    display:inline;
+    max-width:  550px;
+    padding-bottom:10px;
+  }
+  @include media($medium-screen) {
+    width:  60%;
+    display:inline;
+    max-width:450px;
+    padding-bottom:10px;
+  }
+  @include media($small-screen)  {
+    width:  85%;
+    display:inline;
+    max-width:450px;
+    padding-bottom:10px;
+  }
+  @include media($mobile-small-screen) {
+    width:  100%;
+    display:inline;
+    max-width:450px;
+    padding-bottom:10px;
   }
 }
 

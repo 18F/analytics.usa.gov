@@ -945,16 +945,23 @@
   }
 
 // Set the dropdown
-var dropDown = document.getElementById('agency-selector');
-for (var i = 0; i < dropDown.options.length; i++) {
-  if (dropDown.options[i].value === window.location.pathname){
-    dropDown.selectedIndex = i;
-    break;
+var dropDowns = document.getElementsByClassName('agency-selector');
+
+for (var i = 0; i < dropDowns.length; i++) {
+
+  // Start on change listener to load new page
+  d3.select(dropDowns[i]).on("change", function () {
+    window.location= d3.select(this).property('value');
+  });
+
+  for (var j = 0; j < dropDowns[i].options.length; j++) {
+    if (dropDowns[i].options[j].value === window.location.pathname){
+      dropDowns[i].selectedIndex = j;
+      break;
+    }
   }
 }
-// Start on change listener to load new page
-d3.select(dropDown).on("change", function () {
-  window.location= d3.select(this).property('value');
-});
+
+
 
 })(this);
