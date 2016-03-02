@@ -114,7 +114,7 @@
           {% if site.agencies.size > 0 %}
           <div id="agency-selector-wrap">
             &nbsp-
-            <select class="agency-selector">
+            <select id="agency-selector" title="Agency Selection Dropdown" class="agency-selector">
               <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
               {% for agency in site.agencies %}
                 <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
@@ -127,7 +127,7 @@
         <a id="about" href="#explanation" class="site-nav">About this site</a>
         {% if site.agencies.size > 0 %}
           <div id="agency-selector-wrap-small">
-            <select class="agency-selector">
+            <select id="agency-selector-small" title="Agency Selection Dropdown" class="agency-selector">
               <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
               {% for agency in site.agencies %}
                 <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
