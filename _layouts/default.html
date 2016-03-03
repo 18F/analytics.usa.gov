@@ -141,40 +141,6 @@
       <div id="color_bar"></div>
     </header>
 
-        <header id="usa_dot_gov_header">
-      <div class="header_container">
-        <h1>
-          <a href="/" class="external-link anlytics-title"><b>analytics</b>.usa.gov</a>
-          {% if site.agencies.size > 0 %}
-          <div id="agency-selector-wrap">
-            &nbsp-
-            <select id="agency-selector" title="Agency Selection Dropdown" class="agency-selector">
-              <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-              {% for agency in site.agencies %}
-                <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          {% endif %}
-        </h1>
-
-        <a id="about" href="#explanation" class="site-nav">About this site</a>
-        {% if site.agencies.size > 0 %}
-          <div id="agency-selector-wrap-small">
-            <select id="agency-selector-small" title="Agency Selection Dropdown" class="agency-selector">
-              <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-              {% for agency in site.agencies %}
-                <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          {% endif %}
-      </div>
-
-      <div id="color_bar"></div>
-    </header>
-
-
     <div class="container">
       <!--
       JavaScript block hooks look for any element with both data-block and
