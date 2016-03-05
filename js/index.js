@@ -211,9 +211,10 @@
     "countries": renderBlock()
       .transform(function(d) {
         var total_visits = 0;
+        var us_visits = 0;
         d.data.forEach(function(c) {
           total_visits += parseInt(c.active_visitors);
-          if (c.country == "United States") {
+          if (c.country === "United States") {
             us_visits = c.active_visitors;
           }
         });
@@ -223,7 +224,6 @@
           "International": international
         };
         return addShares(listify(data));
-
       })
       .render(
         barChart()
