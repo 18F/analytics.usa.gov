@@ -108,37 +108,26 @@
       {% capture data_url %}{{ page.data_url }}{% endcapture %}
       {% capture page_title %} - {{ page.name }}{% endcapture %}
     {% endif %}
-    <header id="usa_dot_gov_header">
-      <div class="header_container">
-        <h1>
-          <a href="/" class="external-link anlytics-title"><b>analytics</b>.usa.gov</a>
-          {% if site.agencies.size > 0 %}
-          <div id="agency-selector-wrap">
-            &nbsp-
-            <select id="agency-selector" title="Agency Selection Dropdown" class="agency-selector">
-              <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-              {% for agency in site.agencies %}
-                <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          {% endif %}
-        </h1>
 
-        <a id="about" href="#explanation" class="site-nav">About this site</a>
+    <header>
+      <div class="inner clearfix">
+        <a href="#explanation" class="el right">
+          About <span class="sm-hide">this site</span>
+        </a>
+        <a href="/" class="el left brand">
+          <strong>analytics</strong>.usa.gov
+        </a>
         {% if site.agencies.size > 0 %}
-          <div id="agency-selector-wrap-small">
-            <select id="agency-selector-small" title="Agency Selection Dropdown" class="agency-selector">
-              <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-              {% for agency in site.agencies %}
-                <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          {% endif %}
+        <div class="el left agency-selector-wrap">
+          <select class="agency-selector" title="Agency Selection Dropdown">
+            <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+            {% for agency in site.agencies %}
+              <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        {% endif %}
       </div>
-
-      <div id="color_bar"></div>
     </header>
 
     <div class="container">
