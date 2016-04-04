@@ -4,11 +4,11 @@ A project to publish website analytics for the US federal government.
 
 For a detailed description of how the site works, read [18F's blog post on analytics.usa.gov](https://18f.gsa.gov/2015/03/19/how-we-built-analytics-usa-gov/).
 
-Other government agencies who have reused this project for their analytics dashboard: 
+Other government agencies who have reused this project for their analytics dashboard:
 * http://analytics.phila.gov/
 * https://bouldercolorado.gov/stats
 * http://analytics.tdec.tn.gov/
-  
+
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).  
 
 
@@ -42,6 +42,23 @@ make watch
 ```
 
 To compile the Sass stylesheets once, run `make clean all`, or `make -B` to compile even if the .css file already exists.
+
+### Developing on a remote server
+
+By default, Jekyll only listens to localhost requests. You'll need to reconfigure it to allow requests from outside your server (~if you're trying to access this dashboard from a browser outside your server, you'll get a connection refused).
+
+There are two ways to fix this:
+- You can modify `_development.yml` and replace `url: http://localhost:4000` with:
+```
+port: 4000 (or any port of your choice)
+host: your-server-IP
+```
+
+- Or you can configure Jekyll to accept all incoming requests. This will also run `jekyll serve / make dev` for you.
+```
+jekyll server --watch --host 0.0.0.0
+```
+
 
 ### Developing with local data
 
@@ -93,5 +110,3 @@ This project is in the worldwide [public domain](LICENSE.md). As stated in [CONT
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
 > All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
-
-
