@@ -45,7 +45,8 @@ To compile the Sass stylesheets once, run `make clean all`, or `make -B` to comp
 
 ### Developing with local data
 
-The development settings assume data is available at `http://localhost:4000`.
+The development settings assume data is available at `/fakedata`. You can change this in `_development.yml`.
+
 
 ### Developing with real live data from `analytics-reporter`
 
