@@ -27,6 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="google-site-verification" content="NjbZn6hQe7OwV-nTsa6nLmtrOUcSGPRyFjxm5zkmCcg" />
 
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/vendor/uswds.v0.9.1.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/public_analytics.css">
     <link rel="icon" type="image/x-icon" href="images/analytics-favicon.ico">
 
@@ -110,26 +111,29 @@
     {% endif %}
 
     <header>
-      <div class="inner clearfix">
-        <h1>
-          <a href="/" class="external-link">
-            <strong>analytics</strong>.usa.gov
+        <div class="inner clearfix">
+            <h1>
+              <a href="/" class="external-link">
+                <strong>analytics</strong>.usa.gov
+              </a>
+            </h1>
+            {% if site.agencies.size > 0 %}
+            <div class="agency-selector-wrap">
+              <form>
+                <label for="agency-selector">Select an agency</label>
+                <select name="agency-selector" id="agency-selector" title="Agency Selection Dropdown">
+                  <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+                  {% for agency in site.agencies %}
+                    <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
+                  {% endfor %}
+                </select>
+              </form>
+            </div>
+            {% endif %}
+          <a href="#explanation" id="about" class="">
+            About <span class="sm-hide">this site</span>
           </a>
-        </h1>
-        <a href="#explanation" id="about" class="el">
-          About <span class="sm-hide">this site</span>
-        </a>
-        {% if site.agencies.size > 0 %}
-        <div class="el agency-selector-wrap">
-          <select class="agency-selector" title="Agency Selection Dropdown">
-            <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-            {% for agency in site.agencies %}
-              <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-            {% endfor %}
-          </select>
         </div>
-        {% endif %}
-      </div>
     </header>
 
     <div class="container">
@@ -161,7 +165,6 @@
           * We are currently experiencing technical difficulties with respect to our real-time traffic data. 
           Actual real-time visitor counts may be higher than displayed.
         </div> -->
-        
         <section id="realtime"
           data-block="realtime"
           data-source="{{ data_url }}/realtime.json"
@@ -432,6 +435,7 @@
     window._ie = window._ie9 || window._ie10 || window._ie11;
   </script>
 
+  <script src="{{ site.baseurl }}/js/vendor/uswds.v0.9.1.js"></script>
   <script src="{{ site.baseurl }}/js/index.js"></script>
   
   <!-- report to oneself -->
