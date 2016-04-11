@@ -28,10 +28,12 @@ Please clone the `analytics-reporter` next to a local copy of this github reposi
 ### Adding Additional Agencies
 0. Ensure that data is being collected for a specific agency's Google Analytics ID. Visit [18F's analytics-reporter](https://github.com/18F/analytics-reporter) for more information. Save the url path for the data collection path.
 0. Create a new html file in the `_agencies` directory. The name of the file will be the url path.
+
   ```bash
   touch _agencies/agencyx.html
   ```
 0. Set the required data for for the new file. example:
+
   ```yaml
   ---
   name: Agency X # Name of the page
