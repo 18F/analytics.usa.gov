@@ -428,9 +428,6 @@
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
 
-        // Update the type of the objects
-        d3.select("#top_table_type").text(d3.select(d.tab).attr("data-type"));
-
         update();
 
         // track in google analytics

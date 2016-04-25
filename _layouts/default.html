@@ -285,20 +285,19 @@
         <section id="top_100_table">
 
           <!-- see: http://heydonworks.com/practical_aria_examples/ -->
-          <h3>Top <span id="top_table_type">Pages</span></h3>
+          <h3>Top Pages and Domains</h3>
           <ul class="pills" role="tablist">
             <li><a role="tab" data-type="Pages" aria-selected="true" href="#top-pages-realtime" class="site-nav">Now</a></li>
             <li><a role="tab" data-type="Domains" href="#top-pages-7-days" class="site-nav">7 Days</a></li>
             <li><a role="tab" data-type="Domains" href="#top-pages-30-days" class="site-nav">30 Days</a></li>
           </ul>
+            <h5><em>"Now" data includes traffic to a specific page, whereas "7 Days" and "30 Days" data includes traffic to all pages within a domain.</em></h5>
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
             data-block="top-pages-realtime"
             data-source="{{ data_url }}/top-pages-realtime.json"
             data-refresh="15">
-            <h5><em>
-              People on a <strong>single, specific page</strong> now.  We only count pages with at least 10 people on the page.
-              <a href="{{ data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
+              <h5><em>People on a <strong>single, specific page</strong> now.  We only count pages with at least 10 people on the page.
             </em></h5>
             <div class="data bar-chart">
             </div>
@@ -315,10 +314,7 @@
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
             data-source="{{ data_url }}/top-domains-30-days.json">
-            <h5><em>
-              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain. We only count pages with at least 1,000 visits in the last month.
-              <a href="{{ data_url }}/all-domains-30-days.csv">Download the full dataset.</a>
-            </em></h5>
+            <h5><em>Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain. We only count pages with at least 1,000 visits in the last month.</em></h5>
             <div class="data bar-chart">
             </div>
           </figure>
@@ -350,9 +346,6 @@
           Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from around <a href="https://analytics.usa.gov/data/live/second-level-domains.csv" class="external-link">400 executive branch government domains</a>, across <a href="https://analytics.usa.gov/data/sites.csv" class="external-link">over 4000 total websites</a>, including every cabinet department. We continue to pursue and add more sites frequently; to add your site, <a href="mailto:DAP@support.digitalgov.gov" class="external-link">email the Digital Analytics Program</a>.
         </p>
 
-        <p>
-          <strong>Top 20 data:</strong> "Now" data includes traffic to a specific, single page&mdash;whereas "7 Days" and "30 Days" data includes traffic to a domain <strong>and</strong> all pages within that domain.
-        </p>
 
         <p>
           This open source project is in the public domain, which means that this website and its data are free for you to use without restriction. You can find the <a href="https://github.com/GSA/analytics.usa.gov" class="external-link">code for this website</a> and the <a href="https://github.com/18F/analytics-reporter" class="external-link">code behind the data collection</a> on GitHub.
