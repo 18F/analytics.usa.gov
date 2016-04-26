@@ -38,21 +38,21 @@ $mobile-small-screen:  new-breakpoint(max-width  500px   1);
 // Fonts & Colors:
 
 $red: #981b1e;
-$light_blue: #0071bc;
-$dark_blue: #112e51;
-$light_gray: #f9f9f9;
+$light-blue: #0071bc;
+$dark-blue: #112e51;
+$light-gray: #f9f9f9;
 $gray: #e4e4e4; // used only for borders
-$dark_gray: #323a45;//#222;
+$dark-gray: #323a45;//#222;
 $white: #fff;
 
-$background_color: $light_gray;
-$container_background: $white;
-$data: $light_blue;
+$background-color: $light-gray;
+$container-background: $white;
+$data: $light-blue;
 
-$border_width: 1px;
-$border_radius: 5px;
+$border-width: 1px;
+$border-radius: 5px;
 
-$bold_weight: 600;
+$bold-weight: 600;
 
 $font-sans:           "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 $lead-font-size:      rem(20px);
@@ -80,8 +80,8 @@ body {
   font-size: 18px;
   $em-size: 18px;
   font-weight: 300;
-  color: $dark_gray;
-  background: $background_color;
+  color: $dark-gray;
+  background: $background-color;
   margin: 0;
   @include media($small-screen) {
     font-size: 14px;
@@ -90,7 +90,7 @@ body {
 
 a,
 a:visited {
-  color: $dark_blue;
+  color: $dark-blue;
 }
 
 .technical-difficulties {
@@ -114,27 +114,6 @@ ul li:before {
     padding-right: 0;
 }
 
-/*h2 {
-  font-size: 4em;
-}
-
-h3 {
-  font-size: 1.2em;
-  margin: 1em 0;
-}
-
-h4 {
-  margin: 1em 0;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 0.8em;
-  font-weight: 400;
-}*/
-
-
 @include media($small-screen) {
   .sm-hide { display: none !important; }
 }
@@ -145,9 +124,9 @@ h5 {
 */
 
 header {
-  background: $dark_blue;
+  background: $dark-blue;
   color: $white;
-  border-bottom: 6px solid $light_blue;
+  border-bottom: 6px solid $light-blue;
 
   .inner {
     padding: 2.5rem;
@@ -209,7 +188,7 @@ header {
   font-weight: 600;
   vertical-align: middle;
   border: 1px solid $white;
-  /*border-radius: $border_radius;*/
+  /*border-radius: $border-radius;*/
 
   @include media($medium-screen) {
     font-size: 16px;
@@ -237,7 +216,7 @@ section {
 }
 
 #realtime {
-  color: $dark_blue;
+  color: $dark-blue;
   @include media($small-screen)  {
     font-size: 12px;
   }
@@ -271,7 +250,7 @@ section {
     text-align: right;
     margin-top: -2.5rem;
     font-size: 1.0em;
-    color: $dark_gray;
+    color: $dark-gray;
   }
 }
 
@@ -290,7 +269,7 @@ section {
 
 #explanation,
 #data_download {
-  border-top: $border_width solid $gray;
+  border-top: $border-width solid $gray;
   line-height: 1.6;
 
   h4 {font-size: 90%}
@@ -341,7 +320,7 @@ section {
   text-align: center;
   font-size: 1.5em;
   #total_visitors {
-    font-weight: $bold_weight;
+    font-weight: $bold-weight;
   }
 }
 
@@ -381,7 +360,7 @@ section {
   left: 0;
   right: 0;
   height: 100%;
-  background: $dark_blue;
+  background: $dark-blue;
   color: white;
   vertical-align: middle;
   padding: 10em;
@@ -426,7 +405,7 @@ section {
 }
 
 #current_visitors {
-  font-weight: $bold_weight;
+  font-weight: $bold-weight;
   text-align: center;
 }
 
@@ -441,7 +420,7 @@ section {
     font-size: 1.0em;
   }
   h5 {
-    color: $dark_gray;
+    color: $dark-gray;
     font-weight: 300;
   }
 }
@@ -483,7 +462,7 @@ ul.pills {
     float: left;
 
     & > a {
-      color: $dark_blue;
+      color: $dark-blue;
       background: $white;
       width: 100%;
       text-align: center;
@@ -503,7 +482,7 @@ ul.pills {
 
       &[aria-selected='true'] {
         color: #fff;
-        background: $light_blue;
+        background: $light-blue;
       }
     }
 
@@ -597,7 +576,7 @@ ul.pills {
   }
 
   .domain {
-    color: $dark_gray;
+    color: $dark-gray;
   }
 }
 
@@ -609,7 +588,7 @@ g.axis {
   }
 
   .tick text {
-    fill: $dark_gray;
+    fill: $dark-gray;
     font-size: .75rem;
   }
 }
@@ -622,8 +601,8 @@ g.axis {
   }
 
   text.label {
-    fill: $dark_gray;
-    font-size: 1.5rem;
+    fill: $dark-gray;
+    font-size: 1.1rem;
   }
 }
 
