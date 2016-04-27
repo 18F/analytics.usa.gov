@@ -1,141 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
-    <!--
-
-    Hi! Welcome to our source code.
-
-    This dashboard uses data from the Digital Analytics Program, a US
-    government team inside the General Services Administration, an independent
-    federal agency.
-
-
-    For a detailed tech breakdown of how 18F and friends built this site:
-
-    https://18f.gsa.gov/2015/03/19/how-we-built-analytics-usa-gov/
-
-
-    This is a fully open source project, and your contributions are welcome.
-
-    Frontend static site: https://github.com/GSA/analytics.usa.gov
-    Backend data reporting: https://github.com/18F/analytics-reporter
-
-    -->
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="google-site-verification" content="NjbZn6hQe7OwV-nTsa6nLmtrOUcSGPRyFjxm5zkmCcg" />
-
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/vendor/uswds.v0.9.1.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/public_analytics.css">
-    <link rel="icon" type="image/x-icon" href="images/analytics-favicon.ico">
-
-    <meta name="twitter:site" content="@{{ site.twitter }}">
-    <meta name="twitter:creator" content="@{{ site.twitter }}">
-    <meta property="og:type" content="website" />
-
-    <meta property="og:url" content="{{ site.url }}" />
-    <link rel="canonical" href="{{ site.url }}" />
-
-    <title>{{ site.title }}</title>
-    <meta property="og:title" content="{{ site.title }}" />
-    <meta property="og:site_name" content="{{ site.title }}" />
-
-    <meta name="description" content="{{ site.description }}">
-    <meta property="og:description" content="{{ site.description }}" />
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
-    <script src="{{ site.baseurl }}/js/vendor/d3.v3.min.js"></script>
-
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-48605964-36', 'auto');
-    ga('set', 'anonymizeIp', true);
-    ga('set', 'forceSSL', true);
-    ga('send', 'pageview');
-
-    document.addEventListener("DOMContentLoaded", function(event) {
-
-      d3.selectAll('.download-data').on('click', function() {
-        var link = this.href;
-        var text = this.text;
-        ga('send','event','Download Data', link, text);
-      });
-
-      d3.selectAll('.external-link').on('click', function() {
-        var link = this.href;
-        var text = this.text;
-        ga('send','event','External Link', link, text);
-      });
-
-      d3.selectAll('.top-download-page').on('click', function() {
-        var link = this.href;
-        var text = this.text;
-        ga('send','event','Top-Download Page', link, text);
-      });
-
-      d3.selectAll('.top-download-file').on('click', function() {
-        var link = this.href;
-        var text = this.text;
-        ga('send','event','Top-Download File', link, text);
-      });
-
-    });
-  </script>
-
-    <!--[if lte IE 9]>
-    <script src="{{ site.baseurl }}/js/vendor/aight.v2.min.js"></script>
-    <![endif]-->
-
-    <script src="{{ site.baseurl }}/js/vendor/q.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="{{ site.baseurl }}/css/google-fonts.css" rel="stylesheet" />
-  </head>
+  {% include head.html %}
 
   <body>
 
-    <!-- Initalize title and data source variables -->
-    {% if page.url == '/' %}
-      {% capture data_url %}{{ site.data_url }}{% endcapture %}
-      {% capture page_title %}{{ '' }}{% endcapture %}
-    {% else %}
-      {% capture data_url %}{{ page.data_url }}{% endcapture %}
-      {% capture page_title %} - {{ page.name }}{% endcapture %}
-    {% endif %}
-
-    <header>
-        <div class="inner clearfix">
-            <h1>
-              <a href="/" class="external-link">
-                <strong>analytics</strong>.usa.gov
-              </a>
-            </h1>
-            <ul class="links">
-              <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
-              <li><a href="#data">Data</a></li>
-            </ul>
-            {% if site.agencies.size > 0 %}
-            <div class="agency-selector-wrap">
-              <form>
-                <label for="agency-selector">Select an agency</label>
-                <select name="agency-selector" id="agency-selector" title="Agency Selection Dropdown">
-                  <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-                  {% for agency in site.agencies %}
-                    <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
-                  {% endfor %}
-                </select>
-              </form>
-            </div>
-            {% endif %}
-        </div>
-    </header>
+    {% include header.html %}
 
     <div class="container">
       <!--
@@ -160,12 +29,7 @@
       -->
 
       <div id="main_data">
-
-        <!-- Technical Difficulties Banner -->
-<!--         <div class="technical-difficulties">
-          * We are currently experiencing technical difficulties with respect to our real-time traffic data. 
-          Actual real-time visitor counts may be higher than displayed.
-        </div> -->
+        {% include error.html %}
         <section id="realtime"
           data-block="realtime"
           data-source="{{ data_url }}/realtime.json"
@@ -336,136 +200,11 @@
         </section>
       </div>
 
-      <section id="explanation">
-
-        <h3>About this Site</h3>
-        <p>
-          This data provides a window into how people are interacting with the government online. The data comes from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://www.digitalgov.gov/services/dap/" class="external-link">Digital Analytics Program</a>. This program helps government agencies understand how people find, access, and use government services online. The program <a href="https://www.digitalgov.gov/services/dap/common-questions-about-dap-faq/#part-4" class="external-link">does not track individuals</a>, and <a href="https://support.google.com/analytics/answer/2763052?hl=en" class="external-link">anonymizes the IP addresses</a> of visitors.
-        </p>
-
-        <p>
-          Not every government website is represented in this data. Currently, the Digital Analytics Program collects web traffic from around <a href="https://analytics.usa.gov/data/live/second-level-domains.csv" class="external-link">400 executive branch government domains</a>, across <a href="https://analytics.usa.gov/data/sites.csv" class="external-link">over 4000 total websites</a>, including every cabinet department. We continue to pursue and add more sites frequently; to add your site, <a href="mailto:DAP@support.digitalgov.gov" class="external-link">email the Digital Analytics Program</a>.
-        </p>
-
-
-        <p>
-          This open source project is in the public domain, which means that this website and its data are free for you to use without restriction. You can find the <a href="https://github.com/GSA/analytics.usa.gov" class="external-link">code for this website</a> and the <a href="https://github.com/18F/analytics-reporter" class="external-link">code behind the data collection</a> on GitHub.
-        </p>
-
-        <p>
-          We plan to expand the data made available here. If you have any suggestions, or spot any issues or bugs, please <a href="https://github.com/GSA/analytics.usa.gov/issues" class="external-link">open an issue on GitHub</a> or contact the <a href="mailto:DAP@support.digitalgov.gov" class="external-link">Digital Analytics Program</a>.
-        </p>
-      </section>
-
-      <section id="data_download">
-
-        <h3>Download the Data</h3>
-
-          <h4>Updated daily (CSV)</h4>
-          <ul>
-            <li>
-              <a href="{{ data_url }}/all-domains-30-days.csv" class="download-data">Visits to all domains over 30 days</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/top-downloads-yesterday.csv" class="download-data">Top downloads yesterday</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/devices.csv" class="download-data">Desktop/mobile/tablet</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/browsers.csv" class="download-data">Web browsers</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/ie.csv" class="download-data">Versions of Internet Explorer</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/os.csv" class="download-data">Operating systems</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/windows.csv" class="download-data">Versions of Windows</a>
-            </li>
-            <li>
-              <a href="{{ data_url }}/screen-size.csv" class="download-data">Screen sizes</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ data_url }}/screen-size.json" class="download-data">Screen sizes</a> (JSON)
-            </li>
-
-            <li>
-              <a href="{{ data_url }}/language.csv" class="download-data">Language</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ data_url }}/language.json" class="download-data">Language</a> (JSON)
-            </li>
-
-            <li>
-              <a href="{{ data_url }}/device_model.csv" class="download-data">Device model</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ data_url }}/device_model.json" class="download-data">Device model</a> (JSON)
-            </li>
-
-            <li>
-              <a href="{{ data_url }}/top-traffic-sources-30-days.csv" class="download-data">Top traffic sources (30 days)</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ data_url }}/top-traffic-sources-30-days.json" class="download-data">Top traffic sources (30 days)</a> (JSON)
-            </li>
-
-            <li>
-              <a href="{{ data_url }}/top-exit-pages-30-days.csv" class="download-data">Top exit pages (30 days)</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ data_url }}/top-exit-pages-30-days.json" class="download-data">Top exit pages (30 days)</a> (JSON)
-            </li>
-          </ul>
-          <h4>Updated every two minutes</h4>
-
-          <ul>
-            <li>
-              <a href="{{ data_url }}/all-pages-realtime.csv" class="download-data">All pages people are visiting</a> (CSV)
-            </li>
-            <li>
-              <a href="{{ data_url }}/top-countries-realtime.json" class="download-data">Visitors per country</a> (JSON)
-            </li>
-            <li>
-              <a href="{{ data_url }}/top-cities-realtime.json" class="download-data">Visitors per city</a> (JSON)
-            </li>
-            <li>
-              <a href="{{ data_url }}/realtime.json" class="download-data">Total people online</a> (JSON)
-            </li>
-          </ul>
-
-        </section>
-      </section>
-
+      {% include footer.html %}
 
     </div>
   </body>
 
+  {% include footer_scripts.html %}
 
-  <!--
-    IE detection, used to guide console formatting in subsequent include.
-  -->
-  <script type="text/javascript">window._ie9 = false;</script>
-
-  <!--[if IE 9 ]>
-    <script type="text/javascript">window._ie9 = true;</script>
-  <![endif]-->
-
-  <!--
-   IE10 JS targeting: https://stackoverflow.com/a/17099988
-   IE11 JS targeting: https://stackoverflow.com/a/17447695
-  -->
-  <script type="text/javascript">
-    window._ie10 = ("onpropertychange" in document && !!window.matchMedia);
-    window._ie11 = !!navigator.userAgent.match(/Trident\/7.0; rv 11/);
-    window._ie = window._ie9 || window._ie10 || window._ie11;
-  </script>
-
-  <script src="{{ site.baseurl }}/js/vendor/uswds.v0.9.1.js"></script>
-  <script src="{{ site.baseurl }}/js/index.js"></script>
-
-  <!-- report to oneself -->
-  <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&exts=json"></script>
 </html>
