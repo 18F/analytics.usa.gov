@@ -91,6 +91,9 @@ serve --cors
 The data will be available at `http://localhost:3000` over CORS, with no path prefix. For example, device data will be at `http://localhost:3000/devices.json`.
 
 
+### Deploying to Staging (18F specific)
+Pushes to the 18f-pages branch are reflected in the staging environment https://pages.18f.gov/analytics.usa.gov/. All changes can be seen here prior to production release.
+
 ### Deploying the app to production
 
 In production, the site's base URL is set to `https://analytics.usa.gov` and the data's base URL is set to `https://analytics.usa.gov/data/live`.
@@ -104,6 +107,14 @@ make deploy
 ```
 
 **Use the full command above.** The full command ensures that the build completes successfully, with production settings, _before_ triggering an upload to the production bucket.
+
+
+### Environments
+
+| Environment | Branch | URL |
+|-------------| ------ | --- |
+| Staging | 18f-pages  | https://pages.18f.gov/analytics.usa.gov/  |
+| Production | 18f-pages | https://www.analytics.usa.gov  |
 
 ### Public domain
 
