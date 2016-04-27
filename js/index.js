@@ -144,6 +144,8 @@
         return addShares(collapseOther(values, total * .01));
       })
       .render(barChart()
+        .rawValue(function (d) { return d.value; })
+        .rawValueFormat(formatVisits)
         .value(function(d) { return d.share * 100; })
         .format(formatPercent)),
 
@@ -153,6 +155,8 @@
         return addShares(listify(d.totals.os_version));
       })
       .render(barChart()
+        .rawValue(function (d) { return d.value; })
+        .rawValueFormat(formatVisits)
         .value(function(d) { return d.share * 100; })
         .format(formatPercent)),
 
@@ -163,6 +167,8 @@
         return addShares(devices);
       })
       .render(barChart()
+        .rawValue(function (d) { return d.value; })
+        .rawValueFormat(formatVisits)
         .value(function(d) { return d.share * 100; })
         .format(formatPercent))
       .on("render", function(selection, data) {
@@ -184,6 +190,8 @@
         return addShares(collapseOther(values, total * .013));
       })
       .render(barChart()
+        .rawValue(function (d) { return d.value; })
+        .rawValueFormat(formatVisits)
         .value(function(d) { return d.share * 100; })
         .format(formatPercent)),
 
@@ -195,6 +203,8 @@
       })
       .render(
         barChart()
+          .rawValue(function (d) { return d.value; })
+          .rawValueFormat(formatVisits)
           .value(function(d) { return d.share * 100; })
           .format(formatPercent)
       ),
@@ -211,6 +221,8 @@
       })
       .render(
         barChart()
+          .rawValue(function (d) { return d.active_visitors; })
+          .rawValueFormat(formatVisits)
           .value(function(d) { return d.share * 100; })
           .label(function(d) { return d.city; })
           .format(formatPercent)
@@ -235,6 +247,8 @@
       })
       .render(
         barChart()
+          .rawValue(function (d) { return d.value; })
+          .rawValueFormat(formatVisits)
           .value(function(d) {return d.share * 100; })
           .format(formatPercent)
       ),
@@ -248,6 +262,8 @@
       })
       .render(
         barChart()
+          .rawValue(function (d) { return d.active_visitors; })
+          .rawValueFormat(formatVisits)
           .value(function(d) { return d.share * 100; })
           .label(function(d) { return d.country; })
           .format(formatPercent)
@@ -590,7 +606,11 @@
         value = function(d) {
           return d.value;
         },
+        rawValue = function(d) {
+          return d.rawValue;
+        },
         format = String,
+        rawValueFormat = String,
         label = function(d) {
           return d.key;
         },
@@ -609,6 +629,8 @@
         .attr("class", "bin");
       enter.append("div")
         .attr("class", "label");
+      enter.append("div")
+        .attr("class", "raw-value");
       enter.append("div")
         .attr("class", "value");
       enter.append("div")
@@ -629,6 +651,11 @@
           });
 
       bin.select(".label").html(label);
+      bin.select(".raw-value").text(function (d, i) {
+        return rawValue(d)
+          ? rawValueFormat.call(this, rawValue(d), d, i)
+          : null;
+      });
       bin.select(".value").text(function(d, i) {
         return format.call(this, value(d), d, i);
       });
@@ -652,9 +679,21 @@
       return chart;
     };
 
+    chart.rawValue = function(x) {
+      if (!arguments.length) return rawValue;
+      rawValue = d3.functor(x);
+      return chart;
+    }
+
     chart.format = function(x) {
       if (!arguments.length) return format;
       format = d3.functor(x);
+      return chart;
+    };
+
+    chart.rawValueFormat = function(x) {
+      if (!arguments.length) return rawValueFormat;
+      rawValueFormat = d3.functor(x);
       return chart;
     };
 
