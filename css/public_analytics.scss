@@ -128,6 +128,9 @@ header {
   .inner {
     padding: 2.5rem;
     @include responsive_container;
+    @include media($mobile-small-screen) {
+      padding: 1.5rem;
+    }
   }
 
   h1 {
@@ -138,7 +141,8 @@ header {
       line-height: 5.5rem;
     }
     @include media($mobile-small-screen) {
-      font-size: 3.5rem;
+      font-size: 2.8rem;
+      line-height: 4rem
     }
   }
 
@@ -164,10 +168,25 @@ header {
   }
 }
 
-.about {
+.links {
   float: right;
+  margin-bottom: 0;
     @include media($medium-screen) {
-      line-height: 5.5rem;
+      li {
+        display: inline;
+        padding: 0 0.8rem;
+        &:first-child {
+          border-right: 3px solid $light-blue;
+        }
+      }
+      a {
+        line-height: 5.5rem;
+      }
+    }
+   @include media($mobile-small-screen) {
+     a {
+        line-height: 4rem;
+      }
     }
 }
 

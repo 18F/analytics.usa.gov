@@ -117,9 +117,10 @@
                 <strong>analytics</strong>.usa.gov
               </a>
             </h1>
-            <a href="#explanation" class="about">
-              About <span class="sm-hide">this site</span>
-            </a>
+            <ul class="links">
+              <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
+              <li><a href="#data">Data</a></li>
+            </ul>
             {% if site.agencies.size > 0 %}
             <div class="agency-selector-wrap">
               <form>
@@ -383,6 +384,40 @@
             <li>
               <a href="{{ data_url }}/windows.csv" class="download-data">Versions of Windows</a>
             </li>
+            <li>
+              <a href="{{ data_url }}/screen-size.csv" class="download-data">Screen sizes</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ data_url }}/screen-size.json" class="download-data">Screen sizes</a> (JSON)
+            </li>
+
+            <li>
+              <a href="{{ data_url }}/language.csv" class="download-data">Language</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ data_url }}/language.json" class="download-data">Language</a> (JSON)
+            </li>
+
+            <li>
+              <a href="{{ data_url }}/device_model.csv" class="download-data">Device model</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ data_url }}/device_model.json" class="download-data">Device model</a> (JSON)
+            </li>
+
+            <li>
+              <a href="{{ data_url }}/top-traffic-sources-30-days.csv" class="download-data">Top traffic sources (30 days)</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ data_url }}/top-traffic-sources-30-days.json" class="download-data">Top traffic sources (30 days)</a> (JSON)
+            </li>
+
+            <li>
+              <a href="{{ data_url }}/top-exit-pages-30-days.csv" class="download-data">Top exit pages (30 days)</a> (CSV)
+            </li>
+            <li>
+              <a href="{{ data_url }}/top-exit-pages-30-days.json" class="download-data">Top exit pages (30 days)</a> (JSON)
+            </li>
           </ul>
           <h4>Updated every two minutes</h4>
 
@@ -430,8 +465,7 @@
 
   <script src="{{ site.baseurl }}/js/vendor/uswds.v0.9.1.js"></script>
   <script src="{{ site.baseurl }}/js/index.js"></script>
-  
+
   <!-- report to oneself -->
   <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&exts=json"></script>
-   
 </html>
