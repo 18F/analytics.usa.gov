@@ -428,9 +428,6 @@
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
 
-        // Update the type of the objects
-        d3.select("#top_table_type").text(d3.select(d.tab).attr("data-type"));
-
         update();
 
         // track in google analytics
@@ -953,20 +950,17 @@
   }
 
 // Set the dropdown
-var dropDowns = document.getElementsByClassName('agency-selector');
+var dropDown = document.getElementById('agency-selector');
 
-for (var i = 0; i < dropDowns.length; i++) {
+// Start on change listener to load new page
+d3.select(dropDown).on("change", function () {
+  window.location= d3.select(this).property('value');
+});
 
-  // Start on change listener to load new page
-  d3.select(dropDowns[i]).on("change", function () {
-    window.location= d3.select(this).property('value');
-  });
-
-  for (var j = 0; j < dropDowns[i].options.length; j++) {
-    if (dropDowns[i].options[j].value === window.location.pathname){
-      dropDowns[i].selectedIndex = j;
-      break;
-    }
+for (var j = 0; j < dropDown.options.length; j++) {
+  if (dropDown.options[j].value === window.location.pathname){
+    dropDown.selectedIndex = j;
+    break;
   }
 }
 

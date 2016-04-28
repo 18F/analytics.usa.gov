@@ -1,0 +1,35 @@
+    <!-- Initalize title and data source variables -->
+    {% if page.url == '/' %}
+      {% capture data_url %}{{ site.data_url }}{% endcapture %}
+      {% capture page_title %}{{ '' }}{% endcapture %}
+    {% else %}
+      {% capture data_url %}{{ page.data_url }}{% endcapture %}
+      {% capture page_title %} - {{ page.name }}{% endcapture %}
+    {% endif %}
+
+    <header>
+        <div class="inner clearfix">
+            <h1>
+              <a href="/" class="external-link">
+                <strong>analytics</strong>.usa.gov
+              </a>
+            </h1>
+            <ul class="links">
+              <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
+              <li><a href="#data_downloads">Data</a></li>
+            </ul>
+            {% if site.agencies.size > 0 %}
+            <div class="agency-selector-wrap">
+              <form>
+                <label for="agency-selector">Select an agency</label>
+                <select name="agency-selector" id="agency-selector" title="Agency Selection Dropdown">
+                  <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+                  {% for agency in site.agencies %}
+                    <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
+                  {% endfor %}
+                </select>
+              </form>
+            </div>
+            {% endif %}
+        </div>
+    </header>

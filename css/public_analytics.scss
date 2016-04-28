@@ -37,88 +37,65 @@ $mobile-small-screen:  new-breakpoint(max-width  500px   1);
 
 // Fonts & Colors:
 
-$red: #921B1E;
-$blue: #022945;
-
-$light_gray: #f9f9f9;
-$dark_gray: #222;
-$medium_gray: #555;
-
-// used only for borders
-$gray: #e4e4e4;
-
-// Formerly #3A96B7 -> See issue #319 
-$light_blue: #237fa0;
-$dark_blue: #36435A;
+$red: #981b1e;
+$light-blue: #0071bc;
+$dark-blue: #112e51;
+$light-gray: #f9f9f9;
+$gray: #e4e4e4; // used only for borders
+$dark-gray: #323a45;//#222;
 $white: #fff;
-$background_color: $light_gray;
-$container_background: $white;
-$border_width: 1px;
 
-$bold_weight: 600;
+$background-color: $light-gray;
+$container-background: $white;
+$data: $light-blue;
 
-$data: $light_blue;
+$border-width: 1px;
+$border-radius: 5px;
+
+$bold-weight: 600;
+
+$font-sans:           "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+$lead-font-size:      rem(20px);
+$title-font-size:     rem(59px);
+$h1-font-size:        rem(44px);
+$h2-font-size:        rem(34px);
+$h3-font-size:        rem(24px);
+$h4-font-size:        rem(19px);
+$h5-font-size:        rem(16px);
+
+$font-light:          300;
+
+h1, h2, h3, h4, h5 {
+  font-family: $font-sans;
+}
+
+.usa-display-alt {
+  font-size: rem(44px);
+  font-weight: $font-light;
+}
+
 
 // Other Setup:
-$border_radius: 5px;
-
 body {
-  font-family: "Open Sans", Helvetica, arial, sans-serif;
-  font-size: 18px;
-  $em-size: 18px;
   font-weight: 300;
-  color: $dark_gray;
-  background: $background_color;
+  color: $dark-gray;
+  background: $background-color;
   margin: 0;
-  @include media($medium-screen) {
-    font-size: 14px;
-  }
   @include media($small-screen) {
-    font-size: 14px;
   }
 }
 
 a,
 a:visited {
-  color: $dark_blue;
+  color: $dark-blue;
 }
 
-
 .technical-difficulties {
-  color:red;
+  color:$red;
   background:#fff;
   padding-top:1.25em;
 }
 
-
-h2 {
-  font-size: 4em;
-}
-
-h3 {
-  font-size: 1.2em;
-  margin: 1em 0;
-}
-
-h4 {
-  margin: 1em 0;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 0.8em;
-  font-weight: 400;
-}
-
-
-/*
-* utility classes for layout & display
-*/
-
-@include media($small-screen) {
-  .sm-hide { display: none !important; }
-}
 
 .clearfix:before,
 .clearfix:after {
@@ -127,10 +104,16 @@ h5 {
 }
 .clearfix:after { clear: both; }
 
+ul li:after,
+ul li:before {
+    content: "";
+    display: none;
+    padding-right: 0;
+}
 
-/*
-* end utility classes
-*/
+@include media($small-screen) {
+  .sm-hide { display: none !important; }
+}
 
 
 /*
@@ -138,28 +121,28 @@ h5 {
 */
 
 header {
-  @include responsive_container;
-  background: $dark_blue;
+  background: $dark-blue;
   color: $white;
-  border-bottom: 6px solid $light_blue;
+  border-bottom: 6px solid $light-blue;
 
-  .inner { padding: 0 1em; }
-
-  h1 {
-    float: left;
-    margin-right: 24px;
-    font-size: 36px;
-    @include media($medium-screen) {
-      font-size: 26px;
-      line-height: 30px;
+  .inner {
+    padding: 2.5rem;
+    @include responsive_container;
+    @include media($mobile-small-screen) {
+      padding: 1.5rem;
     }
   }
 
-  .el {
-    padding: 20px 0;
-    line-height: 60px;
+  h1 {
+    float: left;
+    margin: 0 24px 0 0;
+    line-height: 5rem;
     @include media($medium-screen) {
-      line-height: 30px;
+      line-height: 5.5rem;
+    }
+    @include media($mobile-small-screen) {
+      font-size: 2.8rem;
+      line-height: 4rem
     }
   }
 
@@ -174,10 +157,37 @@ header {
   a:visited {
     color: $white;
   }
+  //hide label needed for accessibility
+  label {
+    position: absolute;
+    left: -999em;
+  }
+  //override draft web design standards for header hack
+  form {
+      max-width: none;
+  }
 }
 
-#about {
+.links {
   float: right;
+  margin-bottom: 0;
+    @include media($medium-screen) {
+      li {
+        display: inline;
+        padding: 0 0.8rem;
+        &:first-child {
+          border-right: 3px solid $light-blue;
+        }
+      }
+      a {
+        line-height: 5.5rem;
+      }
+    }
+   @include media($mobile-small-screen) {
+     a {
+        line-height: 4rem;
+      }
+    }
 }
 
 .agency-selector-wrap {
@@ -185,23 +195,23 @@ header {
   float: left;
   @include media($medium-screen) {
     width:  80%;
+    float: none;
+    clear: both;
   }
   @include media($small-screen)  {
     width:  100%;
-    float: none;
   }
 }
 
-.agency-selector {
+#agency-selector {
   width: 100%;
-  height: 40px;
+  max-width: none; // USWDS override
   color: $white;
-  background-color: $dark_blue;
+  background-color: $dark-blue;
   font-size: 22px;
   font-weight: 600;
   vertical-align: middle;
   border: 1px solid $white;
-  border-radius: $border_radius;
 
   @include media($medium-screen) {
     font-size: 16px;
@@ -229,7 +239,7 @@ section {
 }
 
 #realtime {
-  color: $dark_blue;
+  color: $dark-blue;
   @include media($small-screen)  {
     font-size: 12px;
   }
@@ -263,7 +273,7 @@ section {
     text-align: right;
     margin-top: -2.5rem;
     font-size: 1.0em;
-    color: $dark_gray;
+    color: $dark-gray;
   }
 }
 
@@ -278,17 +288,11 @@ section {
     border-right: none;
   }
 
-  h3 {
-    margin-bottom: 0;
-  }
-  h5 {
-    margin-top: 0;
-  }
 }
 
 #explanation,
 #data_download {
-  border-top: $border_width solid $gray;
+  border-top: $border-width solid $gray;
   line-height: 1.6;
 
   h4 {font-size: 90%}
@@ -339,7 +343,7 @@ section {
   text-align: center;
   font-size: 1.5em;
   #total_visitors {
-    font-weight: $bold_weight;
+    font-weight: $bold-weight;
   }
 }
 
@@ -379,7 +383,7 @@ section {
   left: 0;
   right: 0;
   height: 100%;
-  background: $dark_blue;
+  background: $dark-blue;
   color: white;
   vertical-align: middle;
   padding: 10em;
@@ -424,14 +428,8 @@ section {
 }
 
 #current_visitors {
-  font-weight: $bold_weight;
+  font-weight: $bold-weight;
   text-align: center;
-}
-
-#top_100_table {
-  h3 {
-    @include span-columns(2 of 5);
-  }
 }
 
 #top_downloads_table {
@@ -445,7 +443,7 @@ section {
     font-size: 1.0em;
   }
   h5 {
-    color: $dark_gray;
+    color: $dark-gray;
     font-weight: 300;
   }
 }
@@ -480,14 +478,14 @@ ul.pills {
   }
 
   & {
-    margin: .60rem 0;
+     margin: .60rem 0 1.5rem 0;
   }
 
   & > li {
     float: left;
 
     & > a {
-      color: $dark_blue;
+      color: $dark-blue;
       background: $white;
       width: 100%;
       text-align: center;
@@ -507,7 +505,7 @@ ul.pills {
 
       &[aria-selected='true'] {
         color: #fff;
-        background: $light_blue;
+        background: $light-blue;
       }
     }
 
@@ -566,7 +564,7 @@ ul.pills {
 
   .label {
     white-space: nowrap;
-    height: 1.5rem;
+    height: 2rem;
     margin-right: 4em;
     white-space: nowrap;
     overflow: hidden;
@@ -582,9 +580,9 @@ ul.pills {
 
   .value {
     text-align: right;
-    height: 1rem;
+    height: 1.8rem;
     white-space: nowrap;
-    margin-top: -1.5rem;
+    margin-top: -2rem;
     margin-bottom: .45rem;
   }
 }
@@ -601,7 +599,7 @@ ul.pills {
   }
 
   .domain {
-    color: $medium_gray;
+    color: $dark-gray;
   }
 }
 
@@ -613,7 +611,7 @@ g.axis {
   }
 
   .tick text {
-    fill: $dark_gray;
+    fill: $dark-gray;
     font-size: .75rem;
   }
 }
@@ -626,8 +624,8 @@ g.axis {
   }
 
   text.label {
-    fill: $dark_gray;
-    font-size: .6rem;
+    fill: $dark-gray;
+    font-size: 1.1rem;
   }
 }
 
