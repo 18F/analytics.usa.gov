@@ -4,7 +4,7 @@
 @import "bourbon/bourbon";
 
 //Grid Settings:
-$grid-columns: 14;
+$grid-columns: 12;
 $max-width: em(1560);
 $gutter: 0em !global;
 
@@ -74,6 +74,20 @@ h1, h2, h3, h4, h5 {
   font-weight: $font-light;
 }
 
+// Grid
+.width-two-thirds {
+  @include span-columns(8);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.width-one-third {
+  @include span-columns(4);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
+}
 
 // Other Setup:
 body {
@@ -256,10 +270,7 @@ section {
 }
 
 #main_data {
-
-  @include span-columns(9);
   @include media($small-screen)  {
-    @include span-columns(1);
     border-right: none;
   }
 }
@@ -281,10 +292,7 @@ section {
 
 #secondary_data {
   border-left: 1px solid $gray;
-
-  @include span-columns(5);
   @include media($small-screen)  {
-    @include span-columns(1);
     border-top: 1px solid $gray;
     border-left: none;
     border-right: none;
@@ -312,23 +320,6 @@ section {
   li {
     margin: 1em 0;
   }
-}
-
-#explanation {
-  @include span-columns(9);
-
-  @include media($small-screen)  {
-    @include span-columns(1);
-  }
-}
-
-#data_download {
-  @include span-columns(5);
-  @include media($small-screen)  {
-    @include span-columns(1);
-  }
-
-
 }
 
 .section_headline {
@@ -367,6 +358,8 @@ section {
     text-align: center;
   }
 }
+
+
 
 #realtime {
   text-align: center;
