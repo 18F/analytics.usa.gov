@@ -178,7 +178,7 @@ header {
         display: inline;
         padding: 0 0.8rem;
         &:first-child {
-          border-right: 3px solid $light-blue;
+          /*border-right: 3px solid $light-blue;*/
         }
       }
       a {
@@ -186,8 +186,11 @@ header {
       }
     }
    @include media($mobile-small-screen) {
+     li {
+        font-size: 1.5rem;
+     }
      a {
-        line-height: 4rem;
+        line-height: 4.5rem;
       }
     }
 }
@@ -274,7 +277,8 @@ section {
     display: block;
     text-align: right;
     margin-top: -2.5rem;
-    font-size: 1.0em;
+    font-size: 1.3rem;
+    font-weight: normal;
     color: $dark-gray;
   }
 }
