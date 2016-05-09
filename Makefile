@@ -15,6 +15,6 @@ deploy:
 	--add-header="Cache-Control:max-age=0" _site/css/*.css \
 	s3://$(DEPLOY_BUCKET)/css/ && \
 	s3cmd put -P --mime-type="text/css" \
-	--add-header="Cache-Control:max-age=0" _site/css/vendor/*.css \
-	s3://$(DEPLOY_BUCKET)/css/vendor/
+	--add-header="Cache-Control:max-age=0" _site/css/vendor/css/*.css \
+	s3://$(DEPLOY_BUCKET)/css/vendor/css/
 
