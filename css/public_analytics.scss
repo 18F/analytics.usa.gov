@@ -157,7 +157,7 @@ header {
     }
     @include media($mobile-small-screen) {
       font-size: 2.8rem;
-      line-height: 4rem
+      padding-top: 4px; //to give h1 and links same baseline
     }
   }
 
@@ -191,17 +191,38 @@ header {
       li {
         display: inline;
         padding: 0 0.8rem;
-        &:first-child {
-          border-right: 3px solid $light-blue;
+        &:nth-child(odd) a::after {
+          content: "\2022";
+          padding: 0 0 0 1.6rem;
+          font-weight: bold;
+          color: $light-blue;
         }
       }
       a {
         line-height: 5.5rem;
       }
     }
+    @include media($small-screen) {
+      li {
+        padding: 0.5rem;
+        &:nth-child(odd) a::after {
+          padding: 0 0 0 1rem;
+        }
+      }
+    }
    @include media($mobile-small-screen) {
+     li {
+       font-size: 1.6rem;
+       padding: 0;
+       margin: 0;
+       display: block;
+       &:nth-child(odd) a::after {
+         content: "";
+         padding: 0;
+       }
+     }
      a {
-        line-height: 4rem;
+        line-height: 1rem;
       }
     }
 }
