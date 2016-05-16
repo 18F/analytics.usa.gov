@@ -76,6 +76,13 @@ h1, h2, h3, h4, h5 {
 }
 
 // Grid
+.width-one-third {
+  @include span-columns(4);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
+}
+
 .width-two-thirds {
   @include span-columns(8);
   @include media($small-screen) {
@@ -83,11 +90,33 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-.width-one-third {
-  @include span-columns(4);
-  @include media($small-screen)  {
+.offset-one-third {
+  @include shift(4 of 12);
+}
+
+.width-one-fourth {
+  @include span-columns(3);
+  @include media($small-screen) {
     @include span-columns(1);
   }
+}
+
+.width-one-half {
+  @include span-columns(6);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.width-three-fourths {
+  @include span-columns(9);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.offset-one-fourth {
+  @include shift(3 of 12);
 }
 
 // Other Setup:
