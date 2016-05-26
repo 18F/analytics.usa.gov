@@ -10,6 +10,7 @@ Other government agencies who have reused this project for their analytics dashb
 * http://analytics.tdec.tn.gov/
 * http://analytics.cityofsacramento.org/
 * http://analytics.muni.org/
+* http://analytics.smgov.net/
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).  
 
