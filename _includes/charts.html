@@ -1,9 +1,10 @@
       {% if page.data_url %}
         {% assign data_url = page.data_url %}
+        {% assign entity = "agency" %}
       {% else %}
         {% assign data_url = site.data_url %}
+        {% assign entity = "government" %}
       {% endif %}
-      {{ data_url }}
       <!--
       JavaScript block hooks look for any element with both data-block and
       data-source attributes:
@@ -28,7 +29,7 @@
           data-source="{{ data_url }}/realtime.json"
           data-refresh="15">
           <h2 id="current_visitors" class="data">...</h2>
-          <div class="chart_subtitle">people on agency websites now</div>
+          <div class="chart_subtitle">people on {{ entity }} websites now</div>
         </section>
 
         <section class="section_headline visits_today">
@@ -155,7 +156,7 @@
             data-source="{{ data_url }}/top-pages-realtime.json"
             data-refresh="15">
             <h5><em>
-              People on a <strong>single, specific page</strong> now.
+              People on a <strong>single, specific page</strong> now. {% if entity == "government" %}We only count pages with at least 10 people on the page.{% endif %}
               <a href="{{ data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
@@ -174,7 +175,7 @@
             data-block="top-pages"
             data-source="{{ data_url }}/top-domains-30-days.json">
             <h5><em>
-              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain.
+              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain. {% if entity == "government" %}We only count pages with at least 1,000 visits in the last month.{% endif %}
               <a href="{{ data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
@@ -186,7 +187,7 @@
         <section id="top_downloads_table">
 
           <h3>Top Downloads</h3>
-          <h5><em>Total file downloads yesterday on agency domains.</em></h5>
+          <h5><em>Total file downloads yesterday on {{ entity }} domains.</em></h5>
           <figure id="top-downloads"
             data-block="top-downloads"
             data-source="{{ data_url }}/top-downloads-yesterday.json">
