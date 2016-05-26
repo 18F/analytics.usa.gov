@@ -53,7 +53,7 @@ Run Jekyll with development settings:
 make dev
 ```
 
-(This runs `bundle exec jekyll serve --watch --config _.yml,_development.yml`.)
+(This runs `bundle exec jekyll serve --watch --config=_config.yml,_development.yml`.)
 
 Sass can watch the .scss source files for changes, and build the .css files automatically:
 
