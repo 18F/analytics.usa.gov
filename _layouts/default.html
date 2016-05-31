@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Initalize title and data source variables -->
+  {% if page.url == '/' %}
+    {% assign data_url = site.data_url %}
+    {% assign entity = "agency" %}
+    {% assign page_title = '' %}
+  {% else %}
+    {% assign data_url = page.data_url %}
+    {% assign entity = "government" %}
+    {% capture page_title %} - {{ page.name }}{% endcapture %}
+  {% endif %}
   {% include head.html %}
 
   <body>
@@ -7,7 +17,6 @@
     {% include header.html %}
 
     <div class="container">
-
       {{ content }}
 
     </div>
