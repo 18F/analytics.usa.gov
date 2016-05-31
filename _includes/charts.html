@@ -1,11 +1,11 @@
-      {% if page.data_url %}
-        {% assign data_url = page.data_url %}
-        {% assign entity = "agency" %}
-      {% else %}
-        {% assign data_url = site.data_url %}
-        {% assign entity = "government" %}
-      {% endif %}
-      <!--
+  {% if page.url == '/' %}
+    {% assign data_url = site.data_url %}
+    {% assign entity = "agency" %}
+  {% else %}
+    {% assign data_url = page.data_url %}
+    {% assign entity = "government" %}
+  {% endif %}
+    <!--
       JavaScript block hooks look for any element with both data-block and
       data-source attributes:
       <section data-block="users" data-source="path/to/data.json">
@@ -21,7 +21,6 @@
       </section>
       -->
       <div id="main_data" class="width-two-thirds">
-
         {% include error.html %}
 
         <section id="realtime"
