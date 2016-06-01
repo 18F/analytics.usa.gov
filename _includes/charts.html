@@ -1,9 +1,9 @@
   {% if page.url == '/' %}
     {% assign data_url = site.data_url %}
-    {% assign entity = "agency" %}
+    {% assign entity = "government" %}
   {% else %}
     {% assign data_url = page.data_url %}
-    {% assign entity = "government" %}
+    {% assign entity = "agency" %}
   {% endif %}
     <!--
       JavaScript block hooks look for any element with both data-block and

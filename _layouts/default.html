@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- Initalize title and data source variables -->
-  {% if page.url == '/' %}
-    {% assign data_url = site.data_url %}
-    {% assign entity = "agency" %}
+  {% assign data_url = site.data_url %}
+  {% if page.url == '/' or page.url == '/data/' %}
+    {% assign entity = "government" %}
     {% assign page_title = '' %}
   {% else %}
     {% assign data_url = page.data_url %}
-    {% assign entity = "government" %}
+    {% assign entity = "agency" %}
     {% capture page_title %} - {{ page.name }}{% endcapture %}
   {% endif %}
   {% include head.html %}
 
   <body>
-
-    {% include header.html %}
-
+    <header>
+        <div class="inner clearfix">
+            <h1>
+              <a href="/" class="external-link">
+                <strong>analytics</strong>.usa.gov
+              </a>
+            </h1>
+            <ul class="links">
+              <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
+              {% if entity == 'government' %}
+                <li><a href="{{ site.url }}/data/">Data</a></li>
+              {% else %}
+                <li><a href="{{ site.url }}/{{ page.slug }}/data/">Data</a></li>
+              {% endif %}
+            </ul>
+            {% assign agencies = site.agencies | sort:"name"  %}
+            {% if agencies.size > 0 %}
+              {% unless page.url contains 'data' %}
+                <div class="agency-selector-wrap">
+                  <form>
+                    <label for="agency-selector">Select an agency</label>
+                    <select name="agency-selector" id="agency-selector" title="Agency Selection Dropdown">
+                      <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+                      {% for agency in agencies %}
+                        <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
+                      {% endfor %}
+                    </select>
+                  </form>
+                </div>
+              {% endunless %}
+            {% endif %}
+        </div>
+    </header>
     <div class="container">
+
       {{ content }}
 
     </div>
