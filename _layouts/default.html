@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- Initalize title and data source variables -->
-  {% assign data_url = site.data_url %}
   {% if page.url == '/' or page.url == '/data/' %}
-    {% assign entity = "government" %}
     {% assign page_title = '' %}
   {% else %}
-    {% assign data_url = page.data_url %}
-    {% assign entity = "agency" %}
     {% capture page_title %} - {{ page.name }}{% endcapture %}
   {% endif %}
   {% include head.html %}
@@ -22,11 +18,7 @@
             </h1>
             <ul class="links">
               <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
-              {% if entity == 'government' %}
-                <li><a href="{{ site.url }}/data/">Data</a></li>
-              {% else %}
-                <li><a href="{{ site.url }}/{{ page.slug }}/data/">Data</a></li>
-              {% endif %}
+              <li><a href="{{ site.url }}{% if page.slug %}/{{ page.slug }}{% endif %}/data/">Data</a></li>
             </ul>
             {% assign agencies = site.agencies | sort:"name"  %}
             {% if agencies.size > 0 %}

@@ -4,8 +4,4 @@ data_url: https://analytics.usa.gov/data/commerce
 slug: commerce
 layout: default
 ---
-{% capture page_title %} - {{ page.name }} - Data{% endcapture %}
-{% assign data_url = page.data_url %}
-{% assign entity = page.name %}
-
 {% include data_download.html %}
