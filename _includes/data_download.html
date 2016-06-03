@@ -1,3 +1,12 @@
+      {% if page.url == '/data/' %}
+        {% capture page_title %}  - Data{% endcapture %}
+        {% assign data_url = site.data_url %}
+        {% assign entity = "government" %}
+      {% else %}
+        {% capture page_title %} - {{ page.name }} - Data{% endcapture %}
+        {% assign data_url = page.data_url %}
+        {% assign entity = page.name %}
+      {% endif %}
       <section class="width-two-thirds">
         <h1>Download the data</h1>
         {% assign agencies = site.agencies | sort:"name"  %}
@@ -14,7 +23,7 @@
           </form>
         </div>
         {% endif %}
-        <h2>Visits to and traffic sources for {{ entity }}</h2>
+        <h2>Visits to and traffic sources for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
         <table class="usa-table-borderless downloads">
           <thead>
             <tr>
@@ -62,7 +71,7 @@
             </tr>
           </tbody>
         </table>
-        <h2>Visitor demographics for {{ entity }}</h2>
+        <h2>Visitor demographics for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
         <table class="usa-table-borderless downloads">
           <thead>
             <tr>

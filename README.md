@@ -35,16 +35,26 @@ Please clone the `analytics-reporter` next to a local copy of this github reposi
   ```bash
   touch _agencies/agencyx.html
   ```
-0. Set the required data for for the new file. example:
+0. Create a new html file in the `_data_pages` directory. Use the same name you used in step 2. This will be the data download page for this agency 
+
+  ```bash
+  touch _data_pages/agencyx.html
+  ```
+0. Set the required data for for the new files. (Both files need this data.) example:
 
   ```yaml
   ---
   name: Agency X # Name of the page
   data_url: https://analytics.usa.gov/data/agencyx # Data URL from step 1
-  layout: agencies # type of layout used. available layouts are in `_layouts`
+  slug: agencyx # Same as the name of the html files. Used to generate data page links.
+  layout: default # type of layout used. available layouts are in `_layouts`
   ---
   ```
+0. Agency page: Below the data you just entered, include the page content you want. The `_agencies` page will use the `charts.html` partial and the `_data_pages` pages will use the `data_download.html` partial. example:
 
+```yaml
+{% include charts.html %}
+```
 
 ### Developing locally
 
