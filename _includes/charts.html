@@ -1,36 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="container">
-      <!--
+  {% if page.url == '/' %}
+    {% assign data_url = site.data_url %}
+    {% assign entity = "government" %}
+  {% else %}
+    {% assign data_url = page.data_url %}
+    {% assign entity = "agency" %}
+  {% endif %}
+    <!--
       JavaScript block hooks look for any element with both data-block and
       data-source attributes:
-
       <section data-block="users" data-source="path/to/data.json">
         The "loading", "loaded", and "error" classes are set on this element
         the data-source URL is loaded. Then the renderer is called on the first
         child of the block with the "data" class:
-
         <div class="data">
         </div>
-
         Some renderers expect to be called on HTML tables, in which
         case you would use:
-
         <table class="data">
         </table>
-
       </section>
       -->
-
-      <div id="main_data">
-
+      <div id="main_data" class="width-two-thirds">
         {% include error.html %}
 
         <section id="realtime"
@@ -38,7 +28,7 @@
           data-source="{{ data_url }}/realtime.json"
           data-refresh="15">
           <h2 id="current_visitors" class="data">...</h2>
-          <div class="chart_subtitle">people on agency websites now</div>
+          <div class="chart_subtitle">people on {{ entity }} websites now</div>
         </section>
 
         <section class="section_headline visits_today">
@@ -149,7 +139,7 @@
 
       </div>
 
-      <div id="secondary_data">
+      <div id="secondary_data" class="width-one-third">
         <section id="top_100_table">
 
           <!-- see: http://heydonworks.com/practical_aria_examples/ -->
@@ -165,7 +155,7 @@
             data-source="{{ data_url }}/top-pages-realtime.json"
             data-refresh="15">
             <h5><em>
-              People on a <strong>single, specific page</strong> now.
+              People on a <strong>single, specific page</strong> now. {% if entity == "government" %}We only count pages with at least 10 people on the page.{% endif %}
               <a href="{{ data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
@@ -184,8 +174,8 @@
             data-block="top-pages"
             data-source="{{ data_url }}/top-domains-30-days.json">
             <h5><em>
-              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain.
-              <a href="{{ data_url }}/all-domains-30-days.csv">Download the full dataset.</a>
+              Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain. {% if entity == "government" %}We only count pages with at least 1,000 visits in the last month.{% endif %}
+              <a href="{{ data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
             </div>
@@ -196,7 +186,7 @@
         <section id="top_downloads_table">
 
           <h3>Top Downloads</h3>
-          <h5><em>Total file downloads yesterday on agency domains.</em></h5>
+          <h5><em>Total file downloads yesterday on {{ entity }} domains.</em></h5>
           <figure id="top-downloads"
             data-block="top-downloads"
             data-source="{{ data_url }}/top-downloads-yesterday.json">
@@ -205,13 +195,4 @@
           </figure>
 
         </section>
-      </div>
 
-      {% include footer.html %}
-
-    </div>
-  </body>
-
-  {% include footer_scripts.html %}
-
-</html>

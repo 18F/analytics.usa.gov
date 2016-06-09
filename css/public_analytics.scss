@@ -4,7 +4,7 @@
 @import "bourbon/bourbon";
 
 //Grid Settings:
-$grid-columns: 14;
+$grid-columns: 12;
 $max-width: em(1560);
 $gutter: 0em !global;
 
@@ -41,6 +41,7 @@ $red: #981b1e;
 $light-blue: #0071bc;
 $dark-blue: #112e51;
 $light-gray: #f9f9f9;
+$uswds-light-gray: #aeb0b5;
 $gray: #e4e4e4; // used only for borders
 $dark-gray: #323a45;//#222;
 $white: #fff;
@@ -74,6 +75,54 @@ h1, h2, h3, h4, h5 {
   font-weight: $font-light;
 }
 
+//override draft web design standards for header hack
+form {
+    max-width: none;
+}
+
+// Grid
+.width-one-third {
+  @include span-columns(4);
+  @include media($small-screen)  {
+    @include span-columns(1);
+  }
+}
+
+.width-two-thirds {
+  @include span-columns(8);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.offset-one-third {
+  @include shift(4 of 12);
+}
+
+.width-one-fourth {
+  @include span-columns(3);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.width-one-half {
+  @include span-columns(6);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.width-three-fourths {
+  @include span-columns(9);
+  @include media($small-screen) {
+    @include span-columns(1);
+  }
+}
+
+.offset-one-fourth {
+  @include shift(3 of 12);
+}
 
 // Other Setup:
 body {
@@ -143,7 +192,7 @@ header {
     }
     @include media($mobile-small-screen) {
       font-size: 2.8rem;
-      line-height: 4rem
+      padding-top: 4px; //to give h1 and links same baseline
     }
   }
 
@@ -159,14 +208,23 @@ header {
   a:visited {
     color: $white;
   }
-  //hide label needed for accessibility
-  label {
-    position: absolute;
-    left: -999em;
+  .agency-selector-wrap {
+    width: 50%;
+    float: left;
+    @include media($medium-screen) {
+        float: none;
+        clear: both;
+    }
   }
-  //override draft web design standards for header hack
-  form {
-      max-width: none;
+}
+
+.agency-selector-wrap {
+  width: 70%;
+  @include media($medium-screen) {
+    width: 80%;
+  }
+  @include media($small-screen)  {
+    width: 100%;
   }
 }
 
@@ -177,51 +235,68 @@ header {
       li {
         display: inline;
         padding: 0 0.8rem;
-        &:first-child {
-          /*border-right: 3px solid $light-blue;*/
+        &:nth-child(odd) a::after {
+          content: "\2022";
+          padding: 0 0 0 1.6rem;
+          font-weight: bold;
+          color: $light-blue;
         }
       }
       a {
         line-height: 5.5rem;
       }
     }
-   @include media($mobile-small-screen) {
-     li {
-        font-size: 1.5rem;
-     }
-     a {
-        line-height: 4.5rem;
+    @include media($small-screen) {
+      li {
+        padding: 0.5rem;
+        &:nth-child(odd) a::after {
+          padding: 0 0 0 1rem;
+        }
       }
     }
+   @include media($mobile-small-screen) {
+     li {
+       font-size: 1.6rem;
+       padding: 0;
+       margin: 0;
+       display: block;
+       &:nth-child(odd) a::after {
+         content: "";
+         padding: 0;
+       }
+     }
+     a {
+        line-height: 1rem;
+        font-size: 1.5rem;
+     }
+  }
 }
 
 .agency-selector-wrap {
-  width: 50%;
-  float: left;
-  @include media($medium-screen) {
-    width:  80%;
-    float: none;
-    clear: both;
-  }
-  @include media($small-screen)  {
-    width:  100%;
+  //hide label needed for accessibility
+  label {
+    position: absolute;
+    left: -999em;
   }
 }
 
 #agency-selector {
   width: 100%;
   max-width: none; // USWDS override
-  color: $white;
-  background-color: $dark-blue;
   font-size: 22px;
   font-weight: 600;
   vertical-align: middle;
-  border: 1px solid $white;
-  background-image: url('../css/img/arrow-down.png');
-  background-image: url('../css/img/arrow-down.svg');
+  color: $dark-blue;
   @include media($medium-screen) {
     font-size: 16px;
   }
+}
+header #agency-selector {
+  background-image: url('../css/img/arrow-down.png');
+  background-image: url('../css/img/arrow-down.svg');
+  color: $white;
+  background-color: $dark-blue;
+  border: 1px solid $white;
 }
 
 /*
@@ -232,7 +307,7 @@ header {
 section {
   background: $white;
   padding: 1em;
-    h2 {
+    #current_visitors {
     font-size: 8em;
     margin: 0;
     @include media($small-screen) {
@@ -260,10 +335,7 @@ section {
 }
 
 #main_data {
-
-  @include span-columns(9);
   @include media($small-screen)  {
-    @include span-columns(1);
     border-right: none;
   }
 }
@@ -286,10 +358,8 @@ section {
 
 #secondary_data {
   border-left: 1px solid $gray;
-
-  @include span-columns(5);
+  border-bottom: 1px solid $gray;
   @include media($small-screen)  {
-    @include span-columns(1);
     border-top: 1px solid $gray;
     border-left: none;
     border-right: none;
@@ -297,11 +367,9 @@ section {
 
 }
 
-#explanation,
-#data_download {
-  border-top: $border-width solid $gray;
-  line-height: 1.6;
-
+#explanation {
+  border-top: 1px solid $gray;
+  margin-top: -1px;
   h4 {font-size: 90%}
 
   ul {
@@ -319,22 +387,39 @@ section {
   }
 }
 
-#explanation {
-  @include span-columns(9);
-
-  @include media($small-screen)  {
-    @include span-columns(1);
+// data page
+.parent td {
+  border-bottom: 1px solid $gray;
+}
+.subset td {
+  border-top: 1px solid $gray;
+  &:first-child {
+    /*font-size: 1.5rem;*/
+    padding-left: 3rem;
+    &::before {
+      content: '\2022';
+      padding: 0 10px;
+    }
   }
 }
 
-#data_download {
-  @include span-columns(5);
-  @include media($small-screen)  {
-    @include span-columns(1);
+.downloads {
+  @include media($mobile-small-screen){
+    thead th {
+      font-size: 1.8rem;
+    }
+    td {
+      font-size: 1.5rem;
+      padding: 1rem;
+      .usa-label-big {
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-bottom: 0.9rem;
+      }
+    }
   }
-
-
 }
+// end data page
 
 .section_headline {
   padding: 0.1em 1em;
@@ -372,6 +457,8 @@ section {
     text-align: center;
   }
 }
+
+
 
 #realtime {
   text-align: center;
@@ -467,7 +554,7 @@ figure {
 
 ul.pills {
   @include clearfix;
-  @include span-columns(3 of 5);
+  @include span-columns(5 of 5);
   display: inline-block;
 
   border-right: 1px solid $gray;
