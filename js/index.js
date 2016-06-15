@@ -8,9 +8,7 @@
     "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
     "forecast.weather.gov/mapclick.php": "http://www.weather.gov/",
     "egov.uscis.gov/casestatus/mycasestatus.do": "https://egov.uscis.gov/casestatus/",
-    "irs.gov/individuals/electronic-filing-pin-request": " https://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
     "ebenefits.va.gov/ebenefits-portal/ebenefits.portal": "https://www.ebenefits.va.gov/ebenefits-portal/ebenefits.portal",
-    "irs.gov/forms-&-pubs": "https://www.irs.gov/Forms-&-Pubs",
     "ebenefits.va.gov/ebenefits/homepage": "https://www.ebenefits.va.gov/ebenefits/homepage",
 
     // USPS is afflicted with a bad case of sensitivity :(
