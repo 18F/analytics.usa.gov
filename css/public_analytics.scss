@@ -520,6 +520,9 @@ section {
   width: 100%;
   height: auto;
   max-height: 300px;
+  .axis[aria-hidden=true] {
+    display: block !important; // WDS override
+  }
 }
 
 #current_visitors {
@@ -707,7 +710,7 @@ g.axis {
 
   .tick text {
     fill: $dark-gray;
-    font-size: .75rem;
+    font-size: 1.1rem;
   }
 }
 
