@@ -148,7 +148,9 @@
     // the windows block is a stack layout
     "windows": renderBlock()
       .transform(function(d) {
-        return addShares(listify(d.totals.os_version));
+        var values = listify(d.totals.os_version),
+            total = d3.sum(values.map(function(d) { return d.value; }));
+        return addShares(collapseOther(values, total * .01)); // % of Windows
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
@@ -179,7 +181,7 @@
       .transform(function(d) {
         var values = listify(d.totals.browser),
             total = d3.sum(values.map(function(d) { return d.value; }));
-        return addShares(collapseOther(values, total * .013));
+        return addShares(collapseOther(values, total * .01));
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
@@ -189,7 +191,9 @@
     // data beforehand to match the expected object format
     "ie": renderBlock()
       .transform(function(d) {
-        return addShares(listify(d.totals.ie_version));
+        var values = listify(d.totals.ie_version),
+            total = d3.sum(values.map(function(d) { return d.value; }));
+        return addShares(collapseOther(values, total * .0001)); // % of IE
       })
       .render(
         barChart()
