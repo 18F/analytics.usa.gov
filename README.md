@@ -12,7 +12,7 @@ Other government agencies who have reused this project for their analytics dashb
 * http://analytics.muni.org/
 * http://analytics.smgov.net/
 
-[This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).  
+[This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
 
 ### Setup
@@ -35,7 +35,7 @@ Please clone the `analytics-reporter` next to a local copy of this github reposi
   ```bash
   touch _agencies/agencyx.html
   ```
-0. Create a new html file in the `_data_pages` directory. Use the same name you used in step 2. This will be the data download page for this agency 
+0. Create a new html file in the `_data_pages` directory. Use the same name you used in step 2. This will be the data download page for this agency
 
   ```bash
   touch _data_pages/agencyx.html
@@ -65,14 +65,6 @@ make dev
 ```
 
 (This runs `bundle exec jekyll serve --watch --config=_config.yml,_development.yml`.)
-
-Sass can watch the .scss source files for changes, and build the .css files automatically:
-
-```bash
-make watch
-```
-
-To compile the Sass stylesheets once, run `make clean all`, or `make -B` to compile even if the .css file already exists.
 
 ### Developing with local data
 
