@@ -12,6 +12,8 @@ Other government agencies who have reused this project for their analytics dashb
 * http://analytics.muni.org/
 * http://analytics.smgov.net/
 * http://analytics.douglascounty-ne.gov/
+* https://analytics.wsu.edu/
+* http://www2.ed.gov/analytics
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
