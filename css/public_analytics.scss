@@ -126,13 +126,12 @@ form {
 
 // Other Setup:
 body {
+  font-family: $font-sans;
   font-weight: 300;
   font-size: 2rem; // USWDS override
   color: $dark-gray;
   background: $background-color;
   margin: 0;
-  @include media($small-screen) {
-  }
 }
 
 a,
@@ -163,6 +162,30 @@ ul li:before {
 
 @include media($small-screen) {
   .sm-hide { display: none !important; }
+}
+
+// Utility classes
+
+.container-padding {
+  padding-left: 2em;
+  padding-right: 2em;
+
+  @include media($mobile-small-screen) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.dark-background {
+  background: $dark-blue;
+
+  &, a {
+    color: $white;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
 
 
@@ -472,41 +495,6 @@ section {
   .chart_subtitle {
     font-size: 2.1em;
     font-weight: 300;
-  }
-}
-
-#coming_soon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: $dark-blue;
-  color: white;
-  vertical-align: middle;
-  padding: 10em;
-
-  a {
-    color: white;
-  }
-
-  h1 {
-    font-size: 4em;
-  }
-
-  h1, h2 {
-    text-align: center;
-    font-weight: 300;
-  }
-  h2 {
-    font-size: 2em;
-    margin: 2em auto;
-  }
-
-  @include media($small-screen) {
-    font-size: 12px;
-    padding: 2em;
   }
 }
 
