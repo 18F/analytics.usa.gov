@@ -14,6 +14,7 @@ Other organizations who have reused this project for their analytics dashboard:
 * http://analytics.douglascounty-ne.gov/
 * https://analytics.wsu.edu/
 * http://www2.ed.gov/analytics
+* http://webanalytics.gov.je/
 
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
