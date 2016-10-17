@@ -15,6 +15,7 @@ Other organizations who have reused this project for their analytics dashboard:
 * [Washington State University](https://analytics.wsu.edu/)
 * [U.S. Department of Education](http://www2.ed.gov/analytics)
 * [The States of Jersey](http://webanalytics.gov.je/)
+* [The City of Los Angeles](http://webanalytics.lacity.org/)
 
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
