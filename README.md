@@ -1,5 +1,4 @@
-[![Code Climate](https://codeclimate.com/repos/5811015f02a1dd18a6003370/badges/da8743f4f1f04c67520b/gpa.svg)](https://codeclimate.com/repos/5811015f02a1dd18a6003370/feed)  
-
+[![Code Climate](https://codeclimate.com/github/18F/analytics.usa.gov/badges/gpa.svg)](https://codeclimate.com/github/18F/analytics.usa.gov)
 
 
 ## analytics.usa.gov
