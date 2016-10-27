@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/repos/5811015f02a1dd18a6003370/badges/da8743f4f1f04c67520b/gpa.svg)](https://codeclimate.com/repos/5811015f02a1dd18a6003370/feed)  
+
+
+
 ## analytics.usa.gov
 
 A project to publish website analytics for the US federal government.
