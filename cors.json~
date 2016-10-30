@@ -1,0 +1,17 @@
+{
+  "CORSRules": [
+    {
+      "AllowedOrigins": ["http://analytics.usa.gov","http://localhost:4000"],
+      "AllowedHeaders": ["*"],
+      "AllowedMethods": ["PUT", "POST", "DELETE"],
+      "MaxAgeSeconds": 3000,
+      "ExposeHeaders": ["x-amz-server-side-encryption"]
+    },
+    {
+      "AllowedOrigins": ["*"],
+      "AllowedHeaders": ["Authorization"],
+      "AllowedMethods": ["GET"],
+      "MaxAgeSeconds": 3000
+    }
+  ]
+}

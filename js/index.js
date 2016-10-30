@@ -481,6 +481,7 @@
    * ```
    */
   function renderBlock() {
+    console.log("got to start of renderBlock");
     var url = function(d) {
           return d && d.source;
         },
