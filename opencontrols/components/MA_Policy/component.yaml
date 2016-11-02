@@ -1,0 +1,160 @@
+documentation_complete: false
+name: System Maintenance Policy for 18F
+satisfies:
+- control_key: MA-1
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        Agency System Maintenance Policy Implementation
+
+        System Maintenance Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 4. Policy on Operational Controls.
+        It states, "The availability and usability of GSA equipment and software must be maintained and safeguarded to enable agency
+        objectives to be accomplished."
+
+        GSA OCISO ISP also defined agency-wide system maintenance procedures in IT Security Procedural Guide:
+        Maintenance (CIO-IT Security-10-50)
+
+        18F follows the GSA System Maintenance policy for its information systems hosted within GSA facilities. The Cloud.Gov information
+        system is hosted with the AWS GovCloud and will be in purview of the hosting site’s Maintenance policy and procedures
+    - key: b
+      text: |
+        The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying System Program
+        Managers and Information System Security Officers and Managers (ISSO/Ms).
+  standard_key: NIST-800-53
+- control_key: MA-2
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: b
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: c
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: d
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: e
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: f
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-3
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-3 (1)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-3 (2)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-3 (3)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: b
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: c
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: d
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-4
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: b
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: c
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: d
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: e
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-4 (2)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-5
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: b
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: c
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-5 (1)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+    - key: b
+      text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+- control_key: MA-6
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is inherited from the AWS GovCloud FedRAMP implementation.
+  standard_key: NIST-800-53
+schema_version: 3.1.0
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/MA-Policy.md
+  type: URL
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.652660
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

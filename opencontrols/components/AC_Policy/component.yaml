@@ -1,0 +1,497 @@
+---
+documentation_complete: false
+name: Access Control Policies for 18F
+satisfies:
+- control_key: AC-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      The 18F Program Office develops, documents, and disseminates
+      to all 18F staff the 18F Access Control Policy which addresses purpose, scope,
+      roles, responsibilities, management commitment, coordination among organizational
+      entities, compliance, and procedures to facilitate the implementation of
+      the access control policy and associated access controls. The 18F Access Control
+      Policy is listed within 18F’s private Github repository and the docs.cloud.gov
+      site that is accessible to all 18F staff.
+  - key: b
+    text: |
+      The 18F Program Office
+      will review and update the current 18F Access Control Policy at least every
+      3 years and any documented access procedures at least annually.
+  standard_key: NIST-800-53
+- control_key: AC-2
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      The 18F Program identifies and selects the following types of
+      information system accounts to support organizational missions/business functions:
+  - key: b
+    text: |
+      18F has established designated DevOps personnel as the assigned
+      account managers for all information system accounts relating to the infrastructure
+      and the cloud.gov platform.
+      System Owners, whose web applications and/or websites
+      reside on the cloud.gov platform, have the responsibility to assign an account
+      manager for their information systems.
+  - key: c
+    text: |
+      18F establishes conditions
+      for group and role membership within the cloud.gov platform and its virtual
+      environment.
+      Conditions for groups and roles membership are based on an established
+      need to manage and access the virtual infrastructure and cloud.gov environments.
+      The user must meet the following conditions in order for the System Owner / Project
+      Manager to approve a group membership request:
+        * The user’s assigned role is required to access a particular group.
+        * The user has the requirements and understanding to assume permissions associated with the group.
+        * The user has completed the security role-based training.
+        * The user complies with any other group-specific conditions created by the system owner.
+      Once conditions have been met, the System Owner / Project Manager will request access within
+      GitHub, 18F’s tracking and ticketing system. Once approved, the 18F DevOps group
+      completes the request for group and role membership within its infrastructure
+      and cloud.gov platform.
+  - key: d
+    text: |
+      The 18F Program Office specifies authorized
+      users of the information system, group and role membership, and access authorizations
+      (i.e., privileges) and other attributes (as required) for each account. System
+      Owners / Project Managers provide the details of what type of access is needed
+      for an authorized authorized user.
+      All accounts will be documented within their
+      respective information systems, detailing their group and role membership, and
+      access authorizations. This documentation will be exported by DevOps and archived
+      for up to a year from the date of account creation by the managing 18F project
+      lead and cloud.gov Technical Point of Contact (Operating Environment) in accordance
+      with best business and security practices.
+  - key: e
+    text: |
+      18F requires approvals by the project lead and system owners for requests to create information system
+      accounts. All accounts will be documented within the GitHub ticketing and tracking
+      system with their respective information systems, detailing their group, role
+      membership, and access authorizations.
+  - key: f
+    text: |
+      User account establishment,
+      activation, modification, disablement or removal requires approval by the managing
+      \ project lead and cloud.gov Information System Technical Point of Contact.
+      Accounts will be created, enabled, modified, disabled, and removed from AWS in accordance
+      with 18F policies, guidelines and established by the project lead and DevOps.
+  - key: g
+    text: |
+      18F monitors the use of all information system accounts within
+      its environment.
+  - key: h
+    text: |
+      18F notifies its DevOps account managers when accounts are no longer required, users are terminated or transferred, and when
+      individual’s information system usage or need-to-know changes within the cloud.gov
+      platform and virtual private cloud infrastructure.
+      The Project Manager or Information
+      System Owner will be notified when accounts have been terminated, disabled or
+      transferred based on the access request submitted via GitHub.  Notification
+      will be sent via email or the GitHub ticketing and tracking system when changes
+      to user and system access occur.
+  - key: i
+    text: |
+      18F authorizes access to its
+      information systems based on a valid access authorization from System Owners
+      and DevOps, intended system usage within the network environment, and other
+      attributes as required by the organization or associated missions/business functions.
+      This is documented within section 3 of the 18F Access Control Policy: Access
+      Management.
+      User and system access is provided only to those with an established
+      need to access and manage the virtual private cloud and cloud.gov environments.
+      * User group membership is restricted to the least privilege necessary for the user to accomplish their assigned duties.
+      * All user accounts are issued only to those who have gained approval by 18F DevOps.
+      Once approved, the DevOps team creates the user account and adds it to the appropriate role and organization
+      within its information systems.
+      18F grants access to the information system
+      based on:
+        * A valid need-to-know/need-to-share that is determined by assigned official duties and satisfying all personnel security criteria.
+        * Intended system usage.
+      18F requires proper identification for requests to establish information
+      system accounts, and it approves all such requests based on organizational or mission/business
+      function attributes.
+  - key: j
+    text: |
+      18F reviews user and system accounts for compliance with account management requirements at least on an annual basis.
+      \ Currently, system and user accounts are being monitored manually on a monthly
+      basis and programmatically on a continuous basis.
+  - key: k
+    text: |
+      18F establishes a process for reissuing shared/group account credentials when individuals are
+      removed from the group. 18F uses its GitHub tracking and ticketing system
+      for requests to reissue and remove individuals from group memberships within
+      its environment.
+  standard_key: NIST-800-53
+- control_key: AC-2 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov integrates its user management application with enterprise single sign on systems.
+      cloud.gov automates user management by delegating user verification to a centralized system.
+  standard_key: NIST-800-53
+- control_key: AC-2 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: This control is not applicable. cloud.gov does not contain any guest/anonymous,
+      group, or temporary user accounts. DevOps only creates individual user accounts
+      and grants role based access to users within cloud.gov.
+  standard_key: NIST-800-53
+- control_key: AC-2 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F manages information system identifiers for users and devices by: Disabling
+      the user identifier after ninety (90) days of inactivity for general user accounts
+      and thirty (30) days for administrator level accounts.
+  standard_key: NIST-800-53
+- control_key: AC-2 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      The 18F Access Control Policy Section 3
+      Session Lock states - 18F information systems prevents further access to the system by initiating a session lock after a period of 20 minutes or less of inactivity or upon receiving a request from a user. 18F information systems retain the session lock until the user reestablishes access using established identification and authentication procedures.
+  standard_key: NIST-800-53
+- control_key: AC-2 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      cloud.gov UAA allows the creation of limited privileged accounts.
+      Roles are created by the administrators on a need by need basis.
+      Cloud Foundry roles are granularly granted depending on the requirements
+      of each organization within the platform.
+  - key: c
+    text: 18F removes users from privileged access rights when privileged
+      role assignments are no longer appropriate or have been requested by the system
+      owner and program manager. Removal of access is sent to the DevOps team through
+      a change request within the GitHub ticketing system.
+  standard_key: NIST-800-53
+- control_key: AC-2 (9)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov does not permit shared accounts. Every user requires their own account.
+  standard_key: NIST-800-53
+- control_key: AC-2 (10)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov does not permit shared accounts. Every user requires their own account.
+  standard_key: NIST-800-53
+- control_key: AC-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F information systems enforce approved authorizations for logical access to information and system resources in accordance with the 18F Access Control Policy Section 3 Access Enforcement which states:
+        * 18F must enforce approved authorizations for logical access to its information systems in accordance with all applicable federal and 18F policies.
+        * 18F must provide access enforcement through the use of access control lists, access control matrices, and cryptography to control access between users (or processes acting on behalf of users) and objects (e.g., devices, files, records, processes, programs, domains) in the information system.
+        * 18F must employ access enforcement mechanisms at the application level, when necessary, to provide increased information security for the organization.
+  standard_key: NIST-800-53
+- control_key: AC-4
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      The information system enforces approved authorizations for controlling the flow
+      of information within the system and between interconnected systems based on the
+      18F Access Control Policy Section 3 -  Information Flow Enforcement which states:
+      * 18F enforces approved authorizations for controlling the flow of information
+      within its information systems and between interconnected systems in accordance
+      with applicable federal laws and 18F policies and procedures.
+      * 18F shall use flow control restrictions to include: keeping export controlled
+      information from being transmitted in the clear to the internet, blocking outside
+      traffic that claims to be from within the organization and not passing any web
+      requests to the internet that are not from the internal web proxy.
+      * 18F shall use boundary protection devices (e.g., proxies, gateways, guards,
+      encrypted tunnels, firewalls, and routers) that employ rule sets or establish
+      configuration settings that restrict information system services, provide a
+      packet-filtering capability based on header information, or message-filtering
+      capability based on content (e.g., using keyword searches or document characteristics.
+  standard_key: NIST-800-53
+- control_key: AC-5
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      18F implements Identity and Access Management (IAM)
+      roles and individual user accounts for separation of duties at the AWS layer.
+      For Cloud Foundry access, cloud.gov uses UAA role based access controls (RBAC) to
+      maintain separation of duties.
+  - key: b
+    text: |
+      18F documents separation of duties of AWS and Cloud Foundry users.  All AWS IAM
+      users, groups and roles can be viewed within the AWS console. IAM users reports
+      are generated to show all separation of duties. Cloud Checkr also generates
+      a report of all IAM users within the 18F AWS environment.
+  - key: c
+    text: |
+      cloud.gov defines roles at each layer of the system. Authorization to each
+      of those roles is defined within the documentation of the setup and maintenance
+      of the layers.
+  standard_key: NIST-800-53
+- control_key: AC-6
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      IAM policies are attached to the users, enabling centralized control of permissions
+      for users under 18F AWS Account to access services, buckets or objects. With IAM
+      policies, 18F only grants users within its own AWS account permission to access
+      its Amazon resources.
+      18F AWS IAM policies are defined to grant only the required access for 18F staff
+      necessary to perform their functions. 18F defines least privilege access to each user,
+      group, or role.
+      Security functions within the AWS infrastructure are explicitly defined within IAM to
+      include read-only permissions for any user functions.
+      18F incorporate running the IAM Policy Simulator to test policies for least privilege access
+      for users and groups.
+  standard_key: NIST-800-53
+- control_key: AC-6 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: Because cloud.gov is a PaaS all accessible functions are privileged functions.
+      Nevertheless, 18F team members use different accounts with increasing security
+      requirements for accessing Cloud Foundry as a user, Cloud Foundry as a administrator,
+      and AWS as an administrator.
+  standard_key: NIST-800-53
+- control_key: AC-6 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      Security functions within the cloud.gov platform are limited to roles that can be taken
+      only by using BOSH, Concourse or UAA CLI. Non-security functions are performed using a
+      non-privileged Cloud Foundry account.
+  standard_key: NIST-800-53
+- control_key: AC-6 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: 18F restricts privileged accounts such as administrator and root access
+      accounts to designated members within the 18F Devops and SecOps teams. Within
+      the virtual infrastructure the admin account is not used for privileged access.
+      It’s only used for billing and metrics.
+  standard_key: NIST-800-53
+- control_key: AC-6 (9)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      * Privileged access to the information system is using an audit trail through
+      the BOSH tasks command. This command shows all actions that an operator has
+      taken with the platform. Additionally, all logging activity is forwarded to
+      CloudWatch Logs.
+      * ELK (Logstash, Elasticsearch, Kibana) is used to collect, manage and display
+      all user activity within the cloud.gov platform.
+  standard_key: NIST-800-53
+- control_key: AC-6 (10)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      The cloud.gov platform has built-in role based access controls (RBAC). This
+      ensures that users can only view and affect the spaces for which they have been
+      granted access to. It also prevents non-privileged users from executing privileged
+      functions to include disabling, circumventing, or altering implemented security
+      safeguards/countermeasures.
+      Only designated Org Managers from the DevOps team can execute privileged functions
+      to the cloud.gov platform. All other accounts are non-privileged accounts.
+      Client agencies using cloud.gov are only permitted to change settings within their
+      associated Org account, spaces and roles. These accounts do not have access to the
+      underlying cloud.gov platform.
+  standard_key: NIST-800-53
+- control_key: AC-7
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: NA - User management is delegated to each organization's enterprise user management system.
+  - key: b
+    text: NA - User management is delegated to each organization's enterprise user management system.
+  standard_key: NIST-800-53
+- control_key: AC-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: Implementation in progress
+  standard_key: NIST-800-53
+- control_key: AC-10
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: NA - User management is delegated to each organization's enterprise user management system.
+  standard_key: NIST-800-53
+- control_key: AC-11
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: NA - User management is delegated to each organization's enterprise user management system.
+  - key: b
+    text: NA - User management is delegated to each organization's enterprise user management system.
+  standard_key: NIST-800-53
+- control_key: AC-11 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      Every user interaction with the cloud.gov APIs requires a valid token. If a user session is locked
+      no cloud.gov actions are allowed.
+  standard_key: NIST-800-53
+- control_key: AC-12
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      Session termination is managed by UAA and set to expire within 15 minutes.
+  standard_key: NIST-800-53
+- control_key: AC-14
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: b
+    text: |
+      It is not possible for members of the 18F Devops and SecOps teams to access the 18F virtual
+      private cloud infrastructure without multifactor authentication and identification. All client
+      users of cloud.gov must login using authenticated credentials in order to access the system.
+  standard_key: NIST-800-53
+- control_key: AC-17
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      cloud.gov has a distributed administrator, operator, and management team. All remote actions are
+      allowed.
+  - key: b
+    text: |
+      AWS Security Groups are implemented to ensure that only users that have been granted access can
+      perform administrative actions.
+  standard_key: NIST-800-53
+- control_key: AC-17 (4)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: 18F authorizes the execution of privileged commands and access
+      to security-relevant information via remote access only for monitoring, managing,
+      and troubleshooting the 18F virtual infrastructure and cloud.gov platform. This
+      authorization is only given to specific members of the DevOps and SecOps teams.
+      All other members are excluded from this type of access.
+  standard_key: NIST-800-53
+- control_key: AC-18 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-18
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-19 (5)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-19
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-20
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-20 (2)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-20 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable for the Cloud Foundry Platform
+  standard_key: NIST-800-53
+- control_key: AC-21
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not applicable to the the cloud.gov platform. The cloud.gov platform is
+      for use of development of and deployment of web applications. This control would
+      be handled at the application level and is the responsibility of the application
+      system owner.
+  standard_key: NIST-800-53
+- control_key: AC-22
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not applicable to the the cloud.gov platform. The cloud.gov platform is
+      for use of development of and deployment of web applications. This control would
+      be handled at the application level and is the responsibility of the application
+      system owner.
+  standard_key: NIST-800-53
+schema_version: "3.1.0"
+verifications:
+- key: POLICY_DOC
+  name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/AC-Policy.md
+  type: URL
+- description: "GIVEN the github link - <policy> THEN the policy has been updated
+    within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 08:25:17.375257000 -05:00
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

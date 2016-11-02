@@ -1,0 +1,49 @@
+documentation_complete: false
+name: Cloud Formation
+references:
+- name: What is AWS CloudFormation?
+  path: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html
+  type: URL
+satisfies:
+- control_key: CM-2
+  covered_by: []
+  implementation_status: none
+  narrative: 'DevOps maintain baseline configurations for VPC, EBS, EC2 instances
+    and AMIs. AWS Cloud Formation templates help 18F maintain a strict configuration
+    management scheme of the cloud infrastructure. If an error or misconfiguration
+    of the infrastructure or associated security mechanism (security groups, NACLs)
+    is detected, the administrators can analyze the current infrastructure templates;
+    compare with previous versions, and redeploy the configurations to a known and
+    approved state.
+
+    AWS Cloud Formation templates are the approved baseline for all changes to the
+    infrastructure and simplify provisioning and management on AWS. They provide an
+    automated method to assess the status of an operational infrastructure against
+    an approved baseline.
+
+    Linux instances are based on the standard AWS AMI images with configuration to
+    GSA requirements based on secure configurations documented in CM-6.
+
+    DevOps maintain copies of the latest Production Software Baseline, which includes
+    the following elements: Manufacturer, Type, Version number, Software, Databases,
+    and Stats.
+
+    '
+  standard_key: NIST-800-53
+- control_key: CM-3
+  covered_by: []
+  implementation_status: none
+  narrative: '- 18F provisions its infrastructure with AWS CloudFormation, the AWS
+    CloudFormation template describes exactly what resources are provisioned and their
+    settings. Because these templates are text files, 18F can simply track differences
+    in these templates to track changes to its infrastructure, similar to the way
+    developers control revisions to source code.
+
+    - 18F uses several version control systems(i.e. AWS Config, AWS Service Catalog)
+    with its templates to know exactly what changes were made, who made them, and
+    when. If at any point 18F needs to reverse changes to infrastructure, you can
+    use a previous version of a template.
+
+    '
+  standard_key: NIST-800-53
+schema_version: 2.0

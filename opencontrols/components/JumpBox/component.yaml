@@ -1,0 +1,74 @@
+documentation_complete: false
+name: JumpBox
+satisfies:
+- control_key: AC-17
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        cloud.gov remote access is not available outside of the 18F environment. 18F DevOps personnel are the only group who connects to information system remotely using SSH (22) through the jump box (bastion Host) to execute BOSH CLI commands. The JumpBox is a virtual machine (VM) that acts as a single access point for the BOSH Director and deployed VMs. For resilience there are at least 2 jump boxes. Allowing access through jump boxes and disabling direct access to the other VMs is a common security measure 18F incorporates.
+
+        The jumbox only serves as a means to execute BOSH CLI commands for the platform. It cannot access any applications or websites hosted on top of the platform.
+
+        JumpBoxes are logged in in the same way an EC2 instances is logged into. The system has both a firewall and user ssh key logins.
+
+        The 18F Access Control Policy Section 3 - Remote Access states:
+
+        * 18F shall define, document and enforce requirements, usage restrictions and implementation guidance for each allowed remote access method.
+        * Remote and Virtual Private Network (VPN) access shall require multi-factor authentication.
+        * Access shall be authorized before a connection may be established.
+        * 18F shall monitor for unauthorized remote access and shall take appropriate action if unauthorized access is discovered.
+        * Remote access shall employ cryptography to protect session confidentiality and integrity.
+        * Remote access shall be routed through a limited number of managed access control points.
+        * Privileged commands and access to security-relevant information via remote access shall only be permitted as described in the System Security Plan (SSP).
+  standard_key: NIST-800-53
+- control_key: AC-17 (2)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        18F DevOps teams remotely access the cloud.gov jumpbox using SSH version 2. There are no other remote connections to the platform. Client end users login to the their Org environment through the CF-Deck within the cloud.gov portal. The cloud.gov Portal uses TLS v1.2 connections and AES 128 bit encryption for all access.
+  standard_key: NIST-800-53
+- control_key: AC-17 (3)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov remote access connections are managed through jumpbox Virtual machines within the cloud.gov VPC. The remote connections are SSH sessions using the BOSH CLI API. There are no other remote connections to the platform as stated in AC-17(2)
+  standard_key: NIST-800-53
+- control_key: AC-17 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        18F authorizes the execution of privileged commands and access to security-relevant information via remote access only for monitoring, managing, and troubleshooting  the 18F virtual infrastructure and cloud.gov platform. This authorization is only given to specific members of the DevOps and SecOps teams. All other members are excluded from this type of access.
+
+        Since the cloud.gov platform resides within the 18F virtual infrastructure, 18F DevOps must use the SSH remote access method to troubleshoot issues and update services that are only resolved by logging into the cloud.gov jumpboxes. The jumpbox itself a virtual machine deployed within the cloud.gov virtual private cloud. It is the only access point for designated DevOps members to run privileged commands that affect the entire platform. No other privileged remote access is available to the information system.
+  standard_key: NIST-800-53
+- control_key: AC-17 (9)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.
+  standard_key: NIST-800-53
+- control_key: IA-2 (1)
+  covered_by: []
+  narrative:
+    - text: |
+        cloud.gov currently does not have MFA capabilities implemented for users; however, any administrative actions taken on the platform requires authentication via encrypted ssh keys which are limited to specific users on the jumpbox.
+  standard_key: NIST-800-53
+- control_key: IA-2 (3)
+  covered_by: []
+  narrative:
+    - text: |
+        Any administrative actions taken on the platform requires authentication via encrypted ssh keys which are limited to specific users on the jumpbox.
+  standard_key: NIST-800-53
+- control_key: IA-2 (8)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.
+  standard_key: NIST-800-53
+schema_version: 3.1.0

@@ -1,0 +1,72 @@
+documentation_complete: false
+name: Security Planning Policy for 18F
+satisfies:
+- control_key: PL-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        Agency Security Policy and Procedures
+
+        Security Planning Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 3. Policy on Management
+        Controls.  It states, "All information systems must be covered by a security plan in accordance with the current
+        version of NIST SP 800-18 Revision 1 “Guide for Developing Security Plans for Information Technology Systems."
+
+        GSA OCISO ISP also defined agency-wide security assessment and authorization procedures in IT Security Procedural
+        Guide: Managing Enterprise Risk, Security Assessment and Authorization, Planning and Risk Assessment (CIO-IT
+        Security-06-30)
+
+        18F Program Policy
+
+        The 18F Program Office develops, documents, and disseminates to all 18F staff,
+        The 18F  Security Planning Policy which  addresses purpose, scope, roles, responsibilities, management
+        commitment, coordination among organizational entities, and compliance and procedures to facilitate the
+        implementation of the security planning if information systems and associated planning controls. The 18F Audit
+        and Accountability policy is listed within 18F’s private GitHub repository https://github.com/18F/compliance-docs/blob/master/PL-Policy.md
+        that is accessible to all 18F staff.
+    - key: b
+      text: |
+        The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying
+        System Program Managers and Information System Security Officers and Managers (ISSO/Ms).
+
+        The 18F Program Office will review and update the current 18F Security Planning Policy at least every 3 years and
+        any documented procedures at least annually.
+  standard_key: NIST-800-53
+- control_key: PL-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        18F has developed the system security plan (SSP) for Cloud Foundry PaaS containing the information security architecture for the information system that:
+            - Describes the overall philosophy, requirements, and approach to be taken with regard to protecting the confidentiality, integrity, and availability of organizational information
+            - Describes how the information security architecture is integrated into and supports the enterprise architecture
+            - Describes any information security assumptions about, and dependencies on, external services
+    - key: b
+      text: |
+        18F Reviews and updates the information security architecture within the System Security plans and the 18F GitHub repository on an annual basis or when a significant change takes place to reflect updates in the enterprise architecture.
+
+        Due to the dynamic and elastic nature of cloud computing, 18F monitors real-time updates of its information security architecture using its infrastructure management and visual security consoles.
+    - key: c
+      text: |
+        18F ensures that planned information security architecture changes are reflected in the security plan and organizational procurements/acquisitions.
+        18F follows the risk management framework (RMF) which includes conducting annual risk assessments for its information systems and infrastructure. Any changes are then updated in systems security plans, plan of actions and milestones POA&Ms, security assessment reports (SAR)
+  standard_key: NIST-800-53
+schema_version: 3.1.0
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: policy document
+  path: https://github.com/18f/compliance-docs/blob/master/PL-Policy.md
+  type: url
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.693033
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

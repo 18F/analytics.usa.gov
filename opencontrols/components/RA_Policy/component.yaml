@@ -1,0 +1,46 @@
+documentation_complete: false
+name: Risk Assessment Policy for 18F
+satisfies:
+- control_key: RA-1
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        18F Policy
+  standard_key: NIST-800-53
+- control_key: RA-5
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        18F Conducts monthly Operating System (OS) and web application scanning; quarterly database scanning; and, OS and Web application scanning with every code release. 18F conducts internal vulnerability scanning of its VPC and private subnets within the 18F Virtual Private Cloud.
+    - key: b
+      text: |
+        18F vulnerability scanning tools utilize techniques that promote interoperability such as Common Vulnerability Scoring System v2 (CVSS2), Common Platform Enumeration (CPE), and Common Vulnerability Enumeration (CVE) and OWASP TOP 10 vulnerabilities.
+    - key: c
+      text: |
+        18F Analyzes vulnerability scan reports from its vulnerability scanning tools assessments at least weekly and appropriate actions taken on discovery of vulnerabilities within the 18F Cloud Infrastructure and applications and from security control assessments conducted on its information systems.
+    - key: d
+      text: |
+        High-risk vulnerabilities are mitigated within thirty days (30); moderate risk vulnerabilities mitigated within ninety days (90). If the recommended steps will adversely impact functionality or performance, the ISSO/ISSM will reviews changes and mitigating controls with 18F DevOps as well as the Cloud Foundry system owners.
+    - key: e
+      text: |
+        18F shares information obtained from the vulnerability scanning process and security control assessments with designated System Owners, DevOps, GSA SecOps, ISSM and the Authorizing Official (AO) to help eliminate similar vulnerabilities in other information systems (i.e., systemic weaknesses or deficiencies).
+  standard_key: NIST-800-53
+schema_version: 3.1.0
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: policy document
+  path: https://github.com/18f/compliance-docs/blob/master/RA-policy.md
+  type: url
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.715124
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

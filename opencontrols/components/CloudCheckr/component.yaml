@@ -1,0 +1,127 @@
+documentation_complete: false
+name: Cloud Checkr
+references:
+- name: Cloud Checkr Site
+  path: http://cloudcheckr.com/
+  type: URL
+satisfies:
+- control_key: AC-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: j
+      text: |
+        User accounts will be monitored monthly and accounts will be disabled after 90 days of inactivity; this will be a manual review process every 30 days. 18F is in the process of automating this account management process through the use of implementing AWS OSQuery to trigger alerts when user accounts are inactive of a 90-day period.
+  standard_key: NIST-800-53
+- control_key: AC-2 (3)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        User accounts will be monitored monthly and accounts will be disabled
+        after 90 days of inactivity; this will be a manual review process every 30 days.
+        18F generates a credential report that lists all IAM users and the status of their
+        credentials, including passwords, access keys, and MFA devices.
+  standard_key: NIST-800-53
+- control_key: AC-2 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        #TODO
+        18F has implemented CloudWatch for its system account monitoring. It monitors resources in near real-time, including EC2 instances, EBS volumes, Elastic Load Balancers, and RDS DB instances. Metrics such as CPU utilization, latency, and request counts are provided automatically for these AWS resources. It allows 18F to supply logs or custom application and system metrics, such as memory usage, transaction volumes, or error rates.
+
+        CloudTrail captures all IAM API calls from  command-line tools, the AWS SDK, and the AWS Management Console. Monitoring data is retained for two weeks, even if AWS resources have been terminated. This enables 18F to quickly look back at the metrics preceding an event of interest.
+
+        Metrics are accessed in either the EC2 tab or the CloudWatch tab of the AWS Management Console. SecOps personnel monitors the use of all infrastructure accounts through Cloud Checkr
+  standard_key: NIST-800-53
+- control_key: AC-2 (7)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: b
+    text: |
+      18F monitors all privileged role assignments to the VPS through the IAM console, CloudTrail audit logs and Cloud Watch alerts. 18F uses Cloud Checkr to provide centralized monitoring and alerting within its VPC.
+  standard_key: NIST-800-53
+- control_key: AC-2 (12)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        18F has implemented Cloud Checkr as a way to monitor information system accounts. CloudCheckr monitors the 18F AWS infrastructure and alerts the DevOps and SecOps when certain conditions are met. The CloudTrail Built-In Alerts allows 18F to monitor for a recommended predefined set of CloudTrail events.
+        These events include:
+        * Any security-related event
+        * CloudTrail disabled
+        * Credentials report generated
+        * EBS snapshot deleted
+        * EC2 instance terminated
+        * Failed login to AWS Management Console
+        * IAM access key created
+        * IAM access key deleted
+        * IAM password policy changed
+        * IAM policy assigned
+        * IAM policy modified
+        * Resource-based policy modified
+        * Role Assumed
+        * Root account access key created
+        * Root account used
+        * Security group assigned
+        * Security group modified
+        * Successful login to AWS Management Console
+        * Unauthorized access attempt
+    - key: b
+      text: |
+        Cloud Checkr reports atypical usage of information system accounts to designated 18F SecOps and Devops teams. Monitoring and intrusion information contained within Cloud Checkr and Cloudtrail logs are  sent to 18F security personnel. The  logs are protected from unauthorized access by limiting access to authorized privileged users only.
+  standard_key: NIST-800-53
+- control_key: AC-6 (9)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        All privileged user account activity and API calls to cloud.gov are
+        audited by CloudTrail and monitored by CloudWatch. CloudTrail provides a log of
+        all requests for AWS resources within the 18F AWS account. For each event recorded,
+        18F can see what service was accessed, what action was performed, any parameters
+        for the action, and who made the request. Cloudtrail also shows whether it was
+        as the AWS root account user or an IAM user, or whether it was with temporary
+        security credentials for a role or federated user.
+  standard_key: NIST-800-53
+- control_key: AC-17 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        Cloud Checkr provides a unified view of all infrastructure monitoring which captures all remote activities within 18F virtual infrastructure. The log files are organized by AWS Account ID, region, service name, date, and time. CloudTrail can be configured to aggregate log files from multiple regions into a single Amazon S3 bucket. From there, 18F Devops and SecOps teams view the logs files within Cloud Checkr to perform security analysis and detect user behavior patterns.
+  standard_key: NIST-800-53
+- control_key: AU-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: d
+      text: |
+        18F has implemented Cloudtrail and Cloudwatch for its account and system  monitoring. It provides visibility into user activity by recording API calls made on an AWS account. CloudTrail captures and records important information about each API call for the list of auditable events:
+        * User - the IAM user name of the person who was interacting with your AWS account.
+        * IP Address - the IP Address where the interactions originated from.
+        * Event Name - the type of interaction that occurred.
+        * Service - the AWS Service that was interacted with.
+        * Time - the date and time that the event occurred.
+        * Region - the AWS Region(s) where the interactions occurred.
+        * Resource ID - the resource ID from the event.
+  standard_key: NIST-800-53
+- control_key: AU-3
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        CloudTrail Log File Name Format CloudTrail uses the following file name format for the log file objects it uploads to your S3 bucket: AccountID_CloudTrail_RegionName_YYYYMMDDTHHmmZ_UniqueString.FileNameFormat YYYY, MM, DD, HH, and mm are the digits of the year, month, day, hour, and minute (respectively) when the log file was delivered. Hours are in 24-hour format. The Z indicates that the time is in UTC.
+  standard_key: NIST-800-53
+- control_key: CM-3
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: c
+    text: |
+      For changes related to the virtual infrastructure, 18F uses VisualOps and Cloud Checkr for real-time configuration changes which are documented, approved and tracked within GitHub. All Cloud Foundry configuration changes are documented, approved and tracked within 18F's GitHub site.
+  standard_key: NIST-800-53
+schema_version: 3.1.0

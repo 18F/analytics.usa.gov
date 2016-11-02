@@ -1,0 +1,75 @@
+documentation_complete: false
+name: BOSH
+references:
+- name: Bosh source code
+  path: https://github.com/cloudfoundry/bosh
+  type: URL
+- name: Bosh Documentation
+  path: https://bosh.io/docs
+  type: URL
+satisfies:
+- control_key: SA-11 (1)
+  covered_by:
+  - verification_key: STATIC_CODE_ANALYSIS
+  implementation_status: complete
+  narrative: 'Bosh uses CodeClimate as it''s primary static code analysis tool. The
+    results of the test are publicly avaiable.
+
+    '
+  standard_key: NIST-800-53
+- control_key: CM-2
+  covered_by: []
+  implementation_status: none
+  narrative: "18F utilizes the Cloud Foundry Secure Deployment best practices which\
+    \ include the following:\nConfigure UAA clients and users using a standard BOSH\
+    \ manifest for cloud Foundry Deployment. Limit and manage these clients and users\
+    \ as you would any other kind of privileged account.\nDeploy within a VPC that\
+    \ limits network traffic to individual VMs. This reduces the possibility of unauthorized\
+    \ access to the VMs within your BOSH-managed cloud.\nEnable HTTPS for applications\
+    \ and SSL database connections to protect sensitive data transmitted to and from\
+    \ applications.\nEnsure that the jumpbox is secure, along with the load balancer\
+    \ and NAT VM.\nEncrypt stored files and data within databases to meet data security\
+    \ requirements. Deploy using industry standard encryption and the best practices\
+    \ for your language or framework.\nProhibit promiscuous network interfaces on\
+    \ the trusted network.\nReview and monitor data sharing and security practices\
+    \ with third-party services that you use to provide additional functionality to\
+    \ your application.\nStore SSH keys securely to prevent disclosure, and promptly\
+    \ replace lost or compromised keys.\nUse Cloud Foundry\u2019s RBAC model to restrict\
+    \ users\u2019 access to only what is necessary to complete their tasks.\nUse a\
+    \ strong passphrase for both Cloud Foundry user account and SSH keys.\n\nStore\
+    \ SSH keys securely to prevent disclosure, and promptly replace lost or compromised\
+    \ keys.\nUse Cloud Foundry\u2019s RBAC model to restrict users\u2019 access to\
+    \ only what is necessary to complete their tasks.\nUse a strong passphrase for\
+    \ both Cloud Foundry user account and SSH keys.\n\nFor further information regarding\
+    \ Cloud Foundry best practices please refer to:\nhttps://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html\n\
+    https://docs.cloudfoundry.org/concepts/security.html\n"
+  standard_key: NIST-800-53
+- control_key: SI-10
+  covered_by: []
+  implementation_status: complete
+  narrative: 'All 18F DevOps user input happens at the BOSH command line interface
+    (CLI) which requires specific syntax and parameters to be used in order to execute
+    job functions. Rules for checking the valid syntax of information system inputs
+    (e.g., character set, length, numerical range, acceptable values) are in place
+    to verify that inputs match specified definitions for format and content. Inputs
+    passed to interpreters are prescreened to prevent the content from being unintentionally
+    interpreted as commands. The extent to which the information system is able to
+    check the accuracy, completeness, validity, and authenticity of information is
+    guided by organizational policy and operational requirements.
+
+    The data inputs as part of the Cloud Foundry are validated in several ways. The
+    validation is a series of steps put in place to ensure consistent data and to
+    protect the system from corruption, either malicious or accidental. The data validation
+    takes place in the same mechanism either through the web user interface (where
+    data validation errors are shown to the authenticated user to correct) or programmatically
+    through web service APIs. (where error messages are returned showing where data
+    is rejected).
+
+    '
+  standard_key: NIST-800-53
+schema_version: 2.0
+verifications:
+- key: STATIC_CODE_ANALYSIS
+  name: Bosh source code static analysis
+  path: https://codeclimate.com/github/cloudfoundry/bosh
+  type: URL

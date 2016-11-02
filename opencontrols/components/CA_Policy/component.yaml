@@ -1,0 +1,200 @@
+---
+schema_version: 3.1.0
+documentation_complete: false
+name: Security Assessment and Authorization Policy for 18F
+satisfies:
+- control_key: CA-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      The 18F Program Office develops, documents, and disseminates to all 18F staff. The 18F Security Assessnet and authorization policy which addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance and procedures to facilitate the implementation of the security assessment and authroization policy and associated security assessnet controls. The 18F security assessnet and authorization policy is listed within its private Github repository that is accessible to all 18F staff.
+  - key: b
+    text: |
+      The 18F Program Office will review and update the current 18F Security Assessment policy at least every 3 years and any documented assessment procedures at least annually.
+  standard_key: NIST-800-53
+- control_key: CA-2 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F will accept the results of the cloud.gov assessment performed by the designated 3PAO and reviewed by the FedRAMP PMO office when the assessment meets the condtions for a Provisional ATO.
+  standard_key: NIST-800-53
+- control_key: CA-2
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      The 18F Program develops a security assessment plan that describes the scope of the assessment including:
+
+      * Security controls and control enhancements under assessment
+      * Assessment procedures to be used to determine security control effectiveness
+      * Assessment environment, assessment team, and assessment roles and responsibilities
+
+      cloud.gov is designed for compliance with the Federal Risk and Authroization Management Plan and has adopted the FedRAMP Assessment and Authorization program as the basis for its Security and Priavacy compliance activities. cloud.gov engages a FedRAMP Accredited Third Pary Assessment Organzation (3PAO) to develop a compliant security assessment plan.
+  - key: b
+    text: |
+      cloud.gov has engaged the 3PAO to assess the security controls in the information system at least annually to determine the extent to which the controls are implemented correctly, operation as intended, and producing the desired outcome with respoect to meeting the security requirements for the system.
+  - key: c
+    text: |
+      cloud.gov has engaged the 3PAO to produce a security assessment report that documents the issues, test activities, findings, and recommendations from the assessment.
+  - key: d
+    text: |
+      18F will deliver all documents used in or created during the assessment to generate a complete FedRAMP Authorization package. The package is transmitted to the FedRAMP Program Management Office (PMO) for submission to the FedRAMP JAB
+  standard_key: NIST-800-53
+- control_key: CA-2 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: 18F will enegage the 3PAO to conduct annual vulnerability assessments and penetration testing or when there are significant changes to its information systems to meet the FedRAMP continuous monitoring program objectives. All assessment activities will be planned, approved and announced before testing takes place.
+  standard_key: NIST-800-53
+- control_key: CA-2 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: 18F has engaged an accredited 3PAO to conduct the independent assessment of security controls for the cloud.gov information system.
+  standard_key: NIST-800-53
+- control_key: CA-2 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: cloud.gov implements continuous monitoring and vulnerability scanning that is conducted at least weekly. Manual penetration testing and red teaming is scheduled to happen in a yearly basis but it is an in-progress process.
+  standard_key: NIST-800-53
+- control_key: CA-2 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: 18F will accept the assesment conducted by the 3PAO according to the FedRAMP P-ATO requirements in the Secure Repository.
+  standard_key: NIST-800-53
+- control_key: CA-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: The cloud.gov informaton system does not have any connections to other external information systems or interconnection security agreements (ISA) with other external agencies at this time.
+  standard_key: NIST-800-53
+- control_key: CA-3 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: This control is not applicable to the cloud.gov information system and essentially would be inherited from the cloud infrastructure as a service level. cloud.gov does not connect to any other external information systems.
+  standard_key: NIST-800-53
+- control_key: CA-3 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: This control is not applicable to the cloud.gov information system. cloud.gov currently does not have any connections to other external information systems.
+  standard_key: NIST-800-53
+- control_key: CA-5
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      18F has developed a plan of action and milestones (POA&M) for the information system which documents the remediation actions to correct weaknesses found or deficiencies noted during the assessment of the security controls and to reduce or eliminate known vulnerabilities.
+
+      The majority of vulnerabilities are found during continuous monitoring activities including monthly vulnerability scanning, updates to cloud.gov systems components, static code analysis on applications and infrastucture and system monitoring tools. The 18F ISSOs are tasked with developing plans of actions and milestones for valid findings and vulnerabilities. The devops administrators are tasked to mitigate high findings within 30 days, moderate findings within 60 days and low findings within 120 days.
+  - key: b
+    text: The 18F ISSOs updates the cloud.gov plan of action and milestones at least monthly based on the findings from security controls assessments, security impacy analysis, and continuous monitoring activites.
+  standard_key: NIST-800-53
+- control_key: CA-6
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: 18F has assigned an Authorizing Official (AO) for the cloud.gov information system. The designated AO is listed in Section 4 of the system security plan.
+  - key: b
+    text: The Authorizing Official responsibilities include ensuring the cloud.gov information system is assessed and authorized before going to an operational state. Authorization descisions are based on the contenct of them.
+  - key: c
+    text: 18F updates the security authorzation of cloud.gov on an annual basis or when there are significant changes within the information system. Significant changes include,
+  standard_key: NIST-800-53
+- control_key: CA-7
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: a
+    text: The organization-defined metrics are collected by a combination of AWS CloudWatch (in real time, CPU Utilization, Disk IO, Network In/Out), application logging policy (see AU-2) and a vulnerability scanner.
+  - key: b
+    text: AWS CloudWatch Metrics (CPU Utilization, Disk IO, Network In/Out) are collected in real time. Other metrics are collected in frequencies ranging between 5 minutes and 1 hour. Host vulnerability scans are run daily.
+  - key: c
+    text: Compliance with security controls that can be tested from the operating system level (eg. presence of configuration settings, etc) are monitored and automatically corrected as part of configuration management. Non-automated security processes are handled by the cloud.gov operations team.
+  - key: d
+    text: See CA-7(c)
+  - key: e
+    text: See CA-7(c)
+  - key: f
+    text: Response actions will use the mitigation strategy defined in RA-5(d).
+  - key: g
+    text: Reporting of the security status of the system will be provided by the cloud.gov team according to the Federal and FedRAMP requirements on a monthly basis.
+  standard_key: NIST-800-53
+- control_key: CA-7 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: 18F will engage an accredited 3PAO to conduct the independent assessment of security controls for the cloud.gov information system on a yearly basis.
+  standard_key: NIST-800-53
+- control_key: CA-8 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: GSA ISE will perform Penetration testing of the all 18F systems that are in the purview of GSA. All other penetration testing for the cloud.gov platform will be conducted by an Independent Third party assessor (3PAO) as requested.
+  standard_key: NIST-800-53
+- control_key: CA-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      External Penetration testing
+
+      External penetration testing activities are conducted by GSA OCISO on an annual basis. These activites are designed to perform the necessary vulnerability analysis against cloud.gov based on all necessary security requirements. The GSA OCISO follows the GSA CIO IT Security Procedural Guide, CIO-IT Security-11-51, Conducting Penetration Test Exercises when performing these tests.
+
+      18F must request permission from AWS using the AWS Vulnerability / Penetration Testing Request Form to conduct penetration test activities against its own Virtual Private Cloud infrastructure and follow the AWS Acceptable Use Policy.
+      Amazon requires customers to obtain authorization for penetration testing (or vulnerability assessments) both from or to their AWS resources.
+
+      AWS Acceptable Use Policy, http://aws.amazon.com/aup/
+      AWS Penetration testing,  http://aws.amazon.com/security/penetration-testing/
+
+      GSA ISE performs penetration testing services for the GSA information systems hosted on the cloud.gov platform. It is also bound by the AWS penetration testing policy and procedures when conducting its penetration tests.
+
+      Internal Penetration testing
+
+      For internal penetration testing inside 18F's Virtual Private Cloud, 18F team members will conduct whitebox/greybox testing of the 18F environment using approved assessment tools.
+
+      For compliance with NIST Publication 800-53 CA-8, Parameter 1 Penetration Testing of all 18F Infrastructure and Application Components will occur annually. Parameter 2 Penetration Testing of Publicly Accessible Infrastructure will be performed on the direction of the 18F .
+  standard_key: NIST-800-53
+- control_key: CA-9
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: In progress
+  standard_key: NIST-800-53
+verifications:
+- key: POLICY_DOC
+  name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/CA-Policy.md
+  type: URL
+- description: "GIVEN the github link - <policy> THEN the policy has been updated
+    within the last 180 days"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 08:25:17.527067000 -05:00
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST
