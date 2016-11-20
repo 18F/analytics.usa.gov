@@ -105,19 +105,19 @@ serve --cors
 The data will be available at `http://localhost:3000` over CORS, with no path prefix. For example, device data will be at `http://localhost:3000/devices.json`.
 
 
-### Deploying the app to production
+### Deploying the app
 
-In production, the site's base URL is set to `https://analytics.usa.gov` and the data's base URL is set to `https://analytics.usa.gov/data/live`.
-
-To deploy this app to `analytics.usa.gov`, you will need authorized access to 18F's Amazon S3 bucket for the project.
-
-To deploy the site using `s3cmd`, production settings, and a **5 minute cache time**, run:
+To deploy to **analytics.usa.gov** after building the site with the details in `_config.yml`:
 
 ```bash
-make deploy
+make deploy_production
 ```
 
-**Use the full command above.** The full command ensures that the build completes successfully, with production settings, _before_ triggering an upload to the production bucket.
+To deploy to **analytics-staging.app.cloud.gov** after building the site with the details in `_config.yml` and `_staging.yml`:
+
+```bash
+make deploy_staging
+```
 
 
 ### Environments
