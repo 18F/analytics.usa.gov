@@ -1,8 +1,8 @@
   {% if page.url == '/' %}
-    {% assign data_url = site.data_url %}
+    {% assign data_prefix = 'live' %}
     {% assign entity = "government" %}
   {% else %}
-    {% assign data_url = page.data_url %}
+    {% assign data_prefix = page.slug %}
     {% assign entity = "agency" %}
   {% endif %}
     <!--
@@ -25,7 +25,7 @@
 
         <section id="realtime"
           data-block="realtime"
-          data-source="{{ data_url }}/realtime.json"
+          data-source="{{ site.data_url }}/{{ data_prefix }}/realtime.json"
           data-refresh="15">
           <h2 id="current_visitors" class="data">...</h2>
           <div class="chart_subtitle">people on {{ entity }} websites now</div>
@@ -37,7 +37,7 @@
         </section>
         <section id="time_series"
           data-block="today"
-          data-source="{{ data_url }}/today.json"
+          data-source="{{ site.data_url }}/{{ data_prefix }}/today.json"
           data-refresh="15">
           <svg class="data time-series">
           </svg>
@@ -53,7 +53,7 @@
 
         <section id="devices" class="three_column"
           data-block="devices"
-          data-source="{{ data_url }}/devices.json">
+          data-source="{{ site.data_url }}/{{ data_prefix }}/devices.json">
           <h4>Devices</h4>
           <figure id="chart_device_types">
             <div class="data bar-chart">
@@ -74,14 +74,14 @@
 
           <figure id="chart_browsers"
             data-block="browsers"
-            data-source="{{ data_url }}/browsers.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/browsers.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_ie"
             data-block="ie"
-            data-source="{{ data_url }}/ie.json"
+            data-source="{{ site.data_url }}/{{ data_prefix }}/ie.json"
             data-scale-to-parent="true">
             <h4>Internet Explorer</h4>
             <div class="data bar-chart">
@@ -94,14 +94,14 @@
 
           <figure id="chart_os"
             data-block="os"
-            data-source="{{ data_url }}/os.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/os.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_windows"
             data-block="windows"
-            data-source="{{ data_url }}/windows.json"
+            data-source="{{ site.data_url }}/{{ data_prefix }}/windows.json"
             data-scale-to-parent="true">
             <h4>Windows</h4>
             <div class="data bar-chart">
@@ -118,7 +118,7 @@
 
         <section id="cities" class="three_column"
           data-block="cities"
-          data-source="{{ data_url }}/top-cities-realtime.json">
+          data-source="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json">
           <h4>Cities</h4>
           <figure id="chart_top-cities-90-days">
             <div class="data bar-chart">
@@ -131,14 +131,14 @@
 
           <figure id="chart_us"
             data-block="countries"
-            data-source="{{ data_url }}/top-countries-realtime.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json">
             <div class="data bar-chart">
             </div>
           </figure>
 
           <figure id="chart_countries"
             data-block="international_visits"
-            data-source="{{ data_url }}/top-countries-realtime.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json">
             <h4>International</h4>
             <div class="data bar-chart">
             </div>
@@ -160,11 +160,11 @@
 
           <figure class="top-pages" id="top-pages-realtime" role="tabpanel"
             data-block="top-pages-realtime"
-            data-source="{{ data_url }}/top-pages-realtime.json"
+            data-source="{{ site.data_url }}/{{ data_prefix }}/top-pages-realtime.json"
             data-refresh="15">
             <h5><em>
               People on a <strong>single, specific page</strong> now. {% if entity == "government" %}We only count pages with at least 10 people on the page.{% endif %}
-              <a href="{{ data_url }}/all-pages-realtime.csv">Download the full dataset.</a>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
             </div>
@@ -172,7 +172,7 @@
 
           <figure class="top-pages" id="top-pages-7-days" role="tabpanel"
             data-block="top-pages"
-            data-source="{{ data_url }}/top-domains-7-days.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-7-days.json">
             <h5><em>Visits over the last week to <strong>domains</strong>, including traffic to all pages within that domain.</em></h5>
             <div class="data bar-chart">
             </div>
@@ -180,10 +180,10 @@
 
           <figure class="top-pages" id="top-pages-30-days" role="tabpanel"
             data-block="top-pages"
-            data-source="{{ data_url }}/top-domains-30-days.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-30-days.json">
             <h5><em>
               Visits over the last month to <strong>domains</strong>, including traffic to all pages within that domain. {% if entity == "government" %}We only count pages with at least 1,000 visits in the last month.{% endif %}
-              <a href="{{ data_url }}/top-domains-30-days.csv">Download the full dataset.</a>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/top-domains-30-days.csv">Download the full dataset.</a>
             </em></h5>
             <div class="data bar-chart">
             </div>
@@ -197,7 +197,7 @@
           <h5><em>Total file downloads yesterday on {{ entity }} domains.</em></h5>
           <figure id="top-downloads"
             data-block="top-downloads"
-            data-source="{{ data_url }}/top-downloads-yesterday.json">
+            data-source="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json">
             <div class="data bar-chart">
             </div>
           </figure>
