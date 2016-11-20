@@ -17,7 +17,6 @@
             <select name="agency-selector" id="agency-selector"  title="Agency Selection Dropdown">
               <option value="{{ site.baseurl }}/data/">{{ site.dropdown_title }}</option>
               {% for agency in agencies %}
-                {{ agency.url }}
                 <option value="{{ site.baseurl }}{{ agency.url }}data/">{{ agency.name }}</option>
               {% endfor %}
             </select>
