@@ -124,7 +124,8 @@ make deploy
 
 | Environment | Branch | URL |
 |-------------| ------ | --- |
-| Production | master | https://analytics.usa.gov  |
+| Production | master | https://analytics.usa.gov |
+| Staging | master | https://analytics-staging.app.cloud.gov |
 
 ### Public domain
 
