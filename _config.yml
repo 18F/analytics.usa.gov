@@ -1,3 +1,6 @@
+
+# Don't exclude nginx.conf, needs to be copied into _site for
+# cloud.gov to pick up on it.
 exclude:
 - ".gitignore"
 - todo.txt
@@ -11,7 +14,6 @@ exclude:
 - dap.md
 - uxtesting.md
 - ".sass-cache"
-- nginx.conf
 - requirements.txt
 - system-security-plan.yml
 - manifest.yml
@@ -43,13 +45,8 @@ url: https://analytics.usa.gov
 # Default dropdown title, will not appear if there are no sub-pages
 dropdown_title: All Participating Websites
 
-# Default data url
-#data_url: https://s3.amazonaws.com/cg-ff27f612-cd16-4a76-94f8-628986af2158/data/
-data_url: https://s3-us-gov-west-1.amazonaws.com/cg-ff27f612-cd16-4a76-94f8-628986af2158/data/live
-
-# GitHub information
-org_name: GSA
-repo_name: analytics.usa.gov
+# Default data url (also needs to be in nginx.conf for cloud.gov deployment)
+data_url: https://analytics.usa.gov/data
 
 # twitter information
 twitter: usgsa
