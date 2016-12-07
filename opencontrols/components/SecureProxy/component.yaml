@@ -1,0 +1,31 @@
+documentation_complete: false
+name: SecureProxy
+references:
+- name: Reference Name
+  path: https://github.com/18F/cg-secureproxy-boshrelease
+  type: URL
+satisfies:
+- control_key: SC-13
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov forces https using SecureProxy:
+
+      Applications running on Cloud Foundry receive requests through the URLs configured
+      for the application. HTTP requests arrive on ports 80 and 443. Additionally, Cloud
+      Foundry requires a channel for TCP/WebSocket traffic. The default cf-release manifest
+      assigns port 4443 for TCP/WebSocket communications.
+
+      All traffic from the public internet to the Cloud Controller and UAA happens over
+      HTTPS. Inside the boundary of the system, components communicate over publish-subscribe
+      (pub-sub) message bus, NATs on port 4222.
+
+      To combat spoofing Cloud Foundry network traffic rules help prevent the attack
+      from accessing application containers. Cloud Foundry uses application isolation,
+      operating system restrictions, and encrypted connections to further mitigate risk.
+
+      Application developers push their code using the Cloud Foundry API. Cloud Foundry
+      secures each call to the CF API using the UAA and SSL
+  standard_key: NIST-800-53
+schema_version: 3.1.0

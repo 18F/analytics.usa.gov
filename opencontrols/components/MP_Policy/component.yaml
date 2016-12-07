@@ -1,0 +1,116 @@
+documentation_complete: false
+name: Media Protection Policy for 18F
+references:
+- name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/MP-Policy.md
+  type: URL
+satisfies:
+- control_key: MP-1
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        Agency Media Protection Policy. Media Protection Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 4. Policy on Operational Controls.  It states, "All GSA data from information system media, both digital and non-digital must be sanitized in accordance with methods described in IT Security Procedural Guide: Media Protection Guide, OCIO-IT Security-06-32, before disposal or transfer outside of GSA.
+        GSA OCISO ISP also defined agency-wide media protection procedures in IT Security Procedural Guide: Media Protection Guide (CIO-IT Security-06-32) 18F follows the GSA Media Protection policy for its information systems hosted within GSA facilities. The Cloud.Gov information system is hosted with the AWS GovCloud and will be in purview of the hosting site’s Media Protection policy and procedures.
+    - key: b
+      text: | 
+        The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying System Program Managers and Information System Security Officers and Managers (ISSO/Ms).
+        The GSA OCISO has determined MP-1 to be an Enterprise-Wide Common Control and is provided by the OCISO ISP. For specific details, please refer to the GSA IT FY-15 Information Security Program Plan Version 1.0.
+  standard_key: NIST-800-53
+- control_key: MP-2
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-3
+  covered_by: [] 
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. Cloud.Gov data does not contain PII or information from the customer.  All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider. 
+    - key: b
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. Cloud.Gov data does not contain PII or information from the customer.  All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider. 
+  standard_key: NIST-800-53
+- control_key: MP-4
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.     
+    - key: b
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-5
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+    - key: b
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+    - key: c
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+    - key: d
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-5 (4)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is not applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-6
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - key: a 
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+    - key: b
+      text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-6 (2)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-7
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider.
+  standard_key: NIST-800-53
+- control_key: MP-7 (1)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+    - text: |
+        This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider
+  standard_key: NIST-800-53
+schema_version: 3.1.0
+system: 18F
+verifications:
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.675575
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

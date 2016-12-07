@@ -1,0 +1,135 @@
+documentation_complete: false
+name: Identity and Access Management
+references:
+- name: AWS Identity and Access Management (IAM)
+  path: https://aws.amazon.com/iam/
+  type: URL
+satisfies:
+- control_key: AC-2 (5)
+  covered_by: []
+  implementation_status: none
+  narrative: "Account log out is set to 15 minutes of inactivity within the Identity and Access Management (IAM) console
+    per account within the organization's virtual infrastructure.
+    "
+  standard_key: NIST-800-53
+- control_key: AC-2 (1)
+  covered_by: []
+  implementation_status: none
+  narrative: "AWS infrastructure as a service Management Life Cycle is automated to
+    use AWS CLI scripts. The organization's AWS Virtual Private Cloud (VPC) can use the AWS Command Line
+    Interface (CLI) to automate the account management LifeCycle within its envoriment.
+    The organization uses the AWS Identity and Access Management (IAM) console for semi-automated 
+    automated account manamgemt.
+    "
+  standard_key: NIST-800-53
+- control_key: AC-6
+  covered_by: []
+  implementation_status: none
+  narrative: "Identity and Access Management (IAM) policies are attached to the users, enabling centralized control
+    of permissions for users under the organization's AWS Account to access services, buckets or
+    objects. With IAM policies, the organization only grant users 
+    within its own AWS account permission to access its Amazon resources.
+
+    AWS IAM policies are defined to grant only the required access for the organizational staff
+    necessary to perform their functions. The organization defines least privilege access to each
+    user, group or role.
+
+    Security functions within the AWS infrastructure are explicitly defined within
+    IAM to include read-only permissions for any user functions.
+
+    The organization incorporates running the IAM Policy Simulator to test policies for least privilege
+    access for users and groups.
+    "
+  standard_key: NIST-800-53
+- control_key: AC-6 (1)
+  covered_by: []
+  implementation_status: none
+  narrative: "The organization explicitly authorizes access to administrative and security functions
+    of its virtual infrastructure and residing platforms to designated individuals
+    within the organization's SecOps and DevOps team.  No other authorizations to security and administrative
+    information is granted to individuals outside these teams.
+    "
+  standard_key: NIST-800-53
+- control_key: AC-2 (2)
+  covered_by: []
+  implementation_status: none
+  narrative: "This control is not applicable. All Temporary accounts are handled by
+    associating resources with Identity and Access Management (IAM) Roles. There are no guest/anonymous, group, or
+    temporary user accounts in the organization's AWS environment.
+    "
+  standard_key: NIST-800-53
+- control_key: AC-5
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nThe organization implements Identity and Access Management (IAM) Policies\
+    \ roles and  individual user accounts for separation of duties.  IAM policies\
+    \ are attached to the users, enabling centralized control of permissions for users\
+    \ under  AWS Account.\n  \n#### b  \nThe organization documents separation of duties of\
+    \ AWS users. All AWS IAM users, groups and roles can be viewed\
+    \ wthin the AWS console. IAM users reports are generated to show all separation\
+    \ of duties. \n
+    "
+  standard_key: NIST-800-53
+- control_key: AC-14
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nThere are no administrative actions than can be performed\
+    \ within the organization's Virtual Private Cloud (VPC) without multifactor authentication.  Per AWS,\
+    \ privileged users can not gain access to the AWS console without identification and authorization\
+    \ to its a VPC.\n  \n#### b  \nIt is not possible for members of the 18F Devops\
+    \ and SecOps teams to aceess the organization's VPC infrastructure without\
+    \ muitifactor authetication. \n  \n
+    "
+  standard_key: NIST-800-53
+- control_key: AC-3
+  covered_by: []
+  implementation_status: none
+  narrative: "The organization follows best practices by implementing the majority of the following:\n\
+    \  - Create the organization's individual accounts for anyone that requires access to the virtual\
+    \ infrastructure or APIs or use Identity and Access Management (IAM) federation from enterprise identity management\
+    \ system\n  - Use groups or roles to assign permissions to IAM users\n\
+    \  - Enable multi factor authentication for all IAM users\n  - Use roles for applications\
+    \ that run on EC2 instances\n  - Delegate by using roles instead of sharing credentials\n\
+    \  - Rotate credentials regularly\n  - Store SSH keys securely to prevent disclosure,\
+    \ and promptly replace lost or compromised keys.\n
+    "
+  standard_key: NIST-800-53
+- control_key: AC-2
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nAWS accounts are managed through AWS Identity and Access Management\
+    \ (IAM). Only users with a need to operate the AWS management console are provided\
+    \ individual AWS user accounts. The following types are used:\n  * User-\
+    \ Individual IAM accounts\n  * System- system and application account not\
+    \ used for interactive access\nThere are no guest/anonymous, groups, or temporary\
+    \ user accounts in the organization's environment\n  \n#### k  \nThe organization does not allow shared/group\
+    \ account credentials within the AWS environment. All users have individual accounts\
+    \ to access the AWS environment. The organization has created specific policies that allow\
+    \ individual users to assume a role within the AWS environment.\n  \n
+    "
+  standard_key: NIST-800-53
+- control_key: AC-6 (5)
+  covered_by: []
+  implementation_status: none
+  narrative: "The organization restricts privileged accounts such as administrator and root access\
+    \ accounts to designated members within the Devops and SecOps teams. Within\
+    \ the virtual infrastructure the admin account is not used for privileged access.\
+    \ It\u2019s only used for billing and metrics.\n
+    "
+  standard_key: NIST-800-53
+- control_key: IA-2
+  covered_by: []
+  implementation_status: none
+  narrative: "All users have individually unique identifiers to access and authenticate
+    to the AWS environment through the AWS management console. The organization's AWS Identity and 
+    Access Management (IAM) users are placed into IAM roles based on their assigned roles and permissions
+
+    Additional temporary permission are delegated with the IAM roles usually for applications
+    that run on EC2 Instances in order to access AWS resources all user accounts for
+    staff are maintained within the organization's AWS environment.
+
+    Shared or group authenticators are not utilized, Service accounts are implemented
+    as Managed Services Accounts within AWS.
+    "
+  standard_key: NIST-800-53
+schema_version: 2.0

@@ -1,0 +1,221 @@
+---
+documentation_complete: false
+name: Identification and Authentication Policy for 18F
+satisfies:
+- control_key: IA-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      The 18F Program Office develops, documents, and disseminates to all 18F staff the 18F Identification and Authentication Policy which addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, compliance, and procedures to facilitate the implementation of the identification and authentication policy and associated identification controls. The 18F Identification and Authentication Policy is listed within 18F's private GitHub repository and the docs.cloud.gov site that is accessible to all 18F staff.
+  - key: b
+    text: |
+      The 18F Program Office will review and update the current 18F Identification and Authentication Policy at least every three years and any documented identification and authentication procedures at least annually.
+  standard_key: NIST-800-53
+- control_key: IA-2
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      The cloud.gov platform delegates authentication to either the GSA enterprise system or GitHub for any administrator access.
+  standard_key: NIST-800-53
+- control_key: IA-2 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      Multifactor authentication is enforced both in the GSA enterprise login system and GitHub.
+  standard_key: NIST-800-53
+- control_key: IA-2 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      Non-privileged accounts can be delegated to enterprise user systems that have multifactor authentication.
+  standard_key: NIST-800-53
+- control_key: IA-2 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - Local access is treated the same as remote access. See IA-2 (1).
+  standard_key: NIST-800-53
+- control_key: IA-2 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - Only individual authentication is allowed.
+  standard_key: NIST-800-53
+- control_key: IA-2 (8)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov implements UAA which has session tokens and CSRF prevention that prevents replay attacks.
+  standard_key: NIST-800-53
+- control_key: IA-2 (11)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to multiple separate single sign on (SSO) systems which implement multifactor in multiple ways.
+  standard_key: NIST-800-53
+- control_key: IA-2 (12)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to multiple separate single sign on (SSO) system which implement multifactor that may or may not include PIV cards.
+  standard_key: NIST-800-53
+- control_key: IA-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov monitors and tracks all network connections using AWS VPC flow logs, router access logs, and application access logs. cloud.gov assigns each connection a unique identifier and tracks it across queries.
+  standard_key: NIST-800-53
+- control_key: IA-4
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      The 18F Identification and Authentication Policy section 3 Identifier Management states:
+      Identifier Management:
+      18F manages information system identifiers for users and devices by:
+      * Receiving authorization from a designated organizational official to assign a user or device identifier.
+      * Selecting an identifier that uniquely identifies an individual or device.
+      * Assigning the user identifier to the intended party or the device identifier to the intended device.
+      * Preventing reuse of user or device identifiers for one (1).
+      * Disabling the user identifier after ninety (90) days of inactivity for general user accounts and thirty (30) days for administrator level accounts.
+  standard_key: NIST-800-53
+- control_key: IA-4 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      18F manages individual identifiers that uniquely identify individuals as employees, contractors, or foreign nationals.
+  standard_key: NIST-800-53
+- control_key: IA-5
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (2)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (3)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (6)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (7)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-5 (11)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-7
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+- control_key: IA-8
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      Every user has an individual account and their source is tracked to the main authentication system.
+  standard_key: NIST-800-53
+- control_key: IA-8 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      PIV verification is subject to the delegated enterprise SSO system.
+  standard_key: NIST-800-53
+- control_key: IA-8 (2)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov does not accept third-party credentials.
+  standard_key: NIST-800-53
+- control_key: IA-8 (3)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov does not accept third-party credentials.
+  standard_key: NIST-800-53
+- control_key: IA-8 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      NA - cloud.gov delegates authentication to an enterprise single sign on (SSO) system.
+  standard_key: NIST-800-53
+schema_version: 3.1.0
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/IA-Policy.md
+  type: URL
+- description: "GIVEN the github link - <policy> THEN the policy has been updated within the last 180 days"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 08:25:17.630024000 -05:00
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

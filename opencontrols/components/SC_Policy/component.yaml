@@ -1,0 +1,433 @@
+---
+schema_version: 3.1.0
+documentation_complete: false
+name: System and Communications Protection Policy for cloud.gov
+satisfies:
+- control_key: SC-1
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - key: a
+    text: |
+      System and Communications Protection Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "All network devices that are either owned, managed, maintain a connection to a GSA facility, and/or handle GSA data shall be strategically positioned behind a GSA firewall to provide analysis/correlation, management structure, and minimize threats presented by external attacks.
+
+      The 18F program includes a library of security policies that address federal and non-federal requirements. These policies guide and govern the actions of 18F employees and contractors in conducting any United States business.
+
+      The 18F security assessment, communications, and authorization policy is listed within its GitHub repository that is accessible to all 18F staff.
+
+      18F helps develop, document, and disseminate policy information to 18F staff members.
+
+      This 18F policy contains a protection policy that addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance.
+
+      18F's "Before You Ship" guide facilitates the implementation of the system and communications protection policy and associated system and communications protection controls.
+
+      See https://github.com/18F/before-you-ship/ for more information.
+  - key: b
+    text: |
+      Reviews and updates the current System and Communications Protection Policy every three years.
+
+      The 18F program includes a library of security policies that address federal and non-federal requirements. These policies guide and govern the actions of 18F employees and contractors in conducting any United States business.
+
+      The 18F security assessment, communications, and authorization policy is listed within its GitHub repository that is accessible to all 18F staff.
+  standard_key: NIST-800-53
+- control_key: SC-2
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - key: b
+    text: |
+      18F implements subnetworks for publicly accessible system components that are logically separated from internal organizational networks. System management functionality to cloud.gov infrastructure is hosted on AWS FedRAMP Certificated Cloud Service Provider (CSP) and is accessible only to 18F Administrative teams through AWS IAM specified roles. This is a Service Provider and Customer Responsibility.
+  standard_key: NIST-800-53
+- control_key: SC-4
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov system architecture prevents unauthorized and unintended information transfer via shared system resources. cloud.gov uses Cloud Foundry components to protect users and shared resources from security threats by minimizing network surface area, applying security controls, isolating customer applications and data in containers, and encrypting connections.
+  standard_key: NIST-800-53
+- control_key: SC-5
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Refer to the 18F policy statement for the types of denial of service (DoS) to protect our systems against. Policy https://github.com/18f/compliance-docs/blob/master/SC-Policy.md
+
+      cloud.gov limits the effects of Volume Based and Protocol DoS type attacks by utilizing the following groups of technical measures:
+
+      18F administrative staff maintains hardened Amazon Managed Images (AMI) and Cloud Foundry custom buildpacks with the latest patches and updates.
+
+      Buildpacks provide framework and runtime support for applications that are deployed on cloud.gov.  The AMI and custom buildpacks are maintained and secured within 18F's software repository, GitHub.
+
+      cloud.gov also uses AWS's IaaS services with well-formed Virtual Private Cloud (VPC) firewall rules to reduce the attack surface, while service resiliency is maintained by utilizing AWS Availability Zones, Elastic Load Balancing, and Auto Scaling services.
+
+      Cloud Foundry's security components limit the effects of an attack at the Application Layer. It limits DoS attacks on this layer through resource starvation and reduction of the attack surface even further with well-formed application security groups which control the traffic flowing from hosted applications.
+
+      These tools combined with SOC staffing are responsible for maintaining system security.
+  parameters:
+  - key: a
+    text: |
+      18F policy statement
+  - key: b
+    text: |
+      18F policy statement
+  standard_key: NIST-800-53
+- control_key: SC-6
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov protects the availability of resources by allocating
+      volatile and non-volatile storage, bandwidth, and availability by using automated
+      AWS features such as Elastic Load Balancing and Auto Scaling technology at the
+      infrastructure layer and Cloud Foundry's application lifecycle manager components,
+      Cloud Controller and Droplet Execution Agent (DEA), at the application layers.
+
+      18F safeguards are in place if resources are reaching their limits with multiple sets of
+      resource monitoring tools:  Cloud Foundry's built-in health monitoring system, New Relic,
+      CloudWatch, and ELK, which combined provide real-time alerts and visibility into critical
+      systems and applications.
+  parameters:
+  - key: a
+    text: |
+      volatile and non-volatile storage, bandwidth, availability of applications
+  - key: b
+    text: |
+      by priority and quota
+  - key: c
+    text: |
+      See system description for list of safeguards
+  standard_key: NIST-800-53
+- control_key: SC-7
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      18F monitors and controls communications at the external boundary of the system and at key internal boundaries within the system.
+  - key: b
+    text: |
+      18F implements subnetworks for publicly accessible system components that are logically separated from internal organizational networks by using a well-formed Virtual Private Cloud. VPC is a virtual network dedicated to your AWS account which is logically isolated from other virtual networks in the AWS cloud.
+      cloud.gov VPC has selected its IP address range, created subnets, and configured route tables, network gateways, and security settings logically separated from any other internal organization networks.
+  - key: c
+    text: |
+      18F staff connects to external networks or information systems only through managed interfaces consisting of boundary protection devices arranged in accordance with organizational security architecture.
+  parameters:
+  - key: b
+    text: |
+      logically
+  standard_key: NIST-800-53
+- control_key: SC-7 (3)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      18F limits the number of external network connections to the information system through the use of AWS network security groups which restrict types of network connections. AWS API authenticated service keys and managed SSH keys restrict PU access to the systems.
+
+      cloud.gov Cloud Foundry components run on AWS AMI that exist within AWS VPCs. In this configuration, the only access points visible on a public network are load balancers that map to one or more Cloud Foundry routers.
+  standard_key: NIST-800-53
+- control_key: SC-7 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      Implements a managed interface for each external telecommunication service.
+  - key: b
+    text: |
+      18F establishes a traffic flow policy for each managed interface as AWS VPC security groups.
+  - key: c
+    text: |
+      18F protects the confidentiality and integrity of the information being transmitted across each interface by using TLS for HTTP based connection.
+  - key: d
+    text: |
+      18F documents each exception to the traffic flow policy with a supporting mission/business need and duration of that need.
+  - key: e
+    text: |
+      18F reviews exceptions to the traffic flow policy at least annually and removes exceptions that are no longer supported by an explicit mission/business need.
+  parameters:
+  - key: e
+    text: |
+      at least annually
+  standard_key: NIST-800-53
+- control_key: SC-7 (5)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov's managed interfaces at the AWS security control group definitions deny network traffic by default and allow network communications traffic by exception.
+  standard_key: NIST-800-53
+- control_key: SC-7 (7)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      VPNs and split tunneling are not an applicable use when accessing this system. 18F adminitrative staff gain access to this system through AWS multi-factor authentication to perform administrative functions and duties.
+  standard_key: NIST-800-53
+- control_key: SC-7 (8)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov doesn't require authenticated proxy servers at managed interfaces. 18F administrative staff gain access to this system through the AWS IAM multi-factor authentication process to perform adminitrative functions and duties at the IaaS layer to administer any managed interfaces.
+  parameters:
+  - key: a
+    text: |
+      N/A
+  - key: b
+    text: |
+      N/A
+  standard_key: NIST-800-53
+- control_key: SC-7 (12)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: b
+    text: |
+      Host-based boundary protection for application services hosted on cloud.gov are provided by CF components.
+
+      Cloud Foundry Application Security Groups (ASGs) control the traffic flowing out of applications. Each CF application uses a dedicated Linux container, and each container includes a dedicated virtual network interface. Application security groups are a collection of ‘allow’ rules that can be made with global or application specific assignments enabling access to be set on individual application requirements. These requirements are added through whitelisting, and whitelisting is layered on top of a series of container-centric lock-downs, allowing limited access to other applications and services.
+  parameters:
+  - key: a
+    text: |
+      N/A
+  - key: b
+    text: |
+      N/A
+  standard_key: NIST-800-53
+- control_key: SC-7 (13)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: b
+    text: |
+      18F practices defense in depth in layers. Sensistive security tools are logically isolated by well defined VPC boundries between internal system boundaries.  Additionally third-party approved tools are used which are accessed via authenticated API keys over encrypted connections such as HTTPS.
+  parameters:
+  - key: a
+    text: |
+      Nessus, Tripwire, OWASP ZAP, ELK stack, Pagerduty, Code Climate, Cloudability, CloudTrail, CloudWatch
+    key: a
+    text: |
+  standard_key: NIST-800-53
+- control_key: SC-7 (18)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: b
+    text: |
+      18F doesn't operate any control interfaces outside of what's provided by AWS CSP. In the event of an operational failure of a boundary protection device, AWS CSP teams should respond to this event and notify the 18F DevOps team.
+  standard_key: NIST-800-53
+- control_key: SC-8
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov provides integrity and confidentiality protection over data in transit by applying HTTPS to all public interfaces connecting to the service. See how HTTPS (TLS) https://tools.ietf.org/html/rfc5246 for details.
+  parameters:
+  - key: SC-8
+    text: |
+      confidentiality and integrity
+  standard_key: NIST-800-53
+- control_key: SC-8 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov implements cryptographic mechanisms to prevent unauthorized disclosure of information and detect changes to  information during transmission only as shown in SC-8.
+      See FedRAMP AWS CSP SSP for further details.
+  parameters:
+  - key: SC-8-1
+    text: |
+      N/A
+  standard_key: NIST-800-53
+- control_key: SC-10
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov's RAS access terminates immediately at the end of the session.
+  parameters:
+  - key: SC-10
+    text: |
+      immediately
+  standard_key: NIST-800-53
+- control_key: SC-12
+  covered_by:
+  - verification_key: KEY_ROTATION
+  implementation_status: complete
+  narrative:
+  - text: |
+      Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized staff, while maintaining availability of information.
+  standard_key: NIST-800-53
+- control_key: SC-12 (2)
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      cloud.gov controls and distributes symmetric cryptographic keys using [NIST FIPS-compliant] key management technology and processes.
+  standard_key: NIST-800-53
+- control_key: SC-12 (3)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov doesn't produce, control, or distribute asymmetric cryptographic keys.
+  parameters:
+  - key: SC-12-3
+    text: N/A
+  standard_key: NIST-800-53
+- control_key: SC-13
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov inherits the control from the GovCloud package for the ELB SSL termination. See https://d0.awsstatic.com/whitepapers/compliance/AWS_Risk_and_Compliance_Whitepaper.pdf for further details.
+  parameters:
+  - key: SC-13
+    text: |
+      N/A
+  standard_key: NIST-800-53
+- control_key: SC-15
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - key: a
+    text: |
+      cloud.gov doesn't allow remote activation of collaborative computing devices, thus not applicable.
+  - key: b
+    text: |
+      Explicit indication of use to users physically present at the devices is not applicable to cloud.gov.
+  parameters:
+  - key: SC-15
+    text: N/A
+  standard_key: NIST-800-53
+- control_key: SC-17
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov obtains public key certificates from COMODO, an approved service provider.
+  standard_key: NIST-800-53
+- control_key: SC-18
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - key: a
+    text: |
+      This is not an applicable control for cloud.gov. It doesn't depend on any mobile code such as Flash, Java, ActiveX, etc.
+  - key: b
+    text: |
+      This is not an applicable control for cloud.gov. It doesn't depend on any mobile code such as Flash, Java, ActiveX, etc.
+  - key: c
+    text: |
+      This is not an applicable control for cloud.gov. It doesn't depend on any mobile code such as Flash, Java, ActiveX, etc.
+  standard_key: NIST-800-53
+- control_key: SC-19
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - key: a
+    text: |
+      This is not an applicable control for cloud.gov. It doesn't depend on any VoIP technologies.
+  - key: b
+    text: |
+      This is not an applicable control for cloud.gov. It doesn't depend on any VoIP technologies.
+  standard_key: NIST-800-53
+- control_key: SC-20
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - key: a
+    text: |
+      cloud.gov inherits from AWS CSP Route 53 the ability to use DNS with HTTP Strict Transport Security (HSTS) to achieve data origin authentication and integrity verification artifacts, along with the authoritative name resolution data the system returns in response to external name/address resolution queries.
+  - key: b
+    text: |
+      By allowing endpoints to use Public Key Infrastructure (PKI) certificates containing unique domain identifiers that map with top-level registered domain, cloud.gov provides the means to indicate the security status of child zones and (if the child supports secure resolution services) to enable verification of a chain of trust among parent and child domains, when operating as part of a distributed, hierarchical namespace.
+  standard_key: NIST-800-53
+- control_key: SC-21
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      It is a customer's responsibility to manage DNS according to FedRAMP standards.
+  standard_key: NIST-800-53
+- control_key: SC-22
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      It is a customer's responsibility to manage DNS according to FedRAMP standards.
+  standard_key: NIST-800-53
+- control_key: SC-23
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov protects the authenticity of sessions by exclusively using HTTPS.
+  standard_key: NIST-800-53
+- control_key: SC-28
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov protects the confidentiality and integrity of all information by using at-rest encryption.
+  parameters:
+  - key: a
+    text: |
+      confidentiality; integrity
+    key: b
+    text: |
+      Administrative and policy information for Cloud Foundry UAA in the database
+  parameters:
+  - key: a
+    text: |
+      confidentiality; integrity
+    key: b
+    text: |
+      Administrative and policy information for Cloud Foundry UAA in the database
+  standard_key: NIST-800-53
+- control_key: SC-28 (1)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov implements cryptographic mechanisms to prevent unauthorized disclosure and modification of all blobs created by BOSH and Cloud Foundry by implementing at-rest encryption and by checking file signatures.
+  parameters:
+  - key: a
+    text: |
+      Administrative and policy information
+    key: b
+    text: |
+      database
+  parameters:
+  - key: a
+    text: |
+      Administrative and policy information
+    key: b
+    text: |
+      database
+  standard_key: NIST-800-53
+- control_key: SC-39
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov maintains a separate execution domain for each executing process by running within its own self-contained environment, a Warden/Garden container that isolates processes, memory, and the file system.
+  standard_key: NIST-800-53
+system: 18F
+verifications:
+- key: KEY_ROTATION
+  name: Key Rotation Policy
+  path: https://github.com/18F/cg-docs/blob/master/content/ops/key-rotation.md
+  type: URL
+- key: POLICY_DOC
+  name: policy document
+  path: https://github.com/18f/compliance-docs/blob/master/SC-Policy.md
+  type: url
+- description: |
+    GIVEN the github link - <policy> THEN the policy has been updated within the last 180 days
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.749496
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

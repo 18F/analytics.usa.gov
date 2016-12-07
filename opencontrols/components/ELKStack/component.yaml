@@ -1,0 +1,77 @@
+documentation_complete: false
+name: ELKStack
+references:
+- name: Reference Name
+  path: https://www.elastic.co/webinars/introduction-elk-stack
+  type: URL
+satisfies:
+- control_key: AC-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: g
+      text: |
+        The UAA API interface is used to monitor privileged/non privileged user accounts within the cloud.gov It lists Cloud Foundry instance users. By default it returns information about each user account including GUID, name, permission groups, activity status, and metadata.
+
+        18F uses the ELK stack to provide a visual way to monitor all user and system accounts within cloud.gov by interfacing with cloud.gov API calls to its internal system components (i.e. Loggregator, Cloud Controller, DEA, Warden, Metrics Collector)
+  standard_key: NIST-800-53
+- control_key: AC-2 (4)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov provides an audit trail through the bosh tasks command which shows all actions that an operator has taken with the platform. It also records an audit trail of all relevant API invocations of an app. The CLI command cf events returns this information.
+
+      ELK ( Logstash, Elasticsearch, Kibana) a front end component for loggregator is used to automatically audit all actions within the cloud.gov platform. By binding an instance of the service to, cloud.gov applications logs will be drained to a Logstash syslog receiver and stored in Elasticsearch to perform real-time data analytics with Kibana as the interface for search and visualization.
+  standard_key: NIST-800-53
+- control_key: AC-2 (7)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: b
+      text: |
+        18F monitors all privileged access API calls through the Cloud Foundry command line interface and BOSH command line interface within cloud.gov. These API calls are monitored through ELK.
+  standard_key: NIST-800-53
+- control_key: AC-2 (12)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      Information system account activities are monitored via ELK
+  - key: b
+    text: |
+      ELK reports atypical usage of information system accounts to designated Infrastructure and cloud.gov operators teams.
+  standard_key: NIST-800-53
+- control_key: AC-6 (9)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        The ELK (elasticsearch, Logstash, Kibana) is used to collect, manage and display all auditing of privileged functions within the cloud.gov platform.
+  standard_key: NIST-800-53
+- control_key: AC-17 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS. The cloud.gov operators only uses the BOSH Command Line Interface (CLI) to log into the cloud.gov jumpbox using SSH as a remote connection. These remote connections are monitored by the cloud.gov Cloud Controller which send this data to the ELK logging and monitoring visualization tool stack.
+  standard_key: NIST-800-53
+- control_key: AU-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      cloud.gov provides an audit trail through the bosh tasks command. This command shows all actions that an operator has taken with the platform. Additionally, operators can redirect Cloud Foundry component logs to a Logstash syslog server using the `syslog_daemon_config` property in the `metron_agent` job of cf-release.
+
+      For end users, cloud.gov records an audit trail of all relevant API invocations of and app. The CLI command cf events returns this information.
+  standard_key: NIST-800-53
+- control_key: AU-3
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        The cloud.gov platform as a service generates audit logs from its Loggregator component and is passed through the ELK stack to produce audit records which contain sufficient information to establish at a minimum: what type of event occurred, when (date and time the event occurrence) the source of the event the outcome (success or failure) of the event the identity of any user/subject associated with the event
+  standard_key: NIST-800-53
+schema_version: 3.1.0

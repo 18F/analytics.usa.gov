@@ -1,0 +1,394 @@
+---
+schema_version: 3.1.0
+documentation_complete: false
+name: System and Information Integrity Policy for 18F
+satisfies:
+- control_key: SI-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F Policy
+  standard_key: NIST-800-53
+- control_key: SI-2
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      18F identifies all system flaws related to cloud.gov, reports system flaws to information system owners, Authorizing officials, cloud.gov operators, and corrects information system flaws that affect cloud.gov.
+  - key: b
+    text: |
+      18F tests software updates against a staging environment for any updates, including those related to flaw remediation, for effectiveness and potential side effects before deploying the updates to production environment.
+      Cloud Foundry manages software vulnerability using releases and BOSH stemcells.
+      New Cloud Foundry releases are created with updates to address code issues, while new
+      stemcells are created with patches for the latest security fixes to address
+      any underlying operating system issues. New Cloud Foundry releases are located
+      at https://github.com/cloudfoundry/cf-release.
+  - key: c
+    text: |
+      Installs security-relevant software and firmware updates within [FedRAMP Assignment: Within 30 days of release of updates] of the release of the updates
+  - key: d
+    text: |
+      18F incorporates flaw remediation into the organizational configuration management process.
+
+      18F implements the release of Cloud Foundry and (or the software
+      developer/vendor in the case of software developed and maintained by a
+      vendor/contractor) promptly installs newly released security relevant
+      patches and tests patches, for effectiveness and potential
+      side effects on information systems before installation.
+  parameters:
+    # [FedRAMP Assignment: Within 30 days of release of updates]
+    - key: SI-2
+      text: |
+        promptly installs newly released
+  standard_key: NIST-800-53
+- control_key: SI-2 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov operators employ automated mechanisms daily to determine the state of information system components with regard to flaw remediation.
+  parameters:
+    # [Assignment: organization-defined frequency]
+    - key: SI-2 (2)
+      text: |
+        [Assignment: organization-defined frequency]
+  standard_key: NIST-800-53
+- control_key: SI-2 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      cloud.gov operators measure the time between flaw identification
+      and flaw remediation
+  - key: b
+    text: |
+     cloud.gov operators teams establish an incident response plan for taking corrective actions. The cloud.gov incident response plan is documented at https://docs.cloud.gov/ops/security-ir/
+  parameters:
+    # [Assignment: organization-defined benchmarks]
+    - key: SI-2 (3)
+      text: |  
+        [Assignment: organization-defined benchmarks]
+  standard_key: NIST-800-53
+- control_key: SI-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        cloud.gov employs ClamAV at information system entry and exit points to detect and eradicate malicious code
+    - key: b
+      text: |
+        18F updates ClamAV whenever new releases are available in accordance with organizational configuration management policy and procedures
+    - key: c
+      text: |
+        18F configures ClamAV in cloud.gov to provide the following :
+
+          1. Real-time scans of cloud.gov applied on either a daily or weekly schedule for file reads and writes
+
+          2. Upon malicious code detection ClamAV identifies the virus in the file and quarantines it.  Once the virus is quarantined, ClamAV sends a notification to cloud.gov operators through Riemann  
+
+    - key: d
+      text: |
+        cloud.gov addresses the receipt of false positives during malicious code detection and eradication and the resulting potential impact on the availability of the information system.
+  parameters:
+    # [Assignment: organization- defined frequency] and real-time scans of files
+    # from external sources at [Selection (one or more); endpoint; network
+    # entry/exit points]
+    - key: SI-3
+      text: |
+        [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points]]
+    # [Selection (one or more): block malicious code; quarantine malicious code;
+    # send alert to administrator; [Assignment: organization-defined action]]
+    - key: SI-3
+      text: |
+        [Selection (one or more): block malicious code; quarantine malicious code; send alert to administrator; [Assignment: organization-defined action]]
+  standard_key: NIST-800-53
+- control_key: SI-3 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F centrally manages malicious code protection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-3 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov automatically updates ClamAV
+  standard_key: NIST-800-53
+- control_key: SI-3 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+     cloud.gov implements nonsignature-based malicious code detection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-4
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      cloud.gov operators monitor the cloud.gov information
+      system to detect potential attacks and intrusions from internal and external
+      sources in accordance with the 18F System Information and Integrity Policy section
+      3 - Information System monitoring, the FedRAMP Incident communication procedures,
+      and GSA CIO-IT Security-08-39 section "System Monitoring / Audit Record
+      Review" for GSA specific information systems.
+  - key: b
+    text: |
+      18F identifies un-authorized access to the cloud.gov information system using automated monitoring
+      tools within its virtual private cloud for monitoring, log management and
+      event analysis. 18F monitors for attacks and indicators of potential attacks,
+      unauthorized local, network, and remote connections.
+  - key: c
+    text: |
+      The infrastructure
+      that hosts cloud.gov provides monitoring and intrusion detcetion of unusual activity
+      at the physical and network layers. 18F is responsible for monitoring everything
+      related to its virtual infrastructure and has deployed monitoring and intrusion
+      detection tools within its virtual private cloud to log and detect malicious
+      activities to its information systems including cloud.gov.
+  - key: d
+    text: |
+      18F ensures intrusion and monitoring tools are protected from unauthorized access
+      by only granting access to certain members from the cloud.gov operators.
+      All monitoring and intrusion information data is protected by limiting accounts
+      to authorized privileged users only and is maintained in secured repositories
+      for review by those members.
+  - key: e
+    text: |
+      Information system monitoring will
+      be heightened based on advisories from Pivotal, US-CERT Advisories, commercial
+      security communities, and other sources.
+  - key: f
+    text: |
+      Information system monitoring will be conducted in accordance and compliance
+      with 18F security policies and all applicable laws, Executive Orders, directives,
+      and regulations.
+  - key: g
+    text: |
+      18F provides monitoring of all information system components. In the event
+      of an event or incident, information will be provided as it is available.  Scheduled
+      reports will be provided for events such as after-hours administrative logins,
+      users being added to privileged groups, persistent malware detections, etc.,
+      to designated members of the cloud.gov operators as needed.
+  standard_key: NIST-800-53
+- control_key: SI-4 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov operators use BOSH to configure and deploy Tripwire.
+  standard_key: NIST-800-53
+- control_key: SI-4 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F uses BOSH to configure and deploy Riemann to support near real-time analysis of events.
+  standard_key: NIST-800-53
+- control_key: SI-4 (4)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    # Need to add how often we check for unusual traffic or conditions
+  - text: |
+      cloud.gov monitors inbound and outbound communications traffic [FedRAMP Assignment: continually] for unusual or unauthorized activities or conditions.
+  standard_key: NIST-800-53
+- control_key: SI-4 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov alerts the cloud.gov operators when
+      the following indications of compromise or potential compromise occur:
+      malicious code, file integrity, and network traffic.
+  standard_key: NIST-800-53
+- control_key: SI-4 (14)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      This control is not applicable. cloud.gov does not contain any wireless system.
+  standard_key: NIST-800-53
+- control_key: SI-4 (16)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F correlates information from Grafana employed throughout cloud.gov.
+  standard_key: NIST-800-53
+- control_key: SI-4 (23)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      18F implements Riemann for host based monitoring and alerting. Riemann is utilized on cloud.gov to collect events from all the servers and applications.  
+      Riemann sends an alert to cloud.gov operators if a system metric exceeds a defined threshold. 
+  standard_key: NIST-800-53
+- control_key: SI-5
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        18F receives information system security alerts, advisories, and directives from US-CERT on an ongoing basis;
+    - key: b
+      text: |
+        18F generates internal security alerts, advisories, and directives as deemed necessary;
+    - key: c
+      text: |
+        18F disseminates security alerts, advisories, and directives to: [Selection
+        (one or more): [Assignment: organization-defined personnel or roles];
+        [Assignment: organization-defined elements within the organization];
+        [Assignment: organization-defined external organizations]]; and
+    - key: d
+      text: |
+        18F implements security directives in accordance with established time
+        frames, or notifies the issuing organization of the degree of noncompliance.
+  standard_key: NIST-800-53
+- control_key: SI-6
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        cloud.gov verifies the correct operation of services that detect malicious code, viruses, file integrity, network traffic, and security compliance of the OS using a contious integration tool called concourse.  
+        concourse is a contious integration tool that auotmates the build of security services in cloud.gov.   
+    - key: b
+      text: |
+        Performs this verification on daily basis using concourse pipelines
+    - key: c
+      text: |
+        concourse notifies cloud.gov operators of failed security verification tests
+    - key: d
+      text: |
+        In the event the a service does not operate correctly, monit will attempt to restart the service upon failure.  If the system is unresponsive then Bosh will restart the server in order to correct the operation of the service.  
+  standard_key: NIST-800-53
+- control_key: SI-7
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F employs Tripwire to detect unauthorized changes to cloud.gov applications.
+  standard_key: NIST-800-53
+- control_key: SI-7 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov performs an integrity check using Tripwire at startup and every hour.
+  standard_key: NIST-800-53
+- control_key: SI-7 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      18F incorporates the detection of unauthorized access to the cloud.gov infrastructure, leveraged services, and other components used to deliver cloud.gov products and services as documented in
+      organizational incident response capability.
+  standard_key: NIST-800-53
+- control_key: SI-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.  
+  - key: b
+    text: |
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.
+  standard_key: NIST-800-53
+- control_key: SI-8 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.
+  standard_key: NIST-800-53
+- control_key: SI-8 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.
+  standard_key: NIST-800-53
+- control_key: SI-10
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov system monitors the integrity of system inputs using Tripwire.
+  standard_key: NIST-800-53
+- control_key: SI-11
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      cloud.gov generates errors through Riemann which then sends an alert to Pager Duty for action.  
+  - key: b
+    text: |
+      Reveals error messages only to cloud.gov operators.
+  standard_key: NIST-800-53
+- control_key: SI-12
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov handles and retains information within cloud.gov system and information output from the system in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and operational requirements.
+  standard_key: NIST-800-53
+- control_key: SI-16
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      cloud.gov system implements ClamAV and Tripwire to protect its memory from unauthorized code execution.
+  standard_key: NIST-800-53
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: policy document
+  path: https://github.com/18f/compliance-docs/blob/master/SI-Policy.md
+  type: url
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.764795
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

@@ -1,0 +1,217 @@
+---
+schema_version: 3.1.0
+documentation_complete: false
+name: Incident Response for cloud.gov
+satisfies:
+- control_key: IR-1
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - key: a
+    text: |
+      cloud.gov developed an Incident Response Guide documenting the procedures required by the 18F and GSA Incident Response Policy.
+      The guide is disseminated to the whole cloud.gov team to ensure everyone is aware of its existence and contents.
+      The incident response guide is publicly available at https://docs.cloud.gov/ops/security-ir/ and it is continually updated based on changes to the team and the platform.
+  - key: b
+    text: |
+      18F reviews and iterates on the Incident Response Guide at least every three years. cloud.gov reviews and iterates on the Incident Response Guide at least annually.
+  standard_key: NIST-800-53
+- control_key: IR-2
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - key: a
+    text: |
+      cloud.gov will make incident response training available to the whole cloud.gov team and will require that at least all operators take it.
+  - key: b
+    text: |
+      If the cloud.gov system changes in a radical way, the cloud.gov team will adapt the incident response training to meet the needs of the new system. cloud.gov operators will be required to take the training again.
+  - key: c
+    text: |
+      cloud.gov requires all operators to take the incident response training at least once a year.
+  standard_key: NIST-800-53
+- control_key: IR-3
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      cloud.gov will create test plans and exercises in accordance to NIST 800-61 (http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), and it will present these to the cloud.gov Authorizing Official for their approval.
+      cloud.gov will test its incident response capabilities and related exercises annually.
+  standard_key: NIST-800-53
+- control_key: IR-3 (2)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      cloud.gov will coordinate with 18F Infrastructure and GSA IT to conduct these exercises in the most effective manner.
+  standard_key: NIST-800-53
+- control_key: IR-4
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - key: a
+    text: |
+      cloud.gov implements automated processes to detect and analyze malicious activity within the platform.
+      If these processes detect malicious activity, they automatically report the activity to the cloud.gov operations team, which is able to use automated tools to eradicate the threat and recover to a known state.
+      cloud.gov uses a service-oriented architecture that allows natural containment and separation.
+  - key: b
+    text: |
+      The cloud.gov team works as a whole on both contingency planning and incident handling. From operations to communication, everyone is involved.
+  - key: c
+    text: |
+      After the conclusion of each event response, the cloud.gov team schedules a retrospective and captures the output of the session in a document available at https://github.com/18F/cg-postmortems/wiki.
+  - key: FedRAMP req
+    text: |
+      All cloud.gov team members have been cleared according to at least tier 1 non-sensitive federal security or an equivalent for contractors.
+  standard_key: NIST-800-53
+- control_key: IR-4 (1)
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      cloud.gov implements automated processes such as ClamAV and Tripwire to detect anomalies. When these processes detect an anomaly, they escalate an alert using PagerDuty.
+      The incident response process is automatically tracked using Slack.
+  standard_key: NIST-800-53
+- control_key: IR-5
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      The cloud.gov team tracks all incidents, not just security incidents, using the cloud.gov postmortem wiki: https://github.com/18F/cg-postmortems/wiki. The team also reports security incidents to GSA IT, which also tracks them.
+  standard_key: NIST-800-53
+- control_key: IR-6
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - key: a
+    text: |
+      GSA and 18F require the cloud.gov team to report all suspected security incidents to 18F Infrastructure and GSA IT within the hour of being detected.
+  - key: b
+    text: |
+      The cloud.gov team reports all security activity to 18F Infrastructure and GSA IT according to FedRAMP Incident Communications Procedure.
+  standard_key: NIST-800-53
+- control_key: IR-6 (1)
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - text: |
+      cloud.gov uses automated tools to capture logs and audit trails that allow the communication of security incidents easy and effective.
+  standard_key: NIST-800-53
+- control_key: IR-7
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      18F provides assistance with security response resources to teams requiring incident response support.
+  standard_key: NIST-800-53
+- control_key: IR-7 (1)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      18F uses internal documentation and Slack to best communicate and automate incident response.
+  standard_key: NIST-800-53
+- control_key: IR-7 (2)
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - key: a
+    text: |
+      18F has direct channels to any external provider of infrastructure and works with them to ensure good cooperation and general application of best practices according to each environment.
+  - key: b
+    text: |
+      When working with external providers during an incident response, all parties have to be identified and cleared before access is granted to any system.
+  standard_key: NIST-800-53
+- control_key: IR-8
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - key: a
+    text: |
+      The cloud.gov team has developed both an Incident Response Guide and checklist to implement incident response capabilities.
+      Given the small size of the cloud.gov team, the structure of the incident response process is clear and concise; it assigns the first responder to the event the role of Incident Commander.
+      The Incident Response Guide provides clear guidance on what steps to take on each situation and how reporting should be handled.
+      The Incident Response Guide empowers the Incident Commander to leverage as many resources from GSA and 18F as needed during the response process.
+      The Incident Response Guide is continually reviewed and updated by the cloud.gov team and approved annually by the Authorizing Official.
+  - key: b
+    text: |
+      The Incident Response Guide is distributed to the whole of the cloud.gov team.
+  - key: c
+    text: |
+      The Incident Response Guide is continually reviewed and updated by the cloud.gov team.
+  - key: d
+    text: |
+      The Incident Response Guide is continually reviewed and updated by the cloud.gov team in response to system and organizational updates.
+  - key: e
+    text: |
+      The cloud.gov team distributes changes to the Incident Response Guide to the whole cloud.gov team.
+  - key: f
+    text: |
+      The Incident Response Guide is stored in GitHub as a public open source file. The branch from which the document is generated is a protected branch forbidding the unauthorized deletion of revision history. Moreover, the cloud.gov team has both configured the repository and provided team policies to ensure strict controls on who has authority to approve changes to this guide.
+  standard_key: NIST-800-53
+- control_key: IR-9
+  covered_by: []
+  implementation_status: partial
+  narrative:
+  - key: a
+    text: |
+      As a cloud service provider, cloud.gov does not deal with sensitive information directly but allows users to manage their information on the system.
+      cloud.gov treats all information uploaded by users with the same level of moderate sensitivity once it is in a cloud.gov service.
+  - key: b
+    text: |
+      Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. Any information spillage will be alerted according to the Incident Response Guide.
+  - key: c
+    text: |
+      cloud.gov uses a service-oriented architecture as well as offering isolated services for users to store data.
+  - key: d
+    text: |
+      Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
+  - key: e
+    text: |
+      Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
+  - key: f
+    text: |
+      Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
+  standard_key: NIST-800-53
+- control_key: IR-9 (1)
+  covered_by: []
+  implementation_status: planned
+  narrative:
+  - text: |
+      According to the cloud.gov Incident Response Guide, the first responder to an incident will have the responsibility to respond to the information spill.
+  standard_key: NIST-800-53
+- control_key: IR-9 (2)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
+  standard_key: NIST-800-53
+- control_key: IR-9 (3)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
+  standard_key: NIST-800-53
+- control_key: IR-9 (4)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: |
+      All cloud.gov team members have been cleared according to at least tier 1 non-sensitive federal security or an equivalent for contractors.
+  standard_key: NIST-800-53
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/IR-Policy.md
+  type: URL
+- description: |
+    GIVEN the github link - <policy> THEN the policy has been updated within the last 180 days
+  key: Policy_Update_Test
+  last_run: 2016-04-07 08:25:17.644608000 -05:00
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST

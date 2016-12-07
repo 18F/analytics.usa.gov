@@ -1,0 +1,33 @@
+documentation_complete: false
+name: EC2
+references:
+- name: EC2 Documentation
+  path: https://aws.amazon.com/ec2/
+  type: URL
+satisfies:
+- control_key: SC-7
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nThe AWS network provides significant protection against traditional\
+    \ network security issues, and 18F can implement further protection. The following\
+    \ are a few examples:\nDistributed Denial Of Service (DDoS) Attacks. AWS API endpoints\
+    \ are hosted on large, Internet-scale, infrastructure. Proprietary DDoS mitigation\
+    \ techniques are used. Additionally, AWS\u2019s networks are multi-homed across\
+    \ a number of providers to achieve Internet access diversity.\nMan in the Middle\
+    \ (MITM) Attacks. All of the AWS APIs are available via SSL-protected endpoints\
+    \ which provide server authentication. Amazon EC2 AMIs automatically generate\
+    \ new SSH host certificates on first boot and log them to the instance\u2019s\
+    \ console. 18F can then use the secure APIs to call the console and access the\
+    \ host certificates before logging into the instance for the first time. 18F uses\
+    \ SSL for all interactions with AWS.\nIP Spoofing. Amazon EC2 instances cannot\
+    \ send spoofed network traffic. The AWS-controlled, host-based firewall infrastructure\
+    \ will not permit an instance to send traffic with a source IP or MAC address\
+    \ other than its own.\n\nAmazon EC2 provides a complete firewall solution; this\
+    \ mandatory inbound firewall is configured in a default deny-all mode and Amazon\
+    \ EC2 customers must explicitly open the ports needed to allow inbound traffic.\
+    \ The traffic may be restricted by protocol, by service port, as well as by source\
+    \ IP address (individual IP or Classless Inter-Domain Routing (CIDR) block).\n\
+    The firewall is configured in groups permitting different groups of instances\
+    \ to have different rules.\n  \n"
+  standard_key: NIST-800-53
+schema_version: 2.0

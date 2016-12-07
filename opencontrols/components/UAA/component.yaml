@@ -1,0 +1,260 @@
+---
+documentation_complete: false
+name: User Account and Authentication (UAA) Server
+references:
+- name: User Account and Authentication (UAA) Server
+  path: http://docs.pivotal.io/pivotalcf/concepts/architecture/uaa.html
+  type: URL
+- name: Creating and Managing Users with the UAA CLI (UAAC)
+  path: http://docs.pivotal.io/pivotalcf/adminguide/uaa-user-management.html
+  type: URL
+- name: UAA Roles
+  path: https://cf-p1-docs-prod.cfapps.io/pivotalcf/concepts/roles.html
+  type: URL
+- name: Cloud Foundry Org Access
+  path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/access/organization_access_spec.rb
+  type: URL
+- name: Cloud Foundry Space Access
+  path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/access/space_access_spec.rb
+  type: URL
+satisfies:
+- control_key: AC-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: j
+    text: User accounts will be monitored monthly and accounts
+      will be disabled after 90 days of inactivity; this will be a manual review process
+      every 30 days, but the disablement will be automatic.
+      A manual review of all
+      user accounts will be conducted on an annual basis
+  - key: k
+    text: Cloud Foundry utilizes role based access controls (RBAC) for group membership within the platform
+      and does not issue shared/group account credentials.
+  standard_key: NIST-800-53
+- control_key: AC-2 (1)
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: UAA CLI is a semi-automated command line based
+      account management system that enables operators to create, modify and deleted
+      user accounts and roles within the platform. https://docs.cloudfoundry.org/adminguide/uaa-user-management.html
+  standard_key: NIST-800-53
+- control_key: AC-2 (2)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable. UAA does not contain any guest/anonymous, group, or
+      temporary user accounts. Administrators only creates individual user accounts and grants
+      role based access to users within UAA. There are no guest/anonymous, group,
+      or temporary user accounts.
+  standard_key: NIST-800-53
+- control_key: AC-2 (4)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: All account activity is logged using the UAA system which can be reviewed for auditing purposes.
+  standard_key: NIST-800-53
+- control_key: AC-2 (7)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - key: b
+    text: |
+      UAA centralizes all role assignment and all user management activity is logged and monitored.
+  standard_key: NIST-800-53
+- control_key: IA-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |-
+      The UAA is the identity management service for Cloud Foundry. Its primary role is as an OAuth2 provider, issuing tokens for client applications to use when they act on behalf of Cloud Foundry users. In collaboration with the login server, it authenticates users with their Cloud Foundry credentials, and act as a Single Sign-On (SSO) service using those credentials (or others). It has endpoints for managing user accounts and for registering OAuth2 clients, as well as various other management functions.
+      All users have individually unique identifiers to access and authenticates  to the environment. Shared or group authenticators are not utilized, with the exception of a root administrative account. There are only two authorized users from the DevOps team who has access to the root administrative account.
+  standard_key: NIST-800-53
+
+- control_key: IA-2 (5)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: This controls is not applicable. here are are no group accounts within the
+      Cloud.Gov platform.
+  standard_key: NIST-800-53
+- control_key: IA-2 (8)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |-
+      Cloud.gov a limit of 5 consecutive invalid logon attempts by a user during a 15 minute period
+      Automatically; locks the account/node for 20 minutes when the maximum number of unsuccessful attempts is exceeded
+      Account log out is set to 15 minutes of inactivity.
+  standard_key: NIST-800-53
+- control_key: IA-2 (12)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: PIV card access is Not applicable for the Cloud Foundry PaaS
+  standard_key: NIST-800-53
+- control_key: IA-2 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Cloud.Gov does not have MFA capabilities implemented. Cloud.Gov currently
+      utilizes username and password for identification and authentication of non-privileged
+      accounts.
+  standard_key: NIST-800-53
+- control_key: IA-2 (11)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Cloud.Gov does not have MFA capabilities implemented. Cloud.Gov currently
+      utilizes username and password for identification and authentication of non-privileged
+      accounts.
+  standard_key: NIST-800-53
+- control_key: AC-2 (9)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: NA - This control is not applicable. Group accounts are not allowed  within
+      the 18F VPC and the Cloud.Gov platform
+  standard_key: NIST-800-53
+- control_key: AC-2 (5)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Account log out is set to 15 minutes of inactivity.
+  standard_key: NIST-800-53
+- control_key: AC-2 (10)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: This control is not applicable. Group accounts are not allowed  within the
+      18F VPC and the Cloud.Gov PaaS
+  standard_key: NIST-800-53
+- control_key: AC-3
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |-
+      18F follows best practices by implementing the majority of the following:
+        - Use RBAC model to restrict users’ access to only what is necessary to complete their tasks.
+        - Use a strong passphrase for both Cloud.gov user account and SSH keys.
+        - Configure UAA clients and users using a BOSH manifest. Limit and manage these clients and users as you would any other kind of privileged account.
+  standard_key: NIST-800-53
+- control_key: IA-3
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Not Applicable to Cloud Foundry
+  standard_key: NIST-800-53
+- control_key: AC-4
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |-
+      The information system enforces approved authorizations for controlling the flow of information within the system and between interconnected systems based on the 18F Access Control Policy Section 3 -  Information Flow Enforcement which states:
+        - 18F enforces approved authorizations for controlling the flow of information within its information systems and between interconnected systems in accordance with applicable federal laws and 18F policies and procedures.
+        - 18F shall use flow control restrictions to include: keeping export controlled information from being transmitted in the clear to the Internet, blocking outside traffic that claims to be from within the organization and not passing any web requests to the Internet that are not from the internal web proxy.
+        - 18F shall use boundary protection devices (e.g., proxies, gateways, guards, encrypted tunnels, firewalls, and routers) that employ rule sets or establish configuration settings that restrict information system services, provide a packet-filtering capability based on header information, or message-filtering capability based on content (e.g., using key word searches or document characteristics.
+  standard_key: NIST-800-53
+- control_key: AC-7
+  covered_by:
+  - verification_key: CLOUDGOV_LOGIN_PAGE
+  implementation_status: none
+  narrative:
+  - text: "#### a  \nCloud.gov displays banner on the cloud.gov login page\n  \n####
+      b  \nThe banner displays on the login page until the user is logged in\n  \n####
+      c  \nThe banner displays all requirements"
+  standard_key: NIST-800-53
+- control_key: AC-10
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: Cloud.gov does not support capability to limit active sessions and as a
+      cloud-based system it was not designed to limit the number of active sessions.
+  standard_key: NIST-800-53
+- control_key: SI-10
+  covered_by: []
+  implementation_status: complete
+  narrative:
+  - text: The UAA uses an api with set endpoint and parameters. Users depending on
+      thier authorized access can only make request to specific endpoint that activate
+      specific functions that take a limited and defined set of parameters.
+  standard_key: NIST-800-53
+- control_key: AC-11 (1)
+  covered_by:
+  - verification_key: CLOUDGOV_LOGIN_PAGE
+  implementation_status: none
+  narrative:
+  - text: The Cloud.gov login page hides user passwords using asterisks, the Cloud
+      Foundry along with the bosh cli also obfuscate user passwords.
+  standard_key: NIST-800-53
+- control_key: AC-11
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: A session limit of 15 minutes is implemented on inactive accounts within
+      the Cloud.gov platform. All sessions are terminated after this period, but sesssion
+      are not locked.
+  standard_key: NIST-800-53
+- control_key: AC-12
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: A session limit of 15 minutes is implemented on inactive accounts within
+      the Cloud.gov platform.
+  standard_key: NIST-800-53
+- control_key: SC-13
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |-
+      As for stored data the following cryptographic mechanisms are used to prevent unauthorized disclosure and modification of stored data.
+      Operators configure encryption of the identity store in the UAA. When users register an account with the Cloud Foundry platform, the UAA acts as the user store and stores user passwords in the UAA database using bcrypt, a blowfish encryption algorithm, which enables Cloud Foundry to store a secure hash of user passwords.
+      The Cloud Controller stores the configuration for an application in an encrypted database table. This configuration data includes user-specified environment variables and service credentials for any services bound to the app.
+  standard_key: NIST-800-53
+- control_key: AC-14
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: "#### a  \nThere are no permitted actions without identification and authentication
+      to Cloud.Gov. The Cloud Controller rejects any broker registration that does
+      not contain a username and password. The Cloud Controller authenticates every
+      request with the Service Broker API using HTTP or HTTPS, depending on which
+      protocol you specify during broker registration.\n  \n#### b  \nIt is not possible
+      for members of the 18F Devops and SecOps teams to aceess the 18F virtual private
+      cloud infrastructure without muitifactor authetication and identification. All
+      clinet users of Cloud.gov must login using authenticated credentials in order
+      to acess the system as stated in Part A above."
+  standard_key: NIST-800-53
+- control_key: SC-28 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+  - text: |-
+      The Cloud Foundry platform as a service does NOT create, store or process any personally identifiable information (PII) or sensitive information as identified by parameter requirement 1.
+
+      Applications running on Cloud Foundry receive requests through the URLs configured for the application. HTTP requests arrive on ports 80 and 443. Additionally, Cloud Foundry requires a channel for TCP/WebSocket traffic. The default cf-release manifest assigns port: 4443 for TCP/WebSocket communications.
+      All traffic from the public internet to the Cloud Controller and UAA happens over HTTPS. Inside the boundary of the system, components communicate over a publish-subscribe (pub-sub) port: 4222 message bus, NATs
+
+      For stored data identified by parameter 2, the following cryptographic mechanisms are used to prevent unauthorized disclosure and modification of stored data.
+      Operators configure encryption of the identity store in the UAA. When users register an account with the Cloud Foundry platform, the UAA, acts as the user store and stores user passwords in the UAA database using bcrypt. Bcrypt is a blowfish encryption algorithm, which enables cloud foundry to store a secure hash of your users' passwords.
+      The Cloud Controller stores the configuration for an application in an encrypted database table. This configuration data includes user-specified environment variables and service credentials for any services bound to the app.
+      Application developers push their code using the Cloud Foundry API. Cloud Foundry secures each call to the CF API using the UAA and SSL
+      To combat spoofing Cloud Foundry network traffic rules help prevents the attack from accessing application containers. Cloud Foundry uses application isolation, operating system restrictions, and encrypted connections to further mitigate risk.
+  standard_key: NIST-800-53
+schema_version: "3.0.0"
+verifications:
+- key: CLOUDGOV_LOGIN_PAGE
+  name: Cloud.gov Login Page
+  path: https://login.cloud.gov/login
+  type: URL
+- description: "GIVEN I am a user that can login WHEN I attempt to login 3 times and
+    fail THEN I am not locked out \nGIVEN I am a user that can login WHEN I attempt
+    to login 6 times and fail THEN I am locked out \n"
+  key: Account_Lockout_Tests
+  last_run: 2016-04-08 09:18:44.795280000 -05:00
+  name: CloudFoundry User Account and Authentication (UAA) Server Features
+  path: BDD/UAA.feature
+  test_passed: true
+  type: TEST

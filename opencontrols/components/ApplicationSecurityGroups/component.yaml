@@ -1,0 +1,76 @@
+documentation_complete: false
+name: Application Security Groups
+references:
+- name: ASG Documentation
+  path: https://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html
+  type: URL
+satisfies:
+- control_key: AC-4 (21)
+  covered_by: []
+  implementation_status: none
+  narrative: 'Cloud.Gov uses application security groups act as virtual firewalls
+    to control outbound traffic from the applications in deployment. Cloud.Gov evaluates
+    security groups and other network traffic rules in a strict priority order. Cloud
+    Foundry returns and allow, deny, or reject result for the first rule that matches
+    the outbound traffic request parameters, and does not evaluate any lower-priority
+    rules. Cloud Foundry evaluates the network traffic rules for an application in
+    the following order:
+
+    Security Groups: The rules described by the Default Staging set, the Default Running
+    set, and all security groups bound to the space.
+
+    '
+  standard_key: NIST-800-53
+- control_key: SC-7
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nCloud Foundry recommends that the use of Cloud Foundry ASGs\
+    \ to specify egress access rules for your applications. This functionality enables\
+    \ secure restricted application outbound traffic to predefined routes.\n  \n"
+  standard_key: NIST-800-53
+- control_key: AC-4
+  covered_by: []
+  implementation_status: none
+  narrative: 'Cloud.Gov enforces security groups and other network traffic rules in
+    a strict priority order. Cloud.Gov returns an allow, deny, or reject result for
+    the first rule that matches the outbound traffic request parameters, and does
+    not evaluate any lower-priority rules
+
+    Cloud.Gov implements network traffic rules using Linux iptables on the component
+    VMs. DevOps configures rules to prevent system access from external networks and
+    between internal components, and to restrict applications from establishing connections
+    over the DEA network interface. Cloud.Gov application security groups (ASG) consists
+    of a list of access rules to control application outbound traffic.
+
+    DEA Network Properties allow DevOps to configure the allow_networks and deny_networks
+    parameters for DEAs to prohibit communication between system components and applications.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-3
+  covered_by: []
+  implementation_status: none
+  narrative: '18F has created specific Cloud.Gov security groups associated with VPCs
+    to provide full control over inbound and outbound traffic. 18F has created a specific
+    set of VPCs (Live production and staging) for its Cloud.Gov implementation.  All
+    VPCs have subnets used to separate and control IP address space within each individual
+    VPC.  Subnets must be created in order to launch Availability Zone (AZ) specific
+    services within a VPC. 18F has setup VPC Peering between the Staging VPC and the
+    CF Live production VPC.
+
+    '
+  standard_key: NIST-800-53
+schema_version: 2.0
+verifications:
+- description: "GIVEN I am using an admin account THEN I can view and print all the\
+    \ ASGs \nGIVEN I am using an admin account WHEN I try to bind the application\
+    \ security group with closed settings to the space THEN the security group is\
+    \ bound \nGIVEN I am using an admin account WHEN I try to bind the application\
+    \ security group with open settings to the space THEN the security group is bound\
+    \ \n"
+  key: Security_Group_Tests
+  last_run: 2016-04-08 14:18:09.168398
+  name: Application Security Groups
+  path: BDD/ASG.feature
+  test_passed: true
+  type: TEST

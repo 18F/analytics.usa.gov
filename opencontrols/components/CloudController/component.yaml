@@ -1,0 +1,168 @@
+documentation_complete: false
+name: Cloud Controller
+satisfies:
+- control_key: SA-11 (1)
+  covered_by:
+  - verification_key: STATIC_CODE_ANALYSIS
+  implementation_status: complete
+  narrative: 'The Cloud Controller uses CodeClimate as it''s primary static code analysis
+    tool. The results of the test are publicly avaiable.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-6
+  covered_by:
+  - verification_key: CF_ROLES
+  - verification_key: CF_ROLES_CODE
+  - verification_key: CF_ROLES_CODE_SPECS
+  implementation_status: none
+  narrative: 'Cloud.Gov uses feature flags which allows an administrator to turn on
+    or off sub-sections, or features, of an application without deploying new code.
+
+    18F uses Orgs, Spaces, and Roles to implement least privileged access to the platform
+    as a service. Cloud.Gov uses role-based access control (RBAC), with each role
+    granting permissions in either an org or a space.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-5
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nThe Cloud Controller is used to create invidual user accounts\
+    \ and roles within the PaaS for separation of duty functions. The following is\
+    \ a list of roles a user can assume within the Cloud.Gov platform.\n* Org Manager\
+    \  - Managers or other users who need to administer the account\n* Org Auditor\
+    \ - Can view but not edit user information and org quota usage information\n*\
+    \ Space Manager - managers or other users who need to administer a space\n* Space\
+    \ Developer - application developers or other users who need to manage applications\
+    \ and services in a space\n* Space Auditor\t- Can view but not edit the space\n\
+    \  \n#### b  \nThe  Cloud Controller API has an enpoint for viewing extensive\
+    \ information about user roles.\n  \n"
+  standard_key: NIST-800-53
+- control_key: AC-6 (10)
+  covered_by: []
+  implementation_status: none
+  narrative: 'The Cloud.Gov platform has built-in Role based access controls (RBAC).
+    This ensures that users can only view and affect the spaces for which they have
+    been granted access to. It also prevents non-privileged users from executing privileged
+    functions to include disabling, circumventing, or altering implemented security
+    safeguards/countermeasures.
+
+    Only designated Org Managers from the DevOps team can execute privileged functions
+    to the Cloud.Gov platform. All other accounts are non-prilviledged accounts.
+
+    Client agencies using Cloud.Gov are only permitted to change settings within their
+    associated  Org account, spaces and roles. These accounts do not have access to
+    the underlying Cloud.Gov Platform.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-14
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nThere are no permitted actions without identification and\
+    \ authentication to Cloud.Gov. The Cloud Controller rejects any broker registration\
+    \ that does not contain a username and password. The Cloud Controller authenticates\
+    \ every request with the Service Broker API using HTTP or HTTPS, depending on\
+    \ which protocol you specify during broker registration.\n  \n"
+  standard_key: NIST-800-53
+- control_key: SI-10
+  covered_by: []
+  implementation_status: complete
+  narrative: 'The UAA uses a Restful API with set endpoint and parameters. Users depending
+    on thier authorized access can only make request to specific endpoint that activate
+    specific functions that take a limited and defined set of parameters.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-2
+  covered_by:
+  - verification_key: CF_ROLES
+  - verification_key: CF_ROLES_CODE
+  - verification_key: CF_ROLES_CODE_SPECS
+  implementation_status: none
+  narrative: "#### a  \nCloud Foundry user and role accounts are managed and maintained\
+    \ through the Cloud Controller. Cloud Foundry uses role-based access control with\
+    \ each role granting permissions in either an organization or an application space.\
+    \ The Following types are used:\n* Org Manager\n* Org Auditor\n* Space Manager\n\
+    * Space Developer\n* Space Auditor\n  \n"
+  standard_key: NIST-800-53
+- control_key: AC-2 (9)
+  covered_by: []
+  implementation_status: none
+  narrative: 'This control is not applicable. Group accounts are not allowed  within
+    the 18F VPC and the Cloud.Gov PaaS
+
+    '
+  standard_key: NIST-800-53
+- control_key: AU-3
+  covered_by:
+  - verification_key: EVENTS_ENDPOINT
+  implementation_status: none
+  narrative: 'Cloud Foundry stores detailed events which can be accessed through the
+    CF API. A list the events is avaiable in the API documentation.
+
+    '
+  standard_key: NIST-800-53
+schema_version: 2.0
+verifications:
+- key: CF_ROLES_CODE_SPECS
+  name: Cloud Controller Role Implmentation Specs
+  path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/lib/cloud_controller/membership_spec.rb
+  type: URL
+- key: STATIC_CODE_ANALYSIS
+  name: Cloud Controller source code static analysis
+  path: https://codeclimate.com/github/cloudfoundry/cloud_controller_ng
+  type: URL
+- key: EVENTS_ENDPOINT
+  name: CF Events Endpoint
+  path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
+  type: URL
+- key: CF_ROLES_CODE
+  name: Cloud Controller Role Implmentation
+  path: https://docs.cloudfoundry.org/concepts/roles.html
+  type: URL
+- key: CF_ROLES
+  name: Cloud Controller Role Documentation
+  path: https://ocs.cloudfoundry.org/concepts/roles.html
+  type: URL
+- description: 'GIVEN I am using a space auditor account WHEN I view my audit logs
+    THEN I find "27" events '
+  key: Audit_Log_Tests
+  last_run: 2016-04-08 14:18:40.782585
+  name: Viewing Audits -- @1.6 Action-Results for auditing
+  path: BDD/CloudController.feature
+  test_passed: true
+  type: TEST
+- description: 'GIVEN I am using an admin account WHEN I look at the audit logs THEN
+    audit logs have timestamp THEN audit logs have type of event THEN audit logs have
+    actor THEN audit logs have actee '
+  key: Log_Content_Test
+  last_run: 2016-04-08 14:18:40.869894
+  name: Logs have timestamp, types of event, actor, and actee
+  path: BDD/CloudController.feature
+  test_passed: true
+  type: TEST
+- description: "GIVEN I am using <account> account WHEN I try to create an org THEN\
+    \ the org <status> \nGIVEN I am using <account> account WHEN I try to update an\
+    \ org name THEN the org name <status> \nGIVEN I am using <account> account WHEN\
+    \ I try to delete an org THEN the org <status> \nGIVEN I am using <account> account\
+    \ WHEN I try to create a space THEN the space <status> \nGIVEN I am using <account>\
+    \ account WHEN I try to update a space name THEN the space name <status> \nGIVEN\
+    \ I am using <account> account WHEN I try to delete a space THEN the space <status>\
+    \ \nGIVEN I am using <account> account WHEN I try to create an app THEN the app\
+    \ <status> \nGIVEN I am using <account> account WHEN I try to delete an app THEN\
+    \ the app <status> \nGIVEN I am using <account> account WHEN I try to create a\
+    \ user THEN the user <status> \nGIVEN I am using <account> account WHEN I try\
+    \ to give a user access to a \"<workspace>\" THEN the user <status> \nGIVEN I\
+    \ am using <account> account WHEN I try to delete a user THEN the user <status>\
+    \ \nGIVEN I am using <account> account WHEN I view my audit logs THEN I find \"\
+    <number>\" events \nGIVEN I am using an admin account WHEN I look at the audit\
+    \ logs THEN audit logs have timestamp THEN audit logs have type of event THEN\
+    \ audit logs have actor THEN audit logs have actee \n"
+  key: User_Role_Tests
+  last_run: 2016-04-08 14:18:41.973438
+  name: Cloud Controller Features
+  path: BDD/CloudController.feature
+  test_passed: true
+  type: TEST

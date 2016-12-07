@@ -1,0 +1,67 @@
+documentation_complete: false
+name: Amazon Virtual Private Cloud
+references:
+- name: Amazon VPC
+  path: https://aws.amazon.com/vpc/
+  type: URL
+satisfies:
+- control_key: AC-4 (21)
+  covered_by: []
+  implementation_status: none
+  narrative: 'The virtual private cloud logically separates the hosted services from other information systems within its environment. Any service built using AWS VPC will reside within its
+    own virtual private network and may have its own dedicated elastic load balancers for incoming traffic.
+
+    '
+  standard_key: NIST-800-53
+- control_key: SC-7
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nAWS Boundary Protection - Secure Network Architecture\n18F\
+    \ utilizes the AWS provided virtual network devices, including firewall and other\
+    \ boundary devices, in place to monitor and control communications at the external\
+    \ boundary of the network and at key internal boundaries within the network. These\
+    \ boundary devices employ rule sets, access control lists (ACL), and configurations\
+    \ to enforce the flow of information to specific information system services.\n\
+    ACLs, or traffic flow policies, are established on each managed interface, which\
+    \ manage and enforce the flow of traffic.\n Designated privileged users(PU) connects to\
+    \ an AWS access point via HTTP or HTTPS using Secure Sockets Layer (SSL), a cryptographic protocol\
+    \ that is designed to protect against eavesdropping, tampering, and message forgery.\n\
+    PU utilizes the AWS Virtual Private Cloud (VPC), which provides a private subnet\
+    \ within the AWS cloud. Each VPC is configured to utilize Routing Rules, Subnet\
+    \ Rules, and Security Group Rules.  Each of these controls must have appropriate\
+    \ rules and routes in-place before any external service is able to reach a host\
+    \ within AWS.\n  \n#### b  \nEach VPC is configured to utilize Routing Tables,\
+    \ and Security Groups.  Each of these controls must have appropriate rules and\
+    \ routes in-place before any external service is able to reach the host within the \
+    \ information system boundry.\n  \n#### c  \nThe information system is internal to the defined\
+    \ VPC and does not connect to external networks or information\
+    \ systems outside the VPC.\n  \n"
+  standard_key: NIST-800-53
+- control_key: AC-17 (4)
+  covered_by: []
+  implementation_status: none
+  narrative: "Since the infromation system platform resides within the defined virtual infrastructure,\
+    \ Privileged User (PU) must use SSH remote access method to troubleshoot issues and\
+    \ update services that are only resolved by logging into a Bastion Host (BH).\
+    \ The BH themselves are virtual machine deployed within the organization's\
+    \ virtual private cloud. They are the only access points for designated PU\
+    \ members to run privileged commnds that affect the entire platform. No other\
+    \ privileged remote access is available to the information system.\n"
+  standard_key: NIST-800-53
+- control_key: AC-4
+  covered_by: []
+  implementation_status: none
+  narrative: "The organization incorporates security features within its vpc such as IAM security\
+    \ groups, network ACLs, routing tables, and external gateways. Each of these items\
+    \ is complementary to providing a secure, isolated network.\nNetwork Access control\
+    \ lists (ACLs) are created to allow or deny traffic entering or exiting these\
+    \ subnets. Each subnet has routing tables attached to them to direct the flow\
+    \ of network traffic to Internet gateways, virtual private gateways, Network Address\
+    \ Translation (NAT) for private subnets.\nThe organization's Virtual Private Cloud (VPC) infrastructure\
+    \ has firewalls enabling filtering on both ingress and egress traffic from its\
+    \ instances. The default group enables inbound communication from other members\
+    \ of the same group and outbound communication to any destination.\nTraffic is\
+    \ restricted by IP protocol, by service port, as well as source/destination IP\
+    \ address (individual IP or Classless Inter-Domain Routing (CIDR) block).\n"
+  standard_key: NIST-800-53
+schema_version: 2.0
