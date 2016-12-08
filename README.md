@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/18F/analytics.usa.gov/badges/gpa.svg)](https://codeclimate.com/github/18F/analytics.usa.gov)
+[![Build Status](https://travis-ci.org/18F/analytics.usa.gov.png)](https://travis-ci.org/18F/analytics.usa.gov)
 
 
 ## analytics.usa.gov
