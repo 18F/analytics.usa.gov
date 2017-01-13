@@ -11,16 +11,19 @@ For a detailed description of how the site works, read [18F's blog post on analy
 Other organizations who have reused this project for their analytics dashboard:
 * [The City of Philadelphia, PA](http://analytics.phila.gov/)
 * [The City of Boulder, CO](https://bouldercolorado.gov/stats)
-* [Tennessee Department of Environment and Conservation](http://analytics.tdec.tn.gov/)
 * [The City of Sacramento, CA](http://analytics.cityofsacramento.org/)
 * [The City of Anchorage, AK](http://analytics.muni.org/)
 * [The City of Santa Monica, CA](http://analytics.smgov.net/)
+* [The City of Los Angeles](http://webanalytics.lacity.org/)
+* [The City of New Orleans](http://webanalytics.nola.gov/)
+* [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)
 * [Douglas County, NE](http://analytics.douglascounty-ne.gov/)
 * [Washington State University](https://analytics.wsu.edu/)
-* [U.S. Department of Education](http://www2.ed.gov/analytics)
 * [The States of Jersey](http://webanalytics.gov.je/)
-* [The City of Los Angeles](http://webanalytics.lacity.org/)
+* [Tennessee Department of Environment and Conservation](http://analytics.tdec.tn.gov/)
+* [U.S. Department of Education](http://www2.ed.gov/analytics)
 * [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)
+
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
