@@ -9,13 +9,14 @@ A project to publish website analytics for the US federal government.
 For a detailed description of how the site works, read [18F's blog post on analytics.usa.gov](https://18f.gsa.gov/2015/03/19/how-we-built-analytics-usa-gov/).
 
 Other organizations who have reused this project for their analytics dashboard:
-* [The City of Philadelphia, PA](http://analytics.phila.gov/)
-* [The City of Boulder, CO](https://bouldercolorado.gov/stats)
-* [The City of Sacramento, CA](http://analytics.cityofsacramento.org/)
 * [The City of Anchorage, AK](http://analytics.muni.org/)
+* [The City of Boulder, CO](https://bouldercolorado.gov/stats)
+* [The City of Los Angeles, CA](http://webanalytics.lacity.org/)
+* [The City of New Orleans, LA](http://webanalytics.nola.gov/)
+* [The City of Philadelphia, PA](http://analytics.phila.gov/)
+* [The City of Sacramento, CA](http://analytics.cityofsacramento.org/)
+* [The City of San Francisco, CA](http://analytics.sfgov.org/)
 * [The City of Santa Monica, CA](http://analytics.smgov.net/)
-* [The City of Los Angeles](http://webanalytics.lacity.org/)
-* [The City of New Orleans](http://webanalytics.nola.gov/)
 * [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)
 * [Douglas County, NE](http://analytics.douglascounty-ne.gov/)
 * [Washington State University](https://analytics.wsu.edu/)
