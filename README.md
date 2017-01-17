@@ -43,9 +43,9 @@ bundle install
 Please clone the `analytics-reporter` next to a local copy of this github repository.
 
 ### Adding Additional Agencies
+
 0. Ensure that data is being collected for a specific agency's Google Analytics ID. Visit [18F's analytics-reporter](https://github.com/18F/analytics-reporter) for more information. Save the url path for the data collection path.
 0. Create a new html file in the `_agencies` directory. The name of the file will be the url path.
-
   ```bash
   touch _agencies/agencyx.html
   ```
@@ -59,7 +59,6 @@ Please clone the `analytics-reporter` next to a local copy of this github reposi
   ```yaml
   ---
   name: Agency X # Name of the page
-  data_url: https://analytics.usa.gov/data/agencyx # Data URL from step 1
   slug: agencyx # Same as the name of the html files. Used to generate data page links.
   layout: default # type of layout used. available layouts are in `_layouts`
   ---

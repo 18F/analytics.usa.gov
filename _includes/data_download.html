@@ -4,13 +4,7 @@
         {% assign entity = "government" %}
       {% else %}
         {% capture page_title %} - {{ page.name }} - Data{% endcapture %}
-
-        {% if page.data %}
-          {% assign data_prefix = page.data %}
-        {% else %}
-          {% assign data_prefix = page.slug %}
-        {% endif %}
-
+        {% assign data_prefix = page.slug %}
         {% assign entity = page.name %}
       {% endif %}
       <section class="width-two-thirds">

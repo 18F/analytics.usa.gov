@@ -2,12 +2,7 @@
     {% assign data_prefix = 'live' %}
     {% assign entity = "government" %}
   {% else %}
-    {% if page.data %}
-      {% assign data_prefix = page.data %}
-    {% else %}
-      {% assign data_prefix = page.slug %}
-    {% endif %}
-
+    {% assign data_prefix = page.slug %}
     {% assign entity = "agency" %}
   {% endif %}
     <!--
