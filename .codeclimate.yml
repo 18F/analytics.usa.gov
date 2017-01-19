@@ -1,0 +1,21 @@
+engines:
+  csslinst:
+    enabled: true
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  fixme:
+    enabled: true
+exclude_paths:
+- "**/vendor/**/*"
+- "sass/bourbon/**/*"
+- "sass/neat/**/*"
+ratings:
+  paths:
+  - "**.js"
+  - "**.css"
+  - "**.scss"
