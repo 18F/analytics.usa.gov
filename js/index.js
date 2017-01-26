@@ -8,10 +8,16 @@
     "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
     "forecast.weather.gov/mapclick.php": "http://www.weather.gov/",
     "egov.uscis.gov/casestatus/mycasestatus.do": "https://egov.uscis.gov/casestatus/",
-    "irs.gov/individuals/electronic-filing-pin-request": " https://www.irs.gov/Individuals/Electronic-Filing-PIN-Request",
     "ebenefits.va.gov/ebenefits-portal/ebenefits.portal": "https://www.ebenefits.va.gov/ebenefits-portal/ebenefits.portal",
-    "irs.gov/forms-&-pubs": "https://www.irs.gov/Forms-&-Pubs",
     "ebenefits.va.gov/ebenefits/homepage": "https://www.ebenefits.va.gov/ebenefits/homepage",
+
+    // USPS is afflicted with a bad case of sensitivity :(
+    "m.usps.com/m/trackconfirmaction": "https://m.usps.com/m/TrackConfirmAction",
+    "tools.usps.com/go/trackconfirmaction_input": "https://tools.usps.com/go/TrackConfirmAction!input",
+    "m.usps.com/m/home": "https://m.usps.com/m/Home",
+    "reg.usps.com/entreg/loginaction_input?appurl=https://cns.usps.com/labelinformation.shtml": "https://reg.usps.com/entreg/LoginAction!input?appurl=https://cns.usps.com/labelinformation.shtml",
+    "tools.usps.com/go/ziplookupaction!input.action": "https://tools.usps.com/go/ZipLookupAction!input.action",
+    "cns.usps.com/labelinformation.shtml": "https://cns.usps.com/labelInformation.shtml",
 
     // for 7/30 days tabs
     "egov.uscis.gov": "https://egov.uscis.gov/casestatus/",
@@ -142,7 +148,9 @@
     // the windows block is a stack layout
     "windows": renderBlock()
       .transform(function(d) {
-        return addShares(listify(d.totals.os_version));
+        var values = listify(d.totals.os_version),
+            total = d3.sum(values.map(function(d) { return d.value; }));
+        return addShares(collapseOther(values, total * .01)); // % of Windows
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
@@ -173,7 +181,7 @@
       .transform(function(d) {
         var values = listify(d.totals.browser),
             total = d3.sum(values.map(function(d) { return d.value; }));
-        return addShares(collapseOther(values, total * .013));
+        return addShares(collapseOther(values, total * .01));
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
@@ -183,7 +191,9 @@
     // data beforehand to match the expected object format
     "ie": renderBlock()
       .transform(function(d) {
-        return addShares(listify(d.totals.ie_version));
+        var values = listify(d.totals.ie_version),
+            total = d3.sum(values.map(function(d) { return d.value; }));
+        return addShares(collapseOther(values, total * .0001)); // % of IE
       })
       .render(
         barChart()
@@ -211,9 +221,10 @@
     "countries": renderBlock()
       .transform(function(d) {
         var total_visits = 0;
+        var us_visits = 0;
         d.data.forEach(function(c) {
           total_visits += parseInt(c.active_visitors);
-          if (c.country == "United States") {
+          if (c.country === "United States") {
             us_visits = c.active_visitors;
           }
         });
@@ -223,7 +234,6 @@
           "International": international
         };
         return addShares(listify(data));
-
       })
       .render(
         barChart()
@@ -419,9 +429,6 @@
         d3.event.preventDefault();
         tabs.each(function(tab) { tab.selected = false; });
         d.selected = true;
-
-        // Update the type of the objects
-        d3.select("#top_table_type").text(d3.select(d.tab).attr("data-type"));
 
         update();
 
@@ -943,6 +950,22 @@
     console.log("%cThis is an open source, public domain project, and your contributions are very welcome.", styles.medium);
 
   }
+
+// Set the dropdown
+var dropDown = document.getElementById('agency-selector');
+
+// Start on change listener to load new page
+d3.select(dropDown).on("change", function () {
+  window.location= d3.select(this).property('value');
+});
+
+for (var j = 0; j < dropDown.options.length; j++) {
+  if (dropDown.options[j].value === window.location.pathname){
+    dropDown.selectedIndex = j;
+    break;
+  }
+}
+
 
 
 })(this);

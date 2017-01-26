@@ -1,0 +1,15 @@
+language: ruby
+script: bundle exec jekyll build
+deploy:
+  edge: true
+  skip_cleanup: true
+  provider: cloudfoundry
+  username:
+    secure: F1SrnljcQS+Fh62drAbyDyTYPF6RtlCXoARQ/1iZN9Sv3u+CkbCwtXwwi77WRi+zb93WwZCkhZ4XNzW4QRlOnN/GYkhIOBNHTgL9Ff0uK3kycuUiwBnRKVxsDlvUp+e+T3Z6I95wgU8shbwVi0mUCg+7p72jA2HVSn/l0587MLc=
+  password:
+    secure: FRBIlx3lLUSXI4dryd7Cwhxiq8egzf2OjeeAiZDlarBAHkODEXicTsFahg2AmVld65oVy/d0uk2ua4UW7SiZ5KDTkE5VYTzjMLxEi+mKEtMlWbXWtGZcxDk86XKqkKymq/obQiLocL1nGog4yW1vhTlJNB7YP75jCH0MfJovQ/E=
+  api: https://api.fr.cloud.gov
+  organization: gsa-opp-analytics
+  space: analytics-dev
+  on:
+    branch: master

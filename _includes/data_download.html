@@ -1,0 +1,182 @@
+      {% if page.url == '/data/' %}
+        {% capture page_title %}  - Data{% endcapture %}
+        {% assign data_prefix = 'live' %}
+        {% assign entity = "government" %}
+      {% else %}
+        {% capture page_title %} - {{ page.name }} - Data{% endcapture %}
+        {% assign data_prefix = page.slug %}
+        {% assign entity = page.name %}
+      {% endif %}
+      <section class="width-two-thirds">
+        <h1>Download the data</h1>
+        {% assign agencies = site.agencies | sort:"name"  %}
+        {% if agencies.size > 0 %}
+        <div class="agency-selector-wrap">
+          <form>
+            <label for="agency-selector">Select an agency</label>
+            <select name="agency-selector" id="agency-selector"  title="Agency Selection Dropdown">
+              <option value="{{ site.baseurl }}/data/">{{ site.dropdown_title }}</option>
+              {% for agency in agencies %}
+                <option value="{{ site.baseurl }}{{ agency.url }}data/">{{ agency.name }}</option>
+              {% endfor %}
+            </select>
+          </form>
+        </div>
+        {% endif %}
+        <h2>Visits to and traffic sources for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
+        <table class="usa-table-borderless downloads">
+          <thead>
+            <tr>
+              <th scope="col">Description</th>
+              <th scope="col">Download</th>
+              <th scope="col">Update frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Visits to all domains over 30 days</td>
+              <td><a href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.csv" class="download-data"><span class="usa-label-big">CSV</span></a></td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Top downloads yesterday</td>
+              <td><a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.csv" class="download-data"><span class="usa-label-big">CSV</span></a></td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Top traffic sources (30 days)</td>
+              <td>
+                    <a href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                    <a href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Top exit pages (30 days)</td>
+              <td>
+                    <a href="{{ site.data_url }}/{{ data_prefix }}/top-exit-pages-30-days.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                    <a href="{{ site.data_url }}/{{ data_prefix }}/top-exit-pages-30-days.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>All pages people are visiting</td>
+              <td><a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv" class="download-data"><span class="usa-label-big">CSV</span></a></td>
+              <td>Every 5 minutes</td>
+            </tr>
+            <tr>
+              <td>Total people online</td>
+              <td><a href="{{ site.data_url }}/{{ data_prefix }}/realtime.json" class="download-data"><span class="usa-label-big">JSON</span></a></td>
+              <td>Every 5 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Visitor demographics for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
+        <table class="usa-table-borderless downloads">
+          <thead>
+            <tr>
+              <th scope="col">Description</th>
+              <th scope="col">Download</th>
+              <th scope="col">Update frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Language</td>
+              <td>
+                    <a href="{{ site.data_url }}/{{ data_prefix }}/language.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                    <a href="{{ site.data_url }}/{{ data_prefix }}/language.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Visitors per country</td>
+              <td><a href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json" class="download-data"><span class="usa-label-big">JSON</span></a></td>
+              <td>Every 5 minutes</td>
+            </tr>
+            <tr>
+              <td>Visitors per city</td>
+              <td><a href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json" class="download-data"><span class="usa-label-big">JSON</span></a></td>
+              <td>Every 5 minutes</td>
+            </tr>
+
+            <tr>
+                <td>Desktop/mobile/tablet</td>
+                <td><a href="{{ site.data_url }}/{{ data_prefix }}/devices.csv" class="download-data"><span class="usa-label-big">CSV</span></a></td>
+                <td>Daily</td>
+              </tr>
+              <tr class="parent">
+                <td>Web browsers</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/browsers.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/browsers.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr class="subset">
+                <td>Versions of Internet Explorer</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/ie.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/ie.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr class="parent">
+                <td>Operating systems</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/os.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/os.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr class="subset">
+                <td>Versions of Windows</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/windows.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/windows.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr>
+                <td>OS &amp; browser (combined)</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr>
+                <td>Windows &amp; browser (combined)</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr>
+                <td>Windows &amp; IE (combined)</td>
+                <td>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/windows-ie.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                  <a href="{{ site.data_url }}/{{ data_prefix }}/windows-ie.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr>
+                <td>Screen sizes</td>
+                <td>
+                      <a href="{{ site.data_url }}/{{ data_prefix }}/screen-size.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                      <a href="{{ site.data_url }}/{{ data_prefix }}/screen-size.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+              <tr>
+                <td>Device model</td>
+                <td>
+                      <a href="{{ site.data_url }}/{{ data_prefix }}/device_model.csv" class="download-data"><span class="usa-label-big">CSV</span></a>
+                      <a href="{{ site.data_url }}/{{ data_prefix }}/device_model.json" class="download-data"><span class="usa-label-big">JSON</span></a>
+                </td>
+                <td>Daily</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>

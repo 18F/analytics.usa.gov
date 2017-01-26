@@ -1,20 +1,27 @@
+
+# Don't exclude nginx.conf, needs to be copied into _site for
+# cloud.gov to pick up on it.
 exclude:
-- ".jekyll-metadata"
 - ".gitignore"
-- ".travis.yml"
 - todo.txt
 - Gemfile
 - Gemfile.lock
 - Makefile
-- vendor
+- Staticfile
 - README.md
 - CONTRIBUTING.md
 - LICENSE.md
 - dap.md
 - uxtesting.md
-- work
 - ".sass-cache"
+- requirements.txt
+- system-security-plan.yml
+- manifest.yml
+- vendor
+- .codeclimate.yml
+- .eslinrc.yml
 
+<<<<<<< HEAD
 # Site metadata
 title: "ndla.no | Web-statistikk fra NDLA.no."
 description: "Informasjon om trafikk på ndla.no og tilhørende domener. ."
@@ -26,6 +33,37 @@ data_url: https://g.hveem.no/NDLA-dash/data/live
 # GitHub information
 org_name: ghveem
 repo_name: analytics.usa.gov
+=======
+# defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: agencies
+    values:
+      layout: default
+
+collections:
+  agencies:
+    output: true
+    permalink: /:path/
+  data_pages:
+    output: true
+    permalink: /:path/data/
+
+# Site title and description
+title: "analytics.usa.gov | The US government's web traffic."
+description: "Official data on web traffic to hundreds of US federal government websites. Published by the Digital Analytics Program."
+
+# Site's own URL
+url: https://analytics.usa.gov
+
+# Default dropdown title, will not appear if there are no sub-pages
+dropdown_title: All Participating Websites
+
+# Default data url (also needs to be in nginx.conf for cloud.gov deployment)
+data_url: https://analytics.usa.gov/data
+>>>>>>> 32a659a6f704d4a5e2985b79449a04ff1c8b727b
 
 # twitter information
 twitter: ghveem
