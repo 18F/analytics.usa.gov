@@ -13,6 +13,7 @@ Other organizations who have reused this project for their analytics dashboard:
 * [The City of Boulder, CO](https://bouldercolorado.gov/stats)
 * [The City of Los Angeles, CA](http://webanalytics.lacity.org/)
 * [The City of New Orleans, LA](http://webanalytics.nola.gov/)
+* [The City of Omaha, NE](https://analytics.cityofomaha.org/)
 * [The City of Philadelphia, PA](http://analytics.phila.gov/)
 * [The City of Sacramento, CA](http://analytics.cityofsacramento.org/)
 * [The City of San Francisco, CA](http://analytics.sfgov.org/)
