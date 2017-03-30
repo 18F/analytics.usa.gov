@@ -1,12 +1,12 @@
- <!--        <style>
-          .technical-difficulties {
-            color: #981b1e;
-            background: #fff;
-            padding-top: 1.25em;
-          }
-        </style>
-
-        <div class="technical-difficulties">
-          * We are currently experiencing technical difficulties with respect to our real-time traffic data. 
-          Actual real-time visitor counts may be higher than displayed.
-        </div> -->
+{% if site.site_wide_error.display %}
+  <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+    <div class="usa-alert-body">
+      <h3 class="usa-alert-heading">
+        {{ site.site_wide_error.title }}
+      </h3>
+      <p class="usa-alert-text">
+        {{ site.site_wide_error.body }}
+      </p>
+    </div>
+  </div>
+{% endif %}
