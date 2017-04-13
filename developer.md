@@ -7,10 +7,10 @@ permalink: /developer/
 
 In addition to being published and available for download, the data generated for this site is also available via an API.
 
-The host name for the API is `https://analytics-api-staging.app.cloud.gov`, and it exposes 2 routes to query data:
+The URL for the API is `https://api.gsa.gov/systems/dap`, and it exposes 2 routes to query data:
 
-- `/reports/<report name>/data`
-- `/agencies/<agency name>/reports/<report name>/data`
+- `reports/<report name>/data`
+- `agencies/<agency name>/reports/<report name>/data`
 
 ## The Response
 
