@@ -29,8 +29,19 @@ Other organizations who have reused this project for their analytics dashboard:
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
+### Setup using Docker
 
-### Setup
+You need  [Docker](https://github.com/docker/docker) and  [docker-compose](https://github.com/docker/compose).
+
+To build and run the app with docker-compose, run `docker-compose up -d` then you can access the app from `http://localhost:4000`, as the local filesystem is mounted on top of the docker container you can edit the files as you are developing locally.
+
+To see the jekyll logs, run: 
+
+```bash
+docker-compose logs -f
+```
+
+### Setup using Ruby
 
 Ths app uses [Jekyll](http://jekyllrb.com) to build the site, and [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io), and [Neat](http://neat.bourbon.io) for CSS.
 
