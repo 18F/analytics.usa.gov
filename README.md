@@ -29,8 +29,19 @@ Other organizations who have reused this project for their analytics dashboard:
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
+### Setup using Docker
 
-### Setup
+You need  [Docker](https://github.com/docker/docker) and  [docker-compose](https://github.com/docker/compose).
+
+To build and run the app with docker-compose, run `docker-compose up -d` then you can access the app from `http://localhost:4000`, as the local filesystem is mounted on top of the docker container you can edit the files as you are developing locally.
+
+To see the jekyll logs, run: 
+
+```bash
+docker-compose logs -f
+```
+
+### Setup using Ruby
 
 Ths app uses [Jekyll](http://jekyllrb.com) to build the site, and [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io), and [Neat](http://neat.bourbon.io) for CSS.
 
@@ -124,6 +135,15 @@ To deploy to **analytics-staging.app.cloud.gov** after building the site with th
 make deploy_staging
 ```
 
+### Deploying the app using Docker
+
+If you are using Docker in production and you want to deploy just the static pages, you can build an nginx container with the static files built in, running the following command:
+
+```bash
+make docker-build-production PROD_IMAGE=yourvendor/your-image-name PROD_TAG=latest
+```
+
+The resulting image will be a standard nginx server image that you can safely push and deploy to your server.
 
 ### Environments
 
