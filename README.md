@@ -135,6 +135,15 @@ To deploy to **analytics-staging.app.cloud.gov** after building the site with th
 make deploy_staging
 ```
 
+### Deploying the app using Docker
+
+If you are using Docker in production and you want to deploy just the static pages, you can build an nginx container with the static files built in, running the following command:
+
+```bash
+make docker-build-production PROD_IMAGE=yourvendor/your-image-name PROD_TAG=latest
+```
+
+The resulting image will be a standard nginx server image that you can safely push and deploy to your server.
 
 ### Environments
 
