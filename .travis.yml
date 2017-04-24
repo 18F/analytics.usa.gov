@@ -11,6 +11,8 @@ script:
   - make docker-build-app
   - make docker-build-jekyll-dist
   - make docker-build-production
+  - docker-compose down -v
+  - sudo rm -rf _site/
   - bundle exec jekyll build
 
 deploy:
