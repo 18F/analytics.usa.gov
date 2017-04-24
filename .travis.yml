@@ -6,12 +6,12 @@ services:
   - docker
 
 script:
-  - bundle exec jekyll build
   - docker-compose up -d && docker-compose exec jekyll bash -c "bundle exec jekyll build"
   - make docker-start
   - make docker-build-app
   - make docker-build-jekyll-dist
   - make docker-build-production
+  - bundle exec jekyll build
 
 deploy:
   edge: true
