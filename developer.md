@@ -14,7 +14,7 @@ The URL for the API is `https://api.gsa.gov/systems/dap`, and it exposes 2 route
 
 ## API Keys
 
-To use the API, please register for [an API key](https://api.data.gov/signup/) and include it in your query in this fashion:  
+To use the API, please register for [an API key](https://api.data.gov/signup/) and include it in your query in this fashion:
 
 - `https://api.gsa.gov/systems/dap/reports/today/data?api_key=DEMO_KEY1`
 
@@ -50,19 +50,21 @@ Reports can be queried by substituting `<report name>` in the path with the name
 
 The following reports can be queried using the API:
 
-- devices  _([example](https://api.gsa.gov/systems/dap/reports/devices/data?api_key=DEMO_KEY1))_
-- browsers  _([example](https://api.gsa.gov/systems/dap/reports/browsers/data?api_key=DEMO_KEY1))_
+- download  _([example](https://api.gsa.gov/systems/dap/reports/download/data?api_key=DEMO_KEY1))_
+- traffic-source  _([example](https://api.gsa.gov/systems/dap/reports/traffic-source/data?api_key=DEMO_KEY1))_
+- device-model  _([example](https://api.gsa.gov/systems/dap/reports/device-model/data?api_key=DEMO_KEY1))_
+- domain  _([example](https://api.gsa.gov/systems/dap/reports/domain/data?api_key=DEMO_KEY1))_
+- site  _([example](https://api.gsa.gov/systems/dap/reports/site/data?api_key=DEMO_KEY1))_
+- second-level-domain  _([example](https://api.gsa.gov/systems/dap/reports/second-level-domain/data?api_key=DEMO_KEY1))_
+- language  _([example](https://api.gsa.gov/systems/dap/reports/language/data?api_key=DEMO_KEY1))_
+- os-browser  _([example](https://api.gsa.gov/systems/dap/reports/os-browser/data?api_key=DEMO_KEY1))_
+- windows-browser  _([example](https://api.gsa.gov/systems/dap/reports/windows-browser/data?api_key=DEMO_KEY1))_
+- browser  _([example](https://api.gsa.gov/systems/dap/reports/browser/data?api_key=DEMO_KEY1))_
 - windows-ie  _([example](https://api.gsa.gov/systems/dap/reports/windows-ie/data?api_key=DEMO_KEY1))_
-- windows-browsers  _([example](https://api.gsa.gov/systems/dap/reports/windows-browsers/data?api_key=DEMO_KEY1))_
-- device_model  _([example](https://api.gsa.gov/systems/dap/reports/device_model/data?api_key=DEMO_KEY1))_
-- ie  _([example](https://api.gsa.gov/systems/dap/reports/ie/data?api_key=DEMO_KEY1))_
-- today  _([example](https://api.gsa.gov/systems/dap/reports/today/data?api_key=DEMO_KEY1))_
-- os-browsers  _([example](https://api.gsa.gov/systems/dap/reports/os-browsers/data?api_key=DEMO_KEY1))_
 - os  _([example](https://api.gsa.gov/systems/dap/reports/os/data?api_key=DEMO_KEY1))_
 - windows  _([example](https://api.gsa.gov/systems/dap/reports/windows/data?api_key=DEMO_KEY1))_
-- screen-size  _([example](https://api.gsa.gov/systems/dap/reports/screen-size/data?api_key=DEMO_KEY1))_
-- language  _([example](https://api.gsa.gov/systems/dap/reports/language/data?api_key=DEMO_KEY1))_
-
+- ie  _([example](https://api.gsa.gov/systems/dap/reports/ie/data?api_key=DEMO_KEY1))_
+- device  _([example](https://api.gsa.gov/systems/dap/reports/device/data?api_key=DEMO_KEY1))_
 
 ## Filtering based on agencies
 
