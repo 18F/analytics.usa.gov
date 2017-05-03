@@ -37,7 +37,7 @@ You need  [Docker](https://github.com/docker/docker) and  [docker-compose](https
 
 To build and run the app with docker-compose, run `docker-compose up -d` then you can access the app from `http://localhost:4000`, as the local filesystem is mounted on top of the docker container you can edit the files as you are developing locally.
 
-To see the jekyll logs, run: 
+To see the jekyll logs, run:
 
 ```bash
 docker-compose logs -f
@@ -139,6 +139,8 @@ make deploy_staging
 
 ### Deploying the app using Docker
 
+_NOTE_: 18F does not use Docker in production!
+
 If you are using Docker in production and you want to deploy just the static pages, you can build an nginx container with the static files built in, running the following command:
 
 ```bash
@@ -146,6 +148,26 @@ make docker-build-production PROD_IMAGE=yourvendor/your-image-name PROD_TAG=late
 ```
 
 The resulting image will be a standard nginx server image that you can safely push and deploy to your server.
+
+### Building & Pushing Docker Images
+
+This repo has git tags. The tag for Docker images built for this repo relate to these git tags. In the examples below, `<version` refers to the tag value of the current commit. When building a new version, be sure to increment the git tag appropriately.
+
+When building images there are 2 images to build: `<version>` and `<version>-production`.
+
+To build the images:
+
+```shell
+docker build -f ./Dockerfile -t 18fgsa/analytics.usa.gov:<version> .
+docker build -f ./Dockerfile.production -t 18fgsa/analytics.usa.gov:<version>-production .
+```
+
+To push the images:
+
+```shell
+docker push 18fgsa/analytics.usa.gov:<version>
+docker push 18fgsa/analytics.usa.gov:<version>-production
+```
 
 ### Environments
 
