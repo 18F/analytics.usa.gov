@@ -144,10 +144,16 @@ _NOTE_: 18F does not use Docker in production!
 If you are using Docker in production and you want to deploy just the static pages, you can build an nginx container with the static files built in, running the following command:
 
 ```bash
-make docker-build-production PROD_IMAGE=yourvendor/your-image-name PROD_TAG=latest
+make docker-build-production PROD_IMAGE=yourvendor/your-image-name PROD_TAG=production
 ```
 
-The resulting image will be a standard nginx server image that you can safely push and deploy to your server.
+The resulting image will be an nginx server image that you can safely push and deploy to your server.
+
+The image accepts an environemnt variable to specify the S3 URL that data at `/data/*` is served from:
+
+```
+docker run -p 8080:80 -e S3_BUCKET_URL=https://s3-us-gov-west-1.amazonaws.com/your-s3-bucket/data yourvendor/your-image-name:production
+```
 
 ### Building & Pushing Docker Images
 
