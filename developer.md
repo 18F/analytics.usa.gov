@@ -50,7 +50,7 @@ To use the API, please register for [an API key](https://api.data.gov/signup/) a
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/systems/dap/reports/today/data?api_key={{api_key}}'
+    exampleApiUrl: 'https://api.gsa.gov/systems/dap/reports/today/data?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
