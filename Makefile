@@ -4,11 +4,8 @@ endif
 ifndef APP_TAG
 	APP_TAG = latest
 endif
-ifndef PROD_IMAGE
-	PROD_IMAGE = 18f/nginx-analytics
-endif
 ifndef PROD_TAG
-	PROD_TAG = latest
+	PROD_TAG = production
 endif
 
 production:
@@ -35,11 +32,8 @@ docker-start:
 docker-build-app:
 	docker build -t $(APP_IMAGE):${APP_TAG} .
 
-docker-build-jekyll-dist:
-	docker run --rm -v $${PWD}/dist:/dist $(APP_IMAGE):${APP_TAG} jekyll build --destination /dist
-
 docker-build-production:
-	docker build -t $(PROD_IMAGE):${PROD_TAG} -f Dockerfile.production .
+	docker build -t $(APP_IMAGE):${PROD_TAG} -f Dockerfile.production .
 
 docker-cli: docker-start
 	docker-compose exec jekyll bash
