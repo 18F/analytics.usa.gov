@@ -10,7 +10,7 @@ permalink: /developer/
      </h3>
      <p class="usa-alert-text">
        This API is under active development, and breaking changes may be made without warning.
-       Have feedback? Contact the <a href="mailto:DAP@support.digitalgov.gov">Digital Analytics Program</a>
+       Have feedback or questions? <a href="https://github.com/18F/analytics.usa.gov/issues">Please let us know</a>!
      </p>
    </div>
  </div>
@@ -27,9 +27,9 @@ The URL for the API is `https://api.gsa.gov/systems/dap`, and it exposes 2 route
 
 ## API Keys
 
-To use the API, please register for [an API key](https://api.data.gov/signup/) and include it in your query in this fashion:
+To use the API, please register for an API key below and include it in your query in this fashion:
 
-- `https://api.gsa.gov/systems/dap/reports/today/data?api_key=DEMO_KEY1`
+- `[https://api.gsa.gov/systems/dap/reports/download/data?api_key=DEMO_KEY1](https://api.gsa.gov/systems/dap/reports/download/data?api_key=DEMO_KEY1)`
 
 
 {% raw %}
