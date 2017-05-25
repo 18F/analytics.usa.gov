@@ -22,8 +22,8 @@ In addition to being published and available for download, the data generated fo
 
 The URL for the API is `https://api.gsa.gov/systems/dap`, and it exposes 2 routes to query data:
 
-- `/reports/<report name>/data`
-- `/agencies/<agency name>/reports/<report name>/data`
+- `reports/<report name>/data`
+- `agencies/<agency name>/reports/<report name>/data`
 
 ## API Keys
 
