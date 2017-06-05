@@ -20,7 +20,7 @@ permalink: /developer/
 
 In addition to being published and available for download, the data generated for this site is also available via an API.
 
-The URL for the API is `https://api.gsa.gov/systems/dap`, and it exposes 2 routes to query data:
+The URL for the API is `https://api.gsa.gov/systems/dap/v1`, and it exposes 2 routes to query data:
 
 - `/reports/<report name>/data`
 - `/agencies/<agency name>/reports/<report name>/data`
@@ -29,7 +29,7 @@ The URL for the API is `https://api.gsa.gov/systems/dap`, and it exposes 2 route
 
 To use the API, please register for an API key below and include it in your query in this fashion:
 
-- `[https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key=DEMO_KEY1](https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key=DEMO_KEY1)`
+- `https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key=DEMO_KEY1`
 
 {% raw %}
 
