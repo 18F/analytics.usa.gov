@@ -13,15 +13,20 @@
   * Circle CI - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this.  
   * Google Analytics API - They are stored in the `analytics-reporter` environment and can be found by runnning `cf env analytics-reporter` when logged into cloud.gov on the command line and targeting the `gsa-opp-analytics` org and the `analytics-dev` space.  Gray Brooks, Jonathan Hooper, and Tim Lowden also have the keys stored.  
   * AWS - Provided by a cloud.gov service. 
+  * Google Analytics (Digital Analytics Program)
+  
 * Points of contact 
   * Cloud.gov - #cloud-gov in Slack; cloud-gov-support@gsa.gov.
   * New Relic - #admins-newrelic in Slack
+  * Api.data.gov - #api-data-gov in Slack; api.data.gov@gsa.gov
 * Important URLs
   * [Cloud.gov Console](http://console.fr.cloud.gov/)
   * [Cloud.gov Docs](https://cloud.gov/docs/)
   * [Cloud.gov Logs](https://logs.fr.cloud.gov)
   * [Circle CI Management](https://circleci.com)
   * [New Relic Management](https://newrelic.com/)
+  * [Api.data.gov Management](https://api.data.gov/admin)
+  * [Google Analytics](https://www.google.com/analytics)
 
 
 
