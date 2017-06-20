@@ -7,4 +7,6 @@ The System owner and current project developers need cloud.gov access to analyti
 
 Specifically, current developers are [granted](https://cloud.gov/docs/apps/managing-teammates/) OrgManager rights to `gsa-opp-analytics` and SpaceDeveloper rights to each of the projects spaces.  
 
+Both of the adding and removing processes should be initiated by creating an issue in the project's [issue tracker](https://github.com/18F/analytics.usa.gov/issues).  Any one can create the issue, but the system owner should be the one who addresses and closes it.    
+
 
