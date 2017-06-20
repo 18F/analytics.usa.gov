@@ -17,3 +17,13 @@ The System owner and current project developers need commit rights to analytics.
 Specifically, current developers are managed as the `analytics.usa.gov` team in the 18F GitHub organization.   
 
 Both of the adding and removing processes should be initiated by creating an issue in the project's [issue tracker](https://github.com/18F/analytics.usa.gov/issues).  Any one can create the issue, but the system owner should be the one who addresses and closes it.  
+
+### Monitoring of Cloud.gov Logs
+
+The development team monitors and reviews logs at https://logs.fr.cloud.gov for unapproved and unusual activities at least monthly. 
+
+Any unusual or suspicious activities are immediately brought to the team's attention in the project slack channel (#dap) and the system owner coordinates appropriate investigation and followup.  
+
+### Monitoring of New Relic Alerts
+
+New Relic alerts are emailed to the full team immediately.  The first team member to see the alert checks the site's status and posts in the project slack channel (#dap) the results.  The system owner then coordinates any necessary followup.  
