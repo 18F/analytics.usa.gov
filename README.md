@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/18F/analytics.usa.gov/badges/gpa.svg)](https://codeclimate.com/github/18F/analytics.usa.gov)  [![Build Status](https://travis-ci.org/18F/analytics.usa.gov.png)](https://travis-ci.org/18F/analytics.usa.gov)  [![Dependency Status](https://gemnasium.com/badges/github.com/18F/analytics.usa.gov.svg)](https://gemnasium.com/github.com/18F/analytics.usa.gov)
+[![Code Climate](https://codeclimate.com/github/18F/analytics.usa.gov/badges/gpa.svg)](https://codeclimate.com/github/18F/analytics.usa.gov)  [![CircleCI](https://circleci.com/gh/18F/analytics.usa.gov.svg?style=shield)](https://circleci.com/gh/18F/analytics.usa.gov)  [![Dependency Status](https://gemnasium.com/badges/github.com/18F/analytics.usa.gov.svg)](https://gemnasium.com/github.com/18F/analytics.usa.gov)
 
 
 
