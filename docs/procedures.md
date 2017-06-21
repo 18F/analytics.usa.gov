@@ -20,7 +20,7 @@ Both of the adding and removing processes should be initiated by creating an iss
 
 ### Monitoring of Cloud.gov Logs
 
-The development team monitors and reviews logs at https://logs.fr.cloud.gov for unapproved and unusual activities at least monthly. 
+The development team monitors and reviews logs at https://logs.fr.cloud.gov for unapproved and unusual activities at least weekly. 
 
 Any unusual or suspicious activities are immediately brought to the team's attention in the project slack channel (#dap) and the system owner coordinates appropriate investigation and followup.  
 
