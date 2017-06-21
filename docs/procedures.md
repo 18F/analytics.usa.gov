@@ -18,11 +18,18 @@ Specifically, current developers are managed as the `analytics.usa.gov` team in 
 
 Both of the adding and removing processes should be initiated by creating an issue in the project's [issue tracker](https://github.com/18F/analytics.usa.gov/issues).  Any one can create the issue, but the system owner should be the one who addresses and closes it.  
 
-### Monitoring of Cloud.gov Logs
+### Weekly Monitoring Checklist
 
-The development team monitors and reviews logs at https://logs.fr.cloud.gov for unapproved and unusual activities at least weekly. 
+The development team checks for security events weekly. Any unusual or suspicious activities are immediately brought to the team's attention in the project slack channel (#dap) and the system owner coordinates appropriate investigation and followup. The team will follow the [18F incident response handbook](https://handbook.18f.gov/security-incidents/).
 
-Any unusual or suspicious activities are immediately brought to the team's attention in the project slack channel (#dap) and the system owner coordinates appropriate investigation and followup.  
+Checklist:
+1. Create an issue in the project's [issue tracker](https://github.com/18F/analytics.usa.gov/issues) to track this Security Event Review.
+2. Review Gemnasium for all repositories and open a ticket for all "red" alerts.
+3. Review [production logs](https://logs.fr.cloud.gov) for unapproved and unusual activities. 
+4. Review actionable security events on production logs for successful and unsuccessful account logon events, account management events, object access, policy change, privilege functions, process tracking, system events, all administrator activity, authentication checks, authorization checks, data deletions, data access, data changes, and permission changes.
+5. Deactivate any cloud.gov and github access for people who have left the team.
+6. Note any findings in the Security Event Review issue.
+7. Close the Security Event Review issue.
 
 ### Monitoring of New Relic Alerts
 
