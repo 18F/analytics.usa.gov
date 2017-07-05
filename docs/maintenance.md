@@ -9,8 +9,8 @@
 * Credentials 
   * Cloud.gov (Deployer) - Gray Brooks and Jonathan Hooper have access to manage this.  
   * Cloud.gov (Access) - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this. 
-  * New Relic - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this. 
-  * Circle CI - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this.  
+  * New Relic (APM and Synthetics) - Gray Brooks, Jonathan Hooper, and Eric Mill have access to manage this. 
+  * Circle CI - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this, as access is managed through github permissions.  
   * Google Analytics API - They are stored in the `analytics-reporter` environment and can be found by runnning `cf env analytics-reporter` when logged into cloud.gov on the command line and targeting the `gsa-opp-analytics` org and the `analytics-dev` space.  Gray Brooks, Jonathan Hooper, and Tim Lowden also have the keys stored.  
   * AWS - Provided by a cloud.gov service. 
   * Google Analytics (Digital Analytics Program)
