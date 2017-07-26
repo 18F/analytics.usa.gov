@@ -85,3 +85,9 @@ Sometimes if the site is acting up, it helps to restart the app in cloud.gov.  H
 * Navigate to the `gsa-opp-anlaytics` org, then the `analytics` app in the `analytics-dev` space.
 * Click on the Restart app button.  
 
+## Adding/Removing users in cloud.gov 
+
+* In a terminal, enter `cf login -a api.fr.cloud.gov --sso`.  
+* Follow the directions to log in.  
+* Use [these commands](https://cloud.gov/docs/apps/managing-teammates/) to add/edit/remove users.  
+
