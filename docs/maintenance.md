@@ -76,3 +76,12 @@ This should give you a username and password. The username and password will be 
 - [analytics-restarter CircleCI settings](https://circleci.com/gh/18F/analytics-restarter/edit#env-vars)
 
 In the settings, the old `CF_USERNAME` and `CF_PASSWORD` values will need to be deleted and re-added with the new username and password values.
+
+## Restarting the app in cloud.gov 
+
+Sometimes if the site is acting up, it helps to restart the app in cloud.gov.  Here's how to do that.  
+
+* Log in at http://console.fr.cloud.gov/.  
+* Navigate to the `gsa-opp-anlaytics` org, then the `analytics` app in the `analytics-dev` space.
+* Click on the Restart app button.  
+
