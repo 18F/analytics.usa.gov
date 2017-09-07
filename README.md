@@ -149,7 +149,7 @@ make docker-build-production PROD_IMAGE=yourvendor/your-image-name PROD_TAG=prod
 
 The resulting image will be an nginx server image that you can safely push and deploy to your server.
 
-The image accepts an environemnt variable to specify the S3 URL that data at `/data/*` is served from:
+The image accepts an environment variable to specify the S3 URL that data at `/data/*` is served from:
 
 ```
 docker run -p 8080:80 -e S3_BUCKET_URL=https://s3-us-gov-west-1.amazonaws.com/your-s3-bucket/data yourvendor/your-image-name:production
