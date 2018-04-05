@@ -231,7 +231,7 @@
         var international = total_visits - us_visits;
         var data = {
           "United States": us_visits,
-          "International": international
+          "International &amp; Territories": international
         };
         return addShares(listify(data));
       })
@@ -401,7 +401,7 @@
   whenRendered(["countries", "international_visits"], function() {
     d3.select("#chart_us")
       .call(nestCharts, function(d) {
-        return d.key === "International";
+        return d.key === "International &amp; Territories";
       }, d3.select("#chart_countries"));
   });
 
