@@ -150,7 +150,7 @@
       .transform(function(d) {
         var values = listify(d.totals.os_version),
             total = d3.sum(values.map(function(d) { return d.value; }));
-        return addShares(collapseOther(values, total * .01)); // % of Windows
+        return addShares(collapseOther(values, total * .001)); // % of Windows
       })
       .render(barChart()
         .value(function(d) { return d.share * 100; })
