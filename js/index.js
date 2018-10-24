@@ -1,155 +1,13 @@
 import { exceptions, titleExceptions } from './lib/exceptions';
-import barChart from './lib/barchart';
-import * as timeSeries from './lib/timeseries';
-import * as consolePrint from './lib/consoleprint';
+// import barChart from './lib/barchart';
+// import * as timeSeries from './lib/timeseries';
+import consolePrint from './lib/consoleprint';
 import helpers from './lib/helpers';
 
-/*
-   * our block renderer is a d3 selection manipulator that does a bunch of
-   * stuff:
-   *
-   * 1. it knows how to get the URL for a block by either looking at the
-   *    `source` key of its bound data _or_ the node's data-source attribute.
-   * 2. it can be configured to transform the loaded data using a function
-   * 3. it has a configurable rendering function that gets called on the first
-   *    child of matching the `.data` selector.
-   * 4. it dispatches events "loading", "load", "render" and "error" events to
-   *    notify us of the state of data.
-   *
-   * Example:
-   *
-   * ```js
-   * var block = renderBlock()
-   *   .render(function(selection, data) {
-   *     selection.text(JSON.stringify(data));
-   *   });
-   * d3.select("#foo")
-   *   .call(block);
-   * ```
-   */
-function renderBlock() {
-  function url(d) { return d && d.source; }
-  function renderer() { }
-  let transform = Object;
 
-  const dispatch = d3.dispatch('loading', 'load', 'error', 'render');
+// common parsing and formatting functions
 
-  function onerror(selection, request) {
-    const message = request.responseText;
-
-    selection.classed('error', true)
-      .select('.error-message')
-      .text(message);
-
-    dispatch.error(selection, request, message);
-  }
-
-  function render(selection, data) {
-    // populate meta elements
-    selection.select('.meta-name')
-      .text(d => d.meta.name);
-    selection.select('.meta-desc')
-      .text(d => d.meta.description);
-
-    selection.select('.data')
-      .datum(data)
-      .call(renderer, data);
-    dispatch.render(selection, data);
-  }
-
-  function load(d) {
-    if (d.dataRequest) d.dataRequest.abort();
-
-    const that = d3.select(this)
-      .classed('loading', true)
-      .classed('loaded error', false);
-
-    dispatch.loading(selection, d);
-
-    const json = url.apply(this, arguments);
-    if (!json) {
-      return console.error('no data source found:', this, d);
-    }
-
-    d.dataRequest = d3.json(json, (error, data) => {
-      that.classed('loading', false);
-      if (error) return that.call(onerror, error);
-
-      that.classed('loaded', true);
-      dispatch.load(selection, data);
-      that.call(render, d.transFormedData = transform(data));
-    });
-  }
-
-  function block(selection) {
-    selection
-      .each(load)
-      .filter((d) => {
-        d.refresh = +this.getAttribute('data-refresh');
-        return !Number.isNaN(d.refresh) && d.refresh > 0;
-      })
-      .each((d) => {
-        const that = d3.select(this);
-        d.interval = setInterval(() => {
-          that.each(load);
-        }, d.refresh * 1000);
-      });
-  }
-
-  block.render = (x) => {
-    if (!arguments.length) return renderer;
-    renderer = x;
-    return block;
-  };
-
-  block.url = (x) => {
-    if (!arguments.length) return url;
-    url = d3.functor(x);
-    return block;
-  };
-
-  block.transform = (x) => {
-    if (!arguments.length) return transform;
-    transform = d3.functor(x);
-    return block;
-  };
-
-  return d3.rebind(block, dispatch, 'on');
-}
-
-function addShares(list, value) {
-  if (!value) value = d => d.value;
-  const total = d3.sum(list.map(value));
-  list.forEach((d) => {
-    d.share = value(d) / total;
-  });
-
-  return list;
-}
-
-function collapseOther(list, threshold) {
-  let otherPresent = false;
-  const other = { key: 'Other', value: 0, children: [] };
-
-
-  let last = list.length - 1;
-  while (last > 0 && list[last].value < threshold) {
-    other.value += list[last].value;
-    other.children.push(list[last]);
-    list.splice(last, 1);
-    last -= 1;
-  }
-  for (let i = 0; i < list.length; i += 1) {
-    if (list[i].key === 'Other') {
-      otherPresent = true;
-      list[i].value += other.value;
-    }
-  }
-  if (!otherPresent) {
-    list.push(other);
-  }
-  return list;
-}
+const TRANSITION_DURATION = 500;
 
 /*
    * Define block renderers for each of the different data types.
@@ -164,13 +22,14 @@ const BLOCKS = {
     }),
 
   today: renderBlock()
+    .transform(data => data)
     .render((svg, data) => {
       const days = data.data;
       days.forEach((d) => {
         d.visits = +d.visits;
       });
 
-      const y = d => d.visits;
+      const y = function (d) { return d.visits; };
 
 
       const series = timeSeries()
@@ -305,7 +164,7 @@ const BLOCKS = {
         .value(d => d.share * 100)
         .format(helpers.formatPercent),
     ),
-  internationalVisits: renderBlock()
+  international_visits: renderBlock()
     .transform((d) => {
       let countries = addShares(d.data, d => d.active_visitors);
       countries = countries.filter(c => c.country !== 'United States');
@@ -328,7 +187,7 @@ const BLOCKS = {
           '<span class="domain" >', helpers.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
           '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
-          helpers.helpersformatFile(d.event_label), '</a></span>',
+          helpers.formatFile(d.event_label), '</a></span>',
         ].join(''))
         .scale(values => d3.scale.linear()
           .domain([0, 1, d3.max(values)])
@@ -342,7 +201,7 @@ const BLOCKS = {
     .on('render', (selection, data) => {
       // turn the labels into links
       selection.selectAll('.label')
-        .each((d) => {
+        .each(function (d) {
           d.text = this.innerText;
         })
         .html('')
@@ -365,7 +224,7 @@ const BLOCKS = {
     .on('render', (selection, data) => {
       // turn the labels into links
       selection.selectAll('.label')
-        .each((d) => {
+        .each(function (d) {
           d.text = this.innerText;
         })
         .html('')
@@ -396,8 +255,10 @@ const PROMISES = {};
    * 3. if a renderer exists, calling it on the selection
    */
 d3.selectAll('*[data-source]')
-  .each(() => {
+  .each(function () {
     const blockId = this.getAttribute('data-block');
+
+
     const block = BLOCKS[blockId];
     if (!block) {
       return console.warn('no block registered for: %s', blockId);
@@ -409,13 +270,531 @@ d3.selectAll('*[data-source]')
       block.on('error.promise', reject);
     });
 
-    return d3.select(this)
+    d3.select(this)
       .datum({
         source: this.getAttribute('data-source'),
         block: blockId,
       })
       .call(block);
   });
+
+// nest the windows chart inside the OS chart once they're both rendered
+whenRendered(['os', 'windows'], () => {
+  d3.select('#chart_os')
+    .call(nestCharts, d => d.key === 'Windows', d3.select('#chart_windows'));
+});
+
+// nest the IE chart inside the browsers chart once they're both rendered
+whenRendered(['browsers', 'ie'], () => {
+  d3.select('#chart_browsers')
+    .call(nestCharts, d => d.key === 'Internet Explorer', d3.select('#chart_ie'));
+});
+
+// nest the international countries chart inside the "International"
+// chart once they're both rendered
+whenRendered(['countries', 'international_visits'], () => {
+  d3.select('#chart_us')
+    .call(nestCharts, d => d.key === 'International &amp; Territories', d3.select('#chart_countries'));
+});
+
+/*
+   * A very primitive, aria-based tab system!
+   */
+d3.selectAll("*[role='tablist']")
+  .each(function () {
+    // grab all of the tabs and panels
+    const tabs = d3.select(this).selectAll("*[role='tab'][href]")
+      .datum(function () {
+        const target = document.getElementById(this.href.split('#').pop());
+        return {
+          selected: this.getAttribute('aria-selected') === 'true',
+          target,
+          tab: this,
+        };
+      });
+
+
+    const panels = d3.select(this.parentNode)
+      .selectAll("*[role='tabpanel']");
+
+    // when a tab is clicked, update the panels
+    tabs.on('click', function (d) {
+      d3.event.preventDefault();
+      tabs.each((tab) => { tab.selected = false; });
+      d.selected = true;
+
+      update();
+
+      // track in google analytics
+      ga('send', 'event', 'Site Navigation', this.href, this.text);
+    });
+
+    // update them to start
+    update();
+
+    function update() {
+      let selected;
+      tabs.attr('aria-selected', (tab) => {
+        if (tab.selected) selected = tab.target;
+        return tab.selected;
+      });
+      panels.attr('aria-hidden', function (panel) {
+        panel.selected = selected === this;
+        return !panel.selected;
+      })
+        .style('display', d => (d.selected ? null : 'none'));
+    }
+  });
+
+/*
+   * our block renderer is a d3 selection manipulator that does a bunch of
+   * stuff:
+   *
+   * 1. it knows how to get the URL for a block by either looking at the
+   *    `source` key of its bound data _or_ the node's data-source attribute.
+   * 2. it can be configured to transform the loaded data using a function
+   * 3. it has a configurable rendering function that gets called on the first
+   *    child of matching the `.data` selector.
+   * 4. it dispatches events "loading", "load", "render" and "error" events to
+   *    notify us of the state of data.
+   *
+   * Example:
+   *
+   * ```js
+   * var block = renderBlock()
+   *   .render(function(selection, data) {
+   *     selection.text(JSON.stringify(data));
+   *   });
+   * d3.select("#foo")
+   *   .call(block);
+   * ```
+   */
+function renderBlock() {
+  let url = function (d) {
+    return d && d.source;
+  };
+
+
+  let transform = Object;
+
+
+  let renderer = function () { };
+
+
+  const dispatch = d3.dispatch('loading', 'load', 'error', 'render');
+
+  const block = function (selection) {
+    selection
+      .each(load)
+      .filter(function (d) {
+        d.refresh = +this.getAttribute('data-refresh');
+        return !Number.isNaN(d.refresh) && d.refresh > 0;
+      })
+      .each(function (d) {
+        const that = d3.select(this);
+        d.interval = setInterval(() => {
+          that.each(load);
+        }, d.refresh * 1000);
+      });
+
+    function load(d) {
+      if (d.dataRequest) d.dataRequest.abort();
+
+      const that = d3.select(this)
+        .classed('loading', true)
+        .classed('loaded error', false);
+
+      dispatch.loading(selection, d);
+
+      const json = url.apply(this, arguments);
+      if (!json) {
+        return console.error('no data source found:', this, d);
+      }
+
+      d.dataRequest = d3.json(json, (error, data) => {
+        that.classed('loading', false);
+        if (error) return that.call(onerror, error);
+
+        that.classed('loaded', true);
+        dispatch.load(selection, data);
+        that.call(render, d.transformedData = transform(data));
+      });
+    }
+  };
+
+  function onerror(selection, request) {
+    const message = request.responseText;
+
+    selection.classed('error', true)
+      .select('.error-message')
+      .text(message);
+
+    dispatch.error(selection, request, message);
+  }
+
+  block.render = function (x) {
+    if (!arguments.length) return renderer;
+    renderer = x;
+    return block;
+  };
+
+  block.url = function (x) {
+    if (!arguments.length) return url;
+    url = d3.functor(x);
+    return block;
+  };
+
+  block.transform = function (x) {
+    if (!arguments.length) return transform;
+    transform = d3.functor(x);
+    return block;
+  };
+
+  function render(selection, data) {
+    // populate meta elements
+    selection.select('.meta-name')
+      .text(d => d.meta.name);
+    selection.select('.meta-desc')
+      .text(d => d.meta.description);
+
+    selection.select('.data')
+      .datum(data)
+      .call(renderer, data);
+    dispatch.render(selection, data);
+  }
+
+  return d3.rebind(block, dispatch, 'on');
+}
+
+function barChart() {
+  let bars = function (d) {
+    return d;
+  };
+
+
+  let value = function (d) {
+    return d.value;
+  };
+
+
+  let format = String;
+
+
+  let label = function (d) {
+    return d.key;
+  };
+
+
+  let scale = null;
+
+
+  const size = function (n) {
+    return `${(n || 0).toFixed(1)}%`;
+  };
+
+  const chart = function (selection) {
+    const bin = selection.selectAll('.bin')
+      .data(bars);
+
+    bin.exit().remove();
+
+    const enter = bin.enter().append('div')
+      .attr('class', 'bin');
+    enter.append('div')
+      .attr('class', 'label');
+    enter.append('div')
+      .attr('class', 'value');
+    enter.append('div')
+      .attr('class', 'bar')
+      .style('width', '0%');
+
+    const componentScale = scale
+      ? scale.call(selection, bin.data().map(value))
+      : null;
+      // console.log("scale:", componentScale ? componentScale.domain() : "(none)");
+    bin.select('.bar')
+      .style('width', componentScale
+        ? d => size(componentScale(value(d)))
+        : d => size(value(d)));
+
+    bin.select('.label').html(label);
+    bin.select('.value').text(function (d, i) {
+      return format.call(this, value(d), d, i);
+    });
+  };
+
+  chart.bars = function (x) {
+    if (!arguments.length) return bars;
+    bars = d3.functor(x);
+    return chart;
+  };
+
+  chart.label = function (x) {
+    if (!arguments.length) return label;
+    label = d3.functor(x);
+    return chart;
+  };
+
+  chart.value = function (x) {
+    if (!arguments.length) return value;
+    value = d3.functor(x);
+    return chart;
+  };
+
+  chart.format = function (x) {
+    if (!arguments.length) return format;
+    format = d3.functor(x);
+    return chart;
+  };
+
+  chart.scale = function (x) {
+    if (!arguments.length) return scale;
+    scale = d3.functor(x);
+    return chart;
+  };
+
+  return chart;
+}
+
+function timeSeries() {
+  let series = function (d) { return [d]; };
+
+
+  let bars = function (d) { return d; };
+
+
+  const width = 700;
+
+
+  const height = 150;
+
+
+  const padding = 50;
+
+
+  const margin = {
+    top: 10,
+    right: padding,
+    bottom: 25,
+    left: padding,
+  };
+
+
+  let x = function (d, i) { return i; };
+
+
+  let y = function (d, i) { return d; };
+
+
+  let label = function (d, i) { return i; };
+
+
+  let title = function (d) { return d; };
+
+
+  let xScale = d3.scale.ordinal();
+
+
+  let yScale = d3.scale.linear();
+
+
+  let yAxis = d3.svg.axis()
+    .scale(yScale)
+    .ticks(5);
+
+
+  const innerTickSize = yAxis.innerTickSize();
+
+
+  let xAxis;
+
+
+  const duration = TRANSITION_DURATION;
+
+  const timeSeries = function (svg) {
+    const right = width - margin.right;
+    const bottom = height - margin.bottom;
+
+    yScale.range([bottom, margin.top]);
+    xScale.rangeRoundBands([margin.left, right], 0, 0);
+
+    svg.attr('viewBox', [0, 0, width, height].join(' '));
+
+    element(svg, 'g.axis.y0')
+      .attr('transform', `translate(${[margin.left, 0]})`)
+      .attr('aria-hidden', 'true')
+      .transition()
+      .duration(duration)
+      .call(yAxis
+      // .innerTickSize(left - right)
+        .orient('left'));
+
+    element(svg, 'g.axis.y1')
+      .attr('transform', `translate(${[right, 0]})`)
+      .attr('aria-hidden', 'true')
+      .transition()
+      .duration(duration)
+      .call(yAxis
+        .innerTickSize(innerTickSize)
+        .orient('right'));
+
+    const g = svg.selectAll('.series')
+      .data(series);
+    g.exit().remove();
+    g.enter().append('g')
+      .attr('class', 'series');
+
+    const barWidth = xScale.rangeBand();
+
+    const bar = g.selectAll('.bar')
+      .data(bars);
+    bar.exit().remove();
+    const enter = bar.enter().append('g')
+      .attr('class', 'bar')
+      .attr('tabindex', 0);
+    enter.append('rect')
+      .attr('width', barWidth)
+      .attr('y', 0)
+      .attr('height', 0);
+    enter.append('text')
+      .attr('class', 'label');
+    enter.append('title');
+
+    bar
+      .datum(function (d) {
+        d = d || {};
+        d.x = xScale(d.u = x.apply(this, arguments));
+        d.y0 = yScale(d.v = y.apply(this, arguments));
+        d.y1 = bottom;
+        d.height = d.y1 - d.y0;
+        return d;
+      })
+      .attr('aria-label', title)
+      .attr('transform', d => `translate(${[d.x, d.y1]})`);
+
+    bar.select('rect')
+      .attr('width', barWidth)
+      .transition()
+      .duration(duration)
+      .attr('y', d => -d.height)
+      .attr('height', d => d.height);
+
+    bar.select('.label')
+      .attr('text-anchor', 'middle')
+    // .attr("alignment-baseline", "before-edge")
+      .attr('dy', 10)
+      .attr('dx', barWidth / 2)
+      .text(label);
+
+    bar.select('title')
+      .text(title);
+  };
+
+  timeSeries.series = function (fs) {
+    if (!arguments.length) return series;
+    series = d3.functor(fs);
+    return timeSeries;
+  };
+
+  timeSeries.bars = function (fb) {
+    if (!arguments.length) return bars;
+    bars = d3.functor(fb);
+    return timeSeries;
+  };
+
+  timeSeries.x = function (fx) {
+    if (!arguments.length) return x;
+    x = d3.functor(fx);
+    return timeSeries;
+  };
+
+  timeSeries.y = function (fy) {
+    if (!arguments.length) return y;
+    y = d3.functor(fy);
+    return timeSeries;
+  };
+
+  timeSeries.xScale = function (xs) {
+    if (!arguments.length) return xScale;
+    xScale = xs;
+    return timeSeries;
+  };
+
+  timeSeries.yScale = function (xs) {
+    if (!arguments.length) return yScale;
+    yScale = xs;
+    return timeSeries;
+  };
+
+  timeSeries.yAxis = function (ya) {
+    if (!arguments.length) return yAxis;
+    yAxis = ya;
+    return timeSeries;
+  };
+
+  timeSeries.label = function (fl) {
+    if (!arguments.length) return label;
+    label = fl;
+    return timeSeries;
+  };
+
+  timeSeries.title = function (ft) {
+    if (!arguments.length) return title;
+    title = ft;
+    return timeSeries;
+  };
+
+  return timeSeries;
+}
+
+function element(selection, selector) {
+  const el = selection.select(selector);
+  if (!el.empty()) return el;
+
+  const bits = selector.split('.');
+
+
+  const name = bits[0];
+
+
+  const klass = bits.slice(1).join(' ');
+  return selection.append(name)
+    .attr('class', klass);
+}
+
+function addShares(list, value) {
+  if (!value) value = function (d) { return d.value; };
+  const total = d3.sum(list.map(value));
+  list.forEach((d) => {
+    d.share = value(d) / total;
+  });
+
+  return list;
+}
+
+function collapseOther(list, threshold) {
+  let otherPresent = false;
+  const other = { key: 'Other', value: 0, children: [] };
+
+
+  let last = list.length - 1;
+  while (last > 0 && list[last].value < threshold) {
+    other.value += list[last].value;
+    other.children.push(list[last]);
+    list.splice(last, 1);
+    last -= 1;
+  }
+  for (let i = 0; i < list.length; i += 1) {
+    if (list[i].key === 'Other') {
+      otherPresent = true;
+      list[i].value += other.value;
+    }
+  }
+  if (!otherPresent) {
+    list.push(other);
+  }
+  return list;
+}
 
 function whenRendered(blockIds, callback) {
   const promises = blockIds.map(id => PROMISES[id]);
@@ -456,77 +835,13 @@ function nestCharts(selection, parentFilter, child) {
   parent.node().appendChild(child.node());
 }
 
-// nest the windows chart inside the OS chart once they're both rendered
-whenRendered(['os', 'windows'], () => {
-  d3.select('#chart_os')
-    .call(nestCharts, d => d.key === 'Windows', d3.select('#chart_windows'));
-});
-
-// nest the IE chart inside the browsers chart once they're both rendered
-whenRendered(['browsers', 'ie'], () => {
-  d3.select('#chart_browsers')
-    .call(nestCharts, d => d.key === 'Internet Explorer', d3.select('#chart_ie'));
-});
-
-// nest the international countries chart inside the "International"
-// chart once they're both rendered
-whenRendered(['countries', 'internationalVisits'], () => {
-  d3.select('#chart_us')
-    .call(nestCharts, d => d.key === 'International &amp; Territories', d3.select('#chart_countries'));
-});
-
-/*
-   * A very primitive, aria-based tab system!
-   */
-d3.selectAll("*[role='tablist']")
-  .each(() => {
-    // grab all of the tabs and panels
-    const tabs = d3.select(this).selectAll("*[role='tab'][href]")
-      .datum(() => {
-        const target = document.getElementById(this.href.split('#').pop());
-        return {
-          selected: this.getAttribute('aria-selected') === 'true',
-          target,
-          tab: this,
-        };
-      });
-
-    function update() {
-      let selected;
-      tabs.attr('aria-selected', (tab) => {
-        if (tab.selected) selected = tab.target;
-        return tab.selected;
-      });
-      const panels = d3.select(this.parentNode)
-        .selectAll("*[role='tabpanel']");
-
-      panels.attr('aria-hidden', (panel) => {
-        panel.selected = selected === this;
-        return !panel.selected;
-      })
-        .style('display', d => (d.selected ? null : 'none'));
-    }
-
-    // when a tab is clicked, update the panels
-    tabs.on('click', (d) => {
-      d3.event.preventDefault();
-      tabs.each((tab) => { tab.selected = false; });
-      d.selected = true;
-      update();
-
-      // track in google analytics
-      ga('send', 'event', 'Site Navigation', this.href, this.text);
-    });
-
-    // update them to start
-    update();
-  });
+consolePrint();
 
 // Set the dropdown
 const dropDown = document.getElementById('agency-selector');
 
 // Start on change listener to load new page
-d3.select(dropDown).on('change', () => {
+d3.select(dropDown).on('change', function () {
   window.location = d3.select(this).property('value');
 });
 
@@ -536,5 +851,3 @@ for (let j = 0; j < dropDown.options.length; j += 1) {
     break;
   }
 }
-
-consolePrint(window);

@@ -1,9 +1,7 @@
 // common parsing and formatting functions
 
-const formatCommas = d3.format(',');
-
 function formatPrefix(suffixes) {
-  if (!suffixes) return formatCommas;
+  if (!suffixes) return this.formatCommas;
   return (visits) => {
     const prefix = d3.formatPrefix(visits);
 
@@ -12,7 +10,7 @@ function formatPrefix(suffixes) {
       ? prefix.scale(visits)
         .toFixed(suffix[1])
         .replace(/\.0+$/, '') + suffix[0]
-      : formatCommas(visits);
+      : this.formatCommas(visits);
   };
 }
 
@@ -21,6 +19,7 @@ function trimZeroes(str) {
 }
 
 export default {
+  formatCommas: d3.format(','),
   formatVisits() {
     return formatPrefix({
       k: ['k', 1], // thousands
