@@ -39,7 +39,7 @@ function formatPercent(p) {
   return p >= 0.1
     ? `${trimZeroes(p.toFixed(1))}%`
     : '< 0.1%';
-};
+}
 
 
 function formatHour(hour) {
@@ -48,7 +48,7 @@ function formatHour(hour) {
 
   const suffix = n >= 12 ? 'p' : 'a';
   return (n % 12 || 12) + suffix;
-};
+}
 
 
 function formatURL(url) {
@@ -878,7 +878,7 @@ function collapseOther(list, threshold) {
     last--;
   }
   for (let i = 0; i < list.length; i++) {
-    if (list[i].key == 'Other') {
+    if (list[i].key === 'Other') {
       otherPresent = true;
       list[i].value += other.value;
     }
@@ -910,7 +910,7 @@ function nestCharts(selection, parentFilter, child) {
     .filter(parentFilter);
 
 
-  const scale = (child.attr('data-scale-to-parent') == 'true');
+  const scale = (child.attr('data-scale-to-parent') === 'true');
 
 
   const share = parent.datum().share;
