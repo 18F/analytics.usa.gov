@@ -193,10 +193,10 @@ const BLOCKS = {
   cities: renderBlock()
     .transform((d) => {
       // remove "(not set) from the data"
-      const city_list = d.data;
-      let city_list_filtered = city_list.filter(c => (c.city != '(not set)') && (c.city != 'zz'));
-      city_list_filtered = addShares(city_list_filtered, d => d.active_visitors);
-      return city_list_filtered.slice(0, 10);
+      const cityList = d.data;
+      let cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
+      cityListFiltered = addShares(cityListFiltered, d => d.active_visitors);
+      return cityListFiltered.slice(0, 10);
     })
     .render(
       barChart()
@@ -207,17 +207,17 @@ const BLOCKS = {
 
   countries: renderBlock()
     .transform((d) => {
-      let total_visits = 0;
-      let us_visits = 0;
+      let totalVisits = 0;
+      let USVisits = 0;
       d.data.forEach((c) => {
-        total_visits += parseInt(c.active_visitors);
+        totalVisits += parseInt(c.active_visitors, 10);
         if (c.country === 'United States') {
-          us_visits = c.active_visitors;
+          USVisits = c.active_visitors;
         }
       });
-      const international = total_visits - us_visits;
+      const international = totalVisits - USVisits;
       const data = {
-        'United States': us_visits,
+        'United States': USVisits,
         'International &amp; Territories': international,
       };
       return addShares(listify(data));
@@ -230,7 +230,7 @@ const BLOCKS = {
   international_visits: renderBlock()
     .transform((d) => {
       let countries = addShares(d.data, d => d.active_visitors);
-      countries = countries.filter(c => c.country != 'United States');
+      countries = countries.filter(c => c.country !== 'United States');
       return countries.slice(0, 15);
     })
     .render(
@@ -474,7 +474,7 @@ function renderBlock() {
       });
 
     function load(d) {
-      if (d._request) d._request.abort();
+      if (d.dataRequest) d.dataRequest.abort();
 
       const that = d3.select(this)
         .classed('loading', true)
@@ -487,7 +487,7 @@ function renderBlock() {
         return console.error('no data source found:', this, d);
       }
 
-      d._request = d3.json(json, (error, data) => {
+      d.dataRequest = d3.json(json, (error, data) => {
         that.classed('loading', false);
         if (error) return that.call(onerror, error);
 
@@ -508,19 +508,19 @@ function renderBlock() {
     dispatch.error(selection, request, message);
   }
 
-  block.render = function (x) {
+  block.render = (x) => {
     if (!arguments.length) return renderer;
     renderer = x;
     return block;
   };
 
-  block.url = function (x) {
+  block.url = (x) => {
     if (!arguments.length) return url;
     url = d3.functor(x);
     return block;
   };
 
-  block.transform = function (x) {
+  block.transform = (x) => {
     if (!arguments.length) return transform;
     transform = d3.functor(x);
     return block;
@@ -552,32 +552,18 @@ function listify(obj) {
 }
 
 function barChart() {
-  let bars = function (d) {
-    return d;
-  };
-
-
-  let value = function (d) {
-    return d.value;
-  };
-
-
+  let bars = d => d;
+  let value = d => d.value;
   let format = String;
-
-
-  let label = function (d) {
-    return d.key;
-  };
-
-
+  let label = d => d.key;
   let scale = null;
 
 
-  const size = function (n) {
+  function size(n) {
     return `${(n || 0).toFixed(1)}%`;
-  };
+  }
 
-  const chart = function (selection) {
+  function chart(selection) {
     const bin = selection.selectAll('.bin')
       .data(bars);
 
@@ -603,36 +589,34 @@ function barChart() {
         : d => size(value(d)));
 
     bin.select('.label').html(label);
-    bin.select('.value').text(function (d, i) {
-      return format.call(this, value(d), d, i);
-    });
-  };
+    bin.select('.value').text((d, i) => format.call(this, value(d), d, i));
+  }
 
-  chart.bars = function (x) {
+  chart.bars = (x) => {
     if (!arguments.length) return bars;
     bars = d3.functor(x);
     return chart;
   };
 
-  chart.label = function (x) {
+  chart.label = (x) => {
     if (!arguments.length) return label;
     label = d3.functor(x);
     return chart;
   };
 
-  chart.value = function (x) {
+  chart.value = (x) => {
     if (!arguments.length) return value;
     value = d3.functor(x);
     return chart;
   };
 
-  chart.format = function (x) {
+  chart.format = (x) => {
     if (!arguments.length) return format;
     format = d3.functor(x);
     return chart;
   };
 
-  chart.scale = function (x) {
+  chart.scale = (x) => {
     if (!arguments.length) return scale;
     scale = d3.functor(x);
     return chart;
@@ -642,20 +626,11 @@ function barChart() {
 }
 
 function timeSeries() {
-  let series = function (d) { return [d]; };
-
-
-  let bars = function (d) { return d; };
-
-
+  let series = d => [d];
+  let bars = d => d;
   const width = 700;
-
-
   const height = 150;
-
-
   const padding = 50;
-
 
   const margin = {
     top: 10,
@@ -664,17 +639,10 @@ function timeSeries() {
     left: padding,
   };
 
-
-  let x = function (d, i) { return i; };
-
-
-  let y = function (d, i) { return d; };
-
-
-  let label = function (d, i) { return i; };
-
-
-  let title = function (d) { return d; };
+  let x = (d, i) => i;
+  let y = (d, i) => d;
+  let label = (d, i) => i;
+  let title = d => d;
 
 
   let xScale = d3.scale.ordinal();
@@ -689,32 +657,19 @@ function timeSeries() {
 
 
   const innerTickSize = yAxis.innerTickSize();
-
-
-  let xAxis;
-
-
   const duration = TRANSITION_DURATION;
 
-  const timeSeries = function (svg) {
-    const left = margin.left;
-
-
+  function timeSeries(svg) {
     const right = width - margin.right;
-
-
-    const top = margin.top;
-
-
     const bottom = height - margin.bottom;
 
-    yScale.range([bottom, top]);
-    xScale.rangeRoundBands([left, right], 0, 0);
+    yScale.range([bottom, margin.top]);
+    xScale.rangeRoundBands([margin.left, right], 0, 0);
 
     svg.attr('viewBox', [0, 0, width, height].join(' '));
 
     element(svg, 'g.axis.y0')
-      .attr('transform', `translate(${[left, 0]})`)
+      .attr('transform', `translate(${[margin.left, 0]})`)
       .attr('aria-hidden', 'true')
       .transition()
       .duration(duration)
@@ -754,7 +709,7 @@ function timeSeries() {
     enter.append('title');
 
     bar
-      .datum(function (d) {
+      .datum((d) => {
         d = d || {};
         d.x = xScale(d.u = x.apply(this, arguments));
         d.y0 = yScale(d.v = y.apply(this, arguments));
@@ -781,57 +736,57 @@ function timeSeries() {
 
     bar.select('title')
       .text(title);
-  };
+  }
 
-  timeSeries.series = function (fs) {
+  timeSeries.series = (fs) => {
     if (!arguments.length) return series;
     series = d3.functor(fs);
     return timeSeries;
   };
 
-  timeSeries.bars = function (fb) {
+  timeSeries.bars = (fb) => {
     if (!arguments.length) return bars;
     bars = d3.functor(fb);
     return timeSeries;
   };
 
-  timeSeries.x = function (fx) {
+  timeSeries.x = (fx) => {
     if (!arguments.length) return x;
     x = d3.functor(fx);
     return timeSeries;
   };
 
-  timeSeries.y = function (fy) {
+  timeSeries.y = (fy) => {
     if (!arguments.length) return y;
     y = d3.functor(fy);
     return timeSeries;
   };
 
-  timeSeries.xScale = function (xs) {
+  timeSeries.xScale = (xs) => {
     if (!arguments.length) return xScale;
     xScale = xs;
     return timeSeries;
   };
 
-  timeSeries.yScale = function (xs) {
+  timeSeries.yScale = (xs) => {
     if (!arguments.length) return yScale;
     yScale = xs;
     return timeSeries;
   };
 
-  timeSeries.yAxis = function (ya) {
+  timeSeries.yAxis = (ya) => {
     if (!arguments.length) return yAxis;
     yAxis = ya;
     return timeSeries;
   };
 
-  timeSeries.label = function (fl) {
+  timeSeries.label = (fl) => {
     if (!arguments.length) return label;
     label = fl;
     return timeSeries;
   };
 
-  timeSeries.title = function (ft) {
+  timeSeries.title = (ft) => {
     if (!arguments.length) return title;
     title = ft;
     return timeSeries;
@@ -856,7 +811,7 @@ function element(selection, selector) {
 }
 
 function addShares(list, value) {
-  if (!value) value = function (d) { return d.value; };
+  if (!value) value = d => d.value;
   const total = d3.sum(list.map(value));
   list.forEach((d) => {
     d.share = value(d) / total;
@@ -875,9 +830,9 @@ function collapseOther(list, threshold) {
     other.value += list[last].value;
     other.children.push(list[last]);
     list.splice(last, 1);
-    last--;
+    last -= 1;
   }
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i += 1) {
     if (list[i].key === 'Other') {
       otherPresent = true;
       list[i].value += other.value;
@@ -909,18 +864,13 @@ function nestCharts(selection, parentFilter, child) {
   const parent = selection.selectAll('.bin')
     .filter(parentFilter);
 
-
   const scale = (child.attr('data-scale-to-parent') === 'true');
-
-
-  const share = parent.datum().share;
-
 
   const bins = child.selectAll('.bin')
   // If the child data should be scaled to be %'s of its parent bin,
   // then multiple each child item's % share by its parent's % share.
     .each((d) => {
-      if (scale) d.share *= share;
+      if (scale) d.share *= parent.datum().share;
     })
     .attr('data-share', d => d.share);
 
@@ -942,10 +892,7 @@ if (window._ie) {
   console.log('If you find a bug or something, please report it at https://github.com/GSA/analytics.usa.gov/issues');
   console.log('Like it, but want a different front-end? The data reporting is its own tool: https://github.com/18f/analytics-reporter');
   console.log('This is an open source, public domain project, and your contributions are very welcome.');
-}
-
-// otherwise, let's get fancy
-else {
+} else { // otherwise, let's get fancy
   const styles = {
     big: 'font-size: 24pt; font-weight: bold;',
     medium: 'font-size: 10pt',
@@ -963,11 +910,11 @@ else {
 const dropDown = document.getElementById('agency-selector');
 
 // Start on change listener to load new page
-d3.select(dropDown).on('change', function () {
+d3.select(dropDown).on('change', () => {
   window.location = d3.select(this).property('value');
 });
 
-for (let j = 0; j < dropDown.options.length; j++) {
+for (let j = 0; j < dropDown.options.length; j += 1) {
   if (dropDown.options[j].value === window.location.pathname) {
     dropDown.selectedIndex = j;
     break;
