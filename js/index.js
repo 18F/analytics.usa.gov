@@ -287,7 +287,7 @@ import { exceptions, titleExceptions } from './lib/exceptions';
           .append('a')
           .attr('target', '_blank')
           .attr('href', d => exceptions[d.domain] || (`http://${d.domain}`))
-          .text(d => title_exceptions[d.domain] || d.domain);
+          .text(d => titleExceptions[d.domain] || d.domain);
       })
       .render(barChart()
         .label(d => d.domain)
@@ -314,7 +314,7 @@ import { exceptions, titleExceptions } from './lib/exceptions';
           .attr('target', '_blank')
           .attr('title', d => d.page_title)
           .attr('href', d => exceptions[d.page] || (`http://${d.page}`))
-          .text(d => title_exceptions[d.page] || d.page_title);
+          .text(d => titleExceptions[d.page] || d.page_title);
       })
       .render(barChart()
         .label(d => d.page_title)
