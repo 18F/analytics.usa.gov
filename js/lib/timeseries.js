@@ -3,20 +3,31 @@ const TRANSITION_DURATION = 500;
 function element(selection, selector) {
   const el = selection.select(selector);
   if (!el.empty()) return el;
+
   const bits = selector.split('.');
   const name = bits[0];
+
 
   const klass = bits.slice(1).join(' ');
   return selection.append(name)
     .attr('class', klass);
 }
 
-export default function timeSeries() {
-  let series = d => [d];
-  let bars = d => d;
+export default function buildtimeSeries() {
+  let series = function (d) { return [d]; };
+
+
+  let bars = function (d) { return d; };
+
+
   const width = 700;
+
+
   const height = 150;
+
+
   const padding = 50;
+
 
   const margin = {
     top: 10,
@@ -25,14 +36,24 @@ export default function timeSeries() {
     left: padding,
   };
 
-  let x = (d, i) => i;
-  let y = (d, i) => d;
-  let label = (d, i) => i;
-  let title = d => d;
+
+  let x = function (d, i) { return i; };
+
+
+  let y = function (d, i) { return d; };
+
+
+  let label = function (d, i) { return i; };
+
+
+  let title = function (d) { return d; };
 
 
   let xScale = d3.scale.ordinal();
+
+
   let yScale = d3.scale.linear();
+
 
   let yAxis = d3.svg.axis()
     .scale(yScale)
@@ -42,7 +63,7 @@ export default function timeSeries() {
   const innerTickSize = yAxis.innerTickSize();
   const duration = TRANSITION_DURATION;
 
-  function timeSeries(svg) {
+  const timeSeries = function (svg) {
     const right = width - margin.right;
     const bottom = height - margin.bottom;
 
@@ -57,7 +78,7 @@ export default function timeSeries() {
       .transition()
       .duration(duration)
       .call(yAxis
-      // .innerTickSize(left - right)
+        // .innerTickSize(left - right)
         .orient('left'));
 
     element(svg, 'g.axis.y1')
@@ -92,7 +113,7 @@ export default function timeSeries() {
     enter.append('title');
 
     bar
-      .datum((d) => {
+      .datum(function (d) {
         d = d || {};
         d.x = xScale(d.u = x.apply(this, arguments));
         d.y0 = yScale(d.v = y.apply(this, arguments));
@@ -112,64 +133,64 @@ export default function timeSeries() {
 
     bar.select('.label')
       .attr('text-anchor', 'middle')
-    // .attr("alignment-baseline", "before-edge")
+      // .attr("alignment-baseline", "before-edge")
       .attr('dy', 10)
       .attr('dx', barWidth / 2)
       .text(label);
 
     bar.select('title')
       .text(title);
-  }
+  };
 
-  timeSeries.series = (fs) => {
+  timeSeries.series = function (fs) {
     if (!arguments.length) return series;
     series = d3.functor(fs);
     return timeSeries;
   };
 
-  timeSeries.bars = (fb) => {
+  timeSeries.bars = function (fb) {
     if (!arguments.length) return bars;
     bars = d3.functor(fb);
     return timeSeries;
   };
 
-  timeSeries.x = (fx) => {
+  timeSeries.x = function (fx) {
     if (!arguments.length) return x;
     x = d3.functor(fx);
     return timeSeries;
   };
 
-  timeSeries.y = (fy) => {
+  timeSeries.y = function (fy) {
     if (!arguments.length) return y;
     y = d3.functor(fy);
     return timeSeries;
   };
 
-  timeSeries.xScale = (xs) => {
+  timeSeries.xScale = function (xs) {
     if (!arguments.length) return xScale;
     xScale = xs;
     return timeSeries;
   };
 
-  timeSeries.yScale = (xs) => {
+  timeSeries.yScale = function (xs) {
     if (!arguments.length) return yScale;
     yScale = xs;
     return timeSeries;
   };
 
-  timeSeries.yAxis = (ya) => {
+  timeSeries.yAxis = function (ya) {
     if (!arguments.length) return yAxis;
     yAxis = ya;
     return timeSeries;
   };
 
-  timeSeries.label = (fl) => {
+  timeSeries.label = function (fl) {
     if (!arguments.length) return label;
     label = fl;
     return timeSeries;
   };
 
-  timeSeries.title = (ft) => {
+  timeSeries.title = function (ft) {
     if (!arguments.length) return title;
     title = ft;
     return timeSeries;

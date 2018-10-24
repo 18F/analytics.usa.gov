@@ -74,4 +74,37 @@ export default {
     return d3.entries(obj)
       .sort((a, b) => d3.descending(+a.value, +b.value));
   },
+
+  addShares(list, value) {
+    if (!value) value = function (d) { return d.value; };
+    const total = d3.sum(list.map(value));
+    list.forEach((d) => {
+      d.share = value(d) / total;
+    });
+
+    return list;
+  },
+
+  collapseOther(list, threshold) {
+    let otherPresent = false;
+    const other = { key: 'Other', value: 0, children: [] };
+
+    let last = list.length - 1;
+    while (last > 0 && list[last].value < threshold) {
+      other.value += list[last].value;
+      other.children.push(list[last]);
+      list.splice(last, 1);
+      last -= 1;
+    }
+    for (let i = 0; i < list.length; i += 1) {
+      if (list[i].key === 'Other') {
+        otherPresent = true;
+        list[i].value += other.value;
+      }
+    }
+    if (!otherPresent) {
+      list.push(other);
+    }
+    return list;
+  },
 };

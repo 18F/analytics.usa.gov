@@ -1,16 +1,25 @@
 export default function barChart() {
-  let bars = d => d;
-  let value = d => d.value;
+  let bars = function (d) {
+    return d;
+  };
+
+  let value = function (d) {
+    return d.value;
+  };
+
   let format = String;
-  let label = d => d.key;
+
+  let label = function (d) {
+    return d.key;
+  };
+
   let scale = null;
 
-
-  function size(n) {
+  const size = function (n) {
     return `${(n || 0).toFixed(1)}%`;
-  }
+  };
 
-  function chart(selection) {
+  const chart = function (selection) {
     const bin = selection.selectAll('.bin')
       .data(bars);
 
@@ -26,46 +35,46 @@ export default function barChart() {
       .attr('class', 'bar')
       .style('width', '0%');
 
-    const setScale = scale
+    const componentScale = scale
       ? scale.call(selection, bin.data().map(value))
       : null;
-      // console.log("scale:", setScale ? setScale.domain() : "(none)");
+    // console.log("scale:", componentScale ? componentScale.domain() : "(none)");
     bin.select('.bar')
-      .style('width', setScale
-        ? d => size(setScale(value(d)))
+      .style('width', componentScale
+        ? d => size(componentScale(value(d)))
         : d => size(value(d)));
 
     bin.select('.label').html(label);
-    bin.select('.value').text((d, i) => format.call(this, value(d), d, i));
+    bin.select('.value').text(function (d, i) {
+      return format.call(this, value(d), d, i);
+    });
+  };
 
-    return bin;
-  }
-
-  chart.bars = (x) => {
+  chart.bars = function (x) {
     if (!arguments.length) return bars;
     bars = d3.functor(x);
     return chart;
   };
 
-  chart.label = (x) => {
+  chart.label = function (x) {
     if (!arguments.length) return label;
     label = d3.functor(x);
     return chart;
   };
 
-  chart.value = (x) => {
+  chart.value = function (x) {
     if (!arguments.length) return value;
     value = d3.functor(x);
     return chart;
   };
 
-  chart.format = (x) => {
+  chart.format = function (x) {
     if (!arguments.length) return format;
     format = d3.functor(x);
     return chart;
   };
 
-  chart.scale = (x) => {
+  chart.scale = function (x) {
     if (!arguments.length) return scale;
     scale = d3.functor(x);
     return chart;
