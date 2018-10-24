@@ -20,19 +20,16 @@ function formatPrefix(suffixes) {
   };
 }
 
-
 const formatVisits = formatPrefix({
   k: ['k', 1], // thousands
   M: ['m', 1], // millions
   G: ['b', 2], // billions
 });
 
-
 const formatBigNumber = formatPrefix({
   M: [' million', 1], // millions
   G: [' billion', 2], // billions
 });
-
 
 function trimZeroes(str) {
   return str.replace(/\.0+$/, '');
@@ -44,15 +41,11 @@ function formatPercent(p) {
     : '< 0.1%';
 }
 
-
 function formatHour(hour) {
   const n = +hour;
-
-
   const suffix = n >= 12 ? 'p' : 'a';
   return (n % 12 || 12) + suffix;
 }
-
 
 function formatURL(url) {
   let index = 0;
@@ -164,7 +157,7 @@ function renderBlock() {
       .each(load)
       .filter((d) => {
         d.refresh = +this.getAttribute('data-refresh');
-        return !isNaN(d.refresh) && d.refresh > 0;
+        return !Number.isNaN(d.refresh) && d.refresh > 0;
       })
       .each((d) => {
         const that = d3.select(this);
@@ -195,6 +188,40 @@ function renderBlock() {
   return d3.rebind(block, dispatch, 'on');
 }
 
+function addShares(list, value) {
+  if (!value) value = d => d.value;
+  const total = d3.sum(list.map(value));
+  list.forEach((d) => {
+    d.share = value(d) / total;
+  });
+
+  return list;
+}
+
+function collapseOther(list, threshold) {
+  let otherPresent = false;
+  const other = { key: 'Other', value: 0, children: [] };
+
+
+  let last = list.length - 1;
+  while (last > 0 && list[last].value < threshold) {
+    other.value += list[last].value;
+    other.children.push(list[last]);
+    list.splice(last, 1);
+    last -= 1;
+  }
+  for (let i = 0; i < list.length; i += 1) {
+    if (list[i].key === 'Other') {
+      otherPresent = true;
+      list[i].value += other.value;
+    }
+  }
+  if (!otherPresent) {
+    list.push(other);
+  }
+  return list;
+}
+
 /*
    * Define block renderers for each of the different data types.
    */
@@ -215,7 +242,7 @@ const BLOCKS = {
         d.visits = +d.visits;
       });
 
-      const y = function (d) { return d.visits; };
+      const y = d => d.visits;
 
 
       const series = timeSeries()
@@ -350,7 +377,7 @@ const BLOCKS = {
         .value(d => d.share * 100)
         .format(formatPercent),
     ),
-  international_visits: renderBlock()
+  internationalVisits: renderBlock()
     .transform((d) => {
       let countries = addShares(d.data, d => d.active_visitors);
       countries = countries.filter(c => c.country !== 'United States');
@@ -387,7 +414,7 @@ const BLOCKS = {
     .on('render', (selection, data) => {
       // turn the labels into links
       selection.selectAll('.label')
-        .each(function (d) {
+        .each((d) => {
           d.text = this.innerText;
         })
         .html('')
@@ -441,10 +468,8 @@ const PROMISES = {};
    * 3. if a renderer exists, calling it on the selection
    */
 d3.selectAll('*[data-source]')
-  .each(function () {
+  .each(() => {
     const blockId = this.getAttribute('data-block');
-
-
     const block = BLOCKS[blockId];
     if (!block) {
       return console.warn('no block registered for: %s', blockId);
@@ -456,13 +481,52 @@ d3.selectAll('*[data-source]')
       block.on('error.promise', reject);
     });
 
-    d3.select(this)
+    return d3.select(this)
       .datum({
         source: this.getAttribute('data-source'),
         block: blockId,
       })
       .call(block);
   });
+
+function whenRendered(blockIds, callback) {
+  const promises = blockIds.map(id => PROMISES[id]);
+  return Q.all(promises).then(callback);
+}
+
+/*
+   * nested chart helper function:
+   *
+   * 1. finds the selection's `.bin` child with data matching the parentFilter
+   *    function (the "parent bin")
+   * 2. determines that bin's share of the total (if `data-scale-to-parent` is "true")
+   * 3. grabs all of the child `.bin`s of the child selection and updates their
+   *    share (by multiplying it by the parent's)
+   * 4. updates the `.bar` width  and `.value` text for each child bin
+   * 5. moves the child node into the parent bin
+   */
+function nestCharts(selection, parentFilter, child) {
+  const parent = selection.selectAll('.bin')
+    .filter(parentFilter);
+
+  const scale = (child.attr('data-scale-to-parent') === 'true');
+
+  const bins = child.selectAll('.bin')
+    // If the child data should be scaled to be %'s of its parent bin,
+    // then multiple each child item's % share by its parent's % share.
+    .each((d) => {
+      if (scale) d.share *= parent.datum().share;
+    })
+    .attr('data-share', d => d.share);
+
+  // XXX we *could* call the renderer again here, but this works, so...
+  bins.select('.bar')
+    .style('width', d => `${(d.share * 100).toFixed(1)}%`);
+  bins.select('.value')
+    .text(d => formatPercent(d.share * 100));
+
+  parent.node().appendChild(child.node());
+}
 
 // nest the windows chart inside the OS chart once they're both rendered
 whenRendered(['os', 'windows'], () => {
@@ -478,7 +542,7 @@ whenRendered(['browsers', 'ie'], () => {
 
 // nest the international countries chart inside the "International"
 // chart once they're both rendered
-whenRendered(['countries', 'international_visits'], () => {
+whenRendered(['countries', 'internationalVisits'], () => {
   d3.select('#chart_us')
     .call(nestCharts, d => d.key === 'International &amp; Territories', d3.select('#chart_countries'));
 });
@@ -487,14 +551,11 @@ whenRendered(['countries', 'international_visits'], () => {
    * A very primitive, aria-based tab system!
    */
 d3.selectAll("*[role='tablist']")
-  .each(function () {
+  .each(() => {
     // grab all of the tabs and panels
     const tabs = d3.select(this).selectAll("*[role='tab'][href]")
-      .datum(function () {
-        const href = this.href;
-
-
-        const target = document.getElementById(href.split('#').pop());
+      .datum(() => {
+        const target = document.getElementById(this.href.split('#').pop());
         return {
           selected: this.getAttribute('aria-selected') === 'true',
           target,
@@ -547,3 +608,5 @@ for (let j = 0; j < dropDown.options.length; j += 1) {
     break;
   }
 }
+
+consolePrint(window);
