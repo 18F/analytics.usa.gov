@@ -37,6 +37,8 @@ export default function barChart() {
 
     bin.select('.label').html(label);
     bin.select('.value').text((d, i) => format.call(this, value(d), d, i));
+
+    return bin;
   }
 
   chart.bars = (x) => {

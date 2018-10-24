@@ -1,79 +1,8 @@
 import { exceptions, titleExceptions } from './lib/exceptions';
-import * as barChart from './lib/barchart';
+import barChart from './lib/barchart';
 import * as timeSeries from './lib/timeseries';
 import * as consolePrint from './lib/consoleprint';
-
-// common parsing and formatting functions
-const formatCommas = d3.format(',');
-
-function formatPrefix(suffixes) {
-  if (!suffixes) return formatCommas;
-  return (visits) => {
-    const prefix = d3.formatPrefix(visits);
-
-    const suffix = suffixes[prefix.symbol];
-    return prefix && suffix
-      ? prefix.scale(visits)
-        .toFixed(suffix[1])
-        .replace(/\.0+$/, '') + suffix[0]
-      : formatCommas(visits);
-  };
-}
-
-const formatVisits = formatPrefix({
-  k: ['k', 1], // thousands
-  M: ['m', 1], // millions
-  G: ['b', 2], // billions
-});
-
-const formatBigNumber = formatPrefix({
-  M: [' million', 1], // millions
-  G: [' billion', 2], // billions
-});
-
-function trimZeroes(str) {
-  return str.replace(/\.0+$/, '');
-}
-
-function formatPercent(p) {
-  return p >= 0.1
-    ? `${trimZeroes(p.toFixed(1))}%`
-    : '< 0.1%';
-}
-
-function formatHour(hour) {
-  const n = +hour;
-  const suffix = n >= 12 ? 'p' : 'a';
-  return (n % 12 || 12) + suffix;
-}
-
-function formatURL(url) {
-  let index = 0;
-  // find & remove protocol (http, ftp, etc.) and get domain
-  if (url.indexOf('://') > -1) {
-    index = 2;
-  }
-  // find & remove port number
-  return url
-    .split('/')[index]
-    .split(':')[0]
-    .replace(new RegExp('%20', 'g'), ' ');
-}
-
-function formatFile(url) {
-  const splitUrls = url.split('/');
-  const domain = splitUrls[splitUrls.length - 1];
-  return domain.replace(new RegExp('%20', 'g'), ' ');
-}
-
-/*
-   * listify an Object into its key/value pairs (entries) and sorting by
-   * numeric value descending.
-   */
-function listify(obj) {
-  return d3.entries(obj)
-    .sort((a, b) => d3.descending(+a.value, +b.value));
-}
+import helpers from './lib/helpers';
 
 /*
    * our block renderer is a d3 selection manipulator that does a bunch of
@@ -231,11 +160,10 @@ const BLOCKS = {
   realtime: renderBlock()
     .render((selection, data) => {
       const totals = data.data[0];
-      selection.text(formatCommas(+totals.active_visitors));
+      selection.text(helpers.formatCommas(+totals.active_visitors));
     }),
 
   today: renderBlock()
-    .transform(data => data)
     .render((svg, data) => {
       const days = data.data;
       days.forEach((d) => {
@@ -248,10 +176,10 @@ const BLOCKS = {
       const series = timeSeries()
         .series([data.data])
         .y(y)
-        .label(d => formatHour(d.hour))
-        .title(d => `${formatCommas(d.visits)
+        .label(d => helpers.formatHour(d.hour))
+        .title(d => `${helpers.formatCommas(d.visits)
         } visits during the hour of ${
-          formatHour(d.hour)}m`);
+          helpers.formatHour(d.hour)}m`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
@@ -260,7 +188,7 @@ const BLOCKS = {
         .domain([0, d3.max(days, y)]);
 
       series.yAxis()
-        .tickFormat(formatVisits);
+        .tickFormat(helpers.formatVisits);
 
       svg.call(series);
     }),
@@ -268,7 +196,7 @@ const BLOCKS = {
   // the OS block is a stack layout
   os: renderBlock()
     .transform((d) => {
-      const values = listify(d.totals.os);
+      const values = helpers.listify(d.totals.os);
 
 
       const total = d3.sum(values.map(d => d.value));
@@ -276,12 +204,12 @@ const BLOCKS = {
     })
     .render(barChart()
       .value(d => d.share * 100)
-      .format(formatPercent)),
+      .format(helpers.formatPercent)),
 
   // the windows block is a stack layout
   windows: renderBlock()
     .transform((d) => {
-      const values = listify(d.totals.os_version);
+      const values = helpers.listify(d.totals.os_version);
 
 
       const total = d3.sum(values.map(d => d.value));
@@ -289,17 +217,17 @@ const BLOCKS = {
     })
     .render(barChart()
       .value(d => d.share * 100)
-      .format(formatPercent)),
+      .format(helpers.formatPercent)),
 
   // the devices block is a stack layout
   devices: renderBlock()
     .transform((d) => {
-      const devices = listify(d.totals.devices);
+      const devices = helpers.listify(d.totals.devices);
       return addShares(devices);
     })
     .render(barChart()
       .value(d => d.share * 100)
-      .format(formatPercent))
+      .format(helpers.formatPercent))
     .on('render', (selection, data) => {
       /*
          * XXX this is an optimization. Rather than loading
@@ -308,13 +236,13 @@ const BLOCKS = {
          */
       const total = d3.sum(data.map(d => d.value));
       d3.select('#total_visitors')
-        .text(formatBigNumber(total));
+        .text(helpers.formatBigNumber(total));
     }),
 
   // the browsers block is a table
   browsers: renderBlock()
     .transform((d) => {
-      const values = listify(d.totals.browser);
+      const values = helpers.listify(d.totals.browser);
 
 
       const total = d3.sum(values.map(d => d.value));
@@ -322,13 +250,13 @@ const BLOCKS = {
     })
     .render(barChart()
       .value(d => d.share * 100)
-      .format(formatPercent)),
+      .format(helpers.formatPercent)),
 
   // the IE block is a stack, but with some extra work done to transform the
   // data beforehand to match the expected object format
   ie: renderBlock()
     .transform((d) => {
-      const values = listify(d.totals.ie_version);
+      const values = helpers.listify(d.totals.ie_version);
 
 
       const total = d3.sum(values.map(d => d.value));
@@ -337,7 +265,7 @@ const BLOCKS = {
     .render(
       barChart()
         .value(d => d.share * 100)
-        .format(formatPercent),
+        .format(helpers.formatPercent),
     ),
 
   cities: renderBlock()
@@ -352,7 +280,7 @@ const BLOCKS = {
       barChart()
         .value(d => d.share * 100)
         .label(d => d.city)
-        .format(formatPercent),
+        .format(helpers.formatPercent),
     ),
 
   countries: renderBlock()
@@ -370,12 +298,12 @@ const BLOCKS = {
         'United States': USVisits,
         'International &amp; Territories': international,
       };
-      return addShares(listify(data));
+      return addShares(helpers.listify(data));
     })
     .render(
       barChart()
         .value(d => d.share * 100)
-        .format(formatPercent),
+        .format(helpers.formatPercent),
     ),
   internationalVisits: renderBlock()
     .transform((d) => {
@@ -387,7 +315,7 @@ const BLOCKS = {
       barChart()
         .value(d => d.share * 100)
         .label(d => d.country)
-        .format(formatPercent),
+        .format(helpers.formatPercent),
     ),
 
   'top-downloads': renderBlock()
@@ -397,15 +325,15 @@ const BLOCKS = {
         .value(d => +d.total_events)
         .label(d => [
           '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
-          '<span class="domain" >', formatURL(d.page), '</span> ',
+          '<span class="domain" >', helpers.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
           '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
-          formatFile(d.event_label), '</a></span>',
+          helpers.helpersformatFile(d.event_label), '</a></span>',
         ].join(''))
         .scale(values => d3.scale.linear()
           .domain([0, 1, d3.max(values)])
           .rangeRound([0, 1, 100]))
-        .format(formatCommas),
+        .format(helpers.formatCommas),
     ),
 
   // the top pages block(s)
@@ -429,7 +357,7 @@ const BLOCKS = {
       .scale(values => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))
-      .format(formatCommas)),
+      .format(helpers.formatCommas)),
 
   // the top pages block(s)
   'top-pages-realtime': renderBlock()
@@ -437,7 +365,7 @@ const BLOCKS = {
     .on('render', (selection, data) => {
       // turn the labels into links
       selection.selectAll('.label')
-        .each(function (d) {
+        .each((d) => {
           d.text = this.innerText;
         })
         .html('')
@@ -453,7 +381,7 @@ const BLOCKS = {
       .scale(values => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))
-      .format(formatCommas)),
+      .format(helpers.formatCommas)),
 
 };
 
@@ -523,7 +451,7 @@ function nestCharts(selection, parentFilter, child) {
   bins.select('.bar')
     .style('width', d => `${(d.share * 100).toFixed(1)}%`);
   bins.select('.value')
-    .text(d => formatPercent(d.share * 100));
+    .text(d => helpers.formatPercent(d.share * 100));
 
   parent.node().appendChild(child.node());
 }
