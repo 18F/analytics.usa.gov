@@ -1,5 +1,11 @@
-const config = {
-  "extends": "airbnb-base"
-};
-
-module.exports = config;
+{
+  "extends": "airbnb-base",
+  "globals": {
+    "window": false,
+    "document": false,
+    "isNaN": false
+  },
+  "rules": {
+    "no-param-reassign": "off"
+  }
+}
