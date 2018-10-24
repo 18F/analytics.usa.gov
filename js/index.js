@@ -1,5 +1,6 @@
 import { exceptions, titleExceptions } from './lib/exceptions';
 
+
 // common parsing and formatting functions
 const formatCommas = d3.format(',');
 
@@ -71,6 +72,119 @@ function formatFile(url) {
 }
 
 const TRANSITION_DURATION = 500;
+
+/*
+   * our block renderer is a d3 selection manipulator that does a bunch of
+   * stuff:
+   *
+   * 1. it knows how to get the URL for a block by either looking at the
+   *    `source` key of its bound data _or_ the node's data-source attribute.
+   * 2. it can be configured to transform the loaded data using a function
+   * 3. it has a configurable rendering function that gets called on the first
+   *    child of matching the `.data` selector.
+   * 4. it dispatches events "loading", "load", "render" and "error" events to
+   *    notify us of the state of data.
+   *
+   * Example:
+   *
+   * ```js
+   * var block = renderBlock()
+   *   .render(function(selection, data) {
+   *     selection.text(JSON.stringify(data));
+   *   });
+   * d3.select("#foo")
+   *   .call(block);
+   * ```
+   */
+function renderBlock() {
+  function url(d) { return d && d.source; }
+  function renderer() { }
+  let transform = Object;
+
+  const dispatch = d3.dispatch('loading', 'load', 'error', 'render');
+
+  function onerror(selection, request) {
+    const message = request.responseText;
+
+    selection.classed('error', true)
+      .select('.error-message')
+      .text(message);
+
+    dispatch.error(selection, request, message);
+  }
+
+  function render(selection, data) {
+    // populate meta elements
+    selection.select('.meta-name')
+      .text(d => d.meta.name);
+    selection.select('.meta-desc')
+      .text(d => d.meta.description);
+
+    selection.select('.data')
+      .datum(data)
+      .call(renderer, data);
+    dispatch.render(selection, data);
+  }
+
+  function load(d) {
+    if (d.dataRequest) d.dataRequest.abort();
+
+    const that = d3.select(this)
+      .classed('loading', true)
+      .classed('loaded error', false);
+
+    dispatch.loading(selection, d);
+
+    const json = url.apply(this, arguments);
+    if (!json) {
+      return console.error('no data source found:', this, d);
+    }
+
+    d.dataRequest = d3.json(json, (error, data) => {
+      that.classed('loading', false);
+      if (error) return that.call(onerror, error);
+
+      that.classed('loaded', true);
+      dispatch.load(selection, data);
+      that.call(render, d.transFormedData = transform(data));
+    });
+  }
+
+  function block(selection) {
+    selection
+      .each(load)
+      .filter((d) => {
+        d.refresh = +this.getAttribute('data-refresh');
+        return !isNaN(d.refresh) && d.refresh > 0;
+      })
+      .each((d) => {
+        const that = d3.select(this);
+        d.interval = setInterval(() => {
+          that.each(load);
+        }, d.refresh * 1000);
+      });
+  }
+
+  block.render = (x) => {
+    if (!arguments.length) return renderer;
+    renderer = x;
+    return block;
+  };
+
+  block.url = (x) => {
+    if (!arguments.length) return url;
+    url = d3.functor(x);
+    return block;
+  };
+
+  block.transform = (x) => {
+    if (!arguments.length) return transform;
+    transform = d3.functor(x);
+    return block;
+  };
+
+  return d3.rebind(block, dispatch, 'on');
+}
 
 /*
    * Define block renderers for each of the different data types.
@@ -362,7 +476,8 @@ whenRendered(['browsers', 'ie'], () => {
     .call(nestCharts, d => d.key === 'Internet Explorer', d3.select('#chart_ie'));
 });
 
-// nest the international countries chart inside the "International" chart once they're both rendered
+// nest the international countries chart inside the "International"
+// chart once they're both rendered
 whenRendered(['countries', 'international_visits'], () => {
   d3.select('#chart_us')
     .call(nestCharts, d => d.key === 'International &amp; Territories', d3.select('#chart_countries'));
@@ -423,126 +538,6 @@ d3.selectAll("*[role='tablist']")
   });
 
 /*
-   * our block renderer is a d3 selection manipulator that does a bunch of
-   * stuff:
-   *
-   * 1. it knows how to get the URL for a block by either looking at the
-   *    `source` key of its bound data _or_ the node's data-source attribute.
-   * 2. it can be configured to transform the loaded data using a function
-   * 3. it has a configurable rendering function that gets called on the first
-   *    child of matching the `.data` selector.
-   * 4. it dispatches events "loading", "load", "render" and "error" events to
-   *    notify us of the state of data.
-   *
-   * Example:
-   *
-   * ```js
-   * var block = renderBlock()
-   *   .render(function(selection, data) {
-   *     selection.text(JSON.stringify(data));
-   *   });
-   * d3.select("#foo")
-   *   .call(block);
-   * ```
-   */
-function renderBlock() {
-  let url = function (d) {
-    return d && d.source;
-  };
-
-
-  let transform = Object;
-
-
-  let renderer = function () { };
-
-
-  const dispatch = d3.dispatch('loading', 'load', 'error', 'render');
-
-  const block = function (selection) {
-    selection
-      .each(load)
-      .filter(function (d) {
-        d.refresh = +this.getAttribute('data-refresh');
-        return !isNaN(d.refresh) && d.refresh > 0;
-      })
-      .each(function (d) {
-        const that = d3.select(this);
-        d.interval = setInterval(() => {
-          that.each(load);
-        }, d.refresh * 1000);
-      });
-
-    function load(d) {
-      if (d.dataRequest) d.dataRequest.abort();
-
-      const that = d3.select(this)
-        .classed('loading', true)
-        .classed('loaded error', false);
-
-      dispatch.loading(selection, d);
-
-      const json = url.apply(this, arguments);
-      if (!json) {
-        return console.error('no data source found:', this, d);
-      }
-
-      d.dataRequest = d3.json(json, (error, data) => {
-        that.classed('loading', false);
-        if (error) return that.call(onerror, error);
-
-        that.classed('loaded', true);
-        dispatch.load(selection, data);
-        that.call(render, d._data = transform(data));
-      });
-    }
-  };
-
-  function onerror(selection, request) {
-    const message = request.responseText;
-
-    selection.classed('error', true)
-      .select('.error-message')
-      .text(message);
-
-    dispatch.error(selection, request, message);
-  }
-
-  block.render = (x) => {
-    if (!arguments.length) return renderer;
-    renderer = x;
-    return block;
-  };
-
-  block.url = (x) => {
-    if (!arguments.length) return url;
-    url = d3.functor(x);
-    return block;
-  };
-
-  block.transform = (x) => {
-    if (!arguments.length) return transform;
-    transform = d3.functor(x);
-    return block;
-  };
-
-  function render(selection, data) {
-    // populate meta elements
-    selection.select('.meta-name')
-      .text(d => d.meta.name);
-    selection.select('.meta-desc')
-      .text(d => d.meta.description);
-
-    selection.select('.data')
-      .datum(data)
-      .call(renderer, data);
-    dispatch.render(selection, data);
-  }
-
-  return d3.rebind(block, dispatch, 'on');
-}
-
-/*
    * listify an Object into its key/value pairs (entries) and sorting by
    * numeric value descending.
    */
@@ -579,13 +574,13 @@ function barChart() {
       .attr('class', 'bar')
       .style('width', '0%');
 
-    const _scale = scale
+    const setScale = scale
       ? scale.call(selection, bin.data().map(value))
       : null;
-      // console.log("scale:", _scale ? _scale.domain() : "(none)");
+      // console.log("scale:", setScale ? setScale.domain() : "(none)");
     bin.select('.bar')
-      .style('width', _scale
-        ? d => size(_scale(value(d)))
+      .style('width', setScale
+        ? d => size(setScale(value(d)))
         : d => size(value(d)));
 
     bin.select('.label').html(label);
