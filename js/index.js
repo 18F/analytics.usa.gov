@@ -1,5 +1,7 @@
 import { exceptions, titleExceptions } from './lib/exceptions';
-
+import * as barChart from './lib/barchart';
+import * as timeSeries from './lib/timeseries';
+import * as consolePrint from './lib/consoleprint';
 
 // common parsing and formatting functions
 const formatCommas = d3.format(',');
@@ -71,7 +73,14 @@ function formatFile(url) {
   return domain.replace(new RegExp('%20', 'g'), ' ');
 }
 
-const TRANSITION_DURATION = 500;
+/*
+   * listify an Object into its key/value pairs (entries) and sorting by
+   * numeric value descending.
+   */
+function listify(obj) {
+  return d3.entries(obj)
+    .sort((a, b) => d3.descending(+a.value, +b.value));
+}
 
 /*
    * our block renderer is a d3 selection manipulator that does a bunch of
@@ -366,12 +375,9 @@ const BLOCKS = {
           '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
           formatFile(d.event_label), '</a></span>',
         ].join(''))
-        .scale((values) => {
-          const max = d3.max(values);
-          return d3.scale.linear()
-            .domain([0, 1, d3.max(values)])
-            .rangeRound([0, 1, 100]);
-        })
+        .scale(values => d3.scale.linear()
+          .domain([0, 1, d3.max(values)])
+          .rangeRound([0, 1, 100]))
         .format(formatCommas),
     ),
 
@@ -393,12 +399,9 @@ const BLOCKS = {
     .render(barChart()
       .label(d => d.domain)
       .value(d => +d.visits)
-      .scale((values) => {
-        const max = d3.max(values);
-        return d3.scale.linear()
-          .domain([0, 1, d3.max(values)])
-          .rangeRound([0, 1, 100]);
-      })
+      .scale(values => d3.scale.linear()
+        .domain([0, 1, d3.max(values)])
+        .rangeRound([0, 1, 100]))
       .format(formatCommas)),
 
   // the top pages block(s)
@@ -420,12 +423,9 @@ const BLOCKS = {
     .render(barChart()
       .label(d => d.page_title)
       .value(d => +d.active_visitors)
-      .scale((values) => {
-        const max = d3.max(values);
-        return d3.scale.linear()
-          .domain([0, 1, d3.max(values)])
-          .rangeRound([0, 1, 100]);
-      })
+      .scale(values => d3.scale.linear()
+        .domain([0, 1, d3.max(values)])
+        .rangeRound([0, 1, 100]))
       .format(formatCommas)),
 
 };
@@ -502,404 +502,36 @@ d3.selectAll("*[role='tablist']")
         };
       });
 
-
-    const panels = d3.select(this.parentNode)
-      .selectAll("*[role='tabpanel']");
-
-    // when a tab is clicked, update the panels
-    tabs.on('click', function (d) {
-      d3.event.preventDefault();
-      tabs.each((tab) => { tab.selected = false; });
-      d.selected = true;
-
-      update();
-
-      // track in google analytics
-      const link = this.href;
-      const text = this.text;
-      ga('send', 'event', 'Site Navigation', link, text);
-    });
-
-    // update them to start
-    update();
-
     function update() {
       let selected;
       tabs.attr('aria-selected', (tab) => {
         if (tab.selected) selected = tab.target;
         return tab.selected;
       });
-      panels.attr('aria-hidden', function (panel) {
+      const panels = d3.select(this.parentNode)
+        .selectAll("*[role='tabpanel']");
+
+      panels.attr('aria-hidden', (panel) => {
         panel.selected = selected === this;
         return !panel.selected;
       })
         .style('display', d => (d.selected ? null : 'none'));
     }
+
+    // when a tab is clicked, update the panels
+    tabs.on('click', (d) => {
+      d3.event.preventDefault();
+      tabs.each((tab) => { tab.selected = false; });
+      d.selected = true;
+      update();
+
+      // track in google analytics
+      ga('send', 'event', 'Site Navigation', this.href, this.text);
+    });
+
+    // update them to start
+    update();
   });
-
-/*
-   * listify an Object into its key/value pairs (entries) and sorting by
-   * numeric value descending.
-   */
-function listify(obj) {
-  return d3.entries(obj)
-    .sort((a, b) => d3.descending(+a.value, +b.value));
-}
-
-function barChart() {
-  let bars = d => d;
-  let value = d => d.value;
-  let format = String;
-  let label = d => d.key;
-  let scale = null;
-
-
-  function size(n) {
-    return `${(n || 0).toFixed(1)}%`;
-  }
-
-  function chart(selection) {
-    const bin = selection.selectAll('.bin')
-      .data(bars);
-
-    bin.exit().remove();
-
-    const enter = bin.enter().append('div')
-      .attr('class', 'bin');
-    enter.append('div')
-      .attr('class', 'label');
-    enter.append('div')
-      .attr('class', 'value');
-    enter.append('div')
-      .attr('class', 'bar')
-      .style('width', '0%');
-
-    const setScale = scale
-      ? scale.call(selection, bin.data().map(value))
-      : null;
-      // console.log("scale:", setScale ? setScale.domain() : "(none)");
-    bin.select('.bar')
-      .style('width', setScale
-        ? d => size(setScale(value(d)))
-        : d => size(value(d)));
-
-    bin.select('.label').html(label);
-    bin.select('.value').text((d, i) => format.call(this, value(d), d, i));
-  }
-
-  chart.bars = (x) => {
-    if (!arguments.length) return bars;
-    bars = d3.functor(x);
-    return chart;
-  };
-
-  chart.label = (x) => {
-    if (!arguments.length) return label;
-    label = d3.functor(x);
-    return chart;
-  };
-
-  chart.value = (x) => {
-    if (!arguments.length) return value;
-    value = d3.functor(x);
-    return chart;
-  };
-
-  chart.format = (x) => {
-    if (!arguments.length) return format;
-    format = d3.functor(x);
-    return chart;
-  };
-
-  chart.scale = (x) => {
-    if (!arguments.length) return scale;
-    scale = d3.functor(x);
-    return chart;
-  };
-
-  return chart;
-}
-
-function timeSeries() {
-  let series = d => [d];
-  let bars = d => d;
-  const width = 700;
-  const height = 150;
-  const padding = 50;
-
-  const margin = {
-    top: 10,
-    right: padding,
-    bottom: 25,
-    left: padding,
-  };
-
-  let x = (d, i) => i;
-  let y = (d, i) => d;
-  let label = (d, i) => i;
-  let title = d => d;
-
-
-  let xScale = d3.scale.ordinal();
-
-
-  let yScale = d3.scale.linear();
-
-
-  let yAxis = d3.svg.axis()
-    .scale(yScale)
-    .ticks(5);
-
-
-  const innerTickSize = yAxis.innerTickSize();
-  const duration = TRANSITION_DURATION;
-
-  function timeSeries(svg) {
-    const right = width - margin.right;
-    const bottom = height - margin.bottom;
-
-    yScale.range([bottom, margin.top]);
-    xScale.rangeRoundBands([margin.left, right], 0, 0);
-
-    svg.attr('viewBox', [0, 0, width, height].join(' '));
-
-    element(svg, 'g.axis.y0')
-      .attr('transform', `translate(${[margin.left, 0]})`)
-      .attr('aria-hidden', 'true')
-      .transition()
-      .duration(duration)
-      .call(yAxis
-        // .innerTickSize(left - right)
-        .orient('left'));
-
-    element(svg, 'g.axis.y1')
-      .attr('transform', `translate(${[right, 0]})`)
-      .attr('aria-hidden', 'true')
-      .transition()
-      .duration(duration)
-      .call(yAxis
-        .innerTickSize(innerTickSize)
-        .orient('right'));
-
-    const g = svg.selectAll('.series')
-      .data(series);
-    g.exit().remove();
-    g.enter().append('g')
-      .attr('class', 'series');
-
-    const barWidth = xScale.rangeBand();
-
-    const bar = g.selectAll('.bar')
-      .data(bars);
-    bar.exit().remove();
-    const enter = bar.enter().append('g')
-      .attr('class', 'bar')
-      .attr('tabindex', 0);
-    enter.append('rect')
-      .attr('width', barWidth)
-      .attr('y', 0)
-      .attr('height', 0);
-    enter.append('text')
-      .attr('class', 'label');
-    enter.append('title');
-
-    bar
-      .datum((d) => {
-        d = d || {};
-        d.x = xScale(d.u = x.apply(this, arguments));
-        d.y0 = yScale(d.v = y.apply(this, arguments));
-        d.y1 = bottom;
-        d.height = d.y1 - d.y0;
-        return d;
-      })
-      .attr('aria-label', title)
-      .attr('transform', d => `translate(${[d.x, d.y1]})`);
-
-    bar.select('rect')
-      .attr('width', barWidth)
-      .transition()
-      .duration(duration)
-      .attr('y', d => -d.height)
-      .attr('height', d => d.height);
-
-    bar.select('.label')
-      .attr('text-anchor', 'middle')
-    // .attr("alignment-baseline", "before-edge")
-      .attr('dy', 10)
-      .attr('dx', barWidth / 2)
-      .text(label);
-
-    bar.select('title')
-      .text(title);
-  }
-
-  timeSeries.series = (fs) => {
-    if (!arguments.length) return series;
-    series = d3.functor(fs);
-    return timeSeries;
-  };
-
-  timeSeries.bars = (fb) => {
-    if (!arguments.length) return bars;
-    bars = d3.functor(fb);
-    return timeSeries;
-  };
-
-  timeSeries.x = (fx) => {
-    if (!arguments.length) return x;
-    x = d3.functor(fx);
-    return timeSeries;
-  };
-
-  timeSeries.y = (fy) => {
-    if (!arguments.length) return y;
-    y = d3.functor(fy);
-    return timeSeries;
-  };
-
-  timeSeries.xScale = (xs) => {
-    if (!arguments.length) return xScale;
-    xScale = xs;
-    return timeSeries;
-  };
-
-  timeSeries.yScale = (xs) => {
-    if (!arguments.length) return yScale;
-    yScale = xs;
-    return timeSeries;
-  };
-
-  timeSeries.yAxis = (ya) => {
-    if (!arguments.length) return yAxis;
-    yAxis = ya;
-    return timeSeries;
-  };
-
-  timeSeries.label = (fl) => {
-    if (!arguments.length) return label;
-    label = fl;
-    return timeSeries;
-  };
-
-  timeSeries.title = (ft) => {
-    if (!arguments.length) return title;
-    title = ft;
-    return timeSeries;
-  };
-
-  return timeSeries;
-}
-
-function element(selection, selector) {
-  const el = selection.select(selector);
-  if (!el.empty()) return el;
-
-  const bits = selector.split('.');
-
-
-  const name = bits[0];
-
-
-  const klass = bits.slice(1).join(' ');
-  return selection.append(name)
-    .attr('class', klass);
-}
-
-function addShares(list, value) {
-  if (!value) value = d => d.value;
-  const total = d3.sum(list.map(value));
-  list.forEach((d) => {
-    d.share = value(d) / total;
-  });
-
-  return list;
-}
-
-function collapseOther(list, threshold) {
-  let otherPresent = false;
-  const other = { key: 'Other', value: 0, children: [] };
-
-
-  let last = list.length - 1;
-  while (last > 0 && list[last].value < threshold) {
-    other.value += list[last].value;
-    other.children.push(list[last]);
-    list.splice(last, 1);
-    last -= 1;
-  }
-  for (let i = 0; i < list.length; i += 1) {
-    if (list[i].key === 'Other') {
-      otherPresent = true;
-      list[i].value += other.value;
-    }
-  }
-  if (!otherPresent) {
-    list.push(other);
-  }
-  return list;
-}
-
-function whenRendered(blockIds, callback) {
-  const promises = blockIds.map(id => PROMISES[id]);
-  return Q.all(promises).then(callback);
-}
-
-/*
-   * nested chart helper function:
-   *
-   * 1. finds the selection's `.bin` child with data matching the parentFilter
-   *    function (the "parent bin")
-   * 2. determines that bin's share of the total (if `data-scale-to-parent` is "true")
-   * 3. grabs all of the child `.bin`s of the child selection and updates their
-   *    share (by multiplying it by the parent's)
-   * 4. updates the `.bar` width  and `.value` text for each child bin
-   * 5. moves the child node into the parent bin
-   */
-function nestCharts(selection, parentFilter, child) {
-  const parent = selection.selectAll('.bin')
-    .filter(parentFilter);
-
-  const scale = (child.attr('data-scale-to-parent') === 'true');
-
-  const bins = child.selectAll('.bin')
-  // If the child data should be scaled to be %'s of its parent bin,
-  // then multiple each child item's % share by its parent's % share.
-    .each((d) => {
-      if (scale) d.share *= parent.datum().share;
-    })
-    .attr('data-share', d => d.share);
-
-  // XXX we *could* call the renderer again here, but this works, so...
-  bins.select('.bar')
-    .style('width', d => `${(d.share * 100).toFixed(1)}%`);
-  bins.select('.value')
-    .text(d => formatPercent(d.share * 100));
-
-  parent.node().appendChild(child.node());
-}
-
-// friendly console message
-
-// plain text for IE
-if (window._ie) {
-  console.log("Hi! Please poke around to your heart's content.");
-  console.log('');
-  console.log('If you find a bug or something, please report it at https://github.com/GSA/analytics.usa.gov/issues');
-  console.log('Like it, but want a different front-end? The data reporting is its own tool: https://github.com/18f/analytics-reporter');
-  console.log('This is an open source, public domain project, and your contributions are very welcome.');
-} else { // otherwise, let's get fancy
-  const styles = {
-    big: 'font-size: 24pt; font-weight: bold;',
-    medium: 'font-size: 10pt',
-    medium_bold: 'font-size: 10pt; font-weight: bold',
-    medium_link: 'font-size: 10pt; font-weight: bold; color: #18f',
-  };
-  console.log("%cHi! Please poke around to your heart's content.", styles.big);
-  console.log(' ');
-  console.log('%cIf you find a bug or something, please report it over at %chttps://github.com/GSA/analytics.usa.gov/issues', styles.medium, styles.medium_link);
-  console.log('%cLike it, but want a different front-end? The data reporting is its own tool: %chttps://github.com/18f/analytics-reporter', styles.medium, styles.medium_link);
-  console.log('%cThis is an open source, public domain project, and your contributions are very welcome.', styles.medium);
-}
 
 // Set the dropdown
 const dropDown = document.getElementById('agency-selector');
