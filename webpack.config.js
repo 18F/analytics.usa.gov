@@ -8,6 +8,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'assets'),
   },
+  watchOptions: {
+    ignored: '/node_modules/',
+  },
   module: {
     rules: [
       {
