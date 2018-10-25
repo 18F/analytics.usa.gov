@@ -1,5 +1,7 @@
 
-// import * as timeSeries from './lib/timeseries';
+import d3 from 'd3';
+import * as Q from 'q';
+
 import consolePrint from './lib/consoleprint';
 import helpers from './lib/helpers';
 import BLOCKS from './lib/blocks';

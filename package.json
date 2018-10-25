@@ -10,7 +10,7 @@
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch=true",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint ./js/index.js",
+    "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
   },
   "repository": {
@@ -36,5 +36,9 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "d3": "^3.5.7",
+    "q": "^1.5.1"
   }
 }

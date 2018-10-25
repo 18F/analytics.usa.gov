@@ -1,3 +1,5 @@
+import d3 from 'd3';
+
 export default function barChart() {
   let bars = function (d) {
     return d;

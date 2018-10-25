@@ -1,3 +1,4 @@
+import d3 from 'd3';
 // common parsing and formatting functions
 
 function formatPrefix(suffixes) {

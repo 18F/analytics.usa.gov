@@ -1,3 +1,5 @@
+import d3 from 'd3';
+
 import renderBlock from './renderblock';
 import { exceptions, titleExceptions } from './exceptions';
 import barChart from './barchart';

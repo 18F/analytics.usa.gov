@@ -1,3 +1,4 @@
+import d3 from 'd3';
 /*
    * our block renderer is a d3 selection manipulator that does a bunch of
    * stuff:

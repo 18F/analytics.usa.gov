@@ -1,3 +1,5 @@
+import d3 from 'd3';
+
 const TRANSITION_DURATION = 500;
 
 function element(selection, selector) {
