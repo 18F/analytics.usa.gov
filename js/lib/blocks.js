@@ -193,7 +193,7 @@ export default {
   // the top pages block(s)
   'top-pages': renderBlock()
     .transform(d => d.data)
-    .on('render', (selection, data) => {
+    .on('render', (selection) => {
       // turn the labels into links
       selection.selectAll('.label')
         .each(function (d) {
@@ -216,7 +216,7 @@ export default {
   // the top pages block(s)
   'top-pages-realtime': renderBlock()
     .transform(d => d.data)
-    .on('render', (selection, data) => {
+    .on('render', (selection) => {
       // turn the labels into links
       selection.selectAll('.label')
         .each(function (d) {

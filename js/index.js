@@ -7,6 +7,45 @@ import BLOCKS from './lib/blocks';
 // store a promise for each block
 const PROMISES = {};
 
+function whenRendered(blockIds, callback) {
+  const promises = blockIds.map(id => PROMISES[id]);
+  return Q.all(promises).then(callback);
+}
+
+/*
+   * nested chart helper function:
+   *
+   * 1. finds the selection's `.bin` child with data matching the parentFilter
+   *    function (the "parent bin")
+   * 2. determines that bin's share of the total (if `data-scale-to-parent` is "true")
+   * 3. grabs all of the child `.bin`s of the child selection and updates their
+   *    share (by multiplying it by the parent's)
+   * 4. updates the `.bar` width  and `.value` text for each child bin
+   * 5. moves the child node into the parent bin
+   */
+function nestCharts(selection, parentFilter, child) {
+  const parent = selection.selectAll('.bin')
+    .filter(parentFilter);
+
+  const scale = (child.attr('data-scale-to-parent') === 'true');
+
+  const bins = child.selectAll('.bin')
+    // If the child data should be scaled to be %'s of its parent bin,
+    // then multiple each child item's % share by its parent's % share.
+    .each((d) => {
+      if (scale) d.share *= parent.datum().share;
+    })
+    .attr('data-share', d => d.share);
+
+  // XXX we *could* call the renderer again here, but this works, so...
+  bins.select('.bar')
+    .style('width', d => `${(d.share * 100).toFixed(1)}%`);
+  bins.select('.value')
+    .text(d => helpers.formatPercent(d.share * 100));
+
+  parent.node().appendChild(child.node());
+}
+
 /*
    * Now, initialize all of the blocks by:
    *
@@ -75,6 +114,19 @@ d3.selectAll("*[role='tablist']")
     const panels = d3.select(this.parentNode)
       .selectAll("*[role='tabpanel']");
 
+    function update() {
+      let selected;
+      tabs.attr('aria-selected', (tab) => {
+        if (tab.selected) selected = tab.target;
+        return tab.selected;
+      });
+      panels.attr('aria-hidden', function (panel) {
+        panel.selected = selected === this;
+        return !panel.selected;
+      })
+        .style('display', d => (d.selected ? null : 'none'));
+    }
+
     // when a tab is clicked, update the panels
     tabs.on('click', function (d) {
       d3.event.preventDefault();
@@ -89,59 +141,7 @@ d3.selectAll("*[role='tablist']")
 
     // update them to start
     update();
-
-    function update() {
-      let selected;
-      tabs.attr('aria-selected', (tab) => {
-        if (tab.selected) selected = tab.target;
-        return tab.selected;
-      });
-      panels.attr('aria-hidden', function (panel) {
-        panel.selected = selected === this;
-        return !panel.selected;
-      })
-        .style('display', d => (d.selected ? null : 'none'));
-    }
   });
-
-function whenRendered(blockIds, callback) {
-  const promises = blockIds.map(id => PROMISES[id]);
-  return Q.all(promises).then(callback);
-}
-
-/*
-   * nested chart helper function:
-   *
-   * 1. finds the selection's `.bin` child with data matching the parentFilter
-   *    function (the "parent bin")
-   * 2. determines that bin's share of the total (if `data-scale-to-parent` is "true")
-   * 3. grabs all of the child `.bin`s of the child selection and updates their
-   *    share (by multiplying it by the parent's)
-   * 4. updates the `.bar` width  and `.value` text for each child bin
-   * 5. moves the child node into the parent bin
-   */
-function nestCharts(selection, parentFilter, child) {
-  const parent = selection.selectAll('.bin')
-    .filter(parentFilter);
-
-  const scale = (child.attr('data-scale-to-parent') === 'true');
-
-  const bins = child.selectAll('.bin')
-    // If the child data should be scaled to be %'s of its parent bin,
-    // then multiple each child item's % share by its parent's % share.
-    .each((d) => {
-      if (scale) d.share *= parent.datum().share;
-    })
-    .attr('data-share', d => d.share);
-
-  // XXX we *could* call the renderer again here, but this works, so...
-  bins.select('.bar')
-    .style('width', d => `${(d.share * 100).toFixed(1)}%`);
-  bins.select('.value')
-    .text(d => helpers.formatPercent(d.share * 100));
-
-  parent.node().appendChild(child.node());
-}
 
 consolePrint(window);
 

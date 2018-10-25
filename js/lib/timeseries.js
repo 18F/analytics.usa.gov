@@ -40,7 +40,7 @@ export default function buildtimeSeries() {
   let x = function (d, i) { return i; };
 
 
-  let y = function (d, i) { return d; };
+  let y = function (d) { return d; };
 
 
   let label = function (d, i) { return i; };
