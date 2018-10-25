@@ -11,11 +11,18 @@
   "rules": {
     "no-param-reassign": "off",
     "prefer-rest-params": "warn",
-    "no-console": "off",
     "no-shadow": "warn",
     "consistent-return": "warn",
     "no-unused-vars": "warn",
     "no-func-assign": "warn",
+    "no-console": [
+      "error",
+      { "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
     "no-use-before-define": "off",
     "func-names": "off"
   }

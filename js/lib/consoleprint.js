@@ -1,4 +1,4 @@
-/* eslint no-underscore-dangle: "off" */
+/* eslint no-underscore-dangle: "off", no-console: "off" */
 
 // friendly console message
 export default function (window) {
