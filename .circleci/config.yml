@@ -20,8 +20,8 @@ jobs:
           name: install npm dependencies
           command: |
             npm install
-            npm install -g eslint
-            npm install -g webpack
+            sudo npm install -g eslint
+            sudo npm install -g webpack
       - run:
           name: lint javascript
           command: npm run lint
