@@ -27,7 +27,7 @@ jobs:
           command: npm run lint
       - run:
           name: bundle for production javascript
-          command: npm run build
+          command: npm run build-prod
       - run:
           name: build site
           command: bundle exec jekyll build
