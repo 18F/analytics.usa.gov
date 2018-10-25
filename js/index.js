@@ -17,8 +17,6 @@ const PROMISES = {};
 d3.selectAll('*[data-source]')
   .each(function () {
     const blockId = this.getAttribute('data-block');
-
-
     const block = BLOCKS[blockId];
     if (!block) {
       return console.warn('no block registered for: %s', blockId);
@@ -30,7 +28,7 @@ d3.selectAll('*[data-source]')
       block.on('error.promise', reject);
     });
 
-    d3.select(this)
+    return d3.select(this)
       .datum({
         source: this.getAttribute('data-source'),
         block: blockId,

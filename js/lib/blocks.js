@@ -53,7 +53,7 @@ export default {
       const values = helpers.listify(d.totals.os);
 
 
-      const total = d3.sum(values.map(d => d.value));
+      const total = d3.sum(values.map(() => d.value));
       return helpers.addShares(helpers.collapseOther(values, total * 0.01));
     })
     .render(barChart()
@@ -66,7 +66,7 @@ export default {
       const values = helpers.listify(d.totals.os_version);
 
 
-      const total = d3.sum(values.map(d => d.value));
+      const total = d3.sum(values.map(() => d.value));
       return helpers.addShares(helpers.collapseOther(values, total * 0.001)); // % of Windows
     })
     .render(barChart()
@@ -99,7 +99,7 @@ export default {
       const values = helpers.listify(d.totals.browser);
 
 
-      const total = d3.sum(values.map(d => d.value));
+      const total = d3.sum(values.map(() => d.value));
       return helpers.addShares(helpers.collapseOther(values, total * 0.01));
     })
     .render(barChart()
@@ -113,7 +113,7 @@ export default {
       const values = helpers.listify(d.totals.ie_version);
 
 
-      const total = d3.sum(values.map(d => d.value));
+      const total = d3.sum(values.map(() => d.value));
       return helpers.addShares(helpers.collapseOther(values, total * 0.0001)); // % of IE
     })
     .render(
@@ -127,7 +127,7 @@ export default {
       // remove "(not set) from the data"
       const cityList = d.data;
       let cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
-      cityListFiltered = helpers.addShares(cityListFiltered, d => d.active_visitors);
+      cityListFiltered = helpers.addShares(cityListFiltered, () => d.active_visitors);
       return cityListFiltered.slice(0, 10);
     })
     .render(
@@ -161,7 +161,7 @@ export default {
     ),
   international_visits: renderBlock()
     .transform((d) => {
-      let countries = helpers.addShares(d.data, d => d.active_visitors);
+      let countries = helpers.addShares(d.data, () => d.active_visitors);
       countries = countries.filter(c => c.country !== 'United States');
       return countries.slice(0, 15);
     })
