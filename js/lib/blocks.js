@@ -44,7 +44,7 @@ export default {
         .domain([0, d3.max(days, y)]);
 
       series.yAxis()
-        .tickFormat(helpers.formatVisits);
+        .tickFormat(helpers.formatVisits());
 
       svg.call(series);
     }),
@@ -60,7 +60,7 @@ export default {
     })
     .render(barChart()
       .value(d => d.share * 100)
-      .format(helpers.formatPercent)),
+      .format(helpers.formatPercent())),
 
   // the windows block is a stack layout
   windows: renderBlock()
@@ -121,7 +121,7 @@ export default {
     .render(
       barChart()
         .value(d => d.share * 100)
-        .format(helpers.formatPercent),
+        .format(helpers.formatPercent()),
     ),
 
   cities: renderBlock()
