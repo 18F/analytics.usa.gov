@@ -35,7 +35,9 @@ function nestCharts(selection, parentFilter, child) {
     // If the child data should be scaled to be %'s of its parent bin,
     // then multiple each child item's % share by its parent's % share.
     .each((d) => {
-      if (scale) d.proportion *= parent.datum().proportion;
+      console.warn('parentDatum ', parent.datum().proportion);
+      console.warn('d.prop', d.proportion);
+      if (scale) d.proportion *= (parent.datum().proportion / 100);
     })
     .attr('data-share', d => d.proportion);
 
@@ -43,7 +45,7 @@ function nestCharts(selection, parentFilter, child) {
   bins.select('.bar')
     .style('width', d => `${(d.proportion).toFixed(1)}%`);
   bins.select('.value')
-    .text(d => formatters.formatPercent(d.proportion));
+    .text(d => formatters.floatToPercent(d.proportion));
 
   parent.node().appendChild(child.node());
 }

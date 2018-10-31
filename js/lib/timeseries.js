@@ -17,17 +17,9 @@ function element(selection, selector) {
 
 export default function buildtimeSeries() {
   let series = function (d) { return [d]; };
-
-
   let bars = function (d) { return d; };
-
-
   const width = 700;
-
-
   const height = 150;
-
-
   const padding = 50;
 
 
@@ -40,23 +32,11 @@ export default function buildtimeSeries() {
 
 
   let x = function (d, i) { return i; };
-
-
   let y = function (d) { return d; };
-
-
   let label = function (d, i) { return i; };
-
-
   let title = function (d) { return d; };
-
-
   let xScale = d3.scale.ordinal();
-
-
   let yScale = d3.scale.linear();
-
-
   let yAxis = d3.svg.axis()
     .scale(yScale)
     .ticks(5);

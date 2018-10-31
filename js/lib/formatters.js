@@ -1,8 +1,6 @@
 import d3 from 'd3';
 // common parsing and formatting functions
 
-const DISPLAY_THRESHOLD = 1;
-
 /*
  * @function trimZeros
  * removes additional zeros from big number
@@ -11,22 +9,21 @@ function trimZeroes(str) {
   return str.replace(/\.0+$/, '');
 }
 
-
 /*
- * @function formatCommas
+ * @function addCommas
  * wrapper for the d3.format to put in commas
  */
-const formatCommas = d3.format(',');
+const addCommas = d3.format(',');
 
 function formatPrefix(suffixes) {
-  if (!suffixes) return formatCommas;
+  if (!suffixes) return addCommas;
   return function (visits) {
     const prefix = d3.formatPrefix(visits);
     const suffix = suffixes[prefix.symbol];
     return prefix && suffix
       ? prefix.scale(visits)
         .toFixed(suffix[1])
-        .replace(/\.0+$/, '') + suffix[0] : formatCommas(visits);
+        .replace(/\.0+$/, '') + suffix[0] : addCommas(visits);
   };
 }
 
@@ -38,7 +35,7 @@ function formatVisits() {
   });
 }
 
-function formatBigNumber(total) {
+function readableBigNumber(total) {
   const formatter = formatPrefix({
     M: [' million', 1], // millions
     G: [' billion', 2], // billions
@@ -46,7 +43,7 @@ function formatBigNumber(total) {
   return formatter(total);
 }
 
-function formatPercent(p) {
+function floatToPercent(p) {
   return p >= 0.1
     ? `${trimZeroes(p.toFixed(1))}%`
     : '< 0.1%';
@@ -80,11 +77,11 @@ function formatFile(url) {
 
 export default {
   trimZeroes,
-  formatCommas,
+  addCommas,
   formatVisits,
-  formatBigNumber,
+  readableBigNumber,
   formatHour,
-  formatPercent,
+  floatToPercent,
   formatURL,
   formatFile,
 };

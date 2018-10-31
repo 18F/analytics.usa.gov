@@ -68,12 +68,12 @@ function consolidateSmallValues(proportionsList, threshold) {
 }
 
 /*
- * @function tranformToTopPercents
+ * @function toTopPercents
  * @parameter dataSet - the data to be tranformed
  * @parameter desiredKey - the key that we are interested
  * @return a closure of consolidated smaller date from the proportions
  */
-function tranformToTopPercents(dataSet, desiredKey) {
+function toTopPercents(dataSet, desiredKey) {
   const values = listify(dataSet.totals[desiredKey]);
   const proportions = findProportionsOfMetricFromValue(values);
   return consolidateSmallValues(proportions, DISPLAY_THRESHOLD);
@@ -83,7 +83,7 @@ export default {
   listify,
   findProportionsOfMetric,
   findProportionsOfMetricFromValue,
-  tranformToTopPercents,
+  toTopPercents,
   extractArrayValue,
   consolidateSmallValues,
 };
