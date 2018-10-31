@@ -1,10 +1,21 @@
 import d3 from 'd3';
 // common parsing and formatting functions
 
+const DISPLAY_THRESHOLD = 1;
+
+/*
+ * @function trimZeros
+ * removes additional zeros from big number
+ */
 function trimZeroes(str) {
   return str.replace(/\.0+$/, '');
 }
 
+
+/*
+ * @function formatCommas
+ * wrapper for the d3.format to put in commas
+ */
 const formatCommas = d3.format(',');
 
 function formatPrefix(suffixes) {
@@ -66,48 +77,6 @@ function formatFile(url) {
   return domain.replace(new RegExp('%20', 'g'), ' ');
 }
 
-/*
- * listify an Object into its key/value pairs (entries) and sorting by
- * numeric value descending.
- */
-function listify(obj) {
-  return d3.entries(obj)
-    .sort((a, b) => d3.descending(+a.value, +b.value));
-}
-
-function addShares(list, value) {
-  if (!value) value = function (d) { return d.value; };
-  const total = d3.sum(list.map(value));
-  list.forEach((d) => {
-    d.share = value(d) / total;
-  });
-
-  return list;
-}
-
-function collapseOther(list, threshold) {
-  const modifiedList = list;
-  let otherPresent = false;
-  const other = { key: 'Other', value: 0, children: [] };
-
-  let last = modifiedList.length - 1;
-  while (last > 0 && modifiedList[last].value < threshold) {
-    other.value += modifiedList[last].value;
-    other.children.push(modifiedList[last]);
-    modifiedList.splice(last, 1);
-    last -= 1;
-  }
-  for (let i = 0; i < modifiedList.length; i += 1) {
-    if (modifiedList[i].key === 'Other') {
-      otherPresent = true;
-      modifiedList[i].value += other.value;
-    }
-  }
-  if (!otherPresent) {
-    modifiedList.push(other);
-  }
-  return modifiedList;
-}
 
 export default {
   trimZeroes,
@@ -118,7 +87,4 @@ export default {
   formatPercent,
   formatURL,
   formatFile,
-  listify,
-  addShares,
-  collapseOther,
 };

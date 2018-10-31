@@ -4,18 +4,20 @@ import renderBlock from './renderblock';
 import { exceptions, titleExceptions } from './exceptions';
 import barChart from './barchart';
 import buildTimeSeries from './timeseries';
-import helpers from './helpers';
+import formatters from './formatters';
+import transformers from './transformers';
 
 /*
    * Define block renderers for each of the different data types.
    */
+const DISPLAY_THRESHOLD = 1;
 export default {
 
   // the realtime block is just `data.totals.active_visitors` formatted with commas
   realtime: renderBlock()
     .render((selection, data) => {
       const totals = data.data[0];
-      selection.text(helpers.formatCommas(+totals.active_visitors));
+      selection.text(formatters.formatCommas(+totals.active_visitors));
     }),
 
   today: renderBlock()
@@ -32,10 +34,10 @@ export default {
       const series = buildTimeSeries()
         .series([data.data])
         .y(y)
-        .label(d => helpers.formatHour(d.hour))
-        .title(d => `${helpers.formatCommas(d.visits)
+        .label(d => formatters.formatHour(d.hour))
+        .title(d => `${formatters.formatCommas(d.visits)
         } visits during the hour of ${
-          helpers.formatHour(d.hour)}m`);
+          formatters.formatHour(d.hour)}m`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
@@ -44,46 +46,41 @@ export default {
         .domain([0, d3.max(days, y)]);
 
       series.yAxis()
-        .tickFormat(helpers.formatVisits());
+        .tickFormat(formatters.formatVisits());
 
       svg.call(series);
     }),
 
   // the OS block is a stack layout
   os: renderBlock()
-    .transform((d) => {
-      const values = helpers.listify(d.totals.os);
-
-
-      const total = d3.sum(values.map(() => d.value));
-      return helpers.addShares(helpers.collapseOther(values, total * 0.01));
-    })
+    .transform(d => transformers.tranformToTopPercents(d, 'os'))
     .render(barChart()
-      .value(d => d.share * 100)
-      .format(helpers.formatPercent())),
+      .value(d => d.proportion)
+      .format(formatters.formatPercent)),
 
   // the windows block is a stack layout
   windows: renderBlock()
     .transform((d) => {
-      const values = helpers.listify(d.totals.os_version);
-
-
-      const total = d3.sum(values.map(() => d.value));
-      return helpers.addShares(helpers.collapseOther(values, total * 0.001)); // % of Windows
+      console.warn(d);
+      return transformers.tranformToTopPercents(d, 'os_version');
     })
     .render(barChart()
-      .value(d => d.share * 100)
-      .format(helpers.formatPercent)),
+      .value((d) => {
+        console.warn(d);
+        console.warn(d.proportion);
+        return d.proportion;
+      })
+      .format(formatters.formatPercent)),
 
   // the devices block is a stack layout
   devices: renderBlock()
     .transform((d) => {
-      const devices = helpers.listify(d.totals.devices);
-      return helpers.addShares(devices);
+      const devices = transformers.listify(d.totals.devices);
+      return transformers.findProportionsOfMetricFromValue(devices);
     })
     .render(barChart()
-      .value(d => d.share * 100)
-      .format(helpers.formatPercent))
+      .value(d => d.proportion)
+      .format(formatters.formatPercent))
     .on('render', (selection, data) => {
       /*
          * XXX this is an optimization. Rather than loading
@@ -92,51 +89,42 @@ export default {
          */
       const total = d3.sum(data.map(d => d.value));
       d3.select('#total_visitors')
-        .text(helpers.formatBigNumber(total));
+        .text(formatters.formatBigNumber(total));
     }),
 
   // the browsers block is a table
   browsers: renderBlock()
-    .transform((d) => {
-      const values = helpers.listify(d.totals.browser);
-
-
-      const total = d3.sum(values.map(() => d.value));
-      return helpers.addShares(helpers.collapseOther(values, total * 0.01));
-    })
+    .transform(d => transformers.tranformToTopPercents(d, 'browser'))
     .render(barChart()
-      .value(d => d.share * 100)
-      .format(helpers.formatPercent)),
+      .value(d => d.proportion)
+      .format(formatters.formatPercent)),
 
   // the IE block is a stack, but with some extra work done to transform the
   // data beforehand to match the expected object format
   ie: renderBlock()
-    .transform((d) => {
-      const values = helpers.listify(d.totals.ie_version);
-
-
-      const total = d3.sum(values.map(() => d.value));
-      return helpers.addShares(helpers.collapseOther(values, total * 0.0001)); // % of IE
-    })
+    .transform(d => transformers.tranformToTopPercents(d, 'ie_version'))
     .render(
       barChart()
-        .value(d => d.share * 100)
-        .format(helpers.formatPercent()),
+        .value(d => d.proportion)
+        .format(formatters.formatPercent),
     ),
 
   cities: renderBlock()
     .transform((d) => {
       // remove "(not set) from the data"
       const cityList = d.data;
-      let cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
-      cityListFiltered = helpers.addShares(cityListFiltered, () => d.active_visitors);
-      return cityListFiltered.slice(0, 10);
+      const cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
+      const proportions = transformers.findProportionsOfMetric(
+        cityListFiltered,
+        list => list.map(x => x.active_visitors),
+      );
+      return proportions.slice(0, 10);
     })
     .render(
       barChart()
-        .value(d => d.share * 100)
+        .value(d => d.proportion)
         .label(d => d.city)
-        .format(helpers.formatPercent),
+        .format(formatters.formatPercent),
     ),
 
   countries: renderBlock()
@@ -154,24 +142,29 @@ export default {
         'United States': USVisits,
         'International &amp; Territories': international,
       };
-      return helpers.addShares(helpers.listify(data));
+      return formatters.findProportionsOfMetricFromValue(formatters.listify(data));
     })
     .render(
       barChart()
-        .value(d => d.share * 100)
-        .format(helpers.formatPercent),
+        .value(d => d.proportion)
+        .format(formatters.formatPercent),
     ),
   international_visits: renderBlock()
     .transform((d) => {
-      let countries = helpers.addShares(d.data, () => d.active_visitors);
-      countries = countries.filter(c => c.country !== 'United States');
-      return countries.slice(0, 15);
+      let values = formatters.findProportionsOfMetric(
+        d.data,
+        list => list.map(x => x.active_visitors),
+      );
+      console.warn('int visits:');
+      console.warn(values.slice(0, 15));
+      values = values.filter(c => c.country !== 'United States');
+      return values.slice(0, 15);
     })
     .render(
       barChart()
-        .value(d => d.share * 100)
-        .label(d => d.country)
-        .format(helpers.formatPercent),
+        .value(d => d.proportion)
+        .format(formatters.formatPercent)
+        .label(d => d.country),
     ),
 
   'top-downloads': renderBlock()
@@ -181,15 +174,15 @@ export default {
         .value(d => +d.total_events)
         .label(d => [
           '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
-          '<span class="domain" >', helpers.formatURL(d.page), '</span> ',
+          '<span class="domain" >', formatters.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
           '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
-          helpers.formatFile(d.event_label), '</a></span>',
+          formatters.formatFile(d.event_label), '</a></span>',
         ].join(''))
         .scale(values => d3.scale.linear()
           .domain([0, 1, d3.max(values)])
           .rangeRound([0, 1, 100]))
-        .format(helpers.formatCommas),
+        .format(formatters.formatCommas),
     ),
 
   // the top pages block(s)
@@ -213,7 +206,7 @@ export default {
       .scale(values => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))
-      .format(helpers.formatCommas)),
+      .format(formatters.formatCommas)),
 
   // the top pages block(s)
   'top-pages-realtime': renderBlock()
@@ -237,6 +230,6 @@ export default {
       .scale(values => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))
-      .format(helpers.formatCommas)),
+      .format(formatters.formatCommas)),
 
 };

@@ -3,7 +3,7 @@ import d3 from 'd3';
 import * as Q from 'q';
 
 import consolePrint from './lib/consoleprint';
-import helpers from './lib/helpers';
+import formatters from './lib/formatters';
 import BLOCKS from './lib/blocks';
 
 // store a promise for each block
@@ -35,15 +35,15 @@ function nestCharts(selection, parentFilter, child) {
     // If the child data should be scaled to be %'s of its parent bin,
     // then multiple each child item's % share by its parent's % share.
     .each((d) => {
-      if (scale) d.share *= parent.datum().share;
+      if (scale) d.proportion *= parent.datum().proportion;
     })
-    .attr('data-share', d => d.share);
+    .attr('data-share', d => d.proportion);
 
   // XXX we *could* call the renderer again here, but this works, so...
   bins.select('.bar')
-    .style('width', d => `${(d.share * 100).toFixed(1)}%`);
+    .style('width', d => `${(d.proportion).toFixed(1)}%`);
   bins.select('.value')
-    .text(d => helpers.formatPercent(d.share * 100));
+    .text(d => formatters.formatPercent(d.proportion));
 
   parent.node().appendChild(child.node());
 }
