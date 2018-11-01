@@ -1,4 +1,7 @@
 import d3 from 'd3';
+import barChart from './barchart';
+import formatters from './formatters';
+import transformers from './transformers';
 /*
    * our block renderer is a d3 selection manipulator that does a bunch of
    * stuff:
@@ -14,7 +17,7 @@ import d3 from 'd3';
    * Example:
    *
    * ```js
-   * var block = renderBlock()
+   * var block = loadAndRender()
    *   .render(function(selection, data) {
    *     selection.text(JSON.stringify(data));
    *   });
@@ -22,7 +25,7 @@ import d3 from 'd3';
    *   .call(block);
    * ```
    */
-export default function renderBlock() {
+function loadAndRender() {
   let url = function (d) {
     return d && d.source;
   };
@@ -117,3 +120,32 @@ export default function renderBlock() {
 
   return d3.rebind(block, dispatch, 'on');
 }
+
+function buildBarChart(transformMethod) {
+  return loadAndRender()
+    .transform(transformMethod)
+    .render(barChart()
+      .value(d => d.proportion)
+      .format(formatters.floatToPercent));
+}
+
+function buildBarChartWithLabel(transformMethod, labelKey) {
+  return loadAndRender()
+    .transform(transformMethod)
+    .render(barChart()
+      .value(d => d.proportion)
+      .format(formatters.floatToPercent)
+      .label(d => d[labelKey]));
+}
+
+function buildBarBasicChart(desiredKey) {
+  const method = d => transformers.toTopPercents(d, desiredKey);
+  return buildBarChart(method);
+}
+
+export default {
+  loadAndRender,
+  buildBarChart,
+  buildBarBasicChart,
+  buildBarChartWithLabel,
+};

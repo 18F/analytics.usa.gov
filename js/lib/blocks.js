@@ -13,13 +13,13 @@ import transformers from './transformers';
 export default {
 
   // the realtime block is just `data.totals.active_visitors` formatted with commas
-  realtime: renderBlock()
+  realtime: renderBlock.loadAndRender()
     .render((selection, data) => {
       const totals = data.data[0];
       selection.text(formatters.addCommas(+totals.active_visitors));
     }),
 
-  today: renderBlock()
+  today: renderBlock.loadAndRender()
     .transform(data => data)
     .render((svg, data) => {
       const days = data.data;
@@ -51,21 +51,13 @@ export default {
     }),
 
   // the OS block is a stack layout
-  os: renderBlock()
-    .transform(d => transformers.toTopPercents(d, 'os'))
-    .render(barChart()
-      .value(d => d.proportion)
-      .format(formatters.floatToPercent)),
+  os: renderBlock.buildBarBasicChart('os'),
 
   // the windows block is a stack layout
-  windows: renderBlock()
-    .transform(d => transformers.toTopPercents(d, 'os_version'))
-    .render(barChart()
-      .value(d => d.proportion)
-      .format(formatters.floatToPercent)),
+  windows: renderBlock.buildBarBasicChart('os_version'),
 
   // the devices block is a stack layout
-  devices: renderBlock()
+  devices: renderBlock.loadAndRender()
     .transform((d) => {
       const devices = transformers.listify(d.totals.devices);
       return transformers.findProportionsOfMetricFromValue(devices);
@@ -85,79 +77,50 @@ export default {
     }),
 
   // the browsers block is a table
-  browsers: renderBlock()
-    .transform(d => transformers.toTopPercents(d, 'browser'))
-    .render(barChart()
-      .value(d => d.proportion)
-      .format(formatters.floatToPercent)),
+  browsers: renderBlock.buildBarBasicChart('browser'),
 
   // the IE block is a stack, but with some extra work done to transform the
   // data beforehand to match the expected object format
-  ie: renderBlock()
-    .transform(d => transformers.toTopPercents(d, 'ie_version'))
-    .render(
-      barChart()
-        .value(d => d.proportion)
-        .format(formatters.floatToPercent),
-    ),
+  ie: renderBlock.buildBarBasicChart('ie_version'),
 
-  cities: renderBlock()
-    .transform((d) => {
-      // remove "(not set) from the data"
-      const cityList = d.data;
-      const cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
-      const proportions = transformers.findProportionsOfMetric(
-        cityListFiltered,
-        list => list.map(x => x.active_visitors),
-      );
-      return proportions.slice(0, 10);
-    })
-    .render(
-      barChart()
-        .value(d => d.proportion)
-        .label(d => d.city)
-        .format(formatters.floatToPercent),
-    ),
+  cities: renderBlock.buildBarChartWithLabel((d) => {
+    // remove "(not set) from the data"
+    const cityList = d.data;
+    const cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
+    const proportions = transformers.findProportionsOfMetric(
+      cityListFiltered,
+      list => list.map(x => x.active_visitors),
+    );
+    return proportions.slice(0, 10);
+  }, 'city'),
 
-  countries: renderBlock()
-    .transform((d) => {
-      let totalVisits = 0;
-      let USVisits = 0;
-      d.data.forEach((c) => {
-        totalVisits += parseInt(c.active_visitors, 10);
-        if (c.country === 'United States') {
-          USVisits = c.active_visitors;
-        }
-      });
-      const international = totalVisits - USVisits;
-      const data = {
-        'United States': USVisits,
-        'International &amp; Territories': international,
-      };
-      return transformers.findProportionsOfMetricFromValue(transformers.listify(data));
-    })
-    .render(
-      barChart()
-        .value(d => d.proportion)
-        .format(formatters.floatToPercent),
-    ),
-  international_visits: renderBlock()
-    .transform((d) => {
-      let values = transformers.findProportionsOfMetric(
-        d.data,
-        list => list.map(x => x.active_visitors),
-      );
-      values = values.filter(c => c.country !== 'United States');
-      return values.slice(0, 15);
-    })
-    .render(
-      barChart()
-        .value(d => d.proportion)
-        .format(formatters.floatToPercent)
-        .label(d => d.country),
-    ),
+  countries: renderBlock.buildBarChart((d) => {
+    let totalVisits = 0;
+    let USVisits = 0;
+    d.data.forEach((c) => {
+      totalVisits += parseInt(c.active_visitors, 10);
+      if (c.country === 'United States') {
+        USVisits = c.active_visitors;
+      }
+    });
+    const international = totalVisits - USVisits;
+    const data = {
+      'United States': USVisits,
+      'International &amp; Territories': international,
+    };
+    return transformers.findProportionsOfMetricFromValue(transformers.listify(data));
+  }),
 
-  'top-downloads': renderBlock()
+  international_visits: renderBlock.buildBarChartWithLabel((d) => {
+    let values = transformers.findProportionsOfMetric(
+      d.data,
+      list => list.map(x => x.active_visitors),
+    );
+    values = values.filter(c => c.country !== 'United States');
+    return values.slice(0, 15);
+  }, 'country'),
+
+  'top-downloads': renderBlock.loadAndRender()
     .transform(d => d.data.slice(0, 10))
     .render(
       barChart()
@@ -176,7 +139,7 @@ export default {
     ),
 
   // the top pages block(s)
-  'top-pages': renderBlock()
+  'top-pages': renderBlock.loadAndRender()
     .transform(d => d.data)
     .on('render', (selection) => {
       // turn the labels into links
@@ -199,7 +162,7 @@ export default {
       .format(formatters.addCommas)),
 
   // the top pages block(s)
-  'top-pages-realtime': renderBlock()
+  'top-pages-realtime': renderBlock.loadAndRender()
     .transform(d => d.data)
     .on('render', (selection) => {
       // turn the labels into links
