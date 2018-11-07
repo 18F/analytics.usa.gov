@@ -9,7 +9,7 @@
   "scripts": {
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch=true",
-    "test": "mocha spec",
+    "test": "mocha --require @babel/register spec",
     "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
   },
@@ -26,7 +26,9 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.1",
