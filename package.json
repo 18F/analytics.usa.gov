@@ -9,7 +9,7 @@
   "scripts": {
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch=true",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha spec",
     "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
   },
@@ -33,6 +33,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "mocha": "^5.2.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2"
