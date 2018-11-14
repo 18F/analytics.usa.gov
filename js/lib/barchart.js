@@ -40,7 +40,6 @@ export default function barChart() {
     const componentScale = scale
       ? scale.call(selection, bin.data().map(value))
       : null;
-    // console.log("scale:", componentScale ? componentScale.domain() : "(none)");
     bin.select('.bar')
       .style('width', componentScale
         ? d => size(componentScale(value(d)))
