@@ -2,7 +2,6 @@ import assert from 'assert';
 import transformers from '../js/lib/transformers';
 
 describe('transformers', () => {
-
   const sampleArray = [{ key: 'bob', value: 1000 },
     { key: 'harry', value: 300 },
     { key: 'tom', value: 2 },
