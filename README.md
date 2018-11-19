@@ -31,11 +31,22 @@ Other organizations who have reused this project for their analytics dashboard:
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
+## About the components
+Ths app uses [Jekyll](https://jekyllrb.com) to build the site, and [Sass](https://sass-lang.com/), [Bourbon](http://bourbon.io), and [Neat](https://neat.bourbon.io) for CSS.
+
+The javascript provided is a [webpacked](https://webpack.js.org/) aggregation of [several different modules](#javascript-modules), leveraging [d3](https://d3js.org/) for the visualizations. [Learn more on the webpack configuration](#webpack-configuration)
+
+## Developing locally
+
+There are a couple of different ways to develop locally. Either using docker or running without docker.
+
 ### Setup using Docker
 
 You need  [Docker](https://github.com/docker/docker) and  [docker-compose](https://github.com/docker/compose).
 
 To build and run the app with docker-compose, run `docker-compose up -d` then you can access the app from `http://localhost:4000`, as the local filesystem is mounted on top of the docker container you can edit the files as you are developing locally.
+
+* this does not yet run the webpack script.
 
 To see the jekyll logs, run:
 
@@ -43,18 +54,16 @@ To see the jekyll logs, run:
 docker-compose logs -f
 ```
 
-### Setup using Ruby
-
-Ths app uses [Jekyll](http://jekyllrb.com) to build the site, and [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io), and [Neat](http://neat.bourbon.io) for CSS.
-
-Install them all:
+## Running locally without docker.
+Run Jekyll with development settings:
 
 ```bash
-bundle install
+make dev
+npm install
+npm run build-dev
 ```
 
-[`analytics-reporter`](https://github.com/18F/analytics-reporter) is the code that powers the analytics dashboard.
-Please clone the `analytics-reporter` next to a local copy of this github repository.
+(This runs `bundle exec jekyll serve --watch --config=_config.yml,_development.yml`.)
 
 ### Adding Additional Agencies
 
@@ -82,16 +91,6 @@ Please clone the `analytics-reporter` next to a local copy of this github reposi
 ```yaml
 {% include charts.html %}
 ```
-
-### Developing locally
-
-Run Jekyll with development settings:
-
-```bash
-make dev
-```
-
-(This runs `bundle exec jekyll serve --watch --config=_config.yml,_development.yml`.)
 
 ### Developing with local data
 
@@ -122,6 +121,16 @@ serve --cors
 
 The data will be available at `http://localhost:3000` over CORS, with no path prefix. For example, device data will be at `http://localhost:3000/devices.json`.
 
+### Javascript Modules
+* **Index** - includes the main dom selection and rendering queue of components, and the entry point for the webpack bundler.
+* **lib/barchart** the d3 configuration of the bar charts
+* **lib/blocks** an object of the specific components
+* **lib/consoleprint** the console messages displayed to users
+* **lib/exceptions** agency data to be changed by discrete exception rules
+* **lib/formatters** methods to help format the display of visualization scales and values
+* **lib/renderblock** d3 manipulator to load and render data for a component block
+* **lib/timeseries** the d3 configuration of the timeseries charts
+* **lib/transformers** helper methods to manipulate and consolidate raw data into proportional data.
 
 ### Deploying the app
 
@@ -181,6 +190,25 @@ docker push 18fgsa/analytics.usa.gov:<version>-production
 |-------------| ------ | --- |
 | Production | master | https://analytics.usa.gov |
 | Staging | master | https://analytics-staging.app.cloud.gov |
+
+### Webpack Configuration
+The application compiles es6 modules into web friendly js via Wepback and the [babel loader](https://webpack.js.org/loaders/babel-loader/).
+
+The webpack configuration is set in the [wepback.config.js](./webpack.config.js).
+
+The current configuration uses babel `present-env`.
+
+The webpack also includes linting using [eslint](https://eslint.org/) leveraging the [AirBnb linting preset](https://www.npmjs.com/package/eslint-config-airbnb).
+
+The webconfig uses the [UglifyJSPlugin](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) to minimize the bundle.
+
+The resulting uglified bundle is build into `assest/bundle.js`.
+
+#### NPM webpack commands
+| Command | purpose |
+|-------------| ------ |
+| npm run build-dev | a watch command rebuilding the webpack with a development configuration (i.e. no minifiecation) |
+| npm run build-prod | a webpack command to build a minified and transpiled bundle.js |
 
 ### Public domain
 

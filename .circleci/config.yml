@@ -16,6 +16,18 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: 
+          name: install npm dependencies
+          command: |
+            npm install
+            sudo npm install -g eslint
+            sudo npm install -g webpack
+      - run:
+          name: lint javascript
+          command: npm run lint
+      - run:
+          name: bundle for production javascript
+          command: npm run build-prod
       - run:
           name: build site
           command: bundle exec jekyll build
