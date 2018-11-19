@@ -34,9 +34,7 @@ export default {
         .series([data.data])
         .y(y)
         .label(d => formatters.formatHour(d.hour))
-        .title(d => `${formatters.addCommas(d.visits)
-        } visits during the hour of ${
-          formatters.formatHour(d.hour)}m`);
+        .title(d => `${formatters.addCommas(d.visits)} visits during the hour of ${formatters.formatHour(d.hour)}m`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
