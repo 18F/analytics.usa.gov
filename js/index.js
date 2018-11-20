@@ -2,9 +2,12 @@
 import d3 from 'd3';
 import * as Q from 'q';
 
+import gaEventHandler from './lib/eventhandler';
 import consolePrint from './lib/consoleprint';
 import formatters from './lib/formatters';
 import BLOCKS from './lib/blocks';
+
+gaEventHandler();
 
 // store a promise for each block
 const PROMISES = {};
@@ -109,6 +112,7 @@ d3.selectAll("*[role='tablist']")
           selected: this.getAttribute('aria-selected') === 'true',
           target,
           tab: this,
+          dataType: this.getAttribute('data-type'),
         };
       });
 
@@ -119,7 +123,10 @@ d3.selectAll("*[role='tablist']")
     function update() {
       let selected;
       tabs.attr('aria-selected', (tab) => {
-        if (tab.selected) selected = tab.target;
+        if (tab.selected) {
+          selected = tab.target;
+          document.getElementById('top_table_type').innerHTML = tab.dataType;
+        }
         return tab.selected;
       });
       panels.attr('aria-hidden', function (panel) {

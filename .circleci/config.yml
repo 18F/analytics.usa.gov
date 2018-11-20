@@ -26,6 +26,9 @@ jobs:
           name: lint javascript
           command: npm run lint
       - run:
+          name: run tests
+          command: npm run test
+      - run:
           name: bundle for production javascript
           command: npm run build-prod
       - run:
