@@ -757,4 +757,89 @@ figure figure {
   &.loading {
     opacity: .8;
   }
+
+  
 }
+
+footer {
+  clear: both;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .logo-links {
+    margin-bottom: 0rem;
+    margin-right: 2rem;
+    float: left;
+    }
+
+    img {
+      width: 3.2rem;
+    }
+
+    img.github-icon {
+         width: 2.2rem !important;
+         vertical-align: text-bottom !important;
+      }
+
+  }
+
+.footer-main-img {
+  display: none;
+  max-width: 18.1rem;
+
+  @include media($large-screen) {
+    display: block;
+  }
+}
+
+.footer-content {
+  p {
+    max-width: 75ch;
+  }
+}
+
+.footer-contact-links {
+  margin-top: 3rem;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  img {
+    width: 4rem;
+  }
+
+}
+
+.footer-section-top {
+  @include padding(1.6rem null 1.3rem null);
+  background-color: $light-gray;
+}
+
+.footer-section-bottom {
+  @include padding(1.6rem null 1.3rem null);
+  background-color: $dark-blue;
+
+  p {
+    color: $white;
+    margin-top: 0;
+    font-size: 1.4rem;
+    line-height: 0.75;
+
+    &:first-of-type {
+      @include media($medium-screen) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  a {
+    color: $white;
+    display: inline-block;
+    line-height: 0;
+  }
+}
+
