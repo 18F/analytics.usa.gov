@@ -6,11 +6,13 @@ permalink: /developer/
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <h3 class="usa-alert-heading">
-       This project is in Alpha
+       This project is in BETA
      </h3>
      <p class="usa-alert-text">
        This API is under active development, and breaking changes may be made without warning.
        Have feedback or questions? <a href="https://github.com/18F/analytics.usa.gov/issues">Please let us know</a>!
+
+       Please note we have recently updated to `v1.1`, please update your requests accordingly.
      </p>
    </div>
  </div>
@@ -20,16 +22,19 @@ permalink: /developer/
 
 In addition to being published and available for download, the data generated for this site is also available via an API.
 
-The URL for the API is `https://api.gsa.gov/analytics/dap/v1`, and it exposes 2 routes to query data:
+**Please note we have recently updated to `v1.1`, please update your requests accordingly.**
+
+The URL for the API is `https://api.gsa.gov/analytics/dap/v1.1`, and it exposes 3 routes to query data:
 
 - `/reports/<report name>/data`
 - `/agencies/<agency name>/reports/<report name>/data`
+- `/domain/<domain>/reports/<report name>/data`
 
 ## API Keys
 
 To use the API, please register for an API key below and include it in your query in this fashion:
 
-- `https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key=DEMO_KEY1`
+- `https://api.gsa.gov/analytics/dap/v1.1/reports/download/data?api_key=DEMO_KEY1`
 
 {% raw %}
 
@@ -49,7 +54,7 @@ To use the API, please register for an API key below and include it in your quer
     // This can be any API endpoint on your server, and you can use the
     // special {{api_key}} variable to automatically substitute in the API
     // key the user just signed up for.
-    exampleApiUrl: 'https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key={{api_key}}',
+    exampleApiUrl: 'https://api.gsa.gov/analytics/dap/v1.1/reports/download/data?api_key={{api_key}}',
 
     // OPTIONAL: Provide extra content to display on the signup confirmation
     // page. This will be displayed below the user's API key and the example
@@ -137,21 +142,21 @@ Reports can be queried by substituting `<report name>` in the path with the name
 
 The following reports can be queried using the API:
 
-- download  _([example](https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key=DEMO_KEY1))_
-- traffic-source  _([example](https://api.gsa.gov/analytics/dap/v1/reports/traffic-source/data?api_key=DEMO_KEY1))_
-- device-model  _([example](https://api.gsa.gov/analytics/dap/v1/reports/device-model/data?api_key=DEMO_KEY1))_
-- domain  _([example](https://api.gsa.gov/analytics/dap/v1/reports/domain/data?api_key=DEMO_KEY1))_
-- site  _([example](https://api.gsa.gov/analytics/dap/v1/reports/site/data?api_key=DEMO_KEY1))_
-- second-level-domain  _([example](https://api.gsa.gov/analytics/dap/v1/reports/second-level-domain/data?api_key=DEMO_KEY1))_
-- language  _([example](https://api.gsa.gov/analytics/dap/v1/reports/language/data?api_key=DEMO_KEY1))_
-- os-browser  _([example](https://api.gsa.gov/analytics/dap/v1/reports/os-browser/data?api_key=DEMO_KEY1))_
-- windows-browser  _([example](https://api.gsa.gov/analytics/dap/v1/reports/windows-browser/data?api_key=DEMO_KEY1))_
-- browser  _([example](https://api.gsa.gov/analytics/dap/v1/reports/browser/data?api_key=DEMO_KEY1))_
-- windows-ie  _([example](https://api.gsa.gov/analytics/dap/v1/reports/windows-ie/data?api_key=DEMO_KEY1))_
-- os  _([example](https://api.gsa.gov/analytics/dap/v1/reports/os/data?api_key=DEMO_KEY1))_
-- windows  _([example](https://api.gsa.gov/analytics/dap/v1/reports/windows/data?api_key=DEMO_KEY1))_
-- ie  _([example](https://api.gsa.gov/analytics/dap/v1/reports/ie/data?api_key=DEMO_KEY1))_
-- device  _([example](https://api.gsa.gov/analytics/dap/v1/reports/device/data?api_key=DEMO_KEY1))_
+- download  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/download/data?api_key=DEMO_KEY1))_
+- traffic-source  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/traffic-source/data?api_key=DEMO_KEY1))_
+- device-model  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/device-model/data?api_key=DEMO_KEY1))_
+- domain  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/domain/data?api_key=DEMO_KEY1))_
+- site  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/site/data?api_key=DEMO_KEY1))_
+- second-level-domain  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/second-level-domain/data?api_key=DEMO_KEY1))_
+- language  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/language/data?api_key=DEMO_KEY1))_
+- os-browser  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/os-browser/data?api_key=DEMO_KEY1))_
+- windows-browser  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/windows-browser/data?api_key=DEMO_KEY1))_
+- browser  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/browser/data?api_key=DEMO_KEY1))_
+- windows-ie  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/windows-ie/data?api_key=DEMO_KEY1))_
+- os  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/os/data?api_key=DEMO_KEY1))_
+- windows  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/windows/data?api_key=DEMO_KEY1))_
+- ie  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/ie/data?api_key=DEMO_KEY1))_
+- device  _([example](https://api.gsa.gov/analytics/dap/v1.1/reports/device/data?api_key=DEMO_KEY1))_
 
 ## Filtering based on agencies
 
@@ -159,33 +164,36 @@ Reports can be queried by substituting `<agency name>` in the path with the name
 
 The list of valid agency names includes:
 
-- agency-international-development  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/agency-international-development/reports/site/data?api_key=DEMO_KEY1))_
-- agriculture  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/agriculture/reports/site/data?api_key=DEMO_KEY1))_
-- commerce  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/commerce/reports/site/data?api_key=DEMO_KEY1))_
-- defense  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/defense/reports/site/data?api_key=DEMO_KEY1))_
-- education  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/education/reports/site/data?api_key=DEMO_KEY1))_
-- energy  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/energy/reports/site/data?api_key=DEMO_KEY1))_
-- environmental-protection-agency  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/environmental-protection-agency/reports/site/data?api_key=DEMO_KEY1))_
-- executive-office-president  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/executive-office-president/reports/site/data?api_key=DEMO_KEY1))_
-- general-services-administration  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/general-services-administration/reports/site/data?api_key=DEMO_KEY1))_
-- health-human-services  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/health-human-services/reports/site/data?api_key=DEMO_KEY1))_
-- homeland-security  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/homeland-security/reports/site/data?api_key=DEMO_KEY1))_
-- housing-urban-development  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/housing-urban-development/reports/site/data?api_key=DEMO_KEY1))_
-- interior  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/interior/reports/site/data?api_key=DEMO_KEY1))_
-- justice  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/justice/reports/site/data?api_key=DEMO_KEY1))_
-- labor  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/labor/reports/site/data?api_key=DEMO_KEY1))_
-- national-aeronautics-space-administration  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/national-aeronautics-space-administration/reports/site/data?api_key=DEMO_KEY1))_
-- national-archives-records-administration  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/national-archives-records-administration/reports/site/data?api_key=DEMO_KEY1))_
-- national-science-foundation  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/national-science-foundation/reports/site/data?api_key=DEMO_KEY1))_
-- nuclear-regulatory-commission  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/nuclear-regulatory-commission/reports/site/data?api_key=DEMO_KEY1))_
-- office-personnel-management  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/office-personnel-management/reports/site/data?api_key=DEMO_KEY1))_
-- postal-service  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/postal-service/reports/site/data?api_key=DEMO_KEY1))_
-- small-business-administration  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/small-business-administration/reports/site/data?api_key=DEMO_KEY1))_
-- social-security-administration  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/social-security-administration/reports/site/data?api_key=DEMO_KEY1))_
-- state  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/state/reports/site/data?api_key=DEMO_KEY1))_
-- transportation  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/transportation/reports/site/data?api_key=DEMO_KEY1))_
-- treasury  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/treasury/reports/site/data?api_key=DEMO_KEY1))_
-- veterans-affairs  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/veterans-affairs/reports/site/data?api_key=DEMO_KEY1))_
+- agency-international-development  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/agency-international-development/reports/site/data?api_key=DEMO_KEY1))_
+- agriculture  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/agriculture/reports/site/data?api_key=DEMO_KEY1))_
+- commerce  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/commerce/reports/site/data?api_key=DEMO_KEY1))_
+- defense  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/defense/reports/site/data?api_key=DEMO_KEY1))_
+- education  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/education/reports/site/data?api_key=DEMO_KEY1))_
+- energy  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/energy/reports/site/data?api_key=DEMO_KEY1))_
+- environmental-protection-agency  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/environmental-protection-agency/reports/site/data?api_key=DEMO_KEY1))_
+- executive-office-president  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/executive-office-president/reports/site/data?api_key=DEMO_KEY1))_
+- general-services-administration  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/general-services-administration/reports/site/data?api_key=DEMO_KEY1))_
+- health-human-services  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/health-human-services/reports/site/data?api_key=DEMO_KEY1))_
+- homeland-security  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/homeland-security/reports/site/data?api_key=DEMO_KEY1))_
+- housing-urban-development  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/housing-urban-development/reports/site/data?api_key=DEMO_KEY1))_
+- interior  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/interior/reports/site/data?api_key=DEMO_KEY1))_
+- justice  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/justice/reports/site/data?api_key=DEMO_KEY1))_
+- labor  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/labor/reports/site/data?api_key=DEMO_KEY1))_
+- national-aeronautics-space-administration  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/national-aeronautics-space-administration/reports/site/data?api_key=DEMO_KEY1))_
+- national-archives-records-administration  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/national-archives-records-administration/reports/site/data?api_key=DEMO_KEY1))_
+- national-science-foundation  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/national-science-foundation/reports/site/data?api_key=DEMO_KEY1))_
+- nuclear-regulatory-commission  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/nuclear-regulatory-commission/reports/site/data?api_key=DEMO_KEY1))_
+- office-personnel-management  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/office-personnel-management/reports/site/data?api_key=DEMO_KEY1))_
+- postal-service  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/postal-service/reports/site/data?api_key=DEMO_KEY1))_
+- small-business-administration  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/small-business-administration/reports/site/data?api_key=DEMO_KEY1))_
+- social-security-administration  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/social-security-administration/reports/site/data?api_key=DEMO_KEY1))_
+- state  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/state/reports/site/data?api_key=DEMO_KEY1))_
+- transportation  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/transportation/reports/site/data?api_key=DEMO_KEY1))_
+- treasury  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/treasury/reports/site/data?api_key=DEMO_KEY1))_
+- veterans-affairs  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/veterans-affairs/reports/site/data?api_key=DEMO_KEY1))_
+
+## Filtering on domain
+For the `site`', `domain`, `download`, and `second-level-domain` reports you may use the `domain` route, to only return results by domain.
 
 ## Query params
 
@@ -193,3 +201,5 @@ The following query params are supported to work with the data:
 
 - `limit`: Limit the number of data points that are rendered. The default is 1000 and the max is 10,000
 - `page`: Pages through the results. If the limit is set to `1000`, using `page=2` will render the 1001st through 2000th data point.
+- `after`: Limit the results to in dates on or after the date specified. Expects `YYYY-MM-DD`. 
+- `before`: Limit the results to in dates on or before the date specified. Expects `YYYY-MM-DD`.
