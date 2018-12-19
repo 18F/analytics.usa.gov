@@ -20,10 +20,11 @@ permalink: /developer/
 
 In addition to being published and available for download, the data generated for this site is also available via an API.
 
-The URL for the API is `https://api.gsa.gov/analytics/dap/v1`, and it exposes 2 routes to query data:
+The URL for the API is `https://api.gsa.gov/analytics/dap/v1`, and it exposes 3 routes to query data:
 
 - `/reports/<report name>/data`
 - `/agencies/<agency name>/reports/<report name>/data`
+- `/domain/:domain/reports/:reportName/data`
 
 ## API Keys
 
@@ -187,9 +188,14 @@ The list of valid agency names includes:
 - treasury  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/treasury/reports/site/data?api_key=DEMO_KEY1))_
 - veterans-affairs  _([example](https://api.gsa.gov/analytics/dap/v1/agencies/veterans-affairs/reports/site/data?api_key=DEMO_KEY1))_
 
+## Filtering on domain
+For the `site`', `domain`, `download`, and `second-level-domain` reports you may use the `domain` route, to only return results by domain.
+
 ## Query params
 
 The following query params are supported to work with the data:
 
 - `limit`: Limit the number of data points that are rendered. The default is 1000 and the max is 10,000
 - `page`: Pages through the results. If the limit is set to `1000`, using `page=2` will render the 1001st through 2000th data point.
+- `after`: Limit the results to in dates on or after the date specified. Expects YYYY-MM-DD. 
+- `before`: Limit the results to in dates on or before the date specified. Expects YYYY-MM-DD.
