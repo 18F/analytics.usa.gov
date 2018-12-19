@@ -6,11 +6,13 @@ permalink: /developer/
 <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
    <div class="usa-alert-body">
      <h3 class="usa-alert-heading">
-       This project is in Alpha
+       This project is in BETA
      </h3>
      <p class="usa-alert-text">
        This API is under active development, and breaking changes may be made without warning.
        Have feedback or questions? <a href="https://github.com/18F/analytics.usa.gov/issues">Please let us know</a>!
+
+       Please note we have recently updated to `v1.1`, please update your requests accordingly.
      </p>
    </div>
  </div>
@@ -20,7 +22,9 @@ permalink: /developer/
 
 In addition to being published and available for download, the data generated for this site is also available via an API.
 
-The URL for the API is `https://api.gsa.gov/analytics/dap/v1`, and it exposes 3 routes to query data:
+**Please note we have recently updated to `v1.1`, please update your requests accordingly.**
+
+The URL for the API is `https://api.gsa.gov/analytics/dap/v1.1`, and it exposes 3 routes to query data:
 
 - `/reports/<report name>/data`
 - `/agencies/<agency name>/reports/<report name>/data`
@@ -30,7 +34,7 @@ The URL for the API is `https://api.gsa.gov/analytics/dap/v1`, and it exposes 3 
 
 To use the API, please register for an API key below and include it in your query in this fashion:
 
-- `https://api.gsa.gov/analytics/dap/v1/reports/download/data?api_key=DEMO_KEY1`
+- `https://api.gsa.gov/analytics/dap/v1.1/reports/download/data?api_key=DEMO_KEY1`
 
 {% raw %}
 
