@@ -24,7 +24,7 @@ The URL for the API is `https://api.gsa.gov/analytics/dap/v1`, and it exposes 3 
 
 - `/reports/<report name>/data`
 - `/agencies/<agency name>/reports/<report name>/data`
-- `/domain/:domain/reports/:reportName/data`
+- `/domain/<domain>/reports/<report name>/data`
 
 ## API Keys
 
@@ -197,5 +197,5 @@ The following query params are supported to work with the data:
 
 - `limit`: Limit the number of data points that are rendered. The default is 1000 and the max is 10,000
 - `page`: Pages through the results. If the limit is set to `1000`, using `page=2` will render the 1001st through 2000th data point.
-- `after`: Limit the results to in dates on or after the date specified. Expects YYYY-MM-DD. 
-- `before`: Limit the results to in dates on or before the date specified. Expects YYYY-MM-DD.
+- `after`: Limit the results to in dates on or after the date specified. Expects `YYYY-MM-DD`. 
+- `before`: Limit the results to in dates on or before the date specified. Expects `YYYY-MM-DD`.
