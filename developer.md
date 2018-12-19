@@ -192,8 +192,8 @@ The list of valid agency names includes:
 - treasury  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/treasury/reports/site/data?api_key=DEMO_KEY1))_
 - veterans-affairs  _([example](https://api.gsa.gov/analytics/dap/v1.1/agencies/veterans-affairs/reports/site/data?api_key=DEMO_KEY1))_
 
-## Filtering on domain
-For the `site`', `domain`, `download`, and `second-level-domain` reports you may use the `domain` route, to only return results by domain.
+## Filtering by domain
+For the `site', `domain`, `download`, and `second-level-domain` reports you may use the `domain` route, to only return results by domain.
 
 ## Query params
 
