@@ -23,12 +23,12 @@ Other organizations who have reused this project for their analytics dashboard:
 | [The City of San Francisco, CA](http://analytics.sfgov.org/)              | [The City of San Leandro, CA](http://sanleandroca.seamlessreports.com/)                |
 | [The City of Santa Monica, CA](http://analytics.smgov.net/)               | [Carbarrus County, NC](http://analytics.cabarruscounty.us/)                            |
 | [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)            | [data.jerseycitynj.gov](http://datajerseycitynj.seamlessreports.com/)                  |
-| [data.seattle.gov](http://seattlewa.seamlessreports.com/)                 | [Douglas County, NE](http://analytics.douglascounty-ne.gov/)                           |
+| [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics)                 | [Douglas County, NE](http://analytics.douglascounty-ne.gov/)                           |
 | [Moulton Niguel Water District](http://mnwd.seamlessreports.com/)         | [NYSERDA](http://nyserda.seamlessreports.com/)                                         |
 | [Washington State University](https://analytics.wsu.edu/)                 | [Rowan County, NC](http://rowan.seamlessreports.com/)                                  |
 | [The States of Jersey](http://webanalytics.gov.je/)                       | [Tennessee Dept of  Environment and Conservation](http://analytics.tdec.tn.gov/) |
 | [U.S. Department of Education](http://www2.ed.gov/analytics)              | [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)                |
-| [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) | [City of Seattle] (https://www.seattle.gov/about-our-digital-properties/web-analytics) |
+| [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) | |
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
