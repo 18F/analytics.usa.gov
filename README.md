@@ -28,7 +28,7 @@ Other organizations who have reused this project for their analytics dashboard:
 | [Washington State University](https://analytics.wsu.edu/)                 | [Rowan County, NC](http://rowan.seamlessreports.com/)                                  |
 | [The States of Jersey](http://webanalytics.gov.je/)                       | [Tennessee Dept of  Environment and Conservation](http://analytics.tdec.tn.gov/) |
 | [U.S. Department of Education](http://www2.ed.gov/analytics)              | [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)                |
-| [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) | |
+| [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) | [City of Seattle] (https://www.seattle.gov/about-our-digital-properties/web-analytics) |
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
