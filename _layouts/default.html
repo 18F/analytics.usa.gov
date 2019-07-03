@@ -19,7 +19,7 @@
             </h1>
             <ul class="links">
               <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
-              <li><a href="{{ site.url }}{% if page.slug %}/{{ page.slug }}{% endif %}/data/">Data</a></li>
+              <li><a href="{{ site.url }}{% if page.slug %}/{{ page.slug }}{% endif %}/data/">Data</a> | <a href="https://open.gsa.gov/api/dap/" target="_blank">API</a></li>
             </ul>
             {% assign agencies = site.agencies | sort:"name"  %}
             {% if agencies.size > 0 %}
