@@ -29,7 +29,6 @@ Other organizations who have reused this project for their analytics dashboard:
 | [The States of Jersey](http://webanalytics.gov.je/)                       | [Tennessee Dept of  Environment and Conservation](http://analytics.tdec.tn.gov/) |
 | [U.S. Department of Education](http://www2.ed.gov/analytics)              | [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)                |
 | [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) | [State of Georgia](https://analytics.georgia.gov/) 
-
 | [The City of Pittsburgh](http://webstats.pittsburghpa.gov/)              |  
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
