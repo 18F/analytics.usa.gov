@@ -16,7 +16,7 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: 
+      - run:
           name: install npm dependencies
           command: |
             npm install
@@ -37,6 +37,6 @@ jobs:
       - run:
           name: deploy site
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "jmhooper-zdt-deploy" ]; then
               bin/deploy-ci.sh
             fi
