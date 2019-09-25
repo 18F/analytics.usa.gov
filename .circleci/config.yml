@@ -16,7 +16,7 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: 
+      - run:
           name: install npm dependencies
           command: |
             npm install
