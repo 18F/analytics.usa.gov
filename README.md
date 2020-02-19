@@ -13,19 +13,16 @@ Other organizations who have reused this project for their analytics dashboard:
 |                                                                           |                                                                                        |
 |:-------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
 | [The City of Anchorage, AK](http://analytics.muni.org/)                   | [The City of Boulder, CO](https://bouldercolorado.gov/stats) 
-| [The City of Los Angeles, CA](http://webanalytics.lacity.org/)            | [The City of New Orleans, LA](http://webanalytics.nola.gov/) 
-| [The City of New Orleans, LA](http://webanalytics.nola.gov/)              | [The City of Omaha, NE](https://analytics.cityofomaha.org/) 
+| [The City of Los Angeles, CA](http://webanalytics.lacity.org/)            | [The City of Santa Monica, CA](http://analytics.smgov.net/)
 | [The City of Omaha, NE](https://analytics.cityofomaha.org/)               | [The City of San Francisco, CA](http://analytics.sfgov.org/) 
-| [The City of Philadelphia, PA](http://analytics.phila.gov/)               | [The City of Santa Monica, CA](http://analytics.smgov.net/) 
 | [The City of Sacramento, CA](http://analytics.cityofsacramento.org/)      | [Carbarrus County, NC](http://analytics.cabarruscounty.us/) 
 | [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)            | [data.jerseycitynj.gov](http://datajerseycitynj.seamlessreports.com/)                  |
 | [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics)                 | [Douglas County, NE](http://analytics.douglascounty-ne.gov/)         
 | [Washington State University](https://analytics.wsu.edu/)                 | [State of Indiana](https://analytics.in.gov/)               
-| [The States of Jersey](http://webanalytics.gov.je/)                       | [Tennessee Dept of  Environment and Conservation](http://analytics.tdec.tn.gov/) |
+| [The States of Jersey](http://webanalytics.gov.je/)                       | [The City of Pittsburgh](http://webstats.pittsburghpa.gov/) |
 | [U.S. Department of Education](http://www2.ed.gov/analytics)              | [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)                |
 | [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/)              | [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index)                |
 |  [State of Georgia](https://analytics.georgia.gov/)      |  [State of Kansas](https://analytics.kansas.gov/)  | 
-| [The City of Pittsburgh](http://webstats.pittsburghpa.gov/) |  |
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
