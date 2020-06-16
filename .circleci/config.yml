@@ -31,12 +31,64 @@ jobs:
       - run:
           name: bundle for production javascript
           command: npm run build-prod
+      - persist_to_workspace:
+          root: .
+          paths:
+            - _site
+
+  deploy-production:
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      - attach_workspace:
+          at: .
       - run:
-          name: build site
-          command: bundle exec jekyll build
+          name: build production
+          command: make production
+      - deploy:
+          name: deploy production
+          command: bin/deploy-ci.sh analytics
+
+  deploy-staging:
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      - attach_workspace:
+          at: .
       - run:
-          name: deploy site
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              bin/deploy-ci.sh
-            fi
+          name: build staging
+          command: make staging
+      - deploy:
+          name: deploy staging
+          command: bin/deploy-ci.sh analytics-staging
+
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
+      - deploy-production:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+      - deploy-staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - staging
