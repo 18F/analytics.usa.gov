@@ -42,8 +42,8 @@ export default function barChart() {
       : null;
     bin.select('.bar')
       .style('width', componentScale
-        ? d => size(componentScale(value(d)))
-        : d => size(value(d)));
+        ? (d) => size(componentScale(value(d)))
+        : (d) => size(value(d)));
 
     bin.select('.label').html(label);
     bin.select('.value').text(function (d, i) {

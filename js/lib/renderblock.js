@@ -32,9 +32,7 @@ function loadAndRender() {
 
   let transform = Object;
 
-
   let renderer = function () { };
-
 
   const dispatch = d3.dispatch('loading', 'load', 'error', 'render');
 
@@ -108,9 +106,9 @@ function loadAndRender() {
   function render(selection, data) {
     // populate meta elements
     selection.select('.meta-name')
-      .text(d => d.meta.name);
+      .text((d) => d.meta.name);
     selection.select('.meta-desc')
-      .text(d => d.meta.description);
+      .text((d) => d.meta.description);
 
     selection.select('.data')
       .datum(data)
@@ -125,7 +123,7 @@ function buildBarChart(transformMethod) {
   return loadAndRender()
     .transform(transformMethod)
     .render(barChart()
-      .value(d => d.proportion)
+      .value((d) => d.proportion)
       .format(formatters.floatToPercent));
 }
 
@@ -133,13 +131,13 @@ function buildBarChartWithLabel(transformMethod, labelKey) {
   return loadAndRender()
     .transform(transformMethod)
     .render(barChart()
-      .value(d => d.proportion)
+      .value((d) => d.proportion)
       .format(formatters.floatToPercent)
-      .label(d => d[labelKey]));
+      .label((d) => d[labelKey]));
 }
 
 function buildBarBasicChart(desiredKey) {
-  const method = d => transformers.toTopPercents(d, desiredKey);
+  const method = (d) => transformers.toTopPercents(d, desiredKey);
   return buildBarChart(method);
 }
 
