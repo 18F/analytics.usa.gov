@@ -95,9 +95,13 @@ whenRendered(['browsers', 'ie'], () => {
 // chart once they're both rendered
 whenRendered(['countries', 'international_visits'], () => {
   d3.select('#chart_us')
-    .call(nestCharts, (d) => d.key === 'International &amp; Territories', d3.select('#chart_countries'));
+    .call(nestCharts, (d) => d.key === 'International', d3.select('#chart_countries'));
 });
 
+whenRendered(['countries', 'us_and_territories'], () => {
+  d3.select('#chart_us')
+    .call(nestCharts, (d) => d.key === 'United States &amp; Territories', d3.select('#chart_us_and_territories'));
+});
 /*
    * A very primitive, aria-based tab system!
    */
