@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build-prod": "webpack",
-    "build-dev": "webpack --mode=development --watch=true",
+    "build-dev": "webpack --mode=development --watch",
     "test": "mocha --require @babel/register spec",
     "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
