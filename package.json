@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build-prod": "webpack",
-    "build-dev": "webpack --mode=development --watch=true",
+    "build-dev": "webpack --mode=development --watch",
     "test": "mocha --require @babel/register spec",
     "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
@@ -38,7 +38,7 @@
     "mocha": "^8.0.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^4.1.0"
   },
   "dependencies": {
     "d3": "^3.5.17",
