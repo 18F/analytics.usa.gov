@@ -6,6 +6,7 @@ import barChart from './barchart';
 import buildTimeSeries from './timeseries';
 import formatters from './formatters';
 import transformers from './transformers';
+import { isPartOfUnitedStates } from './territories';
 
 /*
  * Define block renderers for each of the different data types.
@@ -88,7 +89,7 @@ export default {
       cityListFiltered,
       (list) => list.map((x) => x.active_visitors),
     );
-    return proportions.slice(0, 10);
+    return proportions.slice(0, 13);
   }, 'city'),
 
   countries: renderBlock.buildBarChart((d) => {
@@ -96,24 +97,33 @@ export default {
     let USVisits = 0;
     d.data.forEach((c) => {
       totalVisits += parseInt(c.active_visitors, 10);
-      if (c.country === 'United States') {
-        USVisits = c.active_visitors;
+      if (isPartOfUnitedStates(c.country)) {
+        USVisits += parseInt(c.active_visitors, 10);
       }
     });
     const international = totalVisits - USVisits;
     const data = {
-      'United States': USVisits,
-      'International &amp; Territories': international,
+      'United States &amp; Territories': USVisits,
+      International: international,
     };
     return transformers.findProportionsOfMetricFromValue(transformers.listify(data));
   }),
+
+  us_and_territories: renderBlock.buildBarChartWithLabel((d) => {
+    let values = transformers.findProportionsOfMetric(
+      d.data,
+      (list) => list.map((x) => x.active_visitors),
+    );
+    values = values.filter((c) => isPartOfUnitedStates(c.country));
+    return values.slice(0, 3);
+  }, 'country'),
 
   international_visits: renderBlock.buildBarChartWithLabel((d) => {
     let values = transformers.findProportionsOfMetric(
       d.data,
       (list) => list.map((x) => x.active_visitors),
     );
-    values = values.filter((c) => c.country !== 'United States');
+    values = values.filter((c) => !isPartOfUnitedStates(c.country));
     return values.slice(0, 15);
   }, 'country'),
 
