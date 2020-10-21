@@ -89,7 +89,7 @@ export default {
       cityListFiltered,
       (list) => list.map((x) => x.active_visitors),
     );
-    return proportions.slice(0, 10);
+    return proportions.slice(0, 13);
   }, 'city'),
 
   countries: renderBlock.buildBarChart((d) => {
@@ -115,7 +115,7 @@ export default {
       (list) => list.map((x) => x.active_visitors),
     );
     values = values.filter((c) => US_AND_TERRITORIES.includes(c.country));
-    return values.slice(0, 15);
+    return values.slice(0, 3);
   }, 'country'),
 
   international_visits: renderBlock.buildBarChartWithLabel((d) => {
