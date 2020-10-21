@@ -6,7 +6,7 @@ import barChart from './barchart';
 import buildTimeSeries from './timeseries';
 import formatters from './formatters';
 import transformers from './transformers';
-import US_AND_TERRITORIES from './territories';
+import { isPartOfUnitedStates } from './territories';
 
 /*
  * Define block renderers for each of the different data types.
@@ -97,7 +97,7 @@ export default {
     let USVisits = 0;
     d.data.forEach((c) => {
       totalVisits += parseInt(c.active_visitors, 10);
-      if (US_AND_TERRITORIES.includes(c.country)) {
+      if (isPartOfUnitedStates(c.country)) {
         USVisits += parseInt(c.active_visitors, 10);
       }
     });
@@ -114,7 +114,7 @@ export default {
       d.data,
       (list) => list.map((x) => x.active_visitors),
     );
-    values = values.filter((c) => US_AND_TERRITORIES.includes(c.country));
+    values = values.filter((c) => isPartOfUnitedStates(c.country));
     return values.slice(0, 3);
   }, 'country'),
 
@@ -123,7 +123,7 @@ export default {
       d.data,
       (list) => list.map((x) => x.active_visitors),
     );
-    values = values.filter((c) => !US_AND_TERRITORIES.includes(c.country));
+    values = values.filter((c) => !isPartOfUnitedStates(c.country));
     return values.slice(0, 15);
   }, 'country'),
 

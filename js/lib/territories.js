@@ -7,4 +7,11 @@ const US_AND_TERRITORIES = [
   'Northern Mariana Islands',
 ];
 
-export default US_AND_TERRITORIES;
+const isPartOfUnitedStates = function (name) {
+  return new RegExp(name).test(US_AND_TERRITORIES.join('|'));
+};
+
+export {
+  US_AND_TERRITORIES,
+  isPartOfUnitedStates,
+};
