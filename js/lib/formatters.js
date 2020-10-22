@@ -55,6 +55,12 @@ function formatHour(hour) {
   return (n % 12 || 12) + suffix;
 }
 
+function formatDate(date) {
+  const parse = d3.time.format('%Y-%m-%d').parse; // eslint-disable-line
+  const format = d3.time.format('%b %e');
+  return format(parse(date));
+}
+
 function formatURL(url) {
   let index = 0;
   // find & remove protocol (http, ftp, etc.) and get domain
@@ -83,4 +89,5 @@ export default {
   floatToPercent,
   formatURL,
   formatFile,
+  formatDate,
 };

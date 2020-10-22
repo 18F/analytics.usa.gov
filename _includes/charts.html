@@ -29,14 +29,14 @@
           <div class="chart_subtitle">people on {{ entity }} websites now</div>
         </section>
 
-        <section class="section_headline visits_today">
-          <h3>Visits Today</h3>
-          <h4>Eastern Time</h4>
+        <section class="section_headline">
+          <h3>Visits in the Past 30 Days</h3>
         </section>
+
         <section id="time_series"
-          data-block="today"
-          data-source="{{ site.data_url }}/{{ data_prefix }}/today.json"
-          data-refresh="15">
+          data-block="traffic-sources-30-days"
+          data-source="{{ site.data_url }}/{{ data_prefix }}/traffic-sources-30-days.json"
+        >
           <svg class="data time-series">
           </svg>
         </section>

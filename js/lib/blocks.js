@@ -48,6 +48,35 @@ export default {
       svg.call(series);
     }),
 
+  // last 30 days
+  'traffic-sources-30-days': renderBlock.loadAndRender()
+    .transform((data) => data)
+    .render((svg, data) => {
+      const days = data.data;
+      days.forEach((d) => {
+        d.visits = +d.visits;
+      });
+
+      const y = function (d) { return d.visits; };
+
+      const series = buildTimeSeries()
+        .series([data.data.reverse()])
+        .y(y)
+        .label((d) => formatters.formatDate(d.date))
+        .title((d) => `${formatters.addCommas(d.visits)} visits during the day of ${formatters.formatDate(d.date)}`);
+
+      series.xScale()
+        .domain(d3.range(0, days.length + 1));
+
+      series.yScale()
+        .domain([0, d3.max(days, y)]);
+
+      series.yAxis()
+        .tickFormat(formatters.formatVisits());
+
+      svg.call(series);
+    }),
+
   // the OS block is a stack layout
   os: renderBlock.buildBarBasicChart('os'),
 
