@@ -133,10 +133,10 @@ export default {
       barChart()
         .value((d) => +d.total_events)
         .label((d) => [
-          '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
+          '<span class="name"><a class="top-download-page" target="_blank" rel="noopener" href=http://', d.page, '>', d.page_title, '</a></span> ',
           '<span class="domain" >', formatters.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
-          '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
+          '<span class="filename"><a class="top-download-file" target="_blank" rel="noopener" href=', d.event_label, '>',
           formatters.formatFile(d.event_label), '</a></span>',
         ].join(''))
         .scale((values) => d3.scale.linear()
