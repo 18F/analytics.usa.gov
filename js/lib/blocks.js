@@ -157,6 +157,7 @@ export default {
         .html('')
         .append('a')
         .attr('target', '_blank')
+        .attr('rel', 'noopener')
         .attr('href', (d) => exceptions[d.domain] || (`http://${d.domain}`))
         .text((d) => titleExceptions[d.domain] || d.domain);
     })
@@ -180,6 +181,7 @@ export default {
         .html('')
         .append('a')
         .attr('target', '_blank')
+        .attr('rel', 'noopener')
         .attr('title', (d) => d.page_title)
         .attr('href', (d) => exceptions[d.page] || (`http://${d.page}`))
         .text((d) => titleExceptions[d.page] || d.page_title);
