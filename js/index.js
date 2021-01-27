@@ -33,6 +33,11 @@ function nestCharts(selection, parentFilter, child) {
 
   const scale = (child.attr('data-scale-to-parent') === 'true');
 
+  // Display the IE section if an entry exists in the Browsers chart (eg: greater than the DISPLAY_THRESHOLD)
+  if(parent && parent[0] && parent[0].parentNode.innerText && parent[0].parentNode.innerText.includes("Internet Explorer") && child[0]) {
+    child[0][0].classList.remove("hide");
+  }
+
   const bins = child.selectAll('.bin')
     // If the child data should be scaled to be %'s of its parent bin,
     // then multiple each child item's % share by its parent's % share.
