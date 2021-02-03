@@ -37,7 +37,7 @@ function nestCharts(selection, key, child) {
 
   // Display and nest a sub-section if an entry exists in the parent chart
   if (parent && parent[0].parentNode.innerHTML.includes(key) && child[0]) {
-    child[0][0].classList.remove("hide");
+    child[0][0].classList.remove('hide');
   }
 
   const bins = child.selectAll('.bin')
