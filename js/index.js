@@ -35,8 +35,8 @@ function nestCharts(selection, key, child) {
 
   const scale = (child.attr('data-scale-to-parent') === 'true');
 
-  // Display and nest a sub-section if an entry exists in the Browsers chart
-  if(parent && parent[0].parentNode.innerText.includes(key) && child[0]) {
+  // Display and nest a sub-section if an entry exists in the parent chart
+  if (parent && parent[0].parentNode.innerHTML.includes(key) && child[0]) {
     child[0][0].classList.remove("hide");
   }
 
