@@ -34,9 +34,13 @@ jobs:
       - run:
           name: build site
           command: bundle exec jekyll build
+      # Install Cloud Foundry cli (cf) before deploy step. cf is used to push to Cloud.gov
+      - run:
+          name: install-cf-cli
+          command: |
+            curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+            sudo dpkg -i cf-cli_amd64.deb
+            cf -v    
       - run:
           name: deploy site
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              bin/deploy-ci.sh
-            fi
+          command: bin/deploy-ci.sh
