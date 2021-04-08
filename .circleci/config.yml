@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.5-node-browsers
+      - image: circleci/ruby:2.6.6-node-browsers
     steps:
       - checkout
       - restore_cache:
@@ -40,7 +40,7 @@ jobs:
           command: |
             curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
             sudo dpkg -i cf-cli_amd64.deb
-            cf -v    
+            cf -v
       - run:
           name: deploy site
           command: bin/deploy-ci.sh
