@@ -1,4 +1,4 @@
-FROM ruby:2.4.1
+FROM ruby:2.6.6
 RUN bundle config --global frozen 1
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
