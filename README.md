@@ -12,7 +12,7 @@ Other organizations who have reused this project for their analytics dashboard:
 
 |                                                                           |                                                                                        |
 |:-------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
-| [The City of Anchorage, AK](http://analytics.muni.org/)                   | [The City of Boulder, CO](https://bouldercolorado.gov/stats)                           |
+| [The City of Anchorage, AK](https://analytics.muni.org/)                  | [The City of Boulder, CO](https://bouldercolorado.gov/stats)                           |
 | [The City of Los Angeles, CA](http://webanalytics.lacity.org/)            | [The City of Santa Monica, CA](http://analytics.smgov.net/)                            |
 | [The City of Omaha, NE](https://analytics.cityofomaha.org/)               | [The City of San Francisco, CA](http://analytics.sfgov.org/)                           |
 | [The City of Sacramento, CA](https://analytics.cityofsacramento.org/)     | [Carbarrus County, NC](http://analytics.cabarruscounty.us/)                            |
@@ -22,12 +22,12 @@ Other organizations who have reused this project for their analytics dashboard:
 | [The States of Jersey](http://webanalytics.gov.je/)                       | [The City of Pittsburgh](http://webstats.pittsburghpa.gov/)                            |
 | [U.S. Department of Education](http://www2.ed.gov/analytics)              | [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)                |
 | [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/) | [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) |
-| [State of Georgia](https://analytics.georgia.gov/)                        |                                                                                        |
+| [State of Georgia](https://analytics.georgia.gov/)                        | [State of Delaware](https://analytics.delaware.gov/)                                  |
 
 [This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
 
 ## About the components
-Ths app uses [Jekyll](https://jekyllrb.com) to build the site, and [Sass](https://sass-lang.com/), [Bourbon](http://bourbon.io), and [Neat](https://neat.bourbon.io) for CSS.
+Ths app uses [Jekyll](https://jekyllrb.com) to build the site, and [Sass](https://sass-lang.com/), [Bourbon](https://bourbon.io), and [Neat](https://neat.bourbon.io) for CSS.
 
 The javascript provided is a [webpacked](https://webpack.js.org/) aggregation of [several different modules](#javascript-modules), leveraging [d3](https://d3js.org/) for the visualizations. [Learn more on the webpack configuration](#webpack-configuration)
 
