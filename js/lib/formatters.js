@@ -65,13 +65,13 @@ function formatURL(url) {
   return url
     .split('/')[index]
     .split(':')[0]
-    .replace(new RegExp('%20', 'g'), ' ');
+    .replace(/%20/g, ' ');
 }
 
 function formatFile(url) {
   const splitUrls = url.split('/');
   const domain = splitUrls[splitUrls.length - 1];
-  return domain.replace(new RegExp('%20', 'g'), ' ');
+  return domain.replace(/%20/g, ' ');
 }
 
 export default {
