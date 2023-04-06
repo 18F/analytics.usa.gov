@@ -20,6 +20,7 @@ exclude:
 - vendor
 - .codeclimate.yml
 - .eslinrc.yml
+- docker-compose.yml
 - bin/
 - docs/
 
@@ -58,9 +59,9 @@ twitter: usgsa
 
 # Site wide error message
 site_wide_error:
-  display: false
-  title: "Homepage data may not be accurate"
-  body: "Current realtime data on the analytics.usa.gov homepage may not be accurate. Agency pages are currently unaffected."
+  display: true
+  title: "Realtime data may not be accurate"
+  body: "The Google Analytics account that powers analytics.usa.gov is experiencing issues with realtime reporting. Realtime data may be inaccurate."
 sass:
   sass_dir: sass
   style: nested
