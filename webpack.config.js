@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './js/index.js',
@@ -19,15 +20,12 @@ module.exports = {
         options: {
           presets: ['@babel/preset-env'],
         },
-      },
-      {
-        test: /\.m?js$/,
-        exclude: [path.resolve(__dirname, 'node_modules')],
-        loader: 'eslint-loader',
-        enforce: 'pre',
-      },
+      }
     ],
   },
+  plugins: [
+    new ESLintPlugin()
+  ],
   optimization: {
     minimizer: [
       new TerserPlugin({
