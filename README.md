@@ -200,7 +200,7 @@ The current configuration uses babel `present-env`.
 
 The webpack also includes linting using [eslint](https://eslint.org/) leveraging the [AirBnb linting preset](https://www.npmjs.com/package/eslint-config-airbnb).
 
-The webconfig uses the [UglifyJSPlugin](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) to minimize the bundle.
+The webconfig uses the [TerserWebpackPlugin](https://webpack.js.org/plugins/terser-webpack-plugin/) to minimize the bundle.
 
 The resulting uglified bundle is build into `assest/bundle.js`.
 
