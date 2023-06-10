@@ -1,4 +1,6 @@
 
+baseurl: ""
+
 # Don't exclude nginx.conf, needs to be copied into _site for
 # cloud.gov to pick up on it.
 exclude:
@@ -23,6 +25,9 @@ exclude:
 - docker-compose.yml
 - bin/
 - docs/
+- fake-data/
+- node_modules/
+- spec/
 
 # defaults
 defaults:
@@ -32,14 +37,6 @@ defaults:
       type: agencies
     values:
       layout: default
-
-collections:
-  agencies:
-    output: true
-    permalink: /:path/
-  data_pages:
-    output: true
-    permalink: /:path/data/
 
 # Site title and description
 title: "analytics.usa.gov | The US government's web traffic."
@@ -60,8 +57,33 @@ twitter: usgsa
 # Site wide error message
 site_wide_error:
   display: true
-  title: "Realtime data may not be accurate"
-  body: "The Google Analytics account that powers analytics.usa.gov is experiencing issues with realtime reporting. Realtime data may be inaccurate."
+  title: "Realtime data currently not available"
+  body: 'The Google Analytics account that powers analytics.usa.gov is in the process of migrating from Universal Analytics to GA4. Realtime data will become available post migration in the upcoming weeks. Stay tuned as we work hard to bring you the next generation GA4 data.<br><br>For immediate questions about your specific use case, please contact us at <a href="mailto:dap@gsa.gov">dap@gsa.gov</a>'
 sass:
   sass_dir: sass
   style: nested
+
+plugins:
+  - jekyll-datapage-generator
+  - jekyll-redirect-from
+
+page_gen:
+  # Write /agency.slug pages
+  - data: "agencies"
+    template: "data"
+    dir_expr: "record['slug']"
+    index_files: false
+    name_expr: "'index'"
+    title_expr: "record['name']"
+    # debug: true
+
+  # Write /agency.slug/data pages
+  - data: "agencies"
+    template: "data_download"
+    dir_expr: "record['slug'] + '/data/'"
+    index_files: false
+    # name: "index"
+    # name_expr: "record['slug']"
+    name_expr: "'index'"
+    title_expr: "record['name']"
+    debug: true
