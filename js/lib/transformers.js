@@ -16,7 +16,7 @@ function listify(obj) {
  * @return a list of the values in the values key
  */
 function extractArrayValue(list) {
-  return list.map(item => item.value);
+  return list.map((item) => item.value);
 }
 
 /*

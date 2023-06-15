@@ -9,7 +9,6 @@ function element(selection, selector) {
   const bits = selector.split('.');
   const name = bits[0];
 
-
   const klass = bits.slice(1).join(' ');
   return selection.append(name)
     .attr('class', klass);
@@ -22,14 +21,12 @@ export default function buildtimeSeries() {
   const height = 150;
   const padding = 50;
 
-
   const margin = {
     top: 10,
     right: padding,
     bottom: 25,
     left: padding,
   };
-
 
   let x = function (d, i) { return i; };
   let y = function (d) { return d; };
@@ -40,7 +37,6 @@ export default function buildtimeSeries() {
   let yAxis = d3.svg.axis()
     .scale(yScale)
     .ticks(5);
-
 
   const innerTickSize = yAxis.innerTickSize();
   const duration = TRANSITION_DURATION;
@@ -104,14 +100,14 @@ export default function buildtimeSeries() {
         return d;
       })
       .attr('aria-label', title)
-      .attr('transform', d => `translate(${[d.x, d.y1]})`);
+      .attr('transform', (d) => `translate(${[d.x, d.y1]})`);
 
     bar.select('rect')
       .attr('width', barWidth)
       .transition()
       .duration(duration)
-      .attr('y', d => -d.height)
-      .attr('height', d => d.height);
+      .attr('y', (d) => -d.height)
+      .attr('height', (d) => d.height);
 
     bar.select('.label')
       .attr('text-anchor', 'middle')

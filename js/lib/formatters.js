@@ -74,7 +74,6 @@ function formatFile(url) {
   return domain.replace(new RegExp('%20', 'g'), ' ');
 }
 
-
 export default {
   trimZeroes,
   addCommas,

@@ -6,6 +6,7 @@ import barChart from './barchart';
 import buildTimeSeries from './timeseries';
 import formatters from './formatters';
 import transformers from './transformers';
+import { isPartOfUnitedStates } from './territories';
 
 /*
  * Define block renderers for each of the different data types.
@@ -20,7 +21,7 @@ export default {
     }),
 
   today: renderBlock.loadAndRender()
-    .transform(data => data)
+    .transform((data) => data)
     .render((svg, data) => {
       const days = data.data;
       days.forEach((d) => {
@@ -29,12 +30,11 @@ export default {
 
       const y = function (d) { return d.visits; };
 
-
       const series = buildTimeSeries()
         .series([data.data])
         .y(y)
-        .label(d => formatters.formatHour(d.hour))
-        .title(d => `${formatters.addCommas(d.visits)} visits during the hour of ${formatters.formatHour(d.hour)}m`);
+        .label((d) => formatters.formatHour(d.hour))
+        .title((d) => `${formatters.addCommas(d.visits)} visits during the hour of ${formatters.formatHour(d.hour)}m`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
@@ -61,7 +61,7 @@ export default {
       return transformers.findProportionsOfMetricFromValue(devices);
     })
     .render(barChart()
-      .value(d => d.proportion)
+      .value((d) => d.proportion)
       .format(formatters.floatToPercent))
     .on('render', (selection, data) => {
       /*
@@ -69,7 +69,7 @@ export default {
          * users.json, we total up the device numbers to get the "big
          * number", saving us an extra XHR load.
          */
-      const total = d3.sum(data.map(d => d.value));
+      const total = d3.sum(data.map((d) => d.value));
       d3.select('#total_visitors')
         .text(formatters.readableBigNumber(total));
     }),
@@ -84,12 +84,12 @@ export default {
   cities: renderBlock.buildBarChartWithLabel((d) => {
     // remove "(not set) from the data"
     const cityList = d.data;
-    const cityListFiltered = cityList.filter(c => (c.city !== '(not set)') && (c.city !== 'zz'));
+    const cityListFiltered = cityList.filter((c) => (c.city !== '(not set)') && (c.city !== 'zz'));
     const proportions = transformers.findProportionsOfMetric(
       cityListFiltered,
-      list => list.map(x => x.active_visitors),
+      (list) => list.map((x) => x.active_visitors),
     );
-    return proportions.slice(0, 10);
+    return proportions.slice(0, 13);
   }, 'city'),
 
   countries: renderBlock.buildBarChart((d) => {
@@ -97,40 +97,49 @@ export default {
     let USVisits = 0;
     d.data.forEach((c) => {
       totalVisits += parseInt(c.active_visitors, 10);
-      if (c.country === 'United States') {
-        USVisits = c.active_visitors;
+      if (isPartOfUnitedStates(c.country)) {
+        USVisits += parseInt(c.active_visitors, 10);
       }
     });
     const international = totalVisits - USVisits;
     const data = {
-      'United States': USVisits,
-      'International &amp; Territories': international,
+      'United States &amp; Territories': USVisits,
+      International: international,
     };
     return transformers.findProportionsOfMetricFromValue(transformers.listify(data));
   }),
 
+  us_and_territories: renderBlock.buildBarChartWithLabel((d) => {
+    let values = transformers.findProportionsOfMetric(
+      d.data,
+      (list) => list.map((x) => x.active_visitors),
+    );
+    values = values.filter((c) => isPartOfUnitedStates(c.country));
+    return values.slice(0, 3);
+  }, 'country'),
+
   international_visits: renderBlock.buildBarChartWithLabel((d) => {
     let values = transformers.findProportionsOfMetric(
       d.data,
-      list => list.map(x => x.active_visitors),
+      (list) => list.map((x) => x.active_visitors),
     );
-    values = values.filter(c => c.country !== 'United States');
+    values = values.filter((c) => !isPartOfUnitedStates(c.country));
     return values.slice(0, 15);
   }, 'country'),
 
   'top-downloads': renderBlock.loadAndRender()
-    .transform(d => d.data.slice(0, 10))
+    .transform((d) => d.data.slice(0, 10))
     .render(
       barChart()
-        .value(d => +d.total_events)
-        .label(d => [
-          '<span class="name"><a class="top-download-page" target="_blank" href=http://', d.page, '>', d.page_title, '</a></span> ',
+        .value((d) => +d.total_events)
+        .label((d) => [
+          '<span class="name"><a class="top-download-page" target="_blank" rel="noopener" href=http://', d.page, '>', d.page_title, '</a></span> ',
           '<span class="domain" >', formatters.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
-          '<span class="filename"><a class="top-download-file" target="_blank" href=', d.event_label, '>',
+          '<span class="filename"><a class="top-download-file" target="_blank" rel="noopener" href=', d.event_label, '>',
           formatters.formatFile(d.event_label), '</a></span>',
         ].join(''))
-        .scale(values => d3.scale.linear()
+        .scale((values) => d3.scale.linear()
           .domain([0, 1, d3.max(values)])
           .rangeRound([0, 1, 100]))
         .format(formatters.addCommas),
@@ -138,7 +147,7 @@ export default {
 
   // the top pages block(s)
   'top-pages': renderBlock.loadAndRender()
-    .transform(d => d.data)
+    .transform((d) => d.data)
     .on('render', (selection) => {
       // turn the labels into links
       selection.selectAll('.label')
@@ -148,20 +157,21 @@ export default {
         .html('')
         .append('a')
         .attr('target', '_blank')
-        .attr('href', d => exceptions[d.domain] || (`http://${d.domain}`))
-        .text(d => titleExceptions[d.domain] || d.domain);
+        .attr('rel', 'noopener')
+        .attr('href', (d) => exceptions[d.domain] || (`http://${d.domain}`))
+        .text((d) => titleExceptions[d.domain] || d.domain);
     })
     .render(barChart()
-      .label(d => d.domain)
-      .value(d => +d.visits)
-      .scale(values => d3.scale.linear()
+      .label((d) => d.domain)
+      .value((d) => +d.visits)
+      .scale((values) => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))
       .format(formatters.addCommas)),
 
   // the top pages block(s)
   'top-pages-realtime': renderBlock.loadAndRender()
-    .transform(d => d.data)
+    .transform((d) => d.data)
     .on('render', (selection) => {
       // turn the labels into links
       selection.selectAll('.label')
@@ -171,14 +181,15 @@ export default {
         .html('')
         .append('a')
         .attr('target', '_blank')
-        .attr('title', d => d.page_title)
-        .attr('href', d => exceptions[d.page] || (`http://${d.page}`))
-        .text(d => titleExceptions[d.page] || d.page_title);
+        .attr('rel', 'noopener')
+        .attr('title', (d) => d.page_title)
+        .attr('href', (d) => exceptions[d.page] || (`http://${d.page}`))
+        .text((d) => titleExceptions[d.page] || d.page_title);
     })
     .render(barChart()
-      .label(d => d.page_title)
-      .value(d => +d.active_visitors)
-      .scale(values => d3.scale.linear()
+      .label((d) => d.page_title)
+      .value((d) => +d.active_visitors)
+      .scale((values) => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))
       .format(formatters.addCommas)),

@@ -1,4 +1,3 @@
-
 import d3 from 'd3';
 import * as Q from 'q';
 
@@ -13,7 +12,7 @@ gaEventHandler();
 const PROMISES = {};
 
 function whenRendered(blockIds, callback) {
-  const promises = blockIds.map(id => PROMISES[id]);
+  const promises = blockIds.map((id) => PROMISES[id]);
   return Q.all(promises).then(callback);
 }
 
@@ -28,11 +27,18 @@ function whenRendered(blockIds, callback) {
    * 4. updates the `.bar` width  and `.value` text for each child bin
    * 5. moves the child node into the parent bin
    */
-function nestCharts(selection, parentFilter, child) {
+function nestCharts(selection, key, child) {
+  const parentFilter = (d) => d.key === key;
+
   const parent = selection.selectAll('.bin')
     .filter(parentFilter);
 
   const scale = (child.attr('data-scale-to-parent') === 'true');
+
+  // Display and nest a sub-section if an entry exists in the parent chart
+  if (parent && parent[0].parentNode.innerHTML.includes(key) && child[0]) {
+    child[0][0].classList.remove('hide');
+  }
 
   const bins = child.selectAll('.bin')
     // If the child data should be scaled to be %'s of its parent bin,
@@ -40,13 +46,13 @@ function nestCharts(selection, parentFilter, child) {
     .each((d) => {
       if (scale) d.proportion *= (parent.datum().proportion / 100);
     })
-    .attr('data-share', d => d.proportion);
+    .attr('data-share', (d) => d.proportion);
 
   // XXX we *could* call the renderer again here, but this works, so...
   bins.select('.bar')
-    .style('width', d => `${(d.proportion).toFixed(1)}%`);
+    .style('width', (d) => `${(d.proportion).toFixed(1)}%`);
   bins.select('.value')
-    .text(d => formatters.floatToPercent(d.proportion));
+    .text((d) => formatters.floatToPercent(d.proportion));
 
   parent.node().appendChild(child.node());
 }
@@ -83,22 +89,26 @@ d3.selectAll('*[data-source]')
 // nest the windows chart inside the OS chart once they're both rendered
 whenRendered(['os', 'windows'], () => {
   d3.select('#chart_os')
-    .call(nestCharts, d => d.key === 'Windows', d3.select('#chart_windows'));
+    .call(nestCharts, 'Windows', d3.select('#chart_windows'));
 });
 
 // nest the IE chart inside the browsers chart once they're both rendered
 whenRendered(['browsers', 'ie'], () => {
   d3.select('#chart_browsers')
-    .call(nestCharts, d => d.key === 'Internet Explorer', d3.select('#chart_ie'));
+    .call(nestCharts, 'Internet Explorer', d3.select('#chart_ie'));
 });
 
 // nest the international countries chart inside the "International"
 // chart once they're both rendered
 whenRendered(['countries', 'international_visits'], () => {
   d3.select('#chart_us')
-    .call(nestCharts, d => d.key === 'International &amp; Territories', d3.select('#chart_countries'));
+    .call(nestCharts, 'International', d3.select('#chart_countries'));
 });
 
+whenRendered(['countries', 'us_and_territories'], () => {
+  d3.select('#chart_us')
+    .call(nestCharts, 'United States &amp; Territories', d3.select('#chart_us_and_territories'));
+});
 /*
    * A very primitive, aria-based tab system!
    */
@@ -116,7 +126,6 @@ d3.selectAll("*[role='tablist']")
         };
       });
 
-
     const panels = d3.select(this.parentNode)
       .selectAll("*[role='tabpanel']");
 
@@ -133,7 +142,7 @@ d3.selectAll("*[role='tablist']")
         panel.selected = selected === this;
         return !panel.selected;
       })
-        .style('display', d => (d.selected ? null : 'none'));
+        .style('display', (d) => (d.selected ? null : 'none'));
     }
 
     // when a tab is clicked, update the panels
