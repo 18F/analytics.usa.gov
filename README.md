@@ -115,7 +115,7 @@ The data will be available at `http://localhost:3000` over CORS, with no path pr
 
 Production and staging applications are deployed via CI automatically. Any
 commits to the `master` branch will be deployed to production after passing
-automated tests in CI. Any commits to the `staging` branch will be deployed to
+automated tests in CI. Any commits to the `develop` branch will be deployed to
 the staging application.
 
 It shouldn't be necessary to deploy manually, but with the Cloud Foundry CLI
