@@ -4,8 +4,9 @@ baseurl: ""
 # Don't exclude nginx.conf, needs to be copied into _site for
 # cloud.gov to pick up on it.
 exclude:
+- nginx.conf
+- webpack.config.js
 - ".gitignore"
-- todo.txt
 - Gemfile
 - Gemfile.lock
 - Makefile
