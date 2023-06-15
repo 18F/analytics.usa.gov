@@ -31,6 +31,22 @@ jobs:
       - run:
           name: bundle for production javascript
           command: npm run build-prod
+      - persist_to_workspace:
+          root: .
+          paths:
+            - assets
+
+  deploy-production:
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      - attach_workspace:
+          at: .
       - run:
           name: build site
           command: bundle exec jekyll build
