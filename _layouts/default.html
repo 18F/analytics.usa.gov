@@ -21,7 +21,7 @@
               <li><a href="#explanation">About <span class="sm-hide">this site</span></a></li>
               <li><a href="{{ site.url }}{% if page.slug %}/{{ page.slug }}{% endif %}/data/">Data</a> | <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener">API</a></li>
             </ul>
-            {% assign agencies = site.agencies | sort:"name"  %}
+            {% assign agencies = site.data.agencies | sort: "name"  %}
             {% if agencies.size > 0 %}
               {% unless page.url contains 'data' %}
                 <div class="agency-selector-wrap">
@@ -30,7 +30,7 @@
                     <select name="agency-selector" id="agency-selector" title="Agency Selection Dropdown">
                       <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
                       {% for agency in agencies %}
-                        <option value="{{site.baseurl}}{{agency.url}}">{{agency.name}}</option>
+                        <option value="{{site.baseurl}}/{{agency.slug}}">{{agency.name}}</option>
                       {% endfor %}
                     </select>
                   </form>

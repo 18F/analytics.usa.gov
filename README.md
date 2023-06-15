@@ -17,8 +17,8 @@ Other organizations who have reused this project for their analytics dashboard:
 | [The City of Omaha, NE](https://analytics.cityofomaha.org/)               | [The City of San Francisco, CA](http://analytics.sfgov.org/)                           |
 | [The City of Sacramento, CA](https://analytics.cityofsacramento.org/)     | [Carbarrus County, NC](http://analytics.cabarruscounty.us/)                            |
 | [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)            | [State of Kansas](https://analytics.kansas.gov/)                                       |
-| [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) | [Douglas County, NE](http://analytics.douglascounty-ne.gov/)               |        
-| [Washington State University](https://analytics.wsu.edu/)                 | [State of Indiana](https://analytics.in.gov/)                                          |      
+| [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) | [Douglas County, NE](http://analytics.douglascounty-ne.gov/)               |
+| [Washington State University](https://analytics.wsu.edu/)                 | [State of Indiana](https://analytics.in.gov/)                                          |
 | [The States of Jersey](http://webanalytics.gov.je/)                       | [The City of Pittsburgh](http://webstats.pittsburghpa.gov/)                            |
 | [U.S. Department of Education](http://www2.ed.gov/analytics)              | [U.S. Department of Veterans Affairs](http://www.oit.va.gov/analytics/)                |
 | [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/) | [Government of Canada](https://gcanalyticsapp.com/gca-dashboard/dashboard-index) |
@@ -70,31 +70,11 @@ npm run build-dev
 ### Adding Additional Agencies
 
 1. Ensure that data is being collected for a specific agency's Google Analytics ID. Visit [18F's analytics-reporter](https://github.com/18F/analytics-reporter) for more information. Save the url path for the data collection path.
-1. Create a new html file in the `_agencies` directory. The name of the file will be the url path.
-    ```bash
-    touch _agencies/agencyx.html
-    ```
-1. Create a new html file in the `_data_pages` directory. Use the same name you used in step 2. This will be the data download page for this agency
-    ```bash
-    touch _data_pages/agencyx.html
-    ```
-1. Set the required data for for the new files. (Both files need this data.) example:
-    ```yaml
-    ---
-    name: Agency X # Name of the page
-    slug: agencyx # Same as the name of the html files. Used to generate data page links.
-    layout: default # type of layout used. available layouts are in `_layouts`
-    ---
-    ```
-1. Agency page: Below the data you just entered, include the page content you want. The `_agencies` page will use the `charts.html` partial and the `_data_pages` pages will use the `data_download.html` partial. example:
-    ```yaml
-    {% include charts.html %}
-    ```
+1. Create a new json object in the `/_data/agencies.json` file. The `slug` attribute of the object will be the url path. The `name` attribute is the Agency's name.
 
 ### Developing with local data
 
 The development settings assume data is available at `/fakedata`. You can change this in `_development.yml`.
-
 
 ### Developing with real live data from `analytics-reporter`
 
@@ -132,6 +112,14 @@ The data will be available at `http://localhost:3000` over CORS, with no path pr
 * **lib/transformers** helper methods to manipulate and consolidate raw data into proportional data.
 
 ### Deploying the app
+
+Production and staging applications are deployed via CI automatically. Any
+commits to the `master` branch will be deployed to production after passing
+automated tests in CI. Any commits to the `develop` branch will be deployed to
+the staging application.
+
+It shouldn't be necessary to deploy manually, but with the Cloud Foundry CLI
+installed, follow these steps to deploy.
 
 To deploy to **analytics.usa.gov** after building the site with the details in `_config.yml`:
 
