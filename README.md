@@ -175,8 +175,8 @@ docker push 18fgsa/analytics.usa.gov:<version>-production
 
 | Environment | Branch | URL |
 |-------------| ------ | --- |
-| Production | master | https://analytics.usa.gov |
-| Staging | master | https://analytics-staging.app.cloud.gov |
+| Production | master  | https://analytics.usa.gov |
+| Staging    | develop | https://analytics-staging.app.cloud.gov |
 
 ### Webpack Configuration
 

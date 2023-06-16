@@ -7,6 +7,8 @@ if [ "${CIRCLE_BRANCH}" == "master" ]; then
   cf api api.fr.cloud.gov
   cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
 
+  erb nginx.conf.erb > nginx.conf
+
   # Push the app
   cf v3-zdt-push analytics
   cf logout
@@ -16,6 +18,8 @@ if [ "${CIRCLE_BRANCH}" == "develop" ]; then
   # Log into cloud.gov
   cf api api.fr.cloud.gov
   cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+
+  erb nginx.conf.erb > nginx.conf
 
   # Push the app
   cf v3-zdt-push analytics-staging
