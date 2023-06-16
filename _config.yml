@@ -4,33 +4,30 @@ baseurl: ""
 # Don't exclude nginx.conf, needs to be copied into _site for
 # cloud.gov to pick up on it.
 exclude:
-- nginx.conf
-- webpack.config.js
-- ".gitignore"
-- Gemfile
-- Gemfile.lock
-- Makefile
-- Staticfile
-- README.md
-- CONTRIBUTING.md
-- LICENSE.md
-- ".sass-cache"
-- requirements.txt
-- system-security-plan.yml
-- manifest.yml
-- package.json
-- package-lock.json
-- vendor
+- .gitignore
 - .codeclimate.yml
 - .eslinrc.yml
-- docker-compose.yml
+- .sass-cache
+- CONTRIBUTING.md
 - bin/
 - docs/
 - fake-data/
 - node_modules/
 - spec/
+- docker-compose.yml
+- Gemfile
+- Gemfile.lock
+- LICENSE.md
+- Makefile
+- manifest.yml
+- nginx.conf
+- package.json
+- package-lock.json
+- README.md
+- Staticfile
+- system-security-plan.yml
+- webpack.config.js
 
-# defaults
 defaults:
   -
     scope:
