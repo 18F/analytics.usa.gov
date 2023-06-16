@@ -18,6 +18,6 @@ if [ "${CIRCLE_BRANCH}" == "develop" ]; then
   cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
 
   # Push the app
-  make deploy_staging
+  cf v3-zdt-push analytics-staging
   cf logout
 fi
