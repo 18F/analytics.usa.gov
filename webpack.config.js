@@ -1,6 +1,6 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
+const TerserPlugin = require('terser-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './js/index.js',
@@ -20,16 +20,19 @@ module.exports = {
         options: {
           presets: ['@babel/preset-env'],
         },
-      },
-      {
-        test: /\.m?js$/,
-        exclude: [path.resolve(__dirname, 'node_modules')],
-        loader: 'eslint-loader',
-        enforce: 'pre',
-      },
+      }
     ],
   },
+  plugins: [
+    new ESLintPlugin()
+  ],
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+        },
+      }),
+    ],
   },
 };

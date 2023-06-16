@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.6-node-browsers
+      - image: cimg/ruby:2.7.8-browsers
     steps:
       - checkout
       - restore_cache:
@@ -42,5 +42,5 @@ jobs:
             sudo dpkg -i cf-cli_amd64.deb
             cf -v
       - run:
-          name: deploy site
+          name: deploy develop and master branches to cloud.gov
           command: bin/deploy-ci.sh

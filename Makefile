@@ -21,10 +21,10 @@ dev-docker:
 	bundle exec jekyll serve --host 0.0.0.0 --watch --config=_config.yml,_development.yml
 
 deploy_production:
-	make production && cf push analytics
+	make production && cf v3-zdt-push analytics
 
 deploy_staging:
-	make staging && cf push analytics-staging
+	make staging && cf v3-zdt-push analytics-staging
 
 docker-start:
 	docker-compose up -d

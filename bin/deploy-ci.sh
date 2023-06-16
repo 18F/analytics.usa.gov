@@ -9,7 +9,6 @@ if [ "${CIRCLE_BRANCH}" == "master" ]; then
 
   # Push the app
   cf v3-zdt-push analytics
-
   cf logout
 fi
 
@@ -20,6 +19,5 @@ if [ "${CIRCLE_BRANCH}" == "develop" ]; then
 
   # Push the app
   cf v3-zdt-push analytics-staging
-
   cf logout
 fi
