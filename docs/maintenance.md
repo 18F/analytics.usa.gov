@@ -77,17 +77,16 @@ This should give you a username and password. The username and password will be 
 
 In the settings, the old `CF_USERNAME` and `CF_PASSWORD` values will need to be deleted and re-added with the new username and password values.
 
-## Restarting the app in cloud.gov 
+## Restarting the app in cloud.gov
 
-Sometimes if the site is acting up, it helps to restart the app in cloud.gov.  Here's how to do that.  
+Sometimes if the site is acting up, it helps to restart the app in cloud.gov.  Here's how to do that.
 
-* Log in at http://console.fr.cloud.gov/.  
+* Log in via https://cloud.gov/.
 * Navigate to the `gsa-opp-anlaytics` org, then the `analytics` app in the `analytics-dev` space.
-* Click on the Restart app button.  
+* Click on the Restart app button.
 
-## Adding/Removing users in cloud.gov 
+## Adding/Removing users in cloud.gov
 
-* In a terminal, enter `cf login -a api.fr.cloud.gov --sso`.  
-* Follow the directions to log in.  
-* Use [these commands](https://cloud.gov/docs/apps/managing-teammates/) to add/edit/remove users.  
-
+* In a terminal, enter `cf login -a api.fr.cloud.gov --sso`.
+* Follow the directions to log in.
+* Use [these commands](https://cloud.gov/docs/apps/managing-teammates/) to add/edit/remove users.
