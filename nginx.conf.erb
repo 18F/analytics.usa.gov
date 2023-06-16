@@ -60,14 +60,14 @@ http {
     location =/developer {
       return 302 https://open.gsa.gov/api/dap/;
     }
-    
+
     location / {
       root <%= ENV["APP_ROOT"] %>/public;
       index index.html index.htm Default.htm;
-      <% if File.exists?(File.join(ENV["APP_ROOT"], "nginx/conf/.enable_directory_index")) %>
+      <% if ENV["APP_ROOT"] && File.exists?(File.join(ENV["APP_ROOT"], "nginx/conf/.enable_directory_index")) %>
       autoindex on;
       <% end %>
-      <% if File.exists?(auth_file = File.join(ENV["APP_ROOT"], "nginx/conf/.htpasswd")) %>
+      <% if ENV["APP_ROOT"] && File.exists?(auth_file = File.join(ENV["APP_ROOT"], "nginx/conf/.htpasswd")) %>
       auth_basic "Restricted";                                #For Basic Auth
       auth_basic_user_file <%= auth_file %>;  #For Basic Auth
       <% end %>
