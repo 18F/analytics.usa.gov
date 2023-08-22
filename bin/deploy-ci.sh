@@ -19,6 +19,7 @@ if [ "${CIRCLE_BRANCH}" == "develop" ]; then
   cf api api.fr.cloud.gov
   cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
 
+  # Interpret nginx.conf.erb configs, then copy
   erb nginx.conf.erb > nginx.conf
 
   # Push the app
@@ -31,6 +32,7 @@ if [ "${CIRCLE_BRANCH}" == "2023-06-16" ]; then
   cf api api.fr.cloud.gov
   cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
 
+  # Interpret nginx.conf.erb configs, then copy
   erb nginx.conf.erb > nginx.conf
 
   # Push the app
