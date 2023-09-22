@@ -32,6 +32,9 @@ jobs:
           name: bundle for production javascript
           command: npm run build-prod
       - run:
+          name: install gems
+          command: bundle install 
+      - run:
           name: build site
           command: bundle exec jekyll build
       # Install Cloud Foundry cli (cf) before deploy step. cf is used to push to Cloud.gov
