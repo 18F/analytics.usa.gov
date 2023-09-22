@@ -8,5 +8,6 @@ applications:
 - name: analytics-staging
   instances: 1
   memory: 128M
-  buildpack: nginx_buildpack
+  buildpack: staticfile_buildpack
   stack: cflinuxfs4
+  command: /app/new_boot.sh
