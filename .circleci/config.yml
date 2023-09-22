@@ -11,7 +11,7 @@ jobs:
             - v1-dependencies-
       - run:
           name: install dependencies
-          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
       - save_cache:
           paths:
             - ./vendor/bundle
