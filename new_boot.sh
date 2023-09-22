@@ -14,7 +14,7 @@ if [ -f "$APP_ROOT/nginx/conf/.htpasswd" ]; then
 fi
 
 if [ -n "${FORCE_HTTPS}" ]; then
-  sed '/# this is to allow /data/ to pass through untouched/ r /app/nginx_snips/if_force_https.txt)' /app/nginx/conf/nginx.conf 
+  sed '/index index.html index.htm Default.htm;/ r /app/nginx_snips/if_force_https.txt)' /app/nginx/conf/nginx.conf 
 fi
 
 $APP_ROOT/start_logging.sh
