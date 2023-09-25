@@ -3,7 +3,7 @@ applications:
 - name: analytics
   instances: 2
   memory: 128M
-  buildpack: nginx_buildpack
+  buildpack: staticfile_buildpack
   stack: cflinuxfs4
   services:
   - analytics-s3
