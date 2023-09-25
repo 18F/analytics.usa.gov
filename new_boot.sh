@@ -21,7 +21,5 @@ if test -n "FORCE_HTTPS"; then
   sed -i '/index index.html index.htm Default.htm;/ r /app/nginx_snips/if_force_https.txt)' /app/nginx/conf/nginx.conf 
 fi
 
-cat /app/nginx/conf/nginx.conf
-
 $APP_ROOT/start_logging.sh
 nginx -p $APP_ROOT/nginx -c $APP_ROOT/nginx/conf/nginx.conf
