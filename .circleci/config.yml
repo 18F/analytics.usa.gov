@@ -37,13 +37,20 @@ jobs:
       - run:
           name: build site
           command: bundle exec jekyll build
-      # Install Cloud Foundry cli (cf) before deploy step. cf is used to push to Cloud.gov
-      - run:
-          name: install-cf-cli
+
+        # Install Cloud Foundry cli (cf) before deploy step. cf is used to push to Cloud.gov
+      # - run:
+          # name: install-cf-cli
+          # command: |
+            # curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+            # sudo dpkg -i cf-cli_amd64.deb
+            # cf -v
+      
+      - run: 
+          name: Install CF CLI
           command: |
-            curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
-            sudo dpkg -i cf-cli_amd64.deb
-            cf -v
+            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl 
+
       - run:
           name: deploy develop and master branches to cloud.gov
           command: bin/deploy-ci.sh
