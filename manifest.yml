@@ -5,6 +5,8 @@ applications:
   memory: 128M
   buildpack: staticfile_buildpack
   stack: cflinuxfs4
+  services:
+  - analytics-s3
   #- name: analytics-staging
     #instances: 1
     #memory: 128M
