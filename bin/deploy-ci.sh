@@ -20,4 +20,6 @@ if [ "${CIRCLE_BRANCH}" == "develop" ]; then
   # Push the app
   cf push -f "./manifest.yml"
   cf logout
+  cd ./nginx
+  cf push -f "./nginx.yml"
 fi
