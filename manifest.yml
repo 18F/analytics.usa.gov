@@ -15,10 +15,13 @@ applications:
     services:
     - analytics-s3-dev
   - name: analytics-nginx
+    path: nginx
     instances: 1
     memory: 128M
-    buildpack: nginx_buildpack
+    buildpacks: 
+      - https://github.com/cloudfoundry/apt-buildpack    
+      - nginx_buildpack
     stack: cflinuxfs4
     services:
     - analytics-s3-dev
-    command: "chmod +x /home/vcap/app/entrypoint.sh && /home/vcap/app/entrypoint.sh"
+    command: "chmod +x ./entrypoint.sh && ./entrypoint.sh"
