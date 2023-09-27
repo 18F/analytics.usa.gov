@@ -14,3 +14,11 @@ applications:
     stack: cflinuxfs4
     services:
     - analytics-s3-dev
+  - name: analytics-nginx
+    instances: 1
+    memory: 128M
+    buildpack: nginx_buildpack
+    stack: cflinuxfs4
+    services:
+    - analytics-s3-dev
+    command: "chmod +x /home/vcap/app/entrypoint.sh && /home/vcap/app/entrypoint.sh"
