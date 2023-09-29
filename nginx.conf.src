@@ -24,10 +24,10 @@ http {
   server_tokens off;
 
    map $http_origin $allow_origin {
-       ~^http(s)?:\/\/(.*)?\.app\.cloud\.gov$ $http_origin;
+       ~^(http(s)?:\/\/)?(.*)?\.app\.cloud\.gov$ $http_origin;
    }
    map $http_origin $allow_methods {
-       ~^http(s)?:\/\/(.*)?\.app\.cloud\.gov$ "OPTIONS, HEAD, GET";
+       ~^(http(s)?:\/\/)?(.*)?\.app\.cloud\.gov$ "OPTIONS, HEAD, GET";
    }
 
   server {
