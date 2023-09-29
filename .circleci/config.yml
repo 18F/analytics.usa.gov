@@ -49,7 +49,7 @@ jobs:
 
       - run:
           name: Run Envsubst on nginx.conf
-          command: envsubst '${S3_BUCKET_URL}' < "./nginx.conf" > "./nginx.conf" && pwd && ls -l 
+          command: sed -e "s/\${S3_BUCKET_URL}/$S3_BUCKET_URL/g" nginx.conf.src > nginx.conf 
 
       - run: 
           name: Install CF CLI
