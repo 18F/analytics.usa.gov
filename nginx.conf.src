@@ -56,9 +56,9 @@ http {
       add_header             Cache-Control "no-cache";
       add_header             Pragma "no-cache";
 
-      # proxy_hide_header      Access-Control-Allow-Origin;
-      # add_header             Access-Control-Allow-Origin $allow_origin;
-      # add_header             Access-Control-Allow-Methods $allow_methods;
+      proxy_hide_header      Access-Control-Allow-Origin;
+      add_header             Access-Control-Allow-Origin $allow_origin;
+      add_header             Access-Control-Allow-Methods $allow_methods;
 
       proxy_pass             ${S3_BUCKET_URL}/data/$url_full;
     }
