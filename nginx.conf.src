@@ -23,11 +23,26 @@ http {
   port_in_redirect off; # Ensure that redirects don't include the internal container PORT - <%= ENV["PORT"] %>
   server_tokens off;
 
-  map $http_origin $allow_origin {
-      ~^http(s)?://(*\.)?apps.cloud.gov$ $http_origin;
+  # map $http_origin $allow_origin {
+      # ~^http(s)?://(*\.)?apps.cloud.gov$ $http_origin;
+  # }
+  # map $http_origin $allow_methods {
+      # ~^http(s)?://(*\.)?apps.cloud.gov$ "OPTIONS, HEAD, GET";
+  # }
+
+  map $http_x_forwarded_host $best_host {
+    "~^([^,]+),?.*$" $1;
+    ''               $host;
   }
-  map $http_origin $allow_methods {
-      ~^http(s)?://(*\.)?apps.cloud.gov$ "OPTIONS, HEAD, GET";
+
+  map $http_x_forwarded_prefix $best_prefix {
+    "~^([^,]+),?.*$" $1;
+    ''               '';
+  }
+
+  map $http_x_forwarded_proto $best_proto {
+    "~^([^,]+),?.*$" $1;
+    ''               '';
   }
 
   server {
@@ -56,9 +71,9 @@ http {
       add_header             Cache-Control "no-cache";
       add_header             Pragma "no-cache";
 
-      proxy_hide_header      Access-Control-Allow-Origin;
-      add_header             Access-Control-Allow-Origin $allow_origin;
-      add_header             Access-Control-Allow-Methods $allow_methods;
+      # proxy_hide_header      Access-Control-Allow-Origin;
+      # add_header             Access-Control-Allow-Origin $allow_origin;
+      # add_header             Access-Control-Allow-Methods $allow_methods;
 
       proxy_pass             ${S3_BUCKET_URL}/data/$url_full;
     }
