@@ -1,46 +1,158 @@
-version: 2
+version: 2.1
 jobs:
-  build:
+  stage_deploy:       
     docker:
-      - image: cimg/ruby:2.7.8-browsers
-    steps:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:   
       - checkout
+      
+      - run:
+          name: Replace Data URL in _config.yml file when deploying to staging
+          command: |
+              sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-staging.app.cloud.gov@g' _config.yml
+              sed -i 's@  - name: analytics@  - name: analytics-staging@g' manifest.yml
+              sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
+      
       - run:
           name: install dependencies
-          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
+      
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      
       - run:
           name: install npm dependencies
           command: |
             npm install
             sudo npm install -g eslint
             sudo npm install -g webpack
+            sudo npm install -g envsub
+      
       - run:
           name: lint javascript
           command: npm run lint
+      
       - run:
           name: run tests
           command: npm run test
+      
       - run:
           name: bundle for production javascript
           command: npm run build-prod
+      
+      - run:
+          name: install gems
+          command: bundle install 
+      
       - run:
           name: build site
-          command: bundle exec jekyll build
-      # Install Cloud Foundry cli (cf) before deploy step. cf is used to push to Cloud.gov
+          command:  bundle exec jekyll build 
+
       - run:
-          name: install-cf-cli
+          name: Run Envsubst on nginx.conf
+          command: envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
+
+      - run:   
+          name: Install CF CLI
           command: |
-            curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
-            sudo dpkg -i cf-cli_amd64.deb
-            cf -v
+            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl 
+
       - run:
-          name: deploy develop and master branches to cloud.gov
-          command: bin/deploy-ci.sh
+          name: deploy
+          command: |
+              set -e
+              # Log into cloud.gov
+              cf api api.fr.cloud.gov
+              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf push -f "./manifest.yml"
+              cf logout
+
+  main_deploy:       
+    docker:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:  
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      
+      - run:
+          name: install dependencies
+          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
+      
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      
+      - run:
+          name: install npm dependencies
+          command: |
+            npm install
+            sudo npm install -g eslint
+            sudo npm install -g webpack
+            sudo npm install -g envsub
+      
+      - run:
+          name: lint javascript
+          command: npm run lint
+      
+      - run:
+          name: run tests
+          command: npm run test
+      
+      - run:
+          name: bundle for production javascript
+          command: npm run build-prod
+      
+      - run:
+          name: install gems
+          command: bundle install 
+      
+      - run:
+          name: build site
+          command: bundle exec jekyll build 
+
+      - run:
+          name: Run Envsubst on nginx.conf
+          command: envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
+
+      - run:   
+          name: Install CF CLI
+          command: |
+            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl 
+
+      - run:
+          name: deploy
+          command: |
+              set -e
+              # Log into cloud.gov
+              cf api api.fr.cloud.gov
+              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf push -f "./manifest.yml"
+              cf logout
+
+workflows:
+  stage_workflow:
+    jobs: 
+      - stage_deploy:
+          filters:
+            branches:
+              only:
+                - develop
+                  
+  main_workflow:
+    jobs: 
+      - main_deploy:
+          filters:
+            branches:
+              only:
+                - master
