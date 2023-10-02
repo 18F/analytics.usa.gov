@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: analytics-staging
+  - name: analytics
     instances: 1
     memory: 128M
     buildpacks: 
@@ -8,5 +8,5 @@ applications:
     - nginx_buildpack
     stack: cflinuxfs4
     services:
-    - analytics-s3-dev
+    - analytics-s3
     command: "chmod +x ./entrypoint.sh && ./entrypoint.sh"
