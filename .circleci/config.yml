@@ -176,7 +176,8 @@ jobs:
           command: bundle install 
       
       - run:
-          name: build site
+          name: build sitei
+          command:  bundle exec jekyll build 
 
       - run:
           name: Run Envsubst on nginx.conf
