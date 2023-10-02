@@ -198,16 +198,18 @@ jobs:
               cf push -f "./manifest.yml"
               cf logout
 
-  workflows: 
-    # dev_workflow:
-    #   jobs: dev_deploy
-    #   filters:
-    #     branch: develop
+  workflows:
     stage_workflow:
-      jobs: stage_deploy
-      filters:
-        branch: develop
+      jobs: 
+        - stage_deploy:
+            filters:
+              branches:
+                only:
+                - develop
     main_workflow:
-      jobs: main_deploy
-      filters:
-        branch: master
+        jobs: 
+          - main_deploy:
+              filters:
+                branches:
+                  only:
+                  - master
