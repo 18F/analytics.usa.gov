@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: cimg/ruby:3.1.4-browsers
     environment:
-      BRANCH: << pipeline.git.branch >>
+      BRANCH: ${{ << pipeline.git.branch >> || << pipeline.git.tag }}
     steps:
       - checkout
       - restore_cache:
