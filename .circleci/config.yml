@@ -59,6 +59,7 @@ jobs:
       - run:
           name: Replace Data URL in _config.yml file when deploying to staging
           command: |
+            echo $pipeline.git.branch
             if [ "$pipeline.git.branch" = "develop" ]; then 
               sed -i 's@data_url: https://analytics\.usa\.gov/data@data_url: https://analytics-staging.app.cloud.gov/data@g' _config.yml
             fi
