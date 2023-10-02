@@ -57,7 +57,7 @@ jobs:
 
       - run:
           name: Run Envsubst on nginx.conf
-          command: envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
+          command: envsubst '${S3_BUCKET_URL_STAGE}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
 
       - run:   
           name: Install CF CLI
@@ -123,7 +123,7 @@ jobs:
 
       - run:
           name: Run Envsubst on nginx.conf
-          command: envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
+          command: envsubst '${S3_BUCKET_URL_MAIN}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
 
       - run:   
           name: Install CF CLI
