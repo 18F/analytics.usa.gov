@@ -23,18 +23,23 @@ jobs:
             sudo npm install -g eslint
             sudo npm install -g webpack
             sudo npm install -g envsub
+      
       - run:
           name: lint javascript
           command: npm run lint
+      
       - run:
           name: run tests
           command: npm run test
+      
       - run:
           name: bundle for production javascript
           command: npm run build-prod
+      
       - run:
           name: install gems
           command: bundle install 
+      
       - run:
           name: build site
           command: bundle exec jekyll build
@@ -51,7 +56,14 @@ jobs:
           name: Run Envsubst on nginx.conf
           command: envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
 
-      - run: 
+      - run:
+          name: Replace Data URL in _config.yml file when deploying to staging
+          command: |
+            if [ "$pipeline.git.branch" = "develop" ]; then 
+              sed -i 's@data_url: https://analytics\.usa\.gov/data@data_url: https://analytics-staging.app.cloud.gov/data@g' _config.yml
+            fi
+
+      - run:   
           name: Install CF CLI
           command: |
             sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl 
