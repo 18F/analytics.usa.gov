@@ -58,7 +58,7 @@ jobs:
               sed -i 's@data_url: https://analytics\.usa\.gov/data@data_url: https://analytics-staging.app.cloud.gov/data@g' _config.yml
               sed -i 's@url: https://analytics\.usa\.gov/data@url: https://analytics-staging.app.cloud.gov/data@g' _config.yml
               sed -i 's@  - name: analytics@  - name: analytics-staging@g' manifest.yml
-              sed -i 's@    - analytics-s3  @    - analytics-s3-dev@g' manifest.yml
+              sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
       - run:   
           name: Install CF CLI
           command: |
