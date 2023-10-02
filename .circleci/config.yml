@@ -1,65 +1,5 @@
 version: 2
 jobs:
-  # dev_deploy:
-  #   docker:
-  #     - image: cimg/ruby:3.1.4-browsers
-  #   steps:  
-  #     - checkout
-  #     - restore_cache:
-  #         keys:
-  #           - v1-dependencies-{{ checksum "Gemfile.lock" }}
-  #           - v1-dependencies-
-  #     - run:
-  #         name: install dependencies
-  #         command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
-  #
-  #     - save_cache:
-  #         paths:
-  #           - ./vendor/bundle
-  #         key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-  #
-  #     - run:
-  #         name: install npm dependencies
-  #         command: |
-  #           npm install
-  #           sudo npm install -g eslint
-  #           sudo npm install -g webpack
-  #           sudo npm install -g envsub
-  #     
-  #     - run:
-  #         name: lint javascript
-  #         command: npm run lint
-  #     
-  #     - run:
-  #         name: run tests
-  #         command: npm run test
-  #     
-  #     - run:
-  #         name: bundle for production javascript
-  #         command: npm run build-prod
-  #     
-  #     - run:
-  #         name: install gems
-  #         command: bundle install 
-  #     
-  #     - run:
-  #         name: build site
-  #         command: bundle exec jekyll build
-  #
-  #     - run:   
-  #         name: Install CF CLI
-  #         command: |
-  #           sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl 
-  #    
-  #     - run:
-  #         name: Replace Data URL in _config.yml file when deploying to staging
-  #         command: |
-  #             sed -i 's@data_url: https://analytics\.usa\.gov/data@data_url: https://analytics-staging.app.cloud.gov/data@g' _config.yml
-  #
-  #     - run:
-  #         name: deploy develop and master branches to cloud.gov
-  #         command: bin/deploy-ci.sh
-   #
   stage_deploy:       
     docker:
       - image: cimg/ruby:3.1.4-browsers
@@ -176,7 +116,7 @@ jobs:
           command: bundle install 
       
       - run:
-          name: build sitei
+          name: build site
           command:  bundle exec jekyll build 
 
       - run:
@@ -198,18 +138,19 @@ jobs:
               cf push -f "./manifest.yml"
               cf logout
 
-  workflows:
-    stage_workflow:
-      jobs: 
-        - stage_deploy:
-            filters:
-              branches:
-                only:
+workflows:
+  stage_workflow:
+    jobs: 
+      - stage_deploy:
+          filters:
+            branches:
+              only:
                 - develop
-    main_workflow:
-        jobs: 
-          - main_deploy:
-              filters:
-                branches:
-                  only:
-                  - master
+                  
+  main_workflow:
+    jobs: 
+      - main_deploy:
+          filters:
+            branches:
+              only:
+                - master
