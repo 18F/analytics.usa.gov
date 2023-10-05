@@ -105,7 +105,7 @@ To use the API, please register for an API key below and include it in your quer
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(apiUmbrella);
   })();
 </script>
-<noscript>Please enable JavaScript to signup for an <a href="http://api.data.gov/">api.data.gov</a> API key.</noscript>
+<noscript>Please enable JavaScript to signup for an <a href="https://api.data.gov/signup">api.data.gov</a> API key.</noscript>
 
 {% endraw %}
 
@@ -201,5 +201,5 @@ The following query params are supported to work with the data:
 
 - `limit`: Limit the number of data points that are rendered. The default is 1000 and the max is 10,000
 - `page`: Pages through the results. If the limit is set to `1000`, using `page=2` will render the 1001st through 2000th data point.
-- `after`: Limit the results to in dates on or after the date specified. Expects `YYYY-MM-DD`. 
+- `after`: Limit the results to in dates on or after the date specified. Expects `YYYY-MM-DD`.
 - `before`: Limit the results to in dates on or before the date specified. Expects `YYYY-MM-DD`.

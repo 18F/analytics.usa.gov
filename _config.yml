@@ -1,30 +1,37 @@
 
+baseurl: ""
+
 # Don't exclude nginx.conf, needs to be copied into _site for
 # cloud.gov to pick up on it.
 exclude:
-- ".gitignore"
-- todo.txt
-- Gemfile
-- Gemfile.lock
-- Makefile
-- Staticfile
-- README.md
-- CONTRIBUTING.md
-- LICENSE.md
-- dap.md
-- uxtesting.md
-- ".sass-cache"
-- requirements.txt
-- system-security-plan.yml
-- manifest.yml
-- vendor
+- .gitignore
 - .codeclimate.yml
 - .eslinrc.yml
-- docker-compose.yml
+- .sass-cache
 - bin/
 - docs/
+- fake-data/
+- node_modules/
+- sass/
+- spec/
+- CONTRIBUTING.md
+- Dockerfile
+- Dockerfile.production
+- docker-compose.yml
+- Gemfile
+- Gemfile.lock
+- LICENSE.md
+- Makefile
+- manifest.yml
+- nginx.conf
+- package.json
+- package-lock.json
+- README.md
+- Staticfile
+- system-security-plan.yml
+- vendor
+- webpack.config.js
 
-# defaults
 defaults:
   -
     scope:
@@ -32,14 +39,6 @@ defaults:
       type: agencies
     values:
       layout: default
-
-collections:
-  agencies:
-    output: true
-    permalink: /:path/
-  data_pages:
-    output: true
-    permalink: /:path/data/
 
 # Site title and description
 title: "analytics.usa.gov | The US government's web traffic."
@@ -60,8 +59,33 @@ twitter: usgsa
 # Site wide error message
 site_wide_error:
   display: true
-  title: "Realtime data may not be accurate"
-  body: "The Google Analytics account that powers analytics.usa.gov is experiencing issues with realtime reporting. Realtime data may be inaccurate."
+  title: "Data Unavailable Due to a Planned Website Upgrade."
+  body: "Analytics.usa.gov is undergoing scheduled infrastructure and software upgrades. All data and associated reports are temporarily unavailable."
 sass:
   sass_dir: sass
   style: nested
+
+plugins:
+  - jekyll-datapage-generator
+  - jekyll-redirect-from
+
+page_gen:
+  # Write /agency.slug pages
+  - data: "agencies"
+    template: "data"
+    dir_expr: "record['slug']"
+    index_files: false
+    name_expr: "'index'"
+    title_expr: "record['name']"
+    # debug: true
+
+  # Write /agency.slug/data pages
+  - data: "agencies"
+    template: "data_download"
+    dir_expr: "record['slug'] + '/data/'"
+    index_files: false
+    # name: "index"
+    # name_expr: "record['slug']"
+    name_expr: "'index'"
+    title_expr: "record['name']"
+    debug: true
