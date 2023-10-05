@@ -1,5 +1,80 @@
 version: 2.1
 jobs:
+  develop_deploy:       
+    docker:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:   
+      - checkout
+      
+      - run:
+          name: Replace Data URL in _config.yml file when deploying to develop
+          command: |
+              sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-develop.app.cloud.gov@g' _config.yml
+              sed -i 's@  - name: analytics@  - name: analytics-develop@g' manifest.yml
+              sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      
+      - run:
+          name: install dependencies
+          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
+      
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      
+      - run:
+          name: install npm dependencies
+          command: |
+            npm install
+            sudo npm install -g eslint
+            sudo npm install -g webpack
+            sudo npm install -g envsub
+      
+      - run:
+          name: lint javascript
+          command: npm run lint
+      
+      - run:
+          name: run tests
+          command: npm run test
+      
+      - run:
+          name: bundle for production javascript
+          command: npm run build-prod
+      
+      - run:
+          name: install gems
+          command: bundle install 
+      
+      - run:
+          name: build site
+          command:  bundle exec jekyll build 
+
+      - run:
+          name: Run Envsubst on nginx.conf
+          command:  |
+              sed -i 's@${S3_BUCKET_URL}/data/$url_full@${S3_BUCKET_URL_DEV}/data/$url_full@g' nginx.conf.src
+              envsubst '${S3_BUCKET_URL_DEV}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf 
+      - run:   
+          name: Install CF CLI
+          command: |
+            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl 
+
+      - run:
+          name: deploy
+          command: |
+              set -e
+              # Log into cloud.gov
+              cf api api.fr.cloud.gov
+              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf push -f "./manifest.yml"
+              cf logout
+
   stage_deploy:       
     docker:
       - image: cimg/ruby:3.1.4-browsers
@@ -71,7 +146,7 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-stage
               cf push -f "./manifest.yml"
               cf logout
 
@@ -139,18 +214,26 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-main
               cf push -f "./manifest.yml"
               cf logout
 
 workflows:
+  develop_workflow:
+    jobs: 
+      - develop_deploy:
+          filters:
+            branches:
+              only:
+                - develop
+
   stage_workflow:
     jobs: 
       - stage_deploy:
           filters:
             branches:
               only:
-                - develop
+                - stage
                   
   main_workflow:
     jobs: 
