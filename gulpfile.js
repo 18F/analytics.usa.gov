@@ -1,5 +1,7 @@
 /* gulpfile.js */
 
+const setup = require("./gulp/uswds-setup");
+
 /**
  * Import uswds-compile
  */
@@ -19,6 +21,7 @@ uswds.settings.version = 3;
 uswds.paths.dist.css = "./css";
 uswds.paths.dist.theme = "./sass";
 
+
 /**
  * Exports
  * Add as many as you need
@@ -26,3 +29,4 @@ uswds.paths.dist.theme = "./sass";
 exports.init = uswds.init;
 exports.compile = uswds.compile;
 exports.watch = uswds.watch;
+exports.copyAssets = setup.copyUswdsAssets;
