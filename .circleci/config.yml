@@ -71,7 +71,7 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf login -u $CF_USERNAME_DEV -p $CF_PASSWORD_DEV -o gsa-opp-analytics -s analytics-dev
               cf push -f "./manifest.yml"
               cf logout
 
@@ -146,7 +146,7 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-staging
+              cf login -u $CF_USERNAME_STAGE -p $CF_PASSWORD_STAGE -o gsa-opp-analytics -s analytics-staging
               cf push -f "./manifest.yml"
               cf logout
 
@@ -214,7 +214,7 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-main
+              cf login -u $CF_USERNAME_MAIN -p $CF_PASSWORD_MAIN -o gsa-opp-analytics -s analytics-main
               cf push -f "./manifest.yml"
               cf logout
 
