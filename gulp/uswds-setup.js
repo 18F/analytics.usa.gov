@@ -20,13 +20,12 @@ function copyUswdsJS() {
 }
 
 function copyUswdsFonts() {
-  return src(`${USWDS}/uswds/dist/fonts/**/**`).pipe(dest(`${ASSETS}/fonts`));
+  return src(`${USWDS}/fonts/**/**`).pipe(dest(`${ASSETS}/fonts`));
 }
 
 function copyUswdsImages() {
-  return src(`${USWDS}/uswds/dist/img/**/**`).pipe(dest(`${ASSETS}/img`));
+  return src(`${USWDS}/img/**/**`).pipe(dest(`${ASSETS}/img`));
 }
-
 
 
 /**
