@@ -27,7 +27,6 @@ function copyUswdsImages() {
   return src(`${USWDS}/img/**/**`).pipe(dest(`${ASSETS}/img`));
 }
 
-
 /**
  * Export Tasks
  * 

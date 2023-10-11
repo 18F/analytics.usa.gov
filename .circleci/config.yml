@@ -23,6 +23,9 @@ jobs:
             sudo npm install -g eslint
             sudo npm install -g webpack
       - run:
+          name: copy uswds assets
+          command: npm run copy-assets
+      - run:
           name: lint javascript
           command: npm run lint
       - run:

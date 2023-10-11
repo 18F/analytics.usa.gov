@@ -23,10 +23,10 @@ uswds.paths.dist.theme = "./sass";
 
 
 /**
- * Exports
- * Add as many as you need
+ * Export gulp tasks
+ * 
  */
-exports.init = uswds.init;
+exports.copyAssets = setup.copyUswdsAssets;
 exports.compile = uswds.compile;
 exports.watch = uswds.watch;
-exports.copyAssets = setup.copyUswdsAssets;
+
