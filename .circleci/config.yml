@@ -86,7 +86,7 @@ jobs:
           command: |
               sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-staging.app.cloud.gov@g' _config.yml
               sed -i 's@  - name: analytics@  - name: analytics-staging@g' manifest.yml
-              sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
+              sed -i 's@- analytics-s3@- analytics-s3-staging@g' manifest.yml
 
       - restore_cache:
           keys:
