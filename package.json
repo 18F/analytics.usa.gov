@@ -9,6 +9,7 @@
   "scripts": {
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch",
+    "copy-assets": "gulp copyAssets",
     "test": "mocha --require @babel/register spec",
     "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
@@ -27,6 +28,7 @@
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/register": "^7.21.0",
+    "@uswds/compile": "^1.0.0",
     "babel-loader": "^8.3.0",
     "babel-polyfill": "^6.26.0",
     "eslint": "^8.37.0",
@@ -35,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-webpack-plugin": "^4.0.0",
+    "gulp": "^4.0.2",
     "mocha": "^10.2.0",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.8.0",
@@ -44,7 +47,7 @@
     "node": "18.15.0"
   },
   "dependencies": {
-    "@uswds/uswds": "3.6.0",
+    "@uswds/uswds": "^3.6.1",
     "d3": "^3.5.17",
     "eslint-plugin-react-hooks": "^4.6.0",
     "q": "^1.5.1"

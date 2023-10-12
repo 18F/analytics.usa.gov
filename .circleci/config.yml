@@ -109,7 +109,15 @@ jobs:
             sudo npm install -g eslint
             sudo npm install -g webpack
             sudo npm install -g envsub
-      
+
+      - run:
+          name: install gulp cli
+          command: npm install gulp-cli -g
+
+      - run:
+          name: copy uswds assets
+          command: npm run copy-assets
+
       - run:
           name: lint javascript
           command: npm run lint
