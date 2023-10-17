@@ -11,7 +11,7 @@ jobs:
           command: |
               sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-staging.app.cloud.gov@g' _config.yml
               sed -i 's@  - name: analytics@  - name: analytics-staging@g' manifest.yml
-              sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
+              sed -i 's@- analytics-s3@- analytics-s3-staging@g' manifest.yml
 
       - restore_cache:
           keys:
@@ -76,7 +76,7 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf login -u $CF_USERNAME_STAGE -p $CF_PASSWORD_STAGE -o gsa-opp-analytics -s analytics-staging
               cf push -f "./manifest.yml"
               cf logout
 
@@ -230,13 +230,13 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
+              cf login -u $CF_USERNAME_MAIN -p $CF_PASSWORD_MAIN -o gsa-opp-analytics -s analytics-main
               cf push -f "./manifest.yml"
               cf logout
 
 workflows:
   stage_workflow:
-    jobs: 
+    jobs:
       - stage_deploy:
           filters:
             branches:
@@ -244,7 +244,7 @@ workflows:
                 - develop
 
   develop_workflow:
-    jobs: 
+    jobs:
       - develop_deploy:
           filters:
             branches:
@@ -252,7 +252,7 @@ workflows:
                 - develop
 
   main_workflow:
-    jobs: 
+    jobs:
       - main_deploy:
           filters:
             branches:
