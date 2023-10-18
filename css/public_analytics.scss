@@ -1,6 +1,7 @@
 ---
 # Jekyll needs the front matter to render this in Sass
 ---
+
 @import "bourbon/bourbon";
 
 //Grid Settings:
@@ -10,30 +11,29 @@ $gutter: 0em !global;
 
 @import "neat/neat";
 
-
 @mixin responsive_container {
   @include outer-container;
 
   @include media($xlarge-screen) {
     max-width: 1600px;
   }
-  @include media($large-screen)  {
+  @include media($large-screen) {
     max-width: 1200px;
   }
   @include media($medium-screen) {
-    max-width:  992px;
+    max-width: 992px;
   }
-  @include media($small-screen)  {
-    max-width:  768px;
+  @include media($small-screen) {
+    max-width: 768px;
   }
 }
 
-$xxlarge-screen: new-breakpoint(max-width  4000px  14);
-$xlarge-screen: new-breakpoint(max-width  1600px  14);
-$large-screen:  new-breakpoint(max-width  1200px  14);
-$medium-screen: new-breakpoint(max-width  992px   14);
-$small-screen:  new-breakpoint(max-width  768px   1);
-$mobile-small-screen:  new-breakpoint(max-width  500px   1);
+$xxlarge-screen: new-breakpoint(max-width 4000px 14);
+$xlarge-screen: new-breakpoint(max-width 1600px 14);
+$large-screen: new-breakpoint(max-width 1200px 14);
+$medium-screen: new-breakpoint(max-width 992px 14);
+$small-screen: new-breakpoint(max-width 768px 1);
+$mobile-small-screen: new-breakpoint(max-width 500px 1);
 
 // Fonts & Colors:
 
@@ -44,7 +44,7 @@ $dark-blue: #112e51;
 $light-gray: #f9f9f9;
 $uswds-light-gray: #aeb0b5;
 $gray: #e4e4e4; // used only for borders
-$dark-gray: #323a45;//#222;
+$dark-gray: #323a45; //#222;
 $white: #fff;
 
 $background-color: $light-gray;
@@ -56,18 +56,23 @@ $border-radius: 5px;
 
 $bold-weight: 600;
 
-$font-sans:           "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-$lead-font-size:      rem(20px);
-$title-font-size:     rem(59px);
-$h1-font-size:        rem(44px);
-$h2-font-size:        rem(34px);
-$h3-font-size:        rem(24px);
-$h4-font-size:        rem(19px);
-$h5-font-size:        rem(16px);
+$font-sans: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial",
+  sans-serif;
+$lead-font-size: rem(20px);
+$title-font-size: rem(59px);
+$h1-font-size: rem(44px);
+$h2-font-size: rem(34px);
+$h3-font-size: rem(24px);
+$h4-font-size: rem(19px);
+$h5-font-size: rem(16px);
 
-$font-light:          300;
+$font-light: 300;
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: $font-sans;
 }
 
@@ -78,17 +83,20 @@ h1, h2, h3, h4, h5 {
 
 //override draft web design standards for header hack
 form {
-    max-width: none;
+  max-width: none;
 }
 
 // Grid
+
+// ! Replaced with grid-col-8
 .width-one-third {
   @include span-columns(4);
-  @include media($small-screen)  {
+  @include media($small-screen) {
     @include span-columns(1);
   }
 }
 
+// ! Replaced with grid-col-4
 .width-two-thirds {
   @include span-columns(8);
   @include media($small-screen) {
@@ -96,10 +104,12 @@ form {
   }
 }
 
+// * Remove
 .offset-one-third {
   @include shift(4 of 12);
 }
 
+// * Remove
 .width-one-fourth {
   @include span-columns(3);
   @include media($small-screen) {
@@ -107,6 +117,7 @@ form {
   }
 }
 
+// ! Replaced with grid-col-6
 .width-one-half {
   @include span-columns(6);
   @include media($small-screen) {
@@ -114,6 +125,7 @@ form {
   }
 }
 
+// ! Replaced with ???
 .width-three-fourths {
   @include span-columns(9);
   @include media($small-screen) {
@@ -121,6 +133,7 @@ form {
   }
 }
 
+// * Remove
 .offset-one-fourth {
   @include shift(3 of 12);
 }
@@ -141,28 +154,31 @@ a:visited {
 }
 
 .technical-difficulties {
-  color:$red;
-  background:#fff;
-  padding-top:1.25em;
+  color: $red;
+  background: #fff;
+  padding-top: 1.25em;
 }
-
 
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
-.clearfix:after { clear: both; }
+.clearfix:after {
+  clear: both;
+}
 
 ul li:after,
 ul li:before {
-    content: "";
-    display: none;
-    padding-right: 0;
+  content: "";
+  display: none;
+  padding-right: 0;
 }
 
 @include media($small-screen) {
-  .sm-hide { display: none !important; }
+  .sm-hide {
+    display: none !important;
+  }
 }
 
 // Utility classes
@@ -180,7 +196,8 @@ ul li:before {
 .dark-background {
   background: $dark-blue;
 
-  &, a {
+  &,
+  a {
     color: $white;
   }
 }
@@ -188,7 +205,6 @@ ul li:before {
 .text-center {
   text-align: center;
 }
-
 
 /*
 * top navigation bar
@@ -236,9 +252,9 @@ header {
     width: 50%;
     float: left;
     @include media($medium-screen) {
-        width: 100%;
-        float: none;
-        clear: both;
+      width: 100%;
+      float: none;
+      clear: both;
     }
   }
 }
@@ -248,7 +264,7 @@ header {
   @include media($medium-screen) {
     width: 80%;
   }
-  @include media($small-screen)  {
+  @include media($small-screen) {
     width: 100%;
   }
 }
@@ -256,44 +272,44 @@ header {
 .links {
   float: right;
   margin-bottom: 0;
-    @include media($medium-screen) {
-      li {
-        display: inline;
-        padding: 0 0.8rem;
-        &:nth-child(odd) a::after {
-          content: "\2022";
-          padding: 0 0 0 1.6rem;
-          font-weight: bold;
-          color: $light-blue;
-        }
-      }
-      a {
-        line-height: 5.5rem;
+  @include media($medium-screen) {
+    li {
+      display: inline;
+      padding: 0 0.8rem;
+      &:nth-child(odd) a::after {
+        content: "\2022";
+        padding: 0 0 0 1.6rem;
+        font-weight: bold;
+        color: $light-blue;
       }
     }
-    @include media($small-screen) {
-      li {
-        padding: 0.5rem;
-        &:nth-child(odd) a::after {
-          padding: 0 0 0 1rem;
-        }
+    a {
+      line-height: 5.5rem;
+    }
+  }
+  @include media($small-screen) {
+    li {
+      padding: 0.5rem;
+      &:nth-child(odd) a::after {
+        padding: 0 0 0 1rem;
       }
     }
-   @include media($mobile-small-screen) {
-     li {
-       font-size: 1.6rem;
-       padding: 0;
-       margin: 0;
-       display: block;
-       &:nth-child(odd) a::after {
-         content: "";
-         padding: 0;
-       }
-     }
-     a {
-        line-height: 1rem;
-        font-size: 1.5rem;
-     }
+  }
+  @include media($mobile-small-screen) {
+    li {
+      font-size: 1.6rem;
+      padding: 0;
+      margin: 0;
+      display: block;
+      &:nth-child(odd) a::after {
+        content: "";
+        padding: 0;
+      }
+    }
+    a {
+      line-height: 1rem;
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -318,8 +334,8 @@ header {
   }
 }
 header #agency-selector {
-  background-image: url('../css/img/arrow-down.png');
-  background-image: url('../css/img/arrow-down.svg');
+  background-image: url("../css/img/arrow-down.png");
+  background-image: url("../css/img/arrow-down.svg");
   color: $white;
   background-color: $light-blue-two;
   border: 1px solid $white;
@@ -329,11 +345,10 @@ header #agency-selector {
 * end top navigation bar
 */
 
-
 section {
   background: $white;
   padding: 1em;
-    #current_visitors {
+  #current_visitors {
     font-size: 8em;
     margin: 0;
     @include media($small-screen) {
@@ -347,7 +362,7 @@ section {
 
 #realtime {
   color: $dark-blue;
-  @include media($small-screen)  {
+  @include media($small-screen) {
     font-size: 12px;
   }
 }
@@ -361,7 +376,7 @@ section {
 }
 
 #main_data {
-  @include media($small-screen)  {
+  @include media($small-screen) {
     border-right: none;
   }
 }
@@ -385,25 +400,27 @@ section {
 #secondary_data {
   border-left: 1px solid $gray;
   border-bottom: 1px solid $gray;
-  @include media($small-screen)  {
+  @include media($small-screen) {
     border-top: 1px solid $gray;
     border-left: none;
     border-right: none;
   }
-
 }
 
 #explanation {
   border-top: 1px solid $gray;
   margin-top: -1px;
-  h4 {font-size: 90%}
+  h4 {
+    font-size: 90%;
+  }
 
   ul {
     font-size: 80%;
     padding: 0;
   }
 
-  ul, li {
+  ul,
+  li {
     list-style-type: none;
     list-style-position: inside;
   }
@@ -423,7 +440,7 @@ section {
     /*font-size: 1.5rem;*/
     padding-left: 3rem;
     &::before {
-      content: '\2022';
+      content: "\2022";
       padding: 0 10px;
     }
   }
@@ -439,7 +456,7 @@ section {
 }
 
 .downloads {
-  @include media($mobile-small-screen){
+  @include media($mobile-small-screen) {
     thead th {
       font-size: 1.8rem;
     }
@@ -459,7 +476,7 @@ section {
 .section_headline {
   padding: 0.1em 1em;
   border-top: 1px solid $gray;
-  @include media($small-screen)  {
+  @include media($small-screen) {
     border-bottom: none;
   }
 }
@@ -477,7 +494,7 @@ section {
 .three_column {
   @include span-columns(3 of 9);
 
-  @include media($small-screen)  {
+  @include media($small-screen) {
     @include span-columns(1);
     border-left: none;
     border-top: 1px solid $gray;
@@ -493,8 +510,6 @@ section {
   }
 }
 
-
-
 #realtime {
   text-align: center;
   padding-top: 0em;
@@ -505,7 +520,7 @@ section {
   }
 }
 
-.bar:focus{
+.bar:focus {
   outline: 0;
 }
 
@@ -519,7 +534,7 @@ section {
   width: 100%;
   height: auto;
   max-height: 300px;
-  .axis[aria-hidden=true] {
+  .axis[aria-hidden="true"] {
     display: block !important; // WDS override
   }
 }
@@ -535,9 +550,10 @@ section {
   }
 }
 
-#top_100_table, #top_downloads_table {
+#top_100_table,
+#top_downloads_table {
   h3 {
-    font-size: 1.0em;
+    font-size: 1em;
   }
   h5 {
     color: $dark-gray;
@@ -567,7 +583,8 @@ ul.pills {
     width: 33.3333%;
   }
 
-  &, & > li {
+  &,
+  & > li {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -575,7 +592,7 @@ ul.pills {
   }
 
   & {
-     margin: .60rem 0 1.5rem 0;
+    margin: 0.6rem 0 1.5rem 0;
   }
 
   & > li {
@@ -589,7 +606,7 @@ ul.pills {
       font-weight: 300;
       font-size: 0.8em;
       display: inline-block;
-      padding: .32em 0em;
+      padding: 0.32em 0em;
       text-decoration: none;
 
       border-top: 1px solid $gray;
@@ -600,7 +617,7 @@ ul.pills {
         text-decoration: underline;
       }
 
-      &[aria-selected='true'] {
+      &[aria-selected="true"] {
         color: #fff;
         background: $light-blue;
       }
@@ -650,13 +667,13 @@ ul.pills {
   }
 
   .bar {
-    height: .8rem;
+    height: 0.8rem;
     background: $data;
     position: relative;
     z-index: 2;
     min-width: 1px;
 
-    @include transition(width .5s linear);
+    @include transition(width 0.5s linear);
   }
 
   .label {
@@ -680,7 +697,7 @@ ul.pills {
     height: 2rem;
     white-space: nowrap;
     margin-top: -2.2rem;
-    margin-bottom: .45rem;
+    margin-bottom: 0.45rem;
   }
 }
 
@@ -739,10 +756,10 @@ figure figure {
   }
 
   .bar-chart {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
 
     .bin {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -752,13 +769,11 @@ figure figure {
   // transition opacity over a fraction of a second, with a delay
   // (the delay guards against flashes when content switches really quickly
   // from loading -> loaded -> loading again, e.g. when data loads quickly)
-  @include transition(opacity .3s ease-in .5s);
+  @include transition(opacity 0.3s ease-in 0.5s);
 
   &.loading {
-    opacity: .8;
+    opacity: 0.8;
   }
-
-
 }
 
 footer {
@@ -772,18 +787,17 @@ footer {
     margin-bottom: 0rem;
     margin-right: 2rem;
     float: left;
-    }
-
-    img {
-      width: 3.2rem;
-    }
-
-    img.github-icon {
-         width: 2.2rem !important;
-         vertical-align: text-bottom !important;
-      }
-
   }
+
+  img {
+    width: 3.2rem;
+  }
+
+  img.github-icon {
+    width: 2.2rem !important;
+    vertical-align: text-bottom !important;
+  }
+}
 
 .footer-main-img {
   display: none;
@@ -811,7 +825,6 @@ footer {
   img {
     width: 4rem;
   }
-
 }
 
 .footer-section-top {
