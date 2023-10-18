@@ -23,7 +23,7 @@
           </form>
         </div>
         {% endif %}
-        <h2>Visits to and traffic sources for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
+        <h2>Sessions to and traffic sources for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
         <table class="usa-table-borderless downloads">
           <thead>
             <tr>
@@ -34,7 +34,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>Visits to all domains over 30 days</td>
+              <td>Sessions to all hostnames over 30 days</td>
               <td><a href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.csv" class="download-data"><span class="usa-label-big">CSV</span></a></td>
               <td>Daily</td>
             </tr>
@@ -71,7 +71,7 @@
             </tr>
           </tbody>
         </table>
-        <h2>Visitor demographics for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
+        <h2>User demographics for {% if entity == 'government' %}all participating agencies{% else %}{{ entity }}{% endif %}</h2>
         <table class="usa-table-borderless downloads">
           <thead>
             <tr>
@@ -90,12 +90,12 @@
               <td>Daily</td>
             </tr>
             <tr>
-              <td>Visitors per country</td>
+              <td>Users per country</td>
               <td><a href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json" class="download-data"><span class="usa-label-big">JSON</span></a></td>
               <td>Every 5 minutes</td>
             </tr>
             <tr>
-              <td>Visitors per city</td>
+              <td>Users per city</td>
               <td><a href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json" class="download-data"><span class="usa-label-big">JSON</span></a></td>
               <td>Every 5 minutes</td>
             </tr>
