@@ -229,7 +229,7 @@ jobs:
               set -e
               # Log into cloud.gov
               cf api api.fr.cloud.gov
-              cf login -u $CF_USERNAME_MAIN -p $CF_PASSWORD_MAIN -o gsa-opp-analytics -s analytics
+              cf login -u $CF_USERNAME -p $CF_PASSWORD -o gsa-opp-analytics -s analytics-dev
               cf push -f "./manifest.yml"
               cf logout
               rm nginx.conf
