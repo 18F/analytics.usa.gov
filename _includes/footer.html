@@ -1,74 +1,127 @@
 <div class="container">
-      <section id="explanation" class="width-two-thirds">
+  <section id="explanation" class="width-two-thirds">
+    <h3>About this Site</h3>
+    <p>
+      These data provide a window into how people are interacting with the
+      government online. The data come from a unified Google Analytics account
+      for U.S. federal government agencies known as the
+      <a href="https://digital.gov/services/dap/" class="external-link"
+        >Digital Analytics Program</a
+      >. This program helps government agencies understand how people find,
+      access, and use government services online. The program
+      <a
+        href="https://digital.gov/services/dap/common-questions-about-dap-faq/#part-4"
+        class="external-link"
+        >does not track individuals</a
+      >, and
+      <a
+        href="https://support.google.com/analytics/answer/2763052?hl=en"
+        class="external-link"
+        >anonymizes the IP addresses</a
+      >
+      of visitors.
+    </p>
 
-          <h3>About this Site</h3>
-          <p>
-            These data provide a window into how people are interacting with the government online.
-             The data come from a unified Google Analytics account for U.S. federal government agencies known as the <a href="https://digital.gov/services/dap/" class="external-link">Digital Analytics Program</a>.
-              This program helps government agencies understand how people find, access, and use government services online. The program <a href="https://digital.gov/services/dap/common-questions-about-dap-faq/#part-4" class="external-link">does not track individuals</a>,
-               and <a href="https://support.google.com/analytics/answer/2763052?hl=en" class="external-link">anonymizes the IP addresses</a> of visitors.
-          </p>
-
-          <p>
-            Not every government website is represented in these data.
-            Currently, the Digital Analytics Program collects web traffic from around <a href="https://analytics.usa.gov/data/live/second-level-domains.csv" class="external-link">520 executive branch government second level domains</a>,
-             across <a href="https://analytics.usa.gov/data/live/sites.csv" class="external-link">about 6,800 total hostnames</a>,
-              including every cabinet department.
-               We continue to pursue and add more sites frequently; to add your site, <a href="mailto:dap@gsa.gov" class="external-link">email the Digital Analytics Program</a>.
-          </p>
-
-
-      </section>
-      <section class="width-one-third">
-        <h3>Download the data</h3>
-        <p>You can <a href="{{ site.baseurl }}/data/">download the data here.</a> Available in JSON and CSV format.</p>
-        <p> Additionally, you can access data via
-          <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener">API</a> (currently in Beta).
-        </p>
-        <h3>A note on sampling</h3>
-        <p>
-          Due to varying Google Analytics API sampling thresholds and the sheer volume of digital analytics program data,
-          some non-realtime reports may be subject to sampling.
-          The data are intended to represent high level trends and should only be used for general insights into online visitor behavior.
-        </p>
-      </section>
+    <p>
+      Not every government website is represented in these data. Currently, the
+      Digital Analytics Program collects web traffic from around
+      <a
+        href="https://analytics.usa.gov/data/live/second-level-domains.csv"
+        class="external-link"
+        >520 executive branch government second level domains</a
+      >, across
+      <a
+        href="https://analytics.usa.gov/data/live/sites.csv"
+        class="external-link"
+        >about 6,800 total hostnames</a
+      >, including every cabinet department. We continue to pursue and add more
+      sites frequently; to add your site,
+      <a href="mailto:dap@gsa.gov" class="external-link"
+        >email the Digital Analytics Program</a
+      >.
+    </p>
+  </section>
+  <section class="width-one-third">
+    <h3>Download the data</h3>
+    <p>
+      You can
+      <a href="{{ site.baseurl }}/data/">download the data here.</a> Available
+      in JSON and CSV format.
+    </p>
+    <p>
+      Additionally, you can access data via
+      <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
+        >API</a
+      >
+      (currently in Beta).
+    </p>
+    <h3>A note on sampling</h3>
+    <p>
+      Due to varying Google Analytics API sampling thresholds and the sheer
+      volume of digital analytics program data, some non-realtime reports may be
+      subject to sampling. The data are intended to represent high level trends
+      and should only be used for general insights into online visitor behavior.
+    </p>
+  </section>
 </div>
 <footer>
   <div class="footer-section-top">
     <div class="usa-grid">
-          <div class="usa-width-one-half">
-            <p>Have a question or problem?
-              <a href="mailto:dap@gsa.gov">
-              Get in touch</a>.
-              </p>
-              <a class="usa-button usa-button-secondary-inverse"
-              href="https://github.com/18F/analytics.usa.gov/issues">
-              <img src="{{ site.baseurl }}/images/github-logo-white.svg" class="github-icon" alt="Github Icon">
-                  Suggest a feature or report an issue
-            </a>
-            </p>
-          </div>
-          <div class="usa-width-one-half">
-            <p><a href="https://github.com/18F/analytics.usa.gov">
-              <img src="{{ site.baseurl }}/images/github-logo.svg" class="github-icon" alt="Github Icon">
-              View application code on GitHub</a>
-            </p>
-            <p><a href="https://github.com/18F/analytics-reporter">
-              <img src="{{ site.baseurl }}/images/github-logo.svg" class="github-icon" alt="Github Icon">
-              View code for the data on GitHub</a>
-            </p>
-          </div>
+      <div class="usa-width-one-half">
+        <p>
+          Have a question or problem?
+          <a href="mailto:dap@gsa.gov"> Get in touch</a>.
+        </p>
+        <a
+          class="usa-button usa-button-secondary-inverse"
+          href="https://github.com/18F/analytics.usa.gov/issues"
+        >
+          <img
+            src="{{ site.baseurl }}/images/github-logo-white.svg"
+            class="github-icon"
+            alt="Github Icon"
+          />
+          Suggest a feature or report an issue
+        </a>
+      </div>
+      <div class="usa-width-one-half">
+        <p>
+          <a href="https://github.com/18F/analytics.usa.gov">
+            <img
+              src="{{ site.baseurl }}/images/github-logo.svg"
+              class="github-icon"
+              alt="Github Icon"
+            />
+            View application code on GitHub</a
+          >
+        </p>
+        <p>
+          <a href="https://github.com/18F/analytics-reporter">
+            <img
+              src="{{ site.baseurl }}/images/github-logo.svg"
+              class="github-icon"
+              alt="Github Icon"
+            />
+            View code for the data on GitHub</a
+          >
+        </p>
+      </div>
     </div>
   </div>
   <div class="footer-section-bottom">
     <div class="usa-grid">
       <div class="logo-links">
         <a href="https://www.gsa.gov/">
-          <img src="{{ site.baseurl }}/images/gsa-logo.svg" alt="GSA">
+          <img src="{{ site.baseurl }}/images/gsa-logo.svg" alt="GSA" />
         </a>
       </div>
-      <p>Analytics.usa.gov is a project of GSA’s <a href="https://digital.gov/guides/dap/">Digital Analytics Program</a>.</p>
-      <p>This website is hosted on <a href="https://cloud.gov/">cloud.gov</a>.</p>
+      <p>
+        Analytics.usa.gov is a project of GSA’s
+        <a href="https://digital.gov/guides/dap/">Digital Analytics Program</a>.
+      </p>
+      <p>
+        This website is hosted on <a href="https://cloud.gov/">cloud.gov</a>.
+      </p>
     </div>
   </div>
 </footer>

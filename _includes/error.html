@@ -1,12 +1,8 @@
 {% if site.site_wide_error.display %}
-  <div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-    <div class="usa-alert-body">
-      <h3 class="usa-alert-heading">
-        {{ site.site_wide_error.title }}
-      </h3>
-      <p class="usa-alert-text">
-        {{ site.site_wide_error.body }}
-      </p>
-    </div>
+<div class="usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
+  <div class="usa-alert-body">
+    <h3 class="usa-alert-heading">{{ site.site_wide_error.title }}</h3>
+    <p class="usa-alert-text">{{ site.site_wide_error.body }}</p>
   </div>
+</div>
 {% endif %}

@@ -10,9 +10,12 @@
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch",
     "copy-assets": "gulp copyAssets",
-    "test": "mocha --require @babel/register spec",
     "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
-    "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
+    "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix",
+    "prepare": "husky install",
+    "prettier:templates": "npx prettier -c ./*.html && ./**/*.html",
+    "prettier:templates:fix": "npx prettier -w ./*.html && ./**/*.html",
+    "test": "mocha --require @babel/register spec"
   },
   "repository": {
     "type": "git",
@@ -39,9 +42,11 @@
     "eslint-webpack-plugin": "^4.0.0",
     "gulp": "^4.0.2",
     "mocha": "^10.2.0",
+    "prettier": "^3.0.3",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.8.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "husky": "^8.0.0"
   },
   "engines": {
     "node": "18.15.0"

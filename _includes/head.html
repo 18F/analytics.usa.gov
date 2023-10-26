@@ -19,58 +19,93 @@
 
     -->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="google-site-verification" content="NjbZn6hQe7OwV-nTsa6nLmtrOUcSGPRyFjxm5zkmCcg" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta
+    name="google-site-verification"
+    content="NjbZn6hQe7OwV-nTsa6nLmtrOUcSGPRyFjxm5zkmCcg"
+  />
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/vendor/css/uswds.v0.9.6.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/public_analytics.css">
-    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/images/analytics-favicon.ico">
+  <link
+    rel="stylesheet"
+    href="{{ site.baseurl }}/css/vendor/css/uswds.v0.9.6.css"
+  />
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/public_analytics.css" />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="{{ site.baseurl }}/images/analytics-favicon.ico"
+  />
 
-    <meta name="twitter:site" content="@{{ site.twitter }}">
-    <meta name="twitter:creator" content="@{{ site.twitter }}">
-    <meta property="og:type" content="website" />
+  <meta name="twitter:site" content="@{{ site.twitter }}" />
+  <meta name="twitter:creator" content="@{{ site.twitter }}" />
+  <meta property="og:type" content="website" />
 
-    <meta property="og:url" content="{{ site.url }}" />
-    <link rel="canonical" href="{{ site.url }}" />
+  <meta property="og:url" content="{{ site.url }}" />
+  <link rel="canonical" href="{{ site.url }}" />
 
-    <title>{{ site.title }}</title>
-    <meta property="og:title" content="{{ site.title }}" />
-    <meta property="og:site_name" content="{{ site.title }}" />
+  <title>{{ site.title }}</title>
+  <meta property="og:title" content="{{ site.title }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
 
-    <meta name="description" content="{{ site.description }}">
-    <meta property="og:description" content="{{ site.description }}" />
+  <meta name="description" content="{{ site.description }}" />
+  <meta property="og:description" content="{{ site.description }}" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="{{ site.url }}/images/share-image.png" />
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MQSGZS');</script>
-    <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-MQSGZS");
+  </script>
+  <!-- End Google Tag Manager -->
 
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i["GoogleAnalyticsObject"] = r;
+      (i[r] =
+        i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(
+      window,
+      document,
+      "script",
+      "https://www.google-analytics.com/analytics.js",
+      "ga",
+    );
 
-    ga('create', 'UA-48605964-36', 'auto');
-    ga('set', 'anonymizeIp', true);
-    ga('set', 'forceSSL', true);
-    ga('send', 'pageview');
-
+    ga("create", "UA-48605964-36", "auto");
+    ga("set", "anonymizeIp", true);
+    ga("set", "forceSSL", true);
+    ga("send", "pageview");
   </script>
 
-    <!--[if lte IE 9]>
+  <!--[if lte IE 9]>
     <script src="{{ site.baseurl }}/js/vendor/aight.v2.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="{{ site.baseurl}}/assets/uswds/js/uswds-init.min.js" async="async"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    type="text/javascript"
+    src="{{ site.baseurl}}/assets/uswds/js/uswds-init.min.js"
+    async="async"
+  ></script>
 
-    <link href="{{ site.baseurl }}/css/google-fonts.css" rel="stylesheet" />
+  <link href="{{ site.baseurl }}/css/google-fonts.css" rel="stylesheet" />
 </head>
