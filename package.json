@@ -10,9 +10,13 @@
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch",
     "copy-assets": "gulp copyAssets",
-    "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
-    "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix",
+    "lint:js": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
+    "lint:js:fix": "./node_modules/.bin/eslint ./js/index.js --fix",
+    "lint:styles": "npx stylelint ./sass/*.scss",
+    "lint:styles:fix": "npx stylelint ./sass/*.scss --fix",
     "prepare": "husky install",
+    "prettier:styles": "npx prettier -c ./sass/*.scss",
+    "prettier:styles:fix": "npx prettier -c ./sass/*.scss",
     "prettier:templates": "npx prettier -c ./*.html && ./**/*.html",
     "prettier:templates:fix": "npx prettier -w ./*.html && ./**/*.html",
     "test": "mocha --require @babel/register spec"
@@ -28,6 +32,7 @@
   },
   "homepage": "https://github.com/18F/analytics.usa.gov#readme",
   "devDependencies": {
+    "@18f/identity-stylelint-config": "^2.0.0",
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/register": "^7.21.0",
@@ -41,12 +46,15 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-webpack-plugin": "^4.0.0",
     "gulp": "^4.0.2",
+    "husky": "^8.0.0",
     "mocha": "^10.2.0",
-    "prettier": "^3.0.3",
+    "prettier": "^2.8.8",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.8.0",
-    "webpack-cli": "^5.0.1",
-    "husky": "^8.0.0"
+    "webpack-cli": "^5.0.1"
   },
   "engines": {
     "node": "18.15.0"
