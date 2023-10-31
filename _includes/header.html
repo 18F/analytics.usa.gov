@@ -1,0 +1,81 @@
+<header class="analytics-header">
+  <div class="">
+    <h1 class="">
+      <a href="/" class=""> <strong>analytics</strong>.usa.gov </a>
+    </h1>
+    {% assign agencies = site.data.agencies | sort: "name" %} {% if
+    agencies.size > 0 %} {% unless page.url contains 'data' %}
+    <div class="">
+      <form class="usa-form">
+        <label class="usa-label" for="agency-selector">Select an agency</label>
+        <select
+          class="usa-select"
+          name="agency-selector"
+          id="agency-selector"
+          title="Agency Selection Dropdown"
+        >
+          <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+          {% for agency in agencies %}
+          <option value="{{site.baseurl}}/{{agency.slug}}">
+            {{agency.name}}
+          </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+    {% endunless %} {% endif %}
+    <ul class="">
+      <li>
+        <a href="#explanation">About <span class="sm-hide">this site</span></a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/data/">Data</a> &middot;
+        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
+          >API</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>
+
+{% comment %}
+<header class="analytics-header">
+  <div class="grid-row">
+    <h1 class="">
+      <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
+    </h1>
+    {% assign agencies = site.data.agencies | sort: "name" %} {% if
+    agencies.size > 0 %} {% unless page.url contains 'data' %}
+    <div class="agency-selector-wrap">
+      <form class="usa-form">
+        <label class="usa-label" for="agency-selector">Select an agency</label>
+        <select
+          class="usa-select"
+          name="agency-selector"
+          id="agency-selector"
+          title="Agency Selection Dropdown"
+        >
+          <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+          {% for agency in agencies %}
+          <option value="{{site.baseurl}}/{{agency.slug}}">
+            {{agency.name}}
+          </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+    {% endunless %} {% endif %}
+    <ul class="links">
+      <li>
+        <a href="#explanation">About <span class="sm-hide">this site</span></a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/data/">Data</a> &middot;
+        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
+          >API</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>
+{% endcomment %}

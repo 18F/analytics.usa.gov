@@ -1,0 +1,152 @@
+@use "uswds-core" as *;
+
+
+.analytics-header {
+  background: color("blue-80v");
+  color: color("gray-1");
+  border-bottom: 6px solid color("blue-50v");
+  padding: 1rem;
+
+  .inner {
+    // padding: 2.5rem;
+    // @include responsive_container;
+    // @include media($mobile-small-screen) {
+    //   padding: 1.5rem;
+    // }
+  }
+
+  h1 {
+    float: left;
+    margin: 0 24px 0 0;
+    line-height: units(10);
+
+    @include u-font("sans", "2xl");
+    // @include media($medium-screen) {
+    //   line-height: 5.5rem;
+    // }
+    // @include media($mobile-small-screen) {
+    //   font-size: 2.8rem;
+    //   padding-top: 4px; //to give h1 and links same baseline
+    // }
+  }
+
+  strong {
+    // font-weight: 700;
+    @include u-text(700);
+  }
+
+  a {
+    color: color("gray-1");
+    font-weight: 300;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: color("gray-1");
+  }
+  a:visited {
+    color: color("gray-1");
+  }
+
+  .agency-selector-wrap {
+    // width: 50%;
+    // float: left;
+    @include at-media("tablet-lg") {
+    //   width: 100%;
+    //   float: none;
+    //   clear: both;
+    }
+    // @include media($medium-screen) {
+    //   width: 100%;
+    //   float: none;
+    //   clear: both;
+    // }
+  }
+}
+
+.agency-selector-wrap {
+//   width: 70%;
+  // @include at-media("tablet-lg") {
+  //   width: 80%;
+  // }
+  // @include at-media("mobile-lg") {
+  //   width: 100%;
+  // }
+}
+
+.links {
+  float: right;
+  margin-bottom: 0;
+  list-style: none;
+  @include u-font("sans", "md");
+  a {
+    @include u-font("sans", "lg");
+  }
+//   @include at-media("tablet-lg") {
+//     li {
+//       display: inline;
+//       padding: 0 0.8rem;
+//       &:nth-child(odd) a::after {
+//         content: "\2022";
+//         padding: 0 0 0 1.6rem;
+//         font-weight: bold;
+//         color: color("blue-50v");
+//       }
+//     }
+//     a {
+//       line-height: 5.5rem;
+//     }
+//   }
+//   @include at-media("tablet") {
+//     li {
+//       padding: 0.5rem;
+//       &:nth-child(odd) a::after {
+//         padding: 0 0 0 1rem;
+//       }
+//     }
+//   }
+//   @include at-media("mobile-lg") {
+//     li {
+//       font-size: 1.6rem;
+//       padding: 0;
+//       margin: 0;
+//       display: block;
+//       &:nth-child(odd) a::after {
+//         content: "";
+//         padding: 0;
+//       }
+//     }
+//     a {
+//       line-height: 1rem;
+//       font-size: 1.5rem;
+//     }
+//   }
+}
+
+.agency-selector-wrap {
+  //hide label needed for accessibility
+  label {
+    position: absolute;
+    left: -999em;
+  }
+}
+
+#agency-selector {
+//   height: auto;
+//   width: 100%;
+//   max-width: none; // USWDS override
+//   font-size: 22px;
+//   font-weight: 600;
+//   vertical-align: middle;
+//   color: color("blue-80v"); 
+  // @include media($medium-screen) {
+  //   font-size: 16px;
+  // }
+}
+header #agency-selector {
+//   background-image: url("../css/img/arrow-down.png");
+//   background-image: url("../css/img/arrow-down.svg");
+//   color: color("gray-1");
+//   background-color: color("blue-50");
+//   border: 1px solid color("gray-1");
+}
