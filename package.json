@@ -9,6 +9,8 @@
   "scripts": {
     "build-prod": "webpack",
     "build-dev": "webpack --mode=development --watch",
+    "local:watch": "gulp watch",
+    "local:serve": "make dev",
     "copy-assets": "gulp copyAssets",
     "lint:js": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
     "lint:js:fix": "./node_modules/.bin/eslint ./js/index.js --fix",
@@ -19,6 +21,7 @@
     "prettier:styles:fix": "npx prettier -c ./sass/*.scss",
     "prettier:templates": "npx prettier -c ./*.html && ./**/*.html",
     "prettier:templates:fix": "npx prettier -w ./*.html && ./**/*.html",
+    "start": "npm-run-all --parallel local:watch local:serve",
     "test": "mocha --require @babel/register spec"
   },
   "repository": {
@@ -48,10 +51,7 @@
     "gulp": "^4.0.2",
     "husky": "^8.0.0",
     "mocha": "^10.2.0",
-    "prettier": "^2.8.8",
-    "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.3",
+    "npm-run-all": "^4.1.5",
     "terser-webpack-plugin": "^5.3.7",
     "webpack": "^5.8.0",
     "webpack-cli": "^5.0.1"

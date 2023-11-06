@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
   <!-- Initalize title and data source variables -->
-  {% if page.url == '/' or page.url == '/data/' %} {% assign page_title = '' %}
-  {% else %} {% capture page_title %} - {{ page.name }}{% endcapture %} {% endif
-  %} {% include head.html %}
+  {% if page.url == '/' or page.url == '/data/' %}
+    {% assign page_title = '' %}
+  {% else %}
+    {% capture page_title %} - {{ page.name }}{% endcapture %}
+  {% endif %}
+  {% include head.html %}
+  {% if page.url == '/' or page.url == '/data/' %}
+    {% assign page_title = '' %}
+  {% else %}
+    {% capture page_title %} - {{ page.name }}{% endcapture %}
+  {% endif %}
+  {% include head.html %}
 
   <body>
     {% include gtm_iframe.html %}
-    <header>
+    <header class="analytics-header">
       <div class="inner clearfix">
         <h1>
           <a href="/" class="external-link">
@@ -52,7 +61,7 @@
         {% endunless %} {% endif %}
       </div>
     </header>
-    <div class="container">{% include error.html %} {{ content }}</div>
+    <div class="grid-row">{% include error.html %} {{ content }}</div>
     {% include footer.html %}
   </body>
 

@@ -26,6 +26,7 @@
     content="NjbZn6hQe7OwV-nTsa6nLmtrOUcSGPRyFjxm5zkmCcg"
   />
 
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css" />
   <link
     rel="stylesheet"
     href="{{ site.baseurl }}/css/vendor/css/uswds.v0.9.6.css"
@@ -87,9 +88,13 @@
       document,
       "script",
       "https://www.google-analytics.com/analytics.js",
-      "ga",
+      "ga"
     );
 
+    ga("create", "UA-48605964-36", "auto");
+    ga("set", "anonymizeIp", true);
+    ga("set", "forceSSL", true);
+    ga("send", "pageview");
     ga("create", "UA-48605964-36", "auto");
     ga("set", "anonymizeIp", true);
     ga("set", "forceSSL", true);
