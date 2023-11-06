@@ -6,3 +6,15 @@
   </div>
 </div>
 {% endif %}
+
+
+{% if site.site_wide_error.display %}
+<section class="grid-col-12 usa-site-alert usa-site-alert--info" aria-label="Site alert,">
+  <div class="usa-alert">
+    <div class="usa-alert__body">
+      <h3 class="usa-alert__heading">{{ site.site_wide_error.title }}</h3>
+      <p class="usa-alert__text">{{ site.site_wide_error.body }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
