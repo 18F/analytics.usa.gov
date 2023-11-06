@@ -109,18 +109,17 @@ form {
 
 // Other Setup:
 body {
-  // font-family: $font-sans;
-  @include u-font("sans", "md");
+  font-family: $font-sans;
+  // @include u-font("sans", "md");
   font-weight: 300;
-  // font-size: 2rem; // USWDS override
-  // color: $dark-gray;
-  // background: $light-gray;
+  color: color("gray-cool-70");
+  background: color("gray-10");
   margin: 0;
 }
 
 a,
 a:visited {
-  color: $dark-blue;
+  color: color("blue-80v");
 }
 
 .technical-difficulties {
@@ -164,11 +163,11 @@ ul li:before {
 }
 
 .dark-background {
-  background: $dark-blue;
+  background: color("blue-80v");
 
   &,
   a {
-    color: $white;
+    color: color("gray-1");
   }
 }
 
@@ -178,6 +177,9 @@ ul li:before {
 
 /*
 * top navigation bar
+* - [ ] remove neat/bourbon mixin
+* - [ ] refactor into header component
+* - [ ] update to responsive grid classes
 */
 
 .analytics-header {
@@ -186,16 +188,18 @@ ul li:before {
   border-bottom: 6px solid color("blue-50v");
 
   .inner {
-    padding: 2.5rem;
-    // @include responsive_container;
-    // @include media($mobile-small-screen) {
-    //   padding: 1.5rem;
-    // }
+    padding: units(3);
+    @include at-media("tablet-lg") {
+      padding: units(3);
+    }
+  }
+
+  .usa-form {
+    max-width: 100%;
   }
 
   h1 {
     float: left;
-
     margin: 0 24px 0 0;
     line-height: units(10);
 
@@ -207,27 +211,31 @@ ul li:before {
     //   font-size: 2.8rem;
     //   padding-top: 4px; //to give h1 and links same baseline
     // }
+    strong {
+      @include u-text(700);
+    }
   }
 
   a {
-    color: $white;
+    color: color("gray-1");
     font-weight: 300;
     text-decoration: none;
   }
   a:hover {
     text-decoration: underline;
-    color: $white;
+    color: color("gray-1");
   }
   a:visited {
-    color: $white;
+    color: color("gray-1");
   }
   .agency-selector-wrap {
-    width: 50%;
+    width: 100%;
     float: left;
     @include at-media("tablet-lg") {
-      width: 100%;
-      float: none;
-      clear: both;
+      width: 50%;
+      float: left;
+      // float: none;
+      // clear: both;
     }
     // @include media($medium-screen) {
     //   width: 100%;
@@ -239,12 +247,6 @@ ul li:before {
 
 .agency-selector-wrap {
   width: 70%;
-  // @include at-media("tablet-lg") {
-  //   width: 80%;
-  // }
-  // @include at-media("mobile-lg") {
-  //   width: 100%;
-  // }
 }
 
 .links {
@@ -253,7 +255,7 @@ ul li:before {
   list-style: none;
   @include u-font("sans", "md");
   a {
-    @include u-font("sans", "lg");
+    @include u-font("sans", "md");
   }
   @include at-media("tablet-lg") {
     li {
@@ -263,7 +265,7 @@ ul li:before {
         content: "\2022";
         padding: 0 0 0 1.6rem;
         font-weight: bold;
-        color: $light-blue;
+        color: color("blue-50v");
       }
     }
     a {
@@ -291,7 +293,7 @@ ul li:before {
     }
     a {
       line-height: 1rem;
-      font-size: 1.5rem;
+      @include u-font("sans", "lg");
     }
   }
 }
@@ -311,7 +313,7 @@ ul li:before {
   font-size: 22px;
   font-weight: 600;
   vertical-align: middle;
-  color: $dark-blue;
+  color: color("blue-80v");
   // @include media($medium-screen) {
   //   font-size: 16px;
   // }
@@ -319,526 +321,7 @@ ul li:before {
 header #agency-selector {
   background-image: url("../css/img/arrow-down.png");
   background-image: url("../css/img/arrow-down.svg");
-  color: $white;
-  background-color: $light-blue-two;
-  border: 1px solid $white;
-}
-
-/*
-* end top navigation bar
-*/
-
-section {
-  background: $white;
-  // padding: 1em;
-  #current_visitors {
-    font-size: 8em;
-    margin: 0;
-    // @include media($small-screen) {
-    //   font-size: 6em;
-    // }
-  }
-  h3 {
-    margin: 10px 0;
-  }
-}
-
-#realtime {
-  color: $dark-blue;
-  // @include media($small-screen) {
-  //   font-size: 12px;
-  // }
-}
-
-.container {
-  // @include responsive_container;
-  border-left: 1px solid $gray;
-  border-right: 1px solid $gray;
-  border-bottom: 1px solid $gray;
-  background: $white;
-}
-
-#main_data {
-  // @include media($small-screen) {
-  //   border-right: none;
-  // }
-}
-
-.visits_today {
-  h3 {
-    display: block;
-    height: 2.5rem;
-    margin-bottom: 0;
-  }
-  h4 {
-    display: block;
-    text-align: right;
-    margin-top: -2.5rem;
-    font-size: 1.3rem;
-    font-weight: normal;
-    color: $dark-gray;
-  }
-}
-
-#secondary_data {
-  border-left: 1px solid $gray;
-  border-bottom: 1px solid $gray;
-  // @include media($small-screen) {
-  //   border-top: 1px solid $gray;
-  //   border-left: none;
-  //   border-right: none;
-  // }
-}
-
-#explanation {
-  border-top: 1px solid $gray;
-  margin-top: -1px;
-  h4 {
-    font-size: 90%;
-  }
-
-  ul {
-    font-size: 80%;
-    padding: 0;
-  }
-
-  ul,
-  li {
-    list-style-type: none;
-    list-style-position: inside;
-  }
-
-  li {
-    margin: 1em 0;
-  }
-}
-
-// data page
-.parent td {
-  border-bottom: 1px solid $gray;
-}
-.subset td {
-  border-top: 1px solid $gray;
-  &:first-child {
-    /*font-size: 1.5rem;*/
-    padding-left: 3rem;
-    &::before {
-      content: "\2022";
-      padding: 0 10px;
-    }
-  }
-}
-
-#devices {
-  p {
-    font-size: 1.3rem;
-  }
-  .label::first-letter {
-    text-transform: uppercase;
-  }
-}
-
-.downloads {
-  // @include media($mobile-small-screen) {
-  //   thead th {
-  //     font-size: 1.8rem;
-  //   }
-  //   td {
-  //     font-size: 1.5rem;
-  //     padding: 1rem;
-  //     .usa-label-big {
-  //       font-size: 1.5rem;
-  //       display: inline-block;
-  //       margin-bottom: 0.9rem;
-  //     }
-  //   }
-  // }
-}
-// end data page
-
-.section_headline {
-  padding: 0.1em 1em;
-  border-top: 1px solid $gray;
-  // @include media($small-screen) {
-  //   border-bottom: none;
-  // }
-}
-
-.section_subheadline {
-  padding: 0.5em 1em;
-  border-top: 1px solid $gray;
-  text-align: center;
-  font-size: 1.5em;
-  #total_visitors {
-    font-weight: $bold-weight;
-  }
-}
-
-.three_column {
-  // @include span-columns(3 of 9);
-
-  // @include media($small-screen) {
-  //   @include span-columns(1);
-  //   border-left: none;
-  //   border-top: 1px solid $gray;
-  // }
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-  h5 {
-    margin-top: 0;
-    text-align: center;
-  }
-}
-
-#realtime {
-  text-align: center;
-  padding-top: 0em;
-  padding-bottom: 2em;
-  .chart_subtitle {
-    font-size: 2.1em;
-    font-weight: 300;
-  }
-}
-
-.bar:focus {
-  outline: 0;
-}
-
-#time_series {
-  padding: 0 1em;
-}
-
-#time_series svg {
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  .axis[aria-hidden="true"] {
-    display: block !important; // WDS override
-  }
-}
-
-#current_visitors {
-  font-weight: $bold-weight;
-  text-align: center;
-}
-
-#top_downloads_table {
-  h5 {
-    margin-top: 10px;
-  }
-}
-
-#top_100_table,
-#top_downloads_table {
-  h3 {
-    font-size: 1em;
-  }
-  h5 {
-    color: $dark-gray;
-    font-weight: 300;
-  }
-}
-
-.top-pages {
-  .bar-chart {
-    margin-top: 0;
-  }
-}
-
-figure {
-  margin: 0;
-}
-
-ul.pills {
-  // @include clearfix;
-  // @include span-columns(5 of 5);
-  display: inline-block;
-
-  border-right: 1px solid $gray;
-  border-left: 1px solid $gray;
-
-  li {
-    width: 33.3333%;
-  }
-
-  &,
-  & > li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-  }
-
-  & {
-    margin: 0.6rem 0 1.5rem 0;
-  }
-
-  & > li {
-    float: left;
-
-    & > a {
-      color: $dark-blue;
-      background: $white;
-      width: 100%;
-      text-align: center;
-      font-weight: 300;
-      font-size: 0.8em;
-      display: inline-block;
-      padding: 0.32em 0em;
-      text-decoration: none;
-
-      border-top: 1px solid $gray;
-      border-bottom: 1px solid $gray;
-      border-right: 1px solid $gray;
-
-      &:hover {
-        text-decoration: underline;
-      }
-
-      &[aria-selected="true"] {
-        color: #fff;
-        background: $light-blue;
-      }
-    }
-
-    &:last-child > a {
-      border-right: none;
-    }
-  }
-}
-
-.bar-chart {
-  margin: 1rem 0;
-  position: relative;
-  font-size: 90%;
-
-  .bar-chart {
-    font-size: 80%;
-
-    .bin {
-      margin-left: 2em;
-      margin-bottom: 0rem;
-
-      .bar {
-        display: none;
-      }
-    }
-  }
-
-  .bin {
-    position: relative;
-    // @include clearfix;
-    overflow: hidden;
-    margin: 0 0 1rem 0;
-
-    .bar:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      background: #f9f9f9;
-      top: 0;
-      left: 100%;
-      width: 1000px;
-      height: 100%;
-      z-index: 1;
-    }
-  }
-
-  .bar {
-    height: 0.8rem;
-    background: $light-blue;
-    position: relative;
-    z-index: 2;
-    min-width: 1px;
-
-    // @include transition(width 0.5s linear);
-  }
-
-  .label {
-    white-space: nowrap;
-    height: 2.2rem;
-    margin-right: 4em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    a {
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .value {
-    text-align: right;
-    height: 2rem;
-    white-space: nowrap;
-    margin-top: -2.2rem;
-    margin-bottom: 0.45rem;
-  }
-}
-
-#top-downloads .bar-chart .label {
-  height: auto;
-  line-height: 1.6;
-
-  .name {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .domain {
-    color: $dark-gray;
-  }
-}
-
-g.axis {
-  path,
-  line {
-    fill: none;
-    stroke: none; // #ccc;
-  }
-
-  .tick text {
-    fill: $dark-gray;
-    font-size: 1.1rem;
-  }
-}
-
-.time-series {
-  rect {
-    fill: $light-blue;
-    stroke: #fff;
-    stroke-width: 1;
-  }
-
-  text.label {
-    fill: $dark-gray;
-    font-size: 1.1rem;
-  }
-}
-
-#site-wide-alert {
-  margin-top: 0;
-}
-
-// nested charts
-figure figure {
-  // margin-left: 2rem;
-
-  h4 {
-    display: none;
-  }
-
-  .bar-chart {
-    margin: 0.5rem 0;
-
-    .bin {
-      margin-bottom: 0.5rem;
-    }
-  }
-}
-
-*[data-block] {
-  opacity: 1;
-  // transition opacity over a fraction of a second, with a delay
-  // (the delay guards against flashes when content switches really quickly
-  // from loading -> loaded -> loading again, e.g. when data loads quickly)
-  // @include transition(opacity 0.3s ease-in 0.5s);
-
-  &.loading {
-    opacity: 0.8;
-  }
-}
-
-footer {
-  clear: both;
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .logo-links {
-    margin-bottom: 0rem;
-    margin-right: 2rem;
-    float: left;
-  }
-
-  img {
-    width: 3.2rem;
-  }
-
-  img.github-icon {
-    width: 2.2rem !important;
-    vertical-align: text-bottom !important;
-  }
-}
-
-.footer-main-img {
-  display: none;
-  max-width: 18.1rem;
-
-  // @include media($large-screen) {
-  //   display: block;
-  // }
-}
-
-.footer-content {
-  p {
-    max-width: 75ch;
-  }
-}
-
-.footer-contact-links {
-  margin-top: 3rem;
-
-  a {
-    color: $white;
-    text-decoration: underline;
-  }
-
-  img {
-    width: 4rem;
-  }
-}
-
-.footer-section-top {
-  // @include padding(1.6rem null 1.3rem null);
-  background-color: $light-gray;
-}
-
-.footer-section-bottom {
-  // @include padding(1.6rem null 1.3rem null);
-  background-color: $dark-blue;
-
-  p {
-    color: $white;
-    margin-top: 0;
-    font-size: 1.4rem;
-    line-height: 0.75;
-
-    &:first-of-type {
-      // @include media($medium-screen) {
-      //   margin-bottom: 0;
-      // }
-    }
-  }
-
-  a {
-    color: $white;
-    display: inline-block;
-    line-height: 0;
-  }
-}
-
-.hide {
-  display: none;
+  color: color("gray-1");
+  background-color: color("blue-50");
+  border: 1px solid color("gray-1");
 }

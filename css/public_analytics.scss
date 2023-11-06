@@ -37,15 +37,15 @@ $mobile-small-screen: new-breakpoint(max-width 500px 1);
 
 // Fonts & Colors:
 
-$red: #981b1e; // red-70v
-$light-blue: #0071bc; // blue-50v
-$light-blue-two: #2b75b9; // blue-50
-$dark-blue: #112e51; // blue-80v
-$light-gray: #f9f9f9; // gray-2
-$uswds-light-gray: #aeb0b5; // gray-cool-30
-$gray: #e4e4e4; // used only for borders // gray-10
-$dark-gray: #323a45; //#222; //gray-cool-70
-$white: #fff; // gray-1
+$red: #981b1e;
+$light-blue: #0071bc;
+$light-blue-two: #2b75b9;
+$dark-blue: #112e51;
+$light-gray: #f9f9f9;
+$uswds-light-gray: #aeb0b5;
+$gray: #e4e4e4;
+$dark-gray: #323a45;
+$white: #fff;
 
 $background-color: $light-gray;
 $container-background: $white;
@@ -85,58 +85,6 @@ h5 {
 form {
   max-width: none;
 }
-
-// Grid
-
-// // ! Replaced with grid-col-8
-// .width-one-third {
-//   @include span-columns(4);
-//   @include media($small-screen) {
-//     @include span-columns(1);
-//   }
-// }
-
-// // ! Replaced with grid-col-4
-// .width-two-thirds {
-//   @include span-columns(8);
-//   @include media($small-screen) {
-//     @include span-columns(1);
-//   }
-// }
-
-// // * Remove
-// .offset-one-third {
-//   @include shift(4 of 12);
-// }
-
-// // * Remove
-// .width-one-fourth {
-//   @include span-columns(3);
-//   @include media($small-screen) {
-//     @include span-columns(1);
-//   }
-// }
-
-// // ! Replaced with grid-col-6
-// .width-one-half {
-//   @include span-columns(6);
-//   @include media($small-screen) {
-//     @include span-columns(1);
-//   }
-// }
-
-// // ! Replaced with ???
-// .width-three-fourths {
-//   @include span-columns(9);
-//   @include media($small-screen) {
-//     @include span-columns(1);
-//   }
-// }
-
-// // * Remove
-// .offset-one-fourth {
-//   @include shift(3 of 12);
-// }
 
 // Other Setup:
 body {
@@ -216,7 +164,7 @@ header {
   border-bottom: 6px solid $light-blue;
 
   .inner {
-    padding: 2.5rem;
+    // padding: 2.5rem;
     @include responsive_container;
     @include media($mobile-small-screen) {
       padding: 1.5rem;
@@ -318,6 +266,10 @@ header {
   label {
     position: absolute;
     left: -999em;
+  }
+
+  .usa-form {
+    max-width: 100%;
   }
 }
 
