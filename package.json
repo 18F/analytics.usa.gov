@@ -21,11 +21,8 @@
     "prettier:styles:fix": "npx prettier -c ./sass/*.scss",
     "prettier:templates": "npx prettier -c ./*.html && ./**/*.html",
     "prettier:templates:fix": "npx prettier -w ./*.html && ./**/*.html",
-    "test": "mocha --require @babel/register spec"
     "start": "npm-run-all --parallel local:watch local:serve",
-    "test": "mocha --require @babel/register spec",
-    "lint": "./node_modules/.bin/eslint js --ignore-pattern '/js/vendor/*'",
-    "lint:fix": "./node_modules/.bin/eslint ./js/index.js --fix"
+    "test": "mocha --require @babel/register spec"
   },
   "repository": {
     "type": "git",

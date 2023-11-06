@@ -1,11 +1,16 @@
-{% if page.url == '/data/' %} {% capture page_title %} - Data{% endcapture %} {%
-assign data_prefix = 'live' %} {% assign entity = "government" %} {% else %} {%
-capture page_title %} - {{ page.name }} - Data{% endcapture %} {% assign
-data_prefix = page.slug %} {% assign entity = page.name %} {% endif %}
-<section class="grid-col-8">
+{% if page.url == '/data/' %}
+  {% capture page_title %} - Data{% endcapture %}
+  {% assign data_prefix = 'live' %}
+  {% assign entity = "government" %}
+{% else %}
+  {% capture page_title %} - {{ page.name }} - Data{% endcapture %}
+  {% assign data_prefix = page.slug %}
+  {% assign entity = page.name %}
+{% endif %}
+<section class="grid-col-12">
   <h1>Download the data</h1>
-  {% assign agencies = site.data.agencies | sort:"name" %} {% if agencies.size >
-  0 %}
+  {% assign agencies = site.data.agencies | sort:"name" %}
+  {% if agencies.size > 0 %}
   <div class="agency-selector-wrap">
     <form>
       <label for="agency-selector">Select an agency</label>

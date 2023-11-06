@@ -1,16 +1,21 @@
 <!doctype html>
 <html lang="en">
   <!-- Initalize title and data source variables -->
-  {% if page.url == '/' or page.url == '/data/' %} {% assign page_title = '' %}
-  {% else %} {% capture page_title %} - {{ page.name }}{% endcapture %} {% endif
-  %} {% include head.html %}
-  {% if page.url == '/' or page.url == '/data/' %} {% assign page_title = '' %}
-  {% else %} {% capture page_title %} - {{ page.name }}{% endcapture %} {% endif
-  %} {% include head.html %}
+  {% if page.url == '/' or page.url == '/data/' %}
+    {% assign page_title = '' %}
+  {% else %}
+    {% capture page_title %} - {{ page.name }}{% endcapture %}
+  {% endif %}
+  {% include head.html %}
+  {% if page.url == '/' or page.url == '/data/' %}
+    {% assign page_title = '' %}
+  {% else %}
+    {% capture page_title %} - {{ page.name }}{% endcapture %}
+  {% endif %}
+  {% include head.html %}
 
   <body>
     {% include gtm_iframe.html %}
-    {% include banner.html %}
     <header class="analytics-header">
       <div class="inner clearfix">
         <h1>
