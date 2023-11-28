@@ -1,8 +1,14 @@
 {% if site.site_wide_error.display %}
-<div class="grid-col-12 usa-alert usa-alert-warning" id="site-wide-alert" role="alert">
-  <div class="usa-alert-body">
-    <h3 class="usa-alert-heading">{{ site.site_wide_error.title }}</h3>
-    <p class="usa-alert-text">{{ site.site_wide_error.body }}</p>
+<div class="grid-row">
+  <div class="grid-col-12 padding-0">
+    <div class="usa-site-alert usa-site-alert--info" aria-label="Site alert">
+      <div class="usa-alert">
+        <div class="usa-alert__body">
+          <h3 class="usa-alert__heading">{{ site.site_wide_error.title }}</h3>
+          <p class="usa-alert__text">{{ site.site_wide_error.body }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endif %}

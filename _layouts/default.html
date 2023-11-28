@@ -18,7 +18,8 @@
     {% include gtm_iframe.html %}
     {% include header.html %}
 
-    <div class="grid-row">{% include error.html %} {{ content }}</div>
+    {% include error.html %}
+    {{ content }}
     {% include footer.html %}
   </body>
 
