@@ -320,10 +320,28 @@ header #agency-selector {
 }
 
 // footer & identifier
+#explanation {
+  font-size: units(2.5);
+
+  h3 {
+    font-size: units(2.5);
+  }
+
+  a {
+    &:hover {
+      color: color("blue-60");
+    }
+  }
+}
+
 footer {
   border-top: units("1px") solid color("gray-10");
-  padding: units(6) 0;
+  padding: units(3) 0;
   background-color: color("gray-4");
+
+  @include at-media("desktop") {
+    padding: units(6) 0;
+  }
 
   h3 {
     margin-top: 0;
@@ -345,15 +363,15 @@ footer {
   }
 
   p {
-    // color: $white;
-    margin-top: 0;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     line-height: 0.75;
+    margin-top: units(2) 0;
 
     &:first-of-type {
-      // @include media($medium-screen) {
-      //   margin-bottom: 0;
-      // }
+    }
+
+    @include at-media("desktop") {
+      font-size: 1.3rem;
     }
   }
 
