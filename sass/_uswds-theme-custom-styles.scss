@@ -319,3 +319,57 @@ header #agency-selector {
   color: color("gray-1");
 }
 
+// footer & identifier
+footer {
+  border-top: units("1px") solid color("gray-10");
+  padding: units(6) 0;
+  background-color: color("gray-4");
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .logo-links {
+    margin-bottom: 0rem;
+    margin-right: 2rem;
+    float: left;
+  }
+
+  img {
+    width: 3.2rem;
+  }
+
+  img.github-icon {
+    width: 1.4rem !important;
+    vertical-align: text-bottom !important;
+  }
+
+  p {
+    // color: $white;
+    margin-top: 0;
+    font-size: 1.3rem;
+    line-height: 0.75;
+
+    &:first-of-type {
+      // @include media($medium-screen) {
+      //   margin-bottom: 0;
+      // }
+    }
+  }
+
+  a {
+    display: inline-block;
+    line-height: 0;
+
+    &:hover {
+      color: color("blue-50");
+    }
+  }
+
+  a.usa-button {
+    background-color: color("blue-50");
+    &:hover {
+      background-color: color("blue-60");
+    }
+  }
+}
