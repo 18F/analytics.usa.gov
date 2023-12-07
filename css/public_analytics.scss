@@ -56,8 +56,7 @@ $border-radius: 5px;
 
 $bold-weight: 600;
 
-$font-sans: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial",
-  sans-serif;
+$font-sans: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", "sans-serif";
 $lead-font-size: rem(20px);
 $title-font-size: rem(59px);
 $h1-font-size: rem(44px);
@@ -66,20 +65,6 @@ $h3-font-size: rem(24px);
 $h4-font-size: rem(19px);
 $h5-font-size: rem(16px);
 
-$font-light: 300;
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: $font-sans;
-}
-
-.usa-display-alt {
-  font-size: rem(44px);
-  font-weight: $font-light;
-}
 
 //override draft web design standards for header hack
 form {
@@ -87,71 +72,10 @@ form {
 }
 
 // Other Setup:
-body {
-  font-family: $font-sans;
-  font-weight: 300;
-  // font-size: 2rem; // USWDS override
-  // color: $dark-gray;
-  // background: $light-gray;
-  margin: 0;
-}
-
-a,
-a:visited {
-  color: $dark-blue;
-}
-
-.technical-difficulties {
-  color: $red;
-  background: #fff;
-  padding-top: 1.25em;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-
-ul li:after,
-ul li:before {
-  content: "";
-  display: none;
-  padding-right: 0;
-}
-
 @include media($small-screen) {
   .sm-hide {
     display: none !important;
   }
-}
-
-// Utility classes
-
-.container-padding {
-  padding-left: 2em;
-  padding-right: 2em;
-
-  @include media($mobile-small-screen) {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-}
-
-.dark-background {
-  background: $dark-blue;
-
-  &,
-  a {
-    color: $white;
-  }
-}
-
-.text-center {
-  text-align: center;
 }
 
 /*
@@ -159,10 +83,6 @@ ul li:before {
 */
 
 header {
-  // background: $dark-blue;
-  color: $white;
-  // border-bottom: 6px solid $light-blue;
-
   .inner {
     // padding: 2.5rem;
     @include responsive_container;

@@ -92,10 +92,6 @@ h5 {
   font-family: family('sans');
 }
 
-.usa-display-alt {
-  font-size: size('sans', '2xl');
-  font-weight: font-weight(300);
-}
 
 //override draft web design standards for header hack
 form {
@@ -108,7 +104,7 @@ form {
 body {
   background: #FFF;
   color: color("gray-cool-70");
-  font-family: family('ui');
+  font-family: font-family('ui');
   font-weight: font-weight(300);
   margin: 0;
 }
@@ -140,22 +136,22 @@ ul li:before {
   padding-right: 0;
 }
 
+// TODO: replace 13 instances
 // @include media($small-screen) {
 //   .sm-hide {
 //     display: none !important;
 //   }
 // }
 
-// Utility classes
-
+// 404 styles
 .container-padding {
-  padding-left: units(4);
-  padding-right: units(4);
+  padding-left: units(2);
+  padding-right: units(2);
 
-  // @include media($mobile-small-screen) {
-  //   padding-left: units(2);
-  //   padding-right: units(2);
-  // }
+  @include at-media("tablet") {
+    padding-left: units(4);
+    padding-right: units(4);
+  }
 }
 
 .dark-background {
@@ -173,7 +169,7 @@ ul li:before {
 
 /*
 * top navigation bar
-* - [ ] remove neat/bourbon mixin
+* - [x] remove neat/bourbon mixin
 * - [ ] refactor into header component
 * - [ ] update to responsive grid classes
 */
