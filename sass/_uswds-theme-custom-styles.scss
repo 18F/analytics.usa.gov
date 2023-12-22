@@ -40,13 +40,13 @@ $bold-weight: 600;
 $font-light: 300;
 $font-sans: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial",
   sans-serif;
-$lead-font-size: rem(20px);
-$title-font-size: rem(59px);
-$h1-font-size: rem(44px);
-$h2-font-size: rem(34px);
-$h3-font-size: rem(24px);
-$h4-font-size: rem(19px);
-$h5-font-size: rem(16px);
+$lead-font-size: px-to-rem(20px);
+$title-font-size: px-to-rem(59px);
+$h1-font-size: px-to-rem(44px);
+$h2-font-size: px-to-rem(34px);
+$h3-font-size: px-to-rem(24px);
+$h4-font-size: px-to-rem(19px);
+$h5-font-size: px-to-rem(16px);
 
 // @include u-font("sans", "md");
 // '3xs'	13px
@@ -91,7 +91,6 @@ h4,
 h5 {
   font-family: family('sans');
 }
-
 
 //override draft web design standards for header hack
 form {
@@ -363,9 +362,6 @@ footer {
     line-height: 0.75;
     margin-top: units(2) 0;
 
-    &:first-of-type {
-    }
-
     @include at-media("desktop") {
       font-size: 1.3rem;
     }
@@ -385,5 +381,36 @@ footer {
     &:hover {
       background-color: color("blue-60");
     }
+  }
+}
+
+// ==========================================================================
+// Columns
+// ==========================================================================
+// Previously Three column. Taken from `public_analytics.scss`.
+
+.columns {
+  border-left: none;
+  // border-top: 1px solid $gray;
+  // border-top: 1px solid;
+
+  // @TODO: Use classes instead of elements for styling.
+  h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 90%;
+  }
+
+  h5 {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+.columns--thirds {
+
+  @include at-media("tablet") {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

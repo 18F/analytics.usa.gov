@@ -317,15 +317,6 @@ section {
   }
 }
 
-#devices {
-  p {
-    font-size: 1.3rem;
-  }
-  .label::first-letter {
-    text-transform: uppercase;
-  }
-}
-
 .downloads {
   @include media($mobile-small-screen) {
     thead th {
@@ -359,25 +350,6 @@ section {
   font-size: 1.5em;
   #total_visitors {
     font-weight: $bold-weight;
-  }
-}
-
-.three_column {
-  @include span-columns(3 of 9);
-
-  @include media($small-screen) {
-    @include span-columns(1);
-    border-left: none;
-    border-top: 1px solid $gray;
-  }
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-  h5 {
-    margin-top: 0;
-    text-align: center;
   }
 }
 
