@@ -1,0 +1,80 @@
+<section>
+  <section class="section_headline">
+    <h3>Sessions in the Past 90 Days</h3>
+  </section>
+
+  <section class="section_subheadline">
+    There were <span id="total_visitors" class="data">...</span> sessions over the
+    past 90 days.
+  </section>
+
+  <section
+    id="devices"
+    class="three_column"
+    data-block="devices"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/devices.json"
+  >
+    <h4>Devices</h4>
+    <figure id="chart_device_types">
+      <div class="data bar-chart"></div>
+    </figure>
+
+    <p>
+      Based on rough network segmentation data, we estimate that
+      <strong>less than 5%</strong> of all traffic across all agencies comes from
+      US federal government networks.
+    </p>
+
+    <p>
+      Much more detailed data is available in
+      <strong><a href="data/">downloadable CSV and JSON</a></strong
+      >. This includes data on combined browser and OS usage.
+    </p>
+  </section>
+
+  <section id="browsers" class="three_column">
+    <h4>Browsers</h4>
+
+    <figure
+      id="chart_browsers"
+      data-block="browsers"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/browsers.json"
+    >
+      <div class="data bar-chart"></div>
+    </figure>
+
+    <figure
+      id="chart_ie"
+      class="hide"
+      data-block="ie"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/ie.json"
+      data-scale-to-parent="true"
+    >
+      <h4>Internet Explorer</h4>
+      <div class="data bar-chart"></div>
+    </figure>
+  </section>
+
+  <section id="operating_systems" class="three_column">
+    <h4>Operating Systems</h4>
+
+    <figure
+      id="chart_os"
+      data-block="os"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/os.json"
+    >
+      <div class="data bar-chart"></div>
+    </figure>
+
+    <figure
+      id="chart_windows"
+      class="hide"
+      data-block="windows"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/windows.json"
+      data-scale-to-parent="true"
+    >
+      <h4>Windows</h4>
+      <div class="data bar-chart"></div>
+    </figure>
+  </section>
+</section>
