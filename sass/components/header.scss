@@ -7,109 +7,21 @@
 * - [ ] update to responsive grid classes
 */
 
-
-// header {
-//   .inner {
-//     // padding: 2.5rem;
-//     @include responsive_container;
-//     @include media($mobile-small-screen) {
-//       padding: 1.5rem;
-//     }
-//   }
-
-//   h1 {
-//     float: left;
-//     margin: 0 24px 0 0;
-//     line-height: 5rem;
-//     @include media($medium-screen) {
-//       line-height: 5.5rem;
-//     }
-//     @include media($mobile-small-screen) {
-//       font-size: 2.8rem;
-//       padding-top: 4px; //to give h1 and links same baseline
-//     }
-//   }
-
-//   a {
-//     color: color("white");
-//     font-weight: 300;
-//     text-decoration: none;
-//   }
-//   a:hover {
-//     text-decoration: underline;
-//     color: color("white");
-//   }
-//   a:visited {
-//     color: color("white");
-//   }
-//   .agency-selector-wrap {
-//     width: 50%;
-//     float: left;
-//     @include media($medium-screen) {
-//       width: 100%;
-//       float: none;
-//       clear: both;
-//     }
-//   }
-// }
-
-
-// .links {
-//   float: right;
-//   margin-bottom: 0;
-//   @include media($medium-screen) {
-//     li {
-//       display: inline;
-//       padding: 0 0.8rem;
-//       &:nth-child(odd) a::after {
-//         content: "\2022";
-//         padding: 0 0 0 1.6rem;
-//         font-weight: bold;
-//         color: $light-blue;
-//       }
-//     }
-//     a {
-//       line-height: 5.5rem;
-//     }
-//   }
-//   @include media($small-screen) {
-//     li {
-//       padding: 0.5rem;
-//       &:nth-child(odd) a::after {
-//         padding: 0 0 0 1rem;
-//       }
-//     }
-//   }
-//   @include media($mobile-small-screen) {
-//     li {
-//       font-size: 1.6rem;
-//       padding: 0;
-//       margin: 0;
-//       display: block;
-//       &:nth-child(odd) a::after {
-//         content: "";
-//         padding: 0;
-//       }
-//     }
-//     a {
-//       line-height: 1rem;
-//       font-size: 1.5rem;
-//     }
-//   }
-// }
-
 .site-header {
   background-color: color("primary-darker");
   border-bottom: units(1) solid color("primary");
   color: color("base-lightest");
 
   &__inner {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: first baseline;
+    min-height: px-to-rem(95px);
     padding: units(3);
 
-    @include at-media("tablet") {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+    @include at-media("tablet-lg") {
+      align-items: center;
     }
   }
 
@@ -121,15 +33,15 @@
     color: color("gray-1");
     font-weight: font-weight(300);
     text-decoration: none;
-  }
 
-  a:hover {
-    color: color("gray-1");
-    text-decoration: underline;
-  }
+    &:hover {
+      color: color("gray-1");
+      text-decoration: underline;
+    }
 
-  a:visited {
-    color: color("gray-1");
+    &:visited {
+      color: color("gray-1");
+    }
   }
 }
 
@@ -137,15 +49,11 @@
   font-size: size('sans', 'md');
   margin: 0;
   margin-bottom: units(4);
-  // line-height: units(10);
-  // margin: 0 units(3) 0 0;
-  // @include media($medium-screen) {
-  //   line-height: 5.5rem;
-  // }
-  // @include media($mobile-small-screen) {
-  //   font-size: 2.8rem;
-  //   padding-top: 4px; //to give h1 and links same baseline
-  // }
+
+	@include at-media("tablet") {
+		margin-bottom: 0;
+	}
+
   strong {
     font-weight: font-weight(700);
   }
@@ -153,133 +61,56 @@
 
 .site-nav {
   display: flex;
-  column-gap: units(2);
+  column-gap: units(3);
   list-style: none;
-  margin-top: units(2);
+  letter-spacing: 0.4px;
+  margin-top: 0;
   margin-bottom: units(4);
   padding-left: 0;
 
-  @include at-media("tablet-lg") {
-    align-items: center;
-
-    li {
-
-      &:nth-child(odd) a::after {
-        color: color("blue-50v");
-        content: "\2022";
-        font-weight: font-weight(700);
-        padding: 0 0 0 units(1.5);
-      }
-    }
-  }
-
   @include at-media("tablet") {
-    li {
-      padding: units(1);
+		margin-bottom: 0;
+		order: 3;
+	}
 
-      &:nth-child(odd) a::after {
-        padding: 0 0 0 units(2);
-      }
-    }
-  }
-
-  @include at-media("mobile-lg") {
-    li {
-      display: block;
-      // font-size: size('sans', 'lg');
-      margin: 0;
-      padding: 0;
-      &:nth-child(odd) a::after {
-        content: "";
-        padding: 0;
-      }
-    }
-
-    a {
-      line-height: line-height('sans', 1);
-    }
+  @include at-media("tablet-lg") {
+    column-gap: units(6);
   }
 }
 
-.agency-selector-wrap {
-  width: 70%;
-  //hide label needed for accessibility
-  label {
+.site-header .agency-selector-wrap {
+
+	@include at-media("tablet") {
+    margin-left: auto;
+    margin-right: auto;
+		width: 35%;
+	}
+
+	@include at-media("tablet-lg") {
+		width: 50%;
+	}
+
+	// Hide label needed for accessibility.
+	label {
     left: -999em;
     position: absolute;
   }
-}
-
-// .agency-selector-wrap {
-// 	width: 100%;
-
-// 	@include at-media("tablet") {
-// 		width: 30%;
-// 	}
-
-// 	@include at-media("tablet-lg") {
-// 		width: auto;
-// 	}
-// }
-
-.agency-selector-wrap {
-	width: 70%;
-	// @include media($medium-screen) {
-	//   width: 80%;
-	// }
-	// @include media($small-screen) {
-	//   width: 100%;
-	// }
-}
-
-.agency-selector-wrap {
-	//hide label needed for accessibility
-	label {
-		position: absolute;
-		left: -999em;
-	}
 
 	.usa-form {
 		max-width: 100%;
 	}
 }
 
-#agency-selector {
-  color: color("blue-80v");
-  font-size: size('sans', 'lg');
-  height: auto;
-  max-width: none; // USWDS override
-  vertical-align: middle;
-  width: 100%;
-  // @include media($medium-screen) {
-  //   font-size: size('sans', 'sm');
-  // }
-}
 
-.site-agency-selector__dropdown {
-  background-color: color("blue-50");
-  background-image: url("../css/img/arrow-down.png");
-  background-image: url("../css/img/arrow-down.svg");
-  border: units(1px) solid color("gray-1");
-  color: color("gray-1");
-}
-
-.site-agency-selector__dropdown {
-	height: auto;
-	width: 100%;
-	max-width: none; // USWDS override
-	font-size: 22px;
-	vertical-align: middle;
-	color: color("blue-80v");
-	// @include media($medium-screen) {
-	//   font-size: 16px;
-	// }
-}
-
-.site-agency-selector__dropdown {
-	background-image: url("../css/img/arrow-down.png");
-	background-image: url("../css/img/arrow-down.svg");
-	color: color("white");
+.site-header .site-agency-selector__dropdown {
 	background-color: color("blue-50");
+	background-image: url("../css/img/arrow-down.svg");
 	border: 1px solid color("white");
+	color: color("white");
+	font-size: size("sans", "xs");
+	height: auto;
+	margin-top: 0;
+	max-width: none; // USWDS override
+	vertical-align: middle;
+	width: 100%;
 }

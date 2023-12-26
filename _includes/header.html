@@ -1,5 +1,5 @@
 <header class="site-header">
-  <div class="site-header__inner">
+  <div class="site-header__inner responsive-container">
     <h1 class="site-logo">
       <a href="/"> <strong>analytics</strong>.usa.gov </a>
     </h1>
@@ -16,6 +16,7 @@
         </a>
       </li>
     </ul>
+
     {% assign agencies = site.data.agencies | sort: "name" %}
     {% if agencies.size > 0 %}
       {% unless page.url contains 'data' %}
@@ -45,17 +46,18 @@
 {{/*
 
   .site-header
-    .site-logo
-      a
+    .site-header__inner.responsive-container
+      .site-logo
+        a
 
-  ul.site-nav
-    li
-      a
+      ul.site-nav
+        li
+          a
 
-  div.agency-selector-wrap
-    form.usa-form
-      label
-      select
+      div.agency-selector-wrap
+        form.usa-form
+          label
+          select
 
   header
     h1
