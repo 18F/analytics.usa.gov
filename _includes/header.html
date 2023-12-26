@@ -1,27 +1,29 @@
-<header class="analytics-header">
-  <div class="inner clearfix">
-    <h1>
-      <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <h1 class="site-logo">
+      <a href="/"> <strong>analytics</strong>.usa.gov </a>
     </h1>
-    <ul class="links">
+    <ul class="site-nav links">
       <li>
-        <a href="#explanation">About <span class="sm-hide">this site</span></a>
+        <a href="#explanation">About this site</a>
       </li>
       <li>
-        <a href="{{ site.baseurl }}/data/">Data</a> &middot;
-        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
-          >API</a
-        >
+        <a href="{{ site.baseurl }}/data/">Data</a>
+      </li>
+      <li>
+        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener">
+          API
+        </a>
       </li>
     </ul>
     {% assign agencies = site.data.agencies | sort: "name" %}
     {% if agencies.size > 0 %}
       {% unless page.url contains 'data' %}
-      <div class="agency-selector-wrap">
+      <div class="site-agency-selector agency-selector-wrap">
         <form class="usa-form">
           <label class="usa-label" for="agency-selector">Select an agency</label>
           <select
-            class="usa-select"
+            class="usa-select site-agency-selector__dropdown"
             name="agency-selector"
             id="agency-selector"
             title="Agency Selection Dropdown"
@@ -40,13 +42,13 @@
   </div>
 </header>
 
-{{/*  
-  
-  header.analytics-header
-    h1
+{{/*
+
+  .site-header
+    .site-logo
       a
 
-  ul.links
+  ul.site-nav
     li
       a
 
