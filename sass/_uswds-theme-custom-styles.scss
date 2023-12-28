@@ -79,6 +79,7 @@ h5 {
   font-family: family('sans');
 }
 
+
 //override draft web design standards for header hack
 form {
   max-width: none;
@@ -127,7 +128,13 @@ ul li:before {
 //   }
 // }
 
-// 404 styles
+
+
+/* 
+  404 Styles
+*/
+
+
 .container-padding {
   padding-left: units(2);
   padding-right: units(2);
@@ -149,154 +156,6 @@ ul li:before {
 
 .text-center {
   text-align: center;
-}
-
-/*
-* top navigation bar
-* - [x] remove neat/bourbon mixin
-* - [ ] refactor into header component
-* - [ ] update to responsive grid classes
-*/
-
-.analytics-header {
-  background: color("blue-80v");
-  border-bottom: units(1) solid color("blue-50v");
-  color: color("gray-1");
-
-  .inner {
-    padding: units(3);
-    @include at-media("tablet-lg") {
-      padding: units(3);
-    }
-  }
-
-  .usa-form {
-    max-width: 100%;
-  }
-
-  h1 {
-    float: left;
-
-    font-size: size('sans', '2xl');
-    line-height: units(10);
-    margin: 0 units(3) 0 0;
-    // @include media($medium-screen) {
-    //   line-height: 5.5rem;
-    // }
-    // @include media($mobile-small-screen) {
-    //   font-size: 2.8rem;
-    //   padding-top: 4px; //to give h1 and links same baseline
-    // }
-    strong {
-      font-weight: font-weight(700);
-    }
-  }
-
-  a {
-    color: color("gray-1");
-    font-weight: font-weight(300);
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: color("gray-1");
-    text-decoration: underline;
-  }
-
-  a:visited {
-    color: color("gray-1");
-  }
-
-  .agency-selector-wrap {
-    float: left;
-    width: 100%;
-    @include at-media("tablet-lg") {
-      float: left;
-      width: 50%;
-    }
-  }
-}
-
-
-.links {
-  float: right;
-  font-size: size('sans', 'md');
-  list-style: none;
-  margin-bottom: 0;
-  a {
-    font-size: size('sans', 'md');
-  }
-  @include at-media("tablet-lg") {
-    li {
-      display: inline;
-      padding: 0 units(1.5);
-      &:nth-child(odd) a::after {
-        color: color("blue-50v");
-        content: "\2022";
-        font-weight: font-weight(700);
-        padding: 0 0 0 units(1.5);
-      }
-    }
-    a {
-      // line-height: 5.5rem;
-      line-height: units(10);
-    }
-  }
-  @include at-media("tablet") {
-    li {
-      padding: units(1);
-      &:nth-child(odd) a::after {
-        padding: 0 0 0 units(2);
-      }
-    }
-  }
-  @include at-media("mobile-lg") {
-    li {
-      display: block;
-      // font-size: size('sans', 'lg');
-      font-size: 1.6rem;
-      margin: 0;
-      padding: 0;
-      &:nth-child(odd) a::after {
-        content: "";
-        padding: 0;
-      }
-    }
-    a {
-      font-size: size('sans', 'lg');
-      line-height: line-height('sans', 1);
-    }
-  }
-}
-
-.agency-selector-wrap {
-  width: 70%;
-  //hide label needed for accessibility
-  label {
-    left: -999em;
-    position: absolute;
-  }
-}
-
-#agency-selector {
-  color: color("blue-80v");
-  font-size: size('sans', 'lg');
-  font-weight: font-weight(600);
-  height: auto;
-  max-width: none; // USWDS override
-  vertical-align: middle;
-  width: 100%;
-  // @include media($medium-screen) {
-  //   font-size: size('sans', 'sm');
-  // }
-}
-
-header #agency-selector {
-  background-color: color("blue-50");
-  background-image: url("../css/img/arrow-down.png");
-  background-image: url("../css/img/arrow-down.svg");
-  border: units(1px) solid color("gray-1");
-  color: color("gray-1");
 }
 
 // footer & identifier
