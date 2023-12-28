@@ -35,19 +35,6 @@ $gray: color("gray-10");
 $dark-gray: color("gray-cool-70");
 $white: color("gray-1");
 
-// FONTS
-$bold-weight: 600;
-$font-light: 300;
-$font-sans: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial",
-  sans-serif;
-$lead-font-size: rem(20px);
-$title-font-size: rem(59px);
-$h1-font-size: rem(44px);
-$h2-font-size: rem(34px);
-$h3-font-size: rem(24px);
-$h4-font-size: rem(19px);
-$h5-font-size: rem(16px);
-
 // @include u-font("sans", "md");
 // '3xs'	13px
 // '2xs'	14px
@@ -143,7 +130,13 @@ ul li:before {
 //   }
 // }
 
-// 404 styles
+
+
+/* 
+  404 Styles
+*/
+
+
 .container-padding {
   padding-left: units(2);
   padding-right: units(2);
@@ -167,154 +160,6 @@ ul li:before {
   text-align: center;
 }
 
-/*
-* top navigation bar
-* - [x] remove neat/bourbon mixin
-* - [ ] refactor into header component
-* - [ ] update to responsive grid classes
-*/
-
-.analytics-header {
-  background: color("blue-80v");
-  border-bottom: units(1) solid color("blue-50v");
-  color: color("gray-1");
-
-  .inner {
-    padding: units(3);
-    @include at-media("tablet-lg") {
-      padding: units(3);
-    }
-  }
-
-  .usa-form {
-    max-width: 100%;
-  }
-
-  h1 {
-    float: left;
-
-    font-size: size('sans', '2xl');
-    line-height: units(10);
-    margin: 0 units(3) 0 0;
-    // @include media($medium-screen) {
-    //   line-height: 5.5rem;
-    // }
-    // @include media($mobile-small-screen) {
-    //   font-size: 2.8rem;
-    //   padding-top: 4px; //to give h1 and links same baseline
-    // }
-    strong {
-      font-weight: font-weight(700);
-    }
-  }
-
-  a {
-    color: color("gray-1");
-    font-weight: font-weight(300);
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: color("gray-1");
-    text-decoration: underline;
-  }
-
-  a:visited {
-    color: color("gray-1");
-  }
-
-  .agency-selector-wrap {
-    float: left;
-    width: 100%;
-    @include at-media("tablet-lg") {
-      float: left;
-      width: 50%;
-    }
-  }
-}
-
-
-.links {
-  float: right;
-  font-size: size('sans', 'md');
-  list-style: none;
-  margin-bottom: 0;
-  a {
-    font-size: size('sans', 'md');
-  }
-  @include at-media("tablet-lg") {
-    li {
-      display: inline;
-      padding: 0 units(1.5);
-      &:nth-child(odd) a::after {
-        color: color("blue-50v");
-        content: "\2022";
-        font-weight: font-weight(700);
-        padding: 0 0 0 units(1.5);
-      }
-    }
-    a {
-      // line-height: 5.5rem;
-      line-height: units(10);
-    }
-  }
-  @include at-media("tablet") {
-    li {
-      padding: units(1);
-      &:nth-child(odd) a::after {
-        padding: 0 0 0 units(2);
-      }
-    }
-  }
-  @include at-media("mobile-lg") {
-    li {
-      display: block;
-      // font-size: size('sans', 'lg');
-      font-size: 1.6rem;
-      margin: 0;
-      padding: 0;
-      &:nth-child(odd) a::after {
-        content: "";
-        padding: 0;
-      }
-    }
-    a {
-      font-size: size('sans', 'lg');
-      line-height: line-height('sans', 1);
-    }
-  }
-}
-
-.agency-selector-wrap {
-  width: 70%;
-  //hide label needed for accessibility
-  label {
-    left: -999em;
-    position: absolute;
-  }
-}
-
-#agency-selector {
-  color: color("blue-80v");
-  font-size: size('sans', 'lg');
-  font-weight: font-weight(600);
-  height: auto;
-  max-width: none; // USWDS override
-  vertical-align: middle;
-  width: 100%;
-  // @include media($medium-screen) {
-  //   font-size: size('sans', 'sm');
-  // }
-}
-
-header #agency-selector {
-  background-color: color("blue-50");
-  background-image: url("../css/img/arrow-down.png");
-  background-image: url("../css/img/arrow-down.svg");
-  border: units(1px) solid color("gray-1");
-  color: color("gray-1");
-}
-
 // footer & identifier
 #explanation {
   font-size: units(2.5);
@@ -326,64 +171,6 @@ header #agency-selector {
   a {
     &:hover {
       color: color("blue-60");
-    }
-  }
-}
-
-footer {
-  border-top: units("1px") solid color("gray-10");
-  padding: units(3) 0;
-  background-color: color("gray-4");
-
-  @include at-media("desktop") {
-    padding: units(6) 0;
-  }
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .logo-links {
-    margin-bottom: 0rem;
-    margin-right: 2rem;
-    float: left;
-  }
-
-  img {
-    width: 3.2rem;
-  }
-
-  img.github-icon {
-    width: 1.4rem !important;
-    vertical-align: text-bottom !important;
-  }
-
-  p {
-    font-size: 1.15rem;
-    line-height: 0.75;
-    margin-top: units(2) 0;
-
-    &:first-of-type {
-    }
-
-    @include at-media("desktop") {
-      font-size: 1.3rem;
-    }
-  }
-
-  a {
-    display: inline-block;
-    line-height: 0;
-
-    &:hover {
-      color: color("blue-50");
-    }
-  }
-
-  a.usa-button {
-    background-color: color("blue-50");
-    &:hover {
-      background-color: color("blue-60");
     }
   }
 }

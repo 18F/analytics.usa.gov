@@ -1,65 +1,43 @@
-<header class="analytics-header">
-  <div class="inner clearfix">
-    <h1>
-      <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
-    </h1>
-    <ul class="links">
-      <li>
-        <a href="#explanation">About <span class="sm-hide">this site</span></a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl }}/data/">Data</a> &middot;
-        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
-          >API</a
+<header class="analytics-header grid-row">
+  <h1>
+    <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
+  </h1>
+
+  {% assign agencies = site.data.agencies | sort: "name" %}
+  {% if agencies.size > 0 %}
+    {% unless page.url contains 'data' %}
+    <div class="analytics-select">
+      <form class="usa-form">
+        <label class="usa-label" for="agency-selector">Select an agency</label>
+        <select
+          class="usa-select"
+          name="agency-selector"
+          id="analytics-agency-select"
+          title="Agency Selection Dropdown"
         >
-      </li>
-    </ul>
-    {% assign agencies = site.data.agencies | sort: "name" %}
-    {% if agencies.size > 0 %}
-      {% unless page.url contains 'data' %}
-      <div class="agency-selector-wrap">
-        <form class="usa-form">
-          <label class="usa-label" for="agency-selector">Select an agency</label>
-          <select
-            class="usa-select"
-            name="agency-selector"
-            id="agency-selector"
-            title="Agency Selection Dropdown"
-          >
-          <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
-          {% for agency in agencies %}
-          <option value="{{site.baseurl}}/{{agency.slug}}">
-              {{agency.name}}
-          </option>
-          {% endfor %}
-          </select>
-        </form>
-      </div>
-      {% endunless %}
-    {% endif %}
-  </div>
+        <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+        {% for agency in agencies %}
+        <option value="{{site.baseurl}}/{{agency.slug}}">
+            {{agency.name}}
+        </option>
+        {% endfor %}
+        </select>
+      </form>
+    </div>
+    {% endunless %}
+  {% endif %}
+
+  <nav class="links">
+    <li>
+      <a href="#explanation">About <span class="sm-hide">this site</span></a>
+      <span class="link-bullet link-bullet--hide">&#8226;</span>
+    </li>
+    <li>
+      <a href="{{ site.baseurl }}/data/">Data</a>
+      <span class="link-bullet">&#8226;</span>
+      <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
+        >API</a
+      >
+    </li>
+  </nav>
 </header>
-
-{{/*  
-  
-  header.analytics-header
-    h1
-      a
-
-  ul.links
-    li
-      a
-
-  div.agency-selector-wrap
-    form.usa-form
-      label
-      select
-
-  header
-    h1
-    nav
-      about
-      data
-      api
-    form
-*/}}
