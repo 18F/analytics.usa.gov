@@ -7,35 +7,36 @@
   {% assign data_prefix = page.slug %}
   {% assign entity = page.name %}
 {% endif %}
-<section class="grid-col-12">
+<section class="grid-col-8 padding-4">
   <h1>Download the data</h1>
   {% assign agencies = site.data.agencies | sort:"name" %}
   {% if agencies.size > 0 %}
-  <div class="agency-selector-wrap">
-    <form>
-      <label for="agency-selector">Select an agency</label>
-      <select
-        name="agency-selector"
-        id="agency-selector"
-        title="Agency Selection Dropdown"
-      >
+    <div class="analytics-select">
+      <form class="usa-form">
+        <label class="usa-label" for="agency-selector">Select an agency</label>
+        <select
+          class="usa-select"
+          name="agency-selector"
+          id="analytics-agency-select"
+          title="Agency Selection Dropdown"
+        >
         <option value="{{ site.baseurl }}/data/">
           {{ site.dropdown_title }}
         </option>
         {% for agency in agencies %}
         <option value="{{ site.baseurl }}/{{ agency.slug }}/data/">
-          {{ agency.name }}
+            {{ agency.name }}
         </option>
         {% endfor %}
-      </select>
-    </form>
-  </div>
+        </select>
+      </form>
+    </div>
   {% endif %}
   <h2>
     Sessions to and traffic sources for {% if entity == 'government' %}all
     participating agencies{% else %}{{ entity }}{% endif %}
   </h2>
-  <table class="usa-table-borderless downloads">
+  <table class="usa-table usa-table--borderless grid-col-12">
     <thead>
       <tr>
         <th scope="col">Description</th>
@@ -49,8 +50,8 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
         </td>
         <td>Daily</td>
@@ -60,8 +61,8 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
         </td>
         <td>Daily</td>
@@ -71,13 +72,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -87,13 +88,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-exit-pages-30-days.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-exit-pages-30-days.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -103,8 +104,8 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
         </td>
         <td>Every 5 minutes</td>
@@ -114,19 +115,21 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/realtime.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Every 5 minutes</td>
       </tr>
     </tbody>
   </table>
-  <h2>
+
+  <h2 class="padding-top-6">
     User demographics for {% if entity == 'government' %}all participating
     agencies{% else %}{{ entity }}{% endif %}
   </h2>
-  <table class="usa-table-borderless downloads">
+
+  <table class="usa-table usa-table--borderless grid-col-12">
     <thead>
       <tr>
         <th scope="col">Description</th>
@@ -140,13 +143,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/language.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/language.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -156,8 +159,8 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Every 5 minutes</td>
@@ -167,8 +170,8 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Every 5 minutes</td>
@@ -179,24 +182,24 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/devices.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
         </td>
         <td>Daily</td>
       </tr>
       <tr class="parent">
-        <td>Web browsers</td>
+        <td>Web Browsers</td>
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/browsers.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/browsers.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -206,13 +209,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/ie.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/ie.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -222,13 +225,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/os.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/os.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -238,13 +241,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/windows.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/windows.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -254,13 +257,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -270,13 +273,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -286,13 +289,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/windows-ie.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/windows-ie.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -302,13 +305,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/screen-size.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/screen-size.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -318,13 +321,13 @@
         <td>
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/device_model.csv"
-            class="download-data"
-            ><span class="usa-label-big">CSV</span></a
+            class="download-data usa-button"
+            >CSV</a
           >
           <a
             href="{{ site.data_url }}/{{ data_prefix }}/device_model.json"
-            class="download-data"
-            ><span class="usa-label-big">JSON</span></a
+            class="download-data usa-button"
+            >JSON</a
           >
         </td>
         <td>Daily</td>
@@ -332,3 +335,5 @@
     </tbody>
   </table>
 </section>
+
+

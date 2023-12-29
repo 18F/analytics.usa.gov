@@ -7,3 +7,28 @@
 .usa-identifier__required-links-item a {
   text-underline-offset: 2px;
 }
+
+
+.usa-table.usa-table--borderless {
+  thead {
+    background-color: color("gray-10");
+  }
+  thead th {
+    font-size: size("sans", "md");
+  }
+  td {
+    font-size: size("sans", "md");
+    padding: units(2);
+    .usa-label-big {
+      display: inline-block;
+      font-size: size("sans", "md");
+    }
+  }
+
+  .usa-button:first-child {
+
+    @include at-media-max('tablet') {
+      margin-bottom: units(1);
+    }
+  }
+}
