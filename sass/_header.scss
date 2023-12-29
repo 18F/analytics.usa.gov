@@ -24,9 +24,9 @@
     margin: 0;
 
     @include at-media("tablet-lg") {
-      margin: 0 units(3) 0 0;
-      line-height: units(10);
       font-size: size('sans', '2xl');
+      line-height: units(10);
+      margin: 0 units(3) 0 0;
     }
 
     strong {
@@ -53,11 +53,11 @@
 
 
   .analytics-select {
-    width: 100%;
     order: 4;
+    width: 100%;
     @include at-media("desktop") {
-      width: 50%;
       order: 2;
+      width: 50%;
     }
 
     // hide label needed for accessibility
@@ -72,19 +72,19 @@
     }
 
     #analytics-agency-select {
+    
+      background-color: color("blue-50");
+      background-image: url("../css/img/arrow-down.png");
+      background-image: url("../css/img/arrow-down.svg");
+      border: units(1px) solid color("gray-1");
       color: color("blue-80v");
+      color: color("gray-1");
       font-size: size('sans', 'sm');
       font-weight: font-weight(600);
       height: auto;
       max-width: none; // USWDS override
       vertical-align: middle;
       width: 100%;
-    
-      background-color: color("blue-50");
-      background-image: url("../css/img/arrow-down.png");
-      background-image: url("../css/img/arrow-down.svg");
-      border: units(1px) solid color("gray-1");
-      color: color("gray-1");
     
       @include at-media("tablet-lg") {
         font-size: size('sans', 'lg');
@@ -94,15 +94,15 @@
 
 
   nav.links {
+    align-items: flex-end;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     flex-grow: 3;
     font-size: size('sans', 'md');
+    justify-content: flex-end;
     list-style: none;
     margin-bottom: 0;
     order: 3;
-    justify-content: flex-end;
 
     @include at-media("desktop") {
       flex-direction: column;
