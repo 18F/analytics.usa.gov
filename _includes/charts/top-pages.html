@@ -1,0 +1,88 @@
+<section id="top_100_table" class="padding-3">
+
+  <!-- see: http://heydonworks.com/practical_aria_examples/ -->
+  <h3>Top <span id="top_table_type">Web Pages and App Screens</span></h3>
+  <ul class="pills" role="tablist">
+    <li>
+      <a
+        role="tab"
+        data-type="Web Pages and App Screens"
+        aria-selected="true"
+        href="#top-pages-realtime"
+        class="site-nav"
+        >Now</a
+      >
+    </li>
+    <li>
+      <a
+        role="tab"
+        data-type="Hostnames"
+        href="#top-pages-7-days"
+        class="site-nav"
+        >7 Days</a
+      >
+    </li>
+    <li>
+      <a
+        role="tab"
+        data-type="Hostnames"
+        href="#top-pages-30-days"
+        class="site-nav"
+        >30 Days</a
+      >
+    </li>
+  </ul>
+
+  <figure
+    class="top-pages"
+    id="top-pages-realtime"
+    role="tabpanel"
+    data-block="top-pages-realtime"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-pages-realtime.json"
+    data-refresh="15"
+  >
+    <p>
+      People on a <strong>single, specific page or app screen</strong> in
+      the last 30 minutes. We only count pages with at least 10 people on
+      the page.
+      <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv"
+        >Download the full dataset.</a
+      >
+    </p>
+    <div class="data bar-chart"></div>
+  </figure>
+
+  <figure
+    class="top-pages"
+    id="top-pages-7-days"
+    role="tabpanel"
+    data-block="top-pages"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-7-days.json"
+  >
+    <p>
+      Sessions over the last week on <strong>hostnames</strong>, including
+      traffic to all web pages and app screens within that hostname.
+    </p>
+    <div class="data bar-chart"></div>
+  </figure>
+
+  <figure
+    class="top-pages"
+    id="top-pages-30-days"
+    role="tabpanel"
+    data-block="top-pages"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-30-days.json"
+  >
+    <p>
+      Sessions over the last month on <strong>hostnames</strong>, including
+      traffic to all web pages and app screens within that hostname. {% if
+      page.entity == "government" %}We only count pages and app screens with at
+      least 1,000 sessions in the last month.{% endif %}
+      <a
+        href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.csv"
+        >Download the full dataset.</a
+      >
+    </p>
+    <div class="data bar-chart"></div>
+  </figure>
+</section>
