@@ -1,0 +1,36 @@
+{
+  "name": "realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "today",
+        "endDate": "today"
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Active Users Right Now",
+    "description": "Number of users currently visiting all sites."
+  },
+  "data": [
+    {
+      "date": "2023-12-13",
+      "active_visitors": "9804766"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-12-13T19:43:03.556Z"
+}

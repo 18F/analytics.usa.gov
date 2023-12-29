@@ -1,0 +1,27 @@
+<section>
+  <section
+    id="realtime"
+    data-block="realtime"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/realtime.json"
+    data-refresh="15"
+  >
+    <h2 id="current_visitors" class="data">...</h2>
+    <div class="chart_subtitle">
+      people on government websites <br />
+      and apps in last 30 minutes
+    </div>
+  </section>
+
+  <section class="section_headline visits_today">
+    <h3>Sessions Today</h3>
+    <h4>Eastern Time</h4>
+    <section
+    id="time_series"
+    data-block="today"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/today.json"
+    data-refresh="15"
+  >
+    <svg class="data time-series"></svg>
+  </section>
+  </section>
+</section>

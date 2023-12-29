@@ -1,0 +1,11 @@
+<section id="top_downloads_table" class="padding-3">
+  <h3>Top Downloads</h3>
+  <h5><em>Total file downloads yesterday on {{ page.entity }} hostnames.</em></h5>
+  <figure
+    id="top-downloads"
+    data-block="top-downloads"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
+  >
+    <div class="data bar-chart"></div>
+  </figure>
+</section>
