@@ -49,50 +49,6 @@
     }
   }
 
-
-
-
-  .analytics-select {
-    order: 4;
-    width: 100%;
-    @include at-media("desktop") {
-      order: 2;
-      width: 50%;
-    }
-
-    // hide label needed for accessibility
-    label {
-      left: -999em;
-      position: absolute;
-    }
-
-    // style the input drop down
-    .usa-form {
-      max-width: 100%;
-    }
-
-    #analytics-agency-select {
-    
-      background-color: color("blue-50");
-      background-image: url("../css/img/arrow-down.png");
-      background-image: url("../css/img/arrow-down.svg");
-      border: units(1px) solid color("gray-1");
-      color: color("blue-80v");
-      color: color("gray-1");
-      font-size: size('sans', 'sm');
-      font-weight: font-weight(600);
-      height: auto;
-      max-width: none; // USWDS override
-      vertical-align: middle;
-      width: 100%;
-    
-      @include at-media("tablet-lg") {
-        font-size: size('sans', 'lg');
-      }
-    }
-  }
-
-
   nav.links {
     align-items: flex-end;
     display: flex;

@@ -8,7 +8,7 @@
   text-underline-offset: 2px;
 }
 
-
+// overrides for usa-table on /data page
 .usa-table.usa-table--borderless {
   thead {
     background-color: color("gray-10");
@@ -19,14 +19,12 @@
   td {
     font-size: size("sans", "md");
     padding: units(2);
-    .usa-label-big {
-      display: inline-block;
-      font-size: size("sans", "md");
-    }
   }
+  // add bottom spacing for download buttons in table
   .usa-button:first-child {
-    @include at-media-max('tablet') {
-      margin-bottom: units(1);
+    margin-bottom: units('05');
+    @include at-media('desktop-lg') {
+      margin-bottom: 0;
     }
   }
 }

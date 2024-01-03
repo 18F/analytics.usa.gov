@@ -6,7 +6,7 @@
   {% assign agencies = site.data.agencies | sort: "name" %}
   {% if agencies.size > 0 %}
     {% unless page.url contains 'data' %}
-    <div class="analytics-select">
+    <div class="analytics-select analytics-select--main">
       <form class="usa-form">
         <label class="usa-label" for="agency-selector">Select an agency</label>
         <select

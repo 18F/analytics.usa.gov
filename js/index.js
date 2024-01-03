@@ -164,7 +164,7 @@ d3.selectAll("*[role='tablist']")
 consolePrint(window);
 
 // Set the dropdown
-const dropDown = document.getElementById('agency-selector');
+const dropDown = document.getElementById('analytics-agency-select');
 
 // Start on change listener to load new page
 d3.select(dropDown).on('change', function () {
