@@ -23,13 +23,13 @@
       -->
 
 <div class="grid-row">
-  <div id="main_data" class="grid-col-8">
+  <div id="main_data" class="desktop:grid-col-8">
     {% include charts/sessions-today.html data_prefix=data_prefix %}
     {% include charts/sessions-90-days.html data_prefix=data_prefix %}
     {% include charts/locations.html data_prefix=data_prefix %}
   </div>
 
-  <div id="secondary_data" class="grid-col-4">
+  <div id="secondary_data" class="desktop:grid-col-4">
     {% include charts/top-pages.html data_prefix=data_prefix %}
     {% include charts/top-downloads.html data_prefix=data_prefix %}
   </div>

@@ -109,9 +109,10 @@ whenRendered(['countries', 'us_and_territories'], () => {
   d3.select('#chart_us')
     .call(nestCharts, 'United States &amp; Territories', d3.select('#chart_us_and_territories'));
 });
+
 /*
    * A very primitive, aria-based tab system!
-   */
+*/
 d3.selectAll("*[role='tablist']")
   .each(function () {
     // grab all of the tabs and panels
@@ -164,7 +165,7 @@ d3.selectAll("*[role='tablist']")
 consolePrint(window);
 
 // Set the dropdown
-const dropDown = document.getElementById('agency-selector');
+const dropDown = document.getElementById('analytics-agency-select');
 
 // Start on change listener to load new page
 d3.select(dropDown).on('change', function () {

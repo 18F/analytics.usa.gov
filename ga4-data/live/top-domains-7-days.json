@@ -1,0 +1,122 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "tools.usps.com",
+      "visits": "56112854"
+    },
+    {
+      "domain": "reg.usps.com",
+      "visits": "14460715"
+    },
+    {
+      "domain": "(other)",
+      "visits": "14211527"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "12837245"
+    },
+    {
+      "domain": "studentaid.gov",
+      "visits": "12739183"
+    },
+    {
+      "domain": "forecast.weather.gov",
+      "visits": "11332541"
+    },
+    {
+      "domain": "informeddelivery.usps.com",
+      "visits": "10971740"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "10117736"
+    },
+    {
+      "domain": "www.irs.gov",
+      "visits": "8348467"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "7004932"
+    },
+    {
+      "domain": "medlineplus.gov",
+      "visits": "6980519"
+    },
+    {
+      "domain": "www.weather.gov",
+      "visits": "4440537"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "4310642"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "3922049"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "3856117"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "3548023"
+    },
+    {
+      "domain": "www.nps.gov",
+      "visits": "3490187"
+    },
+    {
+      "domain": "www.fda.gov",
+      "visits": "2690738"
+    },
+    {
+      "domain": "www.healthcare.gov",
+      "visits": "2588800"
+    },
+    {
+      "domain": "egov.uscis.gov",
+      "visits": "2132746"
+    }
+  ],
+  "totals": {
+    "visits": 196097298
+  },
+  "taken_at": "2024-01-05T15:31:06.067Z"
+}

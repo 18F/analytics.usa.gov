@@ -255,10 +255,18 @@ footer {
   }
 }
 
-.columns--thirds {
+.barchart {
 
-  @include at-media("tablet") {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  // @TODO: Use classes instead of elements for styling.
+  h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 90%;
   }
+
+  h5 {
+    margin-top: 0;
+    text-align: center;
+  }
+
 }
