@@ -6,9 +6,9 @@
 */
 
 footer {
+  background-color: color("gray-4");
   border-top: units("1px") solid color("gray-10");
   padding: units(3) 0;
-  background-color: color("gray-4");
 
   @include at-media("desktop") {
     padding: units(6) 0;
@@ -19,9 +19,9 @@ footer {
   }
 
   .logo-links {
+    float: left;
     margin-bottom: 0rem;
     margin-right: 2rem;
-    float: left;
   }
 
   img {
@@ -29,17 +29,14 @@ footer {
   }
 
   img.github-icon {
-    width: 1.4rem !important;
     vertical-align: text-bottom !important;
+    width: 1.4rem !important;
   }
 
   p {
     font-size: 1.15rem;
     line-height: 0.75;
     margin-top: units(2) 0;
-
-    &:first-of-type {
-    }
 
     @include at-media("desktop") {
       font-size: 1.3rem;
