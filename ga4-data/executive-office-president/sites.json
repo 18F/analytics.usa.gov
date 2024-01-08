@@ -1,0 +1,81 @@
+{
+  "name": "sites",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "14daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "ga:hostname"
+    ],
+    "filters": "ga:sessions>9",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "ai.gov"
+    },
+    {
+      "domain": "code.gov"
+    },
+    {
+      "domain": "data.geoplatform.gov"
+    },
+    {
+      "domain": "geoplatform.gov"
+    },
+    {
+      "domain": "marketplace.geoplatform.gov"
+    },
+    {
+      "domain": "nitrd.gov"
+    },
+    {
+      "domain": "paymentaccuracy.gov"
+    },
+    {
+      "domain": "quantum.gov"
+    },
+    {
+      "domain": "screeningtool.geoplatform.gov"
+    },
+    {
+      "domain": "smeqa.usds.gov"
+    },
+    {
+      "domain": "staging.code.gov"
+    },
+    {
+      "domain": "stg-marketplace.geoplatform.gov"
+    },
+    {
+      "domain": "stg.geoplatform.gov"
+    },
+    {
+      "domain": "techfarhub.usds.gov"
+    },
+    {
+      "domain": "usds.gov"
+    },
+    {
+      "domain": "whitehouse.gov"
+    },
+    {
+      "domain": "zerotrust.cyber.gov"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:19:30.590Z",
+  "agency": "executive-office-president"
+}

@@ -1,0 +1,96 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 71235401,
+    "browser": {
+      "Chrome": 29030425,
+      "Safari": 20992059,
+      "Edge": 16479401,
+      "Safari (in-app)": 2010924,
+      "Firefox": 1053418,
+      "Samsung Internet": 841953,
+      "Android Webview": 573019,
+      "(not set)": 103363,
+      "Opera": 63363,
+      "Amazon Silk": 42152,
+      "Mozilla Compatible Agent": 28383,
+      "Internet Explorer": 9785,
+      "YaBrowser": 1952,
+      "Whale Browser": 802,
+      "DuckDuckGo Browser": 670,
+      "Waterfox": 174,
+      "Meta Quest Browser": 262,
+      "Coc Coc": 236,
+      "Iron": 603,
+      "Aloha Browser": 501,
+      "Android Runtime": 210,
+      "SeaMonkey": 142,
+      "Opera Mini": 259,
+      "PaleMoon": 111,
+      "UC Browser": 776,
+      "NetFront": 5,
+      "Phoenix Browser": 58,
+      "Puffin": 80,
+      "Mozilla": 71,
+      "Seznam": 3,
+      "Android Browser": 195,
+      "BrowserNG": 1,
+      "Netscape": 9,
+      "Playstation Portable": 1,
+      "Vivaldi": 10,
+      "Galeon": 1,
+      "Konqueror": 4,
+      "BlackBerry": 4,
+      "Nintendo Browser": 4,
+      "Maxthon": 6,
+      "Lynx": 2,
+      "Nokia Browser": 1,
+      "EudoraWeb": 2,
+      "IE with Chrome Frame": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:43:18.122Z",
+  "agency": "office-personnel-management"
+}

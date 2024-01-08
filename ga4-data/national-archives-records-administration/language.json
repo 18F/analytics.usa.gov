@@ -1,0 +1,119 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 41779855,
+    "languages": {
+      "English": 39318182,
+      "Chinese": 545632,
+      "Spanish": 513759,
+      "German": 192453,
+      "French": 193575,
+      "Korean": 125060,
+      "Japanese": 202503,
+      "Portuguese": 88428,
+      "Italian": 75589,
+      "Russian": 104936,
+      "Dutch": 51406,
+      "Turkish": 39568,
+      "Danish": 32601,
+      "Polish": 31558,
+      "Swedish": 38358,
+      "Norwegian Bokmål": 22465,
+      "Vietnamese": 26492,
+      "Arabic": 24971,
+      "Indonesian": 19634,
+      "Thai": 12537,
+      "Czech": 14229,
+      "Ukrainian": 13202,
+      "Hungarian": 10787,
+      "Hebrew": 9754,
+      "Greek": 9368,
+      "Romanian": 7540,
+      "Finnish": 11007,
+      "Croatian": 4413,
+      "Catalan": 4423,
+      "Persian": 5515,
+      "(other)": 6205,
+      "Slovenian": 2846,
+      "Slovak": 5227,
+      "Bulgarian": 2437,
+      "Serbian": 2399,
+      "Hindi": 3838,
+      "Latvian": 800,
+      "Uzbek": 1150,
+      "Lithuanian": 1871,
+      "Malay": 128,
+      "Welsh": 11,
+      "Estonian": 725,
+      "Azerbaijani": 243,
+      "Gujarati": 565,
+      "Maltese": 16,
+      "Marathi": 318,
+      "Bengali": 348,
+      "Burmese": 41,
+      "Afrikaans": 159,
+      "Telugu": 33,
+      "Malayalam": 45,
+      "Tamil": 25,
+      "Norwegian": 97,
+      "Central Khmer": 119,
+      "Georgian": 45,
+      "Bosnian": 44,
+      "Urdu": 25,
+      "Panjabi": 52,
+      "Icelandic": 52,
+      "Albanian": 22,
+      "Amharic": 11,
+      "Armenian": 13
+    }
+  },
+  "taken_at": "2024-01-05T15:48:36.486Z",
+  "agency": "national-archives-records-administration"
+}

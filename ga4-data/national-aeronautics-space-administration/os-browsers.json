@@ -1,0 +1,216 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 76480606,
+    "by_os": {
+      "Android": {
+        "Chrome": 15268808,
+        "Android Webview": 1490010,
+        "Samsung Internet": 1080735,
+        "Firefox": 170653,
+        "Amazon Silk": 102746,
+        "Edge": 93146,
+        "Opera": 89886,
+        "YaBrowser": 23742,
+        "Android Runtime": 3622,
+        "UC Browser": 13268,
+        "Whale Browser": 10794,
+        "Android Browser": 1817,
+        "Mozilla Compatible Agent": 6178
+      },
+      "Windows": {
+        "Chrome": 16236815,
+        "Edge": 4476750,
+        "Firefox": 1680203,
+        "Opera": 288148,
+        "YaBrowser": 73269,
+        "Internet Explorer": 22061,
+        "Whale Browser": 6727,
+        "Coc Coc": 815,
+        "Mozilla": 315
+      },
+      "iOS": {
+        "Safari": 14080799,
+        "Safari (in-app)": 1627180,
+        "Chrome": 2245056,
+        "YaBrowser": 2623,
+        "DuckDuckGo Browser": 102
+      },
+      "Chrome OS": {
+        "Chrome": 6132080
+      },
+      "Macintosh": {
+        "Safari": 4919720,
+        "Chrome": 3495073,
+        "Firefox": 375094,
+        "Mozilla Compatible Agent": 184042,
+        "Edge": 31696,
+        "Opera": 12912
+      },
+      "Linux": {
+        "Chrome": 1707061,
+        "Firefox": 257085,
+        "Samsung Internet": 46680,
+        "Safari": 32561,
+        "Edge": 9887,
+        "Opera": 599
+      },
+      "(not set)": {
+        "(not set)": 144187,
+        "Opera Mini": 33327
+      },
+      "Tizen": {
+        "Samsung Internet": 2126
+      },
+      "Fuchsia": {
+        "Chrome": 208
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Android": 15268808,
+        "Windows": 16236815,
+        "Chrome OS": 6132080,
+        "Macintosh": 3495073,
+        "iOS": 2245056,
+        "Linux": 1707061,
+        "Fuchsia": 208
+      },
+      "Safari": {
+        "iOS": 14080799,
+        "Macintosh": 4919720,
+        "Linux": 32561
+      },
+      "Edge": {
+        "Windows": 4476750,
+        "Android": 93146,
+        "Macintosh": 31696,
+        "Linux": 9887
+      },
+      "Safari (in-app)": {
+        "iOS": 1627180
+      },
+      "Android Webview": {
+        "Android": 1490010
+      },
+      "Firefox": {
+        "Windows": 1680203,
+        "Macintosh": 375094,
+        "Linux": 257085,
+        "Android": 170653
+      },
+      "Samsung Internet": {
+        "Android": 1080735,
+        "Linux": 46680,
+        "Tizen": 2126
+      },
+      "Opera": {
+        "Windows": 288148,
+        "Android": 89886,
+        "Macintosh": 12912,
+        "Linux": 599
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 184042,
+        "Android": 6178
+      },
+      "Amazon Silk": {
+        "Android": 102746
+      },
+      "YaBrowser": {
+        "Windows": 73269,
+        "Android": 23742,
+        "iOS": 2623
+      },
+      "Internet Explorer": {
+        "Windows": 22061
+      },
+      "(not set)": {
+        "(not set)": 144187
+      },
+      "Opera Mini": {
+        "(not set)": 33327
+      },
+      "Android Runtime": {
+        "Android": 3622
+      },
+      "UC Browser": {
+        "Android": 13268
+      },
+      "Whale Browser": {
+        "Windows": 6727,
+        "Android": 10794
+      },
+      "Android Browser": {
+        "Android": 1817
+      },
+      "Coc Coc": {
+        "Windows": 815
+      },
+      "Mozilla": {
+        "Windows": 315
+      },
+      "DuckDuckGo Browser": {
+        "iOS": 102
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:36:17.539Z",
+  "agency": "national-aeronautics-space-administration"
+}

@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Rebecca's Business Plan Template - Traditional | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-rebeccas-business-plan-template-traditional",
+      "total_events": "4554"
+    },
+    {
+      "page_title": "Andrew's Business Plan Template - Lean | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-andrews-business-plan-template-lean",
+      "total_events": "2948"
+    },
+    {
+      "page_title": "Table of size standards | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-table-size-standards",
+      "total_events": "2846"
+    },
+    {
+      "page_title": "Andrew's Business Plan Template - Traditional | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-andrews-business-plan-template-traditional",
+      "total_events": "2728"
+    },
+    {
+      "page_title": "Calculate Startup Costs | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-calculate-startup-costs",
+      "total_events": "1032"
+    },
+    {
+      "page_title": "Borrower Information Form | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1919-borrower-information-form",
+      "total_events": "990"
+    },
+    {
+      "page_title": "Personal Financial Statement | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-413-personal-financial-statement",
+      "total_events": "938"
+    },
+    {
+      "page_title": "Lender and Development Company Loan Programs | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sop-50-10-lender-development-company-loan-programs",
+      "total_events": "878"
+    },
+    {
+      "page_title": "About | SBIR.gov",
+      "event_label": "file_download",
+      "page": "www.sbir.gov/about",
+      "total_events": "442"
+    },
+    {
+      "page_title": "PPP First Draw Borrower Application Form | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2483-ppp-first-draw-borrower-application-form",
+      "total_events": "403"
+    },
+    {
+      "page_title": "SBA Franchise Directory | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sba-franchise-directory",
+      "total_events": "327"
+    },
+    {
+      "page_title": "Borrower's Consent to Verify Information and Third-party Authorization | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-borrowers-consent-verify-information-third-party-authorization",
+      "total_events": "307"
+    },
+    {
+      "page_title": "Declaration of Identity Theft | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-3513-declaration-identity-theft",
+      "total_events": "299"
+    },
+    {
+      "page_title": "SBA 7(a) Loan Guaranty Fee Calculator | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sba-7a-loan-guaranty-fee-calculator",
+      "total_events": "258"
+    },
+    {
+      "page_title": "Directory of federal government prime contractors with subcontracting plans | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-directory-federal-government-prime-contractors-subcontracting-plans",
+      "total_events": "253"
+    },
+    {
+      "page_title": "Sample business plans | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sample-business-plans",
+      "total_events": "241"
+    },
+    {
+      "page_title": "HUBZone program | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/federal-contracting/contracting-assistance-programs/hubzone-program",
+      "total_events": "235"
+    },
+    {
+      "page_title": "Settlement Sheet (Use of Proceeds Certification) | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1050-settlement-sheet-use-proceeds-certification",
+      "total_events": "221"
+    },
+    {
+      "page_title": "7(a) Loan Servicing and Liquidation | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sop-50-57-7a-loan-servicing-liquidation",
+      "total_events": "220"
+    },
+    {
+      "page_title": "HUBZone Supporting Documents Checklist | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-hubzone-supporting-documents-checklist",
+      "total_events": "200"
+    },
+    {
+      "page_title": "COVID-19 EIDL subordination submission process | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-covid-19-eidl-subordination-submission-process",
+      "total_events": "169"
+    },
+    {
+      "page_title": "Eligible NAICS for the Women-Owned Small Business Federal Contracting program | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-eligible-naics-women-owned-small-business-federal-contracting-program",
+      "total_events": "163"
+    },
+    {
+      "page_title": "Program for Investors in Microentrepreneurs (PRIME) | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice--program-investors-microentrepreneurs-prime",
+      "total_events": "162"
+    },
+    {
+      "page_title": "Statement of Personal History | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-912-statement-personal-history",
+      "total_events": "162"
+    },
+    {
+      "page_title": "Active mentor-protege agreements | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-active-mentor-protege-agreements",
+      "total_events": "159"
+    },
+    {
+      "page_title": "Servicing and Liquidation Actions 7(a) Lender Matrix | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support--servicing-liquidation-actions-7a-lender-matrix",
+      "total_events": "159"
+    },
+    {
+      "page_title": "PPP lenders participating in direct forgiveness | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-ppp-lenders-participating-direct-forgiveness",
+      "total_events": "157"
+    },
+    {
+      "page_title": "PPP 3508S Loan Forgiveness Application + Instructions | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-3508s-ppp-3508s-loan-forgiveness-application-instructions",
+      "total_events": "149"
+    },
+    {
+      "page_title": "Renewals and Updates of SBA Forms 1919, 1971, 2237; Introduction of New SBA Form 3518; and Elimination of SBA Forms 1920 and 2449 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-852422-renewals-updates-sba-forms-1919-1971-2237-introduction-new-sba-form-3518-elimination-sba-forms-1920",
+      "total_events": "148"
+    },
+    {
+      "page_title": "Agency contracting goals | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-agency-contracting-goals",
+      "total_events": "146"
+    },
+    {
+      "page_title": "7(a) Loan Post Approval Action Checklist | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2237-7a-loan-post-approval-action-checklist",
+      "total_events": "142"
+    },
+    {
+      "page_title": "Updates to SOP 50 10 7.1 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sop-50-10-71-updates-sop-50-10-71",
+      "total_events": "136"
+    },
+    {
+      "page_title": "7(a) Fees Effective October 1, 2023, for Fiscal Year 2024 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-848801-7a-fees-effective-october-1-2023-fiscal-year-2024",
+      "total_events": "134"
+    },
+    {
+      "page_title": "Financial Statement of Debtor | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-770-financial-statement-debtor",
+      "total_events": "131"
+    },
+    {
+      "page_title": "Offer in Compromise | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1150-offer-compromise",
+      "total_events": "131"
+    },
+    {
+      "page_title": "Frequently Asked Questions | SBIR.gov",
+      "event_label": "file_download",
+      "page": "www.sbir.gov/faqs/eligibility-requirements",
+      "total_events": "130"
+    },
+    {
+      "page_title": "National Resource Guide (English) | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-national-resource-guide-english",
+      "total_events": "130"
+    },
+    {
+      "page_title": "HUBZone eligibility workbook | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-hubzone-eligibility-workbook",
+      "total_events": "129"
+    },
+    {
+      "page_title": "Entrepreneur | SBIR.gov",
+      "event_label": "file_download",
+      "page": "www.sbir.gov/applicant",
+      "total_events": "127"
+    },
+    {
+      "page_title": "Ending Active Collections on Delinquent COVID-19 Economic Injury Disaster Loans | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/report-23-16-ending-active-collections-delinquent-covid-19-economic-injury-disaster-loans",
+      "total_events": "126"
+    },
+    {
+      "page_title": "IRS Form 4506-C (SBA disaster loan) | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-4506-c-irs-form-4506-c-sba-disaster-loan",
+      "total_events": "116"
+    },
+    {
+      "page_title": "Veteran contracting assistance programs | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/federal-contracting/contracting-assistance-programs/veteran-contracting-assistance-programs",
+      "total_events": "115"
+    },
+    {
+      "page_title": "FAQ for PPP Borrowers and Lenders | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-faq-ppp-borrowers-lenders",
+      "total_events": "114"
+    },
+    {
+      "page_title": "SBA Certify - Small Business Administration | SBA Certify - Small",
+      "event_label": "file_download",
+      "page": "certify.sba.gov/",
+      "total_events": "108"
+    },
+    {
+      "page_title": "Issuance of SOP 50 10 7.1 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-848663-issuance-sop-50-10-71",
+      "total_events": "107"
+    },
+    {
+      "page_title": "Affiliation guide for size standards | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-affiliation-guide-size-standards",
+      "total_events": "99"
+    },
+    {
+      "page_title": "PPP Loan Forgiveness Application + Instructions | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-3508-ppp-loan-forgiveness-application-instructions",
+      "total_events": "92"
+    },
+    {
+      "page_title": "PPP Second Draw Borrower Application Form | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2483-sd-ppp-second-draw-borrower-application-form",
+      "total_events": "89"
+    },
+    {
+      "page_title": "Schedule of Liabilities | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2202-schedule-liabilities",
+      "total_events": "89"
+    },
+    {
+      "page_title": "Updated 7(a) Loan Program Forms 1919 and 1920 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-17007-updated-7a-loan-program-forms-1919-1920",
+      "total_events": "86"
+    },
+    {
+      "page_title": "2023 Size Standards Methodology White Paper | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-2023-size-standards-methodology-white-paper",
+      "total_events": "85"
+    },
+    {
+      "page_title": "Non-manufacturer rule class waiver list | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-non-manufacturer-rule-class-waiver-list",
+      "total_events": "83"
+    },
+    {
+      "page_title": "FAQ about PPP Loan Forgiveness | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-faq-about-ppp-loan-forgiveness",
+      "total_events": "79"
+    },
+    {
+      "page_title": "Fee Disclosure and Compensation Agreement | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-159-fee-disclosure-compensation-agreement",
+      "total_events": "74"
+    },
+    {
+      "page_title": "SBA Mentor Protégé Program Agreement Template | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sba-mentor-protege-program-agreement-template",
+      "total_events": "74"
+    },
+    {
+      "page_title": "SBA Form 1502 and Instructions | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1502-sba-form-1502-instructions",
+      "total_events": "73"
+    },
+    {
+      "page_title": "PRIME Grantees | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-prime-grantees",
+      "total_events": "72"
+    },
+    {
+      "page_title": "Federal And State Technology (FAST) Partnership Program | SBIR.gov",
+      "event_label": "file_download",
+      "page": "www.sbir.gov/about-fast",
+      "total_events": "71"
+    },
+    {
+      "page_title": "Microloan Program | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sop-52-00-microloan-program",
+      "total_events": "71"
+    },
+    {
+      "page_title": "Religious Eligibility Worksheet For Use with all 7(a) and 504 Loan Programs | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1971-religious-eligibility-worksheet",
+      "total_events": "67"
+    },
+    {
+      "page_title": "Request Loan Reinstatement | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-request-loan-reinstatement",
+      "total_events": "66"
+    },
+    {
+      "page_title": "Boots to Business | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/sba-learning-platform/boots-business",
+      "total_events": "64"
+    },
+    {
+      "page_title": "How to Calculate First Draw PPP Loan Amounts | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-how-calculate-first-draw-ppp-loan-amounts",
+      "total_events": "64"
+    },
+    {
+      "page_title": "Shuttered Venues Operators Grant (SVOG) Evaluation | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/report-shuttered-venues-operators-grant-svog-evaluation",
+      "total_events": "64"
+    },
+    {
+      "page_title": "Lender's Application for Guaranty | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1920-lenders-application-guaranty",
+      "total_events": "63"
+    },
+    {
+      "page_title": "Marketing plan example | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-marketing-plan-example",
+      "total_events": "62"
+    },
+    {
+      "page_title": "Andrew's Business Plan Template - Lean | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-andrews-business-plan-template-lean#fid-6867",
+      "total_events": "61"
+    },
+    {
+      "page_title": "SBA Form 3518, Community Advantage Addendum - 7(a) SBLC | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2449-community-advantage-addendum-7a-pilot-program",
+      "total_events": "61"
+    },
+    {
+      "page_title": "WOSB and EDWOSB Certification Options | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-wosb-edwosb-certification-options",
+      "total_events": "61"
+    },
+    {
+      "page_title": "Additional 6-Month Deferment for SBA COVID-19 Economic Injury Disaster Loans | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/procedural-notice-5000-830558-additional-6-month-deferment-sba-covid-19-economic-injury-disaster-loans",
+      "total_events": "60"
+    },
+    {
+      "page_title": "Universal Purchase Package (UPP) | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-universal-purchase-package-upp",
+      "total_events": "58"
+    },
+    {
+      "page_title": "Agreement of Compliance | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-601-agreement-compliance",
+      "total_events": "57"
+    },
+    {
+      "page_title": "Rebecca's Business Plan Template - Traditional | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-rebeccas-business-plan-template-traditional#fid-6864",
+      "total_events": "57"
+    },
+    {
+      "page_title": "SBA Standard Loan Note (Form 147) | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-sba-standard-loan-note-form-147",
+      "total_events": "57"
+    },
+    {
+      "page_title": "Assumption of Loan Requirement Letter | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-assumption-loan-requirement-letter",
+      "total_events": "56"
+    },
+    {
+      "page_title": "Issuance of SOP 50 10 7 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-847027-issuance-sop-50-10-7",
+      "total_events": "56"
+    },
+    {
+      "page_title": "SBA Strategic Plan | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sba-strategic-plan",
+      "total_events": "56"
+    },
+    {
+      "page_title": "SBIC program application forms | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form--sbic-program-application-forms",
+      "total_events": "56"
+    },
+    {
+      "page_title": "SBA Plan for Use of Covered Funds | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/report-sba-plan-use-covered-funds",
+      "total_events": "54"
+    },
+    {
+      "page_title": "Congressional Budget Justification and Annual Performance Report | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/report-congressional-budget-justification-annual-performance-report",
+      "total_events": "52"
+    },
+    {
+      "page_title": "Small Business Administration loan program performance | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/report-small-business-administration-loan-program-performance",
+      "total_events": "51"
+    },
+    {
+      "page_title": "HUBZone Program Certification for Applicants Owned by U.S. Citizens, ANCs, NHOs, or CDCs | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-hubzone-program-certification-applicants-owned-us-citizens-ancs-nhos-or-cdcs",
+      "total_events": "50"
+    },
+    {
+      "page_title": "HUBZone program | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/federal-contracting/contracting-assistance-programs/hubzone-program#id-apply-to-get-certified-as-a-hubzone-small-business",
+      "total_events": "50"
+    },
+    {
+      "page_title": "SBA Awards Terms and Conditions | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sba-awards-terms-conditions",
+      "total_events": "50"
+    },
+    {
+      "page_title": "Lender's Transcript of Account | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-1149-lenders-transcript-account",
+      "total_events": "48"
+    },
+    {
+      "page_title": "Company Registration | SBIR.gov",
+      "event_label": "file_download",
+      "page": "www.sbir.gov/registration",
+      "total_events": "46"
+    },
+    {
+      "page_title": "Disaster Home Loan Application | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-5c-disaster-home-loan-application",
+      "total_events": "46"
+    },
+    {
+      "page_title": "Addendum to Franchise Agreement | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2462-addendum-franchise-agreement",
+      "total_events": "45"
+    },
+    {
+      "page_title": "PPP EZ Loan Forgiveness Application + Instructions | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-3508ez-ppp-ez-loan-forgiveness-application-instructions",
+      "total_events": "45"
+    },
+    {
+      "page_title": "Unconditional Guarantee | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-148-unconditional-guarantee",
+      "total_events": "44"
+    },
+    {
+      "page_title": "COVID-19 EIDL Reports 2020 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/report-covid-19-eidl-reports-2020",
+      "total_events": "43"
+    },
+    {
+      "page_title": "Dallas / Fort Worth | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/district/dallas-fort-worth",
+      "total_events": "42"
+    },
+    {
+      "page_title": "LGPC Submission Checklist | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-lgpc-submission-checklist",
+      "total_events": "42"
+    },
+    {
+      "page_title": "SBA Charge Off Tabs/Wrap-Up Report | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-sba-charge-tabswrap-report",
+      "total_events": "42"
+    },
+    {
+      "page_title": "Washington Metropolitan Area | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/district/washington-metropolitan-area",
+      "total_events": "42"
+    },
+    {
+      "page_title": "First Draw Borrower Application Form for Schedule C Filers Using Gross Income | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/sba-form-2483-c-first-draw-borrower-application-form-schedule-c-filers-using-gross-income",
+      "total_events": "41"
+    },
+    {
+      "page_title": "Restaurant Revitalization Funding Program Guide | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-restaurant-revitalization-funding-program-guide",
+      "total_events": "41"
+    },
+    {
+      "page_title": "SBA Form 413 Updated and Issued | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-813332-sba-form-413-updated-issued",
+      "total_events": "41"
+    },
+    {
+      "page_title": "SBA Programs - Scams and Fraud Alerts | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/support-sba-programs-scams-fraud-alerts",
+      "total_events": "41"
+    },
+    {
+      "page_title": "504 Debenture Funding Schedule for Calendar Year 2024 | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "page": "www.sba.gov/document/information-notice-5000-849343-504-debenture-funding-schedule-calendar-year-2024",
+      "total_events": "40"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:43:58.828Z",
+  "agency": "small-business-administration"
+}

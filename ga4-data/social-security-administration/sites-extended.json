@@ -1,0 +1,57 @@
+{
+  "name": "sites-extended",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "14daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "ga:hostname"
+    ],
+    "filters": "ga:sessions>1",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "choosework.ssa.gov"
+    },
+    {
+      "domain": "faq.ssa.gov"
+    },
+    {
+      "domain": "oig-demo.ssa.gov"
+    },
+    {
+      "domain": "oig.ssa.gov"
+    },
+    {
+      "domain": "search.ssa.gov"
+    },
+    {
+      "domain": "secure.ssa.gov"
+    },
+    {
+      "domain": "socialsecurity.gov"
+    },
+    {
+      "domain": "ssa.gov"
+    },
+    {
+      "domain": "yourtickettowork.ssa.gov"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:17:14.192Z",
+  "agency": "social-security-administration"
+}

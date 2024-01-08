@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.fs.usda.gov",
+      "visits": "755321"
+    },
+    {
+      "domain": "www.fns.usda.gov",
+      "visits": "267883"
+    },
+    {
+      "domain": "www.fsis.usda.gov",
+      "visits": "227578"
+    },
+    {
+      "domain": "www.usda.gov",
+      "visits": "222830"
+    },
+    {
+      "domain": "fdc.nal.usda.gov",
+      "visits": "176656"
+    },
+    {
+      "domain": "www.myplate.gov",
+      "visits": "172505"
+    },
+    {
+      "domain": "www.rd.usda.gov",
+      "visits": "134713"
+    },
+    {
+      "domain": "www.fsa.usda.gov",
+      "visits": "107272"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "81604"
+    },
+    {
+      "domain": "www.ams.usda.gov",
+      "visits": "79501"
+    },
+    {
+      "domain": "www.ers.usda.gov",
+      "visits": "56798"
+    },
+    {
+      "domain": "www.nal.usda.gov",
+      "visits": "50244"
+    },
+    {
+      "domain": "www.farmers.gov",
+      "visits": "49942"
+    },
+    {
+      "domain": "www.ars.usda.gov",
+      "visits": "39838"
+    },
+    {
+      "domain": "www.dietaryguidelines.gov",
+      "visits": "23342"
+    },
+    {
+      "domain": "snaped.fns.usda.gov",
+      "visits": "23289"
+    },
+    {
+      "domain": "www.nfc.usda.gov",
+      "visits": "20898"
+    },
+    {
+      "domain": "www.nass.usda.gov",
+      "visits": "19159"
+    },
+    {
+      "domain": "fas.usda.gov",
+      "visits": "18740"
+    },
+    {
+      "domain": "www.nutrition.gov",
+      "visits": "16265"
+    }
+  ],
+  "totals": {
+    "visits": 2544378
+  },
+  "taken_at": "2024-01-05T15:50:45.612Z",
+  "agency": "agriculture"
+}

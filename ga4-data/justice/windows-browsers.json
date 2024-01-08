@@ -1,0 +1,134 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 20719323,
+    "by_windows": {
+      "7": {
+        "Chrome": 243545,
+        "Firefox": 21595,
+        "Edge": 4039
+      },
+      "8": {
+        "Chrome": 9956
+      },
+      "10": {
+        "Chrome": 10856219,
+        "Edge": 3090817,
+        "Firefox": 704282,
+        "Opera": 99061,
+        "Internet Explorer": 24324,
+        "YaBrowser": 4673
+      },
+      "11": {
+        "Chrome": 3967932,
+        "Edge": 1584726
+      },
+      "2000": {
+        "Internet Explorer": 38661
+      },
+      "8.1": {
+        "Chrome": 67226,
+        "Edge": 2045
+      },
+      "NT": {
+        "Chrome": 222
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 243545,
+        "8": 9956,
+        "10": 10856219,
+        "11": 3967932,
+        "8.1": 67226,
+        "NT": 222
+      },
+      "Edge": {
+        "7": 4039,
+        "10": 3090817,
+        "11": 1584726,
+        "8.1": 2045
+      },
+      "Firefox": {
+        "7": 21595,
+        "10": 704282
+      },
+      "Opera": {
+        "10": 99061
+      },
+      "Internet Explorer": {
+        "10": 24324,
+        "2000": 38661
+      },
+      "YaBrowser": {
+        "10": 4673
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:38:04.606Z",
+  "agency": "justice"
+}

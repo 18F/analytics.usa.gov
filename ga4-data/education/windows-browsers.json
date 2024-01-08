@@ -1,0 +1,126 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 21992534,
+    "by_windows": {
+      "7": {
+        "Chrome": 111037,
+        "Firefox": 12038,
+        "Edge": 2175
+      },
+      "8": {
+        "Chrome": 12495,
+        "Firefox": 1288
+      },
+      "10": {
+        "Chrome": 9041662,
+        "Edge": 2793343,
+        "Firefox": 751313,
+        "Opera": 133717
+      },
+      "11": {
+        "Chrome": 6152707,
+        "Edge": 2920857
+      },
+      "8.1": {
+        "Chrome": 56609,
+        "Edge": 2238,
+        "Firefox": 847
+      },
+      "XP": {
+        "Chrome": 208
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 111037,
+        "8": 12495,
+        "10": 9041662,
+        "11": 6152707,
+        "8.1": 56609,
+        "XP": 208
+      },
+      "Edge": {
+        "7": 2175,
+        "10": 2793343,
+        "11": 2920857,
+        "8.1": 2238
+      },
+      "Firefox": {
+        "7": 12038,
+        "8": 1288,
+        "10": 751313,
+        "8.1": 847
+      },
+      "Opera": {
+        "10": 133717
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:32:48.111Z",
+  "agency": "education"
+}

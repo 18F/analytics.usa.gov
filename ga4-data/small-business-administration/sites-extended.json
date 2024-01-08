@@ -1,0 +1,126 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "www.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "www.sbir.gov",
+      "visits": "60531"
+    },
+    {
+      "domain": "www.sba.gov",
+      "visits": "762771"
+    },
+    {
+      "domain": "www.mbda.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.health.mil",
+      "visits": "3"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.certify.sba.gov",
+      "visits": "381"
+    },
+    {
+      "domain": "www.cdfifund.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.acq.osd.mil",
+      "visits": "26"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "23"
+    },
+    {
+      "domain": "prod.sba.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "content.prod.sba.gov",
+      "visits": "227"
+    },
+    {
+      "domain": "cloudfront.www.sba.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "certify.sba.gov",
+      "visits": "19146"
+    },
+    {
+      "domain": "business.defense.gov",
+      "visits": "2"
+    }
+  ],
+  "totals": {
+    "visits": 843266
+  },
+  "taken_at": "2024-01-05T15:43:50.229Z",
+  "agency": "small-business-administration"
+}

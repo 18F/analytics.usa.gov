@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395466379"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "USPS.com® - USPS Tracking® Results",
+      "active_visitors": "18645"
+    },
+    {
+      "page_title": "Informed Delivery",
+      "active_visitors": "5474"
+    },
+    {
+      "page_title": "USPS.com® - Sign In",
+      "active_visitors": "3886"
+    },
+    {
+      "page_title": "Welcome | USPS",
+      "active_visitors": "1989"
+    },
+    {
+      "page_title": "USPS.com® - USPS Tracking®",
+      "active_visitors": "1148"
+    },
+    {
+      "page_title": "ZIP Code™ Lookup | USPS",
+      "active_visitors": "770"
+    },
+    {
+      "page_title": "Informed Delivery - Mail & Package Notifications | USPS",
+      "active_visitors": "748"
+    },
+    {
+      "page_title": "Schedule An Appointment | USPS",
+      "active_visitors": "746"
+    },
+    {
+      "page_title": "The Postal Store @ USPS.com",
+      "active_visitors": "700"
+    },
+    {
+      "page_title": "USPS.com® - Forgot Your Password",
+      "active_visitors": "552"
+    },
+    {
+      "page_title": "USPS Business Customer Gateway",
+      "active_visitors": "444"
+    },
+    {
+      "page_title": "USPS.com® - Sign Out",
+      "active_visitors": "410"
+    },
+    {
+      "page_title": "Tracking Home",
+      "active_visitors": "254"
+    },
+    {
+      "page_title": "Retail Postage Price Calculator Mail Services",
+      "active_visitors": "249"
+    },
+    {
+      "page_title": "Stamps | USPS.com",
+      "active_visitors": "249"
+    },
+    {
+      "page_title": "USPS.com® - Edit Account Preferences",
+      "active_visitors": "186"
+    },
+    {
+      "page_title": "USPS.com® - Register for an online account",
+      "active_visitors": "186"
+    },
+    {
+      "page_title": "Retail Postage Price Calculator",
+      "active_visitors": "184"
+    },
+    {
+      "page_title": "Retail Postage Price Calculator Weight and Shape/Size",
+      "active_visitors": "152"
+    },
+    {
+      "page_title": "Search Results Page | USPS",
+      "active_visitors": "147"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:49.579Z",
+  "agency": "postal-service"
+}

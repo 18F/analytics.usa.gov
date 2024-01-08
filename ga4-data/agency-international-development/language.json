@@ -1,0 +1,105 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 3889446,
+    "languages": {
+      "English": 3399408,
+      "Spanish": 136320,
+      "Chinese": 65651,
+      "French": 67853,
+      "Russian": 60833,
+      "Ukrainian": 22721,
+      "Arabic": 20055,
+      "German": 13697,
+      "Portuguese": 12880,
+      "Indonesian": 20947,
+      "Vietnamese": 11677,
+      "Korean": 7251,
+      "Japanese": 7482,
+      "Turkish": 4750,
+      "Italian": 6025,
+      "Dutch": 5480,
+      "Polish": 2262,
+      "Norwegian Bokmål": 1552,
+      "Croatian": 1310,
+      "Swedish": 3154,
+      "Romanian": 2798,
+      "Thai": 1606,
+      "Serbian": 2815,
+      "Danish": 1555,
+      "Greek": 760,
+      "Czech": 1283,
+      "Hebrew": 718,
+      "Hungarian": 829,
+      "Bengali": 790,
+      "Persian": 746,
+      "Georgian": 917,
+      "Finnish": 754,
+      "Uzbek": 178,
+      "Central Khmer": 813,
+      "Hindi": 247,
+      "Catalan": 12,
+      "(other)": 418,
+      "Bosnian": 114,
+      "Bulgarian": 35,
+      "Amharic": 70,
+      "Burmese": 104,
+      "Nepali": 318,
+      "Lao": 16,
+      "Albanian": 11,
+      "Azerbaijani": 182,
+      "Slovak": 24,
+      "Estonian": 11,
+      "Lithuanian": 14
+    }
+  },
+  "taken_at": "2024-01-05T16:05:02.021Z",
+  "agency": "agency-international-development"
+}

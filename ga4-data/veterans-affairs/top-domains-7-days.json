@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.va.gov",
+      "visits": "3972617"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "visits": "1890506"
+    },
+    {
+      "domain": "eauth.va.gov",
+      "visits": "819559"
+    },
+    {
+      "domain": "mhvidp-prod.myhealth.va.gov",
+      "visits": "434389"
+    },
+    {
+      "domain": "www.mentalhealth.va.gov",
+      "visits": "345555"
+    },
+    {
+      "domain": "news.va.gov",
+      "visits": "201009"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "170030"
+    },
+    {
+      "domain": "www.choose.va.gov",
+      "visits": "112791"
+    },
+    {
+      "domain": "vacareers.va.gov",
+      "visits": "90651"
+    },
+    {
+      "domain": "benefits.va.gov",
+      "visits": "88008"
+    },
+    {
+      "domain": "mobile.va.gov",
+      "visits": "65498"
+    },
+    {
+      "domain": "www.cem.va.gov",
+      "visits": "60562"
+    },
+    {
+      "domain": "www.ptsd.va.gov",
+      "visits": "53084"
+    },
+    {
+      "domain": "www.publichealth.va.gov",
+      "visits": "49964"
+    },
+    {
+      "domain": "www.veteranshealthlibrary.va.gov",
+      "visits": "40729"
+    },
+    {
+      "domain": "department.va.gov",
+      "visits": "31958"
+    },
+    {
+      "domain": "www.caregiver.va.gov",
+      "visits": "16914"
+    },
+    {
+      "domain": "www.hepatitis.va.gov",
+      "visits": "16735"
+    },
+    {
+      "domain": "www.vacanteen.va.gov",
+      "visits": "15743"
+    },
+    {
+      "domain": "digital.va.gov",
+      "visits": "14569"
+    }
+  ],
+  "totals": {
+    "visits": 8490871
+  },
+  "taken_at": "2024-01-05T15:34:14.401Z",
+  "agency": "veterans-affairs"
+}

@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "SAM.gov",
+      "active_visitors": "3667"
+    },
+    {
+      "page_title": "SAM.gov | Search",
+      "active_visitors": "3092"
+    },
+    {
+      "page_title": "SAM.gov | Home",
+      "active_visitors": "2521"
+    },
+    {
+      "page_title": "beta.SAM.gov | Search",
+      "active_visitors": "1019"
+    },
+    {
+      "page_title": "SAM.gov | Workspace",
+      "active_visitors": "1012"
+    },
+    {
+      "page_title": "Per Diem Rates | GSA",
+      "active_visitors": "646"
+    },
+    {
+      "page_title": "ADVANTAGE",
+      "active_visitors": "583"
+    },
+    {
+      "page_title": "Regulations.gov",
+      "active_visitors": "514"
+    },
+    {
+      "page_title": "/",
+      "active_visitors": "467"
+    },
+    {
+      "page_title": "Search Results",
+      "active_visitors": "454"
+    },
+    {
+      "page_title": "GSA Advantage",
+      "active_visitors": "433"
+    },
+    {
+      "page_title": "The public’s one account for government. | Login.gov",
+      "active_visitors": "427"
+    },
+    {
+      "page_title": "Product Detail",
+      "active_visitors": "406"
+    },
+    {
+      "page_title": "SAM.gov | Entity Workspace",
+      "active_visitors": "400"
+    },
+    {
+      "page_title": "Personal Property Management System - Auctions List",
+      "active_visitors": "240"
+    },
+    {
+      "page_title": "Help | Login.gov",
+      "active_visitors": "237"
+    },
+    {
+      "page_title": "SAM.gov | Update Entity",
+      "active_visitors": "237"
+    },
+    {
+      "page_title": "Welcome to GSA Advantage!",
+      "active_visitors": "207"
+    },
+    {
+      "page_title": "Authentication methods | Login.gov",
+      "active_visitors": "196"
+    },
+    {
+      "page_title": "Renew an adult passport | USAGov",
+      "active_visitors": "179"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:08.094Z",
+  "agency": "general-services-administration"
+}

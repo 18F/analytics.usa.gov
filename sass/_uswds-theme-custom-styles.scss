@@ -270,3 +270,25 @@ footer {
   }
 
 }
+
+
+#realtime {
+  color: color("blue-80v");
+
+  @include at-media("mobile") {
+    font-size: units(1);
+  }
+}
+
+
+
+#current_visitors {
+  font-size: 8em;
+  margin: 0;
+  @include media($small-screen) {
+    font-size: 6em;
+  }
+}
+h3 {
+  margin: 10px 0;
+}

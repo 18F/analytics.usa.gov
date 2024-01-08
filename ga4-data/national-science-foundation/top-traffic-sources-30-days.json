@@ -1,0 +1,262 @@
+{
+  "name": "top-traffic-sources-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionSource"
+      },
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Top Traffic Sources (30 Days)",
+    "description": "Last 30 days' Traffic sources, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "source": "(direct)",
+      "session_default_channel_group": "Direct",
+      "visits": "749388",
+      "pageviews": "1922610",
+      "users": "492609",
+      "pageviews_per_session": "2.5655735079825139",
+      "avg_session_duration": "203.76102481506373",
+      "bounce_rate": "0.605177825105286"
+    },
+    {
+      "source": "google",
+      "session_default_channel_group": "Organic Search",
+      "visits": "675533",
+      "pageviews": "1787420",
+      "users": "326850",
+      "pageviews_per_session": "2.6459403167572866",
+      "avg_session_duration": "298.16534455432674",
+      "bounce_rate": "0.39871183199044308"
+    },
+    {
+      "source": "govdelivery",
+      "session_default_channel_group": "Email",
+      "visits": "417332",
+      "pageviews": "567160",
+      "users": "379709",
+      "pageviews_per_session": "1.3590139265620658",
+      "avg_session_duration": "44.549564567641582",
+      "bounce_rate": "0.65843261480068627"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Organic Search",
+      "visits": "39516",
+      "pageviews": "119076",
+      "users": "16778",
+      "pageviews_per_session": "3.0133616762830244",
+      "avg_session_duration": "374.22224708163782",
+      "bounce_rate": "0.41466747646522928"
+    },
+    {
+      "source": "google",
+      "session_default_channel_group": "Paid Search",
+      "visits": "35798",
+      "pageviews": "61139",
+      "users": "28669",
+      "pageviews_per_session": "1.7078887088664172",
+      "avg_session_duration": "129.38127229144084",
+      "bounce_rate": "0.51279401083859433"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Paid Search",
+      "visits": "39707",
+      "pageviews": "52002",
+      "users": "38441",
+      "pageviews_per_session": "1.3096431359709875",
+      "avg_session_duration": "41.559971451985795",
+      "bounce_rate": "0.65210164454630171"
+    },
+    {
+      "source": "(not set)",
+      "session_default_channel_group": "Unassigned",
+      "visits": "12336",
+      "pageviews": "38301",
+      "users": "11867",
+      "pageviews_per_session": "3.1048151750972761",
+      "avg_session_duration": "270.2173310513943",
+      "bounce_rate": "0.9994325551232166"
+    },
+    {
+      "source": "govdelivery/https://lnks.gd/",
+      "session_default_channel_group": "Email",
+      "visits": "18879",
+      "pageviews": "22197",
+      "users": "17274",
+      "pageviews_per_session": "1.1757508342602891",
+      "avg_session_duration": "52.934562497748821",
+      "bounce_rate": "0.90068329890354359"
+    },
+    {
+      "source": "yahoo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "5538",
+      "pageviews": "19952",
+      "users": "2670",
+      "pageviews_per_session": "3.6027446731672086",
+      "avg_session_duration": "381.08764578223185",
+      "bounce_rate": "0.34145901047309496"
+    },
+    {
+      "source": "duckduckgo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "5024",
+      "pageviews": "13172",
+      "users": "2858",
+      "pageviews_per_session": "2.6218152866242037",
+      "avg_session_duration": "292.73247685051757",
+      "bounce_rate": "0.39231687898089174"
+    },
+    {
+      "source": "baidu",
+      "session_default_channel_group": "Organic Search",
+      "visits": "1395",
+      "pageviews": "6269",
+      "users": "920",
+      "pageviews_per_session": "4.4939068100358419",
+      "avg_session_duration": "448.49254686523295",
+      "bounce_rate": "0.55412186379928319"
+    },
+    {
+      "source": "ecosia.org",
+      "session_default_channel_group": "Organic Search",
+      "visits": "1239",
+      "pageviews": "3621",
+      "users": "604",
+      "pageviews_per_session": "2.9225181598062955",
+      "avg_session_duration": "317.77366638740915",
+      "bounce_rate": "0.384180790960452"
+    },
+    {
+      "source": "govdelivery/https://www.linkedin.com/",
+      "session_default_channel_group": "Email",
+      "visits": "765",
+      "pageviews": "1038",
+      "users": "659",
+      "pageviews_per_session": "1.3568627450980393",
+      "avg_session_duration": "73.880190614379089",
+      "bounce_rate": "0.74901960784313726"
+    },
+    {
+      "source": "hs_email",
+      "session_default_channel_group": "Email",
+      "visits": "466",
+      "pageviews": "944",
+      "users": "301",
+      "pageviews_per_session": "2.0257510729613735",
+      "avg_session_duration": "250.83946678755365",
+      "bounce_rate": "0.575107296137339"
+    },
+    {
+      "source": "Presidential Awards News",
+      "session_default_channel_group": "Email",
+      "visits": "570",
+      "pageviews": "571",
+      "users": "571",
+      "pageviews_per_session": "1.0017543859649123",
+      "avg_session_duration": "0.023829056140350875",
+      "bounce_rate": "1"
+    },
+    {
+      "source": "youtube",
+      "session_default_channel_group": "Organic Video",
+      "visits": "492",
+      "pageviews": "562",
+      "users": "441",
+      "pageviews_per_session": "1.1422764227642277",
+      "avg_session_duration": "56.130158522357718",
+      "bounce_rate": "0.91260162601626016"
+    },
+    {
+      "source": "mass_mailer",
+      "session_default_channel_group": "Email",
+      "visits": "215",
+      "pageviews": "531",
+      "users": "185",
+      "pageviews_per_session": "2.4697674418604652",
+      "avg_session_duration": "107.06784723255815",
+      "bounce_rate": "0.59534883720930232"
+    },
+    {
+      "source": "All UD Facutly - August 2023",
+      "session_default_channel_group": "Email",
+      "visits": "415",
+      "pageviews": "453",
+      "users": "311",
+      "pageviews_per_session": "1.0915662650602409",
+      "avg_session_duration": "106.45458833012049",
+      "bounce_rate": "0.653012048192771"
+    },
+    {
+      "source": "miragenews",
+      "session_default_channel_group": "Unassigned",
+      "visits": "210",
+      "pageviews": "399",
+      "users": "115",
+      "pageviews_per_session": "1.9",
+      "avg_session_duration": "283.74905192857142",
+      "bounce_rate": "0.47142857142857142"
+    },
+    {
+      "source": "yandex",
+      "session_default_channel_group": "Organic Search",
+      "visits": "78",
+      "pageviews": "331",
+      "users": "32",
+      "pageviews_per_session": "4.2435897435897436",
+      "avg_session_duration": "572.20747191025646",
+      "bounce_rate": "0.32051282051282054"
+    }
+  ],
+  "totals": {
+    "users": 1321864,
+    "visits": 2004896
+  },
+  "taken_at": "2024-01-05T14:42:02.109Z",
+  "agency": "national-science-foundation"
+}

@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Pell Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/2023-24paymentschedule.pdf",
+      "page": "studentaid.gov/understand-aid/types/grants/pell",
+      "total_events": "1518"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Public Service Loan Forgiveness Form | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/public-service-application-for-forgiveness.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/public-service/public-service-loan-forgiveness-application",
+      "total_events": "1492"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Pell Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-grant-programs.pdf",
+      "page": "studentaid.gov/understand-aid/types/grants/pell",
+      "total_events": "1224"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Loan and Grant Fact Sheets | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-grant-programs.pdf",
+      "page": "studentaid.gov/resources/loan-grant-fact-sheets",
+      "total_events": "1027"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Teacher Loan Forgiveness | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/teacherloanforgiveness-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/teacher",
+      "total_events": "796"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Filling Out the FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out",
+      "total_events": "672"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Total and Permanent Disability Discharge | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/totalandpermanentdisabilitydischargeapplication-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/disability-discharge",
+      "total_events": "548"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Aid Is Calculated | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-08/2223efcformulaguide.pdf",
+      "page": "studentaid.gov/complete-aid-process/how-calculated",
+      "total_events": "473"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "6 Things Students Need Before They Fill Out the 2024–25 FAFSA® Form – Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/articles/things-you-need-for-fafsa/",
+      "total_events": "451"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Subsidized and Unsubsidized Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-loan-programs.pdf",
+      "page": "studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+      "total_events": "448"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Aid Is Calculated | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-08/2223efcformulaguide.pdf",
+      "page": "studentaid.gov/complete-aid-process/how-calculated#efc",
+      "total_events": "327"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Dependency Status | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out/dependency",
+      "total_events": "236"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Public Service Loan Forgiveness | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/public-service-application-for-forgiveness.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/public-service",
+      "total_events": "236"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Subsidized and Unsubsidized Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/direct-loan-basics-students.pdf",
+      "page": "studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+      "total_events": "236"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Loan and Grant Fact Sheets | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-loan-programs.pdf",
+      "page": "studentaid.gov/resources/loan-grant-fact-sheets",
+      "total_events": "234"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Deferment | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/economichardshipdeferment-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/deferment",
+      "total_events": "226"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Deferment | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/inschooldeferment-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/deferment",
+      "total_events": "201"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Filling Out the FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/who-is-my-parent.jpg",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out",
+      "total_events": "195"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "8 Easy Steps for Parents Completing the 2023–24 FAFSA® Form – Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/articles/wp-content/uploads/blog-2022sept-8easysteps-welcome-image2-1.jpg",
+      "page": "studentaid.gov/articles/fafsa-for-parents/",
+      "total_events": "166"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-loan-programs.pdf",
+      "page": "studentaid.gov/understand-aid/types/loans",
+      "total_events": "140"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/committee-and-subcommittee-members-list.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "138"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How to Review and Correct Your FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/after-the-fafsa.wmv",
+      "page": "studentaid.gov/apply-for-aid/fafsa/review-and-correct",
+      "total_events": "126"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-grant-programs.pdf",
+      "page": "studentaid.gov/understand-aid/types/grants",
+      "total_events": "124"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Teacher Loan Forgiveness | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/teacherloanforgiveness-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/teacher#how-and-when-do-i-apply-for-teacher-loan-forgiveness",
+      "total_events": "124"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Forbearance | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/generalforbearance.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/forbearance",
+      "total_events": "117"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-agenda.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "116"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-24-fafsa.pdf",
+      "page": "studentaid.gov/resources#fafsa",
+      "total_events": "112"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-issue-paper-accreditation-final.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "109"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How can I download my aid data? | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-02/downloadmyaiddatafilelayout.pdf",
+      "page": "studentaid.gov/help-center/answers/article/how-can-i-download-my-aid-data",
+      "total_events": "107"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-issue-paper-cash-management-final.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "106"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Borrower Defense Loan Discharge | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/borrower-defense-application.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/borrower-defense",
+      "total_events": "101"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Artificial Intelligence and the Future of Teaching and Learning - Office of Educational Technology",
+      "event_label": "file_download",
+      "file_name": "/files/2023/05/ai-future-of-teaching-and-learning-report.pdf",
+      "page": "tech.ed.gov/ai-future-of-teaching-and-learning/",
+      "total_events": "100"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Deferment | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/unemploymentdeferment-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/deferment",
+      "total_events": "98"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Program Overview - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "file_name": "/files/2023/11/saf_brouchure_final_.pdf",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/program-overview/",
+      "total_events": "96"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-24-fafsa-worksheet.pdf",
+      "page": "studentaid.gov/resources#fafsa",
+      "total_events": "95"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/do-you-need-money.pdf",
+      "page": "studentaid.gov/resources",
+      "total_events": "93"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-issue-paper-state-authorization-final.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-issue-paper-distance-education-final.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-issue-paper-r2t4-final.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "81"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-protocols.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aid for International Study | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/international-schools-in-federal-loan-programs.pdf",
+      "page": "studentaid.gov/understand-aid/types/international",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Biden-Harris Administration Takes Next Steps on Rulemaking to Strengthen Institutional Quality and Program Integrity | U.S. Department of Education",
+      "event_label": "file_download",
+      "file_name": "/policy/highered/reg/hearulemaking/2023/committee-and-subcommittee-members-list.pdf",
+      "page": "www.ed.gov/news/press-releases/biden-harris-administration-takes-next-steps-rulemaking-strengthen-institutional-quality-and-program-integrity",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/eligibility.pdf",
+      "page": "studentaid.gov/resources#fafsa",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Model Form for Disclosure to Parents of Dependent Students and Consent Form for Disclosure to Parents | Protecting Student Privacy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource_document/file/modelform2.doc",
+      "page": "studentprivacy.ed.gov/resources/model-form-disclosure-parents-dependent-students-and-consent-form-disclosure-parents",
+      "total_events": "70"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/program-integrity-and-institutional-quality-session-1-accreditation-proposed-regulatory-text-final.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-grant-programs.pdf",
+      "page": "studentaid.gov/resources",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Repayment | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/repaying-your-loans.pdf",
+      "page": "studentaid.gov/manage-loans/repayment",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Parent PLUS Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/direct-loan-basics-parents.pdf",
+      "page": "studentaid.gov/understand-aid/types/loans/plus/parent",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Civil Rights Data",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/about/offices/list/ocr/docs/2021-22-crdc-school-form.pdf",
+      "page": "www2.ed.gov/about/offices/list/ocr/data.html",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Sweet v. Cardona Settlement | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/sweet-quarterly-report-3.pdf",
+      "page": "studentaid.gov/announcements-events/sweet-settlement",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Dependency Status | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out/dependency#dependent-or-independent",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Sweet v. Cardona Settlement | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/sweet-v-cardona-school-list.pdf",
+      "page": "studentaid.gov/announcements-events/sweet-settlement",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "An Eligible Student Guide to the Family Educational Rights and Privacy Act (FERPA) | Protecting Student Privacy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource_document/file/an%20eligible%20student%20guide%20to%20ferpa_0.pdf",
+      "page": "studentprivacy.ed.gov/resources/eligible-student-guide-family-educational-rights-and-privacy-act-ferpa",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Annual Performance Report -- Student Support Services Program",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/programs/triostudsupp/sssaprinstructions202223.docx",
+      "page": "www2.ed.gov/programs/triostudsupp/report.html",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Every Student Succeeds Act (ESSA) | U.S. Department of Education",
+      "event_label": "file_download",
+      "file_name": "/114/plaws/publ95/plaw-114publ95.pdf",
+      "page": "www.ed.gov/essa",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/committee-and-subcommittee-members-list.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html#iqa",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "A Parent Guide to the Family Educational Rights and Privacy Act (FERPA) | Protecting Student Privacy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource_document/file/a%20parent%20guide%20to%20ferpa_508.pdf",
+      "page": "studentprivacy.ed.gov/resources/parent-guide-family-educational-rights-and-privacy-act-ferpa-0",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/resources#fafsa",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pell Grant Maximum for 2023–24 Announced | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/2023-24paymentschedule.pdf",
+      "page": "studentaid.gov/announcements-events/pell-max-award",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Annual Performance Report -- Student Support Services Program",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/programs/triostudsupp/sssaprform202223.docx",
+      "page": "www2.ed.gov/programs/triostudsupp/report.html",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/policy/highered/reg/hearulemaking/2023/trio-subcommittee-issue-paper-session-1.pdf",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Privacy | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/legacy_drupal_files/omb/circulars/a130/a130revised.pdf",
+      "page": "studentaid.gov/notices/privacy",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-24-fafsa-worksheet.pdf",
+      "page": "studentaid.gov/resources",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Deferment | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/parentplusborrowerdeferment-en-us.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/deferment",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "4 Loan Forgiveness Programs for Teachers – Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/teacherforbearance.pdf",
+      "page": "studentaid.gov/articles/teacher-loan-forgiveness-options/",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Artificial Intelligence and the Future of Teaching and Learning - Office of Educational Technology",
+      "event_label": "file_download",
+      "file_name": "/files/2023/05/ai-report-core-messaging-handout.pdf",
+      "page": "tech.ed.gov/ai-future-of-teaching-and-learning/",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "POLICY STATEMENT: Inclusion of Children with Disabilities in Early Childhood Programs (Nov. 28, 2023) - Individuals with Disabilities Education Act",
+      "event_label": "file_download",
+      "file_name": "/idea/files/policy-statement-on-inclusion-11-28-2023.pdf",
+      "page": "sites.ed.gov/idea/idea-files/policy-statement-inclusion-of-children-with-disabilities-in-early-childhood-programs/",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Forbearance | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/studentloandebtburdenforbearance.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/forbearance",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/federal-loan-programs.pdf",
+      "page": "studentaid.gov/resources",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Upward Bound Program Annual Performance Report",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/programs/trioupbound/ububmsaprinstructions202223.docx",
+      "page": "www2.ed.gov/programs/trioupbound/report.html",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Awardees",
+      "event_label": "file_download",
+      "file_name": "/assets/infographic/2023/2023_nbrs_map_demographics.pdf",
+      "page": "nationalblueribbonschools.ed.gov/awardwinners/",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Awards: President's Education Awards Program",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/programs/presedaward/2023/peap-excellence.pdf",
+      "page": "www2.ed.gov/programs/presedaward/awards.html",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Civil Rights Data",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/about/offices/list/ocr/docs/2021-22-crdc-qa.pdf",
+      "page": "www2.ed.gov/about/offices/list/ocr/data.html",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Financial Responsibility Composite Scores | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/ay-20-21-composite-scores.xls",
+      "page": "studentaid.gov/data-center/school/composite-scores",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Program Overview - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "file_name": "/files/2023/11/saf-one-pager-.pdf",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/program-overview/",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/resources",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Awards -- Upward Bound Program",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/programs/trioupbound/ubfinal2022.xlsx",
+      "page": "www2.ed.gov/programs/trioupbound/awards.html",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "A Better FAFSA Process Means a Better Future for Everyone | Federal Student Aid - Financial Aid Toolkit",
+      "event_label": "file_download",
+      "file_name": "/resources/fafsa-changes-overview.pdf",
+      "page": "financialaidtoolkit.ed.gov/tk/announcement-detail.jsp",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Civil Rights Data",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/about/offices/list/ocr/docs/2021-22-crdc-lea-form.pdf",
+      "page": "www2.ed.gov/about/offices/list/ocr/data.html",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Civil Rights Data",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/about/offices/list/ocr/docs/2023-24-crdc-qa.pdf",
+      "page": "www2.ed.gov/about/offices/list/ocr/data.html",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Data Home | College Scorecard",
+      "event_label": "file_download",
+      "file_name": "/downloads/collegescorecard_raw_data_09262023.zip",
+      "page": "collegescorecard.ed.gov/data/",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EDFacts Business Rules Guide -- EDFacts",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/about/inits/ed/edfacts/eden/ess/business-rules-single-inventory-2022-23-v1-10.xlsx",
+      "page": "www2.ed.gov/about/inits/ed/edfacts/business-rules-guide.html",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Applicant Information - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "file_name": "/files/2023/12/saf-application-webinar-slides-12.12.2024.pdf",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/applicant-information/",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Parent PLUS Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/plus-adverse-credit.pdf",
+      "page": "studentaid.gov/understand-aid/types/loans/plus/parent",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aid for International Study | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/international-schools-in-federal-loan-programs.pdf",
+      "page": "studentaid.gov/understand-aid/types/international#participating-schools",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-08/2223efcformulaguide.pdf",
+      "page": "studentaid.gov/complete-aid-process/how-calculated",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-24-fafsa.pdf",
+      "page": "studentaid.gov/resources",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Student Loan Forbearance | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/teacherforbearance.pdf",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/forbearance",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Awardees",
+      "event_label": "file_download",
+      "file_name": "/assets/infographic/2023/2023_nbrs_map_demographics.pdf",
+      "page": "nationalblueribbonschools.ed.gov/awardwinners",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Awardees",
+      "event_label": "file_download",
+      "file_name": "/assets/reports/2023/all_2023_national_blue_ribbon_schools.pdf",
+      "page": "nationalblueribbonschools.ed.gov/awardwinners/",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Applicant Information - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "file_name": "/files/2023/11/saf_brouchure_final_.pdf",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/applicant-information/",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Unpaid Refund Discharge | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/attachments/dpcletters/gen1418attachloandischargeappunpaidrefund.pdf",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/unpaid-refund",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Applicant Information -- Fulbright-Hays Seminars Abroad--Bilateral Projects",
+      "event_label": "file_download",
+      "file_name": "https://www2.ed.gov/programs/iegpssap/fy2024-seminarsabroad-applicationpackage.docx",
+      "page": "www2.ed.gov/programs/iegpssap/applicant.html",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Pell Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/2023-24paymentschedule.pdf",
+      "page": "studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Filling Out the FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/is-my-parent-a-contributor.jpg",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out#parent-info",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/direct-loan-basics-students.pdf",
+      "page": "studentaid.gov/resources",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Awardees",
+      "event_label": "file_download",
+      "file_name": "/assets/reports/2023/2023_elementary_schools.pdf",
+      "page": "nationalblueribbonschools.ed.gov/awardwinners",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "A Parent Guide to the Family Educational Rights and Privacy Act (FERPA) | Protecting Student Privacy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource_document/file/a%20parent%20guide%20to%20ferpa_508.pdf",
+      "page": "studentprivacy.ed.gov/resources/parent-guide-family-educational-rights-and-privacy-act-ferpa",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Artificial Intelligence - Office of Educational Technology",
+      "event_label": "file_download",
+      "file_name": "/files/2023/05/ai-report-core-messaging-handout.pdf",
+      "page": "tech.ed.gov/ai/",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Education Department Announces Permanent Improvements to the Public Service Loan Forgiveness Program and One-time payment Count Adjustment to Bring Borrowers Closer to Forgiveness | U.S. Department of Education",
+      "event_label": "file_download",
+      "file_name": "/policy/highered/reg/hearulemaking/2021/futureofpslffactsheetfin.pdf",
+      "page": "www.ed.gov/news/press-releases/education-department-announces-permanent-improvements-public-service-loan-forgiveness-program-and-one-time-payment-count-adjustment-bring-borrowers-closer-forgiveness",
+      "total_events": "24"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:33:15.497Z",
+  "agency": "education"
+}

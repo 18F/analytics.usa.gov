@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "National Institute of Standards and Technology | NIST",
+      "active_visitors": "9834"
+    },
+    {
+      "page_title": "National Weather Service",
+      "active_visitors": "2564"
+    },
+    {
+      "page_title": "NWS Radar",
+      "active_visitors": "2512"
+    },
+    {
+      "page_title": "Trademark Status & Document Retrieval",
+      "active_visitors": "299"
+    },
+    {
+      "page_title": "Weather Story",
+      "active_visitors": "296"
+    },
+    {
+      "page_title": "National Oceanic and Atmospheric Administration",
+      "active_visitors": "266"
+    },
+    {
+      "page_title": "Aviation Weather Center",
+      "active_visitors": "211"
+    },
+    {
+      "page_title": "North American Industry Classification System (NAICS) U.S. Census Bureau",
+      "active_visitors": "206"
+    },
+    {
+      "page_title": "Baltimore/Washington",
+      "active_visitors": "169"
+    },
+    {
+      "page_title": "National Forecast Maps",
+      "active_visitors": "168"
+    },
+    {
+      "page_title": "AWC - METeorological Aerodrome Reports (METARs)",
+      "active_visitors": "149"
+    },
+    {
+      "page_title": "Storm Prediction Center Jan 5, 2024 1300 UTC Day 1 Convective Outlook",
+      "active_visitors": "143"
+    },
+    {
+      "page_title": "NOAA/NWS Storm Prediction Center",
+      "active_visitors": "127"
+    },
+    {
+      "page_title": "Weather | National Oceanic and Atmospheric Administration",
+      "active_visitors": "116"
+    },
+    {
+      "page_title": "Boston / Norton, MA",
+      "active_visitors": "113"
+    },
+    {
+      "page_title": "Climate",
+      "active_visitors": "113"
+    },
+    {
+      "page_title": "Philadelphia/Mt Holly",
+      "active_visitors": "101"
+    },
+    {
+      "page_title": "National Forecast Charts",
+      "active_visitors": "91"
+    },
+    {
+      "page_title": "Storm Prediction Center Convective Outlooks",
+      "active_visitors": "90"
+    },
+    {
+      "page_title": "United States Patent and Trademark Office",
+      "active_visitors": "90"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:06:39.928Z",
+  "agency": "commerce"
+}

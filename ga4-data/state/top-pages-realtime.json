@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Passport Application System",
+      "active_visitors": "2205"
+    },
+    {
+      "page_title": "Application for U.S. Passport",
+      "active_visitors": "2041"
+    },
+    {
+      "page_title": "U.S. Passport Application Status",
+      "active_visitors": "1017"
+    },
+    {
+      "page_title": "Renew my Passport by Mail",
+      "active_visitors": "1009"
+    },
+    {
+      "page_title": "U.S. Passports",
+      "active_visitors": "936"
+    },
+    {
+      "page_title": "How to Apply in Person for a Passport",
+      "active_visitors": "678"
+    },
+    {
+      "page_title": "Passport Forms",
+      "active_visitors": "665"
+    },
+    {
+      "page_title": "Passport Fees",
+      "active_visitors": "489"
+    },
+    {
+      "page_title": "Apply for a Child's U.S. Passport",
+      "active_visitors": "441"
+    },
+    {
+      "page_title": "U.S. Passport Photos",
+      "active_visitors": "406"
+    },
+    {
+      "page_title": "The Visa Bulletin",
+      "active_visitors": "368"
+    },
+    {
+      "page_title": "How to Apply for A Passport",
+      "active_visitors": "356"
+    },
+    {
+      "page_title": "Fee Calculator",
+      "active_visitors": "341"
+    },
+    {
+      "page_title": "Travel",
+      "active_visitors": "334"
+    },
+    {
+      "page_title": "Visitor Visa",
+      "active_visitors": "323"
+    },
+    {
+      "page_title": "Already Have a Passport",
+      "active_visitors": "310"
+    },
+    {
+      "page_title": "Visa Wizard - es - Wizard Results",
+      "active_visitors": "296"
+    },
+    {
+      "page_title": "Visa Bulletin For January 2024",
+      "active_visitors": "278"
+    },
+    {
+      "page_title": "Official list of embassies from the U.S. Department of State",
+      "active_visitors": "277"
+    },
+    {
+      "page_title": "Visa Wizard - Wizard Results",
+      "active_visitors": "263"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:03:31.109Z",
+  "agency": "state"
+}

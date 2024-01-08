@@ -1,0 +1,1294 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "wwwn.cdc.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www4.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "www2.va.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.womenshealth.va.gov",
+      "visits": "5722"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.warrelatedillness.va.gov",
+      "visits": "4509"
+    },
+    {
+      "domain": "www.volunteer.va.gov",
+      "visits": "3089"
+    },
+    {
+      "domain": "www.visn9.va.gov",
+      "visits": "398"
+    },
+    {
+      "domain": "www.visn8.va.gov",
+      "visits": "2290"
+    },
+    {
+      "domain": "www.visn6.va.gov",
+      "visits": "561"
+    },
+    {
+      "domain": "www.visn4.va.gov",
+      "visits": "2612"
+    },
+    {
+      "domain": "www.visn23.va.gov",
+      "visits": "264"
+    },
+    {
+      "domain": "www.visn21.va.gov",
+      "visits": "1622"
+    },
+    {
+      "domain": "www.visn20.med.va.gov",
+      "visits": "320"
+    },
+    {
+      "domain": "www.visn2.va.gov",
+      "visits": "1353"
+    },
+    {
+      "domain": "www.visn19.va.gov",
+      "visits": "681"
+    },
+    {
+      "domain": "www.visn16.va.gov",
+      "visits": "374"
+    },
+    {
+      "domain": "www.visn15.va.gov",
+      "visits": "582"
+    },
+    {
+      "domain": "www.visn12.va.gov",
+      "visits": "765"
+    },
+    {
+      "domain": "www.visn10.va.gov",
+      "visits": "602"
+    },
+    {
+      "domain": "www.vision.research.va.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "www.virec.research.va.gov",
+      "visits": "395"
+    },
+    {
+      "domain": "www.veterantraining.va.gov",
+      "visits": "4303"
+    },
+    {
+      "domain": "www.veteranshealthlibrary.va.gov",
+      "visits": "80840"
+    },
+    {
+      "domain": "www.vetcenter.va.gov",
+      "visits": "5540"
+    },
+    {
+      "domain": "www.vendorportal.ecms.va.gov",
+      "visits": "9501"
+    },
+    {
+      "domain": "www.vacsp.research.va.gov",
+      "visits": "247"
+    },
+    {
+      "domain": "www.vacareers.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.vacanteen.va.gov",
+      "visits": "28734"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "7547575"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "620"
+    },
+    {
+      "domain": "www.stroke.cindrr.research.va.gov",
+      "visits": "691"
+    },
+    {
+      "domain": "www.southeast.va.gov",
+      "visits": "472"
+    },
+    {
+      "domain": "www.socrr.research.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.socialwork.va.gov",
+      "visits": "5553"
+    },
+    {
+      "domain": "www.simlearn.va.gov",
+      "visits": "283"
+    },
+    {
+      "domain": "www.sep.va.gov",
+      "visits": "2264"
+    },
+    {
+      "domain": "www.seattledenvercoin.research.va.gov",
+      "visits": "208"
+    },
+    {
+      "domain": "www.seattle.eric.research.va.gov",
+      "visits": "107"
+    },
+    {
+      "domain": "www.sci.va.gov",
+      "visits": "568"
+    },
+    {
+      "domain": "www.ruralhealth.va.gov",
+      "visits": "1451"
+    },
+    {
+      "domain": "www.research.va.gov",
+      "visits": "25737"
+    },
+    {
+      "domain": "www.research.iowa-city.med.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "www.rehab.va.gov",
+      "visits": "3137"
+    },
+    {
+      "domain": "www.rcv.va.gov",
+      "visits": "256"
+    },
+    {
+      "domain": "www.queri.research.va.gov",
+      "visits": "674"
+    },
+    {
+      "domain": "www.publichealth.va.gov",
+      "visits": "102514"
+    },
+    {
+      "domain": "www.ptsd.va.gov",
+      "visits": "101341"
+    },
+    {
+      "domain": "www.psychologytraining.va.gov",
+      "visits": "444"
+    },
+    {
+      "domain": "www.prosthetics.va.gov",
+      "visits": "9630"
+    },
+    {
+      "domain": "www.prevention.va.gov",
+      "visits": "5744"
+    },
+    {
+      "domain": "www.portlandcoin.research.va.gov",
+      "visits": "150"
+    },
+    {
+      "domain": "www.polytrauma.va.gov",
+      "visits": "1335"
+    },
+    {
+      "domain": "www.peprec.research.va.gov",
+      "visits": "145"
+    },
+    {
+      "domain": "www.pbm.va.gov",
+      "visits": "8897"
+    },
+    {
+      "domain": "www.patientsafety.va.gov",
+      "visits": "2481"
+    },
+    {
+      "domain": "www.patientcare.va.gov",
+      "visits": "7165"
+    },
+    {
+      "domain": "www.pathfinder.va.gov",
+      "visits": "276"
+    },
+    {
+      "domain": "www.parkinsons.va.gov",
+      "visits": "1321"
+    },
+    {
+      "domain": "www.osp.va.gov",
+      "visits": "8071"
+    },
+    {
+      "domain": "www.oit.va.gov",
+      "visits": "15867"
+    },
+    {
+      "domain": "www.oedca.va.gov",
+      "visits": "222"
+    },
+    {
+      "domain": "www.nynj.va.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.nutrition.va.gov",
+      "visits": "4580"
+    },
+    {
+      "domain": "www.nimh.nih.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.newengland.va.gov",
+      "visits": "965"
+    },
+    {
+      "domain": "www.ncrar.research.va.gov",
+      "visits": "925"
+    },
+    {
+      "domain": "www.ncptsd.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.myplate.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "visits": "3609229"
+    },
+    {
+      "domain": "www.move.va.gov",
+      "visits": "7715"
+    },
+    {
+      "domain": "www.mirecc.va.gov",
+      "visits": "7714"
+    },
+    {
+      "domain": "www.militaryonesource.mil",
+      "visits": "9"
+    },
+    {
+      "domain": "www.mentalhealth.va.gov",
+      "visits": "685252"
+    },
+    {
+      "domain": "www.marketplace.va.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "www.listserv.va.gov",
+      "visits": "106"
+    },
+    {
+      "domain": "www.jfklibrary.org",
+      "visits": "2"
+    },
+    {
+      "domain": "www.innovation.va.gov",
+      "visits": "2359"
+    },
+    {
+      "domain": "www.hud.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.hsrd.research.va.gov",
+      "visits": "7792"
+    },
+    {
+      "domain": "www.houston.hsrd.research.va.gov",
+      "visits": "382"
+    },
+    {
+      "domain": "www.hospitalcompare.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.hiv.va.gov",
+      "visits": "19287"
+    },
+    {
+      "domain": "www.herc.research.va.gov",
+      "visits": "1161"
+    },
+    {
+      "domain": "www.hepatitis.va.gov",
+      "visits": "32378"
+    },
+    {
+      "domain": "www.heartoftexas.va.gov",
+      "visits": "604"
+    },
+    {
+      "domain": "www.healthquality.va.gov",
+      "visits": "6722"
+    },
+    {
+      "domain": "www.health.mil",
+      "visits": "27"
+    },
+    {
+      "domain": "www.hcsc.va.gov",
+      "visits": "12037"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.gravelocator.cem.va.gov",
+      "visits": "25373"
+    },
+    {
+      "domain": "www.fss.va.gov",
+      "visits": "924"
+    },
+    {
+      "domain": "www.fsc.va.gov",
+      "visits": "3716"
+    },
+    {
+      "domain": "www.fiscal.treasury.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.fdic.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.fai.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.ethics.va.gov",
+      "visits": "930"
+    },
+    {
+      "domain": "www.epilepsy.va.gov",
+      "visits": "235"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "www.ebenefits.va.gov",
+      "visits": "8261"
+    },
+    {
+      "domain": "www.ea.oit.va.gov",
+      "visits": "187"
+    },
+    {
+      "domain": "www.durham.hsrd.research.va.gov",
+      "visits": "204"
+    },
+    {
+      "domain": "www.dieteticinternship.va.gov",
+      "visits": "934"
+    },
+    {
+      "domain": "www.desertpacific.va.gov",
+      "visits": "24252"
+    },
+    {
+      "domain": "www.dementia.cindrr.research.va.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "www.cshiip.research.va.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "www.cmc3.research.va.gov",
+      "visits": "280"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.cindrr.research.va.gov",
+      "visits": "244"
+    },
+    {
+      "domain": "www.ci2i.research.va.gov",
+      "visits": "163"
+    },
+    {
+      "domain": "www.choose.va.gov",
+      "visits": "222568"
+    },
+    {
+      "domain": "www.choir.research.va.gov",
+      "visits": "368"
+    },
+    {
+      "domain": "www.chic.research.va.gov",
+      "visits": "99"
+    },
+    {
+      "domain": "www.cherp.research.va.gov",
+      "visits": "324"
+    },
+    {
+      "domain": "www.cfm.va.gov",
+      "visits": "7013"
+    },
+    {
+      "domain": "www.cerc.research.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "www.cem.va.gov",
+      "visits": "123441"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "www.ccdor.research.va.gov",
+      "visits": "377"
+    },
+    {
+      "domain": "www.caregiver.va.gov",
+      "visits": "29859"
+    },
+    {
+      "domain": "www.cancer.va.gov",
+      "visits": "1135"
+    },
+    {
+      "domain": "www.cadre.research.va.gov",
+      "visits": "136"
+    },
+    {
+      "domain": "www.bva.va.gov",
+      "visits": "7622"
+    },
+    {
+      "domain": "www.brrc.research.va.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "303679"
+    },
+    {
+      "domain": "www.avreap.research.va.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "www.ars.usda.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.aptcenter.research.va.gov",
+      "visits": "592"
+    },
+    {
+      "domain": "www.annarbor.research.va.gov",
+      "visits": "209"
+    },
+    {
+      "domain": "www.annarbor.hsrd.research.va.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "www.amputation.research.va.gov",
+      "visits": "260"
+    },
+    {
+      "domain": "www.acquisitionacademy.va.gov",
+      "visits": "2703"
+    },
+    {
+      "domain": "www.accesstopwt.va.gov",
+      "visits": "1223"
+    },
+    {
+      "domain": "www.accesstocare.va.gov",
+      "visits": "13870"
+    },
+    {
+      "domain": "www-ppd.myhealth.va.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "womenshealth.va.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "70"
+    },
+    {
+      "domain": "web-kfm1m8xswxqqahdjzyhrrdblbwlsju40.demo.cms.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "web-ihqrv6rby5lxlkn8zqdxf9u7lk1aplcp.demo.cms.va.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "web-dyel3cg3kniaoc6nrizjhqazkfgueref.demo.cms.va.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "warrelatedillness.va.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "volunteer.va.gov",
+      "visits": "84"
+    },
+    {
+      "domain": "visn9.va.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "visn8.va.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "visn6.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "visn4.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "visn21.va.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "visn20.med.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "visn19.va.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "visn16.va.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "visn15.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "visn12.va.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "visn10.va.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "vision.research.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "virec.research.va.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "vhahinapp10.r02.med.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "veterantraining.va.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "veteranshealthlibrary.va.gov",
+      "visits": "5778"
+    },
+    {
+      "domain": "vetcenter.va.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "vaww.cms.webdev.va.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "vacsp.research.va.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "vacareers.va.gov",
+      "visits": "171831"
+    },
+    {
+      "domain": "vacanteen.va.gov",
+      "visits": "396"
+    },
+    {
+      "domain": "telehealth.va.gov",
+      "visits": "2922"
+    },
+    {
+      "domain": "stroke.cindrr.research.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "staging.va.gov",
+      "visits": "2341"
+    },
+    {
+      "domain": "staging-developer.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "sqa.vlm.cem.va.gov",
+      "visits": "216"
+    },
+    {
+      "domain": "sqa.eauth.va.gov",
+      "visits": "604"
+    },
+    {
+      "domain": "southeast.va.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "socialwork.va.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "soarworks.samhsa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "smclinician.myhealth.va.gov",
+      "visits": "235"
+    },
+    {
+      "domain": "simlearn.va.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "seattledenvercoin.research.va.gov",
+      "visits": "786"
+    },
+    {
+      "domain": "seattle.eric.research.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "60"
+    },
+    {
+      "domain": "search.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "sci.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ruralhealth.va.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "research.va.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "research.iowa-city.med.va.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "rehab.va.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "rcv.va.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "raportal.vpn.va.gov",
+      "visits": "10011"
+    },
+    {
+      "domain": "queri.research.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "publichealth.va.gov",
+      "visits": "379"
+    },
+    {
+      "domain": "ptsd.va.gov",
+      "visits": "917"
+    },
+    {
+      "domain": "psychologytraining.va.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "prosthetics.va.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "preview-staging.vfs.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "preview-prod.vfs.va.gov",
+      "visits": "318"
+    },
+    {
+      "domain": "prevention.va.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "preprod.vlm.cem.va.gov",
+      "visits": "106"
+    },
+    {
+      "domain": "preprod.sep.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "preprod.eauth.va.gov",
+      "visits": "417"
+    },
+    {
+      "domain": "pr312-m4bn0ysa2w2gwet7swj50v30srnvobmk.tugboat.vfs.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "pr307-wvkv24y3kafb097qlmrdhhhvcag9qy3e.tugboat.vfs.va.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "portlandcoin.research.va.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "portal-prod-vems-south.prod.vaec.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "portal-prod-vems-east.prod.vaec.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "polytrauma.va.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "pki.eauth.va.gov",
+      "visits": "619"
+    },
+    {
+      "domain": "pint.sep.va.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "pint.eauth.va.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "ph.usembassy.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "peprec.research.va.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "pbm.va.gov",
+      "visits": "77"
+    },
+    {
+      "domain": "patientsafety.va.gov",
+      "visits": "68"
+    },
+    {
+      "domain": "patientcare.va.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "pathfinder.va.gov",
+      "visits": "403"
+    },
+    {
+      "domain": "parkinsons.va.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "osp.va.gov",
+      "visits": "47"
+    },
+    {
+      "domain": "oit.va.gov",
+      "visits": "98"
+    },
+    {
+      "domain": "ogccodev1.dva.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "oedca.va.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "nutrition.va.gov",
+      "visits": "114"
+    },
+    {
+      "domain": "nicic.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "news.va.gov",
+      "visits": "366814"
+    },
+    {
+      "domain": "newengland.va.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "ncrar.research.va.gov",
+      "visits": "65"
+    },
+    {
+      "domain": "myseco.militaryonesource.mil",
+      "visits": "68"
+    },
+    {
+      "domain": "move.va.gov",
+      "visits": "78"
+    },
+    {
+      "domain": "mobile.va.gov",
+      "visits": "119846"
+    },
+    {
+      "domain": "mirecc.va.gov",
+      "visits": "1030"
+    },
+    {
+      "domain": "mhvidp-sysb.myhealth.va.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "mhvidp-prod.myhealth.va.gov",
+      "visits": "840968"
+    },
+    {
+      "domain": "mhv-syst.myhealth.va.gov",
+      "visits": "2473"
+    },
+    {
+      "domain": "mhv-intb.myhealth.va.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "mentalhealth.va.gov",
+      "visits": "482"
+    },
+    {
+      "domain": "marketplace.va.gov",
+      "visits": "7581"
+    },
+    {
+      "domain": "m.va.gov",
+      "visits": "342"
+    },
+    {
+      "domain": "listserv.va.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "int.ebenefits.va.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "int.eauth.va.gov",
+      "visits": "227"
+    },
+    {
+      "domain": "innovation.va.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "hsrd.research.va.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "houston.hsrd.research.va.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "hospitalcompare.va.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "hiv.va.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "hepatitis.va.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "heartoftexas.va.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "healthquality.va.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "health.mil",
+      "visits": "14"
+    },
+    {
+      "domain": "hcsc.va.gov",
+      "visits": "259"
+    },
+    {
+      "domain": "gravelocator.cem.va.gov",
+      "visits": "12595"
+    },
+    {
+      "domain": "ga.ng.mil",
+      "visits": "4"
+    },
+    {
+      "domain": "fss.va.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "fsc.va.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "fiscal.treasury.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "fes.research.va.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "ethics.va.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "error.vba.va.gov",
+      "visits": "4232"
+    },
+    {
+      "domain": "epilepsy.va.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "eauth.va.gov",
+      "visits": "1450959"
+    },
+    {
+      "domain": "ea.oit.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "dxp-intb.myhealth.va.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "dxp-di-sa.myhealth.va.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "durham.hsrd.research.va.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "digital.va.gov",
+      "visits": "27527"
+    },
+    {
+      "domain": "dieteticinternship.va.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "developer.va.gov",
+      "visits": "1150"
+    },
+    {
+      "domain": "dev.vlm.cem.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "dev.va.gov",
+      "visits": "199"
+    },
+    {
+      "domain": "dev.eauth.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "dev.cem.vaec.va.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "dev-developer.va.gov",
+      "visits": "64"
+    },
+    {
+      "domain": "desertpacific.va.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "department.va.gov",
+      "visits": "57925"
+    },
+    {
+      "domain": "dementia.cindrr.research.va.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "cshiip.research.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "crg.health.mil",
+      "visits": "2"
+    },
+    {
+      "domain": "connectedcare.va.gov",
+      "visits": "2216"
+    },
+    {
+      "domain": "cmc3.research.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "cindrr.research.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "ci2i.research.va.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "choose.va.gov",
+      "visits": "6937"
+    },
+    {
+      "domain": "choir.research.va.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "chic.research.va.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "cherp.research.va.gov",
+      "visits": "55"
+    },
+    {
+      "domain": "cfm.va.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "cerc.research.va.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "cem.va.gov",
+      "visits": "1147"
+    },
+    {
+      "domain": "caregiver.va.gov",
+      "visits": "459"
+    },
+    {
+      "domain": "cancer.va.gov",
+      "visits": "101"
+    },
+    {
+      "domain": "cadre.research.va.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "bva.va.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "brrc.research.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "beta.cem.vaec.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "benefits.va.gov",
+      "visits": "158205"
+    },
+    {
+      "domain": "avreap.research.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "aptcenter.research.va.gov",
+      "visits": "47"
+    },
+    {
+      "domain": "annarbor.research.va.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "annarbor.hsrd.research.va.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "amputation.research.va.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "admin.myhealth.va.gov",
+      "visits": "14528"
+    },
+    {
+      "domain": "admin.cd6.myhealth.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "admin-syst.myhealth.va.gov",
+      "visits": "1106"
+    },
+    {
+      "domain": "admin-ppd.myhealth.va.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "admin-ng.pp.myhealth.va.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "admin-ng.cd6.myhealth.va.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "admin-intb.myhealth.va.gov",
+      "visits": "307"
+    },
+    {
+      "domain": "admin-di-sa.myhealth.va.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "acquisitionacademy.va.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "(other)",
+      "visits": "7380"
+    }
+  ],
+  "totals": {
+    "visits": 16481281
+  },
+  "taken_at": "2024-01-05T15:34:30.787Z",
+  "agency": "veterans-affairs"
+}

@@ -1,0 +1,239 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395466379"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "tools.usps.com",
+      "visits": "311255250",
+      "users": "118915443",
+      "pageviews": "452479128",
+      "pageviews_per_session": "1.4537236817692232",
+      "avg_session_duration": "169.05742732387486",
+      "bounce_rate": "0.60724322561627475"
+    },
+    {
+      "domain": "reg.usps.com",
+      "visits": "73511442",
+      "users": "25209747",
+      "pageviews": "108485491",
+      "pageviews_per_session": "1.4757633376311676",
+      "avg_session_duration": "107.32753437050586",
+      "bounce_rate": "0.1566149797469624"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "66860574",
+      "users": "28297208",
+      "pageviews": "94788364",
+      "pageviews_per_session": "1.4177019180242156",
+      "avg_session_duration": "82.978838446170116",
+      "bounce_rate": "0.13491366376842651"
+    },
+    {
+      "domain": "informeddelivery.usps.com",
+      "visits": "53384772",
+      "users": "12016943",
+      "pageviews": "114029637",
+      "pageviews_per_session": "2.135995579413545",
+      "avg_session_duration": "160.51762375972066",
+      "bounce_rate": "0.0830056368883621"
+    },
+    {
+      "domain": "(other)",
+      "visits": "30900378",
+      "users": "14052159",
+      "pageviews": "23713921",
+      "pageviews_per_session": "0.767431421065464",
+      "avg_session_duration": "60.065498963631939",
+      "bounce_rate": "0.43404601717169933"
+    },
+    {
+      "domain": "store.usps.com",
+      "visits": "6047937",
+      "users": "4448057",
+      "pageviews": "25213841",
+      "pageviews_per_session": "4.1689986188678887",
+      "avg_session_duration": "170.88282324840091",
+      "bounce_rate": "0.17135214867482912"
+    },
+    {
+      "domain": "faq.usps.com",
+      "visits": "5706909",
+      "users": "4519053",
+      "pageviews": "8608721",
+      "pageviews_per_session": "1.5084735011544779",
+      "avg_session_duration": "121.0184077233597",
+      "bounce_rate": "0.13998348317802159"
+    },
+    {
+      "domain": "about.usps.com",
+      "visits": "3723968",
+      "users": "2642766",
+      "pageviews": "6204661",
+      "pageviews_per_session": "1.6661424050904841",
+      "avg_session_duration": "155.42662957185345",
+      "bounce_rate": "0.34684078917971367"
+    },
+    {
+      "domain": "postcalc.usps.com",
+      "visits": "1895587",
+      "users": "1314296",
+      "pageviews": "8494733",
+      "pageviews_per_session": "4.4813205619156493",
+      "avg_session_duration": "283.24364127277357",
+      "bounce_rate": "0.16006545729634145"
+    },
+    {
+      "domain": "holdmail.usps.com",
+      "visits": "1815278",
+      "users": "1512974",
+      "pageviews": "4121967",
+      "pageviews_per_session": "2.2707083983830576",
+      "avg_session_duration": "194.27263637118392",
+      "bounce_rate": "0.069502302126726589"
+    },
+    {
+      "domain": "pe.usps.com",
+      "visits": "994272",
+      "users": "778448",
+      "pageviews": "1706343",
+      "pageviews_per_session": "1.7161732403205561",
+      "avg_session_duration": "150.85214522359877",
+      "bounce_rate": "0.18600443339448361"
+    },
+    {
+      "domain": "emailus.usps.com",
+      "visits": "960182",
+      "users": "722778",
+      "pageviews": "2259160",
+      "pageviews_per_session": "2.3528456063537955",
+      "avg_session_duration": "203.82421197160227",
+      "bounce_rate": "0.12105413348719306"
+    },
+    {
+      "domain": "gateway.usps.com",
+      "visits": "595136",
+      "users": "289998",
+      "pageviews": "1824735",
+      "pageviews_per_session": "3.0660806941606626",
+      "avg_session_duration": "251.92907094997949",
+      "bounce_rate": "0.055921671685127433"
+    },
+    {
+      "domain": "poboxes.usps.com",
+      "visits": "547805",
+      "users": "427764",
+      "pageviews": "1640877",
+      "pageviews_per_session": "2.9953669645220469",
+      "avg_session_duration": "284.5846150246511",
+      "bounce_rate": "0.14460437564461806"
+    },
+    {
+      "domain": "es.usps.com",
+      "visits": "513203",
+      "users": "367981",
+      "pageviews": "697897",
+      "pageviews_per_session": "1.3598848798623546",
+      "avg_session_duration": "93.510831270331622",
+      "bounce_rate": "0.48508290091835005"
+    },
+    {
+      "domain": "m.usps.com",
+      "visits": "278580",
+      "users": "211153",
+      "pageviews": "366914",
+      "pageviews_per_session": "1.3170866537439874",
+      "avg_session_duration": "115.85158102599972",
+      "bounce_rate": "0.32515973867470743"
+    },
+    {
+      "domain": "onlineclaims.usps.com",
+      "visits": "234754",
+      "users": "128033",
+      "pageviews": "840836",
+      "pageviews_per_session": "3.581774964430851",
+      "avg_session_duration": "482.47240451623833",
+      "bounce_rate": "0.10024962300961858"
+    },
+    {
+      "domain": "retail-pi.usps.com",
+      "visits": "204956",
+      "users": "147398",
+      "pageviews": "590264",
+      "pageviews_per_session": "2.87995472198911",
+      "avg_session_duration": "192.27742552831828",
+      "bounce_rate": "0.051708659419582741"
+    },
+    {
+      "domain": "es-tools.usps.com",
+      "visits": "181915",
+      "users": "93797",
+      "pageviews": "360660",
+      "pageviews_per_session": "1.9825742791963279",
+      "avg_session_duration": "238.31936862032822",
+      "bounce_rate": "0.34313278179369483"
+    },
+    {
+      "domain": "postalpro.usps.com",
+      "visits": "168050",
+      "users": "134183",
+      "pageviews": "305141",
+      "pageviews_per_session": "1.8157750669443617",
+      "avg_session_duration": "199.48458545235349",
+      "bounce_rate": "0.22536745016364176"
+    }
+  ],
+  "totals": {
+    "users": 216230179,
+    "visits": 559780948
+  },
+  "taken_at": "2024-01-05T14:46:20.809Z",
+  "agency": "postal-service"
+}

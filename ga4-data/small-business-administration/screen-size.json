@@ -1,0 +1,77 @@
+{
+  "name": "screen-size",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "screenResolution"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1000"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Screen Resolution",
+    "description": "90 days of Screen Resolution visits for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 3180262,
+    "screen_resolution": {
+      "1920x1080": 778554,
+      "390x844": 323854,
+      "1536x864": 268126,
+      "1440x900": 257651,
+      "428x926": 222838,
+      "1366x768": 208448,
+      "1280x720": 162634,
+      "430x932": 172982,
+      "1024x768": 163848,
+      "414x896": 150523,
+      "393x852": 102517,
+      "2560x1440": 76000,
+      "375x812": 105100,
+      "1280x800": 47871,
+      "412x915": 42382,
+      "1600x900": 33526,
+      "1680x1050": 21360,
+      "360x800": 13758,
+      "800x600": 26240,
+      "375x667": 2050
+    }
+  },
+  "taken_at": "2024-01-05T15:43:26.054Z",
+  "agency": "small-business-administration"
+}

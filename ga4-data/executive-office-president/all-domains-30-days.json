@@ -1,0 +1,193 @@
+{
+  "name": "all-domains-30-days",
+  "sampling": {
+    "containsSampledData": true,
+    "sampleSize": "999985",
+    "sampleSpace": "8659328"
+  },
+  "query": {
+    "start-date": "30daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions",
+      "ga:pageviews",
+      "ga:users",
+      "ga:pageviewsPerSession",
+      "ga:avgSessionDuration",
+      "ga:exits"
+    ],
+    "sort": [
+      "-ga:sessions"
+    ],
+    "filters": "ga:sessions>=10",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "All Domains (30 Days)",
+    "description": "Last 30 days' domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "whitehouse.gov",
+      "visits": "8423574",
+      "pageviews": "13868962",
+      "users": "6500257",
+      "pageviews_per_session": "1.6464462709059124",
+      "avg_session_duration": "75.97679310468455",
+      "exits": "8409130"
+    },
+    {
+      "domain": "ai.gov",
+      "visits": "157524",
+      "pageviews": "271067",
+      "users": "127147",
+      "pageviews_per_session": "1.7207981006068918",
+      "avg_session_duration": "83.38584596632894",
+      "exits": "156953"
+    },
+    {
+      "domain": "screeningtool.geoplatform.gov",
+      "visits": "35270",
+      "pageviews": "41496",
+      "users": "21588",
+      "pageviews_per_session": "1.1765239580379927",
+      "avg_session_duration": "69.10527360362914",
+      "exits": "35201"
+    },
+    {
+      "domain": "usds.gov",
+      "visits": "14669",
+      "pageviews": "26740",
+      "users": "10729",
+      "pageviews_per_session": "1.8228918126661668",
+      "avg_session_duration": "93.70856909128094",
+      "exits": "14652"
+    },
+    {
+      "domain": "quantum.gov",
+      "visits": "10998",
+      "pageviews": "17587",
+      "users": "8114",
+      "pageviews_per_session": "1.5991089288961629",
+      "avg_session_duration": "99.53100563738862",
+      "exits": "10937"
+    },
+    {
+      "domain": "paymentaccuracy.gov",
+      "visits": "4148",
+      "pageviews": "7923",
+      "users": "3464",
+      "pageviews_per_session": "1.9100771456123433",
+      "avg_session_duration": "105.85703953712633",
+      "exits": "4122"
+    },
+    {
+      "domain": "geoplatform.gov",
+      "visits": "3724",
+      "pageviews": "5975",
+      "users": "2736",
+      "pageviews_per_session": "1.6044575725026853",
+      "avg_session_duration": "52.82169709989259",
+      "exits": "3732"
+    },
+    {
+      "domain": "nitrd.gov",
+      "visits": "3221",
+      "pageviews": "6339",
+      "users": "2520",
+      "pageviews_per_session": "1.9680223533064265",
+      "avg_session_duration": "102.02359515678361",
+      "exits": "3213"
+    },
+    {
+      "domain": "techfarhub.usds.gov",
+      "visits": "2503",
+      "pageviews": "3940",
+      "users": "1922",
+      "pageviews_per_session": "1.574111066719936",
+      "avg_session_duration": "152.94326807830603",
+      "exits": "2511"
+    },
+    {
+      "domain": "code.gov",
+      "visits": "1810",
+      "pageviews": "13795",
+      "users": "1602",
+      "pageviews_per_session": "7.621546961325967",
+      "avg_session_duration": "66.09889502762431",
+      "exits": "1801"
+    },
+    {
+      "domain": "zerotrust.cyber.gov",
+      "visits": "979",
+      "pageviews": "1680",
+      "users": "797",
+      "pageviews_per_session": "1.7160367722165475",
+      "avg_session_duration": "77.13891726251276",
+      "exits": "970"
+    },
+    {
+      "domain": "smeqa.usds.gov",
+      "visits": "320",
+      "pageviews": "719",
+      "users": "95",
+      "pageviews_per_session": "2.246875",
+      "avg_session_duration": "113.953125",
+      "exits": "312"
+    },
+    {
+      "domain": "staging.code.gov",
+      "visits": "242",
+      "pageviews": "3013",
+      "users": "242",
+      "pageviews_per_session": "12.450413223140496",
+      "avg_session_duration": "102.19421487603306",
+      "exits": "242"
+    },
+    {
+      "domain": "stg-marketplace.geoplatform.gov",
+      "visits": "104",
+      "pageviews": "130",
+      "users": "104",
+      "pageviews_per_session": "1.25",
+      "avg_session_duration": "68.60576923076923",
+      "exits": "95"
+    },
+    {
+      "domain": "stg.geoplatform.gov",
+      "visits": "104",
+      "pageviews": "312",
+      "users": "35",
+      "pageviews_per_session": "3.0",
+      "avg_session_duration": "572.7692307692307",
+      "exits": "95"
+    },
+    {
+      "domain": "data.geoplatform.gov",
+      "visits": "95",
+      "pageviews": "165",
+      "users": "104",
+      "pageviews_per_session": "1.736842105263158",
+      "avg_session_duration": "2.463157894736842",
+      "exits": "104"
+    },
+    {
+      "domain": "marketplace.geoplatform.gov",
+      "visits": "43",
+      "pageviews": "69",
+      "users": "43",
+      "pageviews_per_session": "1.6046511627906976",
+      "avg_session_duration": "0.0",
+      "exits": "43"
+    }
+  ],
+  "totals": {
+    "users": 6681499,
+    "visits": 8659328
+  },
+  "taken_at": "2023-11-27T15:19:40.939Z",
+  "agency": "executive-office-president"
+}

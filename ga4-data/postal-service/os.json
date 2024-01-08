@@ -1,0 +1,91 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395466379"
+  },
+  "meta": {
+    "names": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites."
+  },
+  "totals": {
+    "visits": 1100388091,
+    "os": {
+      "iOS": 659937891,
+      "Android": 221858011,
+      "Windows": 143324966,
+      "Macintosh": 66319917,
+      "(other)": 78272,
+      "Linux": 4512545,
+      "Chrome OS": 4256042,
+      "": 129,
+      "OS/2": 4239,
+      "Firefox OS": 4300,
+      "Playstation 4": 5707,
+      "Tizen": 3397,
+      "BlackBerry": 3637,
+      "NetBSD": 532,
+      "OpenBSD": 1011,
+      "SymbianOS": 381,
+      "UNIX": 622,
+      "Windows Phone": 225,
+      "(not set)": 71704,
+      "Fuchsia": 2719,
+      "FreeBSD": 1219,
+      "Nokia": 70,
+      "Sony": 47,
+      "BeOS": 2,
+      "macOS X": 69,
+      "Samsung": 19,
+      "SunOS": 74,
+      "PalmOS": 26,
+      "IRIX": 2,
+      "NTT DoCoMo": 24,
+      "Playstation Vita": 15,
+      "HPUX": 4,
+      "Xbox": 38,
+      "Unknown": 16,
+      "TCL/Alcatel_5004R/Dubai_Plus_ATT:10/QP1A.190711.020/v6GFY-0:user/release-keys": 1,
+      "T-Mobile/Newcastle/Newcastle:12/SP1A.210812.016/SW_S98117AA1_S_V023:user/release-keys": 1,
+      "iPhone": 1,
+      "Solaris": 4,
+      "Mac OS": 194,
+      "Playstation 3": 4,
+      "Bada": 4,
+      "lge/cv7as/cv7as:10/QKQ1.200308.002/202391619c522:user/release-keys": 1,
+      "MOT": 7,
+      "motorola/genevn_g/genevn:13/T1TGN33.60-55/ba972-f0e3a:user/release-keys": 1,
+      "Nintendo Wii": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:45:52.535Z",
+  "agency": "postal-service"
+}

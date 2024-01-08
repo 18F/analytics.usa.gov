@@ -1,0 +1,94 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 3898890,
+    "browser": {
+      "Chrome": 2839708,
+      "Safari": 468295,
+      "Edge": 324202,
+      "Firefox": 74956,
+      "Android Webview": 59031,
+      "Safari (in-app)": 41535,
+      "Samsung Internet": 39882,
+      "Opera": 28583,
+      "Opera Mini": 7769,
+      "UC Browser": 4947,
+      "YaBrowser": 3569,
+      "Mozilla Compatible Agent": 1323,
+      "(not set)": 1480,
+      "Coc Coc": 776,
+      "Phoenix Browser": 398,
+      "Aloha Browser": 122,
+      "Whale Browser": 205,
+      "Android Runtime": 164,
+      "Mozilla": 198,
+      "Amazon Silk": 597,
+      "Android Browser": 97,
+      "Internet Explorer": 871,
+      "DuckDuckGo Browser": 27,
+      "Puffin": 12,
+      "Netscape": 9,
+      "Waterfox": 12,
+      "Playstation Vita Browser": 2,
+      "AdobeAIR": 1,
+      "SeaMonkey": 26,
+      "BlackBerry": 6,
+      "Meta Quest Browser": 8,
+      "Iron": 9,
+      "Vivaldi": 6,
+      "PaleMoon": 16,
+      "IE with Chrome Frame": 1,
+      "Lynx": 16,
+      "Maxthon": 23,
+      "Konqueror": 2,
+      "RockMelt": 1,
+      "Playstation 4": 2,
+      "Nokia Browser": 1,
+      "MRCHROME": 2
+    }
+  },
+  "taken_at": "2024-01-05T14:38:59.456Z",
+  "agency": "agency-international-development"
+}

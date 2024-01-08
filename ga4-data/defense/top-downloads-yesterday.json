@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn39139-da_form_4856-001-efile-2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "2854"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Military Compensation > Pay > Basic Pay > Active Duty Pay",
+      "event_label": "file_download",
+      "file_name": "/Portals/3/Documents/ActiveDutyTables/2024%20Pay%20Table-Capped-FINAL.pdf",
+      "page": "militarypay.defense.gov/Pay/Basic-Pay/Active-Duty-Pay/",
+      "total_events": "1753"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn37842-ar_710-4-000-web-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "1342"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn37028-da_form_4187-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "1316"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn39556-da_form_31-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "1108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn34523-da_form_5960-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "1017"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn39613-da_form_2062-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "733"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Reserve Drill Pay",
+      "event_label": "file_download",
+      "file_name": "[shrt]3/Documents/ActiveDutyTables/2024%20Pay%20Table%20w%20Drill%20Pay%20-%201%20drill%20period.pdf",
+      "page": "militarypay.defense.gov/Pay/Basic-Pay/Reserve-Drill-Pay/",
+      "total_events": "717"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALNAV 2024",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Messages/ALNAV/ALN2024/ALN24001.txt",
+      "page": "www.mynavyhr.navy.mil/References/Messages/ALNAV-2024/",
+      "total_events": "699"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn38642-ar_25-50-006-web-12.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "672"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Travis AFB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]0Terminals/AMC%20CONUS%20Terminals/Travis%20AFB%20Passenger%20Terminal/Travis_72HR_04JAN24.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/",
+      "total_events": "623"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NS Norfolk Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]/AMC%20CONUS%20Terminals/NS%20Norfolk%20Passenger%20Terminal/72%20Hour%20Flight%20Schedule.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/NS-Norfolk-Passenger-Terminal/",
+      "total_events": "606"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/nocase-da_form_2062-000-efile-2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "605"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Seattle-Tacoma International Gateway",
+      "event_label": "file_download",
+      "file_name": "[shrt]enger%20Terminals/AMC%20CONUS%20Terminals/Seattle-Tacoma%20International%20Gateway/SEA72hr.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Seattle-Tacoma-International-Gateway/",
+      "total_events": "553"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn32485-da_form_638-003-efile-4.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "534"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DD2875",
+      "event_label": "file_download",
+      "file_name": "/Portals/54/Documents/DD/forms/dd/dd2875.pdf",
+      "page": "www.esd.whs.mil/Directives/forms/dd2500_2999/DD2875/",
+      "total_events": "494"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Ramstein AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]20Command%20Terminals/Ramstein%20AB%20Passenger%20Terminal/72%20Hr%20-%20Ramstein%20AFPIMS.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Ramstein-AB-Passenger-Terminal/",
+      "total_events": "470"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fitness Program",
+      "event_label": "file_download",
+      "file_name": "[shrt]ear%20Chart%20Scoring%20Including%20Optional%20Component%20Standards%20-%2020211111%200219.pdf",
+      "page": "www.afpc.af.mil/Career-Management/Fitness-Program/",
+      "total_events": "456"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALNAV 2024",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Messages/ALNAV/ALN2024/ALN24002.txt",
+      "page": "www.mynavyhr.navy.mil/References/Messages/ALNAV-2024/",
+      "total_events": "434"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn38504-da_form_5500-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "431"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Base Lewis-McChord Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]minals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Lewis-McChord-Passenger-Terminal/",
+      "total_events": "419"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALNAV 2024",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Messages/ALNAV/ALN2024/ALN24003.txt",
+      "page": "www.mynavyhr.navy.mil/References/Messages/ALNAV-2024/",
+      "total_events": "417"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Base Charleston Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]%20Base%20Charleston%20Passenger%20Terminal/Charleston%2072HR%20%2004%20JAN%20-%2006%20JAN.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Charleston-Passenger-Terminal/",
+      "total_events": "410"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/pdf/arn22670_a2823_final_v1_04.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "406"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Military Compensation > Pay > Basic Pay > Active Duty Pay",
+      "event_label": "file_download",
+      "file_name": "/Portals/3/Documents/2023%20Basic%20Pay%20Table.pdf",
+      "page": "militarypay.defense.gov/Pay/Basic-Pay/Active-Duty-Pay/",
+      "total_events": "404"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Defense Finance and Accounting Service > RetiredMilitary > newsevents > newsletter",
+      "event_label": "file_download",
+      "file_name": "/Portals/98/Documents/RetiredMilitary/Newsletter/DFAS%20Retiree%20Newsletter%20December%202023.pdf",
+      "page": "www.dfas.mil/RetiredMilitary/newsevents/newsletter/",
+      "total_events": "396"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn35762-da_form_705-test-003-efile-4.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "392"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Base Pearl Harbor-Hickam Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]erminals/Joint%20Base%20Pearl%20Harbor-Hickam%20Passenger%20Terminal/Hickam_72HR_03Jan2024.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Joint-Base-Pearl-Harbor-Hickam-Passenger-Terminal/",
+      "total_events": "391"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Government of Japan Jobs (Honshu)",
+      "event_label": "file_download",
+      "file_name": "/Portals/33/gojjobs/ann/1_vacancy_20231227.pdf",
+      "page": "www.usarj.army.mil/gojjobs/",
+      "total_events": "370"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Seattle-Tacoma International Gateway",
+      "event_label": "file_download",
+      "file_name": "[shrt]nger%20Terminals/AMC%20CONUS%20Terminals/Seattle-Tacoma%20International%20Gateway/SEA30day.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Seattle-Tacoma-International-Gateway/",
+      "total_events": "363"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Mission Execution Forecast :: Fort Novosel",
+      "event_label": "file_download",
+      "file_name": "/product%20drop/pm.pdf",
+      "page": "home.army.mil/novosel/weather/aviation-weather/mef",
+      "total_events": "362"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Travis AFB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]rminals/AMC%20CONUS%20Terminals/Travis%20AFB%20Passenger%20Terminal/TRAVIS_30DAY_01JAN2024.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/",
+      "total_events": "356"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Defense Finance and Accounting Service > MilitaryMembers > payentitlements > Pay Tables",
+      "event_label": "file_download",
+      "file_name": "[shrt]/98/Documents/militarymembers/militarymembers/pay-tables/2024%20AC%20Pay%20Tables%20Final.docx",
+      "page": "www.dfas.mil/militarymembers/payentitlements/Pay-Tables/",
+      "total_events": "352"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BWI Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]g/Passenger%20Terminals/AMC%20CONUS%20Terminals/BWI%20Passenger%20Terminal/BWI_30DAY_JAN24.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Baltimore-Washington-International-Airport-Passenger-Terminal/",
+      "total_events": "345"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn33311-da_form_705-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "344"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Base Pearl Harbor-Hickam Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]erminals/Joint%20Base%20Pearl%20Harbor-Hickam%20Passenger%20Terminal/Hickam_72HR_04Jan2024.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Joint-Base-Pearl-Harbor-Hickam-Passenger-Terminal/",
+      "total_events": "340"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/pdf/web/arn14342_ar623-3_final.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "339"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Base Andrews Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]C%20CONUS%20Terminals/Joint%20Base%20Andrews%20Passenger%20Terminal/JBANDREWS_72HR_04JAN24.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Andrews-Passenger-Terminal/",
+      "total_events": "321"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Base MDL Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]/Joint%20Base%20MDL%20Passenger%20Terminal/McGuire%2072%20HR%2004%20JAN%202024%200024L%20-.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-MDL-Passenger-Terminal/",
+      "total_events": "320"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Dover AFB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]er%20Terminals/AMC%20CONUS%20Terminals/Dover%20AFB%20Passenger%20Terminal/DOV_72HR_04JAN24.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Dover-AFB-Passenger-Terminal/",
+      "total_events": "312"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NS Norfolk Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]AMC%20CONUS%20Terminals/NS%20Norfolk%20Passenger%20Terminal/JANUARY%202024%20PE%20SCHEDULE.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/NS-Norfolk-Passenger-Terminal/",
+      "total_events": "308"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn32931-ar_600-20-004-web-6.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "306"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BWI Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]ssenger%20Terminals/AMC%20CONUS%20Terminals/BWI%20Passenger%20Terminal/BWI_72HR_04-06JAN24.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Baltimore-Washington-International-Airport-Passenger-Terminal/",
+      "total_events": "299"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DD 1750",
+      "event_label": "file_download",
+      "file_name": "/Portals/54/Documents/DD/forms/dd/dd1750.pdf",
+      "page": "www.esd.whs.mil/Directives/forms/dd1500_1999/DD-1750/",
+      "total_events": "299"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/nocase-dd_form_1750-000-efile-0.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "298"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Seattle-Tacoma International Gateway",
+      "event_label": "file_download",
+      "file_name": "[shrt]%20Terminals/AMC%20CONUS%20Terminals/Seattle-Tacoma%20International%20Gateway/SEA_RollCall.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Seattle-Tacoma-International-Gateway/",
+      "total_events": "294"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "JN Yokosuka Region",
+      "event_label": "file_download",
+      "file_name": "/Portals/80/CNRJ/Documents/Human_Resources/MLC_IHA_HPT/JN_VA_SITE_YOKOSUKA.pdf",
+      "page": "cnrj.cnic.navy.mil/Operations-and-Management/Human-Resources/MLC-IHA-HPT-Jobs/JN-Yokosuka-Region/",
+      "total_events": "292"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TRICARE Costs and Fees Sheet | TRICARE",
+      "event_label": "file_download",
+      "file_name": "/-/media/files/tricare/publications/factsheets/tricare_costs_and_fees_fact_sheet_jan_2024_final_010224.pdf",
+      "page": "tricare.mil/Publications/Costs/costs_fees",
+      "total_events": "286"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
+      "event_label": "file_download",
+      "file_name": "/jtwc/products/abioweb.txt",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "278"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn36067-ar_600-8-19-000-web-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "275"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Dress and Appearance",
+      "event_label": "file_download",
+      "file_name": "/Portals/70/documents/DRESS%20AND%20APPEARANCE/dafi36-2903.pdf",
+      "page": "www.afpc.af.mil/Career-Management/Dress-and-Appearance/",
+      "total_events": "274"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Commander, Navy Region Europe, Africa, Central > Installations > NSA Bahrain > Operations and Management > Human Resources > Job Openings",
+      "event_label": "file_download",
+      "file_name": "/Portals/78/NSA_Bahrain/Documents/Front%20Desk%20Clerk%20-%20BG-0303-06-%20NSA-24-001.pdf",
+      "page": "cnreurafcent.cnic.navy.mil/Installations/NSA-Bahrain/Operations-and-Management/Human-Resources/Job-Openings/",
+      "total_events": "271"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/pdf/web/arn18147_r600_8_22_admin2_final.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "263"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/pdf/web/arn7779_ar600-9_final.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "262"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "JN Okinawa Region",
+      "event_label": "file_download",
+      "file_name": "/Portals/80/CNRJ/Documents/Human_Resources/MLC_IHA_HPT/JN_VA_SITE_OKINAWA.pdf",
+      "page": "cnrj.cnic.navy.mil/Operations-and-Management/Human-Resources/MLC-IHA-HPT-Jobs/JN-Okinawa-Region/",
+      "total_events": "261"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NAVADMIN 2023",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Messages/NAVADMIN/NAV2023/NAV23305.txt",
+      "page": "www.mynavyhr.navy.mil/References/Messages/NAVADMIN-2023/",
+      "total_events": "258"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PFT/CFT",
+      "event_label": "file_download",
+      "file_name": "[shrt]CFT/PFT_CFT%20Standards/Table%202-2%20Hybrid%20Pull-up%20Push-up%20Test%20Scoring%20Tables.pdf",
+      "page": "www.fitness.marines.mil/pft-cft_standards17/",
+      "total_events": "255"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Merchant Mariner Credential NMC",
+      "event_label": "file_download",
+      "file_name": "/Portals/9/NMC/pdfs/forms/CG_719B.pdf",
+      "page": "www.dco.uscg.mil/nmc/merchant_mariner_credential/",
+      "total_events": "254"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/pdf/arn18247_a7801_final_re.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "253"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/pdf/web/arn18487_r350_1_admin_final.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "251"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Kadena AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]fic%20Command%20Terminals/Kadena%20AB%20Passenger%20Terminal/Kadena_72HOUR_04JAN2024_2030L.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Kadena-AB-Passenger-Terminal/",
+      "total_events": "249"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Mission Execution Forecast :: Fort Novosel",
+      "event_label": "file_download",
+      "file_name": "/product%20drop/am.pdf",
+      "page": "home.army.mil/novosel/weather/aviation-weather/mef",
+      "total_events": "247"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Travel Regulations | Defense Travel Management Office",
+      "event_label": "file_download",
+      "file_name": "/2022/Jan/04/2002917147/-1/-1/0/JTR.PDF",
+      "page": "www.travel.dod.mil/Policy-Regulations/Joint-Travel-Regulations/",
+      "total_events": "240"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "420T - Talent Acquisitions Technician",
+      "event_label": "file_download",
+      "file_name": "/Portals/15/23-523%20420T.pdf",
+      "page": "recruiting.army.mil/ISO/AWOR/420T/",
+      "total_events": "228"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/pdf/web/r710_2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "220"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate – Publications/Forms Content Search",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn39139-da_form_4856-001-efile-2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/ContentSearch.aspx?query=4856",
+      "total_events": "217"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn30302-ar_670-1-000-web-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "216"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Ramstein AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]mmand%20Terminals/Ramstein%20AB%20Passenger%20Terminal/December%20and%20January%2030%20Day.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Ramstein-AB-Passenger-Terminal/",
+      "total_events": "214"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Constructed Travel | Defense Travel Management Office",
+      "event_label": "file_download",
+      "file_name": "/Portals/119/Documents/Constructed_Travel/pre-travel-worksheet.zip",
+      "page": "www.travel.dod.mil/Programs/Defense-Travel-System/Constructed-Travel/",
+      "total_events": "212"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn39628-da_form_7768-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "209"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/pdf/da%20form%202166-9-2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "208"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SRB SDAP Enl Bonus",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Career/EnlistedCareerAdmin/SRB%20Award%20Levels.xlsx",
+      "page": "www.mynavyhr.navy.mil/Career-Management/Community-Management/Enlisted-Career-Admin/SRB-SDAP-Enl-Bonus/",
+      "total_events": "208"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PFT/CFT",
+      "event_label": "file_download",
+      "file_name": "[shrt]211/Docs/PFT_CFT/PFT_CFT%20Standards/Table%202-4%20PFT%203%20Mile%20Run%20Scoring%20Tables.pdf",
+      "page": "www.fitness.marines.mil/pft-cft_standards17/",
+      "total_events": "207"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn39611-da_form_1687-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "202"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Government of Japan Jobs (Okinawa)",
+      "event_label": "file_download",
+      "file_name": "/Portals/33/okijobs/ann/43-JESO-23.pdf",
+      "page": "www.usarj.army.mil/okijobs/",
+      "total_events": "202"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn35480-dd_form_2875-000-efile-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "201"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Defense Finance and Accounting Service > RetiredMilitary > forms",
+      "event_label": "file_download",
+      "file_name": "/Portals/54/Documents/DD/forms/dd/dd2656.pdf",
+      "page": "www.dfas.mil/RetiredMilitary/forms/",
+      "total_events": "199"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Security Agency | Central Security Service",
+      "event_label": "file_download",
+      "file_name": "/2023/Dec/19/2003362479/-1/-1/0/NSA%202023%20Cybersecurity%20Year%20In%20Review.PDF",
+      "page": "www.nsa.gov/",
+      "total_events": "197"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn36775-fm_5-0-001-web-3.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "191"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Yokota AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]c%20Command%20Terminals/Yokota%20AB%20Passenger%20Terminal/New%2072%20Hour%20Flight%20(14).pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Yokota-AB-Passenger-Terminal/",
+      "total_events": "189"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MyCAA — Financial Assistance for Military Spouses",
+      "event_label": "file_download",
+      "file_name": "/seco-api/media/default/collaterals_catalog/program_overview/mycaa-helping-spouses-reach-career-goals.pdf",
+      "page": "mycaa.militaryonesource.mil/mycaa/",
+      "total_events": "188"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/pdf/web/arn16562_pam623-3_final.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "186"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BUPERS Instructions",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Reference/Instructions/BUPERS/BUPERSINST%201610.10F%20CH-1.pdf",
+      "page": "www.mynavyhr.navy.mil/References/BUPERS-Instructions/",
+      "total_events": "186"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Travis AFB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]minals/AMC%20CONUS%20Terminals/Travis%20AFB%20Passenger%20Terminal/Travis_ROLLCALL_04JAN24.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/",
+      "total_events": "185"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Air University (AU) > Foundational Resources",
+      "event_label": "file_download",
+      "file_name": "/Portals/61/documents/Airman_Development/BrownBook.pdf",
+      "page": "www.airuniversity.af.edu/Foundational-Resources/",
+      "total_events": "184"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Ramstein AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]amstein%20AB%20Passenger%20Terminal/Ramstein%20Travel%20Webpage%20-%20Roll%20Call%20Report.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Ramstein-AB-Passenger-Terminal/",
+      "total_events": "183"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn30018-ar_600-8-10-000-web-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "182"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NAVADMIN 2023",
+      "event_label": "file_download",
+      "file_name": "/Portals/55/Messages/NAVADMIN/NAV2023/NAV23303.txt",
+      "page": "www.mynavyhr.navy.mil/References/Messages/NAVADMIN-2023/",
+      "total_events": "182"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/epubs/dr_pubs/dr_a/arn30496-ar_635-200-000-web-1.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "181"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn37008-da_form_7708-001-web-2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "181"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Defense Finance and Accounting Service > MilitaryMembers > payentitlements > Pay Tables",
+      "event_label": "file_download",
+      "file_name": "[shrt]/98/Documents/militarymembers/militarymembers/pay-tables/2024%20AC%20Pay%20Tables%20Final.docx",
+      "page": "www.dfas.mil/MilitaryMembers/payentitlements/Pay-Tables/",
+      "total_events": "176"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Getting Your ID Card",
+      "event_label": "file_download",
+      "file_name": "/Portals/53/Documents/dd1172-2.pdf",
+      "page": "www.cac.mil/Next-Generation-Uniformed-Services-ID-Card/Getting-Your-ID-Card/",
+      "total_events": "175"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PFT/CFT",
+      "event_label": "file_download",
+      "file_name": "/Portals/211/Docs/PFT_CFT/PFT_CFT%20Standards/Plank%20Scoring%20Table.pdf",
+      "page": "www.fitness.marines.mil/pft-cft_standards17/",
+      "total_events": "173"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "file_name": "/pub/eforms/dr_a/arn32338-da_form_1380-001-efile-2.pdf",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "169"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Andersen AFB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]ific%20Command%20Terminals/Andersen%20AFB%20Passenger%20Terminal/72%20hr%20AFPIMS%20SLIDES.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Andersen-AFB-Passenger-Terminal/",
+      "total_events": "166"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TRICARE For Life Cost Matrix | TRICARE",
+      "event_label": "file_download",
+      "file_name": "/-/media/files/tricare/publications/pubsnotonpubspage/tricare_for_life_cost_matrix_may_2023.pdf",
+      "page": "tricare.mil/Publications/Costs/tricare_for_life_costs",
+      "total_events": "166"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Joint Knowledge Online JKO Training Education",
+      "event_label": "file_download",
+      "file_name": "/Portals/36/Documents/JKO/JKO_Course_Catalog.pdf",
+      "page": "www.jcs.mil/JKO/",
+      "total_events": "165"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DoD Travel Systems | Defense Travel Management Office",
+      "event_label": "file_download",
+      "file_name": "/Portals/119/Documents/Constructed_Travel/pre-travel-worksheet.zip",
+      "page": "www.travel.dod.mil/Programs/DoD-Travel-Systems/Constructed-Travel/",
+      "total_events": "163"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Kadena AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "[shrt]nals/Pacific%20Command%20Terminals/Kadena%20AB%20Passenger%20Terminal/Kadena_30DAY_JAN2024.pdf",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Kadena-AB-Passenger-Terminal/",
+      "total_events": "163"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Retirement Cost of Living Adjustments",
+      "event_label": "file_download",
+      "file_name": "/Portals/3/Documents/COLA/2024%20MILITARY%20RETIRED%20AND%20SURVIVOR%20COLA-UPR003060-23.pdf",
+      "page": "militarypay.defense.gov/Pay/Retirement/cola/",
+      "total_events": "163"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:52:44.749Z",
+  "agency": "defense"
+}

@@ -1,0 +1,88 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "zainabtours.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "state.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "iawg.gov",
+      "visits": "77"
+    },
+    {
+      "hostname": "grants.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "chped.net",
+      "visits": "1"
+    }
+  ],
+  "totals": {
+    "visits": 83
+  },
+  "taken_at": "2024-01-05T16:00:34.578Z",
+  "agency": "state"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "second-level-domains",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "14daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "ga:hostname"
+    ],
+    "filters": "ga:sessions>4;ga:hostname=~^[^\\.]+\\.[^\\.]+$",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "domain": "ai.gov"
+    },
+    {
+      "domain": "code.gov"
+    },
+    {
+      "domain": "geoplatform.gov"
+    },
+    {
+      "domain": "nitrd.gov"
+    },
+    {
+      "domain": "paymentaccuracy.gov"
+    },
+    {
+      "domain": "quantum.gov"
+    },
+    {
+      "domain": "usds.gov"
+    },
+    {
+      "domain": "whitehouse.gov"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:19:29.930Z",
+  "agency": "executive-office-president"
+}

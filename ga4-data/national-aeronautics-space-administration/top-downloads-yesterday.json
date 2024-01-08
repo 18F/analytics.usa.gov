@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Astronomy Picture of the Day",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2401/zetaoph_spitzer_4015.jpg",
+      "page": "apod.nasa.gov/apod/astropix.html",
+      "total_events": "3094"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2024 January 4 - Zeta Oph: Runaway Star",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2401/zetaoph_spitzer_4015.jpg",
+      "page": "apod.nasa.gov/apod/ap240104.html",
+      "total_events": "1276"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Astronomy Picture of the Day",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2401/zetaoph_spitzer_4015.jpg",
+      "page": "apod.nasa.gov/apod/",
+      "total_events": "497"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2024 January 3 – A SAR Arc from New Zealand",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2401/sararcnz_mcdonald_2048.jpg",
+      "page": "apod.nasa.gov/apod/ap240103.html",
+      "total_events": "494"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Artemis",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/atoms/files/artemis_plan-20200921.pdf",
+      "page": "www.nasa.gov/specials/artemis/",
+      "total_events": "445"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 25 – Cathedral, Mountain, Moon",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/moonaligned_minato_2974.jpg",
+      "page": "apod.nasa.gov/apod/ap231225.html",
+      "total_events": "305"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2024 January 1 – NGC 1232: A Grand Design Spiral Galaxy",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2401/ngc1232b_vlt_3969.jpg",
+      "page": "apod.nasa.gov/apod/ap240101.html",
+      "total_events": "275"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2024 January 2 – Rocket Transits Rippling Moon",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2401/falconmoon_madow_1710.jpg",
+      "page": "apod.nasa.gov/apod/ap240102.html",
+      "total_events": "257"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Invites You to X-59 Rollout Watch Party - NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/12/x-59-watch-party-planning-guide-v9.pdf",
+      "page": "www.nasa.gov/aeronautics/x-59-rollout-watch-party/",
+      "total_events": "210"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 27 – Rainbow Aurora over Icelandic Waterfall",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/archfalls_pellegrini_2000.jpg",
+      "page": "apod.nasa.gov/apod/ap231227.html",
+      "total_events": "194"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "20 Inventions We Wouldn't Have Without Space Travel",
+      "event_label": "file_download",
+      "file_name": "/original_images/infographicsuploadsinfographicsfull11358.jpg",
+      "page": "www.jpl.nasa.gov/infographics/20-inventions-we-wouldnt-have-without-space-travel",
+      "total_events": "188"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA's Discovery Program - NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2024/01/discovery-program-ebook.pdf",
+      "page": "www.nasa.gov/history/nasas-discovery-program-book/",
+      "total_events": "162"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2024 NASA Science Planning Guide - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/2024-pdfcalendar-print-version-tagged.pdf",
+      "page": "science.nasa.gov/multimedia-galleries/2024-nasa-science-planning-guide/",
+      "total_events": "161"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Virtual Guest Program - NASA",
+      "event_label": "file_download",
+      "file_name": "/specials/virtualguest/img/virtual-guest-passport_2nd.pdf",
+      "page": "www.nasa.gov/nasa-virtual-guest-program/",
+      "total_events": "154"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_0193.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "153"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA TV Live - NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2024/01/nasa-tv-schedule-for-web-week-of-1-1-2024.pdf",
+      "page": "www.nasa.gov/nasatv/",
+      "total_events": "152"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_hmiif.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "143"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 26 – IC 443: The Jellyfish Nebula",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/jellyfish_payne_7846.jpg",
+      "page": "apod.nasa.gov/apod/ap231226.html",
+      "total_events": "140"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_0304.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "128"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-21x9-2560x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "127"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_hmii.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "120"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_hmiic.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "115"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Electromagnetic Spectrum - Introduction",
+      "event_label": "file_download",
+      "file_name": "/images/science/em_spectrum_full.jpg",
+      "page": "imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html",
+      "total_events": "113"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA GISS: Panoply Data Viewer: Downloads",
+      "event_label": "file_download",
+      "file_name": "/tools/panoply/download/panoplywin-5.3.1.zip",
+      "page": "www.giss.nasa.gov/tools/panoply/download/",
+      "total_events": "113"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Do Hurricanes Form? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/hurricanes/en/fran_l.en.jpg",
+      "page": "spaceplace.nasa.gov/hurricanes/en/",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-16x9-1920x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-18x9-1440x2960-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "109"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-19.5x9-1242x2688-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-19.5x9-1242x2688-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "104"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voyager 1's Pale Blue Dot - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/09/pia23645.tif",
+      "page": "science.nasa.gov/resource/voyager-1s-pale-blue-dot/",
+      "total_events": "97"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-desktop-8k.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "95"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_4096_hmibc.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "94"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "What Did Hubble See on Your Birthday? - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/04/hubble-birthdays-full-year.xlsx",
+      "page": "science.nasa.gov/mission/hubble/multimedia/what-did-hubble-see-on-your-birthday",
+      "total_events": "94"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Does GPS Work? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/review/gps/tsunami.jpg",
+      "page": "spaceplace.nasa.gov/gps/en/",
+      "total_events": "93"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2024 NASA Science Planning Guide - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/12/2024-pdfcalendar-print-version-spanish.pdf",
+      "page": "science.nasa.gov/multimedia-galleries/2024-nasa-science-planning-guide/",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Invites You to X-59 Rollout Watch Party - NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/12/x-59-watch-invitation-v4.pdf",
+      "page": "www.nasa.gov/aeronautics/x-59-rollout-watch-party/",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_0211.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Worldview | Earthdata",
+      "event_label": "file_download",
+      "file_name": "/s3fs-public/2022-05/worldview-example-australia-fires.jpg",
+      "page": "www.earthdata.nasa.gov/worldview",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 18 – The Same Color Illusion",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/greyillusion_wikipedia_960.jpg",
+      "page": "apod.nasa.gov/apod/ap231218.html",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_0171.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Visions of the Future",
+      "event_label": "file_download",
+      "file_name": "/images/grand_tour.width-1024.jpg",
+      "page": "www.jpl.nasa.gov/galleries/visions-of-the-future",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-16x9-1920x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_211193171.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "83"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 28 - Jupiter and the Geminid",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/g0030446.jpg",
+      "page": "apod.nasa.gov/apod/ap231228.html",
+      "total_events": "82"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-21x9-2560x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "82"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_4096_hmiif.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "82"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 30 - The Persistence of Moonlight",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/2023_12_27-fullmoon.jpg",
+      "page": "apod.nasa.gov/apod/ap231230.html",
+      "total_events": "81"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Earth Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-earth-mobile-21x9-2560x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/earth-poster-and-virtual-backgrounds/",
+      "total_events": "81"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_4096_hmii.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "81"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Global Temperature | Vital Signs – Climate Change: Vital Signs of the Planet",
+      "event_label": "file_download",
+      "file_name": "/gistemp/graphs/graph_data/global_mean_estimates_based_on_land_and_ocean_data/graph.txt",
+      "page": "climate.nasa.gov/vital-signs/global-temperature/",
+      "total_events": "79"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Coloring Pages | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/coloring-pages/en/venus.pdf",
+      "page": "spaceplace.nasa.gov/coloring-pages/en/",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Newton’s Laws of Motion | Glenn Research Center | NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/secondlaw.jpg",
+      "page": "www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Large Magellanic Fireworks - NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/12/pia04609orig.jpg",
+      "page": "www.nasa.gov/image-detail/pia04609orig/",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-mobile-18x9-1440x2960-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Coloring Pages | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/coloring-pages/en/sun.pdf",
+      "page": "spaceplace.nasa.gov/coloring-pages/en/",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voyager 1's Pale Blue Dot - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/09/p36254.tif",
+      "page": "science.nasa.gov/resource/voyager-1s-pale-blue-dot/",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Earth Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-earth-mobile-19.5x9-1242x2688-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/earth-poster-and-virtual-backgrounds/",
+      "total_events": "70"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Image Galleries Webb/NASA",
+      "event_label": "file_download",
+      "file_name": "/65535/53412181911_39e3192a92_b.jpg",
+      "page": "webb.nasa.gov/content/multimedia/images.html#ssdFlickrGallery",
+      "total_events": "68"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "7.22 - Space Security: Best Practices Guide - SW Engineering Handbook Ver D - Global Site",
+      "event_label": "file_download",
+      "file_name": "/download/attachments/146540183/space%20security%20best%20practices%20guide%20bpg%20rev%20a.pdf",
+      "page": "swehb.nasa.gov/display/SWEHBVD/7.22+-+Space+Security:+Best+Practices+Guide",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_hmibc.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "What Did Hubble See on Your Birthday? - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/04/hubble-birthdays-full-year.xlsx",
+      "page": "science.nasa.gov/mission/hubble/multimedia/what-did-hubble-see-on-your-birthday/",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 21 - Three Galaxies and a Comet",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/c2020_v2_ztf_chilescope_debartlett1024.jpg",
+      "page": "apod.nasa.gov/apod/ap231221.html",
+      "total_events": "65"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Earth Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-earth-mobile-16x9-1920x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/earth-poster-and-virtual-backgrounds/",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 20 – Ice Halos over Bavaria",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/bavarianhalos_werner_1500.jpg",
+      "page": "apod.nasa.gov/apod/ap231220.html",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-desktop-8k.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_1024_hmib.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Storm Batters the United Kingdom",
+      "event_label": "file_download",
+      "file_name": "/images/imagerecords/152000/152275/stormhank653_oli_20240103_lrg.jpg",
+      "page": "earthobservatory.nasa.gov/images/152275/storm-batters-the-united-kingdom",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voyager 1's Pale Blue Dot - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/09/p36254.jpg",
+      "page": "science.nasa.gov/resource/voyager-1s-pale-blue-dot/",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Earth Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-earth-desktop-8k.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/earth-poster-and-virtual-backgrounds/",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 12 – Aurora and Milky Way over Norway",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/arcticnight_cobianchi_2048.jpg",
+      "page": "apod.nasa.gov/apod/ap231212.html",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Earth Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-earth-mobile-18x9-1440x2960-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/earth-poster-and-virtual-backgrounds/",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Map | Resources – Moon: NASA Science",
+      "event_label": "file_download",
+      "file_name": "/rails/active_storage/blobs/redirect/eyjfcmfpbhmionsibwvzc2fnzsi6ikjbahbbakvmiiwizxhwijpudwxslcjwdxiioijibg9ix2lkin19--1d99218b089bcc7acd6e0d2e41e7018b232d917a/2023-iomn-moon-map-northern.jpg",
+      "page": "moon.nasa.gov/observe-the-moon-night/resources/moon-map/",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Coloring Pages | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/coloring-pages/en/mercury.pdf",
+      "page": "spaceplace.nasa.gov/coloring-pages/en/",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2024 NASA Science Planning Guide - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/12/2024-pdfcalendar-low-resolution-spanish.pdf",
+      "page": "science.nasa.gov/multimedia-galleries/2024-nasa-science-planning-guide/",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 13 – Deep Field: The Heart Nebula",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/heart_telliveostling_2953.jpg",
+      "page": "apod.nasa.gov/apod/ap231213.html",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/latest_4096_hmiic.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 14 - Supernova Remnant Cassiopeia A",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/casa_nircam_4096.jpg",
+      "page": "apod.nasa.gov/apod/ap231214.html",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-desktop-4k.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Storm Batters the United Kingdom",
+      "event_label": "file_download",
+      "file_name": "/images/imagerecords/152000/152275/stormhank653_oli_20190130_lrg.jpg",
+      "page": "earthobservatory.nasa.gov/images/152275/storm-batters-the-united-kingdom",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Visions of the Future",
+      "event_label": "file_download",
+      "file_name": "/images/earth.width-1024.jpg",
+      "page": "www.jpl.nasa.gov/galleries/visions-of-the-future",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Why Is the Sky Blue? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/review/blue-sky/why-is-the-sky-blue_1920x1080.mp4",
+      "page": "spaceplace.nasa.gov/blue-sky/en/",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Attack of the Drones",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/06/attack-of-the-drones-graphics.zip",
+      "page": "www.nasa.gov/stem-content/attack-of-the-drones/",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA’s Juno to Get Close Look at Jupiter’s Volcanic Moon Io on Dec. 30",
+      "event_label": "file_download",
+      "file_name": "/original_images/1-pia26234-io-flyby-image2.jpg",
+      "page": "www.jpl.nasa.gov/news/nasas-juno-to-get-close-look-at-jupiters-volcanic-moon-io-on-dec-30",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOD: 2023 December 24 – NGC 2440: Cocoon of a New White Dwarf",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/ngc2440e_hst_960.jpg",
+      "page": "apod.nasa.gov/apod/ap231224.html",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airplane Parts and Function | Glenn Research Center | NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/nasa-glenn-airplane-parts-image-2.jpg",
+      "page": "www1.grc.nasa.gov/beginners-guide-to-aeronautics/airplane-parts-function/",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/11/nasa-moon-desktop-4k.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA SVS | The 2023 and 2024 Solar Eclipses: Map and Data",
+      "event_label": "file_download",
+      "file_name": "/vis/a000000/a005000/a005073/2024eclipse_shapefiles.zip",
+      "page": "svs.gsfc.nasa.gov/5073",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voyager - Sounds on the Golden Record",
+      "event_label": "file_download",
+      "file_name": "/assets/audio/golden-record/spheres.wav",
+      "page": "voyager.jpl.nasa.gov/golden-record/whats-on-the-record/sounds/",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Does GPS Work? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/review/gps-pizza/how-does-gps-work_1920x1080.mp4",
+      "page": "spaceplace.nasa.gov/gps-pizza/en/",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voyager - Solar System Portrait",
+      "event_label": "file_download",
+      "file_name": "/assets/images/galleries/images-voyager-took/solar-system-portrait/pia00452.jpg",
+      "page": "voyager.jpl.nasa.gov/galleries/images-voyager-took/solar-system-portrait/",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Activity Books | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/activity-books/en/activity-book_universe.pdf",
+      "page": "spaceplace.nasa.gov/activity-books/en/",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Fiscal Year 2024 Budget Request - NASA",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/03/nasa-fy-2024-cj-v3.pdf",
+      "page": "www.nasa.gov/nasa-fiscal-year-2024-budget-request/",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Universe Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/12/nasa-universe-mobile-16x9-1920x1080-1.jpg",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NASA Coloring Pages | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "file_name": "/coloring-pages/en/earth.pdf",
+      "page": "spaceplace.nasa.gov/coloring-pages/en/",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Image Galleries Webb/NASA",
+      "event_label": "file_download",
+      "file_name": "/65535/53367408399_b5e01a4586_b.jpg",
+      "page": "webb.nasa.gov/content/multimedia/images.html#ssdFlickrGallery",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2024 Spring DEVELOP Tentative Project List | NASA Applied Sciences",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/2024spring_proposedprojectlist_10.01.23.pdf",
+      "page": "appliedsciences.nasa.gov/join-mission/publications-resources/2024-spring-develop-tentative-project-list",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "J1407b: Super-Saturn – Exoplanet Exploration: Planets Beyond our Solar System",
+      "event_label": "file_download",
+      "file_name": "/rails/active_storage/blobs/eyjfcmfpbhmionsibwvzc2fnzsi6ikjbahbbdkvmiiwizxhwijpudwxslcjwdxiioijibg9ix2lkin19--b3064a58aed8f7cd5321c0b2b5de73fa55a31616/j1407_ronmiller_2015_0(s).jpg",
+      "page": "exoplanets.nasa.gov/resources/242/j1407b-super-saturn/",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "file_name": "/wp-content/uploads/2023/07/moon_poster.pdf",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Astronaut Photo ISS070-E-45945",
+      "event_label": "file_download",
+      "file_name": "/databaseimages/esc/large/iss070/iss070-e-45945.jpg",
+      "page": "eol.jsc.nasa.gov/SearchPhotos/photo.pl",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "file_name": "/assets/img/latest/f_094_335_193_1024.jpg",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "44"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:37:07.413Z",
+  "agency": "national-aeronautics-space-administration"
+}

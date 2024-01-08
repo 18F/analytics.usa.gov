@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.justice.gov",
+      "visits": "1561185"
+    },
+    {
+      "domain": "www.nsopw.gov",
+      "visits": "703315"
+    },
+    {
+      "domain": "www.fbi.gov",
+      "visits": "640240"
+    },
+    {
+      "domain": "acis.eoir.justice.gov",
+      "visits": "595052"
+    },
+    {
+      "domain": "www.dea.gov",
+      "visits": "295737"
+    },
+    {
+      "domain": "www.ojp.gov",
+      "visits": "221319"
+    },
+    {
+      "domain": "www.atf.gov",
+      "visits": "146406"
+    },
+    {
+      "domain": "www.usmarshals.gov",
+      "visits": "111964"
+    },
+    {
+      "domain": "uat.ojjdp.ojp.gov",
+      "visits": "92786"
+    },
+    {
+      "domain": "uat.ojp.gov",
+      "visits": "89935"
+    },
+    {
+      "domain": "www.ada.gov",
+      "visits": "87559"
+    },
+    {
+      "domain": "www.deadiversion.usdoj.gov",
+      "visits": "66931"
+    },
+    {
+      "domain": "www.ic3.gov",
+      "visits": "54239"
+    },
+    {
+      "domain": "complaint.ic3.gov",
+      "visits": "40110"
+    },
+    {
+      "domain": "nij.ojp.gov",
+      "visits": "38255"
+    },
+    {
+      "domain": "uat.juvenilecouncil.ojp.gov",
+      "visits": "33521"
+    },
+    {
+      "domain": "search.justice.gov",
+      "visits": "28984"
+    },
+    {
+      "domain": "bjs.ojp.gov",
+      "visits": "22638"
+    },
+    {
+      "domain": "www.foia.gov",
+      "visits": "21969"
+    },
+    {
+      "domain": "namus.nij.ojp.gov",
+      "visits": "21895"
+    }
+  ],
+  "totals": {
+    "visits": 4874040
+  },
+  "taken_at": "2024-01-05T15:38:06.901Z",
+  "agency": "justice"
+}

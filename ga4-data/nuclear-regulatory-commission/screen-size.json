@@ -1,0 +1,52 @@
+{
+  "name": "screen-size",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "screenResolution"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460734"
+  },
+  "meta": {
+    "name": "Screen Resolution",
+    "description": "90 days of Screen Resolution visits for all sites."
+  },
+  "totals": {
+    "visits": 15,
+    "screen_resolution": {
+      "1536x864": 6,
+      "1280x720": 1,
+      "2560x1440": 2,
+      "1920x1080": 4,
+      "2056x1329": 1,
+      "491x1064": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:42:33.418Z",
+  "agency": "nuclear-regulatory-commission"
+}

@@ -1,0 +1,198 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 182474767,
+    "by_os": {
+      "iOS": {
+        "Safari": 54165212,
+        "Chrome": 8826873,
+        "Safari (in-app)": 6280537,
+        "(not set)": 56640
+      },
+      "Windows": {
+        "Chrome": 37649966,
+        "Edge": 14833950,
+        "Firefox": 2050058,
+        "Opera": 232500,
+        "Internet Explorer": 67334,
+        "Whale Browser": 32309,
+        "YaBrowser": 19857,
+        "(not set)": 1546,
+        "Coc Coc": 327,
+        "Vivaldi": 831,
+        "Safari": 13102
+      },
+      "Android": {
+        "Chrome": 25812809,
+        "Samsung Internet": 3166190,
+        "Android Webview": 1975497,
+        "Firefox": 173934,
+        "Edge": 171769,
+        "Opera": 87017,
+        "Amazon Silk": 67460,
+        "Whale Browser": 57478,
+        "UC Browser": 12301,
+        "Android Runtime": 6574,
+        "YaBrowser": 636
+      },
+      "Macintosh": {
+        "Chrome": 10036540,
+        "Safari": 9128522,
+        "Firefox": 496694,
+        "Edge": 95948,
+        "Mozilla Compatible Agent": 70693,
+        "Opera": 22849
+      },
+      "Linux": {
+        "Chrome": 4529013,
+        "Firefox": 269147,
+        "Samsung Internet": 51157,
+        "Edge": 6657,
+        "Mozilla Compatible Agent": 817
+      },
+      "Chrome OS": {
+        "Chrome": 1486196
+      },
+      "(not set)": {
+        "(not set)": 515620,
+        "Mozilla Compatible Agent": 2207
+      }
+    },
+    "by_browsers": {
+      "Safari": {
+        "iOS": 54165212,
+        "Macintosh": 9128522,
+        "Windows": 13102
+      },
+      "Chrome": {
+        "Windows": 37649966,
+        "Android": 25812809,
+        "Macintosh": 10036540,
+        "iOS": 8826873,
+        "Linux": 4529013,
+        "Chrome OS": 1486196
+      },
+      "Edge": {
+        "Windows": 14833950,
+        "Android": 171769,
+        "Macintosh": 95948,
+        "Linux": 6657
+      },
+      "Safari (in-app)": {
+        "iOS": 6280537
+      },
+      "Samsung Internet": {
+        "Android": 3166190,
+        "Linux": 51157
+      },
+      "Firefox": {
+        "Windows": 2050058,
+        "Macintosh": 496694,
+        "Linux": 269147,
+        "Android": 173934
+      },
+      "Android Webview": {
+        "Android": 1975497
+      },
+      "(not set)": {
+        "(not set)": 515620,
+        "iOS": 56640,
+        "Windows": 1546
+      },
+      "Opera": {
+        "Windows": 232500,
+        "Android": 87017,
+        "Macintosh": 22849
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 70693,
+        "(not set)": 2207,
+        "Linux": 817
+      },
+      "Amazon Silk": {
+        "Android": 67460
+      },
+      "Whale Browser": {
+        "Android": 57478,
+        "Windows": 32309
+      },
+      "Internet Explorer": {
+        "Windows": 67334
+      },
+      "YaBrowser": {
+        "Windows": 19857,
+        "Android": 636
+      },
+      "UC Browser": {
+        "Android": 12301
+      },
+      "Android Runtime": {
+        "Android": 6574
+      },
+      "Coc Coc": {
+        "Windows": 327
+      },
+      "Vivaldi": {
+        "Windows": 831
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:56:35.293Z",
+  "agency": "homeland-security"
+}

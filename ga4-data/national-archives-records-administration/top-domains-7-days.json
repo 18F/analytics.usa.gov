@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "691243"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "626998"
+    },
+    {
+      "domain": "www.federalregister.gov",
+      "visits": "612528"
+    },
+    {
+      "domain": "www.jfklibrary.org",
+      "visits": "99504"
+    },
+    {
+      "domain": "obamawhitehouse.archives.gov",
+      "visits": "62610"
+    },
+    {
+      "domain": "vetrecs.archives.gov",
+      "visits": "58815"
+    },
+    {
+      "domain": "trumpwhitehouse.archives.gov",
+      "visits": "53221"
+    },
+    {
+      "domain": "georgewbush-whitehouse.archives.gov",
+      "visits": "48995"
+    },
+    {
+      "domain": "reagan.blogs.archives.gov",
+      "visits": "41676"
+    },
+    {
+      "domain": "www.reaganlibrary.gov",
+      "visits": "31575"
+    },
+    {
+      "domain": "search.archives.gov",
+      "visits": "29507"
+    },
+    {
+      "domain": "historyhub.history.gov",
+      "visits": "28200"
+    },
+    {
+      "domain": "founders.archives.gov",
+      "visits": "25951"
+    },
+    {
+      "domain": "aad.archives.gov",
+      "visits": "14967"
+    },
+    {
+      "domain": "prologue.blogs.archives.gov",
+      "visits": "14227"
+    },
+    {
+      "domain": "museum.archives.gov",
+      "visits": "13087"
+    },
+    {
+      "domain": "www.lbjlibrary.org",
+      "visits": "9523"
+    },
+    {
+      "domain": "1950census.archives.gov",
+      "visits": "8830"
+    },
+    {
+      "domain": "www.nixonlibrary.gov",
+      "visits": "8744"
+    },
+    {
+      "domain": "www.obamalibrary.gov",
+      "visits": "6716"
+    }
+  ],
+  "totals": {
+    "visits": 2486917
+  },
+  "taken_at": "2024-01-05T15:48:50.246Z",
+  "agency": "national-archives-records-administration"
+}

@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.irs.gov",
+      "visits": "8736084"
+    },
+    {
+      "domain": "www.treasurydirect.gov",
+      "visits": "971014"
+    },
+    {
+      "domain": "www.fincen.gov",
+      "visits": "583778"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "496526"
+    },
+    {
+      "domain": "ofac.treasury.gov",
+      "visits": "232631"
+    },
+    {
+      "domain": "catalog.usmint.gov",
+      "visits": "210681"
+    },
+    {
+      "domain": "treasurydirect.gov",
+      "visits": "205366"
+    },
+    {
+      "domain": "www.usmint.gov",
+      "visits": "200935"
+    },
+    {
+      "domain": "www.occ.gov",
+      "visits": "77071"
+    },
+    {
+      "domain": "occ.gov",
+      "visits": "61753"
+    },
+    {
+      "domain": "fiscaldata.treasury.gov",
+      "visits": "56741"
+    },
+    {
+      "domain": "www.fiscal.treasury.gov",
+      "visits": "56489"
+    },
+    {
+      "domain": "helpwithmybank.gov",
+      "visits": "46364"
+    },
+    {
+      "domain": "www.careers.occ.gov",
+      "visits": "45416"
+    },
+    {
+      "domain": "www.bep.gov",
+      "visits": "42673"
+    },
+    {
+      "domain": "www.usaspending.gov",
+      "visits": "42269"
+    },
+    {
+      "domain": "www.helpwithmybank.gov",
+      "visits": "35803"
+    },
+    {
+      "domain": "www.ttb.gov",
+      "visits": "25877"
+    },
+    {
+      "domain": "fiscal.treasury.gov",
+      "visits": "24167"
+    },
+    {
+      "domain": "fincen.gov",
+      "visits": "22109"
+    }
+  ],
+  "totals": {
+    "visits": 12173747
+  },
+  "taken_at": "2024-01-05T16:03:44.651Z",
+  "agency": "treasury"
+}

@@ -1,0 +1,110 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395466379"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 1099336932,
+    "browser": {
+      "Safari": 591606012,
+      "Chrome": 348665224,
+      "Safari (in-app)": 55457879,
+      "Edge": 40402997,
+      "Samsung Internet": 22948002,
+      "Android Webview": 22382622,
+      "Firefox": 14124835,
+      "(other)": 78272,
+      "Amazon Silk": 1574902,
+      "Opera": 1244039,
+      "Internet Explorer": 213050,
+      "Mozilla Compatible Agent": 250647,
+      "(not set)": 187346,
+      "YaBrowser": 55526,
+      "Whale Browser": 35283,
+      "Coc Coc": 20329,
+      "Aloha Browser": 15554,
+      "UC Browser": 6364,
+      "Mozilla": 19393,
+      "SeaMonkey": 7134,
+      "PaleMoon": 5793,
+      "DuckDuckGo Browser": 15070,
+      "Iron": 4895,
+      "Meta Quest Browser": 2013,
+      "Waterfox": 2677,
+      "Seznam": 1260,
+      "Android Browser": 2279,
+      "Android Runtime": 1162,
+      "Puffin": 736,
+      "Opera Mini": 836,
+      "Maxthon": 690,
+      "BlackBerry": 514,
+      "IE with Chrome Frame": 801,
+      "Konqueror": 131,
+      "Nokia Browser": 4,
+      "Phoenix Browser": 513,
+      "BrowserNG": 358,
+      "Lynx": 1123,
+      "Nintendo Browser": 86,
+      "Lunascape": 43,
+      "OmniWeb": 2,
+      "Vivaldi": 72,
+      "NetFront": 51,
+      "Swing": 27,
+      "Netscape": 241,
+      "MRCHROME": 12,
+      "Camino": 28,
+      "DoCoMo": 24,
+      "Galeon": 25,
+      "Playstation Vita Browser": 15,
+      "YE": 2,
+      "RockMelt": 15,
+      "CoolNovo": 4,
+      "Playstation 3": 4,
+      "WhiteHat Aviator": 9,
+      "Playstation 4": 2,
+      "EudoraWeb": 2,
+      "Blazer": 3
+    }
+  },
+  "taken_at": "2024-01-05T14:46:02.710Z",
+  "agency": "postal-service"
+}

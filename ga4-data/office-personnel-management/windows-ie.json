@@ -1,0 +1,113 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites."
+  },
+  "totals": {
+    "visits": 10184,
+    "by_windows": {
+      "7": {
+        "undefined": 369
+      },
+      "8": {
+        "undefined": 222
+      },
+      "10": {
+        "undefined": 9249
+      },
+      "98": {
+        "undefined": 9
+      },
+      "2000": {
+        "undefined": 9
+      },
+      "XP": {
+        "undefined": 166
+      },
+      "8.1": {
+        "undefined": 151
+      },
+      "Server 2003": {
+        "undefined": 9
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 369,
+        "8": 222,
+        "10": 9249,
+        "98": 9,
+        "2000": 9,
+        "XP": 166,
+        "8.1": 151,
+        "Server 2003": 9
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:43:27.641Z",
+  "agency": "office-personnel-management"
+}

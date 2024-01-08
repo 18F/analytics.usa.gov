@@ -1,0 +1,142 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 34389457,
+    "by_windows": {
+      "7": {
+        "Chrome": 361199,
+        "Firefox": 133996,
+        "Edge": 19058
+      },
+      "8": {
+        "Chrome": 10474,
+        "Firefox": 328
+      },
+      "10": {
+        "Chrome": 15706426,
+        "Edge": 7679195,
+        "Firefox": 1169771,
+        "Opera": 79108,
+        "Internet Explorer": 36049,
+        "YaBrowser": 3810,
+        "Whale Browser": 133,
+        "Vivaldi": 3147
+      },
+      "11": {
+        "Chrome": 5725060,
+        "Edge": 3349140
+      },
+      "8.1": {
+        "Chrome": 96681,
+        "Edge": 8716,
+        "Firefox": 5486
+      },
+      "XP": {
+        "Chrome": 1680
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 361199,
+        "8": 10474,
+        "10": 15706426,
+        "11": 5725060,
+        "8.1": 96681,
+        "XP": 1680
+      },
+      "Edge": {
+        "7": 19058,
+        "10": 7679195,
+        "11": 3349140,
+        "8.1": 8716
+      },
+      "Firefox": {
+        "7": 133996,
+        "8": 328,
+        "10": 1169771,
+        "8.1": 5486
+      },
+      "Opera": {
+        "10": 79108
+      },
+      "Internet Explorer": {
+        "10": 36049
+      },
+      "YaBrowser": {
+        "10": 3810
+      },
+      "Whale Browser": {
+        "10": 133
+      },
+      "Vivaldi": {
+        "10": 3147
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:06:43.366Z",
+  "agency": "general-services-administration"
+}

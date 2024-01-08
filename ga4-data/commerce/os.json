@@ -1,0 +1,69 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 303469492,
+    "os": {
+      "Windows": 105247952,
+      "iOS": 81567322,
+      "Android": 55658646,
+      "Macintosh": 39059124,
+      "Chrome OS": 11001645,
+      "Linux": 10683186,
+      "(not set)": 143418,
+      "Tizen": 44945,
+      "OS/2": 28972,
+      "Firefox OS": 16477,
+      "Fuchsia": 10688,
+      "Playstation 4": 7117
+    }
+  },
+  "taken_at": "2024-01-05T15:39:41.043Z",
+  "agency": "commerce"
+}

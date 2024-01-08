@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Fratelli Beretta USA, Inc. Recalls Busseto Foods Brand Ready-to-Eat Charcuterie Meat Products Due to Possible Salmonella Contamination | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/food_label_pdf/2024-01/recall-001-2024-labels.pdf",
+      "page": "www.fsis.usda.gov/recalls-alerts/fratelli-beretta-usa-inc--recalls-busseto-foods-brand-ready-eat-charcuterie-meat",
+      "total_events": "2481"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "file_name": "/publications/forms/1217n_24.pdf",
+      "page": "nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "652"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Valley Meats, LLC, Recalls Ground Beef Products Due to Possible E. Coli O157:H7 Contamination | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/food_label_pdf/2023-12/recall-065-2023-labels.pdf",
+      "page": "www.fsis.usda.gov/recalls-alerts/valley-meats-llc-recalls-ground-beef-products-due-possible-e--coli-o157h7",
+      "total_events": "643"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2453.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-beef-reports",
+      "total_events": "573"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WIC Publication of the 2023-2024 Income Eligibility Guidelines | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/wic-ieg-2023-24-memo.pdf",
+      "page": "www.fns.usda.gov/wic/income-eligibility-guidelines-2023-24",
+      "total_events": "536"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "file_name": "/publications/forms/1217n_24.pdf",
+      "page": "www.nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "485"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Pork Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2498.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-pork-reports",
+      "total_events": "475"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WASDE Report | USDA",
+      "event_label": "file_download",
+      "file_name": "/oce/commodity/wasde/wasde1223.pdf",
+      "page": "www.usda.gov/oce/commodity/wasde",
+      "total_events": "425"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA Food Plans: Monthly Cost of Food Reports | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/cost_of_food_low_moderate_liberal_food_plans_november_2023.pdf",
+      "page": "www.fns.usda.gov/cnpp/usda-food-plans-cost-food-monthly-reports",
+      "total_events": "385"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Guaranteed Loan Program | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/fact-sheet/508_rd_fs_rhs_sfhglp.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program",
+      "total_events": "354"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Dietary Guidelines for Americans, 2020-2025 and Online Materials | Dietary Guidelines for Americans",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-03/dietary_guidelines_for_americans-2020-2025.pdf",
+      "page": "www.dietaryguidelines.gov/resources/2020-2025-dietary-guidelines-online-materials",
+      "total_events": "338"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WASDE Report | USDA",
+      "event_label": "file_download",
+      "file_name": "/oce/commodity/wasde/wasde0124.pdf",
+      "page": "www.usda.gov/oce/commodity/wasde",
+      "total_events": "335"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2452.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-beef-reports",
+      "total_events": "326"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home | Dietary Guidelines for Americans",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-03/dietary_guidelines_for_americans-2020-2025.pdf",
+      "page": "www.dietaryguidelines.gov/",
+      "total_events": "325"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA MyPlate What Is MyPlate?",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-01/sswmp%20mini-poster_english_final2022.pdf",
+      "page": "www.myplate.gov/eat-healthy/what-is-myplate",
+      "total_events": "309"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Pork Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2496.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-pork-reports",
+      "total_events": "279"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SNAP FY 2024 Cost-of-Living Adjustments | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/fy24-snap-cola-memo.pdf",
+      "page": "www.fns.usda.gov/snap/fy-2024-cola",
+      "total_events": "252"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Child Nutrition Programs: Income Eligibility Guidelines (2023-2024) | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-02-09/pdf/2023-02739.pdf",
+      "page": "www.fns.usda.gov/cn/fr-020923",
+      "total_events": "243"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notices",
+      "event_label": "file_download",
+      "file_name": "/internet/fsa_notice/cm_861.pdf",
+      "page": "www.fsa.usda.gov/FSA/notices",
+      "total_events": "239"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2451.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-beef-reports",
+      "total_events": "231"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 1800 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/1800-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/1800-calories-ages-14-plus",
+      "total_events": "231"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Programs | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/rd-directlimitmap.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs",
+      "total_events": "216"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 2000 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/2000-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/2000-calories-ages-14-plus",
+      "total_events": "212"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Beginning Farmers and Ranchers Loans",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/factsheets/2023/202310_fsa_loan_begining_farmers.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/farm-loan-programs/beginning-farmers-and-ranchers-loans/index",
+      "total_events": "207"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA Food Plans: Monthly Cost of Food Reports | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/cost_of_food_thrifty_food_plan_november_2023.pdf",
+      "page": "www.fns.usda.gov/cnpp/usda-food-plans-cost-food-monthly-reports",
+      "total_events": "198"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ARC/PLC Program Data",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/arc-plc/2024/arcco_2024_data-2024-01-02-.xlsx",
+      "page": "www.fsa.usda.gov/programs-and-services/arcplc_program/arcplc-program-data/index",
+      "total_events": "195"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ARC/PLC Program Data",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/arc-plc/2024/pdfs/2024_erp.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/arcplc_program/arcplc-program-data/index",
+      "total_events": "192"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "file_name": "/publications/forms/1217n_23.pdf",
+      "page": "nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "171"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 1600 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/1600-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/1600-calories-ages-14-plus",
+      "total_events": "170"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA Climate Change Fellows Program | USDA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/nrcs-conservationdatateam-gis-specialist-riad.pdf",
+      "page": "www.usda.gov/oce/energy-and-environment/climate-change-fellows-program",
+      "total_events": "163"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grant Awards | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/copy-of-rd_grantawards_fy23.xlsx",
+      "page": "www.rd.usda.gov/about-rd/grant-awards",
+      "total_events": "151"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "file_name": "/publications/forms/1217n_23.pdf",
+      "page": "www.nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "147"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Cost of Living Adjustment (COLA) Information | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/media/file/fy24-income-eligibility-standards.pdf",
+      "page": "www.fns.usda.gov/snap/allotment/COLA",
+      "total_events": "145"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 2200 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/2200-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/2200-calories-ages-14-plus",
+      "total_events": "143"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA Food Plans: Monthly Cost of Food Reports | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/cost_of_food_thrifty_food_plan_november_2023_0.pdf",
+      "page": "www.fns.usda.gov/cnpp/usda-food-plans-cost-food-monthly-reports",
+      "total_events": "139"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Livestock Forage Program (LFP)",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/disaster-assist/lfp-maps/2023/cty_pasturetypes_eligible_4lfp.xlsx",
+      "page": "www.fsa.usda.gov/programs-and-services/disaster-assistance-program/livestock-forage/index",
+      "total_events": "131"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 2400 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/2400-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/2400-calories-ages-14-plus",
+      "total_events": "131"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notices",
+      "event_label": "file_download",
+      "file_name": "/internet/fsa_notice/ao_1860.pdf",
+      "page": "www.fsa.usda.gov/FSA/notices",
+      "total_events": "125"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grain Transportation Report | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/media/gtr01042024.pdf",
+      "page": "www.ams.usda.gov/services/transportation-analysis/gtr",
+      "total_events": "124"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2450.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-beef-reports",
+      "total_events": "121"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Farm Ownership Loans",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/factsheets/2023/202310_fsa_farm_loans_overview.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/farm-loan-programs/farm-ownership-loans/index",
+      "total_events": "121"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Handbooks | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/3555-1chapter09.pdf",
+      "page": "www.rd.usda.gov/resources/directives/handbooks",
+      "total_events": "119"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Programs | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/files/rd-grhlimitmap.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs",
+      "total_events": "119"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SFMNP Publication of the 2023-24 Income Eligibility Guidelines | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/sfmnp-ieg-2023-24-memo.pdf",
+      "page": "www.fns.usda.gov/sfmnp/income-eligibility-guidelines-2023-24",
+      "total_events": "115"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Repair Loans & Grants | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/rd-directlimitmap.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants",
+      "total_events": "112"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National School Lunch Program (NSLP) Fact Sheet | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/nslpfactsheet.pdf",
+      "page": "www.fns.usda.gov/nslp/nslp-fact-sheet",
+      "total_events": "109"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Handbooks | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/3550-1chapter04_0.pdf",
+      "page": "www.rd.usda.gov/resources/directives/handbooks",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA 1890 National Scholars Program | USDA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/1890-national-scholars-program-application-applicant-guide.pdf",
+      "page": "www.usda.gov/partnerships/1890NationalScholars",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 3200 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/3200-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/3200-calories-ages-14-plus",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notices",
+      "event_label": "file_download",
+      "file_name": "/internet/fsa_notice/lp_2290.pdf",
+      "page": "www.fsa.usda.gov/FSA/notices",
+      "total_events": "107"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Nutrition Standards for CACFP Meals and Snacks | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/child-adult-lunchsuppertable-edited-030722.pdf",
+      "page": "www.fns.usda.gov/cacfp/meals-and-snacks",
+      "total_events": "106"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Print Resources | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-12/create%20your%20own%20myplate%20menu.pdf",
+      "page": "www.myplate.gov/resources/print-materials",
+      "total_events": "105"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA Climate Change Fellows Program | USDA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/nrcs-conservationdatateam-modeling-specialist-riad.pdf",
+      "page": "www.usda.gov/oce/energy-and-environment/climate-change-fellows-program",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ARC/PLC Program",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/factsheets/2022/fsa_arc_plc_factsheet_101922.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/arcplc_program/index",
+      "total_events": "102"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FSA Directives",
+      "event_label": "file_download",
+      "file_name": "/internet/fsa_notice/cm_861.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/laws-and-regulations/notices/index",
+      "total_events": "100"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Handbooks | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/3555-1chapter10.pdf",
+      "page": "www.rd.usda.gov/resources/directives/handbooks",
+      "total_events": "99"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Guaranteed Loan Program | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/508-rd-sfh-borrowersupportprograms-haf.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program",
+      "total_events": "98"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Handbooks | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/hb-1-3550_2.pdf",
+      "page": "www.rd.usda.gov/resources/directives/handbooks",
+      "total_events": "97"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WIC Food Packages - Maximum Monthly Allowances | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/snapshot-woman-child-food-pkg.pdf",
+      "page": "www.fns.usda.gov/wic/food-packages-maximum-monthly-allowances",
+      "total_events": "97"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "And Justice for All Posters (Guidance and Translations) | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/ajfa-green-030223.pdf",
+      "page": "www.fns.usda.gov/cr/and-justice-all-posters-guidance-and-translations",
+      "total_events": "96"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FoodData Central",
+      "event_label": "file_download",
+      "file_name": "/fdc-datasets/fooddata_central_foundation_food_csv_2023-10-26.zip",
+      "page": "fdc.nal.usda.gov/download-datasets.html",
+      "total_events": "95"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Environmental Quality Incentives Program | Natural Resources Conservation Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-10/eqip-fact-sheet.pdf",
+      "page": "www.nrcs.usda.gov/programs-initiatives/eqip-environmental-quality-incentives",
+      "total_events": "93"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_1856.pdf",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions",
+      "total_events": "91"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "What Can SNAP Buy? | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/snap/snap-staple-foods.pdf",
+      "page": "www.fns.usda.gov/snap/eligible-food-items",
+      "total_events": "90"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/lsddcbs.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-beef-reports",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Regional Direct Slaughter Cattle | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2671.pdf",
+      "page": "www.ams.usda.gov/market-news/regional-direct-slaughter-cattle",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 2600 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/2600-calories-ages-14-plus-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/2600-calories-ages-14-plus",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PAYE Schedule, Calendars, and Additional Information | National Finance Center",
+      "event_label": "file_download",
+      "file_name": "/clientservices/hr_payroll/paye/2024_paye_processing.pdf",
+      "page": "nfc.usda.gov/ClientServices/HR_Payroll/PAYE/",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Regional Direct Slaughter Cattle | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2667.pdf",
+      "page": "www.ams.usda.gov/market-news/regional-direct-slaughter-cattle",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2022.pdf",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Nutrition Standards for CACFP Meals and Snacks | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/child-adult-breakfasttable-edited030722.pdf",
+      "page": "www.fns.usda.gov/cacfp/meals-and-snacks",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Guaranteed Loan Program | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/media/file/download/scc-participating-lenders-andinvestors-buying-scc-loans.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Swine Direct Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2675.pdf",
+      "page": "www.ams.usda.gov/market-news/swine-direct-reports",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "El Yunque National Forest - Home",
+      "event_label": "file_download",
+      "file_name": "/internet/fse_documents/fseprd1132917.pdf",
+      "page": "www.fs.usda.gov/elyunque",
+      "total_events": "85"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Swine Direct Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2674.pdf",
+      "page": "www.ams.usda.gov/market-news/swine-direct-reports",
+      "total_events": "85"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Interim Final Rule: Establishing the Summer EBT Program and Rural Non-Congregate Option in the Summer Meal Programs | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-29/pdf/2023-28488.pdf",
+      "page": "www.fns.usda.gov/summer/fr-122923",
+      "total_events": "84"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Water Supply Outlook Reports - Montana | Natural Resources Conservation Service",
+      "event_label": "file_download",
+      "file_name": "/references/public/mt/wsor202401.pdf",
+      "page": "www.nrcs.usda.gov/conservation-basics/conservation-by-state/montana/montana-snow-survey/water-supply-outlook-reports-montana",
+      "total_events": "83"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily Pork Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/lsddhps.pdf",
+      "page": "www.ams.usda.gov/market-news/daily-pork-reports",
+      "total_events": "80"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Conservation Stewardship Program | Natural Resources Conservation Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/is-csp-right-for-me-11062023.pdf",
+      "page": "www.nrcs.usda.gov/programs-initiatives/csp-conservation-stewardship-program",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Livestock Forage Program (LFP)",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/factsheets/fsa_lfp_livestockforageprogramfactsheet_2022.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/disaster-assistance-program/livestock-forage/index",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "file_name": "/publications/forms/1217n_25.pdf",
+      "page": "nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "A Guide to Smart Snacks in School | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/smartsnacks.pdf",
+      "page": "www.fns.usda.gov/tn/guide-smart-snacks-school",
+      "total_events": "77"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Emergency Relief Program",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/emergency-relief-program/docs/erp2022_tool_version_final_11062023.xlsm",
+      "page": "www.fsa.usda.gov/programs-and-services/emergency-relief/index",
+      "total_events": "77"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Farm Storage Facility Loan Program",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/factsheets/2022/farm_storage_facility_loan_programs_fact_sheet_july_2022.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/price-support/facility-loans/farm-storage/index",
+      "total_events": "77"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Resilient Food Systems Infrastructure Program | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/media/rfsi_programscopeandrequirements.pdf",
+      "page": "www.ams.usda.gov/services/grants/rfsi",
+      "total_events": "77"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_1850.pdf",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Single Family Housing Repair Loans & Grants in California | Rural Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/rd-directlimitmap.pdf",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants/ca",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WIC Food Packages - Maximum Monthly Allowances | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/snapshot-infant-food-pkg.pdf",
+      "page": "www.fns.usda.gov/wic/food-packages-maximum-monthly-allowances",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_1891.pdf",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2024 Mileage Reimbursement Rates | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/media_file/documents/01-24.pdf",
+      "page": "www.fsis.usda.gov/policy/fsis-notice/01-24",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CACFP Reimbursement Rates | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-07-07/pdf/2023-14317.pdf",
+      "page": "www.fns.usda.gov/cacfp/reimbursement-rates",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Cost of Living Adjustment (COLA) Information | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/media/file/fy24-maximum-allotments-and-deductions.pdf",
+      "page": "www.fns.usda.gov/snap/allotment/COLA",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Farm Loan Programs",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/farm-loan-programs/pdfs/your_guide_to_farm_loans.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/farm-loan-programs/index",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Print Resources | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-12/abriefhistoryofusdafoodguides.pdf",
+      "page": "www.myplate.gov/resources/print-materials",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your MyPlate Plan - 2000 Calories, Ages 9-13 Years | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/2000-calories-ages-9-13-years.pdf",
+      "page": "www.myplate.gov/myplate-plan/results/2000-calories-ages-9-13",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Emergency Relief Program",
+      "event_label": "file_download",
+      "file_name": "/assets/usda-fsa-public/usdafiles/emergency-relief-program/pdfs/fsa_524_erp_2022_tracks_2_application.pdf",
+      "page": "www.fsa.usda.gov/programs-and-services/emergency-relief/index",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USDA ERS - Livestock, Dairy, and Poultry Outlook: December 2023",
+      "event_label": "file_download",
+      "file_name": "/webdocs/outlooks/108146/ldp-m-354.pdf",
+      "page": "www.ers.usda.gov/publications/pub-details/",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Print Resources | MyPlate",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-12/create%20a%20grocery%20game%20plan_grocery%20list.pdf",
+      "page": "www.myplate.gov/resources/print-materials",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Regional Direct Slaughter Cattle | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "file_name": "/mnreports/ams_2665.pdf",
+      "page": "www.ams.usda.gov/market-news/regional-direct-slaughter-cattle",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Applying for Free and Reduced Price School Meals | Food and Nutrition Service",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/resource-files/sp16-2023a2englishapp.pdf",
+      "page": "www.fns.usda.gov/cn/applying-free-and-reduced-price-school-meals",
+      "total_events": "68"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:51:11.316Z",
+  "agency": "agriculture"
+}

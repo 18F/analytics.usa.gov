@@ -1,0 +1,164 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "vote.gov",
+      "visits": "59181"
+    },
+    {
+      "hostname": "tricare.mil",
+      "visits": "1"
+    },
+    {
+      "hostname": "treasurydirect.gov",
+      "visits": "77"
+    },
+    {
+      "hostname": "search.gov",
+      "visits": "2478"
+    },
+    {
+      "hostname": "sbst.gov",
+      "visits": "129"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "1576049"
+    },
+    {
+      "hostname": "realestatesales.gov",
+      "visits": "58938"
+    },
+    {
+      "hostname": "presidentialinnovationfellows.gov",
+      "visits": "2157"
+    },
+    {
+      "hostname": "ncua.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "login.gov",
+      "visits": "379693"
+    },
+    {
+      "hostname": "health.mil",
+      "visits": "5"
+    },
+    {
+      "hostname": "gsaauctions.gov",
+      "visits": "110502"
+    },
+    {
+      "hostname": "gsaadvantage.gov",
+      "visits": "976"
+    },
+    {
+      "hostname": "gsa.gov",
+      "visits": "98"
+    },
+    {
+      "hostname": "geoplatform.gov",
+      "visits": "43"
+    },
+    {
+      "hostname": "fpds.gov",
+      "visits": "103"
+    },
+    {
+      "hostname": "fai.gov",
+      "visits": "2513"
+    },
+    {
+      "hostname": "digital.gov",
+      "visits": "15921"
+    },
+    {
+      "hostname": "data.gov",
+      "visits": "50975"
+    },
+    {
+      "hostname": "computersforlearning.gov",
+      "visits": "592"
+    },
+    {
+      "hostname": "code.gov",
+      "visits": "742"
+    },
+    {
+      "hostname": "cloud.gov",
+      "visits": "2986"
+    },
+    {
+      "hostname": "ai.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "acquisitiongateway.gov",
+      "visits": "193"
+    },
+    {
+      "hostname": "acquisition.gov",
+      "visits": "4915"
+    }
+  ],
+  "totals": {
+    "visits": 2269270
+  },
+  "taken_at": "2024-01-05T16:07:03.728Z",
+  "agency": "general-services-administration"
+}

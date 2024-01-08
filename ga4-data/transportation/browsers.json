@@ -1,0 +1,98 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 30505260,
+    "browser": {
+      "Chrome": 15697316,
+      "Safari": 7685116,
+      "Edge": 3536044,
+      "Firefox": 877257,
+      "Internet Explorer": 632110,
+      "Safari (in-app)": 907088,
+      "Samsung Internet": 302976,
+      "Android Webview": 622058,
+      "(not set)": 76016,
+      "Opera": 59537,
+      "Mozilla Compatible Agent": 61945,
+      "Amazon Silk": 29847,
+      "YaBrowser": 6612,
+      "Whale Browser": 2995,
+      "UC Browser": 2473,
+      "Opera Mini": 1148,
+      "Android Runtime": 560,
+      "Android Browser": 208,
+      "Coc Coc": 992,
+      "Meta Quest Browser": 262,
+      "Mozilla": 595,
+      "PaleMoon": 130,
+      "SeaMonkey": 182,
+      "Aloha Browser": 628,
+      "Puffin": 451,
+      "DuckDuckGo Browser": 354,
+      "BlackBerry": 16,
+      "Iron": 11,
+      "Playstation Vita Browser": 5,
+      "Seznam": 9,
+      "Nintendo Browser": 13,
+      "Phoenix Browser": 108,
+      "Konqueror": 3,
+      "Waterfox": 47,
+      "Netscape": 38,
+      "IE with Chrome Frame": 6,
+      "Vivaldi": 66,
+      "Maxthon": 16,
+      "Lunascape": 1,
+      "Lynx": 14,
+      "DoCoMo": 1,
+      "Swing": 1,
+      "NetFront": 1,
+      "Camino": 1,
+      "AdobeAIR": 1,
+      "Playstation 4": 2
+    }
+  },
+  "taken_at": "2024-01-05T14:36:46.178Z",
+  "agency": "transportation"
+}

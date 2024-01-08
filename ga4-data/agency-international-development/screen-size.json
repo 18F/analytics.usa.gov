@@ -1,0 +1,93 @@
+{
+  "name": "screen-size",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "screenResolution"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1000"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Screen Resolution",
+    "description": "90 days of Screen Resolution visits for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 2464834,
+    "screen_resolution": {
+      "1920x1080": 435929,
+      "1280x720": 404060,
+      "1024x768": 322008,
+      "1536x864": 256415,
+      "1366x768": 272327,
+      "1440x900": 242072,
+      "360x800": 141369,
+      "375x812": 47687,
+      "390x844": 103461,
+      "414x896": 28195,
+      "1280x960": 6708,
+      "800x600": 4584,
+      "1280x800": 40080,
+      "393x873": 30656,
+      "385x854": 15337,
+      "393x851": 16296,
+      "360x760": 11444,
+      "412x915": 17689,
+      "360x780": 9811,
+      "360x820": 6254,
+      "412x892": 7905,
+      "360x806": 5613,
+      "384x857": 6875,
+      "360x640": 4519,
+      "412x869": 4187,
+      "360x720": 3065,
+      "384x854": 5261,
+      "412x846": 3488,
+      "360x772": 2365,
+      "360x825": 1776,
+      "384x832": 1606,
+      "393x876": 1293,
+      "393x895": 1242,
+      "360x803": 1125,
+      "424x942": 1121,
+      "360x804": 1011
+    }
+  },
+  "taken_at": "2024-01-05T16:05:00.250Z",
+  "agency": "agency-international-development"
+}

@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "forecast.weather.gov",
+      "visits": "11446717"
+    },
+    {
+      "domain": "www.weather.gov",
+      "visits": "4663487"
+    },
+    {
+      "domain": "radar.weather.gov",
+      "visits": "1414207"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "1210137"
+    },
+    {
+      "domain": "www.noaa.gov",
+      "visits": "838170"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "803664"
+    },
+    {
+      "domain": "www.nhc.noaa.gov",
+      "visits": "477838"
+    },
+    {
+      "domain": "www.uspto.gov",
+      "visits": "457618"
+    },
+    {
+      "domain": "aviationweather.gov",
+      "visits": "444644"
+    },
+    {
+      "domain": "www.time.gov",
+      "visits": "375996"
+    },
+    {
+      "domain": "www.ndbc.noaa.gov",
+      "visits": "310528"
+    },
+    {
+      "domain": "www.star.nesdis.noaa.gov",
+      "visits": "293274"
+    },
+    {
+      "domain": "www.wpc.ncep.noaa.gov",
+      "visits": "285934"
+    },
+    {
+      "domain": "www.trade.gov",
+      "visits": "282303"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "275626"
+    },
+    {
+      "domain": "bwt.cbp.gov",
+      "visits": "274698"
+    },
+    {
+      "domain": "tsdr.uspto.gov",
+      "visits": "260417"
+    },
+    {
+      "domain": "www.spc.noaa.gov",
+      "visits": "221645"
+    },
+    {
+      "domain": "oceanservice.noaa.gov",
+      "visits": "221404"
+    },
+    {
+      "domain": "tidesandcurrents.noaa.gov",
+      "visits": "178577"
+    }
+  ],
+  "totals": {
+    "visits": 24736884
+  },
+  "taken_at": "2024-01-05T15:39:51.218Z",
+  "agency": "commerce"
+}

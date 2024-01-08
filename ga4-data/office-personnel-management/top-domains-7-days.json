@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "4267338"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "1301125"
+    },
+    {
+      "domain": "cbp.usajobs.gov",
+      "visits": "94697"
+    },
+    {
+      "domain": "securityawareness.usalearning.gov",
+      "visits": "80964"
+    },
+    {
+      "domain": "www.intelligencecareers.gov",
+      "visits": "34766"
+    },
+    {
+      "domain": "bil.usajobs.gov",
+      "visits": "17330"
+    },
+    {
+      "domain": "forestservicecareers.usajobs.gov",
+      "visits": "15222"
+    },
+    {
+      "domain": "dw.opm.gov",
+      "visits": "13366"
+    },
+    {
+      "domain": "intern.usajobs.gov",
+      "visits": "11932"
+    },
+    {
+      "domain": "ssai.usajobs.gov",
+      "visits": "9347"
+    },
+    {
+      "domain": "dhs.usajobs.gov",
+      "visits": "7612"
+    },
+    {
+      "domain": "usda.usajobs.gov",
+      "visits": "7537"
+    },
+    {
+      "domain": "hrmanagement.usajobs.gov",
+      "visits": "7421"
+    },
+    {
+      "domain": "nasa.usajobs.gov",
+      "visits": "5469"
+    },
+    {
+      "domain": "natsec.usajobs.gov",
+      "visits": "4319"
+    },
+    {
+      "domain": "nurse.usajobs.gov",
+      "visits": "4310"
+    },
+    {
+      "domain": "faa.usajobs.gov",
+      "visits": "3822"
+    },
+    {
+      "domain": "acquisitions.usajobs.gov",
+      "visits": "3400"
+    },
+    {
+      "domain": "irs.usajobs.gov",
+      "visits": "3369"
+    },
+    {
+      "domain": "cfccharities.opm.gov",
+      "visits": "2998"
+    }
+  ],
+  "totals": {
+    "visits": 5896344
+  },
+  "taken_at": "2024-01-05T14:44:10.126Z",
+  "agency": "office-personnel-management"
+}

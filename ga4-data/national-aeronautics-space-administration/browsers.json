@@ -1,0 +1,105 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 76607098,
+    "browser": {
+      "Chrome": 45172274,
+      "Safari": 18985983,
+      "Edge": 4611579,
+      "Firefox": 2485517,
+      "Safari (in-app)": 1627180,
+      "Android Webview": 1490010,
+      "Samsung Internet": 1132718,
+      "Opera": 399145,
+      "Mozilla Compatible Agent": 197513,
+      "Amazon Silk": 102746,
+      "YaBrowser": 108570,
+      "Internet Explorer": 23080,
+      "Opera Mini": 39067,
+      "(not set)": 145961,
+      "Whale Browser": 22512,
+      "UC Browser": 15129,
+      "Android Runtime": 7554,
+      "Mozilla": 9673,
+      "Coc Coc": 7821,
+      "PaleMoon": 4103,
+      "SeaMonkey": 3548,
+      "Android Browser": 4140,
+      "Meta Quest Browser": 1509,
+      "Puffin": 2215,
+      "Aloha Browser": 1796,
+      "Seznam": 1248,
+      "DuckDuckGo Browser": 1342,
+      "Waterfox": 739,
+      "BlackBerry": 201,
+      "BrowserNG": 47,
+      "Maxthon": 213,
+      "Nintendo Browser": 102,
+      "Nokia Browser": 54,
+      "Iron": 13,
+      "Lynx": 77,
+      "Netscape": 177,
+      "Phoenix Browser": 681,
+      "Playstation 4": 12,
+      "Konqueror": 107,
+      "Vivaldi": 493,
+      "IE with Chrome Frame": 21,
+      "Lunascape": 7,
+      "YE": 17,
+      "Galeon": 23,
+      "NetFront": 100,
+      "Playstation Vita Browser": 43,
+      "MRCHROME": 17,
+      "Blazer": 11,
+      "EudoraWeb": 4,
+      "Camino": 2,
+      "Swing": 1,
+      "AdobeAIR": 1,
+      "NetNewsWire Browser": 2
+    }
+  },
+  "taken_at": "2024-01-05T14:16:00.674Z",
+  "agency": "national-aeronautics-space-administration"
+}

@@ -1,0 +1,284 @@
+{
+  "name": "top-pages-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      },
+      {
+        "name": "fullPageUrl"
+      },
+      {
+        "name": "pageTitle"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "activeUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Top Pages (30 Days)",
+    "description": "Last 30 days' top 20 pages, measured by page views, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nasa.gov",
+      "page": "www.nasa.gov/",
+      "page_title": "NASA",
+      "pageviews": "2389512",
+      "visits": "1697305",
+      "active_visitors": "1139616",
+      "pageviews_per_session": "1.4078271141603895",
+      "avg_session_duration": "144.67795648223245",
+      "bounce_rate": "0.38872860210745858"
+    },
+    {
+      "domain": "europa.nasa.gov",
+      "page": "europa.nasa.gov/message-in-a-bottle/sign-on/",
+      "page_title": "Sign On | Message in a Bottle – NASA's Europa Clipper",
+      "pageviews": "1654692",
+      "visits": "1225074",
+      "active_visitors": "908800",
+      "pageviews_per_session": "1.3506873870476395",
+      "avg_session_duration": "120.50686870306124",
+      "bounce_rate": "0.42688768188697174"
+    },
+    {
+      "domain": "apod.nasa.gov",
+      "page": "apod.nasa.gov/apod/astropix.html",
+      "page_title": "Astronomy Picture of the Day",
+      "pageviews": "1479410",
+      "visits": "1260769",
+      "active_visitors": "384604",
+      "pageviews_per_session": "1.1734179695090854",
+      "avg_session_duration": "144.82445355169079",
+      "bounce_rate": "0.4864110713382071"
+    },
+    {
+      "domain": "sdo.gsfc.nasa.gov",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "pageviews": "613367",
+      "visits": "45647",
+      "active_visitors": "19106",
+      "pageviews_per_session": "13.43718097574868",
+      "avg_session_duration": "1687.9820681833205",
+      "bounce_rate": "0.13008521918198349"
+    },
+    {
+      "domain": "science.nasa.gov",
+      "page": "science.nasa.gov/eclipses/future-eclipses/eclipse-2024/where-when/",
+      "page_title": "2024 Total Eclipse: Where & When - NASA Science",
+      "pageviews": "578267",
+      "visits": "540711",
+      "active_visitors": "423908",
+      "pageviews_per_session": "1.0694566968306545",
+      "avg_session_duration": "111.44076594571534",
+      "bounce_rate": "0.50099406152269876"
+    },
+    {
+      "domain": "apod.nasa.gov",
+      "page": "apod.nasa.gov/apod/archivepix.html",
+      "page_title": "Astronomy Picture of the Day Archive 2015",
+      "pageviews": "394290",
+      "visits": "233467",
+      "active_visitors": "106392",
+      "pageviews_per_session": "1.6888468177515452",
+      "avg_session_duration": "70.345286737240968",
+      "bounce_rate": "0.10571515460429097"
+    },
+    {
+      "domain": "europa.nasa.gov",
+      "page": "europa.nasa.gov/message-in-a-bottle/check-in/",
+      "page_title": "Check In | Message in a Bottle – NASA's Europa Clipper",
+      "pageviews": "338798",
+      "visits": "239230",
+      "active_visitors": "179012",
+      "pageviews_per_session": "1.4162019813568532",
+      "avg_session_duration": "141.42921039759597",
+      "bounce_rate": "0.39556493750783767"
+    },
+    {
+      "domain": "apod.nasa.gov",
+      "page": "apod.nasa.gov/apod/archivepixFull.html",
+      "page_title": "Astronomy Picture of the Day Archive",
+      "pageviews": "317224",
+      "visits": "225168",
+      "active_visitors": "164805",
+      "pageviews_per_session": "1.4088325161657074",
+      "avg_session_duration": "105.86536773030903",
+      "bounce_rate": "0.15907677822781213"
+    },
+    {
+      "domain": "apod.nasa.gov",
+      "page": "apod.nasa.gov/apod/",
+      "page_title": "Astronomy Picture of the Day",
+      "pageviews": "300879",
+      "visits": "258195",
+      "active_visitors": "129319",
+      "pageviews_per_session": "1.1653169116365538",
+      "avg_session_duration": "132.24519621021898",
+      "bounce_rate": "0.60931853831406491"
+    },
+    {
+      "domain": "eyes.nasa.gov",
+      "page": "eyes.nasa.gov/apps/solar-system/#/home",
+      "page_title": "NASA/JPL Eyes on the Solar System",
+      "pageviews": "299466",
+      "visits": "189427",
+      "active_visitors": "144165",
+      "pageviews_per_session": "1.5809045173074587",
+      "avg_session_duration": "104.21955269441894",
+      "bounce_rate": "0.080020271661378789"
+    },
+    {
+      "domain": "science.nasa.gov",
+      "page": "science.nasa.gov/mission/hubble/multimedia/what-did-hubble-see-on-your-birthday/",
+      "page_title": "What Did Hubble See on Your Birthday? - NASA Science",
+      "pageviews": "297050",
+      "visits": "217528",
+      "active_visitors": "191224",
+      "pageviews_per_session": "1.365571328748483",
+      "avg_session_duration": "58.497624904402265",
+      "bounce_rate": "0.46990272516641535"
+    },
+    {
+      "domain": "europa.nasa.gov",
+      "page": "europa.nasa.gov/",
+      "page_title": "NASA's Europa Clipper",
+      "pageviews": "287146",
+      "visits": "231974",
+      "active_visitors": "198960",
+      "pageviews_per_session": "1.237836998974023",
+      "avg_session_duration": "64.692180512749459",
+      "bounce_rate": "0.17799839637200721"
+    },
+    {
+      "domain": "spaceplace.nasa.gov",
+      "page": "spaceplace.nasa.gov/blue-sky/sp/",
+      "page_title": "Why Is the Sky Blue? | NASA Space Place – NASA Science for Kids",
+      "pageviews": "253069",
+      "visits": "226070",
+      "active_visitors": "147676",
+      "pageviews_per_session": "1.1194276109169725",
+      "avg_session_duration": "53.713972055087474",
+      "bounce_rate": "0.73749723536957579"
+    },
+    {
+      "domain": "urs.earthdata.nasa.gov",
+      "page": "urs.earthdata.nasa.gov/oauth/authorize",
+      "page_title": "Earthdata Login",
+      "pageviews": "236738",
+      "visits": "143269",
+      "active_visitors": "98440",
+      "pageviews_per_session": "1.6524021246745633",
+      "avg_session_duration": "119.47492425420056",
+      "bounce_rate": "0.30981580104558559"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "page": "www.nasa.gov/missions/emit/nasa-sensor-produces-first-global-maps-of-surface-minerals-in-arid-regions/",
+      "page_title": "NASA Sensor Produces First Global Maps of Surface Minerals in Arid Regions - NASA",
+      "pageviews": "225586",
+      "visits": "210660",
+      "active_visitors": "187855",
+      "pageviews_per_session": "1.0708535080224058",
+      "avg_session_duration": "55.764053371900467",
+      "bounce_rate": "0.55283395044146966"
+    },
+    {
+      "domain": "science.nasa.gov",
+      "page": "science.nasa.gov/solar-system/",
+      "page_title": "Solar System Exploration - NASA Science",
+      "pageviews": "221481",
+      "visits": "154227",
+      "active_visitors": "117609",
+      "pageviews_per_session": "1.4360715049893988",
+      "avg_session_duration": "81.742809216348022",
+      "bounce_rate": "0.065345237863668484"
+    },
+    {
+      "domain": "spaceplace.nasa.gov",
+      "page": "spaceplace.nasa.gov/blue-sky/en/",
+      "page_title": "Why Is the Sky Blue? | NASA Space Place – NASA Science for Kids",
+      "pageviews": "194299",
+      "visits": "172410",
+      "active_visitors": "122964",
+      "pageviews_per_session": "1.1269589930978481",
+      "avg_session_duration": "55.586127297820354",
+      "bounce_rate": "0.71379850356707852"
+    },
+    {
+      "domain": "science.nasa.gov",
+      "page": "science.nasa.gov/solar-system/planets/",
+      "page_title": "Planets - NASA Science",
+      "pageviews": "175984",
+      "visits": "109260",
+      "active_visitors": "83934",
+      "pageviews_per_session": "1.6106992494966135",
+      "avg_session_duration": "127.55889181280216",
+      "bounce_rate": "0.17789676002196594"
+    },
+    {
+      "domain": "webb.nasa.gov",
+      "page": "webb.nasa.gov/",
+      "page_title": "Webb Image Release- Webb Space Telescope GSFC/NASA",
+      "pageviews": "174792",
+      "visits": "157803",
+      "active_visitors": "95325",
+      "pageviews_per_session": "1.1076595501986655",
+      "avg_session_duration": "97.32704912011755",
+      "bounce_rate": "0.4469560147779193"
+    },
+    {
+      "domain": "eyes.nasa.gov",
+      "page": "eyes.nasa.gov/apps/solar-system/#/story/total_solar_eclipse",
+      "page_title": "NASA/JPL Eyes on the Solar System",
+      "pageviews": "172900",
+      "visits": "140185",
+      "active_visitors": "129405",
+      "pageviews_per_session": "1.2333773228234119",
+      "avg_session_duration": "56.177833287675625",
+      "bounce_rate": "0.02590148732032671"
+    }
+  ],
+  "totals": {
+    "visits": 7678379
+  },
+  "taken_at": "2024-01-05T15:37:02.566Z",
+  "agency": "national-aeronautics-space-administration"
+}

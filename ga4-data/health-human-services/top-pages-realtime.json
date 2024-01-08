@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Search the Exclusions Database | Office of Inspector General",
+      "active_visitors": "737"
+    },
+    {
+      "page_title": "Calculate Your BMI - Standard BMI Calculator",
+      "active_visitors": "701"
+    },
+    {
+      "page_title": "Find Healthcare Providers: Compare Care Near You | Medicare",
+      "active_visitors": "689"
+    },
+    {
+      "page_title": "PIVRedirector",
+      "active_visitors": "591"
+    },
+    {
+      "page_title": "OIG Search Results",
+      "active_visitors": "495"
+    },
+    {
+      "page_title": "Welcome to Medicare | Medicare",
+      "active_visitors": "399"
+    },
+    {
+      "page_title": "Get Four Free At-⁠Home COVID-⁠19 Tests This Fall | COVID.gov",
+      "active_visitors": "375"
+    },
+    {
+      "page_title": "SAMHSA Publications and Digital Products",
+      "active_visitors": "335"
+    },
+    {
+      "page_title": "Open Enrollment ends Jan 16 - enroll now | HealthCare.gov",
+      "active_visitors": "318"
+    },
+    {
+      "page_title": "Search Results | CDC",
+      "active_visitors": "309"
+    },
+    {
+      "page_title": "Drugs@FDA: FDA-Approved Drugs",
+      "active_visitors": "259"
+    },
+    {
+      "page_title": "Calculadora del IMC para adultos: Sistema métrico | Peso Saludable | DNPAO | CDC",
+      "active_visitors": "239"
+    },
+    {
+      "page_title": "Isolation and Precautions for People with COVID-19 | CDC",
+      "active_visitors": "228"
+    },
+    {
+      "page_title": "Adult BMI Calculator | Healthy Weight, Nutrition, and Physical Activity | CDC",
+      "active_visitors": "203"
+    },
+    {
+      "page_title": "Subscribe to get Marketplace updates by email and text message | HealthCare.gov",
+      "active_visitors": "197"
+    },
+    {
+      "page_title": "At-Home OTC COVID-19 Diagnostic Tests | FDA",
+      "active_visitors": "187"
+    },
+    {
+      "page_title": "CMS Enterprise Portal",
+      "active_visitors": "182"
+    },
+    {
+      "page_title": "Explore your Medicare coverage options",
+      "active_visitors": "175"
+    },
+    {
+      "page_title": "Health insurance plans & prices | HealthCare.gov",
+      "active_visitors": "168"
+    },
+    {
+      "page_title": "Calculate Your BMI - Metric BMI Calculator",
+      "active_visitors": "164"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:02:53.093Z",
+  "agency": "health-human-services"
+}

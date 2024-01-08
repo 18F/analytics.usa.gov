@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Passport Fees",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/fees.html",
+      "total_events": "63043"
+    },
+    {
+      "page_title": "Apply for a Child's U.S. Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/under-16.html",
+      "total_events": "33549"
+    },
+    {
+      "page_title": "Renew my Passport by Mail",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/have-passport/renew.html",
+      "total_events": "29088"
+    },
+    {
+      "page_title": "How to Apply in Person for a Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html",
+      "total_events": "27816"
+    },
+    {
+      "page_title": "Passport Forms",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/forms.html",
+      "total_events": "21645"
+    },
+    {
+      "page_title": "Monthly Immigrant Visa Issuance Statistics",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/immigrant-visa-statistics/monthly-immigrant-visa-issuances.html",
+      "total_events": "8156"
+    },
+    {
+      "page_title": "Visa Bulletin For January 2024",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2024/visa-bulletin-for-january-2024.html",
+      "total_events": "7329"
+    },
+    {
+      "page_title": "DS-160: Frequently Asked Questions",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html#doclist",
+      "total_events": "6877"
+    },
+    {
+      "page_title": "Already Have a Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/have-passport.html",
+      "total_events": "6394"
+    },
+    {
+      "page_title": "Citizenship Evidence",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/citizenship-evidence.html",
+      "total_events": "5095"
+    },
+    {
+      "page_title": "Applying for a Passport as a 16-17 Year Old",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/16-17.html",
+      "total_events": "4677"
+    },
+    {
+      "page_title": "Need a Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport.html",
+      "total_events": "4469"
+    },
+    {
+      "page_title": "U.S. Passport Photos",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/photos.html",
+      "total_events": "4386"
+    },
+    {
+      "page_title": "U.S. Passport Form Wizard",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/form-finder.html",
+      "total_events": "3984"
+    },
+    {
+      "page_title": "ESTA（エスタ）申請 - 在日米国大使館と領事館",
+      "event_label": "file_download",
+      "page": "jp.usembassy.gov/ja/visas-ja/esta-information-ja/",
+      "total_events": "3955"
+    },
+    {
+      "page_title": "Name Change for U.S. Passport or Correct a Printing or Data Error",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/have-passport/change-correct.html",
+      "total_events": "3543"
+    },
+    {
+      "page_title": "DS-160: Frequently Asked Questions",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html",
+      "total_events": "3257"
+    },
+    {
+      "page_title": "Monthly Nonimmigrant Visa Issuance Statistics",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/monthly-nonimmigrant-visa-issuances.html",
+      "total_events": "3035"
+    },
+    {
+      "page_title": "Internship Opportunities - U.S. Embassy in Azerbaijan",
+      "event_label": "file_download",
+      "page": "az.usembassy.gov/internship/",
+      "total_events": "2636"
+    },
+    {
+      "page_title": "National Visa Center (NVC) Immigrant Visa Backlog Report",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/visas-backlog.html",
+      "total_events": "2423"
+    },
+    {
+      "page_title": "Passport Forms",
+      "event_label": "file_download",
+      "page": "eforms.state.gov/PassportForms.aspx",
+      "total_events": "2339"
+    },
+    {
+      "page_title": "What is a Passport Card?",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/card.html",
+      "total_events": "1980"
+    },
+    {
+      "page_title": "Formularios",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/es/pasaportes/requisitos-para-tramitar-el-pasaporte/formularios.html",
+      "total_events": "1887"
+    },
+    {
+      "page_title": "Diversity Visa Instructions",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-instructions.html",
+      "total_events": "1772"
+    },
+    {
+      "page_title": "DS-260 Immigrant Visa Electronic Application - Frequently Asked Questions (FAQs)",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/online-immigrant-visa-forms/ds-260-faqs.html",
+      "total_events": "1762"
+    },
+    {
+      "page_title": "Report of the Visa Office 2022",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/annual-reports/report-of-the-visa-office-2022.html",
+      "total_events": "1727"
+    },
+    {
+      "page_title": "Menores de 16 Años",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/es/pasaportes/tramite-mi-pasaporte/menores.html",
+      "total_events": "1563"
+    },
+    {
+      "page_title": "Birth of U.S. Citizens Abroad",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/international-travel/while-abroad/birth-abroad.html",
+      "total_events": "1495"
+    },
+    {
+      "page_title": "How to Report a Passport Lost or Stolen",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/have-passport/lost-stolen.html",
+      "total_events": "1475"
+    },
+    {
+      "page_title": "Online Application",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/the-immigrant-visa-process/step-5-collect-financial-evidence-and-other-supporting-documents/step-6-complete-online-visa-application.html",
+      "total_events": "1428"
+    },
+    {
+      "page_title": "Visa Bulletin For December 2023",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2024/visa-bulletin-for-december-2023.html",
+      "total_events": "1424"
+    },
+    {
+      "page_title": "How to Replace or Amend a Consular Report of Birth Abroad (CRBA)",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/records-and-authentications/requesting-a-vital-record-as-a-u-s--citizen/replace-amend-CRBA.html",
+      "total_events": "1377"
+    },
+    {
+      "page_title": "Form Finder",
+      "event_label": "file_download",
+      "page": "eforms.state.gov/",
+      "total_events": "1299"
+    },
+    {
+      "page_title": "Resources – Bureau of Global Talent Management - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/resources-bureau-of-global-talent-management/",
+      "total_events": "1215"
+    },
+    {
+      "page_title": "Visas - U.S. Embassy & Consulates in India",
+      "event_label": "file_download",
+      "page": "in.usembassy.gov/visas/",
+      "total_events": "1184"
+    },
+    {
+      "page_title": "Call for Applications for the 2024-2025 Community College Initiative (CCI) Program - U.S. Embassy in Bangladesh",
+      "event_label": "file_download",
+      "page": "bd.usembassy.gov/call-for-applications-for-the-2024-2025-community-college-initiative-cci-program/",
+      "total_events": "1064"
+    },
+    {
+      "page_title": "The Visa Bulletin",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html",
+      "total_events": "1042"
+    },
+    {
+      "page_title": "Special Immigrant Visas for Afghans - Who Were Employed by/on Behalf of the U.S. Government",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/special-immg-visa-afghans-employed-us-gov.html",
+      "total_events": "1025"
+    },
+    {
+      "page_title": "Telephone Directory - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/telephone-directory/",
+      "total_events": "981"
+    },
+    {
+      "page_title": "Requesting Authentication Services",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/records-and-authentications/authenticate-your-document/requesting-authentication-services.html",
+      "total_events": "947"
+    },
+    {
+      "page_title": "Bringing Over-the-Counter Medicine and Prescriptions into Japan - U.S. Embassy & Consulates in Japan",
+      "event_label": "file_download",
+      "page": "jp.usembassy.gov/services/importing-medication/",
+      "total_events": "898"
+    },
+    {
+      "page_title": "Office of Authentications",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/records-and-authentications/authenticate-your-document/office-of-authentications.html",
+      "total_events": "893"
+    },
+    {
+      "page_title": "Frequently Asked Questions",
+      "event_label": "file_download",
+      "page": "pptform.state.gov/include/FAQ.htm",
+      "total_events": "887"
+    },
+    {
+      "page_title": "Immigrant Visa Statistics",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/immigrant-visa-statistics.html",
+      "total_events": "884"
+    },
+    {
+      "page_title": "List of U.S. Embassies and Consulates - K1-K3 Visas",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/list-of-posts-k1-k3-visas.html",
+      "total_events": "866"
+    },
+    {
+      "page_title": "DS-160: Preguntas frecuentes",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html#doclist",
+      "total_events": "859"
+    },
+    {
+      "page_title": "APPEL A CANDIDATURES POUR LES PROGRAMMES DE BOURSES D’ETUDE AU TITRE DE 2025 - Ambassade des Etats-Unis au Mali",
+      "event_label": "file_download",
+      "page": "ml.usembassy.gov/fr/appel-a-candidature-pour-le-programme-dechange-fulbright-humphrey/",
+      "total_events": "850"
+    },
+    {
+      "page_title": "J-1 Visa Basics - BridgeUSABridgeUSA",
+      "event_label": "file_download",
+      "page": "j1visa.state.gov/basics/",
+      "total_events": "833"
+    },
+    {
+      "page_title": "DS-11 / DS-3053 - Wizard Results",
+      "event_label": "file_download",
+      "page": "common.usembassy.gov/en/ds-3053/",
+      "total_events": "830"
+    },
+    {
+      "page_title": "Le Programme de Leadership pour la Jeunesse Panafricaine (PAYLP) 2024 - Ambassade des États-Unis à Guinea",
+      "event_label": "file_download",
+      "page": "gn.usembassy.gov/fr/le-programme-de-leadership-pour-la-jeunesse-panafricaine-paylp-2024/",
+      "total_events": "801"
+    },
+    {
+      "page_title": "Where to Apply for a U.S. Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/where-to-apply.html",
+      "total_events": "791"
+    },
+    {
+      "page_title": "Integrated Country Strategies - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/integrated-country-strategies/",
+      "total_events": "779"
+    },
+    {
+      "page_title": "Rights and Protections for Temporary Workers",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/temporary-workers.html",
+      "total_events": "772"
+    },
+    {
+      "page_title": "Primer Pasaporte para Adulto",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/es/pasaportes/tramite-mi-pasaporte/primer.html",
+      "total_events": "734"
+    },
+    {
+      "page_title": "QR Code Sticker on U.S. Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/passport-help/after-getting-passport.html",
+      "total_events": "732"
+    },
+    {
+      "page_title": "Information for U.S. citizens traveling to Japan - U.S. Embassy & Consulates in Japan",
+      "event_label": "file_download",
+      "page": "jp.usembassy.gov/services/welcomebacktojapan/",
+      "total_events": "695"
+    },
+    {
+      "page_title": "Everyday Conversations: Learning American English | American English",
+      "event_label": "file_download",
+      "page": "americanenglish.state.gov/resources/everyday-conversations-learning-american-english",
+      "total_events": "694"
+    },
+    {
+      "page_title": "Embassy Grant Opportunities - U.S. Embassy in Zimbabwe",
+      "event_label": "file_download",
+      "page": "zw.usembassy.gov/embassy-grant-opportunities/",
+      "total_events": "669"
+    },
+    {
+      "page_title": "The Abraham Accords - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/the-abraham-accords/",
+      "total_events": "644"
+    },
+    {
+      "page_title": "Respond to a Letter or Email",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/letter-email.html",
+      "total_events": "633"
+    },
+    {
+      "page_title": "Passport Resources",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/passport-help/passport-resources.html",
+      "total_events": "625"
+    },
+    {
+      "page_title": "Renewals of U.S. passports for adults at the U.S. Embassy London",
+      "event_label": "file_download",
+      "page": "uk.usembassy.gov/u-s-citizen-services/u-s-passports/renew-an-adult-passport/",
+      "total_events": "609"
+    },
+    {
+      "page_title": "Photo ID for a U.S. Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/identification.html",
+      "total_events": "593"
+    },
+    {
+      "page_title": "Entry On Duty - Careers",
+      "event_label": "file_download",
+      "page": "careers.state.gov/EOD/",
+      "total_events": "554"
+    },
+    {
+      "page_title": "Nonimmigrant Visa Statistics",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics.html",
+      "total_events": "552"
+    },
+    {
+      "page_title": "Job Opportunities - U.S. Embassy & Consulates in Pakistan - Available positions at the U.S. Mission",
+      "event_label": "file_download",
+      "page": "pk.usembassy.gov/jobs/",
+      "total_events": "550"
+    },
+    {
+      "page_title": "Diversity Visa Program Statistics",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-program-statistics.html",
+      "total_events": "548"
+    },
+    {
+      "page_title": "Before You Go",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/international-travel/before-you-go.html",
+      "total_events": "535"
+    },
+    {
+      "page_title": "Programmes d’Échanges Académiques et Professionnels - Ambassade des Etats-Unis en Haïti",
+      "event_label": "file_download",
+      "page": "ht.usembassy.gov/fr/education-culture-fr/academic-professional-exchanges-fr/",
+      "total_events": "503"
+    },
+    {
+      "page_title": "Renovación de Pasaporte para Adulto",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/es/pasaportes/tramite-mi-pasaporte/renovacion.html",
+      "total_events": "503"
+    },
+    {
+      "page_title": "Job Vacancies (ERA) - U.S. Embassy & Consulates in Indonesia",
+      "event_label": "file_download",
+      "page": "id.usembassy.gov/embassy-consulates/jobs/era/",
+      "total_events": "483"
+    },
+    {
+      "page_title": "Holiday Calendar - U.S. Embassy & Consulates in India",
+      "event_label": "file_download",
+      "page": "in.usembassy.gov/holiday-calendar/",
+      "total_events": "477"
+    },
+    {
+      "page_title": "Activate Games for Learning American English: Board Games | American English",
+      "event_label": "file_download",
+      "page": "americanenglish.state.gov/resources/activate-board-games",
+      "total_events": "475"
+    },
+    {
+      "page_title": "Job Opportunities-es - Embajada de Estados Unidos Santo Domingo - Available positions at the U.S. Mission",
+      "event_label": "file_download",
+      "page": "do.usembassy.gov/es/jobs-es/",
+      "total_events": "475"
+    },
+    {
+      "page_title": "Traveler's Checklist",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/international-travel/before-you-go/travelers-checklist.html",
+      "total_events": "469"
+    },
+    {
+      "page_title": "Announcements - U.S. Embassy in Ethiopia",
+      "event_label": "file_download",
+      "page": "et.usembassy.gov/embassy/addis-ababa/announcements-2/",
+      "total_events": "455"
+    },
+    {
+      "page_title": "Chauffeur (3 Positions) - Closing 01/03/2024 - U.S. Embassy in Uganda",
+      "event_label": "file_download",
+      "page": "ug.usembassy.gov/chauffeur-3-positions/",
+      "total_events": "449"
+    },
+    {
+      "page_title": "Next Generation Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/passport-help/next-generation-passport.html",
+      "total_events": "447"
+    },
+    {
+      "page_title": "Downloads - Careers",
+      "event_label": "file_download",
+      "page": "careers.state.gov/downloads/",
+      "total_events": "431"
+    },
+    {
+      "page_title": "Instructions and Appointment Packets - U.S. Embassy & Consulate in Thailand",
+      "event_label": "file_download",
+      "page": "th.usembassy.gov/visas/immigrant-visas/packets/",
+      "total_events": "428"
+    },
+    {
+      "page_title": "The Gift of the Magi and Other Stories | American English",
+      "event_label": "file_download",
+      "page": "americanenglish.state.gov/resources/gift-magi-and-other-stories",
+      "total_events": "425"
+    },
+    {
+      "page_title": "Confirm Your Qualifications",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-if-you-are-selected/diversity-visa-confirm-your-qualifications.html",
+      "total_events": "424"
+    },
+    {
+      "page_title": "2023 Trafficking in Persons Report - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/reports/2023-trafficking-in-persons-report/",
+      "total_events": "421"
+    },
+    {
+      "page_title": "Nonimmigrant visas: Ineligibilities and Waivers",
+      "event_label": "file_download",
+      "page": "uk.usembassy.gov/visas/ineligibilities-and-waivers-2/arrest-caution-conviction/",
+      "total_events": "411"
+    },
+    {
+      "page_title": "Fact Sheets for 2023 Trafficking in Persons Report - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/fact-sheets-for-2023-trafficking-in-persons-report/",
+      "total_events": "404"
+    },
+    {
+      "page_title": "Obtaining Vital Records - U.S. Embassy & Consulates in Italy",
+      "event_label": "file_download",
+      "page": "it.usembassy.gov/u-s-citizen-services/local-resources-of-u-s-citizens/obtaining-vital-records/",
+      "total_events": "399"
+    },
+    {
+      "page_title": "U.S. Government Fact Sheet on Female Genital Mutilation or Cutting (FGM/C)",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/fact-sheet-on-female-genital-mutilation-or-cutting.html",
+      "total_events": "387"
+    },
+    {
+      "page_title": "BridgeUSAPrograms | BridgeUSA",
+      "event_label": "file_download",
+      "page": "j1visa.state.gov/programs/summer-work-travel/",
+      "total_events": "382"
+    },
+    {
+      "page_title": "Applying for a Child´s Passport - U.S. Embassy and Consulate in the Netherlands",
+      "event_label": "file_download",
+      "page": "nl.usembassy.gov/u-s-citizen-services/passports/apply-childs-passport/",
+      "total_events": "381"
+    },
+    {
+      "page_title": "Jobs at the Embassy - U.S. Embassy & Consulates in Morocco",
+      "event_label": "file_download",
+      "page": "ma.usembassy.gov/embassy-consulate/jobs/",
+      "total_events": "379"
+    },
+    {
+      "page_title": "DS-160: Perguntas frequentes",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html#doclist",
+      "total_events": "377"
+    },
+    {
+      "page_title": "Exchange Programs - U.S. Embassy & Consulate in Iraq",
+      "event_label": "file_download",
+      "page": "iq.usembassy.gov/exchange-programs/",
+      "total_events": "372"
+    },
+    {
+      "page_title": "Jobs at the Embassy - U.S. Embassy in Timor Leste",
+      "event_label": "file_download",
+      "page": "tl.usembassy.gov/embassy/jobs/",
+      "total_events": "372"
+    },
+    {
+      "page_title": "Form DS-5535 Supplemental Questions for Visa Applicants - U.S. Embassy & Consulates in India",
+      "event_label": "file_download",
+      "page": "in.usembassy.gov/ds5535/",
+      "total_events": "371"
+    },
+    {
+      "page_title": "USAID Job Vacancies - U.S. Embassy & Consulate in Thailand",
+      "event_label": "file_download",
+      "page": "th.usembassy.gov/embassy-consulate/jobs/usaid-job-vacancies/",
+      "total_events": "368"
+    },
+    {
+      "page_title": "Visa Waiver Program",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html",
+      "total_events": "364"
+    },
+    {
+      "page_title": "Working for DSS - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/working-for-dss/",
+      "total_events": "363"
+    },
+    {
+      "page_title": "Department of State Organization Chart - United States Department of State",
+      "event_label": "file_download",
+      "page": "www.state.gov/department-of-state-organization-chart/",
+      "total_events": "361"
+    },
+    {
+      "page_title": "How to Replace a Limited-Validity Passport",
+      "event_label": "file_download",
+      "page": "travel.state.gov/content/travel/en/passports/have-passport/limited-validity.html",
+      "total_events": "346"
+    },
+    {
+      "page_title": "Interview Schedule - U.S. Embassy in Cambodia",
+      "event_label": "file_download",
+      "page": "kh.usembassy.gov/interview-schedule/",
+      "total_events": "338"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:00:59.143Z",
+  "agency": "state"
+}

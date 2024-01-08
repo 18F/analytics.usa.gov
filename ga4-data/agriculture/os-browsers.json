@@ -1,0 +1,164 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 37248287,
+    "by_os": {
+      "Windows": {
+        "Chrome": 8860487,
+        "Edge": 3806216,
+        "Firefox": 463392,
+        "Opera": 46720,
+        "Internet Explorer": 11388
+      },
+      "iOS": {
+        "Safari": 9214473,
+        "Chrome": 1250385,
+        "Safari (in-app)": 392101,
+        "(not set)": 106598
+      },
+      "Android": {
+        "Chrome": 5099113,
+        "Samsung Internet": 369413,
+        "Android Webview": 192620,
+        "Firefox": 66935,
+        "Amazon Silk": 48082,
+        "Edge": 29155,
+        "Opera": 22389
+      },
+      "Macintosh": {
+        "Safari": 2085924,
+        "Chrome": 2019756,
+        "Firefox": 189841,
+        "Mozilla Compatible Agent": 16846,
+        "Edge": 10978
+      },
+      "Chrome OS": {
+        "Chrome": 1844102
+      },
+      "Linux": {
+        "Chrome": 1046463,
+        "Firefox": 35634,
+        "Samsung Internet": 8594,
+        "Edge": 279
+      },
+      "(not set)": {
+        "(not set)": 6236,
+        "Opera Mini": 4167
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 8860487,
+        "Android": 5099113,
+        "Chrome OS": 1844102,
+        "Macintosh": 2019756,
+        "iOS": 1250385,
+        "Linux": 1046463
+      },
+      "Safari": {
+        "iOS": 9214473,
+        "Macintosh": 2085924
+      },
+      "Edge": {
+        "Windows": 3806216,
+        "Android": 29155,
+        "Macintosh": 10978,
+        "Linux": 279
+      },
+      "Safari (in-app)": {
+        "iOS": 392101
+      },
+      "Firefox": {
+        "Windows": 463392,
+        "Macintosh": 189841,
+        "Android": 66935,
+        "Linux": 35634
+      },
+      "Samsung Internet": {
+        "Android": 369413,
+        "Linux": 8594
+      },
+      "Android Webview": {
+        "Android": 192620
+      },
+      "Amazon Silk": {
+        "Android": 48082
+      },
+      "Opera": {
+        "Windows": 46720,
+        "Android": 22389
+      },
+      "(not set)": {
+        "iOS": 106598,
+        "(not set)": 6236
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 16846
+      },
+      "Internet Explorer": {
+        "Windows": 11388
+      },
+      "Opera Mini": {
+        "(not set)": 4167
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:50:41.556Z",
+  "agency": "agriculture"
+}

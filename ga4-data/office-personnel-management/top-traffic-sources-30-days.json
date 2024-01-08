@@ -1,0 +1,262 @@
+{
+  "name": "top-traffic-sources-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionSource"
+      },
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "Top Traffic Sources (30 Days)",
+    "description": "Last 30 days' Traffic sources, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "source": "(direct)",
+      "session_default_channel_group": "Direct",
+      "visits": "15698240",
+      "pageviews": "77546006",
+      "users": "9200219",
+      "pageviews_per_session": "4.9397898108322975",
+      "avg_session_duration": "345.07852938631271",
+      "bounce_rate": "0.44425056566850807"
+    },
+    {
+      "source": "google",
+      "session_default_channel_group": "Organic Search",
+      "visits": "6834344",
+      "pageviews": "43178833",
+      "users": "3129671",
+      "pageviews_per_session": "6.3179191741006893",
+      "avg_session_duration": "451.49754958448023",
+      "bounce_rate": "0.290676764295154"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Organic Search",
+      "visits": "1247569",
+      "pageviews": "9636458",
+      "users": "506121",
+      "pageviews_per_session": "7.7241884016034383",
+      "avg_session_duration": "615.23651582298942",
+      "bounce_rate": "0.23065577935969875"
+    },
+    {
+      "source": "(not set)",
+      "session_default_channel_group": "Unassigned",
+      "visits": "229786",
+      "pageviews": "1851733",
+      "users": "212624",
+      "pageviews_per_session": "8.0585109623736866",
+      "avg_session_duration": "612.37425564271962",
+      "bounce_rate": "0.960249971712811"
+    },
+    {
+      "source": "yahoo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "139141",
+      "pageviews": "1215002",
+      "users": "67632",
+      "pageviews_per_session": "8.7321637763132358",
+      "avg_session_duration": "650.15654444140114",
+      "bounce_rate": "0.23231829582941046"
+    },
+    {
+      "source": "google_jobs_apply",
+      "session_default_channel_group": "Organic Search",
+      "visits": "71696",
+      "pageviews": "458291",
+      "users": "32497",
+      "pageviews_per_session": "6.3921418210220935",
+      "avg_session_duration": "516.38527126291558",
+      "bounce_rate": "0.30422896674849365"
+    },
+    {
+      "source": "duckduckgo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "69298",
+      "pageviews": "416274",
+      "users": "37784",
+      "pageviews_per_session": "6.0070131894138363",
+      "avg_session_duration": "434.28512933074546",
+      "bounce_rate": "0.2943807902103957"
+    },
+    {
+      "source": "ziprecruiter",
+      "session_default_channel_group": "Unassigned",
+      "visits": "70064",
+      "pageviews": "365502",
+      "users": "45470",
+      "pageviews_per_session": "5.2166875999086546",
+      "avg_session_duration": "403.78195314229845",
+      "bounce_rate": "0.39015757022151176"
+    },
+    {
+      "source": "govDelivery",
+      "session_default_channel_group": "Email",
+      "visits": "46259",
+      "pageviews": "244164",
+      "users": "16636",
+      "pageviews_per_session": "5.2781945135000754",
+      "avg_session_duration": "387.70064657947643",
+      "bounce_rate": "0.39423679716379517"
+    },
+    {
+      "source": "google",
+      "session_default_channel_group": "Paid Search",
+      "visits": "43066",
+      "pageviews": "199613",
+      "users": "29096",
+      "pageviews_per_session": "4.6350485301630053",
+      "avg_session_duration": "315.94180744016165",
+      "bounce_rate": "0.38752147866066039"
+    },
+    {
+      "source": "govdelivery",
+      "session_default_channel_group": "Email",
+      "visits": "39599",
+      "pageviews": "185639",
+      "users": "18626",
+      "pageviews_per_session": "4.68797191848279",
+      "avg_session_duration": "350.84498683360692",
+      "bounce_rate": "0.34074092780120713"
+    },
+    {
+      "source": "linkedin.com",
+      "session_default_channel_group": "Organic Social",
+      "visits": "22645",
+      "pageviews": "136635",
+      "users": "10313",
+      "pageviews_per_session": "6.0337822918966664",
+      "avg_session_duration": "454.45683458273356",
+      "bounce_rate": "0.41324795760653565"
+    },
+    {
+      "source": "indeed",
+      "session_default_channel_group": "Unassigned",
+      "visits": "9262",
+      "pageviews": "54063",
+      "users": "4460",
+      "pageviews_per_session": "5.83707622543727",
+      "avg_session_duration": "430.74648880360616",
+      "bounce_rate": "0.39743036061325848"
+    },
+    {
+      "source": "tfy_google_jobs_apply",
+      "session_default_channel_group": "Organic Search",
+      "visits": "5716",
+      "pageviews": "45740",
+      "users": "3060",
+      "pageviews_per_session": "8.0020993701889438",
+      "avg_session_duration": "617.173132693492",
+      "bounce_rate": "0.25209937018894329"
+    },
+    {
+      "source": "fark",
+      "session_default_channel_group": "Organic Social",
+      "visits": "7619",
+      "pageviews": "42491",
+      "users": "1201",
+      "pageviews_per_session": "5.5769786061162883",
+      "avg_session_duration": "445.2839895935162",
+      "bounce_rate": "0.32458327864549152"
+    },
+    {
+      "source": "careers_home",
+      "session_default_channel_group": "Unassigned",
+      "visits": "4610",
+      "pageviews": "33194",
+      "users": "1710",
+      "pageviews_per_session": "7.200433839479393",
+      "avg_session_duration": "607.171354221692",
+      "bounce_rate": "0.26984815618221258"
+    },
+    {
+      "source": "talent_network",
+      "session_default_channel_group": "Email",
+      "visits": "4217",
+      "pageviews": "30796",
+      "users": "1552",
+      "pageviews_per_session": "7.3028219113113586",
+      "avg_session_duration": "519.58808463552293",
+      "bounce_rate": "0.36305430400758831"
+    },
+    {
+      "source": "hp_greenbox",
+      "session_default_channel_group": "Unassigned",
+      "visits": "2980",
+      "pageviews": "29918",
+      "users": "851",
+      "pageviews_per_session": "10.039597315436241",
+      "avg_session_duration": "596.49747251006715",
+      "bounce_rate": "0.16073825503355704"
+    },
+    {
+      "source": "ecosia.org",
+      "session_default_channel_group": "Organic Search",
+      "visits": "4114",
+      "pageviews": "28165",
+      "users": "1868",
+      "pageviews_per_session": "6.8461351482741861",
+      "avg_session_duration": "501.11894213247444",
+      "bounce_rate": "0.30213903743315507"
+    },
+    {
+      "source": "myjobhelper",
+      "session_default_channel_group": "Unassigned",
+      "visits": "5356",
+      "pageviews": "25903",
+      "users": "3151",
+      "pageviews_per_session": "4.8362584017923824",
+      "avg_session_duration": "373.76820300037338",
+      "bounce_rate": "0.36463778939507097"
+    }
+  ],
+  "totals": {
+    "users": 13324542,
+    "visits": 24555581
+  },
+  "taken_at": "2024-01-05T14:44:20.258Z",
+  "agency": "office-personnel-management"
+}

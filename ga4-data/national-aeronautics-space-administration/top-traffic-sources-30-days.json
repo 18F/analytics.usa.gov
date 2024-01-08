@@ -1,0 +1,262 @@
+{
+  "name": "top-traffic-sources-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionSource"
+      },
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Top Traffic Sources (30 Days)",
+    "description": "Last 30 days' Traffic Sources, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "source": "(direct)",
+      "session_default_channel_group": "Direct",
+      "visits": "10341119",
+      "pageviews": "23241890",
+      "users": "7250194",
+      "pageviews_per_session": "2.2475217623934123",
+      "avg_session_duration": "168.49519114187305",
+      "bounce_rate": "0.55419766468212961"
+    },
+    {
+      "source": "google",
+      "session_default_channel_group": "Organic Search",
+      "visits": "10077830",
+      "pageviews": "22989418",
+      "users": "6735074",
+      "pageviews_per_session": "2.28118731909548",
+      "avg_session_duration": "229.31352926425481",
+      "bounce_rate": "0.4042281919818056"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Organic Search",
+      "visits": "489623",
+      "pageviews": "1381656",
+      "users": "296426",
+      "pageviews_per_session": "2.8218772402440244",
+      "avg_session_duration": "327.91952862345522",
+      "bounce_rate": "0.3443220600339445"
+    },
+    {
+      "source": "(not set)",
+      "session_default_channel_group": "Unassigned",
+      "visits": "155182",
+      "pageviews": "841803",
+      "users": "140479",
+      "pageviews_per_session": "5.42461754584939",
+      "avg_session_duration": "620.94118782602368",
+      "bounce_rate": "0.998968952584707"
+    },
+    {
+      "source": "duckduckgo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "117331",
+      "pageviews": "247771",
+      "users": "76117",
+      "pageviews_per_session": "2.1117266536550443",
+      "avg_session_duration": "222.468805329052",
+      "bounce_rate": "0.41110192532237855"
+    },
+    {
+      "source": "instagram",
+      "session_default_channel_group": "Organic Social",
+      "visits": "134455",
+      "pageviews": "225714",
+      "users": "118885",
+      "pageviews_per_session": "1.6787326614852554",
+      "avg_session_duration": "124.58102860327247",
+      "bounce_rate": "0.45111003681529138"
+    },
+    {
+      "source": "yahoo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "80668",
+      "pageviews": "190373",
+      "users": "50993",
+      "pageviews_per_session": "2.3599568602171863",
+      "avg_session_duration": "283.65972446321962",
+      "bounce_rate": "0.33619279020181486"
+    },
+    {
+      "source": "baidu",
+      "session_default_channel_group": "Organic Search",
+      "visits": "33976",
+      "pageviews": "174377",
+      "users": "20355",
+      "pageviews_per_session": "5.1323581351542265",
+      "avg_session_duration": "385.22683864018717",
+      "bounce_rate": "0.36593477748999292"
+    },
+    {
+      "source": "iContact",
+      "session_default_channel_group": "Email",
+      "visits": "68453",
+      "pageviews": "145636",
+      "users": "33059",
+      "pageviews_per_session": "2.1275327597037381",
+      "avg_session_duration": "231.53383004128381",
+      "bounce_rate": "0.43513067360086483"
+    },
+    {
+      "source": "nasa",
+      "session_default_channel_group": "Unassigned",
+      "visits": "54212",
+      "pageviews": "145019",
+      "users": "15604",
+      "pageviews_per_session": "2.6750350475909395",
+      "avg_session_duration": "292.22351748688482",
+      "bounce_rate": "0.45432745517597578"
+    },
+    {
+      "source": "TWITTER",
+      "session_default_channel_group": "Organic Social",
+      "visits": "71613",
+      "pageviews": "133647",
+      "users": "49609",
+      "pageviews_per_session": "1.8662393699467974",
+      "avg_session_duration": "175.03238199755629",
+      "bounce_rate": "0.50109616968986082"
+    },
+    {
+      "source": "FBPAGE",
+      "session_default_channel_group": "Unassigned",
+      "visits": "75950",
+      "pageviews": "109682",
+      "users": "61516",
+      "pageviews_per_session": "1.4441342988808428",
+      "avg_session_duration": "84.0285251322054",
+      "bounce_rate": "0.63807768268597764"
+    },
+    {
+      "source": "x",
+      "session_default_channel_group": "Organic Search",
+      "visits": "45554",
+      "pageviews": "77281",
+      "users": "36270",
+      "pageviews_per_session": "1.6964701233700663",
+      "avg_session_duration": "146.52747139379639",
+      "bounce_rate": "0.44290292839267681"
+    },
+    {
+      "source": "nasa_newsletter",
+      "session_default_channel_group": "Email",
+      "visits": "33574",
+      "pageviews": "64264",
+      "users": "18392",
+      "pageviews_per_session": "1.9141001965806874",
+      "avg_session_duration": "197.37655427735749",
+      "bounce_rate": "0.49023053553344847"
+    },
+    {
+      "source": "ecosia.org",
+      "session_default_channel_group": "Organic Search",
+      "visits": "23763",
+      "pageviews": "58934",
+      "users": "13357",
+      "pageviews_per_session": "2.4800740647224675",
+      "avg_session_duration": "246.22192420136349",
+      "bounce_rate": "0.40243235281740519"
+    },
+    {
+      "source": "facebook",
+      "session_default_channel_group": "Organic Social",
+      "visits": "33140",
+      "pageviews": "54987",
+      "users": "27885",
+      "pageviews_per_session": "1.6592335546167774",
+      "avg_session_duration": "117.80479556858782",
+      "bounce_rate": "0.45262522631261315"
+    },
+    {
+      "source": "arcore_sceneviewer",
+      "session_default_channel_group": "Unassigned",
+      "visits": "14480",
+      "pageviews": "53670",
+      "users": "12109",
+      "pageviews_per_session": "3.7064917127071824",
+      "avg_session_duration": "156.19818773901935",
+      "bounce_rate": "0.17727900552486187"
+    },
+    {
+      "source": "nasa_solar_system",
+      "session_default_channel_group": "Unassigned",
+      "visits": "7764",
+      "pageviews": "42607",
+      "users": "2959",
+      "pageviews_per_session": "5.487764039155075",
+      "avg_session_duration": "491.59499819538894",
+      "bounce_rate": "0.38189077794951054"
+    },
+    {
+      "source": "yandex",
+      "session_default_channel_group": "Organic Search",
+      "visits": "2855",
+      "pageviews": "32292",
+      "users": "1552",
+      "pageviews_per_session": "11.310683012259194",
+      "avg_session_duration": "475.69450119684763",
+      "bounce_rate": "0.35201401050788089"
+    },
+    {
+      "source": "naver",
+      "session_default_channel_group": "Organic Search",
+      "visits": "4519",
+      "pageviews": "23905",
+      "users": "2894",
+      "pageviews_per_session": "5.2898871431732681",
+      "avg_session_duration": "332.28541379486614",
+      "bounce_rate": "0.27041380836468243"
+    }
+  ],
+  "totals": {
+    "users": 14963729,
+    "visits": 21866061
+  },
+  "taken_at": "2024-01-05T15:36:37.570Z",
+  "agency": "national-aeronautics-space-administration"
+}

@@ -1,0 +1,82 @@
+{
+  "name": "all-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "10000",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "All Pages (Live)",
+    "description": "Pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "(other)",
+      "active_visitors": "73"
+    },
+    {
+      "page_title": "U.S. Agency for International Development",
+      "active_visitors": "61"
+    },
+    {
+      "page_title": "Vacancy Announcements | Careers | U.S. Agency for International Development",
+      "active_visitors": "35"
+    },
+    {
+      "page_title": "Business Forecast Search | U.S. Agency for International Development",
+      "active_visitors": "32"
+    },
+    {
+      "page_title": "WH-380-E (Certification of Health Care Provider for Employee's Serious Health Condition) | Forms | U.S. Agency for International Development",
+      "active_visitors": "25"
+    },
+    {
+      "page_title": "Careers | U.S. Agency for International Development",
+      "active_visitors": "18"
+    },
+    {
+      "page_title": "Business Forecast | Partner With Us | U.S. Agency for International Development",
+      "active_visitors": "16"
+    },
+    {
+      "page_title": "WH-380-F (Certification of Health Care Provider for Family Member's Serious Health Condition) | Forms | U.S. Agency for International Development",
+      "active_visitors": "16"
+    },
+    {
+      "page_title": "Search | U.S. Agency for International Development",
+      "active_visitors": "13"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:02.140Z",
+  "agency": "agency-international-development"
+}

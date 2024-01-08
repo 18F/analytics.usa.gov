@@ -1,0 +1,128 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 20199200,
+    "by_windows": {
+      "7": {
+        "Chrome": 168665,
+        "Firefox": 11977,
+        "Edge": 343
+      },
+      "8": {
+        "Chrome": 18457,
+        "Firefox": 270,
+        "Internet Explorer": 120
+      },
+      "10": {
+        "Chrome": 9795619,
+        "Edge": 3349576,
+        "Firefox": 595565,
+        "Opera": 66531,
+        "Internet Explorer": 12901,
+        "(not set)": 447
+      },
+      "11": {
+        "Chrome": 4220123,
+        "Edge": 1907509
+      },
+      "8.1": {
+        "Chrome": 51097
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 168665,
+        "8": 18457,
+        "10": 9795619,
+        "11": 4220123,
+        "8.1": 51097
+      },
+      "Edge": {
+        "7": 343,
+        "10": 3349576,
+        "11": 1907509
+      },
+      "Firefox": {
+        "7": 11977,
+        "8": 270,
+        "10": 595565
+      },
+      "Opera": {
+        "10": 66531
+      },
+      "Internet Explorer": {
+        "8": 120,
+        "10": 12901
+      },
+      "(not set)": {
+        "10": 447
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:57:56.528Z",
+  "agency": "labor"
+}

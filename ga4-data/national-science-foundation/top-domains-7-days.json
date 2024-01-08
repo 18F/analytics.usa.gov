@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nsf.gov",
+      "visits": "223908"
+    },
+    {
+      "domain": "new.nsf.gov",
+      "visits": "110428"
+    },
+    {
+      "domain": "www.research.gov",
+      "visits": "57364"
+    },
+    {
+      "domain": "seedfund.nsf.gov",
+      "visits": "24320"
+    },
+    {
+      "domain": "extsharepoint.nsf.gov",
+      "visits": "9335"
+    },
+    {
+      "domain": "ncses.nsf.gov",
+      "visits": "7916"
+    },
+    {
+      "domain": "search.nsf.gov",
+      "visits": "3835"
+    },
+    {
+      "domain": "meetings.nsf.gov",
+      "visits": "3500"
+    },
+    {
+      "domain": "ncsesdata.nsf.gov",
+      "visits": "1759"
+    },
+    {
+      "domain": "web.acpt.research.gov",
+      "visits": "1640"
+    },
+    {
+      "domain": "www.fastlane.nsf.gov",
+      "visits": "1373"
+    },
+    {
+      "domain": "fastlane.nsf.gov",
+      "visits": "1348"
+    },
+    {
+      "domain": "www.meetings.nsf.gov",
+      "visits": "558"
+    },
+    {
+      "domain": "help.extsharepoint.nsf.gov",
+      "visits": "519"
+    },
+    {
+      "domain": "sac.gov",
+      "visits": "186"
+    },
+    {
+      "domain": "web.intg.research.gov",
+      "visits": "151"
+    },
+    {
+      "domain": "www.sac.gov",
+      "visits": "138"
+    },
+    {
+      "domain": "new.stage.nsf.gov",
+      "visits": "123"
+    },
+    {
+      "domain": "reporting.demo.research.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "new.dev.nsf.gov",
+      "visits": "95"
+    }
+  ],
+  "totals": {
+    "visits": 448617
+  },
+  "taken_at": "2024-01-05T14:41:56.953Z",
+  "agency": "national-science-foundation"
+}

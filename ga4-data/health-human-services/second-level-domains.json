@@ -1,0 +1,168 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "youth.gov",
+      "visits": "39513"
+    },
+    {
+      "hostname": "yesmeanstest.org",
+      "visits": "72"
+    },
+    {
+      "hostname": "uspreventiveservicestaskforce.org",
+      "visits": "6038"
+    },
+    {
+      "hostname": "usphs.gov",
+      "visits": "699"
+    },
+    {
+      "hostname": "tox21.gov",
+      "visits": "358"
+    },
+    {
+      "hostname": "smokefree.gov",
+      "visits": "55936"
+    },
+    {
+      "hostname": "selectagents.gov",
+      "visits": "164"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "20"
+    },
+    {
+      "hostname": "reproductiverights.gov",
+      "visits": "2244"
+    },
+    {
+      "hostname": "nicic.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "medlineplus.govhttps",
+      "visits": "1"
+    },
+    {
+      "hostname": "medlineplus.gov",
+      "visits": "13466837"
+    },
+    {
+      "hostname": "medicalcountermeasures.gov",
+      "visits": "3411"
+    },
+    {
+      "hostname": "health.mil",
+      "visits": "3"
+    },
+    {
+      "hostname": "health.gov",
+      "visits": "288617"
+    },
+    {
+      "hostname": "grants.gov",
+      "visits": "118577"
+    },
+    {
+      "hostname": "findtreatment.gov",
+      "visits": "60692"
+    },
+    {
+      "hostname": "fda.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "eldercare.gov",
+      "visits": "574"
+    },
+    {
+      "hostname": "donaciondeorganos.gov",
+      "visits": "2642"
+    },
+    {
+      "hostname": "collegedrinkingprevention.gov",
+      "visits": "90"
+    },
+    {
+      "hostname": "cms.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "childcare.gov",
+      "visits": "42959"
+    },
+    {
+      "hostname": "ai.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "agingstats.gov",
+      "visits": "254"
+    },
+    {
+      "hostname": "acl.gov",
+      "visits": "58414"
+    }
+  ],
+  "totals": {
+    "visits": 14148120
+  },
+  "taken_at": "2024-01-05T15:54:15.668Z",
+  "agency": "health-human-services"
+}

@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "studentaid.gov",
+      "visits": "12815518"
+    },
+    {
+      "domain": "www2.ed.gov",
+      "visits": "167512"
+    },
+    {
+      "domain": "www.ed.gov",
+      "visits": "111497"
+    },
+    {
+      "domain": "sites.ed.gov",
+      "visits": "72577"
+    },
+    {
+      "domain": "financialaidtoolkit.ed.gov",
+      "visits": "29974"
+    },
+    {
+      "domain": "collegescorecard.ed.gov",
+      "visits": "26095"
+    },
+    {
+      "domain": "oese.ed.gov",
+      "visits": "21899"
+    },
+    {
+      "domain": "blog.ed.gov",
+      "visits": "13456"
+    },
+    {
+      "domain": "studentprivacy.ed.gov",
+      "visits": "12496"
+    },
+    {
+      "domain": "crdc.communities.ed.gov",
+      "visits": "5973"
+    },
+    {
+      "domain": "tech.ed.gov",
+      "visits": "5727"
+    },
+    {
+      "domain": "lincs.ed.gov",
+      "visits": "3747"
+    },
+    {
+      "domain": "rsa.ed.gov",
+      "visits": "2965"
+    },
+    {
+      "domain": "nationalblueribbonschools.ed.gov",
+      "visits": "2798"
+    },
+    {
+      "domain": "www.nationsreportcard.gov",
+      "visits": "2501"
+    },
+    {
+      "domain": "cte.ed.gov",
+      "visits": "2100"
+    },
+    {
+      "domain": "wioaplans.ed.gov",
+      "visits": "2088"
+    },
+    {
+      "domain": "civilrightsdata.ed.gov",
+      "visits": "2056"
+    },
+    {
+      "domain": "ocrcas.ed.gov",
+      "visits": "1988"
+    },
+    {
+      "domain": "covid-relief-data.ed.gov",
+      "visits": "1421"
+    }
+  ],
+  "totals": {
+    "visits": 13304388
+  },
+  "taken_at": "2024-01-05T15:32:52.077Z",
+  "agency": "education"
+}

@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Monitoring and Evaluation Advisor (Ndola), FSN-10 | Vacancy Announcement | Zambia | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/sol%20no.%207261124r10004%20m%26amp%3be%20advisor%20%28ndola%29.pdf",
+      "page": "www.usaid.gov/monitoring-and-evaluation-advisor-ndola-fsn-10",
+      "total_events": "640"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WH-380-E (Certification of Health Care Provider for Employee's Serious Health Condition) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/wh-380-e%20%28certification%20of%20health%20care%20provider%20for%20employee%26%23039%3bs%20serious%20health%20condition%29.pdf",
+      "page": "www.usaid.gov/forms/wh-380-e",
+      "total_events": "618"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WH-380-F (Certification of Health Care Provider for Family Member's Serious Health Condition) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/wh-380-f%20%28certification%20of%20health%20care%20provider%20for%20family%20member%26%23039%3bs%20serious%20health%20condition%29.pdf",
+      "page": "www.usaid.gov/forms/wh-380-f",
+      "total_events": "449"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 438 | Operational Policy (ADS) | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/438_010324.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-400/438",
+      "total_events": "208"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Careers | Sri Lanka | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-07/form_aid_309-2_offeror%20information%20for%20psc%20with%20individuals_2.pdf",
+      "page": "www.usaid.gov/sri-lanka/careers",
+      "total_events": "118"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Bureau for Democracy, Human Rights, and Governance (DRG) Policy Public Review | Democracy, Human Rights & Governance | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/draft-drg-policy-for-public-comment-12-28-2023.pdf",
+      "page": "www.usaid.gov/democracy/document/drg-policy-public-review",
+      "total_events": "117"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 303 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/303_102323.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/303",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Administrative Management Assistant | Vacancy Announcement | Sri Lanka | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/sol%20%232-24%20-%20admin%20mgt%20assistant%20%281%29.pdf",
+      "page": "www.usaid.gov/sri-lanka/careers/02-24-administrative-management-assistant",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 438maa | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/438maa_122623.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-400/references-chapter/438maa",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AID 309-2 (Offeror Information For Personal Services Contracts With Individuals) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/form_aid_309-2_omb_corrected_1.pdf",
+      "page": "www.usaid.gov/forms/aid-309-2",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Acquisition and Assistance Assistant, FSN-9 | Vacancy Announcement | Zambia | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/sol%20no.%207261124r10002%20acquisition%20and%20assistance%20assistant_4.pdf",
+      "page": "www.usaid.gov/acquisition-and-assistance-assistant-fsn-9",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OPM-71 (Request for Leave or Approved Absence) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/opm-71%20%28request%20for%20leave%20or%20approved%20absence%29.pdf",
+      "page": "www.usaid.gov/forms/opm-71",
+      "total_events": "99"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Roving Administrative Assistant, FSN-6 | Vacancy Announcement | Zambia | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/sol%20no.%207261124r10003%20roving%20administrative%20assistant.pdf",
+      "page": "www.usaid.gov/roving-administrative-assistant-fsn-6",
+      "total_events": "98"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "72049224R10010: Administrative Assistant, FSN-07 | Vacancy Announcement | Philippines | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/solicitation%20%2372049224r10010_admin%20assistant%2c%20fsn-07.pdf",
+      "page": "www.usaid.gov/philippines/careers/72049224r10010-administrative-assistant-fsn-07",
+      "total_events": "84"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-312 (Classified Information Nondisclosure Agreement) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-07/sf%20312%20%28classified%20information%20nondisclosure%20agreement%29%28rev.%207-2013%29.pdf",
+      "page": "www.usaid.gov/forms/sf-312",
+      "total_events": "84"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 201 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-09/201_092523.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-200/201",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 302 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/302_100623.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/302",
+      "total_events": "74"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-182 (Authorization, Agreement, and Certification of Training) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf182-20.pdf",
+      "page": "www.usaid.gov/forms/sf-182",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 522 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/522_121823.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-500/522",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 438mab | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/438mab.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-400/references-chapter/438mab",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AAPD 24-02 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/aapd-24-02.pdf",
+      "page": "www.usaid.gov/work-usaid/aapds-cibs/aapd-24-02",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Business Forecast | Partner With Us | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/businessforecast-fy2024-q1-qa-12-19-23.xlsx",
+      "page": "www.usaid.gov/business-forecast",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AIDAR | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/aidar_111623.pdf",
+      "page": "www.usaid.gov/ads/policy/300/aidar",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF 1164 (Claim for Reimbursement for Expenditures on Official Business) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf%201164%20%28claim%20for%20reimbursement%20for%20expenditures%20on%20official%20business%29.pdf",
+      "page": "www.usaid.gov/forms/sf-1164",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-50 (Notification of Personnel Action) | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf-50%20%28notification%20of%20personnel%20action%29.pdf",
+      "page": "www.usaid.gov/document/sf-50-notification-personnel-action",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OF-306 (Declaration for Federal Employment) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/of306.pdf",
+      "page": "www.usaid.gov/forms/of-306",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 303maa | Automated Directives System | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/303maa_120623.docx",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/303maa",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Request for Public Review of the Draft Updated USAID Biodiversity Policy | Biodiversity | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/draft-updated-usaid-biodiversity-policy-for-public-review.pdf",
+      "page": "www.usaid.gov/policy/biodiversity/public-review-period",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2022 Foreign Service Salary Schedule | Careers | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/fs_salary_schedules.pdf",
+      "page": "www.usaid.gov/careers/fs-salary-schedules",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Project Management Assistant | Vacancy Announcement | Mali | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/sol%2072068824r10005_project%20management%20specialist.pdf",
+      "page": "www.usaid.gov/project-management-assistant-0",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "72038624R10002: Project Management Specialist (Environment), FSN-12 | Vacancy Announcement | India | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/72038624r10002%20-project%20management%20specialist%20%28environment%29%2c%20fsn-12%2c%20general%20development%20office%20%281%29.pdf",
+      "page": "www.usaid.gov/72038624r10002-project-management-specialist-environment-fsn-12",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Human Resources Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/rwanda%20-%20solicitation%2372069624r00005%20for%20hr%20specialist%20fsn-10%20%282%29.pdf",
+      "page": "www.usaid.gov/human-resources-specialist-2",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Program Officer (Desk Officer, Balkans) - FL-0343-02 | Vacancy Announcement | United States | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/program%20officer%20%28desk%20officer%2c%20balkans%29%20-%20fl-0343-02.docx.pdf",
+      "page": "www.usaid.gov/program-officer-desk-officer-balkans-fl-0343-02",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID Project Management Assistant (Local Partners) - 72052224R10004 | Vacancy Announcement | Honduras | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/solicitation%20no.%2072052224r10004%20usaid%20pma%20%28local%20partners%29%2c%20fsn-%208%20final.pdf",
+      "page": "www.usaid.gov/usaid-project-management-assistant-local-partners-72052224r10004",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 309 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/309_103023.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/309",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Monitoring, Evaluation, and Learning Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/rwanda%20-%20solicitation%2372069624r00003%20mel%20spec%20%282%29.pdf",
+      "page": "www.usaid.gov/monitoring-evaluation-and-learning-specialist",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Vacancy Announcement# CCN17/2023 - Project MGT Specialist (Inclusive Communities) - ODG | Vacancy Announcement | Egypt | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/vacancy%20announcement%20ccn17-2023%20-%20%20project%20mgt%20spec%20%28inclusive%20communitites%29%20-%20dg-%20readvertisement.pdf",
+      "page": "www.usaid.gov/vacancy-announcement-ccn172023-project-mgt-specialist-inclusive-communities-odg-0",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Foreign Service Base Salary Schedule | Careers | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-02/2023%20fs%20salary%20schedule.pdf",
+      "page": "www.usaid.gov/careers/foreign-service/2023-foreign-service-base-salary-schedule",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Supervisory Health Development Officer – FL-0685-01 | Vacancy Announcement | United States | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/agency%20notice-%20mchn_chi_fsl-01%20%281%29.docx.pdf",
+      "page": "www.usaid.gov/supervisory-health-development-officer-fl-0685-01-0",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Vacancy Announcement #CCN24/2023A - Procurement Specialist - Executive Office | Vacancy Announcement | Middle East | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/vacancy%20announcement%20ccn24-2023a%20-%20procurement%20specialist%20-%20fsn-10%20-%20readvertisement.pdf",
+      "page": "www.usaid.gov/vacancy-announcement-ccn242023a-procurement-specialist-executive-office",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Business Forecast | Partner With Us | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/forecast-december7-2023.xlsx",
+      "page": "www.usaid.gov/business-forecast",
+      "total_events": "29"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Development Innovation Ventures Annual Program Statement (APS) | Basic Page | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/div%20aps%20oct%202023%20-%20edits%20accepted%20v.3.%20final%20508.pdf",
+      "page": "www.usaid.gov/div/aps",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Development Innovation Ventures (DIV) Sample Application | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/div_sample_application_2024-final%20%282%29.docx",
+      "page": "www.usaid.gov/document/development-innovation-ventures-div-sample-application",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Human Resources Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/form_aid_309-2_omb_corrected_1%20%284%29_2.pdf",
+      "page": "www.usaid.gov/human-resources-specialist-2",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 303mat | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/303mat_102423.docx",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/303mat",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-270 (Request for Advance or Reimbursement) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf-270%20%28request%20for%20advance%20or%20reimbursement%29.pdf",
+      "page": "www.usaid.gov/forms/sf-270",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Gender Equality and Women's Empowerment Policy | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/2023_gender%20policy_508.pdf",
+      "page": "www.usaid.gov/document/2023-gender-equality-and-womens-empowerment-policy",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 308 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-02/308.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/308",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 303mab | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/303mab_120623.docx",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/303mab",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-1034 (Public Voucher for Purchases and Services Other Than Personal) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf-1034%20%28public%20voucher%20for%20purchases%20and%20services%20other%20than%20personal%29.doc",
+      "page": "www.usaid.gov/forms/sf-1034",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Coordinator for Middle East Partnership for Peace Act (MEPPA) Implementation | Vacancy Announcement | West Bank and Gaza | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/solicitation%20wbg%20meppa%20coordinator.pdf",
+      "page": "www.usaid.gov/west-bank-and-gaza/careers/coordinator-for-middle-east-partnership-for-peace-act-meppa-implementation",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID Graphic Standards Manual and Partner Co-Branding Guide | Branding | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/usaid_gsm-02_04_2020.pdf",
+      "page": "www.usaid.gov/branding/gsm",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID's Policy Framework | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-05/policy%20framework%20%28v16%29%2005-04-2023_2.pdf",
+      "page": "www.usaid.gov/policy/documents/mar-23-2023-usaids-policy-framework",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AID 522-6 (E2 User Request Form) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/e2_user_request_form_aid_522-6_4_2023.pdf",
+      "page": "www.usaid.gov/forms/aid-522-6",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How to Apply | Development Innovation Ventures | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/div%20aps%20oct%202023%20-%20edits%20accepted%20v.3.%20final%20508.pdf",
+      "page": "www.usaid.gov/div/apply",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 300 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/300.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/300",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SAM Entity Administrator Letter Template (with banking info) | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/attachment_4_-_rco_notice_18-004_template1_sam_entity_administrator_letter_international_us_.docx",
+      "page": "www.usaid.gov/document/sam-entity-administrator-letter-template-banking-info",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "72038624R10001: Development Assistance Specialist (Development Finance), FSN-12 | Vacancy Announcement | India | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/72038624r10001_development%20assistance%20specialist%20%28development%20finance%29%2c%20fsn-12%2c%20dpio.pdf",
+      "page": "www.usaid.gov/72038624r10001-development-assistance-specialist-development-finance-fsn-12",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 205 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-04/205_1.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-200/205",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 436 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-09/436_091323.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-400/436",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Monitoring, Evaluation, and Learning Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/form_aid_309-2_omb_corrected_1%20%284%29_1.pdf",
+      "page": "www.usaid.gov/monitoring-evaluation-and-learning-specialist",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID Climate Strategy 2022–2030 | Strategy and Policy | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-11/usaid-climate-strategy-2022-2030.pdf",
+      "page": "www.usaid.gov/policy/climate-strategy",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID Project Management Specialist (Operations Manager) - 72052224R10007 | Vacancy Announcement | Honduras | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/solicitation%20no.%2072052224r10007%20-%20usaid%20pms%20%28operations%20manager%29%2c%20fsn-%2012.pdf",
+      "page": "www.usaid.gov/usaid-project-management-specialist-operations-manager-72052224r10007",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-52 (Request for Personnel Action) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf-52%20%28request%20for%20personnel%20action%29.pdf",
+      "page": "www.usaid.gov/forms/sf-52",
+      "total_events": "18"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Supervisory Executive Management Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/solicitation%2372069624r00001_supervisory%20executive%20management%20specialist.pdf",
+      "page": "www.usaid.gov/supervisory-executive-management-specialist",
+      "total_events": "18"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 103 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-09/103_092623.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-100/103",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 310maa | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/310maa.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/310maa",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Branding | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/usaid_gsm-02_04_2020.pdf",
+      "page": "www.usaid.gov/branding",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How to Apply | Development Innovation Ventures | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/div_sample_application_2024-final%20%282%29.docx",
+      "page": "www.usaid.gov/div/apply",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Registering to Work with USAID: Main Step-by-Step Guide | Work with USAID | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-07/registering-to-work-module-step-by-step-guide.pdf",
+      "page": "www.usaid.gov/partner-with-us/get-grant-or-contract/trainings-how-work-usaid/registering-workwork-usaid-main-step-by-step-guide",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID/Ethiopia -Development Program Specialist, Resident-Hire USPSC | Vacancy Announcement | Ethiopia | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/uspsc%20job%20application%20cover%20form.docx",
+      "page": "www.usaid.gov/usaidethiopia-development-program-specialist-resident-hire-uspsc",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID/Ethiopia-Senior Education Advisor, GS-13 | Vacancy Announcement | Ethiopia | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/solicitation%20-%20senior%20education%20advisor%2c%20gs%2013%20-%20resident%20hire.pdf",
+      "page": "www.usaid.gov/usaidethiopia-senior-education-advisor-gs-13",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 320 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/320.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/320",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Branding Resources | Branding | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/usaidlogo_2colorrgb.zip",
+      "page": "www.usaid.gov/branding/resources#downloads",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Glossary of ADS Terms | Operational Policy (ADS) | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/ads_glossary.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/glossary-ads-terms",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Nutrition Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/rwanda%20-%20solicitation%2372069624r00004%20pms%20nutrition%20%281%29.pdf",
+      "page": "www.usaid.gov/nutrition-specialist",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Oportunidades | Colombia | Basic Page | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/cdcs_narrative_public_sp-dec14-2020-508_compliant.pdf",
+      "page": "www.usaid.gov/es/es/colombia/partnership-opportunities",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 303mav | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/303mav_0.docx",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/303mav",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AID 1420-17: Contractor Employee Biographical Data Sheet | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/form_1420_f_21.11.10.pdf",
+      "page": "www.usaid.gov/forms/aid-1420-17",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "logical framework template basic | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/71-logical-framework-template-basicr_0.pdf",
+      "page": "www.usaid.gov/document/logical-framework-template-basic-0",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 545 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/545.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-500/545",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AID 400-29 (FSN Fellowship Program Application) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/application_form_a400-29_v10_2022_fillable_stabs_112022_1.pdf",
+      "page": "www.usaid.gov/forms/aid-400-29",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF-425 (Federal Financial Report) (Replaces SF-269) | Forms | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/sf-425%20%28federal%20financial%20report%29%20%28replaces%20sf-269%29.pdf",
+      "page": "www.usaid.gov/forms/sf-425",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USAID Project Management Specialist (Local Partners) - 72052224R10003 | Vacancy Announcement | Honduras | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/solicitation%20no.%2072052224r10003%20usaid%20pms%20%28local%20partners%29%2c%20fsn-%2011.pdf",
+      "page": "www.usaid.gov/usaid-project-management-specialist-local-partners-72052224r10003",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Vetting Analyst (Audit, Risk and Performance Management Division) | Vacancy Announcement | Washington, D.C. | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/bha%20hbmo%20vetting%20analyst_fsl%20position%20announcement_%20fs-03.pdf",
+      "page": "www.usaid.gov/humanitarian-assistance/careers/vetting-analyst-audit-risk-and-performance-management-division-0",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 101 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/101_120123.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-100/101",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 220 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/220.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-200/220",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 502 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-07/502.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-500/502",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 302sat | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/302sat.doc",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/302sat",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 310mac | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/310mac.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/310mac",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Indirect Cost Rate Guide for Non-Profit Organizations | Basic Page | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/occ-guide-for-nonprofit-indirectcostrate1-27-2023.pdf",
+      "page": "www.usaid.gov/partner-with-us/resources-for-partners/indirect-cost-rate-guide-non-profit-organizations",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Oportunidades | Colombia | Basic Page | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/110515%20propuestas%20y%20solicitudes%20de%20ayuda%20no%20solicitada.pdf",
+      "page": "www.usaid.gov/es/es/colombia/partnership-opportunities",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Chapter 310 | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/310.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/310",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 308maa | Operational Policy (ADS) | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/308maa_122623.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-300/references-chapter/308maa",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 414mad | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-05/414mad.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-400/references-chapter/414mad",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADS Reference 591maa | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/591maa_101023.pdf",
+      "page": "www.usaid.gov/about-us/agency-policy/series-500/references-chapter/591maa",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BHA Fact Sheet | Document | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/bha_fact%20sheet-fy2023.pdf",
+      "page": "www.usaid.gov/humanitarian-assistance/bha-fact-sheet",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Country Development Cooperation Strategy | Uganda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/cdcs-uganda-september-2027%20%282%29.pdf",
+      "page": "www.usaid.gov/uganda/country-development-cooperation-strategy",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Logical Framework Template: Basic | Program Cycle | Project Starter | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/1865/71-logical-framework-template-basicr.pdf",
+      "page": "www.usaid.gov/logical-framework-template-basic",
+      "total_events": "11"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Nutrition Specialist | Vacancy Announcement | Rwanda | U.S. Agency for International Development",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/form_aid_309-2_omb_corrected_1%20%284%29%20%281%29.pdf",
+      "page": "www.usaid.gov/nutrition-specialist",
+      "total_events": "11"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:05:34.597Z",
+  "agency": "agency-international-development"
+}

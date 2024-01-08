@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "12745"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864.pdf",
+      "page": "www.uscis.gov/i-864",
+      "total_events": "5590"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Employment Authorization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765.pdf",
+      "page": "www.uscis.gov/i-765",
+      "total_events": "4329"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-485.pdf",
+      "page": "www.uscis.gov/i-485",
+      "total_events": "4252"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for Alien Relative | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-130.pdf",
+      "page": "www.uscis.gov/i-130",
+      "total_events": "3399"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9instr.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "2856"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-400.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "2314"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Alien’s Change of Address Card | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/ar-11.pdf",
+      "page": "www.uscis.gov/ar-11",
+      "total_events": "2274"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application to Replace Permanent Resident Card (Green Card) | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-90.pdf",
+      "page": "www.uscis.gov/i-90",
+      "total_events": "2182"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Request for Fee Waiver | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-912.pdf",
+      "page": "www.uscis.gov/i-912",
+      "total_events": "2063"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-693.pdf",
+      "page": "www.uscis.gov/i-693",
+      "total_events": "2059"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Travel Document | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-131.pdf",
+      "page": "www.uscis.gov/i-131",
+      "total_events": "1859"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notice of Entry of Appearance as Attorney or Accredited Representative | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-28.pdf",
+      "page": "www.uscis.gov/g-28",
+      "total_events": "1847"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-485instr.pdf",
+      "page": "www.uscis.gov/i-485",
+      "total_events": "1841"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Declaration of Financial Support | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-134.pdf",
+      "page": "www.uscis.gov/i-134",
+      "total_events": "1688"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CBP DTOPS - Checkout Payment Confirmation",
+      "event_label": "file_download",
+      "file_name": "/main/paymentreceipt.pdf",
+      "page": "dtops.cbp.dhs.gov/main/paymentReturn.html",
+      "total_events": "1666"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Asylum and for Withholding of Removal | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-589.pdf",
+      "page": "www.uscis.gov/i-589",
+      "total_events": "1591"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "USCIS To Publish Revised Form I-9 | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9.pdf",
+      "page": "www.uscis.gov/newsroom/alerts/uscis-to-publish-revised-form-i-9",
+      "total_events": "1581"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "E-Notification of Application/Petition Acceptance | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-1145.pdf",
+      "page": "www.uscis.gov/g-1145",
+      "total_events": "1568"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Employment Authorization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765instr.pdf",
+      "page": "www.uscis.gov/i-765",
+      "total_events": "1503"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864instr.pdf",
+      "page": "www.uscis.gov/i-864",
+      "total_events": "1423"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition to Remove Conditions on Residence | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-751.pdf",
+      "page": "www.uscis.gov/i-751",
+      "total_events": "1342"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Six-Month Validity Update | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2022-mar/six-month%20passport%20validity%20update%2020220316.pdf",
+      "page": "www.cbp.gov/document/bulletins/six-month-validity-update",
+      "total_events": "1336"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Study for the Test | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/questions-and-answers/ooc_100_questions_2008_civics_test_v1.pdf",
+      "page": "www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "total_events": "1336"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form 6059B Customs Declaration - English (Fillable) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2022-jun/cbp%20form%206059b_english.pdf",
+      "page": "www.cbp.gov/document/forms/form-6059b-customs-declaration-english-fillable",
+      "total_events": "1286"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "I94 - Official Website",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-en.pdf",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "1040"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for Alien Fiancé(e) | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-129f.pdf",
+      "page": "www.uscis.gov/i-129f",
+      "total_events": "1020"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "I94 - Official Website",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-sp.pdf",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "1012"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for Alien Relative | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-130instr.pdf",
+      "page": "www.uscis.gov/i-130",
+      "total_events": "916"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for a Nonimmigrant Worker | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-129.pdf",
+      "page": "www.uscis.gov/i-129",
+      "total_events": "914"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Contract Between Sponsor and Household Member | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864a.pdf",
+      "page": "www.uscis.gov/i-864a",
+      "total_events": "898"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application to Replace Permanent Resident Card (Green Card) | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-90instr.pdf",
+      "page": "www.uscis.gov/i-90",
+      "total_events": "882"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Travel Document | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-131instr.pdf",
+      "page": "www.uscis.gov/i-131",
+      "total_events": "829"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "My personal information has changed. How do I update my information so that I can continue to receive TSA PreCheck®? | Transportation Security Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/contact-your-enrollmentprovider-infographic.pdf",
+      "page": "www.tsa.gov/travel/frequently-asked-questions/my-personal-information-has-changed-how-do-i-update-my",
+      "total_events": "827"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition to Remove Conditions on Residence | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-751instr.pdf",
+      "page": "www.uscis.gov/i-751",
+      "total_events": "827"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Authorization for Credit Card Transactions | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-1450.pdf",
+      "page": "www.uscis.gov/g-1450",
+      "total_events": "815"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Immigrant Petition for Alien Workers | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-140.pdf",
+      "page": "www.uscis.gov/i-140",
+      "total_events": "788"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TSA PreCheck® | Transportation Security Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/tsa_precheck_callcenter-onesheet.pdf",
+      "page": "www.tsa.gov/precheck",
+      "total_events": "779"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form I-94 Arrival/Departure Record | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/cbp%20form%20i-94%20english%20sample_watermark.pdf",
+      "page": "www.cbp.gov/document/forms/form-i-94-arrivaldeparture-record",
+      "total_events": "767"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fee Schedule | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-1055.pdf",
+      "page": "www.uscis.gov/g-1055",
+      "total_events": "753"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-400instr.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "710"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Declaration of Financial Support | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-134instr.pdf",
+      "page": "www.uscis.gov/i-134",
+      "total_events": "705"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Request for Fee Waiver | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-912instr.pdf",
+      "page": "www.uscis.gov/i-912",
+      "total_events": "696"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Certification of Origin Template | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2020-aug/coo%20template.pdf",
+      "page": "www.cbp.gov/document/guidance/certification-origin-template",
+      "total_events": "688"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Employment Authorization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765ws.pdf",
+      "page": "www.uscis.gov/i-765",
+      "total_events": "682"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Consideration of Deferred Action for Childhood Arrivals | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-821d.pdf",
+      "page": "www.uscis.gov/i-821d",
+      "total_events": "659"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Temporary Protected Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-821.pdf",
+      "page": "www.uscis.gov/i-821",
+      "total_events": "644"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Green Card | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/guides/greencard_comparison_en.pdf.pdf",
+      "page": "www.uscis.gov/green-card",
+      "total_events": "638"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-693instr.pdf",
+      "page": "www.uscis.gov/i-693",
+      "total_events": "628"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for Alien Relative | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-130a.pdf",
+      "page": "www.uscis.gov/i-130",
+      "total_events": "617"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/attachments.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "615"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Build A Kit | Ready.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-02/ready_checklist.pdf",
+      "page": "www.ready.gov/kit",
+      "total_events": "612"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CBP DTOPS - Purchasing - Orders (History)",
+      "event_label": "file_download",
+      "file_name": "/main/paymentreceipt.pdf",
+      "page": "dtops.cbp.dhs.gov/main/pendingOrder.htm",
+      "total_events": "610"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Medical Certification for Disability Exceptions | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-648.pdf",
+      "page": "www.uscis.gov/n-648",
+      "total_events": "595"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for Alien Fiancé(e) | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-129finstr.pdf",
+      "page": "www.uscis.gov/i-129f",
+      "total_events": "594"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application to Extend/Change Nonimmigrant Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-539instr.pdf",
+      "page": "www.uscis.gov/i-539",
+      "total_events": "548"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Action on an Approved Application or Petition | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-824.pdf",
+      "page": "www.uscis.gov/i-824",
+      "total_events": "534"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Handbook for Employers M-274 | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/uscis/e-verify/instructionscreatepdfofe-verifymanual.pdf",
+      "page": "www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274",
+      "total_events": "517"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9-spanish.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "503"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Flood Insurance Program Claim Forms for Adjusters | FEMA.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/fema_adjusters-registration-application_05052023.pdf",
+      "page": "www.fema.gov/flood-insurance/find-form/adjusters",
+      "total_events": "493"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application to Extend/Change Nonimmigrant Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-539.pdf",
+      "page": "www.uscis.gov/i-539",
+      "total_events": "469"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "10 Steps to Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/guides/m-480.pdf",
+      "page": "www.uscis.gov/citizenship/learn-about-citizenship/10-steps-to-naturalization",
+      "total_events": "445"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Request for Exemption for Intending Immigrant's Affidavit of Support | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864w.pdf",
+      "page": "www.uscis.gov/i-864w",
+      "total_events": "437"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Asylum and for Withholding of Removal | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-589instr.pdf",
+      "page": "www.uscis.gov/i-589",
+      "total_events": "419"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Affidavit of Support Under Section 213A of the Act | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864ez.pdf",
+      "page": "www.uscis.gov/i-864ez",
+      "total_events": "417"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Certificate of Citizenship | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-600.pdf",
+      "page": "www.uscis.gov/n-600",
+      "total_events": "408"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petición de Familiar Extranjero | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-130.pdf",
+      "page": "www.uscis.gov/es/i-130",
+      "total_events": "399"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Solicitud de Autorización de Empleo | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765.pdf",
+      "page": "www.uscis.gov/es/i-765",
+      "total_events": "391"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Waiver of Grounds of Inadmissibility | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-601.pdf",
+      "page": "www.uscis.gov/i-601",
+      "total_events": "378"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Immigrant Petition for Alien Workers | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-140instr.pdf",
+      "page": "www.uscis.gov/i-140",
+      "total_events": "368"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Solicitud de Registro de Residencia Permanente o Ajustar Estatus | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-485.pdf",
+      "page": "www.uscis.gov/es/i-485",
+      "total_events": "363"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "I94 - Sitio web oficial",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-en.pdf",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "362"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Consideration of Deferred Action for Childhood Arrivals | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765ws.pdf",
+      "page": "www.uscis.gov/i-821d",
+      "total_events": "349"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tarjeta de Cambio de Dirección de Extranjero | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/ar-11.pdf",
+      "page": "www.uscis.gov/es/ar-11",
+      "total_events": "345"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for Amerasian, Widow(er), or Special Immigrant | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-360.pdf",
+      "page": "www.uscis.gov/i-360",
+      "total_events": "343"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Replacement Naturalization/Citizenship Document | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-565.pdf",
+      "page": "www.uscis.gov/n-565",
+      "total_events": "342"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ABI Software Vendors List | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2023-dec/abi%20software%20vendors%20%28final%20december%2018%202023%29_508.pdf",
+      "page": "www.cbp.gov/document/guidance/abi-software-vendors-list",
+      "total_events": "328"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Solicitud de Asilo y de Suspensión de Remoción | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-589.pdf",
+      "page": "www.uscis.gov/es/i-589",
+      "total_events": "327"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Study for the Test | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/questions-and-answers/ooc_100_questions_2008_civics_test_large_v1.pdf",
+      "page": "www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "total_events": "327"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/guides/g-1151.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "324"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for a Nonimmigrant Worker | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-129instr.pdf",
+      "page": "www.uscis.gov/i-129",
+      "total_events": "314"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Action on an Approved Application or Petition | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-824instr.pdf",
+      "page": "www.uscis.gov/i-824",
+      "total_events": "311"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Consideration of Deferred Action for Childhood Arrivals | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765.pdf",
+      "page": "www.uscis.gov/i-821d",
+      "total_events": "307"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Elevation Certificate | FEMA.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/fema_form-ff-206-fy22-152.pdf",
+      "page": "www.fema.gov/glossary/elevation-certificate",
+      "total_events": "299"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Certificate of Citizenship | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-600instr.pdf",
+      "page": "www.uscis.gov/n-600",
+      "total_events": "297"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Application for Waiver of Grounds of Inadmissibility | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-601instr.pdf",
+      "page": "www.uscis.gov/i-601",
+      "total_events": "296"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CBP Form 5106 - Create/Update Importer Identity Form | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2023-oct/cbp%20form%205106.pdf",
+      "page": "www.cbp.gov/document/forms/cbp-form-5106-createupdate-importer-identity-form",
+      "total_events": "295"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay With a Credit Card | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-1450.pdf",
+      "page": "www.uscis.gov/pay-with-a-credit-card",
+      "total_events": "292"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form I-736 - Guam CNMI Visa Waiver Information (English) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2023-dec/cbp%20form%20i-736%20english.pdf",
+      "page": "www.cbp.gov/document/forms/form-i-736-guam-cnmi-visa-waiver-information-english",
+      "total_events": "284"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notice of Appeal or Motion | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-290b.pdf",
+      "page": "www.uscis.gov/i-290b",
+      "total_events": "280"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Claims | Transportation Security Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/sf95cover_packagerevised07-08-15-508.pdf",
+      "page": "www.tsa.gov/travel/passenger-support/claims",
+      "total_events": "271"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Known Exploited Vulnerabilities Catalog | CISA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/csv/known_exploited_vulnerabilities.csv",
+      "page": "www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "total_events": "264"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Merchant Mariner Credential NMC",
+      "event_label": "file_download",
+      "file_name": "/Portals/9/NMC/pdfs/forms/CG_719B.pdf",
+      "page": "www.dco.uscg.mil/nmc/merchant_mariner_credential/",
+      "total_events": "254"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ACS Public FIRMS Code Report | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2023-oct/firms30_1.txt",
+      "page": "www.cbp.gov/document/report/acs-public-firms-code-report",
+      "total_events": "253"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Contract Between Sponsor and Household Member | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864ainstr.pdf",
+      "page": "www.uscis.gov/i-864a",
+      "total_events": "245"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i9-ins-spanish.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "242"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Plan Ahead for Disasters | Ready.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-06/ready_12-ways-to-prepare_postcard.pdf",
+      "page": "www.ready.gov/",
+      "total_events": "240"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "I94 - Sitio web oficial",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-sp.pdf",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "239"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Petition for U Nonimmigrant Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-918.pdf",
+      "page": "www.uscis.gov/I-918",
+      "total_events": "236"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "I94 - Official Website",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-oaw-dari.pdf",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "234"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:57:05.336Z",
+  "agency": "homeland-security"
+}

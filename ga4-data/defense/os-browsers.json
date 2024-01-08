@@ -1,0 +1,194 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 105835651,
+    "by_os": {
+      "Windows": {
+        "Chrome": 28346706,
+        "Edge": 15511712,
+        "Firefox": 1250576,
+        "Internet Explorer": 387640,
+        "Opera": 286886,
+        "YaBrowser": 9249,
+        "Whale Browser": 669,
+        "Safari": 616
+      },
+      "iOS": {
+        "Safari": 26854802,
+        "Chrome": 3560621,
+        "Safari (in-app)": 2136876,
+        "(not set)": 210
+      },
+      "Android": {
+        "Chrome": 11587848,
+        "Samsung Internet": 1102778,
+        "Android Webview": 790253,
+        "Amazon Silk": 101784,
+        "Firefox": 130153,
+        "Edge": 89147,
+        "Opera": 53278,
+        "Android Runtime": 257,
+        "Whale Browser": 4612
+      },
+      "Macintosh": {
+        "Safari": 4361263,
+        "Chrome": 3610681,
+        "Firefox": 224768,
+        "Edge": 114287,
+        "Mozilla Compatible Agent": 96330,
+        "Opera": 11826
+      },
+      "Linux": {
+        "Chrome": 3411838,
+        "Firefox": 236597,
+        "Mozilla Compatible Agent": 96476,
+        "Samsung Internet": 28184,
+        "Edge": 6280,
+        "Opera": 563
+      },
+      "Chrome OS": {
+        "Chrome": 1245833
+      },
+      "(not set)": {
+        "(not set)": 179184,
+        "Opera Mini": 4252
+      },
+      "Tizen": {
+        "Samsung Internet": 480
+      },
+      "Fuchsia": {
+        "Chrome": 136
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 28346706,
+        "Android": 11587848,
+        "Macintosh": 3610681,
+        "iOS": 3560621,
+        "Linux": 3411838,
+        "Chrome OS": 1245833,
+        "Fuchsia": 136
+      },
+      "Safari": {
+        "iOS": 26854802,
+        "Macintosh": 4361263,
+        "Windows": 616
+      },
+      "Edge": {
+        "Windows": 15511712,
+        "Macintosh": 114287,
+        "Android": 89147,
+        "Linux": 6280
+      },
+      "Safari (in-app)": {
+        "iOS": 2136876
+      },
+      "Firefox": {
+        "Windows": 1250576,
+        "Macintosh": 224768,
+        "Android": 130153,
+        "Linux": 236597
+      },
+      "Samsung Internet": {
+        "Android": 1102778,
+        "Linux": 28184,
+        "Tizen": 480
+      },
+      "Android Webview": {
+        "Android": 790253
+      },
+      "Internet Explorer": {
+        "Windows": 387640
+      },
+      "Opera": {
+        "Windows": 286886,
+        "Android": 53278,
+        "Macintosh": 11826,
+        "Linux": 563
+      },
+      "Amazon Silk": {
+        "Android": 101784
+      },
+      "(not set)": {
+        "(not set)": 179184,
+        "iOS": 210
+      },
+      "Mozilla Compatible Agent": {
+        "Linux": 96476,
+        "Macintosh": 96330
+      },
+      "Android Runtime": {
+        "Android": 257
+      },
+      "YaBrowser": {
+        "Windows": 9249
+      },
+      "Whale Browser": {
+        "Android": 4612,
+        "Windows": 669
+      },
+      "Opera Mini": {
+        "(not set)": 4252
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:51:58.665Z",
+  "agency": "defense"
+}

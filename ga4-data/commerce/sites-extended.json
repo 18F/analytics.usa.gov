@@ -1,0 +1,2310 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "zeno.nist.gov",
+      "visits": "1320"
+    },
+    {
+      "domain": "www2.census.gov",
+      "visits": "12495"
+    },
+    {
+      "domain": "www.wrh.noaa.gov",
+      "visits": "77686"
+    },
+    {
+      "domain": "www.wrclib.noaa.gov",
+      "visits": "98"
+    },
+    {
+      "domain": "www.wpc.woc.noaa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.wpc.ncep.noaa.gov",
+      "visits": "529157"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "www.weather.gov",
+      "visits": "8745034"
+    },
+    {
+      "domain": "www.water.noaa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "www.uspto.gov",
+      "visits": "506558"
+    },
+    {
+      "domain": "www.usitc.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usda.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "www.tsunami.noaa.gov",
+      "visits": "1604"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "72"
+    },
+    {
+      "domain": "www.trade.gov.http.akamai-trials.com",
+      "visits": "4"
+    },
+    {
+      "domain": "www.trade.gov",
+      "visits": "527608"
+    },
+    {
+      "domain": "www.time.gov",
+      "visits": "629034"
+    },
+    {
+      "domain": "www.tidesandcurrents.noaa.gov",
+      "visits": "2211"
+    },
+    {
+      "domain": "www.test.ncdc.noaa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.test.census.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "www.stopfakes.gov",
+      "visits": "5818"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "www.star.nesdis.noaa.gov",
+      "visits": "574237"
+    },
+    {
+      "domain": "www.spc.noaa.gov",
+      "visits": "443277"
+    },
+    {
+      "domain": "www.space.commerce.gov.a.woc.noaa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "www.space.commerce.gov",
+      "visits": "1953"
+    },
+    {
+      "domain": "www.section508.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.search.usa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.scijinks.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.qa.coast.noaa.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.privacyshield.gov",
+      "visits": "33530"
+    },
+    {
+      "domain": "www.pmel.noaa.gov",
+      "visits": "13027"
+    },
+    {
+      "domain": "www.physics.nist.gov",
+      "visits": "812"
+    },
+    {
+      "domain": "www.photolib.noaa.gov",
+      "visits": "372"
+    },
+    {
+      "domain": "www.papahanaumokuakea.gov",
+      "visits": "2825"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.oceanexplorer.noaa.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "www.ntis.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "www.nssl.noaa.gov",
+      "visits": "25718"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.noaa.gov",
+      "visits": "1402258"
+    },
+    {
+      "domain": "www.nist.time.gov",
+      "visits": "853"
+    },
+    {
+      "domain": "www.nhc.noaa.gov",
+      "visits": "947407"
+    },
+    {
+      "domain": "www.ndbc.noaa.gov",
+      "visits": "610301"
+    },
+    {
+      "domain": "www.ncei.noaa.gov",
+      "visits": "183442"
+    },
+    {
+      "domain": "www.nccoe.nist.gov",
+      "visits": "23978"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "www.mbda.gov",
+      "visits": "12800"
+    },
+    {
+      "domain": "www.marinecadastre.gov",
+      "visits": "140"
+    },
+    {
+      "domain": "www.library.doc.gov",
+      "visits": "143"
+    },
+    {
+      "domain": "www.justice.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "www.itl.nist.gov",
+      "visits": "40693"
+    },
+    {
+      "domain": "www.itdashboard.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.iocm.noaa.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "www.history.navy.mil",
+      "visits": "4"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.gps.gov",
+      "visits": "27302"
+    },
+    {
+      "domain": "www.goes-r.gov",
+      "visits": "3358"
+    },
+    {
+      "domain": "www.glerl.noaa.gov",
+      "visits": "14977"
+    },
+    {
+      "domain": "www.fws.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.fisheries.noaa.gov",
+      "visits": "212572"
+    },
+    {
+      "domain": "www.firstnet.gov",
+      "visits": "12195"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.export.gov",
+      "visits": "12326"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.ecofoci.noaa.gov",
+      "visits": "106"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "www.drought.gov",
+      "visits": "42178"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.doi.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.dnsops.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "www.darrp.noaa.gov",
+      "visits": "87"
+    },
+    {
+      "domain": "www.ctcms.nist.gov",
+      "visits": "4917"
+    },
+    {
+      "domain": "www.cstl.nist.gov",
+      "visits": "167"
+    },
+    {
+      "domain": "www.csc.noaa.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "www.cpsc.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.coralreefwatch.noaa.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "www.coralreef.noaa.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "www.commerce.gov",
+      "visits": "234841"
+    },
+    {
+      "domain": "www.coast.noaa.gov",
+      "visits": "749"
+    },
+    {
+      "domain": "www.co-ops.nos.noaa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "www.climate.gov",
+      "visits": "206635"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.cio.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.charts.noaa.gov",
+      "visits": "11720"
+    },
+    {
+      "domain": "www.census.gov.edgekey.net",
+      "visits": "8"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "1365581"
+    },
+    {
+      "domain": "www.cdfifund.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "2184498"
+    },
+    {
+      "domain": "www.bls.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.beringclimate.noaa.gov",
+      "visits": "177"
+    },
+    {
+      "domain": "www.aviationweather.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "www-staging.goesr.woc.noaa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www-search.uspto.gov",
+      "visits": "44841"
+    },
+    {
+      "domain": "www-search-aws.uspto.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www-pvt-web.etc.uspto.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www-pvt-cms.etc.uspto.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www-prod.goesr.woc.noaa.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "www-preview.goesr.woc.noaa.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "www-nlpir.nist.gov",
+      "visits": "4924"
+    },
+    {
+      "domain": "www-mo.weather.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "www-live.goesr.woc.noaa.gov",
+      "visits": "40"
+    },
+    {
+      "domain": "www-dev.star1.nesdis.noaa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "www-dev.oceanexplorer.woc.noaa.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "www-dev.goesr.woc.noaa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "wof.nssl.noaa.gov",
+      "visits": "102"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "85"
+    },
+    {
+      "domain": "webbook.nist.gov",
+      "visits": "160773"
+    },
+    {
+      "domain": "webapp.ditd.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "web31-2.ditd.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "web31-1.ditd.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "web3.acs.census.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "web23-1.ditd.census.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "weather.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "wdob.stage.adsd.census.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "wdob.dev.adsd.census.gov",
+      "visits": "517"
+    },
+    {
+      "domain": "water.noaa.gov",
+      "visits": "1271"
+    },
+    {
+      "domain": "water.ncep.noaa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "water.i.ncep.noaa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "w2.weather.gov",
+      "visits": "5732"
+    },
+    {
+      "domain": "videos.fisheries.noaa.gov",
+      "visits": "5481"
+    },
+    {
+      "domain": "usgv6-deploymon.antd.nist.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "usatrade.census.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "unitsml.nist.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "uat.tidesandcurrents.noaa.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "ttabcenter-sit.etc.uspto.gov",
+      "visits": "79"
+    },
+    {
+      "domain": "ttabcenter-pvt.etc.uspto.gov",
+      "visits": "86"
+    },
+    {
+      "domain": "tsunami.noaa.gov",
+      "visits": "193"
+    },
+    {
+      "domain": "tsunami.coast.noaa.gov",
+      "visits": "2370"
+    },
+    {
+      "domain": "tsdr.uspto.gov",
+      "visits": "288363"
+    },
+    {
+      "domain": "tsapps.nist.gov",
+      "visits": "205"
+    },
+    {
+      "domain": "tsapps-t.nist.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "tsapps-i.nist.gov",
+      "visits": "966"
+    },
+    {
+      "domain": "tsapps-d.nist.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "trecvid.nist.gov",
+      "visits": "262"
+    },
+    {
+      "domain": "trec.nist.gov",
+      "visits": "8244"
+    },
+    {
+      "domain": "trc.nist.gov",
+      "visits": "7762"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "407"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "33"
+    },
+    {
+      "domain": "trademarkcenter.uspto.gov",
+      "visits": "433"
+    },
+    {
+      "domain": "trade.cbp.gov",
+      "visits": "462"
+    },
+    {
+      "domain": "toolkit.climate.gov",
+      "visits": "8829"
+    },
+    {
+      "domain": "tmsearch.uspto.gov",
+      "visits": "28760"
+    },
+    {
+      "domain": "tmp.fisheries.noaa.gov",
+      "visits": "607"
+    },
+    {
+      "domain": "tmep.uspto.gov",
+      "visits": "7576"
+    },
+    {
+      "domain": "tmdesigncodes.uspto.gov",
+      "visits": "2216"
+    },
+    {
+      "domain": "timegov.nist.gov",
+      "visits": "1884"
+    },
+    {
+      "domain": "timegov.boulder.nist.gov",
+      "visits": "6120"
+    },
+    {
+      "domain": "time.gov",
+      "visits": "302979"
+    },
+    {
+      "domain": "time.glb.nist.gov",
+      "visits": "734"
+    },
+    {
+      "domain": "tigerweb.test.geo.census.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "tigerweb.geo.census.gov",
+      "visits": "1171"
+    },
+    {
+      "domain": "tigerweb.dev.geo.census.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "tidesandcurrents.noaa.gov",
+      "visits": "326551"
+    },
+    {
+      "domain": "thunderbay.noaa.gov",
+      "visits": "1507"
+    },
+    {
+      "domain": "tfsr.uspto.gov",
+      "visits": "198"
+    },
+    {
+      "domain": "testint.cbp.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "testbed.aviationweather.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "test-www.fisheries.noaa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "test-www-wpc.woc.noaa.gov",
+      "visits": "272"
+    },
+    {
+      "domain": "test-apps-st.fisheries.noaa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "tess2.uspto.gov",
+      "visits": "523"
+    },
+    {
+      "domain": "teddy.staging.search.usa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "teasi.uspto.gov",
+      "visits": "352"
+    },
+    {
+      "domain": "teas.uspto.gov",
+      "visits": "2682"
+    },
+    {
+      "domain": "teas-sec-fqt.etc.uspto.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "teas-sec-app.uspto.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "tcamt.nist.gov",
+      "visits": "2818"
+    },
+    {
+      "domain": "tbmp.uspto.gov",
+      "visits": "1631"
+    },
+    {
+      "domain": "tao.ndbc.noaa.gov",
+      "visits": "407"
+    },
+    {
+      "domain": "tac-dashboard.nist.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "swfsc-publications.fisheries.noaa.gov",
+      "visits": "128"
+    },
+    {
+      "domain": "strbase-archive.nist.gov",
+      "visits": "2350"
+    },
+    {
+      "domain": "stellwagen.noaa.gov",
+      "visits": "1330"
+    },
+    {
+      "domain": "steel.trade.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "staging.pmel.noaa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "staging.cbp.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "staging-www-goesr.woc.noaa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "stage.trade.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "stage.econ.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ssd.wrh.noaa.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "srdata.nist.gov",
+      "visits": "9901"
+    },
+    {
+      "domain": "srdata-t.nist.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "srdata-d.nist.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "spcwebsite.spc.noaa.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "sos.noaa.gov",
+      "visits": "22179"
+    },
+    {
+      "domain": "smstestbed.nist.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "sit-tsdr.etc.uspto.gov",
+      "visits": "1790"
+    },
+    {
+      "domain": "shoreline.qa.coast.noaa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "shoreline.noaa.gov",
+      "visits": "619"
+    },
+    {
+      "domain": "shoreline.chs.coast.noaa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "shop.nist.gov",
+      "visits": "7264"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "seqdata.uspto.gov",
+      "visits": "255"
+    },
+    {
+      "domain": "secatchshares.fisheries.noaa.gov",
+      "visits": "2344"
+    },
+    {
+      "domain": "search.uspto.gov",
+      "visits": "1079"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "28827"
+    },
+    {
+      "domain": "search.trade.gov",
+      "visits": "136"
+    },
+    {
+      "domain": "search.noaa.gov",
+      "visits": "232"
+    },
+    {
+      "domain": "search.export.gov",
+      "visits": "40"
+    },
+    {
+      "domain": "search.eda.gov",
+      "visits": "347"
+    },
+    {
+      "domain": "search.commerce.gov",
+      "visits": "3412"
+    },
+    {
+      "domain": "search.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "search.bea.gov",
+      "visits": "3409"
+    },
+    {
+      "domain": "scijinks.gov",
+      "visits": "46386"
+    },
+    {
+      "domain": "satable.ncep.noaa.gov",
+      "visits": "1869"
+    },
+    {
+      "domain": "satable-cprk.ncep.noaa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "sanctuaries.noaa.gov",
+      "visits": "13613"
+    },
+    {
+      "domain": "samate.nist.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "salesforce.trade.gov",
+      "visits": "65"
+    },
+    {
+      "domain": "saga.pmel.noaa.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "sa.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "rulings.cbp.gov",
+      "visits": "377"
+    },
+    {
+      "domain": "rpki-monitor.antd.nist.gov",
+      "visits": "143"
+    },
+    {
+      "domain": "repository.library.noaa.gov",
+      "visits": "9098"
+    },
+    {
+      "domain": "rdms-tmep-vip.uspto.gov",
+      "visits": "209"
+    },
+    {
+      "domain": "rdms-tfsr-vip.uspto.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "rdms-tbmp-vip.uspto.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "rdms-mpep-vip.uspto.gov",
+      "visits": "6084"
+    },
+    {
+      "domain": "radar.weather.gov",
+      "visits": "3251996"
+    },
+    {
+      "domain": "radar-v2.weather.gov.akadns.net",
+      "visits": "2"
+    },
+    {
+      "domain": "radar-qa-cp.weather.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "radar-cp.weather.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "radar-bo.weather.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "r.search.yahoo.com",
+      "visits": "2"
+    },
+    {
+      "domain": "qwiexplorer.ces.census.gov",
+      "visits": "403"
+    },
+    {
+      "domain": "qa.coralreef.noaa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "qa.coast.noaa.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "qa-commerce9.d.commerce.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "pvt-tsdr.etc.uspto.gov",
+      "visits": "1427"
+    },
+    {
+      "domain": "publicsafety.nist.gov",
+      "visits": "516"
+    },
+    {
+      "domain": "prod.tidesandcurrents.noaa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "preview.weather.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "preview.climate.gov",
+      "visits": "779"
+    },
+    {
+      "domain": "preview-www-goesr.woc.noaa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "preview-radar.weather.gov",
+      "visits": "2673"
+    },
+    {
+      "domain": "preview-marine.weather.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "preview-idp.weather.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "preview-forecast.weather.gov",
+      "visits": "93"
+    },
+    {
+      "domain": "ppubs.uspto.gov",
+      "visits": "37867"
+    },
+    {
+      "domain": "ports.tidesandcurrents.noaa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "ports.noaa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "pml.nist.gov",
+      "visits": "250"
+    },
+    {
+      "domain": "pmel.noaa.gov",
+      "visits": "260"
+    },
+    {
+      "domain": "physics.nist.gov",
+      "visits": "25600"
+    },
+    {
+      "domain": "photolib.noaa.gov",
+      "visits": "1266"
+    },
+    {
+      "domain": "patentsgazette.uspto.gov",
+      "visits": "4465"
+    },
+    {
+      "domain": "patentcenter.uspto.gov",
+      "visits": "47007"
+    },
+    {
+      "domain": "pages.nist.gov",
+      "visits": "19719"
+    },
+    {
+      "domain": "origin.wpc.ncep.noaa.gov",
+      "visits": "36687"
+    },
+    {
+      "domain": "origin-west-www-wpc.woc.noaa.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "origin-west-www-spc.woc.noaa.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "origin-west-www-nhc.woc.noaa.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "origin-east-www-wpc.woc.noaa.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "origin-east-www-spc.woc.noaa.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "origin-east-www-nhc.woc.noaa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "origin-east-02-drupal-climate.woc.noaa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "origin-east-01-wordpress-space.woc.noaa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "origin-east-01-drupal-climate.woc.noaa.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "origin-climate-toolkit.woc.noaa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "opd-ui.uspto.gov",
+      "visits": "2149"
+    },
+    {
+      "domain": "onthemap.ces.census.gov",
+      "visits": "2610"
+    },
+    {
+      "domain": "olympiccoast.noaa.gov",
+      "visits": "599"
+    },
+    {
+      "domain": "old.tidesandcurrents.noaa.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "ofac.treasury.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "oedci.uspto.gov",
+      "visits": "29801"
+    },
+    {
+      "domain": "oceanwatch.noaa.gov",
+      "visits": "253"
+    },
+    {
+      "domain": "oceantoday.noaa.gov",
+      "visits": "28021"
+    },
+    {
+      "domain": "oceanservice.noaa.gov",
+      "visits": "405169"
+    },
+    {
+      "domain": "oceans.pmel.noaa.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "oceanexplorer.noaa.gov",
+      "visits": "37766"
+    },
+    {
+      "domain": "nssl.noaa.gov",
+      "visits": "275"
+    },
+    {
+      "domain": "nps.nmfs.noaa.gov",
+      "visits": "140"
+    },
+    {
+      "domain": "nosimagery.noaa.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "nosimagery.chs.coast.noaa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "nominate.noaa.gov",
+      "visits": "1117"
+    },
+    {
+      "domain": "nlte.nist.gov",
+      "visits": "1355"
+    },
+    {
+      "domain": "nist.time.gov",
+      "visits": "11249"
+    },
+    {
+      "domain": "nigos.nist.gov",
+      "visits": "99"
+    },
+    {
+      "domain": "nhc-vm-wwwdev01.nhc.noaa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "nessadmin.ntis.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "nctr.pmel.noaa.gov",
+      "visits": "2124"
+    },
+    {
+      "domain": "ncc.nesdis.noaa.gov",
+      "visits": "389"
+    },
+    {
+      "domain": "my.uspto.gov",
+      "visits": "4278"
+    },
+    {
+      "domain": "mrms.nssl.noaa.gov",
+      "visits": "9859"
+    },
+    {
+      "domain": "mrms-dev.nssl.noaa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "mping.nssl.noaa.gov",
+      "visits": "938"
+    },
+    {
+      "domain": "mpep.uspto.gov",
+      "visits": "5842"
+    },
+    {
+      "domain": "montereybay.noaa.gov",
+      "visits": "22625"
+    },
+    {
+      "domain": "monitor.noaa.gov",
+      "visits": "10811"
+    },
+    {
+      "domain": "monitor.dnsops.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "mobile.weather.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "mmlweb.nist.gov",
+      "visits": "663"
+    },
+    {
+      "domain": "mdsdev.nist.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "math.nist.gov",
+      "visits": "6544"
+    },
+    {
+      "domain": "marineprotectedareas.noaa.gov",
+      "visits": "8841"
+    },
+    {
+      "domain": "marinedebris.noaa.gov",
+      "visits": "12888"
+    },
+    {
+      "domain": "marinecadastre.qa.coast.noaa.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "marinecadastre.gov",
+      "visits": "1817"
+    },
+    {
+      "domain": "marine.weather.gov",
+      "visits": "237315"
+    },
+    {
+      "domain": "marine-dev.ncep.noaa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "maps2.qa.coast.noaa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "maps2.coast.noaa.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "maps1.qa.coast.noaa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "maps1.coast.noaa.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "maps.qa.coast.noaa.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "maps.coast.noaa.gov",
+      "visits": "122"
+    },
+    {
+      "domain": "manati.star.nesdis.noaa.gov",
+      "visits": "2827"
+    },
+    {
+      "domain": "maldi.nist.gov",
+      "visits": "2017"
+    },
+    {
+      "domain": "mag.ncep.noaa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "m.cameochemicals.noaa.gov",
+      "visits": "690"
+    },
+    {
+      "domain": "localhost",
+      "visits": "15"
+    },
+    {
+      "domain": "live-www-goesr.woc.noaa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "library.doc.gov",
+      "visits": "10240"
+    },
+    {
+      "domain": "lehdtest9.did.census.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "lehdtest8.did.census.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "lehdtest7.did.census.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "lehdtest6.did.census.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "lehdtest5.did.census.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "lehdtest4.did.census.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "lehdtest3.did.census.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "lehdtest2.did.census.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "lehdtest1.did.census.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "lehdtest.did.census.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "lehd.ces.census.gov",
+      "visits": "11096"
+    },
+    {
+      "domain": "legacy.export.gov",
+      "visits": "3368"
+    },
+    {
+      "domain": "ledextract.ces.census.gov",
+      "visits": "4319"
+    },
+    {
+      "domain": "ladmf.ntis.gov",
+      "visits": "3546"
+    },
+    {
+      "domain": "kw.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "kinetics.nist.gov",
+      "visits": "2896"
+    },
+    {
+      "domain": "j2jexplorer.ces.census.gov",
+      "visits": "4051"
+    },
+    {
+      "domain": "itl.nist.gov",
+      "visits": "510"
+    },
+    {
+      "domain": "itad.dev.dsd.census.gov",
+      "visits": "557"
+    },
+    {
+      "domain": "it.data.census.gov",
+      "visits": "506"
+    },
+    {
+      "domain": "iprs.cbp.gov",
+      "visits": "1737"
+    },
+    {
+      "domain": "iprr.cbp.gov",
+      "visits": "559"
+    },
+    {
+      "domain": "ipm.nist.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "ipidentifier.uspto.gov",
+      "visits": "2243"
+    },
+    {
+      "domain": "iocm.noaa.gov",
+      "visits": "1275"
+    },
+    {
+      "domain": "internals.coast.noaa.gov",
+      "visits": "47"
+    },
+    {
+      "domain": "inside.nssl.noaa.gov",
+      "visits": "734"
+    },
+    {
+      "domain": "imagery2.qa.coast.noaa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "imagery2.coast.noaa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "imagery1.qa.coast.noaa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "imagery1.coast.noaa.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "imagery.qa.coast.noaa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "imagery.coast.noaa.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "icsd.nist.gov",
+      "visits": "1268"
+    },
+    {
+      "domain": "icsd-i.nist.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "i94.cbp.dhs.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "hwt.nssl.noaa.gov",
+      "visits": "173"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "hmsworkshop.fisheries.noaa.gov",
+      "visits": "356"
+    },
+    {
+      "domain": "hmspermits.noaa.gov",
+      "visits": "3674"
+    },
+    {
+      "domain": "hl7v2-iz-r1-5-testing.nist.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "hl7v2-igamt-2.nist.gov",
+      "visits": "79"
+    },
+    {
+      "domain": "hfradar.ndbc.noaa.gov",
+      "visits": "373"
+    },
+    {
+      "domain": "hfp.test.econ.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "hfp.dev.econ.census.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "helpspanish.cbp.gov",
+      "visits": "12913"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "513693"
+    },
+    {
+      "domain": "hawaiihumpbackwhale.noaa.gov",
+      "visits": "6787"
+    },
+    {
+      "domain": "graysreef.noaa.gov",
+      "visits": "754"
+    },
+    {
+      "domain": "graphical.mdl.nws.noaa.gov",
+      "visits": "3050"
+    },
+    {
+      "domain": "grants.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "goes-r.noaa.gov",
+      "visits": "11332"
+    },
+    {
+      "domain": "globaldossier.uspto.gov",
+      "visits": "68569"
+    },
+    {
+      "domain": "globaldossier-ui.uspto.gov",
+      "visits": "168"
+    },
+    {
+      "domain": "globaldossier-cloud-sit.etc.uspto.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "globaldossier-cloud-fqt.etc.uspto.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "globaldossier-cloud-dev.etc.uspto.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "glerl.noaa.gov",
+      "visits": "6571"
+    },
+    {
+      "domain": "gis.dev.ncdc.noaa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "geocoding.geo.census.gov",
+      "visits": "26550"
+    },
+    {
+      "domain": "geocoding.dev.geo.census.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "gams.nist.gov",
+      "visits": "18764"
+    },
+    {
+      "domain": "ftp.csc.noaa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "fsitraining.state.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "fqt-tsdr.etc.uspto.gov",
+      "visits": "7711"
+    },
+    {
+      "domain": "fosterscholars.noaa.gov",
+      "visits": "3352"
+    },
+    {
+      "domain": "forecast.weather.gov",
+      "visits": "21448331"
+    },
+    {
+      "domain": "forecast-dev.ncep.noaa.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "foiadocuments.uspto.gov",
+      "visits": "1198"
+    },
+    {
+      "domain": "flowsmapper.geo.census.gov",
+      "visits": "1009"
+    },
+    {
+      "domain": "flowergarden.noaa.gov",
+      "visits": "492"
+    },
+    {
+      "domain": "floridakeys.noaa.gov",
+      "visits": "40334"
+    },
+    {
+      "domain": "floats.pmel.noaa.gov",
+      "visits": "138"
+    },
+    {
+      "domain": "fits.nist.gov",
+      "visits": "21653"
+    },
+    {
+      "domain": "fisheriespermits.noaa.gov",
+      "visits": "9847"
+    },
+    {
+      "domain": "firstnet.gov",
+      "visits": "14295"
+    },
+    {
+      "domain": "ferret.pmel.noaa.gov",
+      "visits": "1303"
+    },
+    {
+      "domain": "feesqapvt.etc.uspto.gov",
+      "visits": "205"
+    },
+    {
+      "domain": "fees.uspto.gov",
+      "visits": "66737"
+    },
+    {
+      "domain": "fees-dmz-alx1.uspto.gov",
+      "visits": "2217"
+    },
+    {
+      "domain": "feeprocessingportal.uspto.gov",
+      "visits": "2317"
+    },
+    {
+      "domain": "fedv6-deployment.antd.nist.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "farallones.noaa.gov",
+      "visits": "15538"
+    },
+    {
+      "domain": "f1.weather.gov",
+      "visits": "137"
+    },
+    {
+      "domain": "etas.uspto.gov",
+      "visits": "131"
+    },
+    {
+      "domain": "estta.uspto.gov",
+      "visits": "86"
+    },
+    {
+      "domain": "esta.cbp.dhs.gov",
+      "visits": "969"
+    },
+    {
+      "domain": "erulings.cbp.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "equiphq.uspto.gov",
+      "visits": "135"
+    },
+    {
+      "domain": "epas.uspto.gov",
+      "visits": "1803"
+    },
+    {
+      "domain": "eospso.nasa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "enroll.recruiting.cbp.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "emissary.edgenuity.com",
+      "visits": "5"
+    },
+    {
+      "domain": "embargo.data.census.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "eisavpn.cbp.gov",
+      "visits": "93"
+    },
+    {
+      "domain": "egov.uscis.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit.testint.cbp.gov",
+      "visits": "84"
+    },
+    {
+      "domain": "edit.staging.cbp.gov",
+      "visits": "123"
+    },
+    {
+      "domain": "edit.mbda.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "edit.commerce.gov",
+      "visits": "150"
+    },
+    {
+      "domain": "edit.cbp.gov",
+      "visits": "161"
+    },
+    {
+      "domain": "edit-cldp.doc.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "edges.nist.gov",
+      "visits": "138"
+    },
+    {
+      "domain": "ecofoci.noaa.gov",
+      "visits": "7231"
+    },
+    {
+      "domain": "ecc.nist.gov",
+      "visits": "22669"
+    },
+    {
+      "domain": "eastcoast.coastwatch.noaa.gov",
+      "visits": "205"
+    },
+    {
+      "domain": "earthobservatory.nasa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "eallegations.cbp.gov",
+      "visits": "411"
+    },
+    {
+      "domain": "e.drought.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "dods.ndbc.noaa.gov",
+      "visits": "151"
+    },
+    {
+      "domain": "dnsops.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "dlmf.nist.gov",
+      "visits": "14749"
+    },
+    {
+      "domain": "dkogan-docd8-stry0247157-commerce9.d.commerce.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "dkogan-docd8-stry0245152-commerce9.d.commerce.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "ditd-app061.compute.csp1.census.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "ditd-app060.compute.csp1.census.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "ditd-app059.compute.csp1.census.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "ditd-app058.compute.csp1.census.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "digital.mdl.nws.noaa.gov",
+      "visits": "3931"
+    },
+    {
+      "domain": "digital.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "developer.uspto.gov",
+      "visits": "2034"
+    },
+    {
+      "domain": "dev.wrh.noaa.gov",
+      "visits": "481"
+    },
+    {
+      "domain": "dev.trade.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "dev.tidesandcurrents.noaa.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "dev.coast.noaa.gov",
+      "visits": "68"
+    },
+    {
+      "domain": "dev-www-wpc.woc.noaa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "dev-www-goesr.woc.noaa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "dev-west-www-wpc.woc.noaa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "dev-drupal9-climate.woc.noaa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "dev-apps-st.fisheries.noaa.gov",
+      "visits": "68"
+    },
+    {
+      "domain": "dev-02-drupal-climate.woc.noaa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "datapub.nist.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "dataplumbing.nist.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "data.pt.census.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "data.preprod.census.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "data.pmel.noaa.gov",
+      "visits": "60"
+    },
+    {
+      "domain": "data.noaa.gov",
+      "visits": "3410"
+    },
+    {
+      "domain": "data.nist.gov",
+      "visits": "2947"
+    },
+    {
+      "domain": "data.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "data.fr.ditd.census.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "data.fr.census.gov",
+      "visits": "125"
+    },
+    {
+      "domain": "data.er.ditd.census.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "data.er.census.gov",
+      "visits": "331"
+    },
+    {
+      "domain": "data.dissdev3.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "data.dissdev2.census.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "data.dissdev1.census.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "data.commerce.gov",
+      "visits": "40697"
+    },
+    {
+      "domain": "data.ci4.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "data.ci3.census.gov",
+      "visits": "208"
+    },
+    {
+      "domain": "data.ci2.census.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "data.ci1.census.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "data.census.gov",
+      "visits": "121822"
+    },
+    {
+      "domain": "data.canary.census.gov",
+      "visits": "166"
+    },
+    {
+      "domain": "data.at.census.gov",
+      "visits": "236"
+    },
+    {
+      "domain": "darrp.noaa.gov",
+      "visits": "21676"
+    },
+    {
+      "domain": "cybertraining.uspto.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "cwdrupal10.star1.nesdis.noaa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "cstl.nist.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "csrc.test-e1c.nist.gov",
+      "visits": "1188"
+    },
+    {
+      "domain": "csrc.test-e1a.nist.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "csrc.nist.gov",
+      "visits": "170890"
+    },
+    {
+      "domain": "csc.noaa.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "cordellbank.noaa.gov",
+      "visits": "8528"
+    },
+    {
+      "domain": "coralreefwatch.noaa.gov",
+      "visits": "13840"
+    },
+    {
+      "domain": "coralreef.noaa.gov",
+      "visits": "10707"
+    },
+    {
+      "domain": "content-drupal.climate.gov",
+      "visits": "410"
+    },
+    {
+      "domain": "concrete.nist.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "components.uspto.gov",
+      "visits": "3380"
+    },
+    {
+      "domain": "coastwatch.star.nesdis.noaa.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "coastwatch.noaa.gov",
+      "visits": "2268"
+    },
+    {
+      "domain": "coastwatch.chesapeakebay.noaa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "coastalsmartgrowth.noaa.gov",
+      "visits": "5502"
+    },
+    {
+      "domain": "coast.noaa.gov",
+      "visits": "146846"
+    },
+    {
+      "domain": "co-ops.nos.noaa.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "cmsmd.orr.noaa.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "cmsdrp.orr.noaa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "cms1.mo.nids.noaa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "cms.nids.noaa.gov",
+      "visits": "622"
+    },
+    {
+      "domain": "cms.csrc.test-e1a.nist.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "cms.csrc.nist.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "cms-www-goesr.woc.noaa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "climategovtest.woc.noaa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "cldp.doc.gov",
+      "visits": "85006"
+    },
+    {
+      "domain": "cidr-webpub.econ.census.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "cidr-webadmin.train.econ.census.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "cidr-webadmin.econ.census.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "chs.coast.noaa.gov",
+      "visits": "404"
+    },
+    {
+      "domain": "china.usembassy-china.org.cn",
+      "visits": "3"
+    },
+    {
+      "domain": "chemdata.nist.gov",
+      "visits": "7081"
+    },
+    {
+      "domain": "charts.noaa.gov",
+      "visits": "4515"
+    },
+    {
+      "domain": "channelislands.noaa.gov",
+      "visits": "4291"
+    },
+    {
+      "domain": "certifiedcopycenter.uspto.gov",
+      "visits": "361"
+    },
+    {
+      "domain": "cedsci-web78.dev.ced.census.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "cedsci-web66.stage.ced.census.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "cbwofs.nssl.noaa.gov",
+      "visits": "181"
+    },
+    {
+      "domain": "cbpworkforce.cbp.gov",
+      "visits": "588"
+    },
+    {
+      "domain": "cbpcomplaints.cbp.gov",
+      "visits": "2120"
+    },
+    {
+      "domain": "cbp.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "cbb.census.gov",
+      "visits": "1034"
+    },
+    {
+      "domain": "careers.cbp.gov",
+      "visits": "356120"
+    },
+    {
+      "domain": "cams.nssl.noaa.gov",
+      "visits": "746"
+    },
+    {
+      "domain": "cameochemicals.noaa.gov",
+      "visits": "45205"
+    },
+    {
+      "domain": "calendar.library.doc.gov",
+      "visits": "811"
+    },
+    {
+      "domain": "ca.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "bwt.qa.cbp.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "bwt.cbp.gov",
+      "visits": "575791"
+    },
+    {
+      "domain": "bulkdata.uspto.gov",
+      "visits": "1262"
+    },
+    {
+      "domain": "bjs.ojp.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "beta.trade.gov",
+      "visits": "261"
+    },
+    {
+      "domain": "beta.tidesandcurrents.noaa.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "beta.firstnet.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "beta-tmsearch.uspto.gov",
+      "visits": "209"
+    },
+    {
+      "domain": "bds.explorer.ces.census.gov",
+      "visits": "298"
+    },
+    {
+      "domain": "awt.qa.cbp.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "awt.cbp.gov",
+      "visits": "10650"
+    },
+    {
+      "domain": "aviationweather.gov",
+      "visits": "876612"
+    },
+    {
+      "domain": "aviationweather-cprk.ncep.noaa.gov",
+      "visits": "121165"
+    },
+    {
+      "domain": "aviationweather-bldr.ncep.noaa.gov",
+      "visits": "21127"
+    },
+    {
+      "domain": "author.cms.asd.census.gov",
+      "visits": "290"
+    },
+    {
+      "domain": "author-publish.cms.asd.census.gov",
+      "visits": "528"
+    },
+    {
+      "domain": "atlhmscatchshares.fisheries.noaa.gov",
+      "visits": "360"
+    },
+    {
+      "domain": "assignment.uspto.gov",
+      "visits": "18641"
+    },
+    {
+      "domain": "apps.nssl.noaa.gov",
+      "visits": "51"
+    },
+    {
+      "domain": "apps.nmfs.noaa.gov",
+      "visits": "634"
+    },
+    {
+      "domain": "apps.glerl.noaa.gov",
+      "visits": "182"
+    },
+    {
+      "domain": "apps-st.fisheries.noaa.gov",
+      "visits": "122"
+    },
+    {
+      "domain": "api.dissdev3.census.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "api.dissdev2.census.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "americansamoa.noaa.gov",
+      "visits": "1860"
+    },
+    {
+      "domain": "airc.nist.gov",
+      "visits": "4605"
+    },
+    {
+      "domain": "airc-staging.nist.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ai.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "adsorption.nist.gov",
+      "visits": "9570"
+    },
+    {
+      "domain": "actev.nist.gov",
+      "visits": "863"
+    },
+    {
+      "domain": "actev-staging.nist.gov",
+      "visits": "547"
+    },
+    {
+      "domain": "ace.cbp.gov",
+      "visits": "695"
+    },
+    {
+      "domain": "ace-test.cbp.gov",
+      "visits": "132"
+    },
+    {
+      "domain": "ace-sat.cbp.gov",
+      "visits": "553"
+    },
+    {
+      "domain": "ace-d6.cbp.gov",
+      "visits": "536"
+    },
+    {
+      "domain": "ace-d3.cbp.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "account.uspto.gov",
+      "visits": "491"
+    },
+    {
+      "domain": "accesstest.trade.gov",
+      "visits": "26921"
+    },
+    {
+      "domain": "access.trade.gov",
+      "visits": "73740"
+    },
+    {
+      "domain": "2014-2018.firstnet.gov",
+      "visits": "11200"
+    },
+    {
+      "domain": "10millionpatents.uspto.gov",
+      "visits": "8"
+    }
+  ],
+  "totals": {
+    "visits": 50612706
+  },
+  "taken_at": "2024-01-05T15:40:05.770Z",
+  "agency": "commerce"
+}

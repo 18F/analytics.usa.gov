@@ -1,0 +1,946 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "wwwn.cdc.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www3.epa.gov",
+      "visits": "24446"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.sustainability.gov",
+      "visits": "2534"
+    },
+    {
+      "domain": "www.response.epa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.northeastdiesel.org",
+      "visits": "51"
+    },
+    {
+      "domain": "www.niehs.nih.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.justice.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.frtr.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "www.federalregister.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.fedcenter.gov",
+      "visits": "3170"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "1580229"
+    },
+    {
+      "domain": "www.enviroflash.info",
+      "visits": "910"
+    },
+    {
+      "domain": "www.energystar.gov",
+      "visits": "252158"
+    },
+    {
+      "domain": "www.energy.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "95"
+    },
+    {
+      "domain": "www.doi.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.ars.usda.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.airnow.gov",
+      "visits": "519888"
+    },
+    {
+      "domain": "wq-srs.epa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "work.epa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "widget.airnow.gov",
+      "visits": "10672"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "28"
+    },
+    {
+      "domain": "webbook.nist.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "webarchive.library.unt.edu",
+      "visits": "3"
+    },
+    {
+      "domain": "wayback.stanford.edu",
+      "visits": "4"
+    },
+    {
+      "domain": "watersgeo.epa.gov",
+      "visits": "844"
+    },
+    {
+      "domain": "wasteplan.epa.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "vsat.epa.gov",
+      "visits": "152"
+    },
+    {
+      "domain": "vgpenoi.epa.gov",
+      "visits": "403"
+    },
+    {
+      "domain": "ves.epa.gov",
+      "visits": "107"
+    },
+    {
+      "domain": "uploader.arms.epa.gov",
+      "visits": "347"
+    },
+    {
+      "domain": "uicone.epa.gov",
+      "visits": "166"
+    },
+    {
+      "domain": "trimewebmod.epa.gov",
+      "visits": "367"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "5"
+    },
+    {
+      "domain": "tots.epa.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "termlookup.epa.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "tdb.epa.gov",
+      "visits": "456"
+    },
+    {
+      "domain": "tcotsadminstg.epa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "tcots.epa.gov",
+      "visits": "141"
+    },
+    {
+      "domain": "swcweb.epa.gov",
+      "visits": "258"
+    },
+    {
+      "domain": "storet.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "staging.dmap-prod.aws.epa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "sorext.epa.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "sor.epa.gov",
+      "visits": "1492"
+    },
+    {
+      "domain": "sor-scc-apistg.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "sor-scc-api.epa.gov",
+      "visits": "289"
+    },
+    {
+      "domain": "smartpay.gsa.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "slits.epa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "shiny.epa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "sgita.epa.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "seqapass.epa.gov",
+      "visits": "118"
+    },
+    {
+      "domain": "semspub.epa.gov",
+      "visits": "592"
+    },
+    {
+      "domain": "seatool.epa.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "search.epa.gov",
+      "visits": "47090"
+    },
+    {
+      "domain": "search.energystar.gov",
+      "visits": "5158"
+    },
+    {
+      "domain": "sdwisstg.epa.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "sdwis.epa.gov",
+      "visits": "107"
+    },
+    {
+      "domain": "scribenet.response.epa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "sabapp.epa.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "sab.epa.gov",
+      "visits": "573"
+    },
+    {
+      "domain": "rtor.epa.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "rstudio-connect.dmap-stage.aws.epa.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "riverstreamassessment.epa.gov",
+      "visits": "653"
+    },
+    {
+      "domain": "response.epa.gov",
+      "visits": "4315"
+    },
+    {
+      "domain": "response-qa.response.epa.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "remoteassist2.epa.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "remoteassist.epa.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "rcrapublic.epa.gov",
+      "visits": "4704"
+    },
+    {
+      "domain": "raisz.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "radnet.epa.gov",
+      "visits": "60"
+    },
+    {
+      "domain": "qlikviz.epa.gov",
+      "visits": "1320"
+    },
+    {
+      "domain": "qed.epa.gov",
+      "visits": "176"
+    },
+    {
+      "domain": "pss.epa.gov",
+      "visits": "8694"
+    },
+    {
+      "domain": "prmts.epa.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "portfoliomanager.staging.es.epa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "portfoliomanager.energystar.gov",
+      "visits": "32077"
+    },
+    {
+      "domain": "portal.epa.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "pfastt.epa.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "ozoneairqualitystandards.epa.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "ozone.epa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "owshiny.epa.gov",
+      "visits": "129"
+    },
+    {
+      "domain": "owapps.epa.gov",
+      "visits": "197"
+    },
+    {
+      "domain": "ordspub.epa.gov",
+      "visits": "17881"
+    },
+    {
+      "domain": "ordsext.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "orator-map.epa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "opendata.epa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "olsadminstg.epa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "olsadmin.epa.gov",
+      "visits": "124"
+    },
+    {
+      "domain": "ofmpub.epa.gov",
+      "visits": "1054"
+    },
+    {
+      "domain": "ofmextwam.epa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "ofmext.epa.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "obipublic.epa.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "oaspub.epa.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "oasportal.epa.gov",
+      "visits": "69"
+    },
+    {
+      "domain": "oasext.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ntp.niehs.nih.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "nsteps.epa.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "npdes-ereporting.epa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "northeastdiesel.org",
+      "visits": "9"
+    },
+    {
+      "domain": "node2.epa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "netdmr.epa.gov",
+      "visits": "14163"
+    },
+    {
+      "domain": "neport.epa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "nepis.epa.gov",
+      "visits": "48099"
+    },
+    {
+      "domain": "nepassisttool.epa.gov",
+      "visits": "3582"
+    },
+    {
+      "domain": "mywaterway.epa.gov",
+      "visits": "5528"
+    },
+    {
+      "domain": "mostprobablenumbercalculator.epa.gov",
+      "visits": "246"
+    },
+    {
+      "domain": "mobilefire.airnow.gov",
+      "visits": "8615"
+    },
+    {
+      "domain": "methane.epa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "map24.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "map23.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "lookforwatersense.epa.gov",
+      "visits": "2352"
+    },
+    {
+      "domain": "lew.epa.gov",
+      "visits": "747"
+    },
+    {
+      "domain": "lasso.epa.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "java.epa.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "iwaste.epa.gov",
+      "visits": "948"
+    },
+    {
+      "domain": "iris.epa.gov",
+      "visits": "3280"
+    },
+    {
+      "domain": "intrasearch.epa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "iclus.epa.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "iaspub.epa.gov",
+      "visits": "384"
+    },
+    {
+      "domain": "heronet.epa.gov",
+      "visits": "941"
+    },
+    {
+      "domain": "hero.epa.gov",
+      "visits": "26147"
+    },
+    {
+      "domain": "hawc.epa.gov",
+      "visits": "718"
+    },
+    {
+      "domain": "guidemeintstg.epa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "guidemeint.epa.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "guideme.epa.gov",
+      "visits": "681"
+    },
+    {
+      "domain": "gpdashboard.epa.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "gispub.epa.gov",
+      "visits": "40821"
+    },
+    {
+      "domain": "ghgreporting.epa.gov",
+      "visits": "1087"
+    },
+    {
+      "domain": "ghgdata.epa.gov",
+      "visits": "2392"
+    },
+    {
+      "domain": "geopub.epa.gov",
+      "visits": "1057"
+    },
+    {
+      "domain": "geodata.epa.gov",
+      "visits": "130"
+    },
+    {
+      "domain": "geocode.epa.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "frtr.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "frs-public.epa.gov",
+      "visits": "5939"
+    },
+    {
+      "domain": "fishadvisoryonline.epa.gov",
+      "visits": "247"
+    },
+    {
+      "domain": "fire.airnow.gov",
+      "visits": "54488"
+    },
+    {
+      "domain": "essearch.energystar.gov",
+      "visits": "1060"
+    },
+    {
+      "domain": "espanol.epa.gov",
+      "visits": "48889"
+    },
+    {
+      "domain": "esml.epa.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "epamap33.epa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "epamap32.epa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "enviroatlas.epa.gov",
+      "visits": "1214"
+    },
+    {
+      "domain": "enviro.epa.gov",
+      "visits": "11556"
+    },
+    {
+      "domain": "enservices.epa.gov",
+      "visits": "629"
+    },
+    {
+      "domain": "energystar.staging.es.epa.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "energystar.my.site.com",
+      "visits": "2857"
+    },
+    {
+      "domain": "ends2.epa.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "encromerr.epa.gov",
+      "visits": "3232"
+    },
+    {
+      "domain": "emissary.edgenuity.com",
+      "visits": "2"
+    },
+    {
+      "domain": "ejscreen.epa.gov",
+      "visits": "7590"
+    },
+    {
+      "domain": "edg.epa.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "edap.epa.gov",
+      "visits": "2912"
+    },
+    {
+      "domain": "ecomments.epa.gov",
+      "visits": "330"
+    },
+    {
+      "domain": "ecomments-wam.epa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "echoscan.epa.gov",
+      "visits": "805"
+    },
+    {
+      "domain": "echo.epa.gov",
+      "visits": "46886"
+    },
+    {
+      "domain": "dis.epa.gov",
+      "visits": "1958"
+    },
+    {
+      "domain": "cyanp.epa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "cumulis.epa.gov",
+      "visits": "32518"
+    },
+    {
+      "domain": "creat.epa.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "council.epa.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "comptox.epa.gov",
+      "visits": "11591"
+    },
+    {
+      "domain": "cobra.epa.gov",
+      "visits": "99"
+    },
+    {
+      "domain": "cmadmin.staging.es.epa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "cmadmin.energystar.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "cloud.mail.energystar.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "clmapper.epa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "clearinghouse.epa.gov",
+      "visits": "90"
+    },
+    {
+      "domain": "cleanpowerplanmaps.epa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "cleanairnortheast.epa.gov",
+      "visits": "280"
+    },
+    {
+      "domain": "cimc.epa.gov",
+      "visits": "1708"
+    },
+    {
+      "domain": "chemview.epa.gov",
+      "visits": "1677"
+    },
+    {
+      "domain": "champ.rtnccad.epa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "cfpub2.epa.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "cfpub1.epa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "cfpub.epa.gov",
+      "visits": "42781"
+    },
+    {
+      "domain": "cfext.epa.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "cdxapps.epa.gov",
+      "visits": "4180"
+    },
+    {
+      "domain": "cdx.epa.gov",
+      "visits": "260"
+    },
+    {
+      "domain": "ccte-res-ncd.epa.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "ccte-factotum-stg.epa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "ccte-cced-chemster.epa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ccte-ccd.epa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "ccte-ccd-stg.epa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "casac.epa.gov",
+      "visits": "132"
+    },
+    {
+      "domain": "campd.epa.gov",
+      "visits": "782"
+    },
+    {
+      "domain": "cadlink.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "burialatsea.epa.gov",
+      "visits": "191"
+    },
+    {
+      "domain": "bmdsonline.epa.gov",
+      "visits": "195"
+    },
+    {
+      "domain": "beta.staging.es.epa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "beaconstg.epa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "beacon.epa.gov",
+      "visits": "116"
+    },
+    {
+      "domain": "bap.epa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "awsrobinson.epa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "awsgispub.epa.gov",
+      "visits": "55"
+    },
+    {
+      "domain": "awsedap.epa.gov",
+      "visits": "495"
+    },
+    {
+      "domain": "awseatlas.epa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "attainsweb.epa.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "attains.epa.gov",
+      "visits": "466"
+    },
+    {
+      "domain": "atsdr.cdc.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "atmos5.hesc.epa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "atmos-portal.hesc.epa.gov",
+      "visits": "61"
+    },
+    {
+      "domain": "assessments.epa.gov",
+      "visits": "401"
+    },
+    {
+      "domain": "archive.epa.gov",
+      "visits": "2572"
+    },
+    {
+      "domain": "aqs.epa.gov",
+      "visits": "2093"
+    },
+    {
+      "domain": "app.epa.gov",
+      "visits": "326"
+    },
+    {
+      "domain": "api-ccte.epa.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "api-ccte-stg.epa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "aopdb.epa.gov",
+      "visits": "40"
+    },
+    {
+      "domain": "19january2021snapshot.epa.gov",
+      "visits": "5839"
+    },
+    {
+      "domain": "19january2017snapshot.epa.gov",
+      "visits": "15343"
+    },
+    {
+      "domain": "(other)",
+      "visits": "218523"
+    }
+  ],
+  "totals": {
+    "visits": 3221885
+  },
+  "taken_at": "2024-01-05T15:42:17.449Z",
+  "agency": "environmental-protection-agency"
+}

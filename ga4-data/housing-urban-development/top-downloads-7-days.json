@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Housing Handbooks | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh",
+      "total_events": "6092"
+    },
+    {
+      "page_title": "Income Limits | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/il.html",
+      "total_events": "2649"
+    },
+    {
+      "page_title": "HCV Landlord Resources | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/landlord",
+      "total_events": "2171"
+    },
+    {
+      "page_title": "Buying a Home | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/topics/buying_a_home",
+      "total_events": "2139"
+    },
+    {
+      "page_title": "NSPIRE Standards | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/reac/nspire/standards",
+      "total_events": "2004"
+    },
+    {
+      "page_title": "Mortgagee Letters | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/letters/mortgagee",
+      "total_events": "1533"
+    },
+    {
+      "page_title": "Affordable Apartment Listings by County: California | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/states/california/renting/affordable-apartment-listings",
+      "total_events": "1255"
+    },
+    {
+      "page_title": "HUD-9 Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud9",
+      "total_events": "1212"
+    },
+    {
+      "page_title": "Occupancy Requirements of Subsidized Multifamily Housing Programs (4350.3) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh/4350.3",
+      "total_events": "1122"
+    },
+    {
+      "page_title": "MBS Guide Appendices",
+      "event_label": "file_download",
+      "page": "www.ginniemae.gov/issuers/program_guidelines/Pages/mbsguideappendiceslib.aspx",
+      "total_events": "1060"
+    },
+    {
+      "page_title": "Limited Denial of Participation, HUD Funding Disqualifications and Voluntary Abstentions list | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/general_counsel/limited_denial_participation_hud_funding_disqualifications",
+      "total_events": "1008"
+    },
+    {
+      "page_title": "HUD-Multifamily Housing - List of Properties for Sale | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/mfh/pd/mfplist",
+      "total_events": "1004"
+    },
+    {
+      "page_title": "Funding Opportunities | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/cfo/gmomgmt/grantsinfo/fundingopps",
+      "total_events": "927"
+    },
+    {
+      "page_title": "Emergency Housing Vouchers | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/ehv",
+      "total_events": "909"
+    },
+    {
+      "page_title": "Section 184 Indian Home Loan Guarantee Program | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/section184",
+      "total_events": "879"
+    },
+    {
+      "page_title": "CALENDAR YEAR (CY) 2024 OPERATING FUND GRANT PROCESSING | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/ph/am/opfnd2024",
+      "total_events": "866"
+    },
+    {
+      "page_title": "Veterans Affairs Supportive Housing (VASH) - PIH | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/vash",
+      "total_events": "775"
+    },
+    {
+      "page_title": "Disclosure Data Search",
+      "event_label": "file_download",
+      "page": "www.ginniemae.gov/investors/investor_search_tools/Pages/default.aspx",
+      "total_events": "751"
+    },
+    {
+      "page_title": "Housing Choice Voucher Program – Forms for Landlords | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/landlord/forms",
+      "total_events": "707"
+    },
+    {
+      "page_title": "2023 AHAR: Part 1 - PIT Estimates of Homelessness in the U.S. | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/ahar/2023-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html",
+      "total_events": "687"
+    },
+    {
+      "page_title": "HOTMA Resources | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/hotmaresources",
+      "total_events": "682"
+    },
+    {
+      "page_title": "Fair Market Rents (40th PERCENTILE RENTS) | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/fmr.html",
+      "total_events": "627"
+    },
+    {
+      "page_title": "Programs of HUD | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/hudprograms",
+      "total_events": "618"
+    },
+    {
+      "page_title": "HUD-5 Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud5",
+      "total_events": "613"
+    },
+    {
+      "page_title": "Housing Opportunity Through Modernization Act | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/mfh/hotma",
+      "total_events": "604"
+    },
+    {
+      "page_title": "PIH - Housing Choice Vouchers: Tools | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/Tools",
+      "total_events": "571"
+    },
+    {
+      "page_title": "Housing Quality Standards - HCV | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/hqs",
+      "total_events": "556"
+    },
+    {
+      "page_title": "Permanent Foundations Guide for Manufactured Housing Guidebook (4930.3G) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/guidebooks/4930.3G",
+      "total_events": "545"
+    },
+    {
+      "page_title": "CPD Monitoring Handbook (6509.2) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/handbooks/cpd/6509.2",
+      "total_events": "538"
+    },
+    {
+      "page_title": "Housing Choice Voucher Program Guidebook | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/guidebook",
+      "total_events": "535"
+    },
+    {
+      "page_title": "Opportunity Zones - Map | opportunityzones.hud.gov",
+      "event_label": "file_download",
+      "page": "opportunityzones.hud.gov/resources/map",
+      "total_events": "533"
+    },
+    {
+      "page_title": "HUD-1 Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud1",
+      "total_events": "529"
+    },
+    {
+      "page_title": "HUD-5a-Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud5a",
+      "total_events": "509"
+    },
+    {
+      "page_title": "National Pest Management Association (NPMA) Forms - HUD | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/npmaforms",
+      "total_events": "484"
+    },
+    {
+      "page_title": "FHA Mortgage Limits | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/lender/origination/mortgage_limits",
+      "total_events": "479"
+    },
+    {
+      "page_title": "Notices, Rules and Regulations - Public and Indian Housing | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/publications/notices",
+      "total_events": "479"
+    },
+    {
+      "page_title": "Multifamily Utility Allowance Factors | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/muaf.html",
+      "total_events": "478"
+    },
+    {
+      "page_title": "Family Self-Sufficiency (FSS) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/fss",
+      "total_events": "451"
+    },
+    {
+      "page_title": "HUD Housing Counselors | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/hcc/hcc_home",
+      "total_events": "451"
+    },
+    {
+      "page_title": "HUD-9a Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud9a",
+      "total_events": "430"
+    },
+    {
+      "page_title": "National Standards for the Physical Inspection of Real Estate (NSPIRE) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/reac/nspire",
+      "total_events": "430"
+    },
+    {
+      "page_title": "Fair Housing Act Cases | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/hearings_appeals/cases/fha",
+      "total_events": "420"
+    },
+    {
+      "page_title": "SFH Handbook 4000.1 | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/handbook_4000-1",
+      "total_events": "412"
+    },
+    {
+      "page_title": "Housing Handbook 4910.1 | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh/4910.1",
+      "total_events": "401"
+    },
+    {
+      "page_title": "PHA Contact Information | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/pha/contacts",
+      "total_events": "401"
+    },
+    {
+      "page_title": "Section 184 Indian Home Loan Guarantee Program | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/ih/homeownership/184",
+      "total_events": "379"
+    },
+    {
+      "page_title": "Qualified Census Tracts and Difficult Development Areas | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/qct.html",
+      "total_events": "368"
+    },
+    {
+      "page_title": "Assistance Animals | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/fair_housing_equal_opp/assistance_animals",
+      "total_events": "358"
+    },
+    {
+      "page_title": "Homeownership - HUD | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/homeownership",
+      "total_events": "357"
+    },
+    {
+      "page_title": "MBS Guide: Chapters",
+      "event_label": "file_download",
+      "page": "www.ginniemae.gov/issuers/program_guidelines/Pages/MBSGuideLib.aspx",
+      "total_events": "353"
+    },
+    {
+      "page_title": "HUD Insured Multifamily Mortgages | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/comp/mf_fhasl_active",
+      "total_events": "343"
+    },
+    {
+      "page_title": "Violence Against Women Act (VAWA) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/vawa",
+      "total_events": "341"
+    },
+    {
+      "page_title": "Mainstream Vouchers | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/mainstream",
+      "total_events": "336"
+    },
+    {
+      "page_title": "Project Based Vouchers | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/project",
+      "total_events": "319"
+    },
+    {
+      "page_title": "Participating Lenders List - Section 184 - Indian Home Loan Guarantee Program - Indian Housing | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/ih/homeownership/184/lender_list",
+      "total_events": "316"
+    },
+    {
+      "page_title": "Public Housing Agency (PHA) Plans | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/pha",
+      "total_events": "315"
+    },
+    {
+      "page_title": "Multifamily Assistance & Section 8 Database | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/mfh/exp/mfhdiscl",
+      "total_events": "308"
+    },
+    {
+      "page_title": "Environment and Energy Laws, Regulations, & Worksheets | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/comm_planning/environment_energy/regulations#relatedlawsandauthorities",
+      "total_events": "304"
+    },
+    {
+      "page_title": "Multifamily Housing - Physical Inspection Scores By State | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/mfh/rems/remsinspecscores/remsphysinspscores",
+      "total_events": "297"
+    },
+    {
+      "page_title": "Violence Against Women Act (VAWA) Resources for Multifamily Assisted Housing | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/mfh/violence_against_women_act",
+      "total_events": "295"
+    },
+    {
+      "page_title": "HUDUser.gov Search | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/search.html",
+      "total_events": "283"
+    },
+    {
+      "page_title": "Multiple Issuer Pool Numbers & CUSIPs",
+      "event_label": "file_download",
+      "page": "www.ginniemae.gov/issuers/issuer_tools/Pages/multiple_issuer_pool_numbers.aspx",
+      "total_events": "283"
+    },
+    {
+      "page_title": "Weekly Title V Suitability Listing | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/comm_planning/titlev/weekly",
+      "total_events": "279"
+    },
+    {
+      "page_title": "Income Limits | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/il.html#2022_documents",
+      "total_events": "274"
+    },
+    {
+      "page_title": "Enterprise Income Verification (EIV) System | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/ph/eiv",
+      "total_events": "273"
+    },
+    {
+      "page_title": "Multifamily Asset Management and Project Servicing (4350.1) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh/4350.1",
+      "total_events": "268"
+    },
+    {
+      "page_title": "REMIC Offering Circular Supplements",
+      "event_label": "file_download",
+      "page": "www.ginniemae.gov/investors/disclosures_and_reports/Pages/remic_prospectuses.aspx",
+      "total_events": "268"
+    },
+    {
+      "page_title": "HUD FHA Reverse Mortgage for Seniors (HECM) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/hecm/hecmhome",
+      "total_events": "266"
+    },
+    {
+      "page_title": "Home Income Limits | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/HOME-Income-limits.html",
+      "total_events": "265"
+    },
+    {
+      "page_title": "Participating Tribes List- Section 184 - Indian Home Loan Guarantee Program- Indian Housing | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/ih/homeownership/184/tribal_list",
+      "total_events": "262"
+    },
+    {
+      "page_title": "The HUD Guidelines for the Evaluation and Control of Lead-based Paint in Housing | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/healthy_homes/lbp/hudguidelines",
+      "total_events": "261"
+    },
+    {
+      "page_title": "CPD Handbook 1378.0 | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/handbooks/cpd/13780",
+      "total_events": "256"
+    },
+    {
+      "page_title": "Public Housing Occupancy Guidebook | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/ph/mod/guidebook",
+      "total_events": "247"
+    },
+    {
+      "page_title": "HUD-9a Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud9a#group4",
+      "total_events": "242"
+    },
+    {
+      "page_title": "Project Planning and Management V2.0 Artifacts | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/cio/ppm/PPMV20Artifacts",
+      "total_events": "241"
+    },
+    {
+      "page_title": "Reasonable Accommodations and Modifications | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/fair_housing_equal_opp/reasonable_accommodations_and_modifications",
+      "total_events": "238"
+    },
+    {
+      "page_title": "How To Sell HUD Homes | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/reo/hwtosell",
+      "total_events": "233"
+    },
+    {
+      "page_title": "Income Limits | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/Portal/datasets/il.html",
+      "total_events": "232"
+    },
+    {
+      "page_title": "HUD-2 Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/forms/hud2",
+      "total_events": "230"
+    },
+    {
+      "page_title": "Multifamily Accelerated Processing (MAP) Guide (4430.G) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/guidebooks/hsg-GB4430",
+      "total_events": "228"
+    },
+    {
+      "page_title": "Green and Resilient Retrofit Program (GRRP) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/GRRP",
+      "total_events": "226"
+    },
+    {
+      "page_title": "Single Family Housing Model Documents | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/model_documents",
+      "total_events": "222"
+    },
+    {
+      "page_title": "Forecast of Contracting Opportunities | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/sdb/4cast",
+      "total_events": "217"
+    },
+    {
+      "page_title": "Opportunity Zones - Home | opportunityzones.hud.gov",
+      "event_label": "file_download",
+      "page": "opportunityzones.hud.gov/",
+      "total_events": "211"
+    },
+    {
+      "page_title": "eLOCCS Quick Reference Guide | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/cfo/finsys/eLOCCS_access/quick_reference",
+      "total_events": "208"
+    },
+    {
+      "page_title": "Processing Guidelines | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/ih/homeownership/184/guidelines",
+      "total_events": "207"
+    },
+    {
+      "page_title": "Multifamily Housing: Northeast Region | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/states/shared/working/northeast/mf",
+      "total_events": "205"
+    },
+    {
+      "page_title": "HOME Rent Limits | HUD USER",
+      "event_label": "file_download",
+      "page": "www.huduser.gov/portal/datasets/HOME-Rent-limits.html",
+      "total_events": "197"
+    },
+    {
+      "page_title": "Qualified and Non-Qualified PHA Lists - Public Housing Agency (PHA) Plans | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/pha/lists",
+      "total_events": "189"
+    },
+    {
+      "page_title": "Labor Standards and Related Forms | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/davis_bacon_and_labor_standards/olrform",
+      "total_events": "186"
+    },
+    {
+      "page_title": "Multifamily Housing - TRACS | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/mfh/trx/trxsum",
+      "total_events": "185"
+    },
+    {
+      "page_title": "Information for Persons with Disabilities | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/topics/information_for_disabled_persons",
+      "total_events": "184"
+    },
+    {
+      "page_title": "Borrowers Section 184 Loan Resources | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/ih/homeownership/184/borrowers",
+      "total_events": "181"
+    },
+    {
+      "page_title": "Lenders Section 184 Resources | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/ih/homeownership/184/lenders",
+      "total_events": "178"
+    },
+    {
+      "page_title": "Title I Insured Loans for Property Improvements and Manufactured Homes | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/housing/sfh/title",
+      "total_events": "178"
+    },
+    {
+      "page_title": "Violence Against Women Act (VAWA) | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/VAWA",
+      "total_events": "174"
+    },
+    {
+      "page_title": "About the Housing Choice Vouchers Program - HUD | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/about",
+      "total_events": "172"
+    },
+    {
+      "page_title": "All Participant Memorandum (APM)",
+      "event_label": "file_download",
+      "page": "www.ginniemae.gov/issuers/program_guidelines/Pages/mbsguideapmslibdisppage.aspx",
+      "total_events": "168"
+    },
+    {
+      "page_title": "Portability | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/public_indian_housing/programs/hcv/portability",
+      "total_events": "167"
+    },
+    {
+      "page_title": "Public and Indian Housing Notices | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "event_label": "file_download",
+      "page": "www.hud.gov/program_offices/administration/hudclips/notices/pih",
+      "total_events": "165"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:55:46.302Z",
+  "agency": "housing-urban-development"
+}

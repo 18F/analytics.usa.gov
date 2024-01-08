@@ -1,0 +1,1462 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "64"
+    },
+    {
+      "domain": "www.usmcservmart.gsa.gov",
+      "visits": "1096"
+    },
+    {
+      "domain": "www.usmarshals.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.usda.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.usability.gov",
+      "visits": "40715"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "2552009"
+    },
+    {
+      "domain": "www.uat.itdashboard.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "www.tsa.gov",
+      "visits": "174"
+    },
+    {
+      "domain": "www.treasurydirect.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "www.travel.reporting.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "www.statspolicy.gov",
+      "visits": "185"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "115"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "www.spc.noaa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.section508.gov",
+      "visits": "22797"
+    },
+    {
+      "domain": "www.search.usa.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "www.sbst.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "www.saferfederalworkforce.gov",
+      "visits": "3226"
+    },
+    {
+      "domain": "www.rocis.gov",
+      "visits": "2375"
+    },
+    {
+      "domain": "www.regulations.gov",
+      "visits": "172885"
+    },
+    {
+      "domain": "www.reginfo.gov",
+      "visits": "45277"
+    },
+    {
+      "domain": "www.realpropertyprofile.gov",
+      "visits": "183"
+    },
+    {
+      "domain": "www.rd.usda.gov",
+      "visits": "350"
+    },
+    {
+      "domain": "www.presidentialinnovationfellows.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "www.plainlanguage.gov",
+      "visits": "16145"
+    },
+    {
+      "domain": "www.permits.performance.gov",
+      "visits": "3588"
+    },
+    {
+      "domain": "www.performance.gov",
+      "visits": "9250"
+    },
+    {
+      "domain": "www.pbs-billing.gsa.gov",
+      "visits": "61"
+    },
+    {
+      "domain": "www.pbgc.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.nps.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.madeinamerica.gov",
+      "visits": "1562"
+    },
+    {
+      "domain": "www.login.gov",
+      "visits": "756153"
+    },
+    {
+      "domain": "www.login.fai.gov",
+      "visits": "287"
+    },
+    {
+      "domain": "www.itdashboard.gov",
+      "visits": "1528"
+    },
+    {
+      "domain": "www.idmanagement.gov",
+      "visits": "13266"
+    },
+    {
+      "domain": "www.ice.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "www.hud.gov",
+      "visits": "115"
+    },
+    {
+      "domain": "www.gsaglobalsupply.gsa.gov",
+      "visits": "4363"
+    },
+    {
+      "domain": "www.gsaelibrary.gsa.gov",
+      "visits": "39615"
+    },
+    {
+      "domain": "www.gsaauctions.gov",
+      "visits": "133759"
+    },
+    {
+      "domain": "www.gsaadvantage.gov",
+      "visits": "1563944"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "811586"
+    },
+    {
+      "domain": "www.govloans.gov",
+      "visits": "171"
+    },
+    {
+      "domain": "www.fsd.gov",
+      "visits": "126991"
+    },
+    {
+      "domain": "www.fpds.gov",
+      "visits": "33303"
+    },
+    {
+      "domain": "www.fpc.gov",
+      "visits": "1459"
+    },
+    {
+      "domain": "www.fmcsa.dot.gov",
+      "visits": "88"
+    },
+    {
+      "domain": "www.fema.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.fedramp.gov",
+      "visits": "30656"
+    },
+    {
+      "domain": "www.fcsm.gov",
+      "visits": "471"
+    },
+    {
+      "domain": "www.fai.gov",
+      "visits": "33847"
+    },
+    {
+      "domain": "www.facadatabase.gov",
+      "visits": "1702"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "www.evaluation.gov",
+      "visits": "1513"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.energy.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.ebuy.gsa.gov",
+      "visits": "2688"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "499"
+    },
+    {
+      "domain": "www.disasterassistance.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.dhsadvantage.gsa.gov",
+      "visits": "555"
+    },
+    {
+      "domain": "www.dea.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.d2d.gsa.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "www.computersforlearning.gov",
+      "visits": "106"
+    },
+    {
+      "domain": "www.code.gov",
+      "visits": "202"
+    },
+    {
+      "domain": "www.cloud.gov",
+      "visits": "144"
+    },
+    {
+      "domain": "www.citizenscience.gov",
+      "visits": "2809"
+    },
+    {
+      "domain": "www.cio.gov",
+      "visits": "6998"
+    },
+    {
+      "domain": "www.challenge.gov",
+      "visits": "13503"
+    },
+    {
+      "domain": "www.cfo.gov",
+      "visits": "1921"
+    },
+    {
+      "domain": "www.cdo.gov",
+      "visits": "896"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "136"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "www.blm.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.askebsa.dol.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.afadvantage.gov",
+      "visits": "479"
+    },
+    {
+      "domain": "www.acquisitiongateway.gov",
+      "visits": "439"
+    },
+    {
+      "domain": "www.acquisition.gov",
+      "visits": "191019"
+    },
+    {
+      "domain": "www.400yaahc.gov",
+      "visits": "271"
+    },
+    {
+      "domain": "www-usa-gov.translate.goog",
+      "visits": "12"
+    },
+    {
+      "domain": "workplace.gsa.gov",
+      "visits": "250"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "15"
+    },
+    {
+      "domain": "web.fleet-test.fcs.gsa.gov",
+      "visits": "2054"
+    },
+    {
+      "domain": "web.fleet-stg.fcs.gsa.gov",
+      "visits": "427"
+    },
+    {
+      "domain": "web.fleet-dev.fcs.gsa.gov",
+      "visits": "240"
+    },
+    {
+      "domain": "vsc.gsa.gov",
+      "visits": "4882"
+    },
+    {
+      "domain": "vsc-prod.gsa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "vote.gov",
+      "visits": "59181"
+    },
+    {
+      "domain": "viz-staging.staging.ogpvp.mcaas.fcs.gsa.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "viz-dev.dev.ogpvp.mcaas.fcs.gsa.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "vehiclestd.fas.gsa.gov",
+      "visits": "866"
+    },
+    {
+      "domain": "vaadvantage.gsa.gov",
+      "visits": "771"
+    },
+    {
+      "domain": "v1.designsystem.digital.gov",
+      "visits": "261"
+    },
+    {
+      "domain": "ussm.gsa.gov",
+      "visits": "1199"
+    },
+    {
+      "domain": "usdaadvantage.gsa.gov",
+      "visits": "1354"
+    },
+    {
+      "domain": "uat.rocis.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "uat.itdashboard.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "uat.dev-ppm.fcs.gsa.gov",
+      "visits": "105"
+    },
+    {
+      "domain": "tstservice.fsd.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "trumpadministration.archives.performance.gov",
+      "visits": "803"
+    },
+    {
+      "domain": "treasurydirect.gov",
+      "visits": "77"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "training.smartpay.gsa.gov",
+      "visits": "7688"
+    },
+    {
+      "domain": "training.section508.gov",
+      "visits": "1603"
+    },
+    {
+      "domain": "training.rocis.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "training.reginfo.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "touchpoints.digital.gov",
+      "visits": "853"
+    },
+    {
+      "domain": "touchpoints.app.cloud.gov",
+      "visits": "6282"
+    },
+    {
+      "domain": "tmss.preprod-acqit.helix.gsa.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "tmss.gsa.gov",
+      "visits": "4027"
+    },
+    {
+      "domain": "tmf.cio.gov",
+      "visits": "682"
+    },
+    {
+      "domain": "test.test-ppm.fcs.gsa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "test.dev-ppm.fcs.gsa.gov",
+      "visits": "159"
+    },
+    {
+      "domain": "test-iis.ocfo.gsa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "teddy.staging.search.usa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "tech.gsa.gov",
+      "visits": "2746"
+    },
+    {
+      "domain": "tdr.test-acqit.helix.gsa.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "tdr.dev-acqit.helix.gsa.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "tdr-uat.gsa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "tdr-test.test-acqit.helix.gsa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "tdr-test.gsa.gov",
+      "visits": "1013"
+    },
+    {
+      "domain": "tdr-dev.dev-acqit.helix.gsa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "tams.test-acqit.helix.gsa.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "tams.preprod.gsa.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "tams.gsa.gov",
+      "visits": "751"
+    },
+    {
+      "domain": "tams.dev-acqit.helix.gsa.gov",
+      "visits": "97"
+    },
+    {
+      "domain": "tailored.fedramp.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "strategy.data.gov",
+      "visits": "2319"
+    },
+    {
+      "domain": "str.gsa.gov",
+      "visits": "2523"
+    },
+    {
+      "domain": "staging.regulations.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "staging.fai.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "staging.d2d.gsa.gov",
+      "visits": "448"
+    },
+    {
+      "domain": "staging.code.gov",
+      "visits": "117"
+    },
+    {
+      "domain": "stage.api.data.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "ssabest.benefits.gov",
+      "visits": "77"
+    },
+    {
+      "domain": "srp.fas.gsa.gov",
+      "visits": "7788"
+    },
+    {
+      "domain": "spdatawarehouse.gsa.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "spdatawarehouse-dev.gsa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "sorndashboard.fpc.gov",
+      "visits": "113"
+    },
+    {
+      "domain": "smartpay.gsa.gov",
+      "visits": "15104"
+    },
+    {
+      "domain": "secure.login.gov",
+      "visits": "11387"
+    },
+    {
+      "domain": "search.vote.gov",
+      "visits": "1488"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "761091"
+    },
+    {
+      "domain": "search.gsa.gov",
+      "visits": "16171"
+    },
+    {
+      "domain": "search.gov",
+      "visits": "2478"
+    },
+    {
+      "domain": "search.cio.gov",
+      "visits": "109"
+    },
+    {
+      "domain": "sdg.data.gov",
+      "visits": "987"
+    },
+    {
+      "domain": "scopereview.gsa.gov",
+      "visits": "172"
+    },
+    {
+      "domain": "scopereview-test.gsa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "scopereview-staging.gsa.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "sbst.gov",
+      "visits": "129"
+    },
+    {
+      "domain": "sat.reginfo.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "1576049"
+    },
+    {
+      "domain": "roads.fas.gsa.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "rewrite.test.d2d.mcaas.fcs.gsa.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "rewrite.dev.d2d.mcaas.fcs.gsa.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "ret.gsa.gov",
+      "visits": "258"
+    },
+    {
+      "domain": "resources.data.gov",
+      "visits": "4728"
+    },
+    {
+      "domain": "recycling.gsa.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "realestatesales.gov",
+      "visits": "58938"
+    },
+    {
+      "domain": "qa.idmanagement.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "public-sans.digital.gov",
+      "visits": "398"
+    },
+    {
+      "domain": "prod-onrr-frontend.app.cloud.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "preview.gsa.gov",
+      "visits": "400"
+    },
+    {
+      "domain": "presidentialinnovationfellows.gov",
+      "visits": "2157"
+    },
+    {
+      "domain": "pra.digital.gov",
+      "visits": "1377"
+    },
+    {
+      "domain": "pfabankui-q.app.cloud.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "pfabankui-d.app.cloud.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "pfabankfindui.app.cloud.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "pfabankfindui-q.app.cloud.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "pfabankfindui-n.app.cloud.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "pfabankfindui-d.app.cloud.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "pfabankapi.app.cloud.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "pfabankapi-q.app.cloud.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "pfabankapi-n.app.cloud.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "pfabankapi-d.app.cloud.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "panthers.app.cloud.gov",
+      "visits": "192"
+    },
+    {
+      "domain": "pages.cloud.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "ox.staging.search.usa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "origin-www.gsa.gov",
+      "visits": "384"
+    },
+    {
+      "domain": "origin-www.acquisition.gov",
+      "visits": "117"
+    },
+    {
+      "domain": "open.usa.gov",
+      "visits": "313"
+    },
+    {
+      "domain": "open.gsa.gov",
+      "visits": "2314"
+    },
+    {
+      "domain": "open-staging.usa.gov",
+      "visits": "64"
+    },
+    {
+      "domain": "oes.gsa.gov",
+      "visits": "1529"
+    },
+    {
+      "domain": "nrrd.app.cloud.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "nrrd-preview.app.cloud.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "navigator.gsa.gov",
+      "visits": "156"
+    },
+    {
+      "domain": "nars-web-report-beta-terrific-panda-zh.app.cloud.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "mywaterway-prod.app.cloud.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "mysalesb.fas.gsa.gov",
+      "visits": "74"
+    },
+    {
+      "domain": "mysales.fas.gsa.gov",
+      "visits": "588"
+    },
+    {
+      "domain": "mx.usembassy.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "mobile.reginfo.gov",
+      "visits": "131"
+    },
+    {
+      "domain": "mia-django-main.app.cloud.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "mia-django-devops.app.cloud.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "mia-django-develop.app.cloud.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "methods.18f.gov",
+      "visits": "1426"
+    },
+    {
+      "domain": "mcm.fas.gsa.gov",
+      "visits": "2442"
+    },
+    {
+      "domain": "lop.gsa.gov",
+      "visits": "220"
+    },
+    {
+      "domain": "lookforwatersense-prod.app.cloud.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "login.gov",
+      "visits": "379693"
+    },
+    {
+      "domain": "login.fai.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "login.acquisition.gov",
+      "visits": "522"
+    },
+    {
+      "domain": "login.acquisition-staging.gsa.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "leasing.gsa.gov",
+      "visits": "425"
+    },
+    {
+      "domain": "labs.usa.gov",
+      "visits": "113"
+    },
+    {
+      "domain": "labs.gsa.gov",
+      "visits": "217"
+    },
+    {
+      "domain": "jp.usembassy.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "join.tts.gsa.gov",
+      "visits": "5710"
+    },
+    {
+      "domain": "itvmo.gsa.gov",
+      "visits": "217"
+    },
+    {
+      "domain": "iextportal.pbs.gsa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "idp.staging.login.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "idev.fpds.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "identityequitystudy.gsa.gov",
+      "visits": "2665"
+    },
+    {
+      "domain": "i94.cbp.dhs.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "https.cio.gov",
+      "visits": "3108"
+    },
+    {
+      "domain": "handbook.tts.gsa.gov",
+      "visits": "6915"
+    },
+    {
+      "domain": "guides.18f.gov",
+      "visits": "2877"
+    },
+    {
+      "domain": "gsaglobalsupply.gsa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "gsaelibrary.gsa.gov",
+      "visits": "2597"
+    },
+    {
+      "domain": "gsaauctions.gov",
+      "visits": "110502"
+    },
+    {
+      "domain": "gsaadvantage.gsa.gov",
+      "visits": "100"
+    },
+    {
+      "domain": "gsaadvantage.gov",
+      "visits": "976"
+    },
+    {
+      "domain": "gsaadvantage-test3.fas.gsa.gov",
+      "visits": "200"
+    },
+    {
+      "domain": "gsaadvantage-test2.fas.gsa.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "gsaadvantage-test.fas.gsa.gov",
+      "visits": "126"
+    },
+    {
+      "domain": "gsaadvantage-dev2.fas.gsa.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "gsaadvantage-dev.fas.gsa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "gsa.gov",
+      "visits": "98"
+    },
+    {
+      "domain": "go.usa.gov",
+      "visits": "1518"
+    },
+    {
+      "domain": "geoplatform.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "fpds.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "fleetautoauctionsb.fas.gsa.gov",
+      "visits": "40"
+    },
+    {
+      "domain": "fleetautoauctions.gsa.gov",
+      "visits": "21702"
+    },
+    {
+      "domain": "find.search.gov",
+      "visits": "205"
+    },
+    {
+      "domain": "find.digitalgov.gov",
+      "visits": "549"
+    },
+    {
+      "domain": "finance.ocfo.gsa.gov",
+      "visits": "3331"
+    },
+    {
+      "domain": "fedsim.gsa.gov",
+      "visits": "2212"
+    },
+    {
+      "domain": "fedpay.gss.gsa.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "fedpay.gsa.gov",
+      "visits": "1119"
+    },
+    {
+      "domain": "federation.data.gov",
+      "visits": "315"
+    },
+    {
+      "domain": "federalist-f1b28fce-2346-4571-9c87-af81641dafe3.sites.pages.cloud.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "federalist-ecc58765-2903-48b3-920c-5d93318ad084.sites.pages.cloud.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "federalist-ead78f8d-8948-417c-a957-c21ec5617a57.sites.pages.cloud.gov",
+      "visits": "97"
+    },
+    {
+      "domain": "federalist-e3fba26d-2806-4f02-bf0e-89c97cfba93c.sites.pages.cloud.gov",
+      "visits": "158"
+    },
+    {
+      "domain": "federalist-cf03235f-a054-4178-aafb-4e1e61e0d42c.sites.pages.cloud.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "federalist-ab31a10d-375d-4040-9324-1ae94e8a36b9.sites.pages.cloud.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "federalist-a1f29504-db06-4d32-992e-c2dadbfe82f2.sites.pages.cloud.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "federalist-9dc074d2-9bb0-4720-8e37-036899ae1463.sites.pages.cloud.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "federalist-92b5c263-14e3-4225-a235-5ee71593c138.sites.pages.cloud.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "federalist-8bc0b42c-5fd0-4ae8-9366-cd9c265a4446.sites.pages.cloud.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "federalist-7a132a2e-6307-4cd0-9f82-e30e871d214a.sites.pages.cloud.gov",
+      "visits": "51"
+    },
+    {
+      "domain": "federalist-78ccea55-7a06-447c-aabf-bd620b207b74.sites.pages.cloud.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "federalist-61b9594e-083a-41f6-89bb-8b418db4ccf9.sites.pages.cloud.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "federalist-37831b52-7633-429a-9a79-14298034dd54.sites.pages.cloud.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "fdic-wwwdev.app.cloud.gov",
+      "visits": "336"
+    },
+    {
+      "domain": "fdic-search.app.cloud.gov",
+      "visits": "15628"
+    },
+    {
+      "domain": "fdic-cloudworkspace.app.cloud.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "fcp-test.gsa.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "falcon.gsa.gov",
+      "visits": "222"
+    },
+    {
+      "domain": "fai.gov",
+      "visits": "2513"
+    },
+    {
+      "domain": "fac-staging.app.cloud.gov",
+      "visits": "369"
+    },
+    {
+      "domain": "fac-prod.app.cloud.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "fac-preview.app.cloud.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "fac-dev.app.cloud.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "extportal.pbs.gsa.gov",
+      "visits": "2453"
+    },
+    {
+      "domain": "epayb.fas.gsa.gov",
+      "visits": "71"
+    },
+    {
+      "domain": "epay.fas.gsa.gov",
+      "visits": "133"
+    },
+    {
+      "domain": "elibrary-test.fas.gsa.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "elibrary-dev.fas.gsa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "ebuy-test.fas.gsa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "drivethrub.gsa.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "drivethru.gsa.gov",
+      "visits": "10824"
+    },
+    {
+      "domain": "doi-extractives-data.app.cloud.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "disposal.gsa.gov",
+      "visits": "11475"
+    },
+    {
+      "domain": "digitalcorps.gsa.gov",
+      "visits": "2205"
+    },
+    {
+      "domain": "digital.gov",
+      "visits": "15921"
+    },
+    {
+      "domain": "developers.login.gov",
+      "visits": "3155"
+    },
+    {
+      "domain": "dev.dev-ppm.fcs.gsa.gov",
+      "visits": "107"
+    },
+    {
+      "domain": "dev-onrr-frontend.app.cloud.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "dev-iis.ocfo.gsa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "dev-blog-nrrd.app.cloud.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "dev-apps.ocfo.gsa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "designsystem.digital.gov",
+      "visits": "13877"
+    },
+    {
+      "domain": "demo.touchpoints.digital.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "demo.smartpay.gsa.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "demo.pra.digital.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "demo.identityequitystudy.gsa.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "demo.fedramp.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "demo.accessibility.digital.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "demo.10x.gsa.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "data.gov",
+      "visits": "50975"
+    },
+    {
+      "domain": "daac.ornl.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "d2d.gsa.gov",
+      "visits": "6688"
+    },
+    {
+      "domain": "crt-portal-django-prod.app.cloud.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "cowboys.app.cloud.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "courtsweb.gsa.gov",
+      "visits": "453"
+    },
+    {
+      "domain": "corporateapps.gsa.gov",
+      "visits": "13307"
+    },
+    {
+      "domain": "connect.usa.gov",
+      "visits": "13314"
+    },
+    {
+      "domain": "conectate.gobiernousa.gov",
+      "visits": "3255"
+    },
+    {
+      "domain": "computersforlearning.gov",
+      "visits": "592"
+    },
+    {
+      "domain": "coe.gsa.gov",
+      "visits": "2291"
+    },
+    {
+      "domain": "codespace.app.cloud.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "code.gov",
+      "visits": "742"
+    },
+    {
+      "domain": "cobra.app.cloud.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "cms.permits.performance.gov",
+      "visits": "236"
+    },
+    {
+      "domain": "cmls.gsa.gov",
+      "visits": "1502"
+    },
+    {
+      "domain": "cloud.gov",
+      "visits": "2986"
+    },
+    {
+      "domain": "cloud.cio.gov",
+      "visits": "539"
+    },
+    {
+      "domain": "cic.gsa.gov",
+      "visits": "542"
+    },
+    {
+      "domain": "cg-4ade7cd3-a036-4fb7-b1d5-bcef64cb3ddf.sites.pages.cloud.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "ccp-core.test.cmccp.mcaas.fcs.gsa.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "catalog.gsa.gov",
+      "visits": "719"
+    },
+    {
+      "domain": "calm.gsa.gov",
+      "visits": "168"
+    },
+    {
+      "domain": "buy.gsa.gov",
+      "visits": "14081"
+    },
+    {
+      "domain": "blog.usa.gov",
+      "visits": "1756"
+    },
+    {
+      "domain": "beta.notify.gov",
+      "visits": "229"
+    },
+    {
+      "domain": "benefits-tool.usa.gov",
+      "visits": "10214"
+    },
+    {
+      "domain": "benefits-tool-beta.usa.gov",
+      "visits": "211"
+    },
+    {
+      "domain": "autovendor.fas.gsa.gov",
+      "visits": "185"
+    },
+    {
+      "domain": "autochoice.fas.gsa.gov",
+      "visits": "2238"
+    },
+    {
+      "domain": "atf-eregs.18f.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "art.gsa.gov",
+      "visits": "662"
+    },
+    {
+      "domain": "apps.ocfo.gsa.gov",
+      "visits": "142"
+    },
+    {
+      "domain": "api.data.gov",
+      "visits": "1567"
+    },
+    {
+      "domain": "analytics.usa.gov",
+      "visits": "1124"
+    },
+    {
+      "domain": "analytics.app.cloud.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "analytics-staging.app.cloud.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "analytics-develop.app.cloud.gov",
+      "visits": "50"
+    },
+    {
+      "domain": "alpha2.sam.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "alpha.sam.gov",
+      "visits": "1734"
+    },
+    {
+      "domain": "all-sorns.app.cloud.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "airnowtomed.app.cloud.gov",
+      "visits": "128"
+    },
+    {
+      "domain": "airnow-green.app.cloud.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "airnow-blue.app.cloud.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "ahwmpt-staging.app.cloud.gov",
+      "visits": "84"
+    },
+    {
+      "domain": "acquisitiongateway.gov",
+      "visits": "193"
+    },
+    {
+      "domain": "acquisition.gov",
+      "visits": "4915"
+    },
+    {
+      "domain": "acquisition-staging.gsa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "accessibility.digital.gov",
+      "visits": "1648"
+    },
+    {
+      "domain": "accessibility.18f.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "aas.gsa.gov",
+      "visits": "630"
+    },
+    {
+      "domain": "8astars.fas.gsa.gov",
+      "visits": "256"
+    },
+    {
+      "domain": "55samfrontendminc.apps.prod-iae.bsp.gsa.gov",
+      "visits": "78"
+    },
+    {
+      "domain": "55samfrontendcomp.apps.prod-iae.bsp.gsa.gov",
+      "visits": "431"
+    },
+    {
+      "domain": "18f.gsa.gov",
+      "visits": "4868"
+    },
+    {
+      "domain": "10x.gsa.gov",
+      "visits": "383"
+    },
+    {
+      "domain": "100samfrontendaltcomp.apps.prod-iae.bsp.gsa.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "1.usa.gov",
+      "visits": "2571"
+    }
+  ],
+  "totals": {
+    "visits": 10005505
+  },
+  "taken_at": "2024-01-05T16:07:04.782Z",
+  "agency": "general-services-administration"
+}
