@@ -232,6 +232,45 @@ footer {
   text-transform: uppercase;
 }
 
+.barchart {
+
+  // @TODO: Use classes instead of elements for styling.
+  h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 90%;
+  }
+
+  h5 {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+
+
+
+.chart-realtime {
+  color: color("blue-80v");
+  text-align: center;
+
+  &__current_visitors {
+    font-size: 6em;
+    margin: 0;
+    @include at_media("tablet") {
+      font-size: 8em;
+    }
+  }
+  
+  &__description {
+    font-size: 1rem;
+    @include at_media("tablet") {
+      font-size: 2em;
+    }
+  }
+}
+
+
 // ==========================================================================
 // Columns
 // ==========================================================================
@@ -253,42 +292,4 @@ footer {
     margin-top: 0;
     text-align: center;
   }
-}
-
-.barchart {
-
-  // @TODO: Use classes instead of elements for styling.
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-
-  h5 {
-    margin-top: 0;
-    text-align: center;
-  }
-
-}
-
-
-#realtime {
-  color: color("blue-80v");
-
-  @include at-media("mobile") {
-    font-size: units(1);
-  }
-}
-
-
-
-#current_visitors {
-  font-size: 8em;
-  margin: 0;
-  @include media($small-screen) {
-    font-size: 6em;
-  }
-}
-h3 {
-  margin: 10px 0;
 }
