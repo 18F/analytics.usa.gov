@@ -81,9 +81,7 @@ h5 {
 
 
 //override draft web design standards for header hack
-form {
-  max-width: none;
-}
+
 
 // Other Setup:
 body {
@@ -120,15 +118,6 @@ ul li:before {
   display: none;
   padding-right: 0;
 }
-
-// TODO: replace 13 instances
-// @include media($small-screen) {
-//   .sm-hide {
-//     display: none !important;
-//   }
-// }
-
-
 
 /* 
   404 Styles
@@ -174,9 +163,9 @@ ul li:before {
 }
 
 footer {
+  background-color: color("gray-4");
   border-top: units("1px") solid color("gray-10");
   padding: units(3) 0;
-  background-color: color("gray-4");
 
   @include at-media("desktop") {
     padding: units(6) 0;
@@ -187,9 +176,9 @@ footer {
   }
 
   .logo-links {
+    float: left;
     margin-bottom: 0rem;
     margin-right: 2rem;
-    float: left;
   }
 
   img {
@@ -197,8 +186,8 @@ footer {
   }
 
   img.github-icon {
-    width: 1.4rem !important;
     vertical-align: text-bottom !important;
+    width: 1.4rem !important;
   }
 
   p {
@@ -283,9 +272,9 @@ footer {
 
   // @TODO: Use classes instead of elements for styling.
   h4 {
-    text-align: center;
-    margin: 0;
     font-size: 90%;
+    margin: 0;
+    text-align: center;
   }
 
   h5 {

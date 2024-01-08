@@ -6,7 +6,7 @@
   {% assign agencies = site.data.agencies | sort: "name" %}
   {% if agencies.size > 0 %}
     {% unless page.url contains 'data' %}
-    <div class="analytics-select">
+    <div class="analytics-select analytics-select--main">
       <form class="usa-form">
         <label class="usa-label" for="agency-selector">Select an agency</label>
         <select
@@ -15,10 +15,10 @@
           id="analytics-agency-select"
           title="Agency Selection Dropdown"
         >
-        <option value="{{site.baseurl}}/">{{site.dropdown_title}}</option>
+        <option value="{{ site.baseurl }}/">{{ site.dropdown_title }}</option>
         {% for agency in agencies %}
-        <option value="{{site.baseurl}}/{{agency.slug}}">
-            {{agency.name}}
+        <option value="{{ site.baseurl }}/{{ agency.slug }}">
+            {{ agency.name }}
         </option>
         {% endfor %}
         </select>
