@@ -1,0 +1,150 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 18653857,
+    "by_windows": {
+      "7": {
+        "Chrome": 365054,
+        "Firefox": 84092,
+        "Edge": 15437,
+        "Opera": 1480,
+        "YaBrowser": 2234,
+        "Internet Explorer": 268
+      },
+      "8": {
+        "Chrome": 20765,
+        "Firefox": 112
+      },
+      "10": {
+        "Chrome": 8821682,
+        "Edge": 2073960,
+        "Firefox": 1266299,
+        "Opera": 224037,
+        "YaBrowser": 53684,
+        "Internet Explorer": 10335,
+        "Whale Browser": 3025,
+        "Coc Coc": 221
+      },
+      "11": {
+        "Chrome": 4002786,
+        "Edge": 1594311
+      },
+      "8.1": {
+        "Chrome": 87200,
+        "Firefox": 16672,
+        "Edge": 4554
+      },
+      "XP": {
+        "Firefox": 5510,
+        "Chrome": 139
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 365054,
+        "8": 20765,
+        "10": 8821682,
+        "11": 4002786,
+        "8.1": 87200,
+        "XP": 139
+      },
+      "Edge": {
+        "7": 15437,
+        "10": 2073960,
+        "11": 1594311,
+        "8.1": 4554
+      },
+      "Firefox": {
+        "7": 84092,
+        "8": 112,
+        "10": 1266299,
+        "8.1": 16672,
+        "XP": 5510
+      },
+      "Opera": {
+        "7": 1480,
+        "10": 224037
+      },
+      "YaBrowser": {
+        "7": 2234,
+        "10": 53684
+      },
+      "Internet Explorer": {
+        "7": 268,
+        "10": 10335
+      },
+      "Whale Browser": {
+        "10": 3025
+      },
+      "Coc Coc": {
+        "10": 221
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:36:21.977Z",
+  "agency": "national-aeronautics-space-administration"
+}

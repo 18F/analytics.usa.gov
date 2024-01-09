@@ -1,0 +1,152 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 9371763,
+    "by_os": {
+      "Windows": {
+        "Chrome": 2639681,
+        "Edge": 1064343,
+        "Firefox": 100969,
+        "Internet Explorer": 27066,
+        "Opera": 7088
+      },
+      "iOS": {
+        "Safari": 2190555,
+        "Chrome": 318631,
+        "Safari (in-app)": 29372
+      },
+      "Android": {
+        "Chrome": 1961871,
+        "Samsung Internet": 110376,
+        "Android Webview": 28555,
+        "Amazon Silk": 11440,
+        "Firefox": 6937,
+        "Edge": 6074
+      },
+      "Macintosh": {
+        "Chrome": 321939,
+        "Safari": 323515,
+        "Firefox": 15592,
+        "Mozilla Compatible Agent": 138
+      },
+      "Chrome OS": {
+        "Chrome": 130546
+      },
+      "Linux": {
+        "Chrome": 73300,
+        "Firefox": 2031
+      },
+      "(not set)": {
+        "(not set)": 1567,
+        "Chrome": 177
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 2639681,
+        "Android": 1961871,
+        "Macintosh": 321939,
+        "iOS": 318631,
+        "Chrome OS": 130546,
+        "Linux": 73300,
+        "(not set)": 177
+      },
+      "Safari": {
+        "iOS": 2190555,
+        "Macintosh": 323515
+      },
+      "Edge": {
+        "Windows": 1064343,
+        "Android": 6074
+      },
+      "Firefox": {
+        "Windows": 100969,
+        "Macintosh": 15592,
+        "Android": 6937,
+        "Linux": 2031
+      },
+      "Samsung Internet": {
+        "Android": 110376
+      },
+      "Internet Explorer": {
+        "Windows": 27066
+      },
+      "Android Webview": {
+        "Android": 28555
+      },
+      "Safari (in-app)": {
+        "iOS": 29372
+      },
+      "Amazon Silk": {
+        "Android": 11440
+      },
+      "Opera": {
+        "Windows": 7088
+      },
+      "(not set)": {
+        "(not set)": 1567
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 138
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:55:25.274Z",
+  "agency": "housing-urban-development"
+}

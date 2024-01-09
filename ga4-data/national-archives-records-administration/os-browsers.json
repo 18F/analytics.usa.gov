@@ -1,0 +1,170 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 41766334,
+    "by_os": {
+      "Windows": {
+        "Chrome": 13539049,
+        "Edge": 6164109,
+        "Firefox": 651045,
+        "Opera": 73862,
+        "Internet Explorer": 9070,
+        "YaBrowser": 5807,
+        "Safari": 22380
+      },
+      "iOS": {
+        "Safari": 6638588,
+        "Chrome": 929186,
+        "Safari (in-app)": 182529
+      },
+      "Android": {
+        "Chrome": 3573631,
+        "Samsung Internet": 275855,
+        "Android Webview": 128735,
+        "Firefox": 39105,
+        "Amazon Silk": 35441,
+        "Edge": 30489,
+        "Opera": 16863,
+        "Android Browser": 121
+      },
+      "Chrome OS": {
+        "Chrome": 3120232
+      },
+      "Macintosh": {
+        "Chrome": 2622108,
+        "Safari": 2521090,
+        "Firefox": 176797,
+        "Mozilla Compatible Agent": 26258,
+        "Edge": 19177,
+        "Opera": 472
+      },
+      "Linux": {
+        "Chrome": 569701,
+        "Firefox": 361989,
+        "Samsung Internet": 10791,
+        "Edge": 2271
+      },
+      "(not set)": {
+        "(not set)": 19583
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 13539049,
+        "Android": 3573631,
+        "Chrome OS": 3120232,
+        "Macintosh": 2622108,
+        "iOS": 929186,
+        "Linux": 569701
+      },
+      "Edge": {
+        "Windows": 6164109,
+        "Android": 30489,
+        "Macintosh": 19177,
+        "Linux": 2271
+      },
+      "Safari": {
+        "iOS": 6638588,
+        "Macintosh": 2521090,
+        "Windows": 22380
+      },
+      "Firefox": {
+        "Windows": 651045,
+        "Linux": 361989,
+        "Macintosh": 176797,
+        "Android": 39105
+      },
+      "Samsung Internet": {
+        "Android": 275855,
+        "Linux": 10791
+      },
+      "Safari (in-app)": {
+        "iOS": 182529
+      },
+      "Android Webview": {
+        "Android": 128735
+      },
+      "Opera": {
+        "Windows": 73862,
+        "Android": 16863,
+        "Macintosh": 472
+      },
+      "Amazon Silk": {
+        "Android": 35441
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 26258
+      },
+      "(not set)": {
+        "(not set)": 19583
+      },
+      "Internet Explorer": {
+        "Windows": 9070
+      },
+      "YaBrowser": {
+        "Windows": 5807
+      },
+      "Android Browser": {
+        "Android": 121
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:48:46.030Z",
+  "agency": "national-archives-records-administration"
+}

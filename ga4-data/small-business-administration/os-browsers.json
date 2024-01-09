@@ -1,0 +1,134 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 4561363,
+    "by_os": {
+      "Windows": {
+        "Chrome": 1271919,
+        "Edge": 518989,
+        "Firefox": 68080,
+        "Opera": 3142
+      },
+      "iOS": {
+        "Safari": 1062109,
+        "Chrome": 147376,
+        "Safari (in-app)": 15948
+      },
+      "Android": {
+        "Chrome": 462941,
+        "Samsung Internet": 40702,
+        "Android Webview": 9550
+      },
+      "Macintosh": {
+        "Chrome": 358548,
+        "Safari": 328627,
+        "Firefox": 18478
+      },
+      "Linux": {
+        "Chrome": 178342,
+        "Firefox": 205
+      },
+      "Chrome OS": {
+        "Chrome": 75924
+      },
+      "(not set)": {
+        "(not set)": 483
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 1271919,
+        "Android": 462941,
+        "Macintosh": 358548,
+        "Linux": 178342,
+        "iOS": 147376,
+        "Chrome OS": 75924
+      },
+      "Safari": {
+        "iOS": 1062109,
+        "Macintosh": 328627
+      },
+      "Edge": {
+        "Windows": 518989
+      },
+      "Firefox": {
+        "Windows": 68080,
+        "Macintosh": 18478,
+        "Linux": 205
+      },
+      "Samsung Internet": {
+        "Android": 40702
+      },
+      "Safari (in-app)": {
+        "iOS": 15948
+      },
+      "Android Webview": {
+        "Android": 9550
+      },
+      "Opera": {
+        "Windows": 3142
+      },
+      "(not set)": {
+        "(not set)": 483
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:43:35.351Z",
+  "agency": "small-business-administration"
+}

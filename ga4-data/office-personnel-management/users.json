@@ -1,0 +1,41 @@
+{
+  "name": "users",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "Visitors",
+    "description": "90 days of visits for all sites."
+  },
+  "totals": {
+    "visits": 71420345
+  },
+  "taken_at": "2024-01-05T14:43:05.267Z",
+  "agency": "office-personnel-management"
+}

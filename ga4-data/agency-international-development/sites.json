@@ -1,0 +1,122 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "za.usembassy.gov",
+      "visits": "79"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.usaid.gov",
+      "visits": "383021"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "www.marketlinks.org",
+      "visits": "5145"
+    },
+    {
+      "domain": "www.land-links.org",
+      "visits": "4211"
+    },
+    {
+      "domain": "www.globalwaters.org",
+      "visits": "4212"
+    },
+    {
+      "domain": "www-origin.usaid.gov",
+      "visits": "80"
+    },
+    {
+      "domain": "urban-links.org",
+      "visits": "1265"
+    },
+    {
+      "domain": "scms.usaid.gov",
+      "visits": "504"
+    },
+    {
+      "domain": "pk.usembassy.gov",
+      "visits": "329"
+    },
+    {
+      "domain": "ng.usembassy.gov",
+      "visits": "108"
+    },
+    {
+      "domain": "iq.usembassy.gov",
+      "visits": "64"
+    },
+    {
+      "domain": "dev.agrilinks.org",
+      "visits": "17"
+    },
+    {
+      "domain": "aidscapeuat.usaid.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "aidscape.usaid.gov",
+      "visits": "216"
+    },
+    {
+      "domain": "agrilinks.org",
+      "visits": "7293"
+    }
+  ],
+  "totals": {
+    "visits": 406642
+  },
+  "taken_at": "2024-01-05T16:05:26.612Z",
+  "agency": "agency-international-development"
+}

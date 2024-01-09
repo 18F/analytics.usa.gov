@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.usa.gov",
+      "visits": "1496735"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "922686"
+    },
+    {
+      "domain": "www.gsaadvantage.gov",
+      "visits": "641561"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "493995"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "445438"
+    },
+    {
+      "domain": "www.login.gov",
+      "visits": "414847"
+    },
+    {
+      "domain": "login.gov",
+      "visits": "216372"
+    },
+    {
+      "domain": "www.acquisition.gov",
+      "visits": "119750"
+    },
+    {
+      "domain": "www.regulations.gov",
+      "visits": "98101"
+    },
+    {
+      "domain": "www.gsaauctions.gov",
+      "visits": "78147"
+    },
+    {
+      "domain": "www.fsd.gov",
+      "visits": "77098"
+    },
+    {
+      "domain": "gsaauctions.gov",
+      "visits": "52969"
+    },
+    {
+      "domain": "vote.gov",
+      "visits": "34098"
+    },
+    {
+      "domain": "realestatesales.gov",
+      "visits": "30370"
+    },
+    {
+      "domain": "www.reginfo.gov",
+      "visits": "28357"
+    },
+    {
+      "domain": "data.gov",
+      "visits": "26804"
+    },
+    {
+      "domain": "www.gsaelibrary.gsa.gov",
+      "visits": "24420"
+    },
+    {
+      "domain": "www.usability.gov",
+      "visits": "22004"
+    },
+    {
+      "domain": "www.fpds.gov",
+      "visits": "19805"
+    },
+    {
+      "domain": "www.fai.gov",
+      "visits": "19138"
+    }
+  ],
+  "totals": {
+    "visits": 5262695
+  },
+  "taken_at": "2024-01-05T16:06:47.771Z",
+  "agency": "general-services-administration"
+}

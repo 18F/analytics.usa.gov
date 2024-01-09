@@ -1,0 +1,42 @@
+{
+  "name": "top-downloads-yesterday",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "yesterday",
+    "end-date": "yesterday",
+    "dimensions": "ga:pageTitle,ga:eventLabel,ga:pagePath",
+    "metrics": [
+      "ga:totalEvents"
+    ],
+    "sort": [
+      "-ga:totalEvents"
+    ],
+    "filters": "ga:eventCategory=~^(download|downloads|(outbound downloads))$;ga:pagePath!~(usps.com).*/(?i)(zip|doc).*",
+    "start-index": 1,
+    "max-results": 100,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "page_title": "NRC: State and Tribal Programs- National Materials Program",
+      "event_label": "https://scp.nrc.gov/materials/nmpbkgrd090604.pdf",
+      "page": "scp.nrc.gov/materials.html",
+      "total_events": "2"
+    },
+    {
+      "page_title": "Public Meeting Schedule: Search Results | NRC.gov",
+      "event_label": "https://www.nrc.gov/about-nrc/covid-19/guidance-for-visitors-to-nrc-facilities.pdf",
+      "page": "www.nrc.gov/pmns/mtg",
+      "total_events": "1"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:13:59.927Z",
+  "agency": "nuclear-regulatory-commission"
+}

@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.cdc.gov",
+      "visits": "45977806",
+      "users": "36028440",
+      "pageviews": "72936271",
+      "pageviews_per_session": "1.5861852346760521",
+      "avg_session_duration": "180.58832665712998",
+      "bounce_rate": "0.43335638938491322"
+    },
+    {
+      "domain": "medlineplus.gov",
+      "visits": "32093937",
+      "users": "25857723",
+      "pageviews": "38124980",
+      "pageviews_per_session": "1.1878835245423458",
+      "avg_session_duration": "136.24119588145155",
+      "bounce_rate": "0.44462815515591"
+    },
+    {
+      "domain": "www.fda.gov",
+      "visits": "14211507",
+      "users": "10872297",
+      "pageviews": "22481402",
+      "pageviews_per_session": "1.5817067113290659",
+      "avg_session_duration": "151.36672040510663",
+      "bounce_rate": "0.47743740336615953"
+    },
+    {
+      "domain": "www.healthcare.gov",
+      "visits": "13123894",
+      "users": "9212928",
+      "pageviews": "18031122",
+      "pageviews_per_session": "1.3739027456332702",
+      "avg_session_duration": "146.81000603571903",
+      "bounce_rate": "0.60934300444669853"
+    },
+    {
+      "domain": "www.nhlbi.nih.gov",
+      "visits": "6652491",
+      "users": "4853687",
+      "pageviews": "8849601",
+      "pageviews_per_session": "1.3302298342079681",
+      "avg_session_duration": "128.91850815619676",
+      "bounce_rate": "0.52056500339496892"
+    },
+    {
+      "domain": "www.medicare.gov",
+      "visits": "6439263",
+      "users": "4062352",
+      "pageviews": "17129812",
+      "pageviews_per_session": "2.6601283407744023",
+      "avg_session_duration": "360.16946773545715",
+      "bounce_rate": "0.3769446907200405"
+    },
+    {
+      "domain": "www.cancer.gov",
+      "visits": "4547735",
+      "users": "3769095",
+      "pageviews": "5780667",
+      "pageviews_per_session": "1.2706199899510415",
+      "avg_session_duration": "160.86572946788615",
+      "bounce_rate": "0.44161478186393888"
+    },
+    {
+      "domain": "www.cms.gov",
+      "visits": "4407875",
+      "users": "3150716",
+      "pageviews": "9278105",
+      "pageviews_per_session": "2.1045864503870915",
+      "avg_session_duration": "208.95531959697175",
+      "bounce_rate": "0.47212704534497918"
+    },
+    {
+      "domain": "www.niddk.nih.gov",
+      "visits": "3679755",
+      "users": "3066257",
+      "pageviews": "4393018",
+      "pageviews_per_session": "1.1937479533284145",
+      "avg_session_duration": "143.66893523992579",
+      "bounce_rate": "0.440485304048775"
+    },
+    {
+      "domain": "www.covid.gov",
+      "visits": "2934042",
+      "users": "2649050",
+      "pageviews": "3831245",
+      "pageviews_per_session": "1.3057764680941855",
+      "avg_session_duration": "86.269179010755053",
+      "bounce_rate": "0.53617398796608906"
+    },
+    {
+      "domain": "www.accessdata.fda.gov",
+      "visits": "2206843",
+      "users": "1172426",
+      "pageviews": "11016063",
+      "pageviews_per_session": "4.991020203974637",
+      "avg_session_duration": "330.93662300235559",
+      "bounce_rate": "0.30918012744903012"
+    },
+    {
+      "domain": "www.hhs.gov",
+      "visits": "2145010",
+      "users": "1723878",
+      "pageviews": "4112152",
+      "pageviews_per_session": "1.916224632985394",
+      "avg_session_duration": "155.04187513404256",
+      "bounce_rate": "0.48398655484123615"
+    },
+    {
+      "domain": "vsearch.nlm.nih.gov",
+      "visits": "1912195",
+      "users": "1565299",
+      "pageviews": "2976532",
+      "pageviews_per_session": "1.5493247289110159",
+      "avg_session_duration": "125.80686897027437",
+      "bounce_rate": "0.46683889456880706"
+    },
+    {
+      "domain": "nida.nih.gov",
+      "visits": "1738477",
+      "users": "1403841",
+      "pageviews": "2488608",
+      "pageviews_per_session": "1.4314328000888135",
+      "avg_session_duration": "175.96560188356034",
+      "bounce_rate": "0.45568333662165217"
+    },
+    {
+      "domain": "dailymed.nlm.nih.gov",
+      "visits": "1708464",
+      "users": "1061843",
+      "pageviews": "3221384",
+      "pageviews_per_session": "1.8814771631125971",
+      "avg_session_duration": "231.38097100407208",
+      "bounce_rate": "0.4580933516890025"
+    },
+    {
+      "domain": "www.nimh.nih.gov",
+      "visits": "1684324",
+      "users": "1311365",
+      "pageviews": "2003305",
+      "pageviews_per_session": "1.189262279703905",
+      "avg_session_duration": "169.80463505024966",
+      "bounce_rate": "0.5026431969146079"
+    },
+    {
+      "domain": "www.samhsa.gov",
+      "visits": "1536703",
+      "users": "1193864",
+      "pageviews": "2279640",
+      "pageviews_per_session": "1.483244973166578",
+      "avg_session_duration": "149.78271019647602",
+      "bounce_rate": "0.48621952322602352"
+    },
+    {
+      "domain": "www.nia.nih.gov",
+      "visits": "1359973",
+      "users": "1130259",
+      "pageviews": "1698949",
+      "pageviews_per_session": "1.2490571503993093",
+      "avg_session_duration": "172.27926014051158",
+      "bounce_rate": "0.44067492516395546"
+    },
+    {
+      "domain": "exclusions.oig.hhs.gov",
+      "visits": "1346986",
+      "users": "732487",
+      "pageviews": "6119305",
+      "pageviews_per_session": "4.5429618422166227",
+      "avg_session_duration": "332.51740606395475",
+      "bounce_rate": "0.19059143896076128"
+    },
+    {
+      "domain": "www.ninds.nih.gov",
+      "visits": "1328914",
+      "users": "1070348",
+      "pageviews": "1417439",
+      "pageviews_per_session": "1.0665076897376353",
+      "avg_session_duration": "137.08382151731959",
+      "bounce_rate": "0.534853271167284"
+    }
+  ],
+  "totals": {
+    "users": 115888155,
+    "visits": 151036194
+  },
+  "taken_at": "2024-01-05T15:54:01.849Z",
+  "agency": "health-human-services"
+}

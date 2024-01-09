@@ -1,0 +1,66 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395466379"
+  },
+  "meta": {
+    "names": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites."
+  },
+  "totals": {
+    "visits": 18104633,
+    "os_version": {
+      "7": 401931,
+      "8": 18246,
+      "10": 11654960,
+      "11": 5893587,
+      "95": 1,
+      "2000": 25,
+      "8.1": 127398,
+      "Vista": 3474,
+      "XP": 4725,
+      "NT": 198,
+      "Server 2003": 80,
+      "(not set)": 8
+    }
+  },
+  "taken_at": "2024-01-05T14:46:01.141Z",
+  "agency": "postal-service"
+}

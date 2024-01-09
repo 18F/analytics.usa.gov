@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395466379"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "tools.usps.com",
+      "visits": "56314713"
+    },
+    {
+      "domain": "reg.usps.com",
+      "visits": "14820264"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "13300535"
+    },
+    {
+      "domain": "informeddelivery.usps.com",
+      "visits": "11170625"
+    },
+    {
+      "domain": "store.usps.com",
+      "visits": "1144420"
+    },
+    {
+      "domain": "faq.usps.com",
+      "visits": "1132023"
+    },
+    {
+      "domain": "about.usps.com",
+      "visits": "808805"
+    },
+    {
+      "domain": "postcalc.usps.com",
+      "visits": "358643"
+    },
+    {
+      "domain": "holdmail.usps.com",
+      "visits": "300836"
+    },
+    {
+      "domain": "pe.usps.com",
+      "visits": "232574"
+    },
+    {
+      "domain": "poboxes.usps.com",
+      "visits": "200097"
+    },
+    {
+      "domain": "emailus.usps.com",
+      "visits": "192177"
+    },
+    {
+      "domain": "gateway.usps.com",
+      "visits": "144939"
+    },
+    {
+      "domain": "es.usps.com",
+      "visits": "83576"
+    },
+    {
+      "domain": "onlineclaims.usps.com",
+      "visits": "60070"
+    },
+    {
+      "domain": "m.usps.com",
+      "visits": "59069"
+    },
+    {
+      "domain": "postalpro.usps.com",
+      "visits": "48446"
+    },
+    {
+      "domain": "retail-pi.usps.com",
+      "visits": "40541"
+    },
+    {
+      "domain": "es-tools.usps.com",
+      "visits": "39524"
+    },
+    {
+      "domain": "missingmail.usps.com",
+      "visits": "31377"
+    }
+  ],
+  "totals": {
+    "visits": 100483254
+  },
+  "taken_at": "2024-01-05T14:46:17.556Z",
+  "agency": "postal-service"
+}

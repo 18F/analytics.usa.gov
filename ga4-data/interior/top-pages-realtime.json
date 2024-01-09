@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Latest Earthquakes",
+      "active_visitors": "2039"
+    },
+    {
+      "page_title": "Entrance Reservations - Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "988"
+    },
+    {
+      "page_title": "NPS.gov Homepage (U.S. National Park Service)",
+      "active_visitors": "274"
+    },
+    {
+      "page_title": "Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "190"
+    },
+    {
+      "page_title": "Visitor Access Management Plan - Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "183"
+    },
+    {
+      "page_title": "Webcams - Yellowstone National Park (U.S. National Park Service)",
+      "active_visitors": "164"
+    },
+    {
+      "page_title": "Fees & Passes - Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "151"
+    },
+    {
+      "page_title": "EarthExplorer",
+      "active_visitors": "150"
+    },
+    {
+      "page_title": "USGS.gov | Science for a changing world",
+      "active_visitors": "132"
+    },
+    {
+      "page_title": "Entrance Passes (U.S. National Park Service)",
+      "active_visitors": "129"
+    },
+    {
+      "page_title": "Permits & Reservations - Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "110"
+    },
+    {
+      "page_title": "Find a Park (U.S. National Park Service)",
+      "active_visitors": "109"
+    },
+    {
+      "page_title": "National Park Service Air Quality Data",
+      "active_visitors": "107"
+    },
+    {
+      "page_title": "Yellowstone National Park (U.S. National Park Service)",
+      "active_visitors": "100"
+    },
+    {
+      "page_title": "Places to Get Interagency Passes (U.S. National Park Service)",
+      "active_visitors": "96"
+    },
+    {
+      "page_title": "Calendar - Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "93"
+    },
+    {
+      "page_title": "Earthquake Hazards Program | U.S. Geological Survey",
+      "active_visitors": "91"
+    },
+    {
+      "page_title": "Current Conditions - Yosemite National Park (U.S. National Park Service)",
+      "active_visitors": "90"
+    },
+    {
+      "page_title": "Glacier National Park Webcams - Glacier National Park (U.S. National Park Service)",
+      "active_visitors": "87"
+    },
+    {
+      "page_title": "EROS Registration System",
+      "active_visitors": "86"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:07:17.009Z",
+  "agency": "interior"
+}

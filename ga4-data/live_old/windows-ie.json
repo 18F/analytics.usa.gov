@@ -1,0 +1,2009 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites. (>100 sessions)"
+  },
+  "data": [
+    {
+      "date": "2023-12-26",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "29100"
+    },
+    {
+      "date": "2023-12-26",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1764"
+    },
+    {
+      "date": "2023-12-26",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "757"
+    },
+    {
+      "date": "2023-12-26",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "408"
+    },
+    {
+      "date": "2023-12-25",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "74787"
+    },
+    {
+      "date": "2023-12-25",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "601"
+    },
+    {
+      "date": "2023-12-25",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "414"
+    },
+    {
+      "date": "2023-12-25",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "393"
+    },
+    {
+      "date": "2023-12-24",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "24394"
+    },
+    {
+      "date": "2023-12-24",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "622"
+    },
+    {
+      "date": "2023-12-24",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "474"
+    },
+    {
+      "date": "2023-12-24",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "471"
+    },
+    {
+      "date": "2023-12-23",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "69209"
+    },
+    {
+      "date": "2023-12-23",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1805"
+    },
+    {
+      "date": "2023-12-23",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "545"
+    },
+    {
+      "date": "2023-12-23",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "404"
+    },
+    {
+      "date": "2023-12-22",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "81726"
+    },
+    {
+      "date": "2023-12-22",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2091"
+    },
+    {
+      "date": "2023-12-22",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1309"
+    },
+    {
+      "date": "2023-12-22",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "734"
+    },
+    {
+      "date": "2023-12-21",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "15784"
+    },
+    {
+      "date": "2023-12-21",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2018"
+    },
+    {
+      "date": "2023-12-21",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "887"
+    },
+    {
+      "date": "2023-12-21",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "771"
+    },
+    {
+      "date": "2023-12-20",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "38614"
+    },
+    {
+      "date": "2023-12-20",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1964"
+    },
+    {
+      "date": "2023-12-20",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "837"
+    },
+    {
+      "date": "2023-12-20",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "398"
+    },
+    {
+      "date": "2023-12-19",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "15494"
+    },
+    {
+      "date": "2023-12-19",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2052"
+    },
+    {
+      "date": "2023-12-19",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "800"
+    },
+    {
+      "date": "2023-12-19",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "400"
+    },
+    {
+      "date": "2023-12-18",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2053"
+    },
+    {
+      "date": "2023-12-18",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "948"
+    },
+    {
+      "date": "2023-12-18",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "347"
+    },
+    {
+      "date": "2023-12-17",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1035"
+    },
+    {
+      "date": "2023-12-17",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "579"
+    },
+    {
+      "date": "2023-12-17",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "405"
+    },
+    {
+      "date": "2023-12-16",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2043"
+    },
+    {
+      "date": "2023-12-16",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "816"
+    },
+    {
+      "date": "2023-12-16",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "530"
+    },
+    {
+      "date": "2023-12-15",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1929"
+    },
+    {
+      "date": "2023-12-15",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "896"
+    },
+    {
+      "date": "2023-12-15",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "717"
+    },
+    {
+      "date": "2023-12-14",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1863"
+    },
+    {
+      "date": "2023-12-14",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "877"
+    },
+    {
+      "date": "2023-12-14",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "412"
+    },
+    {
+      "date": "2023-12-13",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1732"
+    },
+    {
+      "date": "2023-12-13",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1006"
+    },
+    {
+      "date": "2023-12-13",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "376"
+    },
+    {
+      "date": "2023-12-12",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1883"
+    },
+    {
+      "date": "2023-12-12",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "943"
+    },
+    {
+      "date": "2023-12-12",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "393"
+    },
+    {
+      "date": "2023-12-11",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1755"
+    },
+    {
+      "date": "2023-12-11",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "920"
+    },
+    {
+      "date": "2023-12-11",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "386"
+    },
+    {
+      "date": "2023-12-10",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1298"
+    },
+    {
+      "date": "2023-12-10",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "972"
+    },
+    {
+      "date": "2023-12-10",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "431"
+    },
+    {
+      "date": "2023-12-09",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2173"
+    },
+    {
+      "date": "2023-12-09",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "449"
+    },
+    {
+      "date": "2023-12-09",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "382"
+    },
+    {
+      "date": "2023-12-08",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1970"
+    },
+    {
+      "date": "2023-12-08",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "889"
+    },
+    {
+      "date": "2023-12-08",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "826"
+    },
+    {
+      "date": "2023-12-07",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "8833"
+    },
+    {
+      "date": "2023-12-07",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1736"
+    },
+    {
+      "date": "2023-12-07",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "780"
+    },
+    {
+      "date": "2023-12-07",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "394"
+    },
+    {
+      "date": "2023-12-06",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "74257"
+    },
+    {
+      "date": "2023-12-06",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1682"
+    },
+    {
+      "date": "2023-12-06",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "843"
+    },
+    {
+      "date": "2023-12-06",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "398"
+    },
+    {
+      "date": "2023-12-05",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "95990"
+    },
+    {
+      "date": "2023-12-05",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1818"
+    },
+    {
+      "date": "2023-12-05",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "785"
+    },
+    {
+      "date": "2023-12-05",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "396"
+    },
+    {
+      "date": "2023-12-04",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "114207"
+    },
+    {
+      "date": "2023-12-04",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1697"
+    },
+    {
+      "date": "2023-12-04",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "789"
+    },
+    {
+      "date": "2023-12-04",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "381"
+    },
+    {
+      "date": "2023-12-03",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "32409"
+    },
+    {
+      "date": "2023-12-03",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1230"
+    },
+    {
+      "date": "2023-12-03",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "377"
+    },
+    {
+      "date": "2023-12-03",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "370"
+    },
+    {
+      "date": "2023-12-02",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "16462"
+    },
+    {
+      "date": "2023-12-02",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2332"
+    },
+    {
+      "date": "2023-12-02",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "603"
+    },
+    {
+      "date": "2023-12-02",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "361"
+    },
+    {
+      "date": "2023-12-01",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "28665"
+    },
+    {
+      "date": "2023-12-01",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2081"
+    },
+    {
+      "date": "2023-12-01",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "912"
+    },
+    {
+      "date": "2023-12-01",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "868"
+    },
+    {
+      "date": "2023-11-30",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "13748"
+    },
+    {
+      "date": "2023-11-30",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1803"
+    },
+    {
+      "date": "2023-11-30",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "757"
+    },
+    {
+      "date": "2023-11-30",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "422"
+    },
+    {
+      "date": "2023-11-29",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "53326"
+    },
+    {
+      "date": "2023-11-29",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1994"
+    },
+    {
+      "date": "2023-11-29",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "818"
+    },
+    {
+      "date": "2023-11-29",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "364"
+    },
+    {
+      "date": "2023-11-28",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "47624"
+    },
+    {
+      "date": "2023-11-28",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1959"
+    },
+    {
+      "date": "2023-11-28",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "778"
+    },
+    {
+      "date": "2023-11-28",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "391"
+    },
+    {
+      "date": "2023-11-27",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "10090"
+    },
+    {
+      "date": "2023-11-27",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2060"
+    },
+    {
+      "date": "2023-11-27",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1113"
+    },
+    {
+      "date": "2023-11-27",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "359"
+    },
+    {
+      "date": "2023-11-26",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "7813"
+    },
+    {
+      "date": "2023-11-26",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1340"
+    },
+    {
+      "date": "2023-11-26",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "455"
+    },
+    {
+      "date": "2023-11-26",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "399"
+    },
+    {
+      "date": "2023-11-25",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2303"
+    },
+    {
+      "date": "2023-11-25",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "454"
+    },
+    {
+      "date": "2023-11-25",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "367"
+    },
+    {
+      "date": "2023-11-24",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "43339"
+    },
+    {
+      "date": "2023-11-24",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2393"
+    },
+    {
+      "date": "2023-11-24",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1141"
+    },
+    {
+      "date": "2023-11-24",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "656"
+    },
+    {
+      "date": "2023-11-23",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "11551"
+    },
+    {
+      "date": "2023-11-23",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1055"
+    },
+    {
+      "date": "2023-11-23",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "591"
+    },
+    {
+      "date": "2023-11-23",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "463"
+    },
+    {
+      "date": "2023-11-22",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2306"
+    },
+    {
+      "date": "2023-11-22",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "918"
+    },
+    {
+      "date": "2023-11-22",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "375"
+    },
+    {
+      "date": "2023-11-21",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2248"
+    },
+    {
+      "date": "2023-11-21",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1006"
+    },
+    {
+      "date": "2023-11-21",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "394"
+    },
+    {
+      "date": "2023-11-21",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "148"
+    },
+    {
+      "date": "2023-11-20",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2424"
+    },
+    {
+      "date": "2023-11-20",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1137"
+    },
+    {
+      "date": "2023-11-20",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "375"
+    },
+    {
+      "date": "2023-11-19",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1502"
+    },
+    {
+      "date": "2023-11-19",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "590"
+    },
+    {
+      "date": "2023-11-19",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "381"
+    },
+    {
+      "date": "2023-11-18",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2996"
+    },
+    {
+      "date": "2023-11-18",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "806"
+    },
+    {
+      "date": "2023-11-18",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "758"
+    },
+    {
+      "date": "2023-11-17",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2555"
+    },
+    {
+      "date": "2023-11-17",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1110"
+    },
+    {
+      "date": "2023-11-17",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "904"
+    },
+    {
+      "date": "2023-11-16",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "12192"
+    },
+    {
+      "date": "2023-11-16",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2348"
+    },
+    {
+      "date": "2023-11-16",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "900"
+    },
+    {
+      "date": "2023-11-16",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "397"
+    },
+    {
+      "date": "2023-11-15",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2626"
+    },
+    {
+      "date": "2023-11-15",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2377"
+    },
+    {
+      "date": "2023-11-15",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "374"
+    },
+    {
+      "date": "2023-11-14",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2442"
+    },
+    {
+      "date": "2023-11-14",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "963"
+    },
+    {
+      "date": "2023-11-14",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "378"
+    },
+    {
+      "date": "2023-11-13",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2283"
+    },
+    {
+      "date": "2023-11-13",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1021"
+    },
+    {
+      "date": "2023-11-13",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "356"
+    },
+    {
+      "date": "2023-11-12",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2289"
+    },
+    {
+      "date": "2023-11-12",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1703"
+    },
+    {
+      "date": "2023-11-12",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "417"
+    },
+    {
+      "date": "2023-11-11",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3019"
+    },
+    {
+      "date": "2023-11-11",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "766"
+    },
+    {
+      "date": "2023-11-11",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "371"
+    },
+    {
+      "date": "2023-11-10",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2785"
+    },
+    {
+      "date": "2023-11-10",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1793"
+    },
+    {
+      "date": "2023-11-10",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "903"
+    },
+    {
+      "date": "2023-11-09",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2724"
+    },
+    {
+      "date": "2023-11-09",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2139"
+    },
+    {
+      "date": "2023-11-09",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "578"
+    },
+    {
+      "date": "2023-11-08",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2659"
+    },
+    {
+      "date": "2023-11-08",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2332"
+    },
+    {
+      "date": "2023-11-08",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "357"
+    },
+    {
+      "date": "2023-11-07",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2714"
+    },
+    {
+      "date": "2023-11-07",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2234"
+    },
+    {
+      "date": "2023-11-07",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "366"
+    },
+    {
+      "date": "2023-11-06",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2423"
+    },
+    {
+      "date": "2023-11-06",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2284"
+    },
+    {
+      "date": "2023-11-06",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "363"
+    },
+    {
+      "date": "2023-11-05",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1654"
+    },
+    {
+      "date": "2023-11-05",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1128"
+    },
+    {
+      "date": "2023-11-05",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "391"
+    },
+    {
+      "date": "2023-11-04",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3080"
+    },
+    {
+      "date": "2023-11-04",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1783"
+    },
+    {
+      "date": "2023-11-04",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "535"
+    },
+    {
+      "date": "2023-11-03",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2636"
+    },
+    {
+      "date": "2023-11-03",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2299"
+    },
+    {
+      "date": "2023-11-03",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1026"
+    },
+    {
+      "date": "2023-11-02",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3595"
+    },
+    {
+      "date": "2023-11-02",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2356"
+    },
+    {
+      "date": "2023-11-02",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "732"
+    },
+    {
+      "date": "2023-11-01",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2667"
+    },
+    {
+      "date": "2023-11-01",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2384"
+    },
+    {
+      "date": "2023-11-01",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "714"
+    },
+    {
+      "date": "2023-10-31",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2527"
+    },
+    {
+      "date": "2023-10-31",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2447"
+    },
+    {
+      "date": "2023-10-31",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "740"
+    },
+    {
+      "date": "2023-10-30",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2512"
+    },
+    {
+      "date": "2023-10-30",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2390"
+    },
+    {
+      "date": "2023-10-30",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "641"
+    },
+    {
+      "date": "2023-10-29",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1586"
+    },
+    {
+      "date": "2023-10-29",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1470"
+    },
+    {
+      "date": "2023-10-29",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "739"
+    },
+    {
+      "date": "2023-10-28",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3254"
+    },
+    {
+      "date": "2023-10-28",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1617"
+    },
+    {
+      "date": "2023-10-28",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1271"
+    },
+    {
+      "date": "2023-10-28",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "470"
+    },
+    {
+      "date": "2023-10-27",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2942"
+    },
+    {
+      "date": "2023-10-27",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "2339"
+    },
+    {
+      "date": "2023-10-27",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "2287"
+    },
+    {
+      "date": "2023-10-27",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1838"
+    },
+    {
+      "date": "2023-10-27",
+      "browser": "Internet Explorer",
+      "os_version": "XP",
+      "visits": "101"
+    },
+    {
+      "date": "2023-10-26",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2770"
+    },
+    {
+      "date": "2023-10-26",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2442"
+    },
+    {
+      "date": "2023-10-26",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "788"
+    },
+    {
+      "date": "2023-10-25",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3213"
+    },
+    {
+      "date": "2023-10-25",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2815"
+    },
+    {
+      "date": "2023-10-25",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "666"
+    },
+    {
+      "date": "2023-10-24",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3032"
+    },
+    {
+      "date": "2023-10-24",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2705"
+    },
+    {
+      "date": "2023-10-24",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "696"
+    },
+    {
+      "date": "2023-10-23",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2998"
+    },
+    {
+      "date": "2023-10-23",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2891"
+    },
+    {
+      "date": "2023-10-23",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "712"
+    },
+    {
+      "date": "2023-10-22",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1677"
+    },
+    {
+      "date": "2023-10-22",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "761"
+    },
+    {
+      "date": "2023-10-22",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "609"
+    },
+    {
+      "date": "2023-10-21",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3557"
+    },
+    {
+      "date": "2023-10-21",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "2099"
+    },
+    {
+      "date": "2023-10-21",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "716"
+    },
+    {
+      "date": "2023-10-20",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3069"
+    },
+    {
+      "date": "2023-10-20",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "2538"
+    },
+    {
+      "date": "2023-10-20",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1990"
+    },
+    {
+      "date": "2023-10-19",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3029"
+    },
+    {
+      "date": "2023-10-19",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2988"
+    },
+    {
+      "date": "2023-10-19",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1588"
+    },
+    {
+      "date": "2023-10-18",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3266"
+    },
+    {
+      "date": "2023-10-18",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3163"
+    },
+    {
+      "date": "2023-10-18",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1005"
+    },
+    {
+      "date": "2023-10-17",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3361"
+    },
+    {
+      "date": "2023-10-17",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3269"
+    },
+    {
+      "date": "2023-10-17",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "1043"
+    },
+    {
+      "date": "2023-10-17",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "687"
+    },
+    {
+      "date": "2023-10-16",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3382"
+    },
+    {
+      "date": "2023-10-16",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2627"
+    },
+    {
+      "date": "2023-10-16",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "2248"
+    },
+    {
+      "date": "2023-10-16",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "580"
+    },
+    {
+      "date": "2023-10-15",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "2718"
+    },
+    {
+      "date": "2023-10-15",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1552"
+    },
+    {
+      "date": "2023-10-15",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1481"
+    },
+    {
+      "date": "2023-10-15",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "664"
+    },
+    {
+      "date": "2023-10-14",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "22940"
+    },
+    {
+      "date": "2023-10-14",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "3453"
+    },
+    {
+      "date": "2023-10-14",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3362"
+    },
+    {
+      "date": "2023-10-14",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "644"
+    },
+    {
+      "date": "2023-10-13",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "8398"
+    },
+    {
+      "date": "2023-10-13",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3170"
+    },
+    {
+      "date": "2023-10-13",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2265"
+    },
+    {
+      "date": "2023-10-13",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "957"
+    },
+    {
+      "date": "2023-10-12",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "19537"
+    },
+    {
+      "date": "2023-10-12",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2798"
+    },
+    {
+      "date": "2023-10-12",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2646"
+    },
+    {
+      "date": "2023-10-12",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "824"
+    },
+    {
+      "date": "2023-10-11",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "15637"
+    },
+    {
+      "date": "2023-10-11",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2975"
+    },
+    {
+      "date": "2023-10-11",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2731"
+    },
+    {
+      "date": "2023-10-11",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "503"
+    },
+    {
+      "date": "2023-10-10",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2621"
+    },
+    {
+      "date": "2023-10-10",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2401"
+    },
+    {
+      "date": "2023-10-10",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "1956"
+    },
+    {
+      "date": "2023-10-10",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "510"
+    },
+    {
+      "date": "2023-10-09",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2811"
+    },
+    {
+      "date": "2023-10-09",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "2271"
+    },
+    {
+      "date": "2023-10-09",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1012"
+    },
+    {
+      "date": "2023-10-09",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "471"
+    },
+    {
+      "date": "2023-10-08",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "2887"
+    },
+    {
+      "date": "2023-10-08",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1362"
+    },
+    {
+      "date": "2023-10-08",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1023"
+    },
+    {
+      "date": "2023-10-08",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "509"
+    },
+    {
+      "date": "2023-10-07",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "5076"
+    },
+    {
+      "date": "2023-10-07",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3278"
+    },
+    {
+      "date": "2023-10-07",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "767"
+    },
+    {
+      "date": "2023-10-07",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "676"
+    },
+    {
+      "date": "2023-10-06",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2871"
+    },
+    {
+      "date": "2023-10-06",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "2213"
+    },
+    {
+      "date": "2023-10-06",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1249"
+    },
+    {
+      "date": "2023-10-06",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1073"
+    },
+    {
+      "date": "2023-10-05",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "13225"
+    },
+    {
+      "date": "2023-10-05",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3114"
+    },
+    {
+      "date": "2023-10-05",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2137"
+    },
+    {
+      "date": "2023-10-05",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "539"
+    },
+    {
+      "date": "2023-10-04",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "14558"
+    },
+    {
+      "date": "2023-10-04",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3164"
+    },
+    {
+      "date": "2023-10-04",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2664"
+    },
+    {
+      "date": "2023-10-04",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "450"
+    },
+    {
+      "date": "2023-10-03",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3284"
+    },
+    {
+      "date": "2023-10-03",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "3129"
+    },
+    {
+      "date": "2023-10-03",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2564"
+    },
+    {
+      "date": "2023-10-03",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "503"
+    },
+    {
+      "date": "2023-10-02",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "19360"
+    },
+    {
+      "date": "2023-10-02",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "2912"
+    },
+    {
+      "date": "2023-10-02",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2597"
+    },
+    {
+      "date": "2023-10-02",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "1585"
+    },
+    {
+      "date": "2023-10-01",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "7015"
+    },
+    {
+      "date": "2023-10-01",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "1794"
+    },
+    {
+      "date": "2023-10-01",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "1580"
+    },
+    {
+      "date": "2023-10-01",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "542"
+    },
+    {
+      "date": "2023-09-30",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3726"
+    },
+    {
+      "date": "2023-09-30",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "2082"
+    },
+    {
+      "date": "2023-09-30",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "539"
+    },
+    {
+      "date": "2023-09-29",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3391"
+    },
+    {
+      "date": "2023-09-29",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "3277"
+    },
+    {
+      "date": "2023-09-29",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "920"
+    },
+    {
+      "date": "2023-09-29",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "280"
+    },
+    {
+      "date": "2023-09-28",
+      "browser": "Internet Explorer",
+      "os_version": "2000",
+      "visits": "37883"
+    },
+    {
+      "date": "2023-09-28",
+      "browser": "Internet Explorer",
+      "os_version": "8",
+      "visits": "3242"
+    },
+    {
+      "date": "2023-09-28",
+      "browser": "Internet Explorer",
+      "os_version": "10",
+      "visits": "2865"
+    },
+    {
+      "date": "2023-09-28",
+      "browser": "Internet Explorer",
+      "os_version": "7",
+      "visits": "774"
+    }
+  ],
+  "totals": {
+    "visits": 1511770,
+    "by_windows": {
+      "7": {
+        "undefined": 66165
+      },
+      "8": {
+        "undefined": 209053
+      },
+      "10": {
+        "undefined": 131506
+      },
+      "2000": {
+        "undefined": 1104945
+      },
+      "XP": {
+        "undefined": 101
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 66165,
+        "8": 209053,
+        "10": 131506,
+        "2000": 1104945,
+        "XP": 101
+      }
+    }
+  },
+  "taken_at": "2023-12-27T17:59:58.922Z"
+}

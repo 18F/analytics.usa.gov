@@ -82,7 +82,6 @@ export default {
   ie: renderBlock.buildBarBasicChart('ie_version'),
 
   cities: renderBlock.buildBarChartWithLabel((d) => {
-    // remove "(not set) from the data"
     const cityList = d.data;
     const cityListFiltered = cityList.filter((c) => (c.city !== '(not set)') && (c.city !== 'zz'));
     const proportions = transformers.findProportionsOfMetric(
@@ -127,6 +126,18 @@ export default {
     return values.slice(0, 15);
   }, 'country'),
 
+  // TODO: refactor code to calculate with new languages.json report changes
+  // languages: renderBlock.buildBarChartWithLabel((d) => {
+  //   let languages = d.totals.languages;
+  //   console.log(languages);
+  //   let values = transformers.toTopPercents(
+  //     d.totals,
+  //     (list) => list.map((x) => x.totals),
+  //   );
+  //   values = values.filter((c) => !isPartOfUnitedStates(c.languages));
+  //   return values.slice(0, 15);
+  // }, 'languages'),
+
   'top-downloads': renderBlock.loadAndRender()
     .transform((d) => d.data.slice(0, 10))
     .render(
@@ -136,8 +147,8 @@ export default {
           '<span class="name"><a class="top-download-page" target="_blank" rel="noopener" href=http://', d.page, '>', d.page_title, '</a></span> ',
           '<span class="domain" >', formatters.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
-          '<span class="filename"><a class="top-download-file" target="_blank" rel="noopener" href=', d.event_label, '>',
-          formatters.formatFile(d.event_label), '</a></span>',
+          '<span class="filename"><a class="top-download-file" target="_blank" rel="noopener" href=', formatters.formatURL(d.page), d.file_name, '>',
+          'download file', '</a></span>',
         ].join(''))
         .scale((values) => d3.scale.linear()
           .domain([0, 1, d3.max(values)])
@@ -145,7 +156,26 @@ export default {
         .format(formatters.addCommas),
     ),
 
-  // the top pages block(s)
+  // the top pages first block(s)
+  'top-pages-realtime': renderBlock.loadAndRender()
+    .transform((d) => d.data)
+    .on('render', (selection) => {
+      selection.selectAll('.label')
+        .each(function (d) {
+          d.text = this.innerText;
+        })
+        .html('')
+        .text((d) => titleExceptions[d.page] || d.page_title);
+    })
+    .render(barChart()
+      .label((d) => d.page_title)
+      .value((d) => +d.active_visitors)
+      .scale((values) => d3.scale.linear()
+        .domain([0, 1, d3.max(values)])
+        .rangeRound([0, 1, 100]))
+      .format(formatters.addCommas)),
+
+  // the top pages second and third block(s)
   'top-pages': renderBlock.loadAndRender()
     .transform((d) => d.data)
     .on('render', (selection) => {
@@ -155,40 +185,11 @@ export default {
           d.text = this.innerText;
         })
         .html('')
-        .append('a')
-        .attr('target', '_blank')
-        .attr('rel', 'noopener')
-        .attr('href', (d) => exceptions[d.domain] || (`http://${d.domain}`))
         .text((d) => titleExceptions[d.domain] || d.domain);
     })
     .render(barChart()
       .label((d) => d.domain)
       .value((d) => +d.visits)
-      .scale((values) => d3.scale.linear()
-        .domain([0, 1, d3.max(values)])
-        .rangeRound([0, 1, 100]))
-      .format(formatters.addCommas)),
-
-  // the top pages block(s)
-  'top-pages-realtime': renderBlock.loadAndRender()
-    .transform((d) => d.data)
-    .on('render', (selection) => {
-      // turn the labels into links
-      selection.selectAll('.label')
-        .each(function (d) {
-          d.text = this.innerText;
-        })
-        .html('')
-        .append('a')
-        .attr('target', '_blank')
-        .attr('rel', 'noopener')
-        .attr('title', (d) => d.page_title)
-        .attr('href', (d) => exceptions[d.page] || (`http://${d.page}`))
-        .text((d) => titleExceptions[d.page] || d.page_title);
-    })
-    .render(barChart()
-      .label((d) => d.page_title)
-      .value((d) => +d.active_visitors)
       .scale((values) => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))

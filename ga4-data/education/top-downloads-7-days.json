@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Federal Pell Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/grants/pell",
+      "total_events": "3554"
+    },
+    {
+      "page_title": "Public Service Loan Forgiveness Form | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/public-service/public-service-loan-forgiveness-application",
+      "total_events": "3329"
+    },
+    {
+      "page_title": "Filling Out the FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out",
+      "total_events": "3044"
+    },
+    {
+      "page_title": "Teacher Loan Forgiveness | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/teacher",
+      "total_events": "1965"
+    },
+    {
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources#fafsa",
+      "total_events": "1782"
+    },
+    {
+      "page_title": "6 Things Students Need Before They Fill Out the 2024–25 FAFSA® Form – Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/articles/things-you-need-for-fafsa/",
+      "total_events": "1694"
+    },
+    {
+      "page_title": "Total and Permanent Disability Discharge | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/disability-discharge",
+      "total_events": "1501"
+    },
+    {
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html",
+      "total_events": "1132"
+    },
+    {
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources",
+      "total_events": "1121"
+    },
+    {
+      "page_title": "Subsidized and Unsubsidized Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+      "total_events": "1083"
+    },
+    {
+      "page_title": "Student Loan Deferment | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/deferment",
+      "total_events": "915"
+    },
+    {
+      "page_title": "Dependency Status | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out/dependency",
+      "total_events": "849"
+    },
+    {
+      "page_title": "Student Loan Forbearance | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/lower-payments/get-temporary-relief/forbearance",
+      "total_events": "797"
+    },
+    {
+      "page_title": "OCR Search | OCR",
+      "event_label": "file_download",
+      "page": "ocrcas.ed.gov/ocr-search",
+      "total_events": "790"
+    },
+    {
+      "page_title": "How Aid Is Calculated | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/complete-aid-process/how-calculated#efc",
+      "total_events": "775"
+    },
+    {
+      "page_title": "Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/loans",
+      "total_events": "637"
+    },
+    {
+      "page_title": "Loan and Grant Fact Sheets | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources/loan-grant-fact-sheets",
+      "total_events": "620"
+    },
+    {
+      "page_title": "Sweet v. Cardona Settlement | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/announcements-events/sweet-settlement",
+      "total_events": "603"
+    },
+    {
+      "page_title": "Public Service Loan Forgiveness | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/public-service",
+      "total_events": "577"
+    },
+    {
+      "page_title": "8 Easy Steps for Parents Completing the 2023–24 FAFSA® Form – Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/articles/fafsa-for-parents/",
+      "total_events": "530"
+    },
+    {
+      "page_title": "SY 2022-23 Non-XML File Specifications",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/inits/ed/edfacts/sy-22-23-nonxml.html",
+      "total_events": "453"
+    },
+    {
+      "page_title": "Borrower Defense Loan Discharge | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/borrower-defense",
+      "total_events": "418"
+    },
+    {
+      "page_title": "Regional Advisory Committees - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-formula-grants/program-and-grantee-support-services/comprehensive-centers-program/regional-advisory-committees/",
+      "total_events": "408"
+    },
+    {
+      "page_title": "How can I download my aid data? | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/help-center/answers/article/how-can-i-download-my-aid-data",
+      "total_events": "389"
+    },
+    {
+      "page_title": "2023 Awardees",
+      "event_label": "file_download",
+      "page": "nationalblueribbonschools.ed.gov/awardwinners",
+      "total_events": "346"
+    },
+    {
+      "page_title": "How Aid Is Calculated | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/complete-aid-process/how-calculated",
+      "total_events": "337"
+    },
+    {
+      "page_title": "2023 Awardees",
+      "event_label": "file_download",
+      "page": "nationalblueribbonschools.ed.gov/awardwinners/",
+      "total_events": "332"
+    },
+    {
+      "page_title": "Has Your School Closed? Here’s What to Do. | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/announcements-events/closed-school",
+      "total_events": "317"
+    },
+    {
+      "page_title": "Negotiated Rulemaking for Higher Education 2023-2024",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/policy/highered/reg/hearulemaking/2023/index.html#iqa",
+      "total_events": "288"
+    },
+    {
+      "page_title": "Civil Rights Data",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/offices/list/ocr/data.html",
+      "total_events": "287"
+    },
+    {
+      "page_title": "Awards - Blue Ribbon Schools Program",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/programs/nclbbrs/awards.html",
+      "total_events": "286"
+    },
+    {
+      "page_title": "Program Overview - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/program-overview/",
+      "total_events": "282"
+    },
+    {
+      "page_title": "Artificial Intelligence and the Future of Teaching and Learning - Office of Educational Technology",
+      "event_label": "file_download",
+      "page": "tech.ed.gov/ai-future-of-teaching-and-learning/",
+      "total_events": "280"
+    },
+    {
+      "page_title": "Aid for International Study | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/international",
+      "total_events": "276"
+    },
+    {
+      "page_title": "Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/grants",
+      "total_events": "263"
+    },
+    {
+      "page_title": "Teacher Loan Forgiveness | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/teacher#how-and-when-do-i-apply-for-teacher-loan-forgiveness",
+      "total_events": "259"
+    },
+    {
+      "page_title": "Federal Student Loan Portfolio | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/data-center/student/portfolio",
+      "total_events": "226"
+    },
+    {
+      "page_title": "Student Loan Repayment | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/repayment",
+      "total_events": "221"
+    },
+    {
+      "page_title": "Awards - U.S. Presidential Scholars Program",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/programs/psp/awards.html",
+      "total_events": "202"
+    },
+    {
+      "page_title": "Awards - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/innovation-early-learning/education-innovation-and-research-eir/awards/",
+      "total_events": "190"
+    },
+    {
+      "page_title": "Every Student Succeeds Act (ESSA) | U.S. Department of Education",
+      "event_label": "file_download",
+      "page": "www.ed.gov/essa",
+      "total_events": "186"
+    },
+    {
+      "page_title": "Applicant Information - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/applicant-information/",
+      "total_events": "182"
+    },
+    {
+      "page_title": "Parent PLUS Loans | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/loans/plus/parent",
+      "total_events": "178"
+    },
+    {
+      "page_title": "Pell Grant Maximum for 2023–24 Announced | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/announcements-events/pell-max-award",
+      "total_events": "169"
+    },
+    {
+      "page_title": "Applicant Information -- Fulbright-Hays Seminars Abroad--Bilateral Projects",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/programs/iegpssap/applicant.html",
+      "total_events": "152"
+    },
+    {
+      "page_title": "English Learner Tool Kit (OELA)",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/offices/list/oela/english-learner-toolkit/index.html",
+      "total_events": "151"
+    },
+    {
+      "page_title": "Data Home | College Scorecard",
+      "event_label": "file_download",
+      "page": "collegescorecard.ed.gov/data/",
+      "total_events": "147"
+    },
+    {
+      "page_title": "Financial Aid Shopping Sheet",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/policy/highered/guid/aid-offer/index.html",
+      "total_events": "143"
+    },
+    {
+      "page_title": "Awards: President's Education Awards Program",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/programs/presedaward/awards.html",
+      "total_events": "138"
+    },
+    {
+      "page_title": "Dependency Status | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out/dependency#dependent-or-independent",
+      "total_events": "135"
+    },
+    {
+      "page_title": "Grant Application and Other Forms",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/fund/grant/apply/appforms/appforms.html",
+      "total_events": "125"
+    },
+    {
+      "page_title": "Model Form for Disclosure to Parents of Dependent Students and Consent Form for Disclosure to Parents | Protecting Student Privacy",
+      "event_label": "file_download",
+      "page": "studentprivacy.ed.gov/resources/model-form-disclosure-parents-dependent-students-and-consent-form-disclosure-parents",
+      "total_events": "124"
+    },
+    {
+      "page_title": "Guidance - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/guidance/",
+      "total_events": "120"
+    },
+    {
+      "page_title": "Tax Benefits for Higher Education | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources/tax-benefits",
+      "total_events": "118"
+    },
+    {
+      "page_title": "FAFSA® Completion by High School and Public School District | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/data-center/student/application-volume/fafsa-completion-high-school",
+      "total_events": "115"
+    },
+    {
+      "page_title": "Governor’s Emergency Education Relief Fund - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/education-stabilization-fund/governors-emergency-education-relief-fund/",
+      "total_events": "110"
+    },
+    {
+      "page_title": "An Eligible Student Guide to the Family Educational Rights and Privacy Act (FERPA) | Protecting Student Privacy",
+      "event_label": "file_download",
+      "page": "studentprivacy.ed.gov/resources/eligible-student-guide-family-educational-rights-and-privacy-act-ferpa",
+      "total_events": "109"
+    },
+    {
+      "page_title": "POLICY STATEMENT: Inclusion of Children with Disabilities in Early Childhood Programs (Nov. 28, 2023) - Individuals with Disabilities Education Act",
+      "event_label": "file_download",
+      "page": "sites.ed.gov/idea/idea-files/policy-statement-inclusion-of-children-with-disabilities-in-early-childhood-programs/",
+      "total_events": "106"
+    },
+    {
+      "page_title": "Federal Pell Grants | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get",
+      "total_events": "102"
+    },
+    {
+      "page_title": "Filling Out the FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/apply-for-aid/fafsa/filling-out#parent-info",
+      "total_events": "102"
+    },
+    {
+      "page_title": "Upward Bound Program Annual Performance Report",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/programs/trioupbound/report.html",
+      "total_events": "101"
+    },
+    {
+      "page_title": "4 Loan Forgiveness Programs for Teachers – Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/articles/teacher-loan-forgiveness-options/",
+      "total_events": "99"
+    },
+    {
+      "page_title": "Borrower Defense Updates | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/announcements-events/borrower-defense-update",
+      "total_events": "99"
+    },
+    {
+      "page_title": "Awards -- Title III Part A Programs - Strengthening Institutions",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/programs/iduestitle3a/awards.html",
+      "total_events": "97"
+    },
+    {
+      "page_title": "Deadlines and Announcements - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-state-grantee-relations-evidence-based-practices/state-and-grantee-relations/deadlines-and-announcements/",
+      "total_events": "96"
+    },
+    {
+      "page_title": "Education Department Announces Permanent Improvements to the Public Service Loan Forgiveness Program and One-time payment Count Adjustment to Bring Borrowers Closer to Forgiveness | U.S. Department of Education",
+      "event_label": "file_download",
+      "page": "www.ed.gov/news/press-releases/education-department-announces-permanent-improvements-public-service-loan-forgiveness-program-and-one-time-payment-count-adjustment-bring-borrowers-closer-forgiveness",
+      "total_events": "93"
+    },
+    {
+      "page_title": "12th Grade College Prep Checklists | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources/prepare-for-college/checklists/12th-grade",
+      "total_events": "92"
+    },
+    {
+      "page_title": "EDFacts Data Files | U.S. Department of Education",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/inits/ed/edfacts/data-files/index.html",
+      "total_events": "90"
+    },
+    {
+      "page_title": "Elementary and Secondary School Emergency Relief Fund - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/education-stabilization-fund/elementary-secondary-school-emergency-relief-fund/",
+      "total_events": "90"
+    },
+    {
+      "page_title": "FY 2024 CSP CMO Grants Competition - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/charter-schools-program/charter-schools-program-grants-for-replications-and-expansion-of-high-quality-charter-schools/fy-2024-csp-cmo-grants-competition/",
+      "total_events": "90"
+    },
+    {
+      "page_title": "False Certification Discharge | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/manage-loans/forgiveness-cancellation/false-certification",
+      "total_events": "89"
+    },
+    {
+      "page_title": "OCR: Discrimination Complaint Form",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/offices/list/ocr/complaintintro.html",
+      "total_events": "88"
+    },
+    {
+      "page_title": "FSCS Grant Awards - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/school-choice-improvement-programs/full-service-community-schools-program-fscs/awards/",
+      "total_events": "86"
+    },
+    {
+      "page_title": "FY 2024 Department of Education Justifications of Appropriation Estimates to the Congress",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/overview/budget/budget24/justifications/index.html",
+      "total_events": "84"
+    },
+    {
+      "page_title": "Search Financial Aid Tools and Resources | Federal Student Aid - Financial Aid Toolkit",
+      "event_label": "file_download",
+      "page": "financialaidtoolkit.ed.gov/tk/search#YourSearchResults",
+      "total_events": "84"
+    },
+    {
+      "page_title": "Parents of Students | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources/prepare-for-college/parents",
+      "total_events": "81"
+    },
+    {
+      "page_title": "Resources | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/resources#webinars",
+      "total_events": "81"
+    },
+    {
+      "page_title": "File a Complaint: Discrimination Form | U.S. Department of Education",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/offices/list/ocr/docs/howto.html",
+      "total_events": "79"
+    },
+    {
+      "page_title": "A Better FAFSA Process Means a Better Future for Everyone | Federal Student Aid - Financial Aid Toolkit",
+      "event_label": "file_download",
+      "page": "financialaidtoolkit.ed.gov/tk/announcement-detail.jsp",
+      "total_events": "76"
+    },
+    {
+      "page_title": "Awards - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/school-choice-improvement-programs/magnet-school-assistance-program-msap/awards/",
+      "total_events": "76"
+    },
+    {
+      "page_title": "OCR Search | OCR",
+      "event_label": "file_download",
+      "page": "ocrcas.ed.gov/ocr-search?query=third%20party%20%2A",
+      "total_events": "75"
+    },
+    {
+      "page_title": "Security Requirements for Contractors Doing Business with the Department of Education",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/fund/contract/about/bsp.html",
+      "total_events": "75"
+    },
+    {
+      "page_title": "Aid for International Study | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/understand-aid/types/international#participating-schools",
+      "total_events": "73"
+    },
+    {
+      "page_title": "FY 2023 FSCS Grant Competition - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/school-choice-improvement-programs/full-service-community-schools-program-fscs/fy-2023-fscs-grant-competition/",
+      "total_events": "72"
+    },
+    {
+      "page_title": "File a Complaint | Protecting Student Privacy",
+      "event_label": "file_download",
+      "page": "studentprivacy.ed.gov/file-a-complaint",
+      "total_events": "72"
+    },
+    {
+      "page_title": "Heightened Cash Monitoring | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/data-center/school/hcm",
+      "total_events": "72"
+    },
+    {
+      "page_title": "Consolidated State Performance Reports - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-administration/about-us/consolidated-state-performance-reports/",
+      "total_events": "68"
+    },
+    {
+      "page_title": "Payment Count Adjustments Toward Income-Driven Repayment and Public Service Loan Forgiveness Programs | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/announcements-events/idr-account-adjustment",
+      "total_events": "68"
+    },
+    {
+      "page_title": "Download Recent Data | Civil Rights Data",
+      "event_label": "file_download",
+      "page": "civilrightsdata.ed.gov/",
+      "total_events": "67"
+    },
+    {
+      "page_title": "How to Review and Correct Your FAFSA® Form | Federal Student Aid",
+      "event_label": "file_download",
+      "page": "studentaid.gov/apply-for-aid/fafsa/review-and-correct",
+      "total_events": "67"
+    },
+    {
+      "page_title": "Policy - ED.gov",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/policy/landing.jhtml",
+      "total_events": "67"
+    },
+    {
+      "page_title": "National Educational Technology Plan - Office of Educational Technology",
+      "event_label": "file_download",
+      "page": "tech.ed.gov/netp/",
+      "total_events": "66"
+    },
+    {
+      "page_title": "Performance Review - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-formula-grants/school-support-and-accountability/performance-review/",
+      "total_events": "66"
+    },
+    {
+      "page_title": "ARP: American Rescue Plan (HEERF III)",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/offices/list/ope/arp.html",
+      "total_events": "62"
+    },
+    {
+      "page_title": "Bipartisan Safer Communities Act - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/bipartisan-safer-communities-act/",
+      "total_events": "62"
+    },
+    {
+      "page_title": "Every Student Succeeds Act (ESSA) - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-formula-grants/school-support-and-accountability/the-elementary-secondary-education-act-the-every-student-succeeds-act-of-2016/every-student-succeeds-act-essa/",
+      "total_events": "62"
+    },
+    {
+      "page_title": "Office of State Support - State Documents - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-formula-grants/school-support-and-accountability/key-documents/state-table/",
+      "total_events": "60"
+    },
+    {
+      "page_title": "Request for Designation as an Eligible Institution and Waiver of the Non-Federal Cost Share Requirement",
+      "event_label": "file_download",
+      "page": "www2.ed.gov/about/offices/list/ope/idues/eligibility.html",
+      "total_events": "60"
+    },
+    {
+      "page_title": "School Ambassador Fellowship Program - Office of Elementary and Secondary Education",
+      "event_label": "file_download",
+      "page": "oese.ed.gov/offices/office-of-discretionary-grants-support-services/effective-educator-development-programs/school-ambassador-fellowship-program/",
+      "total_events": "60"
+    },
+    {
+      "page_title": "A Parent Guide to the Family Educational Rights and Privacy Act (FERPA) | Protecting Student Privacy",
+      "event_label": "file_download",
+      "page": "studentprivacy.ed.gov/resources/parent-guide-family-educational-rights-and-privacy-act-ferpa-0",
+      "total_events": "58"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:33:16.641Z",
+  "agency": "education"
+}

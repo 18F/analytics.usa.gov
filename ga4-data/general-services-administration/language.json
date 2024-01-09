@@ -1,0 +1,112 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 74901793,
+    "languages": {
+      "English": 68244798,
+      "Spanish": 4936753,
+      "Chinese": 308291,
+      "French": 291397,
+      "German": 128575,
+      "Korean": 116695,
+      "Portuguese": 104944,
+      "Russian": 139329,
+      "Japanese": 108818,
+      "Italian": 63238,
+      "Turkish": 60768,
+      "Polish": 34858,
+      "Arabic": 48332,
+      "Dutch": 34680,
+      "Ukrainian": 28200,
+      "(other)": 26347,
+      "Swedish": 29442,
+      "Vietnamese": 26321,
+      "Indonesian": 21774,
+      "Danish": 13818,
+      "Norwegian Bokmål": 14168,
+      "Hebrew": 12264,
+      "Thai": 13814,
+      "Czech": 10883,
+      "Finnish": 8698,
+      "Hungarian": 9155,
+      "Greek": 10427,
+      "Romanian": 7900,
+      "Persian": 8861,
+      "Catalan": 7037,
+      "Slovak": 5100,
+      "Bulgarian": 2796,
+      "Croatian": 3978,
+      "Hindi": 3126,
+      "Slovenian": 2454,
+      "Serbian": 3495,
+      "Lithuanian": 2004,
+      "Bengali": 615,
+      "Estonian": 942,
+      "Latvian": 793,
+      "Burmese": 208,
+      "Uzbek": 1862,
+      "Afrikaans": 302,
+      "Albanian": 82,
+      "Azerbaijani": 828,
+      "Georgian": 732,
+      "Panjabi": 35,
+      "Amharic": 299,
+      "Central Khmer": 509,
+      "Macedonian": 104,
+      "Bosnian": 465,
+      "Malay": 316,
+      "Armenian": 98,
+      "Lao": 48,
+      "Mongolian": 17
+    }
+  },
+  "taken_at": "2024-01-05T16:06:29.091Z",
+  "agency": "general-services-administration"
+}

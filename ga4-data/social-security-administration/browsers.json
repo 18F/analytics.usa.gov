@@ -1,0 +1,94 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 97605471,
+    "browser": {
+      "Chrome": 44587779,
+      "Safari": 35777896,
+      "Edge": 10881385,
+      "Firefox": 2120454,
+      "Samsung Internet": 1645013,
+      "Android Webview": 1008522,
+      "Safari (in-app)": 944485,
+      "Amazon Silk": 291166,
+      "Internet Explorer": 173654,
+      "Opera": 111856,
+      "Mozilla Compatible Agent": 34916,
+      "(not set)": 6047,
+      "YaBrowser": 4667,
+      "Whale Browser": 1682,
+      "Aloha Browser": 1465,
+      "Opera Mini": 1790,
+      "DuckDuckGo Browser": 929,
+      "UC Browser": 1661,
+      "Android Runtime": 7189,
+      "Puffin": 160,
+      "PaleMoon": 391,
+      "SeaMonkey": 306,
+      "Coc Coc": 870,
+      "Meta Quest Browser": 173,
+      "Mozilla": 261,
+      "Iron": 37,
+      "Lynx": 24,
+      "Maxthon": 32,
+      "Nintendo Browser": 38,
+      "Phoenix Browser": 146,
+      "Waterfox": 162,
+      "Android Browser": 239,
+      "Seznam": 19,
+      "Vivaldi": 27,
+      "YE": 2,
+      "MRCHROME": 7,
+      "Netscape": 10,
+      "Playstation 4": 3,
+      "NetFront": 2,
+      "Nokia Browser": 1,
+      "BlackBerry": 2,
+      "Playstation Vita Browser": 3
+    }
+  },
+  "taken_at": "2024-01-05T14:44:55.689Z",
+  "agency": "social-security-administration"
+}

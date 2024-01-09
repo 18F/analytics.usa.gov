@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "REAC | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "407"
+    },
+    {
+      "page_title": "HUD.gov / U.S. Department of Housing and Urban Development (HUD) |",
+      "active_visitors": "240"
+    },
+    {
+      "page_title": "PHA Contact Information | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "164"
+    },
+    {
+      "page_title": "Housing Choice Voucher Program Section 8 | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "155"
+    },
+    {
+      "page_title": "Resources | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "98"
+    },
+    {
+      "page_title": "Housing Handbooks | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "93"
+    },
+    {
+      "page_title": "Income Limits | HUD USER",
+      "active_visitors": "91"
+    },
+    {
+      "page_title": "SFH Handbook 4000.1 | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "82"
+    },
+    {
+      "page_title": "Rental Assistance | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "68"
+    },
+    {
+      "page_title": "Homes for Sale | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "66"
+    },
+    {
+      "page_title": "What We do | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "63"
+    },
+    {
+      "page_title": "Fair Market Rents (40th PERCENTILE RENTS) | HUD USER",
+      "active_visitors": "55"
+    },
+    {
+      "page_title": "Buying a Home | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "53"
+    },
+    {
+      "page_title": "Page not found | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "49"
+    },
+    {
+      "page_title": "Program Offices | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "41"
+    },
+    {
+      "page_title": "Office of Housing Choice Vouchers | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "40"
+    },
+    {
+      "page_title": "Contact Us | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "39"
+    },
+    {
+      "page_title": "State Information | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "38"
+    },
+    {
+      "page_title": "Limited Denial of Participation, HUD Funding Disqualifications and Voluntary Abstentions list | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "36"
+    },
+    {
+      "page_title": "Loans | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "active_visitors": "31"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:03:02.990Z",
+  "agency": "housing-urban-development"
+}

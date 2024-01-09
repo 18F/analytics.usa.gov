@@ -1,0 +1,258 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 633742982,
+    "by_os": {
+      "iOS": {
+        "Safari": 159368893,
+        "Chrome": 23615042,
+        "Safari (in-app)": 6167451,
+        "(not set)": 167555,
+        "Iron": 16719,
+        "Aloha Browser": 2663,
+        "UC Browser": 1470,
+        "YaBrowser": 1201,
+        "DuckDuckGo Browser": 719
+      },
+      "Android": {
+        "Chrome": 155380336,
+        "Samsung Internet": 8416404,
+        "Android Webview": 4090513,
+        "Firefox": 759547,
+        "Amazon Silk": 644365,
+        "Opera": 711562,
+        "Edge": 452002,
+        "UC Browser": 115204,
+        "Opera Mini": 50021,
+        "(not set)": 32361,
+        "Android Runtime": 10496,
+        "YaBrowser": 20055,
+        "Whale Browser": 11364,
+        "Phoenix Browser": 5635,
+        "Android Browser": 2587,
+        "Mozilla Compatible Agent": 114
+      },
+      "Windows": {
+        "Chrome": 132740967,
+        "Edge": 46358173,
+        "Firefox": 6487220,
+        "Opera": 1223600,
+        "Internet Explorer": 276771,
+        "YaBrowser": 56928,
+        "Coc Coc": 36441,
+        "Whale Browser": 25644,
+        "Waterfox": 152,
+        "(not set)": 4883,
+        "Safari": 23663,
+        "SeaMonkey": 125
+      },
+      "Macintosh": {
+        "Safari": 30337245,
+        "Chrome": 28288454,
+        "Firefox": 1562138,
+        "Mozilla Compatible Agent": 246563,
+        "Edge": 201934,
+        "Opera": 66228
+      },
+      "Linux": {
+        "Chrome": 13860196,
+        "Firefox": 658487,
+        "Samsung Internet": 216417,
+        "Edge": 24948,
+        "Mozilla": 21705,
+        "Opera": 20061,
+        "Safari": 16707
+      },
+      "Chrome OS": {
+        "Chrome": 10584853
+      },
+      "(not set)": {
+        "(not set)": 169838,
+        "Opera Mini": 109799,
+        "Mozilla Compatible Agent": 50856,
+        "Chrome": 1664
+      },
+      "Fuchsia": {
+        "Chrome": 12545
+      },
+      "Tizen": {
+        "Samsung Internet": 11041,
+        "Mozilla Compatible Agent": 2331
+      },
+      "UNIX": {
+        "Chrome": 126
+      }
+    },
+    "by_browsers": {
+      "Safari": {
+        "iOS": 159368893,
+        "Macintosh": 30337245,
+        "Linux": 16707,
+        "Windows": 23663
+      },
+      "Chrome": {
+        "Android": 155380336,
+        "Windows": 132740967,
+        "iOS": 23615042,
+        "Macintosh": 28288454,
+        "Linux": 13860196,
+        "Chrome OS": 10584853,
+        "Fuchsia": 12545,
+        "(not set)": 1664,
+        "UNIX": 126
+      },
+      "Edge": {
+        "Windows": 46358173,
+        "Android": 452002,
+        "Macintosh": 201934,
+        "Linux": 24948
+      },
+      "Samsung Internet": {
+        "Android": 8416404,
+        "Linux": 216417,
+        "Tizen": 11041
+      },
+      "Firefox": {
+        "Windows": 6487220,
+        "Macintosh": 1562138,
+        "Android": 759547,
+        "Linux": 658487
+      },
+      "Safari (in-app)": {
+        "iOS": 6167451
+      },
+      "Android Webview": {
+        "Android": 4090513
+      },
+      "Opera": {
+        "Windows": 1223600,
+        "Android": 711562,
+        "Macintosh": 66228,
+        "Linux": 20061
+      },
+      "Amazon Silk": {
+        "Android": 644365
+      },
+      "Internet Explorer": {
+        "Windows": 276771
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 246563,
+        "(not set)": 50856,
+        "Tizen": 2331,
+        "Android": 114
+      },
+      "(not set)": {
+        "(not set)": 169838,
+        "iOS": 167555,
+        "Android": 32361,
+        "Windows": 4883
+      },
+      "UC Browser": {
+        "Android": 115204,
+        "iOS": 1470
+      },
+      "Opera Mini": {
+        "(not set)": 109799,
+        "Android": 50021
+      },
+      "YaBrowser": {
+        "Windows": 56928,
+        "Android": 20055,
+        "iOS": 1201
+      },
+      "Coc Coc": {
+        "Windows": 36441
+      },
+      "Whale Browser": {
+        "Windows": 25644,
+        "Android": 11364
+      },
+      "Iron": {
+        "iOS": 16719
+      },
+      "Android Runtime": {
+        "Android": 10496
+      },
+      "Mozilla": {
+        "Linux": 21705
+      },
+      "Aloha Browser": {
+        "iOS": 2663
+      },
+      "Waterfox": {
+        "Windows": 152
+      },
+      "Phoenix Browser": {
+        "Android": 5635
+      },
+      "SeaMonkey": {
+        "Windows": 125
+      },
+      "DuckDuckGo Browser": {
+        "iOS": 719
+      },
+      "Android Browser": {
+        "Android": 2587
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:53:56.926Z",
+  "agency": "health-human-services"
+}

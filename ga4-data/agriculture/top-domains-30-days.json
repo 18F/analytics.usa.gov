@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.fs.usda.gov",
+      "visits": "2754176",
+      "users": "2060497",
+      "pageviews": "4922415",
+      "pageviews_per_session": "1.7872550628572756",
+      "avg_session_duration": "178.94878900623917",
+      "bounce_rate": "0.41658775619277782"
+    },
+    {
+      "domain": "www.fns.usda.gov",
+      "visits": "1088445",
+      "users": "840969",
+      "pageviews": "2044293",
+      "pageviews_per_session": "1.8781775836169949",
+      "avg_session_duration": "176.47210942210765",
+      "bounce_rate": "0.34532934599359638"
+    },
+    {
+      "domain": "www.usda.gov",
+      "visits": "1084183",
+      "users": "816470",
+      "pageviews": "1308582",
+      "pageviews_per_session": "1.2069752062151868",
+      "avg_session_duration": "116.16935743201007",
+      "bounce_rate": "0.49861693090557591"
+    },
+    {
+      "domain": "www.fsis.usda.gov",
+      "visits": "778061",
+      "users": "558522",
+      "pageviews": "1172716",
+      "pageviews_per_session": "1.5072288676594765",
+      "avg_session_duration": "141.76972676856698",
+      "bounce_rate": "0.48036722056496856"
+    },
+    {
+      "domain": "www.myplate.gov",
+      "visits": "752646",
+      "users": "518879",
+      "pageviews": "2723598",
+      "pageviews_per_session": "3.61869723615086",
+      "avg_session_duration": "312.41577792913262",
+      "bounce_rate": "0.36125615495199603"
+    },
+    {
+      "domain": "fdc.nal.usda.gov",
+      "visits": "676269",
+      "users": "502576",
+      "pageviews": "920125",
+      "pageviews_per_session": "1.3605902384997686",
+      "avg_session_duration": "162.96602491456505",
+      "bounce_rate": "0.49676386171774839"
+    },
+    {
+      "domain": "www.rd.usda.gov",
+      "visits": "531720",
+      "users": "371150",
+      "pageviews": "1101437",
+      "pageviews_per_session": "2.0714605431430075",
+      "avg_session_duration": "224.89610874871548",
+      "bounce_rate": "0.34020160986985631"
+    },
+    {
+      "domain": "www.fsa.usda.gov",
+      "visits": "445674",
+      "users": "326279",
+      "pageviews": "761425",
+      "pageviews_per_session": "1.7084797407970849",
+      "avg_session_duration": "159.41374828068049",
+      "bounce_rate": "0.501902736080633"
+    },
+    {
+      "domain": "www.ams.usda.gov",
+      "visits": "367128",
+      "users": "207874",
+      "pageviews": "602962",
+      "pageviews_per_session": "1.6423754113006908",
+      "avg_session_duration": "185.27984484525834",
+      "bounce_rate": "0.37584711599224246"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "350953",
+      "users": "230203",
+      "pageviews": "640282",
+      "pageviews_per_session": "1.8244095363196782",
+      "avg_session_duration": "196.85342271346309",
+      "bounce_rate": "0.39865167130641427"
+    },
+    {
+      "domain": "www.ers.usda.gov",
+      "visits": "290103",
+      "users": "217633",
+      "pageviews": "417891",
+      "pageviews_per_session": "1.440491825317215",
+      "avg_session_duration": "187.92326995693597",
+      "bounce_rate": "0.42929924888746412"
+    },
+    {
+      "domain": "www.farmers.gov",
+      "visits": "229249",
+      "users": "187866",
+      "pageviews": "298598",
+      "pageviews_per_session": "1.3025051363364726",
+      "avg_session_duration": "114.2009670741857",
+      "bounce_rate": "0.64357968846101832"
+    },
+    {
+      "domain": "www.nal.usda.gov",
+      "visits": "225159",
+      "users": "167116",
+      "pageviews": "358410",
+      "pageviews_per_session": "1.5918084553582135",
+      "avg_session_duration": "159.15302982861445",
+      "bounce_rate": "0.41188226986263043"
+    },
+    {
+      "domain": "www.ars.usda.gov",
+      "visits": "183227",
+      "users": "137290",
+      "pageviews": "270658",
+      "pageviews_per_session": "1.4771731240483117",
+      "avg_session_duration": "162.28860294487706",
+      "bounce_rate": "0.36924143275827254"
+    },
+    {
+      "domain": "fas.usda.gov",
+      "visits": "120936",
+      "users": "78711",
+      "pageviews": "187149",
+      "pageviews_per_session": "1.547504465171661",
+      "avg_session_duration": "192.04413063480683",
+      "bounce_rate": "0.40418899252497187"
+    },
+    {
+      "domain": "www.nfc.usda.gov",
+      "visits": "91580",
+      "users": "49506",
+      "pageviews": "109955",
+      "pageviews_per_session": "1.2006442454684429",
+      "avg_session_duration": "181.58912959972704",
+      "bounce_rate": "0.4462218825070976"
+    },
+    {
+      "domain": "www.nass.usda.gov",
+      "visits": "90245",
+      "users": "58061",
+      "pageviews": "186578",
+      "pageviews_per_session": "2.0674608011524183",
+      "avg_session_duration": "215.85654815127714",
+      "bounce_rate": "0.30154579201063769"
+    },
+    {
+      "domain": "www.dietaryguidelines.gov",
+      "visits": "90025",
+      "users": "75481",
+      "pageviews": "111190",
+      "pageviews_per_session": "1.2351013607331296",
+      "avg_session_duration": "128.516900259639",
+      "bounce_rate": "0.47247986670369341"
+    },
+    {
+      "domain": "snaped.fns.usda.gov",
+      "visits": "78764",
+      "users": "59926",
+      "pageviews": "100648",
+      "pageviews_per_session": "1.2778426692397542",
+      "avg_session_duration": "142.53360411627136",
+      "bounce_rate": "0.49861611903915493"
+    },
+    {
+      "domain": "www.nutrition.gov",
+      "visits": "70311",
+      "users": "56691",
+      "pageviews": "91832",
+      "pageviews_per_session": "1.306082974214561",
+      "avg_session_duration": "149.73866409534776",
+      "bounce_rate": "0.38558689252037376"
+    }
+  ],
+  "totals": {
+    "users": 7521700,
+    "visits": 10298854
+  },
+  "taken_at": "2024-01-05T15:50:48.735Z",
+  "agency": "agriculture"
+}

@@ -1,0 +1,160 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 60172339,
+    "by_windows": {
+      "7": {
+        "Chrome": 500643,
+        "Firefox": 84519,
+        "Edge": 42828,
+        "Opera": 208,
+        "YaBrowser": 252,
+        "Internet Explorer": 139
+      },
+      "8": {
+        "Chrome": 45892,
+        "Firefox": 4056,
+        "Safari": 32253,
+        "Internet Explorer": 4952
+      },
+      "10": {
+        "Chrome": 27748197,
+        "Edge": 10527389,
+        "Firefox": 2295612,
+        "Opera": 104102,
+        "Internet Explorer": 21160,
+        "YaBrowser": 17375,
+        "Whale Browser": 990,
+        "Coc Coc": 217
+      },
+      "11": {
+        "Chrome": 12139944,
+        "Edge": 6224389
+      },
+      "2000": {
+        "Internet Explorer": 75253
+      },
+      "8.1": {
+        "Chrome": 213407,
+        "Edge": 25365,
+        "Firefox": 26096
+      },
+      "XP": {
+        "Internet Explorer": 36458,
+        "Chrome": 643
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 500643,
+        "8": 45892,
+        "10": 27748197,
+        "11": 12139944,
+        "8.1": 213407,
+        "XP": 643
+      },
+      "Edge": {
+        "7": 42828,
+        "10": 10527389,
+        "11": 6224389,
+        "8.1": 25365
+      },
+      "Firefox": {
+        "7": 84519,
+        "8": 4056,
+        "10": 2295612,
+        "8.1": 26096
+      },
+      "Internet Explorer": {
+        "7": 139,
+        "8": 4952,
+        "10": 21160,
+        "2000": 75253,
+        "XP": 36458
+      },
+      "Opera": {
+        "7": 208,
+        "10": 104102
+      },
+      "YaBrowser": {
+        "7": 252,
+        "10": 17375
+      },
+      "Whale Browser": {
+        "10": 990
+      },
+      "Safari": {
+        "8": 32253
+      },
+      "Coc Coc": {
+        "10": 217
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:03:38.766Z",
+  "agency": "treasury"
+}

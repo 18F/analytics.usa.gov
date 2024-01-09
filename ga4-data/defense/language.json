@@ -1,0 +1,121 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 105740132,
+    "languages": {
+      "English": 101023283,
+      "Spanish": 749384,
+      "Japanese": 867403,
+      "Chinese": 626169,
+      "German": 418842,
+      "Korean": 268558,
+      "French": 245794,
+      "Russian": 234322,
+      "Italian": 195459,
+      "Portuguese": 159492,
+      "Dutch": 116125,
+      "Polish": 76890,
+      "Turkish": 78089,
+      "Arabic": 86313,
+      "Swedish": 65183,
+      "Vietnamese": 47265,
+      "Norwegian Bokmål": 45325,
+      "Persian": 23122,
+      "Indonesian": 37457,
+      "Czech": 37446,
+      "Finnish": 32923,
+      "Danish": 37996,
+      "Thai": 33671,
+      "Ukrainian": 34798,
+      "Greek": 32468,
+      "Hungarian": 26114,
+      "Hebrew": 38384,
+      "Romanian": 20364,
+      "(other)": 10216,
+      "Slovak": 13160,
+      "Croatian": 12095,
+      "Bulgarian": 6908,
+      "Hindi": 4289,
+      "Serbian": 5845,
+      "Slovenian": 6427,
+      "Lithuanian": 4733,
+      "Catalan": 3718,
+      "Uzbek": 1269,
+      "Latvian": 2375,
+      "Malay": 1462,
+      "Azerbaijani": 1572,
+      "Estonian": 2779,
+      "Bengali": 656,
+      "Bosnian": 1333,
+      "Albanian": 357,
+      "Gujarati": 73,
+      "Georgian": 776,
+      "Burmese": 243,
+      "Central Khmer": 521,
+      "Samoan": 266,
+      "Assamese": 18,
+      "Tagalog": 17,
+      "Afrikaans": 50,
+      "Icelandic": 123,
+      "Tamil": 11,
+      "Macedonian": 68,
+      "Sinhala": 12,
+      "Norwegian": 11,
+      "Irish": 25,
+      "Armenian": 26,
+      "Galician": 11,
+      "Pushto": 12,
+      "Marathi": 25,
+      "Welsh": 11
+    }
+  },
+  "taken_at": "2024-01-05T15:51:48.987Z",
+  "agency": "defense"
+}

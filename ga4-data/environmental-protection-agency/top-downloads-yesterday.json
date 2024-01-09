@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA Map of Radon Zones | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2018-12/documents/radon-zones-map.pdf",
+      "page": "www.epa.gov/radon/epa-map-radon-zones",
+      "total_events": "336"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Protect Your Family from Lead in Your Home (English) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-04/documents/lead-in-your-home-portrait-color-2020-508.pdf",
+      "page": "www.epa.gov/lead/protect-your-family-lead-your-home-english",
+      "total_events": "328"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tier2 Submit Software | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2023-12/tier2submit2023installer.exe",
+      "page": "www.epa.gov/epcra/tier2-submit-software",
+      "total_events": "281"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA's Final Rule for Oil and Natural Gas Operations Will Sharply Reduce Methane and Other Harmful Pollution. | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/eo12866_oil-and-gas-nsps-eg-climate-review-2060-av16-final-rule-20231130.pdf",
+      "page": "www.epa.gov/controlling-air-pollution-oil-and-natural-gas-operations/epas-final-rule-oil-and-natural-gas",
+      "total_events": "254"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2024-01/2024-maintenance-fees-instructions-tables-pria-5.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "251"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-mfee-tables.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "222"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-filing-form.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "221"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Consolidated List of Lists | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2022-12/list_of_lists_compiled_december%202022.pdf",
+      "page": "www.epa.gov/epcra/consolidated-list-lists",
+      "total_events": "215"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Inflation Reduction Act Community Change Grants Program | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/epa-ira-oejecr-ccg-nofo-final-2023-12-20.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/inflation-reduction-act-community-change-grants-program",
+      "total_events": "179"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Search Results | NSCEP | US EPA",
+      "event_label": "file_download",
+      "file_name": "/exe/zynet.exe",
+      "page": "nepis.epa.gov/Exe/ZyNET.exe",
+      "total_events": "165"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPANET | US EPA",
+      "event_label": "file_download",
+      "file_name": "/usepa/epanet2.2/releases/download/2.2.0/epanet2.2_setup.exe",
+      "page": "www.epa.gov/water-research/epanet",
+      "total_events": "160"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "GHG Emission Factors Hub | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-03/ghg_emission_factors_hub.pdf",
+      "page": "www.epa.gov/climateleadership/ghg-emission-factors-hub",
+      "total_events": "147"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "GHG Emission Factors Hub | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-03/ghg-emission-factors-hub.xlsx",
+      "page": "www.epa.gov/climateleadership/ghg-emission-factors-hub",
+      "total_events": "144"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About CPRG Implementation Grants | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-09/cprg%20general%20competition%20nofo.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/about-cprg-implementation-grants",
+      "total_events": "143"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Simplified GHG Emissions Calculator | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2022-09/calculator_tool.xlsm",
+      "page": "www.epa.gov/climateleadership/simplified-ghg-emissions-calculator",
+      "total_events": "143"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/sample-pkg.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "111"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How to Access the TSCA Inventory | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2023-08/csv%20non-cbi%20tsca%20inventory%20%28082023%29.zip",
+      "page": "www.epa.gov/tsca-inventory/how-access-tsca-inventory",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Technical Assistance Document for the Reporting of Daily Air Quality | AirNow.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf",
+      "page": "www.airnow.gov/publications/air-quality-index/technical-assistance-document-for-reporting-the-daily-aqi/",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SF‑425: Federal Financial Report | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-06/documents/sf425_2_0-v2.0_fill-sign.pdf",
+      "page": "www.epa.gov/grants/sf-425-federal-financial-report",
+      "total_events": "106"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PFAS Strategic Roadmap: EPA's Commitments to Action 2021-2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/epas-pfas-strategic-roadmap-dec-2023508v2.pdf",
+      "page": "www.epa.gov/pfas/pfas-strategic-roadmap-epas-commitments-action-2021-2024",
+      "total_events": "104"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tier II Forms and Instructions | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-08/tier%20ii%20emergency%20and%20hazardous%20chemical%20inventory%20form.pdf",
+      "page": "www.epa.gov/epcra/tier-ii-forms-and-instructions",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PFAS Explained | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-10/final-virtual-pfas-explainer-508.pdf",
+      "page": "www.epa.gov/pfas/pfas-explained",
+      "total_events": "101"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Contact Information for Certification Programs and Certified Laboratories for Drinking Water | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-03/state-cert-programs-certify-labs-to-conduct-drinking-water-analyses.pdf",
+      "page": "www.epa.gov/dwlabcert/contact-information-certification-programs-and-certified-laboratories-drinking-water",
+      "total_events": "99"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How to Access the TSCA Inventory | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2023-08/ms%20access%20non-cbi%20tsca%20inventory%20%28082023%29.zip",
+      "page": "www.epa.gov/tsca-inventory/how-access-tsca-inventory",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hazardous Waste Report: Instructions and Form | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2022-12/excerpt_biennial_report_rcra_subtitlec_forms_and_instructions_updated_on_12_28_22.pdf",
+      "page": "www.epa.gov/hwgenerators/hazardous-waste-report-instructions-and-form",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Cleaning and Disinfecting: Best Practices During the COVID-19 Pandemic | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-04/documents/cleaning-disinfecting-one-pager.pdf",
+      "page": "www.epa.gov/coronavirus/cleaning-and-disinfecting-best-practices-during-covid-19-pandemic",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALOHA Software | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/production/files/2016-09/aloha547installer.exe",
+      "page": "www.epa.gov/cameo/aloha-software",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Document Display | NEPIS | US EPA",
+      "event_label": "file_download",
+      "file_name": "/exe/zynet.exe",
+      "page": "nepis.epa.gov/Exe/ZyNET.exe",
+      "total_events": "84"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tier II Forms and Instructions | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2017-06/documents/tier_ii_inventory_form_instructions_2017.pdf",
+      "page": "www.epa.gov/epcra/tier-ii-forms-and-instructions",
+      "total_events": "79"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Consolidated List of Lists | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2022-12/microsoft%20excel%20version%20of%20epcra%20cercla%20caa%20112%28r%29%20consolidated%20list%20of%20lists_december%202022.xlsx",
+      "page": "www.epa.gov/epcra/consolidated-list-lists",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 1: External Combustion Sources | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/production/files/2020-09/documents/1.4_natural_gas_combustion.pdf",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-1-external-0",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Protect Your Family from Lead in Your Home (English) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-04/documents/lead-in-your-home-portrait-bw-2020-508.pdf",
+      "page": "www.epa.gov/lead/protect-your-family-lead-your-home-english",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Developing a Stormwater Pollution Prevention Plan (SWPPP) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015-10/documents/sw_swppp_guide.pdf",
+      "page": "www.epa.gov/npdes/developing-stormwater-pollution-prevention-plan-swppp",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Instructions and Form for Hazardous Waste Generators, Transporters and Treatment, Storage and Disposal Facilities to Obtain an EPA Identification Number (EPA Form 8700-12/Site Identification Form) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2022-12/excerpt_site_id_rcra_subtitlec_forms_and_instructions_updated_12_28_2022.pdf",
+      "page": "www.epa.gov/hwgenerators/instructions-and-form-hazardous-waste-generators-transporters-and-treatment-storage",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Mississippi/Atchafalaya River Basin (MARB) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015-03/marb_600x395.jpg",
+      "page": "www.epa.gov/ms-htf/mississippiatchafalaya-river-basin-marb",
+      "total_events": "70"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Current Class VI Projects under Review at EPA | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2024-01/class-vi-permit-tracker_12-22-23.pdf",
+      "page": "www.epa.gov/uic/current-class-vi-projects-under-review-epa",
+      "total_events": "68"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Download Data | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-01/egrid2021_data.xlsx",
+      "page": "www.epa.gov/egrid/download-data",
+      "total_events": "68"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TSCA Section 8(a)(7) Reporting and Recordkeeping Requirements for Perfluoroalkyl and Polyfluoroalkyl Substances | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-11/tsca-8a7-reporting-instructions-10-11-23.pdf",
+      "page": "www.epa.gov/assessing-and-managing-chemicals-under-tsca/tsca-section-8a7-reporting-and-recordkeeping",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA's Final Rule for Oil and Natural Gas Operations Will Sharply Reduce Methane and Other Harmful Pollution. | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/key-things-to-know-about-epas-final-rule-for-oil-and-natural-gas-operations.fact-sheet.pdf",
+      "page": "www.epa.gov/controlling-air-pollution-oil-and-natural-gas-operations/epas-final-rule-oil-and-natural-gas",
+      "total_events": "63"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Inflation Reduction Act Community Change Grants Program | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-08/frequently%20asked%20questions%20-%20community%20change%20grants%20august%202023_0.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/inflation-reduction-act-community-change-grants-program",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2021 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-04/us-ghg-inventory-2023-main-text.pdf",
+      "page": "www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks-1990-2021",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SW-846 Test Method 1311: Toxicity Characteristic Leaching Procedure | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015-12/documents/1311.pdf",
+      "page": "www.epa.gov/hw-sw846/sw-846-test-method-1311-toxicity-characteristic-leaching-procedure",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 7: Liquid Storage Tanks | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/production/files/2020-10/documents/ch07s01.pdf",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-7-liquid-storage-0",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Overview of the Safe Drinking Water Act | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015-04/documents/epa816f04030.pdf",
+      "page": "www.epa.gov/sdwa/overview-safe-drinking-water-act",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Ecoregions of North America | US EPA",
+      "event_label": "file_download",
+      "file_name": "/epadatacommons/ord/ecoregions/cec_na/na_level_i.pdf",
+      "page": "www.epa.gov/eco-research/ecoregions-north-america",
+      "total_events": "58"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Proposed Lead and Copper Rule Improvements | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-11/lcri-fact-sheet-for-the-public_final.pdf",
+      "page": "www.epa.gov/ground-water-and-drinking-water/proposed-lead-and-copper-rule-improvements",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Volume-to-Weight Conversion Factors for Solid Waste | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2016-04/documents/volume_to_weight_conversion_factors_memorandum_04192016_508fnl.pdf",
+      "page": "www.epa.gov/smm/volume-weight-conversion-factors-solid-waste",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-89491-92894.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About CPRG Implementation Grants | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/cprg-implementation-grants-general-competition-questions-and-answers.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/about-cprg-implementation-grants",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Clean School Bus Program Rebates | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-09/420b23032.pdf",
+      "page": "www.epa.gov/cleanschoolbus/clean-school-bus-program-rebates",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fact Sheet on Requirements for Very Small Quantity Generators of Hazardous Waste | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-07/documents/10635_vsqg-factsheet_508.pdf",
+      "page": "www.epa.gov/hwgenerators/fact-sheet-requirements-very-small-quantity-generators-hazardous-waste",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Seller's Disclosure of Information on Lead-Based Paint and/or Lead-Based Paint Hazards | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/selr_eng.pdf",
+      "page": "www.epa.gov/lead/sellers-disclosure-information-lead-based-paint-andor-lead-based-paint-hazards",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Protect Your Family from Lead in Your Home (English) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-04/documents/lead-in-your-home-booklet-bw-2020-508.pdf",
+      "page": "www.epa.gov/lead/protect-your-family-lead-your-home-english",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Summary of the Clean Water Act | US EPA",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/uscode-2018-title33/pdf/uscode-2018-title33-chap26.pdf",
+      "page": "www.epa.gov/laws-regulations/summary-clean-water-act",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Data Summary of The Fifth Unregulated Contaminant Monitoring Rule | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+      "page": "www.epa.gov/dwucmr/data-summary-fifth-unregulated-contaminant-monitoring-rule",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA Method 200.8: Determination of Trace Elements in Waters and Wastes by Inductively Coupled Plasma-Mass Spectrometry | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015-06/documents/epa-200.8.pdf",
+      "page": "www.epa.gov/esam/epa-method-2008-determination-trace-elements-waters-and-wastes-inductively-coupled-plasma-mass",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Residential New Construction Program Requirements | ENERGY STAR",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/asset/document/national%20program%20requirements%20version%203.1_rev%2013.pdf",
+      "page": "www.energystar.gov/partner_resources/residential_new/homes_prog_reqs/national_page",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-70051-74473.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA General Terms and Conditions effective October 1, 2023 or later | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-09/fy_2023_epa_general_terms_and_conditions_effective_october_1_2023_or_later.pdf",
+      "page": "www.epa.gov/grants/epa-general-terms-and-conditions-effective-october-1-2023-or-later",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Lessor's Disclosure of Information on Lead-Based Paint and/or Lead-Based Paint Hazards | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/lesr_eng.pdf",
+      "page": "www.epa.gov/lead/lessors-disclosure-information-lead-based-paint-andor-lead-based-paint-hazards",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PFAS Strategic Roadmap: EPA's Commitments to Action 2021-2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2021-10/pfas-roadmap_final-508.pdf",
+      "page": "www.epa.gov/pfas/pfas-strategic-roadmap-epas-commitments-action-2021-2024",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Environmental Justice Thriving Communities Grantmaking Program | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2023-environmental-justice-thriving-communities-grantmaking-program-selectees.pdf",
+      "page": "www.epa.gov/environmentaljustice/environmental-justice-thriving-communities-grantmaking-program",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 3: Stationary Internal Combustion Sources | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/production/files/2020-10/documents/c03s03.pdf",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-3-stationary-0",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TSCA Section 8(a)(7) Reporting and Recordkeeping Requirements for Perfluoroalkyl and Polyfluoroalkyl Substances | US EPA",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-10-11/pdf/2023-22094.pdf",
+      "page": "www.epa.gov/assessing-and-managing-chemicals-under-tsca/tsca-section-8a7-reporting-and-recordkeeping",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-51036-62637.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Climate Pollution Reduction Grants | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-09/cprg_planning_grant_award_status.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/climate-pollution-reduction-grants",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Method 533: Determination of Per- and Polyfluoroalkyl Substances in Drinking Water by Isotope Dilution Anion Exchange Solid Phase Extraction and Liquid Chromatography/Tandem Mass Spectrometry | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2019-12/documents/method-533-815b19020.pdf",
+      "page": "www.epa.gov/dwanalyticalmethods/method-533-determination-and-polyfluoroalkyl-substances-drinking-water-isotope",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tier II Forms and Instructions | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-08/tier%20ii%20emergency%20and%20hazardous%20chemical%20inventory%20form.docx",
+      "page": "www.epa.gov/epcra/tier-ii-forms-and-instructions",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-2749-8329.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-8340-34688.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Protect Your Family from Lead in Your Home (English) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-04/documents/lead-in-your-home-booklet-color-2020-508.pdf",
+      "page": "www.epa.gov/lead/protect-your-family-lead-your-home-english",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-84868-89459_0.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About CPRG Planning Grant Information | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-02/epa%20cprg%20planning%20grants%20program%20guidance%20for%20states-municipalities-air%20agencies%2003-01-2023.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/about-cprg-planning-grant-information",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Draft National Strategy for Reducing Food Loss and Waste and Recycling Organics | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/draft_national_strategy_for_reducing_food_loss_and_waste_and_recycling-organics.pdf",
+      "page": "www.epa.gov/circulareconomy/draft-national-strategy-reducing-food-loss-and-waste-and-recycling-organics",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Method 5 - Particulate Matter (PM) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/production/files/2021-05/documents/method_5_-_2020_12_07_0.pdf",
+      "page": "www.epa.gov/emc/method-5-particulate-matter-pm",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Primary Drinking Water Regulation Table | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2016-06/documents/npwdr_complete_table.pdf",
+      "page": "www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Revised Lead and Copper Rule | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2022-08/inventory%20guidance_august%202022_508%20compliant.pdf",
+      "page": "www.epa.gov/ground-water-and-drinking-water/revised-lead-and-copper-rule",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Storm Water Management Model (SWMM) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2023-08/swmm524%28x64%29_setup.exe",
+      "page": "www.epa.gov/water-research/storm-water-management-model-swmm",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tier2 Submit Software | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2023-12/tier2submit2023installer.exe",
+      "page": "www.epa.gov/epcra/tier2-submit-software#download",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-62719-69987.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-74487-84846.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2022 Construction General Permit (CGP) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2022-01/2022-cgp-final-permit.pdf",
+      "page": "www.epa.gov/npdes/2022-construction-general-permit-cgp",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA's Final Rule for Oil and Natural Gas Operations Will Sharply Reduce Methane and Other Harmful Pollution. | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/epas-final-oil-and-gas-rule.-overview-presentation.pdf",
+      "page": "www.epa.gov/controlling-air-pollution-oil-and-natural-gas-operations/epas-final-rule-oil-and-natural-gas",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Scope 3 Inventory Guidance | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/standards/corporate-value-chain-accounting-reporing-standard_041613_2.pdf",
+      "page": "www.epa.gov/climateleadership/scope-3-inventory-guidance",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA Method 8270E (SW-846): Semivolatile Organic Compounds by Gas Chromatography/Mass Spectrometry (GC-MS) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-10/documents/method_8270e_update_vi_06-2018_0.pdf",
+      "page": "www.epa.gov/esam/epa-method-8270e-sw-846-semivolatile-organic-compounds-gas-chromatographymass-spectrometry-gc",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/2024-pesticide-maintenance-fee-product-list-34704-51032.pdf",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Inflation Reduction Act Community Change Grants Program | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/dec-7-2023-webinar_community-change-grants_environmental-and-climate-justice.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/inflation-reduction-act-community-change-grants-program",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "List A: Antimicrobial Products Registered with the EPA as Sterilizers | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2016-12/documents/list_a_sterilizer.pdf",
+      "page": "www.epa.gov/pesticide-registration/list-antimicrobial-products-registered-epa-sterilizers",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Per- and Polyfluoroalkyl Substances (PFAS) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2021-10/pfas-roadmap_final-508.pdf",
+      "page": "www.epa.gov/pfas",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About CPRG Planning Grant Information | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-10/cprg_planning_grant_award_status.pdf",
+      "page": "www.epa.gov/inflation-reduction-act/about-cprg-planning-grant-information",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA Form 3540-16 Pesticide Report for Pesticide-Producing and Device-Producing Establishments | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/other-files/2022-02/estabreport-fill.zip",
+      "page": "www.epa.gov/compliance/epa-form-3540-16-pesticide-report-pesticide-producing-and-device-producing",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EPA's Final Rule for Oil and Natural Gas Operations Will Sharply Reduce Methane and Other Harmful Pollution. | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/epas-final-rule-for-oil-and-gas-operations.-overview-fact-sheet.pdf",
+      "page": "www.epa.gov/controlling-air-pollution-oil-and-natural-gas-operations/epas-final-rule-oil-and-natural-gas",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Meat and Poultry Products Effluent Guidelines - 2024 Proposed Rule | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/prepublication-frn_ow_meat-and-poultry-products-elg_nprm_12_13_2023.pdf",
+      "page": "www.epa.gov/eg/meat-and-poultry-products-effluent-guidelines-2024-proposed-rule",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Method 200.7: Determination of Metals and Trace Elements in Water and Wastes by Inductively Coupled Plasma-Atomic Emission Spectrometry | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015-06/documents/epa-200.7.pdf",
+      "page": "www.epa.gov/esam/method-2007-determination-metals-and-trace-elements-water-and-wastes-inductively-coupled",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Spill Prevention, Control, and Countermeasure (SPCC) Tier I Qualified Facility Plan Template | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2014-05/documents/tier1template.pdf",
+      "page": "www.epa.gov/oil-spills-prevention-and-preparedness-regulations/spill-prevention-control-and-countermeasure-16",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 3: Stationary Internal Combustion Sources | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/production/files/2020-10/documents/c03s02.pdf",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-3-stationary-0",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Uniform Hazardous Waste Manifest: Instructions, Sample Form and Continuation Sheet | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2018-05/documents/uniform_hazardous_waste_manifest.pdf",
+      "page": "www.epa.gov/hwgenerators/uniform-hazardous-waste-manifest-instructions-sample-form-and-continuation-sheet",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "21st Annual P3 Awards: A National Student Design Competition Focusing on People, Prosperity, and the Planet Request for Applications (RFA) | US EPA",
+      "event_label": "file_download",
+      "file_name": "/system/files/documents/2023-12/21st-annual-p3-rfa-final.pdf",
+      "page": "www.epa.gov/research-grants/21st-annual-p3-awards-national-student-design-competition-focusing-people",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Level III and IV Ecoregions of the Continental United States | US EPA",
+      "event_label": "file_download",
+      "file_name": "/epadatacommons/ord/ecoregions/us/eco_level_iii_us.pdf",
+      "page": "www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Scope 1 and Scope 2 Inventory Guidance | US EPA",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-12/documents/stationaryemissions.pdf",
+      "page": "www.epa.gov/climateleadership/scope-1-and-scope-2-inventory-guidance",
+      "total_events": "35"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:42:33.917Z",
+  "agency": "environmental-protection-agency"
+}

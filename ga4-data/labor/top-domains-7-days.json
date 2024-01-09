@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.dol.gov",
+      "visits": "834639"
+    },
+    {
+      "domain": "www.bls.gov",
+      "visits": "818285"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "597516"
+    },
+    {
+      "domain": "www.careeronestop.org",
+      "visits": "187078"
+    },
+    {
+      "domain": "flag.dol.gov",
+      "visits": "157920"
+    },
+    {
+      "domain": "data.bls.gov",
+      "visits": "143153"
+    },
+    {
+      "domain": "webapps.dol.gov",
+      "visits": "80991"
+    },
+    {
+      "domain": "seasonaljobs.dol.gov",
+      "visits": "59251"
+    },
+    {
+      "domain": "owcpmed.dol.gov",
+      "visits": "39986"
+    },
+    {
+      "domain": "www.apprenticeship.gov",
+      "visits": "30544"
+    },
+    {
+      "domain": "www.msha.gov",
+      "visits": "27686"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "22057"
+    },
+    {
+      "domain": "search.osha.gov",
+      "visits": "20282"
+    },
+    {
+      "domain": "www.govloans.gov",
+      "visits": "17930"
+    },
+    {
+      "domain": "www.oalj.dol.gov",
+      "visits": "11948"
+    },
+    {
+      "domain": "blog.dol.gov",
+      "visits": "10753"
+    },
+    {
+      "domain": "beta.bls.gov",
+      "visits": "9938"
+    },
+    {
+      "domain": "www.askebsa.dol.gov",
+      "visits": "8703"
+    },
+    {
+      "domain": "ssabest.benefits.gov",
+      "visits": "8563"
+    },
+    {
+      "domain": "enforcedata.dol.gov",
+      "visits": "8009"
+    }
+  ],
+  "totals": {
+    "visits": 3095232
+  },
+  "taken_at": "2024-01-05T15:57:58.746Z",
+  "agency": "labor"
+}

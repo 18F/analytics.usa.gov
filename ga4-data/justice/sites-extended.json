@@ -1,0 +1,814 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "www.vcf.gov",
+      "visits": "12774"
+    },
+    {
+      "domain": "www.usmarshals.gov",
+      "visits": "211002"
+    },
+    {
+      "domain": "www.uscourts.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.smart.ojp.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "www.secretservice.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.samhsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.rcfl.gov",
+      "visits": "1149"
+    },
+    {
+      "domain": "www.ovc.ojp.gov",
+      "visits": "257"
+    },
+    {
+      "domain": "www.ojp.gov",
+      "visits": "563912"
+    },
+    {
+      "domain": "www.ojjdp.ojp.gov",
+      "visits": "84"
+    },
+    {
+      "domain": "www.nsopw.gov",
+      "visits": "1249733"
+    },
+    {
+      "domain": "www.niem.gov",
+      "visits": "11687"
+    },
+    {
+      "domain": "www.niehs.nih.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.ncjrs.gov",
+      "visits": "1024"
+    },
+    {
+      "domain": "www.lep.gov",
+      "visits": "3044"
+    },
+    {
+      "domain": "www.justthinktwice.gov",
+      "visits": "37522"
+    },
+    {
+      "domain": "www.justice.gov",
+      "visits": "3053580"
+    },
+    {
+      "domain": "www.iprcenter.gov",
+      "visits": "2047"
+    },
+    {
+      "domain": "www.ice.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.ic3.gov",
+      "visits": "99205"
+    },
+    {
+      "domain": "www.hhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "www.getsmartaboutdrugs.gov",
+      "visits": "20859"
+    },
+    {
+      "domain": "www.ftc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.forfeiture.gov",
+      "visits": "3660"
+    },
+    {
+      "domain": "www.foia.gov",
+      "visits": "40778"
+    },
+    {
+      "domain": "www.fletc.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "www.fiscal.treasury.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.fdic.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.fbi.gov",
+      "visits": "1210268"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.doi.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.deadiversion.usdoj.gov",
+      "visits": "113984"
+    },
+    {
+      "domain": "www.dea.gov",
+      "visits": "555868"
+    },
+    {
+      "domain": "www.crimesolutions.ojp.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "www.cpsc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.consumerfinance.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.consumer.ftc.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "www.civilrights.justice.gov",
+      "visits": "89"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.campusdrugprevention.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.bjs.gov",
+      "visits": "901"
+    },
+    {
+      "domain": "www.bja.ojp.gov",
+      "visits": "375"
+    },
+    {
+      "domain": "www.atf.gov",
+      "visits": "291465"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.amberalert.ojp.gov",
+      "visits": "3456"
+    },
+    {
+      "domain": "www.ada.gov",
+      "visits": "149594"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "84"
+    },
+    {
+      "domain": "web.archive.org",
+      "visits": "2"
+    },
+    {
+      "domain": "vehiclehistory.bja.ojp.gov",
+      "visits": "37604"
+    },
+    {
+      "domain": "uat.smart.ojp.gov",
+      "visits": "22045"
+    },
+    {
+      "domain": "uat.ovc.ojp.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "uat.ojp.gov",
+      "visits": "100389"
+    },
+    {
+      "domain": "uat.ojjdp.ojp.gov",
+      "visits": "159483"
+    },
+    {
+      "domain": "uat.nsopw.ojp.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "uat.nij.ojp.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "uat.ncirc.bja.ojp.gov",
+      "visits": "32710"
+    },
+    {
+      "domain": "uat.namus.nij.ojp.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "uat.juvenilecouncil.ojp.gov",
+      "visits": "33521"
+    },
+    {
+      "domain": "uat.justicegrants.usdoj.gov",
+      "visits": "66682"
+    },
+    {
+      "domain": "uat.htcbc.ovc.ojp.gov",
+      "visits": "18535"
+    },
+    {
+      "domain": "uat.bjs.ojp.gov",
+      "visits": "40"
+    },
+    {
+      "domain": "uat.bja.ojp.gov",
+      "visits": "96117"
+    },
+    {
+      "domain": "uat.amberalert.ojp.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "uat-www.foia.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "8"
+    },
+    {
+      "domain": "test.ovc.ojp.gov",
+      "visits": "55"
+    },
+    {
+      "domain": "test.ojp.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "test.nij.ojp.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "test.bjs.ojp.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "test.bja.ojp.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "store.samhsa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "stgwww.forfeiture.gov",
+      "visits": "307"
+    },
+    {
+      "domain": "stgsearch.forfeiture.gov",
+      "visits": "4470"
+    },
+    {
+      "domain": "stg.vcf.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "stg.lep.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "stg.justice.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "stg.d9.justice.gov",
+      "visits": "86"
+    },
+    {
+      "domain": "stg-www.foia.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "stage.usmarshals.gov",
+      "visits": "792"
+    },
+    {
+      "domain": "stage.atf.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "stage-charts.ojp.usdoj.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "spi-data.bjs.ojp.gov",
+      "visits": "75"
+    },
+    {
+      "domain": "smart.ojp.gov",
+      "visits": "11411"
+    },
+    {
+      "domain": "search.vcf.gov",
+      "visits": "167"
+    },
+    {
+      "domain": "search.usmarshals.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "search.lep.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "search.justice.gov",
+      "visits": "51142"
+    },
+    {
+      "domain": "search.forfeiture.gov",
+      "visits": "676"
+    },
+    {
+      "domain": "search.foia.gov",
+      "visits": "1923"
+    },
+    {
+      "domain": "search.dea.gov",
+      "visits": "11180"
+    },
+    {
+      "domain": "search.atf.gov",
+      "visits": "7068"
+    },
+    {
+      "domain": "search.ada.gov",
+      "visits": "217"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "respondentaccess.eoir.justice.gov",
+      "visits": "35247"
+    },
+    {
+      "domain": "regulations.atf.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "ransomware.ic3.gov",
+      "visits": "232"
+    },
+    {
+      "domain": "prod9.dea.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "prod.vcf.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "prod.usmarshals.gov",
+      "visits": "1035"
+    },
+    {
+      "domain": "prod.justice.gov",
+      "visits": "1081"
+    },
+    {
+      "domain": "ovc.ojp.gov",
+      "visits": "34313"
+    },
+    {
+      "domain": "outreachadmin.dea.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "ojp.gov",
+      "visits": "14888"
+    },
+    {
+      "domain": "ojjdp.ojp.gov",
+      "visits": "18513"
+    },
+    {
+      "domain": "oig.treasury.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "oig.ssa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "ofac.treasury.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "nsopw.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "nij.ojp.gov",
+      "visits": "67153"
+    },
+    {
+      "domain": "nida.nih.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "nicic.gov",
+      "visits": "27607"
+    },
+    {
+      "domain": "ndcac.fbi.gov",
+      "visits": "1589"
+    },
+    {
+      "domain": "ncvs.bjs.ojp.gov",
+      "visits": "529"
+    },
+    {
+      "domain": "ncler.acl.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "ncirc.bja.ojp.gov",
+      "visits": "834"
+    },
+    {
+      "domain": "ncea.acl.gov",
+      "visits": "95"
+    },
+    {
+      "domain": "nationalgangcenter.ojp.gov",
+      "visits": "9152"
+    },
+    {
+      "domain": "namus.nij.ojp.gov",
+      "visits": "42591"
+    },
+    {
+      "domain": "leb.fbi.gov",
+      "visits": "23887"
+    },
+    {
+      "domain": "learn.nicic.gov",
+      "visits": "2405"
+    },
+    {
+      "domain": "learcat.bjs.ojp.gov",
+      "visits": "224"
+    },
+    {
+      "domain": "juvenilecouncil.ojp.gov",
+      "visits": "300"
+    },
+    {
+      "domain": "justicegrants.usdoj.gov",
+      "visits": "39318"
+    },
+    {
+      "domain": "jtttest.dea.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "jttprod.dea.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "jttdev.dea.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "icor.eoir.justice.gov",
+      "visits": "7447"
+    },
+    {
+      "domain": "htcbc.ovc.ojp.gov",
+      "visits": "1401"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "gsadtest.dea.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "gsadprod.dea.gov",
+      "visits": "100"
+    },
+    {
+      "domain": "gsaddev.dea.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "grants.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "fns-prod.azureedge.us",
+      "visits": "4"
+    },
+    {
+      "domain": "findtreatment.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "fccps.bjs.ojp.gov",
+      "visits": "206"
+    },
+    {
+      "domain": "fbilabqsd.fbi.gov",
+      "visits": "65"
+    },
+    {
+      "domain": "facjj.ojp.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "ereg.eoir.justice.gov",
+      "visits": "1061"
+    },
+    {
+      "domain": "ereg-uat.eoir.justice.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "efileqa.fara.gov",
+      "visits": "158"
+    },
+    {
+      "domain": "efile.fara.gov",
+      "visits": "2760"
+    },
+    {
+      "domain": "ef.ic3.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "edit.usmarshals.gov",
+      "visits": "146"
+    },
+    {
+      "domain": "edit.atf.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "dev.vcf.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "dev.usmarshals.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "dev.lep.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "dev.justice.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "dev.d9.justice.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "dev.bjatta.bja.ojp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "dev.atf.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "dev-www.foia.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "dev-learcat.bjs.ojp.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "dev-fccps.bjs.ojp.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "deagovstage.dea.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "deadiversion.usdoj.gov",
+      "visits": "17713"
+    },
+    {
+      "domain": "cyberreportcenter.com",
+      "visits": "5"
+    },
+    {
+      "domain": "csat.bjs.ojp.gov",
+      "visits": "273"
+    },
+    {
+      "domain": "crimesolutions.ojp.gov",
+      "visits": "9292"
+    },
+    {
+      "domain": "consumer.ftc.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "complaint.ic3.gov",
+      "visits": "67878"
+    },
+    {
+      "domain": "civilrights.justice.gov",
+      "visits": "15299"
+    },
+    {
+      "domain": "cdptest.dea.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "cdpprod.dea.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "cdpdev.dea.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "cc.bingj.com",
+      "visits": "2"
+    },
+    {
+      "domain": "bjs.ojp.gov",
+      "visits": "83227"
+    },
+    {
+      "domain": "bjs.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "bjatta.bja.ojp.gov",
+      "visits": "5023"
+    },
+    {
+      "domain": "bja.ojp.gov",
+      "visits": "36767"
+    },
+    {
+      "domain": "biz.fbi.gov",
+      "visits": "319"
+    },
+    {
+      "domain": "beta.ada.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "bec.ic3.gov",
+      "visits": "92"
+    },
+    {
+      "domain": "bankrobbers.fbi.gov",
+      "visits": "943"
+    },
+    {
+      "domain": "artcrimes.fbi.gov",
+      "visits": "235"
+    },
+    {
+      "domain": "archive.ada.gov",
+      "visits": "19491"
+    },
+    {
+      "domain": "amberalert.ojp.gov",
+      "visits": "35630"
+    },
+    {
+      "domain": "admin.dea.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "acl.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "acis.eoir.justice.gov",
+      "visits": "1114908"
+    }
+  ],
+  "totals": {
+    "visits": 10037923
+  },
+  "taken_at": "2024-01-05T15:38:21.592Z",
+  "agency": "justice"
+}

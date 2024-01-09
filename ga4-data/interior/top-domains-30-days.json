@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nps.gov",
+      "visits": "13964155",
+      "users": "9272360",
+      "pageviews": "30651241",
+      "pageviews_per_session": "2.1940761184618762",
+      "avg_session_duration": "225.37764724812806",
+      "bounce_rate": "0.40792163936879816"
+    },
+    {
+      "domain": "earthquake.usgs.gov",
+      "visits": "4242336",
+      "users": "1943518",
+      "pageviews": "30606723",
+      "pageviews_per_session": "7.214300564594601",
+      "avg_session_duration": "225.21646311652336",
+      "bounce_rate": "0.28472520799861206"
+    },
+    {
+      "domain": "www.usgs.gov",
+      "visits": "2729130",
+      "users": "1953009",
+      "pageviews": "4794586",
+      "pageviews_per_session": "1.7535372078281357",
+      "avg_session_duration": "172.012242729256",
+      "bounce_rate": "0.42907263486898756"
+    },
+    {
+      "domain": "waterdata.usgs.gov",
+      "visits": "1586205",
+      "users": "555643",
+      "pageviews": "2327928",
+      "pageviews_per_session": "1.4660192093707938",
+      "avg_session_duration": "175.34394431188358",
+      "bounce_rate": "0.5294113938614492"
+    },
+    {
+      "domain": "www.fws.gov",
+      "visits": "1112690",
+      "users": "785079",
+      "pageviews": "2278272",
+      "pageviews_per_session": "2.0440823589679065",
+      "avg_session_duration": "195.33448313490499",
+      "bounce_rate": "0.39016168025236142"
+    },
+    {
+      "domain": "www.blm.gov",
+      "visits": "880020",
+      "users": "662495",
+      "pageviews": "1407828",
+      "pageviews_per_session": "1.5990454762391764",
+      "avg_session_duration": "162.33316598880094",
+      "bounce_rate": "0.48765255335106023"
+    },
+    {
+      "domain": "www.doi.gov",
+      "visits": "443869",
+      "users": "367157",
+      "pageviews": "669445",
+      "pageviews_per_session": "1.5070527565565517",
+      "avg_session_duration": "123.57201644816486",
+      "bounce_rate": "0.59832067569485592"
+    },
+    {
+      "domain": "earthexplorer.usgs.gov",
+      "visits": "304719",
+      "users": "141610",
+      "pageviews": "509791",
+      "pageviews_per_session": "1.6686094401727494",
+      "avg_session_duration": "382.89407301452974",
+      "bounce_rate": "0.33727795116156195"
+    },
+    {
+      "domain": "www.bia.gov",
+      "visits": "267411",
+      "users": "206552",
+      "pageviews": "468545",
+      "pageviews_per_session": "1.75121442274252",
+      "avg_session_duration": "179.64411721509825",
+      "bounce_rate": "0.52744277535329509"
+    },
+    {
+      "domain": "store.usgs.gov",
+      "visits": "258522",
+      "users": "185029",
+      "pageviews": "991541",
+      "pageviews_per_session": "3.8288617603144028",
+      "avg_session_duration": "303.25949387864034",
+      "bounce_rate": "0.37899675849637554"
+    },
+    {
+      "domain": "www.usbr.gov",
+      "visits": "185840",
+      "users": "113601",
+      "pageviews": "332778",
+      "pageviews_per_session": "1.7901420576840292",
+      "avg_session_duration": "182.846444913182",
+      "bounce_rate": "0.41745587602238482"
+    },
+    {
+      "domain": "apps.nationalmap.gov",
+      "visits": "124092",
+      "users": "62994",
+      "pageviews": "135663",
+      "pageviews_per_session": "1.09322115849531",
+      "avg_session_duration": "266.08402816670372",
+      "bounce_rate": "0.5576104825452084"
+    },
+    {
+      "domain": "ers.cr.usgs.gov",
+      "visits": "117299",
+      "users": "80563",
+      "pageviews": "811070",
+      "pageviews_per_session": "6.9145687516517613",
+      "avg_session_duration": "398.29415281455164",
+      "bounce_rate": "0.13367547890433848"
+    },
+    {
+      "domain": "home.nps.gov",
+      "visits": "107119",
+      "users": "82634",
+      "pageviews": "199794",
+      "pageviews_per_session": "1.8470766157264351",
+      "avg_session_duration": "182.83666859669091",
+      "bounce_rate": "0.27811125944043541"
+    },
+    {
+      "domain": "www.sciencebase.gov",
+      "visits": "94036",
+      "users": "61847",
+      "pageviews": "179097",
+      "pageviews_per_session": "1.8708792377387384",
+      "avg_session_duration": "221.51184535933913",
+      "bounce_rate": "0.470054021863967"
+    },
+    {
+      "domain": "nps.gov",
+      "visits": "74947",
+      "users": "61389",
+      "pageviews": "178243",
+      "pageviews_per_session": "2.3563318078108528",
+      "avg_session_duration": "189.6535117373605",
+      "bounce_rate": "0.25826250550388941"
+    },
+    {
+      "domain": "mrdata.usgs.gov",
+      "visits": "65776",
+      "users": "45846",
+      "pageviews": "138584",
+      "pageviews_per_session": "2.040181829238628",
+      "avg_session_duration": "284.49923614316958",
+      "bounce_rate": "0.36344563366577476"
+    },
+    {
+      "domain": "everykidoutdoors.gov",
+      "visits": "65214",
+      "users": "44717",
+      "pageviews": "254850",
+      "pageviews_per_session": "3.9078725427055541",
+      "avg_session_duration": "215.56218610067239",
+      "bounce_rate": "0.45438096114331278"
+    },
+    {
+      "domain": "water.usgs.gov",
+      "visits": "49180",
+      "users": "37890",
+      "pageviews": "65568",
+      "pageviews_per_session": "1.3331842212281415",
+      "avg_session_duration": "238.31980679951391",
+      "bounce_rate": "0.40697437982919887"
+    },
+    {
+      "domain": "www.volunteer.gov",
+      "visits": "46337",
+      "users": "28946",
+      "pageviews": "194918",
+      "pageviews_per_session": "4.2057966635733859",
+      "avg_session_duration": "316.80627533151943",
+      "bounce_rate": "0.35522368733409587"
+    }
+  ],
+  "totals": {
+    "users": 16692879,
+    "visits": 26718897
+  },
+  "taken_at": "2024-01-05T15:46:22.432Z",
+  "agency": "interior"
+}

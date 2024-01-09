@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.epa.gov",
+      "visits": "4439439",
+      "users": "3077528",
+      "pageviews": "7382769",
+      "pageviews_per_session": "1.6629959325941859",
+      "avg_session_duration": "214.67050371981335",
+      "bounce_rate": "0.44546596991196408"
+    },
+    {
+      "domain": "www.airnow.gov",
+      "visits": "1079336",
+      "users": "657390",
+      "pageviews": "2206176",
+      "pageviews_per_session": "2.0440122445651769",
+      "avg_session_duration": "192.97190084778325",
+      "bounce_rate": "0.60213686933447974"
+    },
+    {
+      "domain": "www.energystar.gov",
+      "visits": "630802",
+      "users": "463932",
+      "pageviews": "1818791",
+      "pageviews_per_session": "2.8832993554237305",
+      "avg_session_duration": "235.89902595228449",
+      "bounce_rate": "0.41398568806059588"
+    },
+    {
+      "domain": "nepis.epa.gov",
+      "visits": "144923",
+      "users": "115074",
+      "pageviews": "426393",
+      "pageviews_per_session": "2.9422037909786578",
+      "avg_session_duration": "184.66095410957547",
+      "bounce_rate": "0.34286483166923126"
+    },
+    {
+      "domain": "espanol.epa.gov",
+      "visits": "144818",
+      "users": "122399",
+      "pageviews": "166316",
+      "pageviews_per_session": "1.1484483972986783",
+      "avg_session_duration": "159.09474535014286",
+      "bounce_rate": "0.41982350260326756"
+    },
+    {
+      "domain": "search.epa.gov",
+      "visits": "144576",
+      "users": "109731",
+      "pageviews": "197288",
+      "pageviews_per_session": "1.3645971668880035",
+      "avg_session_duration": "127.29702491905989",
+      "bounce_rate": "0.18760375166002657"
+    },
+    {
+      "domain": "fire.airnow.gov",
+      "visits": "137718",
+      "users": "86820",
+      "pageviews": "145074",
+      "pageviews_per_session": "1.0534134971463425",
+      "avg_session_duration": "100.9623719466954",
+      "bounce_rate": "0.5193148317576497"
+    },
+    {
+      "domain": "cfpub.epa.gov",
+      "visits": "128207",
+      "users": "95242",
+      "pageviews": "218208",
+      "pageviews_per_session": "1.7019975508357579",
+      "avg_session_duration": "179.58244968154628",
+      "bounce_rate": "0.36284290249362361"
+    },
+    {
+      "domain": "echo.epa.gov",
+      "visits": "123078",
+      "users": "83991",
+      "pageviews": "267799",
+      "pageviews_per_session": "2.1758478363314322",
+      "avg_session_duration": "268.63860543491109",
+      "bounce_rate": "0.54679146557467617"
+    },
+    {
+      "domain": "portfoliomanager.energystar.gov",
+      "visits": "104089",
+      "users": "28241",
+      "pageviews": "1012220",
+      "pageviews_per_session": "9.7245626338998363",
+      "avg_session_duration": "860.44657069554921",
+      "bounce_rate": "0.24368569205199397"
+    },
+    {
+      "domain": "cumulis.epa.gov",
+      "visits": "88849",
+      "users": "61452",
+      "pageviews": "305481",
+      "pageviews_per_session": "3.4382041441096693",
+      "avg_session_duration": "313.4439288126373",
+      "bounce_rate": "0.33337460185258133"
+    },
+    {
+      "domain": "gispub.epa.gov",
+      "visits": "85394",
+      "users": "48186",
+      "pageviews": "885449",
+      "pageviews_per_session": "10.368983769351477",
+      "avg_session_duration": "582.57088554367976",
+      "bounce_rate": "0.21779047708269902"
+    },
+    {
+      "domain": "www3.epa.gov",
+      "visits": "80981",
+      "users": "65248",
+      "pageviews": "202180",
+      "pageviews_per_session": "2.4966350131512329",
+      "avg_session_duration": "259.78033255521666",
+      "bounce_rate": "0.39969869475555997"
+    },
+    {
+      "domain": "hero.epa.gov",
+      "visits": "72003",
+      "users": "61816",
+      "pageviews": "79842",
+      "pageviews_per_session": "1.1088704637306779",
+      "avg_session_duration": "138.62267190944814",
+      "bounce_rate": "0.39877505103954003"
+    },
+    {
+      "domain": "ordspub.epa.gov",
+      "visits": "52160",
+      "users": "26227",
+      "pageviews": "289131",
+      "pageviews_per_session": "5.5431556748466262",
+      "avg_session_duration": "369.94258681742735",
+      "bounce_rate": "0.24434432515337423"
+    },
+    {
+      "domain": "19january2017snapshot.epa.gov",
+      "visits": "49836",
+      "users": "40164",
+      "pageviews": "62402",
+      "pageviews_per_session": "1.25214704229874",
+      "avg_session_duration": "187.68323608339352",
+      "bounce_rate": "0.36551890199855525"
+    },
+    {
+      "domain": "netdmr.epa.gov",
+      "visits": "43288",
+      "users": "17392",
+      "pageviews": "740247",
+      "pageviews_per_session": "17.100512844206246",
+      "avg_session_duration": "886.78453184755608",
+      "bounce_rate": "0.1333163925337276"
+    },
+    {
+      "domain": "comptox.epa.gov",
+      "visits": "40399",
+      "users": "20820",
+      "pageviews": "158647",
+      "pageviews_per_session": "3.9270031436421693",
+      "avg_session_duration": "384.49575022748053",
+      "bounce_rate": "0.37550434416693484"
+    },
+    {
+      "domain": "enviro.epa.gov",
+      "visits": "34374",
+      "users": "18869",
+      "pageviews": "199954",
+      "pageviews_per_session": "5.8170128585558851",
+      "avg_session_duration": "381.19580326496765",
+      "bounce_rate": "0.2600512014894979"
+    },
+    {
+      "domain": "ejscreen.epa.gov",
+      "visits": "29189",
+      "users": "14311",
+      "pageviews": "30792",
+      "pageviews_per_session": "1.0549179485422591",
+      "avg_session_duration": "245.45615830655382",
+      "bounce_rate": "0.34160128815649732"
+    }
+  ],
+  "totals": {
+    "users": 5214833,
+    "visits": 7653459
+  },
+  "taken_at": "2024-01-05T15:42:08.921Z",
+  "agency": "environmental-protection-agency"
+}

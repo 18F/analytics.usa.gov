@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-9, Request for Taxpayer Identification Number and Certification | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw9.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-9",
+      "total_events": "39790"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Small Entity Compliance Guide | FinCEN.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/shared/boi_small_compliance_guide.v1.1-final.pdf",
+      "page": "www.fincen.gov/boi/small-entity-compliance-guide",
+      "total_events": "12481"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tax Withholding | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/n1036.pdf",
+      "page": "www.irs.gov/payments/tax-withholding",
+      "total_events": "8602"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-4, Employee's Withholding Certificate | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4",
+      "total_events": "8600"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040, U.S. Individual Income Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040",
+      "total_events": "7220"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "6764"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1099-NEC, Nonemployee Compensation | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1099nec.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099-nec",
+      "total_events": "6395"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-2, Wage and Tax Statement | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw2.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-2",
+      "total_events": "6142"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Beneficial Ownership Information Reporting | FinCEN.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/shared/boi%20informational%20brochure%20508c.pdf",
+      "page": "www.fincen.gov/boi",
+      "total_events": "5876"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "5714"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1099-MISC, Miscellaneous Information | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1099msc.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099-misc",
+      "total_events": "5101"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-4V, Voluntary Withholding Request | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4v.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4-v",
+      "total_events": "4364"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 941, Employer's Quarterly Federal Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f941.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-941",
+      "total_events": "3366"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040-ES, Estimated Tax for Individuals | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040es.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040-es",
+      "total_events": "3133"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040tt.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "2735"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "IRIS Application for TCC | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/taxpros/irs-application-for-tcc-tutorial-1.pdf",
+      "page": "www.irs.gov/tax-professionals/iris-application-for-tcc",
+      "total_events": "2722"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Applicable Federal Rates | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-drop/rr-24-02.pdf",
+      "page": "www.irs.gov/applicable-federal-rates",
+      "total_events": "2474"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Schedule A (Form 1040), Itemized Deductions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sa.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-a-form-1040",
+      "total_events": "2377"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 4506-T, Request for Transcript of Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f4506t.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-4506-t",
+      "total_events": "2312"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw9.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "2182"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 940, Employer's Annual Federal Unemployment (FUTA) Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f940.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-940",
+      "total_events": "2146"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 8822, Change of Address | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8822.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8822",
+      "total_events": "2073"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 15-T, Federal Income Tax Withholding Methods | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p15t.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-15-t",
+      "total_events": "2019"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Schedule C (Form 1040), Profit or Loss from Business (Sole Proprietorship) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sc.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-c-form-1040",
+      "total_events": "1991"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 5695, Residential Energy Credits | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f5695.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-5695",
+      "total_events": "1964"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "1930"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f941.pdf",
+      "page": "www.irs.gov/site-index-search?query=941",
+      "total_events": "1857"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040s.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "1843"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 2553, Election by a Small Business Corporation | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f2553.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-2553",
+      "total_events": "1766"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 970, Tax Benefits for Education | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p970.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-970",
+      "total_events": "1717"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 15, (Circular E), Employer's Tax Guide | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p15.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-15",
+      "total_events": "1715"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-7, Application for IRS Individual Taxpayer Identification Number | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw7.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-7",
+      "total_events": "1683"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 8936, Qualified Plug-In Electric Drive Motor Vehicle Credit | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8936.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8936",
+      "total_events": "1675"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms and Pubs Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-pubs-search?query=1040",
+      "total_events": "1587"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form SS-4, Application for Employer Identification Number (EIN) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fss4.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-ss-4",
+      "total_events": "1560"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f940.pdf",
+      "page": "www.irs.gov/site-index-search?query=940",
+      "total_events": "1559"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw9.pdf",
+      "page": "www.irs.gov/site-index-search?query=w9",
+      "total_events": "1536"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 8832, Entity Classification Election | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8832.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8832",
+      "total_events": "1506"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 8822-B, Change of Address or Responsible Party - Business | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8822b.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8822-b",
+      "total_events": "1461"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Schedule B (Form 1040), Interest and Ordinary Dividends | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sb.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-b-form-1040",
+      "total_events": "1440"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms and Pubs Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f940.pdf",
+      "page": "www.irs.gov/forms-pubs-search?query=940",
+      "total_events": "1377"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-8 BEN, Certificate of Foreign Status of Beneficial Owner for United States Tax Withholding and Reporting (Individuals) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw8ben.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-8-ben",
+      "total_events": "1317"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw2.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "1311"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Schedule 8812 (Form 1040), Credits for Qualifying Children and Other Dependents | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040s8.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-8812-form-1040",
+      "total_events": "1288"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1065, U.S. Return of Partnership Income | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1065.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1065",
+      "total_events": "1250"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/site-index-search?query=1040",
+      "total_events": "1237"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Get An Identity Protection PIN | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f15227.pdf",
+      "page": "www.irs.gov/identity-theft-fraud-scams/get-an-identity-protection-pin",
+      "total_events": "1235"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040es.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "1220"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms, Instructions and Publications | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/forms-instructions-and-publications",
+      "total_events": "1188"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms and Pubs Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f941.pdf",
+      "page": "www.irs.gov/forms-pubs-search?query=941",
+      "total_events": "1174"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw9.pdf",
+      "page": "www.irs.gov/site-index-search?query=w-9",
+      "total_events": "1172"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Internal Revenue Service | An official website of the United States government",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/",
+      "total_events": "1146"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 505, Tax Withholding and Estimated Tax | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p505.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-505",
+      "total_events": "1140"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms and Pubs Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1099msc.pdf",
+      "page": "www.irs.gov/forms-pubs-search?query=1099",
+      "total_events": "1125"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Cash EE or I savings bonds — TreasuryDirect",
+      "event_label": "file_download",
+      "file_name": "/forms/sav1522.pdf",
+      "page": "www.treasurydirect.gov/savings-bonds/cashing-a-bond/",
+      "total_events": "1100"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 843, Claim for Refund and Request for Abatement | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f843.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-843",
+      "total_events": "1089"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About General Instructions for Certain Information Returns | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1099gi.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099",
+      "total_events": "1089"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1099msc.pdf",
+      "page": "www.irs.gov/site-index-search?query=1099",
+      "total_events": "1086"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 2848, Power of Attorney and Declaration of Representative | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f2848.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-2848",
+      "total_events": "1083"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040-X, Amended U.S. Individual Income Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040x.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040x",
+      "total_events": "1075"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-9, Request for Taxpayer Identification Number and Certification | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/iw9.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-9",
+      "total_events": "1043"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-8 IMY, Certificate of Foreign Intermediary, Foreign Flow-Through Entity, or Certain U.S. Branches for United States Tax Withholding and Reporting | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw8imy.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-8-imy",
+      "total_events": "1031"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Schedule D (Form 1040), Capital Gains and Losses | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sd.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-d-form-1040",
+      "total_events": "1025"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040, U.S. Individual Income Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040",
+      "total_events": "980"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Annual Electronic Filing Requirement for Small Exempt Organizations — Form 990-N (e-Postcard) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p5248.pdf",
+      "page": "www.irs.gov/charities-non-profits/annual-electronic-filing-requirement-for-small-exempt-organizations-form-990-n-e-postcard",
+      "total_events": "956"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "E-file Forms 1099 with IRIS | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p5717.pdf",
+      "page": "www.irs.gov/filing/e-file-forms-1099-with-iris",
+      "total_events": "953"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-4P, Withholding Certificate for Periodic Pension or Annuity Payments | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4p.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4-p",
+      "total_events": "952"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 5329, Additional Taxes on Qualified Plans (including IRAs) and Other Tax-Favored Accounts | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f5329.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-5329",
+      "total_events": "925"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1099-NEC, Nonemployee Compensation | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1099mec.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099-nec",
+      "total_events": "910"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 4506, Request for Copy of Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f4506.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-4506",
+      "total_events": "905"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms, Instructions and Publications | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-instructions-and-publications",
+      "total_events": "903"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p590b.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-590-b",
+      "total_events": "902"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "I bonds — TreasuryDirect",
+      "event_label": "file_download",
+      "file_name": "/files/savings-bonds/i-bond-rate-chart.pdf",
+      "page": "www.treasurydirect.gov/savings-bonds/i-bonds/",
+      "total_events": "889"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040, U.S. Individual Income Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040s1.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040",
+      "total_events": "886"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1096, Annual Summary and Transmittal of U.S. Information Returns | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1096.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1096",
+      "total_events": "885"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EFTPS: The Electronic Federal Tax Payment System | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p5301.pdf",
+      "page": "www.irs.gov/payments/eftps-the-electronic-federal-tax-payment-system",
+      "total_events": "883"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 501, Dependents, Standard Deduction, and Filing Information | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p501.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-501",
+      "total_events": "881"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Definition of Adjusted Gross Income | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/e-file-providers/definition-of-adjusted-gross-income",
+      "total_events": "879"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040-SR, U.S. Tax Return for Seniors | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040s.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040-sr",
+      "total_events": "849"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "401(k) limit increases to $23,000 for 2024, IRA limit rises to $7,000 | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-drop/n-23-75.pdf",
+      "page": "www.irs.gov/newsroom/401k-limit-increases-to-23000-for-2024-ira-limit-rises-to-7000",
+      "total_events": "842"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Today's Auction Results — TreasuryDirect",
+      "event_label": "file_download",
+      "file_name": "/instit/annceresult/press/preanre/2024/r_20240104_2.pdf",
+      "page": "www.treasurydirect.gov/auctions/announcements-data-results/announcement-results-press-releases/auction-results/",
+      "total_events": "835"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Applicable Federal Rates | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-drop/rr-23-21.pdf",
+      "page": "www.irs.gov/applicable-federal-rates",
+      "total_events": "824"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i940.pdf",
+      "page": "www.irs.gov/site-index-search?query=940",
+      "total_events": "822"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1098, Mortgage Interest Statement | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1098.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1098",
+      "total_events": "799"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms and Pubs Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/forms-pubs-search?query=1040",
+      "total_events": "799"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Prior Year Forms and Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-prior/f1040--2021.pdf",
+      "page": "www.irs.gov/forms-pubs/prior-year",
+      "total_events": "795"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/site-index-search?query=1040",
+      "total_events": "794"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 502, Medical and Dental Expenses | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p502.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-502",
+      "total_events": "762"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Prior Year Forms and Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-prior/fw9--2018.pdf",
+      "page": "www.irs.gov/prior-year-forms-and-instructions",
+      "total_events": "739"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Schedule SE (Form 1040), Self-Employment Tax | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sse.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-se-form-1040",
+      "total_events": "717"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Offer in Compromise | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f656b.pdf",
+      "page": "www.irs.gov/payments/offer-in-compromise",
+      "total_events": "716"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4.pdf",
+      "page": "www.irs.gov/site-index-search?query=w4",
+      "total_events": "695"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Retirement Plan and IRA Required Minimum Distributions FAQs | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p590b.pdf",
+      "page": "www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs",
+      "total_events": "692"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form W-2, Wage and Tax Statement | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/iw2w3.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-2",
+      "total_events": "688"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Publication 17, Your Federal Income Tax (For Individuals) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/p17.pdf",
+      "page": "www.irs.gov/forms-pubs/about-publication-17",
+      "total_events": "688"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1099-MISC, Miscellaneous Information | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1099mec.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099-misc",
+      "total_events": "685"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms and Pubs Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i940.pdf",
+      "page": "www.irs.gov/forms-pubs-search?query=940",
+      "total_events": "668"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 9465, Installment Agreement Request | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f9465.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-9465",
+      "total_events": "657"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Form 1040-NR, U.S. Nonresident Alien Income Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040nr.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040-nr",
+      "total_events": "654"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Site Index Search | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i941.pdf",
+      "page": "www.irs.gov/site-index-search?query=941",
+      "total_events": "654"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:12.278Z",
+  "agency": "treasury"
+}

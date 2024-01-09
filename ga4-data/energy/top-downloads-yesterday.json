@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "National Definition for a Zero Emissions Building | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/bto-national-definition-zero-emissions-building-122023.pdf",
+      "page": "www.energy.gov/eere/buildings/national-definition-zero-emissions-building",
+      "total_events": "162"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "GREET | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/45vh2-greet2023.zip",
+      "page": "www.energy.gov/eere/greet",
+      "total_events": "160"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Clean Hydrogen Production Tax Credit (45V) Resources | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/assessing_lifecycle_greenhouse_gas_emissions_associated_with_electricity_use_for_the_section_45v_clean_hydrogen_production_tax_credit.pdf",
+      "page": "www.energy.gov/articles/clean-hydrogen-production-tax-credit-45v-resources",
+      "total_events": "116"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "GREET | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/greet-manual_2023-12-20.pdf",
+      "page": "www.energy.gov/eere/greet",
+      "total_events": "109"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home Energy Rebates Programs Guidance | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/home-energy-rebate-programs-requirements-and-application-instructions_10-13-2023.pdf",
+      "page": "www.energy.gov/scep/home-energy-rebates-programs-guidance",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Making Our Homes More Efficient: Clean Energy Tax Credits for Consumers | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-02/tax%20credit%20table.pdf",
+      "page": "www.energy.gov/policy/articles/making-our-homes-more-efficient-clean-energy-tax-credits-consumers",
+      "total_events": "83"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Transmission Needs Study | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/national%20transmission%20needs%20study%20-%20final_2023.12.1.pdf",
+      "page": "www.energy.gov/gdo/national-transmission-needs-study",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Energy Auditor Training Grant Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-08/eat-fact-sheet_082023.pdf",
+      "page": "www.energy.gov/scep/energy-auditor-training-grant-program",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Document Center for LNG Contracts | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/delfin%20gunvor%20doe%20filing%20spa%201.pdf",
+      "page": "www.energy.gov/fecm/articles/document-center-lng-contracts",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PF 2024-15 Federal Acquisition Circular (FAC) 2024-02 | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/federal%20register%2012-22-2023.pdf",
+      "page": "www.energy.gov/management/pf-2024-15-federal-acquisition-circular-fac-2024-02",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Implementation Manual - Bonneville Power Administration",
+      "event_label": "file_download",
+      "file_name": "/-/media/aep/energy-efficiency/document-library/24-25-rp-im.pdf",
+      "page": "www.bpa.gov/energy-and-services/efficiency/implementation-manual",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DOE Qualified List of Energy Service Companies | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe-ql_1223.pdf",
+      "page": "www.energy.gov/femp/articles/doe-qualified-list-energy-service-companies",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PF 2024-15 Federal Acquisition Circular (FAC) 2024-02 | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/attachment%20flash%20fac2024-02%20.pdf",
+      "page": "www.energy.gov/management/pf-2024-15-federal-acquisition-circular-fac-2024-02",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Offshore Wind Market Report: 2023 Edition | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-09/doe-offshore-wind-market-report-2023-edition.pdf",
+      "page": "www.energy.gov/eere/wind/articles/offshore-wind-market-report-2023-edition",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Interest Electric Transmission Corridor Designation Process | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/2023-12-15%20gdo%20nietc%20final%20guidance%20document.pdf",
+      "page": "www.energy.gov/gdo/national-interest-electric-transmission-corridor-designation-process",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Cybersecurity Capability Maturity Model (C2M2) | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-06/c2m2%20version%202.1%20june%202022.pdf",
+      "page": "www.energy.gov/ceser/cybersecurity-capability-maturity-model-c2m2",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ttsl - Bonneville Power Administration",
+      "event_label": "file_download",
+      "file_name": "/tx_availability/ttsl/ttsl_byhour_beg07.xls",
+      "page": "www.bpa.gov/energy-and-services/transmission/ttsl",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Quarterly Solar Industry Update | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/docs/fy24osti/88026.pdf",
+      "page": "www.energy.gov/eere/solar/quarterly-solar-industry-update",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Bonneville Purchasing Instructions - Bonneville Power Administration",
+      "event_label": "file_download",
+      "file_name": "/-/media/aep/customers-and-contractors/bpi/bpi-22-1-parts-1-35.pdf",
+      "page": "www.bpa.gov/energy-and-services/customers-and-contractors/bonneville-purchasing-instructions",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Stockpile Stewardship and Management Plan (SSMP) | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/fy24ssmp_final_november_2023_0.pdf",
+      "page": "www.energy.gov/nnsa/articles/stockpile-stewardship-and-management-plan-ssmp",
+      "total_events": "29"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALRD – Assistance for Latest and Zero Building Energy Code Adoption (Sec. 50131) for States and Territories | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/ira-codes-program-alrd_11-17-23_mod0002.pdf",
+      "page": "www.energy.gov/scep/articles/alrd-assistance-latest-and-zero-building-energy-code-adoption-sec-50131-states-and",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "COVID-19 Workplace Safety Framework | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-05/doe-covid-19-workplace-safety-framework-05-26-23_0.pdf",
+      "page": "www.energy.gov/covid/articles/covid-19-workplace-safety-framework",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Document Center for LNG Contracts | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/delfin%20gunvor%20doe%20filing%20spa%202.pdf",
+      "page": "www.energy.gov/fecm/articles/document-center-lng-contracts",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Department of Energy Acquisition Guide | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/fy24_acquisition_guide_fy2024_v4.pdf",
+      "page": "www.energy.gov/management/articles/department-energy-acquisition-guide",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/101823_grip-overview-fact-sheet.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "November 20 Grid Resilience and Innovation Partnerships (GRIP) Program Second Round Funding Webinar | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/november%2020%20grip%20foa%20second%20round%20kickoff%20webinar%20presentation%20slides%20508%20compliant.pdf",
+      "page": "www.energy.gov/gdo/events/november-20-grid-resilience-and-innovation-partnerships-grip-program-second-round",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Weatherization Memorandum 120: WAP Bipartisan Infrastructure Law Annual Guidance Implementation and WPN Numbering | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/wap-memo-120_122123.pdf",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-memorandum-120-wap-bipartisan-infrastructure-law-annual-guidance",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Acquisition Forecast | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/osdbu%20acquisition%20forecast_december%202023_1.xlsx",
+      "page": "www.energy.gov/osdbu/acquisition-forecast",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Air-Source Heat Pumps | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-11/shutterstock_622693838%20%5bconverted%5d.jpg",
+      "page": "www.energy.gov/energysaver/air-source-heat-pumps",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Homeowner’s Guide to the Federal Tax Credit for Solar Photovoltaics | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/pub/taxpros/fs-2022-40.pdf",
+      "page": "www.energy.gov/eere/solar/homeowners-guide-federal-tax-credit-solar-photovoltaics",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Homeowner’s Guide to the Federal Tax Credit for Solar Photovoltaics | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i5695.pdf",
+      "page": "www.energy.gov/eere/solar/homeowners-guide-federal-tax-credit-solar-photovoltaics",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Maglev Works | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/diagram-final.jpg",
+      "page": "www.energy.gov/articles/how-maglev-works",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Weatherization Program Notice BIL-5: BIL Average Cost Per Dwelling Unit and Allowable Use of Funds Update | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/wpn-bil-5-update-2023.pdf",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-program-notice-bil-5-bil-average-cost-dwelling-unit-and-0",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "48(e) Frequently Asked Questions | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/48%28e%29_faqs_v2.pdf",
+      "page": "www.energy.gov/justice/articles/48e-frequently-asked-questions",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Electrolyzer Installation Webinar | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/2-01-case-study-brophy.pdf",
+      "page": "www.energy.gov/eere/fuelcells/electrolyzer-installation-webinar",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Explore a Career at BPA - Bonneville Power Administration",
+      "event_label": "file_download",
+      "file_name": "/-/media/aep/careers/internal-announcements/2024-bid-list-application-links.pdf",
+      "page": "www.bpa.gov/about/careers/explore-a-career-at-bpa",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NNSA's DEMO pay system compared to the General Schedule | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-01/2022%20nnsa%20pay%20tables.pdf",
+      "page": "www.energy.gov/nnsa/nnsas-demo-pay-system-compared-general-schedule",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The U.S. National Blueprint for Transportation Decarbonization: A Joint Strategy to Transform Transportation | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/the-us-national-blueprint-for-transportation-decarbonization.pdf",
+      "page": "www.energy.gov/eere/us-national-blueprint-transportation-decarbonization-joint-strategy-transform-transportation",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Weatherization Assistance Program Fact Sheet | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-08/2023-wap-fact-sheet.pdf",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-assistance-program-fact-sheet",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Energy Department Releases Guidance to Identify High-Priority Areas for Transmission Development | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/2023-12-15%20gdo%20nietc%20final%20guidance%20document.pdf",
+      "page": "www.energy.gov/gdo/articles/energy-department-releases-guidance-identify-high-priority-areas-transmission",
+      "total_events": "20"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Energy Saver Guide: Tips on Saving Money and Energy at Home | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-08/energy-saver-guide-2022.pdf",
+      "page": "www.energy.gov/energysaver/energy-saver-guide-tips-saving-money-and-energy-home",
+      "total_events": "20"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home Energy Rebates Programs Guidance | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/home-energy-rebate-administrative-and-legal-requirements-document_10-13-2023.pdf",
+      "page": "www.energy.gov/scep/home-energy-rebates-programs-guidance",
+      "total_events": "20"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EECBG Program Formula Grant Application Hub | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-01/iija%20%2840552%29%20eecbg%20program_attachment%201a.%20_local%20govt.%20allocations_final.pdf",
+      "page": "www.energy.gov/scep/eecbg-program-formula-grant-application-hub",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Energy Saver History Timeline: Refrigeration and Refrigerators | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/1920s%20ice%20box.jpg",
+      "page": "www.energy.gov/energysaver/energy-saver-history-timeline-refrigeration-and-refrigerators",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FY 2024 Budget Justification | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-06/doe-fy-2024-budget-vol-1-nnsa-v5.pdf",
+      "page": "www.energy.gov/cfo/articles/fy-2024-budget-justification",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe_grip_1083_sumter%20electric%20cooperative%2c%20inc.%20dba%20seco%20energy%20draft_v4_release_508.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home Efficiency Rebates Program: Sample Application Responses and Guidance | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/home-efficiency-rebates-sample-application.pdf",
+      "page": "www.energy.gov/scep/slsc/home-energy-rebate-program/articles/home-efficiency-rebates-program-sample-application",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home Efficiency Rebates Retroactivity Fact Sheet and Eligibility Checklists | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/retroactivity-fact-sheet-checklists.pdf",
+      "page": "www.energy.gov/scep/articles/home-efficiency-rebates-retroactivity-fact-sheet-and-eligibility-checklists",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Jennifer M. Granholm | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-06/s1_granholm_5423.jpg",
+      "page": "www.energy.gov/person/jennifer-m-granholm",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Natural Ventilation | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-05/ventilation2387462785.jpg",
+      "page": "www.energy.gov/energysaver/natural-ventilation",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tribal Clean Energy Funding Opportunities - Printable Flyer | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/2023.12.15%20ie%20funding%20opportunities%20weekly%20version.pdf",
+      "page": "www.energy.gov/indianenergy/tribal-clean-energy-funding-opportunities-printable-flyer",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ttsl - Bonneville Power Administration",
+      "event_label": "file_download",
+      "file_name": "/tx_availability/ttsl/daily.xls",
+      "page": "www.bpa.gov/energy-and-services/transmission/ttsl",
+      "total_events": "19"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EECBG Program Formula Grant Application Instructions | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/eecbg_application_instructions_2023.10.27.vf__0.pdf",
+      "page": "www.energy.gov/scep/articles/eecbg-program-formula-grant-application-instructions",
+      "total_events": "18"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "What Are Critical Materials and Critical Minerals? | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-07/doe-critical-material-assessment_07312023.pdf",
+      "page": "www.energy.gov/cmm/what-are-critical-materials-and-critical-minerals",
+      "total_events": "18"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Adoption Readiness Levels (ARL): A Complement to TRL | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-06/carat-r10_6-2-23.pdf",
+      "page": "www.energy.gov/technologytransitions/adoption-readiness-levels-arl-complement-trl",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Electrolyzer Installation Webinar | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/1-02-case-study-anderson.pdf",
+      "page": "www.energy.gov/eere/fuelcells/electrolyzer-installation-webinar",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Interest Electric Transmission Corridor Designation Process | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/2023-12-19%20gdo%20nietc%20guidance%20document%20fact%20sheet.pdf",
+      "page": "www.energy.gov/gdo/national-interest-electric-transmission-corridor-designation-process",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Organization Chart | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-03/doe%20org%20chart_march%202022%20realignment.pdf",
+      "page": "www.energy.gov/organization-chart",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Sustainable Aviation Fuel Grand Challenge Roadmap: Flight Plan for Sustainable Aviation Fuel Report | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-09/beto-saf-gc-roadmap-report-sept-2022.pdf",
+      "page": "www.energy.gov/eere/bioenergy/articles/sustainable-aviation-fuel-grand-challenge-roadmap-flight-plan-sustainable",
+      "total_events": "17"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "About Community Benefits Plans | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-05/communitybenefitsplantemplate.docx",
+      "page": "www.energy.gov/infrastructure/about-community-benefits-plans",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DOE Industrial Decarbonization Roadmap | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-09/industrial%20decarbonization%20roadmap.pdf",
+      "page": "www.energy.gov/industrial-technologies/doe-industrial-decarbonization-roadmap",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/2022%20grip%20concept%20paper%20guidance%2012.14.22.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Land-Based Wind Market Report: 2023 Edition | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-08/land-based-wind-market-report-2023-edition.pdf",
+      "page": "www.energy.gov/eere/wind/articles/land-based-wind-market-report-2023-edition",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Qualifying Advanced Energy Project Credit (48C) Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/48c-faqs_v7_12.21.23_0.pdf",
+      "page": "www.energy.gov/infrastructure/qualifying-advanced-energy-project-credit-48c-program",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Sample Project Execution Plan | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2019/02/f60/cmrr-pei1_1.pdf",
+      "page": "www.energy.gov/projectmanagement/articles/sample-project-execution-plan",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "State-Based Home Energy Efficiency Contractor Training Grants | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/ira-50123-alrd_published-modification_10-12-23.pdf",
+      "page": "www.energy.gov/scep/state-based-home-energy-efficiency-contractor-training-grants",
+      "total_events": "16"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DOE Applicant Portal | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/forms/pdf_fill/sf256.pdf",
+      "page": "www.energy.gov/applicant-portal",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executives & Structure - Bonneville Power Administration",
+      "event_label": "file_download",
+      "file_name": "/-/media/aep/about/publications/general-documents/org-chart.pdf",
+      "page": "www.bpa.gov/about/who-we-are/executives",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FY 2024 Budget Justification | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-03/doe-fy-2024-budget-vol-4-eere-v2.pdf",
+      "page": "www.energy.gov/cfo/articles/fy-2024-budget-justification",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe_grip_1107_xcel%20energy%20services%2c%20inc_v4_relese_for508.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Our Organization and Employees | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/2023dec17-fecm-organization-chart.pdf",
+      "page": "www.energy.gov/fecm/our-organization-and-employees",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SERC Quick Guide | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/serc-quick-guide_0.pdf",
+      "page": "www.energy.gov/scep/wap/articles/serc-quick-guide",
+      "total_events": "15"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ASHRAE Standard 62.2. Ventilation and Acceptable Indoor Air Quality in Low-Rise Residential Buildings - Building America Top Innovation | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2014/12/f19/ba_innovations_2014_ashrae%2062_2.pdf",
+      "page": "www.energy.gov/eere/buildings/articles/ashrae-standard-622-ventilation-and-acceptable-indoor-air-quality-low-rise",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Department of Energy Interim Conflict of Interest Policy Requirements for Financial Assistance | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-10/department%20of%20energy%20interim%20conflict%20of%20interest%20policy.pdf",
+      "page": "www.energy.gov/management/department-energy-interim-conflict-interest-policy-requirements-financial-assistance",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Financial Management Handbook | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/doe-financial-management-handbook-complete.pdf",
+      "page": "www.energy.gov/cfo/financial-management-handbook",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Search Results | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2015/11/f27/fcto_fuel_cells_fact_sheet.pdf",
+      "page": "www.energy.gov/search/site?query=fuell%20cells%20fact%20sheet",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The National Environmental Policy Act of 1969 | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-08/nepa%20reg%20amend%2006-2023.pdf",
+      "page": "www.energy.gov/nepa/articles/national-environmental-policy-act-1969",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Year in Review | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/2023%20year%20in%20review_0.pdf",
+      "page": "www.energy.gov/em/year-review",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ZERH Multifamily Version 2 | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/doe%20zerh%20multifamily%20national%20program%20requirements%20version%202.pdf",
+      "page": "www.energy.gov/eere/buildings/zerh-multifamily-version-2",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ZERH Single Family Version 2 | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/doe%20zerh%20v2%20national%20program%20requirements%20-%20dec%202022.pdf",
+      "page": "www.energy.gov/eere/buildings/zerh-single-family-version-2",
+      "total_events": "14"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "40 CFR 1500-1508: CEQ Regulations for Implementing the Procedural Provisions of NEPA (CEQ, 1978) (archived) | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/nepa-40cfr1500_1508.pdf",
+      "page": "www.energy.gov/nepa/articles/40-cfr-1500-1508-ceq-regulations-implementing-procedural-provisions-nepa-ceq-1978",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Administrative and Legal Requirements Document - Energy Efficiency and Conservation Block Grant Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/eecbg_alrd_2023.10.27.vf_.pdf",
+      "page": "www.energy.gov/scep/articles/administrative-and-legal-requirements-document-energy-efficiency-and-conservation",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Consumer Guide to Recycling Codes Fact Sheet | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2021-12/es_consumerguide_recyclingcodes.pdf",
+      "page": "www.energy.gov/energysaver/consumer-guide-recycling-codes-fact-sheet",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Electrolyzer Installation Webinar | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/2-05-cost-analysis-acevedo.pdf",
+      "page": "www.energy.gov/eere/fuelcells/electrolyzer-installation-webinar",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FY 2024 Budget Justification | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-06/doe-fy2024-budget-in-brief-v5.pdf",
+      "page": "www.energy.gov/cfo/articles/fy-2024-budget-justification",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Solar Tax Credits for Businesses | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i3468.pdf",
+      "page": "www.energy.gov/eere/solar/federal-solar-tax-credits-businesses",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe_grip_1022_holy%20cross%20energy_v4_release_508_0.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe_grip_1117_consumers%20energy%20draft%20fact_v4_release_508.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-12/grid%20resilience%20utility%20and%20industry%20grants%20fact%20sheet%20%28december%202022%29.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Onsite Energy Program | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-01/doe_onsite_energy_program.pdf",
+      "page": "www.energy.gov/eere/iedo/articles/onsite-energy-program",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "U.S. Department of Energy Releases 2023 Critical Materials Assessment to Evaluate Supply Chain Security for Clean Energy Technologies | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-07/doe-critical-material-assessment_07312023.pdf",
+      "page": "www.energy.gov/eere/articles/us-department-energy-releases-2023-critical-materials-assessment-evaluate-supply",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Weatherization Memorandum 121: Announce the Recipients of Program Year (PY) 2023 Sustainable Energy for Consumers (SERC) Awards | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/wap-memo-121_122123.pdf",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-memorandum-121-announce-recipients-program-year-py-2023",
+      "total_events": "13"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EECBG Program Formula Grant Application Hub | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-06/eecbg%20bil%20activity%20file.pdf",
+      "page": "www.energy.gov/scep/eecbg-program-formula-grant-application-hub",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EECBG Program Formula Grant Application Hub | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-10/eecbg-voucher-handbook_10.18.2023.pdf",
+      "page": "www.energy.gov/scep/eecbg-program-formula-grant-application-hub",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "EHSS Organization Chart | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/ehss%20organizational%20chart%20-%20december%202023.pdf",
+      "page": "www.energy.gov/ehss/articles/ehss-organization-chart",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Electrolyzer Installation Webinar | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/2-02-safety-murphy.pdf",
+      "page": "www.energy.gov/eere/fuelcells/electrolyzer-installation-webinar",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Electrolyzer Installation Webinar | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/2-03-siting-ehrhart.pdf",
+      "page": "www.energy.gov/eere/fuelcells/electrolyzer-installation-webinar",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe_grip_1014_peco%20energy%20company_v4_release_508.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/doe_grip_1110_pacificorp_v4_release_508.pdf",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "12"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home Efficiency Rebates: Implementation Request for Proposals Guidance | Department of Energy",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-12/homes-implementation-rfp-guidance.pdf",
+      "page": "www.energy.gov/scep/slsc/home-energy-rebate-program/articles/home-efficiency-rebates-implementation-request",
+      "total_events": "12"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:45:29.671Z",
+  "agency": "energy"
+}

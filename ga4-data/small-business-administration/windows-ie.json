@@ -1,0 +1,117 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites."
+  },
+  "totals": {
+    "visits": 1199,
+    "by_windows": {
+      "7": {
+        "undefined": 18
+      },
+      "8": {
+        "undefined": 70
+      },
+      "10": {
+        "undefined": 1084
+      },
+      "95": {
+        "undefined": 2
+      },
+      "Vista": {
+        "undefined": 4
+      },
+      "XP": {
+        "undefined": 8
+      },
+      "8.1": {
+        "undefined": 10
+      },
+      "CE": {
+        "undefined": 2
+      },
+      "NT": {
+        "undefined": 1
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 18,
+        "8": 70,
+        "10": 1084,
+        "95": 2,
+        "Vista": 4,
+        "XP": 8,
+        "8.1": 10,
+        "CE": 2,
+        "NT": 1
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:21:04.683Z",
+  "agency": "small-business-administration"
+}

@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.justice.gov",
+      "visits": "6983255",
+      "users": "5293880",
+      "pageviews": "7774970",
+      "pageviews_per_session": "1.1133733481019954",
+      "avg_session_duration": "113.59662586294547",
+      "bounce_rate": "0.48989504178209159"
+    },
+    {
+      "domain": "www.nsopw.gov",
+      "visits": "3326506",
+      "users": "2853455",
+      "pageviews": "11560659",
+      "pageviews_per_session": "3.4753158419073946",
+      "avg_session_duration": "147.10250118003029",
+      "bounce_rate": "0.14095720855456145"
+    },
+    {
+      "domain": "www.fbi.gov",
+      "visits": "2696151",
+      "users": "2253004",
+      "pageviews": "4559863",
+      "pageviews_per_session": "1.6912491177237476",
+      "avg_session_duration": "118.33193594133742",
+      "bounce_rate": "0.5214681966996656"
+    },
+    {
+      "domain": "acis.eoir.justice.gov",
+      "visits": "2376658",
+      "users": "675251",
+      "pageviews": "5805999",
+      "pageviews_per_session": "2.442925738579131",
+      "avg_session_duration": "246.33882928723781",
+      "bounce_rate": "0.305384283308747"
+    },
+    {
+      "domain": "www.dea.gov",
+      "visits": "1373221",
+      "users": "1177332",
+      "pageviews": "1519584",
+      "pageviews_per_session": "1.106583718134226",
+      "avg_session_duration": "90.125091023541742",
+      "bounce_rate": "0.45927276090301561"
+    },
+    {
+      "domain": "www.ojp.gov",
+      "visits": "1349224",
+      "users": "1211342",
+      "pageviews": "1372815",
+      "pageviews_per_session": "1.017484865374467",
+      "avg_session_duration": "74.881815705165351",
+      "bounce_rate": "0.50371769254030463"
+    },
+    {
+      "domain": "www.atf.gov",
+      "visits": "598484",
+      "users": "465424",
+      "pageviews": "826794",
+      "pageviews_per_session": "1.3814805408331718",
+      "avg_session_duration": "131.70437356639104",
+      "bounce_rate": "0.36426704807480231"
+    },
+    {
+      "domain": "www.usmarshals.gov",
+      "visits": "448986",
+      "users": "389013",
+      "pageviews": "617708",
+      "pageviews_per_session": "1.3757845456205762",
+      "avg_session_duration": "112.55820024413681",
+      "bounce_rate": "0.47452927262765432"
+    },
+    {
+      "domain": "www.ada.gov",
+      "visits": "341881",
+      "users": "263516",
+      "pageviews": "360888",
+      "pageviews_per_session": "1.0555953679789167",
+      "avg_session_duration": "131.35141986483015",
+      "bounce_rate": "0.474986910650197"
+    },
+    {
+      "domain": "uat.ojjdp.ojp.gov",
+      "visits": "257275",
+      "users": "259265",
+      "pageviews": "387051",
+      "pageviews_per_session": "1.5044252259255659",
+      "avg_session_duration": "12.720918401418713",
+      "bounce_rate": "0.50285492177630942"
+    },
+    {
+      "domain": "www.deadiversion.usdoj.gov",
+      "visits": "254263",
+      "users": "186573",
+      "pageviews": "333228",
+      "pageviews_per_session": "1.3105642582680139",
+      "avg_session_duration": "146.49866805806585",
+      "bounce_rate": "0.36445727455430005"
+    },
+    {
+      "domain": "www.ic3.gov",
+      "visits": "247662",
+      "users": "194410",
+      "pageviews": "395125",
+      "pageviews_per_session": "1.5954203713125146",
+      "avg_session_duration": "111.59370197295912",
+      "bounce_rate": "0.36912001033666852"
+    },
+    {
+      "domain": "nij.ojp.gov",
+      "visits": "212677",
+      "users": "164352",
+      "pageviews": "225197",
+      "pageviews_per_session": "1.0588686129670815",
+      "avg_session_duration": "137.0636949526089",
+      "bounce_rate": "0.43127841750635942"
+    },
+    {
+      "domain": "bjs.ojp.gov",
+      "visits": "192829",
+      "users": "165945",
+      "pageviews": "221209",
+      "pageviews_per_session": "1.1471770325002981",
+      "avg_session_duration": "85.855267475981307",
+      "bounce_rate": "0.624216274523023"
+    },
+    {
+      "domain": "uat.bja.ojp.gov",
+      "visits": "150660",
+      "users": "150982",
+      "pageviews": "158209",
+      "pageviews_per_session": "1.0501061993893535",
+      "avg_session_duration": "2.2198026909796882",
+      "bounce_rate": "0.96920881454931629"
+    },
+    {
+      "domain": "uat.smart.ojp.gov",
+      "visits": "141533",
+      "users": "145443",
+      "pageviews": "201716",
+      "pageviews_per_session": "1.4252223862986018",
+      "avg_session_duration": "9.368966503606929",
+      "bounce_rate": "0.64613906297471257"
+    },
+    {
+      "domain": "complaint.ic3.gov",
+      "visits": "135190",
+      "users": "99680",
+      "pageviews": "163135",
+      "pageviews_per_session": "1.2067090761150974",
+      "avg_session_duration": "213.51333060863226",
+      "bounce_rate": "0.218100451216806"
+    },
+    {
+      "domain": "uat.ojp.gov",
+      "visits": "125287",
+      "users": "123740",
+      "pageviews": "181678",
+      "pageviews_per_session": "1.4500945828378045",
+      "avg_session_duration": "9.8701141115837956",
+      "bounce_rate": "0.56732941167080386"
+    },
+    {
+      "domain": "search.justice.gov",
+      "visits": "117594",
+      "users": "100632",
+      "pageviews": "182315",
+      "pageviews_per_session": "1.5503767199006753",
+      "avg_session_duration": "94.889282393234311",
+      "bounce_rate": "0.091577801588516416"
+    },
+    {
+      "domain": "bja.ojp.gov",
+      "visits": "99634",
+      "users": "76563",
+      "pageviews": "126009",
+      "pageviews_per_session": "1.2647188710681092",
+      "avg_session_duration": "132.2033729086958",
+      "bounce_rate": "0.39799666780416326"
+    }
+  ],
+  "totals": {
+    "users": 16249802,
+    "visits": 21428970
+  },
+  "taken_at": "2024-01-05T15:38:11.190Z",
+  "agency": "justice"
+}

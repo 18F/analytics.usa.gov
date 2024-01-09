@@ -1,0 +1,100 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 41714765,
+    "browser": {
+      "Chrome": 24296450,
+      "Edge": 6198662,
+      "Safari": 9165496,
+      "Firefox": 1230940,
+      "Samsung Internet": 287295,
+      "Safari (in-app)": 182010,
+      "(other)": 1294,
+      "Android Webview": 128463,
+      "Opera": 97342,
+      "Amazon Silk": 35372,
+      "Mozilla Compatible Agent": 26801,
+      "(not set)": 20786,
+      "Internet Explorer": 11121,
+      "YaBrowser": 12430,
+      "Opera Mini": 5926,
+      "Whale Browser": 3996,
+      "UC Browser": 3421,
+      "Coc Coc": 1958,
+      "Android Runtime": 467,
+      "Android Browser": 960,
+      "SeaMonkey": 259,
+      "Aloha Browser": 810,
+      "DuckDuckGo Browser": 524,
+      "Puffin": 83,
+      "Meta Quest Browser": 363,
+      "Mozilla": 431,
+      "NetFront": 18,
+      "PaleMoon": 262,
+      "BrowserNG": 15,
+      "Konqueror": 50,
+      "Maxthon": 41,
+      "Nokia Browser": 20,
+      "Iron": 79,
+      "Phoenix Browser": 177,
+      "BlackBerry": 126,
+      "IE with Chrome Frame": 13,
+      "Lynx": 16,
+      "Nintendo Browser": 30,
+      "Seznam": 53,
+      "Waterfox": 104,
+      "Netscape": 38,
+      "Galeon": 16,
+      "Blazer": 14,
+      "Camino": 4,
+      "Vivaldi": 22,
+      "EudoraWeb": 3,
+      "Playstation Vita Browser": 2,
+      "DoCoMo": 2
+    }
+  },
+  "taken_at": "2024-01-05T14:24:57.273Z",
+  "agency": "national-archives-records-administration"
+}

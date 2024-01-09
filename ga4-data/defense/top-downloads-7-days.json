@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
+      "total_events": "86473"
+    },
+    {
+      "page_title": "NAVADMIN 2023",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/References/Messages/NAVADMIN-2023/",
+      "total_events": "11847"
+    },
+    {
+      "page_title": "Travis AFB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/",
+      "total_events": "11410"
+    },
+    {
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
+      "event_label": "file_download",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "9913"
+    },
+    {
+      "page_title": "Military Compensation > Pay > Basic Pay > Active Duty Pay",
+      "event_label": "file_download",
+      "page": "militarypay.defense.gov/Pay/Basic-Pay/Active-Duty-Pay/",
+      "total_events": "9008"
+    },
+    {
+      "page_title": "Defense Finance and Accounting Service > RetiredMilitary > newsevents > newsletter",
+      "event_label": "file_download",
+      "page": "www.dfas.mil/RetiredMilitary/newsevents/newsletter/",
+      "total_events": "8457"
+    },
+    {
+      "page_title": "Wage and Salary",
+      "event_label": "file_download",
+      "page": "wageandsalary.dcpas.osd.mil/BWN/LatestSchedulesAF/",
+      "total_events": "7811"
+    },
+    {
+      "page_title": "Seattle-Tacoma International Gateway",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Seattle-Tacoma-International-Gateway/",
+      "total_events": "7518"
+    },
+    {
+      "page_title": "Ramstein AB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Ramstein-AB-Passenger-Terminal/",
+      "total_events": "6662"
+    },
+    {
+      "page_title": "BWI Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Baltimore-Washington-International-Airport-Passenger-Terminal/",
+      "total_events": "6225"
+    },
+    {
+      "page_title": "Joint Base Pearl Harbor-Hickam Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Joint-Base-Pearl-Harbor-Hickam-Passenger-Terminal/",
+      "total_events": "6176"
+    },
+    {
+      "page_title": "ALNAV 2024",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/References/Messages/ALNAV-2024/",
+      "total_events": "6011"
+    },
+    {
+      "page_title": "NS Norfolk Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/NS-Norfolk-Passenger-Terminal/",
+      "total_events": "5933"
+    },
+    {
+      "page_title": "Defense Finance and Accounting Service > RetiredMilitary > forms",
+      "event_label": "file_download",
+      "page": "www.dfas.mil/RetiredMilitary/forms/",
+      "total_events": "5335"
+    },
+    {
+      "page_title": "PFT/CFT",
+      "event_label": "file_download",
+      "page": "www.fitness.marines.mil/pft-cft_standards17/",
+      "total_events": "5185"
+    },
+    {
+      "page_title": "Checklist NMC",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/checklist/",
+      "total_events": "4876"
+    },
+    {
+      "page_title": "Merchant Mariner Credential NMC",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/merchant_mariner_credential/",
+      "total_events": "4728"
+    },
+    {
+      "page_title": "AARO Home",
+      "event_label": "file_download",
+      "page": "www.aaro.mil/",
+      "total_events": "4444"
+    },
+    {
+      "page_title": "U.S. ARMY RECRUITING COMMAND > In-Service Opportunities > U.S. Army Warrant Officer Recruiting > How Do I Apply? > Form Downloads",
+      "event_label": "file_download",
+      "page": "recruiting.army.mil/ISO/AWOR/PACKET_DOWNLOADS/",
+      "total_events": "4421"
+    },
+    {
+      "page_title": "Dover AFB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Dover-AFB-Passenger-Terminal/",
+      "total_events": "4240"
+    },
+    {
+      "page_title": "Joint Base Charleston Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Charleston-Passenger-Terminal/",
+      "total_events": "3892"
+    },
+    {
+      "page_title": "Kadena AB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Kadena-AB-Passenger-Terminal/",
+      "total_events": "3824"
+    },
+    {
+      "page_title": "Army Publishing Directorate",
+      "event_label": "file_download",
+      "page": "armypubs.army.mil/ProductMaps/PubForm/Details_Printer.aspx",
+      "total_events": "3663"
+    },
+    {
+      "page_title": "Reserve Drill Pay",
+      "event_label": "file_download",
+      "page": "militarypay.defense.gov/Pay/Basic-Pay/Reserve-Drill-Pay/",
+      "total_events": "3611"
+    },
+    {
+      "page_title": "ALNAV 2023",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/References/Messages/ALNAV-2023/",
+      "total_events": "3418"
+    },
+    {
+      "page_title": "Joint Base Lewis-McChord Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Lewis-McChord-Passenger-Terminal/",
+      "total_events": "3403"
+    },
+    {
+      "page_title": "CVC-2 Detentions",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/Our-Organization/Assistant-Commandant-for-Prevention-Policy-CG-5P/Inspections-Compliance-CG-5PC-/Commercial-Vessel-Compliance/Foreign-Offshore-Compliance-Division/Port-State-Control/Detentions/#119",
+      "total_events": "3271"
+    },
+    {
+      "page_title": "Defense SBIR/STTR - Funding Opportunities",
+      "event_label": "file_download",
+      "page": "www.defensesbirsttr.mil/SBIR-STTR/Opportunities/",
+      "total_events": "3096"
+    },
+    {
+      "page_title": "National Vessel Documentation Center - Instructions and Forms",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/Our-Organization/Assistant-Commandant-for-Prevention-Policy-CG-5P/Inspections-Compliance-CG-5PC-/National-Vessel-Documentation-Center/Instructions-and-Forms/",
+      "total_events": "2916"
+    },
+    {
+      "page_title": "STIGs Document Library – DoD Cyber Exchange",
+      "event_label": "file_download",
+      "page": "public.cyber.mil/stigs/downloads/",
+      "total_events": "2818"
+    },
+    {
+      "page_title": "Joint Base Andrews Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Andrews-Passenger-Terminal/",
+      "total_events": "2789"
+    },
+    {
+      "page_title": "Yokota AB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Yokota-AB-Passenger-Terminal/",
+      "total_events": "2768"
+    },
+    {
+      "page_title": "Andersen AFB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Andersen-AFB-Passenger-Terminal/",
+      "total_events": "2681"
+    },
+    {
+      "page_title": "Fitness Program",
+      "event_label": "file_download",
+      "page": "www.afpc.af.mil/Career-Management/Fitness-Program/",
+      "total_events": "2654"
+    },
+    {
+      "page_title": "Defense Finance and Accounting Service > MilitaryMembers > payentitlements > Pay Tables",
+      "event_label": "file_download",
+      "page": "www.dfas.mil/militarymembers/payentitlements/Pay-Tables/",
+      "total_events": "2602"
+    },
+    {
+      "page_title": "Joint Base MDL Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-MDL-Passenger-Terminal/",
+      "total_events": "2515"
+    },
+    {
+      "page_title": "Retirement Cost of Living Adjustments",
+      "event_label": "file_download",
+      "page": "militarypay.defense.gov/Pay/Retirement/cola/",
+      "total_events": "2292"
+    },
+    {
+      "page_title": "Government of Japan Jobs (Honshu)",
+      "event_label": "file_download",
+      "page": "www.usarj.army.mil/gojjobs/",
+      "total_events": "2240"
+    },
+    {
+      "page_title": "SBP Open Season NDAA2023",
+      "event_label": "file_download",
+      "page": "www.dfas.mil/RetiredMilitary/provide/sbp/SBP-Open-Season-NDAA2023/",
+      "total_events": "2240"
+    },
+    {
+      "page_title": "Course Resources for DOD Mandatory Controlled Unclassified Information (CUI) Training IF141.06",
+      "event_label": "file_download",
+      "page": "www.cdse.edu/Training/eLearning/IF141-resources/",
+      "total_events": "2136"
+    },
+    {
+      "page_title": "Program Authorizations",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/Career-Management/Community-Management/Officer/Program-Authorizations/",
+      "total_events": "2114"
+    },
+    {
+      "page_title": "Benefits, Wage, NAF",
+      "event_label": "file_download",
+      "page": "wageandsalary.dcpas.osd.mil/BWN/AFWageSchedules/",
+      "total_events": "2105"
+    },
+    {
+      "page_title": "Mission Execution Forecast :: Fort Novosel",
+      "event_label": "file_download",
+      "page": "home.army.mil/novosel/weather/aviation-weather/mef",
+      "total_events": "2062"
+    },
+    {
+      "page_title": "MyNavy HR > References > Forms > NPPSC Forms",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/References/Forms/NPPSC-Forms/",
+      "total_events": "2033"
+    },
+    {
+      "page_title": "AMC Space Available Travel Page",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/AMC-Space-Available-Travel-Page/",
+      "total_events": "1989"
+    },
+    {
+      "page_title": "MyNavy HR > References > Forms > NAVPERS",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/References/Forms/NAVPERS/",
+      "total_events": "1987"
+    },
+    {
+      "page_title": "Washington Headquarters Services > Directives > forms > dd2500_2999",
+      "event_label": "file_download",
+      "page": "www.esd.whs.mil/Directives/forms/dd2500_2999/",
+      "total_events": "1954"
+    },
+    {
+      "page_title": "Civilian Personnel: Start your job search here > Royal Air Force Mildenhall > Display",
+      "event_label": "file_download",
+      "page": "www.mildenhall.af.mil/About-Us/Fact-Sheets/Display/Article/759969/civilian-personnel-start-your-job-search-here/",
+      "total_events": "1943"
+    },
+    {
+      "page_title": "MyNavyHR",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/",
+      "total_events": "1840"
+    },
+    {
+      "page_title": "Forms NMC",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/forms/",
+      "total_events": "1764"
+    },
+    {
+      "page_title": "Slife promoted to general, assumes AF’s second highest military position > Air Force > Article Display",
+      "event_label": "file_download",
+      "page": "www.af.mil/News/Article-Display/Article/3628675/slife-promoted-to-general-assumes-afs-second-highest-military-position/",
+      "total_events": "1731"
+    },
+    {
+      "page_title": "Survivor Voices",
+      "event_label": "file_download",
+      "page": "ctip.defense.gov/Survivor-Voices/",
+      "total_events": "1712"
+    },
+    {
+      "page_title": "Navy COOL - LaDRs",
+      "event_label": "file_download",
+      "page": "www.cool.osd.mil/usn/all_ladrs.html",
+      "total_events": "1697"
+    },
+    {
+      "page_title": "Local National Staffing",
+      "event_label": "file_download",
+      "page": "www.mcipac.marines.mil/Staff-and-Sections/Principal-Staff/Civilian-Human-Resources-Office/JN/JN-Staffing/",
+      "total_events": "1628"
+    },
+    {
+      "page_title": "U.S. Navy 2023: The Year in Photos > United States Navy > News Stories",
+      "event_label": "file_download",
+      "page": "www.navy.mil/Press-Office/News-Stories/Article/3626411/us-navy-2023-the-year-in-photos/",
+      "total_events": "1623"
+    },
+    {
+      "page_title": "Air University (AU) > Foundational Resources",
+      "event_label": "file_download",
+      "page": "www.airuniversity.af.edu/Foundational-Resources/",
+      "total_events": "1595"
+    },
+    {
+      "page_title": "Commander, Navy Region Europe, Africa, Central > Installations > NSA Bahrain > Operations and Management > Human Resources > Job Openings",
+      "event_label": "file_download",
+      "page": "cnreurafcent.cnic.navy.mil/Installations/NSA-Bahrain/Operations-and-Management/Human-Resources/Job-Openings/",
+      "total_events": "1563"
+    },
+    {
+      "page_title": "Medical Certificate",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/medical_certificate/",
+      "total_events": "1550"
+    },
+    {
+      "page_title": "Blended Retirement",
+      "event_label": "file_download",
+      "page": "militarypay.defense.gov/BlendedRetirement/",
+      "total_events": "1535"
+    },
+    {
+      "page_title": "Defense Finance and Accounting Service > MilitaryMembers > payentitlements > Pay Tables",
+      "event_label": "file_download",
+      "page": "www.dfas.mil/MilitaryMembers/payentitlements/Pay-Tables/",
+      "total_events": "1528"
+    },
+    {
+      "page_title": "EXTERNE STELLENANGEBOTE / EXTERNAL ANNOUNCEMENTS > Ramstein Air Base > Display",
+      "event_label": "file_download",
+      "page": "www.ramstein.af.mil/About/Fact-Sheets/Display/Article/303656/externe-stellenangebote-external-announcements/",
+      "total_events": "1486"
+    },
+    {
+      "page_title": "Okinawa Family Housing",
+      "event_label": "file_download",
+      "page": "www.kadena.af.mil/Kadena_Housing_Office/Okinawa-Family-Housing-Copy/",
+      "total_events": "1462"
+    },
+    {
+      "page_title": "DoD Issuances",
+      "event_label": "file_download",
+      "page": "www.esd.whs.mil/Directives/issuances/dodi/",
+      "total_events": "1461"
+    },
+    {
+      "page_title": "1970",
+      "event_label": "file_download",
+      "page": "www.bmtflightphotos.af.mil/1970s/1970/",
+      "total_events": "1392"
+    },
+    {
+      "page_title": "Camp Lejeune Justice Act Claims",
+      "event_label": "file_download",
+      "page": "www.navy.mil/clja/",
+      "total_events": "1365"
+    },
+    {
+      "page_title": "NISP Tools & Resources",
+      "event_label": "file_download",
+      "page": "www.dcsa.mil/Industrial-Security/National-Industrial-Security-Program-Oversight/NISP-Tools-Resources/",
+      "total_events": "1363"
+    },
+    {
+      "page_title": "SRB SDAP Enl Bonus",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/Career-Management/Community-Management/Enlisted-Career-Admin/SRB-SDAP-Enl-Bonus/",
+      "total_events": "1358"
+    },
+    {
+      "page_title": "Officer Promotions",
+      "event_label": "file_download",
+      "page": "www.afpc.af.mil/Promotion/Officer-Promotions/",
+      "total_events": "1342"
+    },
+    {
+      "page_title": "BUPERS Instructions",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/References/BUPERS-Instructions/",
+      "total_events": "1341"
+    },
+    {
+      "page_title": "Osan AB Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Osan-AB-Passenger-Terminal/",
+      "total_events": "1323"
+    },
+    {
+      "page_title": "CMMC Documentation",
+      "event_label": "file_download",
+      "page": "dodcio.defense.gov/CMMC/Documentation/",
+      "total_events": "1318"
+    },
+    {
+      "page_title": "JN Yokosuka Region",
+      "event_label": "file_download",
+      "page": "cnrj.cnic.navy.mil/Operations-and-Management/Human-Resources/MLC-IHA-HPT-Jobs/JN-Yokosuka-Region/",
+      "total_events": "1317"
+    },
+    {
+      "page_title": "Aviation Screen",
+      "event_label": "file_download",
+      "page": "www.mynavyhr.navy.mil/Career-Management/Boards/Screen-Boards/Aviation-Screen/",
+      "total_events": "1310"
+    },
+    {
+      "page_title": "Army Financial Management & Comptroller > Budget Materials",
+      "event_label": "file_download",
+      "page": "www.asafm.army.mil/Budget-Materials/",
+      "total_events": "1300"
+    },
+    {
+      "page_title": "Navsta Rota Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/Navsta-Rota-Passenger-Terminal/",
+      "total_events": "1290"
+    },
+    {
+      "page_title": "Security Content Automation Protocol (SCAP) – DoD Cyber Exchange",
+      "event_label": "file_download",
+      "page": "public.cyber.mil/stigs/scap/",
+      "total_events": "1277"
+    },
+    {
+      "page_title": "Getting Your ID Card",
+      "event_label": "file_download",
+      "page": "www.cac.mil/Next-Generation-Uniformed-Services-ID-Card/Getting-Your-ID-Card/",
+      "total_events": "1271"
+    },
+    {
+      "page_title": "Volunteer Recruiters",
+      "event_label": "file_download",
+      "page": "recruiting.army.mil/recruiter/volunteer_recruiters/",
+      "total_events": "1259"
+    },
+    {
+      "page_title": "USAF Enlisted Promotion Study Guides",
+      "event_label": "file_download",
+      "page": "www.studyguides.af.mil/",
+      "total_events": "1249"
+    },
+    {
+      "page_title": "Defense Finance and Accounting Service > RetiredMilitary > survivors > Retiree Death",
+      "event_label": "file_download",
+      "page": "www.dfas.mil/RetiredMilitary/survivors/Retiree-Death/",
+      "total_events": "1243"
+    },
+    {
+      "page_title": "DCIPS Compensation",
+      "event_label": "file_download",
+      "page": "dcips.defense.gov/Human-Resources/Compensation/",
+      "total_events": "1236"
+    },
+    {
+      "page_title": "Dress and Appearance",
+      "event_label": "file_download",
+      "page": "www.afpc.af.mil/Career-Management/Dress-and-Appearance/",
+      "total_events": "1207"
+    },
+    {
+      "page_title": "DD2875",
+      "event_label": "file_download",
+      "page": "www.esd.whs.mil/Directives/forms/dd2500_2999/DD2875/",
+      "total_events": "1195"
+    },
+    {
+      "page_title": "TRICARE Costs and Fees Sheet | TRICARE",
+      "event_label": "file_download",
+      "page": "tricare.mil/Publications/Costs/costs_fees",
+      "total_events": "1188"
+    },
+    {
+      "page_title": "JN Okinawa Region",
+      "event_label": "file_download",
+      "page": "cnrj.cnic.navy.mil/Operations-and-Management/Human-Resources/MLC-IHA-HPT-Jobs/JN-Okinawa-Region/",
+      "total_events": "1184"
+    },
+    {
+      "page_title": "NAS Jacksonville Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/NAS-Jacksonville-Passenger-Terminal//",
+      "total_events": "1184"
+    },
+    {
+      "page_title": "1972",
+      "event_label": "file_download",
+      "page": "www.bmtflightphotos.af.mil/1970s/1972/",
+      "total_events": "1168"
+    },
+    {
+      "page_title": "Dislocation Allowance | Defense Travel Management Office",
+      "event_label": "file_download",
+      "page": "www.travel.dod.mil/Travel-Transportation-Rates/Dislocation-Allowance/",
+      "total_events": "1141"
+    },
+    {
+      "page_title": "Base Access / Pass & ID",
+      "event_label": "file_download",
+      "page": "cnrma.cnic.navy.mil/Operations-and-Management/Base-Access/",
+      "total_events": "1117"
+    },
+    {
+      "page_title": "Constructed Travel | Defense Travel Management Office",
+      "event_label": "file_download",
+      "page": "www.travel.dod.mil/Programs/Defense-Travel-System/Constructed-Travel/",
+      "total_events": "1110"
+    },
+    {
+      "page_title": "Joint Base Elmendorf-Richardson Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Joint-Base-Elmendorf-Richardson-Passenger-Terminal/",
+      "total_events": "1109"
+    },
+    {
+      "page_title": "420T - Talent Acquisitions Technician",
+      "event_label": "file_download",
+      "page": "recruiting.army.mil/ISO/AWOR/420T/",
+      "total_events": "1098"
+    },
+    {
+      "page_title": "U.S. Navy Recruit Training Command > Graduation",
+      "event_label": "file_download",
+      "page": "www.bootcamp.navy.mil/Graduation/",
+      "total_events": "1090"
+    },
+    {
+      "page_title": "SRG / STIG Tools – DoD Cyber Exchange",
+      "event_label": "file_download",
+      "page": "public.cyber.mil/stigs/srg-stig-tools/",
+      "total_events": "1086"
+    },
+    {
+      "page_title": "Army Physician Assistant",
+      "event_label": "file_download",
+      "page": "recruiting.army.mil/armypa/",
+      "total_events": "1067"
+    },
+    {
+      "page_title": "Mangino's :: Shades of Green",
+      "event_label": "file_download",
+      "page": "www.shadesofgreen.org/dining-drinks/manginos",
+      "total_events": "1038"
+    },
+    {
+      "page_title": "AF Special Schedules",
+      "event_label": "file_download",
+      "page": "wageandsalary.dcpas.osd.mil/BWN/FWSSpecialSchedules",
+      "total_events": "1026"
+    },
+    {
+      "page_title": "NSA Naples Passenger Terminal",
+      "event_label": "file_download",
+      "page": "www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/NSA-Naples-Passenger-Terminal/",
+      "total_events": "1020"
+    },
+    {
+      "page_title": "EXPRESS",
+      "event_label": "file_download",
+      "page": "www.mcbbutler.marines.mil/Base-Information/The-Green-Line/EXPRESS/",
+      "total_events": "1017"
+    },
+    {
+      "page_title": "DA Selected Recrutiers",
+      "event_label": "file_download",
+      "page": "recruiting.army.mil/recruiter/da_selected_recruiters/",
+      "total_events": "1004"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:52:52.884Z",
+  "agency": "defense"
+}

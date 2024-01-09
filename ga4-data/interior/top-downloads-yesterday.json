@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Sequoia and Kings Canyon National Park, View from the edge of Giant Forest",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam2.html",
+      "total_events": "441"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/zion/planyourvisit/upload/ZionUnigrid.pdf",
+      "page": "www.nps.gov/zion/planyourvisit/maps.htm",
+      "total_events": "259"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2024 Payroll Schedule Office Calendar [xlsx]",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-payroll-schedule-office-calendar_3.xlsx",
+      "page": "www.doi.gov/media/document/2024-payroll-schedule-office-calendar-xlsx",
+      "total_events": "244"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Grand Canyon National Park, View from Yavapai Point",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam2.html",
+      "total_events": "231"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Publications - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/zion/planyourvisit/upload/23-24-Winter-InfosheetPRINT.pdf",
+      "page": "www.nps.gov/zion/planyourvisit/publications.htm",
+      "total_events": "220"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Yellowstone National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/yell/planyourvisit/upload/YELL-GRTE-Tear-Off-Map-2022_508.pdf",
+      "page": "www.nps.gov/yell/planyourvisit/maps.htm",
+      "total_events": "197"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Appalachian National Scenic Trail (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/appa/planyourvisit/upload/APPA_Map.pdf",
+      "page": "www.nps.gov/appa/planyourvisit/maps.htm",
+      "total_events": "169"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Great Smoky Mountains National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grsm/planyourvisit/upload/GSMNP-Trail-Map_JULY21.pdf",
+      "page": "www.nps.gov/grsm/planyourvisit/maps.htm",
+      "total_events": "165"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Register Database and Research - National Register of Historic Places (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/subjects/nationalregister/upload/national-register-listed-20230801.xlsx",
+      "page": "www.nps.gov/subjects/nationalregister/database-research.htm",
+      "total_events": "122"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - White Sands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/whsa/planyourvisit/upload/WHSA_Unigrid_2022.pdf",
+      "page": "www.nps.gov/whsa/planyourvisit/maps.htm",
+      "total_events": "118"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Park Newspaper - Death Valley National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/deva/learn/news/upload/2022-Winter-Visitor-Guide-compressed.pdf",
+      "page": "www.nps.gov/deva/learn/news/newspaper.htm",
+      "total_events": "115"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/zion/planyourvisit/upload/Zion-Area-Map-Website.pdf",
+      "page": "www.nps.gov/zion/planyourvisit/maps.htm",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Bryce Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/brca/planyourvisit/upload/Bryce_Canyon_Visitor_Guide_508.pdf",
+      "page": "www.nps.gov/brca/planyourvisit/maps.htm",
+      "total_events": "104"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Glacier National Park Webcams - Glacier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/webcams-glac/allsky.mp4",
+      "page": "www.nps.gov/glac/learn/photosmultimedia/webcams.htm",
+      "total_events": "102"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Glacier's Shuttle System - Glacier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/glac/planyourvisit/upload/GTSR-Shuttle-Map-5-2022.pdf",
+      "page": "www.nps.gov/glac/planyourvisit/shuttles.htm",
+      "total_events": "94"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Great Smoky Mountains National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grsm/planyourvisit/upload/grsmmap2-2.pdf",
+      "page": "www.nps.gov/grsm/planyourvisit/maps.htm",
+      "total_events": "94"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Publications - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/zion/planyourvisit/upload/ZionUnigrid.pdf",
+      "page": "www.nps.gov/zion/planyourvisit/publications.htm",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Pinnacles National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/pinn/planyourvisit/upload/2019-map-update-DRAFT-2.pdf",
+      "page": "www.nps.gov/pinn/planyourvisit/maps.htm",
+      "total_events": "91"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Mesa Verde National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/meve/planyourvisit/upload/mevemap2018_8x11.jpg",
+      "page": "www.nps.gov/meve/planyourvisit/maps.htm",
+      "total_events": "90"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Big Bend National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/bibe/planyourvisit/upload/Big-Bend-National-Park-Brochure-Map.jpg",
+      "page": "www.nps.gov/bibe/planyourvisit/maps.htm",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TR Complex -Digital/Printer Format-Annual Use Brochure 2023-24_508 Compliant | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/tr%20complex%20digital-printer%20annual%20use%20brochure%202023-24_508%20compliant.pdf",
+      "page": "www.fws.gov/media/tr-complex-digitalprinter-format-annual-use-brochure-2023-24508-compliant",
+      "total_events": "79"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Lithium Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/periodicals/mcs2023/mcs2023-lithium.pdf",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/lithium-statistics-and-information",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Backcountry Camping Routes and Zones - Grand Teton National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grte/planyourvisit/upload/grte_backcountry_map_2012.jpg",
+      "page": "www.nps.gov/grte/planyourvisit/backcountryroutesandzones.htm",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hoover Dam | Bureau of Reclamation",
+      "event_label": "file_download",
+      "file_name": "/lc/hooverdam/images/2019_vc_map.pdf",
+      "page": "www.usbr.gov/lc/hooverdam/service/index.html",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/yose/planyourvisit/upload/yosemitecampgroundmap2013.pdf",
+      "page": "www.nps.gov/yose/planyourvisit/maps.htm",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Redwood National and State Parks (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/redw/planyourvisit/upload/REDW-Map-2020.jpg",
+      "page": "www.nps.gov/redw/planyourvisit/maps.htm",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Great Smoky Mountains National Park, View from Look Rock",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Joshua Tree National Park, View from Belle Mountain",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tracing American Indian and Alaska Native Ancestry | Indian Affairs",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/dup/assets/public/raca/online_forms/pdf/1076-0153_cdib%20form_expires%2011.30.2024_508.pdf",
+      "page": "www.bia.gov/guide/tracing-american-indian-and-alaska-native-aian-ancestry",
+      "total_events": "65"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Yellowstone National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/yell/learn/management/upload/State-of-the-Park-2023-Web.pdf",
+      "page": "www.nps.gov/yell/index.htm",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Yosemite Guide - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/yose/planyourvisit/upload/Yosemite-Guide-Volume-49-1-508-V1.pdf",
+      "page": "www.nps.gov/yose/planyourvisit/guide.htm",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Brochures - Capitol Reef National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/care/planyourvisit/upload/CARE_Unigrid-map-2021.pdf",
+      "page": "www.nps.gov/care/planyourvisit/brochures.htm",
+      "total_events": "62"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Coyote Buttes North Daily Lottery (The Wave) Geofence Perimeter Map | Bureau of Land Management",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/docs/2022-01/cbn_application_geofence_public_20220104_450dpi_opt_508%20%281%29_1.pdf",
+      "page": "www.blm.gov/arizona/public-room/map/coyote-buttes-north-daily-lottery-wave-geofence-perimeter-map",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Cache River National Wildlife Refuge Public Use Regulations | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/cacherivervirtualhunt2023%202024_0.pdf",
+      "page": "www.fws.gov/media/cache-river-national-wildlife-refuge-public-use-regulations",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Recreational Passes | USGS Store",
+      "event_label": "file_download",
+      "file_name": "/assets/mod/storefiles/pass/2023/pass_brochure_2024_508.pdf",
+      "page": "store.usgs.gov/recreational-passes",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Scenic Drives - Big Cypress National Preserve (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/bicy/planyourvisit/upload/BICY-Loop-Road-Scenic-Road-FINAL-4.pdf",
+      "page": "www.nps.gov/bicy/planyourvisit/scenic-drives.htm",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Tectonic Plates of the Earth | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/assets/palladium/production/s3fs-public/thumbnails/image/eq-ed-plates.gif",
+      "page": "www.usgs.gov/media/images/tectonic-plates-earth",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Loess Bluffs Waterfowl Survey 12-19-2023.pdf | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/loess_bluffs_waterfowl_survey_20231219.pdf",
+      "page": "www.fws.gov/media/loess-bluffs-waterfowl-survey-12-19-2023pdf",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/zion/planyourvisit/upload/Map-Page.pdf",
+      "page": "www.nps.gov/zion/planyourvisit/maps.htm",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Trip Planning Guide - Health & Safety (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/subjects/healthandsafety/upload/Trip-Planning-Guide-Package-508c.pdf",
+      "page": "www.nps.gov/subjects/healthandsafety/trip-planning-guide.htm",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hoover Dam | Bureau of Reclamation",
+      "event_label": "file_download",
+      "file_name": "/lc/hooverdam/images/2024_vc_map.pdf",
+      "page": "www.usbr.gov/lc/hooverdam/",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023-2024 Junior Duck Stamp brochure, contest rules and regulations | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/junior-duck-stamp-brochure_1.pdf",
+      "page": "www.fws.gov/media/2023-2024-junior-duck-stamp-brochure-contest-rules-and-regulations",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Brochures - Rocky Mountain National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/romo/planyourvisit/upload/ROMOmap1_small_2022.jpg",
+      "page": "www.nps.gov/romo/planyourvisit/brochures.htm",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Latest Earthquakes",
+      "event_label": "file_download",
+      "file_name": "/earthquakes/feed/v1.0/summary/2.5_day.csv",
+      "page": "earthquake.usgs.gov/earthquakes/map/",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Park Newspaper - Big Bend National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/bibe/learn/news/upload/Big-Bend-Paisano-Visitor-Guide-2022-2023.pdf",
+      "page": "www.nps.gov/bibe/learn/news/newspaper.htm",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Brochures - Appalachian National Scenic Trail (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/appa/planyourvisit/upload/APPA_Map.pdf",
+      "page": "www.nps.gov/appa/planyourvisit/brochures.htm",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Rocky Mountain National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/romo/planyourvisit/upload/ROMO_UnigridBrochure_2022.pdf",
+      "page": "www.nps.gov/romo/planyourvisit/maps.htm",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Regional Offices | Indian Affairs",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/dup/inline-files/idc1-028635.pdf",
+      "page": "www.bia.gov/regional-offices",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Watchman Campground - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/zion/planyourvisit/upload/3-28-Watchman-Regulations-Handout-8-5x14-2.pdf",
+      "page": "www.nps.gov/zion/planyourvisit/watchman-campground.htm",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Rocky Mountain National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/romo/planyourvisit/upload/Bear-Lake-Summer-Trail-Guide-2017-digital.pdf",
+      "page": "www.nps.gov/romo/planyourvisit/maps.htm",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Plan Your Visit - Great Sand Dunes National Park & Preserve (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grsa/planyourvisit/upload/visitor-guide-updated-dec2022-web-508.pdf",
+      "page": "www.nps.gov/grsa/planyourvisit/index.htm",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Canyonlands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/cany/planyourvisit/upload/NeedlesTrailsandRoads2022_WSfixed.pdf",
+      "page": "www.nps.gov/cany/planyourvisit/maps.htm",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Southeast Louisiana Refuges Annual User Brochure and Regulations | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/southeast-louisiana-refuges-public-use-regulations_3.pdf",
+      "page": "www.fws.gov/media/southeast-louisiana-refuges-annual-user-brochure-and-regulations",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Ash Meadows NWR Amargosa Pupfish | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/banner_images/2021-08/dsc_8435_edited-1.jpg",
+      "page": "www.fws.gov/media/150852",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hiking Lake McDonald - Glacier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/glac/planyourvisit/upload/McDonald-Valley-2.pdf",
+      "page": "www.nps.gov/glac/planyourvisit/hikinglakemcdonald.htm",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Canyonlands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/cany/planyourvisit/upload/IslandRoadsandTrails2022_forweb.pdf",
+      "page": "www.nps.gov/cany/planyourvisit/maps.htm",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Great Smoky Mountains National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grsm/planyourvisit/upload/GRSMmap2.pdf",
+      "page": "www.nps.gov/grsm/planyourvisit/maps.htm",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Backcountry Camping - Grand Teton National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grte/planyourvisit/upload/grte_backcountry_map_2012.jpg",
+      "page": "www.nps.gov/grte/planyourvisit/back.htm",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hike - Muir Woods National Monument (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/muwo/upload/MuWo_Map_web-jpg.pdf",
+      "page": "www.nps.gov/muwo/planyourvisit/hike.htm",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Junior Ranger Park Explorer - Health & Safety (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/subjects/healthandsafety/upload/Jr-Ranger-Park-Explorer-book-FINAL-March-2022.pdf",
+      "page": "www.nps.gov/subjects/healthandsafety/junior-ranger-park-explorer.htm",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - White Sands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/whsa/planyourvisit/upload/1-Dunes_Drive_with_Blackband_NP.pdf",
+      "page": "www.nps.gov/whsa/planyourvisit/maps.htm",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Visiting in Winter - Bryce Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/brca/planyourvisit/upload/Web-Winter-Map-01.jpg",
+      "page": "www.nps.gov/brca/planyourvisit/winter.htm",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Webcams - Olympic National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/dnc-kalaloch/kalaloch.jpg",
+      "page": "www.nps.gov/olym/learn/photosmultimedia/webcams.htm",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Park Newspaper and Visitor Guide - Redwood National and State Parks (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/redw/planyourvisit/upload/RNSP_VG_2022-v5-13-small-508-2.pdf",
+      "page": "www.nps.gov/redw/learn/news/newspaper.htm",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hike - Muir Woods National Monument (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/pages/471/files/MountTamalpaisSPFinalWebLayout110816.pdf",
+      "page": "www.nps.gov/muwo/planyourvisit/hike.htm",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hiking Many Glacier - Glacier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/glac/planyourvisit/upload/Many-Glacier.pdf",
+      "page": "www.nps.gov/glac/planyourvisit/hikingmanyglacier.htm",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Note to Banders, January 2024 | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/assets/palladium/production/s3fs-public/media/files/notetobander2023highlights.pdf",
+      "page": "www.usgs.gov/media/files/note-banders-january-2024",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Secretary of the Interior's Standards for the Treatment of Historic Properties - Technical Preservation Services (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/orgs/1739/upload/treatment-guidelines-2017-part1-preservation-rehabilitation.pdf",
+      "page": "www.nps.gov/orgs/1739/secretary-standards-treatment-historic-properties.htm",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Copper Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/periodicals/mcs2023/mcs2023-copper.pdf",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/copper-statistics-and-information",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hiking - Arches National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/arch/planyourvisit/upload/ARCHnews2023ver1sm-508-final.pdf",
+      "page": "www.nps.gov/arch/planyourvisit/hiking.htm",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Rare Earths Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/periodicals/mcs2023/mcs2023-rare-earths.pdf",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Eating & Sleeping - Gulf Islands National Seashore (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/guis/planyourvisit/upload/070121_FortPickensCampground_PadMap_508.pdf",
+      "page": "www.nps.gov/guis/planyourvisit/eatingsleeping.htm",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Scenic Drives - Big Cypress National Preserve (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/bicy/planyourvisit/upload/BICY-Turner-River-Loop-Scenic-Road-FINAL_II.pdf",
+      "page": "www.nps.gov/bicy/planyourvisit/scenic-drives.htm",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ANNUAL PASS, 2024 | USGS Store",
+      "event_label": "file_download",
+      "file_name": "/assets/mod/storefiles/pass/2021/nps_4_panel_brochure_2021.pdf",
+      "page": "store.usgs.gov/product/206946",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Day Hiking - Grand Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/grca/planyourvisit/upload/RimTrail.pdf",
+      "page": "www.nps.gov/grca/planyourvisit/day-hiking.htm",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Rocky Mountain National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/romo/planyourvisit/upload/Bear-Lake-Winter-Trail-Guide-2017-digital.pdf",
+      "page": "www.nps.gov/romo/planyourvisit/maps.htm",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Canyonlands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/cany/planyourvisit/upload/maze2022updated_508forweb.pdf",
+      "page": "www.nps.gov/cany/planyourvisit/maps.htm",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Death Valley National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/deva/planyourvisit/upload/Routes-from-Las-Vegas.pdf",
+      "page": "www.nps.gov/deva/planyourvisit/maps.htm",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "[KWcam] - Halemaʻumaʻu and down-dropped caldera floor; from the west rim of the summit caldera, looking east. | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/observatories/hvo/cams/kwcam/images/m.jpg",
+      "page": "www.usgs.gov/media/webcams/kwcam-halemaumau-and-down-dropped-caldera-floor-west-rim-summit-caldera-looking-east",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps and Brochures - Congaree National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/cong/planyourvisit/upload/CONG-Trail-Guide-2.pdf",
+      "page": "www.nps.gov/cong/planyourvisit/maps.htm",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Campgrounds - Mount Rainier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/mora/planyourvisit/upload/CougarRock2006.pdf",
+      "page": "www.nps.gov/mora/planyourvisit/campgrounds.htm",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Yosemite National Park, View from Turtleback Dome",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam2.html",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Wetland Inventory Wetlands and Deepwater Map Code Diagram | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/wetlands-and-deepwater-map-code-diagram.pdf",
+      "page": "www.fws.gov/media/national-wetland-inventory-wetlands-and-deepwater-map-code-diagram",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Trail Descriptions - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/yose/planyourvisit/upload/trailheads.pdf",
+      "page": "www.nps.gov/yose/planyourvisit/trails.htm",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Web Informatics and Mapping (WIM) is hiring! | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/assets/palladium/production/s3fs-public/media/files/web%20accessibility.pdf",
+      "page": "www.usgs.gov/centers/upper-midwest-water-science-center/web-informatics-and-mapping-wim-hiring",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Big Bend National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/bibe/planyourvisit/upload/Big-Bend-area-map.jpg",
+      "page": "www.nps.gov/bibe/planyourvisit/maps.htm",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Great Smoky Mountains National Park, View from the Purchase",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Wilderness Permits - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/yose/planyourvisit/upload/wildernesstrailheads.pdf",
+      "page": "www.nps.gov/yose/planyourvisit/wildpermits.htm",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Wilderness Trip Planner - North Cascades National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/noca/planyourvisit/upload/NOCA_Wilderness_Trip_Planner-Compliant_508_for-web_508-2.pdf",
+      "page": "www.nps.gov/noca/planyourvisit/wilderness-trip-planner.htm",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Maps - Shenandoah National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/shen/planyourvisit/upload/English_SNP_web.pdf",
+      "page": "www.nps.gov/shen/planyourvisit/maps.htm",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "mazama_campground - Crater Lake National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/crla/planyourvisit/upload/Mazama-CG-Map-v2.jpg",
+      "page": "www.nps.gov/crla/planyourvisit/mazama_campground.htm",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Big Meadows Campground - Shenandoah National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/shen/planyourvisit/upload/BigMeadows_CampgroundMap_web.pdf",
+      "page": "www.nps.gov/shen/planyourvisit/big-meadows-campground.htm",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Dale Bumpers White River NWR Public Use Regulations Brochure | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/dbwhite%20river%20nwr%20public%20use%2023-24_1.pdf",
+      "page": "www.fws.gov/media/dale-bumpers-white-river-nwr-public-use-regulations-brochure",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Ducks at a Distance: A Waterfowl Identification Guide | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/ducks%20at%20a%20distance-ocr.pdf",
+      "page": "www.fws.gov/media/ducks-distance-waterfowl-identification-guide",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Geologic Time Scale | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/assets/palladium/production/s3fs-public/vhp_img3232.gif",
+      "page": "www.usgs.gov/media/images/geologic-time-scale",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Human Resources Serving Employees in the Regions | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/assets/palladium/production/s3fs-public/media/files/servicing-assignments-regions-oct2023.pdf",
+      "page": "www.usgs.gov/media/files/human-resources-serving-employees-regions",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "List of Birds Protected by the Migratory Bird Treaty Act (2023) | FWS.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/documents/cfr50-part10.13-2023.xlsx",
+      "page": "www.fws.gov/media/list-birds-protected-migratory-bird-treaty-act-2023",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Budget (U.S. National Park Service)",
+      "event_label": "file_download",
+      "file_name": "/sites/doi.gov/files/fy2024-nps-greenbook.pdf-508.pdf",
+      "page": "www.nps.gov/aboutus/budget.htm",
+      "total_events": "29"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Mineral commodity summaries 2023 | U.S. Geological Survey",
+      "event_label": "file_download",
+      "file_name": "/periodicals/mcs2023/mcs2023.pdf",
+      "page": "www.usgs.gov/publications/mineral-commodity-summaries-2023",
+      "total_events": "29"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Great Smoky Mountains National Park, View from Clingmans Dome",
+      "event_label": "file_download",
+      "file_name": "/features/ard/webcams/webcam_lg.jpg",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "29"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:47:46.476Z",
+  "agency": "interior"
+}

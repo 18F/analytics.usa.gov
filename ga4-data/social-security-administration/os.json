@@ -1,0 +1,77 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "names": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites."
+  },
+  "totals": {
+    "visits": 97749424,
+    "os": {
+      "iOS": 32938145,
+      "Windows": 30230577,
+      "Android": 20989698,
+      "Macintosh": 10858895,
+      "Chrome OS": 1368219,
+      "Linux": 1350310,
+      "(not set)": 7275,
+      "Firefox OS": 1629,
+      "Fuchsia": 1206,
+      "Tizen": 857,
+      "Playstation 4": 722,
+      "OS/2": 1642,
+      "OpenBSD": 49,
+      "BlackBerry": 33,
+      "FreeBSD": 73,
+      "UNIX": 8,
+      "Nokia": 3,
+      "SymbianOS": 2,
+      "Windows Phone": 6,
+      "Xbox": 41,
+      "WebTV": 1,
+      "Unknown": 4,
+      "NetBSD": 7,
+      "Samsung": 7,
+      "SoftBank": 1,
+      "iPhone": 6,
+      "Playstation Vita": 3,
+      "SunOS": 2,
+      "Sony": 1,
+      "PalmOS": 1,
+      "macOS X": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:44:45.342Z",
+  "agency": "social-security-administration"
+}

@@ -1,0 +1,150 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "www.huduser.gov",
+      "visits": "100532"
+    },
+    {
+      "domain": "www.hud.govhttps",
+      "visits": "257"
+    },
+    {
+      "domain": "www.hud.gov",
+      "visits": "959132"
+    },
+    {
+      "domain": "www.ginniemae.gov",
+      "visits": "16708"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "webstore.huduser.gov",
+      "visits": "217"
+    },
+    {
+      "domain": "tst.ginniemae.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "pave.hud.gov",
+      "visits": "960"
+    },
+    {
+      "domain": "opportunityzones.hud.gov",
+      "visits": "7209"
+    },
+    {
+      "domain": "mgmt.huduser.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "lihtc.huduser.gov",
+      "visits": "4434"
+    },
+    {
+      "domain": "forums.huduser.gov",
+      "visits": "273"
+    },
+    {
+      "domain": "ctsportal.hud.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "cms.tst.ginniemae.gov",
+      "visits": "68"
+    },
+    {
+      "domain": "cms.ginniemae.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "betawebstore.huduser.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "betamgmt.huduser.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "betaarchives.huduser.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "beta.huduser.gov",
+      "visits": "176"
+    },
+    {
+      "domain": "archives.huduser.gov",
+      "visits": "664"
+    }
+  ],
+  "totals": {
+    "visits": 1091045
+  },
+  "taken_at": "2024-01-05T15:55:38.065Z",
+  "agency": "housing-urban-development"
+}

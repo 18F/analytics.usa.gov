@@ -8,11 +8,11 @@
     past 30 days.
   </section>
 
-  <section class="columns columns--thirds">
+  <section class="grid-row">
     <!-- Devices -->
     <section
       id="devices"
-      class="padding-3"
+      class="desktop:grid-col-4 padding-3 barchart"
       data-block="devices"
       data-source="{{ site.data_url }}/{{ data_prefix }}/devices.json"
     >
@@ -20,7 +20,7 @@
       <figure id="chart_device_types">
         <div class="data bar-chart"></div>
       </figure>
-      <!-- @TODO: Create a style for small text. -->
+      {{/*  TODO: create a styles for small text  */}}
       <p class="font-sans-xs">
         Based on rough network segmentation data, we estimate that
         all traffic across all agencies comes from US federal government networks.
@@ -33,7 +33,7 @@
     </section>
 
     <!-- Browsers -->
-    <section id="browsers" class="padding-3">
+    <section id="browsers" class="desktop:grid-col-4 padding-3 barchart">
       <h4>Web Browsers</h4>
       <figure
         id="chart_browsers"
@@ -42,6 +42,7 @@
       >
         <div class="data bar-chart"></div>
       </figure>
+      {{/*  TODO: remove, not displayed as chart  */}}
       <figure
         id="chart_ie"
         class="hide"
@@ -55,7 +56,7 @@
     </section>
 
     <!-- Operating systems -->
-    <section id="operating_systems" class="padding-3">
+    <section id="operating_systems" class="desktop:grid-col-4 padding-3 barchart">
       <h4>Operating Systems</h4>
       <figure
         id="chart_os"

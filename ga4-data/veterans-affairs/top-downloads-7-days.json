@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Public Disability Benefits Questionnaires (DBQs) - Compensation",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/compensation/dbq_publicdbqs.asp",
+      "total_events": "11320"
+    },
+    {
+      "page_title": "Title 38 Pay Schedules - Office of the Chief Human Capital Officer (OCHCO)",
+      "event_label": "file_download",
+      "page": "www.va.gov/ohrm/pay/",
+      "total_events": "10552"
+    },
+    {
+      "page_title": "Find A VA Form | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/",
+      "total_events": "10327"
+    },
+    {
+      "page_title": "Title 38 Pay Schedules - Office of the Chief Human Capital Officer (OCHCO)",
+      "event_label": "file_download",
+      "page": "www.va.gov/OHRM/Pay/",
+      "total_events": "10288"
+    },
+    {
+      "page_title": "About VA Form 21-4138 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-4138/",
+      "total_events": "8192"
+    },
+    {
+      "page_title": "38 CFR Book C, Schedule for Rating Disabilities - Web Automated Reference Material System",
+      "event_label": "file_download",
+      "page": "benefits.va.gov/WARMS/bookc.asp",
+      "total_events": "8041"
+    },
+    {
+      "page_title": "About VA Form 21-526EZ | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-526ez/",
+      "total_events": "7892"
+    },
+    {
+      "page_title": "Lenders Handbook - VA Pamphlet 26-7 - Web Automated Reference Material System",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/warms/pam26_7.asp",
+      "total_events": "6785"
+    },
+    {
+      "page_title": "About VA Form 10-10d | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-10d/",
+      "total_events": "6770"
+    },
+    {
+      "page_title": "My Documents",
+      "event_label": "file_download",
+      "page": "eauth.va.gov/wssweb/wss-claims-webparts/mvc/ebn/documents",
+      "total_events": "6230"
+    },
+    {
+      "page_title": "About VA Form 21-2680 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-2680/",
+      "total_events": "6108"
+    },
+    {
+      "page_title": "About VA Form 20-0995 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-20-0995/",
+      "total_events": "4741"
+    },
+    {
+      "page_title": "About VA Form 21-0966 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-0966/",
+      "total_events": "4541"
+    },
+    {
+      "page_title": "About VA Form 10-10EZ | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-10ez/",
+      "total_events": "4337"
+    },
+    {
+      "page_title": "PatriotStoreDirect Automotive Tires - Veterans Canteen Service (VCS)",
+      "event_label": "file_download",
+      "page": "www.vacanteen.va.gov/VACANTEEN/PatriotStoreDirect_Automotive.asp",
+      "total_events": "3706"
+    },
+    {
+      "page_title": "About VA Form 10-7959C | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-7959c/",
+      "total_events": "3634"
+    },
+    {
+      "page_title": "About VA Form 21P-534EZ | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21p-534ez/",
+      "total_events": "3598"
+    },
+    {
+      "page_title": "VA Appraisal Fee Schedules and Timeliness Requirements - VA Home Loans",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/HOMELOANS/appraiser_fee_schedule.asp",
+      "total_events": "3484"
+    },
+    {
+      "page_title": "Lenders Handbook - VA Pamphlet 26-7 - Web Automated Reference Material System",
+      "event_label": "file_download",
+      "page": "benefits.va.gov/warms/pam26_7.asp",
+      "total_events": "3469"
+    },
+    {
+      "page_title": "About VA Form 21-674 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-674/",
+      "total_events": "3181"
+    },
+    {
+      "page_title": "About VA Form 21-686c | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-686c/",
+      "total_events": "3176"
+    },
+    {
+      "page_title": "About VA Form 21-0781 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-0781/",
+      "total_events": "3019"
+    },
+    {
+      "page_title": "Getting Urgent Care At VA Or In-Network Community Providers | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/resources/getting-urgent-care-at-va-or-in-network-community-providers/",
+      "total_events": "3005"
+    },
+    {
+      "page_title": "About VA Form 10-10172 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-10172/",
+      "total_events": "2990"
+    },
+    {
+      "page_title": "Print Out Your VA Welcome Kit | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/welcome-kit/",
+      "total_events": "2961"
+    },
+    {
+      "page_title": "About VA Form 21-8940 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-8940/",
+      "total_events": "2856"
+    },
+    {
+      "page_title": "About VA Form 21P-509 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21p-509/",
+      "total_events": "2677"
+    },
+    {
+      "page_title": "About VA Form 21-10210 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-10210/",
+      "total_events": "2538"
+    },
+    {
+      "page_title": "38 CFR Book C, Schedule for Rating Disabilities - Web Automated Reference Material System",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/warms/bookc.asp",
+      "total_events": "2400"
+    },
+    {
+      "page_title": "Refill VA Prescriptions - My HealtheVet - My HealtheVet",
+      "event_label": "file_download",
+      "page": "www.myhealth.va.gov/mhv-portal-web/refill-prescriptions",
+      "total_events": "2317"
+    },
+    {
+      "page_title": "About VA Form 22-5490 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-22-5490/",
+      "total_events": "2291"
+    },
+    {
+      "page_title": "About VA Form VA40-1330 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-40-1330/",
+      "total_events": "2221"
+    },
+    {
+      "page_title": "About VA Form 21-22 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-22/",
+      "total_events": "2192"
+    },
+    {
+      "page_title": "About VA Form 10-10EZR | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-10ezr/",
+      "total_events": "2129"
+    },
+    {
+      "page_title": "About VA Form 20-10206 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-20-10206/",
+      "total_events": "2110"
+    },
+    {
+      "page_title": "About VA Form 20-0996 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-20-0996/",
+      "total_events": "1988"
+    },
+    {
+      "page_title": "PTSD Checklist for DSM-5 (PCL-5) - PTSD: National Center for PTSD",
+      "event_label": "file_download",
+      "page": "www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp",
+      "total_events": "1961"
+    },
+    {
+      "page_title": "CHAMPVA Benefits | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/health-care/family-caregiver-benefits/champva/",
+      "total_events": "1831"
+    },
+    {
+      "page_title": "About VA Form 21-4142 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-4142/",
+      "total_events": "1795"
+    },
+    {
+      "page_title": "About VA Form 10-5345 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-5345/",
+      "total_events": "1775"
+    },
+    {
+      "page_title": "VA Pharmacy Residency Program - Pharmacy Benefits Management Services",
+      "event_label": "file_download",
+      "page": "www.pbm.va.gov/education/VAPharmacyResidencyProgram.asp",
+      "total_events": "1661"
+    },
+    {
+      "page_title": "About VA Form 10-3542 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-3542/",
+      "total_events": "1547"
+    },
+    {
+      "page_title": "About VA Form 21-0845 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-0845/",
+      "total_events": "1536"
+    },
+    {
+      "page_title": "Total Reward$ | VA Careers",
+      "event_label": "file_download",
+      "page": "vacareers.va.gov/employment-benefits/total-rewards/",
+      "total_events": "1420"
+    },
+    {
+      "page_title": "Refill VA Prescriptions - My HealtheVet - My HealtheVet",
+      "event_label": "file_download",
+      "page": "eauth.va.gov/mhv-portal-web/web/myhealthevet/refill-prescriptions",
+      "total_events": "1401"
+    },
+    {
+      "page_title": "Combat-Related Special Compensation (CRSC) | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/resources/combat-related-special-compensation-crsc/",
+      "total_events": "1400"
+    },
+    {
+      "page_title": "About VA Form 21-4192 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-4192/",
+      "total_events": "1393"
+    },
+    {
+      "page_title": "Program of Comprehensive Assistance for Family Caregivers (PCAFC) - VA Caregiver Support Program",
+      "event_label": "file_download",
+      "page": "www.caregiver.va.gov/support/support_benefits.asp",
+      "total_events": "1392"
+    },
+    {
+      "page_title": "About VA Form 27-2008 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-27-2008/",
+      "total_events": "1388"
+    },
+    {
+      "page_title": "Lenders Handbook - VA Pamphlet 26-7 - Web Automated Reference Material System",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/WARMS/pam26_7.asp",
+      "total_events": "1335"
+    },
+    {
+      "page_title": "About VA Form 10-0137 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-0137/",
+      "total_events": "1327"
+    },
+    {
+      "page_title": "About VA Form 10-2850C | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-2850c/",
+      "total_events": "1316"
+    },
+    {
+      "page_title": "About VA Form VA10091 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10091/",
+      "total_events": "1255"
+    },
+    {
+      "page_title": "VA Prescription Tracking - My HealtheVet - My HealtheVet",
+      "event_label": "file_download",
+      "page": "www.myhealth.va.gov/mhv-portal-web/prescription-tracking",
+      "total_events": "1252"
+    },
+    {
+      "page_title": "VA Software Document Library -",
+      "event_label": "file_download",
+      "page": "www.va.gov/vdl/application.asp",
+      "total_events": "1232"
+    },
+    {
+      "page_title": "38 CFR Book C, Schedule for Rating Disabilities - Web Automated Reference Material System",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/WARMS/bookc.asp",
+      "total_events": "1216"
+    },
+    {
+      "page_title": "About VA Form SF-1199a | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-sf-1199a/",
+      "total_events": "1175"
+    },
+    {
+      "page_title": "About VA Form 26-1880 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-26-1880/",
+      "total_events": "1145"
+    },
+    {
+      "page_title": "About VA Form 20-10207 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-20-10207/",
+      "total_events": "1132"
+    },
+    {
+      "page_title": "Sample PBI Questions - Performance Based Interviewing (PBI)",
+      "event_label": "file_download",
+      "page": "www.va.gov/pbi/questions.asp",
+      "total_events": "1122"
+    },
+    {
+      "page_title": "About VA Form 21-4502 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-4502/",
+      "total_events": "1106"
+    },
+    {
+      "page_title": "About VA Form 10-8678 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-8678/",
+      "total_events": "1102"
+    },
+    {
+      "page_title": "About VA Form 10-10CG | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-10cg/",
+      "total_events": "1040"
+    },
+    {
+      "page_title": "File for disability compensation | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/disability/file-disability-claim-form-21-526ez/introduction",
+      "total_events": "1033"
+    },
+    {
+      "page_title": "VA National Formulary - Pharmacy Benefits Management Services",
+      "event_label": "file_download",
+      "page": "www.pbm.va.gov/nationalformulary.asp",
+      "total_events": "1026"
+    },
+    {
+      "page_title": "About VA Form 10-2850A | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-2850a/",
+      "total_events": "1016"
+    },
+    {
+      "page_title": "VA Fee Schedule - Community Care",
+      "event_label": "file_download",
+      "page": "www.va.gov/COMMUNITYCARE/revenue-ops/Fee-Schedule.asp",
+      "total_events": "1015"
+    },
+    {
+      "page_title": "CHAMPVA - Community Care",
+      "event_label": "file_download",
+      "page": "www.va.gov/COMMUNITYCARE/programs/dependents/champva/index.asp",
+      "total_events": "1003"
+    },
+    {
+      "page_title": "About VA Form 10-7959A | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-7959a/",
+      "total_events": "981"
+    },
+    {
+      "page_title": "Employment benefits | VA Careers",
+      "event_label": "file_download",
+      "page": "vacareers.va.gov/employment-benefits/",
+      "total_events": "972"
+    },
+    {
+      "page_title": "About VA Form 22-1990e | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-22-1990e/",
+      "total_events": "950"
+    },
+    {
+      "page_title": "About VA Form 21-4142a | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-4142a/",
+      "total_events": "929"
+    },
+    {
+      "page_title": "About VA Form 21-0779 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-0779/",
+      "total_events": "908"
+    },
+    {
+      "page_title": "VA Caregiver Support Program Home",
+      "event_label": "file_download",
+      "page": "www.caregiver.va.gov/",
+      "total_events": "893"
+    },
+    {
+      "page_title": "About VA Form 10-583 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-583/",
+      "total_events": "882"
+    },
+    {
+      "page_title": "Your Intent To File A VA Claim | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/resources/your-intent-to-file-a-va-claim/",
+      "total_events": "877"
+    },
+    {
+      "page_title": "Federal Benefits for Veterans, Dependents and Survivors - Office of Public and Intergovernmental Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/opa/publications/benefits_book.asp",
+      "total_events": "867"
+    },
+    {
+      "page_title": "About VA Form 22-8979 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-va-form-22-8979/",
+      "total_events": "847"
+    },
+    {
+      "page_title": "About VA Form 28-1900 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-28-1900/",
+      "total_events": "827"
+    },
+    {
+      "page_title": "About VA Form 21P-8416 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21p-8416/",
+      "total_events": "822"
+    },
+    {
+      "page_title": "About VA Form 21-0781a | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-0781a/",
+      "total_events": "820"
+    },
+    {
+      "page_title": "Education support | VA Careers",
+      "event_label": "file_download",
+      "page": "vacareers.va.gov/employment-benefits/education-support/",
+      "total_events": "818"
+    },
+    {
+      "page_title": "VISN 2 Center for Integrated Healthcare (CIH) - MIRECC / CoE",
+      "event_label": "file_download",
+      "page": "www.mirecc.va.gov/cih-visn2/clinical_resources.asp",
+      "total_events": "803"
+    },
+    {
+      "page_title": "VA Home Loans Home",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/homeloans/",
+      "total_events": "799"
+    },
+    {
+      "page_title": "About VA Form 10-5345a | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-10-5345a/",
+      "total_events": "797"
+    },
+    {
+      "page_title": "VA Subrogation – Request VA Medical Bills - Office of General Counsel",
+      "event_label": "file_download",
+      "page": "www.va.gov/ogc/collections.asp",
+      "total_events": "793"
+    },
+    {
+      "page_title": "About VA Form 21P-0969 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21p-0969/",
+      "total_events": "780"
+    },
+    {
+      "page_title": "Veteran Materials - MOVE! Weight Management Program",
+      "event_label": "file_download",
+      "page": "www.move.va.gov/vetworkbook.asp",
+      "total_events": "780"
+    },
+    {
+      "page_title": "About VA Form VA5655 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-5655/",
+      "total_events": "773"
+    },
+    {
+      "page_title": "About VA Form 22-1990 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-22-1990/",
+      "total_events": "753"
+    },
+    {
+      "page_title": "Veterans’ Group Life Insurance (VGLI) | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/life-insurance/options-eligibility/vgli/",
+      "total_events": "753"
+    },
+    {
+      "page_title": "VA Prescription Tracking - My HealtheVet - My HealtheVet",
+      "event_label": "file_download",
+      "page": "eauth.va.gov/mhv-portal-web/web/myhealthevet/prescription-tracking",
+      "total_events": "751"
+    },
+    {
+      "page_title": "Refill VA Prescriptions - My HealtheVet - My HealtheVet",
+      "event_label": "file_download",
+      "page": "eauth.va.gov/mhv-portal-web/refill-prescriptions",
+      "total_events": "748"
+    },
+    {
+      "page_title": "How to Apply for CHAMPVA - Community Care",
+      "event_label": "file_download",
+      "page": "www.va.gov/COMMUNITYCARE/programs/dependents/champva/champva-apply.asp",
+      "total_events": "747"
+    },
+    {
+      "page_title": "DESIGN MANUALS (PG-18-10) - Office of Construction & Facilities Management",
+      "event_label": "file_download",
+      "page": "www.cfm.va.gov/til/dManual.asp",
+      "total_events": "746"
+    },
+    {
+      "page_title": "About VA Form 26-4555 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-26-4555/",
+      "total_events": "745"
+    },
+    {
+      "page_title": "About VA Form 21-22a | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-22a/",
+      "total_events": "739"
+    },
+    {
+      "page_title": "Builder Information - VA Home Loans",
+      "event_label": "file_download",
+      "page": "www.benefits.va.gov/HOMELOANS/appraiser_cv_builder_info.asp",
+      "total_events": "726"
+    },
+    {
+      "page_title": "Fact Sheets for VHA Office of Integrated Veteran Care Programs - Community Care",
+      "event_label": "file_download",
+      "page": "www.va.gov/COMMUNITYCARE/pubs/factsheets.asp#champva",
+      "total_events": "717"
+    },
+    {
+      "page_title": "About VA Form 21-0788 | Veterans Affairs",
+      "event_label": "file_download",
+      "page": "www.va.gov/find-forms/about-form-21-0788/",
+      "total_events": "685"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:34:50.477Z",
+  "agency": "veterans-affairs"
+}

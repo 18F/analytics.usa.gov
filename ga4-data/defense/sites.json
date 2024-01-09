@@ -1,0 +1,5230 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "zama.armymwr.com",
+      "visits": "3659"
+    },
+    {
+      "domain": "yuma.armymwr.com",
+      "visits": "640"
+    },
+    {
+      "domain": "yongsan.armymwr.com",
+      "visits": "206"
+    },
+    {
+      "domain": "yokota.tricare.mil",
+      "visits": "695"
+    },
+    {
+      "domain": "yokosuka.tricare.mil",
+      "visits": "3208"
+    },
+    {
+      "domain": "www.youngstown.afrc.af.mil",
+      "visits": "1290"
+    },
+    {
+      "domain": "www.yokota.af.mil",
+      "visits": "9961"
+    },
+    {
+      "domain": "www.wv.ng.mil",
+      "visits": "2455"
+    },
+    {
+      "domain": "www.wpafb.af.mil",
+      "visits": "23558"
+    },
+    {
+      "domain": "www.woundedwarrior.marines.mil",
+      "visits": "877"
+    },
+    {
+      "domain": "www.woundedwarrior.af.mil",
+      "visits": "1195"
+    },
+    {
+      "domain": "www.whs.mil",
+      "visits": "4868"
+    },
+    {
+      "domain": "www.whiteman.af.mil",
+      "visits": "7287"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "51"
+    },
+    {
+      "domain": "www.westover.afrc.af.mil",
+      "visits": "1959"
+    },
+    {
+      "domain": "www.web.dma.mil",
+      "visits": "4332"
+    },
+    {
+      "domain": "www.wavelength.af.mil",
+      "visits": "100"
+    },
+    {
+      "domain": "www.warren.af.mil",
+      "visits": "12250"
+    },
+    {
+      "domain": "www.wads.ang.af.mil",
+      "visits": "992"
+    },
+    {
+      "domain": "www.volkfield.ang.af.mil",
+      "visits": "400"
+    },
+    {
+      "domain": "www.vlco.marines.mil",
+      "visits": "27"
+    },
+    {
+      "domain": "www.veterans-in-blue.af.mil",
+      "visits": "642"
+    },
+    {
+      "domain": "www.vcorps.army.mil",
+      "visits": "1220"
+    },
+    {
+      "domain": "www.vandenberg.spaceforce.mil",
+      "visits": "13279"
+    },
+    {
+      "domain": "www.vance.af.mil",
+      "visits": "1926"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.usmcu.edu",
+      "visits": "38472"
+    },
+    {
+      "domain": "www.usmap.osd.mil",
+      "visits": "14"
+    },
+    {
+      "domain": "www.usfk.mil",
+      "visits": "8249"
+    },
+    {
+      "domain": "www.usfj.mil",
+      "visits": "3573"
+    },
+    {
+      "domain": "www.usff.navy.mil",
+      "visits": "1386"
+    },
+    {
+      "domain": "www.uscg.mil",
+      "visits": "76416"
+    },
+    {
+      "domain": "www.usarpac.army.mil",
+      "visits": "2577"
+    },
+    {
+      "domain": "www.usarmyband.com",
+      "visits": "1178"
+    },
+    {
+      "domain": "www.usarj.army.mil",
+      "visits": "9280"
+    },
+    {
+      "domain": "www.usarcent.army.mil",
+      "visits": "4641"
+    },
+    {
+      "domain": "www.usar.army.mil",
+      "visits": "65500"
+    },
+    {
+      "domain": "www.usanca.army.mil",
+      "visits": "189"
+    },
+    {
+      "domain": "www.usanato.army.mil",
+      "visits": "921"
+    },
+    {
+      "domain": "www.usainscom.army.mil",
+      "visits": "2402"
+    },
+    {
+      "domain": "www.usafmcom.army.mil",
+      "visits": "767"
+    },
+    {
+      "domain": "www.usafe.af.mil",
+      "visits": "6065"
+    },
+    {
+      "domain": "www.usafa.af.mil",
+      "visits": "13762"
+    },
+    {
+      "domain": "www.usace.army.mil",
+      "visits": "45726"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "67"
+    },
+    {
+      "domain": "www.unc.mil",
+      "visits": "1763"
+    },
+    {
+      "domain": "www.tyndall.af.mil",
+      "visits": "4653"
+    },
+    {
+      "domain": "www.ttgp.navy.mil",
+      "visits": "360"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "477"
+    },
+    {
+      "domain": "www.trngcmd.marines.mil",
+      "visits": "14582"
+    },
+    {
+      "domain": "www.tricare.mil",
+      "visits": "376112"
+    },
+    {
+      "domain": "www.travis.af.mil",
+      "visits": "12278"
+    },
+    {
+      "domain": "www.travel.dod.mil",
+      "visits": "315449"
+    },
+    {
+      "domain": "www.trademark.marines.mil",
+      "visits": "451"
+    },
+    {
+      "domain": "www.trademark.af.mil",
+      "visits": "1679"
+    },
+    {
+      "domain": "www.torch.aetc.af.mil",
+      "visits": "986"
+    },
+    {
+      "domain": "www.tobyhanna.army.mil",
+      "visits": "1552"
+    },
+    {
+      "domain": "www.tinker.af.mil",
+      "visits": "9952"
+    },
+    {
+      "domain": "www.tf763.marines.mil",
+      "visits": "26"
+    },
+    {
+      "domain": "www.tf612.marines.mil",
+      "visits": "17"
+    },
+    {
+      "domain": "www.tf515.marines.mil",
+      "visits": "495"
+    },
+    {
+      "domain": "www.test-evaluation.osd.mil",
+      "visits": "161"
+    },
+    {
+      "domain": "www.tesseract.af.mil",
+      "visits": "152"
+    },
+    {
+      "domain": "www.tecom.marines.mil",
+      "visits": "3568"
+    },
+    {
+      "domain": "www.tatrc.org",
+      "visits": "191"
+    },
+    {
+      "domain": "www.tam.usace.army.mil",
+      "visits": "918"
+    },
+    {
+      "domain": "www.tad.usace.army.mil",
+      "visits": "587"
+    },
+    {
+      "domain": "www.t2.army.mil",
+      "visits": "472"
+    },
+    {
+      "domain": "www.swt.usace.army.mil",
+      "visits": "4979"
+    },
+    {
+      "domain": "www.swl.usace.army.mil",
+      "visits": "5208"
+    },
+    {
+      "domain": "www.swg.usace.army.mil",
+      "visits": "3570"
+    },
+    {
+      "domain": "www.swf.usace.army.mil",
+      "visits": "3353"
+    },
+    {
+      "domain": "www.swd.usace.army.mil",
+      "visits": "667"
+    },
+    {
+      "domain": "www.swcs.mil",
+      "visits": "2413"
+    },
+    {
+      "domain": "www.surfpac.navy.mil",
+      "visits": "24145"
+    },
+    {
+      "domain": "www.surflant.usff.navy.mil",
+      "visits": "1907"
+    },
+    {
+      "domain": "www.sublant.usff.navy.mil",
+      "visits": "932"
+    },
+    {
+      "domain": "www.studyguides.af.mil",
+      "visits": "3714"
+    },
+    {
+      "domain": "www.stratcom.mil",
+      "visits": "6423"
+    },
+    {
+      "domain": "www.starcom.spaceforce.mil",
+      "visits": "2181"
+    },
+    {
+      "domain": "www.ssp.navy.mil",
+      "visits": "1134"
+    },
+    {
+      "domain": "www.ssc.spaceforce.mil",
+      "visits": "3243"
+    },
+    {
+      "domain": "www.srleaders.army.mil",
+      "visits": "211"
+    },
+    {
+      "domain": "www.srf.navy.mil",
+      "visits": "676"
+    },
+    {
+      "domain": "www.spoc.spaceforce.mil",
+      "visits": "4592"
+    },
+    {
+      "domain": "www.spn.usace.army.mil",
+      "visits": "3034"
+    },
+    {
+      "domain": "www.spl.usace.army.mil",
+      "visits": "3295"
+    },
+    {
+      "domain": "www.spk.usace.army.mil",
+      "visits": "4894"
+    },
+    {
+      "domain": "www.specialwarfaretw.af.mil",
+      "visits": "833"
+    },
+    {
+      "domain": "www.spd.usace.army.mil",
+      "visits": "509"
+    },
+    {
+      "domain": "www.spangdahlem.af.mil",
+      "visits": "5830"
+    },
+    {
+      "domain": "www.spaceforce.mil",
+      "visits": "69057"
+    },
+    {
+      "domain": "www.spacecom.mil",
+      "visits": "7736"
+    },
+    {
+      "domain": "www.spa.usace.army.mil",
+      "visits": "1900"
+    },
+    {
+      "domain": "www.southcom.mil",
+      "visits": "10639"
+    },
+    {
+      "domain": "www.smmc.marines.mil",
+      "visits": "1264"
+    },
+    {
+      "domain": "www.smdc.army.mil",
+      "visits": "2051"
+    },
+    {
+      "domain": "www.skysoldiers.army.mil",
+      "visits": "2398"
+    },
+    {
+      "domain": "www.sja.marines.mil",
+      "visits": "1215"
+    },
+    {
+      "domain": "www.sheppard.af.mil",
+      "visits": "6437"
+    },
+    {
+      "domain": "www.shaw.af.mil",
+      "visits": "5715"
+    },
+    {
+      "domain": "www.shadowsedge.mil",
+      "visits": "85"
+    },
+    {
+      "domain": "www.shadesofgreen.org",
+      "visits": "134341"
+    },
+    {
+      "domain": "www.seymourjohnson.af.mil",
+      "visits": "4517"
+    },
+    {
+      "domain": "www.secretsdeclassified.af.mil",
+      "visits": "666"
+    },
+    {
+      "domain": "www.secnav.navy.mil",
+      "visits": "844"
+    },
+    {
+      "domain": "www.seaport.navy.mil",
+      "visits": "951"
+    },
+    {
+      "domain": "www.scott.af.mil",
+      "visits": "6458"
+    },
+    {
+      "domain": "www.scientificadvisoryboard.af.mil",
+      "visits": "184"
+    },
+    {
+      "domain": "www.scguard.ng.mil",
+      "visits": "2779"
+    },
+    {
+      "domain": "www.saw.usace.army.mil",
+      "visits": "3387"
+    },
+    {
+      "domain": "www.sas.usace.army.mil",
+      "visits": "5301"
+    },
+    {
+      "domain": "www.sam.usace.army.mil",
+      "visits": "9115"
+    },
+    {
+      "domain": "www.saj.usace.army.mil",
+      "visits": "8299"
+    },
+    {
+      "domain": "www.safsq.hq.af.mil",
+      "visits": "172"
+    },
+    {
+      "domain": "www.safie.hq.af.mil",
+      "visits": "770"
+    },
+    {
+      "domain": "www.safia.hq.af.mil",
+      "visits": "1158"
+    },
+    {
+      "domain": "www.safgc.hq.af.mil",
+      "visits": "269"
+    },
+    {
+      "domain": "www.saffm.hq.af.mil",
+      "visits": "2419"
+    },
+    {
+      "domain": "www.safety.marines.mil",
+      "visits": "526"
+    },
+    {
+      "domain": "www.safety.af.mil",
+      "visits": "2944"
+    },
+    {
+      "domain": "www.safcn.af.mil",
+      "visits": "837"
+    },
+    {
+      "domain": "www.sad.usace.army.mil",
+      "visits": "571"
+    },
+    {
+      "domain": "www.sac.usace.army.mil",
+      "visits": "1532"
+    },
+    {
+      "domain": "www.robins.af.mil",
+      "visits": "8762"
+    },
+    {
+      "domain": "www.rmc.usace.army.mil",
+      "visits": "678"
+    },
+    {
+      "domain": "www.retirees.af.mil",
+      "visits": "3288"
+    },
+    {
+      "domain": "www.resilience.af.mil",
+      "visits": "2064"
+    },
+    {
+      "domain": "www.reserve.uscg.mil",
+      "visits": "2095"
+    },
+    {
+      "domain": "www.repi.mil",
+      "visits": "640"
+    },
+    {
+      "domain": "www.recruiting.af.mil",
+      "visits": "8428"
+    },
+    {
+      "domain": "www.ready.navy.mil",
+      "visits": "631"
+    },
+    {
+      "domain": "www.ready.marines.mil",
+      "visits": "670"
+    },
+    {
+      "domain": "www.ramstein.af.mil",
+      "visits": "23500"
+    },
+    {
+      "domain": "www.quantico.marines.mil",
+      "visits": "11790"
+    },
+    {
+      "domain": "www.publications.usace.army.mil",
+      "visits": "5163"
+    },
+    {
+      "domain": "www.publicaffairs.af.mil",
+      "visits": "801"
+    },
+    {
+      "domain": "www.psmagazine.army.mil",
+      "visits": "7281"
+    },
+    {
+      "domain": "www.pscc.army.mil",
+      "visits": "92"
+    },
+    {
+      "domain": "www.prs.mil",
+      "visits": "149"
+    },
+    {
+      "domain": "www.privacy.af.mil",
+      "visits": "206"
+    },
+    {
+      "domain": "www.prevention.mil",
+      "visits": "746"
+    },
+    {
+      "domain": "www.ppo.marines.mil",
+      "visits": "837"
+    },
+    {
+      "domain": "www.pope.af.mil",
+      "visits": "1151"
+    },
+    {
+      "domain": "www.poj.usace.army.mil",
+      "visits": "625"
+    },
+    {
+      "domain": "www.poh.usace.army.mil",
+      "visits": "1646"
+    },
+    {
+      "domain": "www.pof.usace.army.mil",
+      "visits": "616"
+    },
+    {
+      "domain": "www.pod.usace.army.mil",
+      "visits": "409"
+    },
+    {
+      "domain": "www.poa.usace.army.mil",
+      "visits": "1366"
+    },
+    {
+      "domain": "www.pittsburgh.afrc.af.mil",
+      "visits": "1108"
+    },
+    {
+      "domain": "www.pfpa.mil",
+      "visits": "6016"
+    },
+    {
+      "domain": "www.petersonschriever.spaceforce.mil",
+      "visits": "7922"
+    },
+    {
+      "domain": "www.peostri.army.mil",
+      "visits": "815"
+    },
+    {
+      "domain": "www.peosoldier.army.mil",
+      "visits": "7122"
+    },
+    {
+      "domain": "www.peomlb.navy.mil",
+      "visits": "301"
+    },
+    {
+      "domain": "www.peols.marines.mil",
+      "visits": "892"
+    },
+    {
+      "domain": "www.peogcs.army.mil",
+      "visits": "385"
+    },
+    {
+      "domain": "www.peodigital.navy.mil",
+      "visits": "644"
+    },
+    {
+      "domain": "www.peoc4i.navy.mil",
+      "visits": "429"
+    },
+    {
+      "domain": "www.pendleton.marines.mil",
+      "visits": "16665"
+    },
+    {
+      "domain": "www.patrick.spaceforce.mil",
+      "visits": "14319"
+    },
+    {
+      "domain": "www.pandr.marines.mil",
+      "visits": "343"
+    },
+    {
+      "domain": "www.pacom.mil",
+      "visits": "22796"
+    },
+    {
+      "domain": "www.pacificarea.uscg.mil",
+      "visits": "10207"
+    },
+    {
+      "domain": "www.pacaf.af.mil",
+      "visits": "8104"
+    },
+    {
+      "domain": "www.pa.ng.mil",
+      "visits": "6143"
+    },
+    {
+      "domain": "www.outreach.navy.mil",
+      "visits": "90"
+    },
+    {
+      "domain": "www.ostc.marines.mil",
+      "visits": "62"
+    },
+    {
+      "domain": "www.osi.af.mil",
+      "visits": "8398"
+    },
+    {
+      "domain": "www.osan.af.mil",
+      "visits": "5151"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.onr.navy.mil",
+      "visits": "102"
+    },
+    {
+      "domain": "www.oni.navy.mil",
+      "visits": "4723"
+    },
+    {
+      "domain": "www.okinawa.marines.mil",
+      "visits": "1593"
+    },
+    {
+      "domain": "www.offutt.af.mil",
+      "visits": "6242"
+    },
+    {
+      "domain": "www.obtportal.army.mil",
+      "visits": "430"
+    },
+    {
+      "domain": "www.nww.usace.army.mil",
+      "visits": "2606"
+    },
+    {
+      "domain": "www.nws.usace.army.mil",
+      "visits": "2887"
+    },
+    {
+      "domain": "www.nwp.usace.army.mil",
+      "visits": "4825"
+    },
+    {
+      "domain": "www.nwo.usace.army.mil",
+      "visits": "4280"
+    },
+    {
+      "domain": "www.nwk.usace.army.mil",
+      "visits": "7111"
+    },
+    {
+      "domain": "www.nwdc.usff.navy.mil",
+      "visits": "81"
+    },
+    {
+      "domain": "www.nwd.usace.army.mil",
+      "visits": "2035"
+    },
+    {
+      "domain": "www.nsw.navy.mil",
+      "visits": "4685"
+    },
+    {
+      "domain": "www.nsa.gov",
+      "visits": "155263"
+    },
+    {
+      "domain": "www.nro.gov",
+      "visits": "57286"
+    },
+    {
+      "domain": "www.nrl.navy.mil",
+      "visits": "7554"
+    },
+    {
+      "domain": "www.nrd.gov",
+      "visits": "7000"
+    },
+    {
+      "domain": "www.northcom.mil",
+      "visits": "4180"
+    },
+    {
+      "domain": "www.norad.mil",
+      "visits": "184792"
+    },
+    {
+      "domain": "www.njang.ang.af.mil",
+      "visits": "485"
+    },
+    {
+      "domain": "www.niwcpacific.navy.mil",
+      "visits": "12886"
+    },
+    {
+      "domain": "www.niwcatlantic.navy.mil",
+      "visits": "2366"
+    },
+    {
+      "domain": "www.niagara.afrc.af.mil",
+      "visits": "1199"
+    },
+    {
+      "domain": "www.ngfamily.vt.gov",
+      "visits": "201"
+    },
+    {
+      "domain": "www.ngbpmc.ng.mil",
+      "visits": "3999"
+    },
+    {
+      "domain": "www.nga.mil",
+      "visits": "28086"
+    },
+    {
+      "domain": "www.news.uscg.mil",
+      "visits": "51679"
+    },
+    {
+      "domain": "www.newriver.marines.mil",
+      "visits": "2213"
+    },
+    {
+      "domain": "www.netcents.af.mil",
+      "visits": "169"
+    },
+    {
+      "domain": "www.netc.navy.mil",
+      "visits": "50836"
+    },
+    {
+      "domain": "www.nesdnow.navy.mil",
+      "visits": "376"
+    },
+    {
+      "domain": "www.nepa.navy.mil",
+      "visits": "491"
+    },
+    {
+      "domain": "www.nellis.af.mil",
+      "visits": "13805"
+    },
+    {
+      "domain": "www.necc.usff.navy.mil",
+      "visits": "755"
+    },
+    {
+      "domain": "www.ndu.edu",
+      "visits": "6078"
+    },
+    {
+      "domain": "www.ncoworldwide.army.mil",
+      "visits": "6639"
+    },
+    {
+      "domain": "www.ncolcoe.army.mil",
+      "visits": "3281"
+    },
+    {
+      "domain": "www.ncis.navy.mil",
+      "visits": "14981"
+    },
+    {
+      "domain": "www.navyreserve.navy.mil",
+      "visits": "11488"
+    },
+    {
+      "domain": "www.navycollege.navy.mil",
+      "visits": "7508"
+    },
+    {
+      "domain": "www.navy.mil",
+      "visits": "268071"
+    },
+    {
+      "domain": "www.navwar.navy.mil",
+      "visits": "1750"
+    },
+    {
+      "domain": "www.navsup.navy.mil",
+      "visits": "9002"
+    },
+    {
+      "domain": "www.navsea.navy.mil",
+      "visits": "55148"
+    },
+    {
+      "domain": "www.navifor.usff.navy.mil",
+      "visits": "2949"
+    },
+    {
+      "domain": "www.navfac.navy.mil",
+      "visits": "8690"
+    },
+    {
+      "domain": "www.nau.usace.army.mil",
+      "visits": "713"
+    },
+    {
+      "domain": "www.nationalresourcedirectory.gov",
+      "visits": "231"
+    },
+    {
+      "domain": "www.nationalmuseum.af.mil",
+      "visits": "105847"
+    },
+    {
+      "domain": "www.nationalguard.mil",
+      "visits": "53630"
+    },
+    {
+      "domain": "www.nasic.af.mil",
+      "visits": "1352"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "www.nap.usace.army.mil",
+      "visits": "2497"
+    },
+    {
+      "domain": "www.nao.usace.army.mil",
+      "visits": "2452"
+    },
+    {
+      "domain": "www.nan.usace.army.mil",
+      "visits": "3093"
+    },
+    {
+      "domain": "www.nae.usace.army.mil",
+      "visits": "5503"
+    },
+    {
+      "domain": "www.nad.usace.army.mil",
+      "visits": "1428"
+    },
+    {
+      "domain": "www.nab.usace.army.mil",
+      "visits": "3827"
+    },
+    {
+      "domain": "www.mynavyhr.navy.mil",
+      "visits": "269540"
+    },
+    {
+      "domain": "www.mycg.uscg.mil",
+      "visits": "152654"
+    },
+    {
+      "domain": "www.my.navy.mil",
+      "visits": "269"
+    },
+    {
+      "domain": "www.mwrresourcecenter.com",
+      "visits": "1360"
+    },
+    {
+      "domain": "www.mwrbrandcentral.com",
+      "visits": "495"
+    },
+    {
+      "domain": "www.mvs.usace.army.mil",
+      "visits": "3680"
+    },
+    {
+      "domain": "www.mvr.usace.army.mil",
+      "visits": "7464"
+    },
+    {
+      "domain": "www.mvp.usace.army.mil",
+      "visits": "2376"
+    },
+    {
+      "domain": "www.mvn.usace.army.mil",
+      "visits": "4601"
+    },
+    {
+      "domain": "www.mvm.usace.army.mil",
+      "visits": "806"
+    },
+    {
+      "domain": "www.mvk.usace.army.mil",
+      "visits": "3980"
+    },
+    {
+      "domain": "www.mvd.usace.army.mil",
+      "visits": "973"
+    },
+    {
+      "domain": "www.music.marines.mil",
+      "visits": "1032"
+    },
+    {
+      "domain": "www.music.af.milhttp",
+      "visits": "15"
+    },
+    {
+      "domain": "www.music.af.mil",
+      "visits": "10684"
+    },
+    {
+      "domain": "www.msc.usff.navy.mil",
+      "visits": "1201"
+    },
+    {
+      "domain": "www.mountainhome.af.mil",
+      "visits": "2460"
+    },
+    {
+      "domain": "www.mortuary.af.mil",
+      "visits": "1046"
+    },
+    {
+      "domain": "www.moody.af.mil",
+      "visits": "5307"
+    },
+    {
+      "domain": "www.moguard.ngb.mil",
+      "visits": "5877"
+    },
+    {
+      "domain": "www.modsim.af.mil",
+      "visits": "119"
+    },
+    {
+      "domain": "www.misawa.af.mil",
+      "visits": "7417"
+    },
+    {
+      "domain": "www.miramar.marines.mil",
+      "visits": "4522"
+    },
+    {
+      "domain": "www.miramar-ems.marines.mil",
+      "visits": "436"
+    },
+    {
+      "domain": "www.minot.af.mil",
+      "visits": "5669"
+    },
+    {
+      "domain": "www.minneapolis.afrc.af.mil",
+      "visits": "780"
+    },
+    {
+      "domain": "www.militaryonesource.mil",
+      "visits": "410125"
+    },
+    {
+      "domain": "www.mildenhall.af.mil",
+      "visits": "7357"
+    },
+    {
+      "domain": "www.metoc.navy.mil",
+      "visits": "67057"
+    },
+    {
+      "domain": "www.metc.mil",
+      "visits": "2893"
+    },
+    {
+      "domain": "www.mepcom.army.mil",
+      "visits": "12029"
+    },
+    {
+      "domain": "www.med.navy.mil",
+      "visits": "43287"
+    },
+    {
+      "domain": "www.me.ng.mil",
+      "visits": "970"
+    },
+    {
+      "domain": "www.mcwl.marines.mil",
+      "visits": "651"
+    },
+    {
+      "domain": "www.mctssa.marines.mil",
+      "visits": "43"
+    },
+    {
+      "domain": "www.mcsfr.marines.mil",
+      "visits": "1599"
+    },
+    {
+      "domain": "www.mcsf-nola.marines.mil",
+      "visits": "386"
+    },
+    {
+      "domain": "www.mcrdsd.marines.mil",
+      "visits": "10573"
+    },
+    {
+      "domain": "www.mcrdpi.marines.mil",
+      "visits": "11762"
+    },
+    {
+      "domain": "www.mcrc.marines.mil",
+      "visits": "21491"
+    },
+    {
+      "domain": "www.mcmwtc.marines.mil",
+      "visits": "169"
+    },
+    {
+      "domain": "www.mclbbarstow.marines.mil",
+      "visits": "1476"
+    },
+    {
+      "domain": "www.mcjrotc.marines.mil",
+      "visits": "2505"
+    },
+    {
+      "domain": "www.mciwest.marines.mil",
+      "visits": "719"
+    },
+    {
+      "domain": "www.mcipac.marines.mil",
+      "visits": "11930"
+    },
+    {
+      "domain": "www.mcieast.marines.mil",
+      "visits": "4818"
+    },
+    {
+      "domain": "www.mcicom.marines.mil",
+      "visits": "1113"
+    },
+    {
+      "domain": "www.mcic.marines.mil",
+      "visits": "23"
+    },
+    {
+      "domain": "www.mcesg.marines.mil",
+      "visits": "2558"
+    },
+    {
+      "domain": "www.mccyg.marines.mil",
+      "visits": "22"
+    },
+    {
+      "domain": "www.mcconnell.af.mil",
+      "visits": "3119"
+    },
+    {
+      "domain": "www.mccog.marines.mil",
+      "visits": "88"
+    },
+    {
+      "domain": "www.mcchord.af.mil",
+      "visits": "5427"
+    },
+    {
+      "domain": "www.mcbhawaii.marines.mil",
+      "visits": "6995"
+    },
+    {
+      "domain": "www.mcbbutler.marines.mil",
+      "visits": "9942"
+    },
+    {
+      "domain": "www.mcbblaz.marines.mil",
+      "visits": "1147"
+    },
+    {
+      "domain": "www.mcasyuma.marines.mil",
+      "visits": "3061"
+    },
+    {
+      "domain": "www.mcaspendleton.marines.mil",
+      "visits": "482"
+    },
+    {
+      "domain": "www.mcasiwakunijp.marines.mil",
+      "visits": "4010"
+    },
+    {
+      "domain": "www.mcasiwakuni.marines.mil",
+      "visits": "10634"
+    },
+    {
+      "domain": "www.mcasfutenma.marines.mil",
+      "visits": "691"
+    },
+    {
+      "domain": "www.mcaf.marines.mil",
+      "visits": "214"
+    },
+    {
+      "domain": "www.maxwell.af.mil",
+      "visits": "7091"
+    },
+    {
+      "domain": "www.marsoc.marines.mil",
+      "visits": "10112"
+    },
+    {
+      "domain": "www.marines.milhttp",
+      "visits": "792"
+    },
+    {
+      "domain": "www.marines.mil",
+      "visits": "395432"
+    },
+    {
+      "domain": "www.marineband.marines.mil",
+      "visits": "15412"
+    },
+    {
+      "domain": "www.marforstrat.marines.mil",
+      "visits": "36"
+    },
+    {
+      "domain": "www.marforspace.marines.mil",
+      "visits": "32"
+    },
+    {
+      "domain": "www.marforsouth.marines.mil",
+      "visits": "729"
+    },
+    {
+      "domain": "www.marforres.marines.mil",
+      "visits": "26382"
+    },
+    {
+      "domain": "www.marforpac.marines.milhttp",
+      "visits": "13"
+    },
+    {
+      "domain": "www.marforpac.marines.mil",
+      "visits": "2241"
+    },
+    {
+      "domain": "www.marfork.marines.mil",
+      "visits": "875"
+    },
+    {
+      "domain": "www.marforeur.marines.mil",
+      "visits": "878"
+    },
+    {
+      "domain": "www.marforcyber.marines.mil",
+      "visits": "753"
+    },
+    {
+      "domain": "www.marforcom.marines.mil",
+      "visits": "1117"
+    },
+    {
+      "domain": "www.marcorsyscom.marines.mil",
+      "visits": "7028"
+    },
+    {
+      "domain": "www.march.afrc.af.mil",
+      "visits": "2955"
+    },
+    {
+      "domain": "www.marcent.marines.mil",
+      "visits": "763"
+    },
+    {
+      "domain": "www.manpower.marines.mil",
+      "visits": "888"
+    },
+    {
+      "domain": "www.malmstrom.af.mil",
+      "visits": "4203"
+    },
+    {
+      "domain": "www.mag31.marines.mil",
+      "visits": "820"
+    },
+    {
+      "domain": "www.mag29.marines.mil",
+      "visits": "790"
+    },
+    {
+      "domain": "www.mag26.marines.mil",
+      "visits": "888"
+    },
+    {
+      "domain": "www.mag14.marines.mil",
+      "visits": "1041"
+    },
+    {
+      "domain": "www.macg28.marines.mil",
+      "visits": "948"
+    },
+    {
+      "domain": "www.macdill.af.mil",
+      "visits": "20445"
+    },
+    {
+      "domain": "www.luke.af.mil",
+      "visits": "10549"
+    },
+    {
+      "domain": "www.lrp.usace.army.mil",
+      "visits": "2916"
+    },
+    {
+      "domain": "www.lrn.usace.army.mil",
+      "visits": "5521"
+    },
+    {
+      "domain": "www.lrl.usace.army.mil",
+      "visits": "4651"
+    },
+    {
+      "domain": "www.lrh.usace.army.mil",
+      "visits": "3788"
+    },
+    {
+      "domain": "www.lre.usace.army.mil",
+      "visits": "10967"
+    },
+    {
+      "domain": "www.lrd.usace.army.mil",
+      "visits": "1010"
+    },
+    {
+      "domain": "www.lrc.usace.army.mil",
+      "visits": "1626"
+    },
+    {
+      "domain": "www.lrb.usace.army.mil",
+      "visits": "1548"
+    },
+    {
+      "domain": "www.losangeles.spaceforce.mil",
+      "visits": "4250"
+    },
+    {
+      "domain": "www.logcom.marines.mil",
+      "visits": "2246"
+    },
+    {
+      "domain": "www.littlerock.af.mil",
+      "visits": "3961"
+    },
+    {
+      "domain": "www.letterkenny.army.mil",
+      "visits": "832"
+    },
+    {
+      "domain": "www.lejeune.marines.mil",
+      "visits": "17076"
+    },
+    {
+      "domain": "www.learningprofessionals.af.mil",
+      "visits": "1052"
+    },
+    {
+      "domain": "www.lawenforcement.marines.mil",
+      "visits": "1027"
+    },
+    {
+      "domain": "www.laughlin.af.mil",
+      "visits": "2407"
+    },
+    {
+      "domain": "www.lakenheath.af.mil",
+      "visits": "5152"
+    },
+    {
+      "domain": "www.kunsan.af.mil",
+      "visits": "3337"
+    },
+    {
+      "domain": "www.kirtland.af.mil",
+      "visits": "8441"
+    },
+    {
+      "domain": "www.keesler.af.mil",
+      "visits": "7953"
+    },
+    {
+      "domain": "www.kadena.af.mil",
+      "visits": "15831"
+    },
+    {
+      "domain": "www.jwac.mil",
+      "visits": "1015"
+    },
+    {
+      "domain": "www.jtnc.mil",
+      "visits": "252"
+    },
+    {
+      "domain": "www.jtfn.northcom.mil",
+      "visits": "545"
+    },
+    {
+      "domain": "www.jtfgtmo.southcom.mil",
+      "visits": "226"
+    },
+    {
+      "domain": "www.jtfcs.northcom.mil",
+      "visits": "1517"
+    },
+    {
+      "domain": "www.jtfb.southcom.mil",
+      "visits": "750"
+    },
+    {
+      "domain": "www.jtf-spacedefense.mil",
+      "visits": "639"
+    },
+    {
+      "domain": "www.jpra.mil",
+      "visits": "463"
+    },
+    {
+      "domain": "www.jpeocbrnd.osd.mil",
+      "visits": "1697"
+    },
+    {
+      "domain": "www.jiatfs.southcom.mil",
+      "visits": "2855"
+    },
+    {
+      "domain": "www.jfhq-dodin.mil",
+      "visits": "378"
+    },
+    {
+      "domain": "www.jecc.ustranscom.mil",
+      "visits": "2118"
+    },
+    {
+      "domain": "www.jcu.mil",
+      "visits": "551"
+    },
+    {
+      "domain": "www.jcs.mil",
+      "visits": "45804"
+    },
+    {
+      "domain": "www.jbsa.mil",
+      "visits": "57292"
+    },
+    {
+      "domain": "www.jbmdl.jb.mil",
+      "visits": "8923"
+    },
+    {
+      "domain": "www.jblmdesignstandards.army.mil",
+      "visits": "228"
+    },
+    {
+      "domain": "www.jble.af.mil",
+      "visits": "13449"
+    },
+    {
+      "domain": "www.jber.jb.mil",
+      "visits": "8872"
+    },
+    {
+      "domain": "www.jbcharleston.jb.mil",
+      "visits": "9759"
+    },
+    {
+      "domain": "www.jbab.jb.mil",
+      "visits": "3289"
+    },
+    {
+      "domain": "www.jba.af.mil",
+      "visits": "6877"
+    },
+    {
+      "domain": "www.japan.marines.mil",
+      "visits": "5438"
+    },
+    {
+      "domain": "www.jagreporter.af.mil",
+      "visits": "916"
+    },
+    {
+      "domain": "www.iwr.usace.army.mil",
+      "visits": "3021"
+    },
+    {
+      "domain": "www.itdashboard.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.intelligence.marines.mil",
+      "visits": "1037"
+    },
+    {
+      "domain": "www.insurv.usff.navy.mil",
+      "visits": "91"
+    },
+    {
+      "domain": "www.inherentresolve.mil",
+      "visits": "726"
+    },
+    {
+      "domain": "www.information.marines.mil",
+      "visits": "454"
+    },
+    {
+      "domain": "www.incirlik.af.mil",
+      "visits": "4093"
+    },
+    {
+      "domain": "www.imef.marines.mil",
+      "visits": "6444"
+    },
+    {
+      "domain": "www.il.ngb.army.mil",
+      "visits": "4198"
+    },
+    {
+      "domain": "www.iimef.marines.mil",
+      "visits": "3039"
+    },
+    {
+      "domain": "www.iiimef.marines.mil",
+      "visits": "2996"
+    },
+    {
+      "domain": "www.igmc.marines.mil",
+      "visits": "1726"
+    },
+    {
+      "domain": "www.iandl.marines.mil",
+      "visits": "804"
+    },
+    {
+      "domain": "www.hurlburt.af.mil",
+      "visits": "5922"
+    },
+    {
+      "domain": "www.hrom.marines.mil",
+      "visits": "1748"
+    },
+    {
+      "domain": "www.hqrio.afrc.af.mil",
+      "visits": "3734"
+    },
+    {
+      "domain": "www.hqmc.marines.mil",
+      "visits": "13738"
+    },
+    {
+      "domain": "www.housing.af.mil",
+      "visits": "10632"
+    },
+    {
+      "domain": "www.honorguard.af.mil",
+      "visits": "1077"
+    },
+    {
+      "domain": "www.homestead.afrc.af.mil",
+      "visits": "2407"
+    },
+    {
+      "domain": "www.holloman.af.mil",
+      "visits": "4831"
+    },
+    {
+      "domain": "www.hnc.usace.army.mil",
+      "visits": "1868"
+    },
+    {
+      "domain": "www.hmx-1.marines.mil",
+      "visits": "36"
+    },
+    {
+      "domain": "www.history.uscg.mil",
+      "visits": "9600"
+    },
+    {
+      "domain": "www.history.navy.mil",
+      "visits": "211712"
+    },
+    {
+      "domain": "www.hill.af.mil",
+      "visits": "12235"
+    },
+    {
+      "domain": "www.health.mil",
+      "visits": "136327"
+    },
+    {
+      "domain": "www.hanscom.af.mil",
+      "visits": "5911"
+    },
+    {
+      "domain": "www.halekoa.com",
+      "visits": "89816"
+    },
+    {
+      "domain": "www.hacc.mil",
+      "visits": "746"
+    },
+    {
+      "domain": "www.gulfportcrtc.ang.af.mil",
+      "visits": "250"
+    },
+    {
+      "domain": "www.grissom.afrc.af.mil",
+      "visits": "2274"
+    },
+    {
+      "domain": "www.grandforks.af.mil",
+      "visits": "3000"
+    },
+    {
+      "domain": "www.gosere.af.mil",
+      "visits": "623"
+    },
+    {
+      "domain": "www.goodfellow.af.mil",
+      "visits": "12558"
+    },
+    {
+      "domain": "www.gomo.army.mil",
+      "visits": "14483"
+    },
+    {
+      "domain": "www.goarmysof.army.mil",
+      "visits": "9068"
+    },
+    {
+      "domain": "www.gcn.militaryonesource.mil",
+      "visits": "44"
+    },
+    {
+      "domain": "www.fvap.gov",
+      "visits": "3956"
+    },
+    {
+      "domain": "www.futures.af.mil",
+      "visits": "272"
+    },
+    {
+      "domain": "www.fuji.marines.mil",
+      "visits": "631"
+    },
+    {
+      "domain": "www.ftig.ng.mil",
+      "visits": "2528"
+    },
+    {
+      "domain": "www.fourthfleet.navy.mil",
+      "visits": "833"
+    },
+    {
+      "domain": "www.forscom.army.mil",
+      "visits": "1048"
+    },
+    {
+      "domain": "www.forcecom.uscg.mil",
+      "visits": "13842"
+    },
+    {
+      "domain": "www.foia.marines.mil",
+      "visits": "22"
+    },
+    {
+      "domain": "www.fitness.marines.mil",
+      "visits": "14861"
+    },
+    {
+      "domain": "www.first.army.mil",
+      "visits": "9879"
+    },
+    {
+      "domain": "www.fehrm.gov",
+      "visits": "864"
+    },
+    {
+      "domain": "www.fcc.navy.mil",
+      "visits": "977"
+    },
+    {
+      "domain": "www.fairchild.af.mil",
+      "visits": "4183"
+    },
+    {
+      "domain": "www.expeditionarycenter.af.mil",
+      "visits": "1871"
+    },
+    {
+      "domain": "www.ewtgpac.navy.mil",
+      "visits": "349"
+    },
+    {
+      "domain": "www.europeafrica.army.mil",
+      "visits": "35487"
+    },
+    {
+      "domain": "www.esd.whs.mil",
+      "visits": "32840"
+    },
+    {
+      "domain": "www.erdc.usace.army.mil",
+      "visits": "6775"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "www.ellsworth.af.mil",
+      "visits": "4794"
+    },
+    {
+      "domain": "www.eielson.af.mil",
+      "visits": "4060"
+    },
+    {
+      "domain": "www.eglin.af.mil",
+      "visits": "19124"
+    },
+    {
+      "domain": "www.edwards.af.mil",
+      "visits": "13653"
+    },
+    {
+      "domain": "www.edis.army.mil",
+      "visits": "161"
+    },
+    {
+      "domain": "www.edelweisslodgeandresort.com",
+      "visits": "35161"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "254"
+    },
+    {
+      "domain": "www.eads.ang.af.mil",
+      "visits": "408"
+    },
+    {
+      "domain": "www.e-publishing.af.mil",
+      "visits": "19119"
+    },
+    {
+      "domain": "www.dyess.af.mil",
+      "visits": "3467"
+    },
+    {
+      "domain": "www.dtra.mil",
+      "visits": "7045"
+    },
+    {
+      "domain": "www.dspo.mil",
+      "visits": "996"
+    },
+    {
+      "domain": "www.dsp.dla.mil",
+      "visits": "2265"
+    },
+    {
+      "domain": "www.dso.marines.mil",
+      "visits": "166"
+    },
+    {
+      "domain": "www.drumcorps.marines.mil",
+      "visits": "370"
+    },
+    {
+      "domain": "www.dragonhilllodge.com",
+      "visits": "14131"
+    },
+    {
+      "domain": "www.dpaa.mil",
+      "visits": "6946"
+    },
+    {
+      "domain": "www.dover.af.mil",
+      "visits": "5545"
+    },
+    {
+      "domain": "www.dote.osd.mil",
+      "visits": "1928"
+    },
+    {
+      "domain": "www.dodnafaccounting.defense.gov",
+      "visits": "98"
+    },
+    {
+      "domain": "www.dodmantech.mil",
+      "visits": "1011"
+    },
+    {
+      "domain": "www.dodig.mil",
+      "visits": "36755"
+    },
+    {
+      "domain": "www.dodcui.mil",
+      "visits": "8451"
+    },
+    {
+      "domain": "www.dodclearinghouse.osd.mil",
+      "visits": "66"
+    },
+    {
+      "domain": "www.doctrine.af.mil",
+      "visits": "2054"
+    },
+    {
+      "domain": "www.dobbins.afrc.af.mil",
+      "visits": "3160"
+    },
+    {
+      "domain": "www.dmcs.marines.mil",
+      "visits": "314"
+    },
+    {
+      "domain": "www.dma.mil",
+      "visits": "1874"
+    },
+    {
+      "domain": "www.dm.af.mil",
+      "visits": "6733"
+    },
+    {
+      "domain": "www.dla.mil",
+      "visits": "221729"
+    },
+    {
+      "domain": "www.dinfos.dma.mil",
+      "visits": "1933"
+    },
+    {
+      "domain": "www.dimoc.mil",
+      "visits": "829"
+    },
+    {
+      "domain": "www.dia.mil",
+      "visits": "25812"
+    },
+    {
+      "domain": "www.dhra.mil",
+      "visits": "1857"
+    },
+    {
+      "domain": "www.dfas.mil",
+      "visits": "614192"
+    },
+    {
+      "domain": "www.defensesbirsttr.mil",
+      "visits": "6699"
+    },
+    {
+      "domain": "www.defenseculture.mil",
+      "visits": "4978"
+    },
+    {
+      "domain": "www.defense.gov",
+      "visits": "921873"
+    },
+    {
+      "domain": "www.de.ng.mil",
+      "visits": "1410"
+    },
+    {
+      "domain": "www.dcsa.mil",
+      "visits": "164977"
+    },
+    {
+      "domain": "www.dco.uscg.mil",
+      "visits": "70540"
+    },
+    {
+      "domain": "www.dcms.uscg.mil",
+      "visits": "51715"
+    },
+    {
+      "domain": "www.dcma.mil",
+      "visits": "88749"
+    },
+    {
+      "domain": "www.dcaa.mil",
+      "visits": "6647"
+    },
+    {
+      "domain": "www.dc3.mil",
+      "visits": "2712"
+    },
+    {
+      "domain": "www.data.af.mil",
+      "visits": "61"
+    },
+    {
+      "domain": "www.dasadec.army.mil",
+      "visits": "497"
+    },
+    {
+      "domain": "www.dantes.mil",
+      "visits": "3590"
+    },
+    {
+      "domain": "www.cybercom.mil",
+      "visits": "8362"
+    },
+    {
+      "domain": "www.cusnc.navy.mil",
+      "visits": "7055"
+    },
+    {
+      "domain": "www.cto.mil",
+      "visits": "13"
+    },
+    {
+      "domain": "www.csp.navy.mil",
+      "visits": "7664"
+    },
+    {
+      "domain": "www.csg4.usff.navy.mil",
+      "visits": "210"
+    },
+    {
+      "domain": "www.creech.af.mil",
+      "visits": "1723"
+    },
+    {
+      "domain": "www.cprw1.navy.mil",
+      "visits": "242"
+    },
+    {
+      "domain": "www.cpf.navy.mil",
+      "visits": "8647"
+    },
+    {
+      "domain": "www.cool.osd.mil",
+      "visits": "79626"
+    },
+    {
+      "domain": "www.compliance.af.mil",
+      "visits": "778"
+    },
+    {
+      "domain": "www.columbus.af.mil",
+      "visits": "3146"
+    },
+    {
+      "domain": "www.cnrc.navy.mil",
+      "visits": "4323"
+    },
+    {
+      "domain": "www.cnmoc.usff.navy.mil",
+      "visits": "1125"
+    },
+    {
+      "domain": "www.cnic.navy.mil",
+      "visits": "31453"
+    },
+    {
+      "domain": "www.cmc.marines.mil",
+      "visits": "1680"
+    },
+    {
+      "domain": "www.clwp.navy.mil",
+      "visits": "342"
+    },
+    {
+      "domain": "www.cloud.mil",
+      "visits": "519"
+    },
+    {
+      "domain": "www.citamn.afrc.af.mil",
+      "visits": "34"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "www.cid.army.mil",
+      "visits": "10736"
+    },
+    {
+      "domain": "www.cherrypoint.marines.milhttp",
+      "visits": "24"
+    },
+    {
+      "domain": "www.cherrypoint.marines.mil",
+      "visits": "4586"
+    },
+    {
+      "domain": "www.centcom.mil",
+      "visits": "28038"
+    },
+    {
+      "domain": "www.cdse.edu",
+      "visits": "67273"
+    },
+    {
+      "domain": "www.cdi.marines.mil",
+      "visits": "737"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "www.cd.marines.mil",
+      "visits": "250"
+    },
+    {
+      "domain": "www.ccsg15.navy.mil",
+      "visits": "191"
+    },
+    {
+      "domain": "www.ccad.army.mil",
+      "visits": "382"
+    },
+    {
+      "domain": "www.cbirf.marines.mil",
+      "visits": "274"
+    },
+    {
+      "domain": "www.cannon.af.mil",
+      "visits": "2896"
+    },
+    {
+      "domain": "www.cac.mil",
+      "visits": "33681"
+    },
+    {
+      "domain": "www.c7f.navy.mil",
+      "visits": "5195"
+    },
+    {
+      "domain": "www.c6f.navy.mil",
+      "visits": "18058"
+    },
+    {
+      "domain": "www.c3f.navy.mil",
+      "visits": "762"
+    },
+    {
+      "domain": "www.c2f.usff.navy.mil",
+      "visits": "10814"
+    },
+    {
+      "domain": "www.businessdefense.gov",
+      "visits": "2172"
+    },
+    {
+      "domain": "www.buckley.spaceforce.mil",
+      "visits": "5730"
+    },
+    {
+      "domain": "www.bracpmo.navy.mil",
+      "visits": "2737"
+    },
+    {
+      "domain": "www.bootcamp.navy.mil",
+      "visits": "23310"
+    },
+    {
+      "domain": "www.bmtflightphotos.af.mil",
+      "visits": "5146"
+    },
+    {
+      "domain": "www.bic.marines.mil",
+      "visits": "388"
+    },
+    {
+      "domain": "www.beready.af.mil",
+      "visits": "606"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "www.beaufort.marines.mil",
+      "visits": "1884"
+    },
+    {
+      "domain": "www.beale.af.mil",
+      "visits": "4252"
+    },
+    {
+      "domain": "www.basictraining.af.mil",
+      "visits": "24206"
+    },
+    {
+      "domain": "www.barracks.marines.mil",
+      "visits": "3055"
+    },
+    {
+      "domain": "www.barksdale.af.mil",
+      "visits": "4293"
+    },
+    {
+      "domain": "www.band.eur.army.mil",
+      "visits": "318"
+    },
+    {
+      "domain": "www.awg.army.mil",
+      "visits": "12741"
+    },
+    {
+      "domain": "www.avmc.army.mil",
+      "visits": "951"
+    },
+    {
+      "domain": "www.aviation.marines.mil",
+      "visits": "1565"
+    },
+    {
+      "domain": "www.aviano.af.mil",
+      "visits": "3959"
+    },
+    {
+      "domain": "www.atlanticarea.uscg.mil",
+      "visits": "17569"
+    },
+    {
+      "domain": "www.aschq.army.mil",
+      "visits": "1340"
+    },
+    {
+      "domain": "www.asc-406-lrc-belvoir.army.mil",
+      "visits": "127"
+    },
+    {
+      "domain": "www.asafm.army.mil",
+      "visits": "2748"
+    },
+    {
+      "domain": "www.arsouth.army.mil",
+      "visits": "1144"
+    },
+    {
+      "domain": "www.arpc.afrc.af.mil",
+      "visits": "10950"
+    },
+    {
+      "domain": "www.arnorth.army.mil",
+      "visits": "1623"
+    },
+    {
+      "domain": "www.arnold.af.mil",
+      "visits": "4967"
+    },
+    {
+      "domain": "www.armywcap.com",
+      "visits": "2791"
+    },
+    {
+      "domain": "www.armyupress.army.mil",
+      "visits": "34567"
+    },
+    {
+      "domain": "www.armytenmiler.com",
+      "visits": "4388"
+    },
+    {
+      "domain": "www.armymwr.com",
+      "visits": "35133"
+    },
+    {
+      "domain": "www.armyhealthfacilities.amedd.army.mil",
+      "visits": "18"
+    },
+    {
+      "domain": "www.army.nationalguard.mil",
+      "visits": "505"
+    },
+    {
+      "domain": "www.army.mil",
+      "visits": "70345"
+    },
+    {
+      "domain": "www.arlingtoncemetery.mil",
+      "visits": "82482"
+    },
+    {
+      "domain": "www.arcyber.army.mil",
+      "visits": "4811"
+    },
+    {
+      "domain": "www.arcp.army.mil",
+      "visits": "2593"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "www.ar.marines.mil",
+      "visits": "842"
+    },
+    {
+      "domain": "www.applocker.navy.mil",
+      "visits": "3754"
+    },
+    {
+      "domain": "www.angtec.ang.af.mil",
+      "visits": "613"
+    },
+    {
+      "domain": "www.ang.af.mil",
+      "visits": "10964"
+    },
+    {
+      "domain": "www.andersen.af.mil",
+      "visits": "7874"
+    },
+    {
+      "domain": "www.amphib7flt.navy.mil",
+      "visits": "307"
+    },
+    {
+      "domain": "www.amlc.army.mil",
+      "visits": "1029"
+    },
+    {
+      "domain": "www.amcom.army.mil",
+      "visits": "934"
+    },
+    {
+      "domain": "www.amc.army.mil",
+      "visits": "2166"
+    },
+    {
+      "domain": "www.amc.af.mil",
+      "visits": "114619"
+    },
+    {
+      "domain": "www.altus.af.mil",
+      "visits": "2700"
+    },
+    {
+      "domain": "www.alsa.mil",
+      "visits": "860"
+    },
+    {
+      "domain": "www.alpenacrtc.ang.af.mil",
+      "visits": "253"
+    },
+    {
+      "domain": "www.albany.marines.mil",
+      "visits": "3367"
+    },
+    {
+      "domain": "www.airuniversity.af.edu",
+      "visits": "96572"
+    },
+    {
+      "domain": "www.airpac.navy.mil",
+      "visits": "28729"
+    },
+    {
+      "domain": "www.airmanmagazine.af.mil",
+      "visits": "2425"
+    },
+    {
+      "domain": "www.airman.af.mil",
+      "visits": "211"
+    },
+    {
+      "domain": "www.airlant.usff.navy.mil",
+      "visits": "3224"
+    },
+    {
+      "domain": "www.airforcespecialtactics.af.mil",
+      "visits": "7291"
+    },
+    {
+      "domain": "www.airforcesmallbiz.af.mil",
+      "visits": "1031"
+    },
+    {
+      "domain": "www.airforcemedicine.af.mil",
+      "visits": "12484"
+    },
+    {
+      "domain": "www.airforcebes.af.mil",
+      "visits": "885"
+    },
+    {
+      "domain": "www.aiaccelerator.af.mil",
+      "visits": "404"
+    },
+    {
+      "domain": "www.ai.mil",
+      "visits": "3152"
+    },
+    {
+      "domain": "www.agc.army.mil",
+      "visits": "1270"
+    },
+    {
+      "domain": "www.aftc.af.mil",
+      "visits": "3564"
+    },
+    {
+      "domain": "www.aft3.af.mil",
+      "visits": "240"
+    },
+    {
+      "domain": "www.afsoc.af.mil",
+      "visits": "8580"
+    },
+    {
+      "domain": "www.afsfc.af.mil",
+      "visits": "1937"
+    },
+    {
+      "domain": "www.afsc.af.mil",
+      "visits": "1189"
+    },
+    {
+      "domain": "www.afsbeurope.army.mil",
+      "visits": "1630"
+    },
+    {
+      "domain": "www.afrl.af.mil",
+      "visits": "14861"
+    },
+    {
+      "domain": "www.afrc.af.mil",
+      "visits": "9119"
+    },
+    {
+      "domain": "www.afpc.af.mil",
+      "visits": "67537"
+    },
+    {
+      "domain": "www.afotec.af.mil",
+      "visits": "584"
+    },
+    {
+      "domain": "www.afod.eur.army.mil",
+      "visits": "300"
+    },
+    {
+      "domain": "www.afnwc.af.mil",
+      "visits": "11748"
+    },
+    {
+      "domain": "www.afmc.af.mil",
+      "visits": "21443"
+    },
+    {
+      "domain": "www.afmaa.af.mil",
+      "visits": "91"
+    },
+    {
+      "domain": "www.aflcmc.af.mil",
+      "visits": "7332"
+    },
+    {
+      "domain": "www.afjag.af.mil",
+      "visits": "1983"
+    },
+    {
+      "domain": "www.afinspectorgeneral.af.mil",
+      "visits": "1482"
+    },
+    {
+      "domain": "www.afimsc.af.mil",
+      "visits": "30468"
+    },
+    {
+      "domain": "www.afhra.af.mil",
+      "visits": "9064"
+    },
+    {
+      "domain": "www.afhistoryandmuseums.af.mil",
+      "visits": "518"
+    },
+    {
+      "domain": "www.afhistory.af.mil",
+      "visits": "7111"
+    },
+    {
+      "domain": "www.afgsc.af.mil",
+      "visits": "9363"
+    },
+    {
+      "domain": "www.afdw.af.mil",
+      "visits": "2162"
+    },
+    {
+      "domain": "www.afcent.af.mil",
+      "visits": "10946"
+    },
+    {
+      "domain": "www.afcec.af.mil",
+      "visits": "6220"
+    },
+    {
+      "domain": "www.afams.af.mil",
+      "visits": "184"
+    },
+    {
+      "domain": "www.afaa.af.mil",
+      "visits": "142"
+    },
+    {
+      "domain": "www.af.mil",
+      "visits": "321143"
+    },
+    {
+      "domain": "www.aetc.af.mil",
+      "visits": "11344"
+    },
+    {
+      "domain": "www.aepubs.eur.army.mil",
+      "visits": "2212"
+    },
+    {
+      "domain": "www.adr.af.mil",
+      "visits": "143"
+    },
+    {
+      "domain": "www.adlnet.gov",
+      "visits": "383"
+    },
+    {
+      "domain": "www.acquisition.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "www.acq.osd.mil",
+      "visits": "14825"
+    },
+    {
+      "domain": "www.acmc.marines.mil",
+      "visits": "200"
+    },
+    {
+      "domain": "www.acc.af.mil",
+      "visits": "10757"
+    },
+    {
+      "domain": "www.aatc.ang.af.mil",
+      "visits": "60"
+    },
+    {
+      "domain": "www.aaro.mil",
+      "visits": "18571"
+    },
+    {
+      "domain": "www.9thmcd.marines.mil",
+      "visits": "968"
+    },
+    {
+      "domain": "www.960cyber.afrc.af.mil",
+      "visits": "698"
+    },
+    {
+      "domain": "www.944fw.afrc.af.mil",
+      "visits": "897"
+    },
+    {
+      "domain": "www.940arw.afrc.af.mil",
+      "visits": "385"
+    },
+    {
+      "domain": "www.932aw.afrc.af.mil",
+      "visits": "473"
+    },
+    {
+      "domain": "www.931arw.afrc.af.mil",
+      "visits": "315"
+    },
+    {
+      "domain": "www.927arw.afrc.af.mil",
+      "visits": "360"
+    },
+    {
+      "domain": "www.926wing.afrc.af.mil",
+      "visits": "321"
+    },
+    {
+      "domain": "www.920rqw.afrc.af.mil",
+      "visits": "1119"
+    },
+    {
+      "domain": "www.919sow.afrc.af.mil",
+      "visits": "1334"
+    },
+    {
+      "domain": "www.916arw.afrc.af.mil",
+      "visits": "504"
+    },
+    {
+      "domain": "www.913ag.afrc.af.mil",
+      "visits": "172"
+    },
+    {
+      "domain": "www.908aw.afrc.af.mil",
+      "visits": "882"
+    },
+    {
+      "domain": "www.8thmcd.marines.mil",
+      "visits": "1227"
+    },
+    {
+      "domain": "www.8af.af.mil",
+      "visits": "1437"
+    },
+    {
+      "domain": "www.7atc.army.mil",
+      "visits": "3441"
+    },
+    {
+      "domain": "www.7af.pacaf.af.mil",
+      "visits": "1418"
+    },
+    {
+      "domain": "www.6thmcd.marines.mil",
+      "visits": "985"
+    },
+    {
+      "domain": "www.6thmarines.marines.mil",
+      "visits": "2052"
+    },
+    {
+      "domain": "www.624rsg.afrc.af.mil",
+      "visits": "216"
+    },
+    {
+      "domain": "www.618tacc.amc.af.mil",
+      "visits": "367"
+    },
+    {
+      "domain": "www.5af.pacaf.af.mil",
+      "visits": "776"
+    },
+    {
+      "domain": "www.56ac.army.mil",
+      "visits": "233"
+    },
+    {
+      "domain": "www.557weatherwing.af.mil",
+      "visits": "916"
+    },
+    {
+      "domain": "www.552acw.acc.af.mil",
+      "visits": "453"
+    },
+    {
+      "domain": "www.53rdwing.af.mil",
+      "visits": "996"
+    },
+    {
+      "domain": "www.521amow.af.mil",
+      "visits": "264"
+    },
+    {
+      "domain": "www.514amw.afrc.af.mil",
+      "visits": "448"
+    },
+    {
+      "domain": "www.512aw.afrc.af.mil",
+      "visits": "1069"
+    },
+    {
+      "domain": "www.507arw.afrc.af.mil",
+      "visits": "1283"
+    },
+    {
+      "domain": "www.505ccw.acc.af.mil",
+      "visits": "1479"
+    },
+    {
+      "domain": "www.501csw.usafe.af.mil",
+      "visits": "1337"
+    },
+    {
+      "domain": "www.4thmcd.marines.mil",
+      "visits": "1090"
+    },
+    {
+      "domain": "www.4af.afrc.af.mil",
+      "visits": "318"
+    },
+    {
+      "domain": "www.492sow.af.mil",
+      "visits": "500"
+    },
+    {
+      "domain": "www.477fg.afrc.af.mil",
+      "visits": "739"
+    },
+    {
+      "domain": "www.459arw.afrc.af.mil",
+      "visits": "687"
+    },
+    {
+      "domain": "www.446aw.afrc.af.mil",
+      "visits": "1196"
+    },
+    {
+      "domain": "www.445aw.afrc.af.mil",
+      "visits": "2238"
+    },
+    {
+      "domain": "www.442fw.afrc.af.mil",
+      "visits": "765"
+    },
+    {
+      "domain": "www.433aw.afrc.af.mil",
+      "visits": "1595"
+    },
+    {
+      "domain": "www.41fab.army.mil",
+      "visits": "581"
+    },
+    {
+      "domain": "www.419fw.afrc.af.mil",
+      "visits": "909"
+    },
+    {
+      "domain": "www.413ftg.afrc.af.mil",
+      "visits": "82"
+    },
+    {
+      "domain": "www.409csb.army.mil",
+      "visits": "254"
+    },
+    {
+      "domain": "www.403wg.afrc.af.mil",
+      "visits": "1776"
+    },
+    {
+      "domain": "www.3rdmlr.marines.mil",
+      "visits": "647"
+    },
+    {
+      "domain": "www.3rdmlg.marines.mil",
+      "visits": "1876"
+    },
+    {
+      "domain": "www.3rdmeb.marines.mil",
+      "visits": "225"
+    },
+    {
+      "domain": "www.3rdmaw.marines.mil",
+      "visits": "6099"
+    },
+    {
+      "domain": "www.3rdmardiv.marines.mil",
+      "visits": "3189"
+    },
+    {
+      "domain": "www.388fw.acc.af.mil",
+      "visits": "2230"
+    },
+    {
+      "domain": "www.37trw.af.mil",
+      "visits": "3996"
+    },
+    {
+      "domain": "www.353sow.af.mil",
+      "visits": "598"
+    },
+    {
+      "domain": "www.352sow.af.mil",
+      "visits": "367"
+    },
+    {
+      "domain": "www.350sww.af.mil",
+      "visits": "432"
+    },
+    {
+      "domain": "www.349amw.afrc.af.mil",
+      "visits": "827"
+    },
+    {
+      "domain": "www.340ftg.afrc.af.mil",
+      "visits": "376"
+    },
+    {
+      "domain": "www.33fw.af.mil",
+      "visits": "1051"
+    },
+    {
+      "domain": "www.31stmeu.marines.mil",
+      "visits": "1041"
+    },
+    {
+      "domain": "www.315aw.afrc.af.mil",
+      "visits": "2020"
+    },
+    {
+      "domain": "www.310sw.afrc.af.mil",
+      "visits": "613"
+    },
+    {
+      "domain": "www.307bw.afrc.af.mil",
+      "visits": "909"
+    },
+    {
+      "domain": "www.302aw.afrc.af.mil",
+      "visits": "1104"
+    },
+    {
+      "domain": "www.301fw.afrc.af.mil",
+      "visits": "889"
+    },
+    {
+      "domain": "www.2sigbde.army.mil",
+      "visits": "434"
+    },
+    {
+      "domain": "www.2ndmlg.marines.mil",
+      "visits": "2046"
+    },
+    {
+      "domain": "www.2ndmeb.marines.mil",
+      "visits": "374"
+    },
+    {
+      "domain": "www.2ndmaw.marines.milhttp",
+      "visits": "45"
+    },
+    {
+      "domain": "www.2ndmaw.marines.mil",
+      "visits": "1673"
+    },
+    {
+      "domain": "www.2ndmarines.marines.mil",
+      "visits": "1423"
+    },
+    {
+      "domain": "www.2ndmardiv.marines.mil",
+      "visits": "3305"
+    },
+    {
+      "domain": "www.2id.korea.army.mil",
+      "visits": "2705"
+    },
+    {
+      "domain": "www.2cr.army.mil",
+      "visits": "785"
+    },
+    {
+      "domain": "www.2af.aetc.af.mil",
+      "visits": "1176"
+    },
+    {
+      "domain": "www.29palms.marines.mil",
+      "visits": "10815"
+    },
+    {
+      "domain": "www.26thmeu.marines.mil",
+      "visits": "1429"
+    },
+    {
+      "domain": "www.24thmeu.marines.mil",
+      "visits": "944"
+    },
+    {
+      "domain": "www.22ndmeu.marines.mil",
+      "visits": "741"
+    },
+    {
+      "domain": "www.22af.afrc.af.mil",
+      "visits": "293"
+    },
+    {
+      "domain": "www.21tsc.army.mil",
+      "visits": "2067"
+    },
+    {
+      "domain": "www.20cbrne.army.mil",
+      "visits": "539"
+    },
+    {
+      "domain": "www.20af.af.mil",
+      "visits": "984"
+    },
+    {
+      "domain": "www.1tsc.army.mil",
+      "visits": "772"
+    },
+    {
+      "domain": "www.1stmlg.marines.mil",
+      "visits": "2472"
+    },
+    {
+      "domain": "www.1stmcd.marines.mil",
+      "visits": "1153"
+    },
+    {
+      "domain": "www.1stmaw.marines.mil",
+      "visits": "3590"
+    },
+    {
+      "domain": "www.1stmardiv.marines.mil",
+      "visits": "14246"
+    },
+    {
+      "domain": "www.1id.army.mil",
+      "visits": "6738"
+    },
+    {
+      "domain": "www.1af.acc.af.mil",
+      "visits": "1550"
+    },
+    {
+      "domain": "www.19bcd.army.mil",
+      "visits": "61"
+    },
+    {
+      "domain": "www.195wg.ang.af.mil",
+      "visits": "315"
+    },
+    {
+      "domain": "www.194wg.ang.af.mil",
+      "visits": "110"
+    },
+    {
+      "domain": "www.193sow.ang.af.mil",
+      "visits": "1317"
+    },
+    {
+      "domain": "www.192wg.ang.af.mil",
+      "visits": "936"
+    },
+    {
+      "domain": "www.190arw.ang.af.mil",
+      "visits": "631"
+    },
+    {
+      "domain": "www.18af.amc.af.mil",
+      "visits": "514"
+    },
+    {
+      "domain": "www.189aw.ang.af.mil",
+      "visits": "277"
+    },
+    {
+      "domain": "www.188wg.ang.af.mil",
+      "visits": "1542"
+    },
+    {
+      "domain": "www.187fw.ang.af.mil",
+      "visits": "1078"
+    },
+    {
+      "domain": "www.186arw.ang.af.mil",
+      "visits": "625"
+    },
+    {
+      "domain": "www.185arw.ang.af.mil",
+      "visits": "1270"
+    },
+    {
+      "domain": "www.184iw.ang.af.mil",
+      "visits": "741"
+    },
+    {
+      "domain": "www.183wg.ang.af.mil",
+      "visits": "517"
+    },
+    {
+      "domain": "www.182aw.ang.af.mil",
+      "visits": "735"
+    },
+    {
+      "domain": "www.181iw.ang.af.mil",
+      "visits": "494"
+    },
+    {
+      "domain": "www.180fw.ang.af.mil",
+      "visits": "736"
+    },
+    {
+      "domain": "www.179cw.ang.af.mil",
+      "visits": "41"
+    },
+    {
+      "domain": "www.178wing.ang.af.mil",
+      "visits": "410"
+    },
+    {
+      "domain": "www.177fw.ang.af.mil",
+      "visits": "1249"
+    },
+    {
+      "domain": "www.176wg.ang.af.mil",
+      "visits": "942"
+    },
+    {
+      "domain": "www.175wg.ang.af.mil",
+      "visits": "1219"
+    },
+    {
+      "domain": "www.174attackwing.ang.af.mil",
+      "visits": "515"
+    },
+    {
+      "domain": "www.173fw.ang.af.mil",
+      "visits": "1017"
+    },
+    {
+      "domain": "www.172aw.ang.af.mil",
+      "visits": "482"
+    },
+    {
+      "domain": "www.171arw.ang.af.mil",
+      "visits": "771"
+    },
+    {
+      "domain": "www.16af.af.mil",
+      "visits": "4258"
+    },
+    {
+      "domain": "www.169fw.ang.af.mil",
+      "visits": "2113"
+    },
+    {
+      "domain": "www.168wg.ang.af.mil",
+      "visits": "253"
+    },
+    {
+      "domain": "www.167aw.ang.af.mil",
+      "visits": "809"
+    },
+    {
+      "domain": "www.166aw.ang.af.mil",
+      "visits": "979"
+    },
+    {
+      "domain": "www.165aw.ang.af.mil",
+      "visits": "1092"
+    },
+    {
+      "domain": "www.164aw.ang.af.mil",
+      "visits": "473"
+    },
+    {
+      "domain": "www.163atkw.ang.af.mil",
+      "visits": "319"
+    },
+    {
+      "domain": "www.162wing.ang.af.mil",
+      "visits": "978"
+    },
+    {
+      "domain": "www.161arw.ang.af.mil",
+      "visits": "480"
+    },
+    {
+      "domain": "www.15wing.af.mil",
+      "visits": "2353"
+    },
+    {
+      "domain": "www.15thmeu.marines.mil",
+      "visits": "971"
+    },
+    {
+      "domain": "www.15af.acc.af.mil",
+      "visits": "431"
+    },
+    {
+      "domain": "www.159fw.ang.af.mil",
+      "visits": "271"
+    },
+    {
+      "domain": "www.158fw.ang.af.mil",
+      "visits": "1269"
+    },
+    {
+      "domain": "www.157arw.ang.af.mil",
+      "visits": "1345"
+    },
+    {
+      "domain": "www.156wg.ang.af.mil",
+      "visits": "510"
+    },
+    {
+      "domain": "www.155arw.ang.af.mil",
+      "visits": "380"
+    },
+    {
+      "domain": "www.154wg.ang.af.mil",
+      "visits": "408"
+    },
+    {
+      "domain": "www.153aw.ang.af.mil",
+      "visits": "354"
+    },
+    {
+      "domain": "www.152aw.ang.af.mil",
+      "visits": "1053"
+    },
+    {
+      "domain": "www.151arw.ang.af.mil",
+      "visits": "758"
+    },
+    {
+      "domain": "www.150sow.ang.af.mil",
+      "visits": "460"
+    },
+    {
+      "domain": "www.149fw.ang.af.mil",
+      "visits": "763"
+    },
+    {
+      "domain": "www.148fw.ang.af.mil",
+      "visits": "898"
+    },
+    {
+      "domain": "www.147atkw.ang.af.mil",
+      "visits": "477"
+    },
+    {
+      "domain": "www.146aw.ang.af.mil",
+      "visits": "544"
+    },
+    {
+      "domain": "www.145aw.ang.af.mil",
+      "visits": "1360"
+    },
+    {
+      "domain": "www.144fw.ang.af.mil",
+      "visits": "1183"
+    },
+    {
+      "domain": "www.143aw.ang.af.mil",
+      "visits": "320"
+    },
+    {
+      "domain": "www.142wg.ang.af.mil",
+      "visits": "2313"
+    },
+    {
+      "domain": "www.141arw.ang.af.mil",
+      "visits": "354"
+    },
+    {
+      "domain": "www.140wg.ang.af.mil",
+      "visits": "906"
+    },
+    {
+      "domain": "www.13thmeu.marines.mil",
+      "visits": "359"
+    },
+    {
+      "domain": "www.139aw.ang.af.mil",
+      "visits": "736"
+    },
+    {
+      "domain": "www.138fw.ang.af.mil",
+      "visits": "451"
+    },
+    {
+      "domain": "www.137sow.ang.af.mil",
+      "visits": "518"
+    },
+    {
+      "domain": "www.136aw.ang.af.mil",
+      "visits": "506"
+    },
+    {
+      "domain": "www.134arw.ang.af.mil",
+      "visits": "676"
+    },
+    {
+      "domain": "www.133aw.ang.af.mil",
+      "visits": "806"
+    },
+    {
+      "domain": "www.132dwing.ang.af.mil",
+      "visits": "544"
+    },
+    {
+      "domain": "www.131bw.ang.af.mil",
+      "visits": "851"
+    },
+    {
+      "domain": "www.130aw.ang.af.mil",
+      "visits": "353"
+    },
+    {
+      "domain": "www.12thmlr.marines.mil",
+      "visits": "164"
+    },
+    {
+      "domain": "www.12thmcd.marines.mil",
+      "visits": "1097"
+    },
+    {
+      "domain": "www.12ftw.af.mil",
+      "visits": "350"
+    },
+    {
+      "domain": "www.12cab.army.mil",
+      "visits": "424"
+    },
+    {
+      "domain": "www.12af.acc.af.mil",
+      "visits": "878"
+    },
+    {
+      "domain": "www.129rqw.ang.af.mil",
+      "visits": "558"
+    },
+    {
+      "domain": "www.128arw.ang.af.mil",
+      "visits": "978"
+    },
+    {
+      "domain": "www.127wg.ang.af.mil",
+      "visits": "1556"
+    },
+    {
+      "domain": "www.126arw.ang.af.mil",
+      "visits": "459"
+    },
+    {
+      "domain": "www.125fw.ang.af.mil",
+      "visits": "1280"
+    },
+    {
+      "domain": "www.124thfighterwing.ang.af.mil",
+      "visits": "371"
+    },
+    {
+      "domain": "www.123aw.ang.af.mil",
+      "visits": "1320"
+    },
+    {
+      "domain": "www.122fw.ang.af.mil",
+      "visits": "621"
+    },
+    {
+      "domain": "www.121arw.ang.af.mil",
+      "visits": "389"
+    },
+    {
+      "domain": "www.120thairliftwing.ang.af.mil",
+      "visits": "899"
+    },
+    {
+      "domain": "www.11thmeu.marines.mil",
+      "visits": "522"
+    },
+    {
+      "domain": "www.119wg.ang.af.mil",
+      "visits": "985"
+    },
+    {
+      "domain": "www.118wg.ang.af.mil",
+      "visits": "599"
+    },
+    {
+      "domain": "www.117arw.ang.af.mil",
+      "visits": "713"
+    },
+    {
+      "domain": "www.116acw.ang.af.mil",
+      "visits": "318"
+    },
+    {
+      "domain": "www.115fw.ang.af.mil",
+      "visits": "1227"
+    },
+    {
+      "domain": "www.114fw.ang.af.mil",
+      "visits": "610"
+    },
+    {
+      "domain": "www.113wg.ang.af.mil",
+      "visits": "982"
+    },
+    {
+      "domain": "www.111attackwing.ang.af.mil",
+      "visits": "727"
+    },
+    {
+      "domain": "www.110wg.ang.af.mil",
+      "visits": "580"
+    },
+    {
+      "domain": "www.10thmarines.marines.mil",
+      "visits": "655"
+    },
+    {
+      "domain": "www.10thaamdc.army.mil",
+      "visits": "523"
+    },
+    {
+      "domain": "www.10af.afrc.af.mil",
+      "visits": "494"
+    },
+    {
+      "domain": "www.109aw.ang.af.mil",
+      "visits": "752"
+    },
+    {
+      "domain": "www.108thwing.ang.af.mil",
+      "visits": "521"
+    },
+    {
+      "domain": "www.107attackwing.ang.af.mil",
+      "visits": "393"
+    },
+    {
+      "domain": "www.106rqw.ang.af.mil",
+      "visits": "777"
+    },
+    {
+      "domain": "www.105aw.ang.af.mil",
+      "visits": "795"
+    },
+    {
+      "domain": "www.104fw.ang.af.mil",
+      "visits": "910"
+    },
+    {
+      "domain": "www.103aw.ang.af.mil",
+      "visits": "451"
+    },
+    {
+      "domain": "www.102iw.ang.af.mil",
+      "visits": "627"
+    },
+    {
+      "domain": "www.101arw.ang.af.mil",
+      "visits": "535"
+    },
+    {
+      "domain": "ww3.safaq.hq.af.mil",
+      "visits": "800"
+    },
+    {
+      "domain": "wrightpatterson.tricare.mil",
+      "visits": "5318"
+    },
+    {
+      "domain": "wrair.health.mil",
+      "visits": "1156"
+    },
+    {
+      "domain": "womack.tricare.mil",
+      "visits": "16967"
+    },
+    {
+      "domain": "wmdcenter.ndu.edu",
+      "visits": "954"
+    },
+    {
+      "domain": "winn.tricare.mil",
+      "visits": "3635"
+    },
+    {
+      "domain": "william-beaumont.tricare.mil",
+      "visits": "6939"
+    },
+    {
+      "domain": "wilfordhall.tricare.mil",
+      "visits": "4839"
+    },
+    {
+      "domain": "wiesbaden.armymwr.com",
+      "visits": "5319"
+    },
+    {
+      "domain": "wi.ng.mil",
+      "visits": "1003"
+    },
+    {
+      "domain": "whitesands.armymwr.com",
+      "visits": "1302"
+    },
+    {
+      "domain": "whiteman.tricare.mil",
+      "visits": "592"
+    },
+    {
+      "domain": "westpoint.armymwr.com",
+      "visits": "5495"
+    },
+    {
+      "domain": "weed-irwin.tricare.mil",
+      "visits": "1183"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "149"
+    },
+    {
+      "domain": "watervliet.armymwr.com",
+      "visits": "37"
+    },
+    {
+      "domain": "warriorcare.dodlive.mil",
+      "visits": "1286"
+    },
+    {
+      "domain": "walterreed.tricare.mil",
+      "visits": "22703"
+    },
+    {
+      "domain": "walker.armymwr.com",
+      "visits": "410"
+    },
+    {
+      "domain": "wainwright.armymwr.com",
+      "visits": "6636"
+    },
+    {
+      "domain": "wageandsalary.dcpas.osd.mil",
+      "visits": "43720"
+    },
+    {
+      "domain": "vwac.defense.gov",
+      "visits": "1026"
+    },
+    {
+      "domain": "vt.public.ng.mil",
+      "visits": "2711"
+    },
+    {
+      "domain": "vi.ng.mil",
+      "visits": "646"
+    },
+    {
+      "domain": "vertex.aal.army",
+      "visits": "763"
+    },
+    {
+      "domain": "vce.health.mil",
+      "visits": "271"
+    },
+    {
+      "domain": "vandenberg.tricare.mil",
+      "visits": "511"
+    },
+    {
+      "domain": "vance.tricare.mil",
+      "visits": "316"
+    },
+    {
+      "domain": "valor.defense.gov",
+      "visits": "13466"
+    },
+    {
+      "domain": "va.ng.mil",
+      "visits": "5609"
+    },
+    {
+      "domain": "ut.ng.mil",
+      "visits": "5154"
+    },
+    {
+      "domain": "usnhistory.navylive.dodlive.mil",
+      "visits": "5695"
+    },
+    {
+      "domain": "usmap.osd.mil",
+      "visits": "16574"
+    },
+    {
+      "domain": "usarmyband.com",
+      "visits": "6644"
+    },
+    {
+      "domain": "usariem.health.mil",
+      "visits": "503"
+    },
+    {
+      "domain": "usapc.army.mil",
+      "visits": "206"
+    },
+    {
+      "domain": "usamriid.health.mil",
+      "visits": "1017"
+    },
+    {
+      "domain": "usamrd-w.health.mil",
+      "visits": "20"
+    },
+    {
+      "domain": "usammda.health.mil",
+      "visits": "497"
+    },
+    {
+      "domain": "usaisr.health.mil",
+      "visits": "461"
+    },
+    {
+      "domain": "usaarl.health.mil",
+      "visits": "521"
+    },
+    {
+      "domain": "tyndall.tricare.mil",
+      "visits": "652"
+    },
+    {
+      "domain": "twentynine-palms.tricare.mil",
+      "visits": "1172"
+    },
+    {
+      "domain": "tripler.tricare.mil",
+      "visits": "10611"
+    },
+    {
+      "domain": "tricare.mil",
+      "visits": "231146"
+    },
+    {
+      "domain": "tribute.pre.militaryonesource.mil",
+      "visits": "19"
+    },
+    {
+      "domain": "tribute.militaryonesource.mil",
+      "visits": "353"
+    },
+    {
+      "domain": "travis.tricare.mil",
+      "visits": "8787"
+    },
+    {
+      "domain": "training.armymwr.com",
+      "visits": "19"
+    },
+    {
+      "domain": "torii.armymwr.com",
+      "visits": "670"
+    },
+    {
+      "domain": "tooele.armymwr.com",
+      "visits": "194"
+    },
+    {
+      "domain": "tobyhanna.armymwr.com",
+      "visits": "313"
+    },
+    {
+      "domain": "tinker.tricare.mil",
+      "visits": "1193"
+    },
+    {
+      "domain": "technologytransfer.health.mil",
+      "visits": "53"
+    },
+    {
+      "domain": "tasa.dma.mil",
+      "visits": "90"
+    },
+    {
+      "domain": "styleguide.pre.militaryonesource.mil",
+      "visits": "543"
+    },
+    {
+      "domain": "styleguide.militaryonesource.mil",
+      "visits": "2154"
+    },
+    {
+      "domain": "stuttgart.armymwr.com",
+      "visits": "6359"
+    },
+    {
+      "domain": "store.usgs.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "stewarthunter.armymwr.com",
+      "visits": "8859"
+    },
+    {
+      "domain": "stem.health.mil",
+      "visits": "27"
+    },
+    {
+      "domain": "statepolicy.pre.militaryonesource.mil",
+      "visits": "450"
+    },
+    {
+      "domain": "statepolicy.militaryonesource.mil",
+      "visits": "3551"
+    },
+    {
+      "domain": "staging-www.tricare.mil",
+      "visits": "168"
+    },
+    {
+      "domain": "staging-www.health.mil",
+      "visits": "30"
+    },
+    {
+      "domain": "staging-mobile.health.mil",
+      "visits": "155"
+    },
+    {
+      "domain": "ssi.armywarcollege.edu",
+      "visits": "1107"
+    },
+    {
+      "domain": "spangdahlem.tricare.mil",
+      "visits": "597"
+    },
+    {
+      "domain": "southcomclinic.tricare.mil",
+      "visits": "496"
+    },
+    {
+      "domain": "sotocano.armymwr.com",
+      "visits": "122"
+    },
+    {
+      "domain": "software.af.mil",
+      "visits": "953"
+    },
+    {
+      "domain": "smtc.dodlive.mil",
+      "visits": "370"
+    },
+    {
+      "domain": "skillbridge.osd.mil",
+      "visits": "31261"
+    },
+    {
+      "domain": "sill.armymwr.com",
+      "visits": "3533"
+    },
+    {
+      "domain": "sigonella.tricare.mil",
+      "visits": "763"
+    },
+    {
+      "domain": "sierra.armymwr.com",
+      "visits": "57"
+    },
+    {
+      "domain": "sheppard.tricare.mil",
+      "visits": "841"
+    },
+    {
+      "domain": "shaw.tricare.mil",
+      "visits": "1020"
+    },
+    {
+      "domain": "sfb.dodlive.mil",
+      "visits": "43"
+    },
+    {
+      "domain": "seymourjohnson.tricare.mil",
+      "visits": "673"
+    },
+    {
+      "domain": "securityhub.usalearning.gov",
+      "visits": "292"
+    },
+    {
+      "domain": "securityawareness.usalearning.gov",
+      "visits": "126569"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "10033"
+    },
+    {
+      "domain": "search.defense.gov",
+      "visits": "361"
+    },
+    {
+      "domain": "seabeemagazine.navylive.dodlive.mil",
+      "visits": "917"
+    },
+    {
+      "domain": "sd.ng.mil",
+      "visits": "604"
+    },
+    {
+      "domain": "scott.tricare.mil",
+      "visits": "1716"
+    },
+    {
+      "domain": "scnewsltr.dodlive.mil",
+      "visits": "96"
+    },
+    {
+      "domain": "sandiego.tricare.mil",
+      "visits": "13894"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "322"
+    },
+    {
+      "domain": "rwtf.defense.gov",
+      "visits": "113"
+    },
+    {
+      "domain": "rota.tricare.mil",
+      "visits": "709"
+    },
+    {
+      "domain": "rodriguez.tricare.mil",
+      "visits": "343"
+    },
+    {
+      "domain": "rockisland.armymwr.com",
+      "visits": "817"
+    },
+    {
+      "domain": "robins.tricare.mil",
+      "visits": "787"
+    },
+    {
+      "domain": "riley.armymwr.com",
+      "visits": "3380"
+    },
+    {
+      "domain": "ri.ng.mil",
+      "visits": "662"
+    },
+    {
+      "domain": "rfpb.defense.gov",
+      "visits": "448"
+    },
+    {
+      "domain": "reynolds.tricare.mil",
+      "visits": "2318"
+    },
+    {
+      "domain": "redstone.tricare.mil",
+      "visits": "990"
+    },
+    {
+      "domain": "redstone.armymwr.com",
+      "visits": "7812"
+    },
+    {
+      "domain": "redriver.armymwr.com",
+      "visits": "210"
+    },
+    {
+      "domain": "recruiting.army.mil",
+      "visits": "79496"
+    },
+    {
+      "domain": "rcnsc.ndu.edu",
+      "visits": "631"
+    },
+    {
+      "domain": "raymond-bliss.tricare.mil",
+      "visits": "817"
+    },
+    {
+      "domain": "ramstein.tricare.mil",
+      "visits": "2187"
+    },
+    {
+      "domain": "raflakenheath.tricare.mil",
+      "visits": "1704"
+    },
+    {
+      "domain": "rafcroughton.tricare.mil",
+      "visits": "223"
+    },
+    {
+      "domain": "rafalconbury.tricare.mil",
+      "visits": "324"
+    },
+    {
+      "domain": "rader.tricare.mil",
+      "visits": "1567"
+    },
+    {
+      "domain": "quantico.tricare.mil",
+      "visits": "1718"
+    },
+    {
+      "domain": "qa-beta.history.navy.mil",
+      "visits": "21"
+    },
+    {
+      "domain": "pzal.metoc.navy.mil",
+      "visits": "65"
+    },
+    {
+      "domain": "purview.dodlive.mil",
+      "visits": "89"
+    },
+    {
+      "domain": "publications.armywarcollege.edu",
+      "visits": "372"
+    },
+    {
+      "domain": "public.cyber.mil",
+      "visits": "77158"
+    },
+    {
+      "domain": "prhome.defense.gov",
+      "visits": "2992"
+    },
+    {
+      "domain": "presidio.armymwr.com",
+      "visits": "1376"
+    },
+    {
+      "domain": "pre.militaryonesource.mil",
+      "visits": "445"
+    },
+    {
+      "domain": "portsmouth.tricare.mil",
+      "visits": "22104"
+    },
+    {
+      "domain": "portal.navsea.cloud.navy.mil",
+      "visits": "11"
+    },
+    {
+      "domain": "pope.tricare.mil",
+      "visits": "207"
+    },
+    {
+      "domain": "policy.defense.gov",
+      "visits": "3613"
+    },
+    {
+      "domain": "planmymove.pre.militaryonesource.mil",
+      "visits": "108"
+    },
+    {
+      "domain": "planmymove.militaryonesource.mil",
+      "visits": "2809"
+    },
+    {
+      "domain": "planmymove.gcn.militaryonesource.mil",
+      "visits": "10"
+    },
+    {
+      "domain": "planmydeployment.pre.militaryonesource.mil",
+      "visits": "122"
+    },
+    {
+      "domain": "planmydeployment.militaryonesource.mil",
+      "visits": "1489"
+    },
+    {
+      "domain": "plainsguardian.dodlive.mil",
+      "visits": "81"
+    },
+    {
+      "domain": "pinnacle.ndu.edu",
+      "visits": "130"
+    },
+    {
+      "domain": "pinebluff.armymwr.com",
+      "visits": "55"
+    },
+    {
+      "domain": "picatinny.armymwr.com",
+      "visits": "1697"
+    },
+    {
+      "domain": "phcp.health.mil",
+      "visits": "1620"
+    },
+    {
+      "domain": "phcm.health.mil",
+      "visits": "40"
+    },
+    {
+      "domain": "phceast.health.mil",
+      "visits": "34"
+    },
+    {
+      "domain": "phc.amedd.army.mil",
+      "visits": "14"
+    },
+    {
+      "domain": "ph.health.mil",
+      "visits": "5297"
+    },
+    {
+      "domain": "peterson.tricare.mil",
+      "visits": "1827"
+    },
+    {
+      "domain": "peostri.army.mil",
+      "visits": "135"
+    },
+    {
+      "domain": "peoc3t.army.mil",
+      "visits": "43"
+    },
+    {
+      "domain": "pensacola.tricare.mil",
+      "visits": "3470"
+    },
+    {
+      "domain": "pearlharborhickam.tricare.mil",
+      "visits": "1117"
+    },
+    {
+      "domain": "paxriver.tricare.mil",
+      "visits": "765"
+    },
+    {
+      "domain": "pavilion.dinfos.edu",
+      "visits": "9759"
+    },
+    {
+      "domain": "patrick.tricare.mil",
+      "visits": "1049"
+    },
+    {
+      "domain": "parks.armymwr.com",
+      "visits": "132"
+    },
+    {
+      "domain": "pacific.navfac.navy.mil",
+      "visits": "2560"
+    },
+    {
+      "domain": "pacific.afn.mil",
+      "visits": "6663"
+    },
+    {
+      "domain": "pac.whs.mil",
+      "visits": "1025"
+    },
+    {
+      "domain": "p2p.navy.mil",
+      "visits": "206"
+    },
+    {
+      "domain": "p1.dso.mil",
+      "visits": "2454"
+    },
+    {
+      "domain": "outreach.navy.mil",
+      "visits": "352"
+    },
+    {
+      "domain": "ousdi.defense.gov",
+      "visits": "1905"
+    },
+    {
+      "domain": "osan.tricare.mil",
+      "visits": "1114"
+    },
+    {
+      "domain": "open.defense.gov",
+      "visits": "3813"
+    },
+    {
+      "domain": "okinawa.tricare.mil",
+      "visits": "4010"
+    },
+    {
+      "domain": "ok.ng.mil",
+      "visits": "3158"
+    },
+    {
+      "domain": "oig.nsa.gov",
+      "visits": "613"
+    },
+    {
+      "domain": "oig.dia.mil",
+      "visits": "483"
+    },
+    {
+      "domain": "ogc.osd.mil",
+      "visits": "882"
+    },
+    {
+      "domain": "offutt.tricare.mil",
+      "visits": "4219"
+    },
+    {
+      "domain": "oe.tradoc.army.mil",
+      "visits": "1026"
+    },
+    {
+      "domain": "odin.tradoc.army.mil",
+      "visits": "10662"
+    },
+    {
+      "domain": "oakharbor.tricare.mil",
+      "visits": "1407"
+    },
+    {
+      "domain": "nwc.ndu.edu",
+      "visits": "3269"
+    },
+    {
+      "domain": "ns3.nrd.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "ns3.nationalresourcedirectory.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "ns1.nrd.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "ns1.nationalresourcedirectory.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "nrd.gov",
+      "visits": "27880"
+    },
+    {
+      "domain": "novosel.armymwr.com",
+      "visits": "3794"
+    },
+    {
+      "domain": "nmio.ise.gov",
+      "visits": "260"
+    },
+    {
+      "domain": "nicbr.health.mil",
+      "visits": "11"
+    },
+    {
+      "domain": "nhchawaii.tricare.mil",
+      "visits": "1839"
+    },
+    {
+      "domain": "nhc-charleston.tricare.mil",
+      "visits": "1056"
+    },
+    {
+      "domain": "nh.ng.mil",
+      "visits": "819"
+    },
+    {
+      "domain": "newsroom.tricare.mil",
+      "visits": "134610"
+    },
+    {
+      "domain": "newengland.tricare.mil",
+      "visits": "1494"
+    },
+    {
+      "domain": "nellis.tricare.mil",
+      "visits": "11597"
+    },
+    {
+      "domain": "ne.ng.mil",
+      "visits": "1965"
+    },
+    {
+      "domain": "ndw.cnic.navy.mil",
+      "visits": "6487"
+    },
+    {
+      "domain": "ndupress.ndu.edu",
+      "visits": "18386"
+    },
+    {
+      "domain": "ndia.dtic.mil",
+      "visits": "843"
+    },
+    {
+      "domain": "ncc.navfac.navy.mil",
+      "visits": "433"
+    },
+    {
+      "domain": "navalsafetycommand.navy.mil",
+      "visits": "3287"
+    },
+    {
+      "domain": "navalaviationnews.navy.mil",
+      "visits": "339"
+    },
+    {
+      "domain": "nationalresourcedirectory.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "natick.armymwr.com",
+      "visits": "55"
+    },
+    {
+      "domain": "naples.tricare.mil",
+      "visits": "921"
+    },
+    {
+      "domain": "myseco.militaryonesource.mil",
+      "visits": "27505"
+    },
+    {
+      "domain": "mycaa.militaryonesource.mil",
+      "visits": "27456"
+    },
+    {
+      "domain": "myafn.dodlive.mil",
+      "visits": "1141"
+    },
+    {
+      "domain": "my.navy.mil",
+      "visits": "525873"
+    },
+    {
+      "domain": "munson.tricare.mil",
+      "visits": "1492"
+    },
+    {
+      "domain": "msepjobs.militaryonesource.mil",
+      "visits": "5956"
+    },
+    {
+      "domain": "mrsi.erdc.dren.mil",
+      "visits": "891"
+    },
+    {
+      "domain": "mrdg.health.mil",
+      "visits": "78"
+    },
+    {
+      "domain": "mrdc.health.mil",
+      "visits": "3189"
+    },
+    {
+      "domain": "mrdc-npi.health.mil",
+      "visits": "76"
+    },
+    {
+      "domain": "mrc-europe.army.mil",
+      "visits": "1055"
+    },
+    {
+      "domain": "mountainhome.tricare.mil",
+      "visits": "577"
+    },
+    {
+      "domain": "moore.armymwr.com",
+      "visits": "12398"
+    },
+    {
+      "domain": "moody.tricare.mil",
+      "visits": "651"
+    },
+    {
+      "domain": "moncrief.tricare.mil",
+      "visits": "4937"
+    },
+    {
+      "domain": "misawa.tricare.mil",
+      "visits": "707"
+    },
+    {
+      "domain": "minot.tricare.mil",
+      "visits": "772"
+    },
+    {
+      "domain": "minerva.defense.gov",
+      "visits": "1369"
+    },
+    {
+      "domain": "minationalguard.dodlive.mil",
+      "visits": "1802"
+    },
+    {
+      "domain": "millifelearning.pre.militaryonesource.mil",
+      "visits": "107"
+    },
+    {
+      "domain": "millifelearning.militaryonesource.mil",
+      "visits": "2016"
+    },
+    {
+      "domain": "millifelearning.gcn.militaryonesource.mil",
+      "visits": "93"
+    },
+    {
+      "domain": "militarypay.defense.gov",
+      "visits": "195193"
+    },
+    {
+      "domain": "milgears.osd.mil",
+      "visits": "2187"
+    },
+    {
+      "domain": "miami.armymwr.com",
+      "visits": "465"
+    },
+    {
+      "domain": "mhs-europe.tricare.mil",
+      "visits": "5434"
+    },
+    {
+      "domain": "medlinet.amedd.army.mil",
+      "visits": "19095"
+    },
+    {
+      "domain": "medicalmuseum.health.mil",
+      "visits": "3270"
+    },
+    {
+      "domain": "meade.armymwr.com",
+      "visits": "4907"
+    },
+    {
+      "domain": "mcguiredixlakehurst.tricare.mil",
+      "visits": "1262"
+    },
+    {
+      "domain": "mcdonald.tricare.mil",
+      "visits": "2693"
+    },
+    {
+      "domain": "mccoy.armymwr.com",
+      "visits": "3806"
+    },
+    {
+      "domain": "mcconnell.tricare.mil",
+      "visits": "617"
+    },
+    {
+      "domain": "mcalester.armymwr.com",
+      "visits": "261"
+    },
+    {
+      "domain": "maxwell.tricare.mil",
+      "visits": "934"
+    },
+    {
+      "domain": "martin.tricare.mil",
+      "visits": "3891"
+    },
+    {
+      "domain": "malmstrom.tricare.mil",
+      "visits": "511"
+    },
+    {
+      "domain": "madsciblog.tradoc.army.mil",
+      "visits": "2119"
+    },
+    {
+      "domain": "madigan.tricare.mil",
+      "visits": "14156"
+    },
+    {
+      "domain": "macdill.tricare.mil",
+      "visits": "2545"
+    },
+    {
+      "domain": "lyster.tricare.mil",
+      "visits": "1837"
+    },
+    {
+      "domain": "luke.tricare.mil",
+      "visits": "1124"
+    },
+    {
+      "domain": "losangeles.tricare.mil",
+      "visits": "600"
+    },
+    {
+      "domain": "littlerock.tricare.mil",
+      "visits": "639"
+    },
+    {
+      "domain": "liberty.armymwr.com",
+      "visits": "17515"
+    },
+    {
+      "domain": "lewismcchord.tricare.mil",
+      "visits": "370"
+    },
+    {
+      "domain": "leonardwood.armymwr.com",
+      "visits": "4492"
+    },
+    {
+      "domain": "leonard-wood.tricare.mil",
+      "visits": "2447"
+    },
+    {
+      "domain": "lemoore.tricare.mil",
+      "visits": "2559"
+    },
+    {
+      "domain": "leavenworth.armymwr.com",
+      "visits": "2442"
+    },
+    {
+      "domain": "laughlin.tricare.mil",
+      "visits": "309"
+    },
+    {
+      "domain": "langleyeustis.tricare.mil",
+      "visits": "2831"
+    },
+    {
+      "domain": "landstuhl.tricare.mil",
+      "visits": "6329"
+    },
+    {
+      "domain": "la.defense.gov",
+      "visits": "575"
+    },
+    {
+      "domain": "ky.ng.mil",
+      "visits": "2859"
+    },
+    {
+      "domain": "kwajalein.armymwr.com",
+      "visits": "30"
+    },
+    {
+      "domain": "kunsan.tricare.mil",
+      "visits": "299"
+    },
+    {
+      "domain": "kr.usembassy.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "knox.armymwr.com",
+      "visits": "5213"
+    },
+    {
+      "domain": "kirtland.tricare.mil",
+      "visits": "1052"
+    },
+    {
+      "domain": "kirk.tricare.mil",
+      "visits": "573"
+    },
+    {
+      "domain": "kimbrough.tricare.mil",
+      "visits": "3469"
+    },
+    {
+      "domain": "keystone.ndu.edu",
+      "visits": "213"
+    },
+    {
+      "domain": "kenner.tricare.mil",
+      "visits": "1945"
+    },
+    {
+      "domain": "keller.tricare.mil",
+      "visits": "1680"
+    },
+    {
+      "domain": "keesler.tricare.mil",
+      "visits": "2141"
+    },
+    {
+      "domain": "kaiserslautern.armymwr.com",
+      "visits": "8010"
+    },
+    {
+      "domain": "kadena.tricare.mil",
+      "visits": "875"
+    },
+    {
+      "domain": "jts.health.mil",
+      "visits": "2531"
+    },
+    {
+      "domain": "jtapic.health.mil",
+      "visits": "197"
+    },
+    {
+      "domain": "jsc.defense.gov",
+      "visits": "1613"
+    },
+    {
+      "domain": "jrm.cnic.navy.mil",
+      "visits": "1773"
+    },
+    {
+      "domain": "jpeoaa.army.mil",
+      "visits": "1506"
+    },
+    {
+      "domain": "johnson.armymwr.com",
+      "visits": "3996"
+    },
+    {
+      "domain": "jobs.dso.mil",
+      "visits": "69"
+    },
+    {
+      "domain": "jnlwp.defense.gov",
+      "visits": "1945"
+    },
+    {
+      "domain": "jfsc.ndu.edu",
+      "visits": "3019"
+    },
+    {
+      "domain": "jbmhh.armymwr.com",
+      "visits": "2177"
+    },
+    {
+      "domain": "jblm.armymwr.com",
+      "visits": "24962"
+    },
+    {
+      "domain": "jamrs.defense.gov",
+      "visits": "999"
+    },
+    {
+      "domain": "jag.navylive.dodlive.mil",
+      "visits": "136"
+    },
+    {
+      "domain": "jacksonville.tricare.mil",
+      "visits": "7909"
+    },
+    {
+      "domain": "jackson.armymwr.com",
+      "visits": "5031"
+    },
+    {
+      "domain": "italy.armymwr.com",
+      "visits": "2785"
+    },
+    {
+      "domain": "ismo.ndu.edu",
+      "visits": "504"
+    },
+    {
+      "domain": "irwin.tricare.mil",
+      "visits": "3314"
+    },
+    {
+      "domain": "irwin.armymwr.com",
+      "visits": "1872"
+    },
+    {
+      "domain": "irt.defense.gov",
+      "visits": "571"
+    },
+    {
+      "domain": "ireland.tricare.mil",
+      "visits": "1888"
+    },
+    {
+      "domain": "ipps-a.army.mil",
+      "visits": "328712"
+    },
+    {
+      "domain": "installations.pre.militaryonesource.mil",
+      "visits": "183"
+    },
+    {
+      "domain": "installations.militaryonesource.mil",
+      "visits": "134229"
+    },
+    {
+      "domain": "inss.ndu.edu",
+      "visits": "1923"
+    },
+    {
+      "domain": "innovation.defense.gov",
+      "visits": "630"
+    },
+    {
+      "domain": "innovation.army.mil",
+      "visits": "265"
+    },
+    {
+      "domain": "info.nga.mil",
+      "visits": "145"
+    },
+    {
+      "domain": "incirlik.tricare.mil",
+      "visits": "270"
+    },
+    {
+      "domain": "ig.army.mil",
+      "visits": "2277"
+    },
+    {
+      "domain": "hurlburt.tricare.mil",
+      "visits": "1816"
+    },
+    {
+      "domain": "hunterliggett.armymwr.com",
+      "visits": "557"
+    },
+    {
+      "domain": "humphreys.armymwr.com",
+      "visits": "12406"
+    },
+    {
+      "domain": "huachuca.armymwr.com",
+      "visits": "2841"
+    },
+    {
+      "domain": "home.army.mil",
+      "visits": "370980"
+    },
+    {
+      "domain": "holloman.tricare.mil",
+      "visits": "638"
+    },
+    {
+      "domain": "hohenfels.armymwr.com",
+      "visits": "1228"
+    },
+    {
+      "domain": "history.defense.gov",
+      "visits": "4662"
+    },
+    {
+      "domain": "hill.tricare.mil",
+      "visits": "1011"
+    },
+    {
+      "domain": "hearing.health.mil",
+      "visits": "4051"
+    },
+    {
+      "domain": "health.mil",
+      "visits": "82022"
+    },
+    {
+      "domain": "hawaii.armymwr.com",
+      "visits": "15509"
+    },
+    {
+      "domain": "hanscom.tricare.mil",
+      "visits": "688"
+    },
+    {
+      "domain": "hamilton.armymwr.com",
+      "visits": "1164"
+    },
+    {
+      "domain": "guthrie.tricare.mil",
+      "visits": "1876"
+    },
+    {
+      "domain": "guantanamo.tricare.mil",
+      "visits": "400"
+    },
+    {
+      "domain": "guam.tricare.mil",
+      "visits": "1592"
+    },
+    {
+      "domain": "grgb.navy.mil",
+      "visits": "844"
+    },
+    {
+      "domain": "gregg-adams.armymwr.com",
+      "visits": "2651"
+    },
+    {
+      "domain": "greely.armymwr.com",
+      "visits": "595"
+    },
+    {
+      "domain": "grandforks.tricare.mil",
+      "visits": "325"
+    },
+    {
+      "domain": "grafenwoehr.armymwr.com",
+      "visits": "6801"
+    },
+    {
+      "domain": "goodfellow.tricare.mil",
+      "visits": "416"
+    },
+    {
+      "domain": "go.usa.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "garmisch.armymwr.com",
+      "visits": "643"
+    },
+    {
+      "domain": "ga.ng.mil",
+      "visits": "2547"
+    },
+    {
+      "domain": "frcsw.navair.navy.mil",
+      "visits": "450"
+    },
+    {
+      "domain": "frcse.navair.navy.mil",
+      "visits": "517"
+    },
+    {
+      "domain": "fmso.tradoc.army.mil",
+      "visits": "660"
+    },
+    {
+      "domain": "fl.ng.mil",
+      "visits": "2018"
+    },
+    {
+      "domain": "ffr.cnic.navy.mil",
+      "visits": "18073"
+    },
+    {
+      "domain": "fewarren.tricare.mil",
+      "visits": "609"
+    },
+    {
+      "domain": "fairchild.tricare.mil",
+      "visits": "723"
+    },
+    {
+      "domain": "exwc.navfac.navy.mil",
+      "visits": "2354"
+    },
+    {
+      "domain": "execsec.defense.gov",
+      "visits": "255"
+    },
+    {
+      "domain": "evans.tricare.mil",
+      "visits": "6056"
+    },
+    {
+      "domain": "europe.armymwr.com",
+      "visits": "24"
+    },
+    {
+      "domain": "europe.afn.mil",
+      "visits": "3513"
+    },
+    {
+      "domain": "es.ndu.edu",
+      "visits": "1767"
+    },
+    {
+      "domain": "enterprisemanagement.army.mil",
+      "visits": "116"
+    },
+    {
+      "domain": "elmendorfrichardson.tricare.mil",
+      "visits": "2662"
+    },
+    {
+      "domain": "ellsworth.tricare.mil",
+      "visits": "429"
+    },
+    {
+      "domain": "eitpmo.health.mil",
+      "visits": "84"
+    },
+    {
+      "domain": "eisenhower.tricare.mil",
+      "visits": "4582"
+    },
+    {
+      "domain": "eisenhower.armymwr.com",
+      "visits": "7102"
+    },
+    {
+      "domain": "eielson.tricare.mil",
+      "visits": "461"
+    },
+    {
+      "domain": "eglin.tricare.mil",
+      "visits": "3193"
+    },
+    {
+      "domain": "efmpeducationdirectory.pre.militaryonesource.mil",
+      "visits": "23"
+    },
+    {
+      "domain": "efmpeducationdirectory.militaryonesource.mil",
+      "visits": "213"
+    },
+    {
+      "domain": "efmpandme.pre.militaryonesource.mil",
+      "visits": "16"
+    },
+    {
+      "domain": "efmpandme.militaryonesource.mil",
+      "visits": "919"
+    },
+    {
+      "domain": "efmpandme.gcn.militaryonesource.mil",
+      "visits": "10"
+    },
+    {
+      "domain": "efmp.amedd.army.mil",
+      "visits": "847"
+    },
+    {
+      "domain": "edwards.tricare.mil",
+      "visits": "431"
+    },
+    {
+      "domain": "education.arlingtoncemetery.mil",
+      "visits": "1111"
+    },
+    {
+      "domain": "dyess.tricare.mil",
+      "visits": "514"
+    },
+    {
+      "domain": "dunham.tricare.mil",
+      "visits": "893"
+    },
+    {
+      "domain": "dugway.armymwr.com",
+      "visits": "194"
+    },
+    {
+      "domain": "drum.armymwr.com",
+      "visits": "3570"
+    },
+    {
+      "domain": "dpcld.defense.gov",
+      "visits": "6145"
+    },
+    {
+      "domain": "dpac.defense.gov",
+      "visits": "75"
+    },
+    {
+      "domain": "dover.tricare.mil",
+      "visits": "768"
+    },
+    {
+      "domain": "donfmworkforce.dc3n.navy.mil",
+      "visits": "434"
+    },
+    {
+      "domain": "doha.ogc.osd.mil",
+      "visits": "1318"
+    },
+    {
+      "domain": "dodsoco.ogc.osd.mil",
+      "visits": "3017"
+    },
+    {
+      "domain": "dodsioo.defense.gov",
+      "visits": "344"
+    },
+    {
+      "domain": "dodmwrandresalepolicy.defense.gov",
+      "visits": "126"
+    },
+    {
+      "domain": "dodiac.dtic.mil",
+      "visits": "986"
+    },
+    {
+      "domain": "dodcio.defense.gov",
+      "visits": "30421"
+    },
+    {
+      "domain": "dodcertpmo.defense.gov",
+      "visits": "1862"
+    },
+    {
+      "domain": "dod.defense.gov",
+      "visits": "15262"
+    },
+    {
+      "domain": "diversity.defense.gov",
+      "visits": "706"
+    },
+    {
+      "domain": "discover.dtic.mil",
+      "visits": "14424"
+    },
+    {
+      "domain": "diegogarcia.tricare.mil",
+      "visits": "137"
+    },
+    {
+      "domain": "devens.armymwr.com",
+      "visits": "80"
+    },
+    {
+      "domain": "dev.militaryonesource.mil",
+      "visits": "19"
+    },
+    {
+      "domain": "dev-www.tricare.mil",
+      "visits": "20"
+    },
+    {
+      "domain": "dev-www.health.mil",
+      "visits": "34"
+    },
+    {
+      "domain": "detroit.armymwr.com",
+      "visits": "410"
+    },
+    {
+      "domain": "detrick.armymwr.com",
+      "visits": "590"
+    },
+    {
+      "domain": "desmond-doss.tricare.mil",
+      "visits": "3160"
+    },
+    {
+      "domain": "demographics.pre.militaryonesource.mil",
+      "visits": "18"
+    },
+    {
+      "domain": "demographics.militaryonesource.mil",
+      "visits": "404"
+    },
+    {
+      "domain": "demo.adlnet.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "dctc.mil",
+      "visits": "464"
+    },
+    {
+      "domain": "dcips.defense.gov",
+      "visits": "2920"
+    },
+    {
+      "domain": "dc.ng.mil",
+      "visits": "3072"
+    },
+    {
+      "domain": "dbb.defense.gov",
+      "visits": "545"
+    },
+    {
+      "domain": "davismonthan.tricare.mil",
+      "visits": "863"
+    },
+    {
+      "domain": "data.defense.gov",
+      "visits": "192"
+    },
+    {
+      "domain": "darnall.tricare.mil",
+      "visits": "8511"
+    },
+    {
+      "domain": "dam.defense.gov",
+      "visits": "682"
+    },
+    {
+      "domain": "daflearning.af.mil",
+      "visits": "378"
+    },
+    {
+      "domain": "daegu.armymwr.com",
+      "visits": "1617"
+    },
+    {
+      "domain": "dacowits.defense.gov",
+      "visits": "50"
+    },
+    {
+      "domain": "daaf-wx.army.mil",
+      "visits": "249"
+    },
+    {
+      "domain": "cyberdefensereview.army.mil",
+      "visits": "518"
+    },
+    {
+      "domain": "cybercoe.army.mil",
+      "visits": "3726"
+    },
+    {
+      "domain": "cyber.army.mil",
+      "visits": "1419"
+    },
+    {
+      "domain": "ctip.defense.gov",
+      "visits": "4014"
+    },
+    {
+      "domain": "ct.ng.mil",
+      "visits": "2668"
+    },
+    {
+      "domain": "crg.health.mil",
+      "visits": "815"
+    },
+    {
+      "domain": "corpuschristi.tricare.mil",
+      "visits": "816"
+    },
+    {
+      "domain": "comptroller.defense.gov",
+      "visits": "11753"
+    },
+    {
+      "domain": "columbus.tricare.mil",
+      "visits": "327"
+    },
+    {
+      "domain": "coalition.dso.mil",
+      "visits": "52"
+    },
+    {
+      "domain": "co.ng.mil",
+      "visits": "48915"
+    },
+    {
+      "domain": "cnrsw.cnic.navy.mil",
+      "visits": "18307"
+    },
+    {
+      "domain": "cnrse.cnic.navy.mil",
+      "visits": "18162"
+    },
+    {
+      "domain": "cnrnw.cnic.navy.mil",
+      "visits": "5038"
+    },
+    {
+      "domain": "cnrma.cnic.navy.mil",
+      "visits": "14766"
+    },
+    {
+      "domain": "cnrk.cnic.navy.mil",
+      "visits": "685"
+    },
+    {
+      "domain": "cnrj.cnic.navy.mil",
+      "visits": "18664"
+    },
+    {
+      "domain": "cnrh.cnic.navy.mil",
+      "visits": "4632"
+    },
+    {
+      "domain": "cnreurafcent.cnic.navy.mil",
+      "visits": "24017"
+    },
+    {
+      "domain": "cms.tricare.mil",
+      "visits": "22"
+    },
+    {
+      "domain": "cms.health.mil",
+      "visits": "72"
+    },
+    {
+      "domain": "cjsl.ndu.edu",
+      "visits": "228"
+    },
+    {
+      "domain": "cisa.ndu.edu",
+      "visits": "1263"
+    },
+    {
+      "domain": "cic.ndu.edu",
+      "visits": "1888"
+    },
+    {
+      "domain": "chievres.armymwr.com",
+      "visits": "979"
+    },
+    {
+      "domain": "cherrypoint.tricare.mil",
+      "visits": "1078"
+    },
+    {
+      "domain": "charleston.tricare.mil",
+      "visits": "760"
+    },
+    {
+      "domain": "cavazos.armymwr.com",
+      "visits": "19110"
+    },
+    {
+      "domain": "casl.ndu.edu",
+      "visits": "145"
+    },
+    {
+      "domain": "casey.armymwr.com",
+      "visits": "5240"
+    },
+    {
+      "domain": "carson.armymwr.com",
+      "visits": "8686"
+    },
+    {
+      "domain": "carlisle.armymwr.com",
+      "visits": "2147"
+    },
+    {
+      "domain": "capstone.ndu.edu",
+      "visits": "882"
+    },
+    {
+      "domain": "cannon.tricare.mil",
+      "visits": "592"
+    },
+    {
+      "domain": "campedwards.ng.mil",
+      "visits": "133"
+    },
+    {
+      "domain": "campbell.armymwr.com",
+      "visits": "10542"
+    },
+    {
+      "domain": "camp-pendleton.tricare.mil",
+      "visits": "7330"
+    },
+    {
+      "domain": "camp-lejeune.tricare.mil",
+      "visits": "7181"
+    },
+    {
+      "domain": "calmed.tricare.mil",
+      "visits": "832"
+    },
+    {
+      "domain": "business.defense.gov",
+      "visits": "7060"
+    },
+    {
+      "domain": "buckley.tricare.mil",
+      "visits": "830"
+    },
+    {
+      "domain": "buchanan.armymwr.com",
+      "visits": "2257"
+    },
+    {
+      "domain": "brussels.armymwr.com",
+      "visits": "341"
+    },
+    {
+      "domain": "brunssum.armymwr.com",
+      "visits": "301"
+    },
+    {
+      "domain": "briandallgood.tricare.mil",
+      "visits": "3156"
+    },
+    {
+      "domain": "bremerton.tricare.mil",
+      "visits": "2524"
+    },
+    {
+      "domain": "bluegrass.armymwr.com",
+      "visits": "327"
+    },
+    {
+      "domain": "blog-brigade.pre.militaryonesource.mil",
+      "visits": "25"
+    },
+    {
+      "domain": "blog-brigade.militaryonesource.mil",
+      "visits": "4624"
+    },
+    {
+      "domain": "blog-brigade.gcn.militaryonesource.mil",
+      "visits": "17"
+    },
+    {
+      "domain": "blog-brigade.dev.militaryonesource.mil",
+      "visits": "15"
+    },
+    {
+      "domain": "bliss.armymwr.com",
+      "visits": "9762"
+    },
+    {
+      "domain": "blastinjuryresearch.health.mil",
+      "visits": "708"
+    },
+    {
+      "domain": "blanchfield.tricare.mil",
+      "visits": "6679"
+    },
+    {
+      "domain": "blacksea.armymwr.com",
+      "visits": "36"
+    },
+    {
+      "domain": "bg-crawford.tricare.mil",
+      "visits": "417"
+    },
+    {
+      "domain": "benelux-region.armymwr.com",
+      "visits": "11"
+    },
+    {
+      "domain": "benefits.va.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "belvoirhospital.tricare.mil",
+      "visits": "16264"
+    },
+    {
+      "domain": "belvoir.armymwr.com",
+      "visits": "10843"
+    },
+    {
+      "domain": "beaufort.tricare.mil",
+      "visits": "1257"
+    },
+    {
+      "domain": "beale.tricare.mil",
+      "visits": "450"
+    },
+    {
+      "domain": "bayne-jones.tricare.mil",
+      "visits": "2808"
+    },
+    {
+      "domain": "baumholder.armymwr.com",
+      "visits": "1951"
+    },
+    {
+      "domain": "bassett-wainwright.tricare.mil",
+      "visits": "2227"
+    },
+    {
+      "domain": "basicresearch.defense.gov",
+      "visits": "914"
+    },
+    {
+      "domain": "barquist.tricare.mil",
+      "visits": "709"
+    },
+    {
+      "domain": "barksdale.tricare.mil",
+      "visits": "814"
+    },
+    {
+      "domain": "bamc.tricare.mil",
+      "visits": "14702"
+    },
+    {
+      "domain": "aviano.tricare.mil",
+      "visits": "643"
+    },
+    {
+      "domain": "author.history.navy.mil",
+      "visits": "28"
+    },
+    {
+      "domain": "atlantic.navfac.navy.mil",
+      "visits": "1765"
+    },
+    {
+      "domain": "at.dod.mil",
+      "visits": "205"
+    },
+    {
+      "domain": "asb.army.mil",
+      "visits": "177"
+    },
+    {
+      "domain": "armypubs.army.mil",
+      "visits": "165303"
+    },
+    {
+      "domain": "armycemeteries.army.mil",
+      "visits": "668"
+    },
+    {
+      "domain": "armedforcessports.defense.gov",
+      "visits": "2579"
+    },
+    {
+      "domain": "arlingtoncemetery.mil",
+      "visits": "7060"
+    },
+    {
+      "domain": "arkansas.nationalguard.mil",
+      "visits": "3283"
+    },
+    {
+      "domain": "apps.pre.militaryonesource.mil",
+      "visits": "60"
+    },
+    {
+      "domain": "apps.militaryonesource.mil",
+      "visits": "1827"
+    },
+    {
+      "domain": "apps.gcn.militaryonesource.mil",
+      "visits": "82"
+    },
+    {
+      "domain": "ansbach.armymwr.com",
+      "visits": "1206"
+    },
+    {
+      "domain": "anniston.armymwr.com",
+      "visits": "85"
+    },
+    {
+      "domain": "annapolis.tricare.mil",
+      "visits": "2388"
+    },
+    {
+      "domain": "andrews.tricare.mil",
+      "visits": "3908"
+    },
+    {
+      "domain": "andersen.tricare.mil",
+      "visits": "437"
+    },
+    {
+      "domain": "ancadmin.army.mil",
+      "visits": "29"
+    },
+    {
+      "domain": "anacostiabolling.tricare.mil",
+      "visits": "1107"
+    },
+    {
+      "domain": "altus.tricare.mil",
+      "visits": "291"
+    },
+    {
+      "domain": "allhands.navy.mil",
+      "visits": "15172"
+    },
+    {
+      "domain": "al.ng.mil",
+      "visits": "3240"
+    },
+    {
+      "domain": "ak.ng.mil",
+      "visits": "1234"
+    },
+    {
+      "domain": "airforceacademy.tricare.mil",
+      "visits": "2242"
+    },
+    {
+      "domain": "ahrpo.army.mil",
+      "visits": "79"
+    },
+    {
+      "domain": "afrims.health.mil",
+      "visits": "411"
+    },
+    {
+      "domain": "afrba-portal.test.cce.af.mil",
+      "visits": "48"
+    },
+    {
+      "domain": "afrba-portal.test.azure.cce.af.mil",
+      "visits": "31"
+    },
+    {
+      "domain": "afrba-portal.prod.azure.cce.af.mil",
+      "visits": "55"
+    },
+    {
+      "domain": "afrba-portal.cce.af.mil",
+      "visits": "1970"
+    },
+    {
+      "domain": "afd.defense.gov",
+      "visits": "550"
+    },
+    {
+      "domain": "adlnet.gov",
+      "visits": "2949"
+    },
+    {
+      "domain": "actuary.defense.gov",
+      "visits": "464"
+    },
+    {
+      "domain": "acc.army.mil",
+      "visits": "1508"
+    },
+    {
+      "domain": "ac.cto.mil",
+      "visits": "46"
+    },
+    {
+      "domain": "aberdeen.armymwr.com",
+      "visits": "2934"
+    },
+    {
+      "domain": "aal.army",
+      "visits": "1021"
+    },
+    {
+      "domain": "6mlmc.health.mil",
+      "visits": "29"
+    },
+    {
+      "domain": "11thairbornedivision.army.mil",
+      "visits": "2789"
+    },
+    {
+      "domain": "",
+      "visits": "238"
+    }
+  ],
+  "totals": {
+    "visits": 13744574
+  },
+  "taken_at": "2024-01-05T15:52:25.972Z",
+  "agency": "defense"
+}

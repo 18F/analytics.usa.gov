@@ -1,0 +1,108 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "torgateway.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "ojp.gov",
+      "visits": "14888"
+    },
+    {
+      "hostname": "nsopw.gov",
+      "visits": "49"
+    },
+    {
+      "hostname": "nicic.gov",
+      "visits": "27607"
+    },
+    {
+      "hostname": "medlineplus.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "grants.gov",
+      "visits": "46"
+    },
+    {
+      "hostname": "findtreatment.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "cyberreportcenter.com",
+      "visits": "5"
+    },
+    {
+      "hostname": "bjs.gov",
+      "visits": "7"
+    },
+    {
+      "hostname": "acl.gov",
+      "visits": "4"
+    }
+  ],
+  "totals": {
+    "visits": 42612
+  },
+  "taken_at": "2024-01-05T15:38:19.115Z",
+  "agency": "justice"
+}

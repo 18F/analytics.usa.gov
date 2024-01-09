@@ -3,10 +3,10 @@
     <h3>User Locations In The Last 30 Minutes</h3>
   </section>
 
-  <div class="columns columns--thirds">
+  <div class="grid-row">
     <section
       id="cities"
-      class="padding-3"
+      class="desktop:grid-col-4 padding-3 barchart"
       data-block="cities"
       data-source="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json"
     >
@@ -16,7 +16,7 @@
       </figure>
     </section>
 
-    <section id="countries" class="padding-3">
+    <section id="countries" class="desktop:grid-col-4 padding-3 barchart">
       <h4>Countries</h4>
 
       <figure
@@ -44,6 +44,19 @@
         data-source="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json"
       >
         <h4>International</h4>
+        <div class="data bar-chart"></div>
+      </figure>
+    </section>
+
+
+    <section
+      id="languages"
+      class="desktop:grid-col-4 padding-3 barchart"
+      data-block="languages"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/language.json"
+    >
+      <h4>Languages</h4>
+      <figure id="chart_top-languages">
         <div class="data bar-chart"></div>
       </figure>
     </section>

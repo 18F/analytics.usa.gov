@@ -1,0 +1,890 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/rus.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "15336"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/dcb.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "13940"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form W-9, Request for Taxpayer Identification Number and Certification | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw9.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-9",
+      "total_events": "10437"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Passport Fees",
+      "event_label": "file_download",
+      "file_name": "/content/dam/passports/forms-fees/fee%20chart%202023.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/fees.html",
+      "total_events": "7708"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "5413"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/gs.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "5084"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Replace Social Security card | SSA",
+      "event_label": "file_download",
+      "file_name": "/forms/ss-5.pdf",
+      "page": "www.ssa.gov/number-card/replace-card",
+      "total_events": "4806"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "How to Apply in Person for a Passport",
+      "event_label": "file_download",
+      "file_name": "/forms/ds11.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html",
+      "total_events": "4243"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864.pdf",
+      "page": "www.uscis.gov/i-864",
+      "total_events": "4132"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "APOD: 2023 December 25 – Cathedral, Mountain, Moon",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/moonaligned_minato_2974.jpg",
+      "page": "apod.nasa.gov/apod/ap231225.html",
+      "total_events": "3890"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Renew my Passport by Mail",
+      "event_label": "file_download",
+      "file_name": "/forms/ds82.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/have-passport/renew.html",
+      "total_events": "3670"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-485.pdf",
+      "page": "www.uscis.gov/i-485",
+      "total_events": "3576"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Apply for a Child's U.S. Passport",
+      "event_label": "file_download",
+      "file_name": "/forms/ds11.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/under-16.html",
+      "total_events": "3460"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 1040, U.S. Individual Income Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040",
+      "total_events": "3440"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form W-4, Employee's Withholding Certificate | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4",
+      "total_events": "3329"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/rus_h.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "3267"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "3156"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form W-4V, Voluntary Withholding Request | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4v.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4-v",
+      "total_events": "3020"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-e.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "3009"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040gi.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "2978"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application for Employment Authorization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765.pdf",
+      "page": "www.uscis.gov/i-765",
+      "total_events": "2913"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/ny.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "2880"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Change name with Social Security | SSA",
+      "event_label": "file_download",
+      "file_name": "/forms/ss-5.pdf",
+      "page": "www.ssa.gov/personal-record/change-name",
+      "total_events": "2842"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Petition for Alien Relative | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-130.pdf",
+      "page": "www.uscis.gov/i-130",
+      "total_events": "2733"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 1040-ES, Estimated Tax for Individuals | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040es.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040-es",
+      "total_events": "2678"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/la.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "2558"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/atl.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "2453"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Replacement Card",
+      "event_label": "file_download",
+      "file_name": "/forms/ss-5.pdf",
+      "page": "www.ssa.gov/number-card/replace-card/get-started/applicant",
+      "total_events": "2389"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Astronomy Picture of the Day",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/jellyfish_payne_7846.jpg",
+      "page": "apod.nasa.gov/apod/astropix.html",
+      "total_events": "2280"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Small Entity Compliance Guide | FinCEN.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/shared/boi_small_compliance_guide.v1.1-final.pdf",
+      "page": "www.fincen.gov/boi/small-entity-compliance-guide",
+      "total_events": "2255"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form W-2, Wage and Tax Statement | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw2.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-2",
+      "total_events": "2213"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/23tables/pdf/dcb.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2023/general-schedule/",
+      "total_events": "2179"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Beneficial Ownership Information Reporting | FinCEN.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/shared/boi%20informational%20brochure%20508c.pdf",
+      "page": "www.fincen.gov/boi",
+      "total_events": "2073"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/23tables/pdf/rus.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2023/general-schedule/",
+      "total_events": "2002"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/dfw.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1968"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/sf.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1884"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/bos.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1879"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/phl.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1808"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-f.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "1790"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Payroll Calendars | GSA",
+      "event_label": "file_download",
+      "file_name": "/system/files/2024_gsa_payroll_calendar.pdf",
+      "page": "www.gsa.gov/buy-through-us/purchasing-programs/shared-services/payroll-shared-services/payroll-calendars",
+      "total_events": "1710"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/23tables/pdf/rus.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2023/general-schedule",
+      "total_events": "1686"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/hou.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1661"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 1099-MISC, Miscellaneous Information | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1099msc.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099-misc",
+      "total_events": "1641"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/chi.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1641"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 1099-NEC, Nonemployee Compensation | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1099nec.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1099-nec",
+      "total_events": "1632"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/sea.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1615"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/mfl.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1510"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Alien’s Change of Address Card | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/ar-11.pdf",
+      "page": "www.uscis.gov/ar-11",
+      "total_events": "1503"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/den.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1501"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-485instr.pdf",
+      "page": "www.uscis.gov/i-485",
+      "total_events": "1474"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-693.pdf",
+      "page": "www.uscis.gov/i-693",
+      "total_events": "1472"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Schedule of Social Security Payments | SSA",
+      "event_label": "file_download",
+      "file_name": "/pubs/en-05-10031-2024.pdf",
+      "page": "www.ssa.gov/pubs/calendar.htm",
+      "total_events": "1466"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/sd.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1457"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/i1040tt.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "1448"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-400.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "1446"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Passport Forms",
+      "event_label": "file_download",
+      "file_name": "/forms/ds11.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/forms.html",
+      "total_events": "1446"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/vb.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1437"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Disability Benefits | SSA",
+      "event_label": "file_download",
+      "file_name": "/hlp/radr/10/ovw001-checklist.pdf",
+      "page": "www.ssa.gov/benefits/disability/",
+      "total_events": "1428"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Form MCS-150 and Instructions - Motor Carrier Identification Report | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-06/mcs-150%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-mcs-150-and-instructions-motor-carrier-identification-report",
+      "total_events": "1423"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Request for Fee Waiver | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-912.pdf",
+      "page": "www.uscis.gov/i-912",
+      "total_events": "1419"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "I94 - Official Website",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-sp.pdf",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "1366"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application for Travel Document | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-131.pdf",
+      "page": "www.uscis.gov/i-131",
+      "total_events": "1363"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Cost-of-Living Adjustment (COLA) Information | SSA",
+      "event_label": "file_download",
+      "file_name": "/news/press/factsheets/colafacts2024.pdf",
+      "page": "www.ssa.gov/cola/",
+      "total_events": "1352"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/hi.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1334"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9instr.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "1332"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Applicable Federal Rates | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-drop/rr-24-02.pdf",
+      "page": "www.irs.gov/applicable-federal-rates",
+      "total_events": "1310"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/dcb_h.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1250"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 8822, Change of Address | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8822.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8822",
+      "total_events": "1241"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Apply for a Child's U.S. Passport",
+      "event_label": "file_download",
+      "file_name": "/forms/ds3053.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/under-16.html",
+      "total_events": "1241"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Formulario I-94: registro de entrada y salida de EE. UU. | USAGov",
+      "event_label": "file_download",
+      "file_name": "/i94/i94-sp.pdf",
+      "page": "www.usa.gov/es/i94-registro-entradas-salidas-estados-unidos",
+      "total_events": "1232"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Schedule A (Form 1040), Itemized Deductions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sa.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-a-form-1040",
+      "total_events": "1221"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Renew an adult passport | USAGov",
+      "event_label": "file_download",
+      "file_name": "/forms/ds82.pdf",
+      "page": "www.usa.gov/renew-adult-passport",
+      "total_events": "1212"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Schedule of Social Security Payments | SSA",
+      "event_label": "file_download",
+      "file_name": "/pubs/en-05-10031-2023.pdf",
+      "page": "www.ssa.gov/pubs/calendar.htm",
+      "total_events": "1203"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Declaration of Financial Support | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-134.pdf",
+      "page": "www.uscis.gov/i-134",
+      "total_events": "1196"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application to Replace Permanent Resident Card (Green Card) | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-90.pdf",
+      "page": "www.uscis.gov/i-90",
+      "total_events": "1192"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Form 6059B Customs Declaration - English (Fillable) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2022-jun/cbp%20form%206059b_english.pdf",
+      "page": "www.cbp.gov/document/forms/form-6059b-customs-declaration-english-fillable",
+      "total_events": "1188"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Application for Asylum and for Withholding of Removal | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-589.pdf",
+      "page": "www.uscis.gov/i-589",
+      "total_events": "1174"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "APOD: 2023 December 26 – IC 443: The Jellyfish Nebula",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2312/jellyfish_payne_7846.jpg",
+      "page": "apod.nasa.gov/apod/ap231226.html",
+      "total_events": "1163"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864instr.pdf",
+      "page": "www.uscis.gov/i-864",
+      "total_events": "1161"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About VA Form 21-526EZ | Veterans Affairs",
+      "event_label": "file_download",
+      "file_name": "/pubs/forms/vba-21-526ez-are.pdf",
+      "page": "www.va.gov/find-forms/about-form-21-526ez/",
+      "total_events": "1159"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "E-Notification of Application/Petition Acceptance | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-1145.pdf",
+      "page": "www.uscis.gov/g-1145",
+      "total_events": "1156"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 4506-T, Request for Transcript of Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f4506t.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-4506-t",
+      "total_events": "1152"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 941, Employer's Quarterly Federal Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f941.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-941",
+      "total_events": "1139"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Law Enforcement Officer",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/rus%20(leo).pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/law-enforcement-officer",
+      "total_events": "1128"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "CBP DTOPS - Checkout Payment Confirmation",
+      "event_label": "file_download",
+      "file_name": "/main/paymentreceipt.pdf",
+      "page": "dtops.cbp.dhs.gov/main/paymentReturn.html",
+      "total_events": "1110"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Inactivated Influenza Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "file_name": "https://www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.pdf",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.html",
+      "total_events": "1101"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/23tables/pdf/dcb.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2023/general-schedule",
+      "total_events": "1096"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/det.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1088"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/kc.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "1072"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "CMS 40B | CMS",
+      "event_label": "file_download",
+      "file_name": "/medicare/cms-forms/cms-forms/downloads/cms40b-e.pdf",
+      "page": "www.cms.gov/Medicare/CMS-Forms/CMS-Forms/CMS-Forms-Items/CMS017339",
+      "total_events": "1063"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 5695, Residential Energy Credits | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f5695.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-5695",
+      "total_events": "1056"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Schedule C (Form 1040), Profit or Loss from Business (Sole Proprietorship) | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040sc.pdf",
+      "page": "www.irs.gov/forms-pubs/about-schedule-c-form-1040",
+      "total_events": "1016"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Six-Month Validity Update | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/assets/documents/2022-mar/six-month%20passport%20validity%20update%2020220316.pdf",
+      "page": "www.cbp.gov/document/bulletins/six-month-validity-update",
+      "total_events": "1001"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 8936, Qualified Plug-In Electric Drive Motor Vehicle Credit | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8936.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8936",
+      "total_events": "992"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Cash EE or I savings bonds — TreasuryDirect",
+      "event_label": "file_download",
+      "file_name": "/forms/sav1522.pdf",
+      "page": "www.treasurydirect.gov/savings-bonds/cashing-a-bond/",
+      "total_events": "992"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "About Form 2553, Election by a Small Business Corporation | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f2553.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-2553",
+      "total_events": "985"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/ra.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "985"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "Vaccine Schedule for Children 6 Years or Younger | CDC",
+      "event_label": "file_download",
+      "file_name": "https://www.cdc.gov/vaccines/parents/downloads/parent-ver-sch-0-6yrs.pdf",
+      "page": "www.cdc.gov/vaccines/schedules/easy-to-read/child-easyread.html",
+      "total_events": "976"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/px.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "967"
+    },
+    {
+      "date": "2023-12-26",
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/so.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
+      "total_events": "965"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-12-27T18:00:34.650Z"
+}

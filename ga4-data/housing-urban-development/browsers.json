@@ -1,0 +1,92 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 9393937,
+    "browser": {
+      "Chrome": 5432333,
+      "Safari": 2512682,
+      "Edge": 1076126,
+      "Firefox": 134962,
+      "Samsung Internet": 113887,
+      "Internet Explorer": 29002,
+      "Android Webview": 28679,
+      "Safari (in-app)": 29516,
+      "Opera": 14113,
+      "Amazon Silk": 11815,
+      "Mozilla Compatible Agent": 4916,
+      "(not set)": 4150,
+      "Mozilla": 336,
+      "YaBrowser": 405,
+      "UC Browser": 243,
+      "Aloha Browser": 153,
+      "Android Runtime": 43,
+      "DuckDuckGo Browser": 147,
+      "Lynx": 83,
+      "Meta Quest Browser": 37,
+      "SeaMonkey": 109,
+      "Coc Coc": 28,
+      "Phoenix Browser": 4,
+      "Android Browser": 31,
+      "Whale Browser": 54,
+      "IE with Chrome Frame": 4,
+      "Opera Mini": 16,
+      "Vivaldi": 4,
+      "PaleMoon": 21,
+      "Waterfox": 4,
+      "Puffin": 4,
+      "Iron": 2,
+      "Maxthon": 3,
+      "Netscape": 15,
+      "BrowserNG": 2,
+      "NetFront": 2,
+      "Nintendo Browser": 2,
+      "BlackBerry": 2,
+      "Galeon": 1,
+      "Konqueror": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:31:44.038Z",
+  "agency": "housing-urban-development"
+}

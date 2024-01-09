@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "USAJOBS - Search",
+      "active_visitors": "10614"
+    },
+    {
+      "page_title": "USAJOBS - Job Announcement",
+      "active_visitors": "8094"
+    },
+    {
+      "page_title": "USAJOBS - Profile Dashboard",
+      "active_visitors": "3580"
+    },
+    {
+      "page_title": "USAJOBS - The Federal Government's official employment site",
+      "active_visitors": "3339"
+    },
+    {
+      "page_title": "General Schedule",
+      "active_visitors": "1449"
+    },
+    {
+      "page_title": "Select Resume",
+      "active_visitors": "1251"
+    },
+    {
+      "page_title": "Application Guide - Select Documents",
+      "active_visitors": "1084"
+    },
+    {
+      "page_title": "Continue Application with Agency",
+      "active_visitors": "1018"
+    },
+    {
+      "page_title": "Review Package",
+      "active_visitors": "907"
+    },
+    {
+      "page_title": "Demographic Details",
+      "active_visitors": "885"
+    },
+    {
+      "page_title": "Complete survey",
+      "active_visitors": "857"
+    },
+    {
+      "page_title": "Apply History Post",
+      "active_visitors": "679"
+    },
+    {
+      "page_title": "USAJOBS - Profile",
+      "active_visitors": "503"
+    },
+    {
+      "page_title": "Salaries & Wages",
+      "active_visitors": "483"
+    },
+    {
+      "page_title": "USAJOBS - Documents - Resumes",
+      "active_visitors": "459"
+    },
+    {
+      "page_title": "USAJOBS - Application - ApplyReturn",
+      "active_visitors": "329"
+    },
+    {
+      "page_title": "Pay & Leave : Salaries & Wages - OPM.gov",
+      "active_visitors": "306"
+    },
+    {
+      "page_title": "Search",
+      "active_visitors": "290"
+    },
+    {
+      "page_title": "OPM Home - OPM.gov",
+      "active_visitors": "232"
+    },
+    {
+      "page_title": "Special Rates - OPM.gov",
+      "active_visitors": "230"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:31.282Z",
+  "agency": "office-personnel-management"
+}

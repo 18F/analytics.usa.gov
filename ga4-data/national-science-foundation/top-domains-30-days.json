@@ -1,0 +1,239 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nsf.gov",
+      "visits": "1134291",
+      "users": "857119",
+      "pageviews": "1986795",
+      "pageviews_per_session": "1.7515743314546268",
+      "avg_session_duration": "137.61251914983632",
+      "bounce_rate": "0.56382885873201849"
+    },
+    {
+      "domain": "new.nsf.gov",
+      "visits": "529610",
+      "users": "360041",
+      "pageviews": "895065",
+      "pageviews_per_session": "1.6900455051830592",
+      "avg_session_duration": "169.25306296351087",
+      "bounce_rate": "0.49092162157058966"
+    },
+    {
+      "domain": "www.research.gov",
+      "visits": "263565",
+      "users": "66385",
+      "pageviews": "1115145",
+      "pageviews_per_session": "4.231005634283763",
+      "avg_session_duration": "359.95117136786371",
+      "bounce_rate": "0.33823914404416366"
+    },
+    {
+      "domain": "seedfund.nsf.gov",
+      "visits": "108494",
+      "users": "82820",
+      "pageviews": "176107",
+      "pageviews_per_session": "1.6231957527605214",
+      "avg_session_duration": "126.20313330391544",
+      "bounce_rate": "0.52943019890500853"
+    },
+    {
+      "domain": "ncses.nsf.gov",
+      "visits": "50358",
+      "users": "34707",
+      "pageviews": "97060",
+      "pageviews_per_session": "1.9273998173080742",
+      "avg_session_duration": "252.55316565830654",
+      "bounce_rate": "0.39626275864807975"
+    },
+    {
+      "domain": "meetings.nsf.gov",
+      "visits": "19185",
+      "users": "6927",
+      "pageviews": "56396",
+      "pageviews_per_session": "2.9395882199635133",
+      "avg_session_duration": "364.04454541084181",
+      "bounce_rate": "0.17659629919207714"
+    },
+    {
+      "domain": "extsharepoint.nsf.gov",
+      "visits": "19020",
+      "users": "3677",
+      "pageviews": "148738",
+      "pageviews_per_session": "7.8200841219768664",
+      "avg_session_duration": "1016.1478420595164",
+      "bounce_rate": "0.15583596214511042"
+    },
+    {
+      "domain": "search.nsf.gov",
+      "visits": "18274",
+      "users": "14384",
+      "pageviews": "32318",
+      "pageviews_per_session": "1.768523585421911",
+      "avg_session_duration": "75.2658863622086",
+      "bounce_rate": "0.068293750684031956"
+    },
+    {
+      "domain": "ncsesdata.nsf.gov",
+      "visits": "7518",
+      "users": "5494",
+      "pageviews": "18369",
+      "pageviews_per_session": "2.4433359936153232",
+      "avg_session_duration": "203.82639885301941",
+      "bounce_rate": "0.38494280393721736"
+    },
+    {
+      "domain": "web.acpt.research.gov",
+      "visits": "7006",
+      "users": "5429",
+      "pageviews": "39609",
+      "pageviews_per_session": "5.6535826434484724",
+      "avg_session_duration": "177.88958214815869",
+      "bounce_rate": "0.24364830145589494"
+    },
+    {
+      "domain": "www.fastlane.nsf.gov",
+      "visits": "4914",
+      "users": "3063",
+      "pageviews": "10620",
+      "pageviews_per_session": "2.161172161172161",
+      "avg_session_duration": "305.45468590557584",
+      "bounce_rate": "0.23483923483923483"
+    },
+    {
+      "domain": "fastlane.nsf.gov",
+      "visits": "4736",
+      "users": "3309",
+      "pageviews": "7049",
+      "pageviews_per_session": "1.4883868243243243",
+      "avg_session_duration": "217.67863513830235",
+      "bounce_rate": "0.22191722972972974"
+    },
+    {
+      "domain": "www.meetings.nsf.gov",
+      "visits": "2406",
+      "users": "1282",
+      "pageviews": "6349",
+      "pageviews_per_session": "2.63881961762261",
+      "avg_session_duration": "366.38833526475474",
+      "bounce_rate": "0.1142975893599335"
+    },
+    {
+      "domain": "help.extsharepoint.nsf.gov",
+      "visits": "1379",
+      "users": "1132",
+      "pageviews": "4444",
+      "pageviews_per_session": "3.222625090645395",
+      "avg_session_duration": "256.68297381653372",
+      "bounce_rate": "0.36185641769398114"
+    },
+    {
+      "domain": "sac.gov",
+      "visits": "755",
+      "users": "705",
+      "pageviews": "1300",
+      "pageviews_per_session": "1.7218543046357615",
+      "avg_session_duration": "36.628555033112583",
+      "bounce_rate": "0.67947019867549674"
+    },
+    {
+      "domain": "web.dev.research.gov",
+      "visits": "699",
+      "users": "312",
+      "pageviews": "3004",
+      "pageviews_per_session": "4.2975679542203151",
+      "avg_session_duration": "399.92968127896995",
+      "bounce_rate": "0.25464949928469244"
+    },
+    {
+      "domain": "www.acpt.nsf.gov",
+      "visits": "665",
+      "users": "278",
+      "pageviews": "1790",
+      "pageviews_per_session": "2.6917293233082709",
+      "avg_session_duration": "401.5543632676692",
+      "bounce_rate": "0.28872180451127821"
+    },
+    {
+      "domain": "web.intg.research.gov",
+      "visits": "619",
+      "users": "250",
+      "pageviews": "2700",
+      "pageviews_per_session": "4.3618739903069468",
+      "avg_session_duration": "354.20152911631664",
+      "bounce_rate": "0.23263327948303716"
+    },
+    {
+      "domain": "www.sac.gov",
+      "visits": "584",
+      "users": "532",
+      "pageviews": "1299",
+      "pageviews_per_session": "2.2243150684931505",
+      "avg_session_duration": "78.993569804794518",
+      "bounce_rate": "0.59246575342465757"
+    },
+    {
+      "domain": "www.ncses.nsf.gov",
+      "visits": "583",
+      "users": "461",
+      "pageviews": "874",
+      "pageviews_per_session": "1.4991423670668953",
+      "avg_session_duration": "151.15724714579761",
+      "bounce_rate": "0.57804459691252141"
+    }
+  ],
+  "totals": {
+    "users": 1448307,
+    "visits": 2174661
+  },
+  "taken_at": "2024-01-05T14:41:58.430Z",
+  "agency": "national-science-foundation"
+}

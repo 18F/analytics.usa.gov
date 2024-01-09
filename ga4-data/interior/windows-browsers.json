@@ -1,0 +1,128 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 19097082,
+    "by_windows": {
+      "7": {
+        "Chrome": 297163,
+        "Firefox": 73317,
+        "Edge": 19122
+      },
+      "8": {
+        "Chrome": 24360,
+        "Safari": 9659
+      },
+      "10": {
+        "Chrome": 8062234,
+        "Edge": 3129317,
+        "Firefox": 1095214,
+        "Opera": 148977,
+        "YaBrowser": 24455
+      },
+      "11": {
+        "Chrome": 4281431,
+        "Edge": 1805188
+      },
+      "8.1": {
+        "Chrome": 103001,
+        "Firefox": 18003,
+        "Edge": 5641
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 297163,
+        "8": 24360,
+        "10": 8062234,
+        "11": 4281431,
+        "8.1": 103001
+      },
+      "Edge": {
+        "7": 19122,
+        "10": 3129317,
+        "11": 1805188,
+        "8.1": 5641
+      },
+      "Firefox": {
+        "7": 73317,
+        "10": 1095214,
+        "8.1": 18003
+      },
+      "Opera": {
+        "10": 148977
+      },
+      "YaBrowser": {
+        "10": 24455
+      },
+      "Safari": {
+        "8": 9659
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:46:17.870Z",
+  "agency": "interior"
+}

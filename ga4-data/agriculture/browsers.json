@@ -1,0 +1,98 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 37299414,
+    "browser": {
+      "Chrome": 20121862,
+      "Safari": 11307276,
+      "Edge": 3848945,
+      "Firefox": 756853,
+      "Safari (in-app)": 392101,
+      "Samsung Internet": 380397,
+      "Android Webview": 192620,
+      "Opera": 73335,
+      "Amazon Silk": 48082,
+      "(not set)": 117393,
+      "Mozilla Compatible Agent": 17608,
+      "Internet Explorer": 13664,
+      "Opera Mini": 10073,
+      "YaBrowser": 7490,
+      "Coc Coc": 2360,
+      "Whale Browser": 2522,
+      "UC Browser": 2982,
+      "Android Runtime": 310,
+      "DuckDuckGo Browser": 552,
+      "Aloha Browser": 675,
+      "Android Browser": 608,
+      "PaleMoon": 248,
+      "SeaMonkey": 204,
+      "Mozilla": 386,
+      "Maxthon": 17,
+      "Meta Quest Browser": 111,
+      "NetFront": 4,
+      "Puffin": 30,
+      "Seznam": 28,
+      "Vivaldi": 22,
+      "Waterfox": 198,
+      "Phoenix Browser": 199,
+      "Konqueror": 5,
+      "Lynx": 116,
+      "Iron": 16,
+      "BlackBerry": 17,
+      "Netscape": 42,
+      "YE": 18,
+      "IE with Chrome Frame": 14,
+      "Nintendo Browser": 17,
+      "BrowserNG": 2,
+      "Galeon": 1,
+      "Nokia Browser": 4,
+      "AdobeAIR": 1,
+      "Playstation Vita Browser": 3,
+      "MRCHROME": 3
+    }
+  },
+  "taken_at": "2024-01-05T14:26:38.012Z",
+  "agency": "agriculture"
+}

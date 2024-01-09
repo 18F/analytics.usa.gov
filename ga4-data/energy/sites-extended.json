@@ -1,0 +1,290 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "www.test.bpa.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.sciencebase.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.osti.govhttps",
+      "visits": "12"
+    },
+    {
+      "domain": "www.osti.gov.libproxy.v.zzu.edu.cn",
+      "visits": "6"
+    },
+    {
+      "domain": "www.osti.gov",
+      "visits": "270063"
+    },
+    {
+      "domain": "www.nsf.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "www.ferc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.fai.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "www.energy.gov",
+      "visits": "1010778"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.earthdata.nasa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.cancer.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.bpa.gov",
+      "visits": "9084"
+    },
+    {
+      "domain": "www.acq.osd.mil",
+      "visits": "3"
+    },
+    {
+      "domain": "webmap.ornl.gov",
+      "visits": "214"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "10"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "3"
+    },
+    {
+      "domain": "train.cms.doe.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "test.osti.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "tams.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "stage.energy.gov",
+      "visits": "67"
+    },
+    {
+      "domain": "stage.cms.doe.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "7728"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "red.cms.doe.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "pubs.usgs.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "fsitraining.state.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "feature.sandbox.cms.doe.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "evweb.ornl.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "epa-visl.ornl.gov",
+      "visits": "769"
+    },
+    {
+      "domain": "epa-sprg.ornl.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "epa-sdcc.ornl.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "epa-prgs.ornl.gov",
+      "visits": "831"
+    },
+    {
+      "domain": "epa-dccs.ornl.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "epa-bprg.ornl.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "epa-bdcc.ornl.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "dev.cms.doe.gov",
+      "visits": "71"
+    },
+    {
+      "domain": "daymetweb.ornl.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "daymet.ornl.gov",
+      "visits": "416"
+    },
+    {
+      "domain": "daac.ornl.gov",
+      "visits": "6304"
+    },
+    {
+      "domain": "cms.doe.gov",
+      "visits": "1145"
+    },
+    {
+      "domain": "cms-test.osti.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "cms-dev.osti.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "carve.ornl.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "app1dr.osti.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "airmoss.ornl.gov",
+      "visits": "55"
+    },
+    {
+      "domain": "acceptance.osti.gov",
+      "visits": "8"
+    }
+  ],
+  "totals": {
+    "visits": 1308056
+  },
+  "taken_at": "2024-01-05T15:45:19.441Z",
+  "agency": "energy"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 3554182712,
+    "os": {
+      "iOS": 1371191577,
+      "Windows": 996684186,
+      "Android": 692908543,
+      "Macintosh": 336626150,
+      "Linux": 87274569,
+      "Chrome OS": 65707539,
+      "(other)": 454561,
+      "": 34087,
+      "Tizen": 92271,
+      "(not set)": 2990817,
+      "Fuchsia": 49326,
+      "OS/2": 54771,
+      "Firefox OS": 38415,
+      "Playstation 4": 31544,
+      "BlackBerry": 8654,
+      "FreeBSD": 33862,
+      "SymbianOS": 458,
+      "Sony": 101,
+      "UNIX": 739,
+      "Windows Phone": 433,
+      "OpenBSD": 109
+    }
+  },
+  "taken_at": "2024-01-05T15:30:54.397Z"
+}

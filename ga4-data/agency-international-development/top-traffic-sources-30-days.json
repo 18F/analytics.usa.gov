@@ -1,0 +1,262 @@
+{
+  "name": "top-traffic-sources-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionSource"
+      },
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Top Traffic Sources (30 Days)",
+    "description": "Last 30 days' Traffic Sources, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "source": "google",
+      "session_default_channel_group": "Organic Search",
+      "visits": "598092",
+      "pageviews": "1060606",
+      "users": "375029",
+      "pageviews_per_session": "1.7733158109454732",
+      "avg_session_duration": "223.5579083016292",
+      "bounce_rate": "0.41793403021608716"
+    },
+    {
+      "source": "(direct)",
+      "session_default_channel_group": "Direct",
+      "visits": "385158",
+      "pageviews": "614363",
+      "users": "329118",
+      "pageviews_per_session": "1.5950934421717839",
+      "avg_session_duration": "121.38733348162575",
+      "bounce_rate": "0.6343916003302541"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Organic Search",
+      "visits": "39754",
+      "pageviews": "76884",
+      "users": "22011",
+      "pageviews_per_session": "1.9339940634904664",
+      "avg_session_duration": "275.49829704902652",
+      "bounce_rate": "0.37724505710117223"
+    },
+    {
+      "source": "govdelivery",
+      "session_default_channel_group": "Email",
+      "visits": "20414",
+      "pageviews": "34631",
+      "users": "11638",
+      "pageviews_per_session": "1.6964338199275006",
+      "avg_session_duration": "189.2498197254825",
+      "bounce_rate": "0.50269422945037723"
+    },
+    {
+      "source": "(not set)",
+      "session_default_channel_group": "Unassigned",
+      "visits": "42224",
+      "pageviews": "17758",
+      "users": "41088",
+      "pageviews_per_session": "0.42056650246305421",
+      "avg_session_duration": "43.966815759165407",
+      "bounce_rate": "0.99921845395983322"
+    },
+    {
+      "source": "yahoo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "5113",
+      "pageviews": "9713",
+      "users": "3247",
+      "pageviews_per_session": "1.8996675141795423",
+      "avg_session_duration": "268.32892035908463",
+      "bounce_rate": "0.37121063954625466"
+    },
+    {
+      "source": "duckduckgo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "2229",
+      "pageviews": "4164",
+      "users": "1583",
+      "pageviews_per_session": "1.8681022880215343",
+      "avg_session_duration": "185.94481534679227",
+      "bounce_rate": "0.40466576940331989"
+    },
+    {
+      "source": "USAID Bureau for Resilience and Food Security / Agrilinks",
+      "session_default_channel_group": "Email",
+      "visits": "2417",
+      "pageviews": "3836",
+      "users": "1421",
+      "pageviews_per_session": "1.5870914356640464",
+      "avg_session_duration": "203.3269163512619",
+      "bounce_rate": "0.51261894911046757"
+    },
+    {
+      "source": "ecosia.org",
+      "session_default_channel_group": "Organic Search",
+      "visits": "700",
+      "pageviews": "1414",
+      "users": "431",
+      "pageviews_per_session": "2.02",
+      "avg_session_duration": "262.01965711428568",
+      "bounce_rate": "0.37857142857142856"
+    },
+    {
+      "source": "baidu",
+      "session_default_channel_group": "Organic Search",
+      "visits": "274",
+      "pageviews": "742",
+      "users": "220",
+      "pageviews_per_session": "2.7080291970802919",
+      "avg_session_duration": "222.51561083211681",
+      "bounce_rate": "0.63868613138686137"
+    },
+    {
+      "source": "hs_email",
+      "session_default_channel_group": "Email",
+      "visits": "190",
+      "pageviews": "473",
+      "users": "123",
+      "pageviews_per_session": "2.4894736842105263",
+      "avg_session_duration": "362.61975341578955",
+      "bounce_rate": "0.64736842105263159"
+    },
+    {
+      "source": "DASH",
+      "session_default_channel_group": "Display",
+      "visits": "313",
+      "pageviews": "313",
+      "users": "313",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "0",
+      "bounce_rate": "1"
+    },
+    {
+      "source": "happymonday",
+      "session_default_channel_group": "Unassigned",
+      "visits": "193",
+      "pageviews": "255",
+      "users": "83",
+      "pageviews_per_session": "1.3212435233160622",
+      "avg_session_duration": "237.59746589119169",
+      "bounce_rate": "0.48186528497409326"
+    },
+    {
+      "source": "yandex",
+      "session_default_channel_group": "Organic Search",
+      "visits": "84",
+      "pageviews": "169",
+      "users": "55",
+      "pageviews_per_session": "2.0119047619047619",
+      "avg_session_duration": "277.66094272619046",
+      "bounce_rate": "0.4642857142857143"
+    },
+    {
+      "source": "qwant.com",
+      "session_default_channel_group": "Organic Search",
+      "visits": "46",
+      "pageviews": "120",
+      "users": "26",
+      "pageviews_per_session": "2.6086956521739131",
+      "avg_session_duration": "142.88309119565218",
+      "bounce_rate": "0.43478260869565216"
+    },
+    {
+      "source": "ForecastDec2023",
+      "session_default_channel_group": "Email",
+      "visits": "46",
+      "pageviews": "99",
+      "users": "22",
+      "pageviews_per_session": "2.152173913043478",
+      "avg_session_duration": "551.44321165217389",
+      "bounce_rate": "0.36956521739130432"
+    },
+    {
+      "source": "English Global List",
+      "session_default_channel_group": "Email",
+      "visits": "90",
+      "pageviews": "94",
+      "users": "79",
+      "pageviews_per_session": "1.0444444444444445",
+      "avg_session_duration": "24.829424011111112",
+      "bounce_rate": "0.75555555555555554"
+    },
+    {
+      "source": "idealist",
+      "session_default_channel_group": "Referral",
+      "visits": "55",
+      "pageviews": "85",
+      "users": "44",
+      "pageviews_per_session": "1.5454545454545454",
+      "avg_session_duration": "180.73373876363635",
+      "bounce_rate": "0.30909090909090908"
+    },
+    {
+      "source": "slider",
+      "session_default_channel_group": "Unassigned",
+      "visits": "33",
+      "pageviews": "81",
+      "users": "10",
+      "pageviews_per_session": "2.4545454545454546",
+      "avg_session_duration": "485.39954242424244",
+      "bounce_rate": "0.39393939393939392"
+    },
+    {
+      "source": "zalo",
+      "session_default_channel_group": "Organic Social",
+      "visits": "47",
+      "pageviews": "79",
+      "users": "36",
+      "pageviews_per_session": "1.6808510638297873",
+      "avg_session_duration": "153.85465846808512",
+      "bounce_rate": "0.68085106382978722"
+    }
+  ],
+  "totals": {
+    "users": 786577,
+    "visits": 1097472
+  },
+  "taken_at": "2024-01-05T16:05:23.862Z",
+  "agency": "agency-international-development"
+}

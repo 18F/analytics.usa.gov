@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.usa.gov",
+      "visits": "5875267",
+      "users": "5225446",
+      "pageviews": "9204188",
+      "pageviews_per_session": "1.5666365460497369",
+      "avg_session_duration": "121.59961977971551",
+      "bounce_rate": "0.40424954304204386"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "4146234",
+      "users": "1900911",
+      "pageviews": "30689054",
+      "pageviews_per_session": "7.4016849989653259",
+      "avg_session_duration": "408.58561181174844",
+      "bounce_rate": "0.23382327191374147"
+    },
+    {
+      "domain": "www.gsaadvantage.gov",
+      "visits": "3170278",
+      "users": "2992233",
+      "pageviews": "12973909",
+      "pageviews_per_session": "4.092359723658304",
+      "avg_session_duration": "72.04866442898269",
+      "bounce_rate": "0.05125134136501594"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "2168014",
+      "users": "1381774",
+      "pageviews": "4221028",
+      "pageviews_per_session": "1.9490349232062154",
+      "avg_session_duration": "201.08541023700448",
+      "bounce_rate": "0.42860101456909411"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "1900600",
+      "users": "1583319",
+      "pageviews": "3355214",
+      "pageviews_per_session": "1.7884583815637167",
+      "avg_session_duration": "152.07621160512284",
+      "bounce_rate": "0.37193465221509"
+    },
+    {
+      "domain": "www.login.gov",
+      "visits": "1729097",
+      "users": "1405463",
+      "pageviews": "3644611",
+      "pageviews_per_session": "2.1078210187167059",
+      "avg_session_duration": "197.19115601047508",
+      "bounce_rate": "0.35463192637544338"
+    },
+    {
+      "domain": "login.gov",
+      "visits": "996092",
+      "users": "832271",
+      "pageviews": "1679393",
+      "pageviews_per_session": "1.6859948679439249",
+      "avg_session_duration": "126.60888014742072",
+      "bounce_rate": "0.4398077687603153"
+    },
+    {
+      "domain": "www.acquisition.gov",
+      "visits": "625544",
+      "users": "286403",
+      "pageviews": "1801387",
+      "pageviews_per_session": "2.8817029657386213",
+      "avg_session_duration": "378.46263789686634",
+      "bounce_rate": "0.43446344301919609"
+    },
+    {
+      "domain": "www.regulations.gov",
+      "visits": "475290",
+      "users": "315227",
+      "pageviews": "1873003",
+      "pageviews_per_session": "3.940760377874561",
+      "avg_session_duration": "251.45908199129502",
+      "bounce_rate": "0.49389846199162618"
+    },
+    {
+      "domain": "www.fsd.gov",
+      "visits": "354868",
+      "users": "183672",
+      "pageviews": "1137725",
+      "pageviews_per_session": "3.2119435959286271",
+      "avg_session_duration": "387.39125670127873",
+      "bounce_rate": "0.37506340385720888"
+    },
+    {
+      "domain": "www.gsaauctions.gov",
+      "visits": "307570",
+      "users": "202529",
+      "pageviews": "2232076",
+      "pageviews_per_session": "7.257138212439445",
+      "avg_session_duration": "340.98907758988139",
+      "bounce_rate": "0.047410345612380923"
+    },
+    {
+      "domain": "gsaauctions.gov",
+      "visits": "258326",
+      "users": "151796",
+      "pageviews": "1955479",
+      "pageviews_per_session": "7.5698303693782272",
+      "avg_session_duration": "361.78281377234782",
+      "bounce_rate": "0.073910485200870221"
+    },
+    {
+      "domain": "www.reginfo.gov",
+      "visits": "174517",
+      "users": "114268",
+      "pageviews": "1663731",
+      "pageviews_per_session": "9.5334093526705139",
+      "avg_session_duration": "360.19023038001541",
+      "bounce_rate": "0.4894881300962084"
+    },
+    {
+      "domain": "vote.gov",
+      "visits": "144192",
+      "users": "120705",
+      "pageviews": "199271",
+      "pageviews_per_session": "1.3820947070572569",
+      "avg_session_duration": "112.88272223285699",
+      "bounce_rate": "0.42830392809587214"
+    },
+    {
+      "domain": "data.gov",
+      "visits": "133373",
+      "users": "112970",
+      "pageviews": "157137",
+      "pageviews_per_session": "1.1783269477330494",
+      "avg_session_duration": "80.43940832007226",
+      "bounce_rate": "0.55703928081395782"
+    },
+    {
+      "domain": "www.gsaelibrary.gsa.gov",
+      "visits": "122740",
+      "users": "63065",
+      "pageviews": "428870",
+      "pageviews_per_session": "3.4941176470588236",
+      "avg_session_duration": "390.13561559150617",
+      "bounce_rate": "0.365015479876161"
+    },
+    {
+      "domain": "realestatesales.gov",
+      "visits": "121740",
+      "users": "104244",
+      "pageviews": "387702",
+      "pageviews_per_session": "3.1846722523410547",
+      "avg_session_duration": "183.10190575451131",
+      "bounce_rate": "0.24690323640545425"
+    },
+    {
+      "domain": "www.usability.gov",
+      "visits": "113914",
+      "users": "80165",
+      "pageviews": "131396",
+      "pageviews_per_session": "1.1536948926383062",
+      "avg_session_duration": "142.98371778229043",
+      "bounce_rate": "0.532682549993855"
+    },
+    {
+      "domain": "www.fpds.gov",
+      "visits": "92601",
+      "users": "38854",
+      "pageviews": "105120",
+      "pageviews_per_session": "1.135192924482457",
+      "avg_session_duration": "209.80775441707002",
+      "bounce_rate": "0.63486355438926145"
+    },
+    {
+      "domain": "www.fai.gov",
+      "visits": "92365",
+      "users": "46509",
+      "pageviews": "146014",
+      "pageviews_per_session": "1.5818762518269907",
+      "avg_session_duration": "265.31357506434534",
+      "bounce_rate": "0.42880961403128892"
+    }
+  ],
+  "totals": {
+    "users": 17141824,
+    "visits": 23002622
+  },
+  "taken_at": "2024-01-05T16:06:53.930Z",
+  "agency": "general-services-administration"
+}

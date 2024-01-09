@@ -1,0 +1,200 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "wizard.gov",
+      "visits": "16"
+    },
+    {
+      "hostname": "ttbonline.gov",
+      "visits": "18141"
+    },
+    {
+      "hostname": "treasuryscams.gov",
+      "visits": "74"
+    },
+    {
+      "hostname": "treasuryhunt.gov",
+      "visits": "6868"
+    },
+    {
+      "hostname": "treasurydirect.gov",
+      "visits": "355178"
+    },
+    {
+      "hostname": "treasuryauctions.gov",
+      "visits": "217"
+    },
+    {
+      "hostname": "taaps.gov",
+      "visits": "93"
+    },
+    {
+      "hostname": "slgs.gov",
+      "visits": "42"
+    },
+    {
+      "hostname": "savingsbondwizard.gov",
+      "visits": "34"
+    },
+    {
+      "hostname": "savingsbonds.gov",
+      "visits": "418"
+    },
+    {
+      "hostname": "savingsbond.gov",
+      "visits": "441"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "7"
+    },
+    {
+      "hostname": "patriotbonds.gov",
+      "visits": "89"
+    },
+    {
+      "hostname": "ots.gov",
+      "visits": "175"
+    },
+    {
+      "hostname": "occhelps.gov",
+      "visits": "88"
+    },
+    {
+      "hostname": "occ.gov",
+      "visits": "129200"
+    },
+    {
+      "hostname": "ncua.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "nationalbankhelp.gov",
+      "visits": "133"
+    },
+    {
+      "hostname": "login.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "helpwithmymortgagebank.gov",
+      "visits": "112"
+    },
+    {
+      "hostname": "helpwithmymortgage.gov",
+      "visits": "87"
+    },
+    {
+      "hostname": "helpwithmycreditcardbank.gov",
+      "visits": "87"
+    },
+    {
+      "hostname": "helpwithmycreditcard.gov",
+      "visits": "88"
+    },
+    {
+      "hostname": "helpwithmycheckingaccount.gov",
+      "visits": "96"
+    },
+    {
+      "hostname": "helpwithmybank.gov",
+      "visits": "91169"
+    },
+    {
+      "hostname": "fincen.gov",
+      "visits": "28544"
+    },
+    {
+      "hostname": "federalinvestments.gov",
+      "visits": "44"
+    },
+    {
+      "hostname": "comptrollerofthecurrency.gov",
+      "visits": "102"
+    },
+    {
+      "hostname": "bondpro.gov",
+      "visits": "32"
+    },
+    {
+      "hostname": "bankhelp.gov",
+      "visits": "101"
+    },
+    {
+      "hostname": "bankcustomerassistance.gov",
+      "visits": "102"
+    },
+    {
+      "hostname": "bankcustomer.gov",
+      "visits": "88"
+    },
+    {
+      "hostname": "bankanswers.gov",
+      "visits": "107"
+    },
+    {
+      "hostname": "ayudaconmibanco.gov",
+      "visits": "110"
+    }
+  ],
+  "totals": {
+    "visits": 632085
+  },
+  "taken_at": "2024-01-05T16:03:53.859Z",
+  "agency": "treasury"
+}

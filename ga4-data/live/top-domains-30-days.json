@@ -1,0 +1,289 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "tools.usps.com",
+      "visits": "34422612",
+      "users": "25509112",
+      "pageviews": "63237538",
+      "pageviews_per_session": "1.8370929550610511",
+      "avg_session_duration": "201.36847847452398",
+      "bounce_rate": "0.67138989917441472"
+    },
+    {
+      "domain": "reg.usps.com",
+      "visits": "3159185",
+      "users": "2797652",
+      "pageviews": "4877021",
+      "pageviews_per_session": "1.5437592290416673",
+      "avg_session_duration": "277.41528681571106",
+      "bounce_rate": "0.38276675788217529"
+    },
+    {
+      "domain": "www.gsaadvantage.gov",
+      "visits": "2774861",
+      "users": "2798891",
+      "pageviews": "6335410",
+      "pageviews_per_session": "2.2831449935690471",
+      "avg_session_duration": "12.19827386733858",
+      "bounce_rate": "0.031884479979357526"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "visits": "2741704",
+      "users": "2714331",
+      "pageviews": "4034168",
+      "pageviews_per_session": "1.4714090215428071",
+      "avg_session_duration": "53.422472560852704",
+      "bounce_rate": "0.87132929010571525"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "2400259",
+      "users": "2036912",
+      "pageviews": "4044864",
+      "pageviews_per_session": "1.6851781411922631",
+      "avg_session_duration": "99.358102112339537",
+      "bounce_rate": "0.32967692236546137"
+    },
+    {
+      "domain": "www.nsopw.gov",
+      "visits": "2377504",
+      "users": "2399611",
+      "pageviews": "9543612",
+      "pageviews_per_session": "4.0141307858998347",
+      "avg_session_duration": "91.718570792190874",
+      "bounce_rate": "0.10234598974386584"
+    },
+    {
+      "domain": "radar.weather.gov",
+      "visits": "2228521",
+      "users": "2101591",
+      "pageviews": "15881123",
+      "pageviews_per_session": "7.1263061914157415",
+      "avg_session_duration": "811.42600932590767",
+      "bounce_rate": "0.62147002428965215"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "2119108",
+      "users": "1933983",
+      "pageviews": "5014583",
+      "pageviews_per_session": "2.36636499885801",
+      "avg_session_duration": "97.006223997934029",
+      "bounce_rate": "0.629354426485106"
+    },
+    {
+      "domain": "www.irs.gov",
+      "visits": "1763447",
+      "users": "1715099",
+      "pageviews": "3465856",
+      "pageviews_per_session": "1.9653871083168364",
+      "avg_session_duration": "100.91546405045742",
+      "bounce_rate": "0.62475821501865381"
+    },
+    {
+      "domain": "informeddelivery.usps.com",
+      "visits": "1629086",
+      "users": "1192720",
+      "pageviews": "5010820",
+      "pageviews_per_session": "3.0758474383795575",
+      "avg_session_duration": "166.92377269726765",
+      "bounce_rate": "0.02160229723906534"
+    },
+    {
+      "domain": "forecast.weather.gov",
+      "visits": "1307369",
+      "users": "929839",
+      "pageviews": "8485604",
+      "pageviews_per_session": "6.4905959985283417",
+      "avg_session_duration": "639.96320199845024",
+      "bounce_rate": "0.62413060123041009"
+    },
+    {
+      "domain": "studentaid.gov",
+      "visits": "1299090",
+      "users": "1026072",
+      "pageviews": "10469121",
+      "pageviews_per_session": "8.0588111678174723",
+      "avg_session_duration": "496.66574637589309",
+      "bounce_rate": "0.087298801468720419"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "1114980",
+      "users": "1105836",
+      "pageviews": "3099989",
+      "pageviews_per_session": "2.7803090638397103",
+      "avg_session_duration": "165.72165311366649",
+      "bounce_rate": "0.43399343485981812"
+    },
+    {
+      "domain": "www.weather.gov",
+      "visits": "1100407",
+      "users": "841074",
+      "pageviews": "5008049",
+      "pageviews_per_session": "4.5510879156530262",
+      "avg_session_duration": "538.27213515745984",
+      "bounce_rate": "0.39652419513870779"
+    },
+    {
+      "domain": "www.fda.gov",
+      "visits": "1029131",
+      "users": "1009947",
+      "pageviews": "2723435",
+      "pageviews_per_session": "2.64634434294565",
+      "avg_session_duration": "108.66778867308052",
+      "bounce_rate": "0.5325104384184326"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "1025856",
+      "users": "1016706",
+      "pageviews": "1868649",
+      "pageviews_per_session": "1.821550977915029",
+      "avg_session_duration": "71.053572976829116",
+      "bounce_rate": "0.70489912814274125"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "956191",
+      "users": "924616",
+      "pageviews": "1687131",
+      "pageviews_per_session": "1.764428864107694",
+      "avg_session_duration": "150.40906796791751",
+      "bounce_rate": "0.49811282473899043"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "814011",
+      "users": "754788",
+      "pageviews": "4077218",
+      "pageviews_per_session": "5.0087996353857624",
+      "avg_session_duration": "93.453438387992279",
+      "bounce_rate": "0.041713195521927836"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "726698",
+      "users": "722281",
+      "pageviews": "930911",
+      "pageviews_per_session": "1.2810149470619157",
+      "avg_session_duration": "38.373058560157077",
+      "bounce_rate": "0.97005496093287724"
+    },
+    {
+      "domain": "www.nlm.nih.gov",
+      "visits": "676304",
+      "users": "684051",
+      "pageviews": "708542",
+      "pageviews_per_session": "1.0476679126546642",
+      "avg_session_duration": "2.9948174276139139",
+      "bounce_rate": "0.99058559464382878"
+    }
+  ],
+  "totals": {
+    "users": 54215112,
+    "visits": 65666324
+  },
+  "taken_at": "2024-01-05T15:31:09.933Z"
+}

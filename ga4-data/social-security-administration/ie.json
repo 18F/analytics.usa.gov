@@ -1,0 +1,61 @@
+{
+  "name": "ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "browser",
+        "stringFilter": {
+          "value": "Internet Explorer"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "name": "Internet Explorer",
+    "description": "90 days of visits from Internet Explorer users broken down by version for all sites."
+  },
+  "totals": {
+    "visits": 173654,
+    "ie_version": {
+      "undefined": 173654
+    }
+  },
+  "taken_at": "2024-01-05T14:44:56.607Z",
+  "agency": "social-security-administration"
+}

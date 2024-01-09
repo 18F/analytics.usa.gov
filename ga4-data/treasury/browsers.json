@@ -1,0 +1,100 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 136381343,
+    "browser": {
+      "Chrome": 78691148,
+      "Safari": 33784326,
+      "Edge": 17038892,
+      "Firefox": 3137591,
+      "Android Webview": 1028816,
+      "Samsung Internet": 1176222,
+      "Safari (in-app)": 676409,
+      "Internet Explorer": 146886,
+      "(not set)": 277274,
+      "Amazon Silk": 136025,
+      "Opera": 153555,
+      "Mozilla Compatible Agent": 71828,
+      "YaBrowser": 35521,
+      "Whale Browser": 7984,
+      "Aloha Browser": 1808,
+      "Coc Coc": 2841,
+      "UC Browser": 2048,
+      "SeaMonkey": 866,
+      "DuckDuckGo Browser": 1618,
+      "Android Runtime": 1262,
+      "Mozilla": 1818,
+      "Opera Mini": 3450,
+      "PaleMoon": 862,
+      "Waterfox": 344,
+      "Android Browser": 532,
+      "Meta Quest Browser": 208,
+      "Iron": 385,
+      "Lynx": 127,
+      "BlackBerry": 118,
+      "Puffin": 58,
+      "Phoenix Browser": 242,
+      "Seznam": 66,
+      "Konqueror": 14,
+      "Netscape": 37,
+      "Playstation 4": 4,
+      "EudoraWeb": 1,
+      "Maxthon": 75,
+      "Nokia Browser": 3,
+      "Swing": 3,
+      "Nintendo Browser": 42,
+      "NetFront": 4,
+      "Galeon": 2,
+      "MRCHROME": 1,
+      "Vivaldi": 21,
+      "YE": 1,
+      "Camino": 1,
+      "BrowserNG": 1,
+      "IE with Chrome Frame": 3
+    }
+  },
+  "taken_at": "2024-01-05T14:37:54.338Z",
+  "agency": "treasury"
+}

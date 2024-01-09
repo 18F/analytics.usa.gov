@@ -1,0 +1,139 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 76629883,
+    "languages": {
+      "English": 60727556,
+      "Spanish": 4553908,
+      "Chinese": 1658931,
+      "German": 1322526,
+      "French": 1144538,
+      "Portuguese": 1304027,
+      "Italian": 784105,
+      "Russian": 710786,
+      "Japanese": 530215,
+      "Dutch": 438695,
+      "Turkish": 400813,
+      "Polish": 363507,
+      "Korean": 361479,
+      "Swedish": 230094,
+      "Danish": 151072,
+      "Czech": 160135,
+      "Norwegian Bokmål": 125829,
+      "Hungarian": 143401,
+      "Indonesian": 140580,
+      "Arabic": 157697,
+      "Thai": 136944,
+      "Ukrainian": 88178,
+      "Greek": 129004,
+      "Finnish": 107737,
+      "Vietnamese": 109509,
+      "Persian": 84917,
+      "Romanian": 89585,
+      "Slovak": 63770,
+      "Hebrew": 45883,
+      "Bulgarian": 31623,
+      "Croatian": 60889,
+      "Catalan": 62262,
+      "Hindi": 23516,
+      "Slovenian": 27699,
+      "Serbian": 27185,
+      "Lithuanian": 18832,
+      "(other)": 12821,
+      "Estonian": 11380,
+      "Burmese": 2797,
+      "Latvian": 8621,
+      "Bengali": 4561,
+      "Georgian": 7414,
+      "Malay": 5589,
+      "Uzbek": 7357,
+      "Azerbaijani": 5888,
+      "Albanian": 2976,
+      "Marathi": 3914,
+      "Central Khmer": 4166,
+      "Macedonian": 3817,
+      "Bosnian": 4983,
+      "Icelandic": 2334,
+      "Tamil": 2429,
+      "Telugu": 1863,
+      "Gujarati": 1953,
+      "Mongolian": 1405,
+      "Kannada": 900,
+      "Malayalam": 2041,
+      "Basque": 2315,
+      "Welsh": 838,
+      "Galician": 1677,
+      "Urdu": 887,
+      "Irish": 374,
+      "Afrikaans": 1772,
+      "Norwegian": 764,
+      "Armenian": 746,
+      "Belarusian": 763,
+      "Sinhala": 497,
+      "Panjabi": 657,
+      "Corsican": 12,
+      "Kazakh": 379,
+      "Amharic": 487,
+      "Norwegian Nynorsk": 194,
+      "Swahili": 49,
+      "Somali": 22,
+      "Igbo": 11,
+      "Pushto": 27,
+      "Nepali": 57,
+      "Maori": 32,
+      "Kalaallisut": 529,
+      "Lao": 122,
+      "Luxembourgish": 23,
+      "Gaelic": 13
+    }
+  },
+  "taken_at": "2024-01-05T15:36:02.255Z",
+  "agency": "national-aeronautics-space-administration"
+}

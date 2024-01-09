@@ -1,0 +1,192 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 3550587183,
+    "languages": {
+      "(other)": 41260289,
+      "English": 3170495362,
+      "Spanish": 214112259,
+      "Chinese": 25073242,
+      "Korean": 5884006,
+      "Russian": 9215173,
+      "Japanese": 7957304,
+      "French": 17690434,
+      "German": 10220092,
+      "Portuguese": 9262501,
+      "Turkish": 5505612,
+      "Italian": 4584622,
+      "Vietnamese": 2225319,
+      "Ukrainian": 1319315,
+      "Arabic": 4103424,
+      "Dutch": 3028164,
+      "Polish": 2310409,
+      "Indonesian": 2014882,
+      "Hebrew": 976013,
+      "Swedish": 1791443,
+      "Thai": 1003512,
+      "Danish": 1030252,
+      "Czech": 871976,
+      "Norwegian Bokmål": 1078597,
+      "Greek": 842139,
+      "Hungarian": 772429,
+      "Finnish": 714114,
+      "Persian": 781966,
+      "Romanian": 657927,
+      "Croatian": 353688,
+      "Serbian": 218072,
+      "Slovak": 457936,
+      "Bulgarian": 222339,
+      "Catalan": 576020,
+      "Hindi": 269966,
+      "Slovenian": 171245,
+      "Lithuanian": 152612,
+      "Estonian": 85279,
+      "Latvian": 83332,
+      "Georgian": 85662,
+      "Uzbek": 132354,
+      "Azerbaijani": 71750,
+      "Malay": 64390,
+      "Bosnian": 58403,
+      "Bengali": 61876,
+      "Albanian": 49956,
+      "Central Khmer": 49197,
+      "Icelandic": 32421,
+      "Marathi": 36926,
+      "Macedonian": 32298,
+      "Tamil": 28223,
+      "Afrikaans": 31627,
+      "Panjabi": 29108,
+      "Amharic": 29829,
+      "Burmese": 34097,
+      "Gujarati": 37884,
+      "Basque": 21755,
+      "Telugu": 22135,
+      "Galician": 21755,
+      "Armenian": 16767,
+      "Malayalam": 16924,
+      "Mongolian": 15469,
+      "Kannada": 14645,
+      "Irish": 12053,
+      "Corsican": 11123,
+      "Welsh": 11535,
+      "Nepali": 12926,
+      "Urdu": 15070,
+      "Samoan": 8267,
+      "Tonga": 7792,
+      "Belarusian": 10462,
+      "Somali": 9634,
+      "Norwegian": 8425,
+      "Swahili": 8060,
+      "Tagalog": 5588,
+      "Sinhala": 7370,
+      "Tigrinya": 3791,
+      "Pushto": 5048,
+      "Igbo": 4621,
+      "Akan": 4582,
+      "Maori": 4440,
+      "Kazakh": 7567,
+      "Lao": 6634,
+      "Gaelic": 4445,
+      "Norwegian Nynorsk": 4368,
+      "Haitian": 3422,
+      "Yoruba": 3133,
+      "Esperanto": 3016,
+      "Oriya": 2339,
+      "Tibetan": 2935,
+      "Kashmiri": 1894,
+      "Maltese": 1615,
+      "Yiddish": 1276,
+      "Assamese": 1936,
+      "Latin": 2092,
+      "Kinyarwanda": 989,
+      "Ido": 2016,
+      "Oromo": 2883,
+      "Shona": 1706,
+      "Ganda": 1471,
+      "Luxembourgish": 1352,
+      "Hausa": 363,
+      "Venda": 335,
+      "Zulu": 751,
+      "Aragonese": 605,
+      "Kirghiz": 1616,
+      "Sanskrit": 89,
+      "Manx": 59,
+      "Javanese": 75,
+      "Wolof": 890,
+      "Turkmen": 814,
+      "Ewe": 95,
+      "Divehi": 734,
+      "Guarani": 26,
+      "Faroese": 1040,
+      "Xhosa": 51,
+      "Tajik": 186,
+      "Breton": 189,
+      "Interlingua": 321,
+      "Serbo-Croatian": 578,
+      "Uighur": 219,
+      "Twi": 161,
+      "Quechua": 25,
+      "Dzongkha": 245,
+      "Kurdish": 12,
+      "Northern Sami": 22,
+      "Bambara": 63,
+      "Ossetian": 58,
+      "Kalaallisut": 721,
+      "Tsonga": 46,
+      "Tswana": 57,
+      "Romansh": 33,
+      "Sindhi": 25,
+      "Rundi": 23,
+      "Southern Sotho": 25,
+      "Bashkir": 38
+    }
+  },
+  "taken_at": "2024-01-05T15:30:49.415Z"
+}

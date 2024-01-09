@@ -1,0 +1,66 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 98392494,
+    "os": {
+      "Windows": 38739573,
+      "iOS": 29610749,
+      "Android": 19291500,
+      "Macintosh": 7783891,
+      "Linux": 2026874,
+      "Chrome OS": 907678,
+      "(other)": 9973,
+      "": 644,
+      "(not set)": 21612
+    }
+  },
+  "taken_at": "2024-01-05T15:34:07.058Z",
+  "agency": "veterans-affairs"
+}

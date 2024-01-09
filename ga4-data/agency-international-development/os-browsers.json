@@ -1,0 +1,144 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 3862947,
+    "by_os": {
+      "Windows": {
+        "Chrome": 1249625,
+        "Edge": 319816,
+        "Firefox": 58481,
+        "Opera": 8604,
+        "Internet Explorer": 356
+      },
+      "Android": {
+        "Chrome": 833736,
+        "Android Webview": 59031,
+        "Samsung Internet": 39074,
+        "Opera": 16266,
+        "UC Browser": 1180
+      },
+      "Linux": {
+        "Chrome": 348297,
+        "Firefox": 176
+      },
+      "iOS": {
+        "Safari": 312632,
+        "Chrome": 71843,
+        "Safari (in-app)": 41366
+      },
+      "Macintosh": {
+        "Chrome": 276109,
+        "Safari": 154788,
+        "Firefox": 8501
+      },
+      "Chrome OS": {
+        "Chrome": 62745
+      },
+      "(not set)": {
+        "(not set)": 321
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 1249625,
+        "Android": 833736,
+        "Linux": 348297,
+        "Macintosh": 276109,
+        "iOS": 71843,
+        "Chrome OS": 62745
+      },
+      "Edge": {
+        "Windows": 319816
+      },
+      "Safari": {
+        "iOS": 312632,
+        "Macintosh": 154788
+      },
+      "Android Webview": {
+        "Android": 59031
+      },
+      "Safari (in-app)": {
+        "iOS": 41366
+      },
+      "Firefox": {
+        "Windows": 58481,
+        "Macintosh": 8501,
+        "Linux": 176
+      },
+      "Samsung Internet": {
+        "Android": 39074
+      },
+      "Opera": {
+        "Android": 16266,
+        "Windows": 8604
+      },
+      "UC Browser": {
+        "Android": 1180
+      },
+      "(not set)": {
+        "(not set)": 321
+      },
+      "Internet Explorer": {
+        "Windows": 356
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:05:10.566Z",
+  "agency": "agency-international-development"
+}

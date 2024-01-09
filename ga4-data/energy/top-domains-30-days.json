@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.energy.gov",
+      "visits": "2770145",
+      "users": "2071070",
+      "pageviews": "4030142",
+      "pageviews_per_session": "1.4548487534046051",
+      "avg_session_duration": "180.78495607475091",
+      "bounce_rate": "0.51025884926601317"
+    },
+    {
+      "domain": "www.osti.gov",
+      "visits": "667814",
+      "users": "555820",
+      "pageviews": "918289",
+      "pageviews_per_session": "1.3750670096763471",
+      "avg_session_duration": "85.431333875332058",
+      "bounce_rate": "0.70235874060741466"
+    },
+    {
+      "domain": "www.bpa.gov",
+      "visits": "25327",
+      "users": "13504",
+      "pageviews": "63033",
+      "pageviews_per_session": "2.4887669285742486",
+      "avg_session_duration": "268.2274258561614",
+      "bounce_rate": "0.36751293086429504"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "25241",
+      "users": "19407",
+      "pageviews": "45320",
+      "pageviews_per_session": "1.7954914623033953",
+      "avg_session_duration": "185.41826661273333",
+      "bounce_rate": "0.39645814349669189"
+    },
+    {
+      "domain": "daac.ornl.gov",
+      "visits": "17942",
+      "users": "10736",
+      "pageviews": "32469",
+      "pageviews_per_session": "1.8096644744175676",
+      "avg_session_duration": "259.62894680804811",
+      "bounce_rate": "0.46421803589343441"
+    },
+    {
+      "domain": "energy.gov",
+      "visits": "5443",
+      "users": "5505",
+      "pageviews": "5505",
+      "pageviews_per_session": "1.0113907771449568",
+      "avg_session_duration": "0.55110435384898027",
+      "bounce_rate": "0.99559066691162956"
+    },
+    {
+      "domain": "cms.doe.gov",
+      "visits": "3505",
+      "users": "587",
+      "pageviews": "32639",
+      "pageviews_per_session": "9.3121255349500718",
+      "avg_session_duration": "1270.222325221969",
+      "bounce_rate": "0.19828815977175462"
+    },
+    {
+      "domain": "epa-prgs.ornl.gov",
+      "visits": "2801",
+      "users": "1402",
+      "pageviews": "6725",
+      "pageviews_per_session": "2.4009282399143164",
+      "avg_session_duration": "442.824506884327",
+      "bounce_rate": "0.34630489111031776"
+    },
+    {
+      "domain": "epa-visl.ornl.gov",
+      "visits": "2283",
+      "users": "978",
+      "pageviews": "6275",
+      "pageviews_per_session": "2.7485764345159875",
+      "avg_session_duration": "504.00175777266753",
+      "bounce_rate": "0.35173017958826108"
+    },
+    {
+      "domain": "daymet.ornl.gov",
+      "visits": "1237",
+      "users": "820",
+      "pageviews": "2279",
+      "pageviews_per_session": "1.8423605497170574",
+      "avg_session_duration": "222.10893234599843",
+      "bounce_rate": "0.37105901374292644"
+    },
+    {
+      "domain": "stage.energy.gov",
+      "visits": "734",
+      "users": "721",
+      "pageviews": "768",
+      "pageviews_per_session": "1.0463215258855585",
+      "avg_session_duration": "8.8510762029972749",
+      "bounce_rate": "0.9659400544959128"
+    },
+    {
+      "domain": "webmap.ornl.gov",
+      "visits": "616",
+      "users": "360",
+      "pageviews": "785",
+      "pageviews_per_session": "1.2743506493506493",
+      "avg_session_duration": "217.38014507954543",
+      "bounce_rate": "0.36525974025974028"
+    },
+    {
+      "domain": "science.energy.gov",
+      "visits": "198",
+      "users": "198",
+      "pageviews": "198",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "0",
+      "bounce_rate": "1"
+    },
+    {
+      "domain": "airmoss.ornl.gov",
+      "visits": "155",
+      "users": "143",
+      "pageviews": "221",
+      "pageviews_per_session": "1.4258064516129032",
+      "avg_session_duration": "95.135853619354833",
+      "bounce_rate": "0.32258064516129031"
+    },
+    {
+      "domain": "dev.cms.doe.gov",
+      "visits": "151",
+      "users": "49",
+      "pageviews": "851",
+      "pageviews_per_session": "5.6357615894039732",
+      "avg_session_duration": "784.85698200000024",
+      "bounce_rate": "0.11258278145695365"
+    },
+    {
+      "domain": "www.nsf.gov",
+      "visits": "130",
+      "users": "93",
+      "pageviews": "153",
+      "pageviews_per_session": "1.176923076923077",
+      "avg_session_duration": "111.68958656153846",
+      "bounce_rate": "0.5461538461538461"
+    },
+    {
+      "domain": "epa-bprg.ornl.gov",
+      "visits": "120",
+      "users": "80",
+      "pageviews": "285",
+      "pageviews_per_session": "2.375",
+      "avg_session_duration": "252.46971382499999",
+      "bounce_rate": "0.35833333333333334"
+    },
+    {
+      "domain": "epa-sprg.ornl.gov",
+      "visits": "113",
+      "users": "106",
+      "pageviews": "180",
+      "pageviews_per_session": "1.5929203539823009",
+      "avg_session_duration": "81.840068761061929",
+      "bounce_rate": "0.19469026548672566"
+    },
+    {
+      "domain": "stage.cms.doe.gov",
+      "visits": "99",
+      "users": "52",
+      "pageviews": "445",
+      "pageviews_per_session": "4.4949494949494948",
+      "avg_session_duration": "537.26566595959594",
+      "bounce_rate": "0.15151515151515152"
+    },
+    {
+      "domain": "train.cms.doe.gov",
+      "visits": "90",
+      "users": "24",
+      "pageviews": "510",
+      "pageviews_per_session": "5.666666666666667",
+      "avg_session_duration": "834.18917331111118",
+      "bounce_rate": "0.13333333333333333"
+    }
+  ],
+  "totals": {
+    "users": 2681655,
+    "visits": 3524144
+  },
+  "taken_at": "2024-01-05T15:45:11.347Z",
+  "agency": "energy"
+}

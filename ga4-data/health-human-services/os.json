@@ -1,0 +1,67 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 633610621,
+    "os": {
+      "Windows": 187010128,
+      "iOS": 189415748,
+      "Android": 170735622,
+      "Macintosh": 60662452,
+      "Linux": 14832322,
+      "Chrome OS": 10585092,
+      "(not set)": 340865,
+      "Fuchsia": 12545,
+      "Tizen": 15620,
+      "UNIX": 227
+    }
+  },
+  "taken_at": "2024-01-05T15:53:51.186Z",
+  "agency": "health-human-services"
+}

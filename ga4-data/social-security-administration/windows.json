@@ -1,0 +1,68 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "names": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites."
+  },
+  "totals": {
+    "visits": 30338215,
+    "os_version": {
+      "7": 554049,
+      "8": 30514,
+      "10": 19029232,
+      "11": 10465036,
+      "95": 7,
+      "98": 7,
+      "2000": 29,
+      "8.1": 247260,
+      "Vista": 5433,
+      "XP": 5287,
+      "NT": 1239,
+      "Server 2003": 101,
+      "(not set)": 14,
+      "ME": 7
+    }
+  },
+  "taken_at": "2024-01-05T14:44:54.482Z",
+  "agency": "social-security-administration"
+}

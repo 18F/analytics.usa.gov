@@ -1,0 +1,136 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 38617238,
+    "by_windows": {
+      "7": {
+        "Firefox": 64650,
+        "Edge": 33226,
+        "Chrome": 228121
+      },
+      "8": {
+        "Firefox": 6846,
+        "Chrome": 12336
+      },
+      "10": {
+        "Edge": 17286721,
+        "Chrome": 10932544,
+        "Firefox": 1110189,
+        "Opera": 66613,
+        "Internet Explorer": 26997
+      },
+      "11": {
+        "Chrome": 4989149,
+        "Edge": 3711954
+      },
+      "8.1": {
+        "Edge": 21501,
+        "Firefox": 13826,
+        "Chrome": 111493
+      },
+      "XP": {
+        "Firefox": 101,
+        "Chrome": 658
+      },
+      "Vista": {
+        "Chrome": 313
+      }
+    },
+    "by_browsers": {
+      "Edge": {
+        "7": 33226,
+        "10": 17286721,
+        "11": 3711954,
+        "8.1": 21501
+      },
+      "Chrome": {
+        "7": 228121,
+        "8": 12336,
+        "10": 10932544,
+        "11": 4989149,
+        "8.1": 111493,
+        "Vista": 313,
+        "XP": 658
+      },
+      "Firefox": {
+        "7": 64650,
+        "8": 6846,
+        "10": 1110189,
+        "8.1": 13826,
+        "XP": 101
+      },
+      "Opera": {
+        "10": 66613
+      },
+      "Internet Explorer": {
+        "10": 26997
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:34:12.458Z",
+  "agency": "veterans-affairs"
+}

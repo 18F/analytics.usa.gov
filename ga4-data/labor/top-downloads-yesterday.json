@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-e.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "6556"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Recordkeeping - Recordkeeping Forms | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha-rk-forms-package.pdf",
+      "page": "www.osha.gov/recordkeeping/forms",
+      "total_events": "5059"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-f.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "3713"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Recordkeeping - Recordkeeping Forms | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/new-osha300form.xlsx",
+      "page": "www.osha.gov/recordkeeping/forms",
+      "total_events": "2786"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-381.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "2567"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Family and Medical Leave Act (FMLA) Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/fmlaen.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/fmla",
+      "total_events": "1218"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-382.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "883"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-e.pdf",
+      "page": "www.dol.gov/agencies/whd/forms",
+      "total_events": "636"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha_ita_summary_data_csv_template-revised.csv",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "492"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TEGL 06-23 Change 1 | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/advisories/tegl/2023/tegl%2006-23%20change%201/tegl%2006-23%20change%201.pdf",
+      "page": "www.dol.gov/agencies/eta/advisories/tegl-06-23-change-1",
+      "total_events": "422"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Equal Employment Opportunity Posters | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/regs/compliance/posters/pdf/22-088_eeoc_knowyourrights.pdf",
+      "page": "www.dol.gov/agencies/ofccp/posters",
+      "total_events": "409"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fair Labor Standards Act (FLSA) Minimum Wage Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/minwagep-small.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/flsa",
+      "total_events": "394"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OSHA's Free Workplace Poster | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha3165-8514.pdf",
+      "page": "www.osha.gov/publications/poster",
+      "total_events": "368"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-f.pdf",
+      "page": "www.dol.gov/agencies/whd/forms",
+      "total_events": "340"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Continuation of Health Coverage (COBRA) | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/about-ebsa/our-activities/resource-center/faqs/cobra-continuation-health-coverage-consumer.pdf",
+      "page": "www.dol.gov/general/topic/health-plans/cobra",
+      "total_events": "339"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Employee Polygraph Protection Act (EPPA) Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/eppac.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/employee-polygraph-protection-act",
+      "total_events": "335"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Family and Medical Leave Act Employee Guide | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/employeeguide.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/employee-guide",
+      "total_events": "324"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fair Labor Standards Act (FLSA) Minimum Wage Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/minwagep.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/flsa",
+      "total_events": "309"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OSHA Publications By Search | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/oshafs4388.pdf",
+      "page": "www.osha.gov/publications/publication-products",
+      "total_events": "306"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Family and Medical Leave Act Employer Guide | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/employerguide.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/employer-guide",
+      "total_events": "305"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/injuryreporting/osha_ita-estab-and-summary-csv-documentation_revised.pdf",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "299"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voluntary Self‐Identification of Disability Form | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/regs/compliance/sec503/self_id_forms/503self-idform-04262023.pdf",
+      "page": "www.dol.gov/agencies/ofccp/self-id-forms",
+      "total_events": "293"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha_ita_summary_data_csv_sample_data-revised.csv",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "275"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-e.pdf",
+      "page": "www.dol.gov/general/forms",
+      "total_events": "268"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "elaws - <i>FirstStep</i> Poster Advisor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/regs/compliance/posters/pdf/22-088_eeoc_knowyourrights.pdf",
+      "page": "webapps.dol.gov/elaws/firststep/poster_direct.htm",
+      "total_events": "268"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Emergency Response Rulemaking | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/er-nprm-unofficial-web-version.pdf",
+      "page": "www.osha.gov/emergency-response/rulemaking",
+      "total_events": "243"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CPI Home : U.S. Bureau of Labor Statistics",
+      "event_label": "file_download",
+      "file_name": "/news.release/pdf/cpi.pdf",
+      "page": "www.bls.gov/cpi/",
+      "total_events": "237"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OSHA's Free Workplace Poster | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha3165.pdf",
+      "page": "www.osha.gov/publications/poster",
+      "total_events": "230"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Other Resources | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/fmla/fmla-powerpoint.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/posters",
+      "total_events": "227"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "COBRA Continuation Coverage | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/about-ebsa/our-activities/resource-center/faqs/cobra-model-notices.pdf",
+      "page": "www.dol.gov/agencies/ebsa/laws-and-regulations/laws/cobra",
+      "total_events": "213"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Download Forms : U.S. Bureau of Labor Statistics",
+      "event_label": "file_download",
+      "file_name": "/respondents/iif/forms/oshaforms.pdf",
+      "page": "www.bls.gov/respondents/iif/forms.htm",
+      "total_events": "200"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha_ita_summary_data_csv_template-revised.csv",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "198"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fair Labor Standards Act (FLSA) Minimum Wage Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/minwagebwp.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/flsa",
+      "total_events": "194"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WARN Act Compliance Assistance | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/layoff/pdfs/_employerwarn2003.pdf",
+      "page": "www.dol.gov/agencies/eta/layoffs/warn",
+      "total_events": "194"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FLSA Protections to Pump at Work | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/flsa/pump-flyer.pdf",
+      "page": "www.dol.gov/agencies/whd/pump-at-work",
+      "total_events": "192"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TEGL 07-23 | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/advisories/tegl/2023/tegl%2007-23/tegl%2007-23%20%28complete%20pdf%29.pdf",
+      "page": "www.dol.gov/agencies/eta/advisories/tegl-07-23",
+      "total_events": "192"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Equal Employment Opportunity Posters | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/pdf/pay-transp_%20english_formattedesqa508c.pdf",
+      "page": "www.dol.gov/agencies/ofccp/posters",
+      "total_events": "184"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "elaws - <i>FirstStep</i> Poster Advisor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/vets/legacy/files/userra_private.pdf",
+      "page": "webapps.dol.gov/elaws/firststep/results.htm",
+      "total_events": "183"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-f.pdf",
+      "page": "www.dol.gov/general/forms",
+      "total_events": "181"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh347.pdf",
+      "page": "www.dol.gov/agencies/whd/forms",
+      "total_events": "177"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Archived Consumer Price Index Supplemental Files : U.S. Bureau of Labor Statistics",
+      "event_label": "file_download",
+      "file_name": "/cpi/tables/supplemental-files/news-release-table1-202311.xlsx",
+      "page": "www.bls.gov/cpi/tables/supplemental-files/",
+      "total_events": "176"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form 5500 Series | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/employers-and-advisers/plan-administration-and-compliance/reporting-and-filing/form-5500/2023-form-5500.pdf",
+      "page": "www.dol.gov/agencies/ebsa/employers-and-advisers/plan-administration-and-compliance/reporting-and-filing/form-5500",
+      "total_events": "176"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Performance Data | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/oflc/pdfs/perm_disclosure_data_fy2023_q4.xlsx",
+      "page": "www.dol.gov/agencies/eta/foreign-labor/performance",
+      "total_events": "172"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Recordkeeping - Overview | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha_fs-4272_ita_07-2023.pdf",
+      "page": "www.osha.gov/recordkeeping",
+      "total_events": "170"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FLSA Protections to Pump at Work | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/flsa/pump-card.pdf",
+      "page": "www.dol.gov/agencies/whd/pump-at-work",
+      "total_events": "163"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha_ita-estab-and-summary-csv-documentation_revised.pdf",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "160"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Your Rights Under USERRA Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/vets/files/userra-poster.pdf",
+      "page": "www.dol.gov/agencies/vets/programs/userra/poster",
+      "total_events": "157"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Training Requirements and Resources | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha2254.pdf",
+      "page": "www.osha.gov/training/library",
+      "total_events": "147"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "elaws - <i>FirstStep</i> Poster Advisor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/vets/legacy/files/userra_private.pdf",
+      "page": "webapps.dol.gov/elaws/firststep/poster_direct.htm",
+      "total_events": "146"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "December 14, 2023 Fatality - Preliminary Report | Mine Safety and Health Administration (MSHA)",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/data_reports/fatals/enforcement/2023/december%2014%2c%202025%20-%20preliminary%20report%20beck%20street.pdf",
+      "page": "www.msha.gov/data-reports/fatality-reports/2023/december-14-2023-fatality/preliminary-report",
+      "total_events": "145"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "TEGL 06-23 Change 1 | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/advisories/tegl/2023/tegl%2006-23%20change%201/attachment%20i%20%28accessible%20pdf%29.pdf",
+      "page": "www.dol.gov/agencies/eta/advisories/tegl-06-23-change-1",
+      "total_events": "141"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/ita_template_form_300-301_csv_data.csv",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "139"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "elaws - <i>FirstStep</i> Poster Advisor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/regs/compliance/posters/pdf/22-088_eeoc_knowyourrights.pdf",
+      "page": "webapps.dol.gov/elaws/firststep/results.htm",
+      "total_events": "138"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/manually-add-300a-data.pdf",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "136"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/ita_template_form_300-301_csv_data.csv",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "131"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "COBRA Continuation Coverage | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/laws-and-regulations/laws/cobra/model-general-notice.docx",
+      "page": "www.dol.gov/agencies/ebsa/laws-and-regulations/laws/cobra",
+      "total_events": "129"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OSHA announces switch from traditional hard hats to safety helmets to protect agency employees from head injuries better | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/safety_helmet_shib.pdf",
+      "page": "www.osha.gov/news/newsreleases/trade/12112023",
+      "total_events": "129"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form 5500 Series | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/employers-and-advisers/plan-administration-and-compliance/reporting-and-filing/form-5500/2023-instructions.pdf",
+      "page": "www.dol.gov/agencies/ebsa/employers-and-advisers/plan-administration-and-compliance/reporting-and-filing/form-5500",
+      "total_events": "125"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Workplace Posters | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh1385state.pdf",
+      "page": "www.dol.gov/general/topics/posters",
+      "total_events": "125"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/manually-add-300-301-data.pdf",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "122"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms for New Employees | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9.pdf",
+      "page": "www.dol.gov/agencies/oasam/orientation/forms/new-employee",
+      "total_events": "121"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FLSA Protections to Pump at Work | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/minwagep.pdf",
+      "page": "www.dol.gov/agencies/whd/pump-at-work",
+      "total_events": "120"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WARN Act Compliance Assistance | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/layoff/pdfs/workerwarn2003.pdf",
+      "page": "www.dol.gov/agencies/eta/layoffs/warn",
+      "total_events": "119"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/eta/oflc/pdfs/form%20eta-9089%20-%20application%20for%20permanent%20employment%20certification%20-%20508%20compliant%20-%2006.01.2023.pdf",
+      "page": "www.dol.gov/agencies/eta/foreign-labor/forms",
+      "total_events": "115"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Voluntary Self‐Identification of Disability Form | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/regs/compliance/sec503/self_id_forms/503self-idform-04262023.docx",
+      "page": "www.dol.gov/agencies/ofccp/self-id-forms",
+      "total_events": "115"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/01-create-ita-account.pdf",
+      "page": "www.osha.gov/injuryreporting/ita",
+      "total_events": "113"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Employee Rights for Workers with Disabilities/Special Minimum Wage Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/disabc.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/section-14c",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/osha_ita_summary_data_csv_sample_data-revised.csv",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Workplace Posters | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh1385state.pdf",
+      "page": "www.dol.gov/agencies/whd/posters",
+      "total_events": "110"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms for New Employees | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4.pdf",
+      "page": "www.dol.gov/agencies/oasam/orientation/forms/new-employee",
+      "total_events": "107"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Am I a Protected Veteran? | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ofccp/posters/infographics/files/protectedvet-2016-11x17_engesqa508c.pdf",
+      "page": "www.dol.gov/agencies/ofccp/veterans/protected-veterans",
+      "total_events": "106"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fair Labor Standards Act (FLSA) Minimum Wage Poster | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/minwagebw.pdf",
+      "page": "www.dol.gov/agencies/whd/posters/flsa",
+      "total_events": "105"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Instructions For Completing Payroll Form, WH-347 | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh347.pdf",
+      "page": "www.dol.gov/agencies/whd/forms/wh347",
+      "total_events": "104"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-384.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/forms",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/01-create-ita-account.pdf",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "101"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Workplace Posters | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/posters/ffcra_poster_wh1422_non-federal.pdf",
+      "page": "www.dol.gov/agencies/whd/posters",
+      "total_events": "100"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FMLA: General Guidance | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/fmla/fmla-powerpoint.pdf",
+      "page": "www.dol.gov/agencies/whd/fmla/general-guidance",
+      "total_events": "98"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/ita_case_data_csv_specifications.pdf",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "95"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Establishment Specific Injury and Illness Data (Injury Tracking Application) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/ita-data-cy2022.zip",
+      "page": "www.osha.gov/Establishment-Specific-Injury-and-Illness-Data",
+      "total_events": "94"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WHD Fact Sheets | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/whd_fs.pdf",
+      "page": "www.dol.gov/agencies/whd/fact-sheets",
+      "total_events": "94"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "File a Complaint | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha7.pdf",
+      "page": "www.osha.gov/workers/file-complaint",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Home | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha2254.pdf",
+      "page": "www.osha.gov/",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay Records on the Employee Personal Page (EPP) | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/forms/ssa-7050.pdf",
+      "page": "www.dol.gov/agencies/oasam/centers-offices/human-resources-center/foia/employment-records",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Archived Consumer Price Index Supplemental Files : U.S. Bureau of Labor Statistics",
+      "event_label": "file_download",
+      "file_name": "/cpi/tables/supplemental-files/cpi-u-202311.xlsx",
+      "page": "www.bls.gov/cpi/tables/supplemental-files/",
+      "total_events": "90"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-381.pdf",
+      "page": "www.dol.gov/agencies/whd/forms",
+      "total_events": "90"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notice to Employees of Coverage Options | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/model-notice-for-employers-who-offer-a-health-plan-to-some-or-all-employees.pdf",
+      "page": "www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/coverage-options-notice",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/02-create-login.gov-account.pdf",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notice to Employees of Coverage Options | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/model-notice-for-employers-who-offer-a-health-plan-to-some-or-all-employees.doc",
+      "page": "www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/coverage-options-notice",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Apprenticeship System Enhancements | Apprenticeship.gov",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/dol-eta_national%20apprenticeship%20system%20enhancements_nprm_rin%201205-ac13.pdf",
+      "page": "www.apprenticeship.gov/national-apprenticeship-system-enhancements",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Training Requirements and Resources | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha2254.pdf",
+      "page": "www.osha.gov/training/library/",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Law and Regulations | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha2254.pdf",
+      "page": "www.osha.gov/laws-regs",
+      "total_events": "84"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Job Openings and Labor Turnover Summary - 2023 M11 Results",
+      "event_label": "file_download",
+      "file_name": "/news.release/pdf/jolts.pdf",
+      "page": "www.bls.gov/news.release/jolts.nr0.htm",
+      "total_events": "83"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application (ITA) | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/manually-add-300-301-data.pdf",
+      "page": "www.osha.gov/injuryreporting",
+      "total_events": "82"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/ita_sample_form_300-301_csv_data.csv",
+      "page": "www.osha.gov/injuryreporting/ita/home",
+      "total_events": "82"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OSHA Publications By Search | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/osha3165.pdf",
+      "page": "www.osha.gov/publications/publication-products",
+      "total_events": "81"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FLSA Protections to Pump at Work | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/whd/flsa/pump-doorhang.pdf",
+      "page": "www.dol.gov/agencies/whd/pump-at-work",
+      "total_events": "80"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OSHA Enforcement | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/factsheet-inspections.pdf",
+      "page": "www.osha.gov/enforcement",
+      "total_events": "80"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/02-create-login.gov-account.pdf",
+      "page": "www.osha.gov/injuryreporting/ita",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Restrooms and Sanitation Requirements - Overview | Occupational Safety and Health Administration",
+      "event_label": "file_download",
+      "file_name": "//files/documents/committees/osha/sanitation_handout_for_employees.pdf",
+      "page": "www.osha.gov/restrooms-sanitation",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Forms | U.S. Department of Labor",
+      "event_label": "file_download",
+      "file_name": "/sites/dolgov/files/owcp/regs/compliance/ca-17.pdf",
+      "page": "www.dol.gov/agencies/owcp/FECA/regs/compliance/forms",
+      "total_events": "76"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:58:29.467Z",
+  "agency": "labor"
+}
