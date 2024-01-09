@@ -1,0 +1,25 @@
+@use "uswds-core" as *;
+
+.analytics-data {
+  padding: 0;
+
+  @include at-media("tablet") {
+    padding: units(2);
+  }
+
+  &__header {
+    padding: units(2);
+
+    @include at-media("tablet") {
+      padding: 0;
+    }
+  }
+
+  h2 {
+    padding: units(4) units(2) units(2) units(2);
+
+    @include at-media("tablet") {
+      padding: units(4) 0 units(2) 0;
+    }
+  }
+}
