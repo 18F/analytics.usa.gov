@@ -22,8 +22,6 @@ i.e.
 
 @use "uswds-core" as *;
 
-// Replace styles from css/public_analytics.scss here!
-
 // COLORS
 $red: color("red-70v");
 $light-blue: color("blue-50v");
@@ -120,14 +118,6 @@ ul li:before {
   display: none;
   padding-right: 0;
 }
-
-// TODO: replace 13 instances
-// @include media($small-screen) {
-//   .sm-hide {
-//     display: none !important;
-//   }
-// }
-
 
 
 /* 
@@ -233,8 +223,6 @@ footer {
 }
 
 .barchart {
-
-  // @TODO: Use classes instead of elements for styling.
   h4 {
     text-align: center;
     margin: 0;
@@ -246,9 +234,6 @@ footer {
     text-align: center;
   }
 }
-
-
-
 
 .chart-realtime {
   color: color("blue-80v");
@@ -267,29 +252,5 @@ footer {
     @include at_media("tablet") {
       font-size: 2em;
     }
-  }
-}
-
-
-// ==========================================================================
-// Columns
-// ==========================================================================
-// Previously Three column. Taken from `public_analytics.scss`.
-
-.columns {
-  border-left: none;
-  // border-top: 1px solid $gray;
-  // border-top: 1px solid;
-
-  // @TODO: Use classes instead of elements for styling.
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-
-  h5 {
-    margin-top: 0;
-    text-align: center;
   }
 }
