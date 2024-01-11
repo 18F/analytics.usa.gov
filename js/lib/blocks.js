@@ -126,17 +126,7 @@ export default {
     return values.slice(0, 15);
   }, 'country'),
 
-  // TODO: refactor code to calculate with new languages.json report changes
-  // languages: renderBlock.buildBarChartWithLabel((d) => {
-  //   let languages = d.totals.languages;
-  //   console.log(languages);
-  //   let values = transformers.toTopPercents(
-  //     d.totals,
-  //     (list) => list.map((x) => x.totals),
-  //   );
-  //   values = values.filter((c) => !isPartOfUnitedStates(c.languages));
-  //   return values.slice(0, 15);
-  // }, 'languages'),
+  languages: renderBlock.buildBarBasicChart('languages'),
 
   'top-downloads': renderBlock.loadAndRender()
     .transform((d) => d.data.slice(0, 10))
