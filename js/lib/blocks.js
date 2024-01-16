@@ -126,7 +126,13 @@ export default {
     return values.slice(0, 15);
   }, 'country'),
 
-  languages: renderBlock.buildBarBasicChart('languages'),
+  languages: renderBlock.buildBarChartWithLabel((d) => {
+    const values = transformers.findProportionsOfMetric(
+      d.data,
+      (list) => list.map((x) => x.visits),
+    );
+    return values.slice(0, 10);
+  }, 'language'),
 
   'top-downloads': renderBlock.loadAndRender()
     .transform((d) => d.data.slice(0, 10))

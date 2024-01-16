@@ -1,6 +1,6 @@
 import d3 from 'd3';
 
-const DISPLAY_THRESHOLD = 1;
+const DISPLAY_THRESHOLD = 0.1;
 /*
  * listify an Object into its key/value pairs (entries) and sorting by
  * numeric value descending.

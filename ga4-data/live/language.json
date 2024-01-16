@@ -3,9 +3,6 @@
   "query": {
     "dimensions": [
       {
-        "name": "date"
-      },
-      {
         "name": "language"
       }
     ],
@@ -23,7 +20,7 @@
     "orderBys": [
       {
         "dimension": {
-          "dimensionName": "date"
+          "dimensionName": "sessions"
         },
         "desc": true
       }
@@ -39,7 +36,6 @@
         }
       }
     },
-    "samplingLevel": "HIGHER_PRECISION",
     "limit": "10000",
     "property": "properties/393249053"
   },
@@ -47,146 +43,817 @@
     "name": "Browser Language",
     "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
   },
+  "data": [
+    {
+      "language": "English",
+      "visits": "3346176157"
+    },
+    {
+      "language": "Spanish",
+      "visits": "205534154"
+    },
+    {
+      "language": "Chinese",
+      "visits": "25253593"
+    },
+    {
+      "language": "French",
+      "visits": "16919902"
+    },
+    {
+      "language": "German",
+      "visits": "10505406"
+    },
+    {
+      "language": "Portuguese",
+      "visits": "9206974"
+    },
+    {
+      "language": "Russian",
+      "visits": "8715154"
+    },
+    {
+      "language": "Japanese",
+      "visits": "7719932"
+    },
+    {
+      "language": "Korean",
+      "visits": "5977442"
+    },
+    {
+      "language": "Turkish",
+      "visits": "5202793"
+    },
+    {
+      "language": "Italian",
+      "visits": "4601495"
+    },
+    {
+      "language": "Arabic",
+      "visits": "3777460"
+    },
+    {
+      "language": "Dutch",
+      "visits": "3033379"
+    },
+    {
+      "language": "Polish",
+      "visits": "2413372"
+    },
+    {
+      "language": "Vietnamese",
+      "visits": "2198570"
+    },
+    {
+      "language": "Indonesian",
+      "visits": "2004886"
+    },
+    {
+      "language": "Swedish",
+      "visits": "1801661"
+    },
+    {
+      "language": "Ukrainian",
+      "visits": "1347056"
+    },
+    {
+      "language": "Norwegian Bokmål",
+      "visits": "1113312"
+    },
+    {
+      "language": "Danish",
+      "visits": "1042190"
+    },
+    {
+      "language": "Thai",
+      "visits": "1026956"
+    },
+    {
+      "language": "Hebrew",
+      "visits": "991316"
+    },
+    {
+      "language": "Czech",
+      "visits": "884197"
+    },
+    {
+      "language": "Greek",
+      "visits": "880867"
+    },
+    {
+      "language": "Hungarian",
+      "visits": "793195"
+    },
+    {
+      "language": "Finnish",
+      "visits": "709977"
+    },
+    {
+      "language": "Persian",
+      "visits": "665475"
+    },
+    {
+      "language": "Romanian",
+      "visits": "661673"
+    },
+    {
+      "language": "(other)",
+      "visits": "573935"
+    },
+    {
+      "language": "Catalan",
+      "visits": "571532"
+    },
+    {
+      "language": "Slovak",
+      "visits": "459220"
+    },
+    {
+      "language": "Croatian",
+      "visits": "369059"
+    },
+    {
+      "language": "Hindi",
+      "visits": "282205"
+    },
+    {
+      "language": "Bulgarian",
+      "visits": "226193"
+    },
+    {
+      "language": "Serbian",
+      "visits": "218094"
+    },
+    {
+      "language": "Slovenian",
+      "visits": "178564"
+    },
+    {
+      "language": "Lithuanian",
+      "visits": "152686"
+    },
+    {
+      "language": "Uzbek",
+      "visits": "114508"
+    },
+    {
+      "language": "Georgian",
+      "visits": "90041"
+    },
+    {
+      "language": "Latvian",
+      "visits": "86074"
+    },
+    {
+      "language": "Estonian",
+      "visits": "85466"
+    },
+    {
+      "language": "Azerbaijani",
+      "visits": "67040"
+    },
+    {
+      "language": "Malay",
+      "visits": "66699"
+    },
+    {
+      "language": "Bengali",
+      "visits": "63442"
+    },
+    {
+      "language": "Bosnian",
+      "visits": "58777"
+    },
+    {
+      "language": "Albanian",
+      "visits": "50993"
+    },
+    {
+      "language": "Central Khmer",
+      "visits": "48759"
+    },
+    {
+      "language": "Marathi",
+      "visits": "36925"
+    },
+    {
+      "language": "Gujarati",
+      "visits": "36799"
+    },
+    {
+      "language": "Burmese",
+      "visits": "33474"
+    },
+    {
+      "language": "Afrikaans",
+      "visits": "33010"
+    },
+    {
+      "language": "Icelandic",
+      "visits": "32407"
+    },
+    {
+      "language": "Macedonian",
+      "visits": "31812"
+    },
+    {
+      "language": "Panjabi",
+      "visits": "29661"
+    },
+    {
+      "language": "Amharic",
+      "visits": "28291"
+    },
+    {
+      "language": "Tamil",
+      "visits": "28166"
+    },
+    {
+      "language": "Telugu",
+      "visits": "22233"
+    },
+    {
+      "language": "Galician",
+      "visits": "22015"
+    },
+    {
+      "language": "Basque",
+      "visits": "22005"
+    },
+    {
+      "language": "Malayalam",
+      "visits": "16289"
+    },
+    {
+      "language": "Armenian",
+      "visits": "16225"
+    },
+    {
+      "language": "Urdu",
+      "visits": "15575"
+    },
+    {
+      "language": "Mongolian",
+      "visits": "14872"
+    },
+    {
+      "language": "Kannada",
+      "visits": "14861"
+    },
+    {
+      "language": "Irish",
+      "visits": "12489"
+    },
+    {
+      "language": "Nepali",
+      "visits": "11956"
+    },
+    {
+      "language": "Welsh",
+      "visits": "11440"
+    },
+    {
+      "language": "Corsican",
+      "visits": "11226"
+    },
+    {
+      "language": "Belarusian",
+      "visits": "10405"
+    },
+    {
+      "language": "Somali",
+      "visits": "9144"
+    },
+    {
+      "language": "Norwegian",
+      "visits": "8557"
+    },
+    {
+      "language": "Samoan",
+      "visits": "8418"
+    },
+    {
+      "language": "Tonga",
+      "visits": "8161"
+    },
+    {
+      "language": "Swahili",
+      "visits": "7877"
+    },
+    {
+      "language": "Kazakh",
+      "visits": "7265"
+    },
+    {
+      "language": "Sinhala",
+      "visits": "6882"
+    },
+    {
+      "language": "Lao",
+      "visits": "5879"
+    },
+    {
+      "language": "Tagalog",
+      "visits": "5591"
+    },
+    {
+      "language": "Pushto",
+      "visits": "4703"
+    },
+    {
+      "language": "Igbo",
+      "visits": "4654"
+    },
+    {
+      "language": "Gaelic",
+      "visits": "4513"
+    },
+    {
+      "language": "Norwegian Nynorsk",
+      "visits": "4492"
+    },
+    {
+      "language": "Akan",
+      "visits": "4425"
+    },
+    {
+      "language": "Maori",
+      "visits": "4285"
+    },
+    {
+      "language": "Tigrinya",
+      "visits": "3969"
+    },
+    {
+      "language": "Haitian",
+      "visits": "3614"
+    },
+    {
+      "language": "Yoruba",
+      "visits": "3365"
+    },
+    {
+      "language": "Esperanto",
+      "visits": "3102"
+    },
+    {
+      "language": "Tibetan",
+      "visits": "2969"
+    },
+    {
+      "language": "Oromo",
+      "visits": "2599"
+    },
+    {
+      "language": "Oriya",
+      "visits": "2338"
+    },
+    {
+      "language": "Latin",
+      "visits": "2188"
+    },
+    {
+      "language": "Ido",
+      "visits": "2135"
+    },
+    {
+      "language": "Assamese",
+      "visits": "1939"
+    },
+    {
+      "language": "Shona",
+      "visits": "1802"
+    },
+    {
+      "language": "Maltese",
+      "visits": "1693"
+    },
+    {
+      "language": "Kashmiri",
+      "visits": "1660"
+    },
+    {
+      "language": "Kirghiz",
+      "visits": "1655"
+    },
+    {
+      "language": "Ganda",
+      "visits": "1483"
+    },
+    {
+      "language": "Luxembourgish",
+      "visits": "1463"
+    },
+    {
+      "language": "Yiddish",
+      "visits": "1423"
+    },
+    {
+      "language": "Kinyarwanda",
+      "visits": "1247"
+    },
+    {
+      "language": "Faroese",
+      "visits": "1234"
+    },
+    {
+      "language": "Wolof",
+      "visits": "1046"
+    },
+    {
+      "language": "Divehi",
+      "visits": "1039"
+    },
+    {
+      "language": "Zulu",
+      "visits": "1010"
+    },
+    {
+      "language": "Turkmen",
+      "visits": "940"
+    },
+    {
+      "language": "Aragonese",
+      "visits": "861"
+    },
+    {
+      "language": "Hausa",
+      "visits": "849"
+    },
+    {
+      "language": "Serbo-Croatian",
+      "visits": "814"
+    },
+    {
+      "language": "Kalaallisut",
+      "visits": "757"
+    },
+    {
+      "language": "Interlingua",
+      "visits": "738"
+    },
+    {
+      "language": "Venda",
+      "visits": "657"
+    },
+    {
+      "language": "Uighur",
+      "visits": "626"
+    },
+    {
+      "language": "Breton",
+      "visits": "611"
+    },
+    {
+      "language": "Tajik",
+      "visits": "525"
+    },
+    {
+      "language": "Dzongkha",
+      "visits": "522"
+    },
+    {
+      "language": "Twi",
+      "visits": "500"
+    },
+    {
+      "language": "Ewe",
+      "visits": "470"
+    },
+    {
+      "language": "Sanskrit",
+      "visits": "455"
+    },
+    {
+      "language": "Javanese",
+      "visits": "451"
+    },
+    {
+      "language": "Romansh",
+      "visits": "431"
+    },
+    {
+      "language": "Bambara",
+      "visits": "428"
+    },
+    {
+      "language": "Manx",
+      "visits": "417"
+    },
+    {
+      "language": "Tswana",
+      "visits": "398"
+    },
+    {
+      "language": "Xhosa",
+      "visits": "395"
+    },
+    {
+      "language": "Ossetian",
+      "visits": "322"
+    },
+    {
+      "language": "Sindhi",
+      "visits": "311"
+    },
+    {
+      "language": "Kurdish",
+      "visits": "300"
+    },
+    {
+      "language": "Tsonga",
+      "visits": "297"
+    },
+    {
+      "language": "Guarani",
+      "visits": "291"
+    },
+    {
+      "language": "Rundi",
+      "visits": "290"
+    },
+    {
+      "language": "Chichewa",
+      "visits": "277"
+    },
+    {
+      "language": "Inuktitut",
+      "visits": "269"
+    },
+    {
+      "language": "Quechua",
+      "visits": "265"
+    },
+    {
+      "language": "Northern Sami",
+      "visits": "258"
+    },
+    {
+      "language": "Lingala",
+      "visits": "249"
+    },
+    {
+      "language": "Bashkir",
+      "visits": "247"
+    },
+    {
+      "language": "Western Frisian",
+      "visits": "237"
+    },
+    {
+      "language": "Kikuyu",
+      "visits": "222"
+    },
+    {
+      "language": "Chechen",
+      "visits": "199"
+    },
+    {
+      "language": "Malagasy",
+      "visits": "194"
+    },
+    {
+      "language": "Southern Sotho",
+      "visits": "187"
+    },
+    {
+      "language": "Fulah",
+      "visits": "179"
+    },
+    {
+      "language": "Tatar",
+      "visits": "171"
+    },
+    {
+      "language": "Cornish",
+      "visits": "154"
+    },
+    {
+      "language": "North Ndebele",
+      "visits": "141"
+    },
+    {
+      "language": "Walloon",
+      "visits": "132"
+    },
+    {
+      "language": "Bihari",
+      "visits": "129"
+    },
+    {
+      "language": "Sundanese",
+      "visits": "115"
+    },
+    {
+      "language": "Sardinian",
+      "visits": "112"
+    },
+    {
+      "language": "Sichuan Yi",
+      "visits": "111"
+    },
+    {
+      "language": "Swati",
+      "visits": "72"
+    },
+    {
+      "language": "Occitan",
+      "visits": "68"
+    },
+    {
+      "language": "Chuvash",
+      "visits": "60"
+    },
+    {
+      "language": "Afar",
+      "visits": "39"
+    },
+    {
+      "language": "Aymara",
+      "visits": "29"
+    },
+    {
+      "language": "South Ndebele",
+      "visits": "25"
+    },
+    {
+      "language": "Bislama",
+      "visits": "22"
+    },
+    {
+      "language": "Tahitian",
+      "visits": "15"
+    },
+    {
+      "language": "Marshallese",
+      "visits": "12"
+    }
+  ],
   "totals": {
-    "visits": 3550587183,
+    "visits": 3675571632,
     "languages": {
-      "(other)": 41260289,
-      "English": 3170495362,
-      "Spanish": 214112259,
-      "Chinese": 25073242,
-      "Korean": 5884006,
-      "Russian": 9215173,
-      "Japanese": 7957304,
-      "French": 17690434,
-      "German": 10220092,
-      "Portuguese": 9262501,
-      "Turkish": 5505612,
-      "Italian": 4584622,
-      "Vietnamese": 2225319,
-      "Ukrainian": 1319315,
-      "Arabic": 4103424,
-      "Dutch": 3028164,
-      "Polish": 2310409,
-      "Indonesian": 2014882,
-      "Hebrew": 976013,
-      "Swedish": 1791443,
-      "Thai": 1003512,
-      "Danish": 1030252,
-      "Czech": 871976,
-      "Norwegian Bokmål": 1078597,
-      "Greek": 842139,
-      "Hungarian": 772429,
-      "Finnish": 714114,
-      "Persian": 781966,
-      "Romanian": 657927,
-      "Croatian": 353688,
-      "Serbian": 218072,
-      "Slovak": 457936,
-      "Bulgarian": 222339,
-      "Catalan": 576020,
-      "Hindi": 269966,
-      "Slovenian": 171245,
-      "Lithuanian": 152612,
-      "Estonian": 85279,
-      "Latvian": 83332,
-      "Georgian": 85662,
-      "Uzbek": 132354,
-      "Azerbaijani": 71750,
-      "Malay": 64390,
-      "Bosnian": 58403,
-      "Bengali": 61876,
-      "Albanian": 49956,
-      "Central Khmer": 49197,
-      "Icelandic": 32421,
-      "Marathi": 36926,
-      "Macedonian": 32298,
-      "Tamil": 28223,
-      "Afrikaans": 31627,
-      "Panjabi": 29108,
-      "Amharic": 29829,
-      "Burmese": 34097,
-      "Gujarati": 37884,
-      "Basque": 21755,
-      "Telugu": 22135,
-      "Galician": 21755,
-      "Armenian": 16767,
-      "Malayalam": 16924,
-      "Mongolian": 15469,
-      "Kannada": 14645,
-      "Irish": 12053,
-      "Corsican": 11123,
-      "Welsh": 11535,
-      "Nepali": 12926,
-      "Urdu": 15070,
-      "Samoan": 8267,
-      "Tonga": 7792,
-      "Belarusian": 10462,
-      "Somali": 9634,
-      "Norwegian": 8425,
-      "Swahili": 8060,
-      "Tagalog": 5588,
-      "Sinhala": 7370,
-      "Tigrinya": 3791,
-      "Pushto": 5048,
-      "Igbo": 4621,
-      "Akan": 4582,
-      "Maori": 4440,
-      "Kazakh": 7567,
-      "Lao": 6634,
-      "Gaelic": 4445,
-      "Norwegian Nynorsk": 4368,
-      "Haitian": 3422,
-      "Yoruba": 3133,
-      "Esperanto": 3016,
-      "Oriya": 2339,
-      "Tibetan": 2935,
-      "Kashmiri": 1894,
-      "Maltese": 1615,
-      "Yiddish": 1276,
-      "Assamese": 1936,
-      "Latin": 2092,
-      "Kinyarwanda": 989,
-      "Ido": 2016,
-      "Oromo": 2883,
-      "Shona": 1706,
-      "Ganda": 1471,
-      "Luxembourgish": 1352,
-      "Hausa": 363,
-      "Venda": 335,
-      "Zulu": 751,
-      "Aragonese": 605,
-      "Kirghiz": 1616,
-      "Sanskrit": 89,
-      "Manx": 59,
-      "Javanese": 75,
-      "Wolof": 890,
-      "Turkmen": 814,
-      "Ewe": 95,
-      "Divehi": 734,
-      "Guarani": 26,
-      "Faroese": 1040,
-      "Xhosa": 51,
-      "Tajik": 186,
-      "Breton": 189,
-      "Interlingua": 321,
-      "Serbo-Croatian": 578,
-      "Uighur": 219,
-      "Twi": 161,
-      "Quechua": 25,
-      "Dzongkha": 245,
-      "Kurdish": 12,
-      "Northern Sami": 22,
-      "Bambara": 63,
-      "Ossetian": 58,
-      "Kalaallisut": 721,
-      "Tsonga": 46,
-      "Tswana": 57,
-      "Romansh": 33,
-      "Sindhi": 25,
-      "Rundi": 23,
-      "Southern Sotho": 25,
-      "Bashkir": 38
+      "English": 3346176157,
+      "Spanish": 205534154,
+      "Chinese": 25253593,
+      "French": 16919902,
+      "German": 10505406,
+      "Portuguese": 9206974,
+      "Russian": 8715154,
+      "Japanese": 7719932,
+      "Korean": 5977442,
+      "Turkish": 5202793,
+      "Italian": 4601495,
+      "Arabic": 3777460,
+      "Dutch": 3033379,
+      "Polish": 2413372,
+      "Vietnamese": 2198570,
+      "Indonesian": 2004886,
+      "Swedish": 1801661,
+      "Ukrainian": 1347056,
+      "Norwegian Bokmål": 1113312,
+      "Danish": 1042190,
+      "Thai": 1026956,
+      "Hebrew": 991316,
+      "Czech": 884197,
+      "Greek": 880867,
+      "Hungarian": 793195,
+      "Finnish": 709977,
+      "Persian": 665475,
+      "Romanian": 661673,
+      "(other)": 573935,
+      "Catalan": 571532,
+      "Slovak": 459220,
+      "Croatian": 369059,
+      "Hindi": 282205,
+      "Bulgarian": 226193,
+      "Serbian": 218094,
+      "Slovenian": 178564,
+      "Lithuanian": 152686,
+      "Uzbek": 114508,
+      "Georgian": 90041,
+      "Latvian": 86074,
+      "Estonian": 85466,
+      "Azerbaijani": 67040,
+      "Malay": 66699,
+      "Bengali": 63442,
+      "Bosnian": 58777,
+      "Albanian": 50993,
+      "Central Khmer": 48759,
+      "Marathi": 36925,
+      "Gujarati": 36799,
+      "Burmese": 33474,
+      "Afrikaans": 33010,
+      "Icelandic": 32407,
+      "Macedonian": 31812,
+      "Panjabi": 29661,
+      "Amharic": 28291,
+      "Tamil": 28166,
+      "Telugu": 22233,
+      "Galician": 22015,
+      "Basque": 22005,
+      "Malayalam": 16289,
+      "Armenian": 16225,
+      "Urdu": 15575,
+      "Mongolian": 14872,
+      "Kannada": 14861,
+      "Irish": 12489,
+      "Nepali": 11956,
+      "Welsh": 11440,
+      "Corsican": 11226,
+      "Belarusian": 10405,
+      "Somali": 9144,
+      "Norwegian": 8557,
+      "Samoan": 8418,
+      "Tonga": 8161,
+      "Swahili": 7877,
+      "Kazakh": 7265,
+      "Sinhala": 6882,
+      "Lao": 5879,
+      "Tagalog": 5591,
+      "Pushto": 4703,
+      "Igbo": 4654,
+      "Gaelic": 4513,
+      "Norwegian Nynorsk": 4492,
+      "Akan": 4425,
+      "Maori": 4285,
+      "Tigrinya": 3969,
+      "Haitian": 3614,
+      "Yoruba": 3365,
+      "Esperanto": 3102,
+      "Tibetan": 2969,
+      "Oromo": 2599,
+      "Oriya": 2338,
+      "Latin": 2188,
+      "Ido": 2135,
+      "Assamese": 1939,
+      "Shona": 1802,
+      "Maltese": 1693,
+      "Kashmiri": 1660,
+      "Kirghiz": 1655,
+      "Ganda": 1483,
+      "Luxembourgish": 1463,
+      "Yiddish": 1423,
+      "Kinyarwanda": 1247,
+      "Faroese": 1234,
+      "Wolof": 1046,
+      "Divehi": 1039,
+      "Zulu": 1010,
+      "Turkmen": 940,
+      "Aragonese": 861,
+      "Hausa": 849,
+      "Serbo-Croatian": 814,
+      "Kalaallisut": 757,
+      "Interlingua": 738,
+      "Venda": 657,
+      "Uighur": 626,
+      "Breton": 611,
+      "Tajik": 525,
+      "Dzongkha": 522,
+      "Twi": 500,
+      "Ewe": 470,
+      "Sanskrit": 455,
+      "Javanese": 451,
+      "Romansh": 431,
+      "Bambara": 428,
+      "Manx": 417,
+      "Tswana": 398,
+      "Xhosa": 395,
+      "Ossetian": 322,
+      "Sindhi": 311,
+      "Kurdish": 300,
+      "Tsonga": 297,
+      "Guarani": 291,
+      "Rundi": 290,
+      "Chichewa": 277,
+      "Inuktitut": 269,
+      "Quechua": 265,
+      "Northern Sami": 258,
+      "Lingala": 249,
+      "Bashkir": 247,
+      "Western Frisian": 237,
+      "Kikuyu": 222,
+      "Chechen": 199,
+      "Malagasy": 194,
+      "Southern Sotho": 187,
+      "Fulah": 179,
+      "Tatar": 171,
+      "Cornish": 154,
+      "North Ndebele": 141,
+      "Walloon": 132,
+      "Bihari": 129,
+      "Sundanese": 115,
+      "Sardinian": 112,
+      "Sichuan Yi": 111,
+      "Swati": 72,
+      "Occitan": 68,
+      "Chuvash": 60,
+      "Afar": 39,
+      "Aymara": 29,
+      "South Ndebele": 25,
+      "Bislama": 22,
+      "Tahitian": 15,
+      "Marshallese": 12
     }
   },
-  "taken_at": "2024-01-05T15:30:49.415Z"
+  "taken_at": "2024-01-16T19:38:37.823Z"
 }
