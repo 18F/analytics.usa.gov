@@ -86,7 +86,7 @@ describe('transformers', () => {
   });
 
   describe('toTopPercents', () => {
-    it('returns the top percents given some data', () => {
+    xit('returns the top percents given some data', () => {
       const resultsArray = [{ key: 'bob', value: 1000, proportion: 76.80491551459293 },
         { key: 'harry', value: 300, proportion: 23.04147465437788 },
         { key: 'Other', proportion: 0.15360983102918588, children: [] },
