@@ -251,3 +251,30 @@ footer {
     }
   }
 }
+
+g.axis {
+  path,
+  line {
+    fill: none;
+    stroke: none;
+  }
+
+  .tick text {
+    fill: color("blue-80v");
+    font-size: units(1.5);
+  }
+}
+
+.time-series {
+  rect {
+    fill: color("blue-50v");
+    stroke: color("gray-1");
+    stroke-width: 1;
+  }
+
+  text.label {
+    fill: color("blue-80v");
+    // font-size: units(1.5); or 1
+    font-size: .45rem;
+  }
+}

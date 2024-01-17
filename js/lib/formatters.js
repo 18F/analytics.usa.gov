@@ -55,6 +55,22 @@ function formatHour(hour) {
   return (n % 12 || 12) + suffix;
 }
 
+/**
+ * Returns an ISO Date (2023-12-17) in dd/mm format for time series chart
+ * @param {ISO Date} - date
+ */
+function formatDate(isoDateString) {
+  const date = new Date(isoDateString);
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+
+  // display 01-09 until 10
+  // if (day < 10) day = `0${day}`;
+  // if (month < 10) month = `0${month}`;
+
+  return `${day}/${month}`;
+}
+
 function formatURL(url) {
   let index = 0;
   // find & remove protocol (http, ftp, etc.) and get domain
@@ -80,6 +96,7 @@ export default {
   formatVisits,
   readableBigNumber,
   formatHour,
+  formatDate,
   floatToPercent,
   formatURL,
   formatFile,

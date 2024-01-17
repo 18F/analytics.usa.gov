@@ -28,13 +28,17 @@ export default {
         d.visits = +d.visits;
       });
 
+      // 1. reverse filter ASC on data.data
+      // 2. format date to read 1/17 for title
+      // 3. update times to dd/mm
+
       const y = function (d) { return d.visits; };
 
       const series = buildTimeSeries()
         .series([data.data])
         .y(y)
-        .label((d) => formatters.formatHour(d.hour))
-        .title((d) => `${formatters.addCommas(d.visits)} visits during the hour of ${formatters.formatHour(d.hour)}m`);
+        .label((d) => formatters.formatDate(d.date))
+        .title((d) => `${formatters.addCommas(d.visits)} visits during the day of ${d.date}`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
