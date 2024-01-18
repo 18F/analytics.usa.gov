@@ -1,0 +1,71 @@
+.bar-chart {
+    margin: 1rem 0;
+    position: relative;
+    font-size: 90%;
+  
+    .bar-chart {
+      font-size: 80%;
+  
+      .bin {
+        margin-left: 2em;
+        margin-bottom: 0rem;
+  
+        .bar {
+          display: none;
+        }
+      }
+    }
+  
+    .bin {
+      position: relative;
+      @include clearfix;
+      overflow: hidden;
+      margin: 0 0 1rem 0;
+  
+      .bar:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        background: #f9f9f9;
+        top: 0;
+        left: 100%;
+        width: 1000px;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+  
+    .bar {
+      height: 0.8rem;
+      background: $data;
+      position: relative;
+      z-index: 2;
+      min-width: 1px;
+  
+      @include transition(width 0.5s linear);
+    }
+  
+    .label {
+      white-space: nowrap;
+      height: 2.2rem;
+      margin-right: 4em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    .value {
+      text-align: right;
+      height: 2rem;
+      white-space: nowrap;
+      margin-top: -2.2rem;
+      margin-bottom: 0.45rem;
+    }
+  }

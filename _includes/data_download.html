@@ -56,6 +56,11 @@
               class="download-data usa-button"
               >CSV</a
             >
+            <a
+            href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.json"
+            class="download-data usa-button"
+            >JSON</a
+          >
           </td>
           <td>Daily</td>
         </tr>
@@ -67,6 +72,11 @@
               class="download-data usa-button"
               >CSV</a
             >
+            <a
+            href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
+            class="download-data usa-button"
+            >JSON</a
+          >
           </td>
           <td>Daily</td>
         </tr>
@@ -87,22 +97,6 @@
           <td>Daily</td>
         </tr>
         <tr>
-          <td>Top exit pages (90 days)</td>
-          <td>
-            <a
-              href="{{ site.data_url }}/{{ data_prefix }}/top-exit-pages-30-days.csv"
-              class="download-data usa-button"
-              >CSV</a
-            >
-            <a
-              href="{{ site.data_url }}/{{ data_prefix }}/top-exit-pages-30-days.json"
-              class="download-data usa-button"
-              >JSON</a
-            >
-          </td>
-          <td>Daily</td>
-        </tr>
-        <tr>
           <td>All pages people are visiting</td>
           <td>
             <a
@@ -110,12 +104,22 @@
               class="download-data usa-button"
               >CSV</a
             >
+            <a
+            href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.json"
+            class="download-data usa-button"
+            >JSON</a
+          >
           </td>
           <td>Every 5 minutes</td>
         </tr>
         <tr>
           <td>Total people online</td>
           <td>
+            <a
+            href="{{ site.data_url }}/{{ data_prefix }}/realtime.csv"
+            class="download-data usa-button"
+            >CSV</a
+          >
             <a
               href="{{ site.data_url }}/{{ data_prefix }}/realtime.json"
               class="download-data usa-button"
@@ -162,6 +166,11 @@
           <td>Users per country</td>
           <td>
             <a
+              href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.csv"
+              class="download-data usa-button"
+              >CSV</a
+            >
+            <a
               href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json"
               class="download-data usa-button"
               >JSON</a
@@ -172,6 +181,11 @@
         <tr>
           <td>Users per city</td>
           <td>
+            <a
+              href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.csv"
+              class="download-data usa-button"
+              >CSV</a
+            >
             <a
               href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json"
               class="download-data usa-button"
@@ -187,6 +201,11 @@
               href="{{ site.data_url }}/{{ data_prefix }}/devices.csv"
               class="download-data usa-button"
               >CSV</a
+            >
+            <a
+              href="{{ site.data_url }}/{{ data_prefix }}/devices.json"
+              class="download-data usa-button"
+              >JSON</a
             >
           </td>
           <td>Daily</td>

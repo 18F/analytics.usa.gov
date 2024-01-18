@@ -28,10 +28,6 @@ export default {
         d.visits = +d.visits;
       });
 
-      // 1. reverse filter ASC on data.data
-      // 2. format date to read 1/17 for title
-      // 3. update times to dd/mm
-
       const y = function (d) { return d.visits; };
 
       const series = buildTimeSeries()
@@ -51,7 +47,6 @@ export default {
 
       svg.call(series);
     }),
-
   // the OS block is a stack layout
   os: renderBlock.buildBarBasicChart('os'),
 
