@@ -219,22 +219,10 @@ footer {
   text-transform: uppercase;
 }
 
-.barchart {
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-
-  h5 {
-    margin-top: 0;
-    text-align: center;
-  }
-}
-
 .chart-realtime {
   color: color("blue-80v");
   text-align: center;
+  padding: 2rem;
 
   &__current_visitors {
     font-size: 6em;
@@ -249,6 +237,12 @@ footer {
     @include at_media("tablet") {
       font-size: 2em;
     }
+  }
+}
+
+.locations {
+  .section_headline {
+    padding: 1rem 0 1rem 1rem;
   }
 }
 
@@ -275,5 +269,107 @@ g.axis {
   text.label {
     fill: color("blue-80v");
     font-size: .45rem; // use for 30 day dd/mm styles
+  }
+}
+
+
+/*
+* Section Styles
+*/
+
+
+.container {
+  border-left: 1px solid color("gray-cool-40");
+  border-right: 1px solid color("gray-cool-40");
+  border-bottom: 1px solid color("gray-cool-40");
+  background: $white;
+}
+
+#secondary_data {
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid color("gray-cool-40");
+  @include at-media("tablet") {
+    border-left: 1px solid color("gray-cool-40");
+    border-bottom: 1px solid color("gray-cool-40");
+    border-top: none;
+  }
+}
+
+.section_headline {
+  padding: 0.1em 1em;
+  border-top: 1px solid color("gray-cool-40");
+  // @include media($small-screen) {
+  //   border-bottom: none;
+  // }
+}
+
+.section_subheadline {
+  padding: 0.5em 1em;
+  border-top: 1px solid color("gray-cool-40");
+  text-align: center;
+  font-size: 1.5em;
+  // #total_visitors {
+  //   font-weight: $bold-weight;
+  // }
+}
+
+#top_100_table,
+#top_downloads_table {
+  h3 {
+    font-size: 18px;
+  }
+  h5 {
+    color: color("gray-cool-70");
+    font-weight: 300;
+  }
+}
+
+
+.visits_today {
+  h3 {
+    display: block;
+    height: 2.5rem;
+    margin-bottom: 0;
+    padding-top: 1rem;
+  }
+  h4 {
+    display: block;
+    text-align: right;
+    margin-top: -2.5rem;
+    font-size: units(2);
+    font-weight: normal;
+    color: color("gray-cool-70");
+    padding-top: 1rem;
+  }
+}
+
+.section_subheadline {
+  padding-top: 2rem;
+}
+
+#time_series {
+  padding: 1rem 1em;
+}
+
+#explanation {
+  border-top: 1px solid color("gray-cool-40");
+  margin-top: -1px;
+  h4 {
+    font-size: 90%;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    list-style-position: inside;
+  }
+
+  li {
+    margin: 1em 0;
   }
 }
