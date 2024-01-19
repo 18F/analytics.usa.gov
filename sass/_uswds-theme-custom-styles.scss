@@ -219,22 +219,10 @@ footer {
   text-transform: uppercase;
 }
 
-.barchart {
-  h4 {
-    text-align: center;
-    margin: 0;
-    font-size: 90%;
-  }
-
-  h5 {
-    margin-top: 0;
-    text-align: center;
-  }
-}
-
 .chart-realtime {
   color: color("blue-80v");
   text-align: center;
+  padding: 2rem;
 
   &__current_visitors {
     font-size: 6em;
@@ -249,5 +237,137 @@ footer {
     @include at_media("tablet") {
       font-size: 2em;
     }
+  }
+}
+
+.locations {
+  .section_headline {
+    padding: 1rem 0 1rem 1rem;
+  }
+}
+
+g.axis {
+  path,
+  line {
+    fill: none;
+    stroke: none;
+  }
+
+  .tick text {
+    fill: color("blue-80v");
+    font-size: units(1.5);
+  }
+}
+
+.time-series {
+  rect {
+    fill: color("blue-50v");
+    stroke: color("gray-1");
+    stroke-width: 1;
+  }
+
+  text.label {
+    fill: color("blue-80v");
+    font-size: .45rem; // use for 30 day dd/mm styles
+  }
+}
+
+
+/*
+* Section Styles
+*/
+
+#main_data {
+  @include at-media("tablet") {
+    border-right: none;
+  }
+}
+
+#secondary_data {
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid color("gray-cool-40");
+  @include at-media("tablet") {
+    border-left: 1px solid color("gray-cool-40");
+    border-bottom: 1px solid color("gray-cool-40");
+    border-top: none;
+  }
+}
+
+/*
+* Section components (locations, 30-day-sessions, 90-day-sessions)
+*/
+
+.section {
+  padding: 0 units(2);
+  border-top: 1px solid color("gray-cool-40");
+  // border-bottom: 1px solid color("gray-cool-40");
+  @include at-media("tablet") {
+    border-bottom: none;
+  }
+
+  &__headline {
+    padding-top: units(3);
+    padding-left: units(3);
+  }
+
+  &__subheader {
+    padding: units(4) units(2);
+    text-align: center;
+    font-size: units(3);
+
+    #total_visitors {
+      font-weight: font-weight('bold')
+    }
+  }
+}
+
+
+#top_100_table,
+#top_downloads_table {
+  padding: units(3) units(3) 0 units(3);
+
+  h3 {
+    font-size: 18px;
+  }
+  h5 {
+    color: color("gray-cool-70");
+    font-weight: 300;
+  }
+}
+
+#top_downloads_table {
+  padding-top: 0;
+
+  h4 {
+    font-weight: font-weight('light');
+    margin-bottom: units(2);
+    margin-top: 0;
+  }
+}
+
+#time_series {
+  padding: 1rem 1em;
+}
+
+#explanation {
+  border-top: 1px solid color("gray-cool-40");
+  margin-top: -1px;
+  h4 {
+    font-size: 90%;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    list-style-position: inside;
+  }
+
+  li {
+    margin: 1em 0;
   }
 }

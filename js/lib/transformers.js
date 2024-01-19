@@ -74,7 +74,6 @@ function consolidateSmallValues(proportionsList, threshold) {
  * @return a closure of consolidated smaller date from the proportions
  */
 function toTopPercents(dataSet, desiredKey) {
-  console.warn(dataSet);
   const values = listify(dataSet.totals[desiredKey]);
   const proportions = findProportionsOfMetricFromValue(values);
   return consolidateSmallValues(proportions, DISPLAY_THRESHOLD);

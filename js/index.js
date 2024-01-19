@@ -2,7 +2,6 @@ import d3 from 'd3';
 import * as Q from 'q';
 
 import gaEventHandler from './lib/eventhandler';
-import consolePrint from './lib/consoleprint';
 import formatters from './lib/formatters';
 import BLOCKS from './lib/blocks';
 
@@ -87,6 +86,7 @@ d3.selectAll('*[data-source]')
   });
 
 // nest the windows chart inside the OS chart once they're both rendered
+// TODO: Remove windows versions?
 whenRendered(['os', 'windows'], () => {
   d3.select('#chart_os')
     .call(nestCharts, 'Windows', d3.select('#chart_windows'));
@@ -161,8 +161,6 @@ d3.selectAll("*[role='tablist']")
     // update them to start
     update();
   });
-
-consolePrint(window);
 
 // Set the dropdown
 const dropDown = document.getElementById('analytics-agency-select');

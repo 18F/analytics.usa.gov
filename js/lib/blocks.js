@@ -33,8 +33,8 @@ export default {
       const series = buildTimeSeries()
         .series([data.data])
         .y(y)
-        .label((d) => formatters.formatHour(d.hour))
-        .title((d) => `${formatters.addCommas(d.visits)} visits during the hour of ${formatters.formatHour(d.hour)}m`);
+        .label((d) => formatters.formatDate(d.date))
+        .title((d) => `${formatters.addCommas(d.visits)} visits during the day of ${d.date}`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
@@ -47,7 +47,6 @@ export default {
 
       svg.call(series);
     }),
-
   // the OS block is a stack layout
   os: renderBlock.buildBarBasicChart('os'),
 
@@ -58,6 +57,11 @@ export default {
   devices: renderBlock.loadAndRender()
     .transform((d) => {
       const devices = transformers.listify(d.totals.devices);
+      devices.forEach(device => {
+        if (device.key === 'smart tv') {
+          device.key = 'Smart TV';
+        }
+      });
       return transformers.findProportionsOfMetricFromValue(devices);
     })
     .render(barChart()
