@@ -277,12 +277,10 @@ g.axis {
 * Section Styles
 */
 
-
-.container {
-  border-left: 1px solid color("gray-cool-40");
-  border-right: 1px solid color("gray-cool-40");
-  border-bottom: 1px solid color("gray-cool-40");
-  background: $white;
+#main_data {
+  @include at-media("tablet") {
+    border-right: none;
+  }
 }
 
 #secondary_data {
@@ -296,26 +294,39 @@ g.axis {
   }
 }
 
-.section_headline {
-  padding: 0.1em 1em;
+/*
+* Section components (locations, 30-day-sessions, 90-day-sessions)
+*/
+
+.section {
+  padding: 0 units(2);
   border-top: 1px solid color("gray-cool-40");
-  // @include media($small-screen) {
-  //   border-bottom: none;
-  // }
+  // border-bottom: 1px solid color("gray-cool-40");
+  @include at-media("tablet") {
+    border-bottom: none;
+  }
+
+  &__headline {
+    padding-top: units(3);
+    padding-left: units(3);
+  }
+
+  &__subheader {
+    padding: units(4) units(2);
+    text-align: center;
+    font-size: units(3);
+
+    #total_visitors {
+      font-weight: font-weight('bold')
+    }
+  }
 }
 
-.section_subheadline {
-  padding: 0.5em 1em;
-  border-top: 1px solid color("gray-cool-40");
-  text-align: center;
-  font-size: 1.5em;
-  // #total_visitors {
-  //   font-weight: $bold-weight;
-  // }
-}
 
 #top_100_table,
 #top_downloads_table {
+  padding: units(3) units(3) 0 units(3);
+
   h3 {
     font-size: 18px;
   }
@@ -325,27 +336,12 @@ g.axis {
   }
 }
 
+#top_downloads_table {
+  padding-top: 0;
 
-.visits_today {
-  h3 {
-    display: block;
-    height: 2.5rem;
-    margin-bottom: 0;
-    padding-top: 1rem;
-  }
   h4 {
-    display: block;
-    text-align: right;
-    margin-top: -2.5rem;
-    font-size: units(2);
-    font-weight: normal;
-    color: color("gray-cool-70");
-    padding-top: 1rem;
+    font-weight: font-weight('light');
   }
-}
-
-.section_subheadline {
-  padding-top: 2rem;
 }
 
 #time_series {
