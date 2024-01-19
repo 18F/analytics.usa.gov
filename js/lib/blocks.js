@@ -57,6 +57,11 @@ export default {
   devices: renderBlock.loadAndRender()
     .transform((d) => {
       const devices = transformers.listify(d.totals.devices);
+      devices.forEach(device => {
+        if (device.key === 'smart tv') {
+          device.key = 'Smart TV';
+        }
+      });
       return transformers.findProportionsOfMetricFromValue(devices);
     })
     .render(barChart()

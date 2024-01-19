@@ -74,34 +74,50 @@
     margin-top: -2.2rem;
     margin-bottom: 0.45rem;
   }
-}
 
-
-
-.bar-chart--top-downloads {
-
-  .label {
-    height: auto;
-    line-height: 1.6;
-  
-    .name {
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+  &__top-pages {
+    .bar-chart {
+      margin-top: 0;
     }
-  
-    .domain {
-      color: color("gray-cool-70");
+    .label {
       text-transform: lowercase;
     }
   
-    .filename {
-      text-transform: lowercase;
+    &--realtime {
+      .label {
+        text-transform: capitalize;
+      }
     }
   }
 
-  .bar {
-    margin-top: units(2); 
+  &__top-downloads {
+    .bar-chart {
+      margin-top: 0;
+    }
+
+    .label {
+      height: auto;
+      line-height: 1.6;
+
+      .name {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .domain {
+        color: color("gray-cool-70");
+        text-transform: lowercase;
+      }
+
+      .filename {
+        text-transform: lowercase;
+      }
+    }
+
+    .bar {
+      margin-top: units(2); 
+    }
   }
 }
