@@ -38,13 +38,11 @@
   }
 
   .bar {
-    // height: 0.8rem;
     height: units(1.5);
     background: color("blue-50v");
     position: relative;
     z-index: 2;
     min-width: 1px;
-
     transition: width 0.5s linear;
   }
 
@@ -83,7 +81,7 @@
       text-transform: lowercase;
     }
   
-    &--realtime {
+    &-realtime {
       .label {
         text-transform: capitalize;
       }
@@ -91,6 +89,12 @@
   }
 
   &__top-downloads {
+    padding: 0 units(3);
+
+    h4 {
+      font-weight: font-weight("light");
+    }
+
     .bar-chart {
       margin-top: 0;
     }

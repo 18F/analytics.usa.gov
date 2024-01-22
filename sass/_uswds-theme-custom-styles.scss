@@ -78,9 +78,6 @@ h5 {
 }
 
 
-//override draft web design standards for header hack
-
-
 // Other Setup:
 body {
   background: #FFF;
@@ -121,7 +118,6 @@ ul li:before {
   404 Styles
 */
 
-
 .container-padding {
   padding-left: units(2);
   padding-right: units(2);
@@ -139,10 +135,6 @@ ul li:before {
   a {
     color: color("gray-1");
   }
-}
-
-.text-center {
-  text-align: center;
 }
 
 // footer & identifier
@@ -330,7 +322,6 @@ g.axis {
     }
   }
 
-
   &__chart {
     padding: 0;
 
@@ -356,6 +347,68 @@ g.axis {
   }
 }
 
+.top {
+  &-pages {
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3); 
+    }
+
+    &__headline {
+      padding-top: units(2.5);
+    }
+
+    &__realtime {
+      .bar-chart {
+        margin-top: 0;
+      }
+      .label {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &-downloads {
+    padding: 0 units(2);
+    @include at-media("tablet") {
+      padding: 0 units(3); 
+    }
+
+    h4 {
+      font-weight: font-weight("light");
+    }
+
+    &__headline {
+      padding-top: units(2.5);
+    }
+
+    .label {
+      height: 3rem;
+      line-height: 1.6;
+
+      .name {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .domain {
+        color: color("gray-cool-70");
+        text-transform: lowercase;
+      }
+
+      .filename {
+        text-transform: lowercase;
+      }
+    }
+
+    .bar {
+      margin-top: units(2); 
+    }
+  }
+}
 
 #top_100_table,
 #top_downloads_table {
@@ -364,11 +417,15 @@ g.axis {
   h3 {
     font-size: 18px;
   }
+
   h5 {
     color: color("gray-cool-70");
     font-weight: 300;
   }
 }
+
+
+
 
 #top_downloads_table {
   padding-top: 0;

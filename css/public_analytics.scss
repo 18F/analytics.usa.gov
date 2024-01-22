@@ -66,68 +66,6 @@ form {
 }
 
 
-// .container {
-//   @include responsive_container;
-//   border-left: 1px solid $gray;
-//   border-right: 1px solid $gray;
-//   border-bottom: 1px solid $gray;
-//   background: $white;
-// }
-
-#main_data {
-  @include media($small-screen) {
-    border-right: none;
-  }
-}
-
-// .visits_today {
-//   h3 {
-//     display: block;
-//     height: 2.5rem;
-//     margin-bottom: 0;
-//   }
-//   h4 {
-//     display: block;
-//     text-align: right;
-//     margin-top: -2.5rem;
-//     font-size: 1.3rem;
-//     font-weight: normal;
-//     color: $dark-gray;
-//   }
-// }
-
-// #secondary_data {
-//   border-left: 1px solid $gray;
-//   border-bottom: 1px solid $gray;
-//   @include media($small-screen) {
-//     border-top: 1px solid $gray;
-//     border-left: none;
-//     border-right: none;
-//   }
-// }
-
-// #explanation {
-//   border-top: 1px solid $gray;
-//   margin-top: -1px;
-//   h4 {
-//     font-size: 90%;
-//   }
-
-//   ul {
-//     padding: 0;
-//   }
-
-//   ul,
-//   li {
-//     list-style-type: none;
-//     list-style-position: inside;
-//   }
-
-//   li {
-//     margin: 1em 0;
-//   }
-// }
-
 // data page
 .parent td {
   border-bottom: 1px solid $gray;
@@ -162,31 +100,9 @@ form {
 }
 // end data page
 
-// .section_headline {
-//   padding: 0.1em 1em;
-//   border-top: 1px solid $gray;
-//   @include media($small-screen) {
-//     border-bottom: none;
-//   }
-// }
-
-// .section_subheadline {
-//   padding: 0.5em 1em;
-//   border-top: 1px solid $gray;
-//   text-align: center;
-//   font-size: 1.5em;
-//   #total_visitors {
-//     font-weight: $bold-weight;
-//   }
-// }
-
 .bar:focus {
   outline: 0;
 }
-
-// #time_series {
-//   padding: 1rem 1em;
-// }
 
 #time_series svg {
   display: block;
@@ -199,28 +115,17 @@ form {
   }
 }
 
-#top_downloads_table {
-  h5 {
-    margin-top: 10px;
-  }
-}
-
-// #top_100_table,
 // #top_downloads_table {
-//   h3 {
-//     font-size: 1em;
-//   }
 //   h5 {
-//     color: $dark-gray;
-//     font-weight: 300;
+//     margin-top: 10px;
 //   }
 // }
 
-.top-pages {
-  .bar-chart {
-    margin-top: 0;
-  }
-}
+// .top-pages {
+//   .bar-chart {
+//     margin-top: 0;
+//   }
+// }
 
 figure {
   margin: 0;
@@ -283,94 +188,6 @@ ul.pills {
     }
   }
 }
-
-// .bar-chart {
-//   margin: 1rem 0;
-//   position: relative;
-//   font-size: 90%;
-
-//   .bar-chart {
-//     font-size: 80%;
-
-//     .bin {
-//       margin-left: 2em;
-//       margin-bottom: 0rem;
-
-//       .bar {
-//         display: none;
-//       }
-//     }
-//   }
-
-//   .bin {
-//     position: relative;
-//     @include clearfix;
-//     overflow: hidden;
-//     margin: 0 0 1rem 0;
-
-//     .bar:after {
-//       content: " ";
-//       display: block;
-//       position: absolute;
-//       background: #f9f9f9;
-//       top: 0;
-//       left: 100%;
-//       width: 1000px;
-//       height: 100%;
-//       z-index: 1;
-//     }
-//   }
-
-//   .bar {
-//     height: 0.8rem;
-//     background: $data;
-//     position: relative;
-//     z-index: 2;
-//     min-width: 1px;
-
-//     @include transition(width 0.5s linear);
-//   }
-
-//   .label {
-//     white-space: nowrap;
-//     height: 2.2rem;
-//     margin-right: 4em;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-
-//     a {
-//       text-decoration: none;
-//     }
-//     a:hover {
-//       text-decoration: underline;
-//     }
-//   }
-
-//   .value {
-//     text-align: right;
-//     height: 2rem;
-//     white-space: nowrap;
-//     margin-top: -2.2rem;
-//     margin-bottom: 0.45rem;
-//   }
-// }
-
-// #top-downloads .bar-chart .label {
-//   height: auto;
-//   line-height: 1.6;
-
-//   .name {
-//     display: block;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//   }
-
-//   .domain {
-//     color: $dark-gray;
-//   }
-// }
 
 // nested charts
 figure figure {
