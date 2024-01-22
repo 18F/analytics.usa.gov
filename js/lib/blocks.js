@@ -207,6 +207,10 @@ export default {
           d.text = this.innerText;
         })
         .html('')
+        .append('a')
+        .attr('target', '_blank')
+        .attr('rel', 'noopener')
+        .attr('href', (d) => exceptions[d.domain] || (`http://${d.domain}`))
         .text((d) => titleExceptions[d.domain] || d.domain);
     })
     .render(barChart()
