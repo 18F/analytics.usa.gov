@@ -1,5 +1,10 @@
 @use "uswds-core" as *;
 
+/*
+* Defines styles for each barchart
+* TODO: Further refactoring into one component will require updates to javascript code
+*/
+
 .bar-chart {
   margin: units(4) 0;
   position: relative;
@@ -49,7 +54,7 @@
   .label {
     white-space: nowrap;
     height: 2.2rem;
-    margin-right: 4em;
+    margin-right: units(8);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -100,7 +105,6 @@
     }
 
     .label {
-      height: auto;
       line-height: 1.6;
 
       .name {
@@ -123,5 +127,20 @@
     .bar {
       margin-top: units(2); 
     }
+  }
+}
+
+.top-downloads {
+
+  .label {
+    height: units(8);
+  }
+}
+
+#chart_us_and_territories,
+#chart_countries {
+
+  .label {
+    font-size: 90%;
   }
 }
