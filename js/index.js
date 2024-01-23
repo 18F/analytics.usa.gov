@@ -92,12 +92,6 @@ whenRendered(['os', 'windows'], () => {
     .call(nestCharts, 'Windows', d3.select('#chart_windows'));
 });
 
-// nest the IE chart inside the browsers chart once they're both rendered
-whenRendered(['browsers', 'ie'], () => {
-  d3.select('#chart_browsers')
-    .call(nestCharts, 'Internet Explorer', d3.select('#chart_ie'));
-});
-
 // nest the international countries chart inside the "International"
 // chart once they're both rendered
 whenRendered(['countries', 'international_visits'], () => {

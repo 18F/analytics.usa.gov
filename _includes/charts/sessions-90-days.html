@@ -1,14 +1,14 @@
-<section class="devices section">
+<article class="section">
   <section class="section__subheader">
     There were <span id="total_visitors" class="data">...</span> sessions over the
     past 90 days.
   </section>
 
-  <section class="grid-row">
+  <section class="section__chart grid-row">
     <!-- Devices -->
     <section
       id="devices"
-      class="desktop:grid-col-4 padding-3 bar-chart-component"
+      class="desktop:grid-col-4 bar-chart-component"
       data-block="devices"
       data-source="{{ site.data_url }}/{{ data_prefix }}/devices.json"
     >
@@ -19,7 +19,7 @@
     </section>
 
     <!-- Browsers -->
-    <section id="browsers" class="desktop:grid-col-4 padding-3 bar-chart-component">
+    <section id="browsers" class="desktop:grid-col-4 bar-chart-component">
       <h4>Web Browsers</h4>
       <figure
         id="chart_browsers"
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Operating systems -->
-    <section id="operating_systems" class="desktop:grid-col-4 padding-3 bar-chart-component">
+    <section id="operating_systems" class="desktop:grid-col-4 bar-chart-component">
       <h4>Operating Systems</h4>
       <figure
         id="chart_os"
@@ -63,4 +63,4 @@
       </figure>
     </section>
   </section>
-</section>
+</article>

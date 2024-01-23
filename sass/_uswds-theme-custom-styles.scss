@@ -78,9 +78,6 @@ h5 {
 }
 
 
-//override draft web design standards for header hack
-
-
 // Other Setup:
 body {
   background: #FFF;
@@ -121,7 +118,6 @@ ul li:before {
   404 Styles
 */
 
-
 .container-padding {
   padding-left: units(2);
   padding-right: units(2);
@@ -139,10 +135,6 @@ ul li:before {
   a {
     color: color("gray-1");
   }
-}
-
-.text-center {
-  text-align: center;
 }
 
 // footer & identifier
@@ -222,7 +214,15 @@ footer {
 .chart-realtime {
   color: color("blue-80v");
   text-align: center;
-  padding: 2rem;
+  padding: units(4);
+
+  &__visitors-count {
+    padding: 0;
+
+    @include at-media("tablet") {
+      padding: units(2);
+    }
+  }
 
   &__current_visitors {
     font-size: 6em;
@@ -233,16 +233,10 @@ footer {
   }
   
   &__description {
-    font-size: 1rem;
+    font-size: units(3);
     @include at_media("tablet") {
-      font-size: 2em;
+      font-size: units(4);
     }
-  }
-}
-
-.locations {
-  .section_headline {
-    padding: 1rem 0 1rem 1rem;
   }
 }
 
@@ -299,16 +293,23 @@ g.axis {
 */
 
 .section {
-  padding: 0 units(2);
   border-top: 1px solid color("gray-cool-40");
-  // border-bottom: 1px solid color("gray-cool-40");
   @include at-media("tablet") {
     border-bottom: none;
   }
 
   &__headline {
-    padding-top: units(3);
-    padding-left: units(3);
+    border-bottom: 1px solid color("gray-cool-40");
+
+    @include at-media("tablet") {
+      padding-top: units(3);
+      padding-left: units(3); 
+      border-bottom: none;
+    }
+
+    h3 {
+      padding: 0 units(2);
+    }
   }
 
   &__subheader {
@@ -320,8 +321,94 @@ g.axis {
       font-weight: font-weight('bold')
     }
   }
+
+  &__chart {
+    padding: 0;
+
+    @include at-media("tablet") {
+      padding: 0 units(2);
+    }
+
+    .bar-chart-component {
+      padding: units(2);
+
+      &:first-child {
+        padding-top: units(2);
+
+        @include at-media("tablet") {
+          padding-top: units(3);
+        }
+      }
+
+      @include at-media("tablet") {
+        padding: units(3);
+      }
+    }
+  }
 }
 
+.top {
+  &-pages {
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3); 
+    }
+
+    &__headline {
+      padding-top: units(2.5);
+    }
+
+    &__realtime {
+      .bar-chart {
+        margin-top: 0;
+      }
+      .label {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &-downloads {
+    padding: 0 units(2);
+    @include at-media("tablet") {
+      padding: 0 units(3); 
+    }
+
+    h4 {
+      font-weight: font-weight("light");
+    }
+
+    &__headline {
+      padding-top: units(2.5);
+    }
+
+    .label {
+      height: 3rem;
+      line-height: 1.6;
+
+      .name {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .domain {
+        color: color("gray-cool-70");
+        text-transform: lowercase;
+      }
+
+      .filename {
+        text-transform: lowercase;
+      }
+    }
+
+    .bar {
+      margin-top: units(2); 
+    }
+  }
+}
 
 #top_100_table,
 #top_downloads_table {
@@ -330,11 +417,15 @@ g.axis {
   h3 {
     font-size: 18px;
   }
+
   h5 {
     color: color("gray-cool-70");
     font-weight: 300;
   }
 }
+
+
+
 
 #top_downloads_table {
   padding-top: 0;
@@ -347,7 +438,11 @@ g.axis {
 }
 
 #time_series {
-  padding: 1rem 1em;
+  padding: units(4) 0;
+
+  @include at-media("tablet") {
+    padding: units(2);
+  }
 }
 
 #explanation {

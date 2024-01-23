@@ -1,6 +1,8 @@
-<section id="top_100_table">
+<section class="top-pages">
   <!-- see: http://heydonworks.com/practical_aria_examples/ -->
-  <h3>Top <span id="top_table_type">Web Pages and App Screens</span></h3>
+  <div class="top-pages__headline">
+    <h3>Top <span id="top_table_type">Web Pages and App Screens</span></h3>
+  </div>
   <ul class="pills" role="tablist">
     <li>
       <a
@@ -33,7 +35,7 @@
   </ul>
 
   <figure
-    class="bar-chart__top-pages bar-chart__top-pages--realtime"
+    class="top-pages__realtime"
     id="top-pages-realtime"
     role="tabpanel"
     data-block="top-pages-realtime"
@@ -42,8 +44,8 @@
   >
     <p>
       People on a <strong>single, specific page or app screen</strong> in
-      the last 30 minutes. We only count pages with at least 10 people on
-      the page.
+      the last 30 minutes. GA4 does not report hostnames in real-time, 
+      so only page title and screen name information is available.
       <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv"
         >Download the full dataset.</a
       >

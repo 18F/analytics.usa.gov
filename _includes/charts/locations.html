@@ -1,12 +1,14 @@
-<section class="locations section" id="locations">
-  <section class="section__headline">
-    <h3>User Locations and Languages Now</h3>
-  </section>
+<article class="section">
+  <div class="section__headline">
+    <h3>
+      User Locations and Languages Now
+    </h3>
+  </div>
 
-  <div class="grid-row">
+  <div class="section__chart grid-row">
     <section
       id="cities"
-      class="desktop:grid-col-4 padding-3 bar-chart-component"
+      class="desktop:grid-col-4 padding-2 bar-chart-component"
       data-block="cities"
       data-source="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json"
     >
@@ -16,7 +18,7 @@
       </figure>
     </section>
 
-    <section id="countries" class="desktop:grid-col-4 padding-3 bar-chart-component">
+    <section id="countries" class="desktop:grid-col-4 padding-2 bar-chart-component">
       <h4>Countries</h4>
 
       <figure
@@ -51,7 +53,7 @@
 
     <section
       id="languages"
-      class="desktop:grid-col-4 padding-3 bar-chart-component"
+      class="desktop:grid-col-4 padding-2 bar-chart-component"
       data-block="languages"
       data-source="{{ site.data_url }}/{{ data_prefix }}/language.json"
     >
@@ -61,4 +63,4 @@
       </figure>
     </section>
   </div>
-</section>
+</article>

@@ -1,5 +1,10 @@
 @use "uswds-core" as *;
 
+/*
+* Defines styles for each barchart
+* TODO: Further refactoring into one component will require updates to javascript code
+*/
+
 .bar-chart {
   margin: units(4) 0;
   position: relative;
@@ -38,20 +43,18 @@
   }
 
   .bar {
-    // height: 0.8rem;
     height: units(1.5);
     background: color("blue-50v");
     position: relative;
     z-index: 2;
     min-width: 1px;
-
     transition: width 0.5s linear;
   }
 
   .label {
     white-space: nowrap;
     height: 2.2rem;
-    margin-right: 4em;
+    margin-right: units(8);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -83,7 +86,7 @@
       text-transform: lowercase;
     }
   
-    &--realtime {
+    &-realtime {
       .label {
         text-transform: capitalize;
       }
@@ -91,12 +94,17 @@
   }
 
   &__top-downloads {
+    padding: 0 units(3);
+
+    h4 {
+      font-weight: font-weight("light");
+    }
+
     .bar-chart {
       margin-top: 0;
     }
 
     .label {
-      height: auto;
       line-height: 1.6;
 
       .name {
@@ -119,5 +127,20 @@
     .bar {
       margin-top: units(2); 
     }
+  }
+}
+
+.top-downloads {
+
+  .label {
+    height: units(8);
+  }
+}
+
+#chart_us_and_territories,
+#chart_countries {
+
+  .label {
+    font-size: 90%;
   }
 }
