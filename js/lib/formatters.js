@@ -62,11 +62,10 @@ function formatHour(hour) {
  */
 function formatDate(isoDateString) {
   const realDate = isoDateString.split('-');
-  let month = removeLeadingZero(realDate[1]);
-  let day = removeLeadingZero(realDate[2]);
+  const month = removeLeadingZero(realDate[1]);
+  const day = removeLeadingZero(realDate[2]);
   return `${day}/${month}`;
 }
-
 
 /**
  * remove leading 0 from date string
