@@ -91,10 +91,33 @@ function formatURL(url) {
     .replace(/%20/g, ' ');
 }
 
-function formatFile(url) {
-  const splitUrls = url.split('/');
-  const domain = splitUrls[splitUrls.length - 1];
-  return domain.replace(/%20/g, ' ');
+/**
+ * @param {string} page is a url
+ * return url with protocol
+ * the page property from GA4 does not always contain the protocol,
+ * this will cause jekyll to prepend the base url to the link, breaking it
+ */
+function formatProtocol(page) {
+  page = formatURL(page);
+  if (page.indexOf('http') === 0) {
+    return;
+  }
+  page = `http://${page}`;
+  return page;
+}
+
+/**
+ * If filepath is a URL we want to return the pathname to be consistent with the API
+ * top-downloads-yesterday.json sometimes returns a URL instead of pathname for the file_name field
+ * @param {string} filepath
+ * @returns {string} pathname should be consistent with file_name
+ */
+function formatFile(filepath) {
+  if (URL.canParse(filepath)) {
+    const url = new URL(filepath);
+    return url.pathname;
+  }
+  return filepath;
 }
 
 export default {
@@ -106,5 +129,6 @@ export default {
   formatDate,
   floatToPercent,
   formatURL,
+  formatProtocol,
   formatFile,
 };
