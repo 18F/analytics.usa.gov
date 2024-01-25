@@ -102,7 +102,7 @@ function formatProtocol(page) {
   if (page.indexOf('http') === 0) {
     return;
   }
-  page = `http://${page}`;
+  page = `https://${page}`;
   return page;
 }
 
