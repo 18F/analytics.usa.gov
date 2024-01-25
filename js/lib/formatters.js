@@ -58,17 +58,24 @@ function formatHour(hour) {
 /**
  * Returns an ISO Date (2023-12-17) in dd/mm format for time series chart
  * @param {ISO Date} - date
+ * @return {string} - formatted date as "1/12" in dd/mm format
  */
 function formatDate(isoDateString) {
-  const date = new Date(isoDateString);
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-
-  // display 01-09 until 10
-  // if (day < 10) day = `0${day}`;
-  // if (month < 10) month = `0${month}`;
-
+  const realDate = isoDateString.split('-');
+  const month = removeLeadingZero(realDate[1]);
+  const day = removeLeadingZero(realDate[2]);
   return `${day}/${month}`;
+}
+
+/**
+ * remove leading 0 from date string
+ * @param {string} - datefield that is passed "01"
+ */
+function removeLeadingZero(dateField) {
+  if (dateField.charAt(0) === '0') {
+    dateField = dateField.slice(1);
+  }
+  return dateField;
 }
 
 function formatURL(url) {
