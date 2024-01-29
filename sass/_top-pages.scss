@@ -1,0 +1,56 @@
+@use "uswds-core" as *;
+
+ul.pills {
+    display: inline-block;
+    border-right: 1px solid color("gray-10");
+    border-left: 1px solid color("gray-10");
+
+    li {
+      width: 33.3333%;
+    }
+
+    &,
+    & > li {
+      list-style: none;
+      padding: 0;
+      margin-bottom: units(2);
+      display: block;
+    }
+
+    & > li {
+
+      float: left;
+
+      &:first-child {
+        a {
+          border-left: 1px solid color("gray-10");
+        }
+      }
+
+      & > a {
+        color: color("blue-80v");
+        background: color("gray-1");
+        width: 100%;
+        text-align: center;
+        font-weight: font-weight(400);
+        font-size: units(2);
+        display: inline-block;
+        padding: units(1) 0;
+        text-decoration: none;
+
+        border-top: 1px solid color("gray-10");
+        border-bottom: 1px solid color("gray-10");
+        border-right: 1px solid color("gray-10");
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &[aria-selected="true"] {
+          color: #fff;
+          color: color("gray-10");
+          background: color("blue-50v");
+        }
+      }
+    }
+  }

@@ -92,6 +92,42 @@ a:visited {
   color: color("blue-80v");
 }
 
+figure {
+  margin: 0;
+}
+
+// nested charts
+figure figure {
+
+  h4 {
+    display: none;
+  }
+
+  .bar-chart {
+    margin: units(1) 0;
+
+    .bin {
+      margin-bottom: units(1);
+    }
+  }
+}
+
+*[data-block] {
+  opacity: 1;
+  // transition opacity over a fraction of a second, with a delay
+  // (the delay guards against flashes when content switches really quickly
+  // from loading -> loaded -> loading again, e.g. when data loads quickly)
+  transition: opacity 0.5s ease-in;
+
+  &.loading {
+    opacity: 0.8;
+  }
+}
+
+.hide {
+  display: none;
+}
+
 .technical-difficulties {
   background: color("gray-1");
   color: color("red-70v");
@@ -442,6 +478,17 @@ g.axis {
 
   @include at-media("tablet") {
     padding: units(2);
+  }
+
+  svg {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    .axis[aria-hidden="true"] {
+      display: block !important; // WDS override
+    }
   }
 }
 

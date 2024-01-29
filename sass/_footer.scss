@@ -45,7 +45,7 @@ footer {
 
   a {
     display: inline-block;
-    line-height: 0;
+    line-height: 1;
 
     &:hover {
       color: color("blue-50");
@@ -57,5 +57,75 @@ footer {
     &:hover {
       background-color: color("blue-60");
     }
+  }
+}
+
+footer {
+  clear: both;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .logo-links {
+    margin-bottom: 0rem;
+    margin-right: 2rem;
+    float: left;
+  }
+}
+
+.footer-main-img {
+  display: none;
+  max-width: 18.1rem;
+
+  @include at-media("desktop") {
+    display: block;
+  }
+}
+
+.footer-content {
+  p {
+    max-width: 75ch;
+  }
+}
+
+.footer-contact-links {
+  margin-top: 3rem;
+
+  a {
+    color: color("gray-1");
+    text-decoration: underline;
+  }
+
+  img {
+    width: 4rem;
+  }
+}
+
+.footer-section-top {
+  background-color: color("gray-2");
+}
+
+.footer-section-bottom {
+  background-color: color("gray-2");
+
+  p {
+    color: color("gray-1");
+    margin-top: 0;
+    font-size: 1.4rem;
+    line-height: 0.75;
+
+    &:first-of-type {
+
+      @include at-media("tablet") {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  a {
+    color: color("gray-1");
+    display: inline-block;
+    line-height: 0;
   }
 }
