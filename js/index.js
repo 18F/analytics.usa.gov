@@ -110,9 +110,10 @@ whenRendered(['countries', 'us_and_territories'], () => {
 d3.selectAll("*[role='tablist']")
   .each(function () {
     // grab all of the tabs and panels
-    const tabs = d3.select(this).selectAll("*[role='tab'][href]")
+    const tabs = d3.select(this).selectAll("*[role='tab'][data-tablink]");
+    tabs
       .datum(function () {
-        const target = document.getElementById(this.href.split('#').pop());
+        const target = document.getElementById(this.dataset.tablink.split('#').pop());
         return {
           selected: this.getAttribute('aria-selected') === 'true',
           target,
