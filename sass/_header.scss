@@ -50,12 +50,13 @@
   }
 
   nav.links {
-    align-items: flex-end;
     display: flex;
+    align-items: flex-end;
     flex-direction: row;
-    flex-grow: 3;
-    font-size: size('sans', 'md');
     justify-content: flex-end;
+    flex-grow: 3;
+
+    font-size: size('sans', 'md');
     list-style: none;
     margin-bottom: 0;
     order: 3;
@@ -64,35 +65,40 @@
       flex-direction: column;
     }
 
-    li {
-      @include at-media("mobile-lg") {
-        display: block;
-        font-size: size('sans', 'lg');
-        padding: 0;
-        &:nth-child(odd) a::after {
-          content: "";
+    ul {
+      list-style: none;
+      display:contents;
+
+      li {
+        @include at-media("mobile-lg") {
+          display: block;
+          font-size: size('sans', 'lg');
           padding: 0;
+          &:nth-child(odd) a::after {
+            content: "";
+            padding: 0;
+          }
         }
       }
-    }
-
-    span.link-bullet {
-      padding: 0 units(1);
-
-      &--hide {
-        display: inline;
-
-        @include at-media("desktop") {
-          display: none;
+  
+      span.link-bullet {
+        padding: 0 units(1);
+  
+        &--hide {
+          display: inline;
+  
+          @include at-media("desktop") {
+            display: none;
+          }
         }
       }
-    }
-
-    a {
-      font-size: size('sans', 'xs');
-
-      @include at-media("mobile-lg") {
-        font-size: size('sans', 'lg');
+  
+      a {
+        font-size: size('sans', 'xs');
+  
+        @include at-media("mobile-lg") {
+          font-size: size('sans', 'lg');
+        }
       }
     }
   }
