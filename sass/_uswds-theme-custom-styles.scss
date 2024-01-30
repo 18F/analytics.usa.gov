@@ -65,10 +65,6 @@ $white: color("gray-1");
 // desktop-lg  1200px
 // widescreen  1400px
 
-// @include at-media("tablet-lg")
-
-// include via custom theme settings
-
 h1,
 h2,
 h3,
@@ -90,6 +86,42 @@ body {
 a,
 a:visited {
   color: color("blue-80v");
+}
+
+figure {
+  margin: 0;
+}
+
+// nested charts
+figure figure {
+
+  h4 {
+    display: none;
+  }
+
+  .bar-chart {
+    margin: units(1) 0;
+
+    .bin {
+      margin-bottom: units(1);
+    }
+  }
+}
+
+*[data-block] {
+  opacity: 1;
+  // transition opacity over a fraction of a second, with a delay
+  // (the delay guards against flashes when content switches really quickly
+  // from loading -> loaded -> loading again, e.g. when data loads quickly)
+  transition: opacity 0.5s ease-in;
+
+  &.loading {
+    opacity: 0.8;
+  }
+}
+
+.hide {
+  display: none;
 }
 
 .technical-difficulties {
@@ -137,75 +169,6 @@ ul li:before {
   }
 }
 
-// footer & identifier
-#explanation {
-  font-size: units(2.5);
-
-  h3 {
-    font-size: units(2.5);
-  }
-
-  a {
-    &:hover {
-      color: color("blue-60");
-    }
-  }
-}
-
-footer {
-  background-color: color("gray-4");
-  border-top: units("1px") solid color("gray-10");
-  padding: units(3) 0;
-
-  @include at-media("desktop") {
-    padding: units(6) 0;
-  }
-
-  h3 {
-    margin-top: 0;
-  }
-
-  .logo-links {
-    float: left;
-    margin-bottom: 0rem;
-    margin-right: 2rem;
-  }
-
-  img {
-    width: 3.2rem;
-  }
-
-  img.github-icon {
-    vertical-align: text-bottom !important;
-    width: 1.4rem !important;
-  }
-
-  p {
-    font-size: 1.15rem;
-    line-height: 0.75;
-    margin-top: units(2) 0;
-
-    @include at-media("desktop") {
-      font-size: 1.3rem;
-    }
-  }
-
-  a {
-    display: inline-block;
-    line-height: 0;
-
-    &:hover {
-      color: color("blue-50");
-    }
-  }
-
-  a.usa-button {
-    background-color: color("blue-50");
-    &:hover {
-      background-color: color("blue-60");
-    }
-  }
-}
 
 .time-series {
   text-transform: uppercase;
@@ -442,6 +405,17 @@ g.axis {
 
   @include at-media("tablet") {
     padding: units(2);
+  }
+
+  svg {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    .axis[aria-hidden="true"] {
+      display: block !important; // WDS override
+    }
   }
 }
 
