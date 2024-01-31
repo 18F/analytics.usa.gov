@@ -1,29 +1,22 @@
 @use "uswds-core" as *;
 
-.pills {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.usa-button-group--segmented {
+  width: 100%;
 
-    button {
-      min-width: 33.3333%;
+  // make the buttons stretch to fill the parent container
+  .usa-button-group__item {
+    flex-grow: 1;
+    width: 33.3333%;
+
+    // targets the last <button> in the group
+    &:last-child > .usa-button {
+      margin-left: -2px;
       width: 100%;
-      text-align: center;
-      font-weight: font-weight(600);
-      font-size: units(2);
-      padding: units(1);
-      text-decoration: none;
-
-      @include at-media("mobile") {
-        min-width: 33.3333%;
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
-
-      &[aria-selected="true"] {
-        color: #fff;
-      }
     }
   }
+
+  // fill full width of parent
+  .usa-button {
+    width: 100%;
+  }
+}

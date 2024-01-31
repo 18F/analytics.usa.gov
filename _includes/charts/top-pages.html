@@ -3,33 +3,39 @@
   <div class="top-pages__headline">
     <h3>Top <span id="top_table_type">Web Pages and App Screens</span></h3>
   </div>
-  <div class="pills" role="tablist">
-    <button
-      role="tab"
-      aria-selected="true"
-      data-type="Web Pages and App Screens"
-      data-tablink="#top-pages-realtime"
-      class="usa-button">
-      Now
+  <div class="usa-button-group usa-button-group--segmented" role="tablist">
+    <div class="usa-button-group__item">
+      <button
+        role="tab"
+        aria-selected="false"
+        data-type="Web Pages and App Screens"
+        data-tablink="#top-pages-realtime"
+        class="usa-button">
+        Now
+      </button>
+    </div>
+    <div class="usa-button-group__item">
+      <button
+        role="tab"
+        aria-selected="false"
+        data-type="Hostnames"
+        data-tablink="#top-pages-7-days"
+        class="usa-button usa-button--outline"
+        >
+        7 Days
     </button>
-    <button
-      role="tab"
-      aria-selected="true"
-      data-type="Hostnames"
-      data-tablink="#top-pages-7-days"
-      class="usa-button"
-      >
-      7 Days
-    </button>
-    <button
-      role="tab"
-      aria-selected="true"
-      data-type="Hostnames"
-      data-tablink="#top-pages-30-days"
-      class="usa-button"
-      >
-      30 Days
-    </button>
+    </div>
+    <div class="usa-button-group__item">
+      <button
+        role="tab"
+        aria-selected="false"
+        data-type="Hostnames"
+        data-tablink="#top-pages-30-days"
+        class="usa-button usa-button--outline"
+        >
+        30 Days
+      </button>
+    </div>
   </div>
 
   <figure
