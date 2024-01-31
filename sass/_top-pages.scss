@@ -1,29 +1,24 @@
 @use "uswds-core" as *;
 
-.pills {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+// overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
 
-    button {
-      min-width: 33.3333%;
+.usa-button-group--segmented {
+  width: 100%;
+
+  // make the buttons parent stretch to fill the parent container
+  .usa-button-group__item {
+    flex-grow: 1;
+    width: 33.3333%;
+
+    // make each button full width
+    .usa-button {
       width: 100%;
-      text-align: center;
-      font-weight: font-weight(600);
-      font-size: units(2);
-      padding: units(1);
-      text-decoration: none;
+    }
 
-      @include at-media("mobile") {
-        min-width: 33.3333%;
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
-
-      &[aria-selected="true"] {
-        color: #fff;
-      }
+    // targets the last <button> in the group
+    &:last-child > .usa-button {
+      margin-left: -2px;
+      width: 100%;
     }
   }
+}
