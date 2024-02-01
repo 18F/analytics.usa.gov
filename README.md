@@ -116,8 +116,9 @@ The data will be available at `http://localhost:3000` over CORS, with no path pr
 
 Production and staging applications are deployed via CI automatically. Any
 commits to the `master` branch will be deployed to production after passing
-automated tests in CI. Any commits to the `develop` branch will be deployed to
-the staging application.
+automated tests in CI. Any commits to the `staging` branch will be deployed to
+the staging application. Any commits to the `develop` branch will be deployed to
+the development application.
 
 It shouldn't be necessary to deploy manually, but with the Cloud Foundry CLI
 installed, follow these steps to deploy.
@@ -177,7 +178,8 @@ docker push 18fgsa/analytics.usa.gov:<version>-production
 | Environment | Branch | URL |
 |-------------| ------ | --- |
 | Production | master | https://analytics.usa.gov |
-| Staging | master | https://analytics-staging.app.cloud.gov |
+| Staging | staging | https://analytics-staging.app.cloud.gov |
+| Development | develop | https://analytics-develop.app.cloud.gov |
 
 ### Webpack Configuration
 
