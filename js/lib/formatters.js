@@ -107,17 +107,18 @@ function formatProtocol(page) {
 }
 
 /**
- * If filepath is a URL we want to return the pathname to be consistent with the API
+ * If filepath is a full URL we want to return the pathname to be consistent with the API
  * top-downloads-yesterday.json sometimes returns a URL instead of pathname for the file_name field
  * @param {string} filepath
  * @returns {string} pathname should be consistent with file_name
  */
 function formatFile(filepath) {
-  if (URL.canParse(filepath)) {
+  try {
     const url = new URL(filepath);
     return url.pathname;
+  } catch (e) {
+    return filepath;
   }
-  return filepath;
 }
 
 export default {
