@@ -13,8 +13,8 @@
     font-size: 80%;
 
     .bin {
-      margin-left: units(4);
       margin-bottom: 0;
+      margin-left: units(4);
 
       .bar {
         display: none;
@@ -23,32 +23,32 @@
   }
 
   .bin {
-    position: relative;
     @include clearfix;
-    overflow: hidden;
-    margin: 0 0 units(2) 0;
     font-size: 1.25rem;
+    margin: 0 0 units(2) 0;
+    overflow: hidden;
+    position: relative;
 
     .bar:after {
+      background: #f9f9f9;
       content: " ";
       display: block;
-      position: absolute;
-      background: #f9f9f9;
-      top: 0;
-      left: 100%;
-      width: 1000px;
       height: 100%;
+      left: 100%;
+      position: absolute;
+      top: 0;
+      width: 1000px;
       z-index: 1;
     }
   }
 
   .bar {
-    height: units(1.5);
     background: color("blue-50v");
-    position: relative;
-    z-index: 2;
+    height: units(1.5);
     min-width: 1px;
+    position: relative;
     transition: width 0.5s linear;
+    z-index: 2;
 
     .bar:focus {
       outline: 0;
@@ -56,40 +56,40 @@
   }
 
   .label {
-    white-space: nowrap;
+    color: color("gray-cool-70");
     height: 2.2rem;
     margin-right: units(8);
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: color("gray-cool-70");
     text-transform: capitalize;
+    white-space: nowrap;
 
     a {
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
   }
 
   .value {
-    text-align: right;
-    // height: 1.75rem;
     height: 1.25rem;
-    white-space: nowrap;
-    margin-top: -2.2rem;
     margin-bottom: 0.45rem;
+    margin-top: -2.2rem;
+    text-align: right;
+    white-space: nowrap;
   }
 
   &__top-pages {
     .bar-chart {
       margin-top: 0;
     }
+
     .label {
       text-transform: lowercase;
     }
-  
+
     &-realtime {
       .label {
         text-transform: capitalize;
@@ -113,9 +113,9 @@
 
       .name {
         display: block;
-        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .domain {
@@ -129,13 +129,13 @@
     }
 
     .bar {
-      margin-top: units(2); 
+      margin-top: units(2);
     }
   }
 }
 
 .top-downloads {
-  
+
   &__headline {
     padding-top: 0;
   }

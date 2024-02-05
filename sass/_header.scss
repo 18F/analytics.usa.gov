@@ -1,6 +1,6 @@
 @use "uswds-core" as *;
 
-/* 
+/*
   Top navigation header
 
   header
@@ -50,13 +50,12 @@
   }
 
   nav.links {
-    display: flex;
     align-items: flex-end;
+    display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     flex-grow: 3;
-
     font-size: size('sans', 'md');
+    justify-content: flex-end;
     list-style: none;
     margin-bottom: 0;
     order: 3;
@@ -66,36 +65,37 @@
     }
 
     ul {
+      display: contents;
       list-style: none;
-      display:contents;
 
       li {
         @include at-media("mobile-lg") {
           display: block;
           font-size: size('sans', 'lg');
           padding: 0;
+
           &:nth-child(odd) a::after {
             content: "";
             padding: 0;
           }
         }
       }
-  
+
       span.link-bullet {
         padding: 0 units(1);
-  
+
         &--hide {
           display: inline;
-  
+
           @include at-media("desktop") {
             display: none;
           }
         }
       }
-  
+
       a {
         font-size: size('sans', 'xs');
-  
+
         @include at-media("mobile-lg") {
           font-size: size('sans', 'lg');
         }
