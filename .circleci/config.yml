@@ -67,7 +67,7 @@ master_branch_filter: &master_branch_filter
         - master
 
 jobs:
-  lint:
+  lint_js:
     docker:
       - image: cimg/ruby:3.1.4-browsers
     steps:
@@ -76,6 +76,15 @@ jobs:
       - run:
           name: lint javascript
           command: npm run lint:js
+  lint_styles:
+    docker:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:
+      - checkout
+      - *npm_install
+      - run:
+          name: lint scss
+          command: npm run lint:styles
   test:
     docker:
       - image: cimg/ruby:3.1.4-browsers
@@ -188,17 +197,22 @@ jobs:
 workflows:
   general_workflow:
     jobs:
-      - lint
+      - lint_js
+      - lint_styles
       - test:
           requires:
-            - lint
+            - lint_js
+            - lint_styles
   staging_workflow:
     jobs:
-      - lint:
+      - lint_js:
+          <<: *staging_branch_filter
+      - lint_styles:
           <<: *staging_branch_filter
       - test:
           requires:
-            - lint
+            - lint_js
+            - lint_styles
           <<: *staging_branch_filter
       - staging_env_deploy:
           requires:
@@ -206,11 +220,14 @@ workflows:
           <<: *staging_branch_filter
   develop_workflow:
     jobs:
-      - lint:
+      - lint_js:
+          <<: *develop_branch_filter
+      - lint_styles:
           <<: *develop_branch_filter
       - test:
           requires:
-            - lint
+            - lint_js
+            - lint_styles
           <<: *develop_branch_filter
       - development_env_deploy:
           requires:
@@ -218,11 +235,14 @@ workflows:
           <<: *develop_branch_filter
   master_workflow:
     jobs:
-      - lint:
+      - lint_js:
+          <<: *master_branch_filter
+      - lint_styles:
           <<: *master_branch_filter
       - test:
           requires:
-            - lint
+            - lint_js
+            - lint_styles
           <<: *master_branch_filter
       - production_env_deploy:
           requires:
