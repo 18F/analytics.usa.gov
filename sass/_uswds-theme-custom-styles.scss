@@ -135,6 +135,7 @@ figure figure {
   content: " ";
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
@@ -146,7 +147,7 @@ ul li:before {
   padding-right: 0;
 }
 
-/* 
+/*
   404 Styles
 */
 
@@ -169,15 +170,10 @@ ul li:before {
   }
 }
 
-
-.time-series {
-  text-transform: uppercase;
-}
-
 .chart-realtime {
   color: color("blue-80v");
-  text-align: center;
   padding: units(4);
+  text-align: center;
 
   &__visitors-count {
     padding: 0;
@@ -190,13 +186,15 @@ ul li:before {
   &__current_visitors {
     font-size: 6em;
     margin: 0;
+
     @include at_media("tablet") {
       font-size: 8em;
     }
   }
-  
+
   &__description {
     font-size: units(3);
+
     @include at_media("tablet") {
       font-size: units(4);
     }
@@ -204,6 +202,7 @@ ul li:before {
 }
 
 g.axis {
+
   path,
   line {
     fill: none;
@@ -217,6 +216,8 @@ g.axis {
 }
 
 .time-series {
+  text-transform: uppercase;
+
   rect {
     fill: color("blue-50v");
     stroke: color("gray-1");
@@ -244,9 +245,10 @@ g.axis {
   border-left: none;
   border-right: none;
   border-top: 1px solid color("gray-cool-40");
+
   @include at-media("tablet") {
-    border-left: 1px solid color("gray-cool-40");
     border-bottom: 1px solid color("gray-cool-40");
+    border-left: 1px solid color("gray-cool-40");
     border-top: none;
   }
 }
@@ -257,6 +259,7 @@ g.axis {
 
 .section {
   border-top: 1px solid color("gray-cool-40");
+
   @include at-media("tablet") {
     border-bottom: none;
   }
@@ -265,9 +268,9 @@ g.axis {
     border-bottom: 1px solid color("gray-cool-40");
 
     @include at-media("tablet") {
-      padding-top: units(3);
-      padding-left: units(3); 
       border-bottom: none;
+      padding-left: units(3);
+      padding-top: units(3);
     }
 
     h3 {
@@ -276,9 +279,9 @@ g.axis {
   }
 
   &__subheader {
+    font-size: units(3);
     padding: units(4) units(2);
     text-align: center;
-    font-size: units(3);
 
     #total_visitors {
       font-weight: font-weight('bold')
@@ -315,7 +318,7 @@ g.axis {
     padding: 0 units(2);
 
     @include at-media("tablet") {
-      padding: 0 units(3); 
+      padding: 0 units(3);
     }
 
     &__headline {
@@ -326,6 +329,7 @@ g.axis {
       .bar-chart {
         margin-top: 0;
       }
+
       .label {
         text-transform: capitalize;
       }
@@ -334,8 +338,9 @@ g.axis {
 
   &-downloads {
     padding: 0 units(2);
+
     @include at-media("tablet") {
-      padding: 0 units(3); 
+      padding: 0 units(3);
     }
 
     h4 {
@@ -352,9 +357,9 @@ g.axis {
 
       .name {
         display: block;
-        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .domain {
@@ -368,7 +373,7 @@ g.axis {
     }
 
     .bar {
-      margin-top: units(2); 
+      margin-top: units(2);
     }
   }
 }
@@ -409,10 +414,11 @@ g.axis {
 
   svg {
     display: block;
-    margin: 0;
-    width: 100%;
     height: auto;
+    margin: 0;
     max-height: 300px;
+    width: 100%;
+
     .axis[aria-hidden="true"] {
       display: block !important; // WDS override
     }
@@ -422,6 +428,7 @@ g.axis {
 #explanation {
   border-top: 1px solid color("gray-cool-40");
   margin-top: -1px;
+
   h4 {
     font-size: 90%;
   }
@@ -432,8 +439,8 @@ g.axis {
 
   ul,
   li {
-    list-style-type: none;
     list-style-position: inside;
+    list-style-type: none;
   }
 
   li {

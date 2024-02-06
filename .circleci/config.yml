@@ -1,75 +1,123 @@
 version: 2.1
+
+restore_bundle_cache: &restore_bundle_cache
+  restore_cache:
+    keys:
+      - v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - v1-dependencies-
+
+bundle_install: &bundle_install
+  run:
+    name: install dependencies
+    command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
+
+save_bundle_cache: &save_bundle_cache
+  save_cache:
+    paths:
+      - ./vendor/bundle
+    key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+npm_install: &npm_install
+  run:
+    name: install npm dependencies
+    command: |
+      npm install
+      sudo npm install -g eslint
+      sudo npm install -g webpack
+      sudo npm install -g envsub
+      sudo npm install -g gulp-cli
+
+copy_uswds_assets: &copy_uswds_assets
+  run:
+    name: copy uswds assets
+    command: npm run copy-assets
+
+bundle_javascript: &bundle_javascript
+  run:
+    name: bundle for production javascript
+    command: npm run build-prod
+
+build_jekyll_site: &build_jekyll_site
+  run:
+   name: build site
+   command: bundle exec jekyll build
+
+install_cf_cli: &install_cf_cli
+  run:
+    name: Install CF CLI
+    command: |
+      sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl
+
+staging_branch_filter: &staging_branch_filter
+  filters:
+    branches:
+      only:
+        - staging
+
+develop_branch_filter: &develop_branch_filter
+  filters:
+    branches:
+      only:
+        - develop
+
+master_branch_filter: &master_branch_filter
+  filters:
+    branches:
+      only:
+        - master
+
 jobs:
-  stage_deploy:
+  lint_js:
     docker:
       - image: cimg/ruby:3.1.4-browsers
     steps:
       - checkout
-
+      - *npm_install
+      - run:
+          name: lint javascript
+          command: npm run lint:js
+  lint_styles:
+    docker:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:
+      - checkout
+      - *npm_install
+      - run:
+          name: lint scss
+          command: npm run lint:styles
+  test:
+    docker:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:
+      - checkout
+      - *npm_install
+      - run:
+          name: unit test javascript
+          command: npm test
+  staging_env_deploy:
+    docker:
+      - image: cimg/ruby:3.1.4-browsers
+    steps:
+      - checkout
       - run:
           name: Replace Data URL in _config.yml file when deploying to staging
           command: |
             sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-staging.app.cloud.gov@g' _config.yml
             sed -i 's@  - name: analytics@  - name: analytics-staging@g' manifest.yml
             sed -i 's@- analytics-s3@- analytics-s3-staging@g' manifest.yml
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
-
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      - run:
-          name: install npm dependencies
-          command: |
-            npm install
-            sudo npm install -g eslint
-            sudo npm install -g webpack
-            sudo npm install -g envsub
-            sudo npm install -g gulp-cli
-
-      - run:
-          name: copy uswds assets
-          command: npm run copy-assets
-
-      - run:
-          name: lint javascript
-          command: npm run lint:js
-
-      - run:
-          name: run tests
-          command: npm run test
-
-      - run:
-          name: bundle for production javascript
-          command: npm run build-prod
-
-      - run:
-          name: install gems
-          command: bundle install
-
-      - run:
-          name: build site
-          command: bundle exec jekyll build
-
+      - *restore_bundle_cache
+      - *bundle_install
+      - *save_bundle_cache
+      - *npm_install
+      - *copy_uswds_assets
+      - *bundle_javascript
+      - *build_jekyll_site
+      - *install_cf_cli
       - run:
           name: Run Envsubst on nginx.conf
           command: |
             sed -i 's@${S3_BUCKET_URL}/data/$url_full@${S3_BUCKET_URL_STAGE}/data/$url_full@g' nginx.conf.src
             envsubst '${S3_BUCKET_URL_STAGE}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf
-      - run:
-          name: Install CF CLI
-          command: |
-            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl
-
       - run:
           name: deploy
           command: |
@@ -79,77 +127,30 @@ jobs:
             cf login -u $CF_USERNAME_STAGE -p $CF_PASSWORD_STAGE -o gsa-opp-analytics -s analytics-staging
             cf push -f "./manifest.yml"
             cf logout
-
-  develop_deploy:
+  development_env_deploy:
     docker:
       - image: cimg/ruby:3.1.4-browsers
     steps:
       - checkout
-
       - run:
           name: Replace Data URL in _config.yml file when deploying to develop
           command: |
             sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-develop.app.cloud.gov@g' _config.yml
             sed -i 's@  - name: analytics@  - name: analytics-develop@g' manifest.yml
             sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
-
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      - run:
-          name: install npm dependencies
-          command: |
-            npm install
-            sudo npm install -g eslint
-            sudo npm install -g webpack
-            sudo npm install -g envsub
-            sudo npm install -g gulp-cli
-
-      - run:
-          name: copy uswds assets
-          command: npm run copy-assets
-
-      - run:
-          name: lint javascript
-          command: npm run lint:js
-
-      - run:
-          name: run tests
-          command: npm run test
-
-      - run:
-          name: bundle for production javascript
-          command: npm run build-prod
-
-      - run:
-          name: install gems
-          command: bundle install
-
-      - run:
-          name: build site
-          command: bundle exec jekyll build
-
+      - *restore_bundle_cache
+      - *bundle_install
+      - *save_bundle_cache
+      - *npm_install
+      - *copy_uswds_assets
+      - *bundle_javascript
+      - *build_jekyll_site
+      - *install_cf_cli
       - run:
           name: Run Envsubst on nginx.conf
           command: |
             sed -i 's@${S3_BUCKET_URL}/data/$url_full@${S3_BUCKET_URL_DEV}/data/$url_full@g' nginx.conf.src
             envsubst '${S3_BUCKET_URL_DEV}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf
-      - run:
-          name: Install CF CLI
-          command: |
-            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl
-
       - run:
           name: deploy
           command: |
@@ -159,77 +160,30 @@ jobs:
             cf login -u $CF_USERNAME_DEV -p $CF_PASSWORD_DEV -o gsa-opp-analytics -s analytics-dev
             cf push -f "./manifest.yml"
             cf logout
-
-  main_deploy:
+  production_env_deploy:
     docker:
       - image: cimg/ruby:3.1.4-browsers
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: bundle install --jobs=4 --retry=3 && bundle config set --local path 'vendor/bundle'
-
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      - run:
-          name: install npm dependencies
-          command: |
-            npm install
-            sudo npm install -g eslint
-            sudo npm install -g webpack
-            sudo npm install -g envsub
-            sudo npm install -g gulp-cli
-
-      - run:
-          name: copy uswds assets
-          command: npm run copy-assets
-
-      - run:
-          name: lint javascript
-          command: npm run lint:js
-
-      - run:
-          name: run tests
-          command: npm run test
-
-      - run:
-          name: bundle for production javascript
-          command: npm run build-prod
-
-      - run:
-          name: install gems
-          command: bundle install
-
-      - run:
-          name: build site
-          command: bundle exec jekyll build
-
-      - run:
-          name: Install CF CLI
-          command: |
-            sudo wget --user-agent "Mozilla" -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - && sudo echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list && sudo apt-get update && sudo apt-get -y install cf8-cli curl
-
+      - *restore_bundle_cache
+      - *bundle_install
+      - *save_bundle_cache
+      - *npm_install
+      - *copy_uswds_assets
+      - *bundle_javascript
+      - *build_jekyll_site
+      - *install_cf_cli
       - run:
           name: Replace Data URL in _config.yml file when deploying to prod (First sed can go after cutover)
           command: |
             sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-prod.app.cloud.gov@g' _config.yml
             sed -i 's@  - name: analytics@  - name: analytics-prod@g' manifest.yml
             sed -i 's@- analytics-s3@- analytics-s3-prod@g' manifest.yml
-      
       - run:
           name: Run Envsubst on nginx.conf
           command: |
             sed -i 's@${S3_BUCKET_URL}/data/$url_full@${S3_BUCKET_URL_MAIN}/data/$url_full@g' nginx.conf.src
             envsubst '${S3_BUCKET_URL_MAIN}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf
-
       - run:
           name: deploy
           command: |
@@ -241,26 +195,56 @@ jobs:
             cf logout
 
 workflows:
-  stage_workflow:
+  general_workflow:
     jobs:
-      - stage_deploy:
-          filters:
-            branches:
-              only:
-                - staging
-
+      - lint_js
+      - lint_styles
+      - test:
+          requires:
+            - lint_js
+            - lint_styles
+  staging_workflow:
+    jobs:
+      - lint_js:
+          <<: *staging_branch_filter
+      - lint_styles:
+          <<: *staging_branch_filter
+      - test:
+          requires:
+            - lint_js
+            - lint_styles
+          <<: *staging_branch_filter
+      - staging_env_deploy:
+          requires:
+            - test
+          <<: *staging_branch_filter
   develop_workflow:
     jobs:
-      - develop_deploy:
-          filters:
-            branches:
-              only:
-                - develop
-
-  main_workflow:
+      - lint_js:
+          <<: *develop_branch_filter
+      - lint_styles:
+          <<: *develop_branch_filter
+      - test:
+          requires:
+            - lint_js
+            - lint_styles
+          <<: *develop_branch_filter
+      - development_env_deploy:
+          requires:
+            - test
+          <<: *develop_branch_filter
+  master_workflow:
     jobs:
-      - main_deploy:
-          filters:
-            branches:
-              only:
-                - master
+      - lint_js:
+          <<: *master_branch_filter
+      - lint_styles:
+          <<: *master_branch_filter
+      - test:
+          requires:
+            - lint_js
+            - lint_styles
+          <<: *master_branch_filter
+      - production_env_deploy:
+          requires:
+            - test
+          <<: *master_branch_filter
