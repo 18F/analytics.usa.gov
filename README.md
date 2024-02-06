@@ -89,10 +89,8 @@ bundle install
 npm install
 
 # Compile and serve the site locally, watching for changes.
-npm run local:serve
+npm start
 ```
-
-(This runs `bundle exec jekyll serve --watch --config=_config.yml,_development.yml`.)
 
 Now the site will be served at http://localhost:4000 and will be reloaded if you
 make changes to the source files locally.
