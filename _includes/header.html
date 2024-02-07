@@ -1,39 +1,45 @@
-<header class="analytics-header grid-row">
-  <h1>
-    <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
-  </h1>
-
-  {% assign agencies = site.data.agencies | sort: "name" %}
-  {% if agencies.size > 0 %}
-  {% unless page.url contains 'data' %}
-  <div class="analytics-select analytics-select--main">
-    <form class="usa-form">
-      <label class="usa-label" for="analytics-agency-select">Select an agency</label>
-      <select aria-label="Select an agency" class="usa-select" name="agency-selector" id="analytics-agency-select"
-        title="Agency Selection Dropdown">
-        <option value="{{ site.baseurl }}/">{{ site.dropdown_title }}</option>
-        {% for agency in agencies %}
-        <option value="{{ site.baseurl }}/{{ agency.slug }}">
-          {{ agency.name }}
-        </option>
-        {% endfor %}
-      </select>
-    </form>
+<header class="usa-header usa-header--basic">
+  <div class="usa-nav-container">
+    <div class="usa-navbar">
+      <div class="usa-logo">
+        <h1 class="usa-logo__text">
+          <a href="/" title="analytics.usa.gov"><strong>analytics</strong>.usa.gov</a>
+        </h1>
+      </div>
+    </div>
+    {% assign agencies = site.data.agencies | sort: "name" %}
+    {% if agencies.size > 0 %}
+    {% unless page.url contains 'data' %}
+    <nav aria-label="Primary navigation" class="usa-nav">
+      <ul class="usa-nav__primary usa-accordion">
+        <li class="usa-nav__primary-item" id="agency-link-menu">
+          <button type="button" class="usa-accordion__button usa-nav__link usa-current" aria-expanded="false"
+            aria-controls="basic-nav-section-one">
+            <span>Selected Agency</span>
+          </button>
+          <ul id="basic-nav-section-one" class="usa-nav__submenu">
+            <li class="usa-nav__submenu-item">
+              <a href="{{ site.baseurl }}/"><span>{{ site.dropdown_title }}</span></a>
+            </li>
+            {% for agency in agencies %}
+            <li class="usa-nav__submenu-item">
+              <a href="{{ site.baseurl }}/{{ agency.slug }}"><span>{{ agency.name }}</span></a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="usa-nav__primary-item">
+          <a href="#explanation" class="usa-nav-link">About this site</a>
+        </li>
+        <li class="usa-nav__primary-item">
+          <a href="{{ site.baseurl }}/data/" class="usa-nav-link">Data</a>
+        </li>
+        <li class="usa-nav__primary-item">
+          <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener" class="usa-nav-link">API</a>
+        </li>
+      </ul>
+    </nav>
+    {% endunless %}
+    {% endif %}
   </div>
-  {% endunless %}
-  {% endif %}
-
-  <nav class="links">
-    <ul>
-      <li>
-        <a href="#explanation">About <span class="sm-hide">this site</span></a>
-        <span class="link-bullet link-bullet--hide">&#8226;</span>
-      </li>
-      <li>
-        <a href="{{ site.baseurl }}/data/">Data</a>
-        <span class="link-bullet">&#8226;</span>
-        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener">API</a>
-      </li>
-    </ul>
-  </nav>
 </header>
