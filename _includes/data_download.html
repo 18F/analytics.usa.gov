@@ -14,20 +14,18 @@
       {% assign agencies = site.data.agencies | sort:"name" %}
       {% if agencies.size > 0 %}
       <div class="analytics-select analytics-select--secondary">
-        <form class="usa-form">
-          <label class="usa-label" for="agency-selector">Select an agency</label>
-          <select aria-label="Select an agency" class="usa-select" name="agency-selector" id="analytics-agency-select"
-            title="Agency Selection Dropdown">
-            <option value="{{ site.baseurl }}/data/">
-              {{ site.dropdown_title }}
-            </option>
-            {% for agency in agencies %}
-            <option value="{{ site.baseurl }}/{{ agency.slug }}/data/">
-              {{ agency.name }}
-            </option>
-            {% endfor %}
-          </select>
-        </form>
+        <label class="usa-label" for="analytics-agency-select">Select an agency to display results</label>
+        <select aria-label="Select an agency to display results" class="usa-select" name="agency-selector"
+          id="analytics-agency-select" title="Agency Selection Dropdown">
+          <option value="{{ site.baseurl }}/data/">
+            {{ site.dropdown_title }}
+          </option>
+          {% for agency in agencies %}
+          <option value="{{ site.baseurl }}/{{ agency.slug }}/data/">
+            {{ agency.name }}
+          </option>
+          {% endfor %}
+        </select>
       </div>
       {% endif %}
     </div>
