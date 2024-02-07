@@ -176,12 +176,16 @@ for (let j = 0; j < dropDown.options.length; j += 1) {
 const tabs = document.querySelector('.usa-button-group');
 const buttons = document.querySelectorAll('.usa-button-group button');
 
-tabs.addEventListener('click', () => {
-  buttons.forEach((button) => {
-    if (button.ariaSelected === 'true') {
-      button.classList.remove('usa-button--outline');
-    } else {
-      button.classList.add('usa-button--outline');
+if (tabs) {
+  tabs.addEventListener('click', () => {
+    if (buttons) {
+      buttons.forEach((button) => {
+        if (button.ariaSelected === 'true') {
+          button.classList.remove('usa-button--outline');
+        } else {
+          button.classList.add('usa-button--outline');
+        }
+      });
     }
   });
-});
+}
