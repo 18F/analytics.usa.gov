@@ -169,7 +169,7 @@ export default {
           '<span class="name"><a class="top-download-page" target="_blank" rel="noopener" href=http://', d.page, '>', d.page_title, '</a></span> ',
           '<span class="domain" >', formatters.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
-          '<span class="filename"><a class="top-download-file" target="_blank" aria-label="', d.page_title, '" rel="noopener" href=', formatters.formatProtocol(d.page), formatters.formatFile(d.file_name), '>',
+          '<span class="filename"><a class="top-download-file" target="_blank" aria-label="', formatters.formatFile(d.file_name), '" rel="noopener" href=', formatters.formatProtocol(d.page), formatters.formatFile(d.file_name), '>',
           'download file', '</a></span>',
         ].join(''))
         .scale((values) => d3.scale.linear()
