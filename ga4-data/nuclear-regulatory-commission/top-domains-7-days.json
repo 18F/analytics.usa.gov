@@ -1,0 +1,79 @@
+{
+  "name": "top-domains-7-days",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "7daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "-ga:sessions"
+    ],
+    "start-index": 1,
+    "max-results": 20,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "nrc.gov",
+      "visits": "108384"
+    },
+    {
+      "domain": "scp.nrc.gov",
+      "visits": "434"
+    },
+    {
+      "domain": "video.nrc.gov",
+      "visits": "134"
+    },
+    {
+      "domain": "publish.nrc.gov",
+      "visits": "99"
+    },
+    {
+      "domain": "tribal.nrc.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "feedback.nrc.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "papaya.nrc.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "nmss.preprod.nrc.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "tribal.preprod.nrc.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "gid-test.nrc.gov",
+      "visits": "1"
+    },
+    {
+      "domain": "nmss.dev.nrc.gov",
+      "visits": "0"
+    },
+    {
+      "domain": "tribal.dev.nrc.gov",
+      "visits": "0"
+    }
+  ],
+  "totals": {
+    "visits": 109131
+  },
+  "taken_at": "2023-12-01T11:07:25.139Z",
+  "agency": "nuclear-regulatory-commission"
+}

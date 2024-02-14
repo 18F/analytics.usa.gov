@@ -1,0 +1,1218 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "wwwpreview.its.mp.usbr.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www3.epa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www1.usgs.gov",
+      "visits": "2184"
+    },
+    {
+      "domain": "www1-staging.snafu.cr.usgs.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www1-dev.snafu.cr.usgs.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "www1-beta.usgs.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.wlci.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "www.volunteer.gov",
+      "visits": "19899"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usgs.gov",
+      "visits": "1118091"
+    },
+    {
+      "domain": "www.usbr.gov",
+      "visits": "83924"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.umesc.usgs.gov",
+      "visits": "541"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.sierrawild.gov",
+      "visits": "1190"
+    },
+    {
+      "domain": "www.sciencebase.gov",
+      "visits": "31759"
+    },
+    {
+      "domain": "www.rivers.gov",
+      "visits": "5996"
+    },
+    {
+      "domain": "www.pwrc.usgs.gov",
+      "visits": "18551"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "www.onrr.gov",
+      "visits": "3590"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "www.nps.gov",
+      "visits": "6944786"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.mrlc.gov",
+      "visits": "82"
+    },
+    {
+      "domain": "www.mitigationcommission.gov",
+      "visits": "97"
+    },
+    {
+      "domain": "www.mbr-pwrc.usgs.gov",
+      "visits": "395"
+    },
+    {
+      "domain": "www.landfire.gov",
+      "visits": "932"
+    },
+    {
+      "domain": "www.itdashboard.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.history.navy.mil",
+      "visits": "6"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "www.geoplatform.gov",
+      "visits": "968"
+    },
+    {
+      "domain": "www.fws.gov",
+      "visits": "438406"
+    },
+    {
+      "domain": "www.fsa.usda.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.fai.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "www.everykidoutdoors.gov",
+      "visits": "9569"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "76"
+    },
+    {
+      "domain": "www.earthdata.nasa.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.doi.gov",
+      "visits": "216870"
+    },
+    {
+      "domain": "www.csc.noaa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.coralreef.gov",
+      "visits": "195"
+    },
+    {
+      "domain": "www.cerc.usgs.gov",
+      "visits": "317"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.blm.gov",
+      "visits": "411686"
+    },
+    {
+      "domain": "www.bia.gov",
+      "visits": "96747"
+    },
+    {
+      "domain": "www.atf.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "47"
+    },
+    {
+      "domain": "www.ada.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "woodshole.er.usgs.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "wise.er.usgs.gov",
+      "visits": "351"
+    },
+    {
+      "domain": "wfdss.usgs.gov",
+      "visits": "690"
+    },
+    {
+      "domain": "webvadevvs04.er.usgs.gov",
+      "visits": "75"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "49"
+    },
+    {
+      "domain": "webapps.usgs.gov",
+      "visits": "1150"
+    },
+    {
+      "domain": "weather.nifc.gov",
+      "visits": "623"
+    },
+    {
+      "domain": "waterdata.usgs.gov",
+      "visits": "682856"
+    },
+    {
+      "domain": "water.usgs.gov",
+      "visits": "13465"
+    },
+    {
+      "domain": "water.code-pages.usgs.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "warcapps.usgs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "vsc-ash.wr.usgs.gov",
+      "visits": "125"
+    },
+    {
+      "domain": "volcview.wr.usgs.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "volcanoes.usgs.gov",
+      "visits": "10057"
+    },
+    {
+      "domain": "vhptools.usgs.gov",
+      "visits": "156"
+    },
+    {
+      "domain": "vawv-gis.usgs.gov",
+      "visits": "55"
+    },
+    {
+      "domain": "va.water.usgs.gov",
+      "visits": "77"
+    },
+    {
+      "domain": "usbr.gov",
+      "visits": "537"
+    },
+    {
+      "domain": "urs.earthdata.nasa.gov",
+      "visits": "50"
+    },
+    {
+      "domain": "update.cmsd9.chs.usgs.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "unitid.nifc.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "umesc.usgs.gov",
+      "visits": "50"
+    },
+    {
+      "domain": "uatweather.nifc.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "uatunit.nifc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "uas.usgs.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "txpub.usgs.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "txdata.usgs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "301"
+    },
+    {
+      "domain": "training.cmsd9.chs.usgs.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "topotools.cr.usgs.gov",
+      "visits": "206"
+    },
+    {
+      "domain": "topochange.cr.usgs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "tnm-apps-dev.usgs.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "tin.er.usgs.gov",
+      "visits": "328"
+    },
+    {
+      "domain": "test.streamstats.usgs.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "tadp.astrogeology.usgs.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "streamstats.usgs.gov",
+      "visits": "77"
+    },
+    {
+      "domain": "store2.usgs.gov",
+      "visits": "554"
+    },
+    {
+      "domain": "store.usgs.gov",
+      "visits": "127880"
+    },
+    {
+      "domain": "stg.geoplatform.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "stg-warcapps.usgs.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "stg-marketplace.geoplatform.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "stellwagen.er.usgs.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "stddbexp.cr.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "staging.waterdata.usgs.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "staging.cmsd9.chs.usgs.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "staging-or.water.usgs.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "staging-earthquake.usgs.gov",
+      "visits": "440"
+    },
+    {
+      "domain": "stac.astrogeology.usgs.gov",
+      "visits": "140"
+    },
+    {
+      "domain": "sonar.cr.usgs.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "soma.cr.usgs.gov",
+      "visits": "50"
+    },
+    {
+      "domain": "smartpay.gsa.gov",
+      "visits": "134"
+    },
+    {
+      "domain": "skillbridge.osd.mil",
+      "visits": "5"
+    },
+    {
+      "domain": "sicarius.wr.usgs.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "screeningtool.geoplatform.gov",
+      "visits": "11006"
+    },
+    {
+      "domain": "sciencebase.usgs.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "sciencebase.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "sciencebase-dev.snafu.cr.usgs.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "rmgsc.cr.usgs.gov",
+      "visits": "61"
+    },
+    {
+      "domain": "revenuedata.doi.gov",
+      "visits": "1551"
+    },
+    {
+      "domain": "rconnect.usgs.gov",
+      "visits": "292"
+    },
+    {
+      "domain": "rconnect.chs.usgs.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "qabot.usgs.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "qa.cmsd9.chs.usgs.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "pubs.usgs.gov",
+      "visits": "1615"
+    },
+    {
+      "domain": "pubs.nps.gov",
+      "visits": "193"
+    },
+    {
+      "domain": "psdi.astrogeology.usgs.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "ppmatt.nps.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "planning.nps.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "planetarynames.wr.usgs.gov",
+      "visits": "4321"
+    },
+    {
+      "domain": "planetary-sdi.astrogeology.usgs.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "planetary-nomenclature.prod-asc.chs.usgs.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "phenology.cr.usgs.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "permanent.fdlp.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "pepctest.nps.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "pepcstage.nps.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "pepc.nps.gov",
+      "visits": "4161"
+    },
+    {
+      "domain": "pbupdate10.cmsd9.chs.usgs.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "pbupdate.cmsd9.chs.usgs.gov",
+      "visits": "95"
+    },
+    {
+      "domain": "parkplanningtest.nps.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "parkplanning.nps.gov",
+      "visits": "10632"
+    },
+    {
+      "domain": "pa.water.usgs.gov",
+      "visits": "270"
+    },
+    {
+      "domain": "or.water.usgs.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "onrr.gov",
+      "visits": "2875"
+    },
+    {
+      "domain": "onrr-connection.onrr.gov",
+      "visits": "68"
+    },
+    {
+      "domain": "ny.water.usgs.gov",
+      "visits": "91"
+    },
+    {
+      "domain": "nwis.waterdata.usgs.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "npssearch.nps.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "nps.gov",
+      "visits": "41340"
+    },
+    {
+      "domain": "npgalleryservices.nps.gov",
+      "visits": "397"
+    },
+    {
+      "domain": "npgallery.nps.gov",
+      "visits": "16303"
+    },
+    {
+      "domain": "nomen-dev.prod-asc.chs.usgs.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "ngmdb.usgs.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "newengland.water.usgs.gov",
+      "visits": "122"
+    },
+    {
+      "domain": "nevada.usgs.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "nc.water.usgs.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "nawqatrends.wim.usgs.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "navigator.nps.gov",
+      "visits": "143"
+    },
+    {
+      "domain": "my.usgs.gov",
+      "visits": "282"
+    },
+    {
+      "domain": "muleapi.blm.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "mrdata.usgs.gov",
+      "visits": "28635"
+    },
+    {
+      "domain": "mitigationcommission.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "marketplace.geoplatform.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "maps.waterdata.usgs.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "maps.usgs.gov",
+      "visits": "2656"
+    },
+    {
+      "domain": "maps-dev.snafu.cr.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "maps-beta.usgs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "m2m.cr.usgs.gov",
+      "visits": "260"
+    },
+    {
+      "domain": "m.waterdata.usgs.gov",
+      "visits": "69"
+    },
+    {
+      "domain": "ltdl.dev-fresc.chs.usgs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "lima.usgs.gov",
+      "visits": "340"
+    },
+    {
+      "domain": "library.usgs.gov",
+      "visits": "545"
+    },
+    {
+      "domain": "legacy.rivers.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "landslides.usgs.gov",
+      "visits": "194"
+    },
+    {
+      "domain": "landsat.usgs.gov",
+      "visits": "1626"
+    },
+    {
+      "domain": "landsat.gsfc.nasa.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "landfiredev.cr.usgs.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "landfire.gov",
+      "visits": "1097"
+    },
+    {
+      "domain": "landfire.cr.usgs.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "ladsweb.modaps.eosdis.nasa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "itsupport.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "itis-staging.snafu.cr.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "itis-dev.snafu.cr.usgs.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "irmadev.nps.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "irma.nps.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ipacd.ecosphere.fws.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "ipacb.ecosphere.fws.gov",
+      "visits": "359"
+    },
+    {
+      "domain": "ipac.ecosphere.fws.gov",
+      "visits": "14988"
+    },
+    {
+      "domain": "intranet.usbr.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "intra.usbr.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "int-volcanoes.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "igswia046svltdl.wr.usgs.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "igskrdcnvscms01.er.usgs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "hydromaintenance.nationalmap.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "hydromaintenance-stage.nationalmap.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "hotspringchem.wr.usgs.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "home1.nps.gov",
+      "visits": "129"
+    },
+    {
+      "domain": "home.nps.gov",
+      "visits": "46609"
+    },
+    {
+      "domain": "hddsexplorer.usgs.gov",
+      "visits": "407"
+    },
+    {
+      "domain": "grants.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "grandcanyon.usgs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "gom.usgs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "glovis.usgs.gov",
+      "visits": "5921"
+    },
+    {
+      "domain": "glovis-cloud.usgs.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "gis1.usgs.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "gis.usgs.gov",
+      "visits": "75"
+    },
+    {
+      "domain": "gis-beta.usgs.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "geoplatform.gov",
+      "visits": "262"
+    },
+    {
+      "domain": "geonarrative.usgs.gov",
+      "visits": "191"
+    },
+    {
+      "domain": "geology.usgs.gov",
+      "visits": "204"
+    },
+    {
+      "domain": "geo-nsdi.er.usgs.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "gec.cr.usgs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "gapanalysis.usgs.gov",
+      "visits": "82"
+    },
+    {
+      "domain": "gacc.nifc.gov",
+      "visits": "2015"
+    },
+    {
+      "domain": "ga.water.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "fwsprimary.wim.usgs.gov",
+      "visits": "502"
+    },
+    {
+      "domain": "fws.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "fdp.astrogeology.usgs.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "everykidoutdoors.gov",
+      "visits": "35714"
+    },
+    {
+      "domain": "etict.nps.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "etic2.nps.gov",
+      "visits": "482"
+    },
+    {
+      "domain": "escweb.wr.usgs.gov",
+      "visits": "203"
+    },
+    {
+      "domain": "ers.cr.usgs.gov",
+      "visits": "41796"
+    },
+    {
+      "domain": "erosstage.cr.usgs.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "eros.usgs.gov",
+      "visits": "7773"
+    },
+    {
+      "domain": "eesc.usgs.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "eerscmap.usgs.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "eebulk.cr.usgs.gov",
+      "visits": "2065"
+    },
+    {
+      "domain": "eeadmin.cr.usgs.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "edna.usgs.gov",
+      "visits": "159"
+    },
+    {
+      "domain": "edits.nationalmap.gov",
+      "visits": "710"
+    },
+    {
+      "domain": "edits-staging.nationalmap.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "edit.doi.gov",
+      "visits": "213"
+    },
+    {
+      "domain": "edit.blm.gov",
+      "visits": "286"
+    },
+    {
+      "domain": "earthquake.usgs.gov",
+      "visits": "2341474"
+    },
+    {
+      "domain": "earthexplorer.usgs.gov",
+      "visits": "111091"
+    },
+    {
+      "domain": "drupal9-staging.dev-store.chs.usgs.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "drupal9-production.store.chs.usgs.gov",
+      "visits": "76"
+    },
+    {
+      "domain": "drupal9-dev.dev-store.chs.usgs.gov",
+      "visits": "230"
+    },
+    {
+      "domain": "doi.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "dmp.cr.usgs.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "deveros.cr.usgs.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "devapps.nifc.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "dev.wr.usgs.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "dev-vadr.usgs.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "dev-serapps.cr.usgs.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "dev-is.chs.usgs.gov",
+      "visits": "183"
+    },
+    {
+      "domain": "dev-intrac.usgs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "dev-doi.sciencebase.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "dds.cr.usgs.gov",
+      "visits": "1161"
+    },
+    {
+      "domain": "datasharingportal.usgs.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "data.usgs.gov",
+      "visits": "3574"
+    },
+    {
+      "domain": "data.geoplatform.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "data-dev.snafu.cr.usgs.gov",
+      "visits": "171"
+    },
+    {
+      "domain": "data-beta.usgs.gov",
+      "visits": "925"
+    },
+    {
+      "domain": "cua.nps.gov",
+      "visits": "435"
+    },
+    {
+      "domain": "cotuit.er.usgs.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "coralreef.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "compass.er.usgs.gov",
+      "visits": "151"
+    },
+    {
+      "domain": "compass-dev.er.usgs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "coastal.er.usgs.gov",
+      "visits": "222"
+    },
+    {
+      "domain": "co2public.er.usgs.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "cmt.usgs.gov",
+      "visits": "90"
+    },
+    {
+      "domain": "cmstest.nps.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "cms.usgs.gov",
+      "visits": "871"
+    },
+    {
+      "domain": "cms.nps.gov",
+      "visits": "2769"
+    },
+    {
+      "domain": "cmgds.marine.usgs.gov",
+      "visits": "429"
+    },
+    {
+      "domain": "cmgds.er.usgs.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "cmerwebmap.cr.usgs.gov",
+      "visits": "114"
+    },
+    {
+      "domain": "cm.water.usgs.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "cidr.cr.usgs.gov",
+      "visits": "105"
+    },
+    {
+      "domain": "cida.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "cic.gsa.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "chesapeake.usgs.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "chat.cslive.usgs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "certmapper.cr.usgs.gov",
+      "visits": "1380"
+    },
+    {
+      "domain": "ca.water.usgs.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "buy.gsa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "bulk-cloud.usgs.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "blog-nrrd.doi.gov",
+      "visits": "314"
+    },
+    {
+      "domain": "blm.sciencebase.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "bison.usgs.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "beta.sciencebase.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "beta.onrr.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "avo-vsc-ash.wr.usgs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "avo-volcview.wr.usgs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "astrogeology.usgs.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "asterweb.jpl.nasa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ardf.wr.usgs.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "archive.revenuedata.doi.gov",
+      "visits": "286"
+    },
+    {
+      "domain": "apps.usgs.gov",
+      "visits": "451"
+    },
+    {
+      "domain": "apps.nationalmap.gov",
+      "visits": "46151"
+    },
+    {
+      "domain": "apps-beta.nationalmap.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "app.dev-fresc.chs.usgs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "answers.usgs.gov",
+      "visits": "1649"
+    },
+    {
+      "domain": "alaska.usgs.gov",
+      "visits": "494"
+    }
+  ],
+  "totals": {
+    "visits": 13057859
+  },
+  "taken_at": "2024-01-05T15:46:34.931Z",
+  "agency": "interior"
+}

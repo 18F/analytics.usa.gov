@@ -37,41 +37,63 @@ Additional repositories are:
 
 * https://github.com/18f/analytics-reporter
 * https://github.com/18f/analytics-reporter-api
-* https://github.com/18f/analytics-restarter
 
 ## Developing locally
 
-There are a couple of different ways to develop locally. Either using docker or running without docker.
+### Prerequisites
 
-### Setup using Docker
+* [Ruby 3.1.4](https://www.ruby-lang.org/en/)
+* [NodeJS 20.x.x](https://nodejs.org/en)
 
-You need  [Docker](https://github.com/docker/docker) and  [docker-compose](https://github.com/docker/compose).
-
-To build and run the app with docker-compose, run `docker-compose up -d` then you can access the app from `http://localhost:4000`, as the local filesystem is mounted on top of the docker container you can edit the files as you are developing locally.
-
-* this does not yet run the webpack script.
-
-To see the jekyll logs, run:
+Install ruby and node libraries before attempting to run other development
+commands:
 
 ```bash
-docker-compose logs -f
-```
-
-## Running locally without docker.
-Run Jekyll with development settings:
-
-```bash
-make dev
+# Install dependencies
+bundle install
 npm install
-npm run build-dev
 ```
 
-(This runs `bundle exec jekyll serve --watch --config=_config.yml,_development.yml`.)
+### Run the linters
 
-### Adding Additional Agencies
+Linters run on the static files for the repo and ensure that the code is free
+from syntax issues and that code style conforms to community best practices.
+These checks are also enforced in CI. Run the linters with the following
+commands:
 
-1. Ensure that data is being collected for a specific agency's Google Analytics ID. Visit [18F's analytics-reporter](https://github.com/18F/analytics-reporter) for more information. Save the url path for the data collection path.
-1. Create a new json object in the `/_data/agencies.json` file. The `slug` attribute of the object will be the url path. The `name` attribute is the Agency's name.
+```bash
+# JavaScript
+npm run lint:js
+```
+
+```bash
+# SCSS
+npm run lint:styles
+```
+
+### Run the unit tests
+
+Unit tests ensure that code works as expected and can be helpful in finding
+bugs. These tests are also enforced to pass via CI. Run the unit tests with the
+following command:
+
+```bash
+npm test
+```
+
+### Build and serve the site on your local machine
+
+```bash
+# Install dependencies
+bundle install
+npm install
+
+# Compile and serve the site locally, watching for changes.
+npm start
+```
+
+Now the site will be served at http://localhost:4000 and will be reloaded if you
+make changes to the source files locally.
 
 ### Developing with local data
 
@@ -101,6 +123,11 @@ serve --cors
 
 The data will be available at `http://localhost:3000` over CORS, with no path prefix. For example, device data will be at `http://localhost:3000/devices.json`.
 
+### Adding Additional Agencies
+
+1. Ensure that data is being collected for a specific agency's Google Analytics ID. Visit [18F's analytics-reporter](https://github.com/18F/analytics-reporter) for more information. Save the url path for the data collection path.
+1. Create a new json object in the `/_data/agencies.json` file. The `slug` attribute of the object will be the url path. The `name` attribute is the Agency's name.
+
 ### Javascript Modules
 * **Index** - includes the main dom selection and rendering queue of components, and the entry point for the webpack bundler.
 * **lib/barchart** the d3 configuration of the bar charts
@@ -116,8 +143,9 @@ The data will be available at `http://localhost:3000` over CORS, with no path pr
 
 Production and staging applications are deployed via CI automatically. Any
 commits to the `master` branch will be deployed to production after passing
-automated tests in CI. Any commits to the `develop` branch will be deployed to
-the staging application.
+automated tests in CI. Any commits to the `staging` branch will be deployed to
+the staging application. Any commits to the `develop` branch will be deployed to
+the development application.
 
 It shouldn't be necessary to deploy manually, but with the Cloud Foundry CLI
 installed, follow these steps to deploy.
@@ -177,7 +205,8 @@ docker push 18fgsa/analytics.usa.gov:<version>-production
 | Environment | Branch | URL |
 |-------------| ------ | --- |
 | Production | master | https://analytics.usa.gov |
-| Staging | master | https://analytics-staging.app.cloud.gov |
+| Staging | staging | https://analytics-staging.app.cloud.gov |
+| Development | develop | https://analytics-develop.app.cloud.gov |
 
 ### Webpack Configuration
 
@@ -194,6 +223,7 @@ The webconfig uses the [TerserWebpackPlugin](https://webpack.js.org/plugins/ters
 The resulting uglified bundle is build into `assest/bundle.js`.
 
 #### NPM webpack commands
+
 | Command | purpose |
 |-------------| ------ |
 | npm run build-dev | a watch command rebuilding the webpack with a development configuration (i.e. no minifiecation) |

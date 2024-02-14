@@ -1,0 +1,50 @@
+{
+  "name": "devices",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "deviceCategory"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Devices",
+    "description": "90 days of desktop/mobile/tablet visits for all sites."
+  },
+  "totals": {
+    "visits": 3552660,
+    "devices": {
+      "desktop": 2558434,
+      "mobile": 955830,
+      "tablet": 38210,
+      "smart tv": 186
+    }
+  },
+  "taken_at": "2024-01-05T15:44:57.343Z",
+  "agency": "energy"
+}

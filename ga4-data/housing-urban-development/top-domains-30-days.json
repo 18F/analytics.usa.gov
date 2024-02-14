@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.hud.gov",
+      "visits": "2377800",
+      "users": "1590788",
+      "pageviews": "4711036",
+      "pageviews_per_session": "1.9812583059971403",
+      "avg_session_duration": "209.22868063785558",
+      "bounce_rate": "0.40791740264109683"
+    },
+    {
+      "domain": "www.huduser.gov",
+      "visits": "271727",
+      "users": "185431",
+      "pageviews": "408496",
+      "pageviews_per_session": "1.5033323887578343",
+      "avg_session_duration": "152.70993548319819",
+      "bounce_rate": "0.4752343344606903"
+    },
+    {
+      "domain": "www.ginniemae.gov",
+      "visits": "46760",
+      "users": "30632",
+      "pageviews": "288102",
+      "pageviews_per_session": "6.1612917023096667",
+      "avg_session_duration": "304.98721363584264",
+      "bounce_rate": "0.28973481608212148"
+    },
+    {
+      "domain": "opportunityzones.hud.gov",
+      "visits": "16019",
+      "users": "12313",
+      "pageviews": "20919",
+      "pageviews_per_session": "1.3058867594731256",
+      "avg_session_duration": "152.91316923671886",
+      "bounce_rate": "0.34995942318496787"
+    },
+    {
+      "domain": "lihtc.huduser.gov",
+      "visits": "10877",
+      "users": "7589",
+      "pageviews": "11705",
+      "pageviews_per_session": "1.076123931231038",
+      "avg_session_duration": "139.41666160549786",
+      "bounce_rate": "0.48083111151972052"
+    },
+    {
+      "domain": "pave.hud.gov",
+      "visits": "4104",
+      "users": "3671",
+      "pageviews": "5177",
+      "pageviews_per_session": "1.2614522417153997",
+      "avg_session_duration": "90.474498513401571",
+      "bounce_rate": "0.44736842105263158"
+    },
+    {
+      "domain": "beta.huduser.gov",
+      "visits": "2223",
+      "users": "100",
+      "pageviews": "8948",
+      "pageviews_per_session": "4.02519118308592",
+      "avg_session_duration": "390.68040896581186",
+      "bounce_rate": "0.55105713000449841"
+    },
+    {
+      "domain": "archives.huduser.gov",
+      "visits": "1656",
+      "users": "1433",
+      "pageviews": "2329",
+      "pageviews_per_session": "1.4064009661835748",
+      "avg_session_duration": "128.94023166183581",
+      "bounce_rate": "0.37016908212560384"
+    },
+    {
+      "domain": "forums.huduser.gov",
+      "visits": "1389",
+      "users": "725",
+      "pageviews": "5634",
+      "pageviews_per_session": "4.0561555075593949",
+      "avg_session_duration": "490.18158915766736",
+      "bounce_rate": "0.50611951043916492"
+    },
+    {
+      "domain": "tst.ginniemae.gov",
+      "visits": "964",
+      "users": "868",
+      "pageviews": "4318",
+      "pageviews_per_session": "4.4792531120331951",
+      "avg_session_duration": "102.87983167738587",
+      "bounce_rate": "0.12551867219917012"
+    },
+    {
+      "domain": "webstore.huduser.gov",
+      "visits": "786",
+      "users": "459",
+      "pageviews": "6396",
+      "pageviews_per_session": "8.13740458015267",
+      "avg_session_duration": "584.33134480916021",
+      "bounce_rate": "0.50127226463104324"
+    },
+    {
+      "domain": "www.hud.govhttps",
+      "visits": "434",
+      "users": "433",
+      "pageviews": "1030",
+      "pageviews_per_session": "2.3732718894009217",
+      "avg_session_duration": "68.622976854838726",
+      "bounce_rate": "0.51382488479262678"
+    },
+    {
+      "domain": "betamgmt.huduser.gov",
+      "visits": "301",
+      "users": "27",
+      "pageviews": "3473",
+      "pageviews_per_session": "11.538205980066445",
+      "avg_session_duration": "1663.4659729003324",
+      "bounce_rate": "0.079734219269102985"
+    },
+    {
+      "domain": "mgmt.huduser.gov",
+      "visits": "181",
+      "users": "18",
+      "pageviews": "1900",
+      "pageviews_per_session": "10.497237569060774",
+      "avg_session_duration": "899.31974757458556",
+      "bounce_rate": "0.0718232044198895"
+    },
+    {
+      "domain": "ctsportal.hud.gov",
+      "visits": "156",
+      "users": "150",
+      "pageviews": "240",
+      "pageviews_per_session": "1.5384615384615385",
+      "avg_session_duration": "61.420113128205124",
+      "bounce_rate": "0.070512820512820512"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "137",
+      "users": "111",
+      "pageviews": "317",
+      "pageviews_per_session": "2.3138686131386863",
+      "avg_session_duration": "204.00204664233581",
+      "bounce_rate": "0.10948905109489052"
+    },
+    {
+      "domain": "cms.ginniemae.gov",
+      "visits": "133",
+      "users": "15",
+      "pageviews": "2273",
+      "pageviews_per_session": "17.090225563909776",
+      "avg_session_duration": "801.34350186466168",
+      "bounce_rate": "0.11278195488721804"
+    },
+    {
+      "domain": "cms.tst.ginniemae.gov",
+      "visits": "83",
+      "users": "14",
+      "pageviews": "1690",
+      "pageviews_per_session": "20.361445783132531",
+      "avg_session_duration": "496.50462566265071",
+      "bounce_rate": "0.20481927710843373"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "54",
+      "users": "49",
+      "pageviews": "63",
+      "pageviews_per_session": "1.1666666666666667",
+      "avg_session_duration": "25.637144629629628",
+      "bounce_rate": "0.66666666666666663"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "47",
+      "users": "37",
+      "pageviews": "52",
+      "pageviews_per_session": "1.1063829787234043",
+      "avg_session_duration": "181.84809765957448",
+      "bounce_rate": "0.27659574468085107"
+    }
+  ],
+  "totals": {
+    "users": 1834863,
+    "visits": 2735831
+  },
+  "taken_at": "2024-01-05T15:55:32.192Z",
+  "agency": "housing-urban-development"
+}

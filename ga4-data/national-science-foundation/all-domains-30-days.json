@@ -1,0 +1,418 @@
+{
+  "name": "all-domains-30-days",
+  "sampling": {
+    "containsSampledData": true,
+    "sampleSize": "999984",
+    "sampleSpace": "2260137"
+  },
+  "query": {
+    "start-date": "30daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions",
+      "ga:pageviews",
+      "ga:users",
+      "ga:pageviewsPerSession",
+      "ga:avgSessionDuration",
+      "ga:exits"
+    ],
+    "sort": [
+      "-ga:sessions"
+    ],
+    "filters": "ga:sessions>=10",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "All Domains (30 Days)",
+    "description": "Last 30 days' domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "nsf.gov",
+      "visits": "923977",
+      "pageviews": "1831321",
+      "users": "612918",
+      "pageviews_per_session": "1.9819984696588768",
+      "avg_session_duration": "98.4239142316313",
+      "exits": "937086"
+    },
+    {
+      "domain": "new.nsf.gov",
+      "visits": "615863",
+      "pageviews": "1031349",
+      "users": "403877",
+      "pageviews_per_session": "1.6746403014956248",
+      "avg_session_duration": "90.76922627272624",
+      "exits": "612954"
+    },
+    {
+      "domain": "research.gov",
+      "visits": "363924",
+      "pageviews": "1113497",
+      "users": "82250",
+      "pageviews_per_session": "3.0596965300447345",
+      "avg_session_duration": "208.93196381662105",
+      "exits": "358271"
+    },
+    {
+      "domain": "seedfund.nsf.gov",
+      "visits": "119753",
+      "pageviews": "197679",
+      "users": "99624",
+      "pageviews_per_session": "1.6507227376349654",
+      "avg_session_duration": "65.30323248686881",
+      "exits": "119626"
+    },
+    {
+      "domain": "usap.gov",
+      "visits": "48847",
+      "pageviews": "90787",
+      "users": "30221",
+      "pageviews_per_session": "1.8585992998546481",
+      "avg_session_duration": "99.05885724814216",
+      "exits": "48598"
+    },
+    {
+      "domain": "ncses.nsf.gov",
+      "visits": "48704",
+      "pageviews": "107480",
+      "users": "34203",
+      "pageviews_per_session": "2.2068002628120893",
+      "avg_session_duration": "160.16397010512483",
+      "exits": "48528"
+    },
+    {
+      "domain": "meetings.nsf.gov",
+      "visits": "36949",
+      "pageviews": "112649",
+      "users": "8896",
+      "pageviews_per_session": "3.0487699261143737",
+      "avg_session_duration": "288.66751468240005",
+      "exits": "38841"
+    },
+    {
+      "domain": "search.nsf.gov",
+      "visits": "30822",
+      "pageviews": "41377",
+      "users": "18142",
+      "pageviews_per_session": "1.3424501979105834",
+      "avg_session_duration": "42.50960352994614",
+      "exits": "27253"
+    },
+    {
+      "domain": "fastlane.nsf.gov",
+      "visits": "10049",
+      "pageviews": "25438",
+      "users": "7529",
+      "pageviews_per_session": "2.5313961588217735",
+      "avg_session_duration": "282.36401632003185",
+      "exits": "8720"
+    },
+    {
+      "domain": "web.acpt.research.gov",
+      "visits": "7879",
+      "pageviews": "42410",
+      "users": "5255",
+      "pageviews_per_session": "5.382662774463764",
+      "avg_session_duration": "102.29470745018403",
+      "exits": "7850"
+    },
+    {
+      "domain": "ncsesdata.nsf.gov",
+      "visits": "6272",
+      "pageviews": "17971",
+      "users": "5178",
+      "pageviews_per_session": "2.8652742346938775",
+      "avg_session_duration": "139.34151785714286",
+      "exits": "6335"
+    },
+    {
+      "domain": "iucrc.nsf.gov",
+      "visits": "5099",
+      "pageviews": "9500",
+      "users": "3933",
+      "pageviews_per_session": "1.8631104138066288",
+      "avg_session_duration": "134.89056677779956",
+      "exits": "4970"
+    },
+    {
+      "domain": "antarcticsun.usap.gov",
+      "visits": "4525",
+      "pageviews": "7020",
+      "users": "4052",
+      "pageviews_per_session": "1.5513812154696132",
+      "avg_session_duration": "68.01237569060774",
+      "exits": "4536"
+    },
+    {
+      "domain": "sac.gov",
+      "visits": "4340",
+      "pageviews": "6661",
+      "users": "1462",
+      "pageviews_per_session": "1.5347926267281107",
+      "avg_session_duration": "17.85599078341014",
+      "exits": "4340"
+    },
+    {
+      "domain": "extsharepoint.nsf.gov",
+      "visits": "2714",
+      "pageviews": "26238",
+      "users": "1037",
+      "pageviews_per_session": "9.66764922623434",
+      "avg_session_duration": "658.6779661016949",
+      "exits": "2766"
+    },
+    {
+      "domain": "photolibrary.usap.gov",
+      "visits": "1704",
+      "pageviews": "2834",
+      "users": "1623",
+      "pageviews_per_session": "1.6631455399061033",
+      "avg_session_duration": "57.56572769953052",
+      "exits": "1774"
+    },
+    {
+      "domain": "future.usap.gov",
+      "visits": "1094",
+      "pageviews": "2201",
+      "users": "900",
+      "pageviews_per_session": "2.0118829981718465",
+      "avg_session_duration": "123.46069469835466",
+      "exits": "1058"
+    },
+    {
+      "domain": "web.dev.research.gov",
+      "visits": "741",
+      "pageviews": "3203",
+      "users": "296",
+      "pageviews_per_session": "4.322537112010796",
+      "avg_session_duration": "232.9379217273954",
+      "exits": "757"
+    },
+    {
+      "domain": "web.intg.research.gov",
+      "visits": "545",
+      "pageviews": "1951",
+      "users": "212",
+      "pageviews_per_session": "3.5798165137614677",
+      "avg_session_duration": "318.44770642201837",
+      "exits": "522"
+    },
+    {
+      "domain": "new.demo.nsf.gov",
+      "visits": "438",
+      "pageviews": "542",
+      "users": "448",
+      "pageviews_per_session": "1.2374429223744292",
+      "avg_session_duration": "50.99315068493151",
+      "exits": "445"
+    },
+    {
+      "domain": "extwiki.nsf.gov",
+      "visits": "366",
+      "pageviews": "755",
+      "users": "215",
+      "pageviews_per_session": "2.0628415300546448",
+      "avg_session_duration": "54.702185792349724",
+      "exits": "362"
+    },
+    {
+      "domain": "help.extsharepoint.nsf.gov",
+      "visits": "359",
+      "pageviews": "938",
+      "users": "350",
+      "pageviews_per_session": "2.6128133704735377",
+      "avg_session_duration": "133.50139275766017",
+      "exits": "346"
+    },
+    {
+      "domain": "new.dev.nsf.gov",
+      "visits": "346",
+      "pageviews": "509",
+      "users": "294",
+      "pageviews_per_session": "1.4710982658959537",
+      "avg_session_duration": "60.8150289017341",
+      "exits": "344"
+    },
+    {
+      "domain": "new.stage.nsf.gov",
+      "visits": "203",
+      "pageviews": "1166",
+      "users": "108",
+      "pageviews_per_session": "5.74384236453202",
+      "avg_session_duration": "392.25615763546796",
+      "exits": "201"
+    },
+    {
+      "domain": "ncses.acpt.nsf.gov",
+      "visits": "174",
+      "pageviews": "1033",
+      "users": "23",
+      "pageviews_per_session": "5.936781609195402",
+      "avg_session_duration": "790.551724137931",
+      "exits": "174"
+    },
+    {
+      "domain": "pims.nsf.gov",
+      "visits": "163",
+      "pageviews": "386",
+      "users": "84",
+      "pageviews_per_session": "2.3680981595092025",
+      "avg_session_duration": "289.8957055214724",
+      "exits": "185"
+    },
+    {
+      "domain": "meetings.acpt.nsf.gov",
+      "visits": "120",
+      "pageviews": "240",
+      "users": "111",
+      "pageviews_per_session": "2.0",
+      "avg_session_duration": "114.11666666666666",
+      "exits": "54"
+    },
+    {
+      "domain": "new.acpt.nsf.gov",
+      "visits": "104",
+      "pageviews": "420",
+      "users": "66",
+      "pageviews_per_session": "4.038461538461538",
+      "avg_session_duration": "411.11538461538464",
+      "exits": "104"
+    },
+    {
+      "domain": "p-app-fl10.prod.nsf.gov",
+      "visits": "63",
+      "pageviews": "127",
+      "users": "63",
+      "pageviews_per_session": "2.015873015873016",
+      "avg_session_duration": "6.492063492063492",
+      "exits": "0"
+    },
+    {
+      "domain": "ncsesdata-stage.nsf.gov",
+      "visits": "61",
+      "pageviews": "1835",
+      "users": "27",
+      "pageviews_per_session": "30.081967213114755",
+      "avg_session_duration": "1011.2950819672132",
+      "exits": "61"
+    },
+    {
+      "domain": "meetings.dev.nsf.gov",
+      "visits": "59",
+      "pageviews": "174",
+      "users": "29",
+      "pageviews_per_session": "2.9491525423728815",
+      "avg_session_duration": "275.135593220339",
+      "exits": "61"
+    },
+    {
+      "domain": "ncses.test.nsf.gov",
+      "visits": "59",
+      "pageviews": "475",
+      "users": "9",
+      "pageviews_per_session": "8.05084745762712",
+      "avg_session_duration": "965.7796610169491",
+      "exits": "50"
+    },
+    {
+      "domain": "p-app-l-rgovsvc01.nsf.gov",
+      "visits": "57",
+      "pageviews": "113",
+      "users": "57",
+      "pageviews_per_session": "1.9824561403508771",
+      "avg_session_duration": "22.210526315789473",
+      "exits": "0"
+    },
+    {
+      "domain": "reporting.demo.research.gov",
+      "visits": "47",
+      "pageviews": "2859",
+      "users": "240",
+      "pageviews_per_session": "60.829787234042556",
+      "avg_session_duration": "1026.9787234042553",
+      "exits": "183"
+    },
+    {
+      "domain": "2115.beta-nsf.aws-dev.nsf.gov",
+      "visits": "38",
+      "pageviews": "124",
+      "users": "36",
+      "pageviews_per_session": "3.263157894736842",
+      "avg_session_duration": "80.42105263157895",
+      "exits": "38"
+    },
+    {
+      "domain": "streamline-funding-search.beta-nsf.aws-dev.nsf.gov",
+      "visits": "38",
+      "pageviews": "359",
+      "users": "14",
+      "pageviews_per_session": "9.447368421052632",
+      "avg_session_duration": "642.8421052631579",
+      "exits": "47"
+    },
+    {
+      "domain": "ncsesdata-dev.nsf.gov",
+      "visits": "32",
+      "pageviews": "373",
+      "users": "7",
+      "pageviews_per_session": "11.65625",
+      "avg_session_duration": "784.125",
+      "exits": "32"
+    },
+    {
+      "domain": "p-app-mt10.prod.nsf.gov",
+      "visits": "25",
+      "pageviews": "52",
+      "users": "23",
+      "pageviews_per_session": "2.08",
+      "avg_session_duration": "23.96",
+      "exits": "20"
+    },
+    {
+      "domain": "cloud.go2.nsf.gov",
+      "visits": "23",
+      "pageviews": "88",
+      "users": "20",
+      "pageviews_per_session": "3.8260869565217392",
+      "avg_session_duration": "229.56521739130434",
+      "exits": "36"
+    },
+    {
+      "domain": "feedback.usap.gov",
+      "visits": "23",
+      "pageviews": "86",
+      "users": "41",
+      "pageviews_per_session": "3.739130434782609",
+      "avg_session_duration": "283.1304347826087",
+      "exits": "29"
+    },
+    {
+      "domain": "p-app-mt11.prod.nsf.gov",
+      "visits": "16",
+      "pageviews": "52",
+      "users": "23",
+      "pageviews_per_session": "3.25",
+      "avg_session_duration": "10.75",
+      "exits": "23"
+    },
+    {
+      "domain": "web.local.research.gov",
+      "visits": "14",
+      "pageviews": "81",
+      "users": "2",
+      "pageviews_per_session": "5.785714285714286",
+      "avg_session_duration": "534.8571428571429",
+      "exits": "11"
+    }
+  ],
+  "totals": {
+    "users": 1323898,
+    "visits": 2236629
+  },
+  "taken_at": "2023-11-27T15:12:35.267Z",
+  "agency": "national-science-foundation"
+}

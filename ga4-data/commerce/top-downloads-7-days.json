@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "GOES-East - Continental U.S. (CONUS) - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/conus.php",
+      "total_events": "23040"
+    },
+    {
+      "page_title": "Boston/Norton, MA Weather Forecast Office Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/box/winter",
+      "total_events": "20007"
+    },
+    {
+      "page_title": "Forms for patent applications | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/patents/apply/forms",
+      "total_events": "12008"
+    },
+    {
+      "page_title": "Latest Satellite Imagery",
+      "event_label": "file_download",
+      "page": "www.nhc.noaa.gov/satellite.php",
+      "total_events": "11717"
+    },
+    {
+      "page_title": "Snow and Ice Forecasts & Services",
+      "event_label": "file_download",
+      "page": "www.weather.gov/lwx/winter",
+      "total_events": "11156"
+    },
+    {
+      "page_title": "Sector Images: Pacific Southwest - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "8260"
+    },
+    {
+      "page_title": "Form 6059B Customs Declaration - English (Fillable) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-6059b-customs-declaration-english-fillable",
+      "total_events": "7973"
+    },
+    {
+      "page_title": "Winter Weather Experimental Probabilistic Snow and Ice",
+      "event_label": "file_download",
+      "page": "www.weather.gov/phi/winter",
+      "total_events": "7600"
+    },
+    {
+      "page_title": "Six-Month Validity Update | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/bulletins/six-month-validity-update",
+      "total_events": "6958"
+    },
+    {
+      "page_title": "Probabilistic Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/okx/winter",
+      "total_events": "6467"
+    },
+    {
+      "page_title": "Winter Weather Experimental Probabilistic Snow and Ice",
+      "event_label": "file_download",
+      "page": "www.weather.gov/ctp/winter",
+      "total_events": "6042"
+    },
+    {
+      "page_title": "Snow and Ice Potential Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/pbz/winter",
+      "total_events": "4909"
+    },
+    {
+      "page_title": "Sector Images: Pacific Northwest - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "4900"
+    },
+    {
+      "page_title": "Schedule B 2024 - Browse Chapters",
+      "event_label": "file_download",
+      "page": "www.census.gov/foreign-trade/schedules/b/2024/index.html",
+      "total_events": "4876"
+    },
+    {
+      "page_title": "AWC - International Flight Folder Program",
+      "event_label": "file_download",
+      "page": "aviationweather-cprk.ncep.noaa.gov/flightfolder/products",
+      "total_events": "4430"
+    },
+    {
+      "page_title": "GYX Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/gyx/winter",
+      "total_events": "4302"
+    },
+    {
+      "page_title": "Form I-94 Arrival/Departure Record | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-i-94-arrivaldeparture-record",
+      "total_events": "4176"
+    },
+    {
+      "page_title": "Probabilistic Snow Forecasts for Colorado",
+      "event_label": "file_download",
+      "page": "www.weather.gov/bou/winter",
+      "total_events": "3474"
+    },
+    {
+      "page_title": "AES Concordance",
+      "event_label": "file_download",
+      "page": "www.census.gov/foreign-trade/aes/concordance.html",
+      "total_events": "3399"
+    },
+    {
+      "page_title": "Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/aly/winter",
+      "total_events": "3366"
+    },
+    {
+      "page_title": "North American Industry Classification System (NAICS) U.S. Census Bureau",
+      "event_label": "file_download",
+      "page": "www.census.gov/naics/",
+      "total_events": "3179"
+    },
+    {
+      "page_title": "NERFC Snow Page",
+      "event_label": "file_download",
+      "page": "www.weather.gov/nerfc/snow",
+      "total_events": "2764"
+    },
+    {
+      "page_title": "Sector Images: Northeast - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "2653"
+    },
+    {
+      "page_title": "Kansas City/Pleasant Hill, MO",
+      "event_label": "file_download",
+      "page": "www.weather.gov/eax/",
+      "total_events": "2651"
+    },
+    {
+      "page_title": "Schedule B 2023 - Browse Chapters",
+      "event_label": "file_download",
+      "page": "www.census.gov/foreign-trade/schedules/b/2023/index.html",
+      "total_events": "2441"
+    },
+    {
+      "page_title": "Certification of Origin Template | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/guidance/certification-origin-template",
+      "total_events": "2357"
+    },
+    {
+      "page_title": "Important Information for Completing an Application Data Sheet (ADS) | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/patents/apply/forms/important-information-completing-application-data-sheet-ads",
+      "total_events": "2018"
+    },
+    {
+      "page_title": "Income in the United States: 2022",
+      "event_label": "file_download",
+      "page": "www.census.gov/library/publications/2023/demo/p60-279.html",
+      "total_events": "2000"
+    },
+    {
+      "page_title": "BTV Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/btv/winter",
+      "total_events": "1958"
+    },
+    {
+      "page_title": "GOES-East CONUS - GeoColor - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/conus_band.php",
+      "total_events": "1949"
+    },
+    {
+      "page_title": "Manual of Patent Examining Procedure",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/web/offices/pac/mpep/index.html",
+      "total_events": "1920"
+    },
+    {
+      "page_title": "GOES-West - Latest Full Disk Images - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/fulldisk.php",
+      "total_events": "1885"
+    },
+    {
+      "page_title": "Weather Briefings",
+      "event_label": "file_download",
+      "page": "www.weather.gov/bgm/briefingMain",
+      "total_events": "1768"
+    },
+    {
+      "page_title": "Winter Weather",
+      "event_label": "file_download",
+      "page": "www.weather.gov/buf/winter",
+      "total_events": "1766"
+    },
+    {
+      "page_title": "Sector Images: Northern Rockies - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "1759"
+    },
+    {
+      "page_title": "SP 800-53 Rev. 5, Security and Privacy Controls for Information Systems and Organizations | CSRC",
+      "event_label": "file_download",
+      "page": "csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+      "total_events": "1731"
+    },
+    {
+      "page_title": "Form I-736 - Guam CNMI Visa Waiver Information (English) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-i-736-guam-cnmi-visa-waiver-information-english",
+      "total_events": "1704"
+    },
+    {
+      "page_title": "CBP Traveler Entry Forms | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/travel/clearing-cbp/traveler-entry-form",
+      "total_events": "1686"
+    },
+    {
+      "page_title": "SLC Probabilistic Snowfall Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/slc/winter",
+      "total_events": "1678"
+    },
+    {
+      "page_title": "Sector Images: U.S. Pacific Coast - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "1600"
+    },
+    {
+      "page_title": "Probabilistic Winter Precip Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/gsp/winter",
+      "total_events": "1592"
+    },
+    {
+      "page_title": "Weather Story",
+      "event_label": "file_download",
+      "page": "www.weather.gov/bgm/weatherstory",
+      "total_events": "1592"
+    },
+    {
+      "page_title": "Winter Weather",
+      "event_label": "file_download",
+      "page": "www.weather.gov/bgm/winter",
+      "total_events": "1490"
+    },
+    {
+      "page_title": "New York, NY",
+      "event_label": "file_download",
+      "page": "www.weather.gov/okx/",
+      "total_events": "1411"
+    },
+    {
+      "page_title": "Probabilistic Snowfall Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/akq/winter",
+      "total_events": "1371"
+    },
+    {
+      "page_title": "(not set)",
+      "event_label": "file_download",
+      "page": "shop.nist.gov/ccrz__ProductDetails",
+      "total_events": "1346"
+    },
+    {
+      "page_title": "Topeka, KS",
+      "event_label": "file_download",
+      "page": "www.weather.gov/top/",
+      "total_events": "1302"
+    },
+    {
+      "page_title": "Winter Weather/Probabilistic Snow Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/rlx/winter",
+      "total_events": "1291"
+    },
+    {
+      "page_title": "Sector Images: Southern Rockies - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "1274"
+    },
+    {
+      "page_title": "United States Patent and Trademark Office",
+      "event_label": "file_download",
+      "page": "assignment.uspto.gov/patent/index.html#/patent/search",
+      "total_events": "1271"
+    },
+    {
+      "page_title": "TEAS form previews | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/trademarks/apply/forms-submit-only-if-teas-online-forms-are-unavailable",
+      "total_events": "1263"
+    },
+    {
+      "page_title": "File patent application documents in DOCX | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/patents/docx",
+      "total_events": "1227"
+    },
+    {
+      "page_title": "State Population Totals: 2020-2023",
+      "event_label": "file_download",
+      "page": "www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "total_events": "1166"
+    },
+    {
+      "page_title": "Central Illinois",
+      "event_label": "file_download",
+      "page": "www.weather.gov/ilx/",
+      "total_events": "1146"
+    },
+    {
+      "page_title": "Form-Fillable PDFs Available | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/patents/apply/applying-online/form-fillable-pdfs-available",
+      "total_events": "1139"
+    },
+    {
+      "page_title": "Form I-94W - Visa Waiver Arrival/Departure Record | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-i-94w-visa-waiver-arrivaldeparture-record",
+      "total_events": "1135"
+    },
+    {
+      "page_title": "I-94 Automation Fact Sheet | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/fact-sheets/i-94-fact-sheet",
+      "total_events": "1119"
+    },
+    {
+      "page_title": "CBP Form 5106 - Create/Update Importer Identity Form | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/cbp-form-5106-createupdate-importer-identity-form",
+      "total_events": "1110"
+    },
+    {
+      "page_title": "Getting started - new users | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/patents/apply/applying-online/getting-started-new-users",
+      "total_events": "1104"
+    },
+    {
+      "page_title": "County Population Totals: 2020-2022",
+      "event_label": "file_download",
+      "page": "www.census.gov/data/tables/time-series/demo/popest/2020s-counties-total.html",
+      "total_events": "1097"
+    },
+    {
+      "page_title": "CBP Forms | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/newsroom/publications/forms",
+      "total_events": "1095"
+    },
+    {
+      "page_title": "Sector Images: Great Lakes - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "1086"
+    },
+    {
+      "page_title": "Snowfall Probabilities",
+      "event_label": "file_download",
+      "page": "www.weather.gov/gjt/winter",
+      "total_events": "1081"
+    },
+    {
+      "page_title": "GOES-East - Latest Full Disk Images - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/fulldisk.php",
+      "total_events": "1042"
+    },
+    {
+      "page_title": "Trademark basics | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/trademarks/basics",
+      "total_events": "1042"
+    },
+    {
+      "page_title": "GOES-West - Pacific U.S. (PACUS) - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/conus.php",
+      "total_events": "1035"
+    },
+    {
+      "page_title": "Past Customs Broker License Examinations & Answer Keys | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/publications/past-customs-broker-license-examinations-answer-keys",
+      "total_events": "1026"
+    },
+    {
+      "page_title": "Winter Weather",
+      "event_label": "file_download",
+      "page": "www.weather.gov/ffc/winter",
+      "total_events": "1004"
+    },
+    {
+      "page_title": "Sector Images: Upper Mississippi Valley - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "982"
+    },
+    {
+      "page_title": "Winter Weather",
+      "event_label": "file_download",
+      "page": "www.weather.gov/mpx/winter",
+      "total_events": "956"
+    },
+    {
+      "page_title": "Philadelphia/Mt Holly",
+      "event_label": "file_download",
+      "page": "www.weather.gov/phi/",
+      "total_events": "954"
+    },
+    {
+      "page_title": "Sector Images: Southeast - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "920"
+    },
+    {
+      "page_title": "SP 800-171 Rev. 2, Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations | CSRC",
+      "event_label": "file_download",
+      "page": "csrc.nist.gov/pubs/sp/800/171/r2/upd1/final",
+      "total_events": "907"
+    },
+    {
+      "page_title": "City and Town Population Totals: 2020-2022",
+      "event_label": "file_download",
+      "page": "www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html",
+      "total_events": "903"
+    },
+    {
+      "page_title": "Poverty in the United States: 2022",
+      "event_label": "file_download",
+      "page": "www.census.gov/library/publications/2023/demo/p60-280.html",
+      "total_events": "878"
+    },
+    {
+      "page_title": "Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/rnk/winter",
+      "total_events": "876"
+    },
+    {
+      "page_title": "Form 6059B Customs Declaration (Sample) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-6059b-customs-declaration-sample",
+      "total_events": "863"
+    },
+    {
+      "page_title": "GOES-West - Sector view: Pacific Southwest - GeoColor - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector_band.php",
+      "total_events": "863"
+    },
+    {
+      "page_title": "Cartographic Boundary Files",
+      "event_label": "file_download",
+      "page": "www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html",
+      "total_events": "861"
+    },
+    {
+      "page_title": "Wichita, Kansas",
+      "event_label": "file_download",
+      "page": "www.weather.gov/ict/",
+      "total_events": "852"
+    },
+    {
+      "page_title": "GOES-West - Pacific U.S. (PACUS) - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/goes/conus.php",
+      "total_events": "841"
+    },
+    {
+      "page_title": "Foreign Currency Exchange Rates | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/trade/programs-administration/determining-duty-rates/foreign-currency-exchange-rates",
+      "total_events": "823"
+    },
+    {
+      "page_title": "ACS Public FIRMS Code Report | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/report/acs-public-firms-code-report",
+      "total_events": "810"
+    },
+    {
+      "page_title": "Winter Weather Forecasts",
+      "event_label": "file_download",
+      "page": "www.weather.gov/cle/winter",
+      "total_events": "788"
+    },
+    {
+      "page_title": "Poverty Thresholds",
+      "event_label": "file_download",
+      "page": "www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-thresholds.html",
+      "total_events": "777"
+    },
+    {
+      "page_title": "Importing into the United States | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/publications/importing-united-states",
+      "total_events": "773"
+    },
+    {
+      "page_title": "(not set)",
+      "event_label": "file_download",
+      "page": "coast.noaa.gov/htdata/CMSP/AISDataHandler/2022/index.html",
+      "total_events": "772"
+    },
+    {
+      "page_title": "Northern Arizona Snow Tables",
+      "event_label": "file_download",
+      "page": "www.weather.gov/fgz/SnowTables",
+      "total_events": "737"
+    },
+    {
+      "page_title": "Colorado Snowpack",
+      "event_label": "file_download",
+      "page": "www.weather.gov/bou/co_snowpack",
+      "total_events": "722"
+    },
+    {
+      "page_title": "Chart Locator",
+      "event_label": "file_download",
+      "page": "www.charts.noaa.gov/InteractiveCatalog/nrnc.shtml",
+      "total_events": "695"
+    },
+    {
+      "page_title": "Sector Images: Northern Pacific - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/GOES/sector.php",
+      "total_events": "686"
+    },
+    {
+      "page_title": "Urban and Rural",
+      "event_label": "file_download",
+      "page": "www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural.html",
+      "total_events": "686"
+    },
+    {
+      "page_title": "Cartographic Boundary Files - Shapefile",
+      "event_label": "file_download",
+      "page": "www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html",
+      "total_events": "684"
+    },
+    {
+      "page_title": "Pay tables | U.S. Department of Commerce",
+      "event_label": "file_download",
+      "page": "www.commerce.gov/hr/employees/compensation/pay-tables",
+      "total_events": "684"
+    },
+    {
+      "page_title": "Winter Weather Webpage",
+      "event_label": "file_download",
+      "page": "www.weather.gov/iln/winter",
+      "total_events": "684"
+    },
+    {
+      "page_title": "GOES-East - Latest Full Disk Images - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/goes/fulldisk.php",
+      "total_events": "680"
+    },
+    {
+      "page_title": "Patent term calculator | USPTO",
+      "event_label": "file_download",
+      "page": "www.uspto.gov/patents/laws/patent-term-calculator",
+      "total_events": "680"
+    },
+    {
+      "page_title": "GOES-East - Continental U.S. (CONUS) - NOAA / NESDIS / STAR",
+      "event_label": "file_download",
+      "page": "www.star.nesdis.noaa.gov/goes/conus.php",
+      "total_events": "669"
+    },
+    {
+      "page_title": "Winter Weather",
+      "event_label": "file_download",
+      "page": "www.weather.gov/rah/winter",
+      "total_events": "664"
+    },
+    {
+      "page_title": "Nationwide Encounters | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/stats/nationwide-encounters",
+      "total_events": "645"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:40:34.271Z",
+  "agency": "commerce"
+}

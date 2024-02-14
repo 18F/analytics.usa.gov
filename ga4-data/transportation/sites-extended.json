@@ -1,0 +1,558 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "wwwnc.cdc.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.volpe.dot.gov",
+      "visits": "4322"
+    },
+    {
+      "domain": "www.usmma.edu",
+      "visits": "17750"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.tsa.gov",
+      "visits": "129"
+    },
+    {
+      "domain": "www.treasurydirect.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.transtats.bts.gov",
+      "visits": "10240"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "409034"
+    },
+    {
+      "domain": "www.transit.dot.gov",
+      "visits": "40066"
+    },
+    {
+      "domain": "www.trafficsafetymarketing.gov",
+      "visits": "7356"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.section508.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.seaway.dot.gov",
+      "visits": "2561"
+    },
+    {
+      "domain": "www.regulations.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.plainlanguage.gov",
+      "visits": "16145"
+    },
+    {
+      "domain": "www.phmsa.dot.gov",
+      "visits": "56812"
+    },
+    {
+      "domain": "www.performance.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.nps.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.nhtsa.gov",
+      "visits": "2200307"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.maritime.dot.gov",
+      "visits": "23663"
+    },
+    {
+      "domain": "www.hud.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "126"
+    },
+    {
+      "domain": "www.gis.fhwa.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.geoplatform.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.fmcsa.dot.gov",
+      "visits": "551314"
+    },
+    {
+      "domain": "www.fhwa.dot.gov",
+      "visits": "130677"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "928626"
+    },
+    {
+      "domain": "www.environment.fhwa.dot.gov",
+      "visits": "2881"
+    },
+    {
+      "domain": "www.ems.gov",
+      "visits": "4891"
+    },
+    {
+      "domain": "www.eeoc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "728"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.cmfclearinghouse.org",
+      "visits": "3"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "62"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.bts.gov",
+      "visits": "31590"
+    },
+    {
+      "domain": "www.bts.dot.gov",
+      "visits": "1457"
+    },
+    {
+      "domain": "www.911.gov",
+      "visits": "19046"
+    },
+    {
+      "domain": "www-nrd.nhtsa.dot.gov",
+      "visits": "117"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "14"
+    },
+    {
+      "domain": "web.archive.org",
+      "visits": "2"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "transtats.bts.gov",
+      "visits": "1545"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "6"
+    },
+    {
+      "domain": "tmcpfs.ops.fhwa.dot.gov",
+      "visits": "98"
+    },
+    {
+      "domain": "smartpay.gsa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "110"
+    },
+    {
+      "domain": "sapt.faa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "safety.fhwa.dot.gov",
+      "visits": "7996"
+    },
+    {
+      "domain": "rosap.ntl.bts.gov",
+      "visits": "17285"
+    },
+    {
+      "domain": "railroads.fra.dot.gov",
+      "visits": "68"
+    },
+    {
+      "domain": "railroads.dot.gov",
+      "visits": "28922"
+    },
+    {
+      "domain": "qa-www.faa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "primis-uat.phmsa.dot.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "pipelinesafety.dot.gov",
+      "visits": "32239"
+    },
+    {
+      "domain": "opstest.fhwa.dot.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "ops.fhwa.dot.gov",
+      "visits": "19963"
+    },
+    {
+      "domain": "ntl.bts.gov",
+      "visits": "719"
+    },
+    {
+      "domain": "nationalregistry.fmcsa.dot.gov",
+      "visits": "94120"
+    },
+    {
+      "domain": "mutcdtest.fhwa.dot.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "mutcd.fhwa.dot.gov",
+      "visits": "58671"
+    },
+    {
+      "domain": "maritime.dot.gov",
+      "visits": "471"
+    },
+    {
+      "domain": "login.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "international.fhwa.dot.gov",
+      "visits": "415"
+    },
+    {
+      "domain": "highways.dot.gov",
+      "visits": "55018"
+    },
+    {
+      "domain": "hazmatsafety.dot.gov",
+      "visits": "35959"
+    },
+    {
+      "domain": "hazmat.dot.gov",
+      "visits": "392"
+    },
+    {
+      "domain": "grants.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "fhwatest.fhwa.dot.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "fhwaapps.fhwa.dot.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "esubmit.rita.dot.gov",
+      "visits": "401"
+    },
+    {
+      "domain": "dotcms.fra.dot.gov",
+      "visits": "64"
+    },
+    {
+      "domain": "dev-www.faa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "cms.volpe.dot.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "cms.usmma.edu",
+      "visits": "130"
+    },
+    {
+      "domain": "cms.tsm.nhtsa.dot.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "cms.seaway.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "cms.phmsa.dot.gov",
+      "visits": "67"
+    },
+    {
+      "domain": "cms.nhtsa.dot.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "cms.marad.dot.gov",
+      "visits": "83"
+    },
+    {
+      "domain": "cms.fta.dot.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "cms.fmcsa.dot.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "cms.fhwa.dot.gov",
+      "visits": "138"
+    },
+    {
+      "domain": "cms.faa.gov",
+      "visits": "312"
+    },
+    {
+      "domain": "cms.dot.gov",
+      "visits": "208"
+    },
+    {
+      "domain": "cms.buildamerica.dot.gov",
+      "visits": "40"
+    },
+    {
+      "domain": "cms.bts.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "cms.bts.dot.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "cdan.dot.gov",
+      "visits": "1882"
+    },
+    {
+      "domain": "buildamerica.dot.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "ask.fmcsa.dot.gov",
+      "visits": "22035"
+    },
+    {
+      "domain": "acquia-test-volpe8.dot.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "acquia-test-usmma8.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-test-tsm-nhtsa.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-test-seaway8.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-test-phmsa8.dot.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "acquia-test-permits8.dot.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "acquia-test-marad7.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-test-fta8.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-test-fra8.dot.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "acquia-test-fmcsa8.dot.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "acquia-test-fhwa8.dot.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "acquia-test-faa.dot.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "acquia-test-dot8.dot.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "acquia-test-buildamerica.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-test-bts8.dot.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "acquia-stage2-tsm-nhtsa.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-stage2-permits8.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-stage1-tsm-nhtsa.dot.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "acquia-stage1-marad8.dot.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "acquia-stage1-fmcsa8.dot.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "acquia-stage1-fhwa8.dot.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "acquia-stage-tsm-nhtsa.dot.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acquia-stage-marad8.dot.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "acquia-stage-dot8.dot.gov",
+      "visits": "46"
+    },
+    {
+      "domain": "acquia-dev-tsm-nhtsa.dot.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "acquia-dev-nhtsa.dot.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "acquia-dev-fhwa8.dot.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "(other)",
+      "visits": "13966"
+    }
+  ],
+  "totals": {
+    "visits": 4854245
+  },
+  "taken_at": "2024-01-05T16:02:16.716Z",
+  "agency": "transportation"
+}

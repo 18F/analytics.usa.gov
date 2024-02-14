@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "DONALD EUGENE FIELDS II — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/donald-eugene-fields-ii",
+      "total_events": "6928"
+    },
+    {
+      "page_title": "RUJA IGNATOVA — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/ruja-ignatova",
+      "total_events": "6650"
+    },
+    {
+      "page_title": "YULAN ADONAY ARCHAGA CARIAS — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias",
+      "total_events": "6271"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "5875"
+    },
+    {
+      "page_title": "BHADRESHKUMAR CHETANBHAI PATEL — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/bhadreshkumar-chetanbhai-patel",
+      "total_events": "5287"
+    },
+    {
+      "page_title": "VITEL'HOMME INNOCENT — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/vitelhomme-innocent",
+      "total_events": "4862"
+    },
+    {
+      "page_title": "ALEJANDRO ROSALES CASTILLO — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/alejandro-castillo",
+      "total_events": "4276"
+    },
+    {
+      "page_title": "OMAR ALEXANDER CARDENAS — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/omar-alexander-cardenas",
+      "total_events": "3900"
+    },
+    {
+      "page_title": "ALEXIS FLORES — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/alexis-flores",
+      "total_events": "3869"
+    },
+    {
+      "page_title": "ARNOLDO JIMENEZ — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/arnoldo-jimenez",
+      "total_events": "2441"
+    },
+    {
+      "page_title": "WILVER VILLEGAS-PALOMINO — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/topten/wilver-villegas-palomino",
+      "total_events": "2178"
+    },
+    {
+      "page_title": "Controlled Substance Schedules",
+      "event_label": "file_download",
+      "page": "www.deadiversion.usdoj.gov/schedules/",
+      "total_events": "1602"
+    },
+    {
+      "page_title": "Documents",
+      "event_label": "file_download",
+      "page": "efile.fara.gov/ords/fara/f",
+      "total_events": "1232"
+    },
+    {
+      "page_title": "Automated Case Information",
+      "event_label": "file_download",
+      "page": "acis.eoir.justice.gov/en/",
+      "total_events": "1098"
+    },
+    {
+      "page_title": "PIPE BOMBS IN WASHINGTON, D.C. — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc",
+      "total_events": "1068"
+    },
+    {
+      "page_title": "SHELBIE LYNN DWYER — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer",
+      "total_events": "1031"
+    },
+    {
+      "page_title": "Drug Scheduling",
+      "event_label": "file_download",
+      "page": "www.dea.gov/drug-information/drug-scheduling",
+      "total_events": "953"
+    },
+    {
+      "page_title": "KARLIE LAIN GUSÉ — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/karlie-lain-guse",
+      "total_events": "953"
+    },
+    {
+      "page_title": "Drug Fact Sheets | Get Smart About Drugs",
+      "event_label": "file_download",
+      "page": "www.getsmartaboutdrugs.gov/publication/drug-fact-sheets",
+      "total_events": "905"
+    },
+    {
+      "page_title": "Mid-Level Practitioners Authorization by State",
+      "event_label": "file_download",
+      "page": "www.deadiversion.usdoj.gov/drugreg/practioners/index.html",
+      "total_events": "883"
+    },
+    {
+      "page_title": "UNKNOWN INDIVIDUAL - JANE DOE 36 — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/ecap/unknown-individual---jane-doe-36",
+      "total_events": "824"
+    },
+    {
+      "page_title": "GERARD BOGUSLAW ZALEWSKI — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/cac/gerard-boguslaw-zalewski",
+      "total_events": "819"
+    },
+    {
+      "page_title": "ADA Standards for Accessible Design | ADA.gov",
+      "event_label": "file_download",
+      "page": "www.ada.gov/law-and-regs/design-standards/",
+      "total_events": "779"
+    },
+    {
+      "page_title": "Internet Crime Complaint Center(IC3) | Home Page",
+      "event_label": "file_download",
+      "page": "www.ic3.gov/",
+      "total_events": "773"
+    },
+    {
+      "page_title": "Información automatizada de casos",
+      "event_label": "file_download",
+      "page": "acis.eoir.justice.gov/es/",
+      "total_events": "689"
+    },
+    {
+      "page_title": "JOANNE DEBORAH CHESIMARD — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/joanne-deborah-chesimard",
+      "total_events": "674"
+    },
+    {
+      "page_title": "Home | Forfeiture.gov",
+      "event_label": "file_download",
+      "page": "www.forfeiture.gov/",
+      "total_events": "658"
+    },
+    {
+      "page_title": "U.S. Marshals List | U.S. Marshals Service",
+      "event_label": "file_download",
+      "page": "www.usmarshals.gov/resources/publications/us-marshals-list",
+      "total_events": "651"
+    },
+    {
+      "page_title": "Fentanyl",
+      "event_label": "file_download",
+      "page": "www.dea.gov/factsheets/fentanyl",
+      "total_events": "633"
+    },
+    {
+      "page_title": "Medication Assisted Treatment",
+      "event_label": "file_download",
+      "page": "www.deadiversion.usdoj.gov/pubs/docs/MATE_training.html",
+      "total_events": "605"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | Workload and Adjudication Statistics",
+      "event_label": "file_download",
+      "page": "www.justice.gov/eoir/workload-and-adjudication-statistics",
+      "total_events": "583"
+    },
+    {
+      "page_title": "PRESTON POWELL — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/cei/preston-powell",
+      "total_events": "568"
+    },
+    {
+      "page_title": "Office on Violence Against Women (OVW) | Open Solicitations",
+      "event_label": "file_download",
+      "page": "www.justice.gov/ovw/open-solicitations",
+      "total_events": "506"
+    },
+    {
+      "page_title": "AHLAM AHMAD AL-TAMIMI — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/ahlam-ahmad-al-tamimi",
+      "total_events": "490"
+    },
+    {
+      "page_title": "SEEKING INFORMATION — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/ecap/seeking-information",
+      "total_events": "488"
+    },
+    {
+      "page_title": "BEHZAD MOHAMMADZADEH — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/cyber/behzad-mohammadzadeh",
+      "total_events": "474"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | List of Currently Disciplined Practitioners",
+      "event_label": "file_download",
+      "page": "www.justice.gov/eoir/list-of-currently-disciplined-practitioners",
+      "total_events": "467"
+    },
+    {
+      "page_title": "HATE CRIME — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/seeking-info/hate-crime-1",
+      "total_events": "462"
+    },
+    {
+      "page_title": "DIEGO ALFONSO DE LEON MEJIA — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/murders/diego-alfonso-de-leon-mejia",
+      "total_events": "457"
+    },
+    {
+      "page_title": "MAYUSHI BHAGAT — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/mayushi-bhagat",
+      "total_events": "454"
+    },
+    {
+      "page_title": "LINA SARDAR KHIL — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/lina-sardar-khil",
+      "total_events": "452"
+    },
+    {
+      "page_title": "Tribal Justice and Safety | Open Solicitations",
+      "event_label": "file_download",
+      "page": "www.justice.gov/tribal/open-solicitations",
+      "total_events": "447"
+    },
+    {
+      "page_title": "MADALINA COJOCARI — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/madalina-cojocari",
+      "total_events": "436"
+    },
+    {
+      "page_title": "District of Columbia | Capitol Breach Cases | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/usao-dc/capitol-breach-cases",
+      "total_events": "419"
+    },
+    {
+      "page_title": "Controlled Substance Schedules",
+      "event_label": "file_download",
+      "page": "www.deadiversion.usdoj.gov/schedules/index.html",
+      "total_events": "412"
+    },
+    {
+      "page_title": "Search Filings",
+      "event_label": "file_download",
+      "page": "efile.fara.gov/ords/fara/f",
+      "total_events": "410"
+    },
+    {
+      "page_title": "JONATHAN DANIEL POLLOCK — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/additional/jonathan-pollock",
+      "total_events": "404"
+    },
+    {
+      "page_title": "Southern District of New York | Jeffrey Epstein Charged In Manhattan Federal Court With Sex Trafficking Of Minors | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors",
+      "total_events": "403"
+    },
+    {
+      "page_title": "CATHERINE MARIE KERKOW — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/dt/catherine-marie-kerkow",
+      "total_events": "398"
+    },
+    {
+      "page_title": "Antitrust Division | 2023 Merger Guidelines | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/atr/2023-merger-guidelines",
+      "total_events": "381"
+    },
+    {
+      "page_title": "CARIS E. AYALA — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/murders/caris-e.-ayala",
+      "total_events": "375"
+    },
+    {
+      "page_title": "Información de caso automatizada",
+      "event_label": "file_download",
+      "page": "acis.eoir.justice.gov/en/",
+      "total_events": "370"
+    },
+    {
+      "page_title": "National Law Enforcement Telecommunications Systems - ORI (Originating Agency Identifier) Directory | Office of Justice Programs",
+      "event_label": "file_download",
+      "page": "www.ojp.gov/ncjrs/virtual-library/abstracts/national-law-enforcement-telecommunications-systems-ori-originating",
+      "total_events": "368"
+    },
+    {
+      "page_title": "Factoring Criteria for Firearms with Attached “Stabilizing Braces” | Bureau of Alcohol, Tobacco, Firearms and Explosives",
+      "event_label": "file_download",
+      "page": "www.atf.gov/rules-and-regulations/factoring-criteria-firearms-attached-stabilizing-braces",
+      "total_events": "366"
+    },
+    {
+      "page_title": "Información automatizada de casos",
+      "event_label": "file_download",
+      "page": "acis.eoir.justice.gov/en/",
+      "total_events": "360"
+    },
+    {
+      "page_title": "HUSAYN MUHAMMAD AL-UMARI — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/husayn-muhammad-al-umari",
+      "total_events": "358"
+    },
+    {
+      "page_title": "Identity History Summary Request (FD-1164) — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/file-repository/fd-1164-identity-history-summary-request-110120.pdf/view",
+      "total_events": "353"
+    },
+    {
+      "page_title": "Antitrust Division | U.S. and Plaintiff States v. Google LLC [2020] - Trial Exhibits",
+      "event_label": "file_download",
+      "page": "www.justice.gov/atr/us-and-plaintiff-states-v-google-llc-2020-trial-exhibits",
+      "total_events": "350"
+    },
+    {
+      "page_title": "Southern District of New York | Founder And Former CEO Of Tingo Companies Charged With Securities Fraud | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/usao-sdny/pr/founder-and-former-ceo-tingo-companies-charged-securities-fraud",
+      "total_events": "349"
+    },
+    {
+      "page_title": "HANEUL OH — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/haneul-oh",
+      "total_events": "346"
+    },
+    {
+      "page_title": "Department of Justice | Special Counsel Jack Smith",
+      "event_label": "file_download",
+      "page": "www.justice.gov/sco-smith",
+      "total_events": "344"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | Recognition & Accreditation (R&A) Program",
+      "event_label": "file_download",
+      "page": "www.justice.gov/eoir/recognition-and-accreditation-program",
+      "total_events": "341"
+    },
+    {
+      "page_title": "GEORGE EDWARD WRIGHT — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/dt/george-edward-wright",
+      "total_events": "341"
+    },
+    {
+      "page_title": "TARA LEIGH CALICO — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/tara-leigh-calico",
+      "total_events": "334"
+    },
+    {
+      "page_title": "UNKNOWN SUSPECT - JOHN DOE 17 — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/ecap/unknown-suspect-1",
+      "total_events": "331"
+    },
+    {
+      "page_title": "USDOJ: U.S. Department of Justice Archive NDIC: Archived Publications A-K",
+      "event_label": "file_download",
+      "page": "www.justice.gov/archive/ndic/topics/archived.htm#Facts",
+      "total_events": "322"
+    },
+    {
+      "page_title": "CHRISTOPHER W. BURNS — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wcc/christopher-w-burns",
+      "total_events": "321"
+    },
+    {
+      "page_title": "Oxycodone",
+      "event_label": "file_download",
+      "page": "www.dea.gov/factsheets/oxycodone",
+      "total_events": "313"
+    },
+    {
+      "page_title": "Southern District of New York | New Jersey Man Charged With Attempting To Provide Material Support To Al Shabaab | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/usao-sdny/pr/new-jersey-man-charged-attempting-provide-material-support-al-shabaab",
+      "total_events": "312"
+    },
+    {
+      "page_title": "Publicly Funded Forensic Crime Laboratories, 2020 | Bureau of Justice Statistics",
+      "event_label": "file_download",
+      "page": "bjs.ojp.gov/library/publications/publicly-funded-forensic-crime-laboratories-2020",
+      "total_events": "311"
+    },
+    {
+      "page_title": "Ecstasy Or MDMA (also Known As Molly)",
+      "event_label": "file_download",
+      "page": "www.dea.gov/factsheets/ecstasy-or-mdma-also-known-molly",
+      "total_events": "310"
+    },
+    {
+      "page_title": "JOHN GARY MONROE — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/seeking-info/john-gary-monroe",
+      "total_events": "309"
+    },
+    {
+      "page_title": "CESAR VILLARREAL — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/murders/cesar-villarreal",
+      "total_events": "308"
+    },
+    {
+      "page_title": "CATHERINE BARBARA DAVIDSON — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/catherine-barbara-davidson",
+      "total_events": "305"
+    },
+    {
+      "page_title": "JEFFREY DEAN MCDANIEL — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/cac/jeffrey-dean-mcdaniel",
+      "total_events": "300"
+    },
+    {
+      "page_title": "Credit Card Payment Form — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/file-repository/idhsc-credit-card-payment-form.pdf/view",
+      "total_events": "297"
+    },
+    {
+      "page_title": "GERARDO BELTRAN — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/cac/gerardo-beltran",
+      "total_events": "294"
+    },
+    {
+      "page_title": "DANIEL ANDREAS SAN DIEGO — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/daniel-andreas-san-diego",
+      "total_events": "293"
+    },
+    {
+      "page_title": "NATALIA BURLINOVA — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/counterintelligence/natalia-burlinova",
+      "total_events": "293"
+    },
+    {
+      "page_title": "JASON DEREK BROWN — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/murders/jason-derek-brown",
+      "total_events": "291"
+    },
+    {
+      "page_title": "U.S. Trustee Program | Bankruptcy Information Sheet | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/ust/bankruptcy-information-sheet-0",
+      "total_events": "284"
+    },
+    {
+      "page_title": "JULIEANNE BALDUEZA DIMITRION — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wcc/julieanne-baldueza-dimitrion",
+      "total_events": "283"
+    },
+    {
+      "page_title": "DULCE MARIA ALAVEZ — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/dulce-maria-alavez",
+      "total_events": "281"
+    },
+    {
+      "page_title": "Oficina Ejecutiva de Revisión de Inmigración | Formulario EOIR-33 Listado de tribunales de inmigración EOIR",
+      "event_label": "file_download",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "280"
+    },
+    {
+      "page_title": "Office of Privacy and Civil Liberties | Privacy Act of 1974",
+      "event_label": "file_download",
+      "page": "www.justice.gov/opcl/privacy-act-1974",
+      "total_events": "276"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing#Texas",
+      "total_events": "269"
+    },
+    {
+      "page_title": "Laws, Regulations & Standards | ADA.gov",
+      "event_label": "file_download",
+      "page": "www.ada.gov/law-and-regs/",
+      "total_events": "269"
+    },
+    {
+      "page_title": "KYRON RICHARD HORMAN — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/kidnap/kyron-richard-horman",
+      "total_events": "266"
+    },
+    {
+      "page_title": "Office of the Pardon Attorney | Search for a Case | United States Department of Justice",
+      "event_label": "file_download",
+      "page": "www.justice.gov/pardon/search-clemency-case-status",
+      "total_events": "265"
+    },
+    {
+      "page_title": "JOSEPHINE SUNSHINE OVERAKER — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/dt/josephine-sunshine-overaker",
+      "total_events": "262"
+    },
+    {
+      "page_title": "UNKNOWN INDIVIDUAL - JOHN DOE 41 — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/ecap/unknown-individual---john-doe-41",
+      "total_events": "260"
+    },
+    {
+      "page_title": "Criminal Victimization, 2022 | Bureau of Justice Statistics",
+      "event_label": "file_download",
+      "page": "bjs.ojp.gov/library/publications/criminal-victimization-2022",
+      "total_events": "259"
+    },
+    {
+      "page_title": "Registration",
+      "event_label": "file_download",
+      "page": "www.deadiversion.usdoj.gov/drugreg/",
+      "total_events": "258"
+    },
+    {
+      "page_title": "Spice/ K2, Synthetic Marijuana",
+      "event_label": "file_download",
+      "page": "www.dea.gov/factsheets/spice-k2-synthetic-marijuana",
+      "total_events": "258"
+    },
+    {
+      "page_title": "UNKNOWN SUSPECT - JOHN DOE 5 — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/ecap/unknown-suspect-5",
+      "total_events": "258"
+    },
+    {
+      "page_title": "IBRAHIM SALIH MOHAMMED AL-YACOUB — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/ibrahim-salih-mohammed-al-yacoub",
+      "total_events": "257"
+    },
+    {
+      "page_title": "The National Crime Victimization Survey and National Incident-Based Reporting System: A complementary picture of crime in 2022 | Bureau of Justice Statistics",
+      "event_label": "file_download",
+      "page": "bjs.ojp.gov/library/publications/national-crime-victimization-survey-and-national-incident-based-reporting-0",
+      "total_events": "256"
+    },
+    {
+      "page_title": "Hydromorphone",
+      "event_label": "file_download",
+      "page": "www.dea.gov/factsheets/hydromorphone",
+      "total_events": "253"
+    },
+    {
+      "page_title": "Update on the Prescription Stimulant Shortage",
+      "event_label": "file_download",
+      "page": "www.dea.gov/documents/2023/2023-11/2023-11-01/update-prescription-stimulant-shortage",
+      "total_events": "253"
+    },
+    {
+      "page_title": "ALVIN SCOTT — FBI",
+      "event_label": "file_download",
+      "page": "www.fbi.gov/wanted/murders/alvin-scott",
+      "total_events": "249"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:38:38.775Z",
+  "agency": "justice"
+}

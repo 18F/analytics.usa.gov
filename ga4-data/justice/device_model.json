@@ -1,0 +1,113 @@
+{
+  "name": "device_model",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "mobileDeviceModel"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1000"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Device Model",
+    "description": "90 days of visits by Device Model for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 67060436,
+    "device_models": {
+      "Chrome": 27096648,
+      "iPhone": 20833084,
+      "": 99487,
+      "Edge": 5163346,
+      "Safari": 6449967,
+      "ChromeBook": 1662583,
+      "Firefox": 964176,
+      "(other)": 4526,
+      "iPad": 356389,
+      "(not set)": 843811,
+      "SM-A146U": 364636,
+      "SM-S918U": 332958,
+      "SM-S908U": 348448,
+      "SM-S901U": 248016,
+      "SM-S911U": 178073,
+      "SM-G991U": 195202,
+      "SM-G998U": 171304,
+      "SM-A037U": 160377,
+      "SM-A136U": 145719,
+      "SM-S916U": 115642,
+      "SM-S906U": 124521,
+      "moto g play (2023)": 63459,
+      "Pixel 7": 122737,
+      "moto g pure": 130665,
+      "Opera": 98228,
+      "SM-A326B": 93887,
+      "Pixel 6a": 86716,
+      "Pixel 7 Pro": 81726,
+      "SM-G996U": 70328,
+      "Firefox for Android": 50512,
+      "Pixel 6": 83092,
+      "Moto G 5G (2022)": 62575,
+      "SM-G781U": 56174,
+      "SM-A546U": 2109,
+      "moto g 5G - 2023": 1028,
+      "Internet Explorer": 40524,
+      "SM-G973U": 6711,
+      "SM-G970U": 3301,
+      "SM-G781V": 1225,
+      "SM-N986U": 26918,
+      "SM-G960U": 3233,
+      "Moto G Stylus 5G": 19543,
+      "SM-S918U1": 6486,
+      "Moto G Stylus 5G (2022)": 19769,
+      "SM-A037F": 40203,
+      "SM-G975U": 1073,
+      "SM-A536U": 1039,
+      "Pixel 6 Pro": 12852,
+      "SM-G990U": 1004,
+      "SM-S908U1": 3153,
+      "Moto G Power (2022)": 4473,
+      "Moto G Power (2021)": 1222,
+      "iPhone 14 Pro Max": 1037,
+      "22127RK46C": 1728,
+      "M2007J1SC": 1662,
+      "Lumia 640 XL": 1131
+    }
+  },
+  "taken_at": "2024-01-05T15:09:50.585Z",
+  "agency": "justice"
+}

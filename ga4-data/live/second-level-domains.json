@@ -1,0 +1,1915 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "zipees.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "zeaslab.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "zbelit.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "zainabtours.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "youth.gov",
+      "visits": "33987"
+    },
+    {
+      "hostname": "younnique.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "yi88.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "yesmeanstest.org",
+      "visits": "58"
+    },
+    {
+      "hostname": "yandexwebcache.net",
+      "visits": "2"
+    },
+    {
+      "hostname": "xx57822.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "wwnphd.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "wraithservers.com",
+      "visits": "3"
+    },
+    {
+      "hostname": "wpaobgyn.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "worktruckxchange.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "wizard.gov",
+      "visits": "5"
+    },
+    {
+      "hostname": "wickedporn.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "whejqfovohfv.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "wh46.localhost",
+      "visits": "6"
+    },
+    {
+      "hostname": "westcoastcollaborative.org",
+      "visits": "833"
+    },
+    {
+      "hostname": "webharvest.gov",
+      "visits": "146"
+    },
+    {
+      "hostname": "weather.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "wb-bam.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "wauwatosahotel.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "vulkancasino.company",
+      "visits": "1"
+    },
+    {
+      "hostname": "vulcanmega34.com",
+      "visits": "8"
+    },
+    {
+      "hostname": "vqeg.org",
+      "visits": "4"
+    },
+    {
+      "hostname": "vote.gov",
+      "visits": "57373"
+    },
+    {
+      "hostname": "vnxx.com",
+      "visits": "5"
+    },
+    {
+      "hostname": "vizagstories.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "virtualsolar.org",
+      "visits": "71"
+    },
+    {
+      "hostname": "ventraip.email",
+      "visits": "2"
+    },
+    {
+      "hostname": "veachel.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "v-cache.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "uspreventiveservicestaskforce.org",
+      "visits": "3724"
+    },
+    {
+      "hostname": "usphs.gov",
+      "visits": "459"
+    },
+    {
+      "hostname": "usmarmy.live",
+      "visits": "11"
+    },
+    {
+      "hostname": "usbr.gov",
+      "visits": "326"
+    },
+    {
+      "hostname": "usarmyband.com",
+      "visits": "5546"
+    },
+    {
+      "hostname": "urban-links.org",
+      "visits": "744"
+    },
+    {
+      "hostname": "unicar.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "unemployment.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "ug601cb.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "ucjh.xyz",
+      "visits": "3"
+    },
+    {
+      "hostname": "ttbonline.gov",
+      "visits": "17426"
+    },
+    {
+      "hostname": "tsdivas.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "tricare.mil",
+      "visits": "205702"
+    },
+    {
+      "hostname": "treasuryscams.gov",
+      "visits": "32"
+    },
+    {
+      "hostname": "treasuryhunt.gov",
+      "visits": "6129"
+    },
+    {
+      "hostname": "treasurydirect.gov",
+      "visits": "342357"
+    },
+    {
+      "hostname": "treasuryauctions.gov",
+      "visits": "142"
+    },
+    {
+      "hostname": "trainenthusiasts.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "tox21.gov",
+      "visits": "283"
+    },
+    {
+      "hostname": "torgateway.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "tommurda.online",
+      "visits": "1"
+    },
+    {
+      "hostname": "todaybet.social",
+      "visits": "1"
+    },
+    {
+      "hostname": "tobiasschotter.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "time.gov",
+      "visits": "299905"
+    },
+    {
+      "hostname": "thudes.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "thomsonreuters-riskandregulation.com",
+      "visits": "3"
+    },
+    {
+      "hostname": "thirtyavenue.info",
+      "visits": "1"
+    },
+    {
+      "hostname": "theplanetsonline.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "thecommunityguide.org",
+      "visits": "144"
+    },
+    {
+      "hostname": "the-intermediary.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "test.dash",
+      "visits": "3"
+    },
+    {
+      "hostname": "tesdaspecialista.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "techspringco.xyz",
+      "visits": "2"
+    },
+    {
+      "hostname": "taaps.gov",
+      "visits": "69"
+    },
+    {
+      "hostname": "swedareaclients.website",
+      "visits": "1"
+    },
+    {
+      "hostname": "studentaid.gov",
+      "visits": "15976768"
+    },
+    {
+      "hostname": "strwst.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "structurecenter.science",
+      "visits": "2"
+    },
+    {
+      "hostname": "structurecenter.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "stros.online",
+      "visits": "2"
+    },
+    {
+      "hostname": "streaming-foot.online",
+      "visits": "1"
+    },
+    {
+      "hostname": "stratus-clear.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "stiff.one",
+      "visits": "1"
+    },
+    {
+      "hostname": "statesfbi.us",
+      "visits": "4"
+    },
+    {
+      "hostname": "staging.dash",
+      "visits": "9"
+    },
+    {
+      "hostname": "srre.org",
+      "visits": "2"
+    },
+    {
+      "hostname": "spd15revision.gov",
+      "visits": "169"
+    },
+    {
+      "hostname": "smokefree.gov",
+      "visits": "52426"
+    },
+    {
+      "hostname": "slgs.gov",
+      "visits": "15"
+    },
+    {
+      "hostname": "skylove.world",
+      "visits": "1"
+    },
+    {
+      "hostname": "sicklecellred.org",
+      "visits": "3"
+    },
+    {
+      "hostname": "shangshungstore.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "sgc.pub",
+      "visits": "1"
+    },
+    {
+      "hostname": "selectagents.gov",
+      "visits": "95"
+    },
+    {
+      "hostname": "search.gov",
+      "visits": "1895"
+    },
+    {
+      "hostname": "search.app",
+      "visits": "2"
+    },
+    {
+      "hostname": "scoutsex.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "scijinks.gov",
+      "visits": "42384"
+    },
+    {
+      "hostname": "sciencebase.gov",
+      "visits": "4"
+    },
+    {
+      "hostname": "scanbayar.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "sbst.gov",
+      "visits": "118"
+    },
+    {
+      "hostname": "savingsbondwizard.gov",
+      "visits": "13"
+    },
+    {
+      "hostname": "savingsbonds.gov",
+      "visits": "301"
+    },
+    {
+      "hostname": "savingsbond.gov",
+      "visits": "337"
+    },
+    {
+      "hostname": "satfortune.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "1456417"
+    },
+    {
+      "hostname": "salivaryproteome.org",
+      "visits": "46"
+    },
+    {
+      "hostname": "safetyact.gov",
+      "visits": "52"
+    },
+    {
+      "hostname": "sac.gov",
+      "visits": "308"
+    },
+    {
+      "hostname": "s63wvpc6b3n.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "rrb.gov",
+      "visits": "17321"
+    },
+    {
+      "hostname": "rozhdestvenskaya31.homes",
+      "visits": "1"
+    },
+    {
+      "hostname": "roweplants.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "rootsfarmllc.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "rioplus.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "rinvest.info",
+      "visits": "1"
+    },
+    {
+      "hostname": "richmondautocare.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "reproductiverights.gov",
+      "visits": "2064"
+    },
+    {
+      "hostname": "realestatesales.gov",
+      "visits": "58032"
+    },
+    {
+      "hostname": "rainbowhouseatl.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "qualitizersus.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "qofis.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "qff9m6dmx6v.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "q59j.live",
+      "visits": "2"
+    },
+    {
+      "hostname": "punxsutawneyweather.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "pulsenetai.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "publicspace.cloud",
+      "visits": "1"
+    },
+    {
+      "hostname": "pssy.rest",
+      "visits": "1"
+    },
+    {
+      "hostname": "proxysite.cloud",
+      "visits": "2"
+    },
+    {
+      "hostname": "prismafrica.com",
+      "visits": "21"
+    },
+    {
+      "hostname": "presidentialinnovationfellows.gov",
+      "visits": "1719"
+    },
+    {
+      "hostname": "presaholic.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "pragati.org",
+      "visits": "2"
+    },
+    {
+      "hostname": "ppms.gov",
+      "visits": "8396"
+    },
+    {
+      "hostname": "pnwdiving.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "playgreedmc.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "platformprofit.site",
+      "visits": "1"
+    },
+    {
+      "hostname": "placefilenation.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "pinegarchevrolet.online",
+      "visits": "1"
+    },
+    {
+      "hostname": "ph.local",
+      "visits": "3"
+    },
+    {
+      "hostname": "pfl18.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "peanutbubbyandbean.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "patriotbonds.gov",
+      "visits": "64"
+    },
+    {
+      "hostname": "owensweber.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "otsos116.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "ots.gov",
+      "visits": "124"
+    },
+    {
+      "hostname": "otm.localhost",
+      "visits": "25"
+    },
+    {
+      "hostname": "osb247.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "optumkic.com",
+      "visits": "8"
+    },
+    {
+      "hostname": "ops-syndicate.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "onrr.gov",
+      "visits": "2352"
+    },
+    {
+      "hostname": "onetix.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "ojp.gov",
+      "visits": "9760"
+    },
+    {
+      "hostname": "oge.gov",
+      "visits": "621"
+    },
+    {
+      "hostname": "odyseallc.net",
+      "visits": "4"
+    },
+    {
+      "hostname": "octo.deals",
+      "visits": "1"
+    },
+    {
+      "hostname": "occhelps.gov",
+      "visits": "71"
+    },
+    {
+      "hostname": "occ.gov",
+      "visits": "125335"
+    },
+    {
+      "hostname": "nwsync.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "nuestrotrailers.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "nsopw.gov",
+      "visits": "44"
+    },
+    {
+      "hostname": "nsa-codebreaker.org",
+      "visits": "4"
+    },
+    {
+      "hostname": "nrd.gov",
+      "visits": "19467"
+    },
+    {
+      "hostname": "nps.gov",
+      "visits": "28734"
+    },
+    {
+      "hostname": "nowenowinki.click",
+      "visits": "1"
+    },
+    {
+      "hostname": "notifresh.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "nosewant.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "northeastdiesel.org",
+      "visits": "2"
+    },
+    {
+      "hostname": "nodered.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "noblefakes.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "nihefggrants.org",
+      "visits": "4"
+    },
+    {
+      "hostname": "nicic.gov",
+      "visits": "23348"
+    },
+    {
+      "hostname": "ncua.gov",
+      "visits": "70257"
+    },
+    {
+      "hostname": "navyadminonline.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "nativeblue.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "nationalresourcedirectory.gov",
+      "visits": "48"
+    },
+    {
+      "hostname": "nationalcoastguardmuseum.org",
+      "visits": "210"
+    },
+    {
+      "hostname": "nationalbankhelp.gov",
+      "visits": "110"
+    },
+    {
+      "hostname": "nasa.gov",
+      "visits": "6"
+    },
+    {
+      "hostname": "myprimerewards.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "mydoggiestuff.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "mycreditunion.gov",
+      "visits": "17751"
+    },
+    {
+      "hostname": "museodelwhiskyargentina.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "mqvmgxgrxu.cam",
+      "visits": "5"
+    },
+    {
+      "hostname": "mitigationcommission.gov",
+      "visits": "3"
+    },
+    {
+      "hostname": "mirror-h.org",
+      "visits": "10"
+    },
+    {
+      "hostname": "milgearstest.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "midwestinvestmentpros.com",
+      "visits": "31"
+    },
+    {
+      "hostname": "mgty775.app",
+      "visits": "1"
+    },
+    {
+      "hostname": "mgty589.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "mgty567.app",
+      "visits": "1"
+    },
+    {
+      "hostname": "mgty.xyz",
+      "visits": "1"
+    },
+    {
+      "hostname": "mentaltoto.biz",
+      "visits": "1"
+    },
+    {
+      "hostname": "medlineplus.govhttps",
+      "visits": "1"
+    },
+    {
+      "hostname": "medlineplus.gov",
+      "visits": "13153676"
+    },
+    {
+      "hostname": "medicalcountermeasures.gov",
+      "visits": "2311"
+    },
+    {
+      "hostname": "mcp-launchpad.com",
+      "visits": "3"
+    },
+    {
+      "hostname": "mckaymetis.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "maruvazquez.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "martin-anderle.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "marker.to",
+      "visits": "4"
+    },
+    {
+      "hostname": "marinecadastre.gov",
+      "visits": "1584"
+    },
+    {
+      "hostname": "marijncompanjen.com",
+      "visits": "6"
+    },
+    {
+      "hostname": "lwapy3zqnp0.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "lung.asia",
+      "visits": "20"
+    },
+    {
+      "hostname": "ltt.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "lozwatgtop.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "lostfilm-hd-1218.online",
+      "visits": "1"
+    },
+    {
+      "hostname": "longislandexplorers.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "logos.team",
+      "visits": "1"
+    },
+    {
+      "hostname": "login.gov",
+      "visits": "365002"
+    },
+    {
+      "hostname": "localmartca.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "liqorice.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "levomekol.ru",
+      "visits": "1"
+    },
+    {
+      "hostname": "lernen.trading",
+      "visits": "2"
+    },
+    {
+      "hostname": "lash-stuff.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "landfire.gov",
+      "visits": "727"
+    },
+    {
+      "hostname": "lakercountry.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "kikiwai.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "khanomtan.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "kaliksec.fun",
+      "visits": "1"
+    },
+    {
+      "hostname": "jyedtqfo9siu.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "justinweather.com",
+      "visits": "17"
+    },
+    {
+      "hostname": "justinmichaelmoore.com",
+      "visits": "22"
+    },
+    {
+      "hostname": "juptierewards.network",
+      "visits": "48"
+    },
+    {
+      "hostname": "juptiereward.network",
+      "visits": "6"
+    },
+    {
+      "hostname": "juptier.online",
+      "visits": "26"
+    },
+    {
+      "hostname": "juptier.network",
+      "visits": "12"
+    },
+    {
+      "hostname": "jupiterewards.network",
+      "visits": "57"
+    },
+    {
+      "hostname": "jslab.app",
+      "visits": "1"
+    },
+    {
+      "hostname": "jplopensourcerover.com",
+      "visits": "40"
+    },
+    {
+      "hostname": "jobs44.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "jiangzhuti.me",
+      "visits": "7"
+    },
+    {
+      "hostname": "jbysxoejqtt.shop",
+      "visits": "2"
+    },
+    {
+      "hostname": "jbdev1.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "jazzmannentertainment.online",
+      "visits": "1"
+    },
+    {
+      "hostname": "janetpearson.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "j28055.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "iwillgetthere.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "itis.gov",
+      "visits": "1435"
+    },
+    {
+      "hostname": "irishgreenmedicine.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "irimodel.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "ipcowv.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "inulpkr.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "interodeldoradohills.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "instantunblock.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "instantprchecker.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "inobelele.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "illuminatedata.io",
+      "visits": "19"
+    },
+    {
+      "hostname": "ilali.ngo",
+      "visits": "1"
+    },
+    {
+      "hostname": "ilab-onlinecampus.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "iawg.gov",
+      "visits": "62"
+    },
+    {
+      "hostname": "hydrex-hookah.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "hungary-fashion-style.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "hungary-fashion-new.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "hsgov-oig.com",
+      "visits": "7"
+    },
+    {
+      "hostname": "homestorealkmaar.online",
+      "visits": "1"
+    },
+    {
+      "hostname": "hiredrneck.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "hero.prod",
+      "visits": "334"
+    },
+    {
+      "hostname": "hengheng66.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "helpwithmymortgagebank.gov",
+      "visits": "82"
+    },
+    {
+      "hostname": "helpwithmymortgage.gov",
+      "visits": "58"
+    },
+    {
+      "hostname": "helpwithmycreditcardbank.gov",
+      "visits": "76"
+    },
+    {
+      "hostname": "helpwithmycreditcard.gov",
+      "visits": "63"
+    },
+    {
+      "hostname": "helpwithmycheckingaccount.gov",
+      "visits": "77"
+    },
+    {
+      "hostname": "helpwithmybank.gov",
+      "visits": "89296"
+    },
+    {
+      "hostname": "helioviewer.org",
+      "visits": "3442"
+    },
+    {
+      "hostname": "helicon.online",
+      "visits": "2"
+    },
+    {
+      "hostname": "health.mil",
+      "visits": "66153"
+    },
+    {
+      "hostname": "health.gov",
+      "visits": "273042"
+    },
+    {
+      "hostname": "harlall.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "happylawyerchicago.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "hailnet.online",
+      "visits": "9"
+    },
+    {
+      "hostname": "gymleboronothe.tk",
+      "visits": "4"
+    },
+    {
+      "hostname": "gsafleet.gov",
+      "visits": "8923"
+    },
+    {
+      "hostname": "gsaauctions.gov",
+      "visits": "106465"
+    },
+    {
+      "hostname": "gsaadvantage.gov",
+      "visits": "791"
+    },
+    {
+      "hostname": "gsa.gov",
+      "visits": "98"
+    },
+    {
+      "hostname": "grupoprf.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "greengov.gov",
+      "visits": "30"
+    },
+    {
+      "hostname": "grants.gov",
+      "visits": "104828"
+    },
+    {
+      "hostname": "grafenart.ch",
+      "visits": "1"
+    },
+    {
+      "hostname": "govanisland.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "gosumarkt.ru",
+      "visits": "1"
+    },
+    {
+      "hostname": "googleweblight.com",
+      "visits": "19"
+    },
+    {
+      "hostname": "gmclore.org",
+      "visits": "6"
+    },
+    {
+      "hostname": "get.gov",
+      "visits": "3098"
+    },
+    {
+      "hostname": "geoplatform.gov",
+      "visits": "185"
+    },
+    {
+      "hostname": "genusluvkf.space",
+      "visits": "5"
+    },
+    {
+      "hostname": "gcabp.org",
+      "visits": "7"
+    },
+    {
+      "hostname": "ganobet17.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "gafribank.com",
+      "visits": "47"
+    },
+    {
+      "hostname": "g5.gov",
+      "visits": "85"
+    },
+    {
+      "hostname": "fws.gov",
+      "visits": "5"
+    },
+    {
+      "hostname": "fueleconomy.gov",
+      "visits": "543"
+    },
+    {
+      "hostname": "frtr.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "fqfinsuranceagency.com",
+      "visits": "33"
+    },
+    {
+      "hostname": "fpds.gov",
+      "visits": "65"
+    },
+    {
+      "hostname": "forestsandrangelands.gov",
+      "visits": "51"
+    },
+    {
+      "hostname": "footandsocks.com",
+      "visits": "5"
+    },
+    {
+      "hostname": "foiaonline.gov",
+      "visits": "169"
+    },
+    {
+      "hostname": "fkaqgo.asia",
+      "visits": "1"
+    },
+    {
+      "hostname": "fixitbvi.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "fivestartrailer.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "firstnet.gov",
+      "visits": "13589"
+    },
+    {
+      "hostname": "findtreatment.gov",
+      "visits": "59482"
+    },
+    {
+      "hostname": "fincen.gov",
+      "visits": "27004"
+    },
+    {
+      "hostname": "financialadvertising.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "ficus.science",
+      "visits": "2"
+    },
+    {
+      "hostname": "ferc.gov",
+      "visits": "3397"
+    },
+    {
+      "hostname": "fedinvest.org",
+      "visits": "36"
+    },
+    {
+      "hostname": "fedinvest.com",
+      "visits": "43"
+    },
+    {
+      "hostname": "federalinvestments.gov",
+      "visits": "15"
+    },
+    {
+      "hostname": "fbiconductservices.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "faraoncazino.club",
+      "visits": "1"
+    },
+    {
+      "hostname": "faizapatos.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "fai.gov",
+      "visits": "1929"
+    },
+    {
+      "hostname": "exis.gov",
+      "visits": "12"
+    },
+    {
+      "hostname": "everykidoutdoors.gov",
+      "visits": "34693"
+    },
+    {
+      "hostname": "eventsmonk.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "estudiantespiota.com",
+      "visits": "20"
+    },
+    {
+      "hostname": "essentialbangkok.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "eroioppai.xyz",
+      "visits": "1"
+    },
+    {
+      "hostname": "epyc.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "epaosc.org",
+      "visits": "76"
+    },
+    {
+      "hostname": "empowerenergy.co",
+      "visits": "15"
+    },
+    {
+      "hostname": "electronicshightech.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "electricaluprising.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "eldercare.gov",
+      "visits": "524"
+    },
+    {
+      "hostname": "elaxury.com",
+      "visits": "5"
+    },
+    {
+      "hostname": "dyessinsurance.info",
+      "visits": "2"
+    },
+    {
+      "hostname": "duyenvietyen.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "dt-cdn.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "drugalcoholrehablosangeles.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "donotcall.gov",
+      "visits": "238"
+    },
+    {
+      "hostname": "donaciondeorganos.gov",
+      "visits": "1882"
+    },
+    {
+      "hostname": "doiz.site",
+      "visits": "19"
+    },
+    {
+      "hostname": "doi.org",
+      "visits": "20"
+    },
+    {
+      "hostname": "doi.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "dnsops.gov",
+      "visits": "33"
+    },
+    {
+      "hostname": "digitalaristocrat.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "digital.gov",
+      "visits": "12161"
+    },
+    {
+      "hostname": "dev.localhost",
+      "visits": "4"
+    },
+    {
+      "hostname": "dev.dmi2devmmn",
+      "visits": "3"
+    },
+    {
+      "hostname": "dev.dash",
+      "visits": "12"
+    },
+    {
+      "hostname": "deusxcorp.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "deneme.org",
+      "visits": "2"
+    },
+    {
+      "hostname": "ddmedicalcenters.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "ddd762.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "dctc.mil",
+      "visits": "395"
+    },
+    {
+      "hostname": "data.gov",
+      "visits": "49236"
+    },
+    {
+      "hostname": "darin.zip",
+      "visits": "1"
+    },
+    {
+      "hostname": "d0t6rp7a8ge.shop",
+      "visits": "3"
+    },
+    {
+      "hostname": "cyberreportcenter.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "cuabs.us",
+      "visits": "2"
+    },
+    {
+      "hostname": "craiglathrop.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "crabstores.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "cpsc.gov",
+      "visits": "33"
+    },
+    {
+      "hostname": "coronaviruspreventionnetwork.org",
+      "visits": "88"
+    },
+    {
+      "hostname": "coralreef.gov",
+      "visits": "31"
+    },
+    {
+      "hostname": "consumidor.gov",
+      "visits": "16263"
+    },
+    {
+      "hostname": "consumer.gov",
+      "visits": "18795"
+    },
+    {
+      "hostname": "coniferbits.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "confexample.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "computersforlearning.gov",
+      "visits": "522"
+    },
+    {
+      "hostname": "comptrollerofthecurrency.gov",
+      "visits": "77"
+    },
+    {
+      "hostname": "coloradophotographers.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "collegedrinkingprevention.gov",
+      "visits": "64"
+    },
+    {
+      "hostname": "collectorseries.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "code.gov",
+      "visits": "665"
+    },
+    {
+      "hostname": "cncsgrants.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "club-vulkan.rocks",
+      "visits": "1"
+    },
+    {
+      "hostname": "clouding.digital",
+      "visits": "1"
+    },
+    {
+      "hostname": "cloud.gov",
+      "visits": "2009"
+    },
+    {
+      "hostname": "clintonlangham.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "clearbracesharleystreet.london",
+      "visits": "1"
+    },
+    {
+      "hostname": "civilservicedivision.org",
+      "visits": "41"
+    },
+    {
+      "hostname": "childcare.gov",
+      "visits": "40159"
+    },
+    {
+      "hostname": "chem-view.com",
+      "visits": "7"
+    },
+    {
+      "hostname": "changecycle.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "cg6000.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "cf849.xyz",
+      "visits": "6"
+    },
+    {
+      "hostname": "ccpdata.org",
+      "visits": "439"
+    },
+    {
+      "hostname": "cbp-border.com",
+      "visits": "3"
+    },
+    {
+      "hostname": "capeyouth.org",
+      "visits": "63"
+    },
+    {
+      "hostname": "camelotcostumes.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "buyu065.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bschoolindia.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "brokersresourcenetwork.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "bridge.domains",
+      "visits": "1"
+    },
+    {
+      "hostname": "bouns365.app",
+      "visits": "1"
+    },
+    {
+      "hostname": "bottozap.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bottomlineremodel.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bosque.gov",
+      "visits": "28"
+    },
+    {
+      "hostname": "booktoki329.com",
+      "visits": "3"
+    },
+    {
+      "hostname": "bondpro.gov",
+      "visits": "11"
+    },
+    {
+      "hostname": "bluebearpies.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "blickfrch.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "blackrifleco.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bjs.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "bj-lhy.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "biom-mass.org",
+      "visits": "13"
+    },
+    {
+      "hostname": "bing.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bigskyrise.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "betparibu182.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "beta.localhost",
+      "visits": "9"
+    },
+    {
+      "hostname": "berkeleyofficeinteriors.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "beidin.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "begottengames.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bariballoon.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "bankhelp.gov",
+      "visits": "84"
+    },
+    {
+      "hostname": "bankcustomerassistance.gov",
+      "visits": "88"
+    },
+    {
+      "hostname": "bankcustomer.gov",
+      "visits": "64"
+    },
+    {
+      "hostname": "bankanswers.gov",
+      "visits": "77"
+    },
+    {
+      "hostname": "b224.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "azagba.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "ayudaconmibanco.gov",
+      "visits": "78"
+    },
+    {
+      "hostname": "aviationweather.gov",
+      "visits": "838008"
+    },
+    {
+      "hostname": "avalon-projects.pro",
+      "visits": "1"
+    },
+    {
+      "hostname": "assistenza-netson.net",
+      "visits": "1"
+    },
+    {
+      "hostname": "assetrecoverycentr.com",
+      "visits": "4"
+    },
+    {
+      "hostname": "askearn.org",
+      "visits": "4831"
+    },
+    {
+      "hostname": "asianlawpractices.com",
+      "visits": "3"
+    },
+    {
+      "hostname": "asc.gov",
+      "visits": "1504"
+    },
+    {
+      "hostname": "artisanshive.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "arnoldgeissbuhler.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "arlingtonconstructionmanagement.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "arlingtoncemetery.mil",
+      "visits": "6264"
+    },
+    {
+      "hostname": "araserv.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "aramichange.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "apreuslt.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "apintof.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "anavratri.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "americorps.gov",
+      "visits": "253536"
+    },
+    {
+      "hostname": "alwafd.org",
+      "visits": "5"
+    },
+    {
+      "hostname": "alpacabears.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "alfatop.org",
+      "visits": "4"
+    },
+    {
+      "hostname": "alert-fmi.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "akupanel-outlet.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "airnow.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "airknowledge.gov",
+      "visits": "834"
+    },
+    {
+      "hostname": "ai46.localhost",
+      "visits": "1"
+    },
+    {
+      "hostname": "ai.gov",
+      "visits": "7736"
+    },
+    {
+      "hostname": "agrilinks.org",
+      "visits": "4539"
+    },
+    {
+      "hostname": "agingstats.gov",
+      "visits": "196"
+    },
+    {
+      "hostname": "aestheticwellnessnyc.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "adventurebetting.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "adlnet.gov",
+      "visits": "2363"
+    },
+    {
+      "hostname": "acquisitiongateway.gov",
+      "visits": "9347"
+    },
+    {
+      "hostname": "acquisition.gov",
+      "visits": "3548"
+    },
+    {
+      "hostname": "acl.gov",
+      "visits": "50846"
+    },
+    {
+      "hostname": "accentselfstorage.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "aal.army",
+      "visits": "774"
+    },
+    {
+      "hostname": "aaa040.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "a-zgsm.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "99bosses.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "853790.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "830260.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "6131z322px5v.shop",
+      "visits": "1"
+    },
+    {
+      "hostname": "4cn.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "4bfddtyn54q.shop",
+      "visits": "2"
+    },
+    {
+      "hostname": "4bathurst.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "3treeleadership.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "37963.com",
+      "visits": "2"
+    },
+    {
+      "hostname": "352191.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "24srbija.com",
+      "visits": "23"
+    },
+    {
+      "hostname": "205509.com",
+      "visits": "1"
+    },
+    {
+      "hostname": "18plus.com",
+      "visits": "15"
+    },
+    {
+      "hostname": "1163251.org",
+      "visits": "1"
+    },
+    {
+      "hostname": "073.pw",
+      "visits": "1"
+    }
+  ],
+  "totals": {
+    "visits": 34545263
+  },
+  "taken_at": "2024-01-05T15:31:22.603Z"
+}

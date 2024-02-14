@@ -1,0 +1,112 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 28332672,
+    "languages": {
+      "English": 25605976,
+      "Spanish": 1120274,
+      "Chinese": 467773,
+      "Korean": 121353,
+      "French": 137187,
+      "German": 107812,
+      "Japanese": 135411,
+      "Portuguese": 85081,
+      "Russian": 72946,
+      "Italian": 66919,
+      "Turkish": 45652,
+      "(other)": 6760,
+      "Vietnamese": 42655,
+      "Polish": 27359,
+      "Dutch": 34958,
+      "Arabic": 41981,
+      "Thai": 19183,
+      "Indonesian": 25871,
+      "Greek": 14522,
+      "Swedish": 23358,
+      "Danish": 14625,
+      "Czech": 13002,
+      "Norwegian Bokmål": 12301,
+      "Hindi": 6628,
+      "Ukrainian": 7414,
+      "Romanian": 6765,
+      "Finnish": 9511,
+      "Hungarian": 8004,
+      "Hebrew": 5920,
+      "Slovenian": 3367,
+      "Catalan": 7786,
+      "Persian": 9702,
+      "Slovak": 5835,
+      "Bulgarian": 2563,
+      "Lithuanian": 3523,
+      "Croatian": 4127,
+      "Serbian": 2668,
+      "Latvian": 1242,
+      "Malay": 816,
+      "Uzbek": 542,
+      "Estonian": 1309,
+      "Bengali": 152,
+      "Bosnian": 467,
+      "Marathi": 596,
+      "Telugu": 88,
+      "Amharic": 11,
+      "Panjabi": 58,
+      "Central Khmer": 112,
+      "Azerbaijani": 224,
+      "Georgian": 22,
+      "Tamil": 116,
+      "Basque": 104,
+      "Kannada": 13,
+      "Gujarati": 16,
+      "Welsh": 12
+    }
+  },
+  "taken_at": "2024-01-05T15:41:52.308Z",
+  "agency": "environmental-protection-agency"
+}

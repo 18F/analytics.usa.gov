@@ -1,0 +1,112 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 137962,
+    "by_windows": {
+      "7": {
+        "undefined": 139
+      },
+      "8": {
+        "undefined": 4952
+      },
+      "10": {
+        "undefined": 21160
+      },
+      "2000": {
+        "undefined": 75253
+      },
+      "XP": {
+        "undefined": 36458
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 139,
+        "8": 4952,
+        "10": 21160,
+        "2000": 75253,
+        "XP": 36458
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:03:43.190Z",
+  "agency": "treasury"
+}

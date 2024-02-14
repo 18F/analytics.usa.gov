@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.usaid.gov",
+      "visits": "207462"
+    },
+    {
+      "domain": "agrilinks.org",
+      "visits": "3788"
+    },
+    {
+      "domain": "www.marketlinks.org",
+      "visits": "2885"
+    },
+    {
+      "domain": "www.globalwaters.org",
+      "visits": "2404"
+    },
+    {
+      "domain": "www.land-links.org",
+      "visits": "2383"
+    },
+    {
+      "domain": "urban-links.org",
+      "visits": "757"
+    },
+    {
+      "domain": "scms.usaid.gov",
+      "visits": "260"
+    },
+    {
+      "domain": "pk.usembassy.gov",
+      "visits": "182"
+    },
+    {
+      "domain": "aidscape.usaid.gov",
+      "visits": "95"
+    },
+    {
+      "domain": "ng.usembassy.gov",
+      "visits": "60"
+    },
+    {
+      "domain": "www-origin.usaid.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "za.usembassy.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "iq.usembassy.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "aidscapeuat.usaid.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "dev.agrilinks.org",
+      "visits": "10"
+    },
+    {
+      "domain": "fsitraining.state.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "admin.agrilinks.org",
+      "visits": "5"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "5"
+    }
+  ],
+  "totals": {
+    "visits": 220476
+  },
+  "taken_at": "2024-01-05T16:05:15.063Z",
+  "agency": "agency-international-development"
+}

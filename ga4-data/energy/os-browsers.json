@@ -1,0 +1,154 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 11930892,
+    "by_os": {
+      "Windows": {
+        "Chrome": 4392946,
+        "Edge": 1386369,
+        "Firefox": 225023,
+        "Opera": 32768,
+        "Internet Explorer": 530
+      },
+      "iOS": {
+        "Safari": 1466237,
+        "Chrome": 244960,
+        "Safari (in-app)": 87932
+      },
+      "Android": {
+        "Chrome": 1281985,
+        "Samsung Internet": 74754,
+        "Android Webview": 45740,
+        "Firefox": 14820,
+        "Edge": 8935,
+        "Amazon Silk": 594,
+        "Opera": 6776
+      },
+      "Macintosh": {
+        "Chrome": 770423,
+        "Safari": 622421,
+        "Firefox": 52427,
+        "Edge": 5251,
+        "Mozilla Compatible Agent": 1669
+      },
+      "Linux": {
+        "Chrome": 728848,
+        "Firefox": 23093
+      },
+      "Chrome OS": {
+        "Chrome": 423919
+      },
+      "(not set)": {
+        "(not set)": 32472
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 4392946,
+        "Android": 1281985,
+        "Macintosh": 770423,
+        "Linux": 728848,
+        "Chrome OS": 423919,
+        "iOS": 244960
+      },
+      "Edge": {
+        "Windows": 1386369,
+        "Android": 8935,
+        "Macintosh": 5251
+      },
+      "Safari": {
+        "iOS": 1466237,
+        "Macintosh": 622421
+      },
+      "Firefox": {
+        "Windows": 225023,
+        "Macintosh": 52427,
+        "Linux": 23093,
+        "Android": 14820
+      },
+      "Safari (in-app)": {
+        "iOS": 87932
+      },
+      "Samsung Internet": {
+        "Android": 74754
+      },
+      "Android Webview": {
+        "Android": 45740
+      },
+      "(not set)": {
+        "(not set)": 32472
+      },
+      "Opera": {
+        "Windows": 32768,
+        "Android": 6776
+      },
+      "Internet Explorer": {
+        "Windows": 530
+      },
+      "Amazon Silk": {
+        "Android": 594
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 1669
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:45:04.777Z",
+  "agency": "energy"
+}

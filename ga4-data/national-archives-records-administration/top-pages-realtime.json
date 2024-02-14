@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Main Area",
+      "active_visitors": "294"
+    },
+    {
+      "page_title": "eCFR :: Search",
+      "active_visitors": "262"
+    },
+    {
+      "page_title": "Request Military Service Records | National Archives",
+      "active_visitors": "164"
+    },
+    {
+      "page_title": "National Archives |",
+      "active_visitors": "155"
+    },
+    {
+      "page_title": "eVetRecs status page",
+      "active_visitors": "153"
+    },
+    {
+      "page_title": "The Constitution of the United States: A Transcription | National Archives",
+      "active_visitors": "132"
+    },
+    {
+      "page_title": "Federal Register :: Home - Friday, January 5th",
+      "active_visitors": "117"
+    },
+    {
+      "page_title": "eCFR :: 38 CFR Part 4 -- Schedule for Rating Disabilities",
+      "active_visitors": "101"
+    },
+    {
+      "page_title": "eCFR :: Home",
+      "active_visitors": "97"
+    },
+    {
+      "page_title": "Veterans' Service Records | National Archives",
+      "active_visitors": "87"
+    },
+    {
+      "page_title": "The Bill of Rights: A Transcription | National Archives",
+      "active_visitors": "80"
+    },
+    {
+      "page_title": "Declaration of Independence: A Transcription | National Archives",
+      "active_visitors": "74"
+    },
+    {
+      "page_title": "eCFR :: 404",
+      "active_visitors": "71"
+    },
+    {
+      "page_title": "eCFR :: 2 CFR Part 200 -- Uniform Administrative Requirements, Cost Principles, and Audit Requirements for Federal Awards",
+      "active_visitors": "61"
+    },
+    {
+      "page_title": "Federal Register :: Document Search",
+      "active_visitors": "58"
+    },
+    {
+      "page_title": "Research Our Records | National Archives",
+      "active_visitors": "56"
+    },
+    {
+      "page_title": "The Constitution: Amendments 11-27 | National Archives",
+      "active_visitors": "55"
+    },
+    {
+      "page_title": "The Presidents of the United States",
+      "active_visitors": "53"
+    },
+    {
+      "page_title": "Milestone Documents | National Archives",
+      "active_visitors": "49"
+    },
+    {
+      "page_title": "The Bill of Rights: What Does it Say? | National Archives",
+      "active_visitors": "49"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:02:23.662Z",
+  "agency": "national-archives-records-administration"
+}

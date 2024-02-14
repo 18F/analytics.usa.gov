@@ -1,0 +1,262 @@
+{
+  "name": "top-traffic-sources-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionSource"
+      },
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Top Traffic Sources (30 Days)",
+    "description": "Last 30 days' Traffic Sources, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "source": "google",
+      "session_default_channel_group": "Organic Search",
+      "visits": "1465286",
+      "pageviews": "2783783",
+      "users": "994240",
+      "pageviews_per_session": "1.899822287253137",
+      "avg_session_duration": "210.34926705129712",
+      "bounce_rate": "0.36750299941444881"
+    },
+    {
+      "source": "(direct)",
+      "session_default_channel_group": "Direct",
+      "visits": "1074454",
+      "pageviews": "2215321",
+      "users": "748862",
+      "pageviews_per_session": "2.0618109290858428",
+      "avg_session_duration": "181.66618121310731",
+      "bounce_rate": "0.45395894100631579"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Organic Search",
+      "visits": "143720",
+      "pageviews": "294388",
+      "users": "76267",
+      "pageviews_per_session": "2.0483440022265516",
+      "avg_session_duration": "277.89460414423183",
+      "bounce_rate": "0.35418174227664906"
+    },
+    {
+      "source": "(not set)",
+      "session_default_channel_group": "Unassigned",
+      "visits": "13832",
+      "pageviews": "104035",
+      "users": "11772",
+      "pageviews_per_session": "7.5213273568536723",
+      "avg_session_duration": "492.18323082186231",
+      "bounce_rate": "0.993637941006362"
+    },
+    {
+      "source": "yahoo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "24611",
+      "pageviews": "57591",
+      "users": "15649",
+      "pageviews_per_session": "2.340051196619398",
+      "avg_session_duration": "294.55983990435175",
+      "bounce_rate": "0.31242127503961642"
+    },
+    {
+      "source": "duckduckgo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "11134",
+      "pageviews": "22994",
+      "users": "8117",
+      "pageviews_per_session": "2.0652056763068081",
+      "avg_session_duration": "233.98374432746544",
+      "bounce_rate": "0.32342374708101312"
+    },
+    {
+      "source": "ecosia.org",
+      "session_default_channel_group": "Organic Search",
+      "visits": "783",
+      "pageviews": "1554",
+      "users": "519",
+      "pageviews_per_session": "1.9846743295019158",
+      "avg_session_duration": "274.97815644827585",
+      "bounce_rate": "0.37675606641123882"
+    },
+    {
+      "source": "aol",
+      "session_default_channel_group": "Organic Search",
+      "visits": "460",
+      "pageviews": "1141",
+      "users": "322",
+      "pageviews_per_session": "2.4804347826086954",
+      "avg_session_duration": "274.25883478043477",
+      "bounce_rate": "0.2565217391304348"
+    },
+    {
+      "source": "NLIHC All Subscribers",
+      "session_default_channel_group": "Email",
+      "visits": "778",
+      "pageviews": "778",
+      "users": "559",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "133.01396670694086",
+      "bounce_rate": "0.56940874035989719"
+    },
+    {
+      "source": "HUD Exchange Mailing List",
+      "session_default_channel_group": "Email",
+      "visits": "641",
+      "pageviews": "721",
+      "users": "427",
+      "pageviews_per_session": "1.1248049921996879",
+      "avg_session_duration": "189.42376750702027",
+      "bounce_rate": "0.51326053042121689"
+    },
+    {
+      "source": "govdelivery",
+      "session_default_channel_group": "Email",
+      "visits": "263",
+      "pageviews": "577",
+      "users": "160",
+      "pageviews_per_session": "2.1939163498098861",
+      "avg_session_duration": "289.20389790114064",
+      "bounce_rate": "0.46387832699619774"
+    },
+    {
+      "source": "hcr.ny.gov",
+      "session_default_channel_group": "Referral",
+      "visits": "224",
+      "pageviews": "377",
+      "users": "180",
+      "pageviews_per_session": "1.6830357142857142",
+      "avg_session_duration": "254.81055744642853",
+      "bounce_rate": "0.42857142857142855"
+    },
+    {
+      "source": "hs_email",
+      "session_default_channel_group": "Email",
+      "visits": "61",
+      "pageviews": "220",
+      "users": "29",
+      "pageviews_per_session": "3.6065573770491803",
+      "avg_session_duration": "453.96593091803283",
+      "bounce_rate": "0.37704918032786883"
+    },
+    {
+      "source": "Section-8-apartments.org",
+      "session_default_channel_group": "Unassigned",
+      "visits": "24",
+      "pageviews": "147",
+      "users": "18",
+      "pageviews_per_session": "6.125",
+      "avg_session_duration": "456.21594170833333",
+      "bounce_rate": "0.125"
+    },
+    {
+      "source": "Resources-assistance.com",
+      "session_default_channel_group": "Unassigned",
+      "visits": "8",
+      "pageviews": "119",
+      "users": "4",
+      "pageviews_per_session": "14.875",
+      "avg_session_duration": "1284.1985367500001",
+      "bounce_rate": "0.125"
+    },
+    {
+      "source": "baidu",
+      "session_default_channel_group": "Organic Search",
+      "visits": "91",
+      "pageviews": "116",
+      "users": "86",
+      "pageviews_per_session": "1.2747252747252746",
+      "avg_session_duration": "94.532944571428587",
+      "bounce_rate": "0.93406593406593408"
+    },
+    {
+      "source": "Section8assistance.org",
+      "session_default_channel_group": "Unassigned",
+      "visits": "24",
+      "pageviews": "61",
+      "users": "15",
+      "pageviews_per_session": "2.5416666666666665",
+      "avg_session_duration": "314.44789404166664",
+      "bounce_rate": "0.29166666666666669"
+    },
+    {
+      "source": "search.usa.gov",
+      "session_default_channel_group": "Referral",
+      "visits": "35",
+      "pageviews": "56",
+      "users": "5",
+      "pageviews_per_session": "1.6",
+      "avg_session_duration": "295.3873866",
+      "bounce_rate": "0.51428571428571423"
+    },
+    {
+      "source": "opgguides.com",
+      "session_default_channel_group": "Unassigned",
+      "visits": "28",
+      "pageviews": "54",
+      "users": "22",
+      "pageviews_per_session": "1.9285714285714286",
+      "avg_session_duration": "131.43863007142858",
+      "bounce_rate": "0.32142857142857145"
+    },
+    {
+      "source": "Section-8assistance.com",
+      "session_default_channel_group": "Unassigned",
+      "visits": "18",
+      "pageviews": "45",
+      "users": "13",
+      "pageviews_per_session": "2.5",
+      "avg_session_duration": "333.09859605555556",
+      "bounce_rate": "0.27777777777777779"
+    }
+  ],
+  "totals": {
+    "users": 1857266,
+    "visits": 2736475
+  },
+  "taken_at": "2024-01-05T15:55:35.954Z",
+  "agency": "housing-urban-development"
+}

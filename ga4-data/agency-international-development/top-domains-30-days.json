@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.usaid.gov",
+      "visits": "1032918",
+      "users": "721433",
+      "pageviews": "1707026",
+      "pageviews_per_session": "1.652624893747616",
+      "avg_session_duration": "179.34707676830496",
+      "bounce_rate": "0.50976456988841323"
+    },
+    {
+      "domain": "agrilinks.org",
+      "visits": "21805",
+      "users": "15169",
+      "pageviews": "31503",
+      "pageviews_per_session": "1.4447603760605365",
+      "avg_session_duration": "180.16551085260261",
+      "bounce_rate": "0.48328365053886724"
+    },
+    {
+      "domain": "www.marketlinks.org",
+      "visits": "15572",
+      "users": "11553",
+      "pageviews": "21453",
+      "pageviews_per_session": "1.3776650398150527",
+      "avg_session_duration": "168.35063035839966",
+      "bounce_rate": "0.50372463395838685"
+    },
+    {
+      "domain": "www.globalwaters.org",
+      "visits": "14785",
+      "users": "11053",
+      "pageviews": "24740",
+      "pageviews_per_session": "1.6733175515725398",
+      "avg_session_duration": "176.88749228102807",
+      "bounce_rate": "0.51843084206966517"
+    },
+    {
+      "domain": "www.land-links.org",
+      "visits": "13453",
+      "users": "10593",
+      "pageviews": "16651",
+      "pageviews_per_session": "1.2377164944622017",
+      "avg_session_duration": "172.87443505634428",
+      "bounce_rate": "0.49304987735077677"
+    },
+    {
+      "domain": "urban-links.org",
+      "visits": "3886",
+      "users": "2642",
+      "pageviews": "5635",
+      "pageviews_per_session": "1.4500772002058673",
+      "avg_session_duration": "181.37668180648478",
+      "bounce_rate": "0.5074626865671642"
+    },
+    {
+      "domain": "scms.usaid.gov",
+      "visits": "1693",
+      "users": "699",
+      "pageviews": "13089",
+      "pageviews_per_session": "7.7312463083284113",
+      "avg_session_duration": "1187.0354351376257",
+      "bounce_rate": "0.34199645599527467"
+    },
+    {
+      "domain": "aidscape.usaid.gov",
+      "visits": "613",
+      "users": "412",
+      "pageviews": "816",
+      "pageviews_per_session": "1.3311582381729201",
+      "avg_session_duration": "207.294600588907",
+      "bounce_rate": "0.34584013050570961"
+    },
+    {
+      "domain": "www-origin.usaid.gov",
+      "visits": "569",
+      "users": "179",
+      "pageviews": "3499",
+      "pageviews_per_session": "6.1493848857644995",
+      "avg_session_duration": "321.53901365377862",
+      "bounce_rate": "0.74516695957820733"
+    },
+    {
+      "domain": "pk.usembassy.gov",
+      "visits": "335",
+      "users": "304",
+      "pageviews": "396",
+      "pageviews_per_session": "1.182089552238806",
+      "avg_session_duration": "54.567772262686567",
+      "bounce_rate": "0.33432835820895523"
+    },
+    {
+      "domain": "ng.usembassy.gov",
+      "visits": "224",
+      "users": "207",
+      "pageviews": "294",
+      "pageviews_per_session": "1.3125",
+      "avg_session_duration": "108.31955767410714",
+      "bounce_rate": "0.36160714285714285"
+    },
+    {
+      "domain": "za.usembassy.gov",
+      "visits": "203",
+      "users": "191",
+      "pageviews": "236",
+      "pageviews_per_session": "1.1625615763546797",
+      "avg_session_duration": "103.03302770935962",
+      "bounce_rate": "0.43842364532019706"
+    },
+    {
+      "domain": "iq.usembassy.gov",
+      "visits": "138",
+      "users": "129",
+      "pageviews": "162",
+      "pageviews_per_session": "1.173913043478261",
+      "avg_session_duration": "88.264793304347833",
+      "bounce_rate": "0.21014492753623187"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "107",
+      "users": "96",
+      "pageviews": "136",
+      "pageviews_per_session": "1.2710280373831775",
+      "avg_session_duration": "98.6436903271028",
+      "bounce_rate": "0.514018691588785"
+    },
+    {
+      "domain": "aidscapeuat.usaid.gov",
+      "visits": "66",
+      "users": "65",
+      "pageviews": "105",
+      "pageviews_per_session": "1.5909090909090908",
+      "avg_session_duration": "39.906156257575759",
+      "bounce_rate": "0.2878787878787879"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "36",
+      "users": "35",
+      "pageviews": "48",
+      "pageviews_per_session": "1.3333333333333333",
+      "avg_session_duration": "38.254051166666663",
+      "bounce_rate": "0.47222222222222221"
+    },
+    {
+      "domain": "dev.agrilinks.org",
+      "visits": "33",
+      "users": "8",
+      "pageviews": "212",
+      "pageviews_per_session": "6.4242424242424239",
+      "avg_session_duration": "606.76499845454543",
+      "bounce_rate": "0.27272727272727271"
+    },
+    {
+      "domain": "jo.usembassy.gov",
+      "visits": "33",
+      "users": "27",
+      "pageviews": "50",
+      "pageviews_per_session": "1.5151515151515151",
+      "avg_session_duration": "134.64186418181816",
+      "bounce_rate": "0.30303030303030304"
+    },
+    {
+      "domain": "et.usembassy.gov",
+      "visits": "27",
+      "users": "24",
+      "pageviews": "37",
+      "pageviews_per_session": "1.3703703703703705",
+      "avg_session_duration": "68.112604592592589",
+      "bounce_rate": "0.29629629629629628"
+    },
+    {
+      "domain": "admin.agrilinks.org",
+      "visits": "22",
+      "users": "18",
+      "pageviews": "20",
+      "pageviews_per_session": "0.90909090909090906",
+      "avg_session_duration": "22.851391",
+      "bounce_rate": "0.63636363636363635"
+    }
+  ],
+  "totals": {
+    "users": 774837,
+    "visits": 1106518
+  },
+  "taken_at": "2024-01-05T16:05:17.583Z",
+  "agency": "agency-international-development"
+}

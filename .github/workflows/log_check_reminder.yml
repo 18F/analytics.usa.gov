@@ -1,0 +1,22 @@
+name: Weekly Reminder to Check Logs for Errors/Security Issues.
+
+on:
+  schedule:
+    - cron: '0 0 * * 3' 
+
+jobs:
+  #Add Reminder issue to github issues on analytics.usa.gov repo.
+  add_reminder:    
+    runs-on: ubuntu-latest
+    environment: develop
+    
+    steps:
+              
+      - name: Open Issue Action
+        uses: GuillaumeFalourd/open-issue-action@v1
+        with: 
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          repo-owner: 18F
+          repo-name: analytics.usa.gov
+          issue-title: REMINDER! Scan Logs for Security Issues and Other errors.
+          issue-body: This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.

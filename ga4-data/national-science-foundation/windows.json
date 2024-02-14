@@ -1,0 +1,69 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "names": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites."
+  },
+  "totals": {
+    "visits": 2977387,
+    "os_version": {
+      "7": 50986,
+      "8": 3035,
+      "10": 2124095,
+      "11": 782396,
+      "95": 4,
+      "98": 15,
+      "2000": 21,
+      "8.1": 15496,
+      "XP": 636,
+      "NT": 495,
+      "Server 2003": 60,
+      "Vista": 133,
+      "3.1": 2,
+      "(not set)": 7,
+      "CE": 6
+    }
+  },
+  "taken_at": "2024-01-05T14:41:42.241Z",
+  "agency": "national-science-foundation"
+}

@@ -111,7 +111,7 @@ describe('Formatters', () => {
 
   describe('formatFile', () => {
     it('returns the file name from a given url', () => {
-      assert.equal(formatters.formatFile('https://www.irs.gov:8443/ds82.pdf'), 'ds82.pdf');
+      assert.equal(formatters.formatFile('https://www.irs.gov:8443/ds82.pdf'), '/ds82.pdf');
     });
 
     it('returns the same for a clean url', () => {

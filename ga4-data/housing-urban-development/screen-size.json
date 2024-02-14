@@ -1,0 +1,97 @@
+{
+  "name": "screen-size",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "screenResolution"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1000"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Screen Resolution",
+    "description": "90 days of Screen Resolution visits for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 7011649,
+    "screen_resolution": {
+      "1920x1080": 1813140,
+      "390x844": 703068,
+      "1536x864": 477679,
+      "1280x720": 310057,
+      "428x926": 435676,
+      "414x896": 393434,
+      "1366x768": 287931,
+      "430x932": 277737,
+      "1440x900": 279968,
+      "412x915": 325892,
+      "375x812": 237505,
+      "393x852": 160852,
+      "1280x960": 44374,
+      "1600x900": 107111,
+      "375x667": 136598,
+      "1280x800": 96197,
+      "360x800": 164335,
+      "2560x1440": 78186,
+      "800x600": 69632,
+      "1680x1050": 74169,
+      "360x780": 114785,
+      "384x857": 90253,
+      "1024x768": 39368,
+      "1920x1200": 29878,
+      "385x854": 80666,
+      "412x892": 32469,
+      "384x824": 37976,
+      "320x712": 23405,
+      "384x854": 24110,
+      "412x869": 13453,
+      "412x883": 14750,
+      "384x832": 7067,
+      "320x693": 12112,
+      "432x960": 5730,
+      "360x720": 6510,
+      "412x846": 1247,
+      "414x736": 1149,
+      "360x760": 1105,
+      "360x740": 1053,
+      "810x1080": 1022
+    }
+  },
+  "taken_at": "2024-01-05T15:55:15.150Z",
+  "agency": "housing-urban-development"
+}

@@ -1,0 +1,253 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites."
+  },
+  "totals": {
+    "visits": 31869193,
+    "by_windows": {
+      "7": {
+        "Chrome": 90463,
+        "Firefox": 17576,
+        "Edge": 10953,
+        "Internet Explorer": 369,
+        "Opera": 373,
+        "YaBrowser": 45,
+        "Mozilla Compatible Agent": 27,
+        "Safari": 35,
+        "Mozilla": 18,
+        "Coc Coc": 9
+      },
+      "8": {
+        "Chrome": 4565,
+        "Firefox": 1132,
+        "Internet Explorer": 222,
+        "Edge": 98,
+        "Mozilla": 44,
+        "Opera": 26,
+        "PaleMoon": 9
+      },
+      "10": {
+        "Edge": 13638046,
+        "Chrome": 10574583,
+        "Firefox": 732263,
+        "Opera": 45081,
+        "Internet Explorer": 9249,
+        "YaBrowser": 766,
+        "(not set)": 176,
+        "PaleMoon": 88,
+        "Waterfox": 88,
+        "Whale Browser": 326,
+        "Coc Coc": 178,
+        "SeaMonkey": 97,
+        "Mozilla": 9,
+        "Safari": 9,
+        "Mozilla Compatible Agent": 36,
+        "Aloha Browser": 44
+      },
+      "11": {
+        "Chrome": 3904319,
+        "Edge": 2780602
+      },
+      "95": {
+        "Mozilla Compatible Agent": 9
+      },
+      "98": {
+        "Internet Explorer": 9,
+        "Opera": 9
+      },
+      "2000": {
+        "Internet Explorer": 9,
+        "Opera": 18
+      },
+      "8.1": {
+        "Chrome": 43530,
+        "Edge": 6856,
+        "Firefox": 3652,
+        "YaBrowser": 27,
+        "Internet Explorer": 151,
+        "Opera": 140
+      },
+      "Vista": {
+        "Firefox": 522,
+        "Chrome": 275,
+        "Mozilla": 27,
+        "Safari": 18
+      },
+      "NT": {
+        "Chrome": 116,
+        "Firefox": 54,
+        "Mozilla Compatible Agent": 9
+      },
+      "XP": {
+        "Firefox": 691,
+        "Internet Explorer": 166,
+        "Mozilla Compatible Agent": 9,
+        "Chrome": 792,
+        "Opera": 54,
+        "Safari": 9
+      },
+      "Server 2003": {
+        "Firefox": 9,
+        "SeaMonkey": 36,
+        "Chrome": 27,
+        "Safari": 9,
+        "Internet Explorer": 9
+      },
+      "(not set)": {
+        "Chrome": 27
+      }
+    },
+    "by_browsers": {
+      "Edge": {
+        "7": 10953,
+        "8": 98,
+        "10": 13638046,
+        "11": 2780602,
+        "8.1": 6856
+      },
+      "Chrome": {
+        "7": 90463,
+        "8": 4565,
+        "10": 10574583,
+        "11": 3904319,
+        "8.1": 43530,
+        "NT": 116,
+        "XP": 792,
+        "Vista": 275,
+        "(not set)": 27,
+        "Server 2003": 27
+      },
+      "Firefox": {
+        "7": 17576,
+        "8": 1132,
+        "10": 732263,
+        "8.1": 3652,
+        "Vista": 522,
+        "XP": 691,
+        "NT": 54,
+        "Server 2003": 9
+      },
+      "Opera": {
+        "7": 373,
+        "8": 26,
+        "10": 45081,
+        "98": 9,
+        "2000": 18,
+        "8.1": 140,
+        "XP": 54
+      },
+      "Internet Explorer": {
+        "7": 369,
+        "8": 222,
+        "10": 9249,
+        "98": 9,
+        "2000": 9,
+        "XP": 166,
+        "8.1": 151,
+        "Server 2003": 9
+      },
+      "YaBrowser": {
+        "7": 45,
+        "10": 766,
+        "8.1": 27
+      },
+      "(not set)": {
+        "10": 176
+      },
+      "PaleMoon": {
+        "8": 9,
+        "10": 88
+      },
+      "Waterfox": {
+        "10": 88
+      },
+      "Whale Browser": {
+        "10": 326
+      },
+      "Coc Coc": {
+        "7": 9,
+        "10": 178
+      },
+      "Mozilla Compatible Agent": {
+        "7": 27,
+        "10": 36,
+        "95": 9,
+        "XP": 9,
+        "NT": 9
+      },
+      "SeaMonkey": {
+        "10": 97,
+        "Server 2003": 36
+      },
+      "Mozilla": {
+        "7": 18,
+        "8": 44,
+        "10": 9,
+        "Vista": 27
+      },
+      "Safari": {
+        "7": 35,
+        "10": 9,
+        "Server 2003": 9,
+        "XP": 9,
+        "Vista": 18
+      },
+      "Aloha Browser": {
+        "10": 44
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:43:24.280Z",
+  "agency": "office-personnel-management"
+}

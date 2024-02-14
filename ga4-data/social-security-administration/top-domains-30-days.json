@@ -1,0 +1,239 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.ssa.gov",
+      "visits": "30170312",
+      "users": "17509137",
+      "pageviews": "63098407",
+      "pageviews_per_session": "2.0914071753716037",
+      "avg_session_duration": "243.45314411595908",
+      "bounce_rate": "0.42160220285424954"
+    },
+    {
+      "domain": "secure.ssa.gov",
+      "visits": "4857813",
+      "users": "3578263",
+      "pageviews": "17960224",
+      "pageviews_per_session": "3.6971830739470621",
+      "avg_session_duration": "243.45163335958443",
+      "bounce_rate": "0.13106885752909797"
+    },
+    {
+      "domain": "faq.ssa.gov",
+      "visits": "1062944",
+      "users": "927313",
+      "pageviews": "1541627",
+      "pageviews_per_session": "1.4503369885901798",
+      "avg_session_duration": "147.63574859929872",
+      "bounce_rate": "0.23351841677454316"
+    },
+    {
+      "domain": "search.ssa.gov",
+      "visits": "461643",
+      "users": "379068",
+      "pageviews": "760988",
+      "pageviews_per_session": "1.6484339630407046",
+      "avg_session_duration": "146.86990493422192",
+      "bounce_rate": "0.05194490114655697"
+    },
+    {
+      "domain": "choosework.ssa.gov",
+      "visits": "74849",
+      "users": "57412",
+      "pageviews": "133761",
+      "pageviews_per_session": "1.7870779836737967",
+      "avg_session_duration": "221.65230099816964",
+      "bounce_rate": "0.30736549586500822"
+    },
+    {
+      "domain": "oig.ssa.gov",
+      "visits": "60579",
+      "users": "51274",
+      "pageviews": "100865",
+      "pageviews_per_session": "1.6650159296125719",
+      "avg_session_duration": "163.89166636060349",
+      "bounce_rate": "0.23027781904620412"
+    },
+    {
+      "domain": "yourtickettowork.ssa.gov",
+      "visits": "10520",
+      "users": "7453",
+      "pageviews": "24798",
+      "pageviews_per_session": "2.3572243346007604",
+      "avg_session_duration": "231.72823871264256",
+      "bounce_rate": "0.23925855513307984"
+    },
+    {
+      "domain": "www.choosework.ssa.gov",
+      "visits": "1228",
+      "users": "941",
+      "pageviews": "2124",
+      "pageviews_per_session": "1.729641693811075",
+      "avg_session_duration": "266.4834362776873",
+      "bounce_rate": "0.21579804560260588"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "598",
+      "users": "477",
+      "pageviews": "709",
+      "pageviews_per_session": "1.18561872909699",
+      "avg_session_duration": "183.36221742474916",
+      "bounce_rate": "0.28762541806020064"
+    },
+    {
+      "domain": "www.yourtickettowork.ssa.gov",
+      "visits": "150",
+      "users": "105",
+      "pageviews": "246",
+      "pageviews_per_session": "1.64",
+      "avg_session_duration": "204.48754375333334",
+      "bounce_rate": "0.12"
+    },
+    {
+      "domain": "ssabest.benefits.gov",
+      "visits": "132",
+      "users": "106",
+      "pageviews": "112",
+      "pageviews_per_session": "0.84848484848484851",
+      "avg_session_duration": "142.21600196969698",
+      "bounce_rate": "0.098484848484848481"
+    },
+    {
+      "domain": "oig-demo.ssa.gov",
+      "visits": "113",
+      "users": "107",
+      "pageviews": "130",
+      "pageviews_per_session": "1.1504424778761062",
+      "avg_session_duration": "16.352648946902654",
+      "bounce_rate": "0.87610619469026552"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "71",
+      "users": "64",
+      "pageviews": "72",
+      "pageviews_per_session": "1.0140845070422535",
+      "avg_session_duration": "139.11713635211268",
+      "bounce_rate": "0.16901408450704225"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "56",
+      "users": "48",
+      "pageviews": "78",
+      "pageviews_per_session": "1.3928571428571428",
+      "avg_session_duration": "125.08968714285716",
+      "bounce_rate": "0.25"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "48",
+      "users": "41",
+      "pageviews": "51",
+      "pageviews_per_session": "1.0625",
+      "avg_session_duration": "97.566948604166669",
+      "bounce_rate": "0.25"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "45",
+      "users": "42",
+      "pageviews": "78",
+      "pageviews_per_session": "1.7333333333333334",
+      "avg_session_duration": "150.9326771111111",
+      "bounce_rate": "0.17777777777777778"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "42",
+      "users": "41",
+      "pageviews": "46",
+      "pageviews_per_session": "1.0952380952380953",
+      "avg_session_duration": "63.051649071428571",
+      "bounce_rate": "0.59523809523809523"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "39",
+      "users": "36",
+      "pageviews": "44",
+      "pageviews_per_session": "1.1282051282051282",
+      "avg_session_duration": "98.163062974358965",
+      "bounce_rate": "0.17948717948717949"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "36",
+      "users": "30",
+      "pageviews": "28",
+      "pageviews_per_session": "0.77777777777777779",
+      "avg_session_duration": "21.006358722222224",
+      "bounce_rate": "0.55555555555555558"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "36",
+      "users": "29",
+      "pageviews": "48",
+      "pageviews_per_session": "1.3333333333333333",
+      "avg_session_duration": "114.37543325000001",
+      "bounce_rate": "0.5"
+    }
+  ],
+  "totals": {
+    "users": 22511987,
+    "visits": 36701254
+  },
+  "taken_at": "2024-01-05T14:45:17.072Z",
+  "agency": "social-security-administration"
+}

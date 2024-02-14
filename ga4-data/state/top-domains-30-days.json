@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "travel.state.gov",
+      "visits": "17276289",
+      "users": "10494566",
+      "pageviews": "40456027",
+      "pageviews_per_session": "2.3417721826718689",
+      "avg_session_duration": "263.51350823277613",
+      "bounce_rate": "0.34532439229281242"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "3680160",
+      "users": "2987834",
+      "pageviews": "5173415",
+      "pageviews_per_session": "1.40733364853702",
+      "avg_session_duration": "142.29920863910928",
+      "bounce_rate": "0.5224563605930177"
+    },
+    {
+      "domain": "pptform.state.gov",
+      "visits": "3033392",
+      "users": "1873926",
+      "pageviews": "5519446",
+      "pageviews_per_session": "1.819576236767289",
+      "avg_session_duration": "316.27860292166707",
+      "bounce_rate": "0.26819942823083859"
+    },
+    {
+      "domain": "history.state.gov",
+      "visits": "1645778",
+      "users": "1262118",
+      "pageviews": "2362784",
+      "pageviews_per_session": "1.4386126196850364",
+      "avg_session_duration": "199.14200257418105",
+      "bounce_rate": "0.46521037466778631"
+    },
+    {
+      "domain": "passportstatus.state.gov",
+      "visits": "1381517",
+      "users": "722030",
+      "pageviews": "3990460",
+      "pageviews_per_session": "2.8884740470077457",
+      "avg_session_duration": "179.91889672021344",
+      "bounce_rate": "0.21363255030520797"
+    },
+    {
+      "domain": "common.usembassy.gov",
+      "visits": "1263993",
+      "users": "883785",
+      "pageviews": "1683428",
+      "pageviews_per_session": "1.3318356984571909",
+      "avg_session_duration": "74.514788249114119",
+      "bounce_rate": "0.032394957883469293"
+    },
+    {
+      "domain": "www.usembassy.gov",
+      "visits": "730155",
+      "users": "546662",
+      "pageviews": "1406731",
+      "pageviews_per_session": "1.9266703645116448",
+      "avg_session_duration": "231.13132859271855",
+      "bounce_rate": "0.22619717731166669"
+    },
+    {
+      "domain": "in.usembassy.gov",
+      "visits": "706624",
+      "users": "456452",
+      "pageviews": "1301312",
+      "pageviews_per_session": "1.8419753645503125",
+      "avg_session_duration": "225.27808339348567",
+      "bounce_rate": "0.3564993546780183"
+    },
+    {
+      "domain": "mx.usembassy.gov",
+      "visits": "638799",
+      "users": "433653",
+      "pageviews": "1034983",
+      "pageviews_per_session": "1.6206490617549496",
+      "avg_session_duration": "193.66353662630891",
+      "bounce_rate": "0.26214192570746042"
+    },
+    {
+      "domain": "br.usembassy.gov",
+      "visits": "559334",
+      "users": "372321",
+      "pageviews": "973114",
+      "pageviews_per_session": "1.740602216207132",
+      "avg_session_duration": "248.88441182965724",
+      "bounce_rate": "0.34877014449327237"
+    },
+    {
+      "domain": "uk.usembassy.gov",
+      "visits": "511721",
+      "users": "371898",
+      "pageviews": "1160561",
+      "pageviews_per_session": "2.2684353387881289",
+      "avg_session_duration": "219.43451523164364",
+      "bounce_rate": "0.36674476912223652"
+    },
+    {
+      "domain": "jp.usembassy.gov",
+      "visits": "417804",
+      "users": "310662",
+      "pageviews": "655481",
+      "pageviews_per_session": "1.5692932571253506",
+      "avg_session_duration": "216.28608851772643",
+      "bounce_rate": "0.33195708992733436"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "368693",
+      "users": "313708",
+      "pageviews": "410752",
+      "pageviews_per_session": "1.1301190963755754",
+      "avg_session_duration": "125.23652583092482",
+      "bounce_rate": "0.50253734136530936"
+    },
+    {
+      "domain": "china.usembassy-china.org.cn",
+      "visits": "363069",
+      "users": "269755",
+      "pageviews": "610909",
+      "pageviews_per_session": "1.6842060324621491",
+      "avg_session_duration": "201.22594327660795",
+      "bounce_rate": "0.51494894909782984"
+    },
+    {
+      "domain": "ca.usembassy.gov",
+      "visits": "345071",
+      "users": "241598",
+      "pageviews": "716364",
+      "pageviews_per_session": "2.0766769737242479",
+      "avg_session_duration": "209.77800199546621",
+      "bounce_rate": "0.34427697488342979"
+    },
+    {
+      "domain": "tr.usembassy.gov",
+      "visits": "254502",
+      "users": "160481",
+      "pageviews": "464462",
+      "pageviews_per_session": "1.8259660041964307",
+      "avg_session_duration": "216.20268112270276",
+      "bounce_rate": "0.38378873250504908"
+    },
+    {
+      "domain": "passportappointment.travel.state.gov",
+      "visits": "252912",
+      "users": "164239",
+      "pageviews": "1275212",
+      "pageviews_per_session": "5.04216881761245",
+      "avg_session_duration": "316.16943765954676",
+      "bounce_rate": "0.16186262415385588"
+    },
+    {
+      "domain": "co.usembassy.gov",
+      "visits": "247211",
+      "users": "161109",
+      "pageviews": "419824",
+      "pageviews_per_session": "1.6990142024424479",
+      "avg_session_duration": "196.55123305156661",
+      "bounce_rate": "0.22553608051421661"
+    },
+    {
+      "domain": "2009-2017.state.gov",
+      "visits": "231567",
+      "users": "192579",
+      "pageviews": "278015",
+      "pageviews_per_session": "1.2136617048197713",
+      "avg_session_duration": "147.97117551066552",
+      "bounce_rate": "0.44247237300651648"
+    },
+    {
+      "domain": "it.usembassy.gov",
+      "visits": "202805",
+      "users": "149313",
+      "pageviews": "332280",
+      "pageviews_per_session": "1.6401469391780281",
+      "avg_session_duration": "191.39944974612541",
+      "bounce_rate": "0.38892039150908508"
+    }
+  ],
+  "totals": {
+    "users": 22368689,
+    "visits": 34111396
+  },
+  "taken_at": "2024-01-05T16:00:23.774Z",
+  "agency": "state"
+}

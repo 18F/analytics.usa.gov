@@ -1,0 +1,323 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites."
+  },
+  "totals": {
+    "visits": 2976617,
+    "by_windows": {
+      "7": {
+        "Chrome": 46103,
+        "Firefox": 3626,
+        "Edge": 780,
+        "Safari": 77,
+        "Internet Explorer": 98,
+        "Opera": 120,
+        "YaBrowser": 98,
+        "PaleMoon": 2,
+        "(not set)": 4,
+        "IE with Chrome Frame": 5,
+        "Coc Coc": 9,
+        "Maxthon": 1,
+        "Mozilla": 55,
+        "Whale Browser": 1
+      },
+      "8": {
+        "Chrome": 2173,
+        "Mozilla": 574,
+        "Firefox": 171,
+        "Safari": 36,
+        "Edge": 28,
+        "Internet Explorer": 41,
+        "PaleMoon": 2,
+        "YaBrowser": 1,
+        "Opera": 9
+      },
+      "10": {
+        "Chrome": 1631328,
+        "Edge": 243405,
+        "Firefox": 241062,
+        "Opera": 7315,
+        "Internet Explorer": 274,
+        "Whale Browser": 596,
+        "(not set)": 152,
+        "YaBrowser": 595,
+        "Coc Coc": 137,
+        "Waterfox": 3,
+        "Puffin": 1,
+        "SeaMonkey": 31,
+        "Aloha Browser": 5,
+        "Mozilla Compatible Agent": 10,
+        "Vivaldi": 18,
+        "PaleMoon": 16,
+        "Safari": 1,
+        "Mozilla": 9
+      },
+      "11": {
+        "Chrome": 628987,
+        "Edge": 151782
+      },
+      "95": {
+        "Internet Explorer": 4
+      },
+      "98": {
+        "Netscape": 2,
+        "Internet Explorer": 3,
+        "Opera": 8,
+        "Firefox": 1,
+        "Safari": 1
+      },
+      "2000": {
+        "Chrome": 2,
+        "Opera": 8,
+        "Firefox": 4,
+        "Netscape": 1,
+        "Internet Explorer": 6
+      },
+      "8.1": {
+        "Chrome": 14552,
+        "Firefox": 485,
+        "Edge": 382,
+        "YaBrowser": 35,
+        "Opera": 28,
+        "Internet Explorer": 15
+      },
+      "XP": {
+        "Firefox": 174,
+        "Chrome": 271,
+        "Opera": 31,
+        "Mozilla Compatible Agent": 4,
+        "Internet Explorer": 132,
+        "Safari": 14,
+        "Netscape": 7,
+        "PaleMoon": 1,
+        "MRCHROME": 1,
+        "YaBrowser": 1
+      },
+      "NT": {
+        "Chrome": 396,
+        "Firefox": 81,
+        "Internet Explorer": 13,
+        "Mozilla Compatible Agent": 5
+      },
+      "Server 2003": {
+        "Chrome": 21,
+        "SeaMonkey": 28,
+        "Internet Explorer": 5,
+        "UC Browser": 2,
+        "Opera": 4
+      },
+      "Vista": {
+        "Firefox": 48,
+        "Internet Explorer": 11,
+        "Chrome": 53,
+        "Safari": 14,
+        "Opera": 6,
+        "(not set)": 1
+      },
+      "3.1": {
+        "Internet Explorer": 2
+      },
+      "(not set)": {
+        "Firefox": 4,
+        "Mozilla Compatible Agent": 2,
+        "Safari": 1
+      },
+      "CE": {
+        "Internet Explorer": 5,
+        "Opera": 1
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 46103,
+        "8": 2173,
+        "10": 1631328,
+        "11": 628987,
+        "2000": 2,
+        "8.1": 14552,
+        "NT": 396,
+        "XP": 271,
+        "Server 2003": 21,
+        "Vista": 53
+      },
+      "Edge": {
+        "7": 780,
+        "8": 28,
+        "10": 243405,
+        "11": 151782,
+        "8.1": 382
+      },
+      "Firefox": {
+        "7": 3626,
+        "8": 171,
+        "10": 241062,
+        "98": 1,
+        "2000": 4,
+        "8.1": 485,
+        "XP": 174,
+        "NT": 81,
+        "Vista": 48,
+        "(not set)": 4
+      },
+      "Opera": {
+        "7": 120,
+        "8": 9,
+        "10": 7315,
+        "98": 8,
+        "2000": 8,
+        "XP": 31,
+        "8.1": 28,
+        "Vista": 6,
+        "Server 2003": 4,
+        "CE": 1
+      },
+      "Internet Explorer": {
+        "7": 98,
+        "8": 41,
+        "10": 274,
+        "95": 4,
+        "98": 3,
+        "2000": 6,
+        "Vista": 11,
+        "3.1": 2,
+        "Server 2003": 5,
+        "8.1": 15,
+        "XP": 132,
+        "NT": 13,
+        "CE": 5
+      },
+      "Whale Browser": {
+        "7": 1,
+        "10": 596
+      },
+      "(not set)": {
+        "7": 4,
+        "10": 152,
+        "Vista": 1
+      },
+      "Mozilla": {
+        "7": 55,
+        "8": 574,
+        "10": 9
+      },
+      "Safari": {
+        "7": 77,
+        "8": 36,
+        "10": 1,
+        "98": 1,
+        "Vista": 14,
+        "XP": 14,
+        "(not set)": 1
+      },
+      "YaBrowser": {
+        "7": 98,
+        "8": 1,
+        "10": 595,
+        "8.1": 35,
+        "XP": 1
+      },
+      "Coc Coc": {
+        "7": 9,
+        "10": 137
+      },
+      "Mozilla Compatible Agent": {
+        "10": 10,
+        "XP": 4,
+        "NT": 5,
+        "(not set)": 2
+      },
+      "SeaMonkey": {
+        "10": 31,
+        "Server 2003": 28
+      },
+      "Waterfox": {
+        "10": 3
+      },
+      "Puffin": {
+        "10": 1
+      },
+      "Netscape": {
+        "98": 2,
+        "2000": 1,
+        "XP": 7
+      },
+      "PaleMoon": {
+        "7": 2,
+        "8": 2,
+        "10": 16,
+        "XP": 1
+      },
+      "Aloha Browser": {
+        "10": 5
+      },
+      "IE with Chrome Frame": {
+        "7": 5
+      },
+      "Vivaldi": {
+        "10": 18
+      },
+      "UC Browser": {
+        "Server 2003": 2
+      },
+      "MRCHROME": {
+        "XP": 1
+      },
+      "Maxthon": {
+        "7": 1
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:41:47.712Z",
+  "agency": "national-science-foundation"
+}

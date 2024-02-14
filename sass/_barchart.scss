@@ -1,0 +1,154 @@
+@use "uswds-core" as *;
+
+/*
+* Defines styles for each barchart
+* TODO: Further refactoring into one component will require updates to javascript code
+*/
+
+.bar-chart {
+  margin: units(4) 0;
+  position: relative;
+
+  .bar-chart {
+    font-size: 80%;
+
+    .bin {
+      margin-bottom: 0;
+      margin-left: units(4);
+
+      .bar {
+        display: none;
+      }
+    }
+  }
+
+  .bin {
+    @include clearfix;
+    font-size: 1.25rem;
+    margin: 0 0 units(2) 0;
+    overflow: hidden;
+    position: relative;
+
+    .bar:after {
+      background: #f9f9f9;
+      content: " ";
+      display: block;
+      height: 100%;
+      left: 100%;
+      position: absolute;
+      top: 0;
+      width: 1000px;
+      z-index: 1;
+    }
+  }
+
+  .bar {
+    background: color("blue-50v");
+    height: units(1.5);
+    min-width: 1px;
+    position: relative;
+    transition: width 0.5s linear;
+    z-index: 2;
+
+    .bar:focus {
+      outline: 0;
+    }
+  }
+
+  .label {
+    color: color("gray-cool-70");
+    height: 2.2rem;
+    margin-right: units(8);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .value {
+    height: 1.25rem;
+    margin-bottom: 0.45rem;
+    margin-top: -2.2rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  &__top-pages {
+    .bar-chart {
+      margin-top: 0;
+    }
+
+    .label {
+      text-transform: lowercase;
+    }
+
+    &-realtime {
+      .label {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__top-downloads {
+    padding: 0 units(3);
+
+    h4 {
+      font-weight: font-weight("light");
+    }
+
+    .bar-chart {
+      margin-top: 0;
+    }
+
+    .label {
+      line-height: 1.6;
+
+      .name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .domain {
+        color: color("gray-cool-70");
+        text-transform: lowercase;
+      }
+
+      .filename {
+        text-transform: lowercase;
+      }
+    }
+
+    .bar {
+      margin-top: units(2);
+    }
+  }
+}
+
+.top-downloads {
+
+  &__headline {
+    padding-top: 0;
+  }
+
+  .label {
+    height: units(8);
+  }
+}
+
+#chart_us_and_territories,
+#chart_countries {
+
+  .label {
+    font-size: 90%;
+  }
+}

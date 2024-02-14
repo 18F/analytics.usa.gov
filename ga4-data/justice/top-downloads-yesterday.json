@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "RUJA IGNATOVA — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/ruja-ignatova/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/ruja-ignatova",
+      "total_events": "1105"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OMAR ALEXANDER CARDENAS — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/omar-alexander-cardenas/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/omar-alexander-cardenas",
+      "total_events": "1094"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "VITEL'HOMME INNOCENT — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/vitelhomme-innocent/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/vitelhomme-innocent",
+      "total_events": "877"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DONALD EUGENE FIELDS II — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/donald-eugene-fields-ii/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/donald-eugene-fields-ii",
+      "total_events": "822"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "YULAN ADONAY ARCHAGA CARIAS — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/yulan-adonay-archaga-carias/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias",
+      "total_events": "818"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BHADRESHKUMAR CHETANBHAI PATEL — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/bhadreshkumar-chetanbhai-patel/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/bhadreshkumar-chetanbhai-patel",
+      "total_events": "741"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALEJANDRO ROSALES CASTILLO — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alejandro-castillo/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/alejandro-castillo",
+      "total_events": "724"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALEXIS FLORES — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alexis-flores/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/alexis-flores",
+      "total_events": "600"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ARNOLDO JIMENEZ — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/arnoldo-jimenez/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/arnoldo-jimenez",
+      "total_events": "502"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WILVER VILLEGAS-PALOMINO — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/wilver-villegas-palomino/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/wilver-villegas-palomino",
+      "total_events": "404"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PIPE BOMBS IN WASHINGTON, D.C. — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc/pipe-bomb-update-jan2023.pdf",
+      "page": "www.fbi.gov/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc",
+      "total_events": "327"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Drug Scheduling",
+      "event_label": "file_download",
+      "file_name": "/schedules/orangebook/c_cs_alpha.pdf",
+      "page": "www.dea.gov/drug-information/drug-scheduling",
+      "total_events": "263"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Mid-Level Practitioners Authorization by State",
+      "event_label": "file_download",
+      "file_name": "/drugreg/practioners/mlp_by_state.pdf",
+      "page": "www.deadiversion.usdoj.gov/drugreg/practioners/index.html",
+      "total_events": "192"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2015/07/24/eoir33icen_miami_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "190"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Automated Case Information",
+      "event_label": "file_download",
+      "file_name": "/fglop_flyer_en.pdf",
+      "page": "acis.eoir.justice.gov/en/",
+      "total_events": "175"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Controlled Substance Schedules",
+      "event_label": "file_download",
+      "file_name": "/schedules/orangebook/c_cs_alpha.pdf",
+      "page": "www.deadiversion.usdoj.gov/schedules/",
+      "total_events": "166"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Southern District of New York | Jeffrey Epstein Charged In Manhattan Federal Court With Sex Trafficking Of Minors | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/press-releases/attachments/2019/07/09/u.s._v._jeffrey_epstein_indictment_redacted_0.pdf",
+      "page": "www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors",
+      "total_events": "151"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "District of New Jersey | Chief Executive Officer Charged in $35 Million Fraud to Sell Prohibited Security Cameras and Equipment to Law Enforcment | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/2024-01/zakhary.complaint.pdf",
+      "page": "www.justice.gov/usao-nj/pr/chief-executive-officer-charged-35-million-fraud-sell-prohibited-security-cameras-and",
+      "total_events": "137"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Información automatizada de casos",
+      "event_label": "file_download",
+      "file_name": "/fglop_flyer_es.pdf",
+      "page": "acis.eoir.justice.gov/es/",
+      "total_events": "136"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2015/07/24/eoir33icen_orlando_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "135"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADA Standards for Accessible Design | ADA.gov",
+      "event_label": "file_download",
+      "file_name": "/assets/pdfs/2010-design-standards.pdf",
+      "page": "www.ada.gov/law-and-regs/design-standards/",
+      "total_events": "125"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2015/07/24/eoir33icen_san_francisco_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "123"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2015/07/24/eoir33icen_denver_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "109"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BEHZAD MOHAMMADZADEH — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/cyber/behzad-mohammadzadeh/@@download.pdf",
+      "page": "www.fbi.gov/wanted/cyber/behzad-mohammadzadeh",
+      "total_events": "102"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "JOANNE DEBORAH CHESIMARD — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/wanted_terrorists/joanne-deborah-chesimard/@@download.pdf",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/joanne-deborah-chesimard",
+      "total_events": "96"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Law Enforcement Telecommunications Systems - ORI (Originating Agency Identifier) Directory | Office of Justice Programs",
+      "event_label": "file_download",
+      "file_name": "/pdffiles1/digitization/75873ncjrs.pdf",
+      "page": "www.ojp.gov/ncjrs/virtual-library/abstracts/national-law-enforcement-telecommunications-systems-ori-originating",
+      "total_events": "90"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "KARLIE LAIN GUSÉ — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/karlie-lain-guse/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/karlie-lain-guse",
+      "total_events": "89"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "VITEL'HOMME INNOCENT — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/vitelhomme-innocent/vhinnocent2.jpg",
+      "page": "www.fbi.gov/wanted/topten/vitelhomme-innocent",
+      "total_events": "87"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "District of Columbia | Capitol Breach Cases | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-12/12.18_table%20of%20probation%20hd%20incarceration%20sentences.pdf",
+      "page": "www.justice.gov/usao-dc/capitol-breach-cases",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "SHELBIE LYNN DWYER — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/shelbie-lynn-dwyer/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Department of Justice | FY 2023 Agency Financial Report",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-11/fy_2023_doj_agency_financial_report.pdf",
+      "page": "www.justice.gov/doj/fy-2023-agency-financial-report",
+      "total_events": "82"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Antitrust Division | 2023 Merger Guidelines | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-12/2023%20merger%20guidelines.pdf",
+      "page": "www.justice.gov/atr/2023-merger-guidelines",
+      "total_events": "81"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DONALD EUGENE FIELDS II — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/donald-eugene-fields-ii/fields3.jpg",
+      "page": "www.fbi.gov/wanted/topten/donald-eugene-fields-ii",
+      "total_events": "80"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "YULAN ADONAY ARCHAGA CARIAS — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/yulan-adonay-archaga-carias/carias2.jpg",
+      "page": "www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias",
+      "total_events": "79"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CATHERINE BARBARA DAVIDSON — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/catherine-barbara-davidson/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/catherine-barbara-davidson",
+      "total_events": "78"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PRESTON POWELL — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/cei/preston-powell/@@download.pdf",
+      "page": "www.fbi.gov/wanted/cei/preston-powell",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "RACHEL LOUISE COOKE — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/rachel-louise-cooke/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/rachel-louise-cooke",
+      "total_events": "76"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "RUJA IGNATOVA — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/ruja-ignatova/ignatova2.jpg",
+      "page": "www.fbi.gov/wanted/topten/ruja-ignatova",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Fentanyl",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-06/fentanyl%202022%20drug%20fact%20sheet-update.pdf",
+      "page": "www.dea.gov/factsheets/fentanyl",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Identity History Summary Request (FD-1164) — FBI",
+      "event_label": "file_download",
+      "file_name": "/file-repository/fd-1164-identity-history-summary-request-110120.pdf",
+      "page": "www.fbi.gov/file-repository/fd-1164-identity-history-summary-request-110120.pdf/view",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Credit Card Payment Form — FBI",
+      "event_label": "file_download",
+      "file_name": "/file-repository/idhsc-credit-card-payment-form.pdf",
+      "page": "www.fbi.gov/file-repository/idhsc-credit-card-payment-form.pdf/view",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "GERARDO BELTRAN — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/cac/gerardo-beltran/@@download.pdf",
+      "page": "www.fbi.gov/wanted/cac/gerardo-beltran",
+      "total_events": "70"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "WILVER VILLEGAS-PALOMINO — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/wilver-villegas-palomino/palomino2.jpg",
+      "page": "www.fbi.gov/wanted/topten/wilver-villegas-palomino",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Controlled Substance Schedules",
+      "event_label": "file_download",
+      "file_name": "/schedules/orangebook/orangebook.pdf",
+      "page": "www.deadiversion.usdoj.gov/schedules/",
+      "total_events": "68"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Southern District of New York | United States v. Jeffrey Epstein, 19 Cr. 490 (RMB)",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2019/07/15/u.s._v._jeffrey_epstein_indictment_redacted.pdf",
+      "page": "www.justice.gov/usao-sdny/programs/victim-witness-services/united-states-v-jeffrey-epstein-19-cr-490-rmb",
+      "total_events": "68"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ADA Standards for Accessible Design | ADA.gov",
+      "event_label": "file_download",
+      "file_name": "/assets/pdfs/guidance-2010-standards.pdf",
+      "page": "www.ada.gov/law-and-regs/design-standards/",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALEXIS FLORES — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alexis-flores/floresaged.jpg",
+      "page": "www.fbi.gov/wanted/topten/alexis-flores",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2019/09/20/eoir33icen_los_north_street_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "GERARD BOGUSLAW ZALEWSKI — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/cac/gerard-boguslaw-zalewski/@@download.pdf",
+      "page": "www.fbi.gov/wanted/cac/gerard-boguslaw-zalewski",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Office of the Solicitor General | Gonzalez v. Trevino | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/2024-01/22-1025npacunitedstates.pdf",
+      "page": "www.justice.gov/osg/brief/gonzalez-v-trevino",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Office of Privacy and Civil Liberties | Privacy Act of 1974",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/uscode-2018-title5/pdf/uscode-2018-title5-parti-chap5-subchapii-sec552a.pdf",
+      "page": "www.justice.gov/opcl/privacy-act-1974",
+      "total_events": "65"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2015/07/24/eoir33icen_los_olive_street_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Información automatizada de casos",
+      "event_label": "file_download",
+      "file_name": "/fglop_flyer_es.pdf",
+      "page": "acis.eoir.justice.gov/en/",
+      "total_events": "62"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALEJANDRO ROSALES CASTILLO — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alejandro-castillo/castillo2.jpg",
+      "page": "www.fbi.gov/wanted/topten/alejandro-castillo",
+      "total_events": "58"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CATHERINE MARIE KERKOW — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/dt/catherine-marie-kerkow/@@download.pdf",
+      "page": "www.fbi.gov/wanted/dt/catherine-marie-kerkow",
+      "total_events": "58"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Office of the Solicitor General | Garland v. Cargill | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/2024-01/22-976tsunitedstates.pdf",
+      "page": "www.justice.gov/osg/brief/garland-v-cargill-0",
+      "total_events": "58"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Update on the Prescription Stimulant Shortage",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-11/quota-shortages%20letter.pdf",
+      "page": "www.dea.gov/documents/2023/2023-11/2023-11-01/update-prescription-stimulant-shortage",
+      "total_events": "58"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Factoring Criteria for Firearms with Attached “Stabilizing Braces” | Bureau of Alcohol, Tobacco, Firearms and Explosives",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-01-31/pdf/2023-01001.pdf",
+      "page": "www.atf.gov/rules-and-regulations/factoring-criteria-firearms-attached-stabilizing-braces",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OMAR ALEXANDER CARDENAS — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/omar-alexander-cardenas/cardenaso2.jpg",
+      "page": "www.fbi.gov/wanted/topten/omar-alexander-cardenas",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Recognition & Accreditation (R&A) Program",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-11/eoir-31_oct2022.pdf",
+      "page": "www.justice.gov/eoir/recognition-and-accreditation-program",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BHADRESHKUMAR CHETANBHAI PATEL — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/bhadreshkumar-chetanbhai-patel/patelhotel.jpg",
+      "page": "www.fbi.gov/wanted/topten/bhadreshkumar-chetanbhai-patel",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "IBRAHIM SALIH MOHAMMED AL-YACOUB — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/wanted_terrorists/ibrahim-salih-mohammed-al-yacoub/@@download.pdf",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/ibrahim-salih-mohammed-al-yacoub",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AHLAM AHMAD AL-TAMIMI — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/wanted_terrorists/ahlam-ahmad-al-tamimi/@@download.pdf",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/ahlam-ahmad-al-tamimi",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Información de caso automatizada",
+      "event_label": "file_download",
+      "file_name": "/fglop_flyer_en.pdf",
+      "page": "acis.eoir.justice.gov/en/",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PIPE BOMBS IN WASHINGTON, D.C. — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc/unsub-c-3-8-2021.jpg",
+      "page": "www.fbi.gov/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Controlled Substances Act",
+      "event_label": "file_download",
+      "file_name": "/schedules/orangebook/c_cs_alpha.pdf",
+      "page": "www.dea.gov/drug-information/csa",
+      "total_events": "54"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BHADRESHKUMAR CHETANBHAI PATEL — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/bhadreshkumar-chetanbhai-patel/patelwork1.jpg",
+      "page": "www.fbi.gov/wanted/topten/bhadreshkumar-chetanbhai-patel",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Office on Violence Against Women (OVW) | Open Solicitations",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-12/ovw-fy24-jff.pdf",
+      "page": "www.justice.gov/ovw/open-solicitations",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "U.S. Trustee Program | Bankruptcy Information Sheet | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/ust/eo/ust_org/bky-info/docs/bky-info_english.pdf",
+      "page": "www.justice.gov/ust/bankruptcy-information-sheet-0",
+      "total_events": "53"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BHADRESHKUMAR CHETANBHAI PATEL — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/bhadreshkumar-chetanbhai-patel/pateltable1a.jpg",
+      "page": "www.fbi.gov/wanted/topten/bhadreshkumar-chetanbhai-patel",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "PIPE BOMBS IN WASHINGTON, D.C. — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc/glasses-august-2021.jpg",
+      "page": "www.fbi.gov/wanted/seeking-info/suspected-pipe-bombs-in-washington-dc",
+      "total_events": "52"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "BOB TANG — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/murders/bob-tang/@@download.pdf",
+      "page": "www.fbi.gov/wanted/murders/bob-tang",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Osama bin Laden — FBI",
+      "event_label": "file_download",
+      "file_name": "/image-repository/usama-bin-laden_poster.jpg",
+      "page": "www.fbi.gov/history/famous-cases/osama-bin-laden",
+      "total_events": "51"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALEXIS FLORES — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alexis-flores/flores_aphoto3.jpg",
+      "page": "www.fbi.gov/wanted/topten/alexis-flores",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Laws, Regulations & Standards | ADA.gov",
+      "event_label": "file_download",
+      "file_name": "/assets/pdfs/title-ii-2010-regulations.pdf",
+      "page": "www.ada.gov/law-and-regs/",
+      "total_events": "50"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "APOLLO CARREON QUIBOLOY — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/human-trafficking/apollo-carreon-quiboloy/@@download.pdf",
+      "page": "www.fbi.gov/wanted/human-trafficking/apollo-carreon-quiboloy",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Southern District of New York | Founder And Former CEO Of Tingo Companies Charged With Securities Fraud | United States Department of Justice",
+      "event_label": "file_download",
+      "file_name": "/d9/2024-01/u.s._v._mmobuosi_indictment.pdf",
+      "page": "www.justice.gov/usao-sdny/pr/founder-and-former-ceo-tingo-companies-charged-securities-fraud",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DONALD EUGENE FIELDS II — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/donald-eugene-fields-ii/fields5.jpg",
+      "page": "www.fbi.gov/wanted/topten/donald-eugene-fields-ii",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2022/03/17/eoir33icen_santaana_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MADALINA COJOCARI — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/madalina-cojocari/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/madalina-cojocari",
+      "total_events": "48"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Recognition & Accreditation (R&A) Program",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-11/eoir-31a_oct2022.pdf",
+      "page": "www.justice.gov/eoir/recognition-and-accreditation-program",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "LINA SARDAR KHIL — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/lina-sardar-khil/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/lina-sardar-khil",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OMAR ALEXANDER CARDENAS — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/omar-alexander-cardenas/download.pdf",
+      "page": "www.fbi.gov/wanted/topten/omar-alexander-cardenas",
+      "total_events": "47"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Claim Status Definitions | VCF",
+      "event_label": "file_download",
+      "file_name": "/sites/vcf/files/media/document/2020-11/claimstatusdefinitions.pdf",
+      "page": "www.vcf.gov/resources/claim-status-definitions",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "RUJA IGNATOVA — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/ruja-ignatova/download.pdf",
+      "page": "www.fbi.gov/wanted/topten/ruja-ignatova",
+      "total_events": "46"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ALEXIS FLORES — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alexis-flores/flores_aphoto1.jpg",
+      "page": "www.fbi.gov/wanted/topten/alexis-flores",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Controlled Substance Schedules",
+      "event_label": "file_download",
+      "file_name": "/schedules/orangebook/a_sched_alpha.pdf",
+      "page": "www.deadiversion.usdoj.gov/schedules/",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Internet Crime Complaint Center(IC3) | Home Page",
+      "event_label": "file_download",
+      "file_name": "/media/pdf/annualreport/2022_ic3report.pdf",
+      "page": "www.ic3.gov/",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DIEGO ALFONSO DE LEON MEJIA — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/murders/diego-alfonso-de-leon-mejia/@@download.pdf",
+      "page": "www.fbi.gov/wanted/murders/diego-alfonso-de-leon-mejia",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Executive Office for Immigration Review | Form EOIR-33 EOIR Immigration Court Listing",
+      "event_label": "file_download",
+      "file_name": "/d9/pages/attachments/2015/07/24/eoir33icen_phoenix_02082022.pdf",
+      "page": "www.justice.gov/eoir/form-eoir-33-eoir-immigration-court-listing",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Medication Assisted Treatment",
+      "event_label": "file_download",
+      "file_name": "/pubs/docs/mate_training_letter_final.pdf",
+      "page": "www.deadiversion.usdoj.gov/pubs/docs/MATE_training.html",
+      "total_events": "43"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ABDUL RAHMAN YASIN — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/wanted_terrorists/abdul-rahman-yasin/@@download.pdf",
+      "page": "www.fbi.gov/wanted/wanted_terrorists/abdul-rahman-yasin",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "National Crime Information Center (NCIC) Code Manual - Second Edition | Office of Justice Programs",
+      "event_label": "file_download",
+      "file_name": "/pdffiles1/digitization/91595ncjrs.pdf",
+      "page": "www.ojp.gov/ncjrs/virtual-library/abstracts/national-crime-information-center-ncic-code-manual-second-edition",
+      "total_events": "42"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CARIS E. AYALA — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/murders/caris-e.-ayala/@@download.pdf",
+      "page": "www.fbi.gov/wanted/murders/caris-e.-ayala",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Office on Violence Against Women (OVW) | Open Solicitations",
+      "event_label": "file_download",
+      "file_name": "/d9/2023-12/ovw-fy24-lav.pdf",
+      "page": "www.justice.gov/ovw/open-solicitations",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "UNKNOWN INDIVIDUAL - JANE DOE 36 — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/ecap/unknown-individual---jane-doe-36/@@download.pdf",
+      "page": "www.fbi.gov/wanted/ecap/unknown-individual---jane-doe-36",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Controlled Substance Schedules",
+      "event_label": "file_download",
+      "file_name": "/schedules/orangebook/f_chemlist_alpha.pdf",
+      "page": "www.deadiversion.usdoj.gov/schedules/",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "DONALD EUGENE FIELDS II — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/donald-eugene-fields-ii/fields4.jpg",
+      "page": "www.fbi.gov/wanted/topten/donald-eugene-fields-ii",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "HANEUL OH — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/kidnap/haneul-oh/@@download.pdf",
+      "page": "www.fbi.gov/wanted/kidnap/haneul-oh",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "OMAR ALEXANDER CARDENAS — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/omar-alexander-cardenas/cardenaso2019.jpg",
+      "page": "www.fbi.gov/wanted/topten/omar-alexander-cardenas",
+      "total_events": "40"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:38:37.774Z",
+  "agency": "justice"
+}

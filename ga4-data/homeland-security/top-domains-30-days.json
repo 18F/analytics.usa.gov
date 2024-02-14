@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.uscis.gov",
+      "visits": "16184411",
+      "users": "8467811",
+      "pageviews": "33685843",
+      "pageviews_per_session": "2.081335428271069",
+      "avg_session_duration": "232.03822308941307",
+      "bounce_rate": "0.39016526458701523"
+    },
+    {
+      "domain": "egov.uscis.gov",
+      "visits": "9361788",
+      "users": "3304284",
+      "pageviews": "16560372",
+      "pageviews_per_session": "1.7689257650354826",
+      "avg_session_duration": "195.49038312527131",
+      "bounce_rate": "0.38937999877801122"
+    },
+    {
+      "domain": "my.uscis.gov",
+      "visits": "5898801",
+      "users": "2010173",
+      "pageviews": "7871247",
+      "pageviews_per_session": "1.3343733751994684",
+      "avg_session_duration": "324.25644974316037",
+      "bounce_rate": "0.49389223335386295"
+    },
+    {
+      "domain": "www.tsa.gov",
+      "visits": "5704006",
+      "users": "4419789",
+      "pageviews": "12169401",
+      "pageviews_per_session": "2.1334264024266454",
+      "avg_session_duration": "176.26414873230993",
+      "bounce_rate": "0.46160400252033396"
+    },
+    {
+      "domain": "esta.cbp.dhs.gov",
+      "visits": "5036654",
+      "users": "2829746",
+      "pageviews": "26893025",
+      "pageviews_per_session": "5.3394590932789905",
+      "avg_session_duration": "661.59606216212853",
+      "bounce_rate": "0.32569638494127251"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "4782679",
+      "users": "3518883",
+      "pageviews": "8433677",
+      "pageviews_per_session": "1.7630510013320986",
+      "avg_session_duration": "169.10556328479313",
+      "bounce_rate": "0.43953315704440965"
+    },
+    {
+      "domain": "tsaenrollmentbyidemia.tsa.dhs.gov",
+      "visits": "3059511",
+      "users": "1786730",
+      "pageviews": "7380850",
+      "pageviews_per_session": "2.4124227695210116",
+      "avg_session_duration": "326.65525672214756",
+      "bounce_rate": "0.39518406699632719"
+    },
+    {
+      "domain": "i94.cbp.dhs.gov",
+      "visits": "2830539",
+      "users": "1405805",
+      "pageviews": "12486013",
+      "pageviews_per_session": "4.4111715118569288",
+      "avg_session_duration": "459.98316983418613",
+      "bounce_rate": "0.25538563503276229"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "2309171",
+      "users": "1977757",
+      "pageviews": "3384866",
+      "pageviews_per_session": "1.4652492171432951",
+      "avg_session_duration": "115.18919338224552",
+      "bounce_rate": "0.57053288820966486"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "1883755",
+      "users": "1467095",
+      "pageviews": "2866898",
+      "pageviews_per_session": "1.5212923124291642",
+      "avg_session_duration": "129.87188447275577",
+      "bounce_rate": "0.7139649264368243"
+    },
+    {
+      "domain": "www.fema.gov",
+      "visits": "1565996",
+      "users": "1058435",
+      "pageviews": "2908144",
+      "pageviews_per_session": "1.8560009093254388",
+      "avg_session_duration": "168.47660600100573",
+      "bounce_rate": "0.44722144884150405"
+    },
+    {
+      "domain": "www.ice.gov",
+      "visits": "1136450",
+      "users": "779147",
+      "pageviews": "2045557",
+      "pageviews_per_session": "1.7984196401073518",
+      "avg_session_duration": "213.64466878613621",
+      "bounce_rate": "0.49053895903911304"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "1129840",
+      "users": "936338",
+      "pageviews": "1542092",
+      "pageviews_per_session": "1.3647091623592722",
+      "avg_session_duration": "177.24686091288774",
+      "bounce_rate": "0.40661244069956809"
+    },
+    {
+      "domain": "bwt.cbp.gov",
+      "visits": "964745",
+      "users": "463867",
+      "pageviews": "2116012",
+      "pageviews_per_session": "2.193337099440785",
+      "avg_session_duration": "243.03884977148073",
+      "bounce_rate": "0.38648451145121249"
+    },
+    {
+      "domain": "careers.cbp.gov",
+      "visits": "901368",
+      "users": "768422",
+      "pageviews": "1468053",
+      "pageviews_per_session": "1.6286788525885099",
+      "avg_session_duration": "108.27128387101104",
+      "bounce_rate": "0.54560512465496891"
+    },
+    {
+      "domain": "www.ready.gov",
+      "visits": "639105",
+      "users": "549623",
+      "pageviews": "872935",
+      "pageviews_per_session": "1.3657192480108902",
+      "avg_session_duration": "111.43201158685002",
+      "bounce_rate": "0.663721923627573"
+    },
+    {
+      "domain": "msc.fema.gov",
+      "visits": "596487",
+      "users": "276750",
+      "pageviews": "1153896",
+      "pageviews_per_session": "1.9344696531525414",
+      "avg_session_duration": "278.14931843913627",
+      "bounce_rate": "0.32136492496902697"
+    },
+    {
+      "domain": "www.e-verify.gov",
+      "visits": "541587",
+      "users": "337950",
+      "pageviews": "1016032",
+      "pageviews_per_session": "1.8759035944363509",
+      "avg_session_duration": "161.27830048668804",
+      "bounce_rate": "0.53116119847780685"
+    },
+    {
+      "domain": "www.mycg.uscg.mil",
+      "visits": "424588",
+      "users": "123278",
+      "pageviews": "493764",
+      "pageviews_per_session": "1.1623809434086692",
+      "avg_session_duration": "160.18847587538517",
+      "bounce_rate": "0.51102951567166288"
+    },
+    {
+      "domain": "www.disasterassistance.gov",
+      "visits": "325255",
+      "users": "154902",
+      "pageviews": "491334",
+      "pageviews_per_session": "1.5101781678990331",
+      "avg_session_duration": "176.89439576388929",
+      "bounce_rate": "0.55581928025702909"
+    }
+  ],
+  "totals": {
+    "users": 36636785,
+    "visits": 65276736
+  },
+  "taken_at": "2024-01-05T15:56:43.005Z",
+  "agency": "homeland-security"
+}

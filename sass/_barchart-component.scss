@@ -1,0 +1,27 @@
+@use "uswds-core" as *;
+
+/*
+* Wrapper component around .barchart to handle header styles
+* TODO: Further refactoring into one component will require updates to javascript code
+*/
+
+.bar-chart-component {
+  h4 {
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    // border-bottom: 1px solid black;
+    // padding-bottom: units(0.5);
+
+    // @include at-media("tablet") {
+    //   text-align: center;
+    //   border-bottom: none;
+    //   padding-bottom: none;
+    // }
+  }
+
+  h5 {
+    margin-top: 0;
+    text-align: center;
+  }
+}

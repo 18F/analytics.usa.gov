@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.bls.gov",
+      "visits": "3714351",
+      "users": "2718841",
+      "pageviews": "5781568",
+      "pageviews_per_session": "1.5565486406642774",
+      "avg_session_duration": "167.77755670408763",
+      "bounce_rate": "0.41990188864757261"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "3152995",
+      "users": "2427595",
+      "pageviews": "3986169",
+      "pageviews_per_session": "1.2642484368037374",
+      "avg_session_duration": "140.00071510076168",
+      "bounce_rate": "0.41770443657538309"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "2547574",
+      "users": "1624107",
+      "pageviews": "4757735",
+      "pageviews_per_session": "1.8675551720970618",
+      "avg_session_duration": "214.00904397045187",
+      "bounce_rate": "0.39803711295530569"
+    },
+    {
+      "domain": "www.careeronestop.org",
+      "visits": "847402",
+      "users": "577638",
+      "pageviews": "3883253",
+      "pageviews_per_session": "4.5825393378821389",
+      "avg_session_duration": "309.19802990210303",
+      "bounce_rate": "0.32027892310851286"
+    },
+    {
+      "domain": "data.bls.gov",
+      "visits": "639848",
+      "users": "443708",
+      "pageviews": "1082251",
+      "pageviews_per_session": "1.6914188994886286",
+      "avg_session_duration": "127.66665422567704",
+      "bounce_rate": "0.28665089208687061"
+    },
+    {
+      "domain": "flag.dol.gov",
+      "visits": "556535",
+      "users": "192455",
+      "pageviews": "1298441",
+      "pageviews_per_session": "2.33308057893933",
+      "avg_session_duration": "347.61265034599796",
+      "bounce_rate": "0.37884050419111109"
+    },
+    {
+      "domain": "webapps.dol.gov",
+      "visits": "290765",
+      "users": "255277",
+      "pageviews": "825421",
+      "pageviews_per_session": "2.8387907760562654",
+      "avg_session_duration": "125.78291007778789",
+      "bounce_rate": "0.28036386772823413"
+    },
+    {
+      "domain": "seasonaljobs.dol.gov",
+      "visits": "204514",
+      "users": "94992",
+      "pageviews": "1140165",
+      "pageviews_per_session": "5.5749973106975563",
+      "avg_session_duration": "412.61447802161723",
+      "bounce_rate": "0.26225099504190424"
+    },
+    {
+      "domain": "owcpmed.dol.gov",
+      "visits": "184081",
+      "users": "51360",
+      "pageviews": "184869",
+      "pageviews_per_session": "1.0042807242463916",
+      "avg_session_duration": "274.51627146664794",
+      "bounce_rate": "0.40519662539860168"
+    },
+    {
+      "domain": "www.apprenticeship.gov",
+      "visits": "130797",
+      "users": "99451",
+      "pageviews": "427736",
+      "pageviews_per_session": "3.27022791042608",
+      "avg_session_duration": "204.1408754818078",
+      "bounce_rate": "0.3364985435445767"
+    },
+    {
+      "domain": "www.msha.gov",
+      "visits": "118533",
+      "users": "69497",
+      "pageviews": "246173",
+      "pageviews_per_session": "2.0768309247213854",
+      "avg_session_duration": "201.94578119507656",
+      "bounce_rate": "0.36383116937899151"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "87923",
+      "users": "78805",
+      "pageviews": "105006",
+      "pageviews_per_session": "1.1942950081321155",
+      "avg_session_duration": "108.35315442205112",
+      "bounce_rate": "0.31745959532772994"
+    },
+    {
+      "domain": "search.osha.gov",
+      "visits": "82873",
+      "users": "65226",
+      "pageviews": "125364",
+      "pageviews_per_session": "1.5127242889722829",
+      "avg_session_duration": "70.746049520326281",
+      "bounce_rate": "0.059669614953000376"
+    },
+    {
+      "domain": "www.govloans.gov",
+      "visits": "67820",
+      "users": "57915",
+      "pageviews": "176591",
+      "pageviews_per_session": "2.6038189324682985",
+      "avg_session_duration": "138.74677582944562",
+      "bounce_rate": "0.26837216160424654"
+    },
+    {
+      "domain": "blog.dol.gov",
+      "visits": "62582",
+      "users": "52053",
+      "pageviews": "55762",
+      "pageviews_per_session": "0.89102297785305684",
+      "avg_session_duration": "95.4579305251031",
+      "bounce_rate": "0.45640919114122269"
+    },
+    {
+      "domain": "www.oalj.dol.gov",
+      "visits": "55022",
+      "users": "10798",
+      "pageviews": "203606",
+      "pageviews_per_session": "3.7004470938897169",
+      "avg_session_duration": "216.59018229331909",
+      "bounce_rate": "0.189160699356621"
+    },
+    {
+      "domain": "beta.bls.gov",
+      "visits": "42375",
+      "users": "32183",
+      "pageviews": "125246",
+      "pageviews_per_session": "2.9556578171091443",
+      "avg_session_duration": "143.43090393392328",
+      "bounce_rate": "0.30123893805309737"
+    },
+    {
+      "domain": "www.askebsa.dol.gov",
+      "visits": "34639",
+      "users": "25092",
+      "pageviews": "208661",
+      "pageviews_per_session": "6.0238748231761887",
+      "avg_session_duration": "348.58093980478651",
+      "bounce_rate": "0.22200409942550303"
+    },
+    {
+      "domain": "ssabest.benefits.gov",
+      "visits": "33798",
+      "users": "29056",
+      "pageviews": "103369",
+      "pageviews_per_session": "3.0584354103793125",
+      "avg_session_duration": "231.64274550588794",
+      "bounce_rate": "0.218178590449139"
+    },
+    {
+      "domain": "enforcedata.dol.gov",
+      "visits": "31174",
+      "users": "30207",
+      "pageviews": "44056",
+      "pageviews_per_session": "1.4132289728620004",
+      "avg_session_duration": "30.901133010681978",
+      "bounce_rate": "0.76387374093796112"
+    }
+  ],
+  "totals": {
+    "users": 8936256,
+    "visits": 12885601
+  },
+  "taken_at": "2024-01-05T15:58:02.447Z",
+  "agency": "labor"
+}

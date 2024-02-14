@@ -1,0 +1,84 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "sam.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "nicic.gov",
+      "visits": "4"
+    },
+    {
+      "hostname": "ncua.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "health.mil",
+      "visits": "14"
+    },
+    {
+      "hostname": "digital.gov",
+      "visits": "1"
+    }
+  ],
+  "totals": {
+    "visits": 22
+  },
+  "taken_at": "2024-01-05T15:34:28.584Z",
+  "agency": "veterans-affairs"
+}

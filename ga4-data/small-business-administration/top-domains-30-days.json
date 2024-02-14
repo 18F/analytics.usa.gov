@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.sba.gov",
+      "visits": "1823803",
+      "users": "1341023",
+      "pageviews": "3513961",
+      "pageviews_per_session": "1.9267218005453439",
+      "avg_session_duration": "191.97856791385036",
+      "bounce_rate": "0.44976787514879624"
+    },
+    {
+      "domain": "www.sbir.gov",
+      "visits": "165484",
+      "users": "110719",
+      "pageviews": "426620",
+      "pageviews_per_session": "2.5780135843948662",
+      "avg_session_duration": "245.95949089195332",
+      "bounce_rate": "0.42361799328031713"
+    },
+    {
+      "domain": "certify.sba.gov",
+      "visits": "51833",
+      "users": "21766",
+      "pageviews": "339652",
+      "pageviews_per_session": "6.5528138444620225",
+      "avg_session_duration": "597.40408405716437",
+      "bounce_rate": "0.27513360214535143"
+    },
+    {
+      "domain": "www.certify.sba.gov",
+      "visits": "1155",
+      "users": "570",
+      "pageviews": "5005",
+      "pageviews_per_session": "4.333333333333333",
+      "avg_session_duration": "354.36368933419914",
+      "bounce_rate": "0.2917748917748918"
+    },
+    {
+      "domain": "content.prod.sba.gov",
+      "visits": "610",
+      "users": "130",
+      "pageviews": "2736",
+      "pageviews_per_session": "4.4852459016393444",
+      "avg_session_duration": "607.13372961803282",
+      "bounce_rate": "0.16393442622950818"
+    },
+    {
+      "domain": "cloudfront.www.sba.gov",
+      "visits": "96",
+      "users": "87",
+      "pageviews": "143",
+      "pageviews_per_session": "1.4895833333333333",
+      "avg_session_duration": "54.130148989583326",
+      "bounce_rate": "0.52083333333333337"
+    },
+    {
+      "domain": "prod.sba.gov",
+      "visits": "72",
+      "users": "36",
+      "pageviews": "84",
+      "pageviews_per_session": "1.1666666666666667",
+      "avg_session_duration": "49.932956527777762",
+      "bounce_rate": "0.69444444444444442"
+    },
+    {
+      "domain": "cloudfront.www.sba.govhttps",
+      "visits": "71",
+      "users": "66",
+      "pageviews": "120",
+      "pageviews_per_session": "1.6901408450704225",
+      "avg_session_duration": "108.92209929577463",
+      "bounce_rate": "0.45070422535211269"
+    },
+    {
+      "domain": "www.acq.osd.mil",
+      "visits": "69",
+      "users": "63",
+      "pageviews": "76",
+      "pageviews_per_session": "1.1014492753623188",
+      "avg_session_duration": "33.359618869565217",
+      "bounce_rate": "0.69565217391304346"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "68",
+      "users": "62",
+      "pageviews": "77",
+      "pageviews_per_session": "1.1323529411764706",
+      "avg_session_duration": "72.936981794117642",
+      "bounce_rate": "0.35294117647058826"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "51",
+      "users": "44",
+      "pageviews": "55",
+      "pageviews_per_session": "1.0784313725490196",
+      "avg_session_duration": "144.6036777254902",
+      "bounce_rate": "0.29411764705882354"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "28",
+      "users": "28",
+      "pageviews": "0",
+      "pageviews_per_session": "0",
+      "avg_session_duration": "0",
+      "bounce_rate": "0.035714285714285712"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "19",
+      "users": "19",
+      "pageviews": "0",
+      "pageviews_per_session": "0",
+      "avg_session_duration": "0",
+      "bounce_rate": "0.36842105263157893"
+    },
+    {
+      "domain": "www.mbda.gov",
+      "visits": "15",
+      "users": "13",
+      "pageviews": "7",
+      "pageviews_per_session": "0.46666666666666667",
+      "avg_session_duration": "48.5382716",
+      "bounce_rate": "0.33333333333333331"
+    },
+    {
+      "domain": "business.defense.gov",
+      "visits": "9",
+      "users": "6",
+      "pageviews": "10",
+      "pageviews_per_session": "1.1111111111111112",
+      "avg_session_duration": "170.22066944444444",
+      "bounce_rate": "0.33333333333333331"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "9",
+      "users": "9",
+      "pageviews": "11",
+      "pageviews_per_session": "1.2222222222222223",
+      "avg_session_duration": "54.507203666666669",
+      "bounce_rate": "0.22222222222222221"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "5",
+      "users": "5",
+      "pageviews": "5",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "380.452565",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.health.mil",
+      "visits": "5",
+      "users": "3",
+      "pageviews": "4",
+      "pageviews_per_session": "0.8",
+      "avg_session_duration": "0",
+      "bounce_rate": "1"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "5",
+      "users": "5",
+      "pageviews": "6",
+      "pageviews_per_session": "1.2",
+      "avg_session_duration": "13.439580799999998",
+      "bounce_rate": "0.4"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "5",
+      "users": "5",
+      "pageviews": "3",
+      "pageviews_per_session": "0.6",
+      "avg_session_duration": "22.328877799999997",
+      "bounce_rate": "0.6"
+    }
+  ],
+  "totals": {
+    "users": 1474659,
+    "visits": 2043412
+  },
+  "taken_at": "2024-01-05T15:43:42.670Z",
+  "agency": "small-business-administration"
+}

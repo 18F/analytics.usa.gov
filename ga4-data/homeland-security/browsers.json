@@ -1,0 +1,104 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 182465072,
+    "browser": {
+      "Chrome": 88205187,
+      "Safari": 63373033,
+      "Edge": 15112440,
+      "Safari (in-app)": 6280537,
+      "Firefox": 2987545,
+      "Samsung Internet": 3214876,
+      "Android Webview": 1975497,
+      "(not set)": 577196,
+      "Opera": 344674,
+      "Whale Browser": 91739,
+      "Mozilla Compatible Agent": 83002,
+      "Amazon Silk": 67460,
+      "Internet Explorer": 67481,
+      "YaBrowser": 33820,
+      "UC Browser": 14611,
+      "Android Runtime": 9681,
+      "Coc Coc": 6566,
+      "Opera Mini": 5047,
+      "Aloha Browser": 2356,
+      "Mozilla": 2395,
+      "Seznam": 1058,
+      "Meta Quest Browser": 379,
+      "Phoenix Browser": 1194,
+      "Android Browser": 1019,
+      "PaleMoon": 416,
+      "SeaMonkey": 673,
+      "DuckDuckGo Browser": 1650,
+      "Vivaldi": 1979,
+      "Waterfox": 299,
+      "Lynx": 419,
+      "BlackBerry": 40,
+      "Iron": 172,
+      "Maxthon": 209,
+      "AdobeAIR": 2,
+      "Puffin": 160,
+      "Netscape": 88,
+      "Galeon": 7,
+      "MRCHROME": 17,
+      "NetFront": 22,
+      "OmniWeb": 1,
+      "Nintendo Browser": 40,
+      "BrowserNG": 6,
+      "Swing": 15,
+      "Playstation 3": 2,
+      "Konqueror": 23,
+      "Nokia Browser": 8,
+      "Blazer": 4,
+      "Camino": 2,
+      "IE with Chrome Frame": 13,
+      "Playstation Vita Browser": 8,
+      "Lunascape": 2,
+      "DoCoMo": 2
+    }
+  },
+  "taken_at": "2024-01-05T14:32:36.074Z",
+  "agency": "homeland-security"
+}

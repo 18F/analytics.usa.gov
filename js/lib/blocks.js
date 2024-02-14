@@ -33,8 +33,8 @@ export default {
       const series = buildTimeSeries()
         .series([data.data])
         .y(y)
-        .label((d) => formatters.formatHour(d.hour))
-        .title((d) => `${formatters.addCommas(d.visits)} visits during the hour of ${formatters.formatHour(d.hour)}m`);
+        .label((d) => formatters.formatDate(d.date))
+        .title((d) => `${formatters.addCommas(d.visits)} visits during the day of ${d.date}`);
 
       series.xScale()
         .domain(d3.range(0, days.length + 1));
@@ -47,7 +47,6 @@ export default {
 
       svg.call(series);
     }),
-
   // the OS block is a stack layout
   os: renderBlock.buildBarBasicChart('os'),
 
@@ -58,6 +57,11 @@ export default {
   devices: renderBlock.loadAndRender()
     .transform((d) => {
       const devices = transformers.listify(d.totals.devices);
+      devices.forEach((device) => {
+        if (device.key === 'smart tv') {
+          device.key = 'Smart TV';
+        }
+      });
       return transformers.findProportionsOfMetricFromValue(devices);
     })
     .render(barChart()
@@ -82,7 +86,6 @@ export default {
   ie: renderBlock.buildBarBasicChart('ie_version'),
 
   cities: renderBlock.buildBarChartWithLabel((d) => {
-    // remove "(not set) from the data"
     const cityList = d.data;
     const cityListFiltered = cityList.filter((c) => (c.city !== '(not set)') && (c.city !== 'zz'));
     const proportions = transformers.findProportionsOfMetric(
@@ -127,6 +130,36 @@ export default {
     return values.slice(0, 15);
   }, 'country'),
 
+  languages: renderBlock.buildBarChartWithLabel((d) => {
+    // 1. filter out non-languages - (other)
+    // 2. convert object into array of objects
+    // 3. sort desc by visitors #
+
+    const languages = d.totals.languages;
+    const keysToExclude = ['(other)'];
+    const filteredLanguages = {};
+
+    for (const key in languages) {
+      if (!keysToExclude.includes(key)) {
+        filteredLanguages[key] = languages[key];
+      }
+    }
+
+    const languagesArray = [];
+    for (const [key, value] of Object.entries(filteredLanguages)) {
+      languagesArray.push({ language: key, visitors: value });
+    }
+
+    d.totals.languages = languagesArray;
+
+    const values = transformers.findProportionsOfMetric(
+      d.totals.languages,
+      (list) => list.map((x) => x.visitors),
+    );
+
+    return values.slice(0, 10);
+  }, 'language'),
+
   'top-downloads': renderBlock.loadAndRender()
     .transform((d) => d.data.slice(0, 10))
     .render(
@@ -136,8 +169,8 @@ export default {
           '<span class="name"><a class="top-download-page" target="_blank" rel="noopener" href=http://', d.page, '>', d.page_title, '</a></span> ',
           '<span class="domain" >', formatters.formatURL(d.page), '</span> ',
           '<span class="divider">/</span> ',
-          '<span class="filename"><a class="top-download-file" target="_blank" rel="noopener" href=', d.event_label, '>',
-          formatters.formatFile(d.event_label), '</a></span>',
+          '<span class="filename"><a class="top-download-file" target="_blank" aria-label="', formatters.formatFile(d.file_name), '" rel="noopener" href=', formatters.formatProtocol(d.page), formatters.formatFile(d.file_name), '>',
+          'download file', '</a></span>',
         ].join(''))
         .scale((values) => d3.scale.linear()
           .domain([0, 1, d3.max(values)])
@@ -145,7 +178,26 @@ export default {
         .format(formatters.addCommas),
     ),
 
-  // the top pages block(s)
+  // the top pages first block(s)
+  'top-pages-realtime': renderBlock.loadAndRender()
+    .transform((d) => d.data)
+    .on('render', (selection) => {
+      selection.selectAll('.label')
+        .each(function (d) {
+          d.text = this.innerText;
+        })
+        .html('')
+        .text((d) => titleExceptions[d.page] || d.page_title);
+    })
+    .render(barChart()
+      .label((d) => d.page_title)
+      .value((d) => +d.active_visitors)
+      .scale((values) => d3.scale.linear()
+        .domain([0, 1, d3.max(values)])
+        .rangeRound([0, 1, 100]))
+      .format(formatters.addCommas)),
+
+  // the top pages second and third block(s)
   'top-pages': renderBlock.loadAndRender()
     .transform((d) => d.data)
     .on('render', (selection) => {
@@ -164,31 +216,6 @@ export default {
     .render(barChart()
       .label((d) => d.domain)
       .value((d) => +d.visits)
-      .scale((values) => d3.scale.linear()
-        .domain([0, 1, d3.max(values)])
-        .rangeRound([0, 1, 100]))
-      .format(formatters.addCommas)),
-
-  // the top pages block(s)
-  'top-pages-realtime': renderBlock.loadAndRender()
-    .transform((d) => d.data)
-    .on('render', (selection) => {
-      // turn the labels into links
-      selection.selectAll('.label')
-        .each(function (d) {
-          d.text = this.innerText;
-        })
-        .html('')
-        .append('a')
-        .attr('target', '_blank')
-        .attr('rel', 'noopener')
-        .attr('title', (d) => d.page_title)
-        .attr('href', (d) => exceptions[d.page] || (`http://${d.page}`))
-        .text((d) => titleExceptions[d.page] || d.page_title);
-    })
-    .render(barChart()
-      .label((d) => d.page_title)
-      .value((d) => +d.active_visitors)
       .scale((values) => d3.scale.linear()
         .domain([0, 1, d3.max(values)])
         .rangeRound([0, 1, 100]))

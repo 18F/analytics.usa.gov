@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Search Public Sex Offender Registries | Dru Sjodin National Sex Offender Public Website",
+      "active_visitors": "2764"
+    },
+    {
+      "page_title": "Automated Case Information",
+      "active_visitors": "1881"
+    },
+    {
+      "page_title": "Home | Dru Sjodin National Sex Offender Public Website",
+      "active_visitors": "1281"
+    },
+    {
+      "page_title": "Información automatizada de casos",
+      "active_visitors": "406"
+    },
+    {
+      "page_title": "Department of Justice | Homepage | United States Department of Justice",
+      "active_visitors": "206"
+    },
+    {
+      "page_title": "DEA Diversion Control Division",
+      "active_visitors": "160"
+    },
+    {
+      "page_title": "Welcome to fbi.gov — FBI",
+      "active_visitors": "157"
+    },
+    {
+      "page_title": "Ten Most Wanted Fugitives — FBI",
+      "active_visitors": "134"
+    },
+    {
+      "page_title": "Federal Bureau of Investigation",
+      "active_visitors": "122"
+    },
+    {
+      "page_title": "IC3 Complaint Referral Form",
+      "active_visitors": "120"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | Find an Immigration Court and Access Internet-Based Hearings",
+      "active_visitors": "111"
+    },
+    {
+      "page_title": "Internet Crime Complaint Center(IC3) | File a Complaint",
+      "active_visitors": "110"
+    },
+    {
+      "page_title": "Video and Additional Information Released Regarding January 5 Pipe Bomb Investigation — FBI",
+      "active_visitors": "107"
+    },
+    {
+      "page_title": "Registration",
+      "active_visitors": "84"
+    },
+    {
+      "page_title": "Internet Crime Complaint Center(IC3) | Home Page",
+      "active_visitors": "79"
+    },
+    {
+      "page_title": "Executive Office for Immigration Review | EOIR Courts & Appeals System (ECAS) - Online Filing",
+      "active_visitors": "75"
+    },
+    {
+      "page_title": "PIPE BOMBS IN WASHINGTON, D.C. — FBI",
+      "active_visitors": "75"
+    },
+    {
+      "page_title": "Rap Sheets (Identity History Summary Checks) — FBI",
+      "active_visitors": "71"
+    },
+    {
+      "page_title": "Home | DEA.gov",
+      "active_visitors": "65"
+    },
+    {
+      "page_title": "Most Wanted — FBI",
+      "active_visitors": "60"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:06:29.637Z",
+  "agency": "justice"
+}

@@ -1,0 +1,120 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "weather.gov",
+      "visits": "3"
+    },
+    {
+      "hostname": "trade.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "time.gov",
+      "visits": "302979"
+    },
+    {
+      "hostname": "scijinks.gov",
+      "visits": "46386"
+    },
+    {
+      "hostname": "marinecadastre.gov",
+      "visits": "1817"
+    },
+    {
+      "hostname": "grants.gov",
+      "visits": "8"
+    },
+    {
+      "hostname": "firstnet.gov",
+      "visits": "14295"
+    },
+    {
+      "hostname": "dnsops.gov",
+      "visits": "36"
+    },
+    {
+      "hostname": "digital.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "data.gov",
+      "visits": "6"
+    },
+    {
+      "hostname": "cbp.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "aviationweather.gov",
+      "visits": "876612"
+    },
+    {
+      "hostname": "ai.gov",
+      "visits": "5"
+    },
+    {
+      "hostname": "2020census.gov",
+      "visits": "1"
+    }
+  ],
+  "totals": {
+    "visits": 1242153
+  },
+  "taken_at": "2024-01-05T15:40:03.578Z",
+  "agency": "commerce"
+}

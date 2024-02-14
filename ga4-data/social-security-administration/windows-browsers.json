@@ -1,0 +1,299 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites."
+  },
+  "totals": {
+    "visits": 30323637,
+    "by_windows": {
+      "7": {
+        "Chrome": 423421,
+        "Firefox": 82504,
+        "Edge": 45270,
+        "YaBrowser": 257,
+        "Opera": 2179,
+        "Internet Explorer": 228,
+        "SeaMonkey": 35,
+        "PaleMoon": 78,
+        "Safari": 21,
+        "Coc Coc": 14,
+        "MRCHROME": 7,
+        "Mozilla": 7,
+        "(not set)": 7,
+        "Waterfox": 30
+      },
+      "8": {
+        "Chrome": 18725,
+        "Firefox": 8870,
+        "Internet Explorer": 2354,
+        "Edge": 325,
+        "Opera": 216,
+        "Safari": 14,
+        "SeaMonkey": 7
+      },
+      "10": {
+        "Chrome": 11032303,
+        "Edge": 6270279,
+        "Firefox": 1485164,
+        "Internet Explorer": 167523,
+        "Opera": 73372,
+        "Whale Browser": 1086,
+        "YaBrowser": 1900,
+        "(not set)": 137,
+        "Coc Coc": 550,
+        "Mozilla": 122,
+        "PaleMoon": 215,
+        "SeaMonkey": 170,
+        "Waterfox": 137,
+        "Puffin": 7,
+        "Seznam": 14,
+        "Safari": 14,
+        "Aloha Browser": 72,
+        "Vivaldi": 7,
+        "Mozilla Compatible Agent": 22
+      },
+      "11": {
+        "Chrome": 6040375,
+        "Edge": 4406243
+      },
+      "95": {
+        "Internet Explorer": 7
+      },
+      "98": {
+        "Internet Explorer": 7
+      },
+      "2000": {
+        "Chrome": 29
+      },
+      "8.1": {
+        "Chrome": 186663,
+        "Firefox": 26583,
+        "Edge": 32929,
+        "Opera": 720,
+        "Internet Explorer": 128,
+        "YaBrowser": 134,
+        "Coc Coc": 66,
+        "Whale Browser": 14,
+        "SeaMonkey": 7
+      },
+      "Vista": {
+        "Firefox": 2085,
+        "Chrome": 3220,
+        "Edge": 7,
+        "Opera": 85,
+        "Internet Explorer": 7,
+        "Mozilla": 21,
+        "Safari": 7
+      },
+      "XP": {
+        "Firefox": 2498,
+        "Chrome": 2142,
+        "YaBrowser": 14,
+        "PaleMoon": 15,
+        "SeaMonkey": 7,
+        "Internet Explorer": 500,
+        "Opera": 56,
+        "Mozilla": 35,
+        "Netscape": 7,
+        "Safari": 7
+      },
+      "NT": {
+        "Chrome": 815,
+        "Firefox": 250,
+        "Opera": 107,
+        "Edge": 56,
+        "Internet Explorer": 7
+      },
+      "Server 2003": {
+        "SeaMonkey": 43,
+        "Firefox": 28,
+        "Internet Explorer": 7,
+        "Chrome": 22
+      },
+      "(not set)": {
+        "Chrome": 14
+      },
+      "ME": {
+        "Opera": 7
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 423421,
+        "8": 18725,
+        "10": 11032303,
+        "11": 6040375,
+        "2000": 29,
+        "8.1": 186663,
+        "Vista": 3220,
+        "XP": 2142,
+        "NT": 815,
+        "(not set)": 14,
+        "Server 2003": 22
+      },
+      "Edge": {
+        "7": 45270,
+        "8": 325,
+        "10": 6270279,
+        "11": 4406243,
+        "8.1": 32929,
+        "Vista": 7,
+        "NT": 56
+      },
+      "Firefox": {
+        "7": 82504,
+        "8": 8870,
+        "10": 1485164,
+        "8.1": 26583,
+        "Vista": 2085,
+        "XP": 2498,
+        "NT": 250,
+        "Server 2003": 28
+      },
+      "Internet Explorer": {
+        "7": 228,
+        "8": 2354,
+        "10": 167523,
+        "95": 7,
+        "98": 7,
+        "8.1": 128,
+        "XP": 500,
+        "Server 2003": 7,
+        "Vista": 7,
+        "NT": 7
+      },
+      "Opera": {
+        "7": 2179,
+        "8": 216,
+        "10": 73372,
+        "8.1": 720,
+        "Vista": 85,
+        "XP": 56,
+        "NT": 107,
+        "ME": 7
+      },
+      "Whale Browser": {
+        "10": 1086,
+        "8.1": 14
+      },
+      "YaBrowser": {
+        "7": 257,
+        "10": 1900,
+        "8.1": 134,
+        "XP": 14
+      },
+      "SeaMonkey": {
+        "7": 35,
+        "8": 7,
+        "10": 170,
+        "Server 2003": 43,
+        "XP": 7,
+        "8.1": 7
+      },
+      "(not set)": {
+        "7": 7,
+        "10": 137
+      },
+      "Coc Coc": {
+        "7": 14,
+        "10": 550,
+        "8.1": 66
+      },
+      "Mozilla": {
+        "7": 7,
+        "10": 122,
+        "Vista": 21,
+        "XP": 35
+      },
+      "PaleMoon": {
+        "7": 78,
+        "10": 215,
+        "XP": 15
+      },
+      "Waterfox": {
+        "7": 30,
+        "10": 137
+      },
+      "Safari": {
+        "7": 21,
+        "8": 14,
+        "10": 14,
+        "XP": 7,
+        "Vista": 7
+      },
+      "Puffin": {
+        "10": 7
+      },
+      "Seznam": {
+        "10": 14
+      },
+      "Aloha Browser": {
+        "10": 72
+      },
+      "Vivaldi": {
+        "10": 7
+      },
+      "Mozilla Compatible Agent": {
+        "10": 22
+      },
+      "MRCHROME": {
+        "7": 7
+      },
+      "Netscape": {
+        "XP": 7
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:45:02.460Z",
+  "agency": "social-security-administration"
+}

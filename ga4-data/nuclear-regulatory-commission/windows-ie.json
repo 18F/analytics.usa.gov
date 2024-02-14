@@ -1,0 +1,111 @@
+{
+  "name": "windows-ie",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "90daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:date,ga:browserVersion,ga:operatingSystemVersion",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "ga:date",
+      "-ga:sessions"
+    ],
+    "filters": "ga:browser==Internet Explorer;ga:operatingSystem==Windows",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites."
+  },
+  "totals": {
+    "visits": 3895,
+    "by_windows": {
+      "7": {
+        "7.0": 92,
+        "11.0": 92,
+        "8.0": 1
+      },
+      "8": {
+        "11.0": 105,
+        "7.0": 294,
+        "10.0": 1
+      },
+      "10": {
+        "11.0": 3268,
+        "7.0": 6,
+        "10.0": 9
+      },
+      "98": {
+        "5.5": 1,
+        "5.00": 1
+      },
+      "2000": {
+        "5.01": 1,
+        "6.0": 1
+      },
+      "8.1": {
+        "11.0": 13
+      },
+      "Vista": {
+        "9.0": 5
+      },
+      "Server 2003": {
+        "6.0": 1,
+        "8.0": 1
+      },
+      "XP": {
+        "6.0": 1,
+        "8.0": 1,
+        "7.0": 1
+      }
+    },
+    "by_ie": {
+      "11.0": {
+        "7": 92,
+        "8": 105,
+        "10": 3268,
+        "8.1": 13
+      },
+      "7.0": {
+        "7": 92,
+        "8": 294,
+        "10": 6,
+        "XP": 1
+      },
+      "9.0": {
+        "Vista": 5
+      },
+      "5.01": {
+        "2000": 1
+      },
+      "10.0": {
+        "8": 1,
+        "10": 9
+      },
+      "6.0": {
+        "2000": 1,
+        "Server 2003": 1,
+        "XP": 1
+      },
+      "8.0": {
+        "7": 1,
+        "Server 2003": 1,
+        "XP": 1
+      },
+      "5.5": {
+        "98": 1
+      },
+      "5.00": {
+        "98": 1
+      }
+    }
+  },
+  "taken_at": "2023-12-01T11:01:24.387Z",
+  "agency": "nuclear-regulatory-commission"
+}

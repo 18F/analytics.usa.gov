@@ -1,0 +1,180 @@
+{
+  "name": "top-downloads-7-days",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "7daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:pageTitle,ga:eventLabel,ga:pagePath",
+    "metrics": [
+      "ga:totalEvents"
+    ],
+    "sort": [
+      "-ga:totalEvents"
+    ],
+    "filters": "ga:eventCategory=~^(download|downloads|(outbound downloads))$;ga:eventLabel!~swf$;ga:pagePath!~(usps.com).*/(?i)(zip|doc).*",
+    "start-index": 1,
+    "max-results": 100,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "NRC-NMSS: Low-Level Radioactive Waste Disposal Program",
+      "event_label": "http://www.nrc.gov/reading-rm/doc-collections/insp-manual/manual-chapter/mc2401.pdf",
+      "page": "scp.nrc.gov/impeptoolbox/impeplowlevel.html",
+      "total_events": "3"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/wiagreements.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "2"
+    },
+    {
+      "page_title": "NRC: State and Tribal Programs- National Materials Program",
+      "event_label": "https://scp.nrc.gov/materials/nmpbkgrd090604.pdf",
+      "page": "scp.nrc.gov/materials.html",
+      "total_events": "2"
+    },
+    {
+      "page_title": "NRC: State and Tribal Programs- Non-Emergency Concerns Involving States and Agreement States",
+      "event_label": "https://scp.nrc.gov/special/protect.pdf",
+      "page": "scp.nrc.gov/allegations.html",
+      "total_events": "2"
+    },
+    {
+      "page_title": "NRC: State and Tribal Programs- Regulation Toolbox",
+      "event_label": "https://scp.nrc.gov/regulationtoolbox/Suggested_State_Legislation_review_summary_sheet.docx",
+      "page": "scp.nrc.gov/regtoolbox.html",
+      "total_events": "2"
+    },
+    {
+      "page_title": "NRC - NMSS Agreement State Program Reviews and Other Activities",
+      "event_label": "https://scp.nrc.gov/reviews/14ny_imp.pdf",
+      "page": "scp.nrc.gov/reviews.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC - NMSS Agreement State Program Reviews and Other Activities",
+      "event_label": "https://scp.nrc.gov/reviews/18ny_imp.pdf",
+      "page": "scp.nrc.gov/reviews.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC - NMSS Agreement State Program Reviews and Other Activities",
+      "event_label": "https://scp.nrc.gov/reviews/aa_MRBperiodicMins160920_AL_NY.pdf",
+      "page": "scp.nrc.gov/reviews.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC Office of Nuclear Material Safety and Safeguards",
+      "event_label": "https://scp.nrc.gov/special/designee.pdf",
+      "page": "scp.nrc.gov/",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC Sponsored Training for Agreement State Staff",
+      "event_label": "https://scp.nrc.gov/special/designee.pdf",
+      "page": "scp.nrc.gov/training.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC-NMSS: NARM Toolbox-Licensee Communications",
+      "event_label": "https://scp.nrc.gov/narmtoolbox/ris2009-07.pdf",
+      "page": "scp.nrc.gov/narmtoolbox/narmlicensee_commun.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC-NMSS: Technical Quality of Incident and Allegation Activities",
+      "event_label": "https://www.nrc.gov/docs/ML2116/ML21165A163.pdf",
+      "page": "scp.nrc.gov/impeptoolbox/impepresponse.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC-NMSS: Technical Quality of Incident and Allegation Activities",
+      "event_label": "https://www.nrc.gov/docs/ML2226/ML22266A093.pdf",
+      "page": "scp.nrc.gov/impeptoolbox/impepresponse.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/ga_srschart.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/gaagreements.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/inregs220420.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/nyagreements.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/nydol_srschart.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/nysdec_srschart.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/nysdh_srschart.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: NMSS - State Regulations and Legislation",
+      "event_label": "https://scp.nrc.gov/special/regs/wi_approval.pdf",
+      "page": "scp.nrc.gov/rulemaking.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: State and Tribal Programs- Non-Emergency Concerns Involving States and Agreement States",
+      "event_label": "https://www.nrc.gov/docs/ML1807/ML18073A206.pdf",
+      "page": "scp.nrc.gov/allegations.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "NRC: State and Tribal Programs- Regulation Toolbox",
+      "event_label": "https://scp.nrc.gov/regulationtoolbox/PROGRAM_ELEMENTS_in_SA_200_Final.pdf",
+      "page": "scp.nrc.gov/regtoolbox.html",
+      "total_events": "1"
+    },
+    {
+      "page_title": "Public Meeting Schedule | NRC.gov",
+      "event_label": "https://www.nrc.gov/about-nrc/covid-19/guidance-for-visitors-to-nrc-facilities.pdf",
+      "page": "www.nrc.gov/pmns/mtg",
+      "total_events": "1"
+    },
+    {
+      "page_title": "Public Meeting Schedule: Search Results | NRC.gov",
+      "event_label": "https://www.nrc.gov/about-nrc/covid-19/guidance-for-visitors-to-nrc-facilities.pdf",
+      "page": "www.nrc.gov/pmns/mtg",
+      "total_events": "1"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:14:04.243Z",
+  "agency": "nuclear-regulatory-commission"
+}

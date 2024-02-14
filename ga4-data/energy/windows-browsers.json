@@ -1,0 +1,114 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 6027306,
+    "by_windows": {
+      "7": {
+        "Chrome": 72510,
+        "Firefox": 12095
+      },
+      "10": {
+        "Chrome": 3096130,
+        "Edge": 903508,
+        "Firefox": 210021,
+        "Opera": 31789
+      },
+      "11": {
+        "Chrome": 1204379,
+        "Edge": 479081
+      },
+      "8.1": {
+        "Chrome": 17636
+      },
+      "NT": {
+        "Chrome": 157
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 72510,
+        "10": 3096130,
+        "11": 1204379,
+        "8.1": 17636,
+        "NT": 157
+      },
+      "Edge": {
+        "10": 903508,
+        "11": 479081
+      },
+      "Firefox": {
+        "7": 12095,
+        "10": 210021
+      },
+      "Opera": {
+        "10": 31789
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:45:06.398Z",
+  "agency": "energy"
+}

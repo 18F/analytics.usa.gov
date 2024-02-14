@@ -1,0 +1,566 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "wwwdev.nass.usda.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "wwwbeta.nass.usda.gov",
+      "visits": "110"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "36"
+    },
+    {
+      "domain": "www.wcc.nrcs.usda.gov",
+      "visits": "2869"
+    },
+    {
+      "domain": "www.usda.gov",
+      "visits": "431047"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.srs.fs.usda.gov",
+      "visits": "1917"
+    },
+    {
+      "domain": "www.rma.usda.gov",
+      "visits": "19459"
+    },
+    {
+      "domain": "www.ree.usda.gov",
+      "visits": "582"
+    },
+    {
+      "domain": "www.rd.usda.gov",
+      "visits": "233821"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.nutrition.gov",
+      "visits": "26609"
+    },
+    {
+      "domain": "www.nrs.fs.usda.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "140820"
+    },
+    {
+      "domain": "www.nps.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "www.nfc.usda.gov",
+      "visits": "38069"
+    },
+    {
+      "domain": "www.nass.usda.gov",
+      "visits": "34011"
+    },
+    {
+      "domain": "www.nal.usda.gov",
+      "visits": "97970"
+    },
+    {
+      "domain": "www.myplate.gov",
+      "visits": "257103"
+    },
+    {
+      "domain": "www.lcacommons.gov",
+      "visits": "624"
+    },
+    {
+      "domain": "www.itap.gov",
+      "visits": "200"
+    },
+    {
+      "domain": "www.invasivespeciesinfo.gov",
+      "visits": "14845"
+    },
+    {
+      "domain": "www.fsis.usda.gov",
+      "visits": "384161"
+    },
+    {
+      "domain": "www.fsa.usda.gov",
+      "visits": "194102"
+    },
+    {
+      "domain": "www.fs.usda.gov",
+      "visits": "1355748"
+    },
+    {
+      "domain": "www.fns.usda.gov",
+      "visits": "433892"
+    },
+    {
+      "domain": "www.fia.fs.usda.gov",
+      "visits": "1456"
+    },
+    {
+      "domain": "www.fas.usda.gov",
+      "visits": "12816"
+    },
+    {
+      "domain": "www.farmers.gov",
+      "visits": "96142"
+    },
+    {
+      "domain": "www.ers.usda.gov",
+      "visits": "96125"
+    },
+    {
+      "domain": "www.empowhr.gov",
+      "visits": "168"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "www.dietaryguidelines.gov",
+      "visits": "37047"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.blm.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.ars.usda.gov",
+      "visits": "71160"
+    },
+    {
+      "domain": "www.ams.usda.gov",
+      "visits": "136496"
+    },
+    {
+      "domain": "www.agcounts.usda.gov",
+      "visits": "2831"
+    },
+    {
+      "domain": "www.aff.gov",
+      "visits": "4133"
+    },
+    {
+      "domain": "www-tx.ers.usda.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "wfdss-qa.nwcg.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "30"
+    },
+    {
+      "domain": "usdasearch.usda.gov",
+      "visits": "21616"
+    },
+    {
+      "domain": "usda.stg.platform.usda.gov",
+      "visits": "74"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "17"
+    },
+    {
+      "domain": "training.ars-grin.gov",
+      "visits": "78"
+    },
+    {
+      "domain": "test-wic.prod.usda.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "tellus.ars.usda.gov",
+      "visits": "3379"
+    },
+    {
+      "domain": "tellus-prod.arsnet.usda.gov",
+      "visits": "103"
+    },
+    {
+      "domain": "surveyreviewbeta.nass.usda.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "surveyreview.nass.usda.gov",
+      "visits": "483"
+    },
+    {
+      "domain": "submit.nal.usda.gov",
+      "visits": "119"
+    },
+    {
+      "domain": "store.usgs.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "stg.aff.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "srs.fs.usda.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "snaped89.stg.platform.usda.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "snaped.stg.platform.usda.gov",
+      "visits": "90"
+    },
+    {
+      "domain": "snaped.prod.usda.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "snaped.fns.usda.gov",
+      "visits": "36965"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "37"
+    },
+    {
+      "domain": "search.nal.usda.gov",
+      "visits": "4998"
+    },
+    {
+      "domain": "search.invasivespeciesinfo.gov",
+      "visits": "338"
+    },
+    {
+      "domain": "search.farmers.gov",
+      "visits": "1184"
+    },
+    {
+      "domain": "search.ers.usda.gov",
+      "visits": "1667"
+    },
+    {
+      "domain": "sd-prod.arsnet.usda.gov",
+      "visits": "95"
+    },
+    {
+      "domain": "scinet.usda.gov",
+      "visits": "926"
+    },
+    {
+      "domain": "scientificdiscoveries.ars.usda.gov",
+      "visits": "1038"
+    },
+    {
+      "domain": "sandbox.fsa.usda.gov",
+      "visits": "154"
+    },
+    {
+      "domain": "rma.usda.gov",
+      "visits": "6341"
+    },
+    {
+      "domain": "reconnect-apply.rd.usda.gov",
+      "visits": "107"
+    },
+    {
+      "domain": "quickstats.nass.usda.gov",
+      "visits": "8350"
+    },
+    {
+      "domain": "qa-cms.fs.usda.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "ps.fns.agcloud.usda.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "professionalstandards.fns.usda.gov",
+      "visits": "818"
+    },
+    {
+      "domain": "primary.ers.usda.gov",
+      "visits": "135"
+    },
+    {
+      "domain": "ppdfs.ess.usda.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "phytochem.nal.usda.gov",
+      "visits": "2638"
+    },
+    {
+      "domain": "origin2.www.fsa.usda.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "origin-fs.fs.usda.gov",
+      "visits": "321"
+    },
+    {
+      "domain": "npgsweb.ars-grin.gov",
+      "visits": "7836"
+    },
+    {
+      "domain": "nfc.usda.gov",
+      "visits": "27895"
+    },
+    {
+      "domain": "nesruat.fns.edc.usda.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "nesr.usda.gov",
+      "visits": "395"
+    },
+    {
+      "domain": "nematode.ars.usda.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "nareeeab.ree.usda.gov",
+      "visits": "254"
+    },
+    {
+      "domain": "mymarketnewsdev.ams.usda.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "mymarketnews.ams.usda.gov",
+      "visits": "22985"
+    },
+    {
+      "domain": "iwgsc.nal.usda.gov",
+      "visits": "147"
+    },
+    {
+      "domain": "i5k.nal.usda.gov",
+      "visits": "74"
+    },
+    {
+      "domain": "geodata.nal.usda.gov",
+      "visits": "841"
+    },
+    {
+      "domain": "fsweb.wo.fs.fed.us",
+      "visits": "405"
+    },
+    {
+      "domain": "fsis-test.fsis.usda.gov",
+      "visits": "394"
+    },
+    {
+      "domain": "fsis-dev.fsis.usda.gov",
+      "visits": "43"
+    },
+    {
+      "domain": "fns.stg.platform.usda.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "fns-prod.azureedge.us",
+      "visits": "490"
+    },
+    {
+      "domain": "fdc.nal.usda.gov",
+      "visits": "308349"
+    },
+    {
+      "domain": "fas.usda.gov",
+      "visits": "35587"
+    },
+    {
+      "domain": "famprod.nwcg.gov",
+      "visits": "828"
+    },
+    {
+      "domain": "ers.usda.gov",
+      "visits": "711"
+    },
+    {
+      "domain": "digitop.nal.usda.gov",
+      "visits": "1043"
+    },
+    {
+      "domain": "digitalpermits-stg.fs2c.usda.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "digitalpermits-dev.fs2c.usda.gov",
+      "visits": "62"
+    },
+    {
+      "domain": "dguat.fns.edc.usda.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "dev.aff.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "dev-cms.fs.usda.gov",
+      "visits": "124"
+    },
+    {
+      "domain": "data.nal.usda.gov",
+      "visits": "7715"
+    },
+    {
+      "domain": "data.gov",
+      "visits": "48"
+    },
+    {
+      "domain": "data.ers.usda.gov",
+      "visits": "4491"
+    },
+    {
+      "domain": "cms.fs.usda.gov",
+      "visits": "300"
+    },
+    {
+      "domain": "cms-prod.fsis.usda.gov",
+      "visits": "177"
+    },
+    {
+      "domain": "cm1.fsa.usda.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "capitrainingtest.nass.usda.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "capitraining.nass.usda.gov",
+      "visits": "156"
+    },
+    {
+      "domain": "arsstaging.arsnet.usda.gov",
+      "visits": "121"
+    },
+    {
+      "domain": "arssandbox.arsnet.usda.gov",
+      "visits": "120"
+    },
+    {
+      "domain": "apps.fs.usda.gov",
+      "visits": "191"
+    },
+    {
+      "domain": "ams.stg.platform.usda.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "aglearn.usda.gov",
+      "visits": "12662"
+    },
+    {
+      "domain": "aglab.ars.usda.gov",
+      "visits": "1544"
+    },
+    {
+      "domain": "aglab-staging.arsnet.usda.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "aglab-prod.arsnet.usda.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "agcountstest.nass.usda.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "agcountsbeta.nass.usda.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "agcounts.usda.gov",
+      "visits": "6688"
+    },
+    {
+      "domain": "agclass.nal.usda.gov",
+      "visits": "2206"
+    },
+    {
+      "domain": "about.usps.com",
+      "visits": "23"
+    }
+  ],
+  "totals": {
+    "visits": 4664623
+  },
+  "taken_at": "2024-01-05T15:50:55.882Z",
+  "agency": "agriculture"
+}

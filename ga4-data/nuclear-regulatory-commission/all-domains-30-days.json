@@ -1,0 +1,101 @@
+{
+  "name": "all-domains-30-days",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "30daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions",
+      "ga:pageviews",
+      "ga:users",
+      "ga:pageviewsPerSession",
+      "ga:avgSessionDuration",
+      "ga:exits"
+    ],
+    "sort": [
+      "-ga:sessions"
+    ],
+    "filters": "ga:sessions>=10",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "All Domains (30 Days)",
+    "description": "Last 30 days' domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "nrc.gov",
+      "visits": "469609",
+      "pageviews": "1272381",
+      "users": "330983",
+      "pageviews_per_session": "2.709447646872185",
+      "avg_session_duration": "142.31695516908746",
+      "exits": "469531"
+    },
+    {
+      "domain": "scp.nrc.gov",
+      "visits": "1483",
+      "pageviews": "2239",
+      "users": "998",
+      "pageviews_per_session": "1.5097774780849629",
+      "avg_session_duration": "161.3924477410654",
+      "exits": "1420"
+    },
+    {
+      "domain": "video.nrc.gov",
+      "visits": "1427",
+      "pageviews": "1826",
+      "users": "958",
+      "pageviews_per_session": "1.2796075683251578",
+      "avg_session_duration": "113.11352487736511",
+      "exits": "1437"
+    },
+    {
+      "domain": "publish.nrc.gov",
+      "visits": "610",
+      "pageviews": "6629",
+      "users": "193",
+      "pageviews_per_session": "10.8672131147541",
+      "avg_session_duration": "996.2426229508196",
+      "exits": "591"
+    },
+    {
+      "domain": "tribal.nrc.gov",
+      "visits": "130",
+      "pageviews": "272",
+      "users": "124",
+      "pageviews_per_session": "2.0923076923076924",
+      "avg_session_duration": "144.3846153846154",
+      "exits": "113"
+    },
+    {
+      "domain": "feedback.nrc.gov",
+      "visits": "84",
+      "pageviews": "110",
+      "users": "67",
+      "pageviews_per_session": "1.3095238095238095",
+      "avg_session_duration": "96.98809523809524",
+      "exits": "72"
+    },
+    {
+      "domain": "papaya.nrc.gov",
+      "visits": "74",
+      "pageviews": "93",
+      "users": "38",
+      "pageviews_per_session": "1.2567567567567568",
+      "avg_session_duration": "108.48648648648648",
+      "exits": "77"
+    }
+  ],
+  "totals": {
+    "users": 333361,
+    "visits": 473417
+  },
+  "taken_at": "2023-11-27T15:14:14.359Z",
+  "agency": "nuclear-regulatory-commission"
+}

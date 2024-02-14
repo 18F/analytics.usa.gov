@@ -1,0 +1,410 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.webharvest.gov",
+      "visits": "751"
+    },
+    {
+      "domain": "www.reaganlibrary.gov",
+      "visits": "52455"
+    },
+    {
+      "domain": "www.obamalibrary.gov",
+      "visits": "12547"
+    },
+    {
+      "domain": "www.nixonlibrary.gov",
+      "visits": "15032"
+    },
+    {
+      "domain": "www.militaryonesource.mil",
+      "visits": "10"
+    },
+    {
+      "domain": "www.lbjlibrary.org",
+      "visits": "18663"
+    },
+    {
+      "domain": "www.jimmycarterlibrary.gov",
+      "visits": "7633"
+    },
+    {
+      "domain": "www.jfklibrary.org",
+      "visits": "173161"
+    },
+    {
+      "domain": "www.georgewbushlibrary.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.founders.archives.gov",
+      "visits": "313"
+    },
+    {
+      "domain": "www.fordlibrarymuseum.gov",
+      "visits": "6841"
+    },
+    {
+      "domain": "www.fmcsa.dot.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.fincen.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.federalregister.gov",
+      "visits": "1093072"
+    },
+    {
+      "domain": "www.eisenhowerlibrary.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "1228763"
+    },
+    {
+      "domain": "www.clintonlibrary.gov",
+      "visits": "5961"
+    },
+    {
+      "domain": "www.bush41.org",
+      "visits": "5980"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "1115310"
+    },
+    {
+      "domain": "webharvest.gov",
+      "visits": "170"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "30"
+    },
+    {
+      "domain": "vetrecs.archives.gov",
+      "visits": "108706"
+    },
+    {
+      "domain": "unwritten-record.blogs.archives.gov",
+      "visits": "9775"
+    },
+    {
+      "domain": "trumpwhitehouse.archives.gov",
+      "visits": "96354"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "12"
+    },
+    {
+      "domain": "transforming-classification.blogs.archives.gov",
+      "visits": "198"
+    },
+    {
+      "domain": "transfer.archives.gov",
+      "visits": "102"
+    },
+    {
+      "domain": "training.archives.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "text-message.blogs.archives.gov",
+      "visits": "7040"
+    },
+    {
+      "domain": "test.nac-mvp.archives.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "situationroom.archives.gov",
+      "visits": "234"
+    },
+    {
+      "domain": "search.archives.gov",
+      "visits": "52022"
+    },
+    {
+      "domain": "rediscovering-black-history.blogs.archives.gov",
+      "visits": "4978"
+    },
+    {
+      "domain": "records-express.blogs.archives.gov",
+      "visits": "1522"
+    },
+    {
+      "domain": "reagan.blogs.archives.gov",
+      "visits": "45351"
+    },
+    {
+      "domain": "reagan.artifacts.archives.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "qavetrecs.archives.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "qa.civics.archives.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "prologue.blogs.archives.gov",
+      "visits": "24905"
+    },
+    {
+      "domain": "preview.nac-mvp.archives.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "petitions.trumpwhitehouse.archives.gov",
+      "visits": "757"
+    },
+    {
+      "domain": "petitions.obamawhitehouse.archives.gov",
+      "visits": "8466"
+    },
+    {
+      "domain": "open.obamawhitehouse.archives.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "obamawhitehouse.archives.gov",
+      "visits": "112048"
+    },
+    {
+      "domain": "obamalibrary.archives.gov",
+      "visits": "137"
+    },
+    {
+      "domain": "obama.artifacts.archives.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "narations.blogs.archives.gov",
+      "visits": "1564"
+    },
+    {
+      "domain": "museum.archives.gov",
+      "visits": "24470"
+    },
+    {
+      "domain": "letsmove.obamawhitehouse.archives.gov",
+      "visits": "2156"
+    },
+    {
+      "domain": "lbjlibrary.archives.gov",
+      "visits": "177"
+    },
+    {
+      "domain": "lbj.artifacts.archives.gov",
+      "visits": "84"
+    },
+    {
+      "domain": "jfklibrary.archives.gov",
+      "visits": "176"
+    },
+    {
+      "domain": "jfk.blogs.archives.gov",
+      "visits": "2228"
+    },
+    {
+      "domain": "jfk.artifacts.archives.gov",
+      "visits": "4312"
+    },
+    {
+      "domain": "isoo.blogs.archives.gov",
+      "visits": "1908"
+    },
+    {
+      "domain": "isoo-overview.blogs.archives.gov",
+      "visits": "1156"
+    },
+    {
+      "domain": "import.ecfr.gov",
+      "visits": "174"
+    },
+    {
+      "domain": "hoover.blogs.archives.gov",
+      "visits": "4302"
+    },
+    {
+      "domain": "hoover.archives.gov",
+      "visits": "6155"
+    },
+    {
+      "domain": "historyhub.history.gov",
+      "visits": "50946"
+    },
+    {
+      "domain": "georgewbush-whitehouse.archives.gov",
+      "visits": "89814"
+    },
+    {
+      "domain": "founders.archives.gov",
+      "visits": "46724"
+    },
+    {
+      "domain": "ford.blogs.archives.gov",
+      "visits": "155"
+    },
+    {
+      "domain": "foia.blogs.archives.gov",
+      "visits": "1278"
+    },
+    {
+      "domain": "fdr.blogs.archives.gov",
+      "visits": "4616"
+    },
+    {
+      "domain": "fdr.artifacts.archives.gov",
+      "visits": "310"
+    },
+    {
+      "domain": "eservices.archives.gov",
+      "visits": "8383"
+    },
+    {
+      "domain": "education.blogs.archives.gov",
+      "visits": "3357"
+    },
+    {
+      "domain": "drafting.ecfr.gov",
+      "visits": "1103"
+    },
+    {
+      "domain": "dev.nac-mvp.archives.gov",
+      "visits": "50"
+    },
+    {
+      "domain": "declassification.blogs.archives.gov",
+      "visits": "398"
+    },
+    {
+      "domain": "d10.qa.museum.archives.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "crisisnextdoor.trumpwhitehouse.archives.gov",
+      "visits": "80"
+    },
+    {
+      "domain": "clintonwhitehouse6.archives.gov",
+      "visits": "551"
+    },
+    {
+      "domain": "clintonwhitehouse5.archives.gov",
+      "visits": "4227"
+    },
+    {
+      "domain": "clintonwhitehouse4.archives.gov",
+      "visits": "12172"
+    },
+    {
+      "domain": "clintonwhitehouse3.archives.gov",
+      "visits": "6135"
+    },
+    {
+      "domain": "clintonwhitehouse2.archives.gov",
+      "visits": "289"
+    },
+    {
+      "domain": "clintonwhitehouse1.archives.gov",
+      "visits": "233"
+    },
+    {
+      "domain": "clinton.presidentiallibraries.us",
+      "visits": "3375"
+    },
+    {
+      "domain": "civics.archives.gov",
+      "visits": "687"
+    },
+    {
+      "domain": "bush41library.tamu.edu",
+      "visits": "988"
+    },
+    {
+      "domain": "bush41library.archives.gov",
+      "visits": "154"
+    },
+    {
+      "domain": "aotus11.blogs.archives.gov",
+      "visits": "118"
+    },
+    {
+      "domain": "aotus.blogs.archives.gov",
+      "visits": "1500"
+    },
+    {
+      "domain": "annotation.blogs.archives.gov",
+      "visits": "59"
+    },
+    {
+      "domain": "aad.archives.gov",
+      "visits": "27281"
+    },
+    {
+      "domain": "1950census.archives.gov",
+      "visits": "16688"
+    }
+  ],
+  "totals": {
+    "visits": 4540233
+  },
+  "taken_at": "2024-01-05T15:49:04.544Z",
+  "agency": "national-archives-records-administration"
+}

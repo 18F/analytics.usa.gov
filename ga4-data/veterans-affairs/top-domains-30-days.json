@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.va.gov",
+      "visits": "17457239",
+      "users": "9231479",
+      "pageviews": "76967415",
+      "pageviews_per_session": "4.4090106115864023",
+      "avg_session_duration": "284.68492568686514",
+      "bounce_rate": "0.3499102578592182"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "visits": "8418345",
+      "users": "4915124",
+      "pageviews": "33567281",
+      "pageviews_per_session": "3.9874020368611647",
+      "avg_session_duration": "252.65742636552497",
+      "bounce_rate": "0.44409655341994181"
+    },
+    {
+      "domain": "eauth.va.gov",
+      "visits": "3750858",
+      "users": "1593987",
+      "pageviews": "14041688",
+      "pageviews_per_session": "3.7435970649915298",
+      "avg_session_duration": "316.61157834416423",
+      "bounce_rate": "0.23890987075490461"
+    },
+    {
+      "domain": "mhvidp-prod.myhealth.va.gov",
+      "visits": "1937732",
+      "users": "1107550",
+      "pageviews": "2614766",
+      "pageviews_per_session": "1.3494002266567307",
+      "avg_session_duration": "51.456543648271371",
+      "bounce_rate": "0.024542609607520544"
+    },
+    {
+      "domain": "www.mentalhealth.va.gov",
+      "visits": "1407223",
+      "users": "799151",
+      "pageviews": "1934113",
+      "pageviews_per_session": "1.3744246647475205",
+      "avg_session_duration": "116.0822026820738",
+      "bounce_rate": "0.76260194723935015"
+    },
+    {
+      "domain": "news.va.gov",
+      "visits": "975560",
+      "users": "780741",
+      "pageviews": "1175834",
+      "pageviews_per_session": "1.2059791299356266",
+      "avg_session_duration": "130.31049150607612",
+      "bounce_rate": "0.46101521177580057"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "736364",
+      "users": "511221",
+      "pageviews": "1056449",
+      "pageviews_per_session": "1.4347360816118115",
+      "avg_session_duration": "205.1511608391622",
+      "bounce_rate": "0.29312405277824555"
+    },
+    {
+      "domain": "www.choose.va.gov",
+      "visits": "515129",
+      "users": "463638",
+      "pageviews": "732389",
+      "pageviews_per_session": "1.421768139631044",
+      "avg_session_duration": "81.5515255288449",
+      "bounce_rate": "0.48054953225308611"
+    },
+    {
+      "domain": "vacareers.va.gov",
+      "visits": "394054",
+      "users": "320779",
+      "pageviews": "609945",
+      "pageviews_per_session": "1.5480568653027249",
+      "avg_session_duration": "106.9391948373989",
+      "bounce_rate": "0.31264242971775441"
+    },
+    {
+      "domain": "benefits.va.gov",
+      "visits": "368228",
+      "users": "275452",
+      "pageviews": "457627",
+      "pageviews_per_session": "1.2428604017076377",
+      "avg_session_duration": "162.27256289201236",
+      "bounce_rate": "0.26271766405596531"
+    },
+    {
+      "domain": "mobile.va.gov",
+      "visits": "331569",
+      "users": "153620",
+      "pageviews": "425503",
+      "pageviews_per_session": "1.2832954829914738",
+      "avg_session_duration": "139.99346226003453",
+      "bounce_rate": "0.57734287584183086"
+    },
+    {
+      "domain": "www.cem.va.gov",
+      "visits": "327782",
+      "users": "240513",
+      "pageviews": "544851",
+      "pageviews_per_session": "1.662144352038855",
+      "avg_session_duration": "170.1784021365001",
+      "bounce_rate": "0.34133356926249764"
+    },
+    {
+      "domain": "www.ptsd.va.gov",
+      "visits": "289636",
+      "users": "214821",
+      "pageviews": "407652",
+      "pageviews_per_session": "1.4074735184852711",
+      "avg_session_duration": "175.3289697523729",
+      "bounce_rate": "0.4618072339073872"
+    },
+    {
+      "domain": "www.publichealth.va.gov",
+      "visits": "237040",
+      "users": "176423",
+      "pageviews": "368862",
+      "pageviews_per_session": "1.5561635167060412",
+      "avg_session_duration": "203.99821815357805",
+      "bounce_rate": "0.35188153898076274"
+    },
+    {
+      "domain": "www.veteranshealthlibrary.va.gov",
+      "visits": "181932",
+      "users": "167912",
+      "pageviews": "239529",
+      "pageviews_per_session": "1.3151836950069256",
+      "avg_session_duration": "72.283097156116369",
+      "bounce_rate": "0.68461842886353141"
+    },
+    {
+      "domain": "department.va.gov",
+      "visits": "150184",
+      "users": "118966",
+      "pageviews": "235918",
+      "pageviews_per_session": "1.5722447131518671",
+      "avg_session_duration": "182.2826353754109",
+      "bounce_rate": "0.24294199115751344"
+    },
+    {
+      "domain": "www.vacanteen.va.gov",
+      "visits": "80842",
+      "users": "62750",
+      "pageviews": "130073",
+      "pageviews_per_session": "1.6089903762895525",
+      "avg_session_duration": "179.79633875374168",
+      "bounce_rate": "0.35101803517973329"
+    },
+    {
+      "domain": "www.hepatitis.va.gov",
+      "visits": "76902",
+      "users": "64359",
+      "pageviews": "120632",
+      "pageviews_per_session": "1.5688278588333204",
+      "avg_session_duration": "124.0410722129629",
+      "bounce_rate": "0.40850693089906637"
+    },
+    {
+      "domain": "www.research.va.gov",
+      "visits": "74589",
+      "users": "54607",
+      "pageviews": "114653",
+      "pageviews_per_session": "1.539744466342222",
+      "avg_session_duration": "194.80649048559997",
+      "bounce_rate": "0.36833849495233884"
+    },
+    {
+      "domain": "www.gravelocator.cem.va.gov",
+      "visits": "72951",
+      "users": "52989",
+      "pageviews": "319622",
+      "pageviews_per_session": "4.3813244506586617",
+      "avg_session_duration": "259.33456991839159",
+      "bounce_rate": "0.067538484736329868"
+    }
+  ],
+  "totals": {
+    "users": 21306082,
+    "visits": 37784159
+  },
+  "taken_at": "2024-01-05T15:34:15.300Z",
+  "agency": "veterans-affairs"
+}

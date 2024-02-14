@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "MyPlate | U.S. Department of Agriculture",
+      "active_visitors": "523"
+    },
+    {
+      "page_title": "MyPlate Daily Checklist | MyPlate",
+      "active_visitors": "456"
+    },
+    {
+      "page_title": "FoodData Central",
+      "active_visitors": "386"
+    },
+    {
+      "page_title": "MyPlate Plan | MyPlate",
+      "active_visitors": "345"
+    },
+    {
+      "page_title": "USDA MyPlate Fruit Group – One of the Five Food Groups",
+      "active_visitors": "214"
+    },
+    {
+      "page_title": "USDA MyPlate What Is MyPlate?",
+      "active_visitors": "207"
+    },
+    {
+      "page_title": "USDA",
+      "active_visitors": "201"
+    },
+    {
+      "page_title": "USDA MyPlate Vegetables Group – One of the Five Food Groups",
+      "active_visitors": "189"
+    },
+    {
+      "page_title": "USDA MyPlate Protein Foods Group – One of the Five Food Groups",
+      "active_visitors": "164"
+    },
+    {
+      "page_title": "USDA MyPlate Grains Group – One of the Five Food Groups",
+      "active_visitors": "162"
+    },
+    {
+      "page_title": "USDA MyPlate Dairy Group – One of the Five Food Groups",
+      "active_visitors": "147"
+    },
+    {
+      "page_title": "Home | Natural Resources Conservation Service",
+      "active_visitors": "130"
+    },
+    {
+      "page_title": "SNAP Eligibility | Food and Nutrition Service",
+      "active_visitors": "118"
+    },
+    {
+      "page_title": "What You'll Learn",
+      "active_visitors": "112"
+    },
+    {
+      "page_title": "SNAP State Directory of Resources | Food and Nutrition Service",
+      "active_visitors": "111"
+    },
+    {
+      "page_title": "Menu",
+      "active_visitors": "110"
+    },
+    {
+      "page_title": "MyPlate Quiz | MyPlate",
+      "active_visitors": "100"
+    },
+    {
+      "page_title": "Lesson Summary",
+      "active_visitors": "92"
+    },
+    {
+      "page_title": "MyPlate Quiz Results | MyPlate",
+      "active_visitors": "89"
+    },
+    {
+      "page_title": "Home | National Finance Center",
+      "active_visitors": "82"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:02:32.727Z",
+  "agency": "agriculture"
+}

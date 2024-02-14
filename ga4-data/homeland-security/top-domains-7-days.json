@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.uscis.gov",
+      "visits": "3668001"
+    },
+    {
+      "domain": "egov.uscis.gov",
+      "visits": "2164831"
+    },
+    {
+      "domain": "www.tsa.gov",
+      "visits": "1393710"
+    },
+    {
+      "domain": "my.uscis.gov",
+      "visits": "1342574"
+    },
+    {
+      "domain": "esta.cbp.dhs.gov",
+      "visits": "1218421"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "1209251"
+    },
+    {
+      "domain": "tsaenrollmentbyidemia.tsa.dhs.gov",
+      "visits": "799365"
+    },
+    {
+      "domain": "i94.cbp.dhs.gov",
+      "visits": "646884"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "598894"
+    },
+    {
+      "domain": "www.fema.gov",
+      "visits": "424318"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "358610"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "275626"
+    },
+    {
+      "domain": "bwt.cbp.gov",
+      "visits": "274698"
+    },
+    {
+      "domain": "www.ice.gov",
+      "visits": "250360"
+    },
+    {
+      "domain": "www.ready.gov",
+      "visits": "156445"
+    },
+    {
+      "domain": "msc.fema.gov",
+      "visits": "132107"
+    },
+    {
+      "domain": "careers.cbp.gov",
+      "visits": "124040"
+    },
+    {
+      "domain": "www.e-verify.gov",
+      "visits": "122112"
+    },
+    {
+      "domain": "www.mycg.uscg.mil",
+      "visits": "87711"
+    },
+    {
+      "domain": "www.disasterassistance.gov",
+      "visits": "64599"
+    }
+  ],
+  "totals": {
+    "visits": 15312557
+  },
+  "taken_at": "2024-01-05T15:56:42.005Z",
+  "agency": "homeland-security"
+}

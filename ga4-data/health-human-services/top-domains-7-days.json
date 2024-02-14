@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.cdc.gov",
+      "visits": "10634996"
+    },
+    {
+      "domain": "medlineplus.gov",
+      "visits": "7249410"
+    },
+    {
+      "domain": "www.fda.gov",
+      "visits": "2789248"
+    },
+    {
+      "domain": "www.healthcare.gov",
+      "visits": "2689672"
+    },
+    {
+      "domain": "www.nhlbi.nih.gov",
+      "visits": "1604419"
+    },
+    {
+      "domain": "www.medicare.gov",
+      "visits": "1461328"
+    },
+    {
+      "domain": "www.cms.gov",
+      "visits": "1002602"
+    },
+    {
+      "domain": "www.cancer.gov",
+      "visits": "965273"
+    },
+    {
+      "domain": "www.niddk.nih.gov",
+      "visits": "827084"
+    },
+    {
+      "domain": "www.covid.gov",
+      "visits": "764606"
+    },
+    {
+      "domain": "www.hhs.gov",
+      "visits": "496907"
+    },
+    {
+      "domain": "www.accessdata.fda.gov",
+      "visits": "454001"
+    },
+    {
+      "domain": "vsearch.nlm.nih.gov",
+      "visits": "405865"
+    },
+    {
+      "domain": "dailymed.nlm.nih.gov",
+      "visits": "389088"
+    },
+    {
+      "domain": "nida.nih.gov",
+      "visits": "360914"
+    },
+    {
+      "domain": "www.nimh.nih.gov",
+      "visits": "353879"
+    },
+    {
+      "domain": "www.samhsa.gov",
+      "visits": "320439"
+    },
+    {
+      "domain": "www.nia.nih.gov",
+      "visits": "314737"
+    },
+    {
+      "domain": "wwwnc.cdc.gov",
+      "visits": "306381"
+    },
+    {
+      "domain": "exclusions.oig.hhs.gov",
+      "visits": "300914"
+    }
+  ],
+  "totals": {
+    "visits": 33691763
+  },
+  "taken_at": "2024-01-05T15:54:00.920Z",
+  "agency": "health-human-services"
+}

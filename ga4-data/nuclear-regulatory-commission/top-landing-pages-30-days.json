@@ -1,0 +1,101 @@
+{
+  "name": "top-landing-pages-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      },
+      {
+        "name": "landingPagePlusQueryString"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "activeUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460734"
+  },
+  "meta": {
+    "name": "Top Landing Pages (30 Days)",
+    "description": "Last 30 days' Landing Pages, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.archives.gov",
+      "landing_page": "/search?query=C05617906&affiliate=national-archives",
+      "pageviews": "1",
+      "visits": "1",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "2.162456",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.archives.gov",
+      "landing_page": "/vpv404/files/declassification/iscap/pdf/2011-099-doc01.pdf./https://www.nrc.gov/",
+      "pageviews": "1",
+      "visits": "1",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "14.516652",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.epa.gov",
+      "landing_page": "/vpv404/cleanups/cleanup-grants-and-funding",
+      "pageviews": "1",
+      "visits": "1",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "18.373204",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.epa.gov",
+      "landing_page": "/vpv404/cleanups/cleanup-grants-and-funding/https://www.nrc.gov/",
+      "pageviews": "1",
+      "visits": "1",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "74.143129",
+      "bounce_rate": "0"
+    }
+  ],
+  "totals": {
+    "visits": 4
+  },
+  "taken_at": "2024-01-05T14:42:45.193Z",
+  "agency": "nuclear-regulatory-commission"
+}

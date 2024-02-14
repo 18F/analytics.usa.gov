@@ -1,0 +1,49 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460734"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites."
+  },
+  "totals": {
+    "visits": 15,
+    "languages": {
+      "English": 12,
+      "German": 2,
+      "Russian": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:42:34.412Z",
+  "agency": "nuclear-regulatory-commission"
+}

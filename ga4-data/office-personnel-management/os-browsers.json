@@ -1,0 +1,519 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites."
+  },
+  "totals": {
+    "visits": 71198374,
+    "by_os": {
+      "Windows": {
+        "Edge": 16376994,
+        "Chrome": 14648052,
+        "Firefox": 760394,
+        "Opera": 48120,
+        "Internet Explorer": 9767,
+        "YaBrowser": 1002,
+        "Whale Browser": 418,
+        "Coc Coc": 207,
+        "Waterfox": 161,
+        "SeaMonkey": 124,
+        "PaleMoon": 74,
+        "(not set)": 159,
+        "Mozilla": 68,
+        "Safari": 81,
+        "Mozilla Compatible Agent": 60,
+        "Aloha Browser": 23,
+        "Netscape": 6,
+        "UC Browser": 8,
+        "Vivaldi": 7,
+        "Maxthon": 1,
+        "Iron": 1,
+        "IE with Chrome Frame": 1
+      },
+      "iOS": {
+        "Safari": 17738885,
+        "Safari (in-app)": 2010924,
+        "Chrome": 2462438,
+        "(not set)": 57645,
+        "DuckDuckGo Browser": 525,
+        "Iron": 599,
+        "Aloha Browser": 340,
+        "YaBrowser": 328,
+        "UC Browser": 42,
+        "Whale Browser": 7,
+        "Seznam": 1,
+        "Edge": 7,
+        "Puffin": 48,
+        "Phoenix Browser": 7,
+        "Netscape": 1
+      },
+      "Android": {
+        "Chrome": 6730121,
+        "Samsung Internet": 829655,
+        "Android Webview": 573019,
+        "Edge": 76589,
+        "Firefox": 71199,
+        "Amazon Silk": 42152,
+        "Opera": 10714,
+        "YaBrowser": 506,
+        "Android Runtime": 210,
+        "Whale Browser": 289,
+        "UC Browser": 726,
+        "(not set)": 14,
+        "DuckDuckGo Browser": 123,
+        "Phoenix Browser": 51,
+        "Aloha Browser": 90,
+        "Opera Mini": 46,
+        "Seznam": 2,
+        "Android Browser": 195,
+        "Iron": 3,
+        "Netscape": 2,
+        "Puffin": 11,
+        "Mozilla Compatible Agent": 3,
+        "Coc Coc": 12,
+        "Maxthon": 1
+      },
+      "Macintosh": {
+        "Safari": 3256987,
+        "Chrome": 2800416,
+        "Firefox": 177358,
+        "Mozilla Compatible Agent": 28111,
+        "Edge": 25792,
+        "Opera": 4139,
+        "Waterfox": 13,
+        "YaBrowser": 95,
+        "DuckDuckGo Browser": 21,
+        "SeaMonkey": 3,
+        "Whale Browser": 73,
+        "Vivaldi": 1,
+        "Coc Coc": 17,
+        "Aloha Browser": 47,
+        "(not set)": 2,
+        "Maxthon": 4,
+        "Internet Explorer": 5,
+        "Puffin": 2,
+        "Mozilla": 1
+      },
+      "Linux": {
+        "Chrome": 1842491,
+        "Firefox": 44644,
+        "Samsung Internet": 13583,
+        "Edge": 3103,
+        "Meta Quest Browser": 262,
+        "Opera": 403,
+        "Puffin": 21,
+        "Mozilla Compatible Agent": 22,
+        "Safari": 81,
+        "YaBrowser": 24,
+        "PaleMoon": 37,
+        "Whale Browser": 15,
+        "Aloha Browser": 3,
+        "Galeon": 1,
+        "Konqueror": 4,
+        "SeaMonkey": 13,
+        "Mozilla": 2,
+        "(not set)": 2,
+        "Vivaldi": 2,
+        "DuckDuckGo Browser": 1
+      },
+      "Chrome OS": {
+        "Chrome": 500005
+      },
+      "(not set)": {
+        "(not set)": 45524,
+        "Opera Mini": 211,
+        "Mozilla Compatible Agent": 185,
+        "Chrome": 322,
+        "Opera": 6,
+        "Safari": 10,
+        "Nintendo Browser": 4,
+        "Lynx": 2,
+        "Internet Explorer": 1
+      },
+      "Firefox OS": {
+        "Firefox": 138
+      },
+      "OS/2": {
+        "Firefox": 96,
+        "Safari": 2,
+        "SeaMonkey": 1
+      },
+      "Fuchsia": {
+        "Chrome": 315
+      },
+      "Sony": {
+        "NetFront": 5,
+        "(not set)": 1
+      },
+      "Samsung": {
+        "Opera Mini": 2,
+        "(not set)": 3
+      },
+      "Playstation 4": {
+        "Safari": 141
+      },
+      "Tizen": {
+        "Samsung Internet": 204,
+        "Safari": 6,
+        "Chrome": 1
+      },
+      "UNIX": {
+        "Edge": 7,
+        "Chrome": 1
+      },
+      "FreeBSD": {
+        "Firefox": 28,
+        "Opera": 1
+      },
+      "SymbianOS": {
+        "BrowserNG": 1,
+        "Safari": 2,
+        "Opera": 3,
+        "Nokia Browser": 1
+      },
+      "Nokia": {
+        "(not set)": 1
+      },
+      "Xbox": {
+        "Edge": 6,
+        "Internet Explorer": 3
+      },
+      "Vodafone": {
+        "(not set)": 1
+      },
+      "Unknown": {
+        "Chrome": 5
+      },
+      "BlackBerry": {
+        "Chrome": 20,
+        "BlackBerry": 4,
+        "Opera": 1
+      },
+      "Playstation Portable": {
+        "Playstation Portable": 1
+      },
+      "Windows Phone": {
+        "Internet Explorer": 9,
+        "Safari": 1
+      },
+      "MOT": {
+        "(not set)": 1
+      },
+      "OpenBSD": {
+        "Firefox": 19,
+        "Chrome": 1
+      },
+      "LG": {
+        "(not set)": 1
+      },
+      "NetBSD": {
+        "(not set)": 2,
+        "Firefox": 1
+      },
+      "BeOS": {
+        "Mozilla Compatible Agent": 1
+      },
+      "iPhone": {
+        "Chrome": 1
+      },
+      "SunOS": {
+        "Firefox": 3,
+        "SeaMonkey": 1
+      },
+      "PalmOS": {
+        "EudoraWeb": 2
+      },
+      "Nintendo Wii": {
+        "Opera": 1
+      }
+    },
+    "by_browsers": {
+      "Edge": {
+        "Windows": 16376994,
+        "Android": 76589,
+        "Macintosh": 25792,
+        "Linux": 3103,
+        "UNIX": 7,
+        "Xbox": 6,
+        "iOS": 7
+      },
+      "Chrome": {
+        "Windows": 14648052,
+        "Android": 6730121,
+        "Macintosh": 2800416,
+        "iOS": 2462438,
+        "Linux": 1842491,
+        "Chrome OS": 500005,
+        "Fuchsia": 315,
+        "(not set)": 322,
+        "Unknown": 5,
+        "BlackBerry": 20,
+        "iPhone": 1,
+        "Tizen": 1,
+        "UNIX": 1,
+        "OpenBSD": 1
+      },
+      "Safari": {
+        "iOS": 17738885,
+        "Macintosh": 3256987,
+        "Playstation 4": 141,
+        "Linux": 81,
+        "Windows": 81,
+        "SymbianOS": 2,
+        "(not set)": 10,
+        "OS/2": 2,
+        "Tizen": 6,
+        "Windows Phone": 1
+      },
+      "Safari (in-app)": {
+        "iOS": 2010924
+      },
+      "Samsung Internet": {
+        "Android": 829655,
+        "Linux": 13583,
+        "Tizen": 204
+      },
+      "Android Webview": {
+        "Android": 573019
+      },
+      "Firefox": {
+        "Windows": 760394,
+        "Macintosh": 177358,
+        "Android": 71199,
+        "Linux": 44644,
+        "Firefox OS": 138,
+        "OS/2": 96,
+        "FreeBSD": 28,
+        "OpenBSD": 19,
+        "NetBSD": 1,
+        "SunOS": 3
+      },
+      "(not set)": {
+        "iOS": 57645,
+        "(not set)": 45524,
+        "Windows": 159,
+        "Android": 14,
+        "Samsung": 3,
+        "Nokia": 1,
+        "Vodafone": 1,
+        "MOT": 1,
+        "LG": 1,
+        "NetBSD": 2,
+        "Macintosh": 2,
+        "Linux": 2,
+        "Sony": 1
+      },
+      "Opera": {
+        "Windows": 48120,
+        "Android": 10714,
+        "Macintosh": 4139,
+        "Linux": 403,
+        "(not set)": 6,
+        "SymbianOS": 3,
+        "FreeBSD": 1,
+        "Nintendo Wii": 1,
+        "BlackBerry": 1
+      },
+      "Amazon Silk": {
+        "Android": 42152
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 28111,
+        "(not set)": 185,
+        "Linux": 22,
+        "Windows": 60,
+        "Android": 3,
+        "BeOS": 1
+      },
+      "Internet Explorer": {
+        "Windows": 9767,
+        "Windows Phone": 9,
+        "Macintosh": 5,
+        "Xbox": 3,
+        "(not set)": 1
+      },
+      "YaBrowser": {
+        "Windows": 1002,
+        "Android": 506,
+        "iOS": 328,
+        "Macintosh": 95,
+        "Linux": 24
+      },
+      "DuckDuckGo Browser": {
+        "iOS": 525,
+        "Android": 123,
+        "Macintosh": 21,
+        "Linux": 1
+      },
+      "Whale Browser": {
+        "Windows": 418,
+        "Android": 289,
+        "Macintosh": 73,
+        "iOS": 7,
+        "Linux": 15
+      },
+      "Meta Quest Browser": {
+        "Linux": 262
+      },
+      "Coc Coc": {
+        "Windows": 207,
+        "Macintosh": 17,
+        "Android": 12
+      },
+      "Iron": {
+        "iOS": 599,
+        "Android": 3,
+        "Windows": 1
+      },
+      "Waterfox": {
+        "Windows": 161,
+        "Macintosh": 13
+      },
+      "Aloha Browser": {
+        "iOS": 340,
+        "Android": 90,
+        "Windows": 23,
+        "Linux": 3,
+        "Macintosh": 47
+      },
+      "Android Runtime": {
+        "Android": 210
+      },
+      "SeaMonkey": {
+        "Windows": 124,
+        "Macintosh": 3,
+        "Linux": 13,
+        "SunOS": 1,
+        "OS/2": 1
+      },
+      "PaleMoon": {
+        "Windows": 74,
+        "Linux": 37
+      },
+      "UC Browser": {
+        "Android": 726,
+        "iOS": 42,
+        "Windows": 8
+      },
+      "Opera Mini": {
+        "(not set)": 211,
+        "Samsung": 2,
+        "Android": 46
+      },
+      "NetFront": {
+        "Sony": 5
+      },
+      "Phoenix Browser": {
+        "Android": 51,
+        "iOS": 7
+      },
+      "Puffin": {
+        "Linux": 21,
+        "Android": 11,
+        "iOS": 48,
+        "Macintosh": 2
+      },
+      "Mozilla": {
+        "Windows": 68,
+        "Linux": 2,
+        "Macintosh": 1
+      },
+      "Seznam": {
+        "Android": 2,
+        "iOS": 1
+      },
+      "Android Browser": {
+        "Android": 195
+      },
+      "BrowserNG": {
+        "SymbianOS": 1
+      },
+      "Netscape": {
+        "Windows": 6,
+        "Android": 2,
+        "iOS": 1
+      },
+      "Playstation Portable": {
+        "Playstation Portable": 1
+      },
+      "Vivaldi": {
+        "Macintosh": 1,
+        "Windows": 7,
+        "Linux": 2
+      },
+      "Galeon": {
+        "Linux": 1
+      },
+      "Konqueror": {
+        "Linux": 4
+      },
+      "BlackBerry": {
+        "BlackBerry": 4
+      },
+      "Nintendo Browser": {
+        "(not set)": 4
+      },
+      "Maxthon": {
+        "Macintosh": 4,
+        "Android": 1,
+        "Windows": 1
+      },
+      "Lynx": {
+        "(not set)": 2
+      },
+      "Nokia Browser": {
+        "SymbianOS": 1
+      },
+      "EudoraWeb": {
+        "PalmOS": 2
+      },
+      "IE with Chrome Frame": {
+        "Windows": 1
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:43:20.715Z",
+  "agency": "office-personnel-management"
+}

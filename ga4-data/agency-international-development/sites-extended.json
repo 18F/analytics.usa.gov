@@ -1,0 +1,190 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "za.usembassy.gov",
+      "visits": "79"
+    },
+    {
+      "domain": "yali.state.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.usaid.gov",
+      "visits": "383021"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "www.performance.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.marketlinks.org",
+      "visits": "5145"
+    },
+    {
+      "domain": "www.land-links.org",
+      "visits": "4211"
+    },
+    {
+      "domain": "www.globalwaters.org",
+      "visits": "4212"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www-origin.usaid.gov",
+      "visits": "80"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "4"
+    },
+    {
+      "domain": "urban-links.org",
+      "visits": "1265"
+    },
+    {
+      "domain": "tz.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "2"
+    },
+    {
+      "domain": "stage.marketlinks.org",
+      "visits": "3"
+    },
+    {
+      "domain": "stage.agrilinks.org",
+      "visits": "2"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "scms.usaid.gov",
+      "visits": "504"
+    },
+    {
+      "domain": "pk.usembassy.gov",
+      "visits": "329"
+    },
+    {
+      "domain": "ng.usembassy.gov",
+      "visits": "108"
+    },
+    {
+      "domain": "jo.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "iq.usembassy.gov",
+      "visits": "64"
+    },
+    {
+      "domain": "fsitraining.state.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "et.usembassy.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "dev.marketlinks.org",
+      "visits": "5"
+    },
+    {
+      "domain": "dev.agrilinks.org",
+      "visits": "17"
+    },
+    {
+      "domain": "careers.state.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "aidscapeuat.usaid.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "aidscapedev.usaid.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "aidscape.usaid.gov",
+      "visits": "216"
+    },
+    {
+      "domain": "agrilinks.org",
+      "visits": "7293"
+    },
+    {
+      "domain": "admin.agrilinks.org",
+      "visits": "9"
+    }
+  ],
+  "totals": {
+    "visits": 406715
+  },
+  "taken_at": "2024-01-05T16:05:27.820Z",
+  "agency": "agency-international-development"
+}

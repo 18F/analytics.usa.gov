@@ -1,0 +1,1046 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "47"
+    },
+    {
+      "domain": "www.weather.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.uspto.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "7"
+    },
+    {
+      "domain": "www.usitc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "6642608"
+    },
+    {
+      "domain": "www.uscg.mil",
+      "visits": "76411"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "51"
+    },
+    {
+      "domain": "www.tsa.gov",
+      "visits": "2700555"
+    },
+    {
+      "domain": "www.together.gov",
+      "visits": "616"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.section508.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.secretservice.gov",
+      "visits": "92938"
+    },
+    {
+      "domain": "www.schoolsafety.gov",
+      "visits": "13333"
+    },
+    {
+      "domain": "www.safetyact.gov",
+      "visits": "836"
+    },
+    {
+      "domain": "www.reserve.uscg.mil",
+      "visits": "2136"
+    },
+    {
+      "domain": "www.ready.gov",
+      "visits": "264002"
+    },
+    {
+      "domain": "www.pacificarea.uscg.mil",
+      "visits": "10316"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.oig.dhs.gov",
+      "visits": "20347"
+    },
+    {
+      "domain": "www.nrcs.usda.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.niem.gov",
+      "visits": "11737"
+    },
+    {
+      "domain": "www.news.uscg.mil",
+      "visits": "50459"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.mycg.uscg.mil",
+      "visits": "151181"
+    },
+    {
+      "domain": "www.login.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.justice.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.juntos.gov",
+      "visits": "201"
+    },
+    {
+      "domain": "www.ice.gov",
+      "visits": "461690"
+    },
+    {
+      "domain": "www.history.uscg.mil",
+      "visits": "9473"
+    },
+    {
+      "domain": "www.health.mil",
+      "visits": "2"
+    },
+    {
+      "domain": "www.halekoa.com",
+      "visits": "3"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "78"
+    },
+    {
+      "domain": "www.fws.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.ftc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.forcecom.uscg.mil",
+      "visits": "14073"
+    },
+    {
+      "domain": "www.floodsmart.gov",
+      "visits": "92772"
+    },
+    {
+      "domain": "www.fletc.gov",
+      "visits": "41951"
+    },
+    {
+      "domain": "www.fleta.gov",
+      "visits": "12279"
+    },
+    {
+      "domain": "www.fema.gov",
+      "visits": "669864"
+    },
+    {
+      "domain": "www.evus.gov",
+      "visits": "106051"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "274"
+    },
+    {
+      "domain": "www.e-verify.gov",
+      "visits": "204664"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.disasterassistance.gov",
+      "visits": "129932"
+    },
+    {
+      "domain": "www.dhs.gov",
+      "visits": "1070665"
+    },
+    {
+      "domain": "www.dco.uscg.mil",
+      "visits": "69487"
+    },
+    {
+      "domain": "www.dcms.uscg.mil",
+      "visits": "52206"
+    },
+    {
+      "domain": "www.cpsc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.cool.osd.mil",
+      "visits": "2"
+    },
+    {
+      "domain": "www.consumer.ftc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.cisa.gov",
+      "visits": "708728"
+    },
+    {
+      "domain": "www.cio.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "118"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "2158575"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.atlanticarea.uscg.mil",
+      "visits": "17475"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "www.acf.hhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "39"
+    },
+    {
+      "domain": "web.archive.org",
+      "visits": "2"
+    },
+    {
+      "domain": "uscis.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "universalenroll.dhs.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "uk.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "tsaenrollmentbyidemia.tsa.dhs.gov",
+      "visits": "1457944"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "834"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "294"
+    },
+    {
+      "domain": "training.fema.gov",
+      "visits": "305"
+    },
+    {
+      "domain": "trade.cbp.gov",
+      "visits": "472"
+    },
+    {
+      "domain": "trade.cbp.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "testint.niccs.us-cert.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "testint.fema.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "testint.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "testint.cisa.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "testint.cbp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "test.msc.fema.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "tams.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "studyinthestates.dhs.gov",
+      "visits": "106264"
+    },
+    {
+      "domain": "store.samhsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "staging.uscis.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "staging.ice.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "staging.fema.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "staging.e-verify.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "staging.disasterassistance.gov",
+      "visits": "39"
+    },
+    {
+      "domain": "staging.dhs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "staging.cisa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "staging.cbp.gov",
+      "visits": "52"
+    },
+    {
+      "domain": "staging-engage.dhs.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "ssabest.benefits.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "snow-pub.dhs.gov",
+      "visits": "80"
+    },
+    {
+      "domain": "snow-pub-test.dhs.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "snow-pub-dev.dhs.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "smartpay.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "skillbridge.osd.mil",
+      "visits": "44"
+    },
+    {
+      "domain": "search.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "search.uscis.gov",
+      "visits": "146"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "222"
+    },
+    {
+      "domain": "search.us-cert.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "search.justice.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "search.gsa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "search.dhs.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "search.cdc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "search.archives.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "safetyact.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "rulings.cbp.gov",
+      "visits": "379"
+    },
+    {
+      "domain": "ramdevlwas02.msc.fema.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "radar.weather.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "qa-api.cbp.dhs.gov",
+      "visits": "173"
+    },
+    {
+      "domain": "preview.disasterassistance.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ovc.ojp.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "origin-my.uscis.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "ops.fhwa.dot.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "officelocator-custsvc-dt.apps.k8s-nonprod.uscis.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "nij.ojp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "niccs.cisa.gov",
+      "visits": "39631"
+    },
+    {
+      "domain": "nfipservices.floodsmart.gov",
+      "visits": "4353"
+    },
+    {
+      "domain": "my.uscis.gov",
+      "visits": "2425090"
+    },
+    {
+      "domain": "msc.fema.gov",
+      "visits": "229308"
+    },
+    {
+      "domain": "mapviewtest.msc.fema.gov",
+      "visits": "74"
+    },
+    {
+      "domain": "map1.msc.fema.gov",
+      "visits": "10140"
+    },
+    {
+      "domain": "m.ready.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "jp.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "iprs.cbp.gov",
+      "visits": "1655"
+    },
+    {
+      "domain": "iprs.cbp.dhs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "iprradmin.cbp.dhs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "iprr.cbp.gov",
+      "visits": "559"
+    },
+    {
+      "domain": "iprr.cbp.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ipris.cbp.dhs.gov",
+      "visits": "1092"
+    },
+    {
+      "domain": "i94.cbp.dhs.gov",
+      "visits": "1215350"
+    },
+    {
+      "domain": "i94-test.sat.istio.cbp.dhs.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "i94-sit.sat.istio.cbp.dhs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "i94-dev.cbp.dhs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "helpspanish.cbp.gov",
+      "visits": "12949"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "513088"
+    },
+    {
+      "domain": "health.mil",
+      "visits": "2"
+    },
+    {
+      "domain": "grants.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "go.usa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "go.dhs.gov",
+      "visits": "11273"
+    },
+    {
+      "domain": "gis.fema.gov",
+      "visits": "120"
+    },
+    {
+      "domain": "get.gov",
+      "visits": "3696"
+    },
+    {
+      "domain": "fr.usembassy.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "form.together.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "form.juntos.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "first.uscis.gov",
+      "visits": "83765"
+    },
+    {
+      "domain": "first-public-test.apps.k8s-nonprod.uscis.dhs.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "first-public-stage.apps.k8s-ext.uscis.dhs.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "first-public-dev.apps.k8s-nonprod.uscis.dhs.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "fincen105.sat.istio.cbp.dhs.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "fincen105.dev.istio.cbp.dhs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "fincen105.cbp.dhs.gov",
+      "visits": "5697"
+    },
+    {
+      "domain": "fema.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "exis.tsa.dhs.gov",
+      "visits": "218"
+    },
+    {
+      "domain": "evus-test.cbp.dhs.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "esta.cbp.dhs.gov",
+      "visits": "2261033"
+    },
+    {
+      "domain": "esta-test.cbp.dhs.gov",
+      "visits": "134"
+    },
+    {
+      "domain": "esta-sit.cbp.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "esta-dev.cbp.dhs.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "esafe.cbp.dhs.gov",
+      "visits": "71"
+    },
+    {
+      "domain": "es.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "erulings.cbp.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "enroll.recruiting.cbp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "engage.dhs.gov",
+      "visits": "323"
+    },
+    {
+      "domain": "eisavpn.cbp.gov",
+      "visits": "91"
+    },
+    {
+      "domain": "egov.uscis.gov",
+      "visits": "3996137"
+    },
+    {
+      "domain": "edit.uscis.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit.tsa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit.testint.niccs.us-cert.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "edit.testint.fema.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "edit.testint.cbp.gov",
+      "visits": "93"
+    },
+    {
+      "domain": "edit.testing.tsa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "edit.staging.uscis.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "edit.staging.tsa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit.staging.niccs.us-cert.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "edit.staging.ice.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "edit.staging.cbp.gov",
+      "visits": "142"
+    },
+    {
+      "domain": "edit.ready.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "edit.niccs.us-cert.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "edit.fletc.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "edit.fema.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "edit.e-verify.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "edit.dhs.gov",
+      "visits": "86"
+    },
+    {
+      "domain": "edit.cisa.gov",
+      "visits": "146"
+    },
+    {
+      "domain": "edit.cbp.gov",
+      "visits": "188"
+    },
+    {
+      "domain": "edit-testint.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit-testint.cisa.gov",
+      "visits": "51"
+    },
+    {
+      "domain": "edit-studyinthestates.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit-staging.dhs.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "edit-staging.cisa.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "edit-staging-oig.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "edit-staging-go.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "edit-go.dhs.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "eallegations.cbp.gov",
+      "visits": "426"
+    },
+    {
+      "domain": "e-safe.cbp.dhs.gov",
+      "visits": "8100"
+    },
+    {
+      "domain": "dxis1.d6.devl.cbp.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "dxis1.d2.devl.cbp.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "dtops.cbp.dhs.gov",
+      "visits": "42069"
+    },
+    {
+      "domain": "dtops-sit.sat.cbp.dhs.gov",
+      "visits": "54"
+    },
+    {
+      "domain": "dtops-qax.cbp.dhs.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "digital.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "dhs.usajobs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "developer.uscis.gov",
+      "visits": "684"
+    },
+    {
+      "domain": "de.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "data.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "csi-rt2.cbp.dhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "cris-ng-custsvc-stage.apps.k8s-ext.uscis.dhs.gov",
+      "visits": "1026"
+    },
+    {
+      "domain": "cris-ng-custsvc-dt.apps.k8s-nonprod.uscis.dhs.gov",
+      "visits": "140"
+    },
+    {
+      "domain": "cris-ng-custsvc-dev.apps.k8s-nonprod.uscis.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "cris-custsvc-stage.apps.k8s-ext.uscis.dhs.gov",
+      "visits": "325"
+    },
+    {
+      "domain": "cris-custsvc-dt.apps.k8s-nonprod.uscis.dhs.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "consumer.ftc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "citizenshipgrants.uscis.gov",
+      "visits": "135"
+    },
+    {
+      "domain": "china.usembassy-china.org.cn",
+      "visits": "7"
+    },
+    {
+      "domain": "ch.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "cbpworkforce.cbp.gov",
+      "visits": "550"
+    },
+    {
+      "domain": "cbpcomplaints.cbp.gov",
+      "visits": "2077"
+    },
+    {
+      "domain": "cbp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "careers.secretservice.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "careers.cbp.gov",
+      "visits": "345385"
+    },
+    {
+      "domain": "careerpathstaging.fema.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "careerpath.fema.gov",
+      "visits": "501"
+    },
+    {
+      "domain": "ca.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "bwt.qa.cbp.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "bwt.cbp.gov",
+      "visits": "575743"
+    },
+    {
+      "domain": "beta.get.gov",
+      "visits": "775"
+    },
+    {
+      "domain": "awt.qa.cbp.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "awt.cbp.gov",
+      "visits": "10556"
+    },
+    {
+      "domain": "asprtracie.hhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "arc.fiscal.treasury.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "apfs-cloud.dhs.gov",
+      "visits": "6247"
+    },
+    {
+      "domain": "ai.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "agents.floodsmart.gov",
+      "visits": "4764"
+    },
+    {
+      "domain": "ace.d6.devl.cbp.dhs.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "ace.d4.devl.cbp.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ace.d1.devl.cbp.dhs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "ace.crt.tnc.ace.cbp.dhs.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "ace.cbp.gov",
+      "visits": "797"
+    },
+    {
+      "domain": "ace.cbp.dhs.gov",
+      "visits": "626"
+    },
+    {
+      "domain": "ace-test.cbp.gov",
+      "visits": "88"
+    },
+    {
+      "domain": "ace-sat.cbp.gov",
+      "visits": "606"
+    },
+    {
+      "domain": "ace-d6.cbp.gov",
+      "visits": "538"
+    },
+    {
+      "domain": "ace-d3.cbp.gov",
+      "visits": "80"
+    }
+  ],
+  "totals": {
+    "visits": 29245531
+  },
+  "taken_at": "2024-01-05T15:56:54.367Z",
+  "agency": "homeland-security"
+}

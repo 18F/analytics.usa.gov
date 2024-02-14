@@ -1,0 +1,108 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "uscis.gov",
+      "visits": "5"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "22"
+    },
+    {
+      "hostname": "safetyact.gov",
+      "visits": "56"
+    },
+    {
+      "hostname": "health.mil",
+      "visits": "2"
+    },
+    {
+      "hostname": "grants.gov",
+      "visits": "20"
+    },
+    {
+      "hostname": "get.gov",
+      "visits": "3696"
+    },
+    {
+      "hostname": "fema.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "digital.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "data.gov",
+      "visits": "2"
+    },
+    {
+      "hostname": "cbp.gov",
+      "visits": "3"
+    },
+    {
+      "hostname": "ai.gov",
+      "visits": "2"
+    }
+  ],
+  "totals": {
+    "visits": 3812
+  },
+  "taken_at": "2024-01-05T15:56:52.787Z",
+  "agency": "homeland-security"
+}

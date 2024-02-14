@@ -1,0 +1,28 @@
+{
+  "name": "all-pages-realtime",
+  "sampling": {},
+  "query": {
+    "dimensions": "rt:pagePath,rt:pageTitle",
+    "metrics": [
+      "rt:activeUsers"
+    ],
+    "sort": [
+      "-rt:activeUsers"
+    ],
+    "max-results": 10000
+  },
+  "meta": {
+    "name": "All Pages (Live)",
+    "description": "Pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page": "www.nrc.gov/about-nrc/radiation/around-us/calculator.html",
+      "page_title": "Personal Annual Radiation Dose Calculator | NRC.gov",
+      "active_visitors": "19"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T19:09:27.485Z",
+  "agency": "nuclear-regulatory-commission"
+}

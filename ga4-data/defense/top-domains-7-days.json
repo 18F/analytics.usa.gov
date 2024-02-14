@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.defense.gov",
+      "visits": "444308"
+    },
+    {
+      "domain": "my.navy.mil",
+      "visits": "323424"
+    },
+    {
+      "domain": "www.dfas.mil",
+      "visits": "287276"
+    },
+    {
+      "domain": "www.tricare.mil",
+      "visits": "227761"
+    },
+    {
+      "domain": "www.militaryonesource.mil",
+      "visits": "226359"
+    },
+    {
+      "domain": "home.army.mil",
+      "visits": "219024"
+    },
+    {
+      "domain": "www.marines.mil",
+      "visits": "211667"
+    },
+    {
+      "domain": "ipps-a.army.mil",
+      "visits": "211164"
+    },
+    {
+      "domain": "www.travel.dod.mil",
+      "visits": "181630"
+    },
+    {
+      "domain": "www.af.mil",
+      "visits": "180893"
+    },
+    {
+      "domain": "www.mynavyhr.navy.mil",
+      "visits": "147483"
+    },
+    {
+      "domain": "www.navy.mil",
+      "visits": "137428"
+    },
+    {
+      "domain": "tricare.mil",
+      "visits": "132206"
+    },
+    {
+      "domain": "www.dla.mil",
+      "visits": "125239"
+    },
+    {
+      "domain": "armypubs.army.mil",
+      "visits": "119699"
+    },
+    {
+      "domain": "www.history.navy.mil",
+      "visits": "113492"
+    },
+    {
+      "domain": "militarypay.defense.gov",
+      "visits": "104123"
+    },
+    {
+      "domain": "www.dcsa.mil",
+      "visits": "97893"
+    },
+    {
+      "domain": "www.mycg.uscg.mil",
+      "visits": "87711"
+    },
+    {
+      "domain": "www.nsa.gov",
+      "visits": "86321"
+    }
+  ],
+  "totals": {
+    "visits": 3665101
+  },
+  "taken_at": "2024-01-05T15:52:02.395Z",
+  "agency": "defense"
+}

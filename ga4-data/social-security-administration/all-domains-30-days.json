@@ -1,0 +1,112 @@
+{
+  "name": "all-domains-30-days",
+  "sampling": {
+    "containsSampledData": true,
+    "sampleSize": "999985",
+    "sampleSpace": "36924546"
+  },
+  "query": {
+    "start-date": "30daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions",
+      "ga:pageviews",
+      "ga:users",
+      "ga:pageviewsPerSession",
+      "ga:avgSessionDuration",
+      "ga:exits"
+    ],
+    "sort": [
+      "-ga:sessions"
+    ],
+    "filters": "ga:sessions>=10",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "All Domains (30 Days)",
+    "description": "Last 30 days' domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "ssa.gov",
+      "visits": "31577459",
+      "pageviews": "56774667",
+      "users": "18476397",
+      "pageviews_per_session": "1.7979491953421585",
+      "avg_session_duration": "140.90791228641925",
+      "exits": "30471959"
+    },
+    {
+      "domain": "secure.ssa.gov",
+      "visits": "3699969",
+      "pageviews": "20609154",
+      "users": "4220687",
+      "pageviews_per_session": "5.570088289928916",
+      "avg_session_duration": "250.64740272148225",
+      "exits": "4793949"
+    },
+    {
+      "domain": "faq.ssa.gov",
+      "visits": "998196",
+      "pageviews": "1591878",
+      "users": "940888",
+      "pageviews_per_session": "1.594754937907986",
+      "avg_session_duration": "95.85778845036445",
+      "exits": "933023"
+    },
+    {
+      "domain": "search.ssa.gov",
+      "visits": "493504",
+      "pageviews": "723917",
+      "users": "370026",
+      "pageviews_per_session": "1.4668918590325508",
+      "avg_session_duration": "91.58981690118013",
+      "exits": "428737"
+    },
+    {
+      "domain": "choosework.ssa.gov",
+      "visits": "81531",
+      "pageviews": "154199",
+      "users": "73555",
+      "pageviews_per_session": "1.8912928824618858",
+      "avg_session_duration": "133.09856373649288",
+      "exits": "77949"
+    },
+    {
+      "domain": "oig.ssa.gov",
+      "visits": "64213",
+      "pageviews": "115797",
+      "users": "63437",
+      "pageviews_per_session": "1.8033264292277265",
+      "avg_session_duration": "97.44240262875118",
+      "exits": "65542"
+    },
+    {
+      "domain": "yourtickettowork.ssa.gov",
+      "visits": "9084",
+      "pageviews": "26992",
+      "users": "8124",
+      "pageviews_per_session": "2.971378247468076",
+      "avg_session_duration": "192.18615147512108",
+      "exits": "8345"
+    },
+    {
+      "domain": "oig-demo.ssa.gov",
+      "visits": "591",
+      "pageviews": "1699",
+      "users": "591",
+      "pageviews_per_session": "2.8747884940778343",
+      "avg_session_duration": "6.622673434856176",
+      "exits": "591"
+    }
+  ],
+  "totals": {
+    "users": 24153705,
+    "visits": 36924547
+  },
+  "taken_at": "2023-11-27T15:17:23.453Z",
+  "agency": "social-security-administration"
+}

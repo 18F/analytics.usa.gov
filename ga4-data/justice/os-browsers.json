@@ -1,0 +1,196 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 76453864,
+    "by_os": {
+      "Windows": {
+        "Chrome": 16439827,
+        "Edge": 5171462,
+        "Firefox": 798163,
+        "Opera": 110193,
+        "Internet Explorer": 68747,
+        "YaBrowser": 8456
+      },
+      "iOS": {
+        "Safari": 18483789,
+        "Chrome": 2311524,
+        "Safari (in-app)": 812899,
+        "(not set)": 2248
+      },
+      "Android": {
+        "Chrome": 10966892,
+        "Samsung Internet": 805502,
+        "Android Webview": 543682,
+        "Firefox": 93924,
+        "Opera": 86423,
+        "Amazon Silk": 48201,
+        "UC Browser": 38391,
+        "Edge": 46315,
+        "Android Runtime": 4975,
+        "YaBrowser": 218
+      },
+      "Linux": {
+        "Chrome": 11215275,
+        "Firefox": 165225,
+        "Samsung Internet": 14952,
+        "Edge": 23653
+      },
+      "Macintosh": {
+        "Chrome": 3310561,
+        "Safari": 2930577,
+        "Firefox": 150416,
+        "Edge": 27081,
+        "Mozilla Compatible Agent": 17454,
+        "Opera": 4493
+      },
+      "Chrome OS": {
+        "Chrome": 1662284
+      },
+      "(other)": {
+        "(other)": 8887
+      },
+      "": {
+        "(not set)": 890
+      },
+      "(not set)": {
+        "(not set)": 46651,
+        "Opera Mini": 6006,
+        "Mozilla Compatible Agent": 116
+      },
+      "FreeBSD": {
+        "Firefox": 27512
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 16439827,
+        "Android": 10966892,
+        "Linux": 11215275,
+        "Macintosh": 3310561,
+        "iOS": 2311524,
+        "Chrome OS": 1662284
+      },
+      "Safari": {
+        "iOS": 18483789,
+        "Macintosh": 2930577
+      },
+      "Edge": {
+        "Windows": 5171462,
+        "Macintosh": 27081,
+        "Android": 46315,
+        "Linux": 23653
+      },
+      "Firefox": {
+        "Windows": 798163,
+        "Linux": 165225,
+        "Macintosh": 150416,
+        "Android": 93924,
+        "FreeBSD": 27512
+      },
+      "(other)": {
+        "(other)": 8887
+      },
+      "Samsung Internet": {
+        "Android": 805502,
+        "Linux": 14952
+      },
+      "Safari (in-app)": {
+        "iOS": 812899
+      },
+      "Android Webview": {
+        "Android": 543682
+      },
+      "Opera": {
+        "Windows": 110193,
+        "Android": 86423,
+        "Macintosh": 4493
+      },
+      "(not set)": {
+        "": 890,
+        "(not set)": 46651,
+        "iOS": 2248
+      },
+      "Amazon Silk": {
+        "Android": 48201
+      },
+      "Internet Explorer": {
+        "Windows": 68747
+      },
+      "UC Browser": {
+        "Android": 38391
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 17454,
+        "(not set)": 116
+      },
+      "Opera Mini": {
+        "(not set)": 6006
+      },
+      "Android Runtime": {
+        "Android": 4975
+      },
+      "YaBrowser": {
+        "Windows": 8456,
+        "Android": 218
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:38:02.820Z",
+  "agency": "justice"
+}

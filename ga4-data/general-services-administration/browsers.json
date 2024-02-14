@@ -1,0 +1,106 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 74901039,
+    "browser": {
+      "Chrome": 45259800,
+      "Edge": 11226499,
+      "Safari": 14914909,
+      "Firefox": 1859603,
+      "Samsung Internet": 724700,
+      "Android Webview": 250903,
+      "Safari (in-app)": 278246,
+      "Opera": 121298,
+      "(not set)": 93458,
+      "Amazon Silk": 69399,
+      "Internet Explorer": 41072,
+      "Mozilla Compatible Agent": 17279,
+      "YaBrowser": 11615,
+      "Whale Browser": 4863,
+      "Android Runtime": 3150,
+      "Opera Mini": 6553,
+      "UC Browser": 3550,
+      "Coc Coc": 1923,
+      "Aloha Browser": 954,
+      "Android Browser": 1154,
+      "SeaMonkey": 570,
+      "Vivaldi": 4877,
+      "Lynx": 157,
+      "Mozilla": 460,
+      "DuckDuckGo Browser": 708,
+      "Iron": 191,
+      "Meta Quest Browser": 183,
+      "Puffin": 215,
+      "PaleMoon": 743,
+      "BlackBerry": 163,
+      "Konqueror": 188,
+      "NetFront": 180,
+      "Waterfox": 337,
+      "Galeon": 51,
+      "Maxthon": 99,
+      "Phoenix Browser": 431,
+      "Playstation 3": 27,
+      "Seznam": 98,
+      "BrowserNG": 86,
+      "Blazer": 17,
+      "IE with Chrome Frame": 11,
+      "Netscape": 91,
+      "Camino": 28,
+      "EudoraWeb": 18,
+      "DoCoMo": 20,
+      "Nokia Browser": 85,
+      "Nintendo Browser": 52,
+      "Playstation Portable": 13,
+      "YE": 3,
+      "Playstation Vita Browser": 3,
+      "Swing": 3,
+      "NetNewsWire Browser": 1,
+      "Playstation 4": 1,
+      "AdobeAIR": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:40:06.595Z",
+  "agency": "general-services-administration"
+}

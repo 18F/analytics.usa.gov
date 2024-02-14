@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Quick Links - MyNavy Portal",
+      "active_visitors": "1274"
+    },
+    {
+      "page_title": "Army Publishing Directorate",
+      "active_visitors": "1115"
+    },
+    {
+      "page_title": "The Integrated Personnel and Pay System - Army | Home",
+      "active_visitors": "1104"
+    },
+    {
+      "page_title": "Home",
+      "active_visitors": "526"
+    },
+    {
+      "page_title": "United States Coast Guard (USCG)",
+      "active_visitors": "331"
+    },
+    {
+      "page_title": "> Home",
+      "active_visitors": "325"
+    },
+    {
+      "page_title": "Defense Contract Management Agency",
+      "active_visitors": "287"
+    },
+    {
+      "page_title": "Basic Housing Allowance | BAH Rate Lookup | Defense Travel Management Office",
+      "active_visitors": "282"
+    },
+    {
+      "page_title": "Copayments & Cost-Shares | TRICARE",
+      "active_visitors": "247"
+    },
+    {
+      "page_title": "Defense Finance Accounting Service (DFAS)",
+      "active_visitors": "209"
+    },
+    {
+      "page_title": "Army Publishing Directorate – Publications/Forms Content Search",
+      "active_visitors": "201"
+    },
+    {
+      "page_title": "Defense Information System for Security (DISS)",
+      "active_visitors": "193"
+    },
+    {
+      "page_title": "U.S. Army Europe and Africa's home page",
+      "active_visitors": "193"
+    },
+    {
+      "page_title": "U.S. Department of Defense",
+      "active_visitors": "171"
+    },
+    {
+      "page_title": "Free 24/7 Support for Military Life | Military OneSource",
+      "active_visitors": "169"
+    },
+    {
+      "page_title": "Home :: FORT LEONARD WOOD",
+      "active_visitors": "167"
+    },
+    {
+      "page_title": "Army Publishing Directorate – Army Regulations",
+      "active_visitors": "150"
+    },
+    {
+      "page_title": "Home Page - MyNavy Portal",
+      "active_visitors": "148"
+    },
+    {
+      "page_title": "MARADMINS",
+      "active_visitors": "142"
+    },
+    {
+      "page_title": "Contact Us",
+      "active_visitors": "129"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:02:42.230Z",
+  "agency": "defense"
+}

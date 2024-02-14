@@ -1,0 +1,138 @@
+{
+  "name": "all-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "10000",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "All Pages (Live)",
+    "description": "Pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "(other)",
+      "active_visitors": "414"
+    },
+    {
+      "page_title": "Department of Energy",
+      "active_visitors": "72"
+    },
+    {
+      "page_title": "Search Results | Department of Energy",
+      "active_visitors": "32"
+    },
+    {
+      "page_title": "DOE Announces Up to $70 Million to Strengthen Energy Sector Against Physical and Cyber Hazards | Department of Energy",
+      "active_visitors": "22"
+    },
+    {
+      "page_title": "DOE Applicant Portal | Department of Energy",
+      "active_visitors": "20"
+    },
+    {
+      "page_title": "Department of Energy ‘Roads to Removal’ Report Maps Path to Gigatonne-Scale CO2 Removal | Department of Energy",
+      "active_visitors": "19"
+    },
+    {
+      "page_title": "Newsroom | Department of Energy",
+      "active_visitors": "19"
+    },
+    {
+      "page_title": "Office of Energy Efficiency & Renewable Energy | Department of Energy",
+      "active_visitors": "19"
+    },
+    {
+      "page_title": "How to Apply for Weatherization Assistance | Department of Energy",
+      "active_visitors": "18"
+    },
+    {
+      "page_title": "About Us | Department of Energy",
+      "active_visitors": "17"
+    },
+    {
+      "page_title": "Login to Cloudspace/VDI Using PIV Card or RSA Token | Department of Energy",
+      "active_visitors": "16"
+    },
+    {
+      "page_title": "Home Energy Rebates Programs | Department of Energy",
+      "active_visitors": "15"
+    },
+    {
+      "page_title": "Homeowner’s Guide to the Federal Tax Credit for Solar Photovoltaics | Department of Energy",
+      "active_visitors": "15"
+    },
+    {
+      "page_title": "Jobs | Department of Energy",
+      "active_visitors": "15"
+    },
+    {
+      "page_title": "Making Our Homes More Efficient: Clean Energy Tax Credits for Consumers | Department of Energy",
+      "active_visitors": "15"
+    },
+    {
+      "page_title": "Bioenergy Basics | Department of Energy",
+      "active_visitors": "13"
+    },
+    {
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program | Department of Energy",
+      "active_visitors": "13"
+    },
+    {
+      "page_title": "Renewable Energy | Department of Energy",
+      "active_visitors": "13"
+    },
+    {
+      "page_title": "Weatherization Assistance Program | Department of Energy",
+      "active_visitors": "13"
+    },
+    {
+      "page_title": "USAJOBS Search | Department of Energy",
+      "active_visitors": "12"
+    },
+    {
+      "page_title": "Carbon Capture Demonstration Projects Local Engagement Opportunities | Department of Energy",
+      "active_visitors": "11"
+    },
+    {
+      "page_title": "EERE Funding Opportunities | Department of Energy",
+      "active_visitors": "11"
+    },
+    {
+      "page_title": "Generation Schedules | Department of Energy",
+      "active_visitors": "11"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:07:11.261Z",
+  "agency": "energy"
+}

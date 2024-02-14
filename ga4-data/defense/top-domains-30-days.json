@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.defense.gov",
+      "visits": "2510727",
+      "users": "1921274",
+      "pageviews": "3778323",
+      "pageviews_per_session": "1.5028001849663464",
+      "avg_session_duration": "137.18257731718279",
+      "bounce_rate": "0.48561830895991481"
+    },
+    {
+      "domain": "my.navy.mil",
+      "visits": "1421507",
+      "users": "454412",
+      "pageviews": "1672385",
+      "pageviews_per_session": "1.1764746849646186",
+      "avg_session_duration": "359.83757100732697",
+      "bounce_rate": "0.41614919940598255"
+    },
+    {
+      "domain": "www.dfas.mil",
+      "visits": "1187798",
+      "users": "870174",
+      "pageviews": "2543434",
+      "pageviews_per_session": "2.1412664442944003",
+      "avg_session_duration": "224.61526352171822",
+      "bounce_rate": "0.36573474614370455"
+    },
+    {
+      "domain": "www.travel.dod.mil",
+      "visits": "1056779",
+      "users": "767021",
+      "pageviews": "2840832",
+      "pageviews_per_session": "2.6881940311077339",
+      "avg_session_duration": "174.80553038842268",
+      "bounce_rate": "0.25965788495040115"
+    },
+    {
+      "domain": "www.marines.mil",
+      "visits": "1012272",
+      "users": "618312",
+      "pageviews": "1780430",
+      "pageviews_per_session": "1.7562581993772426",
+      "avg_session_duration": "164.0451035961508",
+      "bounce_rate": "0.51552053203091663"
+    },
+    {
+      "domain": "www.tricare.mil",
+      "visits": "926866",
+      "users": "647589",
+      "pageviews": "2101038",
+      "pageviews_per_session": "2.2667656381828656",
+      "avg_session_duration": "249.03633444079313",
+      "bounce_rate": "0.32532318587584397"
+    },
+    {
+      "domain": "www.militaryonesource.mil",
+      "visits": "911477",
+      "users": "696888",
+      "pageviews": "1339703",
+      "pageviews_per_session": "1.4688127072871833",
+      "avg_session_duration": "147.37120623199178",
+      "bounce_rate": "0.48491514322358109"
+    },
+    {
+      "domain": "home.army.mil",
+      "visits": "909453",
+      "users": "607034",
+      "pageviews": "1440004",
+      "pageviews_per_session": "1.5829361165447802",
+      "avg_session_duration": "183.02533586740293",
+      "bounce_rate": "0.46074508523255187"
+    },
+    {
+      "domain": "ipps-a.army.mil",
+      "visits": "859033",
+      "users": "397278",
+      "pageviews": "1010168",
+      "pageviews_per_session": "1.1759164083335565",
+      "avg_session_duration": "282.77317282002747",
+      "bounce_rate": "0.38902347174089935"
+    },
+    {
+      "domain": "www.af.mil",
+      "visits": "783973",
+      "users": "647591",
+      "pageviews": "1125848",
+      "pageviews_per_session": "1.4324536686850184",
+      "avg_session_duration": "124.28467691900644",
+      "bounce_rate": "0.51962503810717975"
+    },
+    {
+      "domain": "www.mynavyhr.navy.mil",
+      "visits": "656140",
+      "users": "336339",
+      "pageviews": "1625478",
+      "pageviews_per_session": "2.4773386777212179",
+      "avg_session_duration": "302.54436894764694",
+      "bounce_rate": "0.32657054896820803"
+    },
+    {
+      "domain": "tricare.mil",
+      "visits": "607687",
+      "users": "443671",
+      "pageviews": "1401778",
+      "pageviews_per_session": "2.3067006534614038",
+      "avg_session_duration": "243.20470123019845",
+      "bounce_rate": "0.32747779695797341"
+    },
+    {
+      "domain": "www.dla.mil",
+      "visits": "553263",
+      "users": "439237",
+      "pageviews": "754010",
+      "pageviews_per_session": "1.3613887066368076",
+      "avg_session_duration": "107.42765813597158",
+      "bounce_rate": "0.71979872140374468"
+    },
+    {
+      "domain": "www.navy.mil",
+      "visits": "552350",
+      "users": "466391",
+      "pageviews": "872858",
+      "pageviews_per_session": "1.5771938082737396",
+      "avg_session_duration": "113.12377700925053",
+      "bounce_rate": "0.57060740472526483"
+    },
+    {
+      "domain": "www.history.navy.mil",
+      "visits": "526548",
+      "users": "430229",
+      "pageviews": "1013358",
+      "pageviews_per_session": "1.9132025950150793",
+      "avg_session_duration": "177.389736759509",
+      "bounce_rate": "0.42156650485805663"
+    },
+    {
+      "domain": "armypubs.army.mil",
+      "visits": "489629",
+      "users": "317364",
+      "pageviews": "1086032",
+      "pageviews_per_session": "2.2180589793496708",
+      "avg_session_duration": "237.51835811482636",
+      "bounce_rate": "0.42597558559644139"
+    },
+    {
+      "domain": "www.dcsa.mil",
+      "visits": "465690",
+      "users": "214339",
+      "pageviews": "635114",
+      "pageviews_per_session": "1.3638106895144839",
+      "avg_session_duration": "213.68518031331641",
+      "bounce_rate": "0.53895939358800915"
+    },
+    {
+      "domain": "militarypay.defense.gov",
+      "visits": "428856",
+      "users": "351107",
+      "pageviews": "776156",
+      "pageviews_per_session": "1.8097986270449755",
+      "avg_session_duration": "175.90082350768785",
+      "bounce_rate": "0.38914927155035722"
+    },
+    {
+      "domain": "www.metoc.navy.mil",
+      "visits": "427318",
+      "users": "112733",
+      "pageviews": "704733",
+      "pageviews_per_session": "1.6491933407906991",
+      "avg_session_duration": "156.71035557859753",
+      "bounce_rate": "0.56563496038079375"
+    },
+    {
+      "domain": "www.mycg.uscg.mil",
+      "visits": "423135",
+      "users": "122687",
+      "pageviews": "500753",
+      "pageviews_per_session": "1.183099956278729",
+      "avg_session_duration": "165.5068888551763",
+      "bounce_rate": "0.51249837522303754"
+    }
+  ],
+  "totals": {
+    "users": 10861670,
+    "visits": 16710501
+  },
+  "taken_at": "2024-01-05T15:52:13.039Z",
+  "agency": "defense"
+}

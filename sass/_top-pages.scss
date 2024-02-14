@@ -1,0 +1,28 @@
+@use "uswds-core" as *;
+
+
+.top-pages {
+  min-height: units('tablet-lg');
+}
+
+// overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
+.usa-button-group--segmented {
+  width: 100%;
+
+  // make the buttons parent stretch to fill the parent container
+  .usa-button-group__item {
+    flex-grow: 1;
+    width: 33.3333%;
+
+    // make each button full width
+    .usa-button {
+      width: 100%;
+    }
+
+    // targets the last <button> in the group
+    &:last-child > .usa-button {
+      margin-left: -2px;
+      width: 100%;
+    }
+  }
+}
