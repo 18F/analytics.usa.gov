@@ -30,6 +30,9 @@ export default {
 
       const y = function (d) { return d.visits; };
 
+      /* eslint-disable no-console */
+      console.log(data);
+      /* eslint-enable no-console */
       const series = buildTimeSeries()
         .series([data.data])
         .y(y)
