@@ -5,7 +5,7 @@
 
 ## analytics.usa.gov
 
-Analytics.usa.gov is a product of the [Digital Analytics Program (DAP)](https://github.com/digital-analytics-program/gov-wide-code) to deliver website analytics from thousands of US federal government websites to the public.
+Analytics.usa.gov is a product of the [Digital Analytics Program (DAP)](https://github.com/digital-analytics-program/gov-wide-code), which collects and publishes website analytics from thousands of public-facing US federal government websites as part of the Office of Management and Budget (OMB) "Delivering a Digital-First Public Experience" requirement. 
 
 For a detailed description of how the site works, read [18F's blog post on analytics.usa.gov](https://18f.gsa.gov/2015/03/19/how-we-built-analytics-usa-gov/).
 
