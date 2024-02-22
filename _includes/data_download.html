@@ -46,22 +46,32 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Sessions to all hostnames over 30 days</th>
+            <th scope="row">Total people online</th>
+            <td>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/realtime.csv" class="download-data usa-button"
+                aria-label="realtime.csv">CSV</a>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/realtime.json" class="download-data usa-button"
+                aria-label="realtime.json">JSON</a>
+            </td>
+            <td>Every 30 minutes</td>
+          </tr>
+          <tr>
+            <th scope="row">All pages and screens people are viewing</th>
+            <td>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv" class="download-data usa-button"
+                aria-label="all-pages-realtime.csv">CSV</a>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.json" class="download-data usa-button"
+                aria-label="all-pages-realtime.json">JSON</a>
+            </td>
+            <td>Every 30 minutes</td>
+          </tr>
+          <tr>
+            <th scope="row">Top hostnames (30 days)</th>
             <td>
               <a href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.csv" class="download-data usa-button"
                 aria-label="all-domains-30-days.csv">CSV</a>
               <a href="{{ site.data_url }}/{{ data_prefix }}/all-domains-30-days.json" class="download-data usa-button"
                 aria-label="all-domains-30-days.json">JSON</a>
-            </td>
-            <td>Daily</td>
-          </tr>
-          <tr>
-            <th scope="row">Top downloads yesterday</th>
-            <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.csv"
-                class="download-data usa-button" aria-label="top-downloads-yesterday.csv">CSV</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
-                class="download-data usa-button" aria-label="top-downloads-yesterday.json">JSON</a>
             </td>
             <td>Daily</td>
           </tr>
@@ -76,24 +86,14 @@
             <td>Daily</td>
           </tr>
           <tr>
-            <th scope="row">All pages people are visiting</th>
+            <th scope="row">Top downloads (yesterday)</th>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv" class="download-data usa-button"
-                aria-label="all-pages-realtime.csv">CSV</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.json" class="download-data usa-button"
-                aria-label="all-pages-realtime.json">JSON</a>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.csv"
+                class="download-data usa-button" aria-label="top-downloads-yesterday.csv">CSV</a>
+              <a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
+                class="download-data usa-button" aria-label="top-downloads-yesterday.json">JSON</a>
             </td>
-            <td>Every 30 minutes</td>
-          </tr>
-          <tr>
-            <th scope="row">Total people online</th>
-            <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/realtime.csv" class="download-data usa-button"
-                aria-label="realtime.csv">CSV</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/realtime.json" class="download-data usa-button"
-                aria-label="realtime.json">JSON</a>
-            </td>
-            <td>Every 30 minutes</td>
+            <td>Daily</td>
           </tr>
         </tbody>
       </table>
