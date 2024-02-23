@@ -1,13 +1,13 @@
 <article class="section">
   <section class="section__subheader">
     There were <span id="total_visitors" class="data">...</span> sessions over the
-    past 90 days.
+    past 30 days.
   </section>
 
   <section class="section__chart grid-row">
     <!-- Devices -->
     <section id="devices" class="desktop:grid-col-4 bar-chart-component" data-block="devices"
-      data-source="{{ site.data_url }}/{{ data_prefix }}/devices.json">
+      data-source="{{ site.data_url }}/{{ data_prefix }}/device-30-days.json">
       <h4>Devices</h4>
       <figure id="chart_device_types">
         <div class="data bar-chart"></div>
@@ -18,7 +18,7 @@
     <section id="browsers" class="desktop:grid-col-4 bar-chart-component">
       <h4>Web Browsers</h4>
       <figure id="chart_browsers" data-block="browsers"
-        data-source="{{ site.data_url }}/{{ data_prefix }}/browsers.json">
+        data-source="{{ site.data_url }}/{{ data_prefix }}/browser-30-days.json">
         <div class="data bar-chart"></div>
       </figure>
     </section>
@@ -26,11 +26,11 @@
     <!-- Operating systems -->
     <section id="operating_systems" class="desktop:grid-col-4 bar-chart-component">
       <h4>Operating Systems</h4>
-      <figure id="chart_os" data-block="os" data-source="{{ site.data_url }}/{{ data_prefix }}/os.json">
+      <figure id="chart_os" data-block="os" data-source="{{ site.data_url }}/{{ data_prefix }}/os-30-days.json">
         <div class="data bar-chart"></div>
       </figure>
       <figure id="chart_windows" class="hide" data-block="windows"
-        data-source="{{ site.data_url }}/{{ data_prefix }}/windows.json" data-scale-to-parent="true">
+        data-source="{{ site.data_url }}/{{ data_prefix }}/windows-30-days.json" data-scale-to-parent="true">
         <h4>Windows</h4>
         <div class="data bar-chart"></div>
       </figure>
