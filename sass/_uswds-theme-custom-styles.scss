@@ -270,9 +270,10 @@ g.axis {
     @include at-media("tablet") {
       border-bottom: none;
       padding-left: units(3);
-      padding-top: units(3);
+      padding-top: 0;
     }
 
+    h2,
     h3 {
       padding: 0 units(2);
     }
@@ -280,7 +281,7 @@ g.axis {
 
   &__subheader {
     font-size: units(3);
-    padding: units(4) units(2);
+    padding: units(2) units(2);
     text-align: center;
 
     #total_visitors {
@@ -302,12 +303,12 @@ g.axis {
         padding-top: units(2);
 
         @include at-media("tablet") {
-          padding-top: units(3);
+          padding-top: units(1);
         }
       }
 
       @include at-media("tablet") {
-        padding: units(3);
+        padding: units(1) units(3);
       }
     }
   }
@@ -322,7 +323,7 @@ g.axis {
     }
 
     &__headline {
-      padding-top: units(2.5);
+      padding-top: 0;
     }
 
     &__realtime {
@@ -409,7 +410,7 @@ g.axis {
   padding: units(4) 0;
 
   @include at-media("tablet") {
-    padding: units(2);
+    padding: 0 units(2);
   }
 
   svg {

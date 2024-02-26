@@ -162,7 +162,7 @@ const dropDown = document.getElementById('analytics-agency-select');
 
 // Start on change listener to load new page
 d3.select(dropDown).on('change', function () {
-  window.location = d3.select(this).property('value');
+  window.location.assign(new URL(window.location.origin + d3.select(this).property('value')));
 });
 
 for (let j = 0; j < dropDown.options.length; j += 1) {
