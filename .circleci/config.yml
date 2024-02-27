@@ -55,6 +55,10 @@ jobs:
       - *build_jekyll_site
       - *install_cf_cli
       - run:
+          name: print env vars for debugging
+          command: |
+            env | sort -f
+      - run:
           name: Run Envsubst on nginx.conf
           command: |
             sed -i 's@${S3_BUCKET_URL}/data/$url_full@${S3_BUCKET_URL_DEV}/data/$url_full@g' nginx.conf.src

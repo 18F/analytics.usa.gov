@@ -62,6 +62,7 @@ jobs:
       - name: Replace application URLs in _config.yml file
         run: |
           sed -i "s@url: https://analytics\.usa\.gov@url: ${APP_URL}@g" _config.yml
+          cat _config.yml
       - name: Bundle javascript for production
         run: npm run build-prod
       - name: Build jekyll site
@@ -74,14 +75,16 @@ jobs:
         run: |
           mv manifest.yml manifest.yml.src
           envsubst < manifest.yml.src > manifest.yml
+          cat manifest.yml
       - name: Run Envsubst on nginx.conf
         run: |
-          envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf
-      - name: Login to cloud.gov and deploy
-        run: |
-          set -e
-          # Log into cloud.gov
-          cf api api.fr.cloud.gov
-          cf login -u $CF_USERNAME -p $CF_PASSWORD -o $ORGANIZATION_NAME -s $SPACE_NAME
-          cf push -f "./manifest.yml"
-          cf logout
+          envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf
+          cat nginx.conf
+ #     - name: Login to cloud.gov and deploy
+ #       run: |
+ #         set -e
+ #         # Log into cloud.gov
+ #         cf api api.fr.cloud.gov
+ #         cf login -u $CF_USERNAME -p $CF_PASSWORD -o $ORGANIZATION_NAME -s $SPACE_NAME
+ #         cf push -f "./manifest.yml"
+ #         cf logout
