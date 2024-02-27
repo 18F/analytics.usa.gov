@@ -7,7 +7,7 @@ applications:
   - nginx_buildpack
   stack: cflinuxfs4
   services:
-  - analytics-s3
+  - ${S3_BUCKET_NAME}
   command: "chmod +x ./entrypoint.sh && ./entrypoint.sh"
   env:
     NEW_RELIC_APP_NAME: ${NEW_RELIC_APP_NAME}

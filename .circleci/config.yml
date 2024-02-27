@@ -46,8 +46,8 @@ jobs:
           name: Replace Data URL in _config.yml file when deploying to develop
           command: |
             sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-develop.app.cloud.gov@g' _config.yml
-            sed -i 's@  - name: analytics@  - name: analytics-develop@g' manifest.yml
-            sed -i 's@- analytics-s3@- analytics-s3-dev@g' manifest.yml
+            sed -i 's@  - name: ${APP_NAME}@  - name: analytics-develop@g' manifest.yml
+            sed -i 's@- ${S3_BUCKET_NAME}@- analytics-s3-dev@g' manifest.yml
       - *install_npm_packages
       - *copy_uswds_assets
       - *bundle_javascript
@@ -77,8 +77,8 @@ jobs:
           name: Replace Data URL in _config.yml file when deploying to staging
           command: |
             sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-staging.app.cloud.gov@g' _config.yml
-            sed -i 's@  - name: analytics@  - name: analytics-staging@g' manifest.yml
-            sed -i 's@- analytics-s3@- analytics-s3-staging@g' manifest.yml
+            sed -i 's@  - name: ${APP_NAME}@  - name: analytics-staging@g' manifest.yml
+            sed -i 's@- ${S3_BUCKET_NAME}@- analytics-s3-staging@g' manifest.yml
       - *install_npm_packages
       - *copy_uswds_assets
       - *bundle_javascript
@@ -114,8 +114,8 @@ jobs:
           name: Replace Data URL in _config.yml file when deploying to prod (First sed can go after cutover)
           command: |
             sed -i 's@url: https://analytics\.usa\.gov@url: https://analytics-prod.app.cloud.gov@g' _config.yml
-            sed -i 's@  - name: analytics@  - name: analytics-prod@g' manifest.yml
-            sed -i 's@- analytics-s3@- analytics-s3-prod@g' manifest.yml
+            sed -i 's@  - name: ${APP_NAME}@  - name: analytics-prod@g' manifest.yml
+            sed -i 's@- ${S3_BUCKET_NAME}@- analytics-s3-prod@g' manifest.yml
       - run:
           name: Run Envsubst on nginx.conf
           command: |
