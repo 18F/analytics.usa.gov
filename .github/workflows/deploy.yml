@@ -12,6 +12,9 @@ on:
       SPACE_NAME:
         required: true
         type: string
+      S3_BUCKET_NAME:
+        required: true
+        type: string
     secrets:
       CF_USERNAME:
         required: true
@@ -30,6 +33,7 @@ env:
   CF_USERNAME: ${{ secrets.CF_USERNAME }}
   CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
   NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
+  S3_BUCKET_NAME: ${{ inputs.S3_BUCKET_NAME }}
   S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL }}
 
 jobs:
