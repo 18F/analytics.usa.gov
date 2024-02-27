@@ -48,60 +48,60 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
-  deploy_dev:
-    needs:
-      - lint-js
-      - lint-styles
-      - test
-    if: github.ref == 'refs/heads/develop'
-    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
-    with:
-      APP_NAME: ${{ vars.APP_NAME_DEV }}
-      APP_URL: ${{ vars.APP_URL_DEV }}
-      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
-      ORGANIZATION_NAME: gsa-opp-analytics
-      SPACE_NAME: analytics-dev
-      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_DEV }}
-    secrets:
-      CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
-      CF_PASSWORD: ${{ secrets.CF_PASSWORD_DEV }}
-      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_DEV }}
-      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_DEV }}
-  deploy_stg:
-    needs:
-      - lint-js
-      - lint-styles
-      - test
-    if: github.ref == 'refs/heads/staging'
-    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
-    with:
-      APP_NAME: ${{ vars.APP_NAME_STG }}
-      APP_URL: ${{ vars.APP_URL_STG }}
-      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_STG }}
-      ORGANIZATION_NAME: gsa-opp-analytics
-      SPACE_NAME: analytics-staging
-      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_STG }}
-    secrets:
-      CF_USERNAME: ${{ secrets.CF_USERNAME_STG }}
-      CF_PASSWORD: ${{ secrets.CF_PASSWORD_STG }}
-      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_STG }}
-      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_STG }}
-  deploy_prd:
-    needs:
-      - lint-js
-      - lint-styles
-      - test
-    if: github.ref == 'refs/heads/master'
-    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
-    with:
-      APP_NAME: ${{ vars.APP_NAME_PRD }}
-      APP_URL: ${{ vars.APP_URL_PRD }}
-      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_PRD }}
-      ORGANIZATION_NAME: gsa-opp-analytics
-      SPACE_NAME: analytics-production
-      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_PRD }}
-    secrets:
-      CF_USERNAME: ${{ secrets.CF_USERNAME_PRD }}
-      CF_PASSWORD: ${{ secrets.CF_PASSWORD_PRD }}
-      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_PRD }}
-      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_PRD }}
+#  deploy_dev:
+#    needs:
+#      - lint-js
+#      - lint-styles
+#      - test
+#    if: github.ref == 'refs/heads/develop'
+#    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+#    with:
+#      APP_NAME: ${{ vars.APP_NAME_DEV }}
+#      APP_URL: ${{ vars.APP_URL_DEV }}
+#      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
+#      ORGANIZATION_NAME: gsa-opp-analytics
+#      SPACE_NAME: analytics-dev
+#      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_DEV }}
+#    secrets:
+#      CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
+#      CF_PASSWORD: ${{ secrets.CF_PASSWORD_DEV }}
+#      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_DEV }}
+#      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_DEV }}
+#  deploy_stg:
+#    needs:
+#      - lint-js
+#      - lint-styles
+#      - test
+#    if: github.ref == 'refs/heads/staging'
+#    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+#    with:
+#      APP_NAME: ${{ vars.APP_NAME_STG }}
+#      APP_URL: ${{ vars.APP_URL_STG }}
+#      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_STG }}
+#      ORGANIZATION_NAME: gsa-opp-analytics
+#      SPACE_NAME: analytics-staging
+#      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_STG }}
+#    secrets:
+#      CF_USERNAME: ${{ secrets.CF_USERNAME_STG }}
+#      CF_PASSWORD: ${{ secrets.CF_PASSWORD_STG }}
+#      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_STG }}
+#      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_STG }}
+#  deploy_prd:
+#    needs:
+#      - lint-js
+#      - lint-styles
+#      - test
+#    if: github.ref == 'refs/heads/master'
+#    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+#    with:
+#      APP_NAME: ${{ vars.APP_NAME_PRD }}
+#      APP_URL: ${{ vars.APP_URL_PRD }}
+#      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_PRD }}
+#      ORGANIZATION_NAME: gsa-opp-analytics
+#      SPACE_NAME: analytics-production
+#      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_PRD }}
+#    secrets:
+#      CF_USERNAME: ${{ secrets.CF_USERNAME_PRD }}
+#      CF_PASSWORD: ${{ secrets.CF_PASSWORD_PRD }}
+#      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_PRD }}
+#      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_PRD }}
