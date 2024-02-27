@@ -1,12 +1,14 @@
----
 applications:
-  - name: analytics
-    instances: 1
-    memory: 128M
-    buildpacks:
-    - https://github.com/cloudfoundry/apt-buildpack
-    - nginx_buildpack
-    stack: cflinuxfs4
-    services:
-    - analytics-s3
-    command: "chmod +x ./entrypoint.sh && ./entrypoint.sh"
+- name: ${APP_NAME}
+  instances: 1
+  memory: 128M
+  buildpacks:
+  - https://github.com/cloudfoundry/apt-buildpack
+  - nginx_buildpack
+  stack: cflinuxfs4
+  services:
+  - analytics-s3
+  command: "chmod +x ./entrypoint.sh && ./entrypoint.sh"
+  env:
+    NEW_RELIC_APP_NAME: ${NEW_RELIC_APP_NAME}
+    NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}

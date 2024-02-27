@@ -1,0 +1,72 @@
+on:
+  workflow_call:
+    inputs:
+      APP_NAME:
+        required: true
+        type: string
+      NEW_RELIC_APP_NAME:
+        type: string
+      ORGANIZATION_NAME:
+        required: true
+        type: string
+      SPACE_NAME:
+        required: true
+        type: string
+    secrets:
+      CF_USERNAME:
+        required: true
+      CF_PASSWORD:
+        required: true
+      NEW_RELIC_LICENSE_KEY:
+      S3_BUCKET_URL:
+        required: true
+
+env:
+  APP_NAME: ${{ inputs.APP_NAME }}
+  DB_NAME: ${{ inputs.DB_NAME }}
+  NEW_RELIC_APP_NAME: ${{ inputs.NEW_RELIC_APP_NAME }}
+  ORGANIZATION_NAME: ${{ inputs.ORGANIZATION_NAME }}
+  SPACE_NAME: ${{ inputs.SPACE_NAME }}
+  CF_USERNAME: ${{ secrets.CF_USERNAME }}
+  CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+  NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
+  S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Install ruby and gem dependencies
+        uses: ruby/setup-ruby@360dc864d5da99d54fcb8e9148c14a84b90d3e88
+        with:
+          bundler-cache: true
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: 'npm'
+      - name: Install node dependencies
+        run: npm ci
+      - name: Copy uswds assets
+        run: npm run copy-assets
+      - name: Bundle javascript for production
+        run: npm run build-prod
+      - name: Build jekyll site
+        run: bundle exec jekyll build
+      - name: Install CF CLI
+        run: |
+          sudo curl -v -L -o cf8-cli-installer_8.7.4_x86-64.deb 'https://packages.cloudfoundry.org/stable?release=debian64&version=8.7.4'
+          sudo dpkg -i cf8-cli-installer_8.7.4_x86-64.deb
+      - name: Run Envsubst on nginx.conf
+        run: |
+          envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf
+      - name: Login to cloud.gov and deploy
+        run: |
+          set -e
+          # Log into cloud.gov
+          cf api api.fr.cloud.gov
+          cf login -u $CF_USERNAME -p $CF_PASSWORD -o $ORGANIZATION_NAME -s $SPACE_NAME
+          cf push -f "./manifest.yml"
+          cf logout

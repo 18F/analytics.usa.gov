@@ -1,0 +1,101 @@
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: 'npm'
+      - name: Install node dependencies
+        run: npm ci
+      - name: Lint javascript
+        run: npm run lint:js
+  lint-styles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: 'npm'
+      - name: Install node dependencies
+        run: npm ci
+      - name: Lint SCSS
+        run: npm run lint:styles
+  test:
+    needs:
+      - lint-js
+      - lint-styles
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: 'npm'
+      - name: Install node dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+  deploy_dev:
+    needs:
+      - lint-js
+      - lint-styles
+      - test
+    if: github.ref == 'refs/heads/develop'
+    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+    with:
+      APP_NAME: ${{ vars.APP_NAME_DEV }}
+      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
+      ORGANIZATION_NAME: gsa-opp-analytics
+      SPACE_NAME: analytics-dev
+    secrets:
+      CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
+      CF_PASSWORD: ${{ secrets.CF_PASSWORD_DEV }}
+      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_DEV }}
+      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_DEV }}
+  deploy_stg:
+    needs:
+      - lint-js
+      - lint-styles
+      - test
+    if: github.ref == 'refs/heads/staging'
+    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+    with:
+      APP_NAME: ${{ vars.APP_NAME_STG }}
+      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_STG }}
+      ORGANIZATION_NAME: gsa-opp-analytics
+      SPACE_NAME: analytics-staging
+    secrets:
+      CF_USERNAME: ${{ secrets.CF_USERNAME_STG }}
+      CF_PASSWORD: ${{ secrets.CF_PASSWORD_STG }}
+      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_STG }}
+      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_STG }}
+  deploy_prd:
+    needs:
+      - lint-js
+      - lint-styles
+      - test
+    if: github.ref == 'refs/heads/master'
+    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+    with:
+      APP_NAME: ${{ vars.APP_NAME_PRD }}
+      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_PRD }}
+      ORGANIZATION_NAME: gsa-opp-analytics
+      SPACE_NAME: analytics-production
+    secrets:
+      CF_USERNAME: ${{ secrets.CF_USERNAME_PRD }}
+      CF_PASSWORD: ${{ secrets.CF_PASSWORD_PRD }}
+      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_PRD }}
+      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_PRD }}
