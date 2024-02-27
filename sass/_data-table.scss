@@ -1,6 +1,7 @@
 @use "uswds-core" as *;
 
 .analytics-data {
+  color: color("gray-90");
   padding: 0;
 
   @include at-media("tablet") {
@@ -13,13 +14,18 @@
     @include at-media("tablet") {
       padding: 0;
     }
+
+    p {
+      font-size: units(2.5);
+      font-weight: font-weight(400);
+    }
   }
 
   h2 {
-    padding: units(4) units(2) units(2) units(2);
+    padding: units(2) units(2) units(2) units(2);
 
     @include at-media("tablet") {
-      padding: units(4) 0 units(2) 0;
+      padding: units(2) 0 units(2) 0;
     }
   }
 }
