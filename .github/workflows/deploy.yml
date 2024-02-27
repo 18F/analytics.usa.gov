@@ -59,6 +59,10 @@ jobs:
         run: |
           sudo curl -v -L -o cf8-cli-installer_8.7.4_x86-64.deb 'https://packages.cloudfoundry.org/stable?release=debian64&version=8.7.4'
           sudo dpkg -i cf8-cli-installer_8.7.4_x86-64.deb
+      - name: Run envsubst on manifest.yml
+        run: |
+          mv manifest.yml manifest.yml.src
+          envsubst < manifest.yml.src > manifest.yml
       - name: Run Envsubst on nginx.conf
         run: |
           envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf && pwd && cat nginx.conf
