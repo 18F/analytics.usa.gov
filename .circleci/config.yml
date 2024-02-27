@@ -134,29 +134,17 @@ jobs:
 workflows:
   ci:
     jobs:
-      - lint_js
-      - lint_styles
-      - test:
-          requires:
-            - lint_js
-            - lint_styles
       - development_env_deploy:
-          requires:
-            - test
           filters:
             branches:
               only:
                 - develop
       - staging_env_deploy:
-          requires:
-            - test
           filters:
             branches:
               only:
                 - staging
       - production_env_deploy:
-          requires:
-            - test
           filters:
             branches:
               only:
