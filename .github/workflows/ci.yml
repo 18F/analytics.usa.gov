@@ -58,9 +58,9 @@ jobs:
     with:
       APP_NAME: ${{ vars.APP_NAME_DEV }}
       APP_URL: ${{ vars.APP_URL_DEV }}
+      CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
+      CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_DEV }}
       NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
-      ORGANIZATION_NAME: gsa-opp-analytics
-      SPACE_NAME: analytics-dev
       S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_DEV }}
     secrets:
       CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
@@ -77,9 +77,9 @@ jobs:
     with:
       APP_NAME: ${{ vars.APP_NAME_STG }}
       APP_URL: ${{ vars.APP_URL_STG }}
+      CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
+      CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_STG }}
       NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_STG }}
-      ORGANIZATION_NAME: gsa-opp-analytics
-      SPACE_NAME: analytics-staging
       S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_STG }}
     secrets:
       CF_USERNAME: ${{ secrets.CF_USERNAME_STG }}
@@ -96,9 +96,9 @@ jobs:
     with:
       APP_NAME: ${{ vars.APP_NAME_PRD }}
       APP_URL: ${{ vars.APP_URL_PRD }}
+      CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
+      CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_PRD }}
       NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_PRD }}
-      ORGANIZATION_NAME: gsa-opp-analytics
-      SPACE_NAME: analytics-production
       S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_PRD }}
     secrets:
       CF_USERNAME: ${{ secrets.CF_USERNAME_PRD }}
