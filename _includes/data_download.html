@@ -9,7 +9,7 @@
 {% endif %}
 <main>
   <section class="analytics-data analytics-data">
-    <div class="analytics-data__header">
+    <div class="analytics-data__header desktop:grid-col-12">
       <h1>Download the data</h1>
       {% assign agencies = site.data.agencies | sort:"name" %}
       {% if agencies.size > 0 %}
@@ -28,13 +28,22 @@
         </select>
       </div>
       {% endif %}
+
+      <h4>A note on sampling</h4>
+      <div class="desktop:grid-col-8">
+        Due to varying GA4 sampling thresholds, high data cardinality, and the
+        volume of DAP data across its sub-properties, real-time and historical
+        data reports are subject to sampling. This data are intended to
+        represent high-level trends only and provide general insights into
+        online visitor behavior.
+      </div>
     </div>
 
     <div class="analytics-data__sessions desktop:grid-col-12">
       <table class="usa-table usa-table--borderless desktop:grid-col-8">
         <caption>
           <h2>
-            Sessions to and traffic sources
+            User traffic reports
           </h2>
         </caption>
         <thead>
