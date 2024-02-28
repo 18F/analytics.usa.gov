@@ -61,12 +61,12 @@ jobs:
       CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
       CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_DEV }}
       NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
-      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_DEV }}
+      S3_BUCKET_URL: ${{ vars.S3_BUCKET_URL_DEV }}
+      S3_SERVICE_NAME: ${{ vars.S3_SERVICE_NAME_DEV }}
     secrets:
       CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
       CF_PASSWORD: ${{ secrets.CF_PASSWORD_DEV }}
       NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_DEV }}
-      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_DEV }}
   deploy_stg:
     needs:
       - lint-js
@@ -80,12 +80,12 @@ jobs:
       CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
       CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_STG }}
       NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_STG }}
-      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_STG }}
+      S3_BUCKET_URL: ${{ vars.S3_BUCKET_URL_STG }}
+      S3_SERVICE_NAME: ${{ vars.S3_SERVICE_NAME_STG }}
     secrets:
       CF_USERNAME: ${{ secrets.CF_USERNAME_STG }}
       CF_PASSWORD: ${{ secrets.CF_PASSWORD_STG }}
       NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_STG }}
-      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_STG }}
   deploy_prd:
     needs:
       - lint-js
@@ -99,9 +99,9 @@ jobs:
       CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
       CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_PRD }}
       NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_PRD }}
-      S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME_PRD }}
+      S3_BUCKET_URL: ${{ vars.S3_BUCKET_URL_PRD }}
+      S3_SERVICE_NAME: ${{ vars.S3_SERVICE_NAME_PRD }}
     secrets:
       CF_USERNAME: ${{ secrets.CF_USERNAME_PRD }}
       CF_PASSWORD: ${{ secrets.CF_PASSWORD_PRD }}
       NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_PRD }}
-      S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL_PRD }}

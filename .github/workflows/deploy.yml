@@ -15,7 +15,10 @@ on:
         type: string
       NEW_RELIC_APP_NAME:
         type: string
-      S3_BUCKET_NAME:
+      S3_BUCKET_URL:
+        required: true
+        type: string
+      S3_SERVICE_NAME:
         required: true
         type: string
     secrets:
@@ -24,8 +27,6 @@ on:
       CF_PASSWORD:
         required: true
       NEW_RELIC_LICENSE_KEY:
-      S3_BUCKET_URL:
-        required: true
 
 env:
   APP_NAME: ${{ inputs.APP_NAME }}
@@ -36,8 +37,8 @@ env:
   CF_SPACE_NAME: ${{ inputs.CF_SPACE_NAME }}
   NEW_RELIC_APP_NAME: ${{ inputs.NEW_RELIC_APP_NAME }}
   NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
-  S3_BUCKET_NAME: ${{ inputs.S3_BUCKET_NAME }}
-  S3_BUCKET_URL: ${{ secrets.S3_BUCKET_URL }}
+  S3_BUCKET_URL: ${{ inputs.S3_BUCKET_URL }}
+  S3_SERVICE_NAME: ${{ inputs.S3_SERVICE_NAME }}
 
 jobs:
   deploy:
@@ -58,7 +59,7 @@ jobs:
         run: npm ci
       - name: Copy uswds assets
         run: npm run copy-assets
-      - name: Replace application URLs in _config.yml file
+      - name: Replace application URLs for the environment in jekyll config file before building the site
         run: |
           sed -i "s@url: https://analytics\.usa\.gov@url: ${APP_URL}@g" _config.yml
           cat _config.yml
@@ -66,16 +67,16 @@ jobs:
         run: npm run build-prod
       - name: Build jekyll site
         run: bundle exec jekyll build
-      - name: Install CF CLI
+      - name: Install cloud foundry CLI for interacting with cloud.gov
         run: |
           sudo curl -v -L -o cf8-cli-installer_8.7.4_x86-64.deb 'https://packages.cloudfoundry.org/stable?release=debian64&version=8.7.4'
           sudo dpkg -i cf8-cli-installer_8.7.4_x86-64.deb
-      - name: Run envsubst on manifest.yml
+      - name: Run envsubst on manifest.yml to set environment specific values
         run: |
           mv manifest.yml manifest.yml.src
           envsubst < manifest.yml.src > manifest.yml
           cat manifest.yml
-      - name: Run Envsubst on nginx.conf
+      - name: Run envsubst on nginx.conf to set the S3 bucket URL for the environment
         run: |
           envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf
       - name: Login to cloud.gov and deploy
