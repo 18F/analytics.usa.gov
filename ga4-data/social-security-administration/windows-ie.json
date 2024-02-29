@@ -1,0 +1,121 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/397629136"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites."
+  },
+  "totals": {
+    "visits": 170768,
+    "by_windows": {
+      "7": {
+        "undefined": 228
+      },
+      "8": {
+        "undefined": 2354
+      },
+      "10": {
+        "undefined": 167523
+      },
+      "95": {
+        "undefined": 7
+      },
+      "98": {
+        "undefined": 7
+      },
+      "8.1": {
+        "undefined": 128
+      },
+      "XP": {
+        "undefined": 500
+      },
+      "Server 2003": {
+        "undefined": 7
+      },
+      "Vista": {
+        "undefined": 7
+      },
+      "NT": {
+        "undefined": 7
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 228,
+        "8": 2354,
+        "10": 167523,
+        "95": 7,
+        "98": 7,
+        "8.1": 128,
+        "XP": 500,
+        "Server 2003": 7,
+        "Vista": 7,
+        "NT": 7
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:45:06.113Z",
+  "agency": "social-security-administration"
+}

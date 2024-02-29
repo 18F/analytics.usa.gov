@@ -1,0 +1,64 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251184"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 74940480,
+    "os": {
+      "Windows": 34659056,
+      "Linux": 7450661,
+      "iOS": 13669196,
+      "Macintosh": 8513339,
+      "Android": 9487944,
+      "Chrome OS": 1062832,
+      "(not set)": 97452
+    }
+  },
+  "taken_at": "2024-01-05T16:06:32.732Z",
+  "agency": "general-services-administration"
+}

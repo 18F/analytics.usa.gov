@@ -1,0 +1,116 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "usphs.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "usarmyband.com",
+      "visits": "6644"
+    },
+    {
+      "hostname": "tricare.mil",
+      "visits": "231146"
+    },
+    {
+      "hostname": "sam.gov",
+      "visits": "322"
+    },
+    {
+      "hostname": "nsa-codebreaker.org",
+      "visits": "5"
+    },
+    {
+      "hostname": "nrd.gov",
+      "visits": "27880"
+    },
+    {
+      "hostname": "nps.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "nationalresourcedirectory.gov",
+      "visits": "59"
+    },
+    {
+      "hostname": "health.mil",
+      "visits": "82022"
+    },
+    {
+      "hostname": "dctc.mil",
+      "visits": "464"
+    },
+    {
+      "hostname": "arlingtoncemetery.mil",
+      "visits": "7060"
+    },
+    {
+      "hostname": "adlnet.gov",
+      "visits": "2949"
+    },
+    {
+      "hostname": "aal.army",
+      "visits": "1021"
+    }
+  ],
+  "totals": {
+    "visits": 359574
+  },
+  "taken_at": "2024-01-05T15:52:24.961Z",
+  "agency": "defense"
+}

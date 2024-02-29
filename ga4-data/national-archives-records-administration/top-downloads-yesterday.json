@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Request Military Personnel Records Using Standard Form 180 | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/veterans/military-service-records/standard-form-180.pdf",
+      "page": "www.archives.gov/veterans/military-service-records/standard-form-180.html",
+      "total_events": "1129"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Eligibility and Requirements | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-08/top%2015%20essay%20subjects_2018%20-%202022.xlsx_.docx%20%281%29.pdf",
+      "page": "www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/eligibility-and-requirements",
+      "total_events": "355"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Public Inspection: Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing",
+      "event_label": "file_download",
+      "file_name": "/2023-28857.pdf",
+      "page": "www.federalregister.gov/public-inspection/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and",
+      "total_events": "200"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Section 45V Credit for Production of Clean Hydrogen; Section 48(a)(15) Election To Treat Clean Hydrogen Production Facilities as Energy Property",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-26/pdf/2023-28359.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/26/2023-28359/section-45v-credit-for-production-of-clean-hydrogen-section-48a15-election-to-treat-clean-hydrogen",
+      "total_events": "188"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Contest Topic and Information | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-08/top%2015%20essay%20subjects_2018%20-%202022.pdf",
+      "page": "www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/contest-topic-and-information",
+      "total_events": "179"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Cybersecurity Maturity Model Certification (CMMC) Program",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-26/pdf/2023-27280.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/26/2023-27280/cybersecurity-maturity-model-certification-cmmc-program",
+      "total_events": "167"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Medicare and Medicaid Programs; CY 2024 Payment Policies Under the Physician Fee Schedule and Other Changes to Part B Payment and Coverage Policies; Medicare Shared Savings Program Requirements; Medicare Advantage; Medicare and Medicaid Provider and Supplier Enrollment Policies; and Basic Health Program",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-16/pdf/2023-24184.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/16/2023-24184/medicare-and-medicaid-programs-cy-2024-payment-policies-under-the-physician-fee-schedule-and-other",
+      "total_events": "139"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Beneficial Ownership Information Reporting Requirements",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2022-09-30/pdf/2022-21020.pdf",
+      "page": "www.federalregister.gov/documents/2022/09/30/2022-21020/beneficial-ownership-information-reporting-requirements",
+      "total_events": "109"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "World War II Records | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/military/ww2/ww2-participation.pdf",
+      "page": "www.archives.gov/research/military/ww2",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Declaration of Independence: A Transcription | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/declaration-of-independence-front-630.jpg",
+      "page": "www.archives.gov/founding-docs/declaration-transcript",
+      "total_events": "91"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Executive Orders",
+      "event_label": "file_download",
+      "file_name": "/documents/search.csv",
+      "page": "www.federalregister.gov/presidential-documents/executive-orders",
+      "total_events": "83"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Charts and Forms | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/genealogy/charts-forms/family-group-sheet.pdf",
+      "page": "www.archives.gov/research/genealogy/charts-forms",
+      "total_events": "80"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Charts and Forms | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/genealogy/charts-forms/ancestral-chart.pdf",
+      "page": "www.archives.gov/research/genealogy/charts-forms",
+      "total_events": "74"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Beneficial Ownership Information Access and Safeguards",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-22/pdf/2023-27973.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/22/2023-27973/beneficial-ownership-information-access-and-safeguards",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "JFK Assassination Records - 2023 Additional Documents Release | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/jfk/releases/2023/08/104-10105-10271.pdf",
+      "page": "www.archives.gov/research/jfk/release2023",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Criteria for Judging | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2022-08/top%2015%20essay%20subjects_2018%20-%202022.xlsx_.docx%20%281%29.pdf",
+      "page": "www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/criteria-for-judging",
+      "total_events": "59"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Regulatory Capital Rule: Large Banking Organizations and Banking Organizations With Significant Trading Activity",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-09-18/pdf/2023-19200.pdf",
+      "page": "www.federalregister.gov/documents/2023/09/18/2023-19200/regulatory-capital-rule-large-banking-organizations-and-banking-organizations-with-significant",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Declaration of Independence | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/declaration_of_independence_630.jpg",
+      "page": "www.archives.gov/founding-docs/declaration",
+      "total_events": "57"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Charts and Forms | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/calendar/genealogy-fair/images/pedigree-chart-modern-tree.pdf",
+      "page": "www.archives.gov/research/genealogy/charts-forms",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: National Standards for Traffic Control Devices; the Manual on Uniform Traffic Control Devices for Streets and Highways; Revision",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-19/pdf/2023-27178.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/19/2023-27178/national-standards-for-traffic-control-devices-the-manual-on-uniform-traffic-control-devices-for",
+      "total_events": "56"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "A Letter from Jackie Robinson: Civil Rights Advocate | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/exhibits/featured-documents/jackie-robinson/images/robinson-letter-page-1-l.jpg",
+      "page": "www.archives.gov/exhibits/featured-documents/jackie-robinson",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Correcting Military Service Records | National Archives",
+      "event_label": "file_download",
+      "file_name": "/portals/54/documents/dd/forms/dd/dd0149.pdf",
+      "page": "www.archives.gov/veterans/military-service-records/correct-service-records.html",
+      "total_events": "55"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Charts and Forms | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/calendar/genealogy-fair/images/pedigree-chart-traditional-tree.pdf",
+      "page": "www.archives.gov/research/genealogy/charts-forms",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Constitution of the United States | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/downloads/constitution_pg1of4_ac.jpg",
+      "page": "www.archives.gov/founding-docs/constitution",
+      "total_events": "49"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Start Your Genealogy Research | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/genealogy/start-research/beginning-research.ppt",
+      "page": "www.archives.gov/research/genealogy/start-research",
+      "total_events": "45"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "America's Founding Documents High Resolution Downloads | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/downloads/declaration_pg1of1_ac.jpg",
+      "page": "www.archives.gov/founding-docs/downloads",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "General Records Schedules (GRS) | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/records-mgmt/grs/grs-trs34-sch-only.pdf",
+      "page": "www.archives.gov/records-mgmt/grs.html",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Powers of Persuasion | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/wwt-cover_0.jpg",
+      "page": "www.archives.gov/exhibits/powers-of-persuasion",
+      "total_events": "44"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Beneficial Ownership Information Reporting Deadline Extension for Reporting Companies Created or Registered in 2024",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-30/pdf/2023-26399.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/30/2023-26399/beneficial-ownership-information-reporting-deadline-extension-for-reporting-companies-created-or",
+      "total_events": "41"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Cybersecurity Maturity Model Certification (CMMC) Program Guidance",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-26/pdf/2023-27281.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/26/2023-27281/cybersecurity-maturity-model-certification-cmmc-program-guidance",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Medicare Program; Contract Year 2025 Policy and Technical Changes to the Medicare Advantage Program, Medicare Prescription Drug Benefit Program, Medicare Cost Plan Program, and Programs of All-Inclusive Care for the Elderly; Health Information Technology Standards and Implementation Specifications",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-15/pdf/2023-24118.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/15/2023-24118/medicare-program-contract-year-2025-policy-and-technical-changes-to-the-medicare-advantage-program",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Declaration of Independence | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/declaration_of_independence_stone_630.jpg",
+      "page": "www.archives.gov/founding-docs/declaration",
+      "total_events": "40"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Section 45X Advanced Manufacturing Production Credit",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-15/pdf/2023-27498.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/15/2023-27498/section-45x-advanced-manufacturing-production-credit",
+      "total_events": "39"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Winning Essay by Jeremy Haynes | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-05/2023%20profile%20in%20courage%20essay%20contest%20top%2025%20%284%29.pdf",
+      "page": "www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/past-winning-essays/2023-winning-essay-by-jeremy-haynes",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Definition of Energy Property and Rules Applicable to the Energy Credit",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-22/pdf/2023-25539.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/22/2023-25539/definition-of-energy-property-and-rules-applicable-to-the-energy-credit",
+      "total_events": "38"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Public Inspection: Advanced Impaired Driving Prevention Technology",
+      "event_label": "file_download",
+      "file_name": "/2023-27665.pdf",
+      "page": "www.federalregister.gov/public-inspection/2023-27665/advanced-impaired-driving-prevention-technology",
+      "total_events": "37"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-01/pdf/2023-24283.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+      "total_events": "36"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Extension of Re-Registration Periods for Extensions of the Temporary Protected Status Designations of El Salvador, Haiti, Honduras, Nepal, Nicaragua, and Sudan",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-14/pdf/2023-27342.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/14/2023-27342/extension-of-re-registration-periods-for-extensions-of-the-temporary-protected-status-designations",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "NARA Records Schedule | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/about/records-schedule/nara-records-schedule-list.pdf",
+      "page": "www.archives.gov/about/records-schedule",
+      "total_events": "35"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Access to Clinical and Medical Treatment Records by the Veteran, Next-of-Kin, or Person of Record | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/veterans/military-service-records/na-13042-request-for-information-needed-to-locate-medical-records.pdf",
+      "page": "www.archives.gov/personnel-records-center/medical-records-veterans-access",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Agency Information Collection Activities; Submission for OMB Review; Comment Request; Beneficial Ownership Information Reports",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-09-29/pdf/2023-21293.pdf",
+      "page": "www.federalregister.gov/documents/2023/09/29/2023-21293/agency-information-collection-activities-submission-for-omb-review-comment-request-beneficial",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Medicare Program; Contract Year 2024 Policy and Technical Changes to the Medicare Advantage Program, Medicare Prescription Drug Benefit Program, Medicare Cost Plan Program, and Programs of All-Inclusive Care for the Elderly",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-04-12/pdf/2023-07115.pdf",
+      "page": "www.federalregister.gov/documents/2023/04/12/2023-07115/medicare-program-contract-year-2024-policy-and-technical-changes-to-the-medicare-advantage-program",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Patient Protection and Affordable Care Act, HHS Notice of Benefit and Payment Parameters for 2025; Updating Section 1332 Waiver Public Notice Procedures; Medicaid; Consumer Operated and Oriented Plan (CO-OP) Program; and Basic Health Program",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-24/pdf/2023-25576.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/24/2023-25576/patient-protection-and-affordable-care-act-hhs-notice-of-benefit-and-payment-parameters-for-2025",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Supporting the Head Start Workforce and Consistent Quality Programming",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-20/pdf/2023-25038.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/20/2023-25038/supporting-the-head-start-workforce-and-consistent-quality-programming",
+      "total_events": "34"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Access to Clinical and Medical Treatment Records by the Veteran, Next-of-Kin, or Person of Record | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/veterans/military-service-records/na-13036-authorization-for-release-of-military-medical-patient-records.pdf",
+      "page": "www.archives.gov/personnel-records-center/medical-records-veterans-access",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Interagency Guidance on Third-Party Relationships: Risk Management",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-06-09/pdf/2023-12340.pdf",
+      "page": "www.federalregister.gov/documents/2023/06/09/2023-12340/interagency-guidance-on-third-party-relationships-risk-management",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Powers of Persuasion | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/warning-cover_0.jpg",
+      "page": "www.archives.gov/exhibits/powers-of-persuasion",
+      "total_events": "33"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Current Federal Register Document Issue",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2024-01-04/pdf/fr-2024-01-04.pdf",
+      "page": "www.federalregister.gov/documents/current",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Federal Register Documents Currently on Public Inspection",
+      "event_label": "file_download",
+      "file_name": "/2023-28857.pdf",
+      "page": "www.federalregister.gov/public-inspection/current",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Federal Register Documents Currently on Public Inspection",
+      "event_label": "file_download",
+      "file_name": "/2024-00035.pdf",
+      "page": "www.federalregister.gov/public-inspection/current",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Public Inspection: Endangered and Threatened Species: Initiation of 5-Year Status Reviews of Listed Animal and Plant Species",
+      "event_label": "file_download",
+      "file_name": "/2024-00029.pdf",
+      "page": "www.federalregister.gov/public-inspection/2024-00029/endangered-and-threatened-species-initiation-of-5-year-status-reviews-of-listed-animal-and-plant",
+      "total_events": "32"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: National Primary Drinking Water Regulations for Lead and Copper: Improvements (LCRI)",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-06/pdf/2023-26148.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/06/2023-26148/national-primary-drinking-water-regulations-for-lead-and-copper-improvements-lcri",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Native American Graves Protection and Repatriation Act Systematic Processes for Disposition or Repatriation of Native American Human Remains, Funerary Objects, Sacred Objects, and Objects of Cultural Patrimony",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-13/pdf/2023-27040.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/13/2023-27040/native-american-graves-protection-and-repatriation-act-systematic-processes-for-disposition-or",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Jackie Robinson, Civil Rights Advocate | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/education/lessons/jackie-robinson/images/letter-1961-01.jpg",
+      "page": "www.archives.gov/education/lessons/jackie-robinson/letter-1961.html",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Red States, Blue States: Mapping the Presidential Election | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2020-10/election%20results%201960%20with%20chart.jpg",
+      "page": "www.jfklibrary.org/learn/education/teachers/curricular-resources/red-states-blue-states-mapping-the-presidential-election",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Start Your Genealogy Research | National Archives",
+      "event_label": "file_download",
+      "file_name": "/research/genealogy/start-research/getting-started-toolkit.pdf",
+      "page": "www.archives.gov/research/genealogy/start-research",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Constitution of the United States: A Transcription | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/constitution-page1.jpg",
+      "page": "www.archives.gov/founding-docs/constitution-transcript",
+      "total_events": "31"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Emancipation Proclamation | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/exhibits/featured-documents/emancipation-proclamation/images/emancipation-01-l.jpg",
+      "page": "www.archives.gov/exhibits/featured-documents/emancipation-proclamation",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Obama Family | Barack Obama Presidential Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/6516504337_c643c0e2eb_b.jpg",
+      "page": "www.obamalibrary.gov/galleries/obama-family#131",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The President John F. Kennedy Assassination Records Collection | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/jfk/warren-commission-report/appendix-09.pdf",
+      "page": "www.archives.gov/research/jfk",
+      "total_events": "30"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Federal Register Documents Currently on Public Inspection",
+      "event_label": "file_download",
+      "file_name": "/2024-00044.pdf",
+      "page": "www.federalregister.gov/public-inspection/current",
+      "total_events": "29"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Accessibility Guidelines for Pedestrian Facilities in the Public Right-of-Way",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-08-08/pdf/2023-16149.pdf",
+      "page": "www.federalregister.gov/documents/2023/08/08/2023-16149/accessibility-guidelines-for-pedestrian-facilities-in-the-public-right-of-way",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Combating Auto Retail Scams Trade Regulation Rule",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2024-01-04/pdf/2023-27997.pdf",
+      "page": "www.federalregister.gov/documents/2024/01/04/2023-27997/combating-auto-retail-scams-trade-regulation-rule",
+      "total_events": "28"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Extension and Redesignation of Venezuela for Temporary Protected Status",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-10-03/pdf/2023-21865.pdf",
+      "page": "www.federalregister.gov/documents/2023/10/03/2023-21865/extension-and-redesignation-of-venezuela-for-temporary-protected-status",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Indian Census Rolls, 1885-1940 | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/microfilm/m595.pdf",
+      "page": "www.archives.gov/research/census/native-americans/1885-1940.html",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Powers of Persuasion | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/mtg-cover_0.jpg",
+      "page": "www.archives.gov/exhibits/powers-of-persuasion",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Powers of Persuasion | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/upwo-cover_0.jpg",
+      "page": "www.archives.gov/exhibits/powers-of-persuasion",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Bill of Rights | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/bill-of-rights.jpg",
+      "page": "www.archives.gov/founding-docs/bill-of-rights",
+      "total_events": "27"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 Winning Essay by Jeremy Haynes | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-05/2023%20winning%20essay%20by%20jeremy%20haynes.docx.pdf",
+      "page": "www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/past-winning-essays/2023-winning-essay-by-jeremy-haynes",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "America's Founding Documents High Resolution Downloads | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/downloads/bill_of_rights_pg1of1_ac.jpg",
+      "page": "www.archives.gov/founding-docs/downloads",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "America's Founding Documents High Resolution Downloads | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/downloads/constitution_pg1of4_ac.jpg",
+      "page": "www.archives.gov/founding-docs/downloads",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Medicare Program: Hospital Outpatient Prospective Payment and Ambulatory Surgical Center Payment Systems; Quality Reporting Programs; Payment for Intensive Outpatient Services in Hospital Outpatient Departments, Community Mental Health Centers, Rural Health Clinics, Federally Qualified Health Centers, and Opioid Treatment Programs; Hospital Price Transparency; Changes to Community Mental Health Centers Conditions of Participation, Changes to the Inpatient Prospective Payment ",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-22/pdf/2023-24293.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/22/2023-24293/medicare-program-hospital-outpatient-prospective-payment-and-ambulatory-surgical-center-payment",
+      "total_events": "26"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Electronic-Filing Requirements for Specified Returns and Other Documents",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-02-23/pdf/2023-03710.pdf",
+      "page": "www.federalregister.gov/documents/2023/02/23/2023-03710/electronic-filing-requirements-for-specified-returns-and-other-documents",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Federal Register Documents Currently on Public Inspection",
+      "event_label": "file_download",
+      "file_name": "/2024-00029.pdf",
+      "page": "www.federalregister.gov/public-inspection/current",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The American Revolution | National Archives",
+      "event_label": "file_download",
+      "file_name": "/research/military/american-revolution/service-records.pdf",
+      "page": "www.archives.gov/research/military/american-revolution",
+      "total_events": "25"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "A Letter from Jackie Robinson: Civil Rights Advocate | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/exhibits/featured-documents/jackie-robinson/images/robinson-letter-page-2-l.jpg",
+      "page": "www.archives.gov/exhibits/featured-documents/jackie-robinson",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Federal Register Documents Currently on Public Inspection",
+      "event_label": "file_download",
+      "file_name": "/2024-00005.pdf",
+      "page": "www.federalregister.gov/public-inspection/current",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Safety Program for Surface Mobile Equipment",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-20/pdf/2023-27640.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/20/2023-27640/safety-program-for-surface-mobile-equipment",
+      "total_events": "24"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "\"Ask Not What Your Country Can Do For You...\" | JFK Library",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2018-06/ask_not_what_your_country_can_do_for_you.pdf",
+      "page": "www.jfklibrary.org/learn/education/teachers/curricular-resources/ask-not-what-your-country-can-do-for-you",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Document Drafting Handbook (DDH) | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/federal-register/write/handbook/ddh.pdf",
+      "page": "www.archives.gov/federal-register/write/ddh",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Jackie Robinson, Civil Rights Advocate | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/education/lessons/jackie-robinson/images/letter-1958-01.jpg",
+      "page": "www.archives.gov/education/lessons/jackie-robinson/letter-1958.html",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Jackie Robinson, Civil Rights Advocate | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/education/lessons/jackie-robinson/images/telegram-1963-01.jpg",
+      "page": "www.archives.gov/education/lessons/jackie-robinson/telegram-1963.html",
+      "total_events": "23"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Civil War Records: Basic Research Sources | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/research/microfilm/m594.pdf",
+      "page": "www.archives.gov/research/military/civil-war/resources",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Continuation of Documentation for Beneficiaries of Temporary Protected Status Designations for El Salvador, Haiti, Nicaragua, Sudan, Honduras, and Nepal",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2022-11-16/pdf/2022-24984.pdf",
+      "page": "www.federalregister.gov/documents/2022/11/16/2022-24984/continuation-of-documentation-for-beneficiaries-of-temporary-protected-status-designations-for-el",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Land Management Plan Direction for Old-Growth Forest Conditions Across the National Forest System",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-20/pdf/2023-27875.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/20/2023-27875/land-management-plan-direction-for-old-growth-forest-conditions-across-the-national-forest-system",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Minimum Wage for Federal Contracts Covered by Executive Order 14026, Notice of Rate Change in Effect as of January 1, 2024",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-09-28/pdf/2023-21115.pdf",
+      "page": "www.federalregister.gov/documents/2023/09/28/2023-21115/minimum-wage-for-federal-contracts-covered-by-executive-order-14026-notice-of-rate-change-in-effect",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Public Inspection: Civil Monetary Penalty Inflation Adjustment",
+      "event_label": "file_download",
+      "file_name": "/2023-29003.pdf",
+      "page": "www.federalregister.gov/public-inspection/2023-29003/civil-monetary-penalty-inflation-adjustment",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Public Inspection: State of Louisiana Underground Injection Control Program: Class VI Primacy",
+      "event_label": "file_download",
+      "file_name": "/2024-00044.pdf",
+      "page": "www.federalregister.gov/public-inspection/2024-00044/state-of-louisiana-underground-injection-control-program-class-vi-primacy",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Indian Census Rolls, 1885-1940 | National Archives",
+      "event_label": "file_download",
+      "file_name": "/research/microfilm/m595.pdf",
+      "page": "www.archives.gov/research/census/native-americans/1885-1940.html",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Passenger Arrival Records | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/forms/pdf/natf-81.pdf",
+      "page": "www.archives.gov/research/immigration/passenger-arrival.html",
+      "total_events": "22"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "CUI Resources | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/cui/documents/20161206-cui-marking-handbook-v1-1-20190524.pdf",
+      "page": "www.archives.gov/cui/additional-tools",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Clinical Laboratory Improvement Amendments of 1988 (CLIA) Fees; Histocompatibility, Personnel, and Alternative Sanctions for Certificate of Waiver Laboratories",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-28/pdf/2023-28170.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/28/2023-28170/clinical-laboratory-improvement-amendments-of-1988-clia-fees-histocompatibility-personnel-and",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Federal Register Documents Currently on Public Inspection",
+      "event_label": "file_download",
+      "file_name": "/2023-27665.pdf",
+      "page": "www.federalregister.gov/public-inspection/current",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Phasedown of Hydrofluorocarbons: Technology Transitions Program Residential and Light Commercial Air Conditioning and Heat Pump Subsector",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-26/pdf/2023-28500.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/26/2023-28500/phasedown-of-hydrofluorocarbons-technology-transitions-program-residential-and-light-commercial-air",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Pilot Program To Resume Renewal of H-1B Nonimmigrant Visas in the United States for Certain Qualified Noncitizens",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-21/pdf/2023-28160.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/21/2023-28160/pilot-program-to-resume-renewal-of-h-1b-nonimmigrant-visas-in-the-united-states-for-certain",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Reconsideration and Rescission of Termination of the Designation of Honduras for Temporary Protected Status; Extension of the Temporary Protected Status Designation for Honduras",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-06-21/pdf/2023-13017.pdf",
+      "page": "www.federalregister.gov/documents/2023/06/21/2023-13017/reconsideration-and-rescission-of-termination-of-the-designation-of-honduras-for-temporary-protected",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Request for Information (RFI) Related to NIST's Assignments Under Sections 4.1, 4.5 and 11 of the Executive Order Concerning Artificial Intelligence (Sections 4.1, 4.5, and 11)",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-12-21/pdf/2023-28232.pdf",
+      "page": "www.federalregister.gov/documents/2023/12/21/2023-28232/request-for-information-rfi-related-to-nists-assignments-under-sections-41-45-and-11-of-the",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Federal Register :: Use of FinCEN Identifiers for Reporting Beneficial Ownership Information of Entities",
+      "event_label": "file_download",
+      "file_name": "/content/pkg/fr-2023-11-08/pdf/2023-24559.pdf",
+      "page": "www.federalregister.gov/documents/2023/11/08/2023-24559/use-of-fincen-identifiers-for-reporting-beneficial-ownership-information-of-entities",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Jackie Robinson, Civil Rights Advocate | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/education/lessons/jackie-robinson/images/telegram-1957.jpg",
+      "page": "www.archives.gov/education/lessons/jackie-robinson/telegram-1957.html",
+      "total_events": "21"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "The Declaration of Independence | National Archives",
+      "event_label": "file_download",
+      "file_name": "/files/founding-docs/declaration-of-independence-back-630.jpg",
+      "page": "www.archives.gov/founding-docs/declaration",
+      "total_events": "21"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:49:25.411Z",
+  "agency": "national-archives-records-administration"
+}

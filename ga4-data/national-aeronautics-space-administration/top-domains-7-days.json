@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nasa.gov",
+      "visits": "1172182"
+    },
+    {
+      "domain": "science.nasa.gov",
+      "visits": "963214"
+    },
+    {
+      "domain": "apod.nasa.gov",
+      "visits": "546388"
+    },
+    {
+      "domain": "eyes.nasa.gov",
+      "visits": "396585"
+    },
+    {
+      "domain": "europa.nasa.gov",
+      "visits": "370697"
+    },
+    {
+      "domain": "spaceplace.nasa.gov",
+      "visits": "232598"
+    },
+    {
+      "domain": "blogs.nasa.gov",
+      "visits": "181701"
+    },
+    {
+      "domain": "mars.nasa.gov",
+      "visits": "146116"
+    },
+    {
+      "domain": "earthobservatory.nasa.gov",
+      "visits": "122749"
+    },
+    {
+      "domain": "www.jpl.nasa.gov",
+      "visits": "122512"
+    },
+    {
+      "domain": "climate.nasa.gov",
+      "visits": "104015"
+    },
+    {
+      "domain": "spotthestation.nasa.gov",
+      "visits": "94358"
+    },
+    {
+      "domain": "webb.nasa.gov",
+      "visits": "65022"
+    },
+    {
+      "domain": "exoplanets.nasa.gov",
+      "visits": "59709"
+    },
+    {
+      "domain": "www.grc.nasa.gov",
+      "visits": "52878"
+    },
+    {
+      "domain": "voyager.jpl.nasa.gov",
+      "visits": "50123"
+    },
+    {
+      "domain": "moon.nasa.gov",
+      "visits": "41037"
+    },
+    {
+      "domain": "www3.nasa.gov",
+      "visits": "38688"
+    },
+    {
+      "domain": "svs.gsfc.nasa.gov",
+      "visits": "36540"
+    },
+    {
+      "domain": "urs.earthdata.nasa.gov",
+      "visits": "32870"
+    }
+  ],
+  "totals": {
+    "visits": 4829982
+  },
+  "taken_at": "2024-01-05T15:36:24.418Z",
+  "agency": "national-aeronautics-space-administration"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 9392681,
+    "languages": {
+      "English": 9265150,
+      "Spanish": 94706,
+      "Chinese": 10055,
+      "Russian": 4839,
+      "French": 3448,
+      "Japanese": 3009,
+      "Korean": 2878,
+      "Arabic": 1211,
+      "Dutch": 980,
+      "German": 2041,
+      "Portuguese": 1845,
+      "(other)": 512,
+      "Italian": 858,
+      "Vietnamese": 289,
+      "Ukrainian": 522,
+      "Turkish": 71,
+      "Hebrew": 170,
+      "Swedish": 73,
+      "Polish": 11,
+      "Hungarian": 13
+    }
+  },
+  "taken_at": "2024-01-05T15:55:16.403Z",
+  "agency": "housing-urban-development"
+}

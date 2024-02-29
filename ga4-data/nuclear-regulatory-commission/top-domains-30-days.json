@@ -1,0 +1,77 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460734"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.archives.gov",
+      "visits": "2",
+      "users": "1",
+      "pageviews": "2",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "8.339554",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "2",
+      "users": "2",
+      "pageviews": "2",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "46.2581665",
+      "bounce_rate": "0"
+    }
+  ],
+  "totals": {
+    "users": 3,
+    "visits": 4
+  },
+  "taken_at": "2024-01-05T14:42:44.062Z",
+  "agency": "nuclear-regulatory-commission"
+}

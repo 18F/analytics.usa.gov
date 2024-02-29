@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "page": "sdo.gsfc.nasa.gov/data/",
+      "total_events": "14084"
+    },
+    {
+      "page_title": "Astronomy Picture of the Day",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/astropix.html",
+      "total_events": "13364"
+    },
+    {
+      "page_title": "2024 NASA Science Planning Guide - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/multimedia-galleries/2024-nasa-science-planning-guide/",
+      "total_events": "11135"
+    },
+    {
+      "page_title": "Image Galleries Webb/NASA",
+      "event_label": "file_download",
+      "page": "webb.nasa.gov/content/multimedia/images.html#ssdFlickrGallery",
+      "total_events": "5708"
+    },
+    {
+      "page_title": "APOD: 2023 December 25 – Cathedral, Mountain, Moon",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231225.html",
+      "total_events": "4965"
+    },
+    {
+      "page_title": "Image Galleries Webb/NASA",
+      "event_label": "file_download",
+      "page": "webb.nasa.gov/content/multimedia/images.html",
+      "total_events": "4321"
+    },
+    {
+      "page_title": "Raw Images | Multimedia – NASA Mars Exploration",
+      "event_label": "file_download",
+      "page": "mars.nasa.gov/msl/multimedia/raw-images/",
+      "total_events": "3459"
+    },
+    {
+      "page_title": "APOD: 2024 January 1 – NGC 1232: A Grand Design Spiral Galaxy",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap240101.html",
+      "total_events": "3100"
+    },
+    {
+      "page_title": "CHOP Quote Tool",
+      "event_label": "file_download",
+      "page": "www.sewp.nasa.gov/sewp5chop/quoteinterface/details",
+      "total_events": "2924"
+    },
+    {
+      "page_title": "NASA Artemis",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/specials/artemis/",
+      "total_events": "2513"
+    },
+    {
+      "page_title": "NASA Coloring Pages | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "page": "spaceplace.nasa.gov/coloring-pages/en/",
+      "total_events": "2418"
+    },
+    {
+      "page_title": "Visions of the Future",
+      "event_label": "file_download",
+      "page": "www.jpl.nasa.gov/galleries/visions-of-the-future",
+      "total_events": "2312"
+    },
+    {
+      "page_title": "APOD: 2023 December 27 – Rainbow Aurora over Icelandic Waterfall",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231227.html",
+      "total_events": "2252"
+    },
+    {
+      "page_title": "Audio and Ringtones - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/audio-and-ringtones/",
+      "total_events": "2165"
+    },
+    {
+      "page_title": "Astronomy Picture of the Day",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/",
+      "total_events": "2116"
+    },
+    {
+      "page_title": "APOD: 2024 January 2 – Rocket Transits Rippling Moon",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap240102.html",
+      "total_events": "1784"
+    },
+    {
+      "page_title": "Large Magellanic Fireworks - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/image-detail/pia04609orig/",
+      "total_events": "1746"
+    },
+    {
+      "page_title": "Voyager - Sounds on the Golden Record",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/golden-record/whats-on-the-record/sounds/",
+      "total_events": "1669"
+    },
+    {
+      "page_title": "APOD: 2024 January 3 – A SAR Arc from New Zealand",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap240103.html",
+      "total_events": "1590"
+    },
+    {
+      "page_title": "Voyager 1's Pale Blue Dot - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/resource/voyager-1s-pale-blue-dot/",
+      "total_events": "1516"
+    },
+    {
+      "page_title": "APOD: 2023 December 28 - Jupiter and the Geminid",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231228.html",
+      "total_events": "1400"
+    },
+    {
+      "page_title": "Voyager - Greetings on the Golden Record",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/golden-record/whats-on-the-record/greetings/",
+      "total_events": "1359"
+    },
+    {
+      "page_title": "APOD: 2024 January 4 - Zeta Oph: Runaway Star",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap240104.html",
+      "total_events": "1276"
+    },
+    {
+      "page_title": "APOD: 2023 December 26 – IC 443: The Jellyfish Nebula",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231226.html",
+      "total_events": "1252"
+    },
+    {
+      "page_title": "APOD: 2023 December 18 – The Same Color Illusion",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231218.html",
+      "total_events": "1126"
+    },
+    {
+      "page_title": "How Do Hurricanes Form? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "page": "spaceplace.nasa.gov/hurricanes/en/",
+      "total_events": "1102"
+    },
+    {
+      "page_title": "Perseverance's 360-Degree View From 'Airey Hill' – NASA Mars Exploration",
+      "event_label": "file_download",
+      "page": "mars.nasa.gov/resources/27844/perseverances-360-degree-view-from-airey-hill/",
+      "total_events": "1088"
+    },
+    {
+      "page_title": "Guía de planificación científica de la NASA para 2024 - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/multimedia-galleries/2024-nasa-science-planning-guide/",
+      "total_events": "1056"
+    },
+    {
+      "page_title": "Gateway to Astronaut Photography Query Results Thumbnail Display for Latest_ISS_Imagery",
+      "event_label": "file_download",
+      "page": "eol.jsc.nasa.gov/SearchPhotos/ShowQueryResults-Lightcycle.pl",
+      "total_events": "1052"
+    },
+    {
+      "page_title": "20 Inventions We Wouldn't Have Without Space Travel",
+      "event_label": "file_download",
+      "page": "www.jpl.nasa.gov/infographics/20-inventions-we-wouldnt-have-without-space-travel",
+      "total_events": "997"
+    },
+    {
+      "page_title": "NASA TV Live - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/nasatv/",
+      "total_events": "985"
+    },
+    {
+      "page_title": "Voyager - Mission Status",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/mission/status/",
+      "total_events": "924"
+    },
+    {
+      "page_title": "CDDIS | | archive | gnss | products |",
+      "event_label": "file_download",
+      "page": "cddis.nasa.gov/archive/gnss/products/2294/",
+      "total_events": "901"
+    },
+    {
+      "page_title": "APOD: 2023 December 30 - The Last Full Moon",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231230.html",
+      "total_events": "877"
+    },
+    {
+      "page_title": "Image Galleries Webb/NASA",
+      "event_label": "file_download",
+      "page": "jwst.nasa.gov/content/multimedia/images.html",
+      "total_events": "824"
+    },
+    {
+      "page_title": "APOD: 2023 December 30 - The Persistence of Moonlight",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231230.html",
+      "total_events": "820"
+    },
+    {
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/multimedia-galleries/science-explorers/",
+      "total_events": "799"
+    },
+    {
+      "page_title": "NASA SEWP QRT - Quote Review",
+      "event_label": "file_download",
+      "page": "www.sewp.nasa.gov/sewp5public/getQuotes",
+      "total_events": "765"
+    },
+    {
+      "page_title": "What Did Hubble See on Your Birthday? - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/mission/hubble/multimedia/what-did-hubble-see-on-your-birthday/",
+      "total_events": "762"
+    },
+    {
+      "page_title": "How Does GPS Work? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "page": "spaceplace.nasa.gov/gps/en/",
+      "total_events": "760"
+    },
+    {
+      "page_title": "What Did Hubble See on Your Birthday? - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/mission/hubble/multimedia/what-did-hubble-see-on-your-birthday",
+      "total_events": "747"
+    },
+    {
+      "page_title": "APOD: 2023 December 20 – Ice Halos over Bavaria",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231220.html",
+      "total_events": "737"
+    },
+    {
+      "page_title": "Why Is the Sky Blue? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "page": "spaceplace.nasa.gov/blue-sky/en/",
+      "total_events": "711"
+    },
+    {
+      "page_title": "APOD: 2023 December 24 – NGC 2440: Cocoon of a New White Dwarf",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231224.html",
+      "total_events": "695"
+    },
+    {
+      "page_title": "SDO | Solar Dynamics Observatory",
+      "event_label": "file_download",
+      "page": "sdo.gsfc.nasa.gov/data/aiahmi/browse/queued.php",
+      "total_events": "682"
+    },
+    {
+      "page_title": "APOD: 2023 January 16 – Moon Enhanced",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap230116.html",
+      "total_events": "674"
+    },
+    {
+      "page_title": "Moon Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/multimedia-galleries/moon-poster-and-virtual-backgrounds/",
+      "total_events": "672"
+    },
+    {
+      "page_title": "Image Galleries Webb/NASA",
+      "event_label": "file_download",
+      "page": "jwst.nasa.gov/content/multimedia/images.html#ssdFlickrGallery",
+      "total_events": "654"
+    },
+    {
+      "page_title": "NASA | LANCE | FIRMS - Active Fire Data",
+      "event_label": "file_download",
+      "page": "firms.modaps.eosdis.nasa.gov/active_fire/",
+      "total_events": "650"
+    },
+    {
+      "page_title": "APOD: 2023 December 21 - Three Galaxies and a Comet",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231221.html",
+      "total_events": "625"
+    },
+    {
+      "page_title": "NASA GISS: Panoply Data Viewer: Downloads",
+      "event_label": "file_download",
+      "page": "www.giss.nasa.gov/tools/panoply/download/",
+      "total_events": "613"
+    },
+    {
+      "page_title": "Voyager - Images Voyager Took of Saturn",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/galleries/images-voyager-took/saturn/",
+      "total_events": "611"
+    },
+    {
+      "page_title": "CDDIS | | archive | gnss | data | daily | 2023 |",
+      "event_label": "file_download",
+      "page": "cddis.nasa.gov/archive/gnss/data/daily/2023/brdc/",
+      "total_events": "584"
+    },
+    {
+      "page_title": "FIRMS - Archive Download Request List",
+      "event_label": "file_download",
+      "page": "firms.modaps.eosdis.nasa.gov/download/list.php",
+      "total_events": "573"
+    },
+    {
+      "page_title": "NASA’s Juno to Get Close Look at Jupiter’s Volcanic Moon Io on Dec. 30",
+      "event_label": "file_download",
+      "page": "www.jpl.nasa.gov/news/nasas-juno-to-get-close-look-at-jupiters-volcanic-moon-io-on-dec-30",
+      "total_events": "565"
+    },
+    {
+      "page_title": "Voyager - Solar System Portrait",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/galleries/images-voyager-took/solar-system-portrait/",
+      "total_events": "562"
+    },
+    {
+      "page_title": "CDDIS | | archive | gnss | products |",
+      "event_label": "file_download",
+      "page": "cddis.nasa.gov/archive/gnss/products/2293/",
+      "total_events": "558"
+    },
+    {
+      "page_title": "SPDF - Coordinated Data Analysis Web (CDAWeb)",
+      "event_label": "file_download",
+      "page": "cdaweb.gsfc.nasa.gov/cgi-bin/eval3.cgi",
+      "total_events": "558"
+    },
+    {
+      "page_title": "NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/",
+      "total_events": "547"
+    },
+    {
+      "page_title": "Ridges and Valleys of the Upper Mississippi",
+      "event_label": "file_download",
+      "page": "earthobservatory.nasa.gov/images/152262/ridges-and-valleys-of-the-upper-mississippi",
+      "total_events": "546"
+    },
+    {
+      "page_title": "Submission Confirmation | NASA Langley Student Art Contest",
+      "event_label": "file_download",
+      "page": "artcontest.larc.nasa.gov/student-art-contest-submission-confirmation/",
+      "total_events": "519"
+    },
+    {
+      "page_title": "How Does GPS Work? | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "page": "spaceplace.nasa.gov/gps-pizza/en/",
+      "total_events": "507"
+    },
+    {
+      "page_title": "Worldview | Earthdata",
+      "event_label": "file_download",
+      "page": "www.earthdata.nasa.gov/worldview",
+      "total_events": "506"
+    },
+    {
+      "page_title": "Voyager - Downloads",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/downloads/",
+      "total_events": "489"
+    },
+    {
+      "page_title": "Snow Peak, Réunion Island",
+      "event_label": "file_download",
+      "page": "earthobservatory.nasa.gov/images/152265/snow-peak-reunion-island",
+      "total_events": "487"
+    },
+    {
+      "page_title": "Voyager - Images Voyager Took of Neptune",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/galleries/images-voyager-took/neptune/",
+      "total_events": "480"
+    },
+    {
+      "page_title": "Earth Poster and Virtual Backgrounds - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/multimedia-galleries/earth-poster-and-virtual-backgrounds/",
+      "total_events": "469"
+    },
+    {
+      "page_title": "CSBF Antarctica Operations",
+      "event_label": "file_download",
+      "page": "www.csbf.nasa.gov/antarctica/ice.htm",
+      "total_events": "468"
+    },
+    {
+      "page_title": "Yesterday and Tomorrow Islands",
+      "event_label": "file_download",
+      "page": "earthobservatory.nasa.gov/images/91638/yesterday-and-tomorrow-islands",
+      "total_events": "466"
+    },
+    {
+      "page_title": "APOD: 2023 December 12 – Aurora and Milky Way over Norway",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231212.html",
+      "total_events": "447"
+    },
+    {
+      "page_title": "APOD: 2023 December 23 - A December Summer Night",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231223.html",
+      "total_events": "443"
+    },
+    {
+      "page_title": "APOD: 2023 December 14 - Supernova Remnant Cassiopeia A",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231214.html",
+      "total_events": "442"
+    },
+    {
+      "page_title": "Solar System and Beyond Poster Set - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/resource/solar-system-and-beyond-poster-set/",
+      "total_events": "439"
+    },
+    {
+      "page_title": "High School Aerospace Scholars - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/learning-resources/high-school-aerospace-scholars/",
+      "total_events": "438"
+    },
+    {
+      "page_title": "Voyager - Images Voyager Took of Uranus",
+      "event_label": "file_download",
+      "page": "voyager.jpl.nasa.gov/galleries/images-voyager-took/uranus/",
+      "total_events": "433"
+    },
+    {
+      "page_title": "Make a Pinwheel Galaxy Pinwheel | NASA Space Place – NASA Science for Kids",
+      "event_label": "file_download",
+      "page": "spaceplace.nasa.gov/pinwheel-galaxy/en/",
+      "total_events": "432"
+    },
+    {
+      "page_title": "NASA SVS | The 2023 and 2024 Solar Eclipses: Map and Data",
+      "event_label": "file_download",
+      "page": "svs.gsfc.nasa.gov/5073",
+      "total_events": "432"
+    },
+    {
+      "page_title": "For Students Grades K-4 - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/learning-resources/for-students-grades-k-4/",
+      "total_events": "427"
+    },
+    {
+      "page_title": "Electromagnetic Spectrum - Introduction",
+      "event_label": "file_download",
+      "page": "imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html",
+      "total_events": "406"
+    },
+    {
+      "page_title": "Sunrise from the Station",
+      "event_label": "file_download",
+      "page": "earthobservatory.nasa.gov/images/152259/sunrise-from-the-station",
+      "total_events": "405"
+    },
+    {
+      "page_title": "APOD: 2023 December 13 – Deep Field: The Heart Nebula",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231213.html",
+      "total_events": "402"
+    },
+    {
+      "page_title": "NASA Invites You to X-59 Rollout Watch Party - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/aeronautics/x-59-rollout-watch-party/",
+      "total_events": "401"
+    },
+    {
+      "page_title": "Data.GISS: GISS Surface Temperature Analysis (GISTEMP v4)",
+      "event_label": "file_download",
+      "page": "data.giss.nasa.gov/gistemp/",
+      "total_events": "400"
+    },
+    {
+      "page_title": "Student Project: Make a Moon Phases Calendar and Calculator - New for 2024 | NASA/JPL Edu",
+      "event_label": "file_download",
+      "page": "www.jpl.nasa.gov/edu/learn/project/make-a-moon-phases-calendar-and-calculator/",
+      "total_events": "396"
+    },
+    {
+      "page_title": "J1407b: Super-Saturn – Exoplanet Exploration: Planets Beyond our Solar System",
+      "event_label": "file_download",
+      "page": "exoplanets.nasa.gov/resources/242/j1407b-super-saturn/",
+      "total_events": "390"
+    },
+    {
+      "page_title": "Global Temperature | Vital Signs – Climate Change: Vital Signs of the Planet",
+      "event_label": "file_download",
+      "page": "climate.nasa.gov/vital-signs/global-temperature/",
+      "total_events": "383"
+    },
+    {
+      "page_title": "NASA | LANCE | FIRMS",
+      "event_label": "file_download",
+      "page": "firms.modaps.eosdis.nasa.gov/country/",
+      "total_events": "380"
+    },
+    {
+      "page_title": "APOD: 2023 December 15 - Betelgeuse Eclipsed",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231215.html",
+      "total_events": "373"
+    },
+    {
+      "page_title": "Our Solar System Poster - Version B - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/resource/our-solar-system-poster-version-b/",
+      "total_events": "367"
+    },
+    {
+      "page_title": "Former Astronauts - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/humans-in-space/astronauts/former-astronauts/",
+      "total_events": "366"
+    },
+    {
+      "page_title": "APOD: 2023 December 19 – NGC 1499: The California Nebula",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231219.html",
+      "total_events": "363"
+    },
+    {
+      "page_title": "Snowshoe Lava Field",
+      "event_label": "file_download",
+      "page": "earthobservatory.nasa.gov/images/152269/snowshoe-lava-field",
+      "total_events": "360"
+    },
+    {
+      "page_title": "Our Solar System Poster - Version A - NASA Science",
+      "event_label": "file_download",
+      "page": "science.nasa.gov/resource/our-solar-system-poster-version-a/",
+      "total_events": "347"
+    },
+    {
+      "page_title": "APOD: 2023 December 17 – Geminids over China's Nianhu Lake",
+      "event_label": "file_download",
+      "page": "apod.nasa.gov/apod/ap231217.html",
+      "total_events": "346"
+    },
+    {
+      "page_title": "Mars Explorers Wanted Posters - NASA Mars",
+      "event_label": "file_download",
+      "page": "mars.nasa.gov/multimedia/resources/mars-posters-explorers-wanted/",
+      "total_events": "331"
+    },
+    {
+      "page_title": "NASA Images - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/images/",
+      "total_events": "326"
+    },
+    {
+      "page_title": "ARES | Orbital Debris Program Office | Photo Gallery",
+      "event_label": "file_download",
+      "page": "orbitaldebris.jsc.nasa.gov/photo-gallery/",
+      "total_events": "316"
+    },
+    {
+      "page_title": "7.22 - Space Security: Best Practices Guide - SW Engineering Handbook Ver D - Global Site",
+      "event_label": "file_download",
+      "page": "swehb.nasa.gov/display/SWEHBVD/7.22+-+Space+Security:+Best+Practices+Guide",
+      "total_events": "312"
+    },
+    {
+      "page_title": "Winter Island",
+      "event_label": "file_download",
+      "page": "earthobservatory.nasa.gov/images/152236/winter-island",
+      "total_events": "311"
+    },
+    {
+      "page_title": "NASA Careers: Pathways - NASA",
+      "event_label": "file_download",
+      "page": "www.nasa.gov/careers/pathways/",
+      "total_events": "302"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:37:08.378Z",
+  "agency": "national-aeronautics-space-administration"
+}

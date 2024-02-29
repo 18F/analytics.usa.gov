@@ -1,0 +1,119 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 98183579,
+    "languages": {
+      "(other)": 873784,
+      "English": 96189753,
+      "Spanish": 707920,
+      "Chinese": 87897,
+      "Persian": 25351,
+      "Korean": 40628,
+      "French": 37018,
+      "Vietnamese": 25630,
+      "German": 25836,
+      "Japanese": 12709,
+      "Russian": 25225,
+      "Portuguese": 20462,
+      "Arabic": 14794,
+      "Ukrainian": 8153,
+      "Dutch": 8671,
+      "Indonesian": 11526,
+      "Turkish": 7634,
+      "Italian": 11840,
+      "Thai": 3937,
+      "Swedish": 5620,
+      "Polish": 5593,
+      "Danish": 5368,
+      "Romanian": 2478,
+      "Serbian": 101,
+      "Hebrew": 3510,
+      "Norwegian Bokmål": 3105,
+      "Finnish": 2059,
+      "Greek": 2946,
+      "Croatian": 894,
+      "Hindi": 2330,
+      "Hungarian": 1561,
+      "Czech": 1912,
+      "Bengali": 352,
+      "Burmese": 622,
+      "Panjabi": 113,
+      "Azerbaijani": 1107,
+      "Uzbek": 98,
+      "Bulgarian": 262,
+      "Armenian": 194,
+      "Catalan": 532,
+      "Albanian": 514,
+      "Malay": 39,
+      "Lithuanian": 287,
+      "Central Khmer": 609,
+      "Gujarati": 269,
+      "Slovak": 497,
+      "Samoan": 199,
+      "Slovenian": 160,
+      "Amharic": 325,
+      "Afrikaans": 669,
+      "Oromo": 13,
+      "Bosnian": 159,
+      "Kinyarwanda": 32,
+      "Somali": 22,
+      "Lao": 36,
+      "Malayalam": 11,
+      "Corsican": 12,
+      "Nepali": 35,
+      "Latvian": 12,
+      "Tonga": 13,
+      "Telugu": 121,
+      "Urdu": 20
+    }
+  },
+  "taken_at": "2024-01-05T15:34:02.984Z",
+  "agency": "veterans-affairs"
+}

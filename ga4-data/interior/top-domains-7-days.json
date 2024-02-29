@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nps.gov",
+      "visits": "3746382"
+    },
+    {
+      "domain": "earthquake.usgs.gov",
+      "visits": "1540137"
+    },
+    {
+      "domain": "www.usgs.gov",
+      "visits": "673485"
+    },
+    {
+      "domain": "waterdata.usgs.gov",
+      "visits": "310997"
+    },
+    {
+      "domain": "www.blm.gov",
+      "visits": "220296"
+    },
+    {
+      "domain": "www.fws.gov",
+      "visits": "202203"
+    },
+    {
+      "domain": "www.doi.gov",
+      "visits": "119346"
+    },
+    {
+      "domain": "store.usgs.gov",
+      "visits": "69835"
+    },
+    {
+      "domain": "earthexplorer.usgs.gov",
+      "visits": "53537"
+    },
+    {
+      "domain": "www.bia.gov",
+      "visits": "53316"
+    },
+    {
+      "domain": "www.usbr.gov",
+      "visits": "43054"
+    },
+    {
+      "domain": "apps.nationalmap.gov",
+      "visits": "25960"
+    },
+    {
+      "domain": "home.nps.gov",
+      "visits": "24359"
+    },
+    {
+      "domain": "nps.gov",
+      "visits": "21967"
+    },
+    {
+      "domain": "ers.cr.usgs.gov",
+      "visits": "21605"
+    },
+    {
+      "domain": "everykidoutdoors.gov",
+      "visits": "19521"
+    },
+    {
+      "domain": "www.sciencebase.gov",
+      "visits": "17825"
+    },
+    {
+      "domain": "mrdata.usgs.gov",
+      "visits": "16205"
+    },
+    {
+      "domain": "www.volunteer.gov",
+      "visits": "10932"
+    },
+    {
+      "domain": "www.pwrc.usgs.gov",
+      "visits": "9457"
+    }
+  ],
+  "totals": {
+    "visits": 7200419
+  },
+  "taken_at": "2024-01-05T15:46:21.514Z",
+  "agency": "interior"
+}

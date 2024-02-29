@@ -1,21 +1,26 @@
-  <!--
+<!--
     IE detection, used to guide console formatting in subsequent include.
   -->
-  <script type="text/javascript">window._ie9 = false;</script>
+<script type="text/javascript">
+  window._ie9 = false;
+</script>
 
-  <!--[if IE 9 ]>
-    <script type="text/javascript">window._ie9 = true;</script>
-  <![endif]-->
+<!--[if IE 9]>
+  <script type="text/javascript">
+    window._ie9 = true;
+  </script>
+<![endif]-->
 
-  <!--
+<!--
    IE10 JS targeting: https://stackoverflow.com/a/17099988
    IE11 JS targeting: https://stackoverflow.com/a/17447695
   -->
-  <script type="text/javascript">
-    window._ie10 = ("onpropertychange" in document && !!window.matchMedia);
-    window._ie11 = !!navigator.userAgent.match(/Trident\/7.0; rv 11/);
-    window._ie = window._ie9 || window._ie10 || window._ie11;
-  </script>
+<script type="text/javascript">
+  window._ie10 = "onpropertychange" in document && !!window.matchMedia;
+  window._ie11 = !!navigator.userAgent.match(/Trident\/7.0; rv 11/);
+  window._ie = window._ie9 || window._ie10 || window._ie11;
+</script>
 
-  <script src="{{ site.baseurl }}/assets/bundle.js"></script>
-  <script async="" type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA" id="_fed_an_ua_tag"></script>
+<script async type="text/javascript" src="{{ site.baseurl }}/assets/uswds/js/uswds.min.js"></script>
+<script async type="text/javascript" src="{{ site.baseurl }}/assets/bundle.js"></script>
+<script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA" id="_fed_an_ua_tag"></script>

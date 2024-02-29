@@ -22,5 +22,429 @@ i.e.
 
 @use "uswds-core" as *;
 
+// COLORS
+$red: color("red-70v");
+$light-blue: color("blue-50v");
+$light-blue-two: color("blue-50");
+$dark-blue: color("blue-80v");
+$light-gray: color("gray-2");
+$uswds-light-gray: color("gray-cool-30");
+$gray: color("gray-10");
+$dark-gray: color("gray-cool-70");
+$white: color("gray-1");
 
-// Replace styles from css/public_analytics.scss here!
+// @include u-font("sans", "md");
+// '3xs'	13px
+// '2xs'	14px
+// 'xs'	15px
+// 'sm'	16px
+// 'md'	17px
+// 'lg'	22px
+// 'xl'	32px
+// '2xl'	40px
+// '3xl'	48px
+
+// @include u-text('light')
+// 100
+// 200
+// 300
+// 400
+// 500
+// 600
+// 700
+// 800
+// 900
+
+// card        160px
+// card-lg     240px
+// mobile      320px
+// mobile-lg   480px
+// tablet      640px
+// tablet-lg   880px
+// desktop     1024px
+// desktop-lg  1200px
+// widescreen  1400px
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: family('sans');
+}
+
+
+// Other Setup:
+body {
+  background: #FFF;
+  color: color("gray-cool-70");
+  font-family: font-family('ui');
+  font-weight: font-weight(300);
+  margin: 0;
+}
+
+a,
+a:visited {
+  color: color("blue-80v");
+}
+
+figure {
+  margin: 0;
+}
+
+// nested charts
+figure figure {
+
+  h4 {
+    display: none;
+  }
+
+  .bar-chart {
+    margin: units(1) 0;
+
+    .bin {
+      margin-bottom: units(1);
+    }
+  }
+}
+
+*[data-block] {
+  opacity: 1;
+  // transition opacity over a fraction of a second, with a delay
+  // (the delay guards against flashes when content switches really quickly
+  // from loading -> loaded -> loading again, e.g. when data loads quickly)
+  transition: opacity 0.5s ease-in;
+
+  &.loading {
+    opacity: 0.8;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.technical-difficulties {
+  background: color("gray-1");
+  color: color("red-70v");
+  padding-top: units(2.5);
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+ul li:after,
+ul li:before {
+  content: "";
+  display: none;
+  padding-right: 0;
+}
+
+/*
+  404 Styles
+*/
+
+.container-padding {
+  padding-left: units(2);
+  padding-right: units(2);
+
+  @include at-media("tablet") {
+    padding-left: units(4);
+    padding-right: units(4);
+  }
+}
+
+.dark-background {
+  background: color("blue-80v");
+
+  &,
+  a {
+    color: color("gray-1");
+  }
+}
+
+.chart-realtime {
+  color: color("blue-80v");
+  padding: units(4);
+  text-align: center;
+
+  &__visitors-count {
+    padding: 0;
+
+    @include at-media("tablet") {
+      padding: units(2);
+    }
+  }
+
+  &__current_visitors {
+    font-size: 4em;
+    margin: 0;
+
+    @include at_media("tablet") {
+      font-size: 8em;
+    }
+  }
+
+  &__description {
+    font-size: units(3);
+
+    @include at_media("tablet") {
+      font-size: units(4);
+    }
+  }
+}
+
+g.axis {
+
+  path,
+  line {
+    fill: none;
+    stroke: none;
+  }
+
+  .tick text {
+    fill: color("blue-80v");
+    font-size: units(1.5);
+  }
+}
+
+.time-series {
+  text-transform: uppercase;
+
+  rect {
+    fill: color("blue-50v");
+    stroke: color("gray-1");
+    stroke-width: 1;
+  }
+
+  text.label {
+    fill: color("blue-80v");
+    font-size: .45rem; // use for 30 day dd/mm styles
+  }
+}
+
+
+/*
+* Section Styles
+*/
+
+#main_data {
+  @include at-media("tablet") {
+    border-right: none;
+  }
+}
+
+#secondary_data {
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid color("gray-cool-40");
+
+  @include at-media("tablet") {
+    border-bottom: 1px solid color("gray-cool-40");
+    border-left: 1px solid color("gray-cool-40");
+    border-top: none;
+  }
+}
+
+/*
+* Section components (locations, 30-day-sessions, 90-day-sessions)
+*/
+
+.section {
+  border-top: 1px solid color("gray-cool-40");
+
+  @include at-media("tablet") {
+    border-bottom: none;
+  }
+
+  &__headline {
+    border-bottom: 1px solid color("gray-cool-40");
+
+    @include at-media("tablet") {
+      border-bottom: none;
+      padding-left: units(3);
+      padding-top: 0;
+    }
+
+    h2,
+    h3 {
+      padding: 0 units(2);
+    }
+  }
+
+  &__subheader {
+    font-size: units(3);
+    padding: units(2) units(2);
+    text-align: center;
+
+    #total_visitors {
+      font-weight: font-weight('bold')
+    }
+  }
+
+  &__chart {
+    padding: 0;
+
+    @include at-media("tablet") {
+      padding: 0 units(2);
+    }
+
+    .bar-chart-component {
+      padding: units(2);
+
+      &:first-child {
+        padding-top: units(2);
+
+        @include at-media("tablet") {
+          padding-top: units(1);
+        }
+      }
+
+      @include at-media("tablet") {
+        padding: units(1) units(3);
+      }
+    }
+  }
+}
+
+.top {
+  &-pages {
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+
+    &__headline {
+      padding-top: 0;
+    }
+
+    &__realtime {
+      .bar-chart {
+        margin-top: 0;
+      }
+
+      .label {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &-downloads {
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+
+    h4 {
+      font-weight: font-weight("light");
+    }
+
+    &__headline {
+      padding-top: units(2.5);
+    }
+
+    .label {
+      height: 3rem;
+      line-height: 1.6;
+
+      .name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .domain {
+        color: color("gray-cool-70");
+        text-transform: lowercase;
+      }
+
+      .filename {
+        text-transform: lowercase;
+      }
+    }
+
+    .bar {
+      margin-top: units(2);
+    }
+  }
+}
+
+#top_100_table,
+#top_downloads_table {
+  padding: units(3) units(3) 0 units(3);
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h5 {
+    color: color("gray-cool-70");
+    font-weight: 300;
+  }
+}
+
+
+
+
+#top_downloads_table {
+  padding-top: 0;
+
+  h4 {
+    font-weight: font-weight('light');
+    margin-bottom: units(2);
+    margin-top: 0;
+  }
+}
+
+#time_series {
+  padding: units(4) 0;
+
+  @include at-media("tablet") {
+    padding: 0 units(2);
+  }
+
+  svg {
+    display: block;
+    height: auto;
+    margin: 0;
+    max-height: 300px;
+    width: 100%;
+
+    .axis[aria-hidden="true"] {
+      display: block !important; // WDS override
+    }
+  }
+}
+
+#explanation {
+  border-top: 1px solid color("gray-cool-40");
+  margin-top: -1px;
+
+  h4 {
+    font-size: 90%;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ul,
+  li {
+    list-style-position: inside;
+    list-style-type: none;
+  }
+
+  li {
+    margin: 1em 0;
+  }
+}

@@ -1,6 +1,6 @@
 import d3 from 'd3';
 
-const DISPLAY_THRESHOLD = 1;
+const DISPLAY_THRESHOLD = 0.1;
 /*
  * listify an Object into its key/value pairs (entries) and sorting by
  * numeric value descending.
@@ -74,7 +74,6 @@ function consolidateSmallValues(proportionsList, threshold) {
  * @return a closure of consolidated smaller date from the proportions
  */
 function toTopPercents(dataSet, desiredKey) {
-  console.warn(dataSet);
   const values = listify(dataSet.totals[desiredKey]);
   const proportions = findProportionsOfMetricFromValue(values);
   return consolidateSmallValues(proportions, DISPLAY_THRESHOLD);

@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Updated Annual Pesticide Registration Maintenance Fees for 2024 | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/pesticide-registration/updated-annual-pesticide-registration-maintenance-fees-2024",
+      "total_events": "3152"
+    },
+    {
+      "page_title": "Protect Your Family from Lead in Your Home (English) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/lead/protect-your-family-lead-your-home-english",
+      "total_events": "2559"
+    },
+    {
+      "page_title": "Search Results | NSCEP | US EPA",
+      "event_label": "file_download",
+      "page": "nepis.epa.gov/Exe/ZyNET.exe",
+      "total_events": "1602"
+    },
+    {
+      "page_title": "EPA's Final Rule for Oil and Natural Gas Operations Will Sharply Reduce Methane and Other Harmful Pollution. | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/controlling-air-pollution-oil-and-natural-gas-operations/epas-final-rule-oil-and-natural-gas",
+      "total_events": "1491"
+    },
+    {
+      "page_title": "EPA Map of Radon Zones | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/epa-map-radon-zones",
+      "total_events": "1445"
+    },
+    {
+      "page_title": "Tier2 Submit Software | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/epcra/tier2-submit-software",
+      "total_events": "1314"
+    },
+    {
+      "page_title": "GHG Emission Factors Hub | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/climateleadership/ghg-emission-factors-hub",
+      "total_events": "1216"
+    },
+    {
+      "page_title": "NEPAssist",
+      "event_label": "file_download",
+      "page": "nepassisttool.epa.gov/nepassist/nepamap.aspx",
+      "total_events": "1111"
+    },
+    {
+      "page_title": "EPANET | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/water-research/epanet",
+      "total_events": "1047"
+    },
+    {
+      "page_title": "Consolidated List of Lists | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/epcra/consolidated-list-lists",
+      "total_events": "1019"
+    },
+    {
+      "page_title": "Inflation Reduction Act Community Change Grants Program | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/inflation-reduction-act/inflation-reduction-act-community-change-grants-program",
+      "total_events": "960"
+    },
+    {
+      "page_title": "Radon Media Resources for Partners and Stakeholders | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/radon-media-resources-partners-and-stakeholders",
+      "total_events": "835"
+    },
+    {
+      "page_title": "Tier II Forms and Instructions | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/epcra/tier-ii-forms-and-instructions",
+      "total_events": "816"
+    },
+    {
+      "page_title": "About CPRG Implementation Grants | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/inflation-reduction-act/about-cprg-implementation-grants",
+      "total_events": "805"
+    },
+    {
+      "page_title": "Storm Water Management Model (SWMM) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/water-research/storm-water-management-model-swmm",
+      "total_events": "797"
+    },
+    {
+      "page_title": "Ecoregions of North America | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/eco-research/ecoregions-north-america",
+      "total_events": "702"
+    },
+    {
+      "page_title": "How to Access the TSCA Inventory | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/tsca-inventory/how-access-tsca-inventory",
+      "total_events": "681"
+    },
+    {
+      "page_title": "Document Display | NEPIS | US EPA",
+      "event_label": "file_download",
+      "page": "nepis.epa.gov/Exe/ZyNET.exe",
+      "total_events": "669"
+    },
+    {
+      "page_title": "Download Files | AirData | US EPA",
+      "event_label": "file_download",
+      "page": "aqs.epa.gov/aqsweb/airdata/download_files.html",
+      "total_events": "606"
+    },
+    {
+      "page_title": "EJScreen",
+      "event_label": "file_download",
+      "page": "ejscreen.epa.gov/mapper/",
+      "total_events": "585"
+    },
+    {
+      "page_title": "Cleaning and Disinfecting: Best Practices During the COVID-19 Pandemic | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/coronavirus/cleaning-and-disinfecting-best-practices-during-covid-19-pandemic",
+      "total_events": "583"
+    },
+    {
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 1: External Combustion Sources | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-1-external-0",
+      "total_events": "555"
+    },
+    {
+      "page_title": "EPA Map of Radon Zones and Supplemental Information | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/epa-map-radon-zones-and-supplemental-information#datainfo",
+      "total_events": "547"
+    },
+    {
+      "page_title": "Contact Information for Certification Programs and Certified Laboratories for Drinking Water | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/dwlabcert/contact-information-certification-programs-and-certified-laboratories-drinking-water",
+      "total_events": "542"
+    },
+    {
+      "page_title": "EPA Map of Radon Zones and Supplemental Information | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/epa-map-radon-zones-and-supplemental-information",
+      "total_events": "537"
+    },
+    {
+      "page_title": "EPA Maps of Radon Zones and Supporting Documents by State | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/epa-maps-radon-zones-and-supporting-documents-state",
+      "total_events": "523"
+    },
+    {
+      "page_title": "PFAS Strategic Roadmap: EPA's Commitments to Action 2021-2024 | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/pfas/pfas-strategic-roadmap-epas-commitments-action-2021-2024",
+      "total_events": "521"
+    },
+    {
+      "page_title": "Simplified GHG Emissions Calculator | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/climateleadership/simplified-ghg-emissions-calculator",
+      "total_events": "502"
+    },
+    {
+      "page_title": "Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2021 | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks-1990-2021",
+      "total_events": "501"
+    },
+    {
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 3: Stationary Internal Combustion Sources | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-3-stationary-0",
+      "total_events": "493"
+    },
+    {
+      "page_title": "Scope 1 and Scope 2 Inventory Guidance | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/climateleadership/scope-1-and-scope-2-inventory-guidance",
+      "total_events": "476"
+    },
+    {
+      "page_title": "Residential New Construction Program Requirements | ENERGY STAR",
+      "event_label": "file_download",
+      "page": "www.energystar.gov/partner_resources/residential_new/homes_prog_reqs/national_page",
+      "total_events": "471"
+    },
+    {
+      "page_title": "Annual Certification Data for Vehicles, Engines, and Equipment | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment",
+      "total_events": "446"
+    },
+    {
+      "page_title": "How to Find Bed Bugs | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/bedbugs/how-find-bed-bugs",
+      "total_events": "433"
+    },
+    {
+      "page_title": "Attic Air Sealing Project | ENERGY STAR",
+      "event_label": "file_download",
+      "page": "www.energystar.gov/saveathome/seal_insulate/attic_air_sealing_project",
+      "total_events": "432"
+    },
+    {
+      "page_title": "Technical Assistance Document for the Reporting of Daily Air Quality | AirNow.gov",
+      "event_label": "file_download",
+      "page": "www.airnow.gov/publications/air-quality-index/technical-assistance-document-for-reporting-the-daily-aqi/",
+      "total_events": "430"
+    },
+    {
+      "page_title": "Clean School Bus Program Rebates | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/cleanschoolbus/clean-school-bus-program-rebates",
+      "total_events": "419"
+    },
+    {
+      "page_title": "ALOHA Software | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/cameo/aloha-software",
+      "total_events": "409"
+    },
+    {
+      "page_title": "About CPRG Planning Grant Information | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/inflation-reduction-act/about-cprg-planning-grant-information",
+      "total_events": "408"
+    },
+    {
+      "page_title": "PFAS Explained | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/pfas/pfas-explained",
+      "total_events": "394"
+    },
+    {
+      "page_title": "TSCA Section 8(a)(7) Reporting and Recordkeeping Requirements for Perfluoroalkyl and Polyfluoroalkyl Substances | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/assessing-and-managing-chemicals-under-tsca/tsca-section-8a7-reporting-and-recordkeeping",
+      "total_events": "388"
+    },
+    {
+      "page_title": "Proposed Lead and Copper Rule Improvements | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/ground-water-and-drinking-water/proposed-lead-and-copper-rule-improvements",
+      "total_events": "387"
+    },
+    {
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 13: Miscellaneous Sources | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-13-miscellaneous-0",
+      "total_events": "385"
+    },
+    {
+      "page_title": "2022 Construction General Permit (CGP) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/npdes/2022-construction-general-permit-cgp",
+      "total_events": "378"
+    },
+    {
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 11: Mineral Products Industry | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-11-mineral-products-0",
+      "total_events": "362"
+    },
+    {
+      "page_title": "Developing a Stormwater Pollution Prevention Plan (SWPPP) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/npdes/developing-stormwater-pollution-prevention-plan-swppp",
+      "total_events": "359"
+    },
+    {
+      "page_title": "SF‑425: Federal Financial Report | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/grants/sf-425-federal-financial-report",
+      "total_events": "350"
+    },
+    {
+      "page_title": "Level III and IV Ecoregions of the Continental United States | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states",
+      "total_events": "337"
+    },
+    {
+      "page_title": "Label Review Manual | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/pesticide-registration/label-review-manual",
+      "total_events": "323"
+    },
+    {
+      "page_title": "US Embassies and Consulates | AirNow.gov",
+      "event_label": "file_download",
+      "page": "www.airnow.gov/international/us-embassies-and-consulates/",
+      "total_events": "317"
+    },
+    {
+      "page_title": "Residential New Construction Program Requirements | ENERGY STAR",
+      "event_label": "file_download",
+      "page": "www.energystar.gov/partner_resources/residential_new/homes_prog_reqs/multifamily_national_page",
+      "total_events": "305"
+    },
+    {
+      "page_title": "Revised Lead and Copper Rule | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/ground-water-and-drinking-water/revised-lead-and-copper-rule",
+      "total_events": "302"
+    },
+    {
+      "page_title": "Protect Your Family from Asbestos-Contaminated Vermiculite Insulation | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/asbestos/protect-your-family-asbestos-contaminated-vermiculite-insulation",
+      "total_events": "299"
+    },
+    {
+      "page_title": "Current Class VI Projects under Review at EPA | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/uic/current-class-vi-projects-under-review-epa",
+      "total_events": "290"
+    },
+    {
+      "page_title": "National Menu of Best Management Practices (BMPs) for Stormwater-Construction | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/npdes/national-menu-best-management-practices-bmps-stormwater-construction",
+      "total_events": "284"
+    },
+    {
+      "page_title": "AP 42, Fifth Edition, Volume I Chapter 7: Liquid Storage Tanks | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-7-liquid-storage-0",
+      "total_events": "275"
+    },
+    {
+      "page_title": "Download Data | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/egrid/download-data",
+      "total_events": "275"
+    },
+    {
+      "page_title": "Stormwater Discharges from Industrial Activities-EPA's 2021 MSGP | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/npdes/stormwater-discharges-industrial-activities-epas-2021-msgp",
+      "total_events": "273"
+    },
+    {
+      "page_title": "Method 5 - Particulate Matter (PM) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/emc/method-5-particulate-matter-pm",
+      "total_events": "270"
+    },
+    {
+      "page_title": "Documents List - EPA OSC Response",
+      "event_label": "file_download",
+      "page": "response.epa.gov/site/doc_list.aspx",
+      "total_events": "267"
+    },
+    {
+      "page_title": "Uniform Hazardous Waste Manifest: Instructions, Sample Form and Continuation Sheet | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/hwgenerators/uniform-hazardous-waste-manifest-instructions-sample-form-and-continuation-sheet",
+      "total_events": "266"
+    },
+    {
+      "page_title": "Meat and Poultry Products Effluent Guidelines - 2024 Proposed Rule | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/eg/meat-and-poultry-products-effluent-guidelines-2024-proposed-rule",
+      "total_events": "264"
+    },
+    {
+      "page_title": "Bed Bugs Appearance and Life Cycle | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/bedbugs/bed-bugs-appearance-and-life-cycle",
+      "total_events": "262"
+    },
+    {
+      "page_title": "Per- and Polyfluoroalkyl Substances (PFAS) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas",
+      "total_events": "262"
+    },
+    {
+      "page_title": "Instructions and Form for Hazardous Waste Generators, Transporters and Treatment, Storage and Disposal Facilities to Obtain an EPA Identification Number (EPA Form 8700-12/Site Identification Form) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/hwgenerators/instructions-and-form-hazardous-waste-generators-transporters-and-treatment-storage",
+      "total_events": "258"
+    },
+    {
+      "page_title": "What is EPA's Action Level for Radon and What Does it Mean? | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/what-epas-action-level-radon-and-what-does-it-mean",
+      "total_events": "253"
+    },
+    {
+      "page_title": "Amendments to the 2023 Rule | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/wotus/amendments-2023-rule",
+      "total_events": "250"
+    },
+    {
+      "page_title": "Seller's Disclosure of Information on Lead-Based Paint and/or Lead-Based Paint Hazards | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/lead/sellers-disclosure-information-lead-based-paint-andor-lead-based-paint-hazards",
+      "total_events": "247"
+    },
+    {
+      "page_title": "Avoid Bed Bugs at the Laundromat | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/ipm/avoid-bed-bugs-laundromat",
+      "total_events": "245"
+    },
+    {
+      "page_title": "Consent Decree: Cummins Engine Company, Inc. Diesel Engines Settlement | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/enforcement/consent-decree-cummins-engine-company-inc-diesel-engines-settlement",
+      "total_events": "244"
+    },
+    {
+      "page_title": "The Environmental Justice Thriving Communities Grantmaking Program | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/environmentaljustice/environmental-justice-thriving-communities-grantmaking-program",
+      "total_events": "243"
+    },
+    {
+      "page_title": "Air Quality Dispersion Modeling - Preferred and Recommended Models | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/scram/air-quality-dispersion-modeling-preferred-and-recommended-models",
+      "total_events": "240"
+    },
+    {
+      "page_title": "Climate Pollution Reduction Grants | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/inflation-reduction-act/climate-pollution-reduction-grants",
+      "total_events": "238"
+    },
+    {
+      "page_title": "Lessor's Disclosure of Information on Lead-Based Paint and/or Lead-Based Paint Hazards | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/lead/lessors-disclosure-information-lead-based-paint-andor-lead-based-paint-hazards",
+      "total_events": "237"
+    },
+    {
+      "page_title": "Hazardous Waste Report: Instructions and Form | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/hwgenerators/hazardous-waste-report-instructions-and-form",
+      "total_events": "232"
+    },
+    {
+      "page_title": "Radon Media Resources for Partners and Stakeholders | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/radon-media-resources-partners-and-stakeholders#social",
+      "total_events": "232"
+    },
+    {
+      "page_title": "Product Specification Search",
+      "event_label": "file_download",
+      "page": "www.energystar.gov/products/spec",
+      "total_events": "223"
+    },
+    {
+      "page_title": "EPA Strategic Plan | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/planandbudget/strategicplan",
+      "total_events": "211"
+    },
+    {
+      "page_title": "Tier2 Submit Software | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/epcra/tier2-submit-software#download",
+      "total_events": "211"
+    },
+    {
+      "page_title": "Health Risk of Radon | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/radon/health-risk-radon",
+      "total_events": "208"
+    },
+    {
+      "page_title": "Summary of the Clean Water Act | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/laws-regulations/summary-clean-water-act",
+      "total_events": "208"
+    },
+    {
+      "page_title": "Basement & Crawlspace Air Sealing and Insulating Project | ENERGY STAR",
+      "event_label": "file_download",
+      "page": "www.energystar.gov/saveathome/seal_insulate/basement_crawlspace",
+      "total_events": "199"
+    },
+    {
+      "page_title": "Final 2023 CWA Section 401 Water Quality Certification Improvement Rule | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/cwa-401/final-2023-cwa-section-401-water-quality-certification-improvement-rule",
+      "total_events": "198"
+    },
+    {
+      "page_title": "Download EJScreen Data | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/ejscreen/download-ejscreen-data",
+      "total_events": "194"
+    },
+    {
+      "page_title": "External Civil Rights Docket, 2014-Present | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/external-civil-rights/external-civil-rights-docket-2014-present",
+      "total_events": "194"
+    },
+    {
+      "page_title": "EPA Grantee Forms | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/grants/epa-grantee-forms",
+      "total_events": "191"
+    },
+    {
+      "page_title": "List A: Antimicrobial Products Registered with the EPA as Sterilizers | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/pesticide-registration/list-antimicrobial-products-registered-epa-sterilizers",
+      "total_events": "191"
+    },
+    {
+      "page_title": "WaterSense for Kids | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/watersense/watersense-kids",
+      "total_events": "191"
+    },
+    {
+      "page_title": "NPDES Application Forms | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/npdes/npdes-application-forms",
+      "total_events": "189"
+    },
+    {
+      "page_title": "National Primary Drinking Water Regulation Table | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table",
+      "total_events": "189"
+    },
+    {
+      "page_title": "Dynamometer Drive Schedules | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/vehicle-and-fuel-emissions-testing/dynamometer-drive-schedules",
+      "total_events": "188"
+    },
+    {
+      "page_title": "Water Quality Standards Handbook | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/wqs-tech/water-quality-standards-handbook",
+      "total_events": "184"
+    },
+    {
+      "page_title": "Drinking Water Health Advisories for PFOA and PFOS | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/sdwa/drinking-water-health-advisories-pfoa-and-pfos",
+      "total_events": "182"
+    },
+    {
+      "page_title": "Project and Landfill Data by State | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/lmop/project-and-landfill-data-state",
+      "total_events": "182"
+    },
+    {
+      "page_title": "美国环保局搜索",
+      "event_label": "file_download",
+      "page": "search.epa.gov/epasearch/?query=Biocid",
+      "total_events": "182"
+    },
+    {
+      "page_title": "Method 9 - Visual Opacity | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/emc/method-9-visual-opacity",
+      "total_events": "181"
+    },
+    {
+      "page_title": "Recycling Grant Selectees and Recipients | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/infrastructure/recycling-grant-selectees-and-recipients",
+      "total_events": "177"
+    },
+    {
+      "page_title": "AP-42: Compilation of Air Emissions Factors | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/air-emissions-factors-and-quantification/ap-42-compilation-air-emissions-factors",
+      "total_events": "175"
+    },
+    {
+      "page_title": "Vehicle Emissions California Waivers and Authorizations | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/state-and-local-transportation/vehicle-emissions-california-waivers-and-authorizations",
+      "total_events": "174"
+    },
+    {
+      "page_title": "Per- and Polyfluoroalkyl Substances (PFAS) | US EPA",
+      "event_label": "file_download",
+      "page": "www.epa.gov/pfas",
+      "total_events": "170"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:42:37.380Z",
+  "agency": "environmental-protection-agency"
+}

@@ -1,0 +1,146 @@
+{
+  "name": "device_model",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "mobileDeviceModel"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1000"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Device Model",
+    "description": "90 days of visits by Device Model for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 90212081,
+    "device_models": {
+      "iPhone": 28007348,
+      "Edge": 21023541,
+      "Chrome": 17585355,
+      "": 181360,
+      "Safari": 7805086,
+      "Firefox": 1262947,
+      "iPad": 1046673,
+      "ChromeBook": 908038,
+      "(other)": 6377,
+      "Firefox for Android": 168026,
+      "SM-S908U": 983603,
+      "SM-S918U": 923006,
+      "SM-S901U": 603941,
+      "SM-G991U": 497110,
+      "Opera": 24173,
+      "(not set)": 1090511,
+      "SM-S911U": 444180,
+      "SM-A146U": 465736,
+      "SM-G998U": 475027,
+      "SM-S916U": 341484,
+      "SM-S906U": 345813,
+      "SM-G996U": 263848,
+      "SM-N986U": 234273,
+      "SM-G781U": 237771,
+      "SM-A136U": 255733,
+      "SM-A326B": 244158,
+      "SM-A037U": 237043,
+      "Pixel 7 Pro": 186598,
+      "Pixel 7": 170294,
+      "moto g pure": 220617,
+      "SM-F936U": 144912,
+      "Pixel 6": 149396,
+      "SM-G990U": 125718,
+      "SM-G975U": 136439,
+      "SM-G781V": 139296,
+      "Pixel 6a": 134999,
+      "SM-G973U": 148344,
+      "Moto G 5G (2022)": 152177,
+      "SM-G970U": 140186,
+      "SM-S918U1": 97673,
+      "Moto G Stylus 5G": 146483,
+      "Edge 5G UW": 126869,
+      "SM-N981U": 102787,
+      "SM-A536U": 110271,
+      "SM-G960U": 135688,
+      "SM-A546U": 86207,
+      "SM-F946U": 61386,
+      "Moto G Stylus 5G (2022)": 100440,
+      "SM-S908U1": 89928,
+      "SM-A125U": 122326,
+      "SM-G986U": 88029,
+      "Pixel 6 Pro": 88062,
+      "SM-F926U": 97888,
+      "SM-G990U2": 84611,
+      "Moto G Power (2022)": 112153,
+      "SM-N960U": 94150,
+      "SM-N975U": 82443,
+      "SM-F711U": 77794,
+      "SM-F731U": 33494,
+      "SM-F721U": 74745,
+      "SM-A426U": 69664,
+      "moto g play (2023)": 63269,
+      "SM-G965U": 75826,
+      "SM-A716U": 64891,
+      "Pixel 8 Pro": 7003,
+      "SM-A526U": 38699,
+      "Moto G Power (2021)": 73067,
+      "KFTRWI": 45999,
+      "SM-G981U": 19693,
+      "moto g 5G - 2023": 2033,
+      "DE2118": 49174,
+      "SM-A037F": 56555,
+      "SM-G988U": 16404,
+      "SM-S136DL": 12914,
+      "one 5G ace": 13024,
+      "SM-A236U": 1016,
+      "KFMAWI": 7976,
+      "iPhone 13": 8843,
+      "SM-G950U": 8951,
+      "iPhone 13 Pro Max": 2423,
+      "iPhone 14 Pro Max": 2234,
+      "iPhone 11": 1125,
+      "SM-A102U": 2136,
+      "SM-N950U": 2085,
+      "SM-A135U": 2128,
+      "SM-T227U": 19337,
+      "9137W": 12601,
+      "SM-X200": 6213,
+      "SM-T220": 2234
+    }
+  },
+  "taken_at": "2024-01-05T15:06:43.713Z",
+  "agency": "veterans-affairs"
+}

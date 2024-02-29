@@ -1,0 +1,891 @@
+{
+  "name": "top-downloads-yesterday",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fileName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "yesterday",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Top Downloads Yesterday",
+    "description": "Top downloads yesterday"
+  },
+  "data": [
+    {
+      "date": "2024-01-04",
+      "page_title": "Form MCS-150 and Instructions - Motor Carrier Identification Report | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-06/mcs-150%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-mcs-150-and-instructions-motor-carrier-identification-report",
+      "total_events": "2131"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Medical Examination Report (MER) Form, MCSA-5875 | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-12/medical%20examination%20report%20form%20mcsa-5875%2023.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/medical/medical-examination-report-form-commercial-driver-medical-certification",
+      "total_events": "1040"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Medical Examiner's Certificate (MEC), Form MCSA-5876 | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-12/medical%20examiner%27s%20certificate%20form%20mcsa-5876%2023.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/medical/medical-examiners-certificate-commercial-driver-medical-certification",
+      "total_events": "863"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/mutcd11thedition.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "692"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FY 2024 RAISE Grants Notice of Funding Opportunity | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2023-11/raise%202024%20nofo%2011.30.23_0.pdf",
+      "page": "www.transportation.gov/RAISEgrants/raise-nofo",
+      "total_events": "494"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pilot’s Handbook of Aeronautical Knowledge | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation/phak",
+      "total_events": "424"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form MCSA-5889 - Motor Carrier Records Change Form | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-06/mcsa-5889%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-mcsa-5889-motor-carrier-records-change-form",
+      "total_events": "370"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airplane Flying Handbook | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/00_afh_full.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation/airplane_handbook",
+      "total_events": "298"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FY 2024.1 U.S. DOT SBIR Pre-Solicitation Notice | Volpe National Transportation Systems Center",
+      "event_label": "file_download",
+      "file_name": "/sites/volpe.dot.gov/files/2024-01/fy24.1%2bsbir%2bappendix%2ba.pdf",
+      "page": "www.volpe.dot.gov/work-us/small-business-innovation-research/fy-20241-us-dot-sbir-pre-solicitation-notice",
+      "total_events": "296"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aeronautical Chart Users' Guide",
+      "event_label": "file_download",
+      "file_name": "/user_guide/20231130/cug-complete.pdf",
+      "page": "www.faa.gov/air_traffic/flight_info/aeronav/digital_products/aero_guide/",
+      "total_events": "295"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aviation Handbooks & Manuals | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/regulations_policies/handbooks_manuals/aviation/amtg_handbook.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation",
+      "total_events": "268"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/chapter2b.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "267"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form OCE-46 - Request for Revocation of Operating Authority | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-12/oce-46%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-oce-46-request-revocation-operating-authority",
+      "total_events": "263"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aviation Handbooks & Manuals | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/regulations_policies/handbooks_manuals/aviation/faa-h-8083-31b_aviation_maintenance_technician_handbook.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation",
+      "total_events": "257"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pay & Benefits | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/jobs/working_here/benefits/pay/core_salary_with_conversion.xlsx",
+      "page": "www.faa.gov/jobs/working_here/benefits",
+      "total_events": "248"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/chapter2c.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "213"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/part6.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "213"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Insulin-Treated Diabetes Mellitus Assessment Form, MCSA-5870 | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-08/insulin-treated%20diabetes%20mellitus%20assessment%20form%20mcsa-5870_508.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/medical/insulin-treated-diabetes-mellitus-assessment-form-mcsa-5870",
+      "total_events": "210"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/part3.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "203"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form BOC-3 - Designation of Agents for Service of Process | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-06/boc-3%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-boc-3-designation-agents-service-process",
+      "total_events": "188"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form MCS-90 - Endorsement for Motor Carrier Policies of Insurance for Public Liability under Sections 29 and 30 of the Motor Carrier Act of 1980 | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-05/mcs-90%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-mcs-90-endorsement-motor-carrier-policies-insurance-public-liability-under",
+      "total_events": "187"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "How Can I Become a Collector for DOT Drug Testing? | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/docs/odapc_how_to_become_a_collector.pdf",
+      "page": "www.transportation.gov/odapc/how-can-i-become-collector-dot-drug-testing",
+      "total_events": "182"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AC 43.13-1B - Acceptable Methods, Techniques, and Practices - Aircraft Inspection and Repair [Large AC. This includes Change 1.]",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/advisory_circular/ac_43.13-1b_w-chg1.pdf",
+      "page": "www.faa.gov/regulations_policies/advisory_circulars/index.cfm/go/document.information/documentid/99861",
+      "total_events": "172"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "U.S. Department of Transportation Service Animal Air Transportation Form - Sample | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2024-01/u.s.%20dot%20service%20animal%20air%20transportation%20form%201-4-2024.pdf",
+      "page": "www.transportation.gov/resources/individuals/aviation-consumer-protection/us-department-transportation-service-animal-air",
+      "total_events": "171"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Guide for Aviation Medical Examiners | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/ame_guide/media/dni_dnf_tables.pdf",
+      "page": "www.faa.gov/ame_guide/pharm/dni_dnf",
+      "total_events": "164"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "RAISE 2023 Award Fact Sheets | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2023-06/raise%202023%20fact%20sheets_2.pdf",
+      "page": "www.transportation.gov/raisegrants/raise-2023-fact-sheets",
+      "total_events": "157"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Vision Evaluation Report, Form MCSA–5871 | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-08/vision%20evaluation%20report%20form%20mcsa-5871_508.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/medical/vision-evaluation-report-form-mcsa-5871",
+      "total_events": "155"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "U.S. Department of Transportation Service Animal Air Transportation Form - Sample | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2021-01/u.s.%20dot%20service%20animal%20air%20transportation%20form.pdf",
+      "page": "www.transportation.gov/individuals/aviation-consumer-protection/us-department-transportation-service-animal-air-0",
+      "total_events": "153"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/part4.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "152"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airman Certification Standards | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/acs/private_airplane_acs_change_1.pdf",
+      "page": "www.faa.gov/training_testing/testing/acs",
+      "total_events": "150"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aviation Handbooks & Manuals | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/regulations_policies/handbooks_manuals/aviation/amt_powerplant_handbook.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation",
+      "total_events": "150"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aviation Handbooks & Manuals | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/faa-h-8083-15b.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation",
+      "total_events": "141"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/chapter2a.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "141"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Where can I find study materials for the Part 107 aeronautical knowledge test? | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf",
+      "page": "www.faa.gov/faq/where-can-i-find-study-materials-part-107-aeronautical-knowledge-test",
+      "total_events": "138"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form OP-1 - Application for Motor Property Carrier and Broker Authority and Instructions | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-08/op-1%20form.pdf",
+      "page": "www.fmcsa.dot.gov/registration/form-op-1-application-motor-property-carrier-and-broker-authority",
+      "total_events": "137"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "HOW TO: Create Your Login.Gov Account | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-10/create_a_login-gov_account_how_to_guide.pdf",
+      "page": "www.fmcsa.dot.gov/mission/information-systems/how-create-your-logingov-account",
+      "total_events": "137"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "391.41 CMV Driver Medication Form, MCSA-5895 (optional) | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2023-09/medications%20form%2c%20mcsa-5895%20form%209-11-2023%20508.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/medical/39141-cmv-driver-medication-form-mcsa-5895-optional",
+      "total_events": "136"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Practical Test Standards (PTS) | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/test_standards/faa-s-8081-6d.pdf",
+      "page": "www.faa.gov/training_testing/testing/test_standards",
+      "total_events": "135"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FAA-H-8083-28, Aviation Weather Handbook | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/faa-h-8083-28_faa_web.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/faa-h-8083-28-aviation-weather-handbook",
+      "total_events": "133"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Standard Highway Signs and Markings Book - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/shse/shs_2004_2012_sup.pdf",
+      "page": "mutcd.fhwa.dot.gov/ser-shs_millennium.htm",
+      "total_events": "133"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pilot Records Database (PRD) | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/regulations_policies/pilot_records_database/prd-registrationpilot.pdf",
+      "page": "www.faa.gov/regulations_policies/pilot_records_database",
+      "total_events": "126"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "State-by-State Instructions for Submitting Medical Certificates for CDL Drivers to the State Agencies | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2022-11/state-instructions-submitting-med-certificate_1.pdf",
+      "page": "www.fmcsa.dot.gov/registration/commercial-drivers-license/state-state-med-cert-submission-update",
+      "total_events": "126"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/chapter2d.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "125"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "ERG2020 (English) | PHMSA",
+      "event_label": "file_download",
+      "file_name": "/sites/phmsa.dot.gov/files/2021-01/erg2020-web.pdf",
+      "page": "www.phmsa.dot.gov/hazmat/erg/erg2020-english",
+      "total_events": "124"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Car Seat Recommendations for Children By Age & Size | NHTSA",
+      "event_label": "file_download",
+      "file_name": "/sites/nhtsa.gov/files/documents/carseat-recommendations-for-children-by-age-size.pdf",
+      "page": "www.nhtsa.gov/document/car-seat-recommendations-children-age-size",
+      "total_events": "116"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Certificated Air Carriers List | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2022-03/cert%20carrier%20list_march%202022_0.pdf",
+      "page": "www.transportation.gov/policy/aviation-policy/certificated-air-carriers-list",
+      "total_events": "112"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Where can I find study materials for the Part 107 aeronautical knowledge test? | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/acs/uas_acs.pdf",
+      "page": "www.faa.gov/faq/where-can-i-find-study-materials-part-107-aeronautical-knowledge-test",
+      "total_events": "108"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Instrument Procedures Handbook (IPH) | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/instrument_procedures_handbook/faa-h-8083-16b.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation/instrument_procedures_handbook",
+      "total_events": "105"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/part9.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "105"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AC 43.13-1B - Acceptable Methods, Techniques, and Practices - Aircraft Inspection and Repair [Large AC. This includes Change 1.]",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/advisory_circular/ac_43.13-1b_w-chg1.pdf",
+      "page": "www.faa.gov/regulations_policies/advisory_circulars/index.cfm/go/document.information/documentID/99861",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Where can I find study materials for the Part 107 aeronautical knowledge test? | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/test_questions/uag_questions.pdf",
+      "page": "www.faa.gov/faq/where-can-i-find-study-materials-part-107-aeronautical-knowledge-test",
+      "total_events": "103"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Policy Document Library | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/uas/resources/policy_library/remote_pilot_study_guide.pdf",
+      "page": "www.faa.gov/uas/resources/policy_library#107",
+      "total_events": "100"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aviation Instructor's Handbook | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/aviation_instructors_handbook/aviation_instructors_handbook.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation/aviation_instructors_handbook",
+      "total_events": "99"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Standard Highway Signs 2004 Edition, English Version - FHWA MUTCD -",
+      "event_label": "file_download",
+      "file_name": "/shse/warning.pdf",
+      "page": "mutcd.fhwa.dot.gov/ser-shs_millennium_eng.htm",
+      "total_events": "99"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 12: Weather Theory | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/14_phak_ch12.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-12-weather-theory",
+      "total_events": "97"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Standard Highway Signs 2004 Edition, English Version - FHWA MUTCD -",
+      "event_label": "file_download",
+      "file_name": "/shse/regulatory.pdf",
+      "page": "mutcd.fhwa.dot.gov/ser-shs_millennium_eng.htm",
+      "total_events": "95"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/chapter2e.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Urine Specimen Collection Guidelines | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/docs/resources/partners/drug-and-alcohol-testing/2567/urine-specimen-collection-guidelines-january-2018.pdf",
+      "page": "www.transportation.gov/odapc/urine-specimen-collection-guidelines",
+      "total_events": "92"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form AC 8060-56 - Application for Replacement of Lost, Destroyed, or Paper Airman Certificate(s)",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/form/ac8060-56.pdf",
+      "page": "www.faa.gov/forms/index.cfm/go/document.information/documentID/183832",
+      "total_events": "90"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 1: Introduction to Flying | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/03_phak_ch1.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-1-introduction-flying",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "FAA-certificated Aircraft Operators (Legal Part 135 holders) | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/part_135_aircraft_7.xlsx",
+      "page": "www.faa.gov/about/officeorg/headquartersoffices/avs/faa-certificated-aircraft-operators-legal-part-135-holders",
+      "total_events": "88"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Daily DecisionsDaily FMCSA Registration Decisions, Letters, Certificates, Permits, and Licenses | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/lihtml/rptspdf/li_cpl20240104.pdf",
+      "page": "www.fmcsa.dot.gov/registration/daily-decisionsdaily-fmcsa-registration-decisions-letters-certificates-permits-and",
+      "total_events": "86"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Aviation Mechanic General, Airframe, and Powerplant Airman Certification Standards | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/aviation_mechanic_certification_standards.pdf",
+      "page": "www.faa.gov/trainingtesting/aviation-mechanic-general-airframe-and-powerplant-airman-certification-standards",
+      "total_events": "85"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form AC 8050-1 - Aircraft Registration Application",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/form/ac_form_8050-1_04-05-2023.pdf",
+      "page": "www.faa.gov/forms/index.cfm/go/document.information/documentID/185220",
+      "total_events": "85"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "January/February 2024 FAA Safety Briefing | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/janfeb2024.pdf",
+      "page": "www.faa.gov/newsroom/safety-briefing/januaryfebruary-2024-faa-safety-briefing",
+      "total_events": "84"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/chapter2hthu2n.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "77"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "AC 150/5300-13B - Airport Design",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/advisory_circular/150-5300-13b-airport-design.pdf",
+      "page": "www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.current/documentnumber/150_5300-13",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pilot’s Handbook of Aeronautical Knowledge, FAA-H-8083-25B | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/2022-03/pilot_handbook.pdf",
+      "page": "www.faa.gov/aviation/phak/pilots-handbook-aeronautical-knowledge-faa-h-8083-25b",
+      "total_events": "75"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airman Certification Standards | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/acs/commercial_airplane_acs_change_1.pdf",
+      "page": "www.faa.gov/training_testing/testing/acs",
+      "total_events": "74"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 5: Aerodynamics of Flight | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/07_phak_ch5_0.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-5-aerodynamics-flight",
+      "total_events": "74"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Policy Document Library | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/uas/resources/policy_library/uas_acs.pdf",
+      "page": "www.faa.gov/uas/resources/policy_library#107",
+      "total_events": "74"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airman Certification Standards | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/acs/acs_briefing.pdf",
+      "page": "www.faa.gov/training_testing/testing/acs",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 7: Aircraft Systems | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/09_phak_ch7.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-7-aircraft-systems",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Uniform Certification Application (English) | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2021-02/uniform-certification-application%202.8.2021.pdf",
+      "page": "www.transportation.gov/civil-rights/disadvantaged-business-enterprise/uniform-certification-application-english",
+      "total_events": "73"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Computer Testing Supplements | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/supplements/sport_rec_private_akts.pdf",
+      "page": "www.faa.gov/training_testing/testing/supplements",
+      "total_events": "72"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "2023 SS4A Full Award List | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2023-12/ss4a-fy23_award-list_dec2023.xlsx",
+      "page": "www.transportation.gov/grants/ss4a/2023-full-award-list",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 4: Principles of Flight | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/06_phak_ch4_0.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-4-principles-flight",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Transportation Statistics Annual Report 2023 | Bureau of Transportation Statistics",
+      "event_label": "file_download",
+      "file_name": "/sites/bts.dot.gov/files/2023-12/tsar-2023_123023.pdf",
+      "page": "www.bts.gov/browse-statistical-products-and-data/transportation-statistics-annual-reports/transportation-0",
+      "total_events": "71"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "What Employees Need to Know About DOT Drug & Alcohol Testing (English) | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/docs/resources/partners/drug-and-alcohol-testing/2568/employeehandbookeng2019a.pdf",
+      "page": "www.transportation.gov/odapc/employee-handbook-english",
+      "total_events": "69"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Guide for Aviation Medical Examiners | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/ame_guide/media/ssri_decision_path-i.pdf",
+      "page": "www.faa.gov/ame_guide/app_process/exam_tech/item47/amd/antidepressants",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "MUTCD 11th Edition - FHWA MUTCD",
+      "event_label": "file_download",
+      "file_name": "/pdfs/11th_edition/part1.pdf",
+      "page": "mutcd.fhwa.dot.gov/kno_11th_Edition.htm",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Pharmaceuticals (Therapeutics) | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/ame_guide/media/ame_otc_medications.pdf",
+      "page": "www.faa.gov/pilots/medical_certification/medications",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Standard Highway Signs 2004 Edition, English Version - FHWA MUTCD -",
+      "event_label": "file_download",
+      "file_name": "/shse/guide.pdf",
+      "page": "mutcd.fhwa.dot.gov/ser-shs_millennium_eng.htm",
+      "total_events": "67"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form FAA 337 - Major Repair and Alteration (Airframe, Powerplant, Propeller, or Appliance)",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/form/faa_form_337_pra_extension_july_31_2026.pdf",
+      "page": "www.faa.gov/forms/index.cfm/go/document.information/documentID/185675",
+      "total_events": "66"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Become a Drone Pilot | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/acs/uas_acs.pdf",
+      "page": "www.faa.gov/uas/commercial_operators/become_a_drone_pilot",
+      "total_events": "65"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Hours of Service (HOS) | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/documents/jun9_hos_presentation_508.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/hours-of-service",
+      "total_events": "65"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Notice JO 7340.778 - Foreign ICAO 3LD Additions, Modifications, and Deletions (excluding U.S.)",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/notice/n7340.778_foreign_icao_3ld_additions_mods_(3_jan_2024).pdf",
+      "page": "www.faa.gov/regulations_policies/orders_notices/index.cfm/go/document.information/documentID/1042372",
+      "total_events": "65"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airplane Flying Handbook | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/04_afh_ch3.pdf",
+      "page": "www.faa.gov/regulations_policies/handbooks_manuals/aviation/airplane_handbook",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "New Driver Application Package | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/2021-05/new%20driver%20application%20package%20new%20ssc%20address.pdf",
+      "page": "www.fmcsa.dot.gov/medical/driver-medical-requirements/new-driver-application-package",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Nine Classes of Hazardous Materials (Yellow Visor Card) | FMCSA",
+      "event_label": "file_download",
+      "file_name": "/sites/fmcsa.dot.gov/files/docs/nine_classes_of_hazardous_materials-4-2013_508cln.pdf",
+      "page": "www.fmcsa.dot.gov/regulations/enforcement/nine-classes-hazardous-materials-yellow-visor-card",
+      "total_events": "64"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 14: Airport Operations | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/16_phak_ch14_0.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-14-airport-operations",
+      "total_events": "63"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airworthiness Directives | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/2022-09/ad_final_rule_search_guide_for_drs.pdf",
+      "page": "www.faa.gov/regulations_policies/airworthiness_directives",
+      "total_events": "62"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Form FAA 8700-2 - Comprehensive Medical Examination Checklist (BasicMed)",
+      "event_label": "file_download",
+      "file_name": "/documentlibrary/media/form/faa_form_8700-2_omb_exp_06-2026.pdf",
+      "page": "www.faa.gov/forms/index.cfm/go/document.information/documentID/1030366",
+      "total_events": "62"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Guide for Aviation Medical Examiners | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/ame_guide/media/airman_information_ssri_initial_certification.pdf",
+      "page": "www.faa.gov/ame_guide/app_process/exam_tech/item47/amd/antidepressants",
+      "total_events": "62"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Risk Management Handbook (FAA-H-8083-2A) | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/2022-06/risk_management_handbook_2a.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/risk-management-handbook-faa-h-8083-2a",
+      "total_events": "62"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Air Traffic Plans and Publications",
+      "event_label": "file_download",
+      "file_name": "/air_traffic/publications/media/aim_bsc_w_chg_1_dtd_10-5-23-compressed_v2.pdf",
+      "page": "www.faa.gov/air_traffic/publications/",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Benefit-Cost Analysis Guidance for Discretionary Grant Programs | US Department of Transportation",
+      "event_label": "file_download",
+      "file_name": "/sites/dot.gov/files/2023-12/benefit%20cost%20analysis%20guidance%202024%20update.pdf",
+      "page": "www.transportation.gov/mission/office-secretary/office-policy/transportation-policy/benefit-cost-analysis-guidance",
+      "total_events": "61"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Airman Certification Standards | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/training_testing/testing/acs/instrument_rating_acs_change_1.pdf",
+      "page": "www.faa.gov/training_testing/testing/acs",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 16: Navigation | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/18_phak_ch16.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-16-navigation",
+      "total_events": "60"
+    },
+    {
+      "date": "2024-01-04",
+      "page_title": "Chapter 2: Aeronautical Decision-Making | Federal Aviation Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/faa.gov/files/04_phak_ch2.pdf",
+      "page": "www.faa.gov/regulationspolicies/handbooksmanuals/aviation/phak/chapter-2-aeronautical-decision-making",
+      "total_events": "60"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:02:29.861Z",
+  "agency": "transportation"
+}

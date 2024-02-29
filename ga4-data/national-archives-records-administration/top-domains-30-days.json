@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "3443146",
+      "users": "1686317",
+      "pageviews": "6424573",
+      "pageviews_per_session": "1.8659019977659965",
+      "avg_session_duration": "238.42642284966365",
+      "bounce_rate": "0.45934357706585777"
+    },
+    {
+      "domain": "www.archives.gov",
+      "visits": "3230910",
+      "users": "2521811",
+      "pageviews": "4676526",
+      "pageviews_per_session": "1.4474330761302543",
+      "avg_session_duration": "175.69582138684049",
+      "bounce_rate": "0.42664079160360396"
+    },
+    {
+      "domain": "www.federalregister.gov",
+      "visits": "2830728",
+      "users": "2115092",
+      "pageviews": "3515301",
+      "pageviews_per_session": "1.2418363756602542",
+      "avg_session_duration": "133.30578493467056",
+      "bounce_rate": "0.53802661364850313"
+    },
+    {
+      "domain": "www.jfklibrary.org",
+      "visits": "445852",
+      "users": "392819",
+      "pageviews": "530578",
+      "pageviews_per_session": "1.1900316697020537",
+      "avg_session_duration": "125.42326645606384",
+      "bounce_rate": "0.51971954819087951"
+    },
+    {
+      "domain": "obamawhitehouse.archives.gov",
+      "visits": "344598",
+      "users": "279803",
+      "pageviews": "376688",
+      "pageviews_per_session": "1.0931230012942617",
+      "avg_session_duration": "131.68864357166609",
+      "bounce_rate": "0.477849552231876"
+    },
+    {
+      "domain": "vetrecs.archives.gov",
+      "visits": "248070",
+      "users": "141937",
+      "pageviews": "1103632",
+      "pageviews_per_session": "4.448873301890595",
+      "avg_session_duration": "318.77932111754353",
+      "bounce_rate": "0.22780263635264239"
+    },
+    {
+      "domain": "trumpwhitehouse.archives.gov",
+      "visits": "236258",
+      "users": "195505",
+      "pageviews": "261751",
+      "pageviews_per_session": "1.1079032244410771",
+      "avg_session_duration": "116.5336485769794",
+      "bounce_rate": "0.5259589093279381"
+    },
+    {
+      "domain": "georgewbush-whitehouse.archives.gov",
+      "visits": "216312",
+      "users": "177113",
+      "pageviews": "252572",
+      "pageviews_per_session": "1.1676282406893745",
+      "avg_session_duration": "114.83683011240247",
+      "bounce_rate": "0.48302914308961131"
+    },
+    {
+      "domain": "www.reaganlibrary.gov",
+      "visits": "140915",
+      "users": "115117",
+      "pageviews": "167149",
+      "pageviews_per_session": "1.186168967107831",
+      "avg_session_duration": "151.62228580104315",
+      "bounce_rate": "0.44966114324238016"
+    },
+    {
+      "domain": "search.archives.gov",
+      "visits": "135367",
+      "users": "121963",
+      "pageviews": "271969",
+      "pageviews_per_session": "2.0091233461626543",
+      "avg_session_duration": "105.92653442823578",
+      "bounce_rate": "0.058123471747176192"
+    },
+    {
+      "domain": "founders.archives.gov",
+      "visits": "134623",
+      "users": "94084",
+      "pageviews": "269704",
+      "pageviews_per_session": "2.00340209325301",
+      "avg_session_duration": "197.95852189764753",
+      "bounce_rate": "0.4806162394241697"
+    },
+    {
+      "domain": "historyhub.history.gov",
+      "visits": "116821",
+      "users": "101128",
+      "pageviews": "195286",
+      "pageviews_per_session": "1.6716686212239238",
+      "avg_session_duration": "156.18554630344721",
+      "bounce_rate": "0.3238544439783943"
+    },
+    {
+      "domain": "prologue.blogs.archives.gov",
+      "visits": "75230",
+      "users": "62427",
+      "pageviews": "71850",
+      "pageviews_per_session": "0.95507111524657717",
+      "avg_session_duration": "136.24327983065265",
+      "bounce_rate": "0.43656785856706104"
+    },
+    {
+      "domain": "reagan.blogs.archives.gov",
+      "visits": "61942",
+      "users": "53582",
+      "pageviews": "57976",
+      "pageviews_per_session": "0.93597236124116112",
+      "avg_session_duration": "84.167142553679255",
+      "bounce_rate": "0.61526912272771306"
+    },
+    {
+      "domain": "aad.archives.gov",
+      "visits": "56857",
+      "users": "41136",
+      "pageviews": "748702",
+      "pageviews_per_session": "13.168158713966617",
+      "avg_session_duration": "398.16483089995938",
+      "bounce_rate": "0.18690750479272561"
+    },
+    {
+      "domain": "museum.archives.gov",
+      "visits": "48037",
+      "users": "37939",
+      "pageviews": "65838",
+      "pageviews_per_session": "1.3705685200990902",
+      "avg_session_duration": "136.30053311220516",
+      "bounce_rate": "0.33318067323105105"
+    },
+    {
+      "domain": "www.nixonlibrary.gov",
+      "visits": "41988",
+      "users": "33299",
+      "pageviews": "52277",
+      "pageviews_per_session": "1.2450462036772412",
+      "avg_session_duration": "148.05098895070026",
+      "bounce_rate": "0.41804801371820521"
+    },
+    {
+      "domain": "www.lbjlibrary.org",
+      "visits": "39170",
+      "users": "33825",
+      "pageviews": "55335",
+      "pageviews_per_session": "1.4126882818483533",
+      "avg_session_duration": "94.656362283201432",
+      "bounce_rate": "0.62831248404391116"
+    },
+    {
+      "domain": "clintonwhitehouse4.archives.gov",
+      "visits": "33652",
+      "users": "30039",
+      "pageviews": "34963",
+      "pageviews_per_session": "1.0389575656721741",
+      "avg_session_duration": "105.58216062338046",
+      "bounce_rate": "0.45762510400570544"
+    },
+    {
+      "domain": "1950census.archives.gov",
+      "visits": "32581",
+      "users": "22501",
+      "pageviews": "238379",
+      "pageviews_per_session": "7.3165034836254259",
+      "avg_session_duration": "449.55327892495626",
+      "bounce_rate": "0.28314048064823055"
+    }
+  ],
+  "totals": {
+    "users": 8257437,
+    "visits": 11913057
+  },
+  "taken_at": "2024-01-05T15:48:55.079Z",
+  "agency": "national-archives-records-administration"
+}

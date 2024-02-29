@@ -1,0 +1,66 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 76525396,
+    "os": {
+      "Windows": 22787378,
+      "Android": 18368627,
+      "iOS": 17958520,
+      "Macintosh": 9026335,
+      "Chrome OS": 6132129,
+      "Linux": 2069374,
+      "(not set)": 180688,
+      "Tizen": 2137,
+      "Fuchsia": 208
+    }
+  },
+  "taken_at": "2024-01-05T15:36:07.137Z",
+  "agency": "national-aeronautics-space-administration"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "devices",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "deviceCategory"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Devices",
+    "description": "90 days of desktop/mobile/tablet visits for all sites."
+  },
+  "totals": {
+    "visits": 184821451,
+    "devices": {
+      "mobile": 108813533,
+      "desktop": 73391613,
+      "tablet": 2591591,
+      "smart tv": 24714
+    }
+  },
+  "taken_at": "2024-01-05T15:53:47.964Z",
+  "agency": "health-human-services"
+}

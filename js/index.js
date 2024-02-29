@@ -2,7 +2,6 @@ import d3 from 'd3';
 import * as Q from 'q';
 
 import gaEventHandler from './lib/eventhandler';
-import consolePrint from './lib/consoleprint';
 import formatters from './lib/formatters';
 import BLOCKS from './lib/blocks';
 
@@ -87,15 +86,10 @@ d3.selectAll('*[data-source]')
   });
 
 // nest the windows chart inside the OS chart once they're both rendered
+// TODO: Remove windows versions?
 whenRendered(['os', 'windows'], () => {
   d3.select('#chart_os')
     .call(nestCharts, 'Windows', d3.select('#chart_windows'));
-});
-
-// nest the IE chart inside the browsers chart once they're both rendered
-whenRendered(['browsers', 'ie'], () => {
-  d3.select('#chart_browsers')
-    .call(nestCharts, 'Internet Explorer', d3.select('#chart_ie'));
 });
 
 // nest the international countries chart inside the "International"
@@ -109,15 +103,17 @@ whenRendered(['countries', 'us_and_territories'], () => {
   d3.select('#chart_us')
     .call(nestCharts, 'United States &amp; Territories', d3.select('#chart_us_and_territories'));
 });
+
 /*
    * A very primitive, aria-based tab system!
-   */
+*/
 d3.selectAll("*[role='tablist']")
   .each(function () {
     // grab all of the tabs and panels
-    const tabs = d3.select(this).selectAll("*[role='tab'][href]")
+    const tabs = d3.select(this).selectAll("*[role='tab'][data-tablink]");
+    tabs
       .datum(function () {
-        const target = document.getElementById(this.href.split('#').pop());
+        const target = document.getElementById(this.dataset.tablink.split('#').pop());
         return {
           selected: this.getAttribute('aria-selected') === 'true',
           target,
@@ -161,14 +157,12 @@ d3.selectAll("*[role='tablist']")
     update();
   });
 
-consolePrint(window);
-
 // Set the dropdown
-const dropDown = document.getElementById('agency-selector');
+const dropDown = document.getElementById('analytics-agency-select');
 
 // Start on change listener to load new page
 d3.select(dropDown).on('change', function () {
-  window.location = d3.select(this).property('value');
+  window.location.assign(new URL(window.location.origin + d3.select(this).property('value')));
 });
 
 for (let j = 0; j < dropDown.options.length; j += 1) {
@@ -176,4 +170,22 @@ for (let j = 0; j < dropDown.options.length; j += 1) {
     dropDown.selectedIndex = j;
     break;
   }
+}
+
+// set highlight styles for selected button
+const tabs = document.querySelector('.usa-button-group');
+const buttons = document.querySelectorAll('.usa-button-group button');
+
+if (tabs) {
+  tabs.addEventListener('click', () => {
+    if (buttons) {
+      buttons.forEach((button) => {
+        if (button.ariaSelected === 'true') {
+          button.classList.remove('usa-button--outline');
+        } else {
+          button.classList.add('usa-button--outline');
+        }
+      });
+    }
+  });
 }

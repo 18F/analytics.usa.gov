@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Health insurance plans & prices | HealthCare.gov",
+      "event_label": "file_download",
+      "page": "www.healthcare.gov/see-plans/#/",
+      "total_events": "224750"
+    },
+    {
+      "page_title": "Drugs@FDA: FDA-Approved Drugs",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cder/daf/index.cfm",
+      "total_events": "62134"
+    },
+    {
+      "page_title": "Planes médicos y precios | CuidadoDeSalud.gov",
+      "event_label": "file_download",
+      "page": "www.cuidadodesalud.gov/es/see-plans/#/",
+      "total_events": "35215"
+    },
+    {
+      "page_title": "510(k) Premarket Notification",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm",
+      "total_events": "25951"
+    },
+    {
+      "page_title": "ASP Pricing Files | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/all-fee-service-providers/medicare-part-b-drug-average-sales-price/asp-pricing-files",
+      "total_events": "10936"
+    },
+    {
+      "page_title": "CMS 40B | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/Medicare/CMS-Forms/CMS-Forms/CMS-Forms-Items/CMS017339",
+      "total_events": "9348"
+    },
+    {
+      "page_title": "Growth Charts - Clinical Growth Charts",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/growthcharts/clinical_charts.htm",
+      "total_events": "8959"
+    },
+    {
+      "page_title": "Vaccine Schedule for Children 6 Years or Younger | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/schedules/easy-to-read/child-easyread.html",
+      "total_events": "8189"
+    },
+    {
+      "page_title": "Novel Drug Approvals for 2023 | FDA",
+      "event_label": "file_download",
+      "page": "www.fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2023",
+      "total_events": "7194"
+    },
+    {
+      "page_title": "CMS-1784-F | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/medicare-fee-service-payment/physicianfeesched/pfs-federal-regulation-notices/cms-1784-f",
+      "total_events": "6986"
+    },
+    {
+      "page_title": "Inactivated Influenza Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.html",
+      "total_events": "6758"
+    },
+    {
+      "page_title": "Find Healthcare Providers: Compare Care Near You | Medicare",
+      "event_label": "file_download",
+      "page": "www.medicare.gov/care-compare/",
+      "total_events": "5815"
+    },
+    {
+      "page_title": "Medicare NCCI Policy Manual | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coding-billing/national-correct-coding-initiative-ncci-edits/medicare-ncci-policy-manual",
+      "total_events": "5798"
+    },
+    {
+      "page_title": "2023 and 2024 Solid Tumor Rules",
+      "event_label": "file_download",
+      "page": "seer.cancer.gov/tools/solidtumor/",
+      "total_events": "5678"
+    },
+    {
+      "page_title": "Birth-18 Years Immunization Schedule – Healthcare Providers | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/schedules/hcp/imz/child-adolescent.html",
+      "total_events": "5579"
+    },
+    {
+      "page_title": "Shelf-Life Extension for Specific Lots of Paxlovid | HHS/ASPR",
+      "event_label": "file_download",
+      "page": "aspr.hhs.gov/COVID-19/Therapeutics/updates/Pages/important-update-18January2023.aspx",
+      "total_events": "5502"
+    },
+    {
+      "page_title": "Adult Immunization Schedule – Healthcare Providers | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/schedules/hcp/imz/adult.html",
+      "total_events": "5487"
+    },
+    {
+      "page_title": "510(k) Premarket Notification",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/pmn.cfm",
+      "total_events": "5002"
+    },
+    {
+      "page_title": "Product-Specific Guidances for Generic Drug Development",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cder/psg/index.cfm",
+      "total_events": "4967"
+    },
+    {
+      "page_title": "Growth Charts - WHO Child Growth Standards",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/growthcharts/who_charts.htm",
+      "total_events": "4949"
+    },
+    {
+      "page_title": "Medicare NCCI Medically Unlikely Edits | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coding-billing/national-correct-coding-initiative-ncci-edits/medicare-ncci-medically-unlikely-edits",
+      "total_events": "4804"
+    },
+    {
+      "page_title": "Overview of the Medicare Physician Fee Schedule Search | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/physician-fee-schedule/search/overview",
+      "total_events": "4374"
+    },
+    {
+      "page_title": "100-04 | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/regulations-and-guidance/guidance/manuals/internet-only-manuals-ioms-items/cms018912",
+      "total_events": "4194"
+    },
+    {
+      "page_title": "DME24-A | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/fee-schedules/dmepos/dmepos-fee-schedule/dme24",
+      "total_events": "4028"
+    },
+    {
+      "page_title": "Pneumococcal Conjugate Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/pcv.html",
+      "total_events": "3952"
+    },
+    {
+      "page_title": "RSV Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/rsv.html",
+      "total_events": "3899"
+    },
+    {
+      "page_title": "RVU24A | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu24a",
+      "total_events": "3799"
+    },
+    {
+      "page_title": "FFS ABN | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/forms-notices/beneficiary-notices-initiative/ffs-abn",
+      "total_events": "3770"
+    },
+    {
+      "page_title": "CMS L564 | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/Medicare/CMS-Forms/CMS-Forms/CMS-Forms-Items/CMS009718",
+      "total_events": "3762"
+    },
+    {
+      "page_title": "Vaccine Information Statement | Tdap | Tetanus-Diphtheria-Pertussis | VIS | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/tdap.html",
+      "total_events": "3592"
+    },
+    {
+      "page_title": "QPP Resource Library",
+      "event_label": "file_download",
+      "page": "qpp.cms.gov/resources/resource-library",
+      "total_events": "3443"
+    },
+    {
+      "page_title": "Hepatitis B Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-b.html",
+      "total_events": "3437"
+    },
+    {
+      "page_title": "Proper Storage and Preparation of Breast Milk | Breastfeeding | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/breastfeeding/recommendations/handling_breastmilk.htm",
+      "total_events": "3320"
+    },
+    {
+      "page_title": "MA Plan Directory | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data/ma-plan-directory",
+      "total_events": "3289"
+    },
+    {
+      "page_title": "How to Apply - Application Guide | grants.nih.gov",
+      "event_label": "file_download",
+      "page": "grants.nih.gov/grants/how-to-apply-application-guide.html",
+      "total_events": "3236"
+    },
+    {
+      "page_title": "Poverty Guidelines | ASPE",
+      "event_label": "file_download",
+      "page": "aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines",
+      "total_events": "3058"
+    },
+    {
+      "page_title": "List of Telehealth Services | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coverage/telehealth/list-services",
+      "total_events": "3052"
+    },
+    {
+      "page_title": "Appendix C: Site Specific Coding Modules - 2023 SEER Program Coding and Staging Manual",
+      "event_label": "file_download",
+      "page": "seer.cancer.gov/manuals/2023/appendixc.html",
+      "total_events": "2859"
+    },
+    {
+      "page_title": "Biosketch Format Pages, Instructions and Samples | grants.nih.gov",
+      "event_label": "file_download",
+      "page": "grants.nih.gov/grants/forms/biosketch.htm",
+      "total_events": "2765"
+    },
+    {
+      "page_title": "Catch-up Immunization Schedule for Children, Birth-18 Years | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/schedules/hcp/imz/catchup.html",
+      "total_events": "2638"
+    },
+    {
+      "page_title": "Medicare & You | Medicare",
+      "event_label": "file_download",
+      "page": "www.medicare.gov/medicare-and-you",
+      "total_events": "2616"
+    },
+    {
+      "page_title": "2024 ICD-10-CM | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coding-billing/icd-10-codes/2024-icd-10-cm",
+      "total_events": "2591"
+    },
+    {
+      "page_title": "Your Child's First Vaccines: Vaccine Information Statements | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/multi.html",
+      "total_events": "2571"
+    },
+    {
+      "page_title": "List of CPT/HCPCS Codes | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/regulations-guidance/physician-self-referral/list-cpt/hcpcs-codes",
+      "total_events": "2470"
+    },
+    {
+      "page_title": "Fee Schedules - General Information | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/fee-schedules",
+      "total_events": "2448"
+    },
+    {
+      "page_title": "CMS 460 | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/Medicare/CMS-Forms/CMS-Forms/CMS-Forms-Items/CMS007566",
+      "total_events": "2409"
+    },
+    {
+      "page_title": "COVID-19 Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/covid-19.html",
+      "total_events": "2405"
+    },
+    {
+      "page_title": "Health insurance plans & prices | HealthCare.gov",
+      "event_label": "file_download",
+      "page": "www.healthcare.gov/see-plans/#/plan/results",
+      "total_events": "2397"
+    },
+    {
+      "page_title": "FY 2024 IPPS Final Rule Home Page | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/prospective-payment-systems/acute-inpatient-pps/fy-2024-ipps-final-rule-home-page",
+      "total_events": "2344"
+    },
+    {
+      "page_title": "Premarket Approval (PMA)",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm",
+      "total_events": "2313"
+    },
+    {
+      "page_title": "What's New | COVID-19 Treatment Guidelines",
+      "event_label": "file_download",
+      "page": "www.covid19treatmentguidelines.nih.gov/about-the-guidelines/whats-new/",
+      "total_events": "2282"
+    },
+    {
+      "page_title": "U.S. COVID-19 Vaccine Product Information | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/covid-19/info-by-product/index.html",
+      "total_events": "2256"
+    },
+    {
+      "page_title": "Vaccine Information Statement | Shingles Recombinant | VIS | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/shingles-recombinant.html",
+      "total_events": "2239"
+    },
+    {
+      "page_title": "100-02 | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/regulations-and-guidance/guidance/manuals/internet-only-manuals-ioms-items/cms012673",
+      "total_events": "2204"
+    },
+    {
+      "page_title": "ICD Code Lists | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coordination-benefits-recovery/overview/icd-code-lists",
+      "total_events": "2180"
+    },
+    {
+      "page_title": "Ambulance Fee Schedule Public Use Files | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/fee-schedules/ambulance/ambulance-fee-schedule-public-use-files",
+      "total_events": "2153"
+    },
+    {
+      "page_title": "Diabetes Meal Planning | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/diabetes/managing/eat-well/meal-plan-method.html",
+      "total_events": "2151"
+    },
+    {
+      "page_title": "Vaccine Information Statement | HPV | VIS | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/hpv.html",
+      "total_events": "2139"
+    },
+    {
+      "page_title": "Prior Authorization for Certain Hospital Outpatient Department (OPD) Services | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/prior-authorization-and-pre-claim-review-initiatives/prior-authorization-certain-hospital-outpatient-department-opd-services",
+      "total_events": "2133"
+    },
+    {
+      "page_title": "Vaccine Information Statement | Current VISs | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/current-vis.html",
+      "total_events": "2131"
+    },
+    {
+      "page_title": "Commissioned Corps Management Information System",
+      "event_label": "file_download",
+      "page": "dcp.psc.gov/ccmis/promotions/PROMOTIONS_curriculum_vitae_m.aspx",
+      "total_events": "2100"
+    },
+    {
+      "page_title": "Pay Systems and Tables | Pay",
+      "event_label": "file_download",
+      "page": "www.ihs.gov/OHR/pay-and-benefits/pay/pay-systems-pay-tables/",
+      "total_events": "2079"
+    },
+    {
+      "page_title": "Gag Clause Prohibition Compliance Attestation | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/marketplace/about/oversight/other-insurance-protections/gag-clause-prohibition-compliance-attestation",
+      "total_events": "2075"
+    },
+    {
+      "page_title": "Infection Control Assessment Tools | HAI | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/hai/prevent/infection-control-assessment-tools.html",
+      "total_events": "2059"
+    },
+    {
+      "page_title": "Health coverage tax tool | HealthCare.gov",
+      "event_label": "file_download",
+      "page": "www.healthcare.gov/tax-tool/#/",
+      "total_events": "2049"
+    },
+    {
+      "page_title": "Vaccine Schedule for Children, 7 to 18 Years Old | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/schedules/easy-to-read/adolescent-easyread.html",
+      "total_events": "2041"
+    },
+    {
+      "page_title": "Hepatitis A Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-a.html",
+      "total_events": "2039"
+    },
+    {
+      "page_title": "CMS 40B | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/cms-forms/cms-forms/cms-forms-items/cms017339",
+      "total_events": "2028"
+    },
+    {
+      "page_title": "Download health coverage exemption forms | HealthCare.gov",
+      "event_label": "file_download",
+      "page": "www.healthcare.gov/health-coverage-exemptions/forms-how-to-apply/",
+      "total_events": "1994"
+    },
+    {
+      "page_title": "Health insurance plans & prices | HealthCare.gov",
+      "event_label": "file_download",
+      "page": "www.healthcare.gov/see-plans/#/plan/results/compare",
+      "total_events": "1994"
+    },
+    {
+      "page_title": "CMS L564 | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/cms-forms/cms-forms/cms-forms-items/cms009718",
+      "total_events": "1977"
+    },
+    {
+      "page_title": "Diphtheria-Tetanus-Pertussis Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/dtap.html",
+      "total_events": "1961"
+    },
+    {
+      "page_title": "CMS 1763 | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/Medicare/CMS-Forms/CMS-Forms/CMS-Forms-Items/CMS017353",
+      "total_events": "1947"
+    },
+    {
+      "page_title": "Rotavirus Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/rotavirus.html",
+      "total_events": "1897"
+    },
+    {
+      "page_title": "LEIE Downloadable Databases | Office of Inspector General | U.S. Department of Health and Human Services",
+      "event_label": "file_download",
+      "page": "oig.hhs.gov/exclusions/exclusions_list.asp",
+      "total_events": "1887"
+    },
+    {
+      "page_title": "Apply to the Nurse Corps Scholarship Program | Bureau of Health Workforce",
+      "event_label": "file_download",
+      "page": "bhw.hrsa.gov/funding/apply-scholarship/nurse-corps",
+      "total_events": "1850"
+    },
+    {
+      "page_title": "Medicare NCCI MUE Archive | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coding-billing/national-correct-coding-initiative-ncci-edits/medicare-ncci-mue-archive",
+      "total_events": "1848"
+    },
+    {
+      "page_title": "How do I file a claim? | Medicare",
+      "event_label": "file_download",
+      "page": "www.medicare.gov/claims-appeals/how-do-i-file-a-claim",
+      "total_events": "1828"
+    },
+    {
+      "page_title": "Isolation Precautions | Guidelines Library | Infection Control | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/infectioncontrol/guidelines/isolation/index.html",
+      "total_events": "1783"
+    },
+    {
+      "page_title": "RSV in Older Adults and Adults with Chronic Medical Conditions | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/rsv/high-risk/older-adults.html",
+      "total_events": "1770"
+    },
+    {
+      "page_title": "Other Support | grants.nih.gov",
+      "event_label": "file_download",
+      "page": "grants.nih.gov/grants/forms/othersupport.htm",
+      "total_events": "1742"
+    },
+    {
+      "page_title": "Meningococcal Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/mening.html",
+      "total_events": "1693"
+    },
+    {
+      "page_title": "AHRQ QI: PSI Technical Specifications Updates",
+      "event_label": "file_download",
+      "page": "qualityindicators.ahrq.gov/measures/PSI_TechSpec",
+      "total_events": "1691"
+    },
+    {
+      "page_title": "CDC’s Developmental Milestones | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/ncbddd/actearly/milestones/index.html",
+      "total_events": "1668"
+    },
+    {
+      "page_title": "QPP Resource Library",
+      "event_label": "file_download",
+      "page": "qpp.cms.gov/",
+      "total_events": "1666"
+    },
+    {
+      "page_title": "2024 ICD-10-PCS | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/coding-billing/icd-10-codes/2024-icd-10-pcs",
+      "total_events": "1664"
+    },
+    {
+      "page_title": "Ambulance Fee Schedule & ZIP Code Files | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/fee-schedules/ambulance",
+      "total_events": "1615"
+    },
+    {
+      "page_title": "Anesthesiologists Center | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/payment/fee-schedules/physician/anesthesiologists-center",
+      "total_events": "1596"
+    },
+    {
+      "page_title": "Sample Applications & More | NIH: National Institute of Allergy and Infectious Diseases",
+      "event_label": "file_download",
+      "page": "www.niaid.nih.gov/grants-contracts/sample-applications",
+      "total_events": "1584"
+    },
+    {
+      "page_title": "Minimum Data Set (MDS) 3.0 Resident Assessment Instrument (RAI) Manual | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/quality/nursing-home-improvement/resident-assessment-instrument-manual",
+      "total_events": "1580"
+    },
+    {
+      "page_title": "Measles-Mumps-Rubella (MMR) Vaccine Information Statement | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/mmr.html",
+      "total_events": "1572"
+    },
+    {
+      "page_title": "Approved Risk Evaluation and Mitigation Strategies (REMS)",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cder/rems/index.cfm",
+      "total_events": "1560"
+    },
+    {
+      "page_title": "Common Terminology Criteria for Adverse Events (CTCAE) | Protocol Development | CTEP",
+      "event_label": "file_download",
+      "page": "ctep.cancer.gov/protocoldevelopment/electronic_applications/ctc.htm",
+      "total_events": "1556"
+    },
+    {
+      "page_title": "Vaccine Storage and Handling Resources | CDC",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/vaccines/hcp/admin/storage/index.html",
+      "total_events": "1523"
+    },
+    {
+      "page_title": "Part C and D Performance Data | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data",
+      "total_events": "1486"
+    },
+    {
+      "page_title": "Health Information in Hindi (हिन्दी): MedlinePlus",
+      "event_label": "file_download",
+      "page": "medlineplus.gov/languages/hindi.html",
+      "total_events": "1470"
+    },
+    {
+      "page_title": "STD - Picture Cards",
+      "event_label": "file_download",
+      "page": "www.cdc.gov/std/training/picturecards.htm",
+      "total_events": "1431"
+    },
+    {
+      "page_title": "PDP Plan Directory | CMS",
+      "event_label": "file_download",
+      "page": "www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data/pdp-plan-directory",
+      "total_events": "1425"
+    },
+    {
+      "page_title": "Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule | HealthIT.gov",
+      "event_label": "file_download",
+      "page": "www.healthit.gov/topic/laws-regulation-and-policy/health-data-technology-and-interoperability-certification-program",
+      "total_events": "1375"
+    },
+    {
+      "page_title": "Medication Guides",
+      "event_label": "file_download",
+      "page": "www.accessdata.fda.gov/scripts/cder/daf/index.cfm",
+      "total_events": "1371"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:54:37.032Z",
+  "agency": "health-human-services"
+}

@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Federal Student Aid",
+      "active_visitors": "16598"
+    },
+    {
+      "page_title": "Log In | Federal Student Aid",
+      "active_visitors": "3638"
+    },
+    {
+      "page_title": "FAFSA® Application | Federal Student Aid",
+      "active_visitors": "3245"
+    },
+    {
+      "page_title": "Verify Two-Step Log-in - SMS | Federal Student Aid",
+      "active_visitors": "2075"
+    },
+    {
+      "page_title": "Two-Step Verification Log-in | Federal Student Aid",
+      "active_visitors": "1009"
+    },
+    {
+      "page_title": "Home | Federal Student Aid",
+      "active_visitors": "659"
+    },
+    {
+      "page_title": "Aid Summary | Loans | Federal Student Aid",
+      "active_visitors": "425"
+    },
+    {
+      "page_title": "Verify Two-Step Log-In - Email | Federal Student Aid",
+      "active_visitors": "410"
+    },
+    {
+      "page_title": "Create Account | Federal Student Aid",
+      "active_visitors": "339"
+    },
+    {
+      "page_title": "Personal Information | Create Account | Federal Student Aid",
+      "active_visitors": "302"
+    },
+    {
+      "page_title": "Reset Your Password | Federal Student Aid",
+      "active_visitors": "293"
+    },
+    {
+      "page_title": "Contact Information | Create Account | Federal Student Aid",
+      "active_visitors": "224"
+    },
+    {
+      "page_title": "Contact Us | Federal Student Aid",
+      "active_visitors": "199"
+    },
+    {
+      "page_title": "Account Information | Create Account | Federal Student Aid",
+      "active_visitors": "191"
+    },
+    {
+      "page_title": "Account Lookup | Federal Student Aid",
+      "active_visitors": "149"
+    },
+    {
+      "page_title": "Account Successfully Created | Create Account | Federal Student Aid",
+      "active_visitors": "112"
+    },
+    {
+      "page_title": "Aid Summary | Grants | Federal Student Aid",
+      "active_visitors": "106"
+    },
+    {
+      "page_title": "Search Results Landing Page | Federal Student Aid",
+      "active_visitors": "101"
+    },
+    {
+      "page_title": "Two-Step Verification | Create Account | Federal Student Aid",
+      "active_visitors": "95"
+    },
+    {
+      "page_title": "Soft Launch of the 2024–25 FAFSA® Form | Federal Student Aid",
+      "active_visitors": "89"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:05:57.536Z",
+  "agency": "education"
+}

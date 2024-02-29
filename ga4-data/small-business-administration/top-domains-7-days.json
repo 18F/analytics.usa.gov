@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.sba.gov",
+      "visits": "436657"
+    },
+    {
+      "domain": "www.sbir.gov",
+      "visits": "36322"
+    },
+    {
+      "domain": "certify.sba.gov",
+      "visits": "10828"
+    },
+    {
+      "domain": "www.certify.sba.gov",
+      "visits": "217"
+    },
+    {
+      "domain": "content.prod.sba.gov",
+      "visits": "139"
+    },
+    {
+      "domain": "cloudfront.www.sba.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "prod.sba.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "www.acq.osd.mil",
+      "visits": "12"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "9"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "www.mbda.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "1"
+    },
+    {
+      "domain": "proxy.www.sba.gov",
+      "visits": "1"
+    },
+    {
+      "domain": "www.acquisition.gov",
+      "visits": "1"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "1"
+    },
+    {
+      "domain": "www.health.mil",
+      "visits": "1"
+    },
+    {
+      "domain": "www.nsf.gov",
+      "visits": "1"
+    },
+    {
+      "domain": "www.pay.gov",
+      "visits": "1"
+    }
+  ],
+  "totals": {
+    "visits": 484271
+  },
+  "taken_at": "2024-01-05T15:43:39.907Z",
+  "agency": "small-business-administration"
+}

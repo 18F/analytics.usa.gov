@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.irs.gov",
+      "visits": "19389834",
+      "users": "14065419",
+      "pageviews": "31683684",
+      "pageviews_per_session": "1.6340358561089281",
+      "avg_session_duration": "148.24062315357421",
+      "bounce_rate": "0.27553423097897589"
+    },
+    {
+      "domain": "www.treasurydirect.gov",
+      "visits": "1887800",
+      "users": "1384442",
+      "pageviews": "3183859",
+      "pageviews_per_session": "1.6865446551541476",
+      "avg_session_duration": "188.32568479138459",
+      "bounce_rate": "0.27445809937493376"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "1213908",
+      "users": "992451",
+      "pageviews": "1419249",
+      "pageviews_per_session": "1.1691569707094771",
+      "avg_session_duration": "100.76550305948635",
+      "bounce_rate": "0.37436692072216343"
+    },
+    {
+      "domain": "ofac.treasury.gov",
+      "visits": "921900",
+      "users": "767925",
+      "pageviews": "1278615",
+      "pageviews_per_session": "1.3869345916042954",
+      "avg_session_duration": "82.3011912895726",
+      "bounce_rate": "0.69942943920164879"
+    },
+    {
+      "domain": "www.fincen.gov",
+      "visits": "749470",
+      "users": "581262",
+      "pageviews": "855136",
+      "pageviews_per_session": "1.1409876312594234",
+      "avg_session_duration": "134.22808909515797",
+      "bounce_rate": "0.27944280624974982"
+    },
+    {
+      "domain": "treasurydirect.gov",
+      "visits": "472532",
+      "users": "363597",
+      "pageviews": "673832",
+      "pageviews_per_session": "1.4260028950420289",
+      "avg_session_duration": "146.65846254371772",
+      "bounce_rate": "0.33087917855298687"
+    },
+    {
+      "domain": "www.usmint.gov",
+      "visits": "434247",
+      "users": "374610",
+      "pageviews": "458936",
+      "pageviews_per_session": "1.0568547393534096",
+      "avg_session_duration": "89.187481186096846",
+      "bounce_rate": "0.29546087825592349"
+    },
+    {
+      "domain": "catalog.usmint.gov",
+      "visits": "403860",
+      "users": "300457",
+      "pageviews": "477415",
+      "pageviews_per_session": "1.1821299460208983",
+      "avg_session_duration": "129.67556808585891",
+      "bounce_rate": "0.25739365126528996"
+    },
+    {
+      "domain": "www.occ.gov",
+      "visits": "282667",
+      "users": "277375",
+      "pageviews": "317358",
+      "pageviews_per_session": "1.1227274496138566",
+      "avg_session_duration": "21.313048961923393",
+      "bounce_rate": "0.80111226283931269"
+    },
+    {
+      "domain": "occ.gov",
+      "visits": "274206",
+      "users": "271031",
+      "pageviews": "302281",
+      "pageviews_per_session": "1.1023865269177189",
+      "avg_session_duration": "9.7347185954829616",
+      "bounce_rate": "0.92570549149179815"
+    },
+    {
+      "domain": "helpwithmybank.gov",
+      "visits": "202422",
+      "users": "195834",
+      "pageviews": "197865",
+      "pageviews_per_session": "0.97748762486291019",
+      "avg_session_duration": "0.60882446657477962",
+      "bounce_rate": "0.99492644080188908"
+    },
+    {
+      "domain": "www.careers.occ.gov",
+      "visits": "192406",
+      "users": "194017",
+      "pageviews": "194435",
+      "pageviews_per_session": "1.0105454091868238",
+      "avg_session_duration": "0.031094423339189003",
+      "bounce_rate": "0.99982848767709942"
+    },
+    {
+      "domain": "www.fiscal.treasury.gov",
+      "visits": "136335",
+      "users": "116730",
+      "pageviews": "153759",
+      "pageviews_per_session": "1.1278028385961052",
+      "avg_session_duration": "110.01622522099973",
+      "bounce_rate": "0.33645798951113065"
+    },
+    {
+      "domain": "www.bep.gov",
+      "visits": "134816",
+      "users": "124760",
+      "pageviews": "160223",
+      "pageviews_per_session": "1.1884568597199145",
+      "avg_session_duration": "46.200576967659629",
+      "bounce_rate": "0.65553050083076192"
+    },
+    {
+      "domain": "www.usaspending.gov",
+      "visits": "132106",
+      "users": "79400",
+      "pageviews": "248511",
+      "pageviews_per_session": "1.8811484716818312",
+      "avg_session_duration": "193.62762338634116",
+      "bounce_rate": "0.23982256672671945"
+    },
+    {
+      "domain": "fiscaldata.treasury.gov",
+      "visits": "105722",
+      "users": "87033",
+      "pageviews": "81553",
+      "pageviews_per_session": "0.77139100660222093",
+      "avg_session_duration": "122.96896363491039",
+      "bounce_rate": "0.26820340137341331"
+    },
+    {
+      "domain": "apps.occ.gov",
+      "visits": "88132",
+      "users": "87151",
+      "pageviews": "89552",
+      "pageviews_per_session": "1.0161121953433485",
+      "avg_session_duration": "8.4699647482980076",
+      "bounce_rate": "0.95591839513457089"
+    },
+    {
+      "domain": "www.helpwithmybank.gov",
+      "visits": "83307",
+      "users": "75377",
+      "pageviews": "77403",
+      "pageviews_per_session": "0.92912960495516583",
+      "avg_session_duration": "66.079449322625948",
+      "bounce_rate": "0.3447729482516475"
+    },
+    {
+      "domain": "www.banknet.gov",
+      "visits": "83174",
+      "users": "81721",
+      "pageviews": "89677",
+      "pageviews_per_session": "1.0781854906581383",
+      "avg_session_duration": "14.6314372278236",
+      "bounce_rate": "0.91647630269074465"
+    },
+    {
+      "domain": "careers2.occ.gov",
+      "visits": "78355",
+      "users": "78483",
+      "pageviews": "77856",
+      "pageviews_per_session": "0.99363154872056669",
+      "avg_session_duration": "0.075273204990109116",
+      "bounce_rate": "0.99911939250845516"
+    }
+  ],
+  "totals": {
+    "users": 20499075,
+    "visits": 27267199
+  },
+  "taken_at": "2024-01-05T16:03:47.404Z",
+  "agency": "treasury"
+}

@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "Research.gov - Homepage",
+      "active_visitors": "215"
+    },
+    {
+      "page_title": "Research.gov - NSF User Landing Page",
+      "active_visitors": "208"
+    },
+    {
+      "page_title": "Research.gov - Proposal Status - Search Results",
+      "active_visitors": "89"
+    },
+    {
+      "page_title": "NSF Award Search: Advanced Search Results.",
+      "active_visitors": "58"
+    },
+    {
+      "page_title": "Documents Required for Senior Personnel - Funding at NSF | NSF - National Science Foundation",
+      "active_visitors": "42"
+    },
+    {
+      "page_title": "REU Sites | NSF - National Science Foundation",
+      "active_visitors": "40"
+    },
+    {
+      "page_title": "RPPR - Reports Due",
+      "active_visitors": "38"
+    },
+    {
+      "page_title": "Chapter II: Proposal Preparation Instructions - Proposal & Award Policies & Procedures Guide (PAPPG) (NSF 23-1) | NSF - National Science Foundation",
+      "active_visitors": "36"
+    },
+    {
+      "page_title": "NSF - National Science Foundation",
+      "active_visitors": "36"
+    },
+    {
+      "page_title": "RPPR -",
+      "active_visitors": "36"
+    },
+    {
+      "page_title": "Research.gov - Proposal Status - Application Detail",
+      "active_visitors": "35"
+    },
+    {
+      "page_title": "NSF Award Search: Simple Search Results.",
+      "active_visitors": "34"
+    },
+    {
+      "page_title": "NSF Award Search: Simple Search.",
+      "active_visitors": "28"
+    },
+    {
+      "page_title": "America’s Seed Fund powered by NSF. | NSF SBIR",
+      "active_visitors": "27"
+    },
+    {
+      "page_title": "Funding search | NSF - National Science Foundation",
+      "active_visitors": "25"
+    },
+    {
+      "page_title": "FastLane: Panelist System Selection",
+      "active_visitors": "24"
+    },
+    {
+      "page_title": "GRFP - Home",
+      "active_visitors": "24"
+    },
+    {
+      "page_title": "Search for an REU Site | NSF - National Science Foundation",
+      "active_visitors": "24"
+    },
+    {
+      "page_title": "RPPR - Report Entry - Cover",
+      "active_visitors": "23"
+    },
+    {
+      "page_title": "NSF Award Search: Advanced Search.",
+      "active_visitors": "22"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:17.104Z",
+  "agency": "national-science-foundation"
+}

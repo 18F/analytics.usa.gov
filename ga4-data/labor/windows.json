@@ -1,0 +1,71 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 20251971,
+    "os_version": {
+      "7": 189792,
+      "8": 23091,
+      "10": 13845229,
+      "11": 6133208,
+      "8.1": 60223,
+      "XP": 428
+    }
+  },
+  "taken_at": "2024-01-05T15:57:51.220Z",
+  "agency": "labor"
+}

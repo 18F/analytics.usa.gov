@@ -1,0 +1,114 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 1627543,
+    "by_windows": {
+      "7": {
+        "Chrome": 22245,
+        "Internet Explorer": 171
+      },
+      "10": {
+        "Chrome": 831042,
+        "Edge": 190708,
+        "Firefox": 54133,
+        "Opera": 7683
+      },
+      "11": {
+        "Chrome": 389815,
+        "Edge": 128808
+      },
+      "8.1": {
+        "Chrome": 2818,
+        "Internet Explorer": 120
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 22245,
+        "10": 831042,
+        "11": 389815,
+        "8.1": 2818
+      },
+      "Edge": {
+        "10": 190708,
+        "11": 128808
+      },
+      "Firefox": {
+        "10": 54133
+      },
+      "Opera": {
+        "10": 7683
+      },
+      "Internet Explorer": {
+        "7": 171,
+        "8.1": 120
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:05:12.348Z",
+  "agency": "agency-international-development"
+}

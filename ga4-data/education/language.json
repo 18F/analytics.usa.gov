@@ -1,0 +1,109 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 67849302,
+    "languages": {
+      "English": 67150479,
+      "Spanish": 413828,
+      "Chinese": 86688,
+      "Korean": 33116,
+      "French": 30274,
+      "Russian": 23115,
+      "Japanese": 15070,
+      "Portuguese": 17165,
+      "Vietnamese": 11711,
+      "German": 10134,
+      "Ukrainian": 5746,
+      "Turkish": 7958,
+      "Italian": 7611,
+      "Arabic": 10376,
+      "(other)": 3078,
+      "Polish": 2618,
+      "Indonesian": 3954,
+      "Greek": 1811,
+      "Uzbek": 262,
+      "Hindi": 1452,
+      "Dutch": 2430,
+      "Thai": 1842,
+      "Hungarian": 413,
+      "Swedish": 2162,
+      "Romanian": 336,
+      "Swahili": 600,
+      "Czech": 745,
+      "Hebrew": 1467,
+      "Persian": 856,
+      "Marathi": 78,
+      "Norwegian Bokmål": 747,
+      "Danish": 559,
+      "Amharic": 38,
+      "Corsican": 25,
+      "Igbo": 12,
+      "Catalan": 63,
+      "Samoan": 30,
+      "Bulgarian": 40,
+      "Finnish": 107,
+      "Kannada": 99,
+      "Croatian": 12,
+      "Bosnian": 11,
+      "Telugu": 33,
+      "Albanian": 16,
+      "Afrikaans": 29,
+      "Bengali": 12,
+      "Tamil": 25,
+      "Lithuanian": 25,
+      "Slovenian": 11,
+      "Burmese": 11,
+      "Azerbaijani": 11,
+      "Slovak": 11
+    }
+  },
+  "taken_at": "2024-01-05T15:32:39.553Z",
+  "agency": "education"
+}

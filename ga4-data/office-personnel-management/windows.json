@@ -1,0 +1,67 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "names": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites."
+  },
+  "totals": {
+    "visits": 31828598,
+    "os_version": {
+      "7": 119807,
+      "8": 6096,
+      "10": 24968046,
+      "11": 6677401,
+      "95": 9,
+      "98": 18,
+      "2000": 27,
+      "8.1": 54350,
+      "Vista": 834,
+      "XP": 1715,
+      "NT": 178,
+      "Server 2003": 90,
+      "(not set)": 27
+    }
+  },
+  "taken_at": "2024-01-05T14:43:16.797Z",
+  "agency": "office-personnel-management"
+}

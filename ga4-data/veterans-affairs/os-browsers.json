@@ -1,0 +1,174 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 98264566,
+    "by_os": {
+      "iOS": {
+        "Safari": 22818006,
+        "Chrome": 2961775,
+        "Safari (in-app)": 3806957
+      },
+      "Windows": {
+        "Edge": 21017174,
+        "Chrome": 16304837,
+        "Firefox": 1194104,
+        "Opera": 73149,
+        "Internet Explorer": 32146
+      },
+      "Android": {
+        "Chrome": 15435883,
+        "Samsung Internet": 1887740,
+        "Android Webview": 1362240,
+        "Amazon Silk": 241582,
+        "Firefox": 174984,
+        "Opera": 31874,
+        "Edge": 181119
+      },
+      "Macintosh": {
+        "Safari": 4939592,
+        "Chrome": 2383506,
+        "Firefox": 195617,
+        "Mozilla Compatible Agent": 227821,
+        "Edge": 33508
+      },
+      "Linux": {
+        "Chrome": 1844347,
+        "Firefox": 68911,
+        "Samsung Internet": 81685,
+        "Mozilla Compatible Agent": 22533,
+        "Edge": 7394
+      },
+      "Chrome OS": {
+        "Chrome": 907678
+      },
+      "(other)": {
+        "(other)": 9973
+      },
+      "": {
+        "(not set)": 598
+      },
+      "(not set)": {
+        "(not set)": 17261,
+        "Opera Mini": 572
+      }
+    },
+    "by_browsers": {
+      "Safari": {
+        "iOS": 22818006,
+        "Macintosh": 4939592
+      },
+      "Edge": {
+        "Windows": 21017174,
+        "Macintosh": 33508,
+        "Linux": 7394,
+        "Android": 181119
+      },
+      "Chrome": {
+        "Windows": 16304837,
+        "Android": 15435883,
+        "iOS": 2961775,
+        "Macintosh": 2383506,
+        "Linux": 1844347,
+        "Chrome OS": 907678
+      },
+      "Safari (in-app)": {
+        "iOS": 3806957
+      },
+      "Samsung Internet": {
+        "Android": 1887740,
+        "Linux": 81685
+      },
+      "Firefox": {
+        "Windows": 1194104,
+        "Macintosh": 195617,
+        "Android": 174984,
+        "Linux": 68911
+      },
+      "Android Webview": {
+        "Android": 1362240
+      },
+      "(other)": {
+        "(other)": 9973
+      },
+      "Amazon Silk": {
+        "Android": 241582
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 227821,
+        "Linux": 22533
+      },
+      "Opera": {
+        "Windows": 73149,
+        "Android": 31874
+      },
+      "(not set)": {
+        "": 598,
+        "(not set)": 17261
+      },
+      "Internet Explorer": {
+        "Windows": 32146
+      },
+      "Opera Mini": {
+        "(not set)": 572
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:34:11.550Z",
+  "agency": "veterans-affairs"
+}

@@ -1,54 +1,51 @@
-
 baseurl: ""
 
 # Don't exclude nginx.conf, needs to be copied into _site for
 # cloud.gov to pick up on it.
 exclude:
-- .gitignore
-- .codeclimate.yml
-- .eslinrc.yml
-- .sass-cache
-- bin/
-- docs/
-- fake-data/
-- node_modules/
-- sass/
-- spec/
-- CONTRIBUTING.md
-- Dockerfile
-- Dockerfile.production
-- docker-compose.yml
-- Gemfile
-- Gemfile.lock
-- LICENSE.md
-- Makefile
-- manifest.yml
-- nginx.conf
-- package.json
-- package-lock.json
-- README.md
-- Staticfile
-- system-security-plan.yml
-- vendor
-- webpack.config.js
+  - .gitignore
+  - .codeclimate.yml
+  - .eslinrc.yml
+  - .sass-cache
+  - bin/
+  - docs/
+  - node_modules/
+  - sass/
+  - spec/
+  - CONTRIBUTING.md
+  - Dockerfile
+  - Dockerfile.production
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - Makefile
+  - manifest.yml
+  - nginx.conf
+  - package.json
+  - package-lock.json
+  - README.md
+  - Staticfile
+  - system-security-plan.yml
+  - vendor
+  - webpack.config.js
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: agencies
     values:
       layout: default
 
 # Site title and description
-title: "analytics.usa.gov | The US government's web traffic. Analytics.usa.gov is migrating to a new web analytics platform."
-description: "Official data on web traffic to thousands of US federal government websites. Published by the Digital Analytics Program. Real time data is currently unavailable."
+title: "analytics.usa.gov | The US government's web traffic."
+description: "Official data on web traffic to thousands of US federal government websites. Published by the Digital Analytics Program."
 
 # Site's own URL
 url: https://analytics.usa.gov
 
 # Default dropdown title, will not appear if there are no sub-pages
-dropdown_title: All Participating Websites
+dropdown_title: Government-Wide
 
 # Default data url (also needs to be in nginx.conf for cloud.gov deployment)
 data_url: https://analytics.usa.gov/data
@@ -58,7 +55,7 @@ twitter: usgsa
 
 # Site wide error message
 site_wide_error:
-  display: true
+  display: false
   title: "Analytics.usa.gov is migrating to a new web analytics platform."
   body: "Real time data is currently unavailable."
 sass:

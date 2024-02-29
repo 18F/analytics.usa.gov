@@ -1,0 +1,112 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 1851700,
+    "by_windows": {
+      "7": {
+        "Chrome": 15879
+      },
+      "8": {
+        "Chrome": 105
+      },
+      "10": {
+        "Chrome": 743830,
+        "Edge": 310388,
+        "Firefox": 65088,
+        "Opera": 2748
+      },
+      "11": {
+        "Chrome": 502020,
+        "Edge": 206946
+      },
+      "8.1": {
+        "Chrome": 4696
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 15879,
+        "8": 105,
+        "10": 743830,
+        "11": 502020,
+        "8.1": 4696
+      },
+      "Edge": {
+        "10": 310388,
+        "11": 206946
+      },
+      "Firefox": {
+        "10": 65088
+      },
+      "Opera": {
+        "10": 2748
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:43:38.052Z",
+  "agency": "small-business-administration"
+}

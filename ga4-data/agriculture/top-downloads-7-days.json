@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395461442"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions",
+      "total_events": "11728"
+    },
+    {
+      "page_title": "Valley Meats, LLC, Recalls Ground Beef Products Due to Possible E. Coli O157:H7 Contamination | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "page": "www.fsis.usda.gov/recalls-alerts/valley-meats-llc-recalls-ground-beef-products-due-possible-e--coli-o157h7",
+      "total_events": "10739"
+    },
+    {
+      "page_title": "Reports | Mars Document",
+      "event_label": "file_download",
+      "page": "mymarketnews.ams.usda.gov/filerepo/reports",
+      "total_events": "6718"
+    },
+    {
+      "page_title": "Daily Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/daily-beef-reports",
+      "total_events": "6128"
+    },
+    {
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "page": "nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "5456"
+    },
+    {
+      "page_title": "Print Resources | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/resources/print-materials",
+      "total_events": "5175"
+    },
+    {
+      "page_title": "USDA Food Plans: Monthly Cost of Food Reports | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/cnpp/usda-food-plans-cost-food-monthly-reports",
+      "total_events": "4540"
+    },
+    {
+      "page_title": "Fratelli Beretta USA, Inc. Recalls Busseto Foods Brand Ready-to-Eat Charcuterie Meat Products Due to Possible Salmonella Contamination | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "page": "www.fsis.usda.gov/recalls-alerts/fratelli-beretta-usa-inc--recalls-busseto-foods-brand-ready-eat-charcuterie-meat",
+      "total_events": "4412"
+    },
+    {
+      "page_title": "Notices",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/FSA/notices",
+      "total_events": "4358"
+    },
+    {
+      "page_title": "Handbooks | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/resources/directives/handbooks",
+      "total_events": "4166"
+    },
+    {
+      "page_title": "Daily Pork Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/daily-pork-reports",
+      "total_events": "3784"
+    },
+    {
+      "page_title": "Pay Period Calendars | National Finance Center",
+      "event_label": "file_download",
+      "page": "www.nfc.usda.gov/Publications/Forms/pay_period_calendar.php",
+      "total_events": "3696"
+    },
+    {
+      "page_title": "Payment Schedules | Natural Resources Conservation Service",
+      "event_label": "file_download",
+      "page": "www.nrcs.usda.gov/getting-assistance/payment-schedules",
+      "total_events": "3583"
+    },
+    {
+      "page_title": "Single Family Housing Guaranteed Loan Program | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program",
+      "total_events": "3442"
+    },
+    {
+      "page_title": "WIC Publication of the 2023-2024 Income Eligibility Guidelines | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/wic/income-eligibility-guidelines-2023-24",
+      "total_events": "3140"
+    },
+    {
+      "page_title": "WASDE Report | USDA",
+      "event_label": "file_download",
+      "page": "www.usda.gov/oce/commodity/wasde",
+      "total_events": "2727"
+    },
+    {
+      "page_title": "List of Bioengineered Foods | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/rules-regulations/be/bioengineered-foods-list",
+      "total_events": "2719"
+    },
+    {
+      "page_title": "Single Family Housing Programs | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs",
+      "total_events": "2352"
+    },
+    {
+      "page_title": "Home | Dietary Guidelines for Americans",
+      "event_label": "file_download",
+      "page": "www.dietaryguidelines.gov/",
+      "total_events": "2350"
+    },
+    {
+      "page_title": "Emergency Relief Program",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/emergency-relief/index",
+      "total_events": "2296"
+    },
+    {
+      "page_title": "Cost of Living Adjustment (COLA) Information | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/snap/allotment/COLA",
+      "total_events": "2200"
+    },
+    {
+      "page_title": "Regional Direct Slaughter Cattle | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/regional-direct-slaughter-cattle",
+      "total_events": "1771"
+    },
+    {
+      "page_title": "ARC/PLC Program Data",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/arcplc_program/arcplc-program-data/index",
+      "total_events": "1718"
+    },
+    {
+      "page_title": "FoodData Central",
+      "event_label": "file_download",
+      "page": "fdc.nal.usda.gov/download-datasets.html",
+      "total_events": "1662"
+    },
+    {
+      "page_title": "Weekly and Monthly Beef Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/weekly-and-monthly-beef-reports",
+      "total_events": "1623"
+    },
+    {
+      "page_title": "Child Nutrition Programs: Income Eligibility Guidelines (2023-2024) | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/cn/fr-020923",
+      "total_events": "1595"
+    },
+    {
+      "page_title": "Beginning Farmers and Ranchers Loans",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/farm-loan-programs/beginning-farmers-and-ranchers-loans/index",
+      "total_events": "1569"
+    },
+    {
+      "page_title": "Specialty Crops Terminal Markets Standard Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/fruit-and-vegetable-terminal-markets-standard-reports",
+      "total_events": "1562"
+    },
+    {
+      "page_title": "Single Family Housing Direct Home Loans | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans",
+      "total_events": "1560"
+    },
+    {
+      "page_title": "Livestock Forage Program (LFP)",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/disaster-assistance-program/livestock-forage/index",
+      "total_events": "1556"
+    },
+    {
+      "page_title": "Swine Direct Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/swine-direct-reports",
+      "total_events": "1471"
+    },
+    {
+      "page_title": "Egg Market News Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/egg-market-news-reports",
+      "total_events": "1444"
+    },
+    {
+      "page_title": "FSA Directives",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/laws-and-regulations/notices/index",
+      "total_events": "1396"
+    },
+    {
+      "page_title": "Dietary Guidelines for Americans, 2020-2025 and Online Materials | Dietary Guidelines for Americans",
+      "event_label": "file_download",
+      "page": "www.dietaryguidelines.gov/resources/2020-2025-dietary-guidelines-online-materials",
+      "total_events": "1379"
+    },
+    {
+      "page_title": "Open Purchase Requests | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/open-purchase-request",
+      "total_events": "1359"
+    },
+    {
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions#Kentucky",
+      "total_events": "1321"
+    },
+    {
+      "page_title": "Nutrition Standards for CACFP Meals and Snacks | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/cacfp/meals-and-snacks",
+      "total_events": "1313"
+    },
+    {
+      "page_title": "SNAP FY 2024 Cost-of-Living Adjustments | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/snap/fy-2024-cola",
+      "total_events": "1279"
+    },
+    {
+      "page_title": "Fact Sheets",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/news-room/fact-sheets/index",
+      "total_events": "1262"
+    },
+    {
+      "page_title": "Goat Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/goat-reports",
+      "total_events": "1214"
+    },
+    {
+      "page_title": "Farm Ownership Loans",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/farm-loan-programs/farm-ownership-loans/index",
+      "total_events": "1145"
+    },
+    {
+      "page_title": "El Yunque National Forest - Maps & Publications",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/detail/elyunque/maps-pubs/",
+      "total_events": "1115"
+    },
+    {
+      "page_title": "Your MyPlate Plan - 1800 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/myplate-plan/results/1800-calories-ages-14-plus",
+      "total_events": "1063"
+    },
+    {
+      "page_title": "USDA MyPlate What Is MyPlate?",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/eat-healthy/what-is-myplate",
+      "total_events": "1046"
+    },
+    {
+      "page_title": "El Yunque National Forest - Maps & Publications",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/main/elyunque/maps-pubs",
+      "total_events": "1024"
+    },
+    {
+      "page_title": "Single Family Housing Repair Loans & Grants | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants",
+      "total_events": "999"
+    },
+    {
+      "page_title": "Standard Trail Plans and Specifications | US Forest Service",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/managing-land/trails/trail-management-tools/trailplans",
+      "total_events": "995"
+    },
+    {
+      "page_title": "Your MyPlate Plan - 2000 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/myplate-plan/results/2000-calories-ages-14-plus",
+      "total_events": "995"
+    },
+    {
+      "page_title": "USDA Foods in Schools Product Information Sheets - Meat/Meat Alternates | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/usda-fis/usda-foods-product-info-sheets-meat-meat-alternates",
+      "total_events": "987"
+    },
+    {
+      "page_title": "Sheep Auction Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/sheep-auction-reports",
+      "total_events": "938"
+    },
+    {
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions#Missouri",
+      "total_events": "897"
+    },
+    {
+      "page_title": "Slaughter Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/slaughter-cattle-auctions",
+      "total_events": "859"
+    },
+    {
+      "page_title": "WIC Food Packages - Maximum Monthly Allowances | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/wic/food-packages-maximum-monthly-allowances",
+      "total_events": "837"
+    },
+    {
+      "page_title": "USDA Climate Change Fellows Program | USDA",
+      "event_label": "file_download",
+      "page": "www.usda.gov/oce/energy-and-environment/climate-change-fellows-program",
+      "total_events": "827"
+    },
+    {
+      "page_title": "Your MyPlate Plan - 1600 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/myplate-plan/results/1600-calories-ages-14-plus",
+      "total_events": "824"
+    },
+    {
+      "page_title": "Specialty Crops Shipping Point Market Price Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/fruit-and-vegetable-shipping-point-market-price-reports",
+      "total_events": "788"
+    },
+    {
+      "page_title": "USDA 1890 National Scholars Program | USDA",
+      "event_label": "file_download",
+      "page": "www.usda.gov/partnerships/1890NationalScholars",
+      "total_events": "783"
+    },
+    {
+      "page_title": "Hay Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/hay-reports",
+      "total_events": "751"
+    },
+    {
+      "page_title": "Conservation Reserve Program",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/conservation-programs/conservation-reserve-program/index",
+      "total_events": "747"
+    },
+    {
+      "page_title": "Printable Materials and Handouts | Nutrition.gov",
+      "event_label": "file_download",
+      "page": "www.nutrition.gov/topics/basic-nutrition/printable-materials-and-handouts",
+      "total_events": "721"
+    },
+    {
+      "page_title": "USDA MyPlate Nutrition Information for Kids",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/life-stages/kids",
+      "total_events": "715"
+    },
+    {
+      "page_title": "National Forests in North Carolina - Maps & Publications",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/detail/nfsnc/maps-pubs/",
+      "total_events": "690"
+    },
+    {
+      "page_title": "Rural Innovation Stronger Economy (RISE) Grants | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/business-programs/rural-innovation-stronger-economy-rise-grants",
+      "total_events": "688"
+    },
+    {
+      "page_title": "Single Family Housing Repair Loans & Grants in California | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants/ca",
+      "total_events": "686"
+    },
+    {
+      "page_title": "Your MyPlate Plan - 2200 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/myplate-plan/results/2200-calories-ages-14-plus",
+      "total_events": "686"
+    },
+    {
+      "page_title": "Feeder and Replacement Cattle Auctions | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-auctions#Nebraska",
+      "total_events": "677"
+    },
+    {
+      "page_title": "Direct Loan Application Packagers | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/services/direct-loan-application-packagers",
+      "total_events": "676"
+    },
+    {
+      "page_title": "Single Family Housing Direct Home Loans in Texas | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans/tx",
+      "total_events": "649"
+    },
+    {
+      "page_title": "El Yunque National Forest - Home",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/elyunque",
+      "total_events": "643"
+    },
+    {
+      "page_title": "Handbooks | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/resources/directives/handbooks#hb13555",
+      "total_events": "642"
+    },
+    {
+      "page_title": "PAYE Schedule, Calendars, and Additional Information | National Finance Center",
+      "event_label": "file_download",
+      "page": "nfc.usda.gov/ClientServices/HR_Payroll/PAYE/",
+      "total_events": "638"
+    },
+    {
+      "page_title": "National Forests and Grasslands in Texas - Districts",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/detail/texas/about-forest/districts/",
+      "total_events": "636"
+    },
+    {
+      "page_title": "Single Family Housing Direct Home Loans in California | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans/ca",
+      "total_events": "615"
+    },
+    {
+      "page_title": "Single Family Housing Direct Home Loans in North Carolina | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans/nc",
+      "total_events": "594"
+    },
+    {
+      "page_title": "Professional Resources | Dietary Guidelines for Americans",
+      "event_label": "file_download",
+      "page": "www.dietaryguidelines.gov/professional-resources",
+      "total_events": "589"
+    },
+    {
+      "page_title": "Request Cash Flow Based Assistance from the Inflation Reduction Act | Farmers.gov",
+      "event_label": "file_download",
+      "page": "www.farmers.gov/loans/inflation-reduction-investments/request-based",
+      "total_events": "577"
+    },
+    {
+      "page_title": "Individual Dairy Market News Commodity Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/individual-dairy-market-news-commodity-reports",
+      "total_events": "574"
+    },
+    {
+      "page_title": "SFH Guaranteed Lender | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/page/sfh-guaranteed-lender",
+      "total_events": "572"
+    },
+    {
+      "page_title": "Single Family Housing Repair Loans & Grants in Texas | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants/tx",
+      "total_events": "565"
+    },
+    {
+      "page_title": "Your MyPlate Plan - 2400 Calories, Ages 14+ Years | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/myplate-plan/results/2400-calories-ages-14-plus",
+      "total_events": "555"
+    },
+    {
+      "page_title": "Single Family Housing Direct Home Loans in Florida | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans/fl",
+      "total_events": "554"
+    },
+    {
+      "page_title": "Single Family Housing Repair Loans & Grants in Florida | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants/fl",
+      "total_events": "554"
+    },
+    {
+      "page_title": "Environmental Quality Incentives Program | Natural Resources Conservation Service",
+      "event_label": "file_download",
+      "page": "www.nrcs.usda.gov/programs-initiatives/eqip-environmental-quality-incentives",
+      "total_events": "550"
+    },
+    {
+      "page_title": "Tonto National Forest - Special Places",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/detail/tonto/specialplaces/",
+      "total_events": "537"
+    },
+    {
+      "page_title": "National Direct Slaughter Cattle Reports | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/national-direct-slaughter-cattle-reports",
+      "total_events": "529"
+    },
+    {
+      "page_title": "SNAP Data Tables | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap",
+      "total_events": "528"
+    },
+    {
+      "page_title": "USDA Foods in Schools Product Information Sheets - Fruits | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/usda-fis/usda-foods-product-info-sheets-fruits",
+      "total_events": "525"
+    },
+    {
+      "page_title": "Inflation Reduction Act Assistance for Distressed Borrowers | Farmers.gov",
+      "event_label": "file_download",
+      "page": "www.farmers.gov/loans/inflation-reduction-investments/assistance",
+      "total_events": "521"
+    },
+    {
+      "page_title": "Chattahoochee-Oconee National Forest - Maps & Publications",
+      "event_label": "file_download",
+      "page": "www.fs.usda.gov/main/conf/maps-pubs",
+      "total_events": "520"
+    },
+    {
+      "page_title": "Exhibits | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/rules-regulations/moa/dairy/hearings/national-fmmo-pricing-hearing/exhibits",
+      "total_events": "518"
+    },
+    {
+      "page_title": "Rural Energy for America Program Renewable Energy Systems & Energy Efficiency Improvement Guaranteed Loans & Grants | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/programs-services/energy-programs/rural-energy-america-program-renewable-energy-systems-energy-efficiency-improvement-guaranteed-loans",
+      "total_events": "512"
+    },
+    {
+      "page_title": "MyPlate Graphics | MyPlate",
+      "event_label": "file_download",
+      "page": "www.myplate.gov/resources/graphics/myplate-graphics",
+      "total_events": "511"
+    },
+    {
+      "page_title": "Slaughter Cattle Summary | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/slaughter-cattle-summary",
+      "total_events": "511"
+    },
+    {
+      "page_title": "Feeder and Replacement Cattle Summary | Agricultural Marketing Service",
+      "event_label": "file_download",
+      "page": "www.ams.usda.gov/market-news/feeder-and-replacement-cattle-summary",
+      "total_events": "502"
+    },
+    {
+      "page_title": "Meat, Poultry and Egg Product Inspection Directory | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "page": "www.fsis.usda.gov/inspection/establishments/meat-poultry-and-egg-product-inspection-directory",
+      "total_events": "495"
+    },
+    {
+      "page_title": "Grant Awards | Rural Development",
+      "event_label": "file_download",
+      "page": "www.rd.usda.gov/about-rd/grant-awards",
+      "total_events": "489"
+    },
+    {
+      "page_title": "Scanga Meat Company Recalls Ground Beef Products Due to Possible E. Coli O103 Contamination | Food Safety and Inspection Service",
+      "event_label": "file_download",
+      "page": "www.fsis.usda.gov/recalls-alerts/scanga-meat-company-recalls-ground-beef-products-due-possible-e--coli-o103",
+      "total_events": "487"
+    },
+    {
+      "page_title": "What Can SNAP Buy? | Food and Nutrition Service",
+      "event_label": "file_download",
+      "page": "www.fns.usda.gov/snap/eligible-food-items",
+      "total_events": "486"
+    },
+    {
+      "page_title": "Crop Acreage Data",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/news-room/efoia/electronic-reading-room/frequently-requested-information/crop-acreage-data/index",
+      "total_events": "484"
+    },
+    {
+      "page_title": "Farm Operating Loans",
+      "event_label": "file_download",
+      "page": "www.fsa.usda.gov/programs-and-services/farm-loan-programs/farm-operating-loans/index",
+      "total_events": "484"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:51:12.366Z",
+  "agency": "agriculture"
+}

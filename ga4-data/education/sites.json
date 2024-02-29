@@ -1,0 +1,338 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "www4.pagefreezer.com",
+      "visits": "16"
+    },
+    {
+      "domain": "www2.ed.gov",
+      "visits": "261286"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.nationsreportcard.gov",
+      "visits": "3901"
+    },
+    {
+      "domain": "www.nagb.gov",
+      "visits": "2121"
+    },
+    {
+      "domain": "www.lincs.ed.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "www.g5.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "www.ed.gov",
+      "visits": "177093"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "wioaplans.ed.gov",
+      "visits": "3459"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "15"
+    },
+    {
+      "domain": "training3.msix.ed.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "training.msix.ed.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "tools.usps.com",
+      "visits": "12"
+    },
+    {
+      "domain": "test.www.ed.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "test.msix.ed.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "test.financialaidtoolkit.ed.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "tech.ed.gov",
+      "visits": "9241"
+    },
+    {
+      "domain": "studentprivacy.ed.gov",
+      "visits": "19203"
+    },
+    {
+      "domain": "studentaid.gov",
+      "visits": "16048793"
+    },
+    {
+      "domain": "slds.ed.gov",
+      "visits": "663"
+    },
+    {
+      "domain": "sites.ed.gov",
+      "visits": "143287"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "rsa.ed.gov",
+      "visits": "5162"
+    },
+    {
+      "domain": "preview.www2.ed.gov",
+      "visits": "150"
+    },
+    {
+      "domain": "perkins.ed.gov",
+      "visits": "356"
+    },
+    {
+      "domain": "osep.communities.ed.gov",
+      "visits": "187"
+    },
+    {
+      "domain": "oighotlineportal.ed.gov",
+      "visits": "593"
+    },
+    {
+      "domain": "oha.ed.gov",
+      "visits": "533"
+    },
+    {
+      "domain": "oese.ed.gov",
+      "visits": "40226"
+    },
+    {
+      "domain": "ocrdata.ed.gov",
+      "visits": "232"
+    },
+    {
+      "domain": "ocrcas.ed.gov",
+      "visits": "3269"
+    },
+    {
+      "domain": "nrs.ed.gov",
+      "visits": "1235"
+    },
+    {
+      "domain": "nceo.communities.ed.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "nationalblueribbonschools.ed.gov",
+      "visits": "4530"
+    },
+    {
+      "domain": "msix.ed.gov",
+      "visits": "1467"
+    },
+    {
+      "domain": "mf.dev.nrs.ed.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "lincs.ed.gov",
+      "visits": "6058"
+    },
+    {
+      "domain": "impactaid.ed.gov",
+      "visits": "929"
+    },
+    {
+      "domain": "icrasdev.ed.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "icras.ed.gov",
+      "visits": "81"
+    },
+    {
+      "domain": "g5.gov",
+      "visits": "116"
+    },
+    {
+      "domain": "financialaidtoolkit.ed.gov",
+      "visits": "37355"
+    },
+    {
+      "domain": "emaps.ed.gov",
+      "visits": "1031"
+    },
+    {
+      "domain": "eed.communities.ed.gov",
+      "visits": "108"
+    },
+    {
+      "domain": "edfacts.communities.ed.gov",
+      "visits": "691"
+    },
+    {
+      "domain": "eddataexpress.stage.ed.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "eddataexpress.ed.gov",
+      "visits": "670"
+    },
+    {
+      "domain": "eddataexpress.dev.ed.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "easie.communities.ed.gov",
+      "visits": "197"
+    },
+    {
+      "domain": "datareview.msix.ed.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "cte.ed.gov",
+      "visits": "3201"
+    },
+    {
+      "domain": "crdc.communities.ed.gov",
+      "visits": "7785"
+    },
+    {
+      "domain": "cpo.communities.ed.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "covidreliefdata.ed.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "covid-relief-data.ed.gov",
+      "visits": "1996"
+    },
+    {
+      "domain": "courses.lincs.ed.gov",
+      "visits": "1189"
+    },
+    {
+      "domain": "comps.ed.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "comps-dev.ed.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "community.lincs.ed.gov",
+      "visits": "2237"
+    },
+    {
+      "domain": "collegescorecard.ed.gov",
+      "visits": "41097"
+    },
+    {
+      "domain": "civilrightsdata.ed.gov",
+      "visits": "2944"
+    },
+    {
+      "domain": "ciidta.communities.ed.gov",
+      "visits": "61"
+    },
+    {
+      "domain": "charterschoolcenter.ed.gov",
+      "visits": "1573"
+    },
+    {
+      "domain": "ceds.communities.ed.gov",
+      "visits": "69"
+    },
+    {
+      "domain": "bpvhxwvsql311.lab.ed.gov",
+      "visits": "179"
+    },
+    {
+      "domain": "blog.ed.gov",
+      "visits": "35444"
+    },
+    {
+      "domain": "app.origin.studentaid.gov",
+      "visits": "651"
+    },
+    {
+      "domain": "app-test3-dcc.ed.gov",
+      "visits": "208"
+    },
+    {
+      "domain": "app-test1-dcc.ed.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "aefla.ed.gov",
+      "visits": "582"
+    }
+  ],
+  "totals": {
+    "visits": 16873939
+  },
+  "taken_at": "2024-01-05T15:33:02.534Z",
+  "agency": "education"
+}

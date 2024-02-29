@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nhtsa.gov",
+      "visits": "4485755",
+      "users": "3317205",
+      "pageviews": "6510825",
+      "pageviews_per_session": "1.4514446286076703",
+      "avg_session_duration": "128.28740881523822",
+      "bounce_rate": "0.67751248117652441"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "2276871",
+      "users": "1503351",
+      "pageviews": "4590013",
+      "pageviews_per_session": "2.0159301954304834",
+      "avg_session_duration": "204.75190488932222",
+      "bounce_rate": "0.47091205430610694"
+    },
+    {
+      "domain": "www.fmcsa.dot.gov",
+      "visits": "1273434",
+      "users": "836143",
+      "pageviews": "2726072",
+      "pageviews_per_session": "2.1407250002748475",
+      "avg_session_duration": "235.28075006140406",
+      "bounce_rate": "0.43248805984448352"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "977824",
+      "users": "756950",
+      "pageviews": "1750574",
+      "pageviews_per_session": "1.7902751415387637",
+      "avg_session_duration": "159.73526102354518",
+      "bounce_rate": "0.48873723696697974"
+    },
+    {
+      "domain": "www.fhwa.dot.gov",
+      "visits": "338653",
+      "users": "245280",
+      "pageviews": "659314",
+      "pageviews_per_session": "1.9468718717979761",
+      "avg_session_duration": "183.73258936581396",
+      "bounce_rate": "0.42425727809882091"
+    },
+    {
+      "domain": "nationalregistry.fmcsa.dot.gov",
+      "visits": "233903",
+      "users": "100518",
+      "pageviews": "338324",
+      "pageviews_per_session": "1.4464286477727948",
+      "avg_session_duration": "166.61392632875166",
+      "bounce_rate": "0.52443961813230267"
+    },
+    {
+      "domain": "mutcd.fhwa.dot.gov",
+      "visits": "166450",
+      "users": "108764",
+      "pageviews": "362872",
+      "pageviews_per_session": "2.1800660859116854",
+      "avg_session_duration": "231.69184898377893",
+      "bounce_rate": "0.40093721838389906"
+    },
+    {
+      "domain": "highways.dot.gov",
+      "visits": "151511",
+      "users": "107753",
+      "pageviews": "242937",
+      "pageviews_per_session": "1.6034281339308698",
+      "avg_session_duration": "181.88217344955152",
+      "bounce_rate": "0.40984482974833508"
+    },
+    {
+      "domain": "www.phmsa.dot.gov",
+      "visits": "142524",
+      "users": "111882",
+      "pageviews": "403755",
+      "pageviews_per_session": "2.8328913025174707",
+      "avg_session_duration": "199.18125897949812",
+      "bounce_rate": "0.50148045241503181"
+    },
+    {
+      "domain": "www.transit.dot.gov",
+      "visits": "127215",
+      "users": "71509",
+      "pageviews": "260729",
+      "pageviews_per_session": "2.0495146012655741",
+      "avg_session_duration": "230.91807584437367",
+      "bounce_rate": "0.463325865660496"
+    },
+    {
+      "domain": "railroads.dot.gov",
+      "visits": "108854",
+      "users": "78783",
+      "pageviews": "243996",
+      "pageviews_per_session": "2.2414977860253185",
+      "avg_session_duration": "195.98518023204485",
+      "bounce_rate": "0.4121300090028846"
+    },
+    {
+      "domain": "www.bts.gov",
+      "visits": "83975",
+      "users": "62801",
+      "pageviews": "148131",
+      "pageviews_per_session": "1.7639892825245609",
+      "avg_session_duration": "164.78534388997917",
+      "bounce_rate": "0.46193509973206309"
+    },
+    {
+      "domain": "ops.fhwa.dot.gov",
+      "visits": "61516",
+      "users": "47378",
+      "pageviews": "100362",
+      "pageviews_per_session": "1.6314779894661551",
+      "avg_session_duration": "161.81772903906295",
+      "bounce_rate": "0.44125105663567205"
+    },
+    {
+      "domain": "www.maritime.dot.gov",
+      "visits": "55209",
+      "users": "47266",
+      "pageviews": "103078",
+      "pageviews_per_session": "1.8670506620297416",
+      "avg_session_duration": "175.52981402573857",
+      "bounce_rate": "0.52906229056856668"
+    },
+    {
+      "domain": "ask.fmcsa.dot.gov",
+      "visits": "50925",
+      "users": "29192",
+      "pageviews": "74543",
+      "pageviews_per_session": "1.4637800687285223",
+      "avg_session_duration": "321.98940151169364",
+      "bounce_rate": "0.11986254295532646"
+    },
+    {
+      "domain": "rosap.ntl.bts.gov",
+      "visits": "49134",
+      "users": "34460",
+      "pageviews": "70287",
+      "pageviews_per_session": "1.4305165465868848",
+      "avg_session_duration": "178.39926951308655",
+      "bounce_rate": "0.49812756950380593"
+    },
+    {
+      "domain": "www.911.gov",
+      "visits": "45200",
+      "users": "40406",
+      "pageviews": "69538",
+      "pageviews_per_session": "1.5384513274336282",
+      "avg_session_duration": "99.098165630420354",
+      "bounce_rate": "0.516504424778761"
+    },
+    {
+      "domain": "www.usmma.edu",
+      "visits": "41784",
+      "users": "28387",
+      "pageviews": "94985",
+      "pageviews_per_session": "2.2732385602144363",
+      "avg_session_duration": "179.0644953588216",
+      "bounce_rate": "0.41949071414895656"
+    },
+    {
+      "domain": "www.plainlanguage.gov",
+      "visits": "41234",
+      "users": "32407",
+      "pageviews": "87200",
+      "pageviews_per_session": "2.1147596643546587",
+      "avg_session_duration": "161.40485313619831",
+      "bounce_rate": "0.46808459038657418"
+    },
+    {
+      "domain": "hazmatsafety.dot.gov",
+      "visits": "36165",
+      "users": "36207",
+      "pageviews": "166106",
+      "pageviews_per_session": "4.5930042859117934",
+      "avg_session_duration": "8.7342411137840461",
+      "bounce_rate": "0.23387252868795796"
+    }
+  ],
+  "totals": {
+    "users": 7596642,
+    "visits": 10748136
+  },
+  "taken_at": "2024-01-05T16:02:07.242Z",
+  "agency": "transportation"
+}

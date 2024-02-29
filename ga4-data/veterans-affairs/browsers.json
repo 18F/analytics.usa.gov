@@ -1,0 +1,102 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 98247588,
+    "browser": {
+      "Chrome": 39819833,
+      "Safari": 27728692,
+      "Edge": 21236913,
+      "Safari (in-app)": 3806957,
+      "Samsung Internet": 1966949,
+      "Firefox": 1642092,
+      "Android Webview": 1362240,
+      "(other)": 9973,
+      "Amazon Silk": 241582,
+      "Mozilla Compatible Agent": 251419,
+      "Opera": 110322,
+      "(not set)": 20655,
+      "Internet Explorer": 33900,
+      "YaBrowser": 2474,
+      "Aloha Browser": 1453,
+      "Opera Mini": 2651,
+      "DuckDuckGo Browser": 1777,
+      "UC Browser": 1431,
+      "Android Browser": 1216,
+      "Android Runtime": 924,
+      "Whale Browser": 681,
+      "PaleMoon": 353,
+      "Meta Quest Browser": 515,
+      "Waterfox": 213,
+      "Phoenix Browser": 318,
+      "SeaMonkey": 555,
+      "Coc Coc": 291,
+      "Puffin": 137,
+      "Maxthon": 48,
+      "Mozilla": 594,
+      "Iron": 31,
+      "BlackBerry": 41,
+      "Lynx": 57,
+      "NetFront": 38,
+      "Konqueror": 48,
+      "BrowserNG": 16,
+      "Galeon": 19,
+      "Nintendo Browser": 44,
+      "Camino": 11,
+      "Vivaldi": 53,
+      "EudoraWeb": 1,
+      "Nokia Browser": 20,
+      "Blazer": 5,
+      "Playstation 3": 1,
+      "IE with Chrome Frame": 8,
+      "Netscape": 22,
+      "Playstation 4": 3,
+      "Seznam": 9,
+      "Playstation Vita Browser": 2,
+      "YE": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:14:40.120Z",
+  "agency": "veterans-affairs"
+}

@@ -1,0 +1,766 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "wwwkc.fiscal.treasury.gov",
+      "visits": "235"
+    },
+    {
+      "domain": "wwwdev5.fiscal.treasury.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "www2.occ.gov",
+      "visits": "36128"
+    },
+    {
+      "domain": "www2.helpwithmybank.gov",
+      "visits": "36040"
+    },
+    {
+      "domain": "www.wizard.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.va.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "www.usmint.gov",
+      "visits": "365673"
+    },
+    {
+      "domain": "www.usmint.com",
+      "visits": "436"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usaspending.gov",
+      "visits": "71757"
+    },
+    {
+      "domain": "www.usajobs.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.ttbonline.gov",
+      "visits": "11210"
+    },
+    {
+      "domain": "www.ttb.gov",
+      "visits": "45721"
+    },
+    {
+      "domain": "www.tsp.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.treasuryscams.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.treasuryhunt.gov",
+      "visits": "166"
+    },
+    {
+      "domain": "www.treasurydirect.gov.http.akamai-trials.com",
+      "visits": "6"
+    },
+    {
+      "domain": "www.treasurydirect.gov",
+      "visits": "1576801"
+    },
+    {
+      "domain": "www.treasuryauctions.gov",
+      "visits": "164"
+    },
+    {
+      "domain": "www.treasury.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.taaps.gov",
+      "visits": "106"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "www.sigtarp.gov",
+      "visits": "969"
+    },
+    {
+      "domain": "www.savingsbondwizard.gov",
+      "visits": "61"
+    },
+    {
+      "domain": "www.savingsbonds.gov",
+      "visits": "1190"
+    },
+    {
+      "domain": "www.savingsbond.gov",
+      "visits": "559"
+    },
+    {
+      "domain": "www.pay.gov",
+      "visits": "7507"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.occhelps.gov",
+      "visits": "109"
+    },
+    {
+      "domain": "www.occ.treas.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.occ.gov",
+      "visits": "146802"
+    },
+    {
+      "domain": "www.nationalbankhelp.gov",
+      "visits": "124"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.justice.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.its.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.itdashboard.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.irs.gov",
+      "visits": "14892744"
+    },
+    {
+      "domain": "www.helpwithmymortgagebank.gov",
+      "visits": "86"
+    },
+    {
+      "domain": "www.helpwithmymortgage.gov",
+      "visits": "109"
+    },
+    {
+      "domain": "www.helpwithmycreditcardbank.gov",
+      "visits": "84"
+    },
+    {
+      "domain": "www.helpwithmycreditcard.gov",
+      "visits": "110"
+    },
+    {
+      "domain": "www.helpwithmycheckingaccount.gov",
+      "visits": "112"
+    },
+    {
+      "domain": "www.helpwithmybank.gov",
+      "visits": "67786"
+    },
+    {
+      "domain": "www.ftc.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "www.fiscal.treasury.gov",
+      "visits": "101708"
+    },
+    {
+      "domain": "www.fincen.gov",
+      "visits": "813725"
+    },
+    {
+      "domain": "www.fincen-sit.env2.fincen.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.financialresearch.gov",
+      "visits": "18074"
+    },
+    {
+      "domain": "www.fedinvest.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "www.federalinvestments.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "www.fdic.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.eeoc.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "72"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.consumerfinance.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "www.comptrollerofthecurrency.gov",
+      "visits": "181"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "www.cdfifund.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.catalog.usmint.gov",
+      "visits": "1944"
+    },
+    {
+      "domain": "www.careers.occ.gov",
+      "visits": "91381"
+    },
+    {
+      "domain": "www.bondpro.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "www.bep.gov",
+      "visits": "82844"
+    },
+    {
+      "domain": "www.banknet.gov",
+      "visits": "42233"
+    },
+    {
+      "domain": "www.bankhelp.gov",
+      "visits": "170"
+    },
+    {
+      "domain": "www.bankcustomerassistance.gov",
+      "visits": "86"
+    },
+    {
+      "domain": "www.bankcustomer.gov",
+      "visits": "109"
+    },
+    {
+      "domain": "www.ayudaconmibanco.gov",
+      "visits": "112"
+    },
+    {
+      "domain": "www.americathebeautifulquarters.gov",
+      "visits": "97"
+    },
+    {
+      "domain": "www.ada.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "wizard.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "wgetsnaps.github.io",
+      "visits": "7"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "20"
+    },
+    {
+      "domain": "uat.fiscaldata.treasury.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "ttbonline.gov",
+      "visits": "18141"
+    },
+    {
+      "domain": "treasuryscams.gov",
+      "visits": "74"
+    },
+    {
+      "domain": "treasuryhunt.gov",
+      "visits": "6868"
+    },
+    {
+      "domain": "treasurydirect.services.treasury.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "treasurydirect.gov",
+      "visits": "355178"
+    },
+    {
+      "domain": "treasurydirect.fiscal.treasury.gov",
+      "visits": "660"
+    },
+    {
+      "domain": "treasuryauctions.gov",
+      "visits": "217"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "7"
+    },
+    {
+      "domain": "trainingd.edit.irs.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "trainingc.edit.irs.gov",
+      "visits": "56"
+    },
+    {
+      "domain": "tfx.treasury.gov",
+      "visits": "3468"
+    },
+    {
+      "domain": "tfm.fiscal.treasury.gov",
+      "visits": "4644"
+    },
+    {
+      "domain": "test-my.ttb.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "taaps.gov",
+      "visits": "93"
+    },
+    {
+      "domain": "stg.fiscaldata.treasury.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "slgs.gov",
+      "visits": "42"
+    },
+    {
+      "domain": "sit.edit.irs.gov",
+      "visits": "66"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "search.ttb.gov",
+      "visits": "1268"
+    },
+    {
+      "domain": "search.treasury.gov",
+      "visits": "36654"
+    },
+    {
+      "domain": "search.ssa.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "savingsbondwizard.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "savingsbonds.gov",
+      "visits": "418"
+    },
+    {
+      "domain": "savingsbond.gov",
+      "visits": "441"
+    },
+    {
+      "domain": "sandbox.usaspending.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "sam.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "sa.www4.irs.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "qat.usaspending.gov",
+      "visits": "63"
+    },
+    {
+      "domain": "qat.fiscaldata.treasury.gov",
+      "visits": "142"
+    },
+    {
+      "domain": "qadev.pay.gov",
+      "visits": "105"
+    },
+    {
+      "domain": "qa.pay.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "prod.edit.irs.gov",
+      "visits": "251"
+    },
+    {
+      "domain": "pmaint.edit.irs.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "pete.edit.irs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "patriotbonds.gov",
+      "visits": "89"
+    },
+    {
+      "domain": "ots.gov",
+      "visits": "175"
+    },
+    {
+      "domain": "oig.treasury.gov",
+      "visits": "14116"
+    },
+    {
+      "domain": "ofac.treasury.gov",
+      "visits": "480164"
+    },
+    {
+      "domain": "occhelps.gov",
+      "visits": "88"
+    },
+    {
+      "domain": "occ.gov",
+      "visits": "129200"
+    },
+    {
+      "domain": "nationalbankhelp.gov",
+      "visits": "133"
+    },
+    {
+      "domain": "my.ttb.gov",
+      "visits": "9122"
+    },
+    {
+      "domain": "mobile.treasurydirect.gov",
+      "visits": "262"
+    },
+    {
+      "domain": "la.www4.irs.gov",
+      "visits": "14295"
+    },
+    {
+      "domain": "jobs.occ.gov",
+      "visits": "99"
+    },
+    {
+      "domain": "inactive.fiscaldata.treasury.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "897811"
+    },
+    {
+      "domain": "helpwithmymortgagebank.gov",
+      "visits": "112"
+    },
+    {
+      "domain": "helpwithmymortgage.gov",
+      "visits": "87"
+    },
+    {
+      "domain": "helpwithmycreditcardbank.gov",
+      "visits": "87"
+    },
+    {
+      "domain": "helpwithmycreditcard.gov",
+      "visits": "88"
+    },
+    {
+      "domain": "helpwithmycheckingaccount.gov",
+      "visits": "96"
+    },
+    {
+      "domain": "helpwithmybank.gov",
+      "visits": "91169"
+    },
+    {
+      "domain": "ftdev.pay.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "fr.fiscal.treasury.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "fmvisionkc.fiscal.treasury.gov",
+      "visits": "74"
+    },
+    {
+      "domain": "fmvision.fiscal.treasury.gov",
+      "visits": "218"
+    },
+    {
+      "domain": "fiscaldata.treasury.gov",
+      "visits": "86217"
+    },
+    {
+      "domain": "fiscal.treasury.gov",
+      "visits": "41723"
+    },
+    {
+      "domain": "find.irs.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "fincen.gov",
+      "visits": "28544"
+    },
+    {
+      "domain": "fincen-test.env2.fincen.gov",
+      "visits": "94"
+    },
+    {
+      "domain": "fincen-sit.env2.fincen.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "fincen-dev.env2.fincen.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "files.usaspending.gov",
+      "visits": "435"
+    },
+    {
+      "domain": "files-nonprod.usaspending.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ffb.treasury.gov",
+      "visits": "298"
+    },
+    {
+      "domain": "federalinvestments.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "eite.edit.irs.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "edit.treasury.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "edit.tfx.treasury.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "edit.tfm.fiscal.treasury.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "edit.sigtarp.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "edit.ofac.treasury.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "dre-treasurydirect.fiscal.treasury.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "do.usembassy.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "dmesit.edit.irs.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "dmedev.edit.irs.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "disp-acc.fiscal.treasury.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "development.usmint.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "dev.fiscaldata.treasury.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "dev.edit.irs.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "comptrollerofthecurrency.gov",
+      "visits": "102"
+    },
+    {
+      "domain": "catalog.usmint.gov",
+      "visits": "340841"
+    },
+    {
+      "domain": "careers2.occ.gov",
+      "visits": "35729"
+    },
+    {
+      "domain": "careers.occ.gov",
+      "visits": "5620"
+    },
+    {
+      "domain": "bondpro.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "bankhelp.gov",
+      "visits": "101"
+    },
+    {
+      "domain": "bankcustomerassistance.gov",
+      "visits": "102"
+    },
+    {
+      "domain": "bankcustomer.gov",
+      "visits": "88"
+    },
+    {
+      "domain": "bankanswers.gov",
+      "visits": "107"
+    },
+    {
+      "domain": "ayudaconmibanco.gov",
+      "visits": "110"
+    },
+    {
+      "domain": "arcacc.fiscal.treasury.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "arc.fiscal.treasury.gov",
+      "visits": "14016"
+    },
+    {
+      "domain": "apps.occ.gov",
+      "visits": "39289"
+    },
+    {
+      "domain": "alpha.sam.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "acc.treasurydirect.gov",
+      "visits": "94"
+    },
+    {
+      "domain": "acc.fiscal.treasury.gov",
+      "visits": "131"
+    }
+  ],
+  "totals": {
+    "visits": 21076682
+  },
+  "taken_at": "2024-01-05T16:03:56.799Z",
+  "agency": "treasury"
+}

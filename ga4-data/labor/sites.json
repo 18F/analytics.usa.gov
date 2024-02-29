@@ -1,0 +1,518 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "zuni4.psb.bls.gov",
+      "visits": "239"
+    },
+    {
+      "domain": "zuni3po.psb.bls.gov",
+      "visits": "198"
+    },
+    {
+      "domain": "zuni3.psb.bls.gov",
+      "visits": "224"
+    },
+    {
+      "domain": "zuni2.psb.bls.gov",
+      "visits": "170"
+    },
+    {
+      "domain": "www.wrp.gov",
+      "visits": "5595"
+    },
+    {
+      "domain": "www.worker.gov",
+      "visits": "9079"
+    },
+    {
+      "domain": "www.workcenter.gov",
+      "visits": "3027"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.whistleblowers.gov",
+      "visits": "9609"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "441"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "www.sem.dol.gov",
+      "visits": "588"
+    },
+    {
+      "domain": "www.savingmatters.dol.gov",
+      "visits": "442"
+    },
+    {
+      "domain": "www.osha.gov",
+      "visits": "999014"
+    },
+    {
+      "domain": "www.opm.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.oalj.dol.gov",
+      "visits": "23228"
+    },
+    {
+      "domain": "www.msha.gov",
+      "visits": "44568"
+    },
+    {
+      "domain": "www.hirevets.gov",
+      "visits": "2223"
+    },
+    {
+      "domain": "www.govloans.gov",
+      "visits": "30617"
+    },
+    {
+      "domain": "www.fns.usda.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "www.employer.gov",
+      "visits": "4100"
+    },
+    {
+      "domain": "www.efast.dol.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "www.eeoc.gov",
+      "visits": "207"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "387"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "1384975"
+    },
+    {
+      "domain": "www.dataportalv3.dol.gov",
+      "visits": "194"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "47"
+    },
+    {
+      "domain": "www.careeronestop.org",
+      "visits": "293045"
+    },
+    {
+      "domain": "www.bls.gov",
+      "visits": "1374127"
+    },
+    {
+      "domain": "www.benefits.va.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "www.benefits.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "www.askebsa.dol.gov",
+      "visits": "15039"
+    },
+    {
+      "domain": "www.apprenticeship.gov",
+      "visits": "50040"
+    },
+    {
+      "domain": "www.acf.hhs.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "35"
+    },
+    {
+      "domain": "webapps.dol.gov",
+      "visits": "128059"
+    },
+    {
+      "domain": "training.wrp.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "test.wrp.gov",
+      "visits": "69"
+    },
+    {
+      "domain": "test.flag.dol.gov",
+      "visits": "70"
+    },
+    {
+      "domain": "test.efile.dol.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "test.blog.dol.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "test.apprenticeship.gov",
+      "visits": "205"
+    },
+    {
+      "domain": "test-perm.flag.dol.gov",
+      "visits": "45"
+    },
+    {
+      "domain": "stats.bls.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "statepolicy.militaryonesource.mil",
+      "visits": "39"
+    },
+    {
+      "domain": "staging.flag.dol.gov",
+      "visits": "33"
+    },
+    {
+      "domain": "staging.apprenticeship.gov",
+      "visits": "120"
+    },
+    {
+      "domain": "stageouiextweb.doleta.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "ssabest.benefits.gov",
+      "visits": "15421"
+    },
+    {
+      "domain": "sem.dol.gov",
+      "visits": "286"
+    },
+    {
+      "domain": "section14c.dol.gov",
+      "visits": "156"
+    },
+    {
+      "domain": "seasonaljobs.dol.gov",
+      "visits": "97175"
+    },
+    {
+      "domain": "searchappeals.dol.gov",
+      "visits": "298"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "35356"
+    },
+    {
+      "domain": "search.osha.gov",
+      "visits": "31835"
+    },
+    {
+      "domain": "savingmatters.dol.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "qawebapps.dol.gov",
+      "visits": "19"
+    },
+    {
+      "domain": "preview.osha.gov",
+      "visits": "545"
+    },
+    {
+      "domain": "portal.osha.gov",
+      "visits": "69"
+    },
+    {
+      "domain": "owcpmed.uat.dol.gov",
+      "visits": "166"
+    },
+    {
+      "domain": "owcpmed.dol.gov",
+      "visits": "74327"
+    },
+    {
+      "domain": "ouirhdevextweb.doleta.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "oui.doleta.gov",
+      "visits": "1225"
+    },
+    {
+      "domain": "olmsapps.dol.gov",
+      "visits": "6117"
+    },
+    {
+      "domain": "oigportal.oig.dol.gov",
+      "visits": "189"
+    },
+    {
+      "domain": "oalj.dol.gov",
+      "visits": "571"
+    },
+    {
+      "domain": "myseco.militaryonesource.mil",
+      "visits": "23"
+    },
+    {
+      "domain": "foreignlaborcert.doleta.gov",
+      "visits": "1284"
+    },
+    {
+      "domain": "flag.dol.gov",
+      "visits": "250842"
+    },
+    {
+      "domain": "federalregister.dol.gov",
+      "visits": "294"
+    },
+    {
+      "domain": "enforcedata.dol.gov",
+      "visits": "16092"
+    },
+    {
+      "domain": "efile.dol.gov",
+      "visits": "4685"
+    },
+    {
+      "domain": "edit.whistleblowers.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "edit.osha.gov",
+      "visits": "117"
+    },
+    {
+      "domain": "edit.msha.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "edit.dol.gov",
+      "visits": "618"
+    },
+    {
+      "domain": "edit.blog.dol.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "edit.apprenticeship.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "edit-ita.osha.gov",
+      "visits": "161"
+    },
+    {
+      "domain": "dewscmspreview.psb.bls.gov",
+      "visits": "205"
+    },
+    {
+      "domain": "dewscmsp.psb.bls.gov",
+      "visits": "104"
+    },
+    {
+      "domain": "dev.wrp.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "dev.flag.dol.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "dev.blog.dol.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "dev.apprenticeship.gov",
+      "visits": "71"
+    },
+    {
+      "domain": "dev-perm.flag.dol.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "ddp-www.osha.gov",
+      "visits": "29"
+    },
+    {
+      "domain": "ddp-test.osha.gov",
+      "visits": "38"
+    },
+    {
+      "domain": "ddp-test.ita.osha.gov",
+      "visits": "99"
+    },
+    {
+      "domain": "ddp-staging.osha.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "ddp-staging.ita.osha.gov",
+      "visits": "22"
+    },
+    {
+      "domain": "ddp-preview.osha.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "ddp-edit.osha.gov",
+      "visits": "55"
+    },
+    {
+      "domain": "ddp-dev.osha.gov",
+      "visits": "20"
+    },
+    {
+      "domain": "ddp-dev.ita.osha.gov",
+      "visits": "34"
+    },
+    {
+      "domain": "datatest.bls.gov",
+      "visits": "278"
+    },
+    {
+      "domain": "dataportal.dol.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "datamanagerstage.dol.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "datamanagerdev.dol.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "datamanager.dol.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "datadev.dol.gov",
+      "visits": "25"
+    },
+    {
+      "domain": "datadev.bls.gov",
+      "visits": "253"
+    },
+    {
+      "domain": "data.bls.gov",
+      "visits": "238994"
+    },
+    {
+      "domain": "clear.dol.gov",
+      "visits": "737"
+    },
+    {
+      "domain": "btcomp.dol.gov",
+      "visits": "446"
+    },
+    {
+      "domain": "blstest.psb.bls.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "blsrev.psb.bls.gov",
+      "visits": "49"
+    },
+    {
+      "domain": "blsprod.psb.bls.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "blsmon1.bls.gov",
+      "visits": "88"
+    },
+    {
+      "domain": "blsdev.bls.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "blogs.bls.gov",
+      "visits": "157"
+    },
+    {
+      "domain": "blog.dol.gov",
+      "visits": "17896"
+    },
+    {
+      "domain": "betatest.bls.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "betadev.bls.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "beta.bls.gov",
+      "visits": "17449"
+    },
+    {
+      "domain": "admintools2.dol.gov",
+      "visits": "128"
+    }
+  ],
+  "totals": {
+    "visits": 5196122
+  },
+  "taken_at": "2024-01-05T15:58:10.205Z",
+  "agency": "labor"
+}

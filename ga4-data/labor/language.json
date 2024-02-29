@@ -1,0 +1,111 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 45325718,
+    "languages": {
+      "English": 43136474,
+      "Spanish": 913472,
+      "Portuguese": 189157,
+      "Chinese": 217949,
+      "Japanese": 108793,
+      "Korean": 98677,
+      "French": 114943,
+      "German": 71136,
+      "Vietnamese": 52348,
+      "Turkish": 43122,
+      "Russian": 55525,
+      "Arabic": 44989,
+      "Italian": 46281,
+      "Indonesian": 29385,
+      "Polish": 19779,
+      "Dutch": 22110,
+      "Thai": 15591,
+      "Croatian": 10455,
+      "Swedish": 14033,
+      "Ukrainian": 10189,
+      "Bosnian": 12295,
+      "Czech": 7145,
+      "Norwegian Bokmål": 7978,
+      "Danish": 9368,
+      "Hebrew": 6766,
+      "Greek": 7653,
+      "Hungarian": 7998,
+      "Macedonian": 5674,
+      "Romanian": 6427,
+      "Finnish": 5799,
+      "Persian": 5632,
+      "Albanian": 3753,
+      "Slovak": 3311,
+      "Serbian": 3579,
+      "Bulgarian": 2412,
+      "(other)": 4048,
+      "Hindi": 2630,
+      "Slovenian": 2414,
+      "Panjabi": 24,
+      "Latvian": 530,
+      "Malay": 1737,
+      "Catalan": 1630,
+      "Uzbek": 784,
+      "Azerbaijani": 414,
+      "Afrikaans": 129,
+      "Bengali": 196,
+      "Lithuanian": 509,
+      "Estonian": 292,
+      "Central Khmer": 90,
+      "Burmese": 23,
+      "Georgian": 27,
+      "Mongolian": 19,
+      "Marathi": 12,
+      "Amharic": 12
+    }
+  },
+  "taken_at": "2024-01-05T15:57:45.889Z",
+  "agency": "labor"
+}

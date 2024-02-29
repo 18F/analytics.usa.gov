@@ -1,0 +1,66 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395251747"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 105922826,
+    "os": {
+      "Windows": 45875203,
+      "iOS": 32522189,
+      "Android": 13866053,
+      "Macintosh": 8427782,
+      "Linux": 3794498,
+      "Chrome OS": 1245841,
+      "(not set)": 190641,
+      "Tizen": 483,
+      "Fuchsia": 136
+    }
+  },
+  "taken_at": "2024-01-05T15:51:53.362Z",
+  "agency": "defense"
+}

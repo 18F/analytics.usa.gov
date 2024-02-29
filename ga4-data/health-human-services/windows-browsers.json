@@ -1,0 +1,166 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 36940403,
+    "by_windows": {
+      "7": {
+        "Chrome": 634003,
+        "Firefox": 55261,
+        "Edge": 21237,
+        "Safari": 10883,
+        "Coc Coc": 144
+      },
+      "8": {
+        "Internet Explorer": 62625,
+        "Chrome": 56609,
+        "Firefox": 48720,
+        "Safari": 7508
+      },
+      "10": {
+        "Chrome": 18482965,
+        "Edge": 6308428,
+        "Firefox": 1050005,
+        "Opera": 174318,
+        "Internet Explorer": 33045,
+        "YaBrowser": 4101,
+        "Coc Coc": 3106,
+        "(not set)": 2264,
+        "Whale Browser": 569
+      },
+      "11": {
+        "Chrome": 6808752,
+        "Edge": 2860375
+      },
+      "2000": {
+        "Internet Explorer": 11188
+      },
+      "8.1": {
+        "Chrome": 239050,
+        "Edge": 45105,
+        "Firefox": 12929
+      },
+      "XP": {
+        "Chrome": 5501,
+        "Firefox": 869
+      },
+      "Vista": {
+        "Chrome": 843
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 634003,
+        "8": 56609,
+        "10": 18482965,
+        "11": 6808752,
+        "8.1": 239050,
+        "XP": 5501,
+        "Vista": 843
+      },
+      "Edge": {
+        "7": 21237,
+        "10": 6308428,
+        "11": 2860375,
+        "8.1": 45105
+      },
+      "Firefox": {
+        "7": 55261,
+        "8": 48720,
+        "10": 1050005,
+        "8.1": 12929,
+        "XP": 869
+      },
+      "Opera": {
+        "10": 174318
+      },
+      "Internet Explorer": {
+        "8": 62625,
+        "10": 33045,
+        "2000": 11188
+      },
+      "YaBrowser": {
+        "10": 4101
+      },
+      "Coc Coc": {
+        "7": 144,
+        "10": 3106
+      },
+      "(not set)": {
+        "10": 2264
+      },
+      "Safari": {
+        "7": 10883,
+        "8": 7508
+      },
+      "Whale Browser": {
+        "10": 569
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:53:58.768Z",
+  "agency": "health-human-services"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437322"
+  },
+  "meta": {
+    "names": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites."
+  },
+  "totals": {
+    "visits": 6959089,
+    "os_version": {
+      "7": 318296,
+      "8": 32414,
+      "10": 4581783,
+      "11": 1908878,
+      "95": 7,
+      "98": 22,
+      "2000": 564,
+      "8.1": 83808,
+      "(not set)": 2615,
+      "XP": 16016,
+      "Vista": 9174,
+      "NT": 747,
+      "Server 2003": 4729,
+      "CE": 30,
+      "ME": 3,
+      "3.1": 3
+    }
+  },
+  "taken_at": "2024-01-05T14:47:13.525Z",
+  "agency": "executive-office-president"
+}

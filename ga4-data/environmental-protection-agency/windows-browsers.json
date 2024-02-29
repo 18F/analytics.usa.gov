@@ -1,0 +1,132 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 12870512,
+    "by_windows": {
+      "7": {
+        "Chrome": 139112,
+        "Firefox": 23372,
+        "Edge": 432
+      },
+      "8": {
+        "Chrome": 11710
+      },
+      "10": {
+        "Chrome": 5542217,
+        "Edge": 2060987,
+        "Firefox": 523077,
+        "Opera": 68150,
+        "Internet Explorer": 7241,
+        "YaBrowser": 1300
+      },
+      "11": {
+        "Chrome": 3249882,
+        "Edge": 1197657
+      },
+      "8.1": {
+        "Chrome": 44977,
+        "Edge": 145,
+        "Firefox": 105
+      },
+      "XP": {
+        "Firefox": 148
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 139112,
+        "8": 11710,
+        "10": 5542217,
+        "11": 3249882,
+        "8.1": 44977
+      },
+      "Edge": {
+        "7": 432,
+        "10": 2060987,
+        "11": 1197657,
+        "8.1": 145
+      },
+      "Firefox": {
+        "7": 23372,
+        "10": 523077,
+        "XP": 148,
+        "8.1": 105
+      },
+      "Opera": {
+        "10": 68150
+      },
+      "Internet Explorer": {
+        "10": 7241
+      },
+      "YaBrowser": {
+        "10": 1300
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:42:03.092Z",
+  "agency": "environmental-protection-agency"
+}

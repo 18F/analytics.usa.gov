@@ -1,0 +1,107 @@
+{
+  "name": "top-countries-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "country"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "Top Countries",
+    "description": "Top countries for active onsite users."
+  },
+  "data": [
+    {
+      "country": "United States",
+      "active_visitors": "2881"
+    },
+    {
+      "country": "Puerto Rico",
+      "active_visitors": "23"
+    },
+    {
+      "country": "Canada",
+      "active_visitors": "6"
+    },
+    {
+      "country": "Indonesia",
+      "active_visitors": "4"
+    },
+    {
+      "country": "United Kingdom",
+      "active_visitors": "3"
+    },
+    {
+      "country": "Germany",
+      "active_visitors": "2"
+    },
+    {
+      "country": "India",
+      "active_visitors": "2"
+    },
+    {
+      "country": "Mexico",
+      "active_visitors": "2"
+    },
+    {
+      "country": "Brazil",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Chile",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Colombia",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Egypt",
+      "active_visitors": "1"
+    },
+    {
+      "country": "France",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Pakistan",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Philippines",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Romania",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Spain",
+      "active_visitors": "1"
+    },
+    {
+      "country": "Sweden",
+      "active_visitors": "1"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:03:04.883Z",
+  "agency": "housing-urban-development"
+}

@@ -1,0 +1,176 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 44737602,
+    "by_windows": {
+      "7": {
+        "Chrome": 1282860,
+        "Firefox": 152038,
+        "Edge": 27272,
+        "Opera": 20588,
+        "YaBrowser": 12943,
+        "Internet Explorer": 426
+      },
+      "8": {
+        "Chrome": 60491,
+        "Safari": 1138,
+        "Firefox": 6506,
+        "Opera": 222
+      },
+      "10": {
+        "Chrome": 20341894,
+        "Edge": 5091183,
+        "Firefox": 1733181,
+        "Opera": 416968,
+        "YaBrowser": 114232,
+        "Internet Explorer": 23932,
+        "Coc Coc": 8940,
+        "Whale Browser": 5038,
+        "Mozilla Compatible Agent": 1001
+      },
+      "11": {
+        "Chrome": 11436391,
+        "Edge": 3612728
+      },
+      "8.1": {
+        "Chrome": 326044,
+        "Firefox": 29043,
+        "Edge": 16162,
+        "Opera": 4615,
+        "YaBrowser": 750
+      },
+      "XP": {
+        "Chrome": 3687,
+        "Firefox": 6495,
+        "Internet Explorer": 250,
+        "Opera": 250
+      },
+      "NT": {
+        "Chrome": 232
+      },
+      "Vista": {
+        "Chrome": 102
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 1282860,
+        "8": 60491,
+        "10": 20341894,
+        "11": 11436391,
+        "8.1": 326044,
+        "XP": 3687,
+        "NT": 232,
+        "Vista": 102
+      },
+      "Edge": {
+        "7": 27272,
+        "10": 5091183,
+        "11": 3612728,
+        "8.1": 16162
+      },
+      "Firefox": {
+        "7": 152038,
+        "8": 6506,
+        "10": 1733181,
+        "8.1": 29043,
+        "XP": 6495
+      },
+      "Opera": {
+        "7": 20588,
+        "8": 222,
+        "10": 416968,
+        "8.1": 4615,
+        "XP": 250
+      },
+      "YaBrowser": {
+        "7": 12943,
+        "10": 114232,
+        "8.1": 750
+      },
+      "Internet Explorer": {
+        "7": 426,
+        "10": 23932,
+        "XP": 250
+      },
+      "Coc Coc": {
+        "10": 8940
+      },
+      "Whale Browser": {
+        "10": 5038
+      },
+      "Safari": {
+        "8": 1138
+      },
+      "Mozilla Compatible Agent": {
+        "10": 1001
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:00:12.255Z",
+  "agency": "state"
+}

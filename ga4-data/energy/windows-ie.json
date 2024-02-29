@@ -1,0 +1,129 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites."
+  },
+  "totals": {
+    "visits": 4897,
+    "by_windows": {
+      "7": {
+        "undefined": 477
+      },
+      "8": {
+        "undefined": 561
+      },
+      "10": {
+        "undefined": 1034
+      },
+      "98": {
+        "undefined": 4
+      },
+      "2000": {
+        "undefined": 5
+      },
+      "XP": {
+        "undefined": 2643
+      },
+      "8.1": {
+        "undefined": 127
+      },
+      "Vista": {
+        "undefined": 26
+      },
+      "Server 2003": {
+        "undefined": 7
+      },
+      "3.1": {
+        "undefined": 5
+      },
+      "CE": {
+        "undefined": 2
+      },
+      "NT": {
+        "undefined": 6
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 477,
+        "8": 561,
+        "10": 1034,
+        "98": 4,
+        "2000": 5,
+        "XP": 2643,
+        "8.1": 127,
+        "Vista": 26,
+        "Server 2003": 7,
+        "3.1": 5,
+        "CE": 2,
+        "NT": 6
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:21:59.143Z",
+  "agency": "energy"
+}

@@ -1,0 +1,140 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 25749892,
+    "by_windows": {
+      "7": {
+        "Chrome": 331014,
+        "Firefox": 50218,
+        "Edge": 16291
+      },
+      "8": {
+        "Chrome": 27104,
+        "Safari": 1247
+      },
+      "10": {
+        "Chrome": 10611651,
+        "Edge": 3668664,
+        "Firefox": 935231,
+        "Opera": 102794,
+        "Whale Browser": 19054,
+        "Internet Explorer": 13719,
+        "YaBrowser": 2914
+      },
+      "11": {
+        "Chrome": 6502203,
+        "Edge": 3339340
+      },
+      "2000": {
+        "Internet Explorer": 4256
+      },
+      "8.1": {
+        "Chrome": 105264,
+        "Edge": 10711,
+        "Firefox": 8217
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 331014,
+        "8": 27104,
+        "10": 10611651,
+        "11": 6502203,
+        "8.1": 105264
+      },
+      "Edge": {
+        "7": 16291,
+        "10": 3668664,
+        "11": 3339340,
+        "8.1": 10711
+      },
+      "Firefox": {
+        "7": 50218,
+        "10": 935231,
+        "8.1": 8217
+      },
+      "Opera": {
+        "10": 102794
+      },
+      "Whale Browser": {
+        "10": 19054
+      },
+      "Internet Explorer": {
+        "10": 13719,
+        "2000": 4256
+      },
+      "YaBrowser": {
+        "10": 2914
+      },
+      "Safari": {
+        "8": 1247
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:56:37.467Z",
+  "agency": "homeland-security"
+}

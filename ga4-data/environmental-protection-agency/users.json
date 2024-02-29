@@ -1,0 +1,41 @@
+{
+  "name": "users",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Visitors",
+    "description": "90 days of visits for all sites."
+  },
+  "totals": {
+    "visits": 28348987
+  },
+  "taken_at": "2024-01-05T15:42:53.804Z",
+  "agency": "environmental-protection-agency"
+}

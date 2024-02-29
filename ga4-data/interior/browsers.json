@@ -1,0 +1,100 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 89101651,
+    "browser": {
+      "Chrome": 45367322,
+      "Safari": 31657082,
+      "Edge": 6492794,
+      "Firefox": 2165106,
+      "Samsung Internet": 1141929,
+      "Safari (in-app)": 913207,
+      "Android Webview": 604575,
+      "Opera": 288130,
+      "Amazon Silk": 213870,
+      "Mozilla Compatible Agent": 44731,
+      "(not set)": 106863,
+      "YaBrowser": 49214,
+      "Whale Browser": 10579,
+      "UC Browser": 6972,
+      "Internet Explorer": 12097,
+      "Opera Mini": 7700,
+      "Coc Coc": 3889,
+      "Mozilla": 3968,
+      "Android Runtime": 1013,
+      "DuckDuckGo Browser": 2355,
+      "Aloha Browser": 1981,
+      "SeaMonkey": 1368,
+      "PaleMoon": 2225,
+      "Android Browser": 752,
+      "Meta Quest Browser": 446,
+      "Phoenix Browser": 422,
+      "Seznam": 227,
+      "Puffin": 79,
+      "Waterfox": 286,
+      "Netscape": 34,
+      "Nintendo Browser": 40,
+      "Playstation Vita Browser": 17,
+      "Vivaldi": 15,
+      "BlackBerry": 115,
+      "Iron": 23,
+      "Nokia Browser": 14,
+      "MRCHROME": 4,
+      "BrowserNG": 9,
+      "Lynx": 49,
+      "Maxthon": 83,
+      "Konqueror": 3,
+      "NetFront": 2,
+      "DoCoMo": 1,
+      "YE": 6,
+      "Playstation 4": 5,
+      "IE with Chrome Frame": 9,
+      "EudoraWeb": 1,
+      "Lunascape": 39
+    }
+  },
+  "taken_at": "2024-01-05T14:22:47.814Z",
+  "agency": "interior"
+}

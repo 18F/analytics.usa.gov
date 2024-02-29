@@ -1,0 +1,67 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 76493266,
+    "os": {
+      "Windows": 22615414,
+      "iOS": 21635674,
+      "Android": 12641899,
+      "Linux": 11428172,
+      "Macintosh": 6413724,
+      "Chrome OS": 1662284,
+      "(other)": 8887,
+      "": 1036,
+      "(not set)": 58636,
+      "FreeBSD": 27540
+    }
+  },
+  "taken_at": "2024-01-05T15:37:56.611Z",
+  "agency": "justice"
+}

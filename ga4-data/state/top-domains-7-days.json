@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "travel.state.gov",
+      "visits": "4416716"
+    },
+    {
+      "domain": "pptform.state.gov",
+      "visits": "939219"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "797146"
+    },
+    {
+      "domain": "common.usembassy.gov",
+      "visits": "332789"
+    },
+    {
+      "domain": "history.state.gov",
+      "visits": "312406"
+    },
+    {
+      "domain": "passportstatus.state.gov",
+      "visits": "311919"
+    },
+    {
+      "domain": "www.usembassy.gov",
+      "visits": "192437"
+    },
+    {
+      "domain": "mx.usembassy.gov",
+      "visits": "171874"
+    },
+    {
+      "domain": "in.usembassy.gov",
+      "visits": "159956"
+    },
+    {
+      "domain": "br.usembassy.gov",
+      "visits": "148756"
+    },
+    {
+      "domain": "uk.usembassy.gov",
+      "visits": "139496"
+    },
+    {
+      "domain": "jp.usembassy.gov",
+      "visits": "91618"
+    },
+    {
+      "domain": "ca.usembassy.gov",
+      "visits": "89229"
+    },
+    {
+      "domain": "passportappointment.travel.state.gov",
+      "visits": "84056"
+    },
+    {
+      "domain": "china.usembassy-china.org.cn",
+      "visits": "80766"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "73438"
+    },
+    {
+      "domain": "co.usembassy.gov",
+      "visits": "67445"
+    },
+    {
+      "domain": "tr.usembassy.gov",
+      "visits": "55410"
+    },
+    {
+      "domain": "2009-2017.state.gov",
+      "visits": "49440"
+    },
+    {
+      "domain": "do.usembassy.gov",
+      "visits": "49034"
+    }
+  ],
+  "totals": {
+    "visits": 8563150
+  },
+  "taken_at": "2024-01-05T16:00:17.765Z",
+  "agency": "state"
+}

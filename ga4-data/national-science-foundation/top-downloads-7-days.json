@@ -1,0 +1,630 @@
+{
+  "name": "top-downloads-7-days",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "7daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:pageTitle,ga:eventLabel,ga:pagePath",
+    "metrics": [
+      "ga:totalEvents"
+    ],
+    "sort": [
+      "-ga:totalEvents"
+    ],
+    "filters": "ga:eventCategory=~^(download|downloads|(outbound downloads))$;ga:eventLabel!~swf$;ga:pagePath!~(usps.com).*/(?i)(zip|doc).*",
+    "start-index": 1,
+    "max-results": 100,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Documents Required for Senior Personnel - Funding at NSF | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/coa/coa_template.xlsx",
+      "page": "new.nsf.gov/funding/senior-personnel-documents",
+      "total_events": "607"
+    },
+    {
+      "page_title": "nsf23001 Proposal & Award Policies & Procedures Guide (PAPPG) | NSF - National Science Foundation",
+      "event_label": "https://nsf-gov-resources.nsf.gov/2022-10/nsf23_1.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=pappg",
+      "total_events": "524"
+    },
+    {
+      "page_title": "nsf23001 Proposal & Award Policies & Procedures Guide (PAPPG) | NSF - National Science Foundation",
+      "event_label": "https://nsf-gov-resources.nsf.gov/2022-10/nsf23_1.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=papp",
+      "total_events": "328"
+    },
+    {
+      "page_title": "nsf23605 Graduate Research Fellowship Program (GRFP) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23605/nsf23605.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23605",
+      "total_events": "207"
+    },
+    {
+      "page_title": "Documents Required for Senior Personnel - Funding at NSF | NSF - National Science Foundation",
+      "event_label": "https://www.research.gov/common/attachment/Desktop/SciENcv-FAQs.pdf",
+      "page": "new.nsf.gov/funding/senior-personnel-documents",
+      "total_events": "202"
+    },
+    {
+      "page_title": "Proposal & Award Policies & Procedures Guide (PAPPG) (NSF 23-1) | NSF - National Science Foundation",
+      "event_label": "https://nsf-gov-resources.nsf.gov/2022-10/nsf23_1.pdf",
+      "page": "new.nsf.gov/policies/pappg/23-1",
+      "total_events": "175"
+    },
+    {
+      "page_title": "nsf23620 Postdoctoral Research Fellowships in Biology (PRFB) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23620/nsf23620.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23620",
+      "total_events": "173"
+    },
+    {
+      "page_title": "grantsgovguide0123 NSF Grants.gov Application Guide - January 2023 | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/policydocs/grantsgovguide0123.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=grantsgovguide",
+      "total_events": "152"
+    },
+    {
+      "page_title": "NSF Pre-award and Post-award Disclosures Relating to the Biographical Sketch and Current and Pending Support",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/disclosures_table/jan2023.pdf",
+      "page": "nsf.gov/bfa/dias/policy/disclosures_table.jsp",
+      "total_events": "150"
+    },
+    {
+      "page_title": "nsf22626 Advancing Informal STEM Learning (AISL) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22626/nsf22626.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22626",
+      "total_events": "150"
+    },
+    {
+      "page_title": "Chapter II: Proposal Preparation Instructions - Proposal & Award Policies & Procedures Guide (PAPPG) (NSF 23-1) | NSF - National Science Foundation",
+      "event_label": "https://www.whitehouse.gov/wp-content/uploads/2022/01/010422-NSPM-33-Implementation-Guidance.pdf",
+      "page": "new.nsf.gov/policies/pappg/23-1/ch-2-proposal-preparation",
+      "total_events": "134"
+    },
+    {
+      "page_title": "nsf22586 Faculty Early Career Development Program (CAREER) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22586/nsf22586.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22586",
+      "total_events": "109"
+    },
+    {
+      "page_title": "nsf23510 Improving Undergraduate STEM Education: Directorate for STEM Education (IUSE: EDU) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23510/nsf23510.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23510",
+      "total_events": "106"
+    },
+    {
+      "page_title": "nsf22634 Racial Equity in STEM Education (EDU Racial Equity) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22634/nsf22634.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22634",
+      "total_events": "102"
+    },
+    {
+      "page_title": "nsf24506 International Research Experiences for Students (IRES) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2024/nsf24506/nsf24506.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf24506",
+      "total_events": "101"
+    },
+    {
+      "page_title": "Documents Required for Senior Personnel - Funding at NSF | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/cps_faqs/currentandpendingfaqs_feb2023.pdf",
+      "page": "new.nsf.gov/funding/senior-personnel-documents",
+      "total_events": "99"
+    },
+    {
+      "page_title": "BIO - BIO's Guidance on Data Management Plans | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bio/pubs/BIODMP_Guidance.pdf",
+      "page": "nsf.gov/bio/biodmp.jsp",
+      "total_events": "90"
+    },
+    {
+      "page_title": "Postdoctoral Research Fellowships in Biology (PRFB) | NSF - National Science Foundation",
+      "event_label": "http://www.nsf.gov/bio/prfb/applicant_how_to_apply_prfb.pdf",
+      "page": "new.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb",
+      "total_events": "90"
+    },
+    {
+      "page_title": "nsf22632 Cyberinfrastructure for Sustained Scientific Innovation (CSSI) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22632/nsf22632.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22632",
+      "total_events": "86"
+    },
+    {
+      "page_title": "nsf23627 Ideas Lab: Personalized Engineering Learning (PEL) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23627/nsf23627.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23627",
+      "total_events": "81"
+    },
+    {
+      "page_title": "Support Documents - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/Application%20Flagging%20Guide.pdf",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "80"
+    },
+    {
+      "page_title": "nsf23601 Research Experiences for Undergraduates (REU) Sites and Supplements | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23601/nsf23601.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23601",
+      "total_events": "78"
+    },
+    {
+      "page_title": "nsf23615 Division of Physics: Investigator-Initiated Research Projects (PHY) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23615/nsf23615.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23615",
+      "total_events": "77"
+    },
+    {
+      "page_title": "The USAP Portal: Science and Support in Antarctica - Peninsula Extreme Cold Weather Gear",
+      "event_label": "https://www.usap.gov/travelAndDeployment/images/ecwGear/redDownPrka.jpg",
+      "page": "usap.gov/travelanddeployment/1860/",
+      "total_events": "76"
+    },
+    {
+      "page_title": "Diversity and STEM: Women, Minorities, and Persons with Disabilities 2023 | NSF - National Science Foundation",
+      "event_label": "https://ncses.nsf.gov/pubs/nsf23315/assets/report/nsf23315-report.pdf",
+      "page": "ncses.nsf.gov/pubs/nsf23315/",
+      "total_events": "75"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/2024%20GRFP%20Reviewer%20Guide.docx",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "71"
+    },
+    {
+      "page_title": "nsf1230p NSF Form 1230P, Conflicts-of-Interests and Confidentiality Statement for NSF Panelists | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/forms/NSF%20Form%201230P,%20Conflicts-of-Interests%20and%20Confidentiality%20Statement%20for%20NSF%20Panelists.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf1230p",
+      "total_events": "68"
+    },
+    {
+      "page_title": "nsf23561 Computer and Information Science and Engineering (CISE): Core Programs | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23561/nsf23561.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23561",
+      "total_events": "67"
+    },
+    {
+      "page_title": "FastLane: Panelist System Selection",
+      "event_label": "http://www.nsf.gov/crssprgm/career/note_for_reviewers.pdf",
+      "page": "meetings.nsf.gov/servlet/panelist.login",
+      "total_events": "65"
+    },
+    {
+      "page_title": "nsf23527 NSF Scholarships in Science, Technology, Engineering, and Mathematics (S-STEM) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23527/nsf23527.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23527",
+      "total_events": "65"
+    },
+    {
+      "page_title": "nsf23608 Predictive Intelligence for Pandemic Prevention Phase II (PIPP Phase II Centers Program) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23608/nsf23608.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23608",
+      "total_events": "65"
+    },
+    {
+      "page_title": "nsf22068 Leading the World in Discovery and Innovation, STEM Talent Development and the Delivery of Benefits from Research - NSF Strategic Plan for Fiscal Years (FY) 2022 - 2026 | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22068/nsf22068.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22068",
+      "total_events": "60"
+    },
+    {
+      "page_title": "Support Documents - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/Zoom%20Meeting%20Access.pdf",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "59"
+    },
+    {
+      "page_title": "Chapter II: Proposal Preparation Instructions - Proposal & Award Policies & Procedures Guide (PAPPG) (NSF 23-1) | NSF - National Science Foundation",
+      "event_label": "https://nsf-gov-resources.nsf.gov/2022-10/nsf23_1.pdf",
+      "page": "new.nsf.gov/policies/pappg/23-1/ch-2-proposal-preparation",
+      "total_events": "56"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/GRFP%20Sample%20Reviews.docx",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "54"
+    },
+    {
+      "page_title": "The USAP Portal: Science and Support in Antarctica - Participant Guide",
+      "event_label": "https://www.usap.gov/usapgov/travelAndDeployment/documents/2023_Participant_Guide_508.pdf",
+      "page": "usap.gov/travelanddeployment/541/",
+      "total_events": "54"
+    },
+    {
+      "page_title": "nsf24504 Secure and Trustworthy Cyberspace | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2024/nsf24504/nsf24504.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf24504",
+      "total_events": "54"
+    },
+    {
+      "page_title": "nsf24508 Emerging Frontiers in Research and Innovation (EFRI-2024/25) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2024/nsf24508/nsf24508.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf24508",
+      "total_events": "53"
+    },
+    {
+      "page_title": "FY 2024 Budget Request to Congress | NSF - National Science Foundation",
+      "event_label": "https://nsf-gov-resources.nsf.gov/2023-08/NSF%20FY24%20CJ_Entire%20Rollup_web_%28ERRATA%20v4%29.pdf",
+      "page": "new.nsf.gov/about/budget/fy2024",
+      "total_events": "52"
+    },
+    {
+      "page_title": "nsf23624 Research on Innovative Technologies for Enhanced Learning (RITEL) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23624/nsf23624.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23624",
+      "total_events": "52"
+    },
+    {
+      "page_title": "National AI Research Resource Task Force | NSF - National Science Foundation",
+      "event_label": "https://www.ai.gov/wp-content/uploads/2023/01/NAIRR-TF-Final-Report-2023.pdf",
+      "page": "nsf.gov/cise/national-ai.jsp",
+      "total_events": "50"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/2024%20GRFP%20Review%20Site%20Technical%20Guide.docx",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "49"
+    },
+    {
+      "page_title": "Documents Required for Senior Personnel - Funding at NSF | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/coa/faqs_coatemplatejan2023.pdf",
+      "page": "new.nsf.gov/funding/senior-personnel-documents",
+      "total_events": "49"
+    },
+    {
+      "page_title": "Research.gov - About Account Management",
+      "event_label": "https://www.research.gov/common/attachment/Desktop/Single_ID_Help.pdf",
+      "page": "research.gov/research-web/content/aboutaccountmanagement",
+      "total_events": "49"
+    },
+    {
+      "page_title": "nsf23557 Global Centers (GC): Use-Inspired Research Addressing Global Challenges in Climate Change and Clean Energy | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23557/nsf23557.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23557",
+      "total_events": "49"
+    },
+    {
+      "page_title": "nsf21551 Cyber-Physical Systems (CPS) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2021/nsf21551/nsf21551.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf21551",
+      "total_events": "46"
+    },
+    {
+      "page_title": "Awards - Federal-Wide Research Terms and Conditions | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/fedrtc/appendix_a.pdf",
+      "page": "nsf.gov/awards/managing/rtc.jsp",
+      "total_events": "45"
+    },
+    {
+      "page_title": "Postdoctoral Research Fellowships in Biology (PRFB) | NSF - National Science Foundation",
+      "event_label": "https://resources.research.gov/common/attachment/Desktop/Postdoc%20Fellowship%20Reference%20Letter%20Submission%20Guide_Final_508.pdf",
+      "page": "new.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb",
+      "total_events": "45"
+    },
+    {
+      "page_title": "nsf23605 Graduate Research Fellowship Program (GRFP) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23605/nsf23605.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23605&org=nsf",
+      "total_events": "45"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/2024%20GRFP%20Reviewer%20Tips.pdf",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "43"
+    },
+    {
+      "page_title": "NSTC Research Security Subcommittee NSPM-33 Implementation Guidance Requirements & Standardization",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/researchprotection/commonform_biographicalsketch.pdf",
+      "page": "nsf.gov/bfa/dias/policy/nstc_disclosure.jsp",
+      "total_events": "42"
+    },
+    {
+      "page_title": "Awards - Federal-Wide Research Terms and Conditions | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/fedrtc/agencyimpstatements_april21.pdf",
+      "page": "nsf.gov/awards/managing/rtc.jsp",
+      "total_events": "40"
+    },
+    {
+      "page_title": "nsf23544 Science, Technology, Engineering and Mathematics (STEM) Education Individual Postdoctoral Research Fellowships (STEMEdIPRF) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23544/nsf23544.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23544",
+      "total_events": "40"
+    },
+    {
+      "page_title": "nsf24500 Innovative Technology Experiences for Students and Teachers (ITEST) Resource Center | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2024/nsf24500/nsf24500.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf24500",
+      "total_events": "40"
+    },
+    {
+      "page_title": "nsf23610 National Artificial Intelligence (AI) Research Institutes | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23610/nsf23610.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23610",
+      "total_events": "39"
+    },
+    {
+      "page_title": "Postdoctoral Research Fellowships in Biology (PRFB) | NSF - National Science Foundation",
+      "event_label": "http://www.nsf.gov/bio/prfb/sponsoring_scientist_how_to_prepare_prfb.pdf",
+      "page": "new.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb",
+      "total_events": "38"
+    },
+    {
+      "page_title": "nsf23615 Division of Physics: Investigator-Initiated Research Projects (PHY) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23615/nsf23615.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23615&org=nsf",
+      "total_events": "38"
+    },
+    {
+      "page_title": "nsf23626 Ideas Lab: Advancing Research Capacity at HBCUs through Exploration and Innovation (ARC-HBCU) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23626/nsf23626.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23626",
+      "total_events": "38"
+    },
+    {
+      "page_title": "nsf24507 Incorporating Human Behavior in Epidemiological Models (IHBEM) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2024/nsf24507/nsf24507.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf24507",
+      "total_events": "38"
+    },
+    {
+      "page_title": "REU Sites | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/cgi-bin/good-bye",
+      "page": "nsf.gov/crssprgm/reu/list_result.jsp",
+      "total_events": "37"
+    },
+    {
+      "page_title": "nsf23619 Accelerating Research through International Network-to-Network Collaborations (AccelNet) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23619/nsf23619.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23619",
+      "total_events": "37"
+    },
+    {
+      "page_title": "Master Government List of Federally Funded R&D Centers | NCSES | NSF",
+      "event_label": "https://www.nsf.gov/statistics/ffrdclist/archive/ffrdc-2023.xlsx",
+      "page": "nsf.gov/statistics/ffrdclist/",
+      "total_events": "35"
+    },
+    {
+      "page_title": "nsf23612 Division of Materials Research: Topical Materials Research Programs (DMR:TMRP) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23612/nsf23612.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23612",
+      "total_events": "35"
+    },
+    {
+      "page_title": "nsf23622 Organismal Response to Climate Change (ORCC) Expanding Understanding and Improving Predictions of Life on a Warming Planet | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23622/nsf23622.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23622",
+      "total_events": "35"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/IM%20and%20BI%20examples.docx",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "34"
+    },
+    {
+      "page_title": "RPPR - Reports Due",
+      "event_label": "https://www.research.gov/common/attachment/Desktop/NSFProjectReportTemplate.docx",
+      "page": "research.gov/rppr-web/rppr",
+      "total_events": "33"
+    },
+    {
+      "page_title": "Master Plans | United States Antarctic Program",
+      "event_label": "https://future.usap.gov/resources/documents/McMurdoMasterPlan_2.1.pdf",
+      "page": "future.usap.gov/master-plan/mcmurdo-master-plan-page/",
+      "total_events": "32"
+    },
+    {
+      "page_title": "nsf22633 EPSCoR Research Infrastructure Improvement Program: Track-2 Focused EPSCoR Collaborations (RII Track-2 FEC) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22633/nsf22633.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22633",
+      "total_events": "32"
+    },
+    {
+      "page_title": "nsf23595 Centers of Research Excellence in Science and Technology (CREST Centers) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23595/nsf23595.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23595",
+      "total_events": "32"
+    },
+    {
+      "page_title": "nsf23515 NSF Small Business Innovation Research (SBIR)/ Small Business Technology Transfer (STTR) Programs Phase I | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23515/nsf23515.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23515",
+      "total_events": "30"
+    },
+    {
+      "page_title": "nsf23538 Partnerships for Innovation (PFI) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23538/nsf23538.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23538",
+      "total_events": "30"
+    },
+    {
+      "page_title": "NSTC Research Security Subcommittee NSPM-33 Implementation Guidance Requirements & Standardization",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/researchprotection/commonform_cps.pdf",
+      "page": "nsf.gov/bfa/dias/policy/nstc_disclosure.jsp",
+      "total_events": "29"
+    },
+    {
+      "page_title": "nsf24503 Research Experiences for Teachers (RET) in Engineering and Computer Science | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2024/nsf24503/nsf24503.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf24503",
+      "total_events": "29"
+    },
+    {
+      "page_title": "Support Documents - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/GRFP%20Review%20Site%20Password%20Change%20and%20Reset%20Guide.pdf",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "28"
+    },
+    {
+      "page_title": "nsf22604 Launching Early-Career Academic Pathways in the Mathematical and Physical Sciences (LEAPS-MPS) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22604/nsf22604.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22604",
+      "total_events": "28"
+    },
+    {
+      "page_title": "nsf23549 Division of Environmental Biology (core programs) (DEB) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23549/nsf23549.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23549",
+      "total_events": "28"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/FY24%20Reviewer%20FAQs.docx",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "26"
+    },
+    {
+      "page_title": "OISE Int'l Collaborations-India| NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/od/oise/IntlCollaborations/docs/NSF-DST%20DCL%20Webinar%202023-06-20v2_Final_Corrected.pdf",
+      "page": "nsf.gov/od/oise/intlcollaborations/india.jsp",
+      "total_events": "26"
+    },
+    {
+      "page_title": "Support Documents - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/Zoom%20Telepanel%20Contingency.pdf",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "26"
+    },
+    {
+      "page_title": "The USAP Portal: Science and Support in Antarctica - Peninsula Extreme Cold Weather Gear",
+      "event_label": "https://www.usap.gov/travelAndDeployment/images/ecwGear/crhrtt_jacket.jpg",
+      "page": "usap.gov/travelanddeployment/1860/",
+      "total_events": "26"
+    },
+    {
+      "page_title": "nsf23075 Graduate Research Fellowship Program (GRFP) Administrative Guide | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23075/nsf23075.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=grfp",
+      "total_events": "26"
+    },
+    {
+      "page_title": "The USAP Portal: Science and Support in Antarctica - South Pole Satellite Communications and Pass Schedules",
+      "event_label": "https://www.usap.gov/technology/documents/SPSAT%2020231126.pdf",
+      "page": "usap.gov/technology/1935/",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf21107 Research Infrastructure Guide (RIG) (December 2021) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2021/nsf21107/nsf21107.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf21107",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf22603 Mid-Career Advancement (MCA) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22603/nsf22603.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22603",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf22629 Science and Technology Studies (STS) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22629/nsf22629.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22629",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf22638 Build and Broaden (B2): Enhancing Social, Behavioral and Economic Science Research and Capacity at Minority-Serving Institutions | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22638/nsf22638.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22638",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf23548 Division of Molecular and Cellular Biosciences Core Programs (MCB) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23548/nsf23548.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23548",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf23621 Focused Research Groups in the Mathematical Sciences (FRGMS) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23621/nsf23621.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23621",
+      "total_events": "25"
+    },
+    {
+      "page_title": "nsf14579 Facilitating Research at Primarily Undergraduate Institutions: Research in Undergraduate Institutions (RUI) and Research Opportunity Awards (ROA) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2014/nsf14579/nsf14579.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf14579",
+      "total_events": "24"
+    },
+    {
+      "page_title": "nsf23625 Enabling Partnerships to Increase Innovation Capacity (EPIIC) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23625/nsf23625.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23625",
+      "total_events": "24"
+    },
+    {
+      "page_title": "2024 Panels - Reviewer Support - All Documents",
+      "event_label": "https://extsharepoint.nsf.gov/grfp/Support%20Documents/2024%20Panels%20-%20Reviewer%20Support/2024%20NSF%20GRFP%20Reviewers%20Training%20Video%20Supplement.pdf",
+      "page": "extsharepoint.nsf.gov/grfp/support documents/forms/allitems.aspx",
+      "total_events": "23"
+    },
+    {
+      "page_title": "Awards - General Grant Conditions | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/bfa/dias/policy/gc1/changes_jan23.pdf",
+      "page": "nsf.gov/awards/managing/general_conditions.jsp?org=nsf",
+      "total_events": "23"
+    },
+    {
+      "page_title": "Postdoctoral Research Fellowships in Biology (PRFB) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23137/nsf23137.pdf",
+      "page": "new.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb",
+      "total_events": "23"
+    },
+    {
+      "page_title": "nsf22611 Improving Undergraduate STEM Education: Hispanic-Serving Institutions (HSI Program) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2022/nsf22611/nsf22611.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf22611",
+      "total_events": "23"
+    },
+    {
+      "page_title": "nsf23502 Cultural Anthropology Program - Doctoral Dissertation Research Improvement Grants (CA-DDRIG) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23502/nsf23502.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23502",
+      "total_events": "23"
+    },
+    {
+      "page_title": "nsf23604 NSF National Quantum Virtual Laboratory (NQVL) Quantum Science and Technology Demonstrations (QSTD): I. Pilot Phase | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23604/nsf23604.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23604",
+      "total_events": "23"
+    },
+    {
+      "page_title": "Higher Education Research and Development (HERD) Survey 2021 | NSF - National Science Foundation",
+      "event_label": "https://ncses.nsf.gov/pubs/nsf23304/assets/nsf23304.pdf",
+      "page": "ncses.nsf.gov/surveys/higher-education-research-development/2021",
+      "total_events": "22"
+    },
+    {
+      "page_title": "nsf20032 Prospective New Awardee Guide (June 2020) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2020/nsf20032/nsf20032.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=pnag",
+      "total_events": "22"
+    },
+    {
+      "page_title": "nsf23519 Major Research Instrumentation (MRI) Program: Instrument Acquisition or Development | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23519/nsf23519.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23519",
+      "total_events": "22"
+    },
+    {
+      "page_title": "nsf23568 Human Networks and Data Science (HNDS) | NSF - National Science Foundation",
+      "event_label": "https://www.nsf.gov/pubs/2023/nsf23568/nsf23568.pdf",
+      "page": "nsf.gov/publications/pub_summ.jsp?ods_key=nsf23568",
+      "total_events": "22"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:12:29.529Z",
+  "agency": "national-science-foundation"
+}

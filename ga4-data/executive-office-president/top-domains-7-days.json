@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395437322"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "1367297"
+    },
+    {
+      "domain": "screeningtool.geoplatform.gov",
+      "visits": "7158"
+    },
+    {
+      "domain": "ai.gov",
+      "visits": "5163"
+    },
+    {
+      "domain": "www.usds.gov",
+      "visits": "2123"
+    },
+    {
+      "domain": "www.quantum.gov",
+      "visits": "1852"
+    },
+    {
+      "domain": "www.paymentaccuracy.gov",
+      "visits": "950"
+    },
+    {
+      "domain": "www.nitrd.gov",
+      "visits": "636"
+    },
+    {
+      "domain": "techfarhub.usds.gov",
+      "visits": "544"
+    },
+    {
+      "domain": "www.geoplatform.gov",
+      "visits": "502"
+    },
+    {
+      "domain": "code.gov",
+      "visits": "357"
+    },
+    {
+      "domain": "zerotrust.cyber.gov",
+      "visits": "202"
+    },
+    {
+      "domain": "geoplatform.gov",
+      "visits": "130"
+    },
+    {
+      "domain": "www.code.gov",
+      "visits": "94"
+    },
+    {
+      "domain": "staging.code.gov",
+      "visits": "57"
+    },
+    {
+      "domain": "smeqa.usds.gov",
+      "visits": "44"
+    },
+    {
+      "domain": "data.geoplatform.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "marketplace.geoplatform.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "stg-marketplace.geoplatform.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "14"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "10"
+    }
+  ],
+  "totals": {
+    "visits": 1387175
+  },
+  "taken_at": "2024-01-05T14:47:27.948Z",
+  "agency": "executive-office-president"
+}

@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395243274"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "69451"
+    },
+    {
+      "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-864",
+      "total_events": "35473"
+    },
+    {
+      "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-485",
+      "total_events": "31099"
+    },
+    {
+      "page_title": "Application for Employment Authorization | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-765",
+      "total_events": "28450"
+    },
+    {
+      "page_title": "Petition for Alien Relative | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-130",
+      "total_events": "25278"
+    },
+    {
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "18847"
+    },
+    {
+      "page_title": "Study for the Test | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "total_events": "15433"
+    },
+    {
+      "page_title": "Application to Replace Permanent Resident Card (Green Card) | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-90",
+      "total_events": "14260"
+    },
+    {
+      "page_title": "I94 - Official Website",
+      "event_label": "file_download",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "13626"
+    },
+    {
+      "page_title": "Application for Travel Document | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-131",
+      "total_events": "13545"
+    },
+    {
+      "page_title": "Request for Fee Waiver | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-912",
+      "total_events": "12188"
+    },
+    {
+      "page_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-693",
+      "total_events": "11814"
+    },
+    {
+      "page_title": "Declaration of Financial Support | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-134",
+      "total_events": "11749"
+    },
+    {
+      "page_title": "Petition to Remove Conditions on Residence | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-751",
+      "total_events": "11251"
+    },
+    {
+      "page_title": "Alien’s Change of Address Card | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/ar-11",
+      "total_events": "10080"
+    },
+    {
+      "page_title": "Application for Asylum and for Withholding of Removal | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-589",
+      "total_events": "9539"
+    },
+    {
+      "page_title": "CBP DTOPS - Checkout Payment Confirmation",
+      "event_label": "file_download",
+      "page": "dtops.cbp.dhs.gov/main/paymentReturn.html",
+      "total_events": "9327"
+    },
+    {
+      "page_title": "100 Civics Questions and Answers for the 2008 Test with MP3 Audio (English version) | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test/100-civics-questions-and-answers-with-mp3-audio-english-version",
+      "total_events": "8899"
+    },
+    {
+      "page_title": "Petition for Alien Fiancé(e) | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-129f",
+      "total_events": "8751"
+    },
+    {
+      "page_title": "Form 6059B Customs Declaration - English (Fillable) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-6059b-customs-declaration-english-fillable",
+      "total_events": "8031"
+    },
+    {
+      "page_title": "E-Notification of Application/Petition Acceptance | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/g-1145",
+      "total_events": "7265"
+    },
+    {
+      "page_title": "Notice of Entry of Appearance as Attorney or Accredited Representative | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/g-28",
+      "total_events": "7240"
+    },
+    {
+      "page_title": "Six-Month Validity Update | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/bulletins/six-month-validity-update",
+      "total_events": "6881"
+    },
+    {
+      "page_title": "USCIS To Publish Revised Form I-9 | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/newsroom/alerts/uscis-to-publish-revised-form-i-9",
+      "total_events": "6428"
+    },
+    {
+      "page_title": "Petition for a Nonimmigrant Worker | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-129",
+      "total_events": "6381"
+    },
+    {
+      "page_title": "Consideration of Deferred Action for Childhood Arrivals | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-821d",
+      "total_events": "6262"
+    },
+    {
+      "page_title": "Immigrant Petition for Alien Workers | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-140",
+      "total_events": "5879"
+    },
+    {
+      "page_title": "Application to Extend/Change Nonimmigrant Status | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-539",
+      "total_events": "5689"
+    },
+    {
+      "page_title": "Contract Between Sponsor and Household Member | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-864a",
+      "total_events": "5596"
+    },
+    {
+      "page_title": "Authorization for Credit Card Transactions | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/g-1450",
+      "total_events": "4891"
+    },
+    {
+      "page_title": "Checklist NMC",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/checklist/",
+      "total_events": "4875"
+    },
+    {
+      "page_title": "Merchant Mariner Credential NMC",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/merchant_mariner_credential/",
+      "total_events": "4727"
+    },
+    {
+      "page_title": "TSA PreCheck® | Transportation Security Administration",
+      "event_label": "file_download",
+      "page": "www.tsa.gov/precheck",
+      "total_events": "4704"
+    },
+    {
+      "page_title": "Immigration and Citizenship Data | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
+      "total_events": "4611"
+    },
+    {
+      "page_title": "My personal information has changed. How do I update my information so that I can continue to receive TSA PreCheck®? | Transportation Security Administration",
+      "event_label": "file_download",
+      "page": "www.tsa.gov/travel/frequently-asked-questions/my-personal-information-has-changed-how-do-i-update-my",
+      "total_events": "4522"
+    },
+    {
+      "page_title": "Form I-94 Arrival/Departure Record | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-i-94-arrivaldeparture-record",
+      "total_events": "4175"
+    },
+    {
+      "page_title": "Application for Temporary Protected Status | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-821",
+      "total_events": "3773"
+    },
+    {
+      "page_title": "Application for Action on an Approved Application or Petition | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-824",
+      "total_events": "3623"
+    },
+    {
+      "page_title": "AAO Non-Precedent Decisions | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/administrative-appeals/aao-decisions/aao-non-precedent-decisions",
+      "total_events": "3615"
+    },
+    {
+      "page_title": "CBP DTOPS - Purchasing - Orders (History)",
+      "event_label": "file_download",
+      "page": "dtops.cbp.dhs.gov/main/pendingOrder.htm",
+      "total_events": "3572"
+    },
+    {
+      "page_title": "Fee Schedule | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/g-1055",
+      "total_events": "3555"
+    },
+    {
+      "page_title": "Green Card | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/green-card",
+      "total_events": "3546"
+    },
+    {
+      "page_title": "Application for Certificate of Citizenship | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/n-600",
+      "total_events": "3537"
+    },
+    {
+      "page_title": "Build A Kit | Ready.gov",
+      "event_label": "file_download",
+      "page": "www.ready.gov/kit",
+      "total_events": "3532"
+    },
+    {
+      "page_title": "I94 - Sitio web oficial",
+      "event_label": "file_download",
+      "page": "i94.cbp.dhs.gov/I94/#/home",
+      "total_events": "3478"
+    },
+    {
+      "page_title": "10 Steps to Naturalization | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/citizenship/learn-about-citizenship/10-steps-to-naturalization",
+      "total_events": "3355"
+    },
+    {
+      "page_title": "CVC-2 Detentions",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/Our-Organization/Assistant-Commandant-for-Prevention-Policy-CG-5P/Inspections-Compliance-CG-5PC-/Commercial-Vessel-Compliance/Foreign-Offshore-Compliance-Division/Port-State-Control/Detentions/#119",
+      "total_events": "3271"
+    },
+    {
+      "page_title": "Application for Waiver of Grounds of Inadmissibility | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-601",
+      "total_events": "3263"
+    },
+    {
+      "page_title": "Solicitud de Autorización de Empleo | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/i-765",
+      "total_events": "3194"
+    },
+    {
+      "page_title": "Secure Cloud Business Applications (SCuBA) Project | CISA",
+      "event_label": "file_download",
+      "page": "www.cisa.gov/resources-tools/services/secure-cloud-business-applications-scuba-project",
+      "total_events": "3055"
+    },
+    {
+      "page_title": "Medical Certification for Disability Exceptions | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/n-648",
+      "total_events": "3005"
+    },
+    {
+      "page_title": "Request for Exemption for Intending Immigrant's Affidavit of Support | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-864w",
+      "total_events": "2942"
+    },
+    {
+      "page_title": "National Vessel Documentation Center - Instructions and Forms",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/Our-Organization/Assistant-Commandant-for-Prevention-Policy-CG-5P/Inspections-Compliance-CG-5PC-/National-Vessel-Documentation-Center/Instructions-and-Forms/",
+      "total_events": "2916"
+    },
+    {
+      "page_title": "Affidavit of Support Under Section 213A of the Act | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-864ez",
+      "total_events": "2735"
+    },
+    {
+      "page_title": "Solicitud de Asilo y de Suspensión de Remoción | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/i-589",
+      "total_events": "2493"
+    },
+    {
+      "page_title": "Solicitud de Registro de Residencia Permanente o Ajustar Estatus | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/i-485",
+      "total_events": "2410"
+    },
+    {
+      "page_title": "Application for Replacement Naturalization/Citizenship Document | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/n-565",
+      "total_events": "2332"
+    },
+    {
+      "page_title": "Certification of Origin Template | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/guidance/certification-origin-template",
+      "total_events": "2309"
+    },
+    {
+      "page_title": "Petición de Familiar Extranjero | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/i-130",
+      "total_events": "2292"
+    },
+    {
+      "page_title": "Careers",
+      "event_label": "file_download",
+      "page": "www.secretservice.gov/careers",
+      "total_events": "2236"
+    },
+    {
+      "page_title": "Petition for Amerasian, Widow(er), or Special Immigrant | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-360",
+      "total_events": "2163"
+    },
+    {
+      "page_title": "Petition for U Nonimmigrant Status | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/I-918",
+      "total_events": "2131"
+    },
+    {
+      "page_title": "100 Civics Questions and Answers with MP3 Audio (Spanish version) | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/100-civics-questions-and-answers-with-mp3-audio-spanish-version-0",
+      "total_events": "2118"
+    },
+    {
+      "page_title": "Immigration and Citizenship Data | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data?query=",
+      "total_events": "2053"
+    },
+    {
+      "page_title": "Notice of Appeal or Motion | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-290b",
+      "total_events": "2013"
+    },
+    {
+      "page_title": "Handbook for Employers M-274 | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274",
+      "total_events": "2006"
+    },
+    {
+      "page_title": "Citizenship Resources in Text-Only Format | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/citizenship-resource-center/find-study-materials-and-resources/study-for-the-test/citizenship-resources-in-text-only-format",
+      "total_events": "1985"
+    },
+    {
+      "page_title": "Assistance to Firefighters Grants Documents | FEMA.gov",
+      "event_label": "file_download",
+      "page": "www.fema.gov/grants/preparedness/firefighters/assistance-grants/documents",
+      "total_events": "1868"
+    },
+    {
+      "page_title": "CBP Traveler Entry Forms | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/travel/clearing-cbp/traveler-entry-form",
+      "total_events": "1781"
+    },
+    {
+      "page_title": "Form I-736 - Guam CNMI Visa Waiver Information (English) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-i-736-guam-cnmi-visa-waiver-information-english",
+      "total_events": "1774"
+    },
+    {
+      "page_title": "Forms NMC",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/forms/",
+      "total_events": "1764"
+    },
+    {
+      "page_title": "Claims | Transportation Security Administration",
+      "event_label": "file_download",
+      "page": "www.tsa.gov/travel/passenger-support/claims",
+      "total_events": "1739"
+    },
+    {
+      "page_title": "Record of Abandonment of Lawful Permanent Resident Status | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-407",
+      "total_events": "1698"
+    },
+    {
+      "page_title": "Tarjeta de Cambio de Dirección de Extranjero | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/ar-11",
+      "total_events": "1646"
+    },
+    {
+      "page_title": "Medical Certificate",
+      "event_label": "file_download",
+      "page": "www.dco.uscg.mil/nmc/medical_certificate/",
+      "total_events": "1550"
+    },
+    {
+      "page_title": "Filing Fees | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/forms/filing-fees",
+      "total_events": "1539"
+    },
+    {
+      "page_title": "Pay With a Credit Card | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/pay-with-a-credit-card",
+      "total_events": "1436"
+    },
+    {
+      "page_title": "Application for Provisional Unlawful Presence Waiver | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-601a",
+      "total_events": "1397"
+    },
+    {
+      "page_title": "Supplement A to Form I-485, Adjustment of Status Under Section 245(i) | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-485supa",
+      "total_events": "1373"
+    },
+    {
+      "page_title": "Disabilities and Medical Conditions | Transportation Security Administration",
+      "event_label": "file_download",
+      "page": "www.tsa.gov/travel/special-procedures",
+      "total_events": "1308"
+    },
+    {
+      "page_title": "Naturalization Test Redesign Development 2022 | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/naturalization-test-redesign-development-2022",
+      "total_events": "1286"
+    },
+    {
+      "page_title": "Solicitud de Naturalización | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/n-400",
+      "total_events": "1271"
+    },
+    {
+      "page_title": "Application for Carrier Documentation | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-131a",
+      "total_events": "1214"
+    },
+    {
+      "page_title": "Refugee/Asylee Relative Petition | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-730",
+      "total_events": "1185"
+    },
+    {
+      "page_title": "USCIS Updates Policy Guidance for International Students | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/newsroom/alerts/uscis-updates-policy-guidance-for-international-students",
+      "total_events": "1182"
+    },
+    {
+      "page_title": "Application for Permission to Reapply for Admission into the United States After Deportation or Removal | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-212",
+      "total_events": "1172"
+    },
+    {
+      "page_title": "Form I-94W - Visa Waiver Arrival/Departure Record | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/form-i-94w-visa-waiver-arrivaldeparture-record",
+      "total_events": "1170"
+    },
+    {
+      "page_title": "Declaración Jurada de Patrocinio Económico bajo la Sección 213A de la Ley | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/es/i-864",
+      "total_events": "1149"
+    },
+    {
+      "page_title": "Request for Premium Processing Service | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-907",
+      "total_events": "1147"
+    },
+    {
+      "page_title": "Plan Ahead for Disasters | Ready.gov",
+      "event_label": "file_download",
+      "page": "www.ready.gov/",
+      "total_events": "1145"
+    },
+    {
+      "page_title": "Elevation Certificate | FEMA.gov",
+      "event_label": "file_download",
+      "page": "www.fema.gov/glossary/elevation-certificate",
+      "total_events": "1141"
+    },
+    {
+      "page_title": "Past Customs Broker License Examinations & Answer Keys | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/publications/past-customs-broker-license-examinations-answer-keys",
+      "total_events": "1140"
+    },
+    {
+      "page_title": "Application for Replacement/Initial Nonimmigrant Arrival-Departure Document | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-102",
+      "total_events": "1122"
+    },
+    {
+      "page_title": "I-94 Automation Fact Sheet | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/fact-sheets/i-94-fact-sheet",
+      "total_events": "1118"
+    },
+    {
+      "page_title": "CBP Form 5106 - Create/Update Importer Identity Form | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "page": "www.cbp.gov/document/forms/cbp-form-5106-createupdate-importer-identity-form",
+      "total_events": "1097"
+    },
+    {
+      "page_title": "Make A Plan | Ready.gov",
+      "event_label": "file_download",
+      "page": "www.ready.gov/plan",
+      "total_events": "1090"
+    },
+    {
+      "page_title": "Employer Resources",
+      "event_label": "file_download",
+      "page": "www.e-verify.gov/employers/employer-resources",
+      "total_events": "1087"
+    },
+    {
+      "page_title": "Known Exploited Vulnerabilities Catalog | CISA",
+      "event_label": "file_download",
+      "page": "www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "total_events": "1087"
+    },
+    {
+      "page_title": "#WearBlueDay Social Media Shareables | Homeland Security",
+      "event_label": "file_download",
+      "page": "www.dhs.gov/blue-campaign/publication/wearblueday-social-media-shareables",
+      "total_events": "1068"
+    },
+    {
+      "page_title": "Sponsor's Notice of Change of Address | USCIS",
+      "event_label": "file_download",
+      "page": "www.uscis.gov/i-865",
+      "total_events": "1040"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:57:06.194Z",
+  "agency": "homeland-security"
+}

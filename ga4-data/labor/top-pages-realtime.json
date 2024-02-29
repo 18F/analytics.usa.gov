@@ -1,0 +1,177 @@
+{
+  "name": "top-pages-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "unifiedScreenName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "activeUsers",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395262085"
+  },
+  "meta": {
+    "name": "Top Pages (Live)",
+    "description": "The top 20 pages, measured by active onsite users, for all sites."
+  },
+  "data": [
+    {
+      "page_title": "BLS Search Results",
+      "active_visitors": "947"
+    },
+    {
+      "page_title": "Home : Occupational Outlook Handbook: : U.S. Bureau of Labor Statistics",
+      "active_visitors": "649"
+    },
+    {
+      "page_title": "U.S. Bureau of Labor Statistics",
+      "active_visitors": "586"
+    },
+    {
+      "page_title": "Injury Tracking Application | Occupational Safety and Health Administration",
+      "active_visitors": "566"
+    },
+    {
+      "page_title": "Employment Situation Summary - 2023 M13 Results",
+      "active_visitors": "437"
+    },
+    {
+      "page_title": "Interest Assessment Results | CareerOneStop",
+      "active_visitors": "428"
+    },
+    {
+      "page_title": "Interest Assessment Questions | CareerOneStop",
+      "active_visitors": "389"
+    },
+    {
+      "page_title": "Bureau of Labor Statistics Data",
+      "active_visitors": "355"
+    },
+    {
+      "page_title": "Home | Occupational Safety and Health Administration",
+      "active_visitors": "330"
+    },
+    {
+      "page_title": "Processing Times | Flag.dol.gov",
+      "active_visitors": "279"
+    },
+    {
+      "page_title": "Interest Assessment | CareerOneStop",
+      "active_visitors": "271"
+    },
+    {
+      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "active_visitors": "268"
+    },
+    {
+      "page_title": "Establishment Search | Occupational Safety and Health Administration osha.gov",
+      "active_visitors": "248"
+    },
+    {
+      "page_title": "Home | Flag.dol.gov",
+      "active_visitors": "248"
+    },
+    {
+      "page_title": "Dashboard | Foreign Labor Application Gateway",
+      "active_visitors": "233"
+    },
+    {
+      "page_title": "Recordkeeping - Recordkeeping Forms | Occupational Safety and Health Administration",
+      "active_visitors": "220"
+    },
+    {
+      "page_title": "Submitted Cases | Foreign Labor Application Gateway",
+      "active_visitors": "215"
+    },
+    {
+      "page_title": "New Application | Foreign Labor Application Gateway",
+      "active_visitors": "211"
+    },
+    {
+      "page_title": "Careers and Career Information - CareerOneStop",
+      "active_visitors": "183"
+    },
+    {
+      "page_title": "CPI Home : U.S. Bureau of Labor Statistics",
+      "active_visitors": "168"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:03:21.226Z",
+  "agency": "labor"
+}

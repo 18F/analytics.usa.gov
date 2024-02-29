@@ -1,0 +1,113 @@
+{
+  "name": "device_model",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "mobileDeviceModel"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1000"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "Device Model",
+    "description": "90 days of visits by Device Model for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 63599404,
+    "device_models": {
+      "iPhone": 21346024,
+      "Safari": 13180664,
+      "Chrome": 16380246,
+      "Edge": 5711863,
+      "ChromeBook": 2789114,
+      "Firefox": 786182,
+      "(not set)": 567456,
+      "iPad": 362420,
+      "SM-S908U": 357263,
+      "SM-S918U": 318338,
+      "Opera": 115495,
+      "SM-S901U": 245449,
+      "SM-G991U": 206438,
+      "SM-S911U": 164612,
+      "SM-G998U": 167485,
+      "SM-S916U": 105432,
+      "SM-A146U": 139599,
+      "SM-S906U": 112615,
+      "SM-G996U": 82277,
+      "SM-G781U": 49137,
+      "Pixel 7": 46808,
+      "Pixel 6": 53042,
+      "Pixel 6a": 21875,
+      "SM-N986U": 46399,
+      "Pixel 7 Pro": 50817,
+      "SM-A326B": 15664,
+      "SM-S918U1": 10725,
+      "SM-A136U": 15658,
+      "Moto G Stylus 5G": 12453,
+      "SM-G973U": 11216,
+      "SM-A037U": 7283,
+      "SM-S908U1": 10883,
+      "SM-N981U": 10038,
+      "SM-G781V": 7289,
+      "SM-G970U": 6960,
+      "SM-G990U": 6355,
+      "moto g pure": 9023,
+      "Moto G Stylus 5G (2022)": 6689,
+      "SM-A536U": 6200,
+      "SM-G975U": 8613,
+      "Pixel 6 Pro": 8838,
+      "SM-G960U": 5719,
+      "Moto G 5G (2022)": 3324,
+      "iPhone 13": 3795,
+      "iPhone 11": 1386,
+      "SM-G986U": 3600,
+      "SM-A546U": 3474,
+      "Firefox for Android": 3248,
+      "iPhone 13 Pro Max": 1106,
+      "SM-F711U": 2261,
+      "SM-N975U": 2197,
+      "SM-F721U": 2104,
+      "SM-N960U": 2106,
+      "iPhone 14 Pro Max": 1066,
+      "SM-G981U": 1051,
+      "SM-F936U": 2030
+    }
+  },
+  "taken_at": "2024-01-05T15:05:06.923Z",
+  "agency": "education"
+}

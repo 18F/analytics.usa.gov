@@ -1,0 +1,154 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395246701"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 67851289,
+    "by_os": {
+      "iOS": {
+        "Safari": 19192620,
+        "Chrome": 2422475,
+        "Safari (in-app)": 268596
+      },
+      "Windows": {
+        "Chrome": 15412954,
+        "Edge": 5711971,
+        "Firefox": 768973,
+        "Opera": 133849
+      },
+      "Macintosh": {
+        "Chrome": 6912819,
+        "Safari": 5972280,
+        "Firefox": 224542,
+        "Edge": 27647,
+        "Opera": 7323,
+        "Mozilla Compatible Agent": 16239
+      },
+      "Chrome OS": {
+        "Chrome": 2789090
+      },
+      "Android": {
+        "Chrome": 5797562,
+        "Samsung Internet": 534250,
+        "Android Webview": 103452,
+        "Edge": 57164,
+        "Firefox": 45010,
+        "Amazon Silk": 26518,
+        "Opera": 10687
+      },
+      "Linux": {
+        "Chrome": 1377978,
+        "Firefox": 16822,
+        "Samsung Internet": 9358
+      },
+      "(not set)": {
+        "(not set)": 11110
+      }
+    },
+    "by_browsers": {
+      "Safari": {
+        "iOS": 19192620,
+        "Macintosh": 5972280
+      },
+      "Chrome": {
+        "Windows": 15412954,
+        "Macintosh": 6912819,
+        "Chrome OS": 2789090,
+        "Android": 5797562,
+        "iOS": 2422475,
+        "Linux": 1377978
+      },
+      "Edge": {
+        "Windows": 5711971,
+        "Android": 57164,
+        "Macintosh": 27647
+      },
+      "Firefox": {
+        "Windows": 768973,
+        "Macintosh": 224542,
+        "Android": 45010,
+        "Linux": 16822
+      },
+      "Samsung Internet": {
+        "Android": 534250,
+        "Linux": 9358
+      },
+      "Safari (in-app)": {
+        "iOS": 268596
+      },
+      "Opera": {
+        "Windows": 133849,
+        "Macintosh": 7323,
+        "Android": 10687
+      },
+      "Android Webview": {
+        "Android": 103452
+      },
+      "Amazon Silk": {
+        "Android": 26518
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 16239
+      },
+      "(not set)": {
+        "(not set)": 11110
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:32:47.006Z",
+  "agency": "education"
+}

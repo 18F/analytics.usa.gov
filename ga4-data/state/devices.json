@@ -1,0 +1,50 @@
+{
+  "name": "devices",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "deviceCategory"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Devices",
+    "description": "90 days of desktop/mobile/tablet visits for all sites."
+  },
+  "totals": {
+    "visits": 37403408,
+    "devices": {
+      "desktop": 17627365,
+      "mobile": 19377903,
+      "tablet": 394888,
+      "smart tv": 3252
+    }
+  },
+  "taken_at": "2024-01-05T15:59:59.695Z",
+  "agency": "state"
+}

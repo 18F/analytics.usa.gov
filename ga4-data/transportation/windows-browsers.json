@@ -1,0 +1,126 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 13715313,
+    "by_windows": {
+      "7": {
+        "Firefox": 79029,
+        "Chrome": 115096,
+        "Edge": 5649
+      },
+      "8": {
+        "Chrome": 409027,
+        "Internet Explorer": 380192
+      },
+      "10": {
+        "Chrome": 6159984,
+        "Edge": 2404534,
+        "Firefox": 449146,
+        "Opera": 44461,
+        "Internet Explorer": 440
+      },
+      "11": {
+        "Chrome": 2315192,
+        "Edge": 1071880
+      },
+      "2000": {
+        "Internet Explorer": 245248
+      },
+      "8.1": {
+        "Chrome": 35435
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 115096,
+        "8": 409027,
+        "10": 6159984,
+        "11": 2315192,
+        "8.1": 35435
+      },
+      "Edge": {
+        "7": 5649,
+        "10": 2404534,
+        "11": 1071880
+      },
+      "Firefox": {
+        "7": 79029,
+        "10": 449146
+      },
+      "Internet Explorer": {
+        "8": 380192,
+        "10": 440,
+        "2000": 245248
+      },
+      "Opera": {
+        "10": 44461
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:02:01.093Z",
+  "agency": "transportation"
+}

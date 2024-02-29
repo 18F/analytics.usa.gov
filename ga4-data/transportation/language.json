@@ -1,0 +1,103 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 30469451,
+    "languages": {
+      "English": 28816502,
+      "Spanish": 649952,
+      "Chinese": 246330,
+      "Japanese": 89808,
+      "French": 95808,
+      "Korean": 85480,
+      "German": 70991,
+      "Portuguese": 69114,
+      "Russian": 70181,
+      "Turkish": 29290,
+      "Italian": 29013,
+      "Polish": 23353,
+      "Dutch": 19764,
+      "Persian": 27968,
+      "Arabic": 19341,
+      "Vietnamese": 14170,
+      "Swedish": 11854,
+      "Norwegian Bokmål": 8640,
+      "Indonesian": 11043,
+      "Ukrainian": 9437,
+      "Hebrew": 5579,
+      "Thai": 8142,
+      "(other)": 5610,
+      "Greek": 9692,
+      "Danish": 6742,
+      "Czech": 7378,
+      "Hungarian": 5120,
+      "Romanian": 3987,
+      "Finnish": 4875,
+      "Slovak": 2578,
+      "Serbian": 1444,
+      "Bulgarian": 1971,
+      "Croatian": 2152,
+      "Slovenian": 1314,
+      "Estonian": 263,
+      "Catalan": 1282,
+      "Lithuanian": 1472,
+      "Hindi": 761,
+      "Latvian": 172,
+      "Azerbaijani": 413,
+      "Georgian": 131,
+      "Bosnian": 24,
+      "Burmese": 197,
+      "Uzbek": 42,
+      "Icelandic": 11,
+      "Bengali": 60
+    }
+  },
+  "taken_at": "2024-01-05T16:01:49.570Z",
+  "agency": "transportation"
+}

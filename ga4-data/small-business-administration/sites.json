@@ -1,0 +1,98 @@
+{
+  "name": "sites",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "9"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 10 visits."
+  },
+  "data": [
+    {
+      "domain": "www.usa.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "www.sbir.gov",
+      "visits": "60531"
+    },
+    {
+      "domain": "www.sba.gov",
+      "visits": "762771"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "www.certify.sba.gov",
+      "visits": "381"
+    },
+    {
+      "domain": "www.acq.osd.mil",
+      "visits": "26"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "23"
+    },
+    {
+      "domain": "prod.sba.gov",
+      "visits": "35"
+    },
+    {
+      "domain": "content.prod.sba.gov",
+      "visits": "227"
+    },
+    {
+      "domain": "cloudfront.www.sba.gov",
+      "visits": "58"
+    },
+    {
+      "domain": "certify.sba.gov",
+      "visits": "19146"
+    }
+  ],
+  "totals": {
+    "visits": 843239
+  },
+  "taken_at": "2024-01-05T15:43:49.012Z",
+  "agency": "small-business-administration"
+}

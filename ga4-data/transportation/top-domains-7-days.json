@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395245646"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nhtsa.gov",
+      "visits": "1005697"
+    },
+    {
+      "domain": "www.faa.gov",
+      "visits": "522508"
+    },
+    {
+      "domain": "www.fmcsa.dot.gov",
+      "visits": "298868"
+    },
+    {
+      "domain": "www.transportation.gov",
+      "visits": "229236"
+    },
+    {
+      "domain": "www.fhwa.dot.gov",
+      "visits": "68364"
+    },
+    {
+      "domain": "nationalregistry.fmcsa.dot.gov",
+      "visits": "53429"
+    },
+    {
+      "domain": "mutcd.fhwa.dot.gov",
+      "visits": "33829"
+    },
+    {
+      "domain": "www.phmsa.dot.gov",
+      "visits": "32239"
+    },
+    {
+      "domain": "highways.dot.gov",
+      "visits": "31386"
+    },
+    {
+      "domain": "www.transit.dot.gov",
+      "visits": "23867"
+    },
+    {
+      "domain": "hazmatsafety.dot.gov",
+      "visits": "18678"
+    },
+    {
+      "domain": "www.bts.gov",
+      "visits": "16980"
+    },
+    {
+      "domain": "railroads.dot.gov",
+      "visits": "16574"
+    },
+    {
+      "domain": "pipelinesafety.dot.gov",
+      "visits": "15125"
+    },
+    {
+      "domain": "(other)",
+      "visits": "13966"
+    },
+    {
+      "domain": "ask.fmcsa.dot.gov",
+      "visits": "12394"
+    },
+    {
+      "domain": "www.maritime.dot.gov",
+      "visits": "11740"
+    },
+    {
+      "domain": "ops.fhwa.dot.gov",
+      "visits": "11140"
+    },
+    {
+      "domain": "www.911.gov",
+      "visits": "10591"
+    },
+    {
+      "domain": "www.usmma.edu",
+      "visits": "9554"
+    }
+  ],
+  "totals": {
+    "visits": 2436165
+  },
+  "taken_at": "2024-01-05T16:02:03.962Z",
+  "agency": "transportation"
+}

@@ -1,0 +1,101 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 11927355,
+    "languages": {
+      "English": 10270092,
+      "Chinese": 928550,
+      "Korean": 80259,
+      "Spanish": 110726,
+      "German": 65485,
+      "French": 72675,
+      "Japanese": 65129,
+      "Turkish": 32303,
+      "Portuguese": 43521,
+      "Italian": 34413,
+      "Polish": 22326,
+      "Dutch": 20933,
+      "Russian": 30621,
+      "Norwegian Bokmål": 10178,
+      "Vietnamese": 15219,
+      "Indonesian": 13889,
+      "Arabic": 20789,
+      "Thai": 7947,
+      "Swedish": 14294,
+      "Danish": 9026,
+      "Czech": 6717,
+      "Greek": 8024,
+      "Romanian": 3626,
+      "Hungarian": 5265,
+      "Finnish": 6844,
+      "Ukrainian": 4760,
+      "Hebrew": 3133,
+      "Slovak": 2953,
+      "Slovenian": 2113,
+      "Hindi": 1881,
+      "(other)": 2476,
+      "Persian": 2783,
+      "Croatian": 2062,
+      "Catalan": 1237,
+      "Bulgarian": 1506,
+      "Latvian": 449,
+      "Serbian": 1075,
+      "Lithuanian": 1096,
+      "Estonian": 579,
+      "Uzbek": 24,
+      "Marathi": 85,
+      "Azerbaijani": 73,
+      "Bengali": 133,
+      "Malay": 86
+    }
+  },
+  "taken_at": "2024-01-05T15:44:56.352Z",
+  "agency": "energy"
+}

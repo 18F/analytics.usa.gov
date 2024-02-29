@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395227436"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "EarthExplorer",
+      "event_label": "file_download",
+      "page": "earthexplorer.usgs.gov/",
+      "total_events": "3699"
+    },
+    {
+      "page_title": "Maps - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/zion/planyourvisit/maps.htm",
+      "total_events": "3573"
+    },
+    {
+      "page_title": "Publications - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/zion/planyourvisit/publications.htm",
+      "total_events": "2769"
+    },
+    {
+      "page_title": "Maps - Great Smoky Mountains National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/grsm/planyourvisit/maps.htm",
+      "total_events": "2232"
+    },
+    {
+      "page_title": "Maps | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/maps",
+      "total_events": "1943"
+    },
+    {
+      "page_title": "Maps - Rocky Mountain National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/romo/planyourvisit/maps.htm",
+      "total_events": "1837"
+    },
+    {
+      "page_title": "Maps - Appalachian National Scenic Trail (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/appa/planyourvisit/maps.htm",
+      "total_events": "1502"
+    },
+    {
+      "page_title": "Maps - Yellowstone National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/yell/planyourvisit/maps.htm",
+      "total_events": "1441"
+    },
+    {
+      "page_title": "Maps - White Sands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/whsa/planyourvisit/maps.htm",
+      "total_events": "1433"
+    },
+    {
+      "page_title": "TNM Download v2",
+      "event_label": "file_download",
+      "page": "apps.nationalmap.gov/downloader/",
+      "total_events": "1385"
+    },
+    {
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Sequoia and Kings Canyon National Park, View from the edge of Giant Forest",
+      "event_label": "file_download",
+      "page": "www.nps.gov/features/ard/webcams/webcam2.html",
+      "total_events": "1257"
+    },
+    {
+      "page_title": "2024 Payroll Schedule Office Calendar [xlsx]",
+      "event_label": "file_download",
+      "page": "www.doi.gov/media/document/2024-payroll-schedule-office-calendar-xlsx",
+      "total_events": "1171"
+    },
+    {
+      "page_title": "Maps - Canyonlands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/cany/planyourvisit/maps.htm",
+      "total_events": "1168"
+    },
+    {
+      "page_title": "Maps - Redwood National and State Parks (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/redw/planyourvisit/maps.htm",
+      "total_events": "1150"
+    },
+    {
+      "page_title": "Maps - Shenandoah National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/shen/planyourvisit/maps.htm",
+      "total_events": "1139"
+    },
+    {
+      "page_title": "Day Hiking - Grand Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/grca/planyourvisit/day-hiking.htm",
+      "total_events": "1046"
+    },
+    {
+      "page_title": "Maps - Big Bend National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/bibe/planyourvisit/maps.htm",
+      "total_events": "1045"
+    },
+    {
+      "page_title": "TNM Download v2",
+      "event_label": "file_download",
+      "page": "apps.nationalmap.gov/downloader/#/",
+      "total_events": "1030"
+    },
+    {
+      "page_title": "Brochures - Capitol Reef National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/care/planyourvisit/brochures.htm",
+      "total_events": "1013"
+    },
+    {
+      "page_title": "M 7.5 - 42 km NE of Anamizu, Japan",
+      "event_label": "file_download",
+      "page": "earthquake.usgs.gov/earthquakes/eventpage/us6000m0xl/",
+      "total_events": "879"
+    },
+    {
+      "page_title": "Backcountry Trails and Use Areas - Grand Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/grca/planyourvisit/campsite-information.htm",
+      "total_events": "836"
+    },
+    {
+      "page_title": "Park Newspaper - Death Valley National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/deva/learn/news/newspaper.htm",
+      "total_events": "828"
+    },
+    {
+      "page_title": "Maps - Pinnacles National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/pinn/planyourvisit/maps.htm",
+      "total_events": "822"
+    },
+    {
+      "page_title": "Maps & Brochures - Isle Royale National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/isro/planyourvisit/mapsbrochures.htm",
+      "total_events": "799"
+    },
+    {
+      "page_title": "Maps - Point Reyes National Seashore (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/pore/planyourvisit/maps.htm",
+      "total_events": "799"
+    },
+    {
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Grand Canyon National Park, View from Yavapai Point",
+      "event_label": "file_download",
+      "page": "www.nps.gov/features/ard/webcams/webcam2.html",
+      "total_events": "780"
+    },
+    {
+      "page_title": "TNM Download v2",
+      "event_label": "file_download",
+      "page": "apps.nationalmap.gov/downloader/#/maps",
+      "total_events": "780"
+    },
+    {
+      "page_title": "Webcams - Lassen Volcanic National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/lavo/learn/photosmultimedia/webcams.htm",
+      "total_events": "773"
+    },
+    {
+      "page_title": "Maps - Bryce Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/brca/planyourvisit/maps.htm",
+      "total_events": "767"
+    },
+    {
+      "page_title": "Yosemite Guide - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/yose/planyourvisit/guide.htm",
+      "total_events": "736"
+    },
+    {
+      "page_title": "Maps - Mesa Verde National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/meve/planyourvisit/maps.htm",
+      "total_events": "714"
+    },
+    {
+      "page_title": "Glacier National Park Webcams - Glacier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/glac/learn/photosmultimedia/webcams.htm",
+      "total_events": "686"
+    },
+    {
+      "page_title": "M 7.5 - 42 km NE of Anamizu, Japan",
+      "event_label": "file_download",
+      "page": "earthquake.usgs.gov/earthquakes/eventpage/us6000m0xl",
+      "total_events": "676"
+    },
+    {
+      "page_title": "National Register Database and Research - National Register of Historic Places (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/subjects/nationalregister/database-research.htm",
+      "total_events": "673"
+    },
+    {
+      "page_title": "M 7.5 - 42 km NE of Anamizu, Japan",
+      "event_label": "file_download",
+      "page": "earthquake.usgs.gov/earthquakes/eventpage/us6000m0xl/executive",
+      "total_events": "656"
+    },
+    {
+      "page_title": "Publications - Canyonlands National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/cany/planyourvisit/publications.htm",
+      "total_events": "656"
+    },
+    {
+      "page_title": "Glacier's Shuttle System - Glacier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/glac/planyourvisit/shuttles.htm",
+      "total_events": "636"
+    },
+    {
+      "page_title": "Hike - Muir Woods National Monument (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/muwo/planyourvisit/hike.htm",
+      "total_events": "633"
+    },
+    {
+      "page_title": "Tectonic Plates of the Earth | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/media/images/tectonic-plates-earth",
+      "total_events": "606"
+    },
+    {
+      "page_title": "Tracing American Indian and Alaska Native Ancestry | Indian Affairs",
+      "event_label": "file_download",
+      "page": "www.bia.gov/guide/tracing-american-indian-and-alaska-native-aian-ancestry",
+      "total_events": "602"
+    },
+    {
+      "page_title": "Latest Earthquakes",
+      "event_label": "file_download",
+      "page": "earthquake.usgs.gov/earthquakes/map/",
+      "total_events": "591"
+    },
+    {
+      "page_title": "Scenic Drives - Big Cypress National Preserve (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/bicy/planyourvisit/scenic-drives.htm",
+      "total_events": "591"
+    },
+    {
+      "page_title": "Note to Banders, January 2024 | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/media/files/note-banders-january-2024",
+      "total_events": "586"
+    },
+    {
+      "page_title": "Utah - Recreational Shooting | BUREAU OF LAND MANAGEMENT",
+      "event_label": "file_download",
+      "page": "www.blm.gov/programs/recreation/utah/recreational_shooting",
+      "total_events": "585"
+    },
+    {
+      "page_title": "Maps - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/yose/planyourvisit/maps.htm",
+      "total_events": "579"
+    },
+    {
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Great Smoky Mountains National Park, View from Look Rock",
+      "event_label": "file_download",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "552"
+    },
+    {
+      "page_title": "Brochures - Rocky Mountain National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/romo/planyourvisit/brochures.htm",
+      "total_events": "532"
+    },
+    {
+      "page_title": "Suggested Backcountry Trips - Shenandoah National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/shen/planyourvisit/backcountry-trips.htm",
+      "total_events": "505"
+    },
+    {
+      "page_title": "Coyote Buttes North Daily Lottery (The Wave) Geofence Perimeter Map | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/arizona/public-room/map/coyote-buttes-north-daily-lottery-wave-geofence-perimeter-map",
+      "total_events": "504"
+    },
+    {
+      "page_title": "Lithium Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/lithium-statistics-and-information",
+      "total_events": "495"
+    },
+    {
+      "page_title": "Loess Bluffs Waterfowl Survey 12-19-2023.pdf | FWS.gov",
+      "event_label": "file_download",
+      "page": "www.fws.gov/media/loess-bluffs-waterfowl-survey-12-19-2023pdf",
+      "total_events": "490"
+    },
+    {
+      "page_title": "Campgrounds - Mount Rainier National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/mora/planyourvisit/campgrounds.htm",
+      "total_events": "488"
+    },
+    {
+      "page_title": "Webcams - Olympic National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/olym/learn/photosmultimedia/webcams.htm",
+      "total_events": "485"
+    },
+    {
+      "page_title": "Maps and Brochures - Congaree National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/cong/planyourvisit/maps.htm",
+      "total_events": "483"
+    },
+    {
+      "page_title": "[KWcam] - Halemaʻumaʻu and down-dropped caldera floor; from the west rim of the summit caldera, looking east. | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/media/webcams/kwcam-halemaumau-and-down-dropped-caldera-floor-west-rim-summit-caldera-looking-east",
+      "total_events": "479"
+    },
+    {
+      "page_title": "Hoover Dam | Bureau of Reclamation",
+      "event_label": "file_download",
+      "page": "www.usbr.gov/lc/hooverdam/",
+      "total_events": "475"
+    },
+    {
+      "page_title": "Backcountry Camping Routes and Zones - Grand Teton National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/grte/planyourvisit/backcountryroutesandzones.htm",
+      "total_events": "473"
+    },
+    {
+      "page_title": "TR Complex -Digital/Printer Format-Annual Use Brochure 2023-24_508 Compliant | FWS.gov",
+      "event_label": "file_download",
+      "page": "www.fws.gov/media/tr-complex-digitalprinter-format-annual-use-brochure-2023-24508-compliant",
+      "total_events": "455"
+    },
+    {
+      "page_title": "Basic Information - Grand Canyon National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/grca/planyourvisit/basicinfo.htm",
+      "total_events": "451"
+    },
+    {
+      "page_title": "Maps - Death Valley National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/deva/planyourvisit/maps.htm",
+      "total_events": "442"
+    },
+    {
+      "page_title": "Maps - Lake Mead National Recreation Area (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/lake/planyourvisit/maps.htm",
+      "total_events": "433"
+    },
+    {
+      "page_title": "Hoover Dam | Bureau of Reclamation",
+      "event_label": "file_download",
+      "page": "www.usbr.gov/lc/hooverdam/service/index.html",
+      "total_events": "427"
+    },
+    {
+      "page_title": "Trip Planning Guide - Health & Safety (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/subjects/healthandsafety/trip-planning-guide.htm",
+      "total_events": "400"
+    },
+    {
+      "page_title": "Download Seamless Wetlands Data by State | U.S. Fish & Wildlife Service",
+      "event_label": "file_download",
+      "page": "www.fws.gov/program/national-wetlands-inventory/download-state-wetlands-data",
+      "total_events": "393"
+    },
+    {
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Joshua Tree National Park, View from Belle Mountain",
+      "event_label": "file_download",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "392"
+    },
+    {
+      "page_title": "Sacramento National Wildlife Refuge Complex Hunt Area Maps | FWS.gov",
+      "event_label": "file_download",
+      "page": "www.fws.gov/media/sacramento-national-wildlife-refuge-complex-hunt-area-maps",
+      "total_events": "390"
+    },
+    {
+      "page_title": "NPS: Explore Nature » Air Resources » Air Quality Webcams » Great Smoky Mountains National Park, View from Clingmans Dome",
+      "event_label": "file_download",
+      "page": "www.nps.gov/features/ard/webcams/webcam1.html",
+      "total_events": "378"
+    },
+    {
+      "page_title": "Cache River National Wildlife Refuge Public Use Regulations | FWS.gov",
+      "event_label": "file_download",
+      "page": "www.fws.gov/media/cache-river-national-wildlife-refuge-public-use-regulations",
+      "total_events": "375"
+    },
+    {
+      "page_title": "Utah - Maps | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/maps/frequently-requested/utah",
+      "total_events": "373"
+    },
+    {
+      "page_title": "Cement Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/cement-statistics-and-information",
+      "total_events": "360"
+    },
+    {
+      "page_title": "Web Informatics and Mapping (WIM) is hiring! | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/centers/upper-midwest-water-science-center/web-informatics-and-mapping-wim-hiring",
+      "total_events": "360"
+    },
+    {
+      "page_title": "Pines Campgrounds - Yosemite National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/yose/planyourvisit/pinescampgrounds.htm",
+      "total_events": "356"
+    },
+    {
+      "page_title": "Recreational Passes | USGS Store",
+      "event_label": "file_download",
+      "page": "store.usgs.gov/recreational-passes",
+      "total_events": "356"
+    },
+    {
+      "page_title": "Direct Assistance (Financial Assistance & Social Services) | Indian Affairs",
+      "event_label": "file_download",
+      "page": "www.bia.gov/bia/ois/dhs/financial-assistance",
+      "total_events": "355"
+    },
+    {
+      "page_title": "Maps - Prince William Forest Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/prwi/planyourvisit/maps.htm",
+      "total_events": "355"
+    },
+    {
+      "page_title": "Yellowstone Wolf Project Reports - Yellowstone National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/yell/learn/nature/wolf-reports.htm",
+      "total_events": "355"
+    },
+    {
+      "page_title": "Park Newspaper and Visitor Guide - Redwood National and State Parks (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/redw/learn/news/newspaper.htm",
+      "total_events": "353"
+    },
+    {
+      "page_title": "Director's Orders and Related Guidance - Policy (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/subjects/policy/directors-orders.htm",
+      "total_events": "347"
+    },
+    {
+      "page_title": "Park Newspaper - Big Bend National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/bibe/learn/news/newspaper.htm",
+      "total_events": "345"
+    },
+    {
+      "page_title": "Watchman Campground - Zion National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/zion/planyourvisit/watchman-campground.htm",
+      "total_events": "345"
+    },
+    {
+      "page_title": "Historic Preservation Certification Application - Historic Preservation Tax Incentives (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/subjects/taxincentives/historic-preservation-certification-application.htm",
+      "total_events": "340"
+    },
+    {
+      "page_title": "Hiking - Arches National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/arch/planyourvisit/hiking.htm",
+      "total_events": "333"
+    },
+    {
+      "page_title": "Plan Your Visit - Great Sand Dunes National Park & Preserve (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/grsa/planyourvisit/index.htm",
+      "total_events": "333"
+    },
+    {
+      "page_title": "Maps - Bandelier National Monument (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/band/planyourvisit/maps.htm",
+      "total_events": "332"
+    },
+    {
+      "page_title": "Long-Term Visitor Area (LTVA) - Long-Term Camping on Public Lands | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/documents/arizona-colorado-river-do-california-california-desert-do/public-room-frequently-requested",
+      "total_events": "328"
+    },
+    {
+      "page_title": "Yellowstone National Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/yell/index.htm",
+      "total_events": "322"
+    },
+    {
+      "page_title": "Wild Horse and Burros Sales Program| Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/programs/wild-horse-and-burro/adoption-and-sales/sales-program",
+      "total_events": "321"
+    },
+    {
+      "page_title": "Backcountry Camping - Pictured Rocks National Lakeshore (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/piro/planyourvisit/backcountry.htm",
+      "total_events": "320"
+    },
+    {
+      "page_title": "[F1cam] - Kīlauea summit thermal from the west rim of the summit caldera, looking east | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/media/webcams/f1cam-kilauea-summit-thermal-west-rim-summit-caldera-looking-east",
+      "total_events": "320"
+    },
+    {
+      "page_title": "Rare Earths Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information",
+      "total_events": "319"
+    },
+    {
+      "page_title": "Brochures - Appalachian National Scenic Trail (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/appa/planyourvisit/brochures.htm",
+      "total_events": "318"
+    },
+    {
+      "page_title": "Copper Statistics and Information | U.S. Geological Survey",
+      "event_label": "file_download",
+      "page": "www.usgs.gov/centers/national-minerals-information-center/copper-statistics-and-information",
+      "total_events": "317"
+    },
+    {
+      "page_title": "Preservation Briefs - Technical Preservation Services (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/orgs/1739/preservation-briefs.htm",
+      "total_events": "313"
+    },
+    {
+      "page_title": "Maps - Gulf Islands National Seashore (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/guis/planyourvisit/maps.htm",
+      "total_events": "309"
+    },
+    {
+      "page_title": "M 7.5 - 42 km NE of Anamizu, Japan",
+      "event_label": "file_download",
+      "page": "earthquake.usgs.gov/earthquakes/eventpage/us6000m0xl/shakemap",
+      "total_events": "300"
+    },
+    {
+      "page_title": "California Georeferenced PDF Maps | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/maps/georeferenced-PDFs/california",
+      "total_events": "295"
+    },
+    {
+      "page_title": "Central Valley Operations (CVO) - California-Great Basin Region",
+      "event_label": "file_download",
+      "page": "www.usbr.gov/mp/cvo/",
+      "total_events": "295"
+    },
+    {
+      "page_title": "Maps - Chesapeake & Ohio Canal National Historical Park (U.S. National Park Service)",
+      "event_label": "file_download",
+      "page": "www.nps.gov/choh/planyourvisit/maps.htm",
+      "total_events": "295"
+    },
+    {
+      "page_title": "Utah Georeferenced PDF Maps | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/maps/georeferenced-PDFs/utah",
+      "total_events": "295"
+    },
+    {
+      "page_title": "Red Rock Canyon National Conservation Area | Bureau of Land Management",
+      "event_label": "file_download",
+      "page": "www.blm.gov/programs/national-conservation-lands/nevada/red-rock-canyon",
+      "total_events": "293"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:47:56.690Z",
+  "agency": "interior"
+}

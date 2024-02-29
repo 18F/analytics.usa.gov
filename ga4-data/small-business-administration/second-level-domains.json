@@ -1,0 +1,36 @@
+{
+  "name": "second-level-domains",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "14daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "ga:hostname"
+    ],
+    "filters": "ga:sessions>4;ga:hostname=~^[^\\.]+\\.[^\\.]+$",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "domain": "sba.gov"
+    },
+    {
+      "domain": "sbir.gov"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T14:47:03.312Z",
+  "agency": "small-business-administration"
+}

@@ -1,0 +1,97 @@
+{
+  "name": "top-pages-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      },
+      {
+        "name": "fullPageUrl"
+      },
+      {
+        "name": "pageTitle"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "activeUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395460734"
+  },
+  "meta": {
+    "name": "Top Pages (30 Days)",
+    "description": "Last 30 days' top 20 pages, measured by page views, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.archives.gov",
+      "page": "www.archives.gov/vpv404/files/declassification/iscap/pdf/2011-099-doc01.pdf./https://www.nrc.gov/",
+      "page_title": "Page Not Found | National Archives",
+      "pageviews": "2",
+      "visits": "2",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "8.339554",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.epa.gov",
+      "page": "www.epa.gov/vpv404/cleanups/cleanup-grants-and-funding/https://www.nrc.gov/",
+      "page_title": "Page Not Found | US EPA",
+      "pageviews": "1",
+      "visits": "1",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "74.143129",
+      "bounce_rate": "0"
+    },
+    {
+      "domain": "www.epa.gov",
+      "page": "www.epa.gov/vpv404/cleanups/https://www.nrc.gov/",
+      "page_title": "Page Not Found | US EPA",
+      "pageviews": "1",
+      "visits": "1",
+      "active_visitors": "1",
+      "pageviews_per_session": "1",
+      "avg_session_duration": "18.373204",
+      "bounce_rate": "0"
+    }
+  ],
+  "totals": {
+    "visits": 4
+  },
+  "taken_at": "2024-01-05T14:42:42.463Z",
+  "agency": "nuclear-regulatory-commission"
+}

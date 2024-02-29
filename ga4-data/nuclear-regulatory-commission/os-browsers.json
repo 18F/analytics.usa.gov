@@ -1,0 +1,73 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460734"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites."
+  },
+  "totals": {
+    "visits": 15,
+    "by_os": {
+      "Windows": {
+        "Chrome": 13
+      },
+      "Macintosh": {
+        "Safari": 1
+      },
+      "Android": {
+        "Chrome": 1
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 13,
+        "Android": 1
+      },
+      "Safari": {
+        "Macintosh": 1
+      }
+    }
+  },
+  "taken_at": "2024-01-05T14:42:38.833Z",
+  "agency": "nuclear-regulatory-commission"
+}

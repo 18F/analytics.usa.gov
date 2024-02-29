@@ -1,0 +1,96 @@
+{
+  "name": "windows-ie",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "operatingSystem",
+              "stringFilter": {
+                "value": "Windows"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "browser",
+              "stringFilter": {
+                "value": "Internet Explorer"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395457289"
+  },
+  "meta": {
+    "name": "IE on Windows",
+    "description": "90 days of visits from IE on Windows broken down by IE and Windows versions for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 26754,
+    "by_windows": {
+      "7": {
+        "undefined": 26754
+      }
+    },
+    "by_ie": {
+      "undefined": {
+        "7": 26754
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:55:28.167Z",
+  "agency": "housing-urban-development"
+}

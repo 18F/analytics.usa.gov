@@ -1,0 +1,74 @@
+{
+  "name": "windows",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395460726"
+  },
+  "meta": {
+    "name": "Windows",
+    "description": "90 days of visits from Windows users, broken down by operating system version and date, for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 36968912,
+    "os_version": {
+      "7": 729454,
+      "8": 177388,
+      "10": 26060504,
+      "11": 9672210,
+      "2000": 11198,
+      "8.1": 301479,
+      "XP": 14874,
+      "NT": 677,
+      "Vista": 1128
+    }
+  },
+  "taken_at": "2024-01-05T15:53:53.079Z",
+  "agency": "health-human-services"
+}

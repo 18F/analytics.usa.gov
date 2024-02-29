@@ -1,0 +1,123 @@
+{
+  "name": "top-domains-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Top Domains (7 Days)",
+    "description": "Last week's top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.epa.gov",
+      "visits": "888861"
+    },
+    {
+      "domain": "www.airnow.gov",
+      "visits": "264341"
+    },
+    {
+      "domain": "(other)",
+      "visits": "147678"
+    },
+    {
+      "domain": "www.energystar.gov",
+      "visits": "144242"
+    },
+    {
+      "domain": "search.epa.gov",
+      "visits": "27794"
+    },
+    {
+      "domain": "nepis.epa.gov",
+      "visits": "26777"
+    },
+    {
+      "domain": "fire.airnow.gov",
+      "visits": "25843"
+    },
+    {
+      "domain": "echo.epa.gov",
+      "visits": "25529"
+    },
+    {
+      "domain": "cfpub.epa.gov",
+      "visits": "25500"
+    },
+    {
+      "domain": "espanol.epa.gov",
+      "visits": "25081"
+    },
+    {
+      "domain": "gispub.epa.gov",
+      "visits": "21424"
+    },
+    {
+      "domain": "portfoliomanager.energystar.gov",
+      "visits": "18921"
+    },
+    {
+      "domain": "cumulis.epa.gov",
+      "visits": "18689"
+    },
+    {
+      "domain": "www3.epa.gov",
+      "visits": "15481"
+    },
+    {
+      "domain": "hero.epa.gov",
+      "visits": "13510"
+    },
+    {
+      "domain": "ordspub.epa.gov",
+      "visits": "10187"
+    },
+    {
+      "domain": "19january2017snapshot.epa.gov",
+      "visits": "8617"
+    },
+    {
+      "domain": "netdmr.epa.gov",
+      "visits": "8396"
+    },
+    {
+      "domain": "enviro.epa.gov",
+      "visits": "6913"
+    },
+    {
+      "domain": "comptox.epa.gov",
+      "visits": "6356"
+    }
+  ],
+  "totals": {
+    "visits": 1730140
+  },
+  "taken_at": "2024-01-05T15:42:05.293Z",
+  "agency": "environmental-protection-agency"
+}

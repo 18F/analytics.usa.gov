@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395454267"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.nasa.gov",
+      "visits": "5897845",
+      "users": "4266915",
+      "pageviews": "9885601",
+      "pageviews_per_session": "1.6844321951492451",
+      "avg_session_duration": "161.28189936918955",
+      "bounce_rate": "0.47225554418605442"
+    },
+    {
+      "domain": "science.nasa.gov",
+      "visits": "3754770",
+      "users": "2800123",
+      "pageviews": "6178558",
+      "pageviews_per_session": "1.645970592073549",
+      "avg_session_duration": "157.03017956455759",
+      "bounce_rate": "0.38484887223451769"
+    },
+    {
+      "domain": "apod.nasa.gov",
+      "visits": "2481062",
+      "users": "1116391",
+      "pageviews": "4945365",
+      "pageviews_per_session": "1.993350025110215",
+      "avg_session_duration": "148.60223216539634",
+      "bounce_rate": "0.50000201526604338"
+    },
+    {
+      "domain": "europa.nasa.gov",
+      "visits": "1568685",
+      "users": "1101193",
+      "pageviews": "2909615",
+      "pageviews_per_session": "1.8548733493339964",
+      "avg_session_duration": "161.48166922588723",
+      "bounce_rate": "0.48073641298284869"
+    },
+    {
+      "domain": "eyes.nasa.gov",
+      "visits": "1561046",
+      "users": "1162988",
+      "pageviews": "2782301",
+      "pageviews_per_session": "1.7823433774533231",
+      "avg_session_duration": "153.18090301325776",
+      "bounce_rate": "0.11550908813705682"
+    },
+    {
+      "domain": "spaceplace.nasa.gov",
+      "visits": "1130302",
+      "users": "815970",
+      "pageviews": "2342533",
+      "pageviews_per_session": "2.07273277407277",
+      "avg_session_duration": "213.03084674192158",
+      "bounce_rate": "0.46997351150400513"
+    },
+    {
+      "domain": "mars.nasa.gov",
+      "visits": "660254",
+      "users": "477872",
+      "pageviews": "1687089",
+      "pageviews_per_session": "2.5591211866948176",
+      "avg_session_duration": "205.35120361112891",
+      "bounce_rate": "0.40036713143729535"
+    },
+    {
+      "domain": "earthobservatory.nasa.gov",
+      "visits": "654519",
+      "users": "498058",
+      "pageviews": "900608",
+      "pageviews_per_session": "1.3778943010057767",
+      "avg_session_duration": "167.19790242522777",
+      "bounce_rate": "0.42992640396993825"
+    },
+    {
+      "domain": "www.jpl.nasa.gov",
+      "visits": "651715",
+      "users": "485730",
+      "pageviews": "1001781",
+      "pageviews_per_session": "1.5399798991890628",
+      "avg_session_duration": "148.93161706234815",
+      "bounce_rate": "0.4456411161320516"
+    },
+    {
+      "domain": "climate.nasa.gov",
+      "visits": "626224",
+      "users": "447288",
+      "pageviews": "984313",
+      "pageviews_per_session": "1.5722073890492858",
+      "avg_session_duration": "237.78685631243826",
+      "bounce_rate": "0.45447315976391833"
+    },
+    {
+      "domain": "blogs.nasa.gov",
+      "visits": "456247",
+      "users": "392605",
+      "pageviews": "597580",
+      "pageviews_per_session": "1.3136634323075",
+      "avg_session_duration": "94.125308890380524",
+      "bounce_rate": "0.49997479435481218"
+    },
+    {
+      "domain": "spotthestation.nasa.gov",
+      "visits": "443124",
+      "users": "282596",
+      "pageviews": "729449",
+      "pageviews_per_session": "1.6471348877515097",
+      "avg_session_duration": "137.62226026488227",
+      "bounce_rate": "0.42356315613688267"
+    },
+    {
+      "domain": "exoplanets.nasa.gov",
+      "visits": "293691",
+      "users": "208259",
+      "pageviews": "596195",
+      "pageviews_per_session": "2.0320132384036285",
+      "avg_session_duration": "224.71519694220433",
+      "bounce_rate": "0.301626539458138"
+    },
+    {
+      "domain": "www.grc.nasa.gov",
+      "visits": "272641",
+      "users": "204355",
+      "pageviews": "407535",
+      "pageviews_per_session": "1.4954977424525291",
+      "avg_session_duration": "186.18059885087141",
+      "bounce_rate": "0.44301480701728646"
+    },
+    {
+      "domain": "webb.nasa.gov",
+      "visits": "267283",
+      "users": "169770",
+      "pageviews": "377176",
+      "pageviews_per_session": "1.4112008620076848",
+      "avg_session_duration": "144.81911590617145",
+      "bounce_rate": "0.4109801221925824"
+    },
+    {
+      "domain": "voyager.jpl.nasa.gov",
+      "visits": "216794",
+      "users": "172262",
+      "pageviews": "403398",
+      "pageviews_per_session": "1.8609647868483445",
+      "avg_session_duration": "165.478382045867",
+      "bounce_rate": "0.28307979003108941"
+    },
+    {
+      "domain": "images.nasa.gov",
+      "visits": "199469",
+      "users": "157323",
+      "pageviews": "657977",
+      "pageviews_per_session": "3.3219497766570245",
+      "avg_session_duration": "237.67968127748134",
+      "bounce_rate": "0.41057507682898092"
+    },
+    {
+      "domain": "climatekids.nasa.gov",
+      "visits": "193219",
+      "users": "143175",
+      "pageviews": "456624",
+      "pageviews_per_session": "2.3634218166950456",
+      "avg_session_duration": "295.13253710345339",
+      "bounce_rate": "0.319207738369415"
+    },
+    {
+      "domain": "urs.earthdata.nasa.gov",
+      "visits": "190489",
+      "users": "123146",
+      "pageviews": "615765",
+      "pageviews_per_session": "3.2326486043813554",
+      "avg_session_duration": "236.35275027425376",
+      "bounce_rate": "0.33680160009239379"
+    },
+    {
+      "domain": "moon.nasa.gov",
+      "visits": "184109",
+      "users": "146025",
+      "pageviews": "317260",
+      "pageviews_per_session": "1.7236636992216567",
+      "avg_session_duration": "179.92437237551272",
+      "bounce_rate": "0.39539077394369637"
+    }
+  ],
+  "totals": {
+    "users": 15172044,
+    "visits": 21703488
+  },
+  "taken_at": "2024-01-05T15:36:25.391Z",
+  "agency": "national-aeronautics-space-administration"
+}

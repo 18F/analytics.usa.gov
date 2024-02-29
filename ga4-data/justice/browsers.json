@@ -1,0 +1,101 @@
+{
+  "name": "browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395234366"
+  },
+  "meta": {
+    "name": "Browsers",
+    "description": "90 days of visits broken down by browser for all sites."
+  },
+  "totals": {
+    "visits": 76359436,
+    "browser": {
+      "Chrome": 45787345,
+      "Safari": 21380599,
+      "Edge": 5269066,
+      "Firefox": 1237285,
+      "(other)": 8887,
+      "Samsung Internet": 822011,
+      "Safari (in-app)": 812899,
+      "Android Webview": 543682,
+      "Opera": 206227,
+      "(not set)": 52612,
+      "Amazon Silk": 48201,
+      "Internet Explorer": 70627,
+      "UC Browser": 39767,
+      "Mozilla Compatible Agent": 21005,
+      "YaBrowser": 20216,
+      "Opera Mini": 12322,
+      "Android Runtime": 8183,
+      "Aloha Browser": 4755,
+      "Whale Browser": 3566,
+      "Mozilla": 2212,
+      "Android Browser": 1410,
+      "Coc Coc": 1932,
+      "Meta Quest Browser": 773,
+      "Phoenix Browser": 1143,
+      "PaleMoon": 252,
+      "DuckDuckGo Browser": 858,
+      "Lynx": 90,
+      "SeaMonkey": 325,
+      "Vivaldi": 71,
+      "IE with Chrome Frame": 11,
+      "Iron": 59,
+      "Konqueror": 66,
+      "Nintendo Browser": 208,
+      "Puffin": 252,
+      "Maxthon": 72,
+      "Nokia Browser": 28,
+      "Playstation Vita Browser": 17,
+      "Waterfox": 109,
+      "BlackBerry": 57,
+      "Seznam": 53,
+      "NetFront": 72,
+      "Netscape": 50,
+      "AdobeAIR": 1,
+      "YE": 15,
+      "BrowserNG": 17,
+      "Galeon": 16,
+      "Camino": 10,
+      "MRCHROME": 1,
+      "Playstation 4": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:17:13.212Z",
+  "agency": "justice"
+}

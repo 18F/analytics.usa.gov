@@ -1,0 +1,2810 @@
+{
+  "name": "top-cities-realtime",
+  "query": {
+    "dimensions": [
+      {
+        "name": "city"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "activeUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "activeUsers"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "city",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "city",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "city",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Top Cities (Live)",
+    "description": "Top cities for active onsite users."
+  },
+  "data": [
+    {
+      "city": "Alexandria",
+      "active_visitors": "110"
+    },
+    {
+      "city": "New York",
+      "active_visitors": "51"
+    },
+    {
+      "city": "Atlanta",
+      "active_visitors": "29"
+    },
+    {
+      "city": "Ashburn",
+      "active_visitors": "24"
+    },
+    {
+      "city": "Raleigh",
+      "active_visitors": "24"
+    },
+    {
+      "city": "Washington",
+      "active_visitors": "23"
+    },
+    {
+      "city": "Chicago",
+      "active_visitors": "22"
+    },
+    {
+      "city": "Houston",
+      "active_visitors": "17"
+    },
+    {
+      "city": "College Station",
+      "active_visitors": "15"
+    },
+    {
+      "city": "Columbus",
+      "active_visitors": "15"
+    },
+    {
+      "city": "Woodbridge Township",
+      "active_visitors": "15"
+    },
+    {
+      "city": "Gainesville",
+      "active_visitors": "14"
+    },
+    {
+      "city": "Ann Arbor",
+      "active_visitors": "13"
+    },
+    {
+      "city": "Boston",
+      "active_visitors": "13"
+    },
+    {
+      "city": "Philadelphia",
+      "active_visitors": "13"
+    },
+    {
+      "city": "Cambridge",
+      "active_visitors": "12"
+    },
+    {
+      "city": "San Antonio",
+      "active_visitors": "12"
+    },
+    {
+      "city": "Madison",
+      "active_visitors": "11"
+    },
+    {
+      "city": "Pittsburgh",
+      "active_visitors": "11"
+    },
+    {
+      "city": "Evart",
+      "active_visitors": "10"
+    },
+    {
+      "city": "Tallahassee",
+      "active_visitors": "10"
+    },
+    {
+      "city": "Athens",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Auburn",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Baton Rouge",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Columbia",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Huntsville",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Los Angeles",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Tempe",
+      "active_visitors": "9"
+    },
+    {
+      "city": "Arlington",
+      "active_visitors": "8"
+    },
+    {
+      "city": "Baltimore",
+      "active_visitors": "8"
+    },
+    {
+      "city": "Fairfax",
+      "active_visitors": "8"
+    },
+    {
+      "city": "Fayetteville",
+      "active_visitors": "8"
+    },
+    {
+      "city": "Wilmington",
+      "active_visitors": "8"
+    },
+    {
+      "city": "Amherst",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Austin",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Champaign",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Charlottesville",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Dallas",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Getzville",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Knoxville",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Lawrence",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Oxford",
+      "active_visitors": "7"
+    },
+    {
+      "city": "San Jose",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Seattle",
+      "active_visitors": "7"
+    },
+    {
+      "city": "State College",
+      "active_visitors": "7"
+    },
+    {
+      "city": "West Lafayette",
+      "active_visitors": "7"
+    },
+    {
+      "city": "Charlotte",
+      "active_visitors": "6"
+    },
+    {
+      "city": "College Park",
+      "active_visitors": "6"
+    },
+    {
+      "city": "East Lansing",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Lafayette",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Lexington",
+      "active_visitors": "6"
+    },
+    {
+      "city": "London",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Richmond",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Ruston",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Tichigan",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Troy",
+      "active_visitors": "6"
+    },
+    {
+      "city": "Ames",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Bengaluru",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Bloomington",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Brighton",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Denver",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Ellicott City",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Falmouth",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Greencastle",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Iowa City",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Lubbock",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Medford",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Minneapolis",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Rochester",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Salt Lake City",
+      "active_visitors": "5"
+    },
+    {
+      "city": "San Diego",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Syracuse",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Toronto",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Tuscaloosa",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Urbana",
+      "active_visitors": "5"
+    },
+    {
+      "city": "Bardstown",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Boise",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Buffalo",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Burke",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Burlington",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Chapel Hill",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Denton",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Fremont",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Greensboro",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Istanbul",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Kansas City",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Las Vegas",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Louisville",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Memphis",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Miami",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Middletown",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Newark",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Newton",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Norfolk",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Norman",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Phoenix",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Portland",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Reading",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Silver Spring",
+      "active_visitors": "4"
+    },
+    {
+      "city": "St. Louis",
+      "active_visitors": "4"
+    },
+    {
+      "city": "Ahmedabad",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Albany",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Albuquerque",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Bessemer",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Bethesda",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Brookings",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Cary",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Catonsville",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Clemson",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Cleveland",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Duluth",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Durham",
+      "active_visitors": "3"
+    },
+    {
+      "city": "El Paso",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Fargo",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Indiana",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Lincoln",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Mansfield",
+      "active_visitors": "3"
+    },
+    {
+      "city": "McKinney",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Milwaukee",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Morgantown",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Morrisville",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Naperville",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Nashville",
+      "active_visitors": "3"
+    },
+    {
+      "city": "New Haven",
+      "active_visitors": "3"
+    },
+    {
+      "city": "North Bethesda",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Oconomowoc",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Park Forest Village",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Plano",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Quezon City",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Reno",
+      "active_visitors": "3"
+    },
+    {
+      "city": "San Francisco",
+      "active_visitors": "3"
+    },
+    {
+      "city": "San Marcos",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Scottsdale",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Springfield",
+      "active_visitors": "3"
+    },
+    {
+      "city": "St. Petersburg",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Starkville",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Stillwater",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Tampa",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Toledo",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Wichita",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Ypsilanti Charter Township",
+      "active_visitors": "3"
+    },
+    {
+      "city": "Altadena",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Arnold",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Beachwood",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Berkeley",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Binghamton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Blacksburg",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Boulder",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Bountiful",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Boydton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Bridgeport",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Brookline",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Bruchmuhlbach-Miesau",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Bryan",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Burnsville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Changwon-si",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Chanhassen",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Cheektowaga",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Chennai",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Cheyenne",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Clarksville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Clayton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Cleveland Heights",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Concordville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Cookeville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Covington",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Cumberland",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Davis",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Des Moines",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Detroit",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Duryea",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Edinburg",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Ellettsville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Enid",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Evanston",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Farmington",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Fort Collins",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Fort Worth",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Four Corners",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Frederick",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Glasgow",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Glassboro",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Glastonbury",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Grand Forks",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Greater Landover",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Greenfield",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Greenville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Hanover",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Harrisonburg",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Hillsborough Township",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Ho-Ho-Kus",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Houghton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Huntersville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Hyderabad",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Irvine",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Jacksonville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Johnson City",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Lakeland",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Laramie",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Little Rock",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Littleton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Logan",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Longmont",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Lowell",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Macon",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Madurai",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Manor",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Marion",
+      "active_visitors": "2"
+    },
+    {
+      "city": "McLean",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Melville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Meridian charter Township",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Mesa",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Metairie",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Mint Hill",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Mississippi State",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Montgomery",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Morehead City",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Moses Lake",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Mount Washington",
+      "active_visitors": "2"
+    },
+    {
+      "city": "New Castle",
+      "active_visitors": "2"
+    },
+    {
+      "city": "New Providence",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Northfield",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Notre Dame",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Oak Park",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Oklahoma City",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Omaha",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Orlando",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Oviedo",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Phnom Penh",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Pikeville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Pleasanton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Princeton",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Providence",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Pune",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Rapid City",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Rawalpindi",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Reston",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Rice",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Richland",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Rockville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Roswell",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Salem",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Sandwich",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Savannah",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Schenectady",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Seven Oaks",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Sharon",
+      "active_visitors": "2"
+    },
+    {
+      "city": "South Hadley",
+      "active_visitors": "2"
+    },
+    {
+      "city": "South Kingstown",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Southington",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Springdale",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Stephenville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Stoneham",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Swansboro",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Tehran",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Towson",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Tucson",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Tulsa",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Tunis",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Virginia Beach",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Wesley Chapel",
+      "active_visitors": "2"
+    },
+    {
+      "city": "West Hartford",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Westerville",
+      "active_visitors": "2"
+    },
+    {
+      "city": "Worcester",
+      "active_visitors": "2"
+    },
+    {
+      "city": "17209",
+      "active_visitors": "1"
+    },
+    {
+      "city": "3200",
+      "active_visitors": "1"
+    },
+    {
+      "city": "59139",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Akron",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Alfred",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Allen",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Allentown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Amsterdam",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Anderson",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Annandale",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Annapolis",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Antananarivo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Aquia Harbour",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Artesia",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Arvada",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ashdown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ashland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Aspen Hill",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Atchison",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Auburndale",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bakersfield",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Baku",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bala Cynwyd",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bandung",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bangor",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Barnstable",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Barrington",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bartlesville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bay St. Louis",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bedford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Belgrade",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bellevue",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Berlin",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Berwick",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bethel Park",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bethlehem",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bettendorf",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bismarck",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bison",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bithlo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bixby",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Blythewood",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Boerne",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Boonton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bothell",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Boynton Beach",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Brandon",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Breckenridge",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Breinigsville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bremerton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bridgeton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Brookville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Broomall",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Brownstown Charter Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Brownsville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Bucksport",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Buford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Burrillville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Camden",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Canandaigua",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Canton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cape Girardeau",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Carbondale",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Carnegie",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Carolina",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Carolina Forest",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Casas Adobes",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cave Junction",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cave Spring",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cedar Rapids",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Centerville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Centreville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Chandler",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Chesapeake Beach",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Chieti",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Chula Vista",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cincinnati",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Circleville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Clinton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Closter",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Coffeyville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cohoes",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Coimbra",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Collinsville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Colonie",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cooper City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Coral Gables",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Corpus Christi",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cortland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Coventry",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Creve Coeur",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Culver City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Cypress",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dale City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dalhart",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dalton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dammam",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dayton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "DeForest",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dearborn",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Decatur",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Decorah",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Delaware",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Delft",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dexter",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dhaka",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Drummondville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Dunwoody",
+      "active_visitors": "1"
+    },
+    {
+      "city": "East Greenwich",
+      "active_visitors": "1"
+    },
+    {
+      "city": "East Rochester",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Easton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ecublens",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Eldersburg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Elkhart",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Elkridge",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Emeryville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Englewood",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Erie",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Estero",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Evendale",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ewing Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fairhope",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fairland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fairport",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fall River",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Farmville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Farragut",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Flagstaff",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Flint",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Flowery Branch",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fontainebleau",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Forest",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fort Belvoir",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Fountain Hill",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Franconia",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Frankfurt",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Frisco",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Gahanna",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Galion",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Galloway",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Gallup",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Garner",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Germantown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Gilbert",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Gilmer",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Glenshaw",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Gloucester",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Godfrey",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Grand Junction",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Grand Rapids",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Granville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Grinnell",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Grosse Pointe Woods",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Guarulhos",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Guelph",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hackensack",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hackettstown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hagerstown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hamilton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hammond",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hampton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Harrisburg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hattiesburg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Haverford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hawkinsville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Henrietta",
+      "active_visitors": "1"
+    },
+    {
+      "city": "High Point",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hillsborough",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hilton Head Island",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ho Chi Minh City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Honey Grove",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Howard City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Humacao",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Huntingdon",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Hyattsville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ife",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ithaca",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Jammu",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Jasper",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Jeddah",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Jim Thorpe",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Johns Creek",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Jonesboro",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Justin",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Karachi",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kendall",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kettering",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Keystone",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kings Point",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kirksville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Knightdale",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kokomo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kolkata",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Krasnoyarsk",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kuala Lumpur",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Kyiv",
+      "active_visitors": "1"
+    },
+    {
+      "city": "LaPlace",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lagos",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Laguna Beach",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lahore",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lakeway",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lakewood",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Land O' Lakes",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lansing",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Laurens",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lawrenceville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lebanon",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Leominster",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lewis Center",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lewiston",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lewisville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Liberty Hill",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lincolnton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lockhart",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Long Beach",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Long Branch",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Longboat Key",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Louisburg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Loveland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ludlow",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lumberton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lyndhurst",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Lynnfield",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mableton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Madisonville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Manchester",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Manhattan",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Manlius",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Maple Glen",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mapleton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Marana",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Marietta",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Maryville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mauldin",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mebane",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Medway",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Menomonie",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mentor",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mexico City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Miami Beach",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Middlebury",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Middletown Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mill Creek",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Milledgeville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Milton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Miramar",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mississauga",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Montijo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Montrose",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Montville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Morgan Hill",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Moscow",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mount Prospect",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mount Vernon",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Mt. Juliet",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Multan",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Murfreesboro",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Naaldwijk",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Nahant",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Nairobi",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Nashua",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Nassau",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Natick",
+      "active_visitors": "1"
+    },
+    {
+      "city": "New London",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Newburgh",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Noblesville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Norristown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "North Creek",
+      "active_visitors": "1"
+    },
+    {
+      "city": "North Dumdum",
+      "active_visitors": "1"
+    },
+    {
+      "city": "North Laurel",
+      "active_visitors": "1"
+    },
+    {
+      "city": "North Miami",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Northampton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Norton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Norton Shores",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Norwich",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Novi Sad",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Nuremberg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Oakland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Old Bridge",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Old Town",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Oro Valley",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Orono",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ostrava",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Otterbein",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ozark",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Palmetto Bay",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pamiers",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Paramus",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Paraparaumu Beach",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Paris",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pawtucket",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Peabody",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pearland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pellston",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pembroke Pines",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Penn Hills",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Phoenixville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Piscataway",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pistoia",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Pittsfield",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Plainsboro Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Plainview",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Plymouth Meeting",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Powell",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Provo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Radford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Reisterstown",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rhinebeck",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Richardson",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rigby",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rio Grande",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Roanoke",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rochester Hills",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rockaway Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rockledge",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rogers",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rolla",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rome",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rose Hill",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Ross Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rostov-on-Don",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rourkela",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Rush",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Saint Clair",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Saint John",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Saint Michael",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Saint Paul",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Saint Peter",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Salford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Salisbury",
+      "active_visitors": "1"
+    },
+    {
+      "city": "San Juan",
+      "active_visitors": "1"
+    },
+    {
+      "city": "San Ramon",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sandpoint",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Santa Ana",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Santa Cruz",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Santa Fe",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Santiago",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sao Paulo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Saratoga Springs",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sartell",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Scottdale",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Segrate",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Selden",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Selmer",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Seoul",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Shaker Heights",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sheffield",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sheridan",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Siliguri",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Slatington",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Smyrna",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Socorro",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sofia",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Somerville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sonipat",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Soperton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "South Bend",
+      "active_visitors": "1"
+    },
+    {
+      "city": "South Burlington",
+      "active_visitors": "1"
+    },
+    {
+      "city": "South Charleston",
+      "active_visitors": "1"
+    },
+    {
+      "city": "South Lebanon",
+      "active_visitors": "1"
+    },
+    {
+      "city": "South Orange",
+      "active_visitors": "1"
+    },
+    {
+      "city": "South San Francisco",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Statesboro",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Sterling Heights",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Stockholm",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Stonington",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Suitland-Silver Hill",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Surat",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Surf City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Talihina",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Terre Haute",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Tomball",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Trieste",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Trumansburg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Tustin",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Tyler",
+      "active_visitors": "1"
+    },
+    {
+      "city": "University Center",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Upper Arlington",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Utica",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Valencia West",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Valley City",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Venice",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Vienna",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Vigo",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Villanova",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Waco",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Walden",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wallingford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Warren",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Warsaw",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Waterville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Waunakee",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wendell",
+      "active_visitors": "1"
+    },
+    {
+      "city": "West Windsor Township",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Westland",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wexford",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wheaton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wheaton-Glenmont",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Whitehall",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Whitmore Lake",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wichita Falls",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wilkes-Barre",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Williams",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Williamsburg",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Winamac",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Windsor",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Winona",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Winston-Salem",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Winterville",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wise",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wolverhampton",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Woodbury",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Woodsboro",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Woodstock",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wymore",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Wynnewood",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Yonkers",
+      "active_visitors": "1"
+    },
+    {
+      "city": "York",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Yuma",
+      "active_visitors": "1"
+    },
+    {
+      "city": "Zurich",
+      "active_visitors": "1"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T16:04:18.293Z",
+  "agency": "national-science-foundation"
+}

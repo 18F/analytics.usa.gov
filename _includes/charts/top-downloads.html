@@ -1,0 +1,16 @@
+<section class="top-downloads">
+  <div class="top-downloads__headline">
+    <h3>
+      Top Downloads Yesterday
+    </h3>
+  </div>
+
+  <h4><em>Total file downloads yesterday on {{ page.entity }} hostnames.</em></h4>
+  <figure
+    id="top-downloads"
+    data-block="top-downloads"
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
+  >
+    <div class="data bar-chart"></div>
+  </figure>
+</section>

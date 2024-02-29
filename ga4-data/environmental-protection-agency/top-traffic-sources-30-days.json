@@ -1,0 +1,262 @@
+{
+  "name": "top-traffic-sources-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionSource"
+      },
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395252829"
+  },
+  "meta": {
+    "name": "Top Traffic Sources (30 Days)",
+    "description": "Last 30 days' Traffic Sources, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "source": "google",
+      "session_default_channel_group": "Organic Search",
+      "visits": "3946072",
+      "pageviews": "8300295",
+      "users": "2565831",
+      "pageviews_per_session": "2.1034322232336358",
+      "avg_session_duration": "255.943949336542",
+      "bounce_rate": "0.39793242495321929"
+    },
+    {
+      "source": "(direct)",
+      "session_default_channel_group": "Direct",
+      "visits": "2893315",
+      "pageviews": "7873337",
+      "users": "2176696",
+      "pageviews_per_session": "2.7212166666954687",
+      "avg_session_duration": "206.29330709126106",
+      "bounce_rate": "0.56668216215655742"
+    },
+    {
+      "source": "bing",
+      "session_default_channel_group": "Organic Search",
+      "visits": "391313",
+      "pageviews": "1090470",
+      "users": "189372",
+      "pageviews_per_session": "2.7866950497427889",
+      "avg_session_duration": "365.32763502246291",
+      "bounce_rate": "0.36161589315969567"
+    },
+    {
+      "source": "(not set)",
+      "session_default_channel_group": "Unassigned",
+      "visits": "33906",
+      "pageviews": "978581",
+      "users": "32460",
+      "pageviews_per_session": "28.861587919542263",
+      "avg_session_duration": "4701.8270945181685",
+      "bounce_rate": "0.9992331740694862"
+    },
+    {
+      "source": "yahoo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "54104",
+      "pageviews": "130970",
+      "users": "34897",
+      "pageviews_per_session": "2.42070826556262",
+      "avg_session_duration": "286.08236425441743",
+      "bounce_rate": "0.33426364039627382"
+    },
+    {
+      "source": "duckduckgo",
+      "session_default_channel_group": "Organic Search",
+      "visits": "52006",
+      "pageviews": "108717",
+      "users": "37774",
+      "pageviews_per_session": "2.0904703303464984",
+      "avg_session_duration": "217.37260040197282",
+      "bounce_rate": "0.35997769488135983"
+    },
+    {
+      "source": "govdelivery",
+      "session_default_channel_group": "Email",
+      "visits": "22486",
+      "pageviews": "31183",
+      "users": "19461",
+      "pageviews_per_session": "1.386773992706573",
+      "avg_session_duration": "99.2998452853331",
+      "bounce_rate": "0.7144890153873521"
+    },
+    {
+      "source": "ecosia.org",
+      "session_default_channel_group": "Organic Search",
+      "visits": "9763",
+      "pageviews": "27587",
+      "users": "5217",
+      "pageviews_per_session": "2.825668339649698",
+      "avg_session_duration": "326.58913556949705",
+      "bounce_rate": "0.39188773942435728"
+    },
+    {
+      "source": "baidu",
+      "session_default_channel_group": "Organic Search",
+      "visits": "5380",
+      "pageviews": "20211",
+      "users": "3368",
+      "pageviews_per_session": "3.7566914498141264",
+      "avg_session_duration": "395.15583968048327",
+      "bounce_rate": "0.48513011152416358"
+    },
+    {
+      "source": "google",
+      "session_default_channel_group": "Paid Search",
+      "visits": "7490",
+      "pageviews": "9326",
+      "users": "4807",
+      "pageviews_per_session": "1.2451268357810414",
+      "avg_session_duration": "68.16378724285714",
+      "bounce_rate": "0.79666221628838452"
+    },
+    {
+      "source": "aol",
+      "session_default_channel_group": "Organic Search",
+      "visits": "855",
+      "pageviews": "2472",
+      "users": "666",
+      "pageviews_per_session": "2.8912280701754387",
+      "avg_session_duration": "242.94438496608188",
+      "bounce_rate": "0.20818713450292398"
+    },
+    {
+      "source": "AEP_Eloqua",
+      "session_default_channel_group": "Email",
+      "visits": "1488",
+      "pageviews": "2341",
+      "users": "1374",
+      "pageviews_per_session": "1.573252688172043",
+      "avg_session_duration": "57.971101943548383",
+      "bounce_rate": "0.4536290322580645"
+    },
+    {
+      "source": "hs_email",
+      "session_default_channel_group": "Email",
+      "visits": "1426",
+      "pageviews": "1854",
+      "users": "1081",
+      "pageviews_per_session": "1.3001402524544179",
+      "avg_session_duration": "120.99628944319775",
+      "bounce_rate": "0.62552594670406736"
+    },
+    {
+      "source": "naver",
+      "session_default_channel_group": "Organic Search",
+      "visits": "490",
+      "pageviews": "1677",
+      "users": "342",
+      "pageviews_per_session": "3.4224489795918367",
+      "avg_session_duration": "386.60228376326529",
+      "bounce_rate": "0.34081632653061222"
+    },
+    {
+      "source": "2113",
+      "session_default_channel_group": "Email",
+      "visits": "416",
+      "pageviews": "1270",
+      "users": "411",
+      "pageviews_per_session": "3.0528846153846154",
+      "avg_session_duration": "131.60173081971155",
+      "bounce_rate": "0.23798076923076922"
+    },
+    {
+      "source": "GovDelivery",
+      "session_default_channel_group": "Email",
+      "visits": "620",
+      "pageviews": "1142",
+      "users": "428",
+      "pageviews_per_session": "1.8419354838709678",
+      "avg_session_duration": "242.3575330516129",
+      "bounce_rate": "0.4629032258064516"
+    },
+    {
+      "source": "ClickDimensions",
+      "session_default_channel_group": "Email",
+      "visits": "1027",
+      "pageviews": "1030",
+      "users": "1004",
+      "pageviews_per_session": "1.0029211295034079",
+      "avg_session_duration": "20.239108113924054",
+      "bounce_rate": "0.70107108081791625"
+    },
+    {
+      "source": "ActiveCampaign",
+      "session_default_channel_group": "Email",
+      "visits": "857",
+      "pageviews": "973",
+      "users": "817",
+      "pageviews_per_session": "1.1353558926487748",
+      "avg_session_duration": "28.793774201866981",
+      "bounce_rate": "0.72812135355892649"
+    },
+    {
+      "source": "substack",
+      "session_default_channel_group": "Email",
+      "visits": "590",
+      "pageviews": "921",
+      "users": "431",
+      "pageviews_per_session": "1.5610169491525423",
+      "avg_session_duration": "209.69821469830509",
+      "bounce_rate": "0.55762711864406778"
+    },
+    {
+      "source": "newsletter",
+      "session_default_channel_group": "Email",
+      "visits": "509",
+      "pageviews": "807",
+      "users": "343",
+      "pageviews_per_session": "1.5854616895874263",
+      "avg_session_duration": "188.42358762082515",
+      "bounce_rate": "0.64243614931237725"
+    }
+  ],
+  "totals": {
+    "users": 5076780,
+    "visits": 7424113
+  },
+  "taken_at": "2024-01-05T15:42:14.188Z",
+  "agency": "environmental-protection-agency"
+}

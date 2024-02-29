@@ -1,0 +1,284 @@
+{
+  "name": "top-pages-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      },
+      {
+        "name": "fullPageUrl"
+      },
+      {
+        "name": "pageTitle"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "activeUsers"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "screenPageViews"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395452039"
+  },
+  "meta": {
+    "name": "Top Pages (30 Days)",
+    "description": "Last 30 days' top 20 pages, measured by page views, for all sites."
+  },
+  "data": [
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/mhv-portal-web/home",
+      "page_title": "Home - My HealtheVet - My HealtheVet",
+      "pageviews": "9924047",
+      "visits": "6829943",
+      "active_visitors": "4313941",
+      "pageviews_per_session": "1.4530204717667483",
+      "avg_session_duration": "88.512062826337441",
+      "bounce_rate": "0.48847918642952071"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/",
+      "page_title": "VA.gov Home | Veterans Affairs",
+      "pageviews": "9572217",
+      "visits": "6200781",
+      "active_visitors": "2892806",
+      "pageviews_per_session": "1.543711509888835",
+      "avg_session_duration": "105.10653106846537",
+      "bounce_rate": "0.25110385288562842"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/auth/login/callback",
+      "page_title": "Auth | Veterans Affairs",
+      "pageviews": "4639862",
+      "visits": "4083026",
+      "active_visitors": "1894315",
+      "pageviews_per_session": "1.1363782645518299",
+      "avg_session_duration": "70.908211112896808",
+      "bounce_rate": "0.010441765494513137"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/my-va/",
+      "page_title": "My VA | Veterans Affairs",
+      "pageviews": "4441770",
+      "visits": "3068681",
+      "active_visitors": "1283223",
+      "pageviews_per_session": "1.4474528307113057",
+      "avg_session_duration": "67.256118385255846",
+      "bounce_rate": "0.0155565208635241"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/mhv-portal-web/web/myhealthevet/user-login",
+      "page_title": "Sign In - My HealtheVet - My HealtheVet",
+      "pageviews": "3893409",
+      "visits": "3275712",
+      "active_visitors": "1411151",
+      "pageviews_per_session": "1.1885687752769474",
+      "avg_session_duration": "35.666960251076858",
+      "bounce_rate": "0.018569092765175939"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/sign-in/",
+      "page_title": "Login Page | Veterans Affairs",
+      "pageviews": "3488888",
+      "visits": "3104036",
+      "active_visitors": "2144639",
+      "pageviews_per_session": "1.1239847089402313",
+      "avg_session_duration": "34.225576049152821",
+      "bounce_rate": "0.38274298365096282"
+    },
+    {
+      "domain": "eauth.va.gov",
+      "page": "eauth.va.gov/accessva/",
+      "page_title": "AccessVA",
+      "pageviews": "2985684",
+      "visits": "2092862",
+      "active_visitors": "880049",
+      "pageviews_per_session": "1.4266029007168175",
+      "avg_session_duration": "172.85733922300159",
+      "bounce_rate": "0.35830647218975736"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/?next=loginModal",
+      "page_title": "VA.gov Home | Veterans Affairs",
+      "pageviews": "2770735",
+      "visits": "2436643",
+      "active_visitors": "1065195",
+      "pageviews_per_session": "1.1371111812440313",
+      "avg_session_duration": "24.648640683331294",
+      "bounce_rate": "0.0072193587653176933"
+    },
+    {
+      "domain": "mhvidp-prod.myhealth.va.gov",
+      "page": "mhvidp-prod.myhealth.va.gov/mhv-portal-web/web/guest/home",
+      "page_title": "Home - My HealtheVet",
+      "pageviews": "2356872",
+      "visits": "1930509",
+      "active_visitors": "1103835",
+      "pageviews_per_session": "1.2208552252281653",
+      "avg_session_duration": "45.70919833363795",
+      "bounce_rate": "0.022532399486353081"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/mhv-portal-web/secure-messaging",
+      "page_title": "Secure Messaging - My HealtheVet - My HealtheVet",
+      "pageviews": "1912099",
+      "visits": "836448",
+      "active_visitors": "385855",
+      "pageviews_per_session": "2.2859747408087534",
+      "avg_session_duration": "184.28385511034938",
+      "bounce_rate": "0.059961886453192545"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/claim-or-appeal-status/",
+      "page_title": "Check Your VA Claim, Decision Review, Or Appeal Status | Veterans Affairs",
+      "pageviews": "1735467",
+      "visits": "1398428",
+      "active_visitors": "593315",
+      "pageviews_per_session": "1.2410127657626993",
+      "avg_session_duration": "27.428321778028771",
+      "bounce_rate": "0.02324467187441899"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/mhv-portal-web/refill-prescriptions",
+      "page_title": "Refill VA Prescriptions - My HealtheVet - My HealtheVet",
+      "pageviews": "1628661",
+      "visits": "898557",
+      "active_visitors": "486581",
+      "pageviews_per_session": "1.8125294221735515",
+      "avg_session_duration": "140.30061007769481",
+      "bounce_rate": "0.078216518262057944"
+    },
+    {
+      "domain": "eauth.va.gov",
+      "page": "eauth.va.gov/mhv-portal-web/web/myhealthevet/secure-messaging",
+      "page_title": "Secure Messaging - My HealtheVet - My HealtheVet",
+      "pageviews": "1350503",
+      "visits": "477897",
+      "active_visitors": "265746",
+      "pageviews_per_session": "2.8259290181775572",
+      "avg_session_duration": "190.9756342973009",
+      "bounce_rate": "0.053019792967940793"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/track-claims/your-claims",
+      "page_title": "Check your claim, decision review, or appeal status | Veterans Affairs",
+      "pageviews": "1337076",
+      "visits": "922237",
+      "active_visitors": "434896",
+      "pageviews_per_session": "1.4498182137563338",
+      "avg_session_duration": "65.8377215422201",
+      "bounce_rate": "0.025080321002085147"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/web/myhealthevet/home",
+      "page_title": "Home - My HealtheVet - My HealtheVet",
+      "pageviews": "1238758",
+      "visits": "1093248",
+      "active_visitors": "456821",
+      "pageviews_per_session": "1.1330978881278539",
+      "avg_session_duration": "141.71952057780379",
+      "bounce_rate": "0.10080329440346564"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/mhv-portal-web/user-login",
+      "page_title": "Sign In - My HealtheVet - My HealtheVet",
+      "pageviews": "1178818",
+      "visits": "803907",
+      "active_visitors": "458645",
+      "pageviews_per_session": "1.4663611586912417",
+      "avg_session_duration": "92.422604580093065",
+      "bounce_rate": "0.035813844138687684"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/secure-messaging",
+      "page_title": "Secure Messaging - My HealtheVet - My HealtheVet",
+      "pageviews": "1116096",
+      "visits": "899805",
+      "active_visitors": "416748",
+      "pageviews_per_session": "1.2403765260250832",
+      "avg_session_duration": "34.637410525804867",
+      "bounce_rate": "0.010564511199648813"
+    },
+    {
+      "domain": "eauth.va.gov",
+      "page": "eauth.va.gov/mhv-portal-web/web/myhealthevet/home",
+      "page_title": "Home - My HealtheVet - My HealtheVet",
+      "pageviews": "1104985",
+      "visits": "788783",
+      "active_visitors": "459386",
+      "pageviews_per_session": "1.400873243972043",
+      "avg_session_duration": "95.782909251009642",
+      "bounce_rate": "0.019203000064656566"
+    },
+    {
+      "domain": "www.myhealth.va.gov",
+      "page": "www.myhealth.va.gov/mhv-portal-web/labs-tests",
+      "page_title": "Labs and Tests - My HealtheVet - My HealtheVet",
+      "pageviews": "1104042",
+      "visits": "169769",
+      "active_visitors": "105935",
+      "pageviews_per_session": "6.50320140897337",
+      "avg_session_duration": "250.56778402227235",
+      "bounce_rate": "0.049261054727305929"
+    },
+    {
+      "domain": "www.va.gov",
+      "page": "www.va.gov/track-claims/",
+      "page_title": "Track Claims | Veterans Affairs",
+      "pageviews": "1092070",
+      "visits": "936097",
+      "active_visitors": "360913",
+      "pageviews_per_session": "1.1666194849465386",
+      "avg_session_duration": "7.5931417347913674",
+      "bounce_rate": "0.0095567019229844778"
+    }
+  ],
+  "totals": {
+    "visits": 42247369
+  },
+  "taken_at": "2024-01-05T15:34:43.504Z",
+  "agency": "veterans-affairs"
+}

@@ -1,0 +1,68 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "names": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites."
+  },
+  "totals": {
+    "visits": 6138906,
+    "os": {
+      "Windows": 2970881,
+      "Macintosh": 1595859,
+      "iOS": 563335,
+      "Android": 380759,
+      "Linux": 281818,
+      "(not set)": 267071,
+      "Chrome OS": 78918,
+      "Firefox OS": 26,
+      "Fuchsia": 51,
+      "OS/2": 16,
+      "FreeBSD": 26,
+      "OpenBSD": 37,
+      "Tizen": 49,
+      "Playstation 4": 20,
+      "NetBSD": 15,
+      "UNIX": 9,
+      "Mac OS": 3,
+      "Windows Phone": 2,
+      "Xbox": 5,
+      "Samsung": 3,
+      "BlackBerry": 2,
+      "SunOS": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:41:36.360Z",
+  "agency": "national-science-foundation"
+}

@@ -1,0 +1,57 @@
+{
+  "name": "sites-extended",
+  "sampling": {
+    "containsSampledData": false
+  },
+  "query": {
+    "start-date": "14daysAgo",
+    "end-date": "yesterday",
+    "dimensions": "ga:hostname",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "sort": [
+      "ga:hostname"
+    ],
+    "filters": "ga:sessions>1",
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "feedback.nrc.gov"
+    },
+    {
+      "domain": "feedbackint-test.nrc.gov"
+    },
+    {
+      "domain": "nmss.preprod.nrc.gov"
+    },
+    {
+      "domain": "nrc.gov"
+    },
+    {
+      "domain": "papaya.nrc.gov"
+    },
+    {
+      "domain": "publish.nrc.gov"
+    },
+    {
+      "domain": "scp.nrc.gov"
+    },
+    {
+      "domain": "tribal.nrc.gov"
+    },
+    {
+      "domain": "video.nrc.gov"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2023-11-27T15:13:58.770Z",
+  "agency": "nuclear-regulatory-commission"
+}

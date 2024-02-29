@@ -1,0 +1,1578 @@
+{
+  "name": "sites-extended",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395253929"
+  },
+  "meta": {
+    "name": "Participating hostnames.",
+    "description": "Participating hostnames over the last 14 days with at least 1 visit."
+  },
+  "data": [
+    {
+      "domain": "zw.usembassy.gov",
+      "visits": "7172"
+    },
+    {
+      "domain": "zm.usembassy.gov",
+      "visits": "7916"
+    },
+    {
+      "domain": "zainabtours.com",
+      "visits": "2"
+    },
+    {
+      "domain": "za.usembassy.gov",
+      "visits": "20945"
+    },
+    {
+      "domain": "ylai.state.gov",
+      "visits": "3097"
+    },
+    {
+      "domain": "ye.usembassy.gov",
+      "visits": "2815"
+    },
+    {
+      "domain": "yali.state.gov",
+      "visits": "21836"
+    },
+    {
+      "domain": "xk.usembassy.gov",
+      "visits": "6840"
+    },
+    {
+      "domain": "wwwnc.cdc.gov",
+      "visits": "41"
+    },
+    {
+      "domain": "www.whitehouse.gov",
+      "visits": "153"
+    },
+    {
+      "domain": "www.usps.com",
+      "visits": "3"
+    },
+    {
+      "domain": "www.usmint.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.usembassy.gov",
+      "visits": "341823"
+    },
+    {
+      "domain": "www.uscis.gov",
+      "visits": "347"
+    },
+    {
+      "domain": "www.usau.usmission.gov",
+      "visits": "641"
+    },
+    {
+      "domain": "www.usa.gov",
+      "visits": "24"
+    },
+    {
+      "domain": "www.tsa.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "www.treasurydirect.gov",
+      "visits": "28"
+    },
+    {
+      "domain": "www.state.gov",
+      "visits": "1440170"
+    },
+    {
+      "domain": "www.ssa.gov",
+      "visits": "32"
+    },
+    {
+      "domain": "www.pre.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.osac.gov",
+      "visits": "30207"
+    },
+    {
+      "domain": "www.nsopw.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.nps.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "www.nixonlibrary.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.nasa.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "www.mapgive.state.gov",
+      "visits": "72"
+    },
+    {
+      "domain": "www.justice.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.irs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.ic3.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.hhs.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.gsa.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "www.grants.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.fas.usda.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.epa.gov",
+      "visits": "23"
+    },
+    {
+      "domain": "www.ecfr.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "www.e-verify.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "www.dol.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "www.cdc.gov",
+      "visits": "1710"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "108"
+    },
+    {
+      "domain": "www.atf.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "www.ait.org.tw",
+      "visits": "12"
+    },
+    {
+      "domain": "www.airnow.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ws.usembassy.gov",
+      "visits": "1520"
+    },
+    {
+      "domain": "westafrica.ilea.state.gov",
+      "visits": "190"
+    },
+    {
+      "domain": "webcache.googleusercontent.com",
+      "visits": "90"
+    },
+    {
+      "domain": "web.archive.org",
+      "visits": "13"
+    },
+    {
+      "domain": "vn.usembassy.gov",
+      "visits": "73606"
+    },
+    {
+      "domain": "vienna.usmission.gov",
+      "visits": "704"
+    },
+    {
+      "domain": "ve.usembassy.gov",
+      "visits": "13101"
+    },
+    {
+      "domain": "va.usembassy.gov",
+      "visits": "1237"
+    },
+    {
+      "domain": "uz.usembassy.gov",
+      "visits": "26627"
+    },
+    {
+      "domain": "uz.edit.usembassy.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "uy.usembassy.gov",
+      "visits": "44373"
+    },
+    {
+      "domain": "uy.edit.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "usunrome.usmission.gov",
+      "visits": "471"
+    },
+    {
+      "domain": "usun.usmission.gov",
+      "visits": "21205"
+    },
+    {
+      "domain": "usun-mission.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "usoecd.usmission.gov",
+      "visits": "663"
+    },
+    {
+      "domain": "usoas.usmission.gov",
+      "visits": "11822"
+    },
+    {
+      "domain": "useu.usmission.gov",
+      "visits": "986"
+    },
+    {
+      "domain": "uk.usembassy.gov",
+      "visits": "239119"
+    },
+    {
+      "domain": "uk.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "ug.usembassy.gov",
+      "visits": "31076"
+    },
+    {
+      "domain": "ug.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "ua.usembassy.gov",
+      "visits": "26185"
+    },
+    {
+      "domain": "ua.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "tz.usembassy.gov",
+      "visits": "11697"
+    },
+    {
+      "domain": "tt.usembassy.gov",
+      "visits": "17319"
+    },
+    {
+      "domain": "travel.state.gov",
+      "visits": "7976376"
+    },
+    {
+      "domain": "translated.turbopages.org",
+      "visits": "413"
+    },
+    {
+      "domain": "tr.usembassy.gov",
+      "visits": "113996"
+    },
+    {
+      "domain": "tr.edit.usembassy.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "tn.usembassy.gov",
+      "visits": "15053"
+    },
+    {
+      "domain": "tn.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "tm.usembassy.gov",
+      "visits": "9785"
+    },
+    {
+      "domain": "tm.edit.usembassy.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "tl.usembassy.gov",
+      "visits": "1212"
+    },
+    {
+      "domain": "tl.edit.usembassy.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "tj.usembassy.gov",
+      "visits": "6431"
+    },
+    {
+      "domain": "th.usembassy.gov",
+      "visits": "64090"
+    },
+    {
+      "domain": "th.edit.usembassy.gov",
+      "visits": "18"
+    },
+    {
+      "domain": "tg.usembassy.gov",
+      "visits": "5503"
+    },
+    {
+      "domain": "tg.edit.usembassy.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "test.j1visa.state.gov",
+      "visits": "53"
+    },
+    {
+      "domain": "techcamp.edit.america.gov",
+      "visits": "27"
+    },
+    {
+      "domain": "techcamp.america.gov",
+      "visits": "653"
+    },
+    {
+      "domain": "td.usembassy.gov",
+      "visits": "3813"
+    },
+    {
+      "domain": "sz.usembassy.gov",
+      "visits": "3522"
+    },
+    {
+      "domain": "sy.usembassy.gov",
+      "visits": "1174"
+    },
+    {
+      "domain": "sv.usembassy.gov",
+      "visits": "61303"
+    },
+    {
+      "domain": "sv.edit.usembassy.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "studyinthestates.dhs.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "studyabroad.state.gov",
+      "visits": "2091"
+    },
+    {
+      "domain": "staging.j1visa.state.gov",
+      "visits": "127"
+    },
+    {
+      "domain": "ss.usembassy.gov",
+      "visits": "2796"
+    },
+    {
+      "domain": "sr.usembassy.gov",
+      "visits": "5772"
+    },
+    {
+      "domain": "so.usembassy.gov",
+      "visits": "2089"
+    },
+    {
+      "domain": "sn.usembassy.gov",
+      "visits": "11076"
+    },
+    {
+      "domain": "sm.usmission.gov",
+      "visits": "524"
+    },
+    {
+      "domain": "sl.usembassy.gov",
+      "visits": "10430"
+    },
+    {
+      "domain": "sl.edit.usembassy.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "sk.usembassy.gov",
+      "visits": "6780"
+    },
+    {
+      "domain": "sk.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "si.usembassy.gov",
+      "visits": "2273"
+    },
+    {
+      "domain": "share.america.gov",
+      "visits": "139835"
+    },
+    {
+      "domain": "sg.usembassy.gov",
+      "visits": "14857"
+    },
+    {
+      "domain": "search.usembassy.gov",
+      "visits": "76265"
+    },
+    {
+      "domain": "search.usa.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "se.usembassy.gov",
+      "visits": "15216"
+    },
+    {
+      "domain": "sd.usembassy.gov",
+      "visits": "1919"
+    },
+    {
+      "domain": "sansalvador.ilea.state.gov",
+      "visits": "338"
+    },
+    {
+      "domain": "sample2.usembassy.gov",
+      "visits": "135"
+    },
+    {
+      "domain": "sample2.edit.usembassy.gov",
+      "visits": "10"
+    },
+    {
+      "domain": "sample.usembassy.gov",
+      "visits": "456"
+    },
+    {
+      "domain": "sa.usembassy.gov",
+      "visits": "26222"
+    },
+    {
+      "domain": "rw.usembassy.gov",
+      "visits": "6513"
+    },
+    {
+      "domain": "ru.usembassy.gov",
+      "visits": "50992"
+    },
+    {
+      "domain": "ru.edit.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "rs.usembassy.gov",
+      "visits": "10334"
+    },
+    {
+      "domain": "roswell.ilea.state.gov",
+      "visits": "229"
+    },
+    {
+      "domain": "ro.usembassy.gov",
+      "visits": "32504"
+    },
+    {
+      "domain": "ro.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "qa.usembassy.gov",
+      "visits": "17493"
+    },
+    {
+      "domain": "py.usembassy.gov",
+      "visits": "16311"
+    },
+    {
+      "domain": "pw.usembassy.gov",
+      "visits": "733"
+    },
+    {
+      "domain": "publications.america.gov",
+      "visits": "1006"
+    },
+    {
+      "domain": "pt.usembassy.gov",
+      "visits": "16851"
+    },
+    {
+      "domain": "pt.edit.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "pptform.state.gov",
+      "visits": "1545285"
+    },
+    {
+      "domain": "pl.usembassy.gov",
+      "visits": "54951"
+    },
+    {
+      "domain": "pl.edit.usembassy.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "pk.usembassy.gov",
+      "visits": "57228"
+    },
+    {
+      "domain": "pk.edit.usembassy.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "ph.usembassy.gov",
+      "visits": "77618"
+    },
+    {
+      "domain": "pg.usembassy.gov",
+      "visits": "8573"
+    },
+    {
+      "domain": "pe.usembassy.gov",
+      "visits": "54379"
+    },
+    {
+      "domain": "passportstatus.state.gov",
+      "visits": "564645"
+    },
+    {
+      "domain": "passportappointment.travel.state.gov",
+      "visits": "156130"
+    },
+    {
+      "domain": "palestinianaffairs.state.gov",
+      "visits": "2392"
+    },
+    {
+      "domain": "pa.usembassy.gov",
+      "visits": "22925"
+    },
+    {
+      "domain": "osce.usmission.gov",
+      "visits": "2316"
+    },
+    {
+      "domain": "online.fsi.state.gov",
+      "visits": "133"
+    },
+    {
+      "domain": "online-dev.fsi.state.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "om.usembassy.gov",
+      "visits": "8539"
+    },
+    {
+      "domain": "om.edit.usembassy.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "ofac.treasury.gov",
+      "visits": "296"
+    },
+    {
+      "domain": "nz.usembassy.gov",
+      "visits": "11040"
+    },
+    {
+      "domain": "np.usembassy.gov",
+      "visits": "19419"
+    },
+    {
+      "domain": "no.usembassy.gov",
+      "visits": "7396"
+    },
+    {
+      "domain": "nl.usembassy.gov",
+      "visits": "58098"
+    },
+    {
+      "domain": "nl.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "ni.usembassy.gov",
+      "visits": "16663"
+    },
+    {
+      "domain": "ng.usembassy.gov",
+      "visits": "31957"
+    },
+    {
+      "domain": "ne.usembassy.gov",
+      "visits": "2271"
+    },
+    {
+      "domain": "nato.usmission.gov",
+      "visits": "2000"
+    },
+    {
+      "domain": "na.usembassy.gov",
+      "visits": "4338"
+    },
+    {
+      "domain": "na.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "mz.usembassy.gov",
+      "visits": "4067"
+    },
+    {
+      "domain": "my.usembassy.gov",
+      "visits": "17404"
+    },
+    {
+      "domain": "mx.usembassy.gov",
+      "visits": "307311"
+    },
+    {
+      "domain": "mw.usembassy.gov",
+      "visits": "4306"
+    },
+    {
+      "domain": "mv.usmission.gov",
+      "visits": "792"
+    },
+    {
+      "domain": "mv-mission.edit.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "mu.usembassy.gov",
+      "visits": "2762"
+    },
+    {
+      "domain": "mu.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "mt.usembassy.gov",
+      "visits": "3040"
+    },
+    {
+      "domain": "mr.usembassy.gov",
+      "visits": "6629"
+    },
+    {
+      "domain": "mr.pre.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "mn.usembassy.gov",
+      "visits": "10352"
+    },
+    {
+      "domain": "mn.edit.usembassy.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "mm.usembassy.gov",
+      "visits": "9816"
+    },
+    {
+      "domain": "mm.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "ml.usembassy.gov",
+      "visits": "15565"
+    },
+    {
+      "domain": "ml.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "mk.usembassy.gov",
+      "visits": "5896"
+    },
+    {
+      "domain": "mk.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "mh.usembassy.gov",
+      "visits": "2175"
+    },
+    {
+      "domain": "mg.usembassy.gov",
+      "visits": "8241"
+    },
+    {
+      "domain": "mepi.state.gov",
+      "visits": "4988"
+    },
+    {
+      "domain": "me.usembassy.gov",
+      "visits": "5339"
+    },
+    {
+      "domain": "me.edit.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "md.usembassy.gov",
+      "visits": "8409"
+    },
+    {
+      "domain": "md.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "mapgive.state.gov",
+      "visits": "258"
+    },
+    {
+      "domain": "ma.usembassy.gov",
+      "visits": "31961"
+    },
+    {
+      "domain": "ma.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "ly.usembassy.gov",
+      "visits": "3787"
+    },
+    {
+      "domain": "lv.usembassy.gov",
+      "visits": "4604"
+    },
+    {
+      "domain": "lv.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "lu.usembassy.gov",
+      "visits": "3072"
+    },
+    {
+      "domain": "lt.usembassy.gov",
+      "visits": "5724"
+    },
+    {
+      "domain": "ls.usembassy.gov",
+      "visits": "925"
+    },
+    {
+      "domain": "lr.usembassy.gov",
+      "visits": "10084"
+    },
+    {
+      "domain": "lk.usembassy.gov",
+      "visits": "13240"
+    },
+    {
+      "domain": "lk.edit.usembassy.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "lb.usembassy.gov",
+      "visits": "14317"
+    },
+    {
+      "domain": "la.usembassy.gov",
+      "visits": "3277"
+    },
+    {
+      "domain": "kz.usembassy.gov",
+      "visits": "20377"
+    },
+    {
+      "domain": "kw.usembassy.gov",
+      "visits": "7911"
+    },
+    {
+      "domain": "kr.usembassy.gov",
+      "visits": "56283"
+    },
+    {
+      "domain": "km.usembassy.gov",
+      "visits": "821"
+    },
+    {
+      "domain": "kh.usembassy.gov",
+      "visits": "12878"
+    },
+    {
+      "domain": "kh.edit.usembassy.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "kg.usembassy.gov",
+      "visits": "8387"
+    },
+    {
+      "domain": "ke.usembassy.gov",
+      "visits": "28365"
+    },
+    {
+      "domain": "jp.usembassy.gov",
+      "visits": "183231"
+    },
+    {
+      "domain": "jo.usembassy.gov",
+      "visits": "23229"
+    },
+    {
+      "domain": "jo.edit.usembassy.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "jm.usembassy.gov",
+      "visits": "23720"
+    },
+    {
+      "domain": "j1visawaiverstatus.state.gov",
+      "visits": "20728"
+    },
+    {
+      "domain": "j1visawaiverrecommendation.state.gov",
+      "visits": "8044"
+    },
+    {
+      "domain": "j1visa.state.gov",
+      "visits": "45558"
+    },
+    {
+      "domain": "it.usembassy.gov",
+      "visits": "87308"
+    },
+    {
+      "domain": "it.edit.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "is.usembassy.gov",
+      "visits": "7355"
+    },
+    {
+      "domain": "ir.usembassy.gov",
+      "visits": "2625"
+    },
+    {
+      "domain": "iq.usembassy.gov",
+      "visits": "20931"
+    },
+    {
+      "domain": "interactive.state.gov",
+      "visits": "289"
+    },
+    {
+      "domain": "infocentral.state.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "in.usembassy.gov",
+      "visits": "303598"
+    },
+    {
+      "domain": "in.edit.usembassy.gov",
+      "visits": "31"
+    },
+    {
+      "domain": "images.nasa.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ilet.state.gov",
+      "visits": "61"
+    },
+    {
+      "domain": "ilea.state.gov",
+      "visits": "843"
+    },
+    {
+      "domain": "il.usembassy.gov",
+      "visits": "67469"
+    },
+    {
+      "domain": "il.edit.usembassy.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "ie.usembassy.gov",
+      "visits": "15240"
+    },
+    {
+      "domain": "id.usembassy.gov",
+      "visits": "35727"
+    },
+    {
+      "domain": "id.edit.usembassy.gov",
+      "visits": "11"
+    },
+    {
+      "domain": "ict.state.gov",
+      "visits": "94"
+    },
+    {
+      "domain": "icao.usmission.gov",
+      "visits": "558"
+    },
+    {
+      "domain": "iawg.gov",
+      "visits": "77"
+    },
+    {
+      "domain": "i94.cbp.dhs.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "hu.usembassy.gov",
+      "visits": "18216"
+    },
+    {
+      "domain": "hu.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "ht.usembassy.gov",
+      "visits": "31316"
+    },
+    {
+      "domain": "ht.pre.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ht.edit.usembassy.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "hr.usembassy.gov",
+      "visits": "6961"
+    },
+    {
+      "domain": "hoqgmi-8080.csb.app",
+      "visits": "2"
+    },
+    {
+      "domain": "home.treasury.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "hn.usembassy.gov",
+      "visits": "35203"
+    },
+    {
+      "domain": "hn.edit.usembassy.gov",
+      "visits": "9"
+    },
+    {
+      "domain": "hk.usconsulate.gov",
+      "visits": "54217"
+    },
+    {
+      "domain": "hk-consulate.edit.usembassy.gov",
+      "visits": "21"
+    },
+    {
+      "domain": "history.state.gov",
+      "visits": "570221"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "gy.usembassy.gov",
+      "visits": "9999"
+    },
+    {
+      "domain": "gy.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "gw.usmission.gov",
+      "visits": "1030"
+    },
+    {
+      "domain": "gt.usembassy.gov",
+      "visits": "36098"
+    },
+    {
+      "domain": "gr.usembassy.gov",
+      "visits": "18030"
+    },
+    {
+      "domain": "gr.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "gq.usembassy.gov",
+      "visits": "2518"
+    },
+    {
+      "domain": "gn.usembassy.gov",
+      "visits": "5562"
+    },
+    {
+      "domain": "gm.usembassy.gov",
+      "visits": "2790"
+    },
+    {
+      "domain": "gh.usembassy.gov",
+      "visits": "30528"
+    },
+    {
+      "domain": "gh.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "geneva.usmission.gov",
+      "visits": "3527"
+    },
+    {
+      "domain": "ge.usembassy.gov",
+      "visits": "14738"
+    },
+    {
+      "domain": "gaborone.ilea.state.gov",
+      "visits": "171"
+    },
+    {
+      "domain": "ga.usembassy.gov",
+      "visits": "4212"
+    },
+    {
+      "domain": "ga.edit.usembassy.gov",
+      "visits": "12"
+    },
+    {
+      "domain": "fsitraining.state.gov",
+      "visits": "1615"
+    },
+    {
+      "domain": "fsitraining-dev.fsi.state.gov",
+      "visits": "17"
+    },
+    {
+      "domain": "fr.usembassy.gov",
+      "visits": "65563"
+    },
+    {
+      "domain": "fm.usembassy.gov",
+      "visits": "1093"
+    },
+    {
+      "domain": "fj.usembassy.gov",
+      "visits": "3983"
+    },
+    {
+      "domain": "findit.state.gov",
+      "visits": "24417"
+    },
+    {
+      "domain": "fi.usembassy.gov",
+      "visits": "5298"
+    },
+    {
+      "domain": "faq.usps.com",
+      "visits": "2"
+    },
+    {
+      "domain": "faq.ssa.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "fam.state.gov",
+      "visits": "75"
+    },
+    {
+      "domain": "exchanges.state.gov",
+      "visits": "44616"
+    },
+    {
+      "domain": "et.usembassy.gov",
+      "visits": "24422"
+    },
+    {
+      "domain": "et.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "esta.cbp.dhs.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "es.usembassy.gov",
+      "visits": "62633"
+    },
+    {
+      "domain": "er.usembassy.gov",
+      "visits": "2238"
+    },
+    {
+      "domain": "egov.uscis.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "eg.usembassy.gov",
+      "visits": "60271"
+    },
+    {
+      "domain": "eg.edit.usembassy.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "eforms.state.gov",
+      "visits": "15362"
+    },
+    {
+      "domain": "ee.usembassy.gov",
+      "visits": "7969"
+    },
+    {
+      "domain": "educationusa.state.gov",
+      "visits": "12054"
+    },
+    {
+      "domain": "edit.usembassy.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "eca.state.gov",
+      "visits": "19369"
+    },
+    {
+      "domain": "ec.usembassy.gov",
+      "visits": "65120"
+    },
+    {
+      "domain": "ec.pre.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ec.edit.usembassy.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "dz.usembassy.gov",
+      "visits": "16948"
+    },
+    {
+      "domain": "dz.edit.usembassy.gov",
+      "visits": "6"
+    },
+    {
+      "domain": "do.usembassy.gov",
+      "visits": "77736"
+    },
+    {
+      "domain": "dk.usembassy.gov",
+      "visits": "12063"
+    },
+    {
+      "domain": "dj.usembassy.gov",
+      "visits": "7312"
+    },
+    {
+      "domain": "dj.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "devtechcamp.edit.america.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "devtechcamp.america.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "dev.j1visa.state.gov",
+      "visits": "732"
+    },
+    {
+      "domain": "dev.americanspaces.state.gov",
+      "visits": "30"
+    },
+    {
+      "domain": "de.usembassy.gov",
+      "visits": "69358"
+    },
+    {
+      "domain": "cz.usembassy.gov",
+      "visits": "13830"
+    },
+    {
+      "domain": "cz.edit.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "cy.usembassy.gov",
+      "visits": "3933"
+    },
+    {
+      "domain": "cw.usconsulate.gov",
+      "visits": "4366"
+    },
+    {
+      "domain": "cv.usembassy.gov",
+      "visits": "8191"
+    },
+    {
+      "domain": "cu.usembassy.gov",
+      "visits": "39795"
+    },
+    {
+      "domain": "crm.usmission.gov",
+      "visits": "73"
+    },
+    {
+      "domain": "cr.usembassy.gov",
+      "visits": "46451"
+    },
+    {
+      "domain": "cr.edit.usembassy.gov",
+      "visits": "15"
+    },
+    {
+      "domain": "common.usembassy.gov",
+      "visits": "582637"
+    },
+    {
+      "domain": "co.usembassy.gov",
+      "visits": "116650"
+    },
+    {
+      "domain": "cm.usembassy.gov",
+      "visits": "33283"
+    },
+    {
+      "domain": "cl.usembassy.gov",
+      "visits": "52768"
+    },
+    {
+      "domain": "cl.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "ci.usembassy.gov",
+      "visits": "10503"
+    },
+    {
+      "domain": "china.usembassy-china.org.cn",
+      "visits": "157963"
+    },
+    {
+      "domain": "ch.usembassy.gov",
+      "visits": "26034"
+    },
+    {
+      "domain": "ch.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "cg.usembassy.gov",
+      "visits": "3842"
+    },
+    {
+      "domain": "cf.usembassy.gov",
+      "visits": "1676"
+    },
+    {
+      "domain": "cd.usembassy.gov",
+      "visits": "18876"
+    },
+    {
+      "domain": "cd.edit.usembassy.gov",
+      "visits": "3"
+    },
+    {
+      "domain": "careers.state.gov",
+      "visits": "86377"
+    },
+    {
+      "domain": "ca.usembassy.gov",
+      "visits": "156954"
+    },
+    {
+      "domain": "ca.pre.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ca.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "bz.usembassy.gov",
+      "visits": "5211"
+    },
+    {
+      "domain": "by.usembassy.gov",
+      "visits": "2648"
+    },
+    {
+      "domain": "bw.usembassy.gov",
+      "visits": "3546"
+    },
+    {
+      "domain": "bw.edit.usembassy.gov",
+      "visits": "5"
+    },
+    {
+      "domain": "budapest.ilea.state.gov",
+      "visits": "622"
+    },
+    {
+      "domain": "bs.usembassy.gov",
+      "visits": "10453"
+    },
+    {
+      "domain": "br.usembassy.gov",
+      "visits": "254977"
+    },
+    {
+      "domain": "br.edit.usembassy.gov",
+      "visits": "16"
+    },
+    {
+      "domain": "bo.usembassy.gov",
+      "visits": "11327"
+    },
+    {
+      "domain": "bn.usembassy.gov",
+      "visits": "1551"
+    },
+    {
+      "domain": "bn.edit.usembassy.gov",
+      "visits": "14"
+    },
+    {
+      "domain": "bm.usconsulate.gov",
+      "visits": "2167"
+    },
+    {
+      "domain": "bj.usembassy.gov",
+      "visits": "9447"
+    },
+    {
+      "domain": "bj.edit.usembassy.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "bi.usembassy.gov",
+      "visits": "3040"
+    },
+    {
+      "domain": "bi.edit.usembassy.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "bh.usembassy.gov",
+      "visits": "5213"
+    },
+    {
+      "domain": "bg.usembassy.gov",
+      "visits": "12396"
+    },
+    {
+      "domain": "bg.edit.usembassy.gov",
+      "visits": "13"
+    },
+    {
+      "domain": "bf.usembassy.gov",
+      "visits": "11302"
+    },
+    {
+      "domain": "be.usembassy.gov",
+      "visits": "10515"
+    },
+    {
+      "domain": "bd.usembassy.gov",
+      "visits": "54346"
+    },
+    {
+      "domain": "bd.edit.usembassy.gov",
+      "visits": "7"
+    },
+    {
+      "domain": "bb.usembassy.gov",
+      "visits": "15400"
+    },
+    {
+      "domain": "bangkok.ilea.state.gov",
+      "visits": "765"
+    },
+    {
+      "domain": "ba.usembassy.gov",
+      "visits": "5754"
+    },
+    {
+      "domain": "az.usembassy.gov",
+      "visits": "11862"
+    },
+    {
+      "domain": "au.usembassy.gov",
+      "visits": "41361"
+    },
+    {
+      "domain": "at.usembassy.gov",
+      "visits": "11850"
+    },
+    {
+      "domain": "asean.usmission.gov",
+      "visits": "9387"
+    },
+    {
+      "domain": "archive.cdc.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ar.usembassy.gov",
+      "visits": "70053"
+    },
+    {
+      "domain": "ao.usembassy.gov",
+      "visits": "7091"
+    },
+    {
+      "domain": "ao.edit.usembassy.gov",
+      "visits": "8"
+    },
+    {
+      "domain": "americanspaces.state.gov",
+      "visits": "1264"
+    },
+    {
+      "domain": "americanenglish.state.gov",
+      "visits": "27947"
+    },
+    {
+      "domain": "am.usembassy.gov",
+      "visits": "20323"
+    },
+    {
+      "domain": "am.edit.usembassy.gov",
+      "visits": "4"
+    },
+    {
+      "domain": "alumni.state.gov",
+      "visits": "16519"
+    },
+    {
+      "domain": "alumni.ilea.state.gov",
+      "visits": "285"
+    },
+    {
+      "domain": "al.usembassy.gov",
+      "visits": "9494"
+    },
+    {
+      "domain": "af.usembassy.gov",
+      "visits": "6507"
+    },
+    {
+      "domain": "af.edit.usembassy.gov",
+      "visits": "2"
+    },
+    {
+      "domain": "ae.usembassy.gov",
+      "visits": "37780"
+    },
+    {
+      "domain": "about.usps.com",
+      "visits": "3"
+    },
+    {
+      "domain": "2017-2021.state.gov",
+      "visits": "26"
+    },
+    {
+      "domain": "2009-2017.state.gov",
+      "visits": "92658"
+    },
+    {
+      "domain": "2009-2017-usun.state.gov",
+      "visits": "259"
+    },
+    {
+      "domain": "2009-2017-fpc.state.gov",
+      "visits": "230"
+    },
+    {
+      "domain": "2001-2009.state.gov",
+      "visits": "52143"
+    },
+    {
+      "domain": "1997-2001.state.gov",
+      "visits": "12226"
+    },
+    {
+      "domain": "127.0.0.1",
+      "visits": "2"
+    }
+  ],
+  "totals": {
+    "visits": 19002861
+  },
+  "taken_at": "2024-01-05T16:00:36.786Z",
+  "agency": "state"
+}

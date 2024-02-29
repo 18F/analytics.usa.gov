@@ -1,0 +1,290 @@
+{
+  "name": "top-domains-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      },
+      {
+        "name": "totalUsers"
+      },
+      {
+        "name": "screenPageViews"
+      },
+      {
+        "name": "screenPageViewsPerSession"
+      },
+      {
+        "name": "averageSessionDuration"
+      },
+      {
+        "name": "bounceRate"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "hostName",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "unifiedScreenName",
+                "stringFilter": {
+                  "matchType": "FULL_REGEXP",
+                  "value": "/(.+)$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "20",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395253935"
+  },
+  "meta": {
+    "name": "Top Domains (30 Days)",
+    "description": "Last 30 days' top 20 domains, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "domain": "forecast.weather.gov",
+      "visits": "12868212",
+      "users": "4505976",
+      "pageviews": "24074736",
+      "pageviews_per_session": "1.8708687733773737",
+      "avg_session_duration": "228.00392369583727",
+      "bounce_rate": "0.20319023342170614"
+    },
+    {
+      "domain": "www.weather.gov",
+      "visits": "6623347",
+      "users": "3275261",
+      "pageviews": "13905306",
+      "pageviews_per_session": "2.0994379427802894",
+      "avg_session_duration": "227.02834964838226",
+      "bounce_rate": "0.14975842274306328"
+    },
+    {
+      "domain": "radar.weather.gov",
+      "visits": "3654695",
+      "users": "2707806",
+      "pageviews": "18372784",
+      "pageviews_per_session": "5.0271729925479418",
+      "avg_session_duration": "571.25785331962174",
+      "bounce_rate": "0.44417605299484636"
+    },
+    {
+      "domain": "www.nhc.noaa.gov",
+      "visits": "1344509",
+      "users": "615622",
+      "pageviews": "2439358",
+      "pageviews_per_session": "1.8143113954610939",
+      "avg_session_duration": "303.15831743896263",
+      "bounce_rate": "0.61734209291272879"
+    },
+    {
+      "domain": "www.cbp.gov",
+      "visits": "1270770",
+      "users": "1157982",
+      "pageviews": "2069149",
+      "pageviews_per_session": "1.6282639659419091",
+      "avg_session_duration": "147.9231673923889",
+      "bounce_rate": "0.23095209990792984"
+    },
+    {
+      "domain": "www.census.gov",
+      "visits": "1113118",
+      "users": "965254",
+      "pageviews": "1989094",
+      "pageviews_per_session": "1.7869569982697253",
+      "avg_session_duration": "133.3211139699888",
+      "bounce_rate": "0.34511704958503953"
+    },
+    {
+      "domain": "www.time.gov",
+      "visits": "819779",
+      "users": "431155",
+      "pageviews": "83870873",
+      "pageviews_per_session": "102.30912599615262",
+      "avg_session_duration": "7064.4114058668029",
+      "bounce_rate": "0.15257892675952908"
+    },
+    {
+      "domain": "aviationweather.gov",
+      "visits": "785404",
+      "users": "498010",
+      "pageviews": "1771103",
+      "pageviews_per_session": "2.2550216194468069",
+      "avg_session_duration": "282.07954601318545",
+      "bounce_rate": "0.467401490188489"
+    },
+    {
+      "domain": "www.noaa.gov",
+      "visits": "771826",
+      "users": "525539",
+      "pageviews": "826626",
+      "pageviews_per_session": "1.0710004586525979",
+      "avg_session_duration": "124.81498723338291",
+      "bounce_rate": "0.32580659371412729"
+    },
+    {
+      "domain": "time.gov",
+      "visits": "520672",
+      "users": "230016",
+      "pageviews": "75202501",
+      "pageviews_per_session": "144.4335416538627",
+      "avg_session_duration": "10594.448841986123",
+      "bounce_rate": "0.22056688279761538"
+    },
+    {
+      "domain": "www.spc.noaa.gov",
+      "visits": "519061",
+      "users": "192629",
+      "pageviews": "5431597",
+      "pageviews_per_session": "10.464274911811907",
+      "avg_session_duration": "2411.9360759835681",
+      "bounce_rate": "0.11725982110002485"
+    },
+    {
+      "domain": "www.star.nesdis.noaa.gov",
+      "visits": "497112",
+      "users": "232799",
+      "pageviews": "2817391",
+      "pageviews_per_session": "5.6675175815510386",
+      "avg_session_duration": "860.56752382606146",
+      "bounce_rate": "0.18713891436939764"
+    },
+    {
+      "domain": "www.ndbc.noaa.gov",
+      "visits": "387457",
+      "users": "184759",
+      "pageviews": "884220",
+      "pageviews_per_session": "2.2821113052545186",
+      "avg_session_duration": "454.03923082798872",
+      "bounce_rate": "0.23208768973073141"
+    },
+    {
+      "domain": "www.trade.gov",
+      "visits": "381818",
+      "users": "351908",
+      "pageviews": "528818",
+      "pageviews_per_session": "1.3850001833334207",
+      "avg_session_duration": "143.2469659241367",
+      "bounce_rate": "0.50836524207868672"
+    },
+    {
+      "domain": "www.wpc.ncep.noaa.gov",
+      "visits": "309202",
+      "users": "160897",
+      "pageviews": "594521",
+      "pageviews_per_session": "1.922759231829031",
+      "avg_session_duration": "229.16174690169862",
+      "bounce_rate": "0.14162262857290703"
+    },
+    {
+      "domain": "www.uspto.gov",
+      "visits": "288624",
+      "users": "215425",
+      "pageviews": "356881",
+      "pageviews_per_session": "1.2364910748932867",
+      "avg_session_duration": "135.890495262816",
+      "bounce_rate": "0.2943448916237042"
+    },
+    {
+      "domain": "bwt.cbp.gov",
+      "visits": "283283",
+      "users": "184683",
+      "pageviews": "532299",
+      "pageviews_per_session": "1.8790361581881017",
+      "avg_session_duration": "266.23618302876281",
+      "bounce_rate": "0.18041675638848784"
+    },
+    {
+      "domain": "help.cbp.gov",
+      "visits": "231127",
+      "users": "221719",
+      "pageviews": "266098",
+      "pageviews_per_session": "1.1513064246063853",
+      "avg_session_duration": "147.27843563585819",
+      "bounce_rate": "0.214384299540945"
+    },
+    {
+      "domain": "careers.cbp.gov",
+      "visits": "228508",
+      "users": "211536",
+      "pageviews": "289434",
+      "pageviews_per_session": "1.2666252385036847",
+      "avg_session_duration": "100.98924927476061",
+      "bounce_rate": "0.324496297722618"
+    },
+    {
+      "domain": "tidesandcurrents.noaa.gov",
+      "visits": "225460",
+      "users": "179766",
+      "pageviews": "726166",
+      "pageviews_per_session": "3.2208196575889292",
+      "avg_session_duration": "261.04177333485757",
+      "bounce_rate": "0.54052160028386409"
+    }
+  ],
+  "totals": {
+    "users": 17048742,
+    "visits": 33123984
+  },
+  "taken_at": "2024-01-05T15:39:55.345Z",
+  "agency": "commerce"
+}

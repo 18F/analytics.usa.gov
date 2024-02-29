@@ -1,0 +1,79 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395441051"
+  },
+  "meta": {
+    "names": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites."
+  },
+  "totals": {
+    "visits": 71286353,
+    "os": {
+      "Windows": 31952420,
+      "iOS": 22248502,
+      "Android": 8333373,
+      "Macintosh": 6299586,
+      "Linux": 1905157,
+      "Chrome OS": 500005,
+      "(not set)": 46265,
+      "Firefox OS": 138,
+      "OS/2": 99,
+      "Fuchsia": 315,
+      "Playstation 4": 141,
+      "Samsung": 5,
+      "Sony": 6,
+      "Tizen": 211,
+      "FreeBSD": 29,
+      "UNIX": 8,
+      "SymbianOS": 7,
+      "Nokia": 1,
+      "Xbox": 9,
+      "Vodafone": 1,
+      "Unknown": 5,
+      "BlackBerry": 25,
+      "Playstation Portable": 1,
+      "Windows Phone": 10,
+      "MOT": 1,
+      "OpenBSD": 20,
+      "LG": 1,
+      "NetBSD": 3,
+      "BeOS": 1,
+      "iPhone": 1,
+      "SunOS": 4,
+      "PalmOS": 2,
+      "Nintendo Wii": 1
+    }
+  },
+  "taken_at": "2024-01-05T14:43:07.931Z",
+  "agency": "office-personnel-management"
+}

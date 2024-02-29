@@ -1,0 +1,83 @@
+{
+  "name": "os",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437322"
+  },
+  "meta": {
+    "names": "Operating Systems",
+    "description": "90 days of visits, broken down by operating system and date, for all sites."
+  },
+  "totals": {
+    "visits": 25290319,
+    "os": {
+      "iOS": 8232719,
+      "Windows": 6907959,
+      "Android": 3888086,
+      "Macintosh": 4022748,
+      "Chrome OS": 1453450,
+      "Linux": 658970,
+      "(not set)": 122099,
+      "Firefox OS": 710,
+      "OS/2": 337,
+      "Playstation 4": 329,
+      "Tizen": 564,
+      "Fuchsia": 795,
+      "Windows Phone": 104,
+      "BlackBerry": 317,
+      "Sony": 21,
+      "UNIX": 35,
+      "SymbianOS": 31,
+      "Samsung": 39,
+      "FreeBSD": 586,
+      "MOT": 3,
+      "SunOS": 5,
+      "BeOS": 2,
+      "NetBSD": 116,
+      "Solaris": 6,
+      "LG": 5,
+      "Mac OS": 29,
+      "NTT DoCoMo": 3,
+      "OpenBSD": 191,
+      "Unknown": 6,
+      "PalmOS": 7,
+      "Playstation Vita": 11,
+      "Xbox": 10,
+      "Nokia": 15,
+      "Playstation 3": 2,
+      "Vodafone": 2,
+      "IRIX": 1,
+      "iPhone": 6
+    }
+  },
+  "taken_at": "2024-01-05T14:47:06.375Z",
+  "agency": "executive-office-president"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "device-model",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "mobileDeviceModel"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395443988"
+  },
+  "meta": {
+    "name": "Device Model",
+    "description": "90 days of visits by Device Model for all sites."
+  },
+  "totals": {
+    "visits": 554122
+  },
+  "taken_at": "2024-01-05T14:41:40.522Z",
+  "agency": "national-science-foundation"
+}

@@ -1,0 +1,91 @@
+{
+  "name": "language",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "language"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "10"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395437327"
+  },
+  "meta": {
+    "name": "Browser Language",
+    "description": "90 days of visits by browser language for all sites. (>1000 sessions)"
+  },
+  "totals": {
+    "visits": 4589770,
+    "languages": {
+      "English": 4401838,
+      "Spanish": 111258,
+      "Chinese": 13648,
+      "French": 9316,
+      "Korean": 7238,
+      "Portuguese": 4529,
+      "Russian": 5916,
+      "Italian": 4267,
+      "Japanese": 5981,
+      "German": 4421,
+      "Polish": 1971,
+      "Turkish": 3697,
+      "Vietnamese": 2676,
+      "Arabic": 2577,
+      "Dutch": 1584,
+      "Hebrew": 663,
+      "Persian": 1489,
+      "Ukrainian": 941,
+      "Thai": 721,
+      "(other)": 538,
+      "Indonesian": 1539,
+      "Czech": 267,
+      "Norwegian Bokmål": 212,
+      "Swedish": 586,
+      "Hungarian": 264,
+      "Finnish": 85,
+      "Georgian": 660,
+      "Danish": 230,
+      "Greek": 446,
+      "Catalan": 40,
+      "Slovak": 24,
+      "Latvian": 22,
+      "Romanian": 115,
+      "Lithuanian": 11
+    }
+  },
+  "taken_at": "2024-01-05T15:43:27.324Z",
+  "agency": "small-business-administration"
+}

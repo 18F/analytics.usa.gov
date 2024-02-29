@@ -1,0 +1,35 @@
+@use "uswds-core" as *;
+
+.analytics-data {
+  color: color("gray-90");
+  padding: 0;
+
+  @include at-media("tablet") {
+    padding: units(2);
+  }
+
+  &__header {
+    padding: units(2);
+
+    @include at-media("tablet") {
+      padding: 0;
+    }
+
+    div {
+      font-size: units(2);
+      font-weight: font-weight(300);
+    }
+  }
+
+  h2 {
+    padding: units(2) units(2) units(2) units(2);
+
+    @include at-media("tablet") {
+      padding: units(2) 0 units(2) 0;
+    }
+  }
+
+  table {
+    margin-top: 0
+  }
+}

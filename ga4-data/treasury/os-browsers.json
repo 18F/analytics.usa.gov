@@ -1,0 +1,184 @@
+{
+  "name": "os-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystem"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395126080"
+  },
+  "meta": {
+    "name": "OS-browser combinations",
+    "description": "90 days of visits broken down by browser and OS for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 136333492,
+    "by_os": {
+      "Windows": {
+        "Chrome": 40605061,
+        "Edge": 16875068,
+        "Firefox": 2412031,
+        "Internet Explorer": 146741,
+        "Opera": 113226,
+        "YaBrowser": 22017,
+        "Safari": 31678,
+        "Whale Browser": 222
+      },
+      "iOS": {
+        "Safari": 29125081,
+        "Chrome": 3780025,
+        "Safari (in-app)": 676409,
+        "YaBrowser": 823
+      },
+      "Macintosh": {
+        "Chrome": 12995541,
+        "Safari": 4593745,
+        "Firefox": 495832,
+        "Edge": 65448,
+        "Mozilla Compatible Agent": 66730,
+        "Opera": 9958,
+        "YaBrowser": 127
+      },
+      "Android": {
+        "Chrome": 13238909,
+        "Android Webview": 1028816,
+        "Samsung Internet": 1145520,
+        "Amazon Silk": 136025,
+        "Firefox": 111155,
+        "Edge": 95794,
+        "(not set)": 32141,
+        "Opera": 26722,
+        "YaBrowser": 3402
+      },
+      "Linux": {
+        "Chrome": 6492185,
+        "Firefox": 118603,
+        "Samsung Internet": 31674,
+        "Edge": 4145
+      },
+      "Chrome OS": {
+        "Chrome": 1605343
+      },
+      "(not set)": {
+        "(not set)": 243702,
+        "Mozilla Compatible Agent": 2358,
+        "Opera Mini": 1235
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "Windows": 40605061,
+        "Macintosh": 12995541,
+        "Android": 13238909,
+        "Linux": 6492185,
+        "iOS": 3780025,
+        "Chrome OS": 1605343
+      },
+      "Safari": {
+        "iOS": 29125081,
+        "Macintosh": 4593745,
+        "Windows": 31678
+      },
+      "Edge": {
+        "Windows": 16875068,
+        "Android": 95794,
+        "Macintosh": 65448,
+        "Linux": 4145
+      },
+      "Firefox": {
+        "Windows": 2412031,
+        "Macintosh": 495832,
+        "Linux": 118603,
+        "Android": 111155
+      },
+      "Android Webview": {
+        "Android": 1028816
+      },
+      "Samsung Internet": {
+        "Android": 1145520,
+        "Linux": 31674
+      },
+      "Safari (in-app)": {
+        "iOS": 676409
+      },
+      "Internet Explorer": {
+        "Windows": 146741
+      },
+      "(not set)": {
+        "(not set)": 243702,
+        "Android": 32141
+      },
+      "Amazon Silk": {
+        "Android": 136025
+      },
+      "Opera": {
+        "Windows": 113226,
+        "Android": 26722,
+        "Macintosh": 9958
+      },
+      "Mozilla Compatible Agent": {
+        "Macintosh": 66730,
+        "(not set)": 2358
+      },
+      "YaBrowser": {
+        "Windows": 22017,
+        "Android": 3402,
+        "iOS": 823,
+        "Macintosh": 127
+      },
+      "Opera Mini": {
+        "(not set)": 1235
+      },
+      "Whale Browser": {
+        "Windows": 222
+      }
+    }
+  },
+  "taken_at": "2024-01-05T16:03:34.398Z",
+  "agency": "treasury"
+}

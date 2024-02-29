@@ -1,0 +1,76 @@
+{
+  "name": "second-level-domains",
+  "query": {
+    "dimensions": [
+      {
+        "name": "hostName"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "14daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "hostName"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "hostname",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^[^\\.]+\\.[^\\.]+$",
+          "caseSensitive": false
+        }
+      },
+      "metricFilter": {
+        "filter": {
+          "fieldName": "sessions",
+          "numericFilter": {
+            "operation": "GREATER_THAN",
+            "value": {
+              "int64Value": "4"
+            }
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395450427"
+  },
+  "meta": {
+    "name": "Participating second-level domains.",
+    "description": "Participating second-level domains over the last 2 weeks."
+  },
+  "data": [
+    {
+      "hostname": "urban-links.org",
+      "visits": "1265"
+    },
+    {
+      "hostname": "digital.gov",
+      "visits": "1"
+    },
+    {
+      "hostname": "agrilinks.org",
+      "visits": "7293"
+    }
+  ],
+  "totals": {
+    "visits": 8559
+  },
+  "taken_at": "2024-01-05T16:05:25.250Z",
+  "agency": "agency-international-development"
+}

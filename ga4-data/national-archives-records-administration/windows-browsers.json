@@ -1,0 +1,132 @@
+{
+  "name": "windows-browsers",
+  "query": {
+    "dimensions": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "browser"
+      },
+      {
+        "name": "operatingSystemVersion"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "90daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "dimension": {
+          "dimensionName": "date"
+        },
+        "desc": true
+      },
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "operatingSystem",
+        "stringFilter": {
+          "value": "Windows"
+        }
+      }
+    },
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
+    "samplingLevel": "HIGHER_PRECISION",
+    "limit": "10000",
+    "property": "properties/395458906"
+  },
+  "meta": {
+    "name": "Windows-browser combinations",
+    "description": "90 days of visits broken down by Windows versions and browser for all sites. (>100 sessions)"
+  },
+  "totals": {
+    "visits": 19669456,
+    "by_windows": {
+      "7": {
+        "Chrome": 201821,
+        "Firefox": 18563,
+        "Edge": 2549
+      },
+      "8": {
+        "Chrome": 12048,
+        "Safari": 21683
+      },
+      "10": {
+        "Chrome": 9395147,
+        "Edge": 4374965,
+        "Firefox": 599464,
+        "Opera": 69058,
+        "YaBrowser": 2589,
+        "Internet Explorer": 1883
+      },
+      "11": {
+        "Chrome": 3398326,
+        "Edge": 1529345
+      },
+      "8.1": {
+        "Chrome": 41802
+      },
+      "XP": {
+        "Chrome": 213
+      }
+    },
+    "by_browsers": {
+      "Chrome": {
+        "7": 201821,
+        "8": 12048,
+        "10": 9395147,
+        "11": 3398326,
+        "8.1": 41802,
+        "XP": 213
+      },
+      "Edge": {
+        "7": 2549,
+        "10": 4374965,
+        "11": 1529345
+      },
+      "Firefox": {
+        "7": 18563,
+        "10": 599464
+      },
+      "Opera": {
+        "10": 69058
+      },
+      "YaBrowser": {
+        "10": 2589
+      },
+      "Safari": {
+        "8": 21683
+      },
+      "Internet Explorer": {
+        "10": 1883
+      }
+    }
+  },
+  "taken_at": "2024-01-05T15:48:48.064Z",
+  "agency": "national-archives-records-administration"
+}

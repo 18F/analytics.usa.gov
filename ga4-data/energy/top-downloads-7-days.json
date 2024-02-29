@@ -1,0 +1,697 @@
+{
+  "name": "top-downloads-7-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "pageTitle"
+      },
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "fullPageUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "matchType": "FULL_REGEXP",
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": "~swf$",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fileName",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\\\.(zip|doc)\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "fullPageUrl",
+                "stringFilter": {
+                  "matchType": "PARTIAL_REGEXP",
+                  "value": ".*\\busps\\.com\\b.*",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "samplingLevel": "HIGHER_PRECISION",
+    "property": "properties/395236978"
+  },
+  "meta": {
+    "name": "Top Downloads (7 Days)",
+    "description": "Top downloads in the last 7 days."
+  },
+  "data": [
+    {
+      "page_title": "Electrolyzer Installation Webinar | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/fuelcells/electrolyzer-installation-webinar",
+      "total_events": "1421"
+    },
+    {
+      "page_title": "GREET | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/greet",
+      "total_events": "1188"
+    },
+    {
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program Projects | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program-projects",
+      "total_events": "968"
+    },
+    {
+      "page_title": "Home Energy Rebates Programs Guidance | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/home-energy-rebates-programs-guidance",
+      "total_events": "582"
+    },
+    {
+      "page_title": "Making Our Homes More Efficient: Clean Energy Tax Credits for Consumers | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/policy/articles/making-our-homes-more-efficient-clean-energy-tax-credits-consumers",
+      "total_events": "462"
+    },
+    {
+      "page_title": "Clean Hydrogen Production Tax Credit (45V) Resources | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/articles/clean-hydrogen-production-tax-credit-45v-resources",
+      "total_events": "447"
+    },
+    {
+      "page_title": "National Transmission Needs Study | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/gdo/national-transmission-needs-study",
+      "total_events": "418"
+    },
+    {
+      "page_title": "National Definition for a Zero Emissions Building | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/buildings/national-definition-zero-emissions-building",
+      "total_events": "359"
+    },
+    {
+      "page_title": "Vapor Intrusion Screening Level Home",
+      "event_label": "file_download",
+      "page": "epa-visl.ornl.gov/cgi-bin/visl_search",
+      "total_events": "328"
+    },
+    {
+      "page_title": "EECBG Program Formula Grant Application Hub | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/eecbg-program-formula-grant-application-hub",
+      "total_events": "275"
+    },
+    {
+      "page_title": "Transmission Business Practices - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/transmission/business-practices",
+      "total_events": "240"
+    },
+    {
+      "page_title": "ZERH Single Family Version 2 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/buildings/zerh-single-family-version-2",
+      "total_events": "226"
+    },
+    {
+      "page_title": "Grid Resilience and Innovation Partnerships (GRIP) Program | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/gdo/grid-resilience-and-innovation-partnerships-grip-program",
+      "total_events": "218"
+    },
+    {
+      "page_title": "Homeowner’s Guide to the Federal Tax Credit for Solar Photovoltaics | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/solar/homeowners-guide-federal-tax-credit-solar-photovoltaics",
+      "total_events": "202"
+    },
+    {
+      "page_title": "Cybersecurity Capability Maturity Model (C2M2) | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/ceser/cybersecurity-capability-maturity-model-c2m2",
+      "total_events": "194"
+    },
+    {
+      "page_title": "Weatherization Program Notice BIL-5: BIL Average Cost Per Dwelling Unit and Allowable Use of Funds Update | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-program-notice-bil-5-bil-average-cost-dwelling-unit-and-0",
+      "total_events": "166"
+    },
+    {
+      "page_title": "Annual Merit Review Presentations | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/vehicles/annual-merit-review-presentations",
+      "total_events": "155"
+    },
+    {
+      "page_title": "State-Based Home Energy Efficiency Contractor Training Grants | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/state-based-home-energy-efficiency-contractor-training-grants",
+      "total_events": "153"
+    },
+    {
+      "page_title": "Weatherization Assistance Program Fact Sheet | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-assistance-program-fact-sheet",
+      "total_events": "150"
+    },
+    {
+      "page_title": "Offshore Wind Market Report: 2023 Edition | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/wind/articles/offshore-wind-market-report-2023-edition",
+      "total_events": "148"
+    },
+    {
+      "page_title": "Qualifying Advanced Energy Project Credit (48C) Program | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/infrastructure/qualifying-advanced-energy-project-credit-48c-program",
+      "total_events": "141"
+    },
+    {
+      "page_title": "Explore a Career at BPA - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/about/careers/explore-a-career-at-bpa",
+      "total_events": "140"
+    },
+    {
+      "page_title": "Air-Source Heat Pumps | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/air-source-heat-pumps",
+      "total_events": "122"
+    },
+    {
+      "page_title": "Home Efficiency Rebates Program: Sample Application Responses and Guidance | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/slsc/home-energy-rebate-program/articles/home-efficiency-rebates-program-sample-application",
+      "total_events": "119"
+    },
+    {
+      "page_title": "Sample Project Execution Plan | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/projectmanagement/articles/sample-project-execution-plan",
+      "total_events": "118"
+    },
+    {
+      "page_title": "FY 2024 Budget Justification | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/cfo/articles/fy-2024-budget-justification",
+      "total_events": "117"
+    },
+    {
+      "page_title": "National Interest Electric Transmission Corridor Designation Process | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/gdo/national-interest-electric-transmission-corridor-designation-process",
+      "total_events": "116"
+    },
+    {
+      "page_title": "ZERH Version 1 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/buildings/zerh-version-1",
+      "total_events": "113"
+    },
+    {
+      "page_title": "Bonneville Purchasing Instructions - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/customers-and-contractors/bonneville-purchasing-instructions",
+      "total_events": "108"
+    },
+    {
+      "page_title": "Natural Gas Imports and Exports Monthly 2023 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/fecm/articles/natural-gas-imports-and-exports-monthly-2023",
+      "total_events": "107"
+    },
+    {
+      "page_title": "Document Library - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/efficiency/document-library",
+      "total_events": "106"
+    },
+    {
+      "page_title": "PF 2024-14 CAAC Letter 2024-03, Class Deviation from the Federal Acquisition Regulation (FAR) to Implement the New Trade Agreements Thresholds | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/management/pf-2024-14-caac-letter-2024-03-class-deviation-federal-acquisition-regulation-far",
+      "total_events": "105"
+    },
+    {
+      "page_title": "How Maglev Works | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/articles/how-maglev-works",
+      "total_events": "104"
+    },
+    {
+      "page_title": "Regional Screening Levels (RSL) | Superfund Risk Assessment | US EPA",
+      "event_label": "file_download",
+      "page": "epa-prgs.ornl.gov/cgi-bin/chemicals/csl_search",
+      "total_events": "103"
+    },
+    {
+      "page_title": "Department of Energy Acquisition Guide | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/management/articles/department-energy-acquisition-guide",
+      "total_events": "100"
+    },
+    {
+      "page_title": "ttsl - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/transmission/ttsl",
+      "total_events": "97"
+    },
+    {
+      "page_title": "FOIA Requests Library - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/about/who-we-are/freedom-of-information-act/requests-library",
+      "total_events": "95"
+    },
+    {
+      "page_title": "Heat Pump Systems | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/heat-pump-systems",
+      "total_events": "95"
+    },
+    {
+      "page_title": "New and Used Clean Vehicle Tax Credits | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/new-and-used-clean-vehicle-tax-credits",
+      "total_events": "95"
+    },
+    {
+      "page_title": "Weatherization Memorandum 117: WAP Sustainable Energy Resources for Consumers (SERC) Bipartisan Infrastructure Law (BIL) Grant Application Instructions | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-memorandum-117-wap-sustainable-energy-resources-consumers-serc",
+      "total_events": "95"
+    },
+    {
+      "page_title": "Implementation Manual - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/efficiency/implementation-manual",
+      "total_events": "93"
+    },
+    {
+      "page_title": "Energy Auditor Training Grant Program | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/energy-auditor-training-grant-program",
+      "total_events": "92"
+    },
+    {
+      "page_title": "Office of Intelligence and Counterintelligence | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/intelligence/office-intelligence-and-counterintelligence",
+      "total_events": "92"
+    },
+    {
+      "page_title": "Quarterly Solar Industry Update | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/solar/quarterly-solar-industry-update",
+      "total_events": "92"
+    },
+    {
+      "page_title": "Weatherization Memorandum 120: WAP Bipartisan Infrastructure Law Annual Guidance Implementation and WPN Numbering | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-memorandum-120-wap-bipartisan-infrastructure-law-annual-guidance",
+      "total_events": "91"
+    },
+    {
+      "page_title": "Weatherization Program Notice 24-1: Program Year 2024 Weatherization Grant Application | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-program-notice-24-1-program-year-2024-weatherization-grant-0",
+      "total_events": "89"
+    },
+    {
+      "page_title": "Stockpile Stewardship and Management Plan (SSMP) | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/nnsa/articles/stockpile-stewardship-and-management-plan-ssmp",
+      "total_events": "88"
+    },
+    {
+      "page_title": "DOE Industrial Decarbonization Roadmap | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/industrial-technologies/doe-industrial-decarbonization-roadmap",
+      "total_events": "87"
+    },
+    {
+      "page_title": "ZERH Multifamily Version 2 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/buildings/zerh-multifamily-version-2",
+      "total_events": "87"
+    },
+    {
+      "page_title": "DOE Qualified List of Energy Service Companies | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/femp/articles/doe-qualified-list-energy-service-companies",
+      "total_events": "85"
+    },
+    {
+      "page_title": "Energy Saver Guide: Tips on Saving Money and Energy at Home | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/energy-saver-guide-tips-saving-money-and-energy-home",
+      "total_events": "84"
+    },
+    {
+      "page_title": "Purchasing and Maintaining A Water Softener | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/purchasing-and-maintaining-water-softener",
+      "total_events": "84"
+    },
+    {
+      "page_title": "DOE Applicant Portal | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/applicant-portal",
+      "total_events": "82"
+    },
+    {
+      "page_title": "Day-Ahead Market - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/learn-and-participate/projects/day-ahead-market",
+      "total_events": "80"
+    },
+    {
+      "page_title": "NNSA's DEMO pay system compared to the General Schedule | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/nnsa/nnsas-demo-pay-system-compared-general-schedule",
+      "total_events": "80"
+    },
+    {
+      "page_title": "PF 2024-15 Federal Acquisition Circular (FAC) 2024-02 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/management/pf-2024-15-federal-acquisition-circular-fac-2024-02",
+      "total_events": "79"
+    },
+    {
+      "page_title": "Provider of Choice - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/power/provider-of-choice",
+      "total_events": "79"
+    },
+    {
+      "page_title": "Federal Solar Tax Credits for Businesses | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/solar/federal-solar-tax-credits-businesses",
+      "total_events": "76"
+    },
+    {
+      "page_title": "November 20 Grid Resilience and Innovation Partnerships (GRIP) Program Second Round Funding Webinar | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/gdo/events/november-20-grid-resilience-and-innovation-partnerships-grip-program-second-round",
+      "total_events": "73"
+    },
+    {
+      "page_title": "Homeowner’s Guide to Going Solar | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/solar/homeowners-guide-going-solar",
+      "total_events": "72"
+    },
+    {
+      "page_title": "Steam Systems | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/iedo/steam-systems",
+      "total_events": "71"
+    },
+    {
+      "page_title": "Executives & Structure - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/about/who-we-are/executives",
+      "total_events": "70"
+    },
+    {
+      "page_title": "About Community Benefits Plans | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/infrastructure/about-community-benefits-plans",
+      "total_events": "69"
+    },
+    {
+      "page_title": "Energy Efficiency and Conservation Block Grant Program | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/energy-efficiency-and-conservation-block-grant-program",
+      "total_events": "69"
+    },
+    {
+      "page_title": "Energy Saver History Timeline: Refrigeration and Refrigerators | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/energy-saver-history-timeline-refrigeration-and-refrigerators",
+      "total_events": "68"
+    },
+    {
+      "page_title": "EECBG Program Formula Grant Application Instructions | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/articles/eecbg-program-formula-grant-application-instructions",
+      "total_events": "67"
+    },
+    {
+      "page_title": "Storage Innovations 2030 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/oe/storage-innovations-2030",
+      "total_events": "67"
+    },
+    {
+      "page_title": "The U.S. National Blueprint for Transportation Decarbonization: A Joint Strategy to Transform Transportation | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/us-national-blueprint-transportation-decarbonization-joint-strategy-transform-transportation",
+      "total_events": "67"
+    },
+    {
+      "page_title": "Turn Down the Temperature, but Don't Let Your Pipes Freeze! | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/articles/turn-down-temperature-dont-let-your-pipes-freeze",
+      "total_events": "67"
+    },
+    {
+      "page_title": "Weatherization Memorandum 121: Announce the Recipients of Program Year (PY) 2023 Sustainable Energy for Consumers (SERC) Awards | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/wap/articles/weatherization-memorandum-121-announce-recipients-program-year-py-2023",
+      "total_events": "67"
+    },
+    {
+      "page_title": "Securing America’s Clean Energy Supply Chain | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/policy/securing-americas-clean-energy-supply-chain",
+      "total_events": "66"
+    },
+    {
+      "page_title": "Manufacturing Energy and Carbon Footprints (2018 MECS) | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/iedo/manufacturing-energy-and-carbon-footprints-2018-mecs",
+      "total_events": "65"
+    },
+    {
+      "page_title": "Land-Based Wind Market Report: 2023 Edition | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/wind/articles/land-based-wind-market-report-2023-edition",
+      "total_events": "64"
+    },
+    {
+      "page_title": "Sustainable Aviation Fuel Grand Challenge Roadmap: Flight Plan for Sustainable Aviation Fuel Report | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/bioenergy/articles/sustainable-aviation-fuel-grand-challenge-roadmap-flight-plan-sustainable",
+      "total_events": "64"
+    },
+    {
+      "page_title": "Hydrogen Fuel Cell Engines and Related Technologies Course Manual | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/eere/fuelcells/articles/hydrogen-fuel-cell-engines-and-related-technologies-course-manual",
+      "total_events": "63"
+    },
+    {
+      "page_title": "Maps - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/about/newsroom/maps",
+      "total_events": "61"
+    },
+    {
+      "page_title": "Rate Adjustments - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/rate-and-tariff-proceedings/rate-adjustments",
+      "total_events": "61"
+    },
+    {
+      "page_title": "Consumer Guide to Recycling Codes Fact Sheet | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/consumer-guide-recycling-codes-fact-sheet",
+      "total_events": "59"
+    },
+    {
+      "page_title": "Energy Department Releases Guidance to Identify High-Priority Areas for Transmission Development | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/gdo/articles/energy-department-releases-guidance-identify-high-priority-areas-transmission",
+      "total_events": "59"
+    },
+    {
+      "page_title": "Financial Management Handbook | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/cfo/financial-management-handbook",
+      "total_events": "59"
+    },
+    {
+      "page_title": "ALRD – Assistance for Latest and Zero Building Energy Code Adoption (Sec. 50131) for States and Territories | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/articles/alrd-assistance-latest-and-zero-building-energy-code-adoption-sec-50131-states-and",
+      "total_events": "58"
+    },
+    {
+      "page_title": "What Are Critical Materials and Critical Minerals? | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/cmm/what-are-critical-materials-and-critical-minerals",
+      "total_events": "58"
+    },
+    {
+      "page_title": "Agricultural Marketing Toolkit - Bonneville Power Administration",
+      "event_label": "file_download",
+      "page": "www.bpa.gov/energy-and-services/efficiency/marketing-resources/agricultural-toolkit",
+      "total_events": "56"
+    },
+    {
+      "page_title": "Home Efficiency Rebates Retroactivity Fact Sheet and Eligibility Checklists | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/articles/home-efficiency-rebates-retroactivity-fact-sheet-and-eligibility-checklists",
+      "total_events": "56"
+    },
+    {
+      "page_title": "Justice40 Initiative | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/justice/justice40-initiative",
+      "total_events": "56"
+    },
+    {
+      "page_title": "LNG Monthly 2023 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/fecm/articles/lng-monthly-2023",
+      "total_events": "56"
+    },
+    {
+      "page_title": "Solar Water Heaters | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/energysaver/solar-water-heaters",
+      "total_events": "56"
+    },
+    {
+      "page_title": "State Energy Program Guidance | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/state-energy-program-guidance",
+      "total_events": "54"
+    },
+    {
+      "page_title": "2023 Document Center | Department of Energy",
+      "event_label": "file_download",
+      "page": "cms.doe.gov/fecm/articles/2023-document-center",
+      "total_events": "53"
+    },
+    {
+      "page_title": "Acquisition Forecast | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/osdbu/acquisition-forecast",
+      "total_events": "53"
+    },
+    {
+      "page_title": "Home Energy Rebates Frequently Asked Questions | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/scep/home-energy-rebates-frequently-asked-questions",
+      "total_events": "53"
+    },
+    {
+      "page_title": "Year in Review | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/em/year-review",
+      "total_events": "53"
+    },
+    {
+      "page_title": "PF 2024-12 CAAC Letter 2020-04 Supplement 1, Class Deviation from the Federal Acquisition Regulation (FAR) to Eliminate Hard Copy Original Documents, Signatures, Notarization, Seals on Bonds and Other Seals for Certain Contract Requirements | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/management/pf-2024-12-caac-letter-2020-04-supplement-1-class-deviation-federal-acquisition",
+      "total_events": "52"
+    },
+    {
+      "page_title": "20220809 | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/nnsa/20220809",
+      "total_events": "51"
+    },
+    {
+      "page_title": "COVID-19 Workplace Safety Framework | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/covid/articles/covid-19-workplace-safety-framework",
+      "total_events": "51"
+    },
+    {
+      "page_title": "Our Organization and Employees | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/fecm/our-organization-and-employees",
+      "total_events": "51"
+    },
+    {
+      "page_title": "Venture Global CP2 LNG, LLC - FE Dkt. No. - 21-131-LNG | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/fecm/articles/venture-global-cp2-lng-llc-fe-dkt-no-21-131-lng",
+      "total_events": "51"
+    },
+    {
+      "page_title": "Organization Chart | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/organization-chart",
+      "total_events": "50"
+    },
+    {
+      "page_title": "PF 2024-11 Acquisition Guide, Chapter 7.1, Acquisition Planning and Acquisition Letter 2010-05 Contract Periods of Performance Exceeding 5 Years | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/management/pf-2024-11-acquisition-guide-chapter-71-acquisition-planning-and-acquisition-letter-2010",
+      "total_events": "50"
+    },
+    {
+      "page_title": "Build America, Buy America | Department of Energy",
+      "event_label": "file_download",
+      "page": "www.energy.gov/management/build-america-buy-america",
+      "total_events": "48"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-01-05T15:45:30.915Z",
+  "agency": "energy"
+}
