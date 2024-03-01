@@ -1,25 +1,11 @@
 @use "uswds-core" as *;
 
-/* 
+/*
   Footer
   Styles the footer above the identifier
 */
 
 footer {
-  #explanation {
-    font-size: units(2.5);
-
-    h3 {
-      font-size: units(2.5);
-    }
-
-    a {
-      &:hover {
-        color: color("blue-60");
-      }
-    }
-  }
-
   .github-section {
     background-color: color("gray-4");
     border-top: units("1px") solid color("gray-10");
@@ -36,7 +22,7 @@ footer {
 
       .logo-links {
         float: left;
-        margin-bottom: 0rem;
+        margin-bottom: 0;
         margin-right: 2rem;
       }
 
@@ -70,9 +56,24 @@ footer {
 
       a.usa-button {
         background-color: color("blue-50");
+
         &:hover {
           background-color: color("blue-60");
         }
+      }
+    }
+  }
+
+  #explanation {
+    font-size: units(2.5);
+
+    h3 {
+      font-size: units(2.5);
+    }
+
+    a {
+      &:hover {
+        color: color("blue-60");
       }
     }
   }

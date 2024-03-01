@@ -128,18 +128,18 @@ figure figure {
   padding-top: units(2.5);
 }
 
-.clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
   content: " ";
   display: table;
 }
 
-.clearfix:after {
+.clearfix::after {
   clear: both;
 }
 
-ul li:after,
-ul li:before {
+ul li::after,
+ul li::before {
   content: "";
   display: none;
   padding-right: 0;

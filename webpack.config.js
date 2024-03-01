@@ -1,6 +1,5 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   entry: "./js/index.js",
@@ -23,7 +22,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new ESLintPlugin()],
+  plugins: [],
   optimization: {
     minimizer: [
       new TerserPlugin({

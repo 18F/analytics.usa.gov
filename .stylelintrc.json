@@ -1,12 +1,17 @@
 {
   "extends": [
-    "@18f/identity-stylelint-config"
+    "@18f/identity-stylelint-config",
+    "stylelint-config-standard"
   ],
   "plugins": [
     "stylelint-order",
     "stylelint-prettier"
   ],
   "rules": {
+    "function-no-unknown": null,
+    "at-rule-no-unknown": null,
+    "selector-id-pattern": null,
+    "selector-class-pattern": null,
     "order/properties-alphabetical-order": true,
     "prettier/prettier": true
   }
