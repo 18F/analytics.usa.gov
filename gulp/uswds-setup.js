@@ -8,7 +8,7 @@ const { src, dest, series } = require("gulp");
  */
 
 const USWDS = "node_modules/@uswds/uswds/dist";
-const ASSETS = "assets/uswds"
+const ASSETS = "assets/uswds";
 
 /**
  * Copy USWDS 3 assets for build
@@ -29,13 +29,7 @@ function copyUswdsImages() {
 
 /**
  * Export Tasks
- * 
+ *
  */
 
 exports.copyUswdsAssets = series(copyUswdsJS, copyUswdsFonts, copyUswdsImages);
-
-
-
-
-
-

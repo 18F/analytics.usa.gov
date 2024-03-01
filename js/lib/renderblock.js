@@ -1,30 +1,30 @@
-import d3 from 'd3';
-import barChart from './barchart';
-import formatters from './formatters';
-import transformers from './transformers';
+import d3 from "d3";
+import barChart from "./barchart";
+import formatters from "./formatters";
+import transformers from "./transformers";
 /*
-   * our block renderer is a d3 selection manipulator that does a bunch of
-   * stuff:
-   *
-   * 1. it knows how to get the URL for a block by either looking at the
-   *    `source` key of its bound data _or_ the node's data-source attribute.
-   * 2. it can be configured to transform the loaded data using a function
-   * 3. it has a configurable rendering function that gets called on the first
-   *    child of matching the `.data` selector.
-   * 4. it dispatches events "loading", "load", "render" and "error" events to
-   *    notify us of the state of data.
-   *
-   * Example:
-   *
-   * ```js
-   * var block = loadAndRender()
-   *   .render(function(selection, data) {
-   *     selection.text(JSON.stringify(data));
-   *   });
-   * d3.select("#foo")
-   *   .call(block);
-   * ```
-   */
+ * our block renderer is a d3 selection manipulator that does a bunch of
+ * stuff:
+ *
+ * 1. it knows how to get the URL for a block by either looking at the
+ *    `source` key of its bound data _or_ the node's data-source attribute.
+ * 2. it can be configured to transform the loaded data using a function
+ * 3. it has a configurable rendering function that gets called on the first
+ *    child of matching the `.data` selector.
+ * 4. it dispatches events "loading", "load", "render" and "error" events to
+ *    notify us of the state of data.
+ *
+ * Example:
+ *
+ * ```js
+ * var block = loadAndRender()
+ *   .render(function(selection, data) {
+ *     selection.text(JSON.stringify(data));
+ *   });
+ * d3.select("#foo")
+ *   .call(block);
+ * ```
+ */
 function loadAndRender() {
   let url = function (d) {
     return d && d.source;
@@ -32,15 +32,15 @@ function loadAndRender() {
 
   let transform = Object;
 
-  let renderer = function () { };
+  let renderer = function () {};
 
-  const dispatch = d3.dispatch('loading', 'load', 'error', 'render');
+  const dispatch = d3.dispatch("loading", "load", "error", "render");
 
   const block = function (selection) {
     selection
       .each(load)
       .filter(function (d) {
-        d.refresh = +this.getAttribute('data-refresh');
+        d.refresh = +this.getAttribute("data-refresh");
         return !Number.isNaN(d.refresh) && d.refresh > 0;
       })
       .each(function (d) {
@@ -53,24 +53,25 @@ function loadAndRender() {
     function load(d) {
       if (d.dataRequest) d.dataRequest.abort();
 
-      const that = d3.select(this)
-        .classed('loading', true)
-        .classed('loaded error', false);
+      const that = d3
+        .select(this)
+        .classed("loading", true)
+        .classed("loaded error", false);
 
       dispatch.loading(selection, d);
 
       const json = url.apply(this, arguments);
       if (!json) {
-        return console.error('no data source found:', this, d);
+        return console.error("no data source found:", this, d);
       }
 
       d.dataRequest = d3.json(json, (error, data) => {
-        that.classed('loading', false);
+        that.classed("loading", false);
         if (error) return that.call(onerror, error);
 
-        that.classed('loaded', true);
+        that.classed("loaded", true);
         dispatch.load(selection, data);
-        that.call(render, d.transformedData = transform(data));
+        that.call(render, (d.transformedData = transform(data)));
       });
     }
   };
@@ -78,9 +79,7 @@ function loadAndRender() {
   function onerror(selection, request) {
     const message = request.responseText;
 
-    selection.classed('error', true)
-      .select('.error-message')
-      .text(message);
+    selection.classed("error", true).select(".error-message").text(message);
 
     dispatch.error(selection, request, message);
   }
@@ -105,35 +104,35 @@ function loadAndRender() {
 
   function render(selection, data) {
     // populate meta elements
-    selection.select('.meta-name')
-      .text((d) => d.meta.name);
-    selection.select('.meta-desc')
-      .text((d) => d.meta.description);
+    selection.select(".meta-name").text((d) => d.meta.name);
+    selection.select(".meta-desc").text((d) => d.meta.description);
 
-    selection.select('.data')
-      .datum(data)
-      .call(renderer, data);
+    selection.select(".data").datum(data).call(renderer, data);
     dispatch.render(selection, data);
   }
 
-  return d3.rebind(block, dispatch, 'on');
+  return d3.rebind(block, dispatch, "on");
 }
 
 function buildBarChart(transformMethod) {
   return loadAndRender()
     .transform(transformMethod)
-    .render(barChart()
-      .value((d) => d.proportion)
-      .format(formatters.floatToPercent));
+    .render(
+      barChart()
+        .value((d) => d.proportion)
+        .format(formatters.floatToPercent),
+    );
 }
 
 function buildBarChartWithLabel(transformMethod, labelKey) {
   return loadAndRender()
     .transform(transformMethod)
-    .render(barChart()
-      .value((d) => d.proportion)
-      .format(formatters.floatToPercent)
-      .label((d) => d[labelKey]));
+    .render(
+      barChart()
+        .value((d) => d.proportion)
+        .format(formatters.floatToPercent)
+        .label((d) => d[labelKey]),
+    );
 }
 
 function buildBarBasicChart(desiredKey) {

@@ -1,4 +1,4 @@
-import d3 from 'd3';
+import d3 from "d3";
 
 const DISPLAY_THRESHOLD = 0.1;
 /*
@@ -6,8 +6,7 @@ const DISPLAY_THRESHOLD = 0.1;
  * numeric value descending.
  */
 function listify(obj) {
-  return d3.entries(obj)
-    .sort((a, b) => d3.descending(+a.value, +b.value));
+  return d3.entries(obj).sort((a, b) => d3.descending(+a.value, +b.value));
 }
 
 /*
@@ -32,7 +31,7 @@ function findProportionsOfMetric(list, valueExtractMethod) {
   const newList = [];
   values.forEach((x, i) => {
     newList.push(list[i]);
-    newList[i].proportion = ((x / total) * 100);
+    newList[i].proportion = (x / total) * 100;
   });
   return newList;
 }
@@ -55,7 +54,7 @@ function findProportionsOfMetricFromValue(list) {
  */
 function consolidateSmallValues(proportionsList, threshold) {
   const consolidatedList = [];
-  const other = { key: 'Other', proportion: 0, children: [] };
+  const other = { key: "Other", proportion: 0, children: [] };
   proportionsList.forEach((item) => {
     if (item.proportion >= threshold) {
       consolidatedList.push(item);

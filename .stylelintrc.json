@@ -1,7 +1,13 @@
 {
-  "extends": ["@18f/identity-stylelint-config"],
-  "plugins": ["stylelint-order"],
+  "extends": [
+    "@18f/identity-stylelint-config"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-prettier"
+  ],
   "rules": {
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "prettier/prettier": true
   }
 }

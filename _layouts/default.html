@@ -1,26 +1,16 @@
 <!doctype html>
 <html lang="en">
   <!-- Initalize title and data source variables -->
-  {% if page.url == '/' or page.url == '/data/' %}
-    {% assign page_title = '' %}
-  {% else %}
-    {% capture page_title %} - {{ page.name }}{% endcapture %}
-  {% endif %}
-  {% include head.html %}
-  {% if page.url == '/' or page.url == '/data/' %}
-    {% assign page_title = '' %}
-  {% else %}
-    {% capture page_title %} - {{ page.name }}{% endcapture %}
-  {% endif %}
+  {% if page.url == '/' or page.url == '/data/' %} {% assign page_title = '' %}
+  {% else %} {% capture page_title %} - {{ page.name }}{% endcapture %} {% endif
+  %} {% include head.html %} {% if page.url == '/' or page.url == '/data/' %} {%
+  assign page_title = '' %} {% else %} {% capture page_title %} - {{ page.name
+  }}{% endcapture %} {% endif %}
 
   <body>
-    {% include gtm_iframe.html %}
-    {% include banner.html %}
-    {% include header.html %}
-
-    {% include error.html %}
-    {{ content }}
-    {% include footer.html %}
+    {% include gtm_iframe.html %} {% include banner.html %} {% include
+    header.html %} {% include error.html %} {{ content }} {% include footer.html
+    %}
   </body>
 
   {% include footer_scripts.html %}

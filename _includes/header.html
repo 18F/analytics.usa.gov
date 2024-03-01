@@ -3,13 +3,19 @@
     <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
   </h1>
 
-  {% assign agencies = site.data.agencies | sort: "name" %}
-  {% if agencies.size > 0 %}
-  {% unless page.url contains 'data' %}
+  {% assign agencies = site.data.agencies | sort: "name" %} {% if agencies.size
+  > 0 %} {% unless page.url contains 'data' %}
   <div class="analytics-select analytics-select--main">
-    <label class="usa-label" for="analytics-agency-select">Select an agency to display results</label>
-    <select aria-label="Select an agency to display results" class="usa-select" name="agency-selector"
-      id="analytics-agency-select" title="Agency Selection Dropdown">
+    <label class="usa-label" for="analytics-agency-select"
+      >Select an agency to display results</label
+    >
+    <select
+      aria-label="Select an agency to display results"
+      class="usa-select"
+      name="agency-selector"
+      id="analytics-agency-select"
+      title="Agency Selection Dropdown"
+    >
       <option value="{{ site.baseurl }}/">{{ site.dropdown_title }}</option>
       {% for agency in agencies %}
       <option value="{{ site.baseurl }}/{{ agency.slug }}">
@@ -18,8 +24,7 @@
       {% endfor %}
     </select>
   </div>
-  {% endunless %}
-  {% endif %}
+  {% endunless %} {% endif %}
 
   <nav class="links">
     <ul>
@@ -30,7 +35,9 @@
       <li>
         <a href="{{ site.baseurl }}/data/">Data</a>
         <span class="link-bullet">&#8226;</span>
-        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener">API</a>
+        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
+          >API</a
+        >
       </li>
     </ul>
   </nav>
