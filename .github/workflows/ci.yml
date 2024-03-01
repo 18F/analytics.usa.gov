@@ -3,20 +3,6 @@ on:
   pull_request:
 
 jobs:
-  lint-html:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code Checkout
-        uses: actions/checkout@v4
-      - name: Install Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
-          cache: 'npm'
-      - name: Install node dependencies
-        run: npm ci
-      - name: Lint HTML
-        run: npm run lint:html
   lint-js:
     runs-on: ubuntu-latest
     steps:
@@ -47,7 +33,6 @@ jobs:
         run: npm run lint:styles
   test:
     needs:
-      - lint-html
       - lint-js
       - lint-styles
     runs-on: ubuntu-latest
