@@ -3,6 +3,7 @@
 .analytics-select {
   order: 4;
   width: 100%;
+
   @include at-media("desktop") {
     order: 2;
     width: 50%;
@@ -10,6 +11,7 @@
 
   &--main {
     color: color("gray-1");
+
     select {
       background-color: color("blue-50");
       border: units(1px) solid color("gray-1");
@@ -19,6 +21,7 @@
 
   &--secondary {
     color: color("gray-cool-70");
+
     select {
       border: units(1px) solid color("blue-80v");
     }
@@ -34,11 +37,10 @@
   .usa-form {
     max-width: 100%;
   }
-  
+
   select {
-    background-image: url("../css/img/arrow-down.png");
     background-image: url("../css/img/arrow-down.svg");
-    font-size: size('sans', 'sm');
+    font-size: size("sans", "sm");
     font-weight: font-weight(600);
     height: auto;
     max-width: none; // USWDS override
@@ -46,7 +48,7 @@
     width: 100%;
 
     @include at-media("tablet-lg") {
-      font-size: size('sans', 'lg');
+      font-size: size("sans", "lg");
     }
   }
 }
@@ -54,4 +56,3 @@
 form {
   max-width: none;
 }
-

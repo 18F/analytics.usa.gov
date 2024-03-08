@@ -7,12 +7,12 @@
 {% assign data_prefix = page.slug %}
 {% assign entity = page.name %}
 {% endif %}
+
 <main>
   <section class="analytics-data analytics-data">
     <div class="analytics-data__header desktop:grid-col-12">
       <h1>Download the data</h1>
-      {% assign agencies = site.data.agencies | sort:"name" %}
-      {% if agencies.size > 0 %}
+      {% assign agencies = site.data.agencies | sort:"name" %} {% if agencies.size > 0 %}
       <div class="analytics-select analytics-select--secondary">
         <label class="usa-label" for="analytics-agency-select">Select an agency to display results</label>
         <select aria-label="Select an agency to display results" class="usa-select" name="agency-selector"
@@ -42,9 +42,7 @@
     <div class="analytics-data__sessions desktop:grid-col-12">
       <table class="usa-table usa-table--borderless desktop:grid-col-8">
         <caption>
-          <h2>
-            User traffic reports
-          </h2>
+          <h2>User traffic reports</h2>
         </caption>
         <thead>
           <tr>
@@ -117,9 +115,7 @@
     <div class="analytics-data__demographics desktop:grid-col-12 padding-bottom-4">
       <table class="usa-table usa-table--borderless desktop:grid-col-8">
         <caption>
-          <h2>
-            User demographics
-          </h2>
+          <h2>User demographics</h2>
         </caption>
         <thead>
           <tr>

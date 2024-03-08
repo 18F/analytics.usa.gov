@@ -21,12 +21,10 @@ uswds.settings.version = 3;
 uswds.paths.dist.css = "./css";
 uswds.paths.dist.theme = "./sass";
 
-
 /**
  * Export gulp tasks
- * 
+ *
  */
 exports.copyAssets = setup.copyUswdsAssets;
 exports.compile = uswds.compile;
 exports.watch = uswds.watch;
-
