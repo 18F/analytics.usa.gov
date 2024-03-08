@@ -1,0 +1,60 @@
+{
+  "name": "top-session-channel-group-30-days",
+  "query": {
+    "dimensions": [
+      {
+        "name": "sessionDefaultChannelGroup"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "sessions"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "sessions"
+        },
+        "desc": true
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "20",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Top Session Default Channel Groups (30 Days)",
+    "description": "Top 20 channel groups that initiated a session for the last 30 days, measured by visits, for all sites."
+  },
+  "totals": {
+    "visits": 1498979124,
+    "by_session_default_channel_group": {
+      "Organic Search": 771408816,
+      "Direct": 654428093,
+      "Paid Search": 24004462,
+      "Email": 23132436,
+      "Unassigned": 17458658,
+      "Paid Other": 1887150,
+      "Organic Social": 1746765,
+      "Paid Social": 1613780,
+      "Display": 1411481,
+      "Referral": 551772,
+      "SMS": 487414,
+      "(other)": 455305,
+      "Paid Video": 170270,
+      "Organic Video": 115162,
+      "Organic Shopping": 99087,
+      "Audio": 4828,
+      "Mobile Push Notifications": 2366,
+      "Affiliates": 692,
+      "Paid Shopping": 587
+    }
+  },
+  "taken_at": "2024-03-11T14:12:05.867Z"
+}
