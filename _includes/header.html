@@ -3,9 +3,8 @@
     <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
   </h1>
 
-  {% assign agencies = site.data.agencies | sort: "name" %}
-  {% if agencies.size > 0 %}
-  {% unless page.url contains 'data' %}
+  {% assign agencies = site.data.agencies | sort: "name" %} {% if agencies.size > 0 %} {% unless page.url contains
+  'data' %}
   <div class="analytics-select analytics-select--main">
     <label class="usa-label" for="analytics-agency-select">Select an agency to display results</label>
     <select aria-label="Select an agency to display results" class="usa-select" name="agency-selector"
@@ -18,8 +17,7 @@
       {% endfor %}
     </select>
   </div>
-  {% endunless %}
-  {% endif %}
+  {% endunless %} {% endif %}
 
   <nav class="links">
     <ul>

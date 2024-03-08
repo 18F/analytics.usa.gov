@@ -1,4 +1,4 @@
-import d3 from 'd3';
+import d3 from "d3";
 
 export default function barChart() {
   let bars = function (d) {
@@ -22,31 +22,29 @@ export default function barChart() {
   };
 
   const chart = function (selection) {
-    const bin = selection.selectAll('.bin')
-      .data(bars);
+    const bin = selection.selectAll(".bin").data(bars);
 
     bin.exit().remove();
 
-    const enter = bin.enter().append('div')
-      .attr('class', 'bin');
-    enter.append('div')
-      .attr('class', 'label');
-    enter.append('div')
-      .attr('class', 'value');
-    enter.append('div')
-      .attr('class', 'bar')
-      .style('width', '0%');
+    const enter = bin.enter().append("div").attr("class", "bin");
+    enter.append("div").attr("class", "label");
+    enter.append("div").attr("class", "value");
+    enter.append("div").attr("class", "bar").style("width", "0%");
 
     const componentScale = scale
       ? scale.call(selection, bin.data().map(value))
       : null;
-    bin.select('.bar')
-      .style('width', componentScale
-        ? (d) => size(componentScale(value(d)))
-        : (d) => size(value(d)));
+    bin
+      .select(".bar")
+      .style(
+        "width",
+        componentScale
+          ? (d) => size(componentScale(value(d)))
+          : (d) => size(value(d)),
+      );
 
-    bin.select('.label').html(label);
-    bin.select('.value').text(function (d, i) {
+    bin.select(".label").html(label);
+    bin.select(".value").text(function (d, i) {
       return format.call(this, value(d), d, i);
     });
   };

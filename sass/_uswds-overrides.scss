@@ -13,17 +13,20 @@
   thead {
     background-color: color("gray-10");
   }
+
   thead th {
     font-size: size("sans", "md");
   }
+
   td {
     font-size: size("sans", "md");
     padding: units(2);
   }
   // add bottom spacing for download buttons in table
   .usa-button:first-child {
-    margin-bottom: units('05');
-    @include at-media('desktop-lg') {
+    margin-bottom: units("05");
+
+    @include at-media("desktop-lg") {
       margin-bottom: 0;
     }
   }

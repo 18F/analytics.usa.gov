@@ -1,4 +1,4 @@
-import d3 from 'd3';
+import d3 from "d3";
 
 const TRANSITION_DURATION = 500;
 
@@ -6,17 +6,20 @@ function element(selection, selector) {
   const el = selection.select(selector);
   if (!el.empty()) return el;
 
-  const bits = selector.split('.');
+  const bits = selector.split(".");
   const name = bits[0];
 
-  const klass = bits.slice(1).join(' ');
-  return selection.append(name)
-    .attr('class', klass);
+  const klass = bits.slice(1).join(" ");
+  return selection.append(name).attr("class", klass);
 }
 
 export default function buildtimeSeries() {
-  let series = function (d) { return [d]; };
-  let bars = function (d) { return d; };
+  let series = function (d) {
+    return [d];
+  };
+  let bars = function (d) {
+    return d;
+  };
   const width = 700;
   const height = 150;
   const padding = 50;
@@ -28,15 +31,21 @@ export default function buildtimeSeries() {
     left: padding,
   };
 
-  let x = function (d, i) { return i; };
-  let y = function (d) { return d; };
-  let label = function (d, i) { return i; };
-  let title = function (d) { return d; };
+  let x = function (d, i) {
+    return i;
+  };
+  let y = function (d) {
+    return d;
+  };
+  let label = function (d, i) {
+    return i;
+  };
+  let title = function (d) {
+    return d;
+  };
   let xScale = d3.scale.ordinal();
   let yScale = d3.scale.linear();
-  let yAxis = d3.svg.axis()
-    .scale(yScale)
-    .ticks(5);
+  let yAxis = d3.svg.axis().scale(yScale).ticks(5);
 
   const innerTickSize = yAxis.innerTickSize();
   const duration = TRANSITION_DURATION;
@@ -48,76 +57,72 @@ export default function buildtimeSeries() {
     yScale.range([bottom, margin.top]);
     xScale.rangeRoundBands([margin.left, right], 0, 0);
 
-    svg.attr('viewBox', [0, 0, width, height].join(' '));
+    svg.attr("viewBox", [0, 0, width, height].join(" "));
 
-    element(svg, 'g.axis.y0')
-      .attr('transform', `translate(${[margin.left, 0]})`)
-      .attr('aria-hidden', 'true')
+    element(svg, "g.axis.y0")
+      .attr("transform", `translate(${[margin.left, 0]})`)
+      .attr("aria-hidden", "true")
       .transition()
       .duration(duration)
-      .call(yAxis
-        // .innerTickSize(left - right)
-        .orient('left'));
+      .call(
+        yAxis
+          // .innerTickSize(left - right)
+          .orient("left"),
+      );
 
-    element(svg, 'g.axis.y1')
-      .attr('transform', `translate(${[right, 0]})`)
-      .attr('aria-hidden', 'true')
+    element(svg, "g.axis.y1")
+      .attr("transform", `translate(${[right, 0]})`)
+      .attr("aria-hidden", "true")
       .transition()
       .duration(duration)
-      .call(yAxis
-        .innerTickSize(innerTickSize)
-        .orient('right'));
+      .call(yAxis.innerTickSize(innerTickSize).orient("right"));
 
-    const g = svg.selectAll('.series')
-      .data(series);
+    const g = svg.selectAll(".series").data(series);
     g.exit().remove();
-    g.enter().append('g')
-      .attr('class', 'series');
+    g.enter().append("g").attr("class", "series");
 
     const barWidth = xScale.rangeBand();
 
-    const bar = g.selectAll('.bar')
-      .data(bars);
+    const bar = g.selectAll(".bar").data(bars);
     bar.exit().remove();
-    const enter = bar.enter().append('g')
-      .attr('class', 'bar')
-      .attr('tabindex', 0);
-    enter.append('rect')
-      .attr('width', barWidth)
-      .attr('y', 0)
-      .attr('height', 0);
-    enter.append('text')
-      .attr('class', 'label');
-    enter.append('title');
+    const enter = bar
+      .enter()
+      .append("g")
+      .attr("class", "bar")
+      .attr("tabindex", 0);
+    enter.append("rect").attr("width", barWidth).attr("y", 0).attr("height", 0);
+    enter.append("text").attr("class", "label");
+    enter.append("title");
 
     bar
       .datum(function (d) {
         d = d || {};
-        d.x = xScale(d.u = x.apply(this, arguments));
-        d.y0 = yScale(d.v = y.apply(this, arguments));
+        d.x = xScale((d.u = x.apply(this, arguments)));
+        d.y0 = yScale((d.v = y.apply(this, arguments)));
         d.y1 = bottom;
         d.height = d.y1 - d.y0;
         return d;
       })
-      .attr('aria-label', title)
-      .attr('transform', (d) => `translate(${[d.x, d.y1]})`);
+      .attr("aria-label", title)
+      .attr("transform", (d) => `translate(${[d.x, d.y1]})`);
 
-    bar.select('rect')
-      .attr('width', barWidth)
+    bar
+      .select("rect")
+      .attr("width", barWidth)
       .transition()
       .duration(duration)
-      .attr('y', (d) => -d.height)
-      .attr('height', (d) => d.height);
+      .attr("y", (d) => -d.height)
+      .attr("height", (d) => d.height);
 
-    bar.select('.label')
-      .attr('text-anchor', 'middle')
+    bar
+      .select(".label")
+      .attr("text-anchor", "middle")
       // .attr("alignment-baseline", "before-edge")
-      .attr('dy', 10)
-      .attr('dx', barWidth / 2)
+      .attr("dy", 10)
+      .attr("dx", barWidth / 2)
       .text(label);
 
-    bar.select('title')
-      .text(title);
+    bar.select("title").text(title);
   };
 
   timeSeries.series = function (fs) {

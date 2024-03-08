@@ -20,11 +20,11 @@
   padding: units(3);
 
   h1 {
-    font-size: size('sans', 'lg');
+    font-size: size("sans", "lg");
     margin: 0;
 
     @include at-media("tablet-lg") {
-      font-size: size('sans', '2xl');
+      font-size: size("sans", "2xl");
       line-height: units(10);
       margin: 0 units(3) 0 0;
     }
@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: row;
     flex-grow: 3;
-    font-size: size('sans', 'md');
+    font-size: size("sans", "md");
     justify-content: flex-end;
     list-style: none;
     margin-bottom: 0;
@@ -71,7 +71,7 @@
       li {
         @include at-media("mobile-lg") {
           display: block;
-          font-size: size('sans', 'lg');
+          font-size: size("sans", "lg");
           padding: 0;
 
           &:nth-child(odd) a::after {
@@ -94,10 +94,10 @@
       }
 
       a {
-        font-size: size('sans', 'xs');
+        font-size: size("sans", "xs");
 
         @include at-media("mobile-lg") {
-          font-size: size('sans', 'lg');
+          font-size: size("sans", "lg");
         }
       }
     }
