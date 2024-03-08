@@ -1,6 +1,10 @@
-{% if page.url == '/' %} {% assign data_prefix = 'live' %} {% assign entity
-="government" %} {% else %} {% assign data_prefix = page.slug %} {% assign
-entity = "agency" %} {% endif %}
+{% if page.url == '/' %}
+{% assign data_prefix = 'live' %}
+{% assign entity = "government" %}
+{% else %}
+{% assign data_prefix = page.slug %}
+{% assign entity = "agency" %}
+{% endif %}
 
 <!--
       JavaScript block hooks look for any element with both data-block and
@@ -20,15 +24,15 @@ entity = "agency" %} {% endif %}
 
 <main class="grid-row">
   <section id="main_data" class="desktop:grid-col-8">
-    {% include charts/realtime-visitors.html data_prefix=data_prefix %} {%
-    include charts/locations.html data_prefix=data_prefix %} {% include
-    charts/historical_data.html data_prefix=data_prefix %} {% include
-    charts/sessions-30-days.html data_prefix=data_prefix %} {% include
-    charts/demographics-30-days.html data_prefix=data_prefix %}
+    {% include charts/realtime-visitors.html data_prefix=data_prefix %}
+    {% include charts/locations.html data_prefix=data_prefix %}
+    {% include charts/historical_data.html data_prefix=data_prefix %}
+    {% include charts/sessions-30-days.html data_prefix=data_prefix %}
+    {% include charts/demographics-30-days.html data_prefix=data_prefix %}
   </section>
 
   <section id="secondary_data" class="desktop:grid-col-4">
-    {% include charts/top-pages.html data_prefix=data_prefix %} {% include
-    charts/top-downloads.html data_prefix=data_prefix %}
+    {% include charts/top-pages.html data_prefix=data_prefix %}
+    {% include charts/top-downloads.html data_prefix=data_prefix %}
   </section>
 </main>
