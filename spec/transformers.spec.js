@@ -112,7 +112,7 @@ describe("transformers", () => {
 
       assert.deepEqual(
         transformers.toTopPercents(
-          { totals: { os: { bob: 1000, tom: 0.02, harry: 300 } } },
+          { totals: { by_os: { bob: 1000, tom: 0.02, harry: 300 } } },
           "os",
         ),
         resultsArray,

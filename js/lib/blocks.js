@@ -48,17 +48,28 @@ export default {
 
       svg.call(series);
     }),
+
+  // the session sources block is a stack layout
+  session_default_channel_group: renderBlock.buildCompactBarChart(
+    "session_default_channel_group",
+  ),
+
+  // the session mediums block is a stack layout
+  session_source_medium: renderBlock.buildCompactBarChart(
+    "session_source_medium",
+  ),
+
   // the OS block is a stack layout
-  os: renderBlock.buildBarBasicChart("os"),
+  os: renderBlock.buildCompactBarChart("os"),
 
   // the windows block is a stack layout
-  windows: renderBlock.buildBarBasicChart("os_version"),
+  windows: renderBlock.buildCompactBarChart("os_version"),
 
   // the devices block is a stack layout
   devices: renderBlock
     .loadAndRender()
     .transform((d) => {
-      const devices = transformers.listify(d.totals.devices);
+      const devices = transformers.listify(d.totals.by_device);
       devices.forEach((device) => {
         if (device.key === "smart tv") {
           device.key = "Smart TV";
@@ -82,7 +93,7 @@ export default {
     }),
 
   // the browsers block is a table
-  browsers: renderBlock.buildBarBasicChart("browser"),
+  browsers: renderBlock.buildCompactBarChart("browser"),
 
   // the IE block is a stack, but with some extra work done to transform the
   // data beforehand to match the expected object format
@@ -140,7 +151,7 @@ export default {
     // 2. convert object into array of objects
     // 3. sort desc by visitors #
 
-    const languages = d.totals.languages;
+    const languages = d.totals.by_language;
     const keysToExclude = ["(other)"];
     const filteredLanguages = {};
 
@@ -155,10 +166,10 @@ export default {
       languagesArray.push({ language: key, visitors: value });
     }
 
-    d.totals.languages = languagesArray;
+    d.totals.by_language = languagesArray;
 
     const values = transformers.findProportionsOfMetric(
-      d.totals.languages,
+      d.totals.by_language,
       (list) => list.map((x) => x.visitors),
     );
 
