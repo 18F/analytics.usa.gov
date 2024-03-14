@@ -135,8 +135,18 @@ function buildBarChartWithLabel(transformMethod, labelKey) {
     );
 }
 
+// Builds a bar chart for the key with values that are below a threshold
+// combined into an Other category
 function buildBarBasicChart(desiredKey) {
   const method = (d) => transformers.toTopPercents(d, desiredKey);
+  return buildBarChart(method);
+}
+
+// Builds a bar chart for the key with values that are below a threshold
+// omitted from the chart
+function buildCompactBarChart(desiredKey) {
+  const method = (d) =>
+    transformers.toTopPercentsWithoutConsolidation(d, desiredKey);
   return buildBarChart(method);
 }
 
@@ -145,4 +155,5 @@ export default {
   buildBarChart,
   buildBarBasicChart,
   buildBarChartWithLabel,
+  buildCompactBarChart,
 };

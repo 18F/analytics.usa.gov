@@ -16,7 +16,7 @@
     ],
     "dateRanges": [
       {
-        "startDate": "90daysAgo",
+        "startDate": "30daysAgo",
         "endDate": "yesterday"
       }
     ],
@@ -34,79 +34,61 @@
         "desc": true
       }
     ],
-    "samplingLevel": "HIGHER_PRECISION",
+    "metricFilter": {
+      "filter": {
+        "fieldName": "sessions",
+        "numericFilter": {
+          "operation": "GREATER_THAN",
+          "value": {
+            "int64Value": "100"
+          }
+        }
+      }
+    },
     "limit": "10000",
     "property": "properties/393249053"
   },
   "meta": {
     "name": "Browsers",
-    "description": "90 days of visits broken down by browser for all sites."
+    "description": "30 days of visits broken down by browser for all sites. (>100 sessions)"
   },
   "totals": {
-    "visits": 3546351302,
-    "browser": {
-      "Chrome": 1659319409,
-      "Safari": 1318631627,
-      "Edge": 286871976,
-      "Safari (in-app)": 90084839,
-      "Firefox": 68916763,
-      "Samsung Internet": 55596766,
-      "(other)": 454561,
-      "Android Webview": 42112431,
-      "Internet Explorer": 3674160,
-      "Opera": 7697297,
-      "Amazon Silk": 5372561,
-      "(not set)": 3144521,
-      "Mozilla Compatible Agent": 1987461,
-      "YaBrowser": 746103,
-      "Whale Browser": 300973,
-      "Coc Coc": 132107,
-      "Opera Mini": 367519,
-      "UC Browser": 316383,
-      "PaleMoon": 40500,
-      "Aloha Browser": 65048,
-      "Mozilla": 90313,
-      "Meta Quest Browser": 13139,
-      "SeaMonkey": 37708,
-      "Android Browser": 33911,
-      "Iron": 26596,
-      "DuckDuckGo Browser": 55938,
-      "Android Runtime": 68555,
-      "Phoenix Browser": 25300,
-      "Waterfox": 12526,
-      "Maxthon": 2797,
-      "Nintendo Browser": 2041,
-      "Puffin": 7973,
-      "Seznam": 5617,
-      "Lynx": 95227,
-      "Vivaldi": 27499,
-      "BlackBerry": 3472,
-      "IE with Chrome Frame": 1388,
-      "Netscape": 2729,
-      "BrowserNG": 716,
-      "Konqueror": 1179,
-      "NetFront": 882,
-      "Playstation Vita Browser": 566,
-      "Nokia Browser": 505,
-      "AdobeAIR": 19,
-      "Galeon": 312,
-      "Playstation 3": 77,
-      "YE": 199,
-      "Blazer": 96,
-      "DoCoMo": 68,
-      "Lunascape": 204,
-      "NetNewsWire Browser": 5,
-      "OmniWeb": 3,
-      "Playstation 4": 98,
-      "MRCHROME": 232,
-      "Swing": 63,
-      "Camino": 189,
-      "EudoraWeb": 54,
-      "RockMelt": 35,
-      "Playstation Portable": 39,
-      "CoolNovo": 16,
-      "WhiteHat Aviator": 11
+    "visits": 1492721065,
+    "by_browser": {
+      "Chrome": 724669791,
+      "Safari": 532418559,
+      "Edge": 131456418,
+      "Safari (in-app)": 28370663,
+      "Firefox": 28673898,
+      "(other)": 542273,
+      "Samsung Internet": 21535617,
+      "Android Webview": 14658083,
+      "Opera": 3256137,
+      "Amazon Silk": 2018466,
+      "(not set)": 1299162,
+      "Mozilla Compatible Agent": 882647,
+      "YaBrowser": 499856,
+      "Internet Explorer": 1883528,
+      "Whale Browser": 123256,
+      "Coc Coc": 56684,
+      "UC Browser": 119932,
+      "Opera Mini": 49514,
+      "Aloha Browser": 26440,
+      "Vivaldi": 14972,
+      "Mozilla": 27911,
+      "Android Runtime": 22723,
+      "Android Browser": 9271,
+      "DuckDuckGo Browser": 13066,
+      "PaleMoon": 12977,
+      "Meta Quest Browser": 8586,
+      "Phoenix Browser": 8795,
+      "SeaMonkey": 9990,
+      "Lynx": 38014,
+      "Waterfox": 2841,
+      "Iron": 9347,
+      "Seznam": 1204,
+      "Puffin": 444
     }
   },
-  "taken_at": "2024-01-05T14:11:41.169Z"
+  "taken_at": "2024-03-11T13:59:19.359Z"
 }
