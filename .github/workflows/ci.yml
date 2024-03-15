@@ -14,7 +14,11 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
       - name: Install node dependencies
-        run: npm ci
+        # Fix for installing puppeteer which is a pa11y dependency.
+        # Remove when this GitHub issue is resolved: https://github.com/puppeteer/puppeteer/issues/12094
+        env:
+          PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
+        run: npm ci --timing
       - name: Lint javascript
         run: npm run lint:js
   lint-styles:
@@ -28,7 +32,11 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
       - name: Install node dependencies
-        run: npm ci
+        # Fix for installing puppeteer which is a pa11y dependency.
+        # Remove when this GitHub issue is resolved: https://github.com/puppeteer/puppeteer/issues/12094
+        env:
+          PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
+        run: npm ci --verbose --timing
       - name: Lint SCSS
         run: npm run lint:styles
   test:
@@ -45,7 +53,11 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
       - name: Install node dependencies
-        run: npm ci
+        # Fix for installing puppeteer which is a pa11y dependency.
+        # Remove when this GitHub issue is resolved: https://github.com/puppeteer/puppeteer/issues/12094
+        env:
+          PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
+        run: npm ci --timing
       - name: Run tests
         run: npm test
   deploy_dev:
