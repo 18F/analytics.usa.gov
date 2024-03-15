@@ -56,8 +56,7 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
       - name: Install node dependencies
-        # Fix for installing puppeteer which is a pa11y dependency.
-        # Remove when this GitHub issue is resolved: https://github.com/puppeteer/puppeteer/issues/12094
+        # This causes npm install to omit dev dependencies per NPM docs.
         env:
           NODE_ENV: production
         run: npm ci --timing
