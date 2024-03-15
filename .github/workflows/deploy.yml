@@ -56,9 +56,6 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
       - name: Install node dependencies
-        # This causes npm install to omit dev dependencies per NPM docs.
-        env:
-          NODE_ENV: production
         run: npm ci --timing
       - name: Copy uswds assets
         run: npm run copy-assets
