@@ -56,10 +56,6 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
       - name: Install node dependencies
-        # Fix for installing puppeteer which is a pa11y dependency.
-        # Remove when this GitHub issue is resolved: https://github.com/puppeteer/puppeteer/issues/12094
-        env:
-          PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
         run: npm ci --timing
       - name: Copy uswds assets
         run: npm run copy-assets
