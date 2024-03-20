@@ -249,67 +249,6 @@ g.axis {
   }
 }
 
-/*
-* Section components (locations, 30-day-sessions, 90-day-sessions)
-*/
-
-.section {
-  border-top: 1px solid color("gray-cool-40");
-
-  @include at-media("tablet") {
-    border-bottom: none;
-  }
-
-  &__headline {
-    border-bottom: 1px solid color("gray-cool-40");
-
-    @include at-media("tablet") {
-      border-bottom: none;
-      padding-left: units(3);
-      padding-top: 0;
-    }
-
-    h2,
-    h3 {
-      padding: 0 units(2);
-    }
-  }
-
-  &__subheader {
-    font-size: units(3);
-    padding: units(2) units(2);
-    text-align: center;
-
-    #total_visitors {
-      font-weight: font-weight("bold");
-    }
-  }
-
-  &__chart {
-    padding: 0;
-
-    @include at-media("tablet") {
-      padding: 0 units(2);
-    }
-
-    .bar-chart-component {
-      padding: units(2);
-
-      &:first-child {
-        padding-top: units(2);
-
-        @include at-media("tablet") {
-          padding-top: units(1);
-        }
-      }
-
-      @include at-media("tablet") {
-        padding: units(1) units(3);
-      }
-    }
-  }
-}
-
 .top {
   &-pages {
     padding: 0 units(2);
@@ -371,6 +310,86 @@ g.axis {
 
     .bar {
       margin-top: units(2);
+    }
+  }
+}
+
+/*
+* Section components (locations, 30-day-sessions, 90-day-sessions)
+*/
+
+.section {
+  border-top: 1px solid color("gray-cool-40");
+
+  @include at-media("tablet") {
+    border-bottom: none;
+  }
+
+  &__headline {
+    border-bottom: 1px solid color("gray-cool-40");
+
+    @include at-media("tablet") {
+      border-bottom: none;
+      padding-left: units(3);
+      padding-top: 0;
+    }
+
+    h2,
+    h3 {
+      padding: 0 units(2);
+    }
+  }
+
+  &__subheader {
+    font-size: units(3);
+    padding: units(2) units(2);
+    text-align: center;
+
+    #total_visitors {
+      font-weight: font-weight("bold");
+    }
+  }
+
+  &__rate {
+    padding: 0;
+    text-align: center;
+
+    section {
+      margin: units(2) 0;
+
+      h4 {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      span {
+        font-size: 1.25rem;
+        padding-top: units(0.5);
+      }
+    }
+  }
+
+  &__chart {
+    padding: 0;
+
+    @include at-media("tablet") {
+      padding: 0 units(2);
+    }
+
+    .bar-chart-component {
+      padding: units(2);
+
+      &:first-child {
+        padding-top: units(2);
+
+        @include at-media("tablet") {
+          padding-top: units(1);
+        }
+      }
+
+      @include at-media("tablet") {
+        padding: units(1) units(3);
+      }
     }
   }
 }
