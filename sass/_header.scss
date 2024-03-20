@@ -60,10 +60,6 @@
     margin-bottom: 0;
     order: 3;
 
-    @include at-media("desktop") {
-      flex-direction: column;
-    }
-
     ul {
       display: contents;
       list-style: none;
@@ -86,10 +82,6 @@
 
         &--hide {
           display: inline;
-
-          @include at-media("desktop") {
-            display: none;
-          }
         }
       }
 
@@ -107,7 +99,7 @@
 .sm-hide {
   display: none;
 
-  @include at-media("tablet-lg") {
+  @include at-media("desktop-lg") {
     display: inline;
   }
 }

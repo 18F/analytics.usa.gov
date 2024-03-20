@@ -4,8 +4,12 @@
   order: 4;
   width: 100%;
 
-  @include at-media("desktop") {
+  @include at-media("desktop-lg") {
     order: 2;
+    width: 40%;
+  }
+
+  @include at-media("widescreen") {
     width: 50%;
   }
 
