@@ -6,7 +6,15 @@
     </div>
     <div class="grid-row">
       <div class="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2">
-        people on U.S. federal government websites and apps in the last 30 minutes
+        people on
+        <span>
+          {% if page.title %}
+          {{ page.title }}
+          {% else %}
+          {{ "U.S. Federal Government" }}
+          {% endif %}
+        </span>
+        websites and apps in the last 30 minutes
       </div>
     </div>
   </section>
