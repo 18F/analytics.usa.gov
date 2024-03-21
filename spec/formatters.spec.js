@@ -123,4 +123,45 @@ describe("Formatters", () => {
       assert.equal(formatters.formatFile("dotgov.gov"), "dotgov.gov");
     });
   });
+
+  describe("secondsToReadableTime", () => {
+    describe("when the number of seconds is greater than one year", () => {
+      it("returns a human readable time with years", () => {
+        assert.equal(
+          formatters.secondsToReadableTime(40000000),
+          "1 years 97 days 23 hours 6 min 40 sec",
+        );
+      });
+    });
+
+    describe("when the number of seconds is greater than one day", () => {
+      it("returns a human readable time with days", () => {
+        assert.equal(
+          formatters.secondsToReadableTime(100000),
+          "1 days 3 hours 46 min 40 sec",
+        );
+      });
+    });
+
+    describe("when the number of seconds is greater than one hour", () => {
+      it("returns a human readable time with hours", () => {
+        assert.equal(
+          formatters.secondsToReadableTime(10000),
+          "2 hours 46 min 40 sec",
+        );
+      });
+    });
+
+    describe("when the number of seconds is greater than one minute", () => {
+      it("returns a human readable time with minutes", () => {
+        assert.equal(formatters.secondsToReadableTime(500), "8 min 20 sec");
+      });
+    });
+
+    describe("when the number of seconds is less than one minute", () => {
+      it("returns a human readable time with seconds", () => {
+        assert.equal(formatters.secondsToReadableTime(30), "30 sec");
+      });
+    });
+  });
 });
