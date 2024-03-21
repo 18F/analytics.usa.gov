@@ -5,31 +5,34 @@
   </section>
 </article>
 
-<article>
-  <section class="grid-row">
-    <!-- Session Medium -->
-    <section id="session_channel_groups" class="desktop:grid-col-6 bar-chart-component"
-      data-block="session_default_channel_group"
-      data-source="{{ site.data_url }}/{{ data_prefix }}/top-session-channel-group-30-days.json">
-      <h4>Top Channels</h4>
-      <figure id="chart_session_channel_group">
-        <div class="data bar-chart"></div>
-      </figure>
+<article class="section">
+  <section class="section__rate grid-row">
+    <!-- Average Enagement time per session -->
+    <section id="average_engagement_time" class="desktop:grid-col-6"
+      data-block="average_engagement_duration_per_session"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/engagement-duration-30-days.json">
+      <div class="grid-row">
+        <h4 class="grid-col-12">Avg Engagement Time Per Session (30 days)</h4>
+      </div>
+      <div class="grid-row">
+        <span class="data grid-col-12"></span>
+      </div>
     </section>
 
-    <!-- Session Source -->
-    <section id="session_source_mediums" class="desktop:grid-col-6 bar-chart-component"
-      data-block="session_source_medium"
-      data-source="{{ site.data_url }}/{{ data_prefix }}/top-session-source-medium-30-days.json">
-      <h4>Top Sources/Media</h4>
-      <figure id="chart_session_source_medium">
-        <div class="data bar-chart"></div>
-      </figure>
+    <!-- Engagement Rate -->
+    <section id="engagement_rate" class="desktop:grid-col-6" data-block="engagement_rate"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/engagement-rate-30-days.json">
+      <div class="grid-row">
+        <h4 class="grid-col-12">Engagement Rate (Percent of Engaged Sessions)</h4>
+      </div>
+      <div class="grid-row">
+        <span class="data grid-col-12"></span>
+      </div>
     </section>
   </section>
 </article>
 
-<article>
+<article class="section">
   <div class="section__headline">
     <h2>
       Top Traffic Sources in the Past 30 Days

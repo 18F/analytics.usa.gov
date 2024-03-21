@@ -12,7 +12,7 @@ import { isPartOfUnitedStates } from "./territories";
  * Define block renderers for each of the different data types.
  */
 export default {
-  // the realtime block is just `data.totals.active_visitors` formatted with commas
+  // The realtime block is just `data.totals.active_visitors` formatted with commas
   realtime: renderBlock.loadAndRender().render((selection, data) => {
     const totals = data.data[0];
     selection.text(formatters.addCommas(+totals.active_visitors));
@@ -49,23 +49,42 @@ export default {
       svg.call(series);
     }),
 
-  // the session sources block is a stack layout
+  // The average engagement duration block is the engagement duration divided
+  // by the number of sessions. The result is rounded and formatted to a
+  // percentage.
+  average_engagement_duration_per_session: renderBlock
+    .loadAndRender()
+    .render((selection, data) => {
+      const metrics = data.data[0];
+      const avgEngagementDuration =
+        parseInt(metrics.userEngagementDuration) / parseInt(metrics.visits);
+      selection.text(formatters.secondsToReadableTime(avgEngagementDuration));
+    }),
+
+  // The engagement rate is rounded and formatted to a percentage.
+  engagement_rate: renderBlock.loadAndRender().render((selection, data) => {
+    const metrics = data.data[0];
+    const engagementRate = parseFloat(metrics.engagementRate) * 100;
+    selection.text(formatters.floatToPercent(engagementRate));
+  }),
+
+  // The session sources block is a stack layout
   session_default_channel_group: renderBlock.buildCompactBarChart(
     "session_default_channel_group",
   ),
 
-  // the session mediums block is a stack layout
+  // The session mediums block is a stack layout
   session_source_medium: renderBlock.buildCompactBarChart(
     "session_source_medium",
   ),
 
-  // the OS block is a stack layout
+  // The OS block is a stack layout
   os: renderBlock.buildCompactBarChart("os"),
 
-  // the windows block is a stack layout
+  // The windows block is a stack layout
   windows: renderBlock.buildCompactBarChart("os_version"),
 
-  // the devices block is a stack layout
+  // The devices block is a stack layout
   devices: renderBlock
     .loadAndRender()
     .transform((d) => {
@@ -92,10 +111,10 @@ export default {
       d3.select("#total_visitors").text(formatters.readableBigNumber(total));
     }),
 
-  // the browsers block is a table
+  // The browsers block is a table
   browsers: renderBlock.buildCompactBarChart("browser"),
 
-  // the IE block is a stack, but with some extra work done to transform the
+  // The IE block is a stack, but with some extra work done to transform the
   // data beforehand to match the expected object format
   ie: renderBlock.buildBarBasicChart("ie_version"),
 
@@ -212,7 +231,7 @@ export default {
         .format(formatters.addCommas),
     ),
 
-  // the top pages first block(s)
+  // The top pages first block(s)
   "top-pages-realtime": renderBlock
     .loadAndRender()
     .transform((d) => d.data)
@@ -238,7 +257,7 @@ export default {
         .format(formatters.addCommas),
     ),
 
-  // the top pages second and third block(s)
+  // The top pages second and third block(s)
   "top-pages": renderBlock
     .loadAndRender()
     .transform((d) => d.data)
