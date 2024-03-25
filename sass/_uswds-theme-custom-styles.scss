@@ -200,6 +200,7 @@ ul li::before {
 }
 
 g.axis {
+
   path,
   line {
     fill: none;
@@ -439,5 +440,13 @@ g.axis {
 
   li {
     margin: 1em 0;
+  }
+}
+
+#map {
+  height: 300px;
+
+  @include at-media("tablet") {
+    height: 500px;
   }
 }

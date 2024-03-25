@@ -7,11 +7,17 @@ import buildTimeSeries from "./timeseries";
 import formatters from "./formatters";
 import transformers from "./transformers";
 import { isPartOfUnitedStates } from "./territories";
+import map from "./us_map";
+
 
 /*
  * Define block renderers for each of the different data types.
  */
 export default {
+  country_region: renderBlock.loadAndRender().render((selection, data) => {
+    map.createMap(transformers.toTopPercentsWithoutConsolidation(data, 'region'));
+  }),
+
   // the realtime block is just `data.totals.active_visitors` formatted with commas
   realtime: renderBlock.loadAndRender().render((selection, data) => {
     const totals = data.data[0];
