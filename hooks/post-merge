@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# from https://gist.github.com/taurus227/28960de89e6c43bb3d492125368f1224
+
+# Get current NPM packages after merge.
+
+changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+check_run() {
+	echo "$changed_files" | grep --quiet "$1" && echo "$0: Running $2..." && eval "$2"
+}
+
+check_run package.json "npm prune && npm install"
