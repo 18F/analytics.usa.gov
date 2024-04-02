@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Run linters and unit tests before committing.
+
+echo "Executing pre-commit hooks"
+
+npm run lint:js && npm run lint:styles && npm test

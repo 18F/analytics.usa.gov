@@ -57,6 +57,18 @@ following command:
 npm test
 ```
 
+### Install git hooks
+
+There are some git hooks provided in the `./hooks` directory to help with
+common development tasks. These will checkout current NPM packages on branch
+change events, and run the linters and unit tests on pre-commit.
+
+Install the provided hooks with the following command:
+
+```bash
+npm run install-git-hooks
+```
+
 ### Build and serve the site on your local machine
 
 ```bash
