@@ -18,7 +18,7 @@ export default {
     selection.text(formatters.addCommas(+totals.active_visitors));
   }),
 
-  today: renderBlock
+  sessions_30_days: renderBlock
     .loadAndRender()
     .transform((data) => data)
     .render((svg, data) => {
