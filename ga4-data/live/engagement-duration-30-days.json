@@ -1,0 +1,35 @@
+{
+  "name": "user-engagement-duration",
+  "query": {
+    "metrics": [
+      {
+        "name": "userEngagementDuration"
+      },
+      {
+        "name": "sessions"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "limit": "10000",
+    "property": "properties/397708109"
+  },
+  "meta": {
+    "name": "User engagement duration (30 Days)",
+    "description": "Top 20 sources that initiated a session for the last 30 days, measured by visits, for all sites."
+  },
+  "data": [
+    {
+      "userEngagementDuration": "101105154773",
+      "visits": "1616841012"
+    }
+  ],
+  "totals": {
+    "visits": 1616841012
+  },
+  "taken_at": "2024-03-19T20:58:28.812Z"
+}

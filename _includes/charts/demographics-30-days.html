@@ -3,7 +3,36 @@
     There were <span id="total_visitors" class="data">...</span> sessions in the
     past 30 days.
   </section>
+</article>
 
+<article class="section">
+  <section class="section__rate grid-row">
+    <!-- Average Enagement time per session -->
+    <section id="average_engagement_time" class="desktop:grid-col-6"
+      data-block="average_engagement_duration_per_session"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/engagement-duration-30-days.json">
+      <div class="grid-row">
+        <h4 class="grid-col-12">Average Engagement Time Per Session</h4>
+      </div>
+      <div class="grid-row">
+        <span class="data grid-col-12"></span>
+      </div>
+    </section>
+
+    <!-- Engagement Rate -->
+    <section id="engagement_rate" class="desktop:grid-col-6" data-block="engagement_rate"
+      data-source="{{ site.data_url }}/{{ data_prefix }}/engagement-rate-30-days.json">
+      <div class="grid-row">
+        <h4 class="grid-col-12">Percent of Engaged Sessions</h4>
+      </div>
+      <div class="grid-row">
+        <span class="data grid-col-12"></span>
+      </div>
+    </section>
+  </section>
+</article>
+
+<article class="section">
   <div class="section__headline">
     <h2>
       Top Traffic Sources in the Past 30 Days

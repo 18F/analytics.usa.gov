@@ -1,13 +1,3 @@
-ifndef APP_IMAGE
-	APP_IMAGE = 18f/analytics.usa.gov
-endif
-ifndef APP_TAG
-	APP_TAG = latest
-endif
-ifndef PROD_TAG
-	PROD_TAG = production
-endif
-
 production:
 	bundle exec jekyll build
 
@@ -25,16 +15,4 @@ deploy_production:
 
 deploy_staging:
 	make staging && cf v3-zdt-push analytics-staging
-
-docker-start:
-	docker-compose up -d
-
-docker-build-app:
-	docker build -t $(APP_IMAGE):${APP_TAG} .
-
-docker-build-production:
-	docker build -t $(APP_IMAGE):${PROD_TAG} -f Dockerfile.production .
-
-docker-cli: docker-start
-	docker-compose exec jekyll bash
 

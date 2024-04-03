@@ -1,0 +1,9 @@
+#!/bin/bash
+# from https://gist.github.com/taurus227/28960de89e6c43bb3d492125368f1224
+
+# Get current NPM packages after rebase.
+
+if [[ "$1" == "rebase" ]]
+then
+  $(dirname "$0")/post-merge
+fi

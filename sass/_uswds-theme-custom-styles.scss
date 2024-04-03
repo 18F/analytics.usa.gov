@@ -24,6 +24,7 @@ i.e.
 
 // COLORS
 $red: color("red-70v");
+$orange: color("orange-30v");
 $light-blue: color("blue-50v");
 $light-blue-two: color("blue-50");
 $dark-blue: color("blue-80v");
@@ -32,6 +33,7 @@ $uswds-light-gray: color("gray-cool-30");
 $gray: color("gray-10");
 $dark-gray: color("gray-cool-70");
 $white: color("gray-1");
+$black: color("gray-90");
 
 // @include u-font("sans", "md");
 // '3xs'	13px
@@ -76,7 +78,7 @@ h5 {
 // Other Setup:
 body {
   background: #fff;
-  color: color("gray-cool-70");
+  color: $dark-gray;
   font-family: font-family("ui");
   font-weight: font-weight(300);
   margin: 0;
@@ -84,7 +86,7 @@ body {
 
 a,
 a:visited {
-  color: color("blue-80v");
+  color: $dark-blue;
 }
 
 figure {
@@ -123,8 +125,8 @@ figure figure {
 }
 
 .technical-difficulties {
-  background: color("gray-1");
-  color: color("red-70v");
+  background: $white;
+  color: $red;
   padding-top: units(2.5);
 }
 
@@ -160,16 +162,16 @@ ul li::before {
 }
 
 .dark-background {
-  background: color("blue-80v");
+  background: $dark-blue;
 
   &,
   a {
-    color: color("gray-1");
+    color: $white;
   }
 }
 
 .chart-realtime {
-  color: color("blue-80v");
+  color: $dark-blue;
   padding: units(4);
   text-align: center;
 
@@ -207,7 +209,7 @@ g.axis {
   }
 
   .tick text {
-    fill: color("blue-80v");
+    fill: $dark-blue;
     font-size: units(1.5);
   }
 }
@@ -216,13 +218,13 @@ g.axis {
   text-transform: uppercase;
 
   rect {
-    fill: color("blue-50v");
-    stroke: color("gray-1");
+    fill: $light-blue;
+    stroke: $white;
     stroke-width: 1;
   }
 
   text.label {
-    fill: color("blue-80v");
+    fill: $dark-blue;
     font-size: 0.45rem; // use for 30 day dd/mm styles
   }
 }
@@ -246,67 +248,6 @@ g.axis {
     border-bottom: 1px solid color("gray-cool-40");
     border-left: 1px solid color("gray-cool-40");
     border-top: none;
-  }
-}
-
-/*
-* Section components (locations, 30-day-sessions, 90-day-sessions)
-*/
-
-.section {
-  border-top: 1px solid color("gray-cool-40");
-
-  @include at-media("tablet") {
-    border-bottom: none;
-  }
-
-  &__headline {
-    border-bottom: 1px solid color("gray-cool-40");
-
-    @include at-media("tablet") {
-      border-bottom: none;
-      padding-left: units(3);
-      padding-top: 0;
-    }
-
-    h2,
-    h3 {
-      padding: 0 units(2);
-    }
-  }
-
-  &__subheader {
-    font-size: units(3);
-    padding: units(2) units(2);
-    text-align: center;
-
-    #total_visitors {
-      font-weight: font-weight("bold");
-    }
-  }
-
-  &__chart {
-    padding: 0;
-
-    @include at-media("tablet") {
-      padding: 0 units(2);
-    }
-
-    .bar-chart-component {
-      padding: units(2);
-
-      &:first-child {
-        padding-top: units(2);
-
-        @include at-media("tablet") {
-          padding-top: units(1);
-        }
-      }
-
-      @include at-media("tablet") {
-        padding: units(1) units(3);
-      }
-    }
   }
 }
 
@@ -360,7 +301,7 @@ g.axis {
       }
 
       .domain {
-        color: color("gray-cool-70");
+        color: $dark-gray;
         text-transform: lowercase;
       }
 
@@ -375,6 +316,86 @@ g.axis {
   }
 }
 
+/*
+* Section components (locations, 30-day-sessions, 90-day-sessions)
+*/
+
+.section {
+  border-top: 1px solid color("gray-cool-40");
+
+  @include at-media("tablet") {
+    border-bottom: none;
+  }
+
+  &__headline {
+    border-bottom: 1px solid color("gray-cool-40");
+
+    @include at-media("tablet") {
+      border-bottom: none;
+      padding-left: units(3);
+      padding-top: 0;
+    }
+
+    h2,
+    h3 {
+      padding: 0 units(2);
+    }
+  }
+
+  &__subheader {
+    font-size: units(3);
+    padding: units(2) units(2);
+    text-align: center;
+
+    #total_visitors {
+      font-weight: font-weight("bold");
+    }
+  }
+
+  &__rate {
+    padding: 0;
+    text-align: center;
+
+    section {
+      margin: units(2) 0;
+
+      h4 {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      span {
+        font-size: 1.25rem;
+        padding-top: units(0.5);
+      }
+    }
+  }
+
+  &__chart {
+    padding: 0;
+
+    @include at-media("tablet") {
+      padding: 0 units(2);
+    }
+
+    .bar-chart-component {
+      padding: units(2);
+
+      &:first-child {
+        padding-top: units(2);
+
+        @include at-media("tablet") {
+          padding-top: units(1);
+        }
+      }
+
+      @include at-media("tablet") {
+        padding: units(1) units(3);
+      }
+    }
+  }
+}
+
 #top_100_table,
 #top_downloads_table {
   padding: units(3) units(3) 0 units(3);
@@ -384,7 +405,7 @@ g.axis {
   }
 
   h5 {
-    color: color("gray-cool-70");
+    color: $dark-gray;
     font-weight: 300;
   }
 }
@@ -439,5 +460,22 @@ g.axis {
 
   li {
     margin: 1em 0;
+  }
+}
+
+// touchpoints feedback button
+#contact-btn {
+  background-color: $orange;
+  color: $black;
+  font-weight: 700;
+  width: fit-content;
+}
+
+// remove outline on focus for touchpoints form
+.fba-modal {
+  #fba-modal-dialog {
+    .touchpoints-form-wrapper:focus {
+      outline: none;
+    }
   }
 }

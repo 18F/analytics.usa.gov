@@ -61,7 +61,7 @@ function formatDate(isoDateString) {
   const realDate = isoDateString.split("-");
   const month = removeLeadingZero(realDate[1]);
   const day = removeLeadingZero(realDate[2]);
-  return `${day}/${month}`;
+  return `${month}/${day}`;
 }
 
 /**
@@ -115,6 +115,49 @@ function formatFile(filepath) {
   }
 }
 
+/**
+ * @param {Number} paramSeconds a number of seconds (potentially a float) to convert
+ * to readble time (e.g. 1 hour 43 min 16 sec)
+ * @returns {string} the readable time
+ */
+function secondsToReadableTime(paramSeconds) {
+  const secondsInAYear = 31536000;
+  const secondsInADay = 86400;
+  const secondsInAnHour = 3600;
+  const secondsInAMinute = 60;
+
+  const years = Math.floor(paramSeconds / secondsInAYear);
+  const days = Math.floor((paramSeconds % secondsInAYear) / secondsInADay);
+  const hours = Math.floor(
+    ((paramSeconds % secondsInAYear) % secondsInADay) / secondsInAnHour,
+  );
+  const minutes = Math.floor(
+    (((paramSeconds % secondsInAYear) % secondsInADay) % secondsInAnHour) /
+      secondsInAMinute,
+  );
+  const seconds =
+    (((paramSeconds % secondsInAYear) % secondsInADay) % secondsInAnHour) %
+    secondsInAMinute;
+
+  let formattedTime = "";
+  if (years) {
+    formattedTime = formattedTime + years + " years ";
+  }
+  if (days) {
+    formattedTime = formattedTime + days + " days ";
+  }
+  if (hours) {
+    formattedTime = formattedTime + hours + " hours ";
+  }
+  if (minutes) {
+    formattedTime = formattedTime + minutes + " min ";
+  }
+  if (seconds) {
+    formattedTime = formattedTime + Math.round(seconds) + " sec ";
+  }
+  return formattedTime.trim();
+}
+
 export default {
   trimZeroes,
   addCommas,
@@ -126,4 +169,5 @@ export default {
   formatURL,
   formatProtocol,
   formatFile,
+  secondsToReadableTime,
 };
