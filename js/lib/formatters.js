@@ -61,7 +61,7 @@ function formatDate(isoDateString) {
   const realDate = isoDateString.split("-");
   const month = removeLeadingZero(realDate[1]);
   const day = removeLeadingZero(realDate[2]);
-  return `${day}/${month}`;
+  return `${month}/${day}`;
 }
 
 /**
