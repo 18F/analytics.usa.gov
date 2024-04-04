@@ -1,0 +1,522 @@
+<main>
+  <section class="analytics-definitions usa-prose">
+    <div>
+      <h1 class="analytics-definitions__header">On This Page</h1>
+      <ul class="analytics-definitions__table_of_contents usa-list">
+        <li><a href="#report-descriptions">Description of reports</a></li>
+        <li>
+          <a href="#data-definitions">Data definitions</a>
+          <ul>
+            <li><a href="#dimensions">Dimensions</a></li>
+            <li><a href="#metrics">Metrics</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div id="report-descriptions-accordion" class="usa-accordion usa-accordion--bordered usa-accordion--multiselectable"
+      data-allow-multiple>
+      <h2 id="report-descriptions" class="usa-accordion__heading usa-accordion__primary-heading">
+        <button type="button" class="usa-accordion__button" aria-expanded="true"
+          aria-controls="report-descriptions-content">
+          Description of reports
+        </button>
+      </h2>
+      <div id="report-descriptions-content" class="usa-accordion__content">
+        <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section1">
+              Number of people on federal government websites and apps (real-time)
+            </button>
+          </h3>
+          <div id="report-descriptions__section1" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_active_users">active users</a>
+              </li>
+              <li>
+                Description: users visiting federal government publicly-available websites tagged by DAP in real-time
+                (within the last 30 minutes).
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section2">
+              Top web pages and app screens (real-time)
+            </button>
+          </h3>
+          <div id="report-descriptions__section2" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_active_users">active users</a>
+              </li>
+              <li>
+                Dimensions: <a href="#dimension_screen_name">screen name</a>, <a href="#dimension_page_title">page
+                  title</a>
+              </li>
+              <li>
+                Description: 30 webpages and/or applications based on the highest number of real-time users in real-time
+                (within the last 30 minutes).
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section3">
+              User locations and languages (real-time)
+            </button>
+          </h3>
+          <div id="report-descriptions__section3" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_active_users">active users</a>
+              </li>
+              <li>
+                Dimensions: <a href="#dimension_city">city</a>, <a href="#dimension_country">country</a>, <a
+                  href="#dimension_language">language</a>
+              </li>
+              <li>
+                Description: top cities and countries from which user activity originated, and top (10) language
+                settings in user browsers in real-time (within the last 30 minutes).
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section4">
+              Top downloads (yesterday)
+            </button>
+          </h3>
+          <div id="report-descriptions__section4" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_event_count">event count</a>
+              </li>
+              <li>
+                Dimensions: <a href="#dimension_page_title">page title</a>, <a href="#dimension_event_name">event
+                  name</a>, <a href="#dimension_file_name">file name</a>, <a href="#dimension_link_url">link URL</a>, <a
+                  href="#dimension_host_name">hostname</a>
+              </li>
+              <li>
+                Description: top 10 files downloaded for the previous day across all DAP participating government
+                publicly-available websites.
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section5">
+              Top hostnames (historical)
+            </button>
+          </h3>
+          <div id="report-descriptions__section5" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_sessions">sessions</a>
+              </li>
+              <li>
+                Dimensions: <a href="#dimension_host_name">hostname</a>, full page URL</a>, <a
+                  href="#dimension_page_title">page title</a>
+              </li>
+              <li>
+                Description: top 30 second-level domain websites and/or subdomains based on the number of total
+                sessions. Updated daily for 7 and 30-day aggregate reports.
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section6">
+              Top traffic sources (historical)
+            </button>
+          </h3>
+          <div id="report-descriptions__section6" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_sessions">sessions</a>
+              </li>
+              <li>
+                Dimensions: <a href="#dimension_default_channel_group">default channel group</a>, <a
+                  href="#dimension_source_medium">source medium</a>
+              </li>
+              <li>
+                Description: top 20 traffic sources for the last 30 days.
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section7">
+              User device demographics (historical)
+            </button>
+          </h3>
+          <div id="report-descriptions__section7" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_sessions">sessions</a>
+              </li>
+              <li>
+                Dimensions: <a href="#dimension_device_category">device category</a>, <a
+                  href="#dimension_device_brand">device brand</a>, <a href="#dimension_browser">browser</a>, <a
+                  href="#dimension_operating_system">operating_system</a>
+              </li>
+              <li>
+                Description: devices, web browsers, and operating systems users were on when interacting with
+                DAP-participating government websites in the past 30 days.
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section8">
+              Average engagement time per session (historical)
+            </button>
+          </h3>
+          <div id="report-descriptions__section8" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: <a href="#metric_average_session_duration">average session duration</a>
+              </li>
+              <li>
+                Description: the amount of time users spend on a web page in focus or app screen in the foreground
+                across all DAP participating government websites for the past 30 days.
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="usa-accordion__heading">
+            <button type="button" class="usa-accordion__button" aria-expanded="false"
+              aria-controls="report-descriptions__section9">
+              Engagement rate (historical)
+            </button>
+          </h3>
+          <div id="report-descriptions__section9" class="usa-accordion__content usa-prose">
+            <ul>
+              <li>
+                Metric: percentage of <a href="#metric_engaged_sessions">engaged sessions</a>.
+              </li>
+              <li>
+                Description: the percentage of engaged sessions on websites or mobile applications for the past 30 days
+                across DAP-participating websites and apps.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="data-definitions" class="usa-accordion__heading usa-accordion__primary-heading">
+        <button type="button" class="usa-accordion__button" aria-expanded="true"
+          aria-controls="data-definitions-content">
+          Data definitions
+        </button>
+      </h2>
+      <div id="data-definitions-content" class="usa-accordion__content">
+        <div id="dimensions">
+          <h3>Dimensions</h3>
+          <span class="data-definitions__heading-description">
+            A dimension is an attribute of data that describes data (e.g. device type) as opposed to numbers (metrics).
+            <br />
+            Below is the list of dimensions used in analytics.usa.gov <a href="#report-descriptions">reports</a>.
+          </span>
+          <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+            <h4 id="dimension_browser" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section1">
+                Browser
+              </button>
+            </h4>
+            <div id="dimensions__section1" class="usa-accordion__content usa-prose">
+              <span>
+                The browser from which user activity originated. Typical browsers include 'Chrome', 'Edge', 'Firefox',
+                'Internet Explorer', 'Opera', and 'Safari'.
+              </span>
+            </div>
+
+            <h4 id="dimension_city" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section2">
+                City
+              </button>
+            </h4>
+            <div id="dimensions__section2" class="usa-accordion__content usa-prose">
+              <span>
+                The city from which user activity originates.
+              </span>
+            </div>
+
+            <h4 id="dimension_country" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section3">
+                Country
+              </button>
+            </h4>
+            <div id="dimensions__section3" class="usa-accordion__content usa-prose">
+              <span>
+                The country from which user activity originates.
+              </span>
+            </div>
+
+            <h4 id="dimension_default_channel_group" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section4">
+                Default channel group
+              </button>
+            </h4>
+            <div id="dimensions__section4" class="usa-accordion__content usa-prose">
+              <span>
+                Channel groupings are rule-based definitions of your traffic sources.
+              </span>
+            </div>
+
+            <h4 id="dimension_device_brand" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section5">
+                Device brand
+              </button>
+            </h4>
+            <div id="dimensions__section5" class="usa-accordion__content usa-prose">
+              <span>
+                The brand name of the mobile device (e.g., Motorola, LG, or Samsung).
+              </span>
+            </div>
+
+            <h4 id="dimension_device_category" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section6">
+                Device category
+              </button>
+            </h4>
+            <div id="dimensions__section6" class="usa-accordion__content usa-prose">
+              <span>
+                The type of device from which user activity originated. Device categories include 'desktop', 'mobile',
+                and 'tablet'.
+              </span>
+            </div>
+
+            <h4 id="dimension_event_name" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section7">
+                Event name
+              </button>
+            </h4>
+            <div id="dimensions__section7" class="usa-accordion__content usa-prose">
+              <span>
+                An event allows measurement of a specific interaction or occurrence on websites or applications.
+              </span>
+            </div>
+
+            <h4 id="dimension_federal_government_website" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section8">
+                Federal government website
+              </button>
+            </h4>
+            <div id="dimensions__section8" class="usa-accordion__content usa-prose">
+              <span>
+                A federal government website is a unique discoverable hostname or Uniform Resource Identifier (URI) that
+                responds to a HyperText Transfer Protocol (HTTP) protocol which has been made available by a Federal
+                executive branch entity.
+              </span>
+            </div>
+
+            <h4 id="dimension_file_name" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section9">
+                File name
+              </button>
+            </h4>
+            <div id="dimensions__section9" class="usa-accordion__content usa-prose">
+              <span>
+                The page path of a file download (for example, '/pub/irs-pdf/f1040.pdf').
+              </span>
+            </div>
+
+            <h4 id="dimension_host_name" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section10">
+                Host name
+              </button>
+            </h4>
+            <div id="dimensions__section10" class="usa-accordion__content usa-prose">
+              <span>
+                The subdomain and domain names of a URL that people visited on a website. For example, the hostname of
+                'www.ssa.gov/medicare' is 'www.ssa.gov'.
+              </span>
+            </div>
+
+            <h4 id="dimension_language" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section11">
+                Language
+              </button>
+            </h4>
+            <div id="dimensions__section11" class="usa-accordion__content usa-prose">
+              <span>
+                The name of the language of a user's browser or device.
+              </span>
+            </div>
+
+            <h4 id="dimension_link_url" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section12">
+                Link URL
+              </button>
+            </h4>
+            <div id="dimensions__section12" class="usa-accordion__content usa-prose">
+              <span>
+                The full URL for a file download at the time of download.
+              </span>
+            </div>
+
+            <h4 id="dimension_operating_system" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section13">
+                Operating system
+              </button>
+            </h4>
+            <div id="dimensions__section13" class="usa-accordion__content usa-prose">
+              <span>
+                The operating system used by visitors on your website or application. Typical operating systems include
+                'Android', 'Chrome OS', 'Macintosh', and 'Windows'.
+              </span>
+            </div>
+
+            <h4 id="dimension_page_title" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section14">
+                Page title
+              </button>
+            </h4>
+            <div id="dimensions__section14" class="usa-accordion__content usa-prose">
+              <span>
+                The page title that you set on websites. The page title comes from the &lt;title&gt; tag in your HTML.
+                You can also add the page_title parameter to the config command to send a different page title.
+              </span>
+            </div>
+
+            <h4 id="dimension_screen_name" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section15">
+                Screen name
+              </button>
+            </h4>
+            <div id="dimensions__section15" class="usa-accordion__content usa-prose">
+              <span>
+                The page title from a website and screen name from a mobile app.
+              </span>
+            </div>
+
+            <h4 id="dimension_source_medium" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="dimensions__section16">
+                Source medium
+              </button>
+            </h4>
+            <div id="dimensions__section16" class="usa-accordion__content usa-prose">
+              <span>
+                A source is a representation of the publisher or inventory source from which traffic originated. A
+                medium is a method for acquiring users to websites or applications.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="metrics">
+          <h3>Metrics</h3>
+          <span class="data-definitions__heading-description">
+            A metric is a quantitative measure (e.g. total number, average, ratio, percentage). A metric is always a
+            number as opposed to text or a description (e.g. dimensions).
+            <br />
+            Below is the list of dimensions used in analytics.usa.gov <a href="#report-descriptions">reports</a>.
+          </span>
+          <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+            <h4 id="metric_active_users" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="metrics__section1">
+                Active users
+              </button>
+            </h4>
+            <div id="metrics__section1" class="usa-accordion__content usa-prose">
+              <span>
+                The number of unique users who visited websites or applications within a specified date range.
+              </span>
+            </div>
+
+            <h4 id="metric_average_session_duration" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="metrics__section2">
+                Average session duration
+              </button>
+            </h4>
+            <div id="metrics__section2" class="usa-accordion__content usa-prose">
+              <span>
+                The average duration (in seconds) of users' sessions.
+              </span>
+            </div>
+
+            <h4 id="metric_engaged_sessions" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="metrics__section3">
+                Engaged sessions
+              </button>
+            </h4>
+            <div id="metrics__section3" class="usa-accordion__content usa-prose">
+              <span>
+                The number of sessions that lasted 10 seconds or longer, or had one or more conversion events, or two or
+                more page or screen views.
+              </span>
+            </div>
+
+            <h4 id="metric_engagement_rate" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="metrics__section4">
+                Engagement rate
+              </button>
+            </h4>
+            <div id="metrics__section4" class="usa-accordion__content usa-prose">
+              <span>
+                The percentage of sessions that were engaged.
+              </span>
+            </div>
+
+            <h4 id="metric_event_count" class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="metrics__section5">
+                Event count
+              </button>
+            </h4>
+            <div id="metrics__section5" class="usa-accordion__content usa-prose">
+              <span>
+                The number of times users triggered an event.
+              </span>
+            </div>
+
+            <h4 id="metric_sessions" class=" usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false"
+                aria-controls="metrics__section6">
+                Sessions
+              </button>
+            </h4>
+            <div id="metrics__section6" class="usa-accordion__content usa-prose">
+              <span>
+                The number of sessions that began on websites or applications. A session is a period of time during
+                which a user interacts with a website or app.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
