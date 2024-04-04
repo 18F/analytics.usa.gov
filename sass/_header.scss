@@ -17,6 +17,7 @@
   background: color("blue-80v");
   border-bottom: units(1) solid color("blue-50v");
   color: color("gray-1");
+  justify-content: center;
   padding: units(3);
 
   @include at-media("mobile-lg") {
@@ -25,7 +26,8 @@
 
   img.analytics {
     // filter equivalent of "blue-50"
-    filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg) brightness(88%) contrast(95%);
+    filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg)
+      brightness(88%) contrast(95%);
     height: units(4);
     margin-bottom: units(0.5);
     padding-right: units(1);
@@ -67,15 +69,23 @@
   }
 
   nav.links {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-grow: 3;
-    font-size: size("sans", "md");
-    justify-content: flex-end;
+    justify-content: center;
     list-style: none;
     margin-bottom: 0;
+    margin-top: units(1);
     order: 3;
+
+    @include at-media("mobile-lg") {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-grow: 3;
+      justify-content: flex-end;
+    }
 
     ul {
       display: contents;
@@ -84,7 +94,6 @@
       li {
         @include at-media("mobile-lg") {
           display: block;
-          font-size: size("sans", "lg");
           padding: 0;
 
           &:nth-child(odd) a::after {
@@ -95,14 +104,15 @@
       }
 
       span.link-bullet {
+        font-size: units(3);
         padding: 0 units(1);
       }
 
       a {
-        font-size: size("sans", "xs");
+        font-size: units(2.5);
 
         @include at-media("mobile-lg") {
-          font-size: size("sans", "lg");
+          font-size: units(3);
         }
       }
     }
