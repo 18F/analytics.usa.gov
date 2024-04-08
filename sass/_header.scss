@@ -19,6 +19,23 @@
   color: color("gray-1");
   padding: units(3);
 
+  @include at-media("mobile-lg") {
+    justify-content: flex-start;
+  }
+
+  img.analytics {
+    // filter equivalent of "blue-50"
+    filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg) brightness(88%) contrast(95%);
+    height: units(4);
+    margin-bottom: units(0.5);
+    padding-right: units(1);
+
+    @include at-media("tablet-lg") {
+      height: units(7);
+      margin-bottom: units(1);
+    }
+  }
+
   h1 {
     font-size: size("sans", "lg");
     margin: 0;
@@ -79,10 +96,6 @@
 
       span.link-bullet {
         padding: 0 units(1);
-
-        &--hide {
-          display: inline;
-        }
       }
 
       a {
