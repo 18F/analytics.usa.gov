@@ -17,7 +17,26 @@
   background: color("blue-80v");
   border-bottom: units(1) solid color("blue-50v");
   color: color("gray-1");
+  justify-content: center;
   padding: units(3);
+
+  @include at-media("tablet") {
+    justify-content: flex-start;
+  }
+
+  img.analytics {
+    // filter equivalent of "blue-50"
+    filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg)
+      brightness(88%) contrast(95%);
+    height: units(4);
+    margin-bottom: units(0.5);
+    padding-right: units(1);
+
+    @include at-media("tablet-lg") {
+      height: units(7);
+      margin-bottom: units(1);
+    }
+  }
 
   h1 {
     font-size: size("sans", "lg");
@@ -50,24 +69,32 @@
   }
 
   nav.links {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-grow: 3;
-    font-size: size("sans", "md");
-    justify-content: flex-end;
+    justify-content: center;
     list-style: none;
     margin-bottom: 0;
+    margin-top: units(1);
     order: 3;
+    padding-bottom: units(1);
+
+    @include at-media("tablet") {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-grow: 3;
+      justify-content: flex-end;
+    }
 
     ul {
       display: contents;
       list-style: none;
 
       li {
-        @include at-media("mobile-lg") {
+        @include at-media("tablet") {
           display: block;
-          font-size: size("sans", "lg");
           padding: 0;
 
           &:nth-child(odd) a::after {
@@ -78,18 +105,19 @@
       }
 
       span.link-bullet {
+        font-size: 1.25rem;
         padding: 0 units(1);
 
-        &--hide {
-          display: inline;
+        @include at-media("tablet") {
+          font-size: units(3);
         }
       }
 
       a {
-        font-size: size("sans", "xs");
+        font-size: 1.25rem;
 
-        @include at-media("mobile-lg") {
-          font-size: size("sans", "lg");
+        @include at-media("tablet") {
+          font-size: units(3);
         }
       }
     }
