@@ -12,6 +12,11 @@
   <section class="analytics-data analytics-data">
     <div class="analytics-data__header desktop:grid-col-12">
       <h1>Download the data</h1>
+
+      <p>
+        <a href="/definitions">See data fields and metrics descriptions</a>
+      </p>
+
       {% assign agencies = site.data.agencies | sort:"name" %} {% if agencies.size > 0 %}
       <div class="analytics-select analytics-select--secondary">
         <label class="usa-label" for="analytics-agency-select">Select an agency to display results</label>
