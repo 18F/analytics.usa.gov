@@ -15,11 +15,23 @@ module.exports = [
   },
   {
     // Ignore the locally built site with minified JS.
-    ignores: ["_site/**/*.js", "assets/**/*", "sass/**/*", "ga4-data/**/*"],
+    ignores: [
+      "_site/**/*.js",
+      "assets/**/*",
+      "sass/**/*",
+      "ga4-data/**/*",
+      "js/lib/touchpoints.js",
+    ],
     ...eslintConfigs.recommended,
   },
   {
-    ignores: ["_site/**/*.js", "assets/**/*", "sass/**/*", "ga4-data/**/*"],
+    ignores: [
+      "_site/**/*.js",
+      "assets/**/*",
+      "sass/**/*",
+      "ga4-data/**/*",
+      "js/lib/touchpoints.js",
+    ],
     ...eslintPluginPrettierRecommended,
   },
 ];
