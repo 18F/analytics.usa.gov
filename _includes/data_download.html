@@ -1,12 +1,7 @@
-{% if page.url == '/data/' %}
-{% capture page_title %} - Data{% endcapture %}
-{% assign data_prefix = 'live' %}
-{% assign entity = "government" %}
-{% else %}
-{% capture page_title %} - {{ page.name }} - Data{% endcapture %}
-{% assign data_prefix = page.slug %}
-{% assign entity = page.name %}
-{% endif %}
+{% if page.url == '/data/' %} {% capture page_title %} - Data{% endcapture %} {%
+assign data_prefix = 'live' %} {% assign entity = "government" %} {% else %} {%
+capture page_title %} - {{ page.name }} - Data{% endcapture %} {% assign
+data_prefix = page.slug %} {% assign entity = page.name %} {% endif %}
 
 <main>
   <section class="analytics-data analytics-data">
@@ -17,11 +12,19 @@
         <a href="/definitions">See data fields and metrics descriptions</a>
       </p>
 
-      {% assign agencies = site.data.agencies | sort:"name" %} {% if agencies.size > 0 %}
+      {% assign agencies = site.data.agencies | sort:"name" %} {% if
+      agencies.size > 0 %}
       <div class="analytics-select analytics-select--secondary">
-        <label class="usa-label" for="analytics-agency-select">Select an agency to display results</label>
-        <select aria-label="Select an agency to display results" class="usa-select" name="agency-selector"
-          id="analytics-agency-select" title="Agency Selection Dropdown">
+        <label class="usa-label" for="analytics-agency-select"
+          >Select an agency to display results</label
+        >
+        <select
+          aria-label="Select an agency to display results"
+          class="usa-select"
+          name="agency-selector"
+          id="analytics-agency-select"
+          title="Agency Selection Dropdown"
+        >
           <option value="{{ site.baseurl }}/data/">
             {{ site.dropdown_title }}
           </option>
@@ -73,10 +76,18 @@
             <td scope="row">Top pages and screens people are viewing</td>
             <td>30 minutes</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.json" class="download-data usa-button"
-                aria-label="all-pages-realtime.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv" class="download-data usa-button"
-                aria-label="all-pages-realtime.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.json"
+                class="download-data usa-button"
+                aria-label="all-pages-realtime.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/all-pages-realtime.csv"
+                class="download-data usa-button"
+                aria-label="all-pages-realtime.csv"
+                >CSV</a
+              >
             </td>
             <td>Every 30 minutes</td>
           </tr>
@@ -84,10 +95,18 @@
             <td scope="row">Top hostnames</td>
             <td>30 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-10000-domains-30-days.json"
-                class="download-data usa-button" aria-label="top-10000-domains-30-days.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-10000-domains-30-days.csv"
-                class="download-data usa-button" aria-label="top-10000-domains-30-days.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-10000-domains-30-days.json"
+                class="download-data usa-button"
+                aria-label="top-10000-domains-30-days.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-10000-domains-30-days.csv"
+                class="download-data usa-button"
+                aria-label="top-10000-domains-30-days.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -95,10 +114,18 @@
             <td scope="row">Top traffic sources</td>
             <td>30 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.json"
-                class="download-data usa-button" aria-label="top-traffic-sources-30-days.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.csv"
-                class="download-data usa-button" aria-label="top-traffic-sources-30-days.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.json"
+                class="download-data usa-button"
+                aria-label="top-traffic-sources-30-days.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-traffic-sources-30-days.csv"
+                class="download-data usa-button"
+                aria-label="top-traffic-sources-30-days.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -106,10 +133,18 @@
             <td scope="row">Top downloads</td>
             <td>Yesterday</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
-                class="download-data usa-button" aria-label="top-downloads-yesterday.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.csv"
-                class="download-data usa-button" aria-label="top-downloads-yesterday.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.json"
+                class="download-data usa-button"
+                aria-label="top-downloads-yesterday.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-downloads-yesterday.csv"
+                class="download-data usa-button"
+                aria-label="top-downloads-yesterday.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -117,7 +152,9 @@
       </table>
     </div>
 
-    <div class="analytics-data__demographics desktop:grid-col-12 padding-bottom-4">
+    <div
+      class="analytics-data__demographics desktop:grid-col-12 padding-bottom-4"
+    >
       <table class="usa-table usa-table--borderless desktop:grid-col-8">
         <caption>
           <h2>User demographics</h2>
@@ -135,10 +172,18 @@
             <td scope="row">Language</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/language.json" class="download-data usa-button"
-                aria-label="language.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/language.csv" class="download-data usa-button"
-                aria-label="language.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/language.json"
+                class="download-data usa-button"
+                aria-label="language.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/language.csv"
+                class="download-data usa-button"
+                aria-label="language.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -146,11 +191,20 @@
             <td scope="row">Users per country</td>
             <td>30 minutes</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json"
-                class="download-data usa-button" aria-label="top-countries-realtime.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.csv"
-                class="download-data usa-button" aria-label="top-countries-realtime.csv" disabled="disabled"
-                aria-disabled="true">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.json"
+                class="download-data usa-button"
+                aria-label="top-countries-realtime.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-countries-realtime.csv"
+                class="download-data usa-button"
+                aria-label="top-countries-realtime.csv"
+                disabled="disabled"
+                aria-disabled="true"
+                >CSV</a
+              >
             </td>
             <td>Every 30 minutes</td>
           </tr>
@@ -158,10 +212,20 @@
             <td scope="row">Users per city</td>
             <td>30 minutes</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json" class="download-data usa-button"
-                aria-label="top-cities-realtime.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.csv" class="download-data usa-button"
-                aria-label="top-cities-realtime.csv" disabled="disabled" aria-disabled="true">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.json"
+                class="download-data usa-button"
+                aria-label="top-cities-realtime.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/top-cities-realtime.csv"
+                class="download-data usa-button"
+                aria-label="top-cities-realtime.csv"
+                disabled="disabled"
+                aria-disabled="true"
+                >CSV</a
+              >
             </td>
             <td>Every 30 minutes</td>
           </tr>
@@ -169,10 +233,18 @@
             <td scope="row">Desktop, mobile, tablet</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/devices-90-days.json" class="download-data usa-button"
-                aria-label="devices.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/devices-90-days.csv" class="download-data usa-button"
-                aria-label="devices.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/devices-90-days.json"
+                class="download-data usa-button"
+                aria-label="devices.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/devices-90-days.csv"
+                class="download-data usa-button"
+                aria-label="devices.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -180,10 +252,18 @@
             <td scope="row">Web Browsers (90 days)</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/browsers-90-days.json" class="download-data usa-button"
-                aria-label="browsers.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/browsers-90-days.csv" class="download-data usa-button"
-                aria-label="browsers.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/browsers-90-days.json"
+                class="download-data usa-button"
+                aria-label="browsers.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/browsers-90-days.csv"
+                class="download-data usa-button"
+                aria-label="browsers.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -191,10 +271,18 @@
             <td scope="row">Operating systems</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/os-90-days.json" class="download-data usa-button"
-                aria-label="os.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/os-90-days.csv" class="download-data usa-button"
-                aria-label="os.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/os-90-days.json"
+                class="download-data usa-button"
+                aria-label="os.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/os-90-days.csv"
+                class="download-data usa-button"
+                aria-label="os.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -202,10 +290,18 @@
             <td scope="row">Versions of Windows</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/windows-90-days.json" class="download-data usa-button"
-                aria-label="windows.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/windows-90-days.csv" class="download-data usa-button"
-                aria-label="windows.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/windows-90-days.json"
+                class="download-data usa-button"
+                aria-label="windows.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/windows-90-days.csv"
+                class="download-data usa-button"
+                aria-label="windows.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -213,10 +309,18 @@
             <td scope="row">OS &amp; browser (combined)</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.json" class="download-data usa-button"
-                aria-label="os-browsers.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.csv" class="download-data usa-button"
-                aria-label="os-browsers.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.json"
+                class="download-data usa-button"
+                aria-label="os-browsers.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/os-browsers.csv"
+                class="download-data usa-button"
+                aria-label="os-browsers.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -224,10 +328,18 @@
             <td scope="row">Windows &amp; browser (combined)</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.json" class="download-data usa-button"
-                aria-label="windows-browsers.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.csv" class="download-data usa-button"
-                aria-label="windows-browsers.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.json"
+                class="download-data usa-button"
+                aria-label="windows-browsers.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/windows-browsers.csv"
+                class="download-data usa-button"
+                aria-label="windows-browsers.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -235,10 +347,18 @@
             <td scope="row">Screen sizes</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/screen-size.json" class="download-data usa-button"
-                aria-label="screen-size.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/screen-size.csv" class="download-data usa-button"
-                aria-label="screen-size.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/screen-size.json"
+                class="download-data usa-button"
+                aria-label="screen-size.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/screen-size.csv"
+                class="download-data usa-button"
+                aria-label="screen-size.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
@@ -246,10 +366,18 @@
             <td scope="row">Device model</td>
             <td>90 days</td>
             <td>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/device_model.json" class="download-data usa-button"
-                aria-label="device_model.json">JSON</a>
-              <a href="{{ site.data_url }}/{{ data_prefix }}/device_model.csv" class="download-data usa-button"
-                aria-label="device_model.csv">CSV</a>
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/device_model.json"
+                class="download-data usa-button"
+                aria-label="device_model.json"
+                >JSON</a
+              >
+              <a
+                href="{{ site.data_url }}/{{ data_prefix }}/device_model.csv"
+                class="download-data usa-button"
+                aria-label="device_model.csv"
+                >CSV</a
+              >
             </td>
             <td>Daily</td>
           </tr>
