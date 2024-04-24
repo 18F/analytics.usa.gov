@@ -56,6 +56,7 @@ http {
       add_header             Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header             Pragma "no-cache";
       add_header             Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+      add_header             X-Content-Type-Options "nosniff" always;
 
       proxy_hide_header      Access-Control-Allow-Origin;
       add_header             Access-Control-Allow-Origin $allow_origin;
@@ -82,18 +83,21 @@ http {
       # touchpoints server.
       add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+      add_header X-Content-Type-Options "nosniff" always;
       try_files $uri $uri/index.html $uri/ =404;
     }
 
     location =/developers {
       add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+      add_header X-Content-Type-Options "nosniff" always;
       return 302 https://open.gsa.gov/api/dap/;
     }
 
     location =/developer {
       add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+      add_header X-Content-Type-Options "nosniff" always;
       return 302 https://open.gsa.gov/api/dap/;
     }
   }
