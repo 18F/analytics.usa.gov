@@ -1,0 +1,5277 @@
+/*
+  These styles are taken from inline style directives in the touchpoints JS.
+  IDs may have been added to the HTML in order to apply these.
+*/
+
+#touchpoints-hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+#fba_directive {
+  display: none !important;
+}
+
+/*
+  Styles below this comment are taken from the touchpoints JS code in order to
+  avoid styles being applied inline.  These should not be modified unless
+  updated source is provided by touchpoints.
+*/
+
+.fba-modal {
+  background-color: rgb(0, 0, 0, 0.375);
+  z-index: 10001;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.fba-modal-dialog {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  margin: 0 auto 40px auto;
+  max-width: 35rem;
+  position: relative;
+}
+
+.fba-modal-dialog .wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.fixed-tab-button {
+  bottom: 0;
+  padding: 5px 10px;
+  position: fixed;
+  right: 12px;
+  z-index: 9999;
+}
+
+#fba-button.usa-button:hover,
+.fixed-tab-button.usa-button:hover {
+  color: white;
+  background-color: #1a4480;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+#fba-modal-title {
+  margin-right: 20px;
+  margin-top: 0;
+  word-wrap: break-word;
+}
+
+#fba-text-name,
+#fba-text-email {
+  max-width: 100% !important;
+  font-size: 100%;
+}
+
+.fba-modal-dialog .fba-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 24px;
+  color: #5b616b;
+  background: none;
+  line-height: 1;
+  text-decoration: none;
+  width: auto;
+  z-index: 10;
+}
+
+/* Form Sections */
+.touchpoints-form-wrapper form div.section {
+  display: none;
+}
+
+.touchpoints-form-wrapper form div.section.visible {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/*! uswds v2.1.0 */
+.fba-modal-dialog .usa-list,
+.fba-modal-dialog .usa-prose>ul,
+.fba-modal-dialog .usa-prose>ol {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  line-height: 1.52155;
+  padding-left: 3ch;
+}
+
+.fba-modal-dialog .usa-list:last-child,
+.fba-modal-dialog .usa-prose>ul:last-child,
+.fba-modal-dialog .usa-prose>ol:last-child {
+  margin-bottom: 0;
+}
+
+.fba-modal-dialog .usa-list li,
+.fba-modal-dialog .usa-prose>ul li,
+.fba-modal-dialog .usa-prose>ol li {
+  margin-bottom: 0.25em;
+  max-width: 68ex;
+}
+
+.fba-modal-dialog .usa-list li:last-child,
+.fba-modal-dialog .usa-prose>ul li:last-child,
+.fba-modal-dialog .usa-prose>ol li:last-child {
+  margin-bottom: 0;
+}
+
+.fba-modal-dialog .usa-table,
+.fba-modal-dialog .usa-prose>table {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06471rem;
+  line-height: 1.52155;
+  border-spacing: 0;
+  margin: 1.25rem 0;
+}
+
+.fba-modal-dialog .usa-table thead th,
+.fba-modal-dialog .usa-prose>table thead th {
+  font-weight: 700;
+}
+
+.fba-modal-dialog .usa-table thead th,
+.fba-modal-dialog .usa-prose>table thead th,
+.fba-modal-dialog .usa-table thead td,
+.fba-modal-dialog .usa-prose>table thead td {
+  background-color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-table th,
+.fba-modal-dialog .usa-prose>table th {
+  text-align: left;
+}
+
+.fba-modal-dialog .usa-table th,
+.fba-modal-dialog .usa-prose>table th,
+.fba-modal-dialog .usa-table td,
+.fba-modal-dialog .usa-prose>table td {
+  border-width: 1px;
+  border-color: #565c65;
+  border-style: solid;
+  background-color: white;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+}
+
+.fba-modal-dialog .usa-table caption,
+.fba-modal-dialog .usa-prose>table caption {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 0.91476rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.fba-modal-dialog .usa-table--borderless thead th,
+.fba-modal-dialog .usa-prose>.fba-modal-dialog .usa-table--borderless thead th {
+  background-color: transparent;
+  border-top: 0;
+}
+
+.fba-modal-dialog .usa-table--borderless th,
+.fba-modal-dialog .usa-prose>.fba-modal-dialog .usa-table--borderless th,
+.fba-modal-dialog .usa-table--borderless td,
+.fba-modal-dialog .usa-prose>.fba-modal-dialog .usa-table--borderless td {
+  border-left: 0;
+  border-right: 0;
+}
+
+.fba-modal-dialog .usa-table--borderless th:first-child {
+  padding-left: 0;
+}
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+.fba-modal-dialog html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.fba-modal-dialog body {
+  margin: 0;
+}
+
+.fba-modal-dialog .usa-focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog *,
+.fba-modal-dialog *::before,
+.fba-modal-dialog *::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.fba-modal-dialog {
+  background-color: white;
+  color: #1b1b1b;
+  overflow-x: hidden;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  -webkit-font-kerning: normal;
+  font-kerning: normal;
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fba-modal-dialog .usa-sr-only {
+  position: absolute;
+  left: -999em;
+}
+
+.fba-modal-dialog .usa-button {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06471rem;
+  line-height: 0.93923;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #005ea2;
+  border: 0;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-button {
+    width: auto;
+  }
+}
+
+.fba-modal-dialog .usa-button:visited {
+  color: white;
+}
+
+.fba-modal-dialog .usa-button:hover,
+.fba-modal-dialog .usa-button,
+.fba-modal-dialog .usa-button--hover {
+  background-color: #1a4480;
+  border-bottom: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-button:active,
+.fba-modal-dialog .usa-button.fba-modal-dialog .usa-button--active {
+  background-color: #162e51;
+  color: white;
+}
+
+.fba-modal-dialog .usa-button:focus,
+.fba-modal-dialog .usa-button.fba-modal-dialog .usa-focus {
+  outline-offset: 0.25rem;
+}
+
+.fba-modal-dialog .usa-button:disabled {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #c9c9c9;
+  color: white;
+  pointer-events: none;
+}
+
+.fba-modal-dialog .usa-button:disabled:hover,
+.fba-modal-dialog .usa-button:disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button:disabled:active,
+.fba-modal-dialog .usa-button:disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button:disabled:focus,
+.fba-modal-dialog .usa-button:disabled.fba-modal-dialog .usa-focus {
+  background-color: #c9c9c9;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.fba-modal-dialog .usa-button--accent-cool {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: #00bde3;
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-button--accent-cool:visited {
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-button--accent-cool:hover,
+.fba-modal-dialog .usa-button--accent-cool.fba-modal-dialog .usa-button--hover {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #28a0cb;
+  color: white;
+}
+
+.fba-modal-dialog .usa-button--accent-cool:active,
+.fba-modal-dialog .usa-button--accent-cool.fba-modal-dialog .usa-button--active {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #07648d;
+  color: white;
+}
+
+.fba-modal-dialog .usa-button--outline {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  -webkit-box-shadow: inset 0 0 0 2px #005ea2;
+  box-shadow: inset 0 0 0 2px #005ea2;
+  color: #005ea2;
+}
+
+.fba-modal-dialog .usa-button--outline:visited {
+  color: #005ea2;
+}
+
+.fba-modal-dialog .usa-button--outline:hover,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--hover {
+  background-color: transparent;
+  -webkit-box-shadow: inset 0 0 0 2px #1a4480;
+  box-shadow: inset 0 0 0 2px #1a4480;
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-button--outline:active,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--active {
+  background-color: transparent;
+  -webkit-box-shadow: inset 0 0 0 2px #162e51;
+  box-shadow: inset 0 0 0 2px #162e51;
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse {
+  -webkit-box-shadow: inset 0 0 0 2px #dcdee0;
+  box-shadow: inset 0 0 0 2px #dcdee0;
+  color: #dcdee0;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse:visited {
+  color: #dcdee0;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse:hover,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--hover {
+  -webkit-box-shadow: inset 0 0 0 2px #f0f0f0;
+  box-shadow: inset 0 0 0 2px #f0f0f0;
+  color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse:active,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--active {
+  background-color: transparent;
+  -webkit-box-shadow: inset 0 0 0 2px white;
+  box-shadow: inset 0 0 0 2px white;
+  color: white;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #005ea2;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: #dcdee0;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:visited {
+  color: #562b97;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:hover,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:hover,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled.fba-modal-dialog .usa-button--hover {
+  color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled:active,
+.fba-modal-dialog .usa-button--outline.fba-modal-dialog .usa-button--inverse.fba-modal-dialog .usa-button--unstyled.fba-modal-dialog .usa-button--active {
+  color: white;
+}
+
+.fba-modal-dialog .usa-button--base {
+  background-color: #71767a;
+}
+
+.fba-modal-dialog .usa-button--base:hover,
+.fba-modal-dialog .usa-button--base.fba-modal-dialog .usa-button--hover {
+  background-color: #565c65;
+}
+
+.fba-modal-dialog .usa-button--base:active,
+.fba-modal-dialog .usa-button--base.fba-modal-dialog .usa-button--active {
+  background-color: #3d4551;
+}
+
+.fba-modal-dialog .usa-button--secondary {
+  background-color: #d83933;
+}
+
+.fba-modal-dialog .usa-button--secondary:hover,
+.fba-modal-dialog .usa-button--secondary.fba-modal-dialog .usa-button--hover {
+  background-color: #b50909;
+}
+
+.fba-modal-dialog .usa-button--secondary:active,
+.fba-modal-dialog .usa-button--secondary.fba-modal-dialog .usa-button--active {
+  background-color: #8b0a03;
+}
+
+.fba-modal-dialog .usa-button--big {
+  border-radius: 0.25rem;
+  font-size: 1.46397rem;
+  padding: 1rem 1.5rem;
+}
+
+.fba-modal-dialog .usa-button--disabled {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #c9c9c9;
+  color: white;
+  pointer-events: none;
+}
+
+.fba-modal-dialog .usa-button--disabled:hover,
+.fba-modal-dialog .usa-button--disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button--disabled:active,
+.fba-modal-dialog .usa-button--disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button--disabled:focus,
+.fba-modal-dialog .usa-button--disabled.fba-modal-dialog .usa-focus {
+  background-color: #c9c9c9;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.fba-modal-dialog .usa-button--outline-disabled,
+.fba-modal-dialog .usa-button--outline-inverse-disabled,
+.fba-modal-dialog .usa-button--outline:disabled,
+.fba-modal-dialog .usa-button--outline-inverse:disabled,
+.fba-modal-dialog .usa-button--outline-inverse:disabled {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.fba-modal-dialog .usa-button--outline-disabled:hover,
+.fba-modal-dialog .usa-button--outline-disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button--outline-disabled:active,
+.fba-modal-dialog .usa-button--outline-disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button--outline-disabled:focus,
+.fba-modal-dialog .usa-button--outline-disabled.fba-modal-dialog .usa-focus,
+.fba-modal-dialog .usa-button--outline-inverse-disabled:hover,
+.fba-modal-dialog .usa-button--outline-inverse-disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button--outline-inverse-disabled:active,
+.fba-modal-dialog .usa-button--outline-inverse-disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button--outline-inverse-disabled:focus,
+.fba-modal-dialog .usa-button--outline-inverse-disabled.fba-modal-dialog .usa-focus,
+.fba-modal-dialog .usa-button--outline:disabled:hover,
+.fba-modal-dialog .usa-button--outline:disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button--outline:disabled:active,
+.fba-modal-dialog .usa-button--outline:disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button--outline:disabled:focus,
+.fba-modal-dialog .usa-button--outline:disabled.fba-modal-dialog .usa-focus,
+.fba-modal-dialog .usa-button--outline-inverse:disabled:hover,
+.fba-modal-dialog .usa-button--outline-inverse:disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button--outline-inverse:disabled:active,
+.fba-modal-dialog .usa-button--outline-inverse:disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button--outline-inverse:disabled:focus,
+.fba-modal-dialog .usa-button--outline-inverse:disabled.fba-modal-dialog .usa-focus,
+.fba-modal-dialog .usa-button--outline-inverse:disabled:hover,
+.fba-modal-dialog .usa-button--outline-inverse:disabled.fba-modal-dialog .usa-button--hover,
+.fba-modal-dialog .usa-button--outline-inverse:disabled:active,
+.fba-modal-dialog .usa-button--outline-inverse:disabled.fba-modal-dialog .usa-button--active,
+.fba-modal-dialog .usa-button--outline-inverse:disabled:focus,
+.fba-modal-dialog .usa-button--outline-inverse:disabled.fba-modal-dialog .usa-focus {
+  background-color: transparent;
+  border: 0;
+}
+
+.fba-modal-dialog .usa-button--outline-disabled,
+.fba-modal-dialog .usa-button--outline:disabled {
+  -webkit-box-shadow: inset 0 0 0 2px #c9c9c9;
+  box-shadow: inset 0 0 0 2px #c9c9c9;
+  color: #c9c9c9;
+}
+
+.fba-modal-dialog .usa-button--outline-disabled.fba-modal-dialog .usa-button--inverse,
+.fba-modal-dialog .usa-button--outline:disabled.fba-modal-dialog .usa-button--inverse {
+  background-color: transparent;
+  -webkit-box-shadow: inset 0 0 0 2px #71767a;
+  box-shadow: inset 0 0 0 2px #71767a;
+  color: #71767a;
+}
+
+.fba-modal-dialog .usa-button--unstyled {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #005ea2;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.fba-modal-dialog .usa-button--unstyled:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-button--unstyled:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-button--unstyled:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-button--unstyled:visited {
+  color: #562b97;
+}
+
+.fba-modal-dialog .usa-button--unstyled:hover,
+.fba-modal-dialog .usa-button--unstyled:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-embed-container iframe,
+.fba-modal-dialog .usa-embed-container object,
+.fba-modal-dialog .usa-embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fba-modal-dialog .usa-embed-container {
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.fba-modal img {
+  max-width: 100%;
+}
+
+.fba-modal-dialog .usa-media-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.fba-modal-dialog .usa-checkbox {
+  background: white;
+}
+
+.fba-modal-dialog .usa-checkbox__label {
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-checkbox__label::before {
+  background: white;
+  box-shadow: 0 0 0 2px #1b1b1b;
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-checkbox__label::before {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__input:checked+[class*="__label"]::before {
+  background-color: #005ea2;
+  box-shadow: 0 0 0 2px #005ea2;
+}
+
+.fba-modal-dialog .usa-checkbox__input:disabled+[class*="__label"],
+.usa-checkbox__input[aria-disabled="true"]+[class*="__label"] {
+  color: #757575;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-checkbox__input:disabled+[class*="__label"],
+  .fba-modal-dialog .usa-checkbox__input[aria-disabled="true"]+[class*="__label"] {
+    color: GrayText;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__input:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-checkbox__input[aria-disabled="true"]+[class*="__label"]::before {
+  background-color: white;
+  box-shadow: 0 0 0 2px #757575;
+}
+
+.fba-modal-dialog .usa-checkbox__input--tile+[class*="__label"] {
+  background-color: white;
+  border: 2px solid #c9c9c9;
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-checkbox__input--tile:checked+[class*="__label"] {
+  background-color: rgba(0, 94, 162, 0.1);
+  border-color: #005ea2;
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-checkbox__input--tile:checked+[class*="__label"] {
+    border: ButtonText solid 0.25rem;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__input--tile:disabled+[class*="__label"],
+.fba-modal-dialog .usa-checkbox__input--tile[aria-disabled="true"]+[class*="__label"] {
+  border-color: #e6e6e6;
+}
+
+.fba-modal-dialog .usa-checkbox__input--tile:disabled:checked+[class*="__label"],
+.fba-modal-dialog .usa-checkbox__input--tile[aria-disabled="true"]:checked+[class*="__label"] {
+  background-color: white;
+}
+
+.fba-modal-dialog .usa-checkbox__input:checked+[class*="__label"]::before,
+.fba-modal-dialog .usa-checkbox__input:checked:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-checkbox__input:checked[aria-disabled="true"]+[class*="__label"]::before {
+  background-image: url("https://touchpoints.app.cloud.gov/img/correct8.svg"),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-checkbox__input:checked+[class*="__label"]::before,
+  .fba-modal-dialog .usa-checkbox__input:checked:disabled+[class*="__label"]::before,
+  .fba-modal-dialog .usa-checkbox__input:checked[aria-disabled="true"]+[class*="__label"]::before {
+    background-image: url("https://touchpoints.app.cloud.gov/img/correct8-alt.svg"),
+      linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__input:checked:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-checkbox__input:checked[aria-disabled="true"]+[class*="__label"]::before {
+  background-color: #757575;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-checkbox__input:checked:disabled+[class*="__label"]::before,
+  .fba-modal-dialog .usa-checkbox__input:checked[aria-disabled="true"]+[class*="__label"]::before {
+    background-color: GrayText;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__input {
+  position: absolute;
+  left: -999em;
+  right: auto;
+}
+
+.fba-modal-dialog .usa-checkbox__input:focus+[class*="__label"]::before {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0.25rem;
+}
+
+.fba-modal-dialog .usa-checkbox__input:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-checkbox__input[aria-disabled="true"]+[class*="__label"]::before {
+  cursor: not-allowed;
+}
+
+.fba-modal-dialog .usa-checkbox__input:disabled+[class*="__label"],
+.fba-modal-dialog .usa-checkbox__input[aria-disabled="true"]+[class*="__label"] {
+  color: #757575;
+  cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-checkbox__input:disabled+[class*="__label"],
+  .fba-modal-dialog .usa-checkbox__input[aria-disabled="true"]+[class*="__label"] {
+    color: GrayText;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__input--tile+[class*="__label"] {
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+}
+
+.fba-modal-dialog .usa-checkbox__input--tile+[class*="__label"]::before {
+  left: 0.5rem;
+}
+
+.fba-modal-dialog .usa-checkbox__input:checked+[class*="__label"]::before {
+  background-position: center center;
+  background-size: 0.75rem auto;
+}
+
+@media print {
+  .fba-modal-dialog .usa-checkbox__input:checked+[class*="__label"]::before {
+    background-image: none;
+    background-color: white;
+    content: "✔";
+    text-align: center;
+  }
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-checkbox__input:checked+[class*="__label"]::before {
+    background-color: ButtonText;
+  }
+}
+
+.fba-modal-dialog .usa-checkbox__label {
+  cursor: pointer;
+  display: inherit;
+  font-weight: normal;
+  margin-top: 0.75rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-checkbox__label::before {
+  content: " ";
+  display: block;
+  left: 0;
+  margin-left: 2px;
+  margin-top: 0.064rem;
+  position: absolute;
+}
+
+.fba-modal-dialog .usa-checkbox__label::before {
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 2px;
+}
+
+.fba-modal-dialog .usa-checkbox__label-description {
+  display: block;
+  font-size: 0.93rem;
+  margin-top: 0.5rem;
+}
+
+.fba-modal-dialog .usa-fieldset,
+.fba-modal-dialog .usa-hint,
+.fba-modal-dialog .usa-select,
+.fba-modal-dialog .usa-range,
+.fba-modal-dialog .usa-input,
+.fba-modal-dialog .usa-textarea {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06471rem;
+  line-height: 1.26796;
+}
+
+.fba-modal-dialog .usa-select,
+.fba-modal-dialog .usa-range,
+.fba-modal-dialog .usa-input,
+.fba-modal-dialog .usa-textarea {
+  border-width: 1px;
+  border-color: #565c65;
+  border-style: solid;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  color: #1b1b1b;
+  display: block;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  max-width: 30rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-input--success.fba-modal-dialog .usa-select,
+.fba-modal-dialog .usa-input--success.fba-modal-dialog .usa-range,
+.fba-modal-dialog .usa-input--success.fba-modal-dialog .usa-input,
+.fba-modal-dialog .usa-input--success.fba-modal-dialog .usa-textarea {
+  border-width: 0.25rem;
+  border-color: #00a91c;
+  border-style: solid;
+}
+
+.fba-modal-dialog .usa-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fba-modal-dialog .usa-form-group--error {
+  border-left-width: 0.25rem;
+  border-left-color: #b50909;
+  border-left-style: solid;
+  margin-top: 2rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-label {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.3;
+  display: block;
+  font-weight: normal;
+  margin-top: 1.5rem;
+  max-width: 30rem;
+}
+
+.fba-modal-dialog .usa-label--error {
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.fba-modal-dialog .usa-label--required {
+  color: #b50909;
+}
+
+.fba-modal-dialog .usa-error-message {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  color: #b50909;
+  display: block;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-hint {
+  color: #71767a;
+}
+
+.fba-modal-dialog .usa-hint--required,
+.fba-modal-dialog .usa-label--required {
+  color: #b50909;
+}
+
+.fba-modal-dialog .usa-label {
+  display: block;
+  line-height: 1.12707;
+  margin-top: 1.5rem;
+  max-width: 30rem;
+}
+
+.fba-modal-dialog .usa-legend {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.3;
+  display: block;
+  font-weight: normal;
+  margin-top: 1.5rem;
+  max-width: 30rem;
+}
+
+.fba-modal-dialog .usa-legend--large {
+  font-size: 2.13rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.fba-modal-dialog .usa-input-list {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-input-list li {
+  line-height: 1.26796;
+}
+
+.fba-modal-dialog .usa-prose .fba-modal-dialog .usa-input-list {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-prose .fba-modal-dialog .usa-input-list li {
+  line-height: 1.26796;
+}
+
+.fba-modal-dialog .usa-memorable-date {
+  display: flex;
+}
+
+.fba-modal-dialog .usa-memorable-date [type="number"] {
+  -moz-appearance: textfield;
+}
+
+.fba-modal-dialog .usa-memorable-date [type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.fba-modal-dialog .usa-memorable-date [type="number"]::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+.fba-modal-dialog .usa-form-group--day,
+.fba-modal-dialog .usa-form-group--month,
+.fba-modal-dialog .usa-form-group--year {
+  flex: 0 1 auto;
+  margin-right: 1rem;
+  width: 3rem;
+}
+
+.fba-modal-dialog .usa-form-group--year {
+  width: 4.5rem;
+}
+
+.fba-modal-dialog .usa-select {
+  background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/unfold_more.svg"),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  background-position: right 0.5rem center;
+  background-size: 1.25rem;
+  padding-right: 2rem;
+}
+
+.fba-modal-dialog .usa-select::-ms-expand {
+  display: none;
+}
+
+.fba-modal-dialog .usa-select:-webkit-autofill {
+  -webkit-appearance: menulist;
+  appearance: menulist;
+}
+
+.fba-modal-dialog .usa-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 black;
+}
+
+.fba-modal-dialog .usa-select[multiple] {
+  height: auto;
+  background-image: none;
+  padding-right: 0;
+}
+
+.fba-modal-dialog .usa-select option {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fba-modal-dialog .usa-select:disabled,
+.usa-select[aria-disabled="true"] {
+  background-color: #c9c9c9;
+  color: #454545;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.fba-modal-dialog .usa-select:disabled:hover,
+.fba-modal-dialog .usa-select:disabled:active,
+.fba-modal-dialog .usa-select:disabled:focus,
+.fba-modal-dialog .usa-select:disabled.usa-focus,
+.fba-modal-dialog .usa-select[aria-disabled="true"]:hover,
+.fba-modal-dialog .usa-select[aria-disabled="true"]:active,
+.fba-modal-dialog .usa-select[aria-disabled="true"]:focus,
+.fba-modal-dialog .usa-select[aria-disabled="true"].usa-focus {
+  background-color: #c9c9c9;
+  color: #454545;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-select:disabled,
+  .fba-modal-dialog .usa-select[aria-disabled="true"] {
+    border: 0;
+    color: GrayText;
+  }
+
+  .fba-modal-dialog .usa-select:disabled:hover,
+  .fba-modal-dialog .usa-select:disabled:active,
+  .fba-modal-dialog .usa-select:disabled:focus,
+  .fba-modal-dialog .usa-select:disabled.usa-focus,
+  .fba-modal-dialog .usa-select[aria-disabled="true"]:hover,
+  .fba-modal-dialog .usa-select[aria-disabled="true"]:active,
+  .fba-modal-dialog .usa-select[aria-disabled="true"]:focus,
+  .fba-modal-dialog .usa-select[aria-disabled="true"].usa-focus {
+    color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-select:disabled,
+  .fba-modal-dialog .usa-select[aria-disabled="true"] {
+    border: 2px solid GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-select {
+    -webkit-appearance: listbox;
+    -moz-appearance: listbox;
+    appearance: listbox;
+    background-image: none;
+    padding-right: 0;
+  }
+}
+
+[type="file"] {
+  border: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+  padding-top: 0.2rem;
+}
+
+/* Not using .usa-file-input */
+.fba-modal-dialog .usa-range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding-left: 1px;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-range:focus {
+  outline: none;
+}
+
+.fba-modal-dialog .usa-range:focus::-webkit-slider-thumb {
+  background-color: white;
+  box-shadow: 0 0 0 2px #2491ff;
+}
+
+.fba-modal-dialog .usa-range:focus::-moz-range-thumb {
+  background-color: white;
+  box-shadow: 0 0 0 2px #2491ff;
+}
+
+.fba-modal-dialog .usa-range:focus::-ms-thumb {
+  background-color: white;
+  box-shadow: 0 0 0 2px #2491ff;
+}
+
+.fba-modal-dialog .usa-range::-webkit-slider-runnable-track {
+  background-color: #f0f0f0;
+  border-radius: 99rem;
+  border: 1px solid #71767a;
+  cursor: pointer;
+  height: 1rem;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-range::-moz-range-track {
+  background-color: #f0f0f0;
+  border-radius: 99rem;
+  border: 1px solid #71767a;
+  cursor: pointer;
+  height: 1rem;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-range::-ms-track {
+  background-color: #f0f0f0;
+  border-radius: 99rem;
+  border: 1px solid #71767a;
+  cursor: pointer;
+  height: 1rem;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-range::-webkit-slider-thumb {
+  height: 1.25rem;
+  border-radius: 99rem;
+  width: 1.25rem;
+  background: #f0f0f0;
+  border: none;
+  box-shadow: 0 0 0 2px #71767a;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -0.1875rem;
+}
+
+.fba-modal-dialog .usa-range::-moz-range-thumb {
+  height: 1.25rem;
+  border-radius: 99rem;
+  width: 1.25rem;
+  background: #f0f0f0;
+  border: none;
+  box-shadow: 0 0 0 2px #71767a;
+  cursor: pointer;
+}
+
+.fba-modal-dialog .usa-range::-ms-thumb {
+  height: 1.25rem;
+  border-radius: 99rem;
+  width: 1.25rem;
+  background: #f0f0f0;
+  border: none;
+  box-shadow: 0 0 0 2px #71767a;
+  cursor: pointer;
+}
+
+.fba-modal-dialog .usa-range::-ms-fill-lower {
+  background-color: #f0f0f0;
+  border-radius: 99rem;
+  border: 1px solid #71767a;
+}
+
+.fba-modal-dialog .usa-range::-ms-fill-upper {
+  background-color: #f0f0f0;
+  border-radius: 99rem;
+  border: 1px solid #71767a;
+}
+
+.fba-modal-dialog .usa-textarea {
+  height: 10rem;
+}
+
+.fba-modal-dialog .usa-input--error {
+  border-width: 0.25rem;
+  border-color: #b50909;
+  border-style: solid;
+}
+
+.fba-modal-dialog .usa-character-count__message {
+  display: inline-block;
+  padding-top: 0.25rem;
+}
+
+.fba-modal-dialog .usa-character-count__message--invalid {
+  color: #b50909;
+  font-weight: bold;
+}
+
+/* Not using .usa-combo-box */
+/* Not using .usa-date-picker__wrapper */
+.fba-modal-dialog .grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-card {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-card-lg {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-mobile {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-mobile-lg {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-tablet {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-tablet-lg {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 55rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-desktop {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-desktop-lg {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-container-widescreen {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 87.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fba-modal-dialog .grid-row.grid-gap {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap>* {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-0>* {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-2px {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-2px>* {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-05 {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-05>* {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-1 {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-1>* {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-2>* {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-3 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-3>* {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-4>* {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-5 {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-5>* {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-6 {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-6>* {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-sm {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-sm>* {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-md {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-md>* {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-lg {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.fba-modal-dialog .grid-row.grid-gap-lg>* {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.fba-modal-dialog [class*="grid-col"] {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fba-modal-dialog .grid-col {
+  flex: 1 1 0%;
+  width: auto;
+  max-width: 100%;
+  min-width: 1px;
+  max-width: 100%;
+}
+
+.fba-modal-dialog .grid-col-auto {
+  flex: 0 1 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.fba-modal-dialog .grid-col-fill {
+  flex: 1 1 0%;
+  width: auto;
+  max-width: 100%;
+  min-width: 1px;
+}
+
+.fba-modal-dialog .grid-col-1 {
+  flex: 0 1 auto;
+  width: 8.3333333333%;
+}
+
+.fba-modal-dialog .grid-col-2 {
+  flex: 0 1 auto;
+  width: 16.6666666667%;
+}
+
+.fba-modal-dialog .grid-col-3 {
+  flex: 0 1 auto;
+  width: 25%;
+}
+
+.fba-modal-dialog .grid-col-4 {
+  flex: 0 1 auto;
+  width: 33.3333333333%;
+}
+
+.fba-modal-dialog .grid-col-5 {
+  flex: 0 1 auto;
+  width: 41.6666666667%;
+}
+
+.fba-modal-dialog .grid-col-6 {
+  flex: 0 1 auto;
+  width: 50%;
+}
+
+.fba-modal-dialog .grid-col-7 {
+  flex: 0 1 auto;
+  width: 58.3333333333%;
+}
+
+.fba-modal-dialog .grid-col-8 {
+  flex: 0 1 auto;
+  width: 66.6666666667%;
+}
+
+.fba-modal-dialog .grid-col-9 {
+  flex: 0 1 auto;
+  width: 75%;
+}
+
+.fba-modal-dialog .grid-col-10 {
+  flex: 0 1 auto;
+  width: 83.3333333333%;
+}
+
+.fba-modal-dialog .grid-col-11 {
+  flex: 0 1 auto;
+  width: 91.6666666667%;
+}
+
+.fba-modal-dialog .grid-col-12 {
+  flex: 0 1 auto;
+  width: 100%;
+}
+
+.fba-modal-dialog .grid-offset-1 {
+  margin-left: 8.3333333333%;
+}
+
+.fba-modal-dialog .grid-offset-2 {
+  margin-left: 16.6666666667%;
+}
+
+.fba-modal-dialog .grid-offset-3 {
+  margin-left: 25%;
+}
+
+.fba-modal-dialog .grid-offset-4 {
+  margin-left: 33.33333%;
+}
+
+.fba-modal-dialog .grid-offset-5 {
+  margin-left: 41.6666666667%;
+}
+
+.fba-modal-dialog .grid-offset-6 {
+  margin-left: 50%;
+}
+
+.fba-modal-dialog .grid-offset-7 {
+  margin-left: 58.3333333333%;
+}
+
+.fba-modal-dialog .grid-offset-8 {
+  margin-left: 66.6666666667%;
+}
+
+.fba-modal-dialog .grid-offset-9 {
+  margin-left: 75%;
+}
+
+.fba-modal-dialog .grid-offset-10 {
+  margin-left: 83.3333333333%;
+}
+
+.fba-modal-dialog .grid-offset-11 {
+  margin-left: 91.6666666667%;
+}
+
+.fba-modal-dialog .grid-offset-12 {
+  margin-left: 100%;
+}
+
+.fba-modal-dialog .grid-offset-none {
+  margin-left: 0;
+}
+
+.fba-modal-dialog .usa-tag {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 0.93rem;
+  color: white;
+  text-transform: uppercase;
+  background-color: #565c65;
+  border-radius: 2px;
+  margin-right: 0.25rem;
+  padding: 1px 0.5rem;
+}
+
+.fba-modal-dialog .usa-tag:only-of-type {
+  margin-right: 0;
+}
+
+.fba-modal-dialog .usa-tag--big {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+}
+
+.fba-modal-dialog .usa-paragraph {
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-top: 0;
+  max-width: 68ex;
+}
+
+*+.fba-modal-dialog .usa-paragraph {
+  margin-top: 1em;
+}
+
+.fba-modal-dialog .usa-paragraph+* {
+  margin-top: 1em;
+}
+
+.fba-modal-dialog .usa-content p,
+.fba-modal-dialog .usa-content ul:not(.fba-modal-dialog .usa-accordion):not(.fba-modal-dialog .usa-accordion--bordered),
+.fba-modal-dialog .usa-content ol:not(.fba-modal-dialog .usa-accordion):not(.fba-modal-dialog .usa-accordion--bordered) {
+  max-width: 68ex;
+}
+
+.fba-modal-dialog .usa-display {
+  margin-bottom: 0;
+  margin-top: 0;
+  clear: both;
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 2.44rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+*+.fba-modal-dialog .usa-display {
+  margin-top: 1.5em;
+}
+
+.fba-modal-dialog .usa-display+* {
+  margin-top: 1em;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-display {
+    margin-bottom: 0;
+    margin-top: 0;
+    clear: both;
+    font-family:
+      Merriweather Web,
+      Georgia,
+      Cambria,
+      Times New Roman,
+      Times,
+      serif;
+    font-size: 2.44rem;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+
+  .fba-modal-dialog+.usa-display {
+    margin-top: 1.5em;
+  }
+
+  .fba-modal-dialog .usa-display+* {
+    margin-top: 1em;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-display {
+    margin-bottom: 0;
+    margin-top: 0;
+    clear: both;
+    font-family:
+      Merriweather Web,
+      Georgia,
+      Cambria,
+      Times New Roman,
+      Times,
+      serif;
+    font-size: 2.93rem;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+
+  .fba-modal-dialog+.usa-display {
+    margin-top: 1.5em;
+  }
+
+  .fba-modal-dialog .usa-display+* {
+    margin-top: 1em;
+  }
+}
+
+.fba-modal-dialog .usa-intro {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 1.34rem;
+  line-height: 1.8;
+  font-weight: 400;
+  max-width: 88ex;
+}
+
+.fba-modal-dialog .usa-dark-background {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #3d4551;
+}
+
+.fba-modal-dialog .usa-dark-background p,
+.fba-modal-dialog .usa-dark-background span {
+  color: white;
+}
+
+.fba-modal-dialog .usa-dark-background a {
+  color: #dfe1e2;
+}
+
+.fba-modal-dialog .usa-dark-background a:hover {
+  color: white;
+}
+
+.fba-modal-dialog .usa-prose>p {
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-top: 0;
+  max-width: 68ex;
+}
+
+.fba-modal-dialog .usa-prose>*+p {
+  margin-top: 1em;
+}
+
+.fba-modal-dialog .usa-prose>p+* {
+  margin-top: 1em;
+}
+
+.fba-modal-dialog .usa-prose>h1,
+.fba-modal-dialog .usa-prose>h2,
+.fba-modal-dialog .usa-prose>h3,
+.fba-modal-dialog .usa-prose>h4,
+.fba-modal-dialog .usa-prose>h5,
+.fba-modal-dialog .usa-prose>h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+  clear: both;
+}
+
+.fba-modal-dialog .usa-prose>*+h1,
+.fba-modal-dialog .usa-prose>*+h2,
+.fba-modal-dialog .usa-prose>*+h3,
+.fba-modal-dialog .usa-prose>*+h4,
+.fba-modal-dialog .usa-prose>*+h5,
+.fba-modal-dialog .usa-prose>*+h6 {
+  margin-top: 1.5em;
+}
+
+.fba-modal-dialog .usa-prose>h1+*,
+.fba-modal-dialog .usa-prose>h2+*,
+.fba-modal-dialog .usa-prose>h3+*,
+.fba-modal-dialog .usa-prose>h4+*,
+.fba-modal-dialog .usa-prose>h5+*,
+.fba-modal-dialog .usa-prose>h6+* {
+  margin-top: 1em;
+}
+
+.fba-modal-dialog .usa-link {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-link:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-link:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-link:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-link:visited {
+  color: #562b97;
+}
+
+.fba-modal-dialog .usa-link {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-link:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-link:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-link:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-link:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+
+.fba-modal-dialog .usa-link--external {
+  display: inline;
+}
+
+.fba-modal-dialog .usa-link--external::before {
+  position: absolute;
+  left: -999em;
+  right: auto;
+  content: "External.";
+}
+
+.fba-modal-dialog .usa-link--external[target="_blank"]::before {
+  position: absolute;
+  left: -999em;
+  right: auto;
+  content: "External, opens in a new tab.";
+}
+
+.fba-modal-dialog .usa-link--external::after {
+  background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/launch.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1.75ex 1.75ex;
+  display: inline-block;
+  height: 1.75ex;
+  width: 1.75ex;
+  content: "";
+  display: inline;
+  margin-top: 0.7ex;
+  margin-left: 2px;
+  padding-left: 1.75ex;
+  vertical-align: middle;
+}
+
+.fba-modal-dialog {
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-link--external::after {
+      background: none;
+      background-color: currentColor;
+      -webkit-mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/launch.svg"),
+        linear-gradient(transparent, transparent);
+      mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/launch.svg"),
+        linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+      mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 1.75ex 1.75ex;
+      mask-size: 1.75ex 1.75ex;
+    }
+  }
+}
+
+.fba-modal-dialog .usa-link--external.usa-link--alt {
+  display: inline;
+}
+
+.fba-modal-dialog .usa-link--external.usa-link--alt::before {
+  position: absolute;
+  left: -999em;
+  right: auto;
+  content: "External.";
+}
+
+.fba-modal-dialog .usa-link--external.usa-link--alt[target="_blank"]::before {
+  position: absolute;
+  left: -999em;
+  right: auto;
+  content: "External, opens in a new tab.";
+}
+
+.fba-modal-dialog .usa-link--external.usa-link--alt::after {
+  background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons-bg/launch--white.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1.75ex 1.75ex;
+  display: inline-block;
+  height: 1.75ex;
+  width: 1.75ex;
+  content: "";
+  display: inline;
+  margin-top: 0.7ex;
+  margin-left: 2px;
+  padding-left: 1.75ex;
+  vertical-align: middle;
+}
+
+@supports ((-webkit-mask: url("")) or (mask: url(""))) {
+  .fba-modal-dialog .usa-link--external.usa-link--alt::after {
+    background: none;
+    background-color: currentColor;
+    -webkit-mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/launch.svg"),
+      linear-gradient(transparent, transparent);
+    mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/launch.svg"),
+      linear-gradient(transparent, transparent);
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 1.75ex 1.75ex;
+    mask-size: 1.75ex 1.75ex;
+  }
+}
+
+.fba-modal-dialog .usa-list--unstyled {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-list--unstyled>li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+
+.fba-modal-dialog .usa-prose .fba-modal-dialog .usa-list--unstyled {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-prose .fba-modal-dialog .usa-list--unstyled>li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+
+.fba-modal-dialog .usa-prose {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+
+.fba-modal-dialog .usa-prose>a {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-prose>a:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-prose>a:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-prose>a:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-prose>a:visited {
+  color: #562b97;
+}
+
+.fba-modal-dialog .usa-prose>h1 {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 2.44rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-prose>h2 {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 1.95rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-prose>h3 {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 1.34rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-prose>h4 {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 0.98rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-prose>h5 {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 0.91rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-prose>h6 {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 0.87rem;
+  line-height: 1.1;
+  font-weight: normal;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.fba-modal-dialog .usa-accordion {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+  color: #1b1b1b;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+
+.fba-modal-dialog .usa-accordion>li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+
+.fba-modal-dialog .usa-accordion>ul li ul {
+  list-style: disc;
+}
+
+.fba-modal-dialog .usa-accordion>ul li ul>li>ul {
+  list-style: circle;
+}
+
+.fba-modal-dialog .usa-accordion>ul li ul>li>ul>li>ul {
+  list-style: square;
+}
+
+.fba-modal-dialog .usa-accordion+.fba-modal-dialog .usa-accordion,
+.fba-modal-dialog .usa-accordion+.fba-modal-dialog .usa-accordion--bordered {
+  margin-top: 0.5rem;
+}
+
+.fba-modal-dialog .usa-accordion--bordered .fba-modal-dialog .usa-accordion__content {
+  border-bottom: 0.25rem solid #f0f0f0;
+  border-left: 0.25rem solid #f0f0f0;
+  border-right: 0.25rem solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.fba-modal-dialog .usa-accordion--bordered .fba-modal-dialog .usa-accordion__heading {
+  margin-bottom: 0;
+}
+
+.fba-modal-dialog .usa-accordion__heading,
+.fba-modal-dialog .usa-prose .fba-modal-dialog .usa-accordion__heading {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.fba-modal-dialog .usa-accordion__heading:not(:first-child),
+.fba-modal-dialog .usa-prose .fba-modal-dialog .usa-accordion__heading:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.fba-modal-dialog .usa-accordion__content {
+  background-color: white;
+  margin-top: 0;
+  overflow: auto;
+  padding: 1rem 1.25rem calc(1rem - 0.25rem) 1.25rem;
+}
+
+.fba-modal-dialog .usa-accordion__content>*:first-child {
+  margin-top: 0;
+}
+
+.fba-modal-dialog .usa-accordion__content>*:last-child {
+  margin-bottom: 0;
+}
+
+.fba-modal-dialog .usa-accordion__button {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #005ea2;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background-image: url(https://touchpoints.app.cloud.gov/assets/minus-46fd7dd4affd557199e2e7ab71e938aca534a561df7d4a6d67ac5327b050ee76.svg),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+  background-position: right 1.25rem center;
+  background-size: 1rem;
+  color: #1b1b1b;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0;
+  padding: 1rem 3.5rem 1rem 1.25rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-accordion__button:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-accordion__button:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-accordion__button:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-accordion__button:visited {
+  color: #562b97;
+}
+
+.fba-modal-dialog .usa-accordion__button:hover,
+.fba-modal-dialog .usa-accordion__button:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-accordion__button:hover {
+  background-color: #dcdee0;
+  color: #1b1b1b;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-accordion__button[aria-expanded="false"] {
+  background-image: url(https://touchpoints.app.cloud.gov/assets/plus-16ce3e015c923621ad54046f4b9ea70e40573c29d65ec7bc7e4cbdd0e113e87f.svg),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+}
+
+.fba-modal-dialog .usa-alert {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  background-color: #f0f0f0;
+  background-position: 1.75rem 1.25rem;
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 1.75rem;
+  padding-right: 1.25rem;
+  padding-top: 1.25rem;
+  position: relative;
+}
+
+*+.fba-modal-dialog .usa-alert {
+  margin-top: 1rem;
+}
+
+.fba-modal-dialog .usa-alert::before {
+  background-color: #a9aeb1;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0.5rem;
+}
+
+.fba-modal-dialog .usa-alert ul {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.fba-modal-dialog .usa-alert .fba-modal-dialog .usa-checklist {
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-alert__icon {
+  display: table-cell;
+  padding-right: 0.5rem;
+}
+
+.fba-modal-dialog .usa-alert__body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.fba-modal-dialog .usa-alert__heading {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.46rem;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.fba-modal-dialog .usa-alert__text {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.fba-modal-dialog .usa-alert__text a {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-alert__text a:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-alert__text a:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-alert__text a:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-alert__text a:visited {
+  color: #562b97;
+}
+
+.fba-modal-dialog .usa-alert__text:only-child {
+  margin-bottom: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.fba-modal-dialog .usa-alert--success {
+  background-image: url(https://touchpoints.app.cloud.gov/assets/alerts/success-979c6bd4ae6775f7fbf2304141b171496711160b0fe703ef8c47074551387495.svg),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-color: #ecf3ec;
+}
+
+.fba-modal-dialog .usa-alert--success::before {
+  background-color: #00a91c;
+}
+
+.fba-modal-dialog .usa-alert--success .usa-alert__body {
+  padding-left: 3.25rem;
+}
+
+.fba-modal-dialog .usa-alert--warning {
+  background-image: url(https://touchpoints.app.cloud.gov/assets/alerts/warning-6a4a8ccd3fa5b176d30f6d355927121793c2ae89a9c803ceee32f51c8b69e8e7.svg),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-color: #faf3d1;
+}
+
+.fba-modal-dialog .usa-alert--warning::before {
+  background-color: #ffbe2e;
+}
+
+.fba-modal-dialog .usa-alert--warning .usa-alert__body {
+  padding-left: 3.25rem;
+}
+
+.fba-modal-dialog .usa-alert--error {
+  background-image: url(https://touchpoints.app.cloud.gov/assets/alerts/error-5d3c79da1c99ac79ed05a9c8588c925f7895ec07e5cbb2417133473552693339.svg),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-color: #f4e3db;
+}
+
+.fba-modal-dialog .usa-alert--error::before {
+  background-color: #d54309;
+}
+
+.fba-modal-dialog .usa-alert--error .usa-alert__body {
+  padding-left: 3.25rem;
+}
+
+.fba-modal-dialog .usa-alert--info {
+  background-image: url(https://touchpoints.app.cloud.gov/assets/alerts/info-09ce8e274b07c65e2b351a04d909d4d94bbd221e1868481f65d1d79cd687aa18.svg),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-color: #e7f6f8;
+}
+
+.fba-modal-dialog .usa-alert--info::before {
+  background-color: #00bde3;
+}
+
+.fba-modal-dialog .usa-alert--info .usa-alert__body {
+  padding-left: 3.25rem;
+}
+
+/* not used .usa-alert--slim */
+.fba-modal-dialog .usa-alert--no-icon {
+  background-image: none;
+}
+
+.fba-modal-dialog .usa-alert--no-icon .fba-modal-dialog .usa-alert__body {
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-alert--validation {
+  background-size: 1.5rem;
+}
+
+.fba-modal-dialog .usa-alert--validation .fba-modal-dialog .usa-alert__body {
+  padding-left: 2.5rem;
+}
+
+.fba-modal-dialog .usa-alert--validation .fba-modal-dialog .usa-checklist {
+  margin-top: 1rem;
+}
+
+.fba-modal-dialog .usa-banner {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  background-color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-banner .usa-accordion {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+
+.fba-modal-dialog .usa-banner__header,
+.fba-modal-dialog .usa-banner__content {
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-banner__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: transparent;
+  font-size: 1rem;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  width: 100%;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-banner__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-banner__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__content {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+.fba-modal-dialog .usa-banner__content p:first-child {
+  margin: 0;
+}
+
+.fba-modal-dialog .usa-banner__guidance {
+  display: flex;
+  align-items: flex-start;
+  max-width: 64ex;
+  padding-top: 1rem;
+}
+
+.fba-modal-dialog .usa-banner__lock-image {
+  height: 1.5ex;
+  width: 1.21875ex;
+}
+
+.fba-modal-dialog .usa-banner__lock-image path {
+  fill: currentColor;
+}
+
+.fba-modal-dialog .usa-banner__inner {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-right: 0;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-banner__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__inner {
+    align-items: center;
+  }
+}
+
+.fba-modal-dialog .usa-banner__header {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  min-height: 3rem;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-banner__header-text {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 0.8rem;
+  line-height: 1.1;
+}
+
+.fba-modal-dialog .usa-banner__header-action {
+  color: #005ea2;
+  line-height: 1.1;
+  margin-bottom: 0rem;
+  margin-top: 2px;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-banner__header-action::after {
+  background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_more.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1rem 1rem;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  content: "";
+  vertical-align: middle;
+  margin-left: auto;
+}
+
+@supports ((-webkit-mask: url("")) or (mask: url(""))) {
+  .fba-modal-dialog .usa-banner__header-action::after {
+    background: none;
+    background-color: #005ea2;
+    -webkit-mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_more.svg"),
+      linear-gradient(transparent, transparent);
+    mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_more.svg"),
+      linear-gradient(transparent, transparent);
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 1rem 1rem;
+    mask-size: 1rem 1rem;
+  }
+
+  .fba-modal-dialog .usa-banner__header-action::after:hover {
+    background-color: #1a4480;
+  }
+}
+
+.fba-modal-dialog .usa-banner__header-action:hover::after {
+  content: "";
+  background-color: #1a4480;
+}
+
+.fba-modal-dialog .usa-banner__header-action:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-banner__header-action:hover,
+.fba-modal-dialog .usa-banner__header-action:active {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-banner__header--expanded .usa-banner__header-action {
+  display: none;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__header-action {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-banner__header-action {
+    color: LinkText;
+  }
+
+  .fba-modal-dialog .usa-banner__header-action::after {
+    background-color: ButtonText;
+  }
+}
+
+.fba-modal-dialog .usa-banner__button {
+  color: #005ea2;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  color: #005ea2;
+  text-decoration: underline;
+  vertical-align: baseline;
+  color: #005ea2;
+  display: block;
+  font-size: 0.8rem;
+  height: auto;
+  line-height: 1.1;
+  padding-top: 0rem;
+  padding-left: 0rem;
+  text-decoration: none;
+  width: auto;
+}
+
+.fba-modal-dialog .usa-banner__button:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-banner__button:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-banner__button:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-banner__button:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+
+.usa-banner__button:hover,
+.fba-modal-dialog .usa-banner__button.usa-button--hover,
+.fba-modal-dialog .usa-banner__button:disabled:hover,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"]:hover,
+.fba-modal-dialog .usa-banner__button:disabled.usa-button--hover,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"].usa-button--hover,
+.fba-modal-dialog .usa-banner__button:active,
+.fba-modal-dialog .usa-banner__button.usa-button--active,
+.fba-modal-dialog .usa-banner__button:disabled:active,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"]:active,
+.fba-modal-dialog .usa-banner__button:disabled.usa-button--active,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"].usa-button--active,
+.fba-modal-dialog .usa-banner__button:disabled:focus,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"]:focus,
+.fba-modal-dialog .usa-banner__button:disabled.usa-focus,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"].usa-focus,
+.fba-modal-dialog .usa-banner__button:disabled,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"],
+.fba-modal-dialog .usa-banner__button.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-banner__button.usa-button--hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-banner__button.usa-button--active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-banner__button:disabled,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"],
+.fba-modal-dialog .usa-banner__button:disabled:hover,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"]:hover,
+.fba-modal-dialog .usa-banner__button[aria-disabled="true"]:focus {
+  color: #757575;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-banner__button:disabled,
+  .fba-modal-dialog .usa-banner__button[aria-disabled="true"],
+  .fba-modal-dialog .usa-banner__button:disabled:hover,
+  .fba-modal-dialog .usa-banner__button[aria-disabled="true"]:hover,
+  .fba-modal-dialog .usa-banner__button[aria-disabled="true"]:focus {
+    color: GrayText;
+  }
+}
+
+.fba-modal-dialog .usa-banner__button:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-banner__button:hover,
+.fba-modal-dialog .usa-banner__button:active {
+  color: #1a4480;
+}
+
+@media all and (max-width: 39.99em) {
+  .fba-modal-dialog .usa-banner__button {
+    width: 100%;
+  }
+
+  .fba-modal-dialog .usa-banner__button:enabled:focus {
+    outline-offset: -0.25rem;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__button {
+    color: #005ea2;
+    position: static;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    top: auto;
+    display: inline;
+    margin-left: 0.5rem;
+    position: relative;
+  }
+
+  .fba-modal-dialog .usa-banner__button::after {
+    background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_more.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    content: "";
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .fba-modal-dialog .usa-banner__button::after {
+      background: none;
+      background-color: #005ea2;
+      -webkit-mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_more.svg"),
+        linear-gradient(transparent, transparent);
+      mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_more.svg"),
+        linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+      mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 1rem 1rem;
+      mask-size: 1rem 1rem;
+    }
+
+    .fba-modal-dialog .usa-banner__button::after:hover {
+      background-color: #1a4480;
+    }
+  }
+
+  .fba-modal-dialog .usa-banner__button:hover::after {
+    content: "";
+    background-color: #1a4480;
+  }
+
+  .fba-modal-dialog .usa-banner__button:visited {
+    color: #54278f;
+  }
+
+  .fba-modal-dialog .usa-banner__button:hover,
+  .fba-modal-dialog .usa-banner__button:active {
+    color: #1a4480;
+  }
+
+  .fba-modal-dialog .usa-banner__button::after,
+  .fba-modal-dialog .usa-banner__button:hover::after {
+    position: absolute;
+  }
+}
+
+@media (min-width: 40em) and (forced-colors: active) {
+
+  .fba-modal-dialog .usa-banner__button::after,
+  .fba-modal-dialog .usa-banner__button:hover::after {
+    background-color: ButtonText;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__button:hover {
+    text-decoration: none;
+  }
+}
+
+.fba-modal-dialog .usa-banner__button[aria-expanded="false"],
+.fba-modal-dialog .usa-banner__button[aria-expanded="false"]:hover,
+.fba-modal-dialog .usa-banner__button[aria-expanded="true"],
+.fba-modal-dialog .usa-banner__button[aria-expanded="true"]:hover {
+  background-image: none;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="false"]::before,
+  .fba-modal-dialog .usa-banner__button[aria-expanded="false"]:hover::before,
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::before,
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]:hover::before {
+    content: none;
+  }
+}
+
+@media all and (max-width: 39.99em) {
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after {
+    background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.5rem 1.5rem;
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    content: "";
+    vertical-align: middle;
+    margin-left: 0rem;
+  }
+
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after {
+      background: none;
+      background-color: #005ea2;
+      -webkit-mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/close.svg"),
+        linear-gradient(transparent, transparent);
+      mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/close.svg"),
+        linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+      mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 1.5rem 1.5rem;
+      mask-size: 1.5rem 1.5rem;
+    }
+  }
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::before {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    right: 0;
+    background-color: #dfe1e2;
+    content: "";
+    display: block;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"] {
+    height: auto;
+    padding: 0rem;
+    position: relative;
+  }
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after {
+    background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_less.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    content: "";
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after {
+      background: none;
+      background-color: #005ea2;
+      -webkit-mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_less.svg"),
+        linear-gradient(transparent, transparent);
+      mask-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/expand_less.svg"),
+        linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+      mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 1rem 1rem;
+      mask-size: 1rem 1rem;
+    }
+
+    .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after:hover {
+      background-color: #1a4480;
+    }
+  }
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]:hover::after {
+    content: "";
+    background-color: #1a4480;
+  }
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after,
+  .usa-banner__button[aria-expanded="true"]:hover::after {
+    position: absolute;
+  }
+}
+
+@media (min-width: 40em) and (forced-colors: active) {
+
+  .fba-modal-dialog .usa-banner__button[aria-expanded="true"]::after,
+  .usa-banner__button[aria-expanded="true"]:hover::after {
+    background-color: ButtonText;
+  }
+}
+
+.fba-modal-dialog .usa-banner__button-text {
+  position: absolute;
+  left: -999em;
+  right: auto;
+  text-decoration: underline;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__button-text {
+    position: static;
+    display: inline;
+  }
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-banner__button-text {
+    color: LinkText;
+  }
+}
+
+.fba-modal-dialog .usa-banner__header-flag {
+  float: left;
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+
+.fba-modal-dialog .usa-banner__header--expanded {
+  padding-right: 3.5rem;
+}
+
+.fba-modal-dialog .usa-banner__header--expanded .usa-banner__inner {
+  margin-left: 0;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-banner__header--expanded .usa-banner__inner {
+    margin-left: auto;
+  }
+}
+
+.fba-modal-dialog .usa-banner__header--expanded .usa-banner__header-action {
+  display: none;
+}
+
+.fba-modal-dialog .usa-banner__icon {
+  width: 2.5rem;
+}
+
+/* .usa-breadcrumb not used */
+/* .usa-button-group not used */
+/* .usa-card not used */
+.fba-modal-dialog .usa-checklist {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+
+.fba-modal-dialog .usa-checklist__item {
+  text-indent: -2.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
+.fba-modal-dialog .usa-checklist__item::before {
+  content: " ";
+  display: inline-block;
+  height: 1rem;
+  margin-left: -0.25rem;
+  margin-right: 0.75rem;
+  width: 2rem;
+}
+
+.fba-modal-dialog .usa-checklist__item.usa-checklist__item--checked::before {
+  background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons-bg/check--blue-60v.svg"),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5rem;
+}
+
+.fba-modal-dialog .usa-footer {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.fba-modal-dialog .usa-footer>.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer>.grid-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.fba-modal-dialog .usa-footer__return-to-top {
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  line-height: 0.9;
+}
+
+.fba-modal-dialog .usa-footer__return-to-top a {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-footer__return-to-top a:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-footer__return-to-top a:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-footer__return-to-top a:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-footer__return-to-top a:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-footer__nav {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #a9aeb1;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer__nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom: none;
+  }
+}
+
+@media all and (min-width: 30em) and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer__nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.fba-modal-dialog .usa-footer__nav>ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fba-modal-dialog .usa-footer__primary-section {
+  background-color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-footer__primary-section>.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer__primary-section>.grid-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.fba-modal-dialog .usa-footer__primary-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer__primary-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer__primary-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.fba-modal-dialog .usa-footer__primary-content {
+  line-height: 1.1;
+}
+
+.fba-modal-dialog .usa-footer__primary-link a,
+.fba-modal-dialog .usa-footer__secondary-link a {
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-footer__primary-link a:hover,
+.fba-modal-dialog .usa-footer__secondary-link a:hover {
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-footer__primary-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__primary-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.fba-modal-dialog .usa-footer__primary-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link {
+  line-height: 1.1;
+  margin-left: 1rem;
+  padding: 0;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link a {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link a:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link a:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link a:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link a:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-footer__secondary-link+.usa-footer__secondary-link {
+  padding-top: 1rem;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__secondary-link {
+    margin-left: 0;
+  }
+}
+
+.fba-modal-dialog .usa-footer__contact-info {
+  line-height: 1.1;
+}
+
+.fba-modal-dialog .usa-footer__contact-info a {
+  color: #1b1b1b;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-footer__contact-info:hover {
+  text-decoration: underline;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__contact-info {
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+}
+
+.fba-modal-dialog .usa-footer__primary-content {
+  border-top: 1px solid #a9aeb1;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__primary-content {
+    border: none;
+  }
+}
+
+.fba-modal-dialog .usa-sign-up {
+  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+}
+
+.fba-modal-dialog .usa-sign-up .usa-label,
+.fba-modal-dialog .usa-sign-up .usa-button {
+  margin-top: 0.75rem;
+}
+
+.fba-modal-dialog .usa-sign-up__heading {
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 1.34rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0;
+}
+
+.fba-modal-dialog .usa-footer__secondary-section {
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  background-color: #dfe1e2;
+}
+
+.fba-modal-dialog .usa-footer__secondary-section>.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-footer__secondary-section>.grid-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.fba-modal-dialog .usa-footer__secondary-section a {
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-footer__logo {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__logo {
+    margin-bottom: 0;
+    margin-top: 0;
+    align-items: center;
+  }
+}
+
+.fba-modal-dialog .usa-footer__logo-img {
+  max-width: 5rem;
+}
+
+.fba-modal-dialog .usa-footer__logo-heading {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.46rem;
+  line-height: 0.9;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.fba-modal-dialog .usa-footer__contact-links {
+  margin-top: 1.5rem;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__contact-links {
+    margin-top: 0;
+    text-align: right;
+  }
+}
+
+.fba-modal-dialog .usa-footer__contact-heading {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.46rem;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__contact-heading {
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* not using .usa-social-link */
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-footer__address {
+    justify-content: flex-end;
+  }
+}
+
+/* not using .usa-footer--big */
+.fba-modal-dialog .usa-form__note {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 0.93rem;
+  line-height: 1.3;
+  float: right;
+  margin: 0.25rem 0 1rem;
+}
+
+.fba-modal-dialog .usa-graphic-list {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+
+.fba-modal-dialog .usa-graphic-list .usa-graphic-list__row .usa-media-block {
+  margin-bottom: 2rem;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-graphic-list .usa-graphic-list__row .usa-media-block {
+    margin-bottom: 4rem;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-graphic-list .usa-graphic-list__row:last-child .usa-media-block {
+    margin-bottom: 0;
+  }
+}
+
+.fba-modal-dialog .usa-graphic-list .usa-graphic-list__row:last-child .usa-media-block:last-child {
+  margin-bottom: 0;
+}
+
+.fba-modal-dialog .usa-graphic-list .usa-media-block__img {
+  margin-right: 1.5rem;
+}
+
+.fba-modal-dialog .usa-graphic-list .usa-media-block__body> :first-child {
+  margin-top: 0;
+}
+
+.fba-modal-dialog .usa-graphic-list__heading {
+  margin-bottom: 0;
+  margin-top: 0;
+  clear: both;
+  font-family:
+    Merriweather Web,
+    Georgia,
+    Cambria,
+    Times New Roman,
+    Times,
+    serif;
+  font-size: 1.34rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+*+.fba-modal-dialog .usa-graphic-list__heading {
+  margin-top: 1.5em;
+}
+
+.fba-modal-dialog .usa-graphic-list__heading+* {
+  margin-top: 1em;
+}
+
+.fba-modal-dialog .usa-header {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  z-index: 300;
+}
+
+.fba-modal-dialog .usa-header::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.fba-modal-dialog .usa-header a {
+  border-bottom: none;
+}
+
+.fba-modal-dialog .usa-header [type="search"] {
+  min-width: 0;
+}
+
+.fba-modal-dialog .usa-logo a {
+  color: #1b1b1b;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-logo__text {
+  display: block;
+  font-style: normal;
+  font-weight: bold;
+  margin: 0;
+}
+
+.fba-modal-dialog .usa-menu-btn {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #005ea2;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  flex: 0 1 auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: #005ea2;
+  color: white;
+  font-size: 0.87rem;
+  height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fba-modal-dialog .usa-menu-btn:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-menu-btn:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-menu-btn:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-menu-btn:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-menu-btn:hover,
+.fba-modal-dialog .usa-menu-btn:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-menu-btn {
+    display: none;
+  }
+}
+
+.fba-modal-dialog .usa-menu-btn:hover {
+  background-color: #1a4480;
+  color: white;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-menu-btn:active {
+  color: white;
+}
+
+.fba-modal-dialog .usa-menu-btn:visited {
+  color: white;
+}
+
+.fba-modal-dialog .usa-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  background: black;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  visibility: hidden;
+  z-index: 400;
+}
+
+.fba-modal-dialog .usa-overlay.is-visible {
+  opacity: 0.2;
+  visibility: visible;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--basic .usa-navbar {
+    position: relative;
+    width: 33%;
+  }
+
+  .fba-modal-dialog .usa-header--basic .usa-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    padding: 0 0 0.25rem 0.5rem;
+    width: 100%;
+  }
+
+  /* not using usa-nav__primary */
+  .fba-modal-dialog .usa-header--basic .usa-nav__link[aria-expanded="true"]::after,
+  .usa-header--basic .usa-nav__link[aria-expanded="true"]:hover::after {
+    display: none;
+  }
+
+  .fba-modal-dialog .usa-header--basic .usa-search {
+    top: 0;
+  }
+}
+
+.fba-modal-dialog .usa-header--basic.usa-header--megamenu .usa-nav__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--basic.usa-header--megamenu .usa-nav__inner {
+    display: block;
+    float: right;
+    margin-top: -2.5rem;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended {
+    padding-top: 0;
+  }
+
+  .fba-modal-dialog .usa-header--extended .usa-nav__link[aria-expanded="true"]::after,
+  .usa-header--extended .usa-nav__link[aria-expanded="true"]:hover::after {
+    display: none;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-logo {
+    font-size: 2.13rem;
+    margin: 2rem 0 1.5rem;
+    max-width: 50%;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-navbar {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: block;
+    height: auto;
+    overflow: auto;
+  }
+}
+
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-nav {
+    border-top: 1px solid #dfe1e2;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-nav__inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+  }
+}
+
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-nav__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .usa-nav__link {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+/* not using .usa-hero */
+.fba-modal-dialog .usa-layout-docs__sidenav {
+  order: 2;
+  padding-top: 2rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-layout-docs__sidenav {
+    padding-top: 0;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-layout-docs__main {
+    order: 2;
+  }
+}
+
+.fba-modal-dialog .usa-media-block {
+  align-items: flex-start;
+  display: flex;
+}
+
+.fba-modal-dialog .usa-media-block__img {
+  float: left;
+  margin-right: 0.5rem;
+}
+
+.fba-modal-dialog .usa-media-block__body {
+  flex: 1 1 0%;
+}
+
+/* not using .usa-megamenu */
+/* not using .usa-nav-container */
+.fba-modal-dialog .usa-navbar {
+  height: 3rem;
+}
+
+@media all and (max-width: 63.99em) {
+  .fba-modal-dialog .usa-navbar {
+    align-items: center;
+    border-bottom: 1px solid #dfe1e2;
+    display: flex;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-navbar {
+    border-bottom: none;
+    display: inline-block;
+    height: auto;
+  }
+}
+
+.fba-modal-dialog .usa-nav {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+}
+
+.fba-modal-dialog .usa-nav__secondary {
+  margin-top: 1rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-nav__secondary {
+    bottom: 4rem;
+    font-size: 0.93rem;
+    margin-top: 0.5rem;
+    min-width: calc(27ch + 3rem);
+    position: absolute;
+    right: 2rem;
+  }
+}
+
+.fba-modal-dialog .usa-nav__secondary .usa-search {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-nav__secondary .usa-search {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+.fba-modal-dialog .usa-nav__secondary-links {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-nav__secondary-links {
+    float: right;
+    line-height: 0.9;
+    margin-bottom: 0.25rem;
+    margin-top: 0;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-nav__secondary-links .usa-nav__secondary-item {
+    display: inline;
+    padding-left: 0.25rem;
+  }
+
+  .fba-modal-dialog .usa-nav__secondary-links .usa-nav__secondary-item+.usa-nav__secondary-item::before {
+    color: #dfe1e2;
+    content: "|";
+    padding-right: 0.25rem;
+  }
+}
+
+.fba-modal-dialog .usa-nav__secondary-links a {
+  color: #71767a;
+  display: inline-block;
+  font-size: 0.93rem;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-nav__secondary-links a:hover {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+/* not using .usa-nav__submenu */
+.fba-modal-dialog .usa-nav__close {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #005ea2;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  height: 3rem;
+  width: 3rem;
+  color: currentColor;
+  flex: none;
+  float: right;
+  margin: -0.75rem -1rem 1rem auto;
+  text-align: center;
+}
+
+.fba-modal-dialog .usa-nav__close:hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-nav__close:active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-nav__close:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-nav__close:visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-nav__close:hover,
+.fba-modal-dialog .usa-nav__close:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-nav__close:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+
+@media all and (min-width: 64em) {
+  .fba-modal-dialog .usa-nav__close {
+    display: none;
+  }
+}
+
+.fba-modal-dialog .usa-nav__close img {
+  width: 0.75rem;
+}
+
+.fba-modal-dialog .usa-nav__close+* {
+  clear: both;
+}
+
+.fba-modal-dialog .usa-js-mobile-nav--active {
+  overflow: hidden;
+}
+
+.fba-modal-dialog .usa-search {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-search::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.fba-modal-dialog .usa-search[role="search"],
+.fba-modal-dialog .usa-search[role="search"]>div,
+.fba-modal-dialog .usa-search [role="search"] {
+  display: flex;
+}
+
+.fba-modal-dialog .usa-search [type="submit"] {
+  background-image: url("https://touchpoints.app.cloud.gov/img/usa-icons/search.svg"),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  width: 3rem;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-search [type="submit"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-image: none;
+    width: auto;
+  }
+}
+
+.fba-modal-dialog .usa-search__submit-text {
+  position: absolute;
+  left: -999em;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-search__submit-text {
+    position: static;
+  }
+}
+
+.fba-modal-dialog .usa-section {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-section {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+}
+
+.fba-modal-dialog .usa-section--light {
+  background-color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-section--dark {
+  background-color: #162e51;
+  color: white;
+}
+
+.fba-modal-dialog .usa-section--dark h1,
+.fba-modal-dialog .usa-section--dark h2,
+.fba-modal-dialog .usa-section--dark h3,
+.fba-modal-dialog .usa-section--dark h4,
+.fba-modal-dialog .usa-section--dark h5,
+.fba-modal-dialog .usa-section--dark h6 {
+  color: #00bde3;
+}
+
+.fba-modal-dialog .usa-section--dark p {
+  color: white;
+}
+
+.fba-modal-dialog .usa-section--dark a {
+  color: #dfe1e2;
+}
+
+.fba-modal-dialog .usa-section--dark a:hover {
+  color: #f0f0f0;
+}
+
+.fba-modal-dialog .usa-section--dark a:active {
+  color: white;
+}
+
+.fba-modal-dialog .usa-sidenav {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.3;
+  border-bottom: 1px solid #dfe1e2;
+}
+
+.fba-modal-dialog .usa-sidenav>li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+
+.fba-modal-dialog .usa-sidenav__item {
+  border-top: 1px solid #dfe1e2;
+}
+
+.fba-modal-dialog .usa-sidenav a {
+  color: #565c65;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-sidenav a:hover {
+  background-color: #f0f0f0;
+  color: #005ea2;
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-sidenav a:focus {
+  outline-offset: 0;
+}
+
+.fba-modal-dialog .usa-sidenav .fba-modal-dialog .usa-current {
+  position: relative;
+  color: #005ea2;
+  font-weight: bold;
+}
+
+.fba-modal-dialog .usa-sidenav .usa-current::after {
+  background-color: #005ea2;
+  border-radius: 99rem;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0.25rem;
+  top: 0.25rem;
+  width: 0.25rem;
+  left: 0.25rem;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .usa-sidenav .usa-current {
+    position: relative;
+  }
+
+  .fba-modal-dialog .usa-sidenav .usa-current::after {
+    background-color: #005ea2;
+    border-radius: 99rem;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0.25rem;
+    top: 0.25rem;
+    width: 0.25rem;
+    left: 0;
+  }
+}
+
+.fba-modal-dialog .grid-container .usa-sidenav {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .grid-container .usa-sidenav {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.fba-modal-dialog .usa-sidenav__sublist {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist>li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist-item {
+  border-top: 1px solid #dfe1e2;
+  font-size: 0.93rem;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist .usa-current::after {
+  display: none;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist a {
+  padding-left: 2rem;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist .usa-sidenav__sublist a {
+  padding-left: 3rem;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist .usa-sidenav__sublist .fba-modal-dialog .usa-sidenav__sublist a {
+  content: "foobar";
+  padding-left: 4rem;
+}
+
+/* .usa-tooltip not used */
+/* .usa-search--big not used */
+/* .usa-search--small not used */
+/* TODO Custom */
+@media all and (min-width: 40em) {
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-0>* {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-2px {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-2px>* {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-05 {
+    margin-left: -2px;
+    margin-right: -2px;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-05>* {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-1 {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-1>* {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-2 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-2>* {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-3 {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-3>* {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-4 {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-4>* {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-5 {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-5>* {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-6 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-6>* {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-sm {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-sm>* {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-md {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-md>* {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-lg {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+
+  .fba-modal-dialog .grid-row.tablet\\:grid-gap-lg>* {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+.fba-modal-dialog .usa-banner__guidance {
+  padding-top: 0;
+}
+
+.fba-modal-dialog .usa-banner__header {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  min-height: 0;
+}
+
+.fba-modal-dialog .usa-banner__header-action {
+  display: none;
+}
+
+.fba-modal-dialog .usa-banner__header-flag {
+  margin-right: 0.5rem;
+  padding-top: 0;
+}
+
+.fba-modal-dialog .usa-banner__header--expanded {
+  background-color: transparent;
+  color: #1b1b1b;
+  display: block;
+  font-size: 0.79853rem;
+  font-weight: normal;
+  min-height: 0;
+  padding-right: 0;
+}
+
+.fba-modal-dialog .usa-graphic-list .fba-modal-dialog .usa-graphic-list__row .fba-modal-dialog .usa-media-block {
+  margin-bottom: 4rem;
+}
+
+.fba-modal-dialog .usa-graphic-list .fba-modal-dialog .usa-graphic-list__row:last-child .fba-modal-dialog .usa-media-block {
+  margin-bottom: 0;
+}
+
+.fba-modal-dialog .usa-section {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+
+.fba-modal-dialog .usa-sidenav .fba-modal-dialog .usa-current {
+  position: relative;
+}
+
+.fba-modal-dialog .usa-sidenav .fba-modal-dialog .usa-current::after {
+  background-color: #005ea2;
+  border-radius: 99rem;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0.25rem;
+  top: 0.25rem;
+  width: 0.25rem;
+  left: 0;
+}
+
+.fba-modal-dialog .grid-container .fba-modal-dialog .usa-sidenav {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fba-modal-dialog .usa-sidenav__sublist .fba-modal-dialog .usa-current::after {
+  display: none;
+}
+
+.fba-modal-dialog .grid-row.fba-modal-dialog .grid-gap {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.fba-modal-dialog .grid-row.fba-modal-dialog .grid-gap>* {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-0>* {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-2px {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-2px>* {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-05 {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-05>* {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-1 {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-1>* {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-2>* {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-3 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-3>* {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-4>* {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-5 {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-5>* {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-6 {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-6>* {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-sm {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-sm>* {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-md {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-md>* {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-lg {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.fba-modal-dialog .grid-row.desktop\\:grid-gap-lg>* {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.fba-modal-dialog .usa-banner__inner {
+  padding-right: 2rem;
+}
+
+.fba-modal-dialog .usa-footer__primary-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.fba-modal-dialog .usa-header .fba-modal-dialog .usa-search {
+  float: right;
+}
+
+.fba-modal-dialog .usa-header [role="search"] {
+  float: right;
+  max-width: calc(27ch + 3rem);
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-header+.fba-modal-dialog .usa-section,
+.fba-modal-dialog .usa-header+main {
+  border-top: 1px solid #dcdee0;
+}
+
+.fba-modal-dialog .usa-logo {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.46397rem;
+  line-height: 1.12707;
+}
+
+.fba-modal-dialog .usa-menu-btn {
+  display: none;
+}
+
+.fba-modal-dialog .usa-header--basic .fba-modal-dialog .usa-nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0 0.25rem 0.5rem;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-header--basic .fba-modal-dialog .usa-current,
+.fba-modal-dialog .usa-header--basic [aria-expanded="true"],
+.fba-modal-dialog .usa-header--basic .fba-modal-dialog .usa-nav__link:hover {
+  position: relative;
+}
+
+.fba-modal-dialog .usa-header--basic .fba-modal-dialog .usa-current::after,
+.fba-modal-dialog .usa-header--basic [aria-expanded="true"]::after,
+.fba-modal-dialog .usa-header--basic .fba-modal-dialog .usa-nav__link:hover::after {
+  background-color: #005ea2;
+  border-radius: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.25rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: -0.25rem;
+}
+
+.fba-modal-dialog .usa-header--basic .fba-modal-dialog .usa-search {
+  top: 0;
+}
+
+.fba-modal-dialog .usa-header--basic.fba-modal-dialog .usa-header--megamenu .fba-modal-dialog .usa-nav__inner {
+  display: block;
+  float: right;
+  margin-top: -2.5rem;
+}
+
+.fba-modal-dialog .usa-header--extended {
+  padding-top: 0;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-current,
+.fba-modal-dialog .usa-header--extended [aria-expanded="true"],
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-nav__link:hover {
+  position: relative;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-current::after,
+.fba-modal-dialog .usa-header--extended [aria-expanded="true"]::after,
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-nav__link:hover::after {
+  background-color: #005ea2;
+  border-radius: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.25rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-logo {
+  font-size: 2.12941rem;
+  margin: 2rem 0 1.5rem;
+  max-width: 50%;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-nav {
+  border-top: 1px solid #dcdee0;
+  padding: 0;
+  width: 100%;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-nav__inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem !important;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-nav__link {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-megamenu {
+  left: 0;
+  padding-left: 2rem;
+}
+
+.fba-modal-dialog .usa-layout-docs__sidenav {
+  padding-top: 0;
+}
+
+.fba-modal-dialog .usa-layout-docs__main {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.fba-modal-dialog .usa-nav {
+  float: right;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-nav .fba-modal-dialog .usa-search {
+  margin-left: 1rem;
+}
+
+.fba-modal-dialog .usa-nav__secondary {
+  bottom: 4rem;
+  font-size: 0.93162rem;
+  margin-top: 0.5rem;
+  min-width: calc(27ch + 3rem);
+  position: absolute;
+  right: 2rem;
+}
+
+.fba-modal-dialog .usa-nav__secondary .fba-modal-dialog .usa-search {
+  margin-left: 0;
+  margin-top: 0.5rem;
+}
+
+.fba-modal-dialog .usa-nav__secondary-links {
+  float: right;
+  line-height: 0.93923;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+}
+
+.fba-modal-dialog .usa-nav__secondary-links .fba-modal-dialog .usa-nav__secondary-item {
+  display: inline;
+  padding-left: 0.25rem;
+}
+
+.fba-modal-dialog .usa-nav__secondary-links .fba-modal-dialog .usa-nav__secondary-item+.fba-modal-dialog .usa-nav__secondary-item::before {
+  color: #dcdee0;
+  content: "|";
+  padding-right: 0.25rem;
+}
+
+.fba-modal-dialog .usa-nav__close {
+  display: none;
+}
+
+/* TP-795 disable uswds v1 overrides */
+.fba-modal-dialog .usa-label,
+.fba-modal-dialog .usa-label-big {
+  background-color: inherit;
+  border-radius: inherit;
+  color: inherit;
+  margin-right: inherit;
+  padding: inherit;
+  text-transform: inherit;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-button {
+    width: auto;
+  }
+}
+
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .fba-modal-dialog .usa-header--extended .fba-modal-dialog .usa-nav__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media all and (max-width: 63.99em) {
+  .fba-modal-dialog .usa-logo {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+    font-size: 0.93162rem;
+    line-height: 0.93923;
+    margin-left: 1rem;
+  }
+
+  .fba-modal-dialog .usa-nav {
+    position: absolute;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    background: white;
+    border-right: 0;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1rem;
+    width: 15rem;
+    z-index: 500;
+  }
+
+  .fba-modal-dialog .usa-nav.is-visible {
+    -webkit-animation: slidein-left 0.3s ease-in-out;
+    animation: slidein-left 0.3s ease-in-out;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.star_rating svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.star_rating label,
+.star_rating output {
+  display: block;
+  float: left;
+  font-size: 2em;
+  height: 1.2em;
+  color: #036;
+  cursor: pointer;
+  /* Transparent border-bottom avoids jumping	   when a colored border is applied		 on :hover/:focus */
+  border-bottom: 2px solid transparent;
+}
+
+.star_rating output {
+  font-size: 1.5em;
+  padding: 0 1em;
+}
+
+.star_rating input:checked~label {
+  color: #999;
+}
+
+.star_rating input:checked+label {
+  color: #036;
+  border-bottom-color: #036;
+}
+
+.star_rating input:focus+label {
+  border-bottom-style: dotted;
+}
+
+.star_rating:hover input+label {
+  color: #036;
+}
+
+.star_rating input:hover~label,
+.star_rating input:focus~label,
+.star_rating input[id="star0"]+label {
+  color: #999;
+}
+
+.star_rating input:hover+label,
+.star_rating input:focus+label {
+  color: #036;
+}
+
+.star_rating input[id="star0"]:checked+label {
+  color: #ff2d21;
+}
+
+/*! from USWDS  uswds v2.9.0 */
+#fba-button.usa-button {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  background-color: #005ea2;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.usa-skipnav.touchpoints-skipnav {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  color: #005ea2;
+  text-decoration: underline;
+  background: transparent;
+  left: 0;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: -3.8rem;
+  transition: 0.15s ease-in-out;
+  z-index: 100;
+}
+
+.usa-skipnav.touchpoints-skipnav:visited {
+  color: #54278f;
+}
+
+.usa-skipnav.touchpoints-skipnav:hover {
+  color: #1a4480;
+}
+
+.usa-skipnav.touchpoints-skipnav:active {
+  color: #162e51;
+}
+
+.usa-skipnav.touchpoints-skipnav:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+}
+
+.usa-skipnav.touchpoints-skipnav:focus {
+  background: white;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.fba-modal-dialog abbr[title="required"] {
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-form {
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.3;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-form {
+    max-width: 20rem;
+  }
+}
+
+.fba-modal-dialog .usa-form abbr[title="required"] {
+  text-decoration: none;
+}
+
+.fba-modal-dialog .usa-form .usa-input,
+.fba-modal-dialog .usa-form .usa-range,
+.fba-modal-dialog .usa-form .usa-select,
+.fba-modal-dialog .usa-form .usa-textarea {
+  max-width: none;
+}
+
+.fba-modal-dialog .usa-form .usa-input--2xs,
+.fba-modal-dialog .usa-form .usa-input-group--2xs {
+  max-width: 5ex;
+}
+
+.fba-modal-dialog .usa-form .usa-input--xs,
+.fba-modal-dialog .usa-form .usa-input-group--xs {
+  max-width: 9ex;
+}
+
+.fba-modal-dialog .usa-form .usa-input--sm,
+.fba-modal-dialog .usa-form .usa-input--small,
+.fba-modal-dialog .usa-form .usa-input-group--sm,
+.fba-modal-dialog .usa-form .usa-input-group--small {
+  max-width: 13ex;
+}
+
+.fba-modal-dialog .usa-form .usa-input--md,
+.fba-modal-dialog .usa-form .usa-input--medium,
+.fba-modal-dialog .usa-form .usa-input-group--md,
+.fba-modal-dialog .usa-form .usa-input-group--medium {
+  max-width: 20ex;
+}
+
+.fba-modal-dialog .usa-form .usa-input--lg,
+.fba-modal-dialog .usa-form .usa-input-group--lg {
+  max-width: 30ex;
+}
+
+.fba-modal-dialog .usa-form .usa-input--xl,
+.fba-modal-dialog .usa-form .usa-input-group--xl {
+  max-width: 40ex;
+}
+
+.fba-modal-dialog .usa-form .usa-input--2xl,
+.fba-modal-dialog .usa-form .usa-input-group--2xl {
+  max-width: 50ex;
+}
+
+.fba-modal-dialog .usa-form .usa-button {
+  margin-top: 0.5rem;
+}
+
+@media all and (min-width: 30em) {
+  .fba-modal-dialog .usa-form .usa-button {
+    margin-top: 1.5rem;
+  }
+}
+
+.fba-modal-dialog .usa-form a:where(:not(.usa-button)) {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+.fba-modal-dialog .usa-form a:where(:not(.usa-button)):visited {
+  color: #54278f;
+}
+
+.fba-modal-dialog .usa-form a:where(:not(.usa-button)):hover {
+  color: #1a4480;
+}
+
+.fba-modal-dialog .usa-form a:where(:not(.usa-button)):active {
+  color: #162e51;
+}
+
+.fba-modal-dialog .usa-form a:where(:not(.usa-button)):focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+
+@media all and (min-width: 30em) {
+  .usa-form--large {
+    max-width: 30rem;
+  }
+}
+
+.fba-modal-dialog .usa-radio {
+  background: white;
+}
+
+.fba-modal-dialog .usa-radio__label {
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-radio__label::before {
+  background: white;
+  box-shadow: 0 0 0 2px #1b1b1b;
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-radio__label::before {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+}
+
+.fba-modal-dialog .usa-radio__input:checked+[class*="__label"]::before {
+  background-color: #005ea2;
+  box-shadow: 0 0 0 2px #005ea2;
+}
+
+.fba-modal-dialog .usa-radio__input:disabled+[class*="__label"],
+.fba-modal-dialog .usa-radio__input[aria-disabled="true"]+[class*="__label"] {
+  color: #757575;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-radio__input:disabled+[class*="__label"],
+  .fba-modal-dialog .usa-radio__input[aria-disabled="true"]+[class*="__label"] {
+    color: GrayText;
+  }
+}
+
+.fba-modal-dialog .usa-radio__input:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-radio__input[aria-disabled="true"]+[class*="__label"]::before {
+  background-color: white;
+  box-shadow: 0 0 0 2px #757575;
+}
+
+.fba-modal-dialog .usa-radio__input--tile+[class*="__label"] {
+  background-color: white;
+  border: 2px solid #c9c9c9;
+  color: #1b1b1b;
+}
+
+.fba-modal-dialog .usa-radio__input--tile:checked+[class*="__label"] {
+  background-color: rgba(0, 94, 162, 0.1);
+  border-color: #005ea2;
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-radio__input--tile:checked+[class*="__label"] {
+    border: ButtonText solid 0.25rem;
+  }
+}
+
+.fba-modal-dialog .usa-radio__input--tile:disabled+[class*="__label"],
+.fba-modal-dialog .usa-radio__input--tile[aria-disabled="true"]+[class*="__label"] {
+  border-color: #e6e6e6;
+}
+
+.fba-modal-dialog .usa-radio__input--tile:disabled:checked+[class*="__label"],
+.fba-modal-dialog .usa-radio__input--tile[aria-disabled="true"]:checked+[class*="__label"] {
+  background-color: white;
+}
+
+.fba-modal-dialog .usa-radio__input:checked+[class*="__label"]::before {
+  box-shadow:
+    0 0 0 2px #005ea2,
+    inset 0 0 0 2px white;
+}
+
+@media (forced-colors: active) {
+  .fba-modal-dialog .usa-radio__input:checked+[class*="__label"]::before {
+    background-color: ButtonText;
+  }
+}
+
+.fba-modal-dialog .usa-radio__input:checked:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-radio__input:checked[aria-disabled="true"]+[class*="__label"]::before {
+  background-color: #757575;
+  box-shadow:
+    0 0 0 2px #757575,
+    inset 0 0 0 2px white;
+}
+
+@media (forced-colors: active) {
+
+  .fba-modal-dialog .usa-radio__input:checked:disabled+[class*="__label"]::before,
+  .fba-modal-dialog .usa-radio__input:checked[aria-disabled="true"]+[class*="__label"]::before {
+    background-color: GrayText;
+  }
+}
+
+.fba-modal-dialog .usa-radio__input {
+  position: absolute;
+  left: -999em;
+  right: auto;
+}
+
+.fba-modal-dialog .usa-radio__input:focus+[class*="__label"]::before {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0.25rem;
+}
+
+.fba-modal-dialog .usa-radio__input:disabled+[class*="__label"]::before,
+.fba-modal-dialog .usa-radio__input[aria-disabled="true"]+[class*="__label"]::before {
+  cursor: not-allowed;
+}
+
+.fba-modal-dialog .usa-radio__input:disabled+[class*="__label"],
+.fba-modal-dialog .usa-radio__input[aria-disabled="true"]+[class*="__label"] {
+  cursor: not-allowed;
+}
+
+.fba-modal-dialog .usa-radio__input--tile+[class*="__label"] {
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+}
+
+.fba-modal-dialog .usa-radio__input--tile+[class*="__label"]::before {
+  left: 0.5rem;
+}
+
+@media print {
+  .fba-modal-dialog .usa-radio__input:checked+[class*="__label"]::before {
+    box-shadow:
+      inset 0 0 0 2px white,
+      inset 0 0 0 1rem #005ea2,
+      0 0 0 2px #005ea2;
+  }
+}
+
+.fba-modal-dialog .usa-radio__label {
+  cursor: pointer;
+  display: inherit;
+  font-weight: normal;
+  margin-top: 0.75rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.fba-modal-dialog .usa-radio__label::before {
+  content: " ";
+  display: block;
+  left: 0;
+  margin-left: 2px;
+  margin-top: 0.064rem;
+  position: absolute;
+}
+
+.fba-modal-dialog .usa-radio__label::before {
+  height: 1.25rem;
+  border-radius: 99rem;
+  width: 1.25rem;
+}
+
+.fba-modal-dialog .usa-radio__label-description {
+  display: block;
+  font-size: 0.93rem;
+  margin-top: 0.5rem;
+}
+
+/* Override */
+.fba-modal-dialog .usa-form {
+  max-width: inherit;
+}
+
+/* Custom */
+.touchpoints-form-wrapper .usa-banner {
+  margin-top: 10px;
+}
+
+.usa-banner__header.touchpoints-footer-banner {
+  min-height: 0;
+}
+
+.fba-modal-dialog .question-options.big-thumbs .usa-radio__label::before {
+  display: none;
+}
+
+/* Same max-width as texarea */
+.touchpoints-form-body .big-thumbs {
+  max-width: 35rem;
+}
+
+.question-options.big-thumbs .usa-radio__input--tile+.usa-radio__label {
+  color: #005ea2;
+  padding-left: 1rem;
+}
+
+.touchpoint-form .question-options {
+  clear: both;
+}
+
+.touchpoint-form {
+  max-width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fba-modal-dialog .margin-top-3 {
+  margin-top: 1.5rem;
+}
+
+/* Override */
+.touchpoint-form .usa-form--large {
+  max-width: 35rem;
+}
+
+.fba-modal-dialog .usa-sr-only {
+  position: absolute;
+  left: -999em;
+  right: auto;
+}
+
+/* big thumbs up down buttons */
+.fba-modal-dialog .usa-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  position: relative;
+  width: 1em;
+}
+
+.fba-modal-dialog .margin-top-2 {
+  margin-top: 1rem;
+}
+
+.fba-modal-dialog .text-center {
+  text-align: center;
+}
+
+.fba-modal-dialog .font-sans-3xl {
+  font-size: 3.19rem;
+}
+
+.fba-modal-dialog .margin-bottom-2 {
+  margin-bottom: 1rem;
+}
+
+.fba-modal-dialog .margin-bottom-3 {
+  margin-top: 1.5rem;
+}
+
+.fba-modal-dialog .text-right {
+  text-align: right;
+}
+
+.fba-modal-dialog .text-bold {
+  font-weight: 700;
+}
+
+.fba-modal-dialog .usa-button .margin-top-0 {
+  margin-top: 0;
+}
+
+.fba-modal-dialog .previous-section.usa-button {
+  margin-top: 0;
+}

@@ -4,6 +4,7 @@ import * as Q from "q";
 import gaEventHandler from "./lib/eventhandler";
 import formatters from "./lib/formatters";
 import BLOCKS from "./lib/blocks";
+require("./lib/touchpoints");
 
 gaEventHandler();
 
@@ -176,12 +177,11 @@ d3.selectAll("*[role='tablist']").each(function () {
       }
       return tab.selected;
     });
-    panels
-      .attr("aria-hidden", function (panel) {
-        panel.selected = selected === this;
-        return !panel.selected;
-      })
-      .style("display", (d) => (d.selected ? null : "none"));
+    panels.attr("aria-hidden", function (panel) {
+      panel.selected = selected === this;
+      return !panel.selected;
+    });
+    //  .style("display", (d) => (d.selected ? null : "none"));
   }
 
   // when a tab is clicked, update the panels
