@@ -9,7 +9,8 @@
   </h1>
 
   {% assign agencies = site.data.agencies | sort: "name" %} {% if agencies.size
-  > 0 %} {% unless page.url contains 'data' %}
+  > 0 %} {% unless page.url contains 'data' or page.url contains 'definitions'
+  %}
   <div class="analytics-select analytics-select--main">
     <label class="usa-label" for="analytics-agency-select"
       >Select an agency to display results</label

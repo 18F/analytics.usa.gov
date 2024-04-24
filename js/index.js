@@ -202,20 +202,22 @@ d3.selectAll("*[role='tablist']").each(function () {
   update();
 });
 
-// Set the dropdown
+// Find the agency select dropdown
 const dropDown = document.getElementById("analytics-agency-select");
 
-// Start on change listener to load new page
-d3.select(dropDown).on("change", function () {
-  window.location.assign(
-    new URL(window.location.origin + d3.select(this).property("value")),
-  );
-});
+if (dropDown) {
+  // Set the on change listener to load a new page when an option is selected.
+  d3.select(dropDown).on("change", function () {
+    window.location.assign(
+      new URL(window.location.origin + d3.select(this).property("value")),
+    );
+  });
 
-for (let j = 0; j < dropDown.options.length; j += 1) {
-  if (dropDown.options[j].value === window.location.pathname) {
-    dropDown.selectedIndex = j;
-    break;
+  for (let j = 0; j < dropDown.options.length; j += 1) {
+    if (dropDown.options[j].value === window.location.pathname) {
+      dropDown.selectedIndex = j;
+      break;
+    }
   }
 }
 
