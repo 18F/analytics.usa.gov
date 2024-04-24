@@ -23,12 +23,12 @@ http {
   port_in_redirect off; # Ensure that redirects don't include the internal container PORT - <%= ENV["PORT"] %>
   server_tokens off;
 
-   map $http_origin $allow_origin {
-       ~^(http(s)?:\/\/)?(.*)?\.app\.cloud\.gov$ $http_origin;
-   }
-   map $http_origin $allow_methods {
-       ~^(http(s)?:\/\/)?(.*)?\.app\.cloud\.gov$ "OPTIONS, HEAD, GET";
-   }
+  map $http_origin $allow_origin {
+    ~^(http(s)?:\/\/)?(.*)?\.app\.cloud\.gov$ $http_origin;
+  }
+  map $http_origin $allow_methods {
+    ~^(http(s)?:\/\/)?(.*)?\.app\.cloud\.gov$ "OPTIONS, HEAD, GET";
+  }
 
   server {
     #listen {{port}};
@@ -39,7 +39,6 @@ http {
     # this is to allow /data/ to pass through untouched
 
     location ~* ^/data/(.+) {
-
       set $url_full         '$1';
       gunzip on;
       proxy_http_version     1.1;
@@ -54,20 +53,13 @@ http {
       resolver               8.8.8.8 valid=300s;
 
       add_header             Cache-Control "no-cache";
+      add_header             Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com;" always;
       add_header             Pragma "no-cache";
 
       proxy_hide_header      Access-Control-Allow-Origin;
       add_header             Access-Control-Allow-Origin $allow_origin;
       add_header             Access-Control-Allow-Methods $allow_methods;
       proxy_pass             ${S3_BUCKET_URL}/data/$url_full;
-    }
-
-    location =/developers {
-      return 302 https://open.gsa.gov/api/dap/;
-    }
-
-    location =/developer {
-      return 302 https://open.gsa.gov/api/dap/;
     }
 
     location / {
@@ -82,9 +74,23 @@ http {
       if ($http_x_forwarded_proto != "https") {
         return 301 https://$host$request_uri;
       }
+
       add_header Cache-Control "max-age=60";
+      # Touchpoints and S3 domains are added to the CSP support touchpoints JS
+      # code which dynamically adds HTML with images and references JS on the
+      # touchpoints server.
+      add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com;" always;
       try_files $uri $uri/index.html $uri/ =404;
     }
 
+    location =/developers {
+      add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com;" always;
+      return 302 https://open.gsa.gov/api/dap/;
+    }
+
+    location =/developer {
+      add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com;" always;
+      return 302 https://open.gsa.gov/api/dap/;
+    }
   }
 }
