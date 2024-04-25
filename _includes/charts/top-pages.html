@@ -25,7 +25,7 @@
   </div>
 
   <figure class="top-pages__realtime" id="top-pages-realtime" role="tabpanel" data-block="top-pages-realtime"
-    data-source="{{ site.data_url }}/{{ data_prefix }}/top-pages-realtime.json" data-refresh="15">
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-pages-realtime.json" data-refresh="15" aria-hidden="false">
     <p>
       <strong>People</strong> on a <strong>single, specific page or app screen</strong> in
       the last 30 minutes. Hostnames are not currently reported in real-time,
@@ -36,7 +36,7 @@
   </figure>
 
   <figure class="bar-chart__top-pages" id="top-pages-7-days" role="tabpanel" data-block="top-pages"
-    data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-7-days.json" style="display: none;">
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-7-days.json" aria-hidden="true">
     <p>
       Sessions over the last week on <strong>hostnames</strong>, including
       traffic to all web pages and app screens within that hostname.
@@ -45,7 +45,7 @@
   </figure>
 
   <figure class="bar-chart__top-pages" id="top-pages-30-days" role="tabpanel" data-block="top-pages"
-    data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-30-days.json" style="display: none;">
+    data-source="{{ site.data_url }}/{{ data_prefix }}/top-domains-30-days.json" aria-hidden="true">
     <p>
       Sessions over the last month on <strong>hostnames</strong>, including
       traffic to all web pages and app screens within that hostname. {% if
