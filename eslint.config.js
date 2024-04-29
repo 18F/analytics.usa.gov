@@ -12,6 +12,11 @@ module.exports = [
         ...globals.node,
         ...globals.mocha,
       },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
   },
   {

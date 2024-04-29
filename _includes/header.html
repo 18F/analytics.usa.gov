@@ -8,29 +8,15 @@
     <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
   </h1>
 
-  {% assign agencies = site.data.agencies | sort: "name" %} {% if agencies.size
-  > 0 %} {% unless page.url contains 'data' or page.url contains 'definitions'
-  %}
-  <div class="analytics-select analytics-select--main">
-    <label class="usa-label" for="analytics-agency-select"
-      >Select an agency to display results</label
-    >
-    <select
-      aria-label="Select an agency to display results"
-      class="usa-select"
-      name="agency-selector"
-      id="analytics-agency-select"
-      title="Agency Selection Dropdown"
-    >
-      <option value="{{ site.baseurl }}/">{{ site.dropdown_title }}</option>
-      {% for agency in agencies %}
-      <option value="{{ site.baseurl }}/{{ agency.slug }}">
-        {{ agency.name }}
-      </option>
-      {% endfor %}
-    </select>
-  </div>
-  {% endunless %} {% endif %}
+  {% unless page.url contains 'data' or page.url contains 'definitions' %}
+  <!-- prettier-ignore -->
+  <div
+    id="analytics-agency-select-root"
+    class="analytics-select analytics-select--main"
+    mainAgencyName="{{site.dropdown_title}}"
+    agencies='{{ site.data.agencies | jsonify }}'
+  ></div>
+  {% endunless %}
 
   <nav class="links">
     <ul>

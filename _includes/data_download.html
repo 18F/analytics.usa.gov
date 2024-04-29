@@ -12,30 +12,14 @@ data_prefix = page.slug %} {% assign entity = page.name %} {% endif %}
         <a href="/definitions">See data fields and metrics descriptions</a>
       </p>
 
-      {% assign agencies = site.data.agencies | sort:"name" %} {% if
-      agencies.size > 0 %}
-      <div class="analytics-select analytics-select--secondary">
-        <label class="usa-label" for="analytics-agency-select"
-          >Select an agency to display results</label
-        >
-        <select
-          aria-label="Select an agency to display results"
-          class="usa-select"
-          name="agency-selector"
-          id="analytics-agency-select"
-          title="Agency Selection Dropdown"
-        >
-          <option value="{{ site.baseurl }}/data/">
-            {{ site.dropdown_title }}
-          </option>
-          {% for agency in agencies %}
-          <option value="{{ site.baseurl }}/{{ agency.slug }}/data/">
-            {{ agency.name }}
-          </option>
-          {% endfor %}
-        </select>
-      </div>
-      {% endif %}
+      <!-- prettier-ignore -->
+      <div
+        id="analytics-agency-select-root"
+        class="analytics-select analytics-select--secondary"
+        mainAgencyName="{{site.dropdown_title}}"
+        agencies='{{ site.data.agencies | jsonify }}'
+        pathSuffix="/data"
+      ></div>
 
       <h4>A note on sampling</h4>
       <div class="desktop:grid-col-8">
