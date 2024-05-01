@@ -1,7 +1,6 @@
 import d3 from "d3";
 
 import renderBlock from "./renderblock";
-import { exceptions, titleExceptions } from "./exceptions";
 import barChart from "./barchart";
 import buildTimeSeries from "./timeseries";
 import formatters from "./formatters";
@@ -222,63 +221,6 @@ export default {
             "</a></span>",
           ].join(""),
         )
-        .scale((values) =>
-          d3.scale
-            .linear()
-            .domain([0, 1, d3.max(values)])
-            .rangeRound([0, 1, 100]),
-        )
-        .format(formatters.addCommas),
-    ),
-
-  // The top pages first block(s)
-  "top-pages-realtime": renderBlock
-    .loadAndRender()
-    .transform((d) => d.data)
-    .on("render", (selection) => {
-      selection
-        .selectAll(".label")
-        .each(function (d) {
-          d.text = this.innerText;
-        })
-        .html("")
-        .text((d) => titleExceptions[d.page] || d.page_title);
-    })
-    .render(
-      barChart()
-        .label((d) => d.page_title)
-        .value((d) => +d.active_visitors)
-        .scale((values) =>
-          d3.scale
-            .linear()
-            .domain([0, 1, d3.max(values)])
-            .rangeRound([0, 1, 100]),
-        )
-        .format(formatters.addCommas),
-    ),
-
-  // The top pages second and third block(s)
-  "top-pages": renderBlock
-    .loadAndRender()
-    .transform((d) => d.data)
-    .on("render", (selection) => {
-      // turn the labels into links
-      selection
-        .selectAll(".label")
-        .each(function (d) {
-          d.text = this.innerText;
-        })
-        .html("")
-        .append("a")
-        .attr("target", "_blank")
-        .attr("rel", "noopener")
-        .attr("href", (d) => exceptions[d.domain] || `http://${d.domain}`)
-        .text((d) => titleExceptions[d.domain] || d.domain);
-    })
-    .render(
-      barChart()
-        .label((d) => d.domain)
-        .value((d) => +d.visits)
         .scale((values) =>
           d3.scale
             .linear()
