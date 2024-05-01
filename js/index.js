@@ -5,6 +5,7 @@ import gaEventHandler from "./lib/eventhandler";
 import formatters from "./lib/formatters";
 import BLOCKS from "./lib/blocks";
 require("./lib/touchpoints");
+require("./lib/react_setup");
 
 gaEventHandler();
 
@@ -201,25 +202,6 @@ d3.selectAll("*[role='tablist']").each(function () {
   // update them to start
   update();
 });
-
-// Find the agency select dropdown
-const dropDown = document.getElementById("analytics-agency-select");
-
-if (dropDown) {
-  // Set the on change listener to load a new page when an option is selected.
-  d3.select(dropDown).on("change", function () {
-    window.location.assign(
-      new URL(window.location.origin + d3.select(this).property("value")),
-    );
-  });
-
-  for (let j = 0; j < dropDown.options.length; j += 1) {
-    if (dropDown.options[j].value === window.location.pathname) {
-      dropDown.selectedIndex = j;
-      break;
-    }
-  }
-}
 
 // set highlight styles for selected button
 const tabs = document.querySelector(".usa-button-group");
