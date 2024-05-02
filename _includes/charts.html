@@ -38,8 +38,17 @@
         <h2>Historical Data and Trends</h2>
       </div>
     </article>
-    {% include charts/sessions-30-days.html data_prefix=data_prefix %} {%
-    include charts/demographics-30-days.html data_prefix=data_prefix %}
+    <article class="section">
+      <div class="section__headline">
+        <h3>Daily Sessions in the Past 30 Days</h3>
+      </div>
+      <div
+        id="sessions-30-days-root"
+        dataURL="{{ site.data_url }}"
+        dataPrefix="{{ data_prefix }}"
+      ></div>
+    </article>
+    {% include charts/demographics-30-days.html data_prefix=data_prefix %}
   </section>
 
   <section id="secondary_data" class="desktop:grid-col-4">
