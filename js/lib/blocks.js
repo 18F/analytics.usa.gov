@@ -9,16 +9,6 @@ import transformers from "./transformers";
  * Define block renderers for each of the different data types.
  */
 export default {
-  // The session sources block is a stack layout
-  session_default_channel_group: renderBlock.buildCompactBarChart(
-    "session_default_channel_group",
-  ),
-
-  // The session mediums block is a stack layout
-  session_source_medium: renderBlock.buildCompactBarChart(
-    "session_source_medium",
-  ),
-
   // The OS block is a stack layout
   os: renderBlock.buildCompactBarChart("os"),
 

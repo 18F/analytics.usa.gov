@@ -5,4 +5,5 @@ require("../../components/locations_and_languages");
 require("../../components/realtime_visitors");
 require("../../components/sessions_30_days");
 require("../../components/top_pages");
+require("../../components/traffic_sources");
 require("../../components/visitors_30_days");
