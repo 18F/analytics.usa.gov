@@ -103,6 +103,19 @@
       dataURL="{{ site.data_url }}"
       dataPrefix="{{ data_prefix }}"
     ></section>
-    {% include charts/top-downloads.html data_prefix=data_prefix %}
+    <section class="top-downloads">
+      <div class="top-downloads__headline">
+        <h3>Top Downloads Yesterday</h3>
+      </div>
+
+      <h4>
+        <em>Total file downloads yesterday on {{ page.entity }} hostnames.</em>
+      </h4>
+      <div
+        id="top-downloads-root"
+        dataURL="{{ site.data_url }}"
+        dataPrefix="{{ data_prefix }}"
+      ></div>
+    </section>
   </section>
 </main>

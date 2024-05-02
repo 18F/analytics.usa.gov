@@ -1,8 +1,6 @@
 import d3 from "d3";
-import * as Q from "q";
 
 import gaEventHandler from "./lib/eventhandler";
-import BLOCKS from "./lib/blocks";
 require("./lib/touchpoints");
 require("./lib/react_setup");
 
@@ -43,35 +41,3 @@ function hasChildElement(d3Selection) {
     !!d3Selection[0][0].children[0]
   );
 }
-
-// store a promise for each block
-const PROMISES = {};
-
-/*
- * Now, initialize all of the blocks by:
- *
- * 1. grabbing their data-block attribute
- * 2. looking up the block id in our `BLOCKS` object, and
- * 3. if a renderer exists, calling it on the selection
- */
-d3.selectAll("*[data-source]").each(function () {
-  const blockId = this.getAttribute("data-block");
-  const block = BLOCKS[blockId];
-  if (!block) {
-    return console.warn("no block registered for: %s", blockId);
-  }
-
-  // each block's promise is resolved when the block renders
-  PROMISES[blockId] = Q.Promise((resolve, reject) => {
-    block.on("render.promise", resolve);
-    block.on("error.promise", reject);
-  });
-
-  return d3
-    .select(this)
-    .datum({
-      source: this.getAttribute("data-source"),
-      block: blockId,
-    })
-    .call(block);
-});
