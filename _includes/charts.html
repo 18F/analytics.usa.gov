@@ -20,15 +20,34 @@
 
 <main class="grid-row">
   <section id="main_data" class="desktop:grid-col-8">
-    {% include charts/realtime-visitors.html data_prefix=data_prefix %} {%
-    include charts/locations.html data_prefix=data_prefix %} {% include
-    charts/historical_data.html data_prefix=data_prefix %} {% include
-    charts/sessions-30-days.html data_prefix=data_prefix %} {% include
-    charts/demographics-30-days.html data_prefix=data_prefix %}
+    <article
+      id="realtime-visitors-root"
+      class="chart-realtime"
+      dataURL="{{ site.data_url }}"
+      dataPrefix="{{ data_prefix }}"
+      agency="{{ page.title }}"
+    ></article>
+    <article
+      id="locations-and-languages-root"
+      class="section"
+      dataURL="{{ site.data_url }}"
+      dataPrefix="{{ data_prefix }}"
+    ></article>
+    <article class="section">
+      <div class="section__headline">
+        <h2>Historical Data and Trends</h2>
+      </div>
+    </article>
+    {% include charts/sessions-30-days.html data_prefix=data_prefix %} {%
+    include charts/demographics-30-days.html data_prefix=data_prefix %}
   </section>
 
   <section id="secondary_data" class="desktop:grid-col-4">
-    {% include charts/top-pages.html data_prefix=data_prefix %} {% include
-    charts/top-downloads.html data_prefix=data_prefix %}
+    <section
+      id="top-pages-root"
+      dataURL="{{ site.data_url }}"
+      dataPrefix="{{ data_prefix }}"
+    ></section>
+    {% include charts/top-downloads.html data_prefix=data_prefix %}
   </section>
 </main>

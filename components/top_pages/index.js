@@ -4,7 +4,7 @@ import TopPages from "./TopPages";
 
 /**
  * Renders an TopPages React component, when there is an element on the
- * current page with id '#analytics-agency-select-root'.
+ * current page with id '#top-pages-root'.
  *
  * The TopPages component will be rendered as a child to the matching
  * element.

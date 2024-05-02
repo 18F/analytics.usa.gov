@@ -19,7 +19,7 @@
     "lint:html": "prettier -c {**/*,*}.html",
     "lint:html:fix": "prettier -w {**/*,*}.html",
     "pa11y": "pa11y http://localhost:4000/data",
-    "start": "npm-run-all --parallel local:watch local:serve",
+    "start": "SCRIPT_DEBUG=true npm-run-all --parallel local:watch local:serve",
     "test": "mocha --require @babel/register spec",
     "coverage": "nyc npm run test",
     "install-git-hooks": "cp ./hooks/* .git/hooks/ && chmod -R a+x .git/hooks/"
