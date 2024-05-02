@@ -1,5 +1,5 @@
 import assert from "assert";
-import transformers from "../js/lib/transformers";
+import transformers from "../js/lib/chart_helpers/transformers";
 
 describe("transformers", () => {
   const sampleArray = [

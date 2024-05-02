@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import buildTimeSeries from "../../js/lib/timeseries";
-import renderBlock from "../../js/lib/renderblock";
-import formatters from "../../js/lib/formatters";
+import buildTimeSeries from "../../lib/chart_helpers/timeseries";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import formatters from "../../lib/chart_helpers/formatters";
 
 function Sessions30Days({ dataURL, dataPrefix }) {
   const reportURL = `${dataURL}/${dataPrefix}/sessions-over-30-days.json`;

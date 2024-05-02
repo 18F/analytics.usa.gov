@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import nestCharts from "../../js/lib/nest_charts";
-import renderBlock from "../../js/lib/renderblock";
-import transformers from "../../js/lib/transformers";
-import { isPartOfUnitedStates } from "../../js/lib/territories";
+import nestCharts from "../../lib/chart_helpers/nest_charts";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import transformers from "../../lib/chart_helpers/transformers";
+import { isPartOfUnitedStates } from "../../lib/territories";
 
 function TopCountriesRealtime({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-countries-realtime.json`;

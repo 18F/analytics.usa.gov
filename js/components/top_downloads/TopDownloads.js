@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import barChart from "../../js/lib/barchart";
-import formatters from "../../js/lib/formatters";
-import renderBlock from "../../js/lib/renderblock";
+import barChart from "../../lib/chart_helpers/barchart";
+import formatters from "../../lib/chart_helpers/formatters";
+import renderBlock from "../../lib/chart_helpers/renderblock";
 
 function TopDownloads({ dataURL, dataPrefix }) {
   const reportURL = `${dataURL}/${dataPrefix}/top-downloads-yesterday.json`;

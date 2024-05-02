@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import barChart from "../../js/lib/barchart";
-import formatters from "../../js/lib/formatters";
-import renderBlock from "../../js/lib/renderblock";
-import transformers from "../../js/lib/transformers";
+import barChart from "../../lib/chart_helpers/barchart";
+import formatters from "../../lib/chart_helpers/formatters";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import transformers from "../../lib/chart_helpers/transformers";
 
 function DevicesChart({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/devices.json`;

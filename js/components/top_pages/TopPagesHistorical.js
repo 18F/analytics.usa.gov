@@ -2,17 +2,17 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../js/lib/renderblock";
-import { titleExceptions } from "../../js/lib/exceptions";
-import barChart from "../../js/lib/barchart";
-import formatters from "../../js/lib/formatters";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import { exceptions, titleExceptions } from "../../lib/exceptions";
+import barChart from "../../lib/chart_helpers/barchart";
+import formatters from "../../lib/chart_helpers/formatters";
 
-function TopPagesRealtime({ dataHrefBase, reportFileName }) {
+function TopPagesHistorical({ dataHrefBase, reportFileName }) {
   const dataURL = `${dataHrefBase}/${reportFileName}`;
   const ref = useRef(null);
 
   useEffect(() => {
-    const initRealtimeChart = async () => {
+    const initHistoricalChart = async () => {
       const result = await d3
         .select(ref.current)
         .datum({
@@ -24,18 +24,26 @@ function TopPagesRealtime({ dataHrefBase, reportFileName }) {
             .loadAndRender()
             .transform((d) => d.data)
             .on("render", (selection) => {
+              // turn the labels into links
               selection
                 .selectAll(".label")
                 .each(function (d) {
                   d.text = this.innerText;
                 })
                 .html("")
-                .text((d) => titleExceptions[d.page] || d.page_title);
+                .append("a")
+                .attr("target", "_blank")
+                .attr("rel", "noopener")
+                .attr(
+                  "href",
+                  (d) => exceptions[d.domain] || `http://${d.domain}`,
+                )
+                .text((d) => titleExceptions[d.domain] || d.domain);
             })
             .render(
               barChart()
-                .label((d) => d.page_title)
-                .value((d) => +d.active_visitors)
+                .label((d) => d.domain)
+                .value((d) => +d.visits)
                 .scale((values) =>
                   d3.scale
                     .linear()
@@ -47,24 +55,19 @@ function TopPagesRealtime({ dataHrefBase, reportFileName }) {
         );
       return result;
     };
-    initRealtimeChart().catch(console.error);
-  }, []);
+    initHistoricalChart().catch(console.error);
+  });
 
   return (
-    <figure
-      className="top-pages__realtime"
-      data-source={dataURL}
-      data-refresh="15"
-      ref={ref}
-    >
+    <figure className="bar-chart__top-pages" data-source={dataURL} ref={ref}>
       <div className="data bar-chart"></div>
     </figure>
   );
 }
 
-TopPagesRealtime.propTypes = {
+TopPagesHistorical.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
   reportFileName: PropTypes.string.isRequired,
 };
 
-export default TopPagesRealtime;
+export default TopPagesHistorical;

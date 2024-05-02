@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../js/lib/renderblock";
+import renderBlock from "../../lib/chart_helpers/renderblock";
 
 function TopChannels({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-session-channel-group-30-days.json`;

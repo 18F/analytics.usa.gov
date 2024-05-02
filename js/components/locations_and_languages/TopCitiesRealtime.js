@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../js/lib/renderblock";
-import transformers from "../../js/lib/transformers";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import transformers from "../../lib/chart_helpers/transformers";
 
 function TopCitiesRealtime({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-cities-realtime.json`;

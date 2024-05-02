@@ -1,5 +1,5 @@
 import assert from "assert";
-import formatters from "../js/lib/formatters";
+import formatters from "../js/lib/chart_helpers/formatters";
 
 describe("Formatters", () => {
   describe("trimZeros", () => {

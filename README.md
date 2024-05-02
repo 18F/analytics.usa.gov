@@ -108,7 +108,7 @@ Then run `serve` from the output directory:
 serve --cors
 ```
 
-The data will be available at `http://localhost:3000` over CORS, with no path prefix. For example, device data will be at `http://localhost:3000/devices.json`.
+The data will be available at `http://localhost:4000` over CORS, with no path prefix. For example, device data will be at `http://localhost:4000/devices.json`.
 
 ### Adding Additional Agencies
 
@@ -116,10 +116,8 @@ The data will be available at `http://localhost:3000` over CORS, with no path pr
 1. Create a new json object in the `/_data/agencies.json` file. The `slug` attribute of the object will be the url path. The `name` attribute is the Agency's name.
 
 ### Javascript Modules
-* **Index** - includes the main dom selection and rendering queue of components, and the entry point for the webpack bundler.
+* **Index** - The entry point for the webpack bundler. Includes all React components and rendering logic.
 * **lib/barchart** the d3 configuration of the bar charts
-* **lib/blocks** an object of the specific components
-* **lib/consoleprint** the console messages displayed to users
 * **lib/exceptions** agency data to be changed by discrete exception rules
 * **lib/formatters** methods to help format the display of visualization scales and values
 * **lib/renderblock** d3 manipulator to load and render data for a component block

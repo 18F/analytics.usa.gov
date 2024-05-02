@@ -18,9 +18,9 @@ function Engagement({ dataURL, dataPrefix }) {
           </h4>
         </div>
         <div className="grid-row">
-          <div className="grid-col-12">
+          <span className="grid-col-12">
             <AverageEngagementDuration dataHrefBase={dataHrefBase} />
-          </div>
+          </span>
         </div>
       </section>
 
@@ -33,9 +33,9 @@ function Engagement({ dataURL, dataPrefix }) {
           </h4>
         </div>
         <div className="grid-row">
-          <div className="data grid-col-12">
+          <span className="data grid-col-12">
             <EngagementRate dataHrefBase={dataHrefBase} />
-          </div>
+          </span>
         </div>
       </section>
     </>

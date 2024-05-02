@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../js/lib/renderblock";
-import formatters from "../../js/lib/formatters";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import formatters from "../../lib/chart_helpers/formatters";
 
 function Visitors30Days({ dataURL, dataPrefix }) {
   // This was using devices 30 days and setting this value as a side effect of

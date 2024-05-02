@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../js/lib/renderblock";
-import nestCharts from "../../js/lib/nest_charts";
+import renderBlock from "../../lib/chart_helpers/renderblock";
+import nestCharts from "../../lib/chart_helpers/nest_charts";
 
 function OperatingSystemsChart({ dataHrefBase }) {
   const osDataURL = `${dataHrefBase}/os.json`;
