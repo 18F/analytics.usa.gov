@@ -2,7 +2,6 @@ import d3 from "d3";
 import * as Q from "q";
 
 import gaEventHandler from "./lib/eventhandler";
-import nestCharts from "./lib/nest_charts";
 import BLOCKS from "./lib/blocks";
 require("./lib/touchpoints");
 require("./lib/react_setup");
@@ -48,11 +47,6 @@ function hasChildElement(d3Selection) {
 // store a promise for each block
 const PROMISES = {};
 
-function whenRendered(blockIds, callback) {
-  const promises = blockIds.map((id) => PROMISES[id]);
-  return Q.all(promises).then(callback);
-}
-
 /*
  * Now, initialize all of the blocks by:
  *
@@ -80,14 +74,4 @@ d3.selectAll("*[data-source]").each(function () {
       block: blockId,
     })
     .call(block);
-});
-
-// nest the windows chart inside the OS chart once they're both rendered
-// TODO: Remove windows versions?
-whenRendered(["os", "windows"], () => {
-  d3.select("#chart_os").call(
-    nestCharts,
-    "Windows",
-    d3.select("#chart_windows"),
-  );
 });

@@ -81,7 +81,20 @@
         ></div>
       </section>
     </article>
-    {% include charts/demographics-30-days.html data_prefix=data_prefix %}
+    <article class="section">
+      <div class="section__headline">
+        <h2>User Device Demographics in the Last 30 Days</h2>
+      </div>
+
+      <section class="section__chart">
+        <div
+          id="device-demographics-root"
+          class="grid-row"
+          dataURL="{{ site.data_url }}"
+          dataPrefix="{{ data_prefix }}"
+        ></div>
+      </section>
+    </article>
   </section>
 
   <section id="secondary_data" class="desktop:grid-col-4">

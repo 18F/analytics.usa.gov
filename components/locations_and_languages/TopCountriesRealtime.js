@@ -80,7 +80,7 @@ function TopCountriesRealtime({ dataHrefBase }) {
       // Sleep for half a second because the above charts are still not loaded
       // for some reason.  TODO: figure out why
       const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-      await delay(250);
+      await delay(500);
 
       // nest the US and territories chart inside the "US"
       // chart once they're both rendered

@@ -1,5 +1,6 @@
 require("../../components/agency_select");
 require("../../components/data_downloads");
+require("../../components/device_demographics");
 require("../../components/engagement");
 require("../../components/locations_and_languages");
 require("../../components/realtime_visitors");
