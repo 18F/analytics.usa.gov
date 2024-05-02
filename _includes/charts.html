@@ -48,6 +48,25 @@
         dataPrefix="{{ data_prefix }}"
       ></div>
     </article>
+    <article class="section">
+      <section class="section__subheader">
+        <div
+          id="visitors-30-days-root"
+          dataURL="{{ site.data_url }}"
+          dataPrefix="{{ data_prefix }}"
+        ></div>
+      </section>
+    </article>
+    <article class="section">
+      <section class="section__rate">
+        <div
+          id="engagement-root"
+          class="grid-row"
+          dataURL="{{ site.data_url }}"
+          dataPrefix="{{ data_prefix }}"
+        ></div>
+      </section>
+    </article>
     {% include charts/demographics-30-days.html data_prefix=data_prefix %}
   </section>
 

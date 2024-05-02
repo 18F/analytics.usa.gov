@@ -9,25 +9,6 @@ import transformers from "./transformers";
  * Define block renderers for each of the different data types.
  */
 export default {
-  // The average engagement duration block is the engagement duration divided
-  // by the number of sessions. The result is rounded and formatted to a
-  // percentage.
-  average_engagement_duration_per_session: renderBlock
-    .loadAndRender()
-    .render((selection, data) => {
-      const metrics = data.data[0];
-      const avgEngagementDuration =
-        parseInt(metrics.userEngagementDuration) / parseInt(metrics.visits);
-      selection.text(formatters.secondsToReadableTime(avgEngagementDuration));
-    }),
-
-  // The engagement rate is rounded and formatted to a percentage.
-  engagement_rate: renderBlock.loadAndRender().render((selection, data) => {
-    const metrics = data.data[0];
-    const engagementRate = parseFloat(metrics.engagementRate) * 100;
-    selection.text(formatters.floatToPercent(engagementRate));
-  }),
-
   // The session sources block is a stack layout
   session_default_channel_group: renderBlock.buildCompactBarChart(
     "session_default_channel_group",
@@ -60,16 +41,7 @@ export default {
       barChart()
         .value((d) => d.proportion)
         .format(formatters.floatToPercent),
-    )
-    .on("render", (selection, data) => {
-      /*
-       * XXX this is an optimization. Rather than loading
-       * users.json, we total up the device numbers to get the "big
-       * number", saving us an extra XHR load.
-       */
-      const total = d3.sum(data.map((d) => d.value));
-      d3.select("#total_visitors").text(formatters.readableBigNumber(total));
-    }),
+    ),
 
   // The browsers block is a table
   browsers: renderBlock.buildCompactBarChart("browser"),
