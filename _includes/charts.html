@@ -18,17 +18,10 @@
       </section>
       -->
 
-<main class="grid-row">
-  <section id="main_data" class="desktop:grid-col-8">
-    {% include charts/realtime-visitors.html data_prefix=data_prefix %} {%
-    include charts/locations.html data_prefix=data_prefix %} {% include
-    charts/historical_data.html data_prefix=data_prefix %} {% include
-    charts/sessions-30-days.html data_prefix=data_prefix %} {% include
-    charts/demographics-30-days.html data_prefix=data_prefix %}
-  </section>
-
-  <section id="secondary_data" class="desktop:grid-col-4">
-    {% include charts/top-pages.html data_prefix=data_prefix %} {% include
-    charts/top-downloads.html data_prefix=data_prefix %}
-  </section>
-</main>
+<main
+  id="main-charts-root"
+  class="grid-row"
+  dataURL="{{ site.data_url }}"
+  dataPrefix="{{ data_prefix }}"
+  agency="{{ page.title }}"
+></main>

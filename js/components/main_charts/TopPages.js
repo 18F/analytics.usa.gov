@@ -5,9 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TopPagesRealtime from "./TopPagesRealtime";
 import TopPagesHistorical from "./TopPagesHistorical";
 
-function TopPages({ dataURL, dataPrefix }) {
-  const dataHrefBase = `${dataURL}/${dataPrefix}`;
-
+function TopPages({ dataHrefBase }) {
   return (
     <section className="top-pages">
       <div className="top-pages__headline">
@@ -70,8 +68,7 @@ function TopPages({ dataURL, dataPrefix }) {
 }
 
 TopPages.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default TopPages;

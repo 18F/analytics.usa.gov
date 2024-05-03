@@ -39,6 +39,8 @@ function loadAndRender() {
   const block = function (selection) {
     selection
       .each(load)
+      // TODO: Do the refresh by re-rendering components rather than having D3
+      // do it here.  This breaks nested charts on refresh.
       .filter(function (d) {
         d.refresh = +this.getAttribute("data-refresh");
         return !Number.isNaN(d.refresh) && d.refresh > 0;
