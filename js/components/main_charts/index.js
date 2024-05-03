@@ -16,7 +16,7 @@ if (domNode) {
   const root = createRoot(domNode);
   const dataURL = domNode.attributes.getNamedItem("dataurl").value;
   const dataPrefix = domNode.attributes.getNamedItem("dataprefix")?.value;
-  const agency = domNode.attributes.getNamedItem("dataprefix")?.value;
+  const agency = domNode.attributes.getNamedItem("agency")?.value;
   root.render(
     <MainCharts dataURL={dataURL} dataPrefix={dataPrefix} agency={agency} />,
   );

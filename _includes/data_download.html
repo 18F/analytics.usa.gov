@@ -9,9 +9,15 @@ data_prefix = page.slug %} {% assign entity = page.name %} {% endif %}
       <h1>Download the data</h1>
 
       <p>
-        <a href="/definitions">See data fields and metrics descriptions</a>
+        <a href="/historical-data-download">
+          See optiona to download Universal Analytics legacy reports (2018-2024)
+        </a>
       </p>
 
+      <!--
+        Prettier tries to force double quotes here, which causes problems with
+        the JSON passed to the agencies property, so ignore this div for linting
+      -->
       <!-- prettier-ignore -->
       <div
         id="analytics-agency-select-root"

@@ -183,6 +183,13 @@ make deploy_staging
 | Staging | staging | https://analytics-staging.app.cloud.gov |
 | Development | develop | https://analytics-develop.app.cloud.gov |
 
+#### API key
+
+The historical data downloads page of the site makes API calls (proxied through
+the site's NGINX server) which include an api.data.gov API key. This key is
+provided as configuration by CI during deployment and can be updated as needed
+in the CI deployment variables.
+
 ### Webpack Configuration
 
 The application compiles es6 modules into web friendly js via Wepback and the
