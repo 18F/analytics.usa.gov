@@ -5,9 +5,7 @@ import DevicesChart from "./DevicesChart";
 import BrowsersChart from "./BrowsersChart";
 import OperatingSystemsChart from "./OperatingSystemsChart";
 
-function DeviceDemographics({ dataURL, dataPrefix }) {
-  const dataHrefBase = `${dataURL}/${dataPrefix}`;
-
+function DeviceDemographics({ dataHrefBase }) {
   return (
     <>
       <section id="devices" className="desktop:grid-col-4 bar-chart-component">
@@ -32,8 +30,7 @@ function DeviceDemographics({ dataURL, dataPrefix }) {
 }
 
 DeviceDemographics.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default DeviceDemographics;

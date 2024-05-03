@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import EngagementRate from "./EngagementRate";
 import AverageEngagementDuration from "./AverageEngagementDuration";
 
-function Engagement({ dataURL, dataPrefix }) {
-  const dataHrefBase = `${dataURL}/${dataPrefix}`;
-
+function Engagement({ dataHrefBase }) {
   return (
     <>
       <section id="average_engagement_time" className="desktop:grid-col-6">
@@ -43,8 +41,7 @@ function Engagement({ dataURL, dataPrefix }) {
 }
 
 Engagement.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default Engagement;

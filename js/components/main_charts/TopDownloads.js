@@ -6,8 +6,8 @@ import barChart from "../../lib/chart_helpers/barchart";
 import formatters from "../../lib/chart_helpers/formatters";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 
-function TopDownloads({ dataURL, dataPrefix }) {
-  const reportURL = `${dataURL}/${dataPrefix}/top-downloads-yesterday.json`;
+function TopDownloads({ dataHrefBase }) {
+  const reportURL = `${dataHrefBase}/top-downloads-yesterday.json`;
   const ref = useRef(null);
 
   useEffect(() => {
@@ -68,8 +68,7 @@ function TopDownloads({ dataURL, dataPrefix }) {
 }
 
 TopDownloads.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default TopDownloads;

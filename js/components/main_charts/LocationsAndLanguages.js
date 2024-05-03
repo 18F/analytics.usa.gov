@@ -5,9 +5,7 @@ import TopCitiesRealtime from "./TopCitiesRealtime";
 import TopCountriesRealtime from "./TopCountriesRealtime";
 import TopLanguagesHistorical from "./TopLanguagesHistorical";
 
-function LocationsAndLanguages({ dataURL, dataPrefix }) {
-  const dataHrefBase = `${dataURL}/${dataPrefix}`;
-
+function LocationsAndLanguages({ dataHrefBase }) {
   return (
     <>
       <div className="section__headline">
@@ -44,8 +42,7 @@ function LocationsAndLanguages({ dataURL, dataPrefix }) {
 }
 
 LocationsAndLanguages.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default LocationsAndLanguages;

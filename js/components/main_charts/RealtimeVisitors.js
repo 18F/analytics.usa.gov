@@ -5,8 +5,8 @@ import d3 from "d3";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 import formatters from "../../lib/chart_helpers/formatters";
 
-function RealtimeVisitors({ dataURL, dataPrefix, agency }) {
-  const reportURL = `${dataURL}/${dataPrefix}/realtime.json`;
+function RealtimeVisitors({ dataHrefBase, agency }) {
+  const reportURL = `${dataHrefBase}/realtime.json`;
   const description = agency ? agency : "U.S. Federal Government";
   const ref = useRef(null);
 
@@ -50,8 +50,7 @@ function RealtimeVisitors({ dataURL, dataPrefix, agency }) {
 }
 
 RealtimeVisitors.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
   agency: PropTypes.string,
 };
 

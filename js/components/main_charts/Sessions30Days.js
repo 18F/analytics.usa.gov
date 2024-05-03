@@ -6,8 +6,8 @@ import buildTimeSeries from "../../lib/chart_helpers/timeseries";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 import formatters from "../../lib/chart_helpers/formatters";
 
-function Sessions30Days({ dataURL, dataPrefix }) {
-  const reportURL = `${dataURL}/${dataPrefix}/sessions-over-30-days.json`;
+function Sessions30Days({ dataHrefBase }) {
+  const reportURL = `${dataHrefBase}/sessions-over-30-days.json`;
   const ref = useRef(null);
 
   useEffect(() => {
@@ -68,8 +68,7 @@ function Sessions30Days({ dataURL, dataPrefix }) {
 }
 
 Sessions30Days.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default Sessions30Days;

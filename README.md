@@ -117,12 +117,8 @@ The data will be available at `http://localhost:4000` over CORS, with no path pr
 
 ### Javascript Modules
 * **Index** - The entry point for the webpack bundler. Includes all React components and rendering logic.
-* **lib/barchart** the d3 configuration of the bar charts
-* **lib/exceptions** agency data to be changed by discrete exception rules
-* **lib/formatters** methods to help format the display of visualization scales and values
-* **lib/renderblock** d3 manipulator to load and render data for a component block
-* **lib/timeseries** the d3 configuration of the timeseries charts
-* **lib/transformers** helper methods to manipulate and consolidate raw data into proportional data.
+* **js/components** the top level directory containing all React component definitions. The components which render charts contain the d3 logic for rendering the chart within them.
+* **lib/chart_helpers** helper functions containing d3 logic which is shared between multiple charts.
 
 ### Deploying the app
 

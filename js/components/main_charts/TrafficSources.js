@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import TopChannels from "./TopChannels";
 import TopSourceMedia from "./TopSourceMedia";
 
-function TrafficSources({ dataURL, dataPrefix }) {
-  const dataHrefBase = `${dataURL}/${dataPrefix}`;
-
+function TrafficSources({ dataHrefBase }) {
   return (
     <>
       <section
@@ -29,8 +27,7 @@ function TrafficSources({ dataURL, dataPrefix }) {
 }
 
 TrafficSources.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default TrafficSources;

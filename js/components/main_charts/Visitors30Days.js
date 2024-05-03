@@ -5,11 +5,11 @@ import d3 from "d3";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 import formatters from "../../lib/chart_helpers/formatters";
 
-function Visitors30Days({ dataURL, dataPrefix }) {
+function Visitors30Days({ dataHrefBase }) {
   // This was using devices 30 days and setting this value as a side effect of
   // creating the devices chart.  users.json is 90 days, so just stick with
   // devices.json for now.
-  const reportURL = `${dataURL}/${dataPrefix}/devices.json`;
+  const reportURL = `${dataHrefBase}/devices.json`;
   const ref = useRef(null);
 
   useEffect(() => {
@@ -43,8 +43,7 @@ function Visitors30Days({ dataURL, dataPrefix }) {
 }
 
 Visitors30Days.propTypes = {
-  dataURL: PropTypes.string.isRequired,
-  dataPrefix: PropTypes.string.isRequired,
+  dataHrefBase: PropTypes.string.isRequired,
 };
 
 export default Visitors30Days;
