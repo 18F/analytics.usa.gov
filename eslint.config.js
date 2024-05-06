@@ -20,7 +20,10 @@ module.exports = [
     },
   },
   {
-    // Ignore the locally built site with minified JS.
+    // Include recommended linting rules from eslint, react, and prettier
+    //
+    // When linting ignore the locally compiled minified JS, other assets, and
+    // touchpoints JS which is third party code copied into this repo.
     ignores: [
       "_site/**/*.js",
       "assets/**/*",
@@ -29,27 +32,7 @@ module.exports = [
       "js/lib/touchpoints.js",
     ],
     ...eslintConfigs.recommended,
-  },
-  {
-    // Ignore the locally built site with minified JS.
-    ignores: [
-      "_site/**/*.js",
-      "assets/**/*",
-      "sass/**/*",
-      "ga4-data/**/*",
-      "js/lib/touchpoints.js",
-    ],
     ...reactRecommended,
-  },
-  {
-    // Ignore the locally built site with minified JS.
-    ignores: [
-      "_site/**/*.js",
-      "assets/**/*",
-      "sass/**/*",
-      "ga4-data/**/*",
-      "js/lib/touchpoints.js",
-    ],
     ...eslintPluginPrettierRecommended,
   },
 ];

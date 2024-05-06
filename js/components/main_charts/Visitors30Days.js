@@ -5,6 +5,14 @@ import d3 from "d3";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 import formatters from "../../lib/chart_helpers/formatters";
 
+/**
+ * Retrieves the device report from the passed data URL and creates a
+ * visualization for the count of users visiting sites for the current agency.
+ *
+ * @param {String} dataHrefBase the URL of the base location of the data to be
+ * downloaded including the agency path. In production this is proxied and
+ * redirected to the S3 bucket URL.
+ */
 function Visitors30Days({ dataHrefBase }) {
   // This was using devices 30 days and setting this value as a side effect of
   // creating the devices chart.  users.json is 90 days, so just stick with

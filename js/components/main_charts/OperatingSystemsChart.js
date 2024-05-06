@@ -5,6 +5,15 @@ import d3 from "d3";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 import nestCharts from "../../lib/chart_helpers/nest_charts";
 
+/**
+ * Retrieves the operating systems report from the passed data URL and creates a
+ * visualization for the breakdown of operating systems of users visiting sites
+ * for the current agency.
+ *
+ * @param {String} dataHrefBase the URL of the base location of the data to be
+ * downloaded including the agency path. In production this is proxied and
+ * redirected to the S3 bucket URL.
+ */
 function OperatingSystemsChart({ dataHrefBase }) {
   const osDataURL = `${dataHrefBase}/os.json`;
   const windowsDataURL = `${dataHrefBase}/windows.json`;

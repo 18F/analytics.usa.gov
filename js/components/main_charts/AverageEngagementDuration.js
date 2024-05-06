@@ -5,6 +5,16 @@ import d3 from "d3";
 import renderBlock from "../../lib/chart_helpers/renderblock";
 import formatters from "../../lib/chart_helpers/formatters";
 
+/**
+ * Retrieves the engagement duration report from the passed data URL and creates
+ * a visualization for the average engagement duration of users for the
+ * current agency. The average duration is calculated by taking the total user
+ * engagement duration and dividing by the number of visits.
+ *
+ * @param {String} dataHrefBase the URL of the base location of the data to be
+ * downloaded including the agency path. In production this is proxied and
+ * redirected to the S3 bucket URL.
+ */
 function AverageEngagementDuration({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/engagement-duration-30-days.json`;
   const ref = useRef(null);

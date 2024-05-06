@@ -4,6 +4,15 @@ import d3 from "d3";
 
 import renderBlock from "../../lib/chart_helpers/renderblock";
 
+/**
+ * Retrieves the browser report from the passed data URL and creates a
+ * visualization for the breakdown of browsers of users visiting sites for the
+ * current agency.
+ *
+ * @param {String} dataHrefBase the URL of the base location of the data to be
+ * downloaded including the agency path. In production this is proxied and
+ * redirected to the S3 bucket URL.
+ */
 function BrowsersChart({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/browsers.json`;
   const ref = useRef(null);
