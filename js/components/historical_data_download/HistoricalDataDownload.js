@@ -157,13 +157,13 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
    */
   return (
     <>
-      <section class="historical-analytics-data">
-        <div class="historical-analytics-data__header grid-row">
-          <div class="desktop:grid-col-8">
+      <section className="historical-analytics-data">
+        <div className="historical-analytics-data__header grid-row">
+          <div className="desktop:grid-col-8">
             <h2>Download DAP Universal Analytics historical data</h2>
             <h4>
               <svg
-                class="usa-icon"
+                className="usa-icon"
                 aria-hidden="false"
                 focusable="false"
                 role="img"
@@ -188,7 +188,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
             </p>
             <h4>
               <svg
-                class="usa-icon"
+                className="usa-icon"
                 aria-hidden="false"
                 focusable="false"
                 role="img"
@@ -206,21 +206,21 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
           </div>
         </div>
 
-        <div class="historical-analytics-data__form grid-row">
-          <div class="grid-col-12">
+        <div className="historical-analytics-data__form grid-row">
+          <div className="grid-col-12">
             <form onSubmit={(e) => handleSubmit(e)}>
-              <legend class="form-control usa-legend usa-legend--large">
+              <legend className="form-control usa-legend usa-legend--large">
                 Download data by month
               </legend>
               {error && (
-                <div class="grid-row">
-                  <div class="grid-col-12">
-                    <div class="usa-alert usa-alert--error" role="alert">
-                      <div class="usa-alert__body">
-                        <h4 class="usa-alert__heading">
+                <div className="grid-row">
+                  <div className="grid-col-12">
+                    <div className="usa-alert usa-alert--error" role="alert">
+                      <div className="usa-alert__body">
+                        <h4 className="usa-alert__heading">
                           Error retrieving data
                         </h4>
-                        <p class="usa-alert__text">
+                        <p className="usa-alert__text">
                           Could not retrieve the requested data. DAP APIs are
                           subject to rate limiting. Please try again later.
                         </p>
@@ -230,25 +230,25 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                 </div>
               )}
               {invalid && (
-                <div class="grid-row">
-                  <div class="grid-col-12">
-                    <div class="usa-alert usa-alert--error" role="alert">
-                      <div class="usa-alert__body">
-                        <h4 class="usa-alert__heading">Input error</h4>
-                        <p class="usa-alert__text">{validationMessage}</p>
+                <div className="grid-row">
+                  <div className="grid-col-12">
+                    <div className="usa-alert usa-alert--error" role="alert">
+                      <div className="usa-alert__body">
+                        <h4 className="usa-alert__heading">Input error</h4>
+                        <p className="usa-alert__text">{validationMessage}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               )}
-              <fieldset class="usa-fieldset">
-                <div class="grid-row">
-                  <div class="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
-                    <label class="usa-label" for="report">
+              <fieldset className="usa-fieldset">
+                <div className="grid-row">
+                  <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
+                    <label className="usa-label" htmlFor="report">
                       Report
                       <abbr
                         title="required"
-                        class="form-control usa-hint usa-hint--required"
+                        className="form-control usa-hint usa-hint--required"
                       >
                         *
                       </abbr>
@@ -256,7 +256,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                     <select
                       id="report"
                       name="report"
-                      class="usa-select"
+                      className="usa-select"
                       value={report}
                       onChange={(e) => setReport(e.target.value)}
                       required
@@ -285,14 +285,14 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                       </option>
                     </select>
                   </div>
-                  <div class="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
-                    <label class="usa-label" for="agency">
+                  <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
+                    <label className="usa-label" htmlFor="agency">
                       Agency
                     </label>
                     <select
                       id="agency"
                       name="agency"
-                      class="usa-select"
+                      className="usa-select"
                       value={agency}
                       onChange={(e) => setAgency(e.target.value)}
                     >
@@ -300,16 +300,18 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                         { slug: "", name: mainAgencyName },
                         ...parsedAgencies,
                       ].map((agency) => (
-                        <option value={agency.slug}>{agency.name}</option>
+                        <option key={agency.slug} value={agency.slug}>
+                          {agency.name}
+                        </option>
                       ))}
                     </select>
                   </div>
-                  <div class="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
-                    <label class="usa-label" for="month">
+                  <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
+                    <label className="usa-label" htmlFor="month">
                       Month
                       <abbr
                         title="required"
-                        class="form-control usa-hint usa-hint--required"
+                        className="form-control usa-hint usa-hint--required"
                       >
                         *
                       </abbr>
@@ -317,7 +319,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                     <select
                       id="month"
                       name="month"
-                      class="usa-select"
+                      className="usa-select"
                       value={month}
                       onChange={(e) => setMonth(e.target.value)}
                       required
@@ -337,12 +339,12 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                       <option value="12">December</option>
                     </select>
                   </div>
-                  <div class="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
-                    <label class="usa-label" for="year">
+                  <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
+                    <label className="usa-label" htmlFor="year">
                       Year
                       <abbr
                         title="required"
-                        class="form-control usa-hint usa-hint--required"
+                        className="form-control usa-hint usa-hint--required"
                       >
                         *
                       </abbr>
@@ -350,7 +352,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                     <select
                       id="year"
                       name="year"
-                      class="usa-select"
+                      className="usa-select"
                       value={year}
                       onChange={(e) => setYear(e.target.value)}
                       required
@@ -365,18 +367,22 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                       <option value="2024">2024</option>
                     </select>
                   </div>
-                  <div class="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-3">
-                    <label class="usa-label">Download</label>
-                    <div class="submit-buttons">
-                      <input class="usa-button" type="submit" value="CSV" />
-                      <input class="usa-button" type="submit" value="JSON" />
+                  <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-3">
+                    <label className="usa-label">Download</label>
+                    <div className="submit-buttons">
+                      <input className="usa-button" type="submit" value="CSV" />
+                      <input
+                        className="usa-button"
+                        type="submit"
+                        value="JSON"
+                      />
                     </div>
                   </div>
                   {loading && (
-                    <div class="grid-col-12 tablet:grid-col-8 desktop:grid-col-1">
-                      <div class="loading-spinner-container">
+                    <div className="grid-col-12 tablet:grid-col-8 desktop:grid-col-1">
+                      <div className="loading-spinner-container">
                         <div
-                          class="loading-spinner"
+                          className="loading-spinner"
                           role="alert"
                           aria-live="assertive"
                         ></div>
