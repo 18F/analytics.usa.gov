@@ -4,7 +4,7 @@ import AgencySelect from "./AgencySelect";
 
 /**
  * Renders an AnalyticsSelect React component, when there is an element on the
- * current page with id '#analytics-agency-select-root'.
+ * current page with id 'analytics-agency-select-root'.
  *
  * The AgencySelect component will be rendered as a child to the matching
  * element.

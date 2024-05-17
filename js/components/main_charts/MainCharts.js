@@ -11,7 +11,27 @@ import DeviceDemographics from "./DeviceDemographics";
 import TopPages from "./TopPages";
 import TopDownloads from "./TopDownloads";
 
-function MainCharts({ dataURL, dataPrefix, agency }) {
+/**
+ * Contains charts and other data visualizations for the main page of the site.
+ * This component is mainly laying out the structure for the page and passes
+ * props necessary for getting data and displaying visualizations to child
+ * components.
+ *
+ * This component is using USWDS grid classes and expects it's parent element to
+ * have class 'grid-row'
+ *
+ * @param {String} dataURL the URL of the base location of the data to be
+ * displayed In production this is proxied and redirected to the S3 bucket URL
+ * by NGINX.
+ * @param {String} dataPrefix the path to add to the base URL to find data for
+ * the current agency.
+ * @param {String} agency the display name for the current agency.
+ */
+function MainCharts({
+  dataURL,
+  dataPrefix,
+  agency = "U.S. Federal Government",
+}) {
   const dataHrefBase = `${dataURL}/${dataPrefix}`;
 
   return (

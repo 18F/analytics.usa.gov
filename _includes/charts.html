@@ -3,21 +3,9 @@
 = "agency" %} {% endif %}
 
 <!--
-      JavaScript block hooks look for any element with both data-block and
-      data-source attributes:
-      <section data-block="users" data-source="path/to/data.json">
-        The "loading", "loaded", and "error" classes are set on this element
-        the data-source URL is loaded. Then the renderer is called on the first
-        child of the block with the "data" class:
-        <div class="data">
-        </div>
-        Some renderers expect to be called on HTML tables, in which
-        case you would use:
-        <table class="data">
-        </table>
-      </section>
-      -->
-
+  The contents of this page are populated by react components. See
+  ./js/components/main_charts for the rendering logic.
+-->
 <main
   id="main-charts-root"
   class="grid-row"

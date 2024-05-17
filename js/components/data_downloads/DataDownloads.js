@@ -1,6 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Creates tables with download links for many of the reports that are available
+ * in the analytics.usa.gov project's S3 bucket. Downloads are labelled by human
+ * readable description and by how often the report is updated. Downloads are
+ * available in JSON and CSV format.
+ *
+ * This component is using USWDS grid classes and expects it's parent element to
+ * have class 'grid-row'
+ *
+ * @param {String} dataURL the URL of the base location of the data to be
+ * downloaded. In production this is proxied and redirected to the S3 bucket URL
+ * by NGINX.
+ * @param {String} dataPrefix the path to add to the base URL to find data for
+ * the current agency.
+ */
 function DataDownloads({ dataURL, dataPrefix }) {
   const hrefBase = `${dataURL}/${dataPrefix}`;
   return (

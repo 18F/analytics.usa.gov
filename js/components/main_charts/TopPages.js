@@ -5,6 +5,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TopPagesRealtime from "./TopPagesRealtime";
 import TopPagesHistorical from "./TopPagesHistorical";
 
+/**
+ * Contains charts and other data visualizations for the top pages section of
+ * the site. This component is mainly laying out the structure for the section,
+ * including tabs/panels, and passes props necessary for getting data and
+ * displaying visualizations to child components.
+ *
+ * @param {String} dataHrefBase the URL of the base location of the data to be
+ * downloaded including the agency path. In production this is proxied and
+ * redirected to the S3 bucket URL.
+ */
 function TopPages({ dataHrefBase }) {
   return (
     <section className="top-pages">

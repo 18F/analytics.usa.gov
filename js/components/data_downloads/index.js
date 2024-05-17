@@ -4,7 +4,7 @@ import DataDownloads from "./DataDownloads";
 
 /**
  * Renders an DataDownloads React component, when there is an element on the
- * current page with id '#data-downloads-root'.
+ * current page with id 'data-downloads-root'.
  *
  * The DataDownloads component will be rendered as a child to the matching
  * element.
