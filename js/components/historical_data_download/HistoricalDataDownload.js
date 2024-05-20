@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { isFuture, parse } from "date-fns";
 import { mkConfig, generateCsv } from "export-to-csv";
 import DapApiService from "../../lib/dap_api_service";
+import DapApiDataFormatter from "../../lib/dap_api_data_formatter";
 
 /**
  * Adds a form for downloading a month of historical data from the DAP API
@@ -22,8 +23,56 @@ import DapApiService from "../../lib/dap_api_service";
  * display name for the option.
  */
 function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
+  const parsedAgencies = JSON.parse(agencies).map(({ name, slug }) => {
+    return { name, value: slug };
+  });
+  const apiReports = [
+    {
+      value: "domain",
+      name: "Visits to participating hostnames",
+    },
+    {
+      value: "download",
+      name: "Top downloads",
+    },
+    {
+      value: "traffic-source",
+      name: "Top traffic sources",
+    },
+    {
+      value: "language",
+      name: "Browser language",
+    },
+    {
+      value: "device",
+      name: "Device type (Desktop/Mobile/Tablet)",
+    },
+    {
+      value: "device-model",
+      name: "Device model",
+    },
+    {
+      value: "os",
+      name: "Operating system",
+    },
+    {
+      value: "os-browser",
+      name: "Operating system and browser",
+    },
+    {
+      value: "windows",
+      name: "Windows version",
+    },
+    {
+      value: "windows-browser",
+      name: "Windows version and browser",
+    },
+  ];
   const dapApiService = new DapApiService(apiURL);
-  const parsedAgencies = JSON.parse(agencies);
+  const dapApiDataFormatter = new DapApiDataFormatter(
+    apiReports,
+    parsedAgencies,
+  );
 
   const [report, setReport] = useState("");
   const [agency, setAgency] = useState("");
@@ -75,7 +124,8 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
 
         triggerBrowserDownload(data, contentHeader, fileName);
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log(e);
         setError(true);
       })
       .finally(() => {
@@ -116,10 +166,12 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
    * @returns {String} the data in stringified JSON or CSV format
    */
   function formatResponseData(data, format) {
+    const mappedData = dapApiDataFormatter.mapForDisplay(data);
+
     if (format === "json") {
-      return JSON.stringify(data);
+      return JSON.stringify(mappedData);
     } else {
-      return generateCsv(mkConfig({ useKeysAsHeaders: true }))(data);
+      return generateCsv(mkConfig({ useKeysAsHeaders: true }))(mappedData);
     }
   }
 
@@ -160,8 +212,8 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
       <section className="historical-analytics-data">
         <div className="historical-analytics-data__header grid-row">
           <div className="desktop:grid-col-8">
-            <h2>Download DAP Universal Analytics historical data</h2>
-            <h4>
+            <h1>Download Universal Analytics historical data</h1>
+            <h2>
               <svg
                 className="usa-icon"
                 aria-hidden="false"
@@ -171,11 +223,11 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                 <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
               </svg>
               <span>About the data</span>
-            </h4>
+            </h2>
             <p>
               These Universal Analytics historical reports represent only
               summary-level web traffic and user demographic data aggregated by
-              month and calendar year between January 1, 2018 and July 31, 2024.
+              month and calendar year between January 1, 2018 and June 30, 2024.
               The data is limited to DAP-participating, public-facing federal
               government websites at the time of the original data collection.
               The number of websites participating in DAP was increasing during
@@ -186,7 +238,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
               This directional information should only be used for general
               insights into online visitor behavior trends.
             </p>
-            <h4>
+            <h2>
               <svg
                 className="usa-icon"
                 aria-hidden="false"
@@ -196,12 +248,12 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                 <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
               </svg>
               <span>A note on sampling</span>
-            </h4>
+            </h2>
             <p>
               Due to varying Google Analytics API sampling thresholds, and the
               sheer volume of data in the Digital Analytics Program Universal
-              Analytics property, reports may be subject to sampling. The data
-              are intended to represent trends and numbers may not be precise.
+              Analytics property, reports are subject to sampling. The data are
+              intended to represent trends and numbers may not be precise.
             </p>
           </div>
         </div>
@@ -209,7 +261,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
         <div className="historical-analytics-data__form grid-row">
           <div className="grid-col-12">
             <form onSubmit={(e) => handleSubmit(e)}>
-              <legend className="form-control usa-legend usa-legend--large">
+              <legend className="form-control usa-legend">
                 Download data by month
               </legend>
               {error && (
@@ -262,27 +314,11 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                       required
                     >
                       <option value>- Select a report -</option>
-                      <option value="domain">Visits to all domains</option>
-                      <option value="second-level-domain">
-                        Visits to second-level domains
-                      </option>
-                      <option value="download">Top downloads</option>
-                      <option value="traffic-source">
-                        Top traffic sources
-                      </option>
-                      <option value="language">Browser language</option>
-                      <option value="device">
-                        Device type (Desktop/Mobile/Tablet)
-                      </option>
-                      <option value="device-model">Device model</option>
-                      <option value="os">Operating system</option>
-                      <option value="os-browser">
-                        Operating system and browser
-                      </option>
-                      <option value="windows">Windows version</option>
-                      <option value="windows-browser">
-                        Windows version and browser
-                      </option>
+                      {apiReports.map((report) => (
+                        <option key={report.value} value={report.value}>
+                          {report.name}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
@@ -297,10 +333,10 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                       onChange={(e) => setAgency(e.target.value)}
                     >
                       {[
-                        { slug: "", name: mainAgencyName },
+                        { value: "", name: mainAgencyName },
                         ...parsedAgencies,
                       ].map((agency) => (
-                        <option key={agency.slug} value={agency.slug}>
+                        <option key={agency.value} value={agency.value}>
                           {agency.name}
                         </option>
                       ))}

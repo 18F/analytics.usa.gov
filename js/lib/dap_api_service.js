@@ -14,7 +14,7 @@ class DapApiService {
   #apiURL;
 
   /**
-   * @param {String} apiURL the base route for the API
+   * @param {String} apiURL the base route for the API.
    */
   constructor(apiURL) {
     this.#apiURL = apiURL;
@@ -105,10 +105,7 @@ class DapApiService {
     });
     const json = await response.json();
 
-    // Remove the API deprecation notice from each object in the array.
-    return json.map(
-      ({ notice, ...remainingAttributes }) => remainingAttributes,
-    );
+    return json;
   }
 }
 
