@@ -12,12 +12,22 @@ import {
 class DapApiService {
   static #API_PAGE_LIMIT = 10000;
   #apiURL;
+  #reports;
+  #agencies;
 
   /**
-   * @param {String} apiURL the base route for the API
+   * @param {String} apiURL the base route for the API.
+   * @param {Object[]} reports the report descriptions and API names for use in
+   * mapping the API response report column. Expects name and value keys where
+   * name is the display name, and value is the API value for the report.
+   * @param {Object[]} reports the agency descriptions and API names for use in
+   * mapping the API response agency column. Expects name and value keys where
+   * name is the display name, and value is the API value for the agency.
    */
-  constructor(apiURL) {
+  constructor(apiURL, reports = [{}], agencies = [{}]) {
     this.#apiURL = apiURL;
+    this.#reports = reports;
+    this.#agencies = agencies;
   }
 
   /**
@@ -105,9 +115,36 @@ class DapApiService {
     });
     const json = await response.json();
 
-    // Remove the API deprecation notice from each object in the array.
-    return json.map(
-      ({ notice, ...remainingAttributes }) => remainingAttributes,
+    return this.#mapData(json);
+  }
+
+  /**
+   * Removes notice and id keys.  Maps report and agency keys to the display
+   * names provided in the constructor.
+   *
+   * @param {Object[]} jsonArray
+   * @returns {Object[]} JSON array with unneeded keys removed and report/agency
+   * values mapped.
+   */
+  #mapData(jsonArray) {
+    if (jsonArray.length == 0) {
+      return jsonArray;
+    }
+
+    const reportName = this.#reports.find((report) => {
+      return report.value == jsonArray[0].report;
+    });
+    const agencyName = this.#agencies.find((agency) => {
+      return agency.value == jsonArray[0].agency;
+    });
+    return jsonArray.map(
+      ({ notice, id, report, agency, ...remainingAttributes }) => {
+        return {
+          report: reportName ? reportName : report,
+          agency: agencyName ? agencyName : agency,
+          ...remainingAttributes,
+        };
+      },
     );
   }
 }

@@ -10,10 +10,10 @@ exports[`HistoricalDataDownload renders 1`] = `
     <div
       className="desktop:grid-col-8"
     >
+      <h1>
+        Download Universal Analytics historical data
+      </h1>
       <h2>
-        Download DAP Universal Analytics historical data
-      </h2>
-      <h4>
         <svg
           aria-hidden="false"
           className="usa-icon"
@@ -27,14 +27,14 @@ exports[`HistoricalDataDownload renders 1`] = `
         <span>
           About the data
         </span>
-      </h4>
+      </h2>
       <p>
-        These Universal Analytics historical reports represent only summary-level web traffic and user demographic data aggregated by month and calendar year between January 1, 2018 and July 31, 2024. The data is limited to DAP-participating, public-facing federal government websites at the time of the original data collection. The number of websites participating in DAP was increasing during those years, so the yearly analysis represents a different sample size of participating websites.
+        These Universal Analytics historical reports represent only summary-level web traffic and user demographic data aggregated by month and calendar year between January 1, 2018 and June 30, 2024. The data is limited to DAP-participating, public-facing federal government websites at the time of the original data collection. The number of websites participating in DAP was increasing during those years, so the yearly analysis represents a different sample size of participating websites.
       </p>
       <p>
         This directional information should only be used for general insights into online visitor behavior trends.
       </p>
-      <h4>
+      <h2>
         <svg
           aria-hidden="false"
           className="usa-icon"
@@ -48,9 +48,9 @@ exports[`HistoricalDataDownload renders 1`] = `
         <span>
           A note on sampling
         </span>
-      </h4>
+      </h2>
       <p>
-        Due to varying Google Analytics API sampling thresholds, and the sheer volume of data in the Digital Analytics Program Universal Analytics property, reports may be subject to sampling. The data are intended to represent trends and numbers may not be precise.
+        Due to varying Google Analytics API sampling thresholds, and the sheer volume of data in the Digital Analytics Program Universal Analytics property, reports are subject to sampling. The data are intended to represent trends and numbers may not be precise.
       </p>
     </div>
   </div>
@@ -64,7 +64,7 @@ exports[`HistoricalDataDownload renders 1`] = `
         onSubmit={[Function]}
       >
         <legend
-          className="form-control usa-legend usa-legend--large"
+          className="form-control usa-legend"
         >
           Download data by month
         </legend>
@@ -105,7 +105,7 @@ exports[`HistoricalDataDownload renders 1`] = `
                 <option
                   value="domain"
                 >
-                  Visits to all domains
+                  Visits to participating hostnames
                 </option>
                 <option
                   value="second-level-domain"

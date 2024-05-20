@@ -9,6 +9,15 @@
     padding: units(2);
   }
 
+  h1 {
+    font-size: units(5);
+    padding: units(2) units(2) units(2) units(2);
+
+    @include at-media("tablet") {
+      padding: units(2) 0 units(2) 0;
+    }
+  }
+
   &__header {
     padding: units(2);
 
@@ -16,7 +25,7 @@
       padding: 0;
     }
 
-    h4 {
+    h2 {
       svg {
         font-size: units(3);
         margin-right: units(1);
@@ -30,8 +39,8 @@
     }
 
     p {
-      font-size: units(2);
-      font-weight: font-weight(300);
+      font-size: 1.3em;
+      font-weight: font-weight(100);
     }
   }
 
@@ -41,9 +50,14 @@
       padding-right: units(1);
     }
 
+    .usa-legend {
+      font-size: units(4);
+      font-weight: font-weight(800);
+    }
+
     .usa-label {
       font-size: units(3);
-      font-weight: (800);
+      font-weight: (700);
       text-align: center;
 
       abbr {
@@ -111,14 +125,6 @@
           will-change: transform;
         }
       }
-    }
-  }
-
-  h2 {
-    padding: units(2) units(2) units(2) units(2);
-
-    @include at-media("tablet") {
-      padding: units(2) 0 units(2) 0;
     }
   }
 
