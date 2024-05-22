@@ -13,7 +13,7 @@ import PropTypes from "prop-types";
  * @param {String} pathSuffix a URL path to append to the end of the
  * agency slug.
  */
-function AgencySelect({ mainAgencyName, agencies, pathSuffix }) {
+function AgencySelect({ mainAgencyName, agencies, pathSuffix = "" }) {
   function onChange(event) {
     window.location.assign(
       new URL(window.location.origin + event.target.selectedOptions[0].value),
