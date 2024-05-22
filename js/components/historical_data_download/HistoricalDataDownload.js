@@ -235,25 +235,14 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
               size of participating websites.
             </p>
             <p>
-              This directional information should only be used for general
-              insights into online visitor behavior trends.
-            </p>
-            <h2>
-              <svg
-                className="usa-icon"
-                aria-hidden="false"
-                focusable="false"
-                role="img"
-              >
-                <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
-              </svg>
-              <span>A note on sampling</span>
-            </h2>
-            <p>
               Due to varying Google Analytics API sampling thresholds, and the
               sheer volume of data in the Digital Analytics Program Universal
               Analytics property, reports are subject to sampling. The data are
               intended to represent trends and numbers may not be precise.
+            </p>
+            <p>
+              This directional information should only be used for general
+              insights into online visitor behavior trends.
             </p>
           </div>
         </div>

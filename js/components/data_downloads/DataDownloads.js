@@ -24,10 +24,11 @@ function DataDownloads({ dataURL, dataPrefix }) {
         <table className="usa-table usa-table--borderless desktop:grid-col-8">
           <caption>
             <h2>User traffic reports</h2>
+            <a href="/definitions">See data fields and metrics descriptions</a>
           </caption>
           <thead>
             <tr>
-              <th scope="col">Description</th>
+              <th scope="col">Report</th>
               <th scope="col">Time Range</th>
               <th scope="col">Download</th>
               <th scope="col">Update Frequency</th>
@@ -129,7 +130,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
           </caption>
           <thead>
             <tr>
-              <th scope="col">Description</th>
+              <th scope="col">Report</th>
               <th scope="col">Time Range</th>
               <th scope="col">Download</th>
               <th scope="col">Update Frequency</th>
