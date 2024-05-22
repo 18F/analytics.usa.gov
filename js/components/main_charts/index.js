@@ -18,6 +18,10 @@ if (domNode) {
   const dataPrefix = domNode.attributes.getNamedItem("dataprefix")?.value;
   const agency = domNode.attributes.getNamedItem("agency")?.value;
   root.render(
-    <MainCharts dataURL={dataURL} dataPrefix={dataPrefix} agency={agency} />,
+    <MainCharts
+      dataURL={dataURL}
+      dataPrefix={dataPrefix}
+      agency={agency ? agency : "U.S. Federal Government"}
+    />,
   );
 }

@@ -1,13 +1,7 @@
 import { act } from "react";
 
-// This package causes syntax problems with jest for some reason. Mock it out as
-// a workaround
-jest.mock("export-to-csv", () => {
-  return {};
-});
-
-describe("HistoricalDataDownload root", () => {
-  const apiURL = "http://www.example.com";
+describe("AgencySelect root", () => {
+  const pathSuffix = "/data";
   const mainAgencyName = "live";
   const agencies = '[{"slug": "interior", "name": "Department of Interior"}]';
   let container;
@@ -20,11 +14,11 @@ describe("HistoricalDataDownload root", () => {
     document.body.removeChild(container);
   });
 
-  describe("when an element with id: historical-data-download-root is present", () => {
+  describe("when an element with id: analytics-agency-select-root is present", () => {
     beforeEach(() => {
       container = document.createElement("div");
-      container.id = "historical-data-download-root";
-      container.setAttribute("apiurl", apiURL);
+      container.id = "analytics-agency-select-root";
+      container.setAttribute("pathsuffix", pathSuffix);
       container.setAttribute("mainagencyname", mainAgencyName);
       container.setAttribute("agencies", agencies);
       document.body.appendChild(container);
@@ -33,17 +27,15 @@ describe("HistoricalDataDownload root", () => {
 
     it("should render", () => {
       // Check that the top level element of the component exists
-      expect(
-        document.getElementsByClassName("historical-analytics-data").length,
-      ).toBe(1);
+      expect(document.getElementsByClassName("usa-select").length).toBe(1);
     });
   });
 
-  describe("when an element with id: historical-data-download-root is not present", () => {
+  describe("when an element with id: analytics-agency-select-root is not present", () => {
     beforeEach(() => {
       container = document.createElement("div");
       container.id = "foobar";
-      container.setAttribute("apiurl", apiURL);
+      container.setAttribute("pathsuffix", pathSuffix);
       container.setAttribute("mainagencyname", mainAgencyName);
       container.setAttribute("agencies", agencies);
       document.body.appendChild(container);
@@ -51,9 +43,7 @@ describe("HistoricalDataDownload root", () => {
     });
 
     it("should not render", () => {
-      expect(
-        document.getElementsByClassName("historical-analytics-data").length,
-      ).toBe(0);
+      expect(document.getElementsByClassName("usa-select").length).toBe(0);
     });
   });
 });

@@ -16,7 +16,6 @@ import formatters from "../../lib/chart_helpers/formatters";
  */
 function RealtimeVisitors({ dataHrefBase, agency }) {
   const reportURL = `${dataHrefBase}/realtime.json`;
-  const description = agency ? agency : "U.S. Federal Government";
   const ref = useRef(null);
 
   useEffect(() => {
@@ -51,7 +50,7 @@ function RealtimeVisitors({ dataHrefBase, agency }) {
       </div>
       <div className="grid-row">
         <div className="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2">
-          people on {description} websites and apps in the last 30 minutes
+          people on {agency} websites and apps in the last 30 minutes
         </div>
       </div>
     </section>
@@ -60,7 +59,7 @@ function RealtimeVisitors({ dataHrefBase, agency }) {
 
 RealtimeVisitors.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
-  agency: PropTypes.string,
+  agency: PropTypes.string.isRequired,
 };
 
 export default RealtimeVisitors;

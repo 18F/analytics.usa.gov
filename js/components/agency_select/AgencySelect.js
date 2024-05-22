@@ -55,7 +55,6 @@ function AgencySelect({ mainAgencyName, agencies, pathSuffix }) {
   );
 }
 
-AgencySelect.defaultProps = { agencies: "[]", pathSuffix: "" };
 AgencySelect.propTypes = {
   mainAgencyName: PropTypes.string.isRequired,
   agencies: PropTypes.string,

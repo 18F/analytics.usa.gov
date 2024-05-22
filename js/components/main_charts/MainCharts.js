@@ -27,11 +27,7 @@ import TopDownloads from "./TopDownloads";
  * the current agency.
  * @param {String} agency the display name for the current agency.
  */
-function MainCharts({
-  dataURL,
-  dataPrefix,
-  agency = "U.S. Federal Government",
-}) {
+function MainCharts({ dataURL, dataPrefix, agency }) {
   const dataHrefBase = `${dataURL}/${dataPrefix}`;
 
   return (
