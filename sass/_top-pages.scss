@@ -3,31 +3,41 @@
 .top-pages {
   min-height: units("tablet-lg");
 
-  figure[role="tabpanel"] {
-    &[aria-hidden="true"] {
-      display: none;
-    }
-  }
-}
+  // overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
+  .usa-button-group--segmented {
+    width: 100%;
 
-// overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
-.usa-button-group--segmented {
-  width: 100%;
+    // make the buttons parent stretch to fill the parent container
+    .usa-button-group__item {
+      flex-grow: 1;
+      width: 33.3333%;
 
-  // make the buttons parent stretch to fill the parent container
-  .usa-button-group__item {
-    flex-grow: 1;
-    width: 33.3333%;
+      &[aria-selected="false"] {
+        button {
+          background-color: transparent;
+          box-shadow: inset 0 0 0 2px #005ea2;
+          color: #005ea2;
+        }
+      }
 
-    // make each button full width
-    .usa-button {
-      width: 100%;
-    }
+      &:focus {
+        outline: none;
+      }
 
-    // targets the last <button> in the group
-    &:last-child > .usa-button {
-      margin-left: -2px;
-      width: 100%;
+      // make each button full width
+      .usa-button {
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      // targets the last <button> in the group
+      &:last-child > .usa-button {
+        margin-left: -2px;
+        width: 100%;
+      }
     }
   }
 }

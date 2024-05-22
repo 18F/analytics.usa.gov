@@ -35,9 +35,39 @@ http {
     listen 8080;
     server_name localhost;
 
+    # Proxy requests to the DAP API and use an API key which is provided upon
+    # server deployment.
+    location ~* ^/api/(.*) {
+      set $path                  '$1';
+      set $querystring           '$is_args$args';
+      gunzip                     on;
+      # When the domain resolves to an IPv6 address, NGINX has an internal error
+      # and returns a 500 response. Disable IPv6, TODO: determine the cause.
+      resolver                   8.8.8.8 ipv6=off valid=300s;
+      proxy_http_version         1.1;
+      proxy_buffering            on;
+      proxy_intercept_errors     off;
+
+      # Set headers on the proxied request to the API
+      proxy_set_header           Authorization '';
+      proxy_set_header           x-api-key '${API_KEY}';
+      proxy_hide_header          Access-Control-Allow-Origin;
+
+      # Set headers on the response returned to the API client
+      add_header                 Access-Control-Allow-Origin $allow_origin;
+      add_header                 Access-Control-Allow-Methods $allow_methods;
+      add_header                 Cache-Control no-store;
+      add_header                 Pragma "no-cache";
+
+      # Hard code API version 1.1 because that's the only version which is
+      # currently needed.
+      proxy_pass                 https://${API_DOMAIN}${API_PATH}/v1.1/$path$querystring;
+    }
+
+    # Proxy requests for the data route to the application's S3 bucket which
+    # contains reports populated by analytics-reporter.
     # Note: .+ instead of .*
     # this is to allow /data/ to pass through untouched
-
     location ~* ^/data/(.+) {
       set $url_full         '$1';
       gunzip on;
@@ -53,7 +83,7 @@ http {
       resolver               8.8.8.8 valid=300s;
 
       add_header             Cache-Control "no-cache";
-      add_header             Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
+      add_header             Content-Security-Policy "default-src 'self'; script-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov; connect-src 'self' https://www.google-analytics.com https://touchpoints.app.cloud.gov; img-src 'self' https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header             Permissions-Policy "autoplay=(), encrypted-media=(), fullscreen=(), geolocation=(), microphone=(), midi=(), payment=()" always;
       add_header             Pragma "no-cache";
       add_header             Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
@@ -71,7 +101,7 @@ http {
 
       autoindex on;
 
-      #auth_basic "Restricted";                                #For Basic Auth
+      #auth_basic "Restricted";                        #For Basic Auth
       #auth_basic_user_file /home/vcap/app/.htpasswd;  #For Basic Auth
 
       if ($http_x_forwarded_proto != "https") {
@@ -82,7 +112,7 @@ http {
       # Touchpoints and S3 domains are added to the CSP support touchpoints JS
       # code which dynamically adds HTML with images and references JS on the
       # touchpoints server.
-      add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
+      add_header Content-Security-Policy "default-src 'self'; script-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov; connect-src 'self' https://www.google-analytics.com https://touchpoints.app.cloud.gov; img-src 'self' https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header Permissions-Policy "autoplay=(), encrypted-media=(), fullscreen=(), geolocation=(), microphone=(), midi=(), payment=()" always;
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
       add_header X-Content-Type-Options "nosniff" always;
@@ -90,7 +120,7 @@ http {
     }
 
     location =/developers {
-      add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
+      add_header Content-Security-Policy "default-src 'self'; script-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov; connect-src 'self' https://www.google-analytics.com https://touchpoints.app.cloud.gov; img-src 'self' https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header Permissions-Policy "autoplay=(), encrypted-media=(), fullscreen=(), geolocation=(), microphone=(), midi=(), payment=()" always;
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
       add_header X-Content-Type-Options "nosniff" always;
@@ -98,7 +128,7 @@ http {
     }
 
     location =/developer {
-      add_header Content-Security-Policy "default-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
+      add_header Content-Security-Policy "default-src 'self'; script-src 'self' https://dap.digitalgov.gov https://www.google-analytics.com https://www.googletagmanager.com https://touchpoints.app.cloud.gov; connect-src 'self' https://www.google-analytics.com https://touchpoints.app.cloud.gov; img-src 'self' https://touchpoints.app.cloud.gov https://cg-1b082c1b-3db7-477f-9ca5-bd51a786b41e.s3-us-gov-west-1.amazonaws.com; form-action 'none'; frame-ancestors 'none';" always;
       add_header Permissions-Policy "autoplay=(), encrypted-media=(), fullscreen=(), geolocation=(), microphone=(), midi=(), payment=()" always;
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
       add_header X-Content-Type-Options "nosniff" always;

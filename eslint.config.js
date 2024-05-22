@@ -1,6 +1,7 @@
 const { configs: eslintConfigs } = require("@eslint/js");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 const globals = require("globals");
+const reactRecommended = require("eslint-plugin-react/configs/recommended");
 
 module.exports = [
   {
@@ -11,10 +12,18 @@ module.exports = [
         ...globals.node,
         ...globals.mocha,
       },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
   },
   {
-    // Ignore the locally built site with minified JS.
+    // Include recommended linting rules from eslint, react, and prettier
+    //
+    // When linting ignore the locally compiled minified JS, other assets, and
+    // touchpoints JS which is third party code copied into this repo.
     ignores: [
       "_site/**/*.js",
       "assets/**/*",
@@ -23,15 +32,7 @@ module.exports = [
       "js/lib/touchpoints.js",
     ],
     ...eslintConfigs.recommended,
-  },
-  {
-    ignores: [
-      "_site/**/*.js",
-      "assets/**/*",
-      "sass/**/*",
-      "ga4-data/**/*",
-      "js/lib/touchpoints.js",
-    ],
+    ...reactRecommended,
     ...eslintPluginPrettierRecommended,
   },
 ];

@@ -1,6 +1,12 @@
 on:
   workflow_call:
     inputs:
+      API_DOMAIN:
+        required: true
+        type: string
+      API_PATH:
+        required: true
+        type: string
       APP_NAME:
         required: true
         type: string
@@ -22,6 +28,8 @@ on:
         required: true
         type: string
     secrets:
+      API_KEY:
+        required: true
       CF_USERNAME:
         required: true
       CF_PASSWORD:
@@ -29,6 +37,9 @@ on:
       NEW_RELIC_LICENSE_KEY:
 
 env:
+  API_DOMAIN: ${{ inputs.API_DOMAIN }}
+  API_PATH: ${{ inputs.API_PATH }}
+  API_KEY: ${{ secrets.API_KEY }}
   APP_NAME: ${{ inputs.APP_NAME }}
   APP_URL: ${{ inputs.APP_URL }}
   CF_USERNAME: ${{ secrets.CF_USERNAME }}
@@ -76,9 +87,10 @@ jobs:
           mv manifest.yml manifest.yml.src
           envsubst < manifest.yml.src > manifest.yml
           cat manifest.yml
-      - name: Run envsubst on nginx.conf to set the S3 bucket URL for the environment
+      - name: Run envsubst on nginx.conf to set the API domain, API path, API key, and  S3 bucket URL for the environment
         run: |
-          envsubst '${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf
+          envsubst '${API_DOMAIN} ${API_PATH} ${API_KEY} ${S3_BUCKET_URL}' < nginx.conf.src > nginx.conf
+          cat nginx.conf
       - name: Login to cloud.gov and deploy
         run: |
           set -e

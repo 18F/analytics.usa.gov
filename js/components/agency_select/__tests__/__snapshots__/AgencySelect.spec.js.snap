@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgencySelect when all params are provided renders 1`] = `
+[
+  <label
+    className="usa-label"
+    htmlFor="analytics-agency-select"
+  >
+    Select an agency to display results
+  </label>,
+  <select
+    aria-label="Select an agency to display results"
+    className="usa-select"
+    defaultValue=""
+    id="analytics-agency-select"
+    name="agency-selector"
+    onChange={[Function]}
+    title="Agency Selection Dropdown"
+  >
+    <option
+      value="/data"
+    >
+      foobar
+    </option>
+    <option
+      value="/agency-international-development/data"
+    >
+      Agency for International Development
+    </option>
+  </select>,
+]
+`;
+
+exports[`AgencySelect when optional params are not provided renders 1`] = `
+[
+  <label
+    className="usa-label"
+    htmlFor="analytics-agency-select"
+  >
+    Select an agency to display results
+  </label>,
+  <select
+    aria-label="Select an agency to display results"
+    className="usa-select"
+    defaultValue=""
+    id="analytics-agency-select"
+    name="agency-selector"
+    onChange={[Function]}
+    title="Agency Selection Dropdown"
+  >
+    <option
+      value=""
+    >
+      foobar
+    </option>
+    <option
+      value="/agency-international-development"
+    >
+      Agency for International Development
+    </option>
+  </select>,
+]
+`;
