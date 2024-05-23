@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, React } from "react";
 import PropTypes from "prop-types";
 
 /**
@@ -9,6 +9,10 @@ import PropTypes from "prop-types";
  * @param {String} siteDomain the domain for the site.
  */
 function Footer({ siteDomain }) {
+  useEffect(() => {
+    require("../../lib/touchpoints");
+  });
+
   return (
     <>
       <footer>
@@ -55,8 +59,7 @@ function Footer({ siteDomain }) {
           <div class="tablet:grid-col-4 padding-2 margin-0">
             <h3>Download the data</h3>
             <p>
-              You can{" "}
-              <a href={`${siteDomain}/data"`}>download the data here.</a>{" "}
+              You can <a href={`${siteDomain}/data`}>download the data here.</a>{" "}
               Available in JSON and CSV format.
             </p>
             <p>
@@ -149,7 +152,7 @@ function Footer({ siteDomain }) {
             >
               <p class="usa-identifier__identity-domain">analytics.usa.gov</p>
               <p class="usa-identifier__identity-disclaimer">
-                Analytics.usa.gov is a product of GSA’s{" "}
+                Analytics.usa.gov is a product of GSA's{" "}
                 <a href="https://digital.gov/guides/dap/">
                   Digital Analytics Program
                 </a>
