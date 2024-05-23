@@ -55,7 +55,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
   }, []);
 
   return (
-    <>
+    <div>
       <figure id="chart_os" ref={osRef}>
         <div className="data bar-chart"></div>
       </figure>
@@ -68,7 +68,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
         <h4>Windows</h4>
         <div className="data bar-chart"></div>
       </figure>
-    </>
+    </div>
   );
 }
 

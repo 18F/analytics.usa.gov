@@ -1,4 +1,4 @@
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 import HistoricalDataDownload from "../HistoricalDataDownload";
 
 jest.mock("export-to-csv", () => {
@@ -6,15 +6,29 @@ jest.mock("export-to-csv", () => {
 });
 
 describe("HistoricalDataDownload", () => {
-  it("renders", () => {
-    const component = renderer.create(
-      <HistoricalDataDownload
-        apiURL="http://www.example.com"
-        mainAgencyName="foobar"
-        agencies='[{"name":"Agency for International Development","slug":"agency-international-development","_name":"Agency for International Development"}]'
-      />,
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  const apiURL = "http://www.example.com";
+  const mainAgencyName = "foobar";
+  const agencies =
+    '[{"name":"Agency for International Development","slug":"agency-international-development","_name":"Agency for International Development"}]';
+  let component;
+
+  // TODO: Write tests around form submit behavior (validation, success/error
+  // from API calls, loading, etc.) Currently this cannot be done because the
+  // JSDOM onSubmit behavior doesn't work right. See issue here:
+  // https://github.com/jsdom/jsdom/issues/3117
+  describe("initial render", () => {
+    beforeEach(() => {
+      component = render(
+        <HistoricalDataDownload
+          apiURL={apiURL}
+          mainAgencyName={mainAgencyName}
+          agencies={agencies}
+        />,
+      );
+    });
+
+    it("renders the form with form fields set", () => {
+      expect(component.asFragment()).toMatchSnapshot();
+    });
   });
 });

@@ -117,7 +117,7 @@ function TopCountriesRealtime({ dataHrefBase }) {
   }, []);
 
   return (
-    <>
+    <div>
       <figure id="chart_us" ref={countriesRef}>
         <div className="data bar-chart"></div>
       </figure>
@@ -139,7 +139,7 @@ function TopCountriesRealtime({ dataHrefBase }) {
         <h4>International</h4>
         <div className="data bar-chart"></div>
       </figure>
-    </>
+    </div>
   );
 }
 
