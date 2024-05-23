@@ -1,0 +1,136 @@
+@use "uswds-core" as *;
+
+.historical-analytics-data {
+  color: color("gray-90");
+  margin-bottom: units(2);
+  padding: 0;
+
+  @include at-media("tablet") {
+    padding: units(2);
+  }
+
+  h1 {
+    font-size: units(5);
+    padding: units(2) units(2) units(2) units(2);
+
+    @include at-media("tablet") {
+      padding: units(2) 0 units(2) 0;
+    }
+  }
+
+  &__header {
+    padding: units(2);
+
+    @include at-media("tablet") {
+      padding: 0;
+    }
+
+    h2 {
+      color: color("blue-50v");
+
+      svg {
+        font-size: units(3);
+        margin-right: units(1);
+        vertical-align: middle;
+      }
+
+      span {
+        line-height: units(3);
+        vertical-align: middle;
+      }
+    }
+
+    p {
+      font-size: 1.3em;
+      font-weight: font-weight(100);
+    }
+  }
+
+  &__form {
+    .form-control {
+      padding-left: units(1);
+      padding-right: units(1);
+    }
+
+    .usa-legend {
+      font-size: units(4);
+      font-weight: font-weight(800);
+    }
+
+    .usa-label {
+      font-size: units(3);
+      font-weight: (700);
+      text-align: center;
+
+      abbr {
+        text-decoration: none;
+      }
+    }
+
+    #report,
+    #agency,
+    #month,
+    #year {
+      margin-top: units(1);
+    }
+
+    .submit-buttons {
+      margin-top: units(1);
+      text-align: center;
+
+      .usa-button {
+        margin-bottom: units(1);
+
+        @include at-media("tablet") {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @keyframes spinner {
+      0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+      }
+
+      100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+      }
+    }
+
+    .loading-spinner-container {
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      .loading-spinner {
+        left: 50%;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        transition: opacity linear 0.1s;
+
+        &::before {
+          animation: 2s linear infinite spinner;
+          border: solid 3px color("gray-1");
+          border-bottom-color: color("blue-50v");
+          border-radius: 50%;
+          content: "";
+          height: units(6);
+          left: 50%;
+          opacity: inherit;
+          position: absolute;
+          top: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          transform-origin: center;
+          vertical-align: bottom;
+          width: units(6);
+          will-change: transform;
+        }
+      }
+    }
+  }
+
+  table {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,16 @@
+<!--
+  The contents of this page are populated by react components. See
+  ./js/components/historical_data_download for the rendering logic.
+-->
+
+<!--
+  Prettier tries to force double quotes here, which causes problems with
+  the JSON passed to the agencies property, so ignore this div for linting
+-->
+<!-- prettier-ignore -->
+<main
+  id="historical-data-download-root"
+  apiURL="{{ site.api_url }}"
+  mainAgencyName="{{ site.dropdown_title }}"
+  agencies='{{ site.data.agencies | jsonify }}'
+></main>

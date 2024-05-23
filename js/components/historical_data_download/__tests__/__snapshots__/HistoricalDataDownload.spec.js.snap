@@ -1,0 +1,354 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoricalDataDownload renders 1`] = `
+<section
+  className="historical-analytics-data"
+>
+  <div
+    className="historical-analytics-data__header grid-row"
+  >
+    <div
+      className="desktop:grid-col-8"
+    >
+      <h1>
+        Download Universal Analytics historical data
+      </h1>
+      <h2>
+        <svg
+          aria-hidden="false"
+          className="usa-icon"
+          focusable="false"
+          role="img"
+        >
+          <use
+            xlinkHref="/assets/uswds/img/sprite.svg#warning"
+          />
+        </svg>
+        <span>
+          About the data
+        </span>
+      </h2>
+      <p>
+        These Universal Analytics historical reports represent only summary-level web traffic and user demographic data aggregated by month and calendar year between January 1, 2018 and June 30, 2024. The data is limited to DAP-participating, public-facing federal government websites at the time of the original data collection. The number of websites participating in DAP was increasing during those years, so the yearly analysis represents a different sample size of participating websites.
+      </p>
+      <p>
+        Due to varying Google Analytics API sampling thresholds, and the sheer volume of data in the Digital Analytics Program Universal Analytics property, reports are subject to sampling. The data are intended to represent trends and numbers may not be precise.
+      </p>
+      <p>
+        This directional information should only be used for general insights into online visitor behavior trends.
+      </p>
+    </div>
+  </div>
+  <div
+    className="historical-analytics-data__form grid-row"
+  >
+    <div
+      className="grid-col-12"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <legend
+          className="form-control usa-legend"
+        >
+          Download data by month
+        </legend>
+        <fieldset
+          className="usa-fieldset"
+        >
+          <div
+            className="grid-row"
+          >
+            <div
+              className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2"
+            >
+              <label
+                className="usa-label"
+                htmlFor="report"
+              >
+                Report
+                <abbr
+                  className="form-control usa-hint usa-hint--required"
+                  title="required"
+                >
+                  *
+                </abbr>
+              </label>
+              <select
+                className="usa-select"
+                id="report"
+                name="report"
+                onChange={[Function]}
+                required={true}
+                value=""
+              >
+                <option
+                  value={true}
+                >
+                  - Select a report -
+                </option>
+                <option
+                  value="domain"
+                >
+                  Visits to participating hostnames
+                </option>
+                <option
+                  value="download"
+                >
+                  Top downloads
+                </option>
+                <option
+                  value="traffic-source"
+                >
+                  Top traffic sources
+                </option>
+                <option
+                  value="language"
+                >
+                  Browser language
+                </option>
+                <option
+                  value="device"
+                >
+                  Device type (Desktop/Mobile/Tablet)
+                </option>
+                <option
+                  value="device-model"
+                >
+                  Device model
+                </option>
+                <option
+                  value="os"
+                >
+                  Operating system
+                </option>
+                <option
+                  value="os-browser"
+                >
+                  Operating system and browser
+                </option>
+                <option
+                  value="windows"
+                >
+                  Windows version
+                </option>
+                <option
+                  value="windows-browser"
+                >
+                  Windows version and browser
+                </option>
+              </select>
+            </div>
+            <div
+              className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2"
+            >
+              <label
+                className="usa-label"
+                htmlFor="agency"
+              >
+                Agency
+              </label>
+              <select
+                className="usa-select"
+                id="agency"
+                name="agency"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  value=""
+                >
+                  foobar
+                </option>
+                <option
+                  value="agency-international-development"
+                >
+                  Agency for International Development
+                </option>
+              </select>
+            </div>
+            <div
+              className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2"
+            >
+              <label
+                className="usa-label"
+                htmlFor="month"
+              >
+                Month
+                <abbr
+                  className="form-control usa-hint usa-hint--required"
+                  title="required"
+                >
+                  *
+                </abbr>
+              </label>
+              <select
+                className="usa-select"
+                id="month"
+                name="month"
+                onChange={[Function]}
+                required={true}
+                value=""
+              >
+                <option
+                  value={true}
+                >
+                  - Select a month -
+                </option>
+                <option
+                  value="1"
+                >
+                  January
+                </option>
+                <option
+                  value="2"
+                >
+                  February
+                </option>
+                <option
+                  value="3"
+                >
+                  March
+                </option>
+                <option
+                  value="4"
+                >
+                  April
+                </option>
+                <option
+                  value="5"
+                >
+                  May
+                </option>
+                <option
+                  value="6"
+                >
+                  June
+                </option>
+                <option
+                  value="7"
+                >
+                  July
+                </option>
+                <option
+                  value="8"
+                >
+                  August
+                </option>
+                <option
+                  value="9"
+                >
+                  September
+                </option>
+                <option
+                  value="10"
+                >
+                  October
+                </option>
+                <option
+                  value="11"
+                >
+                  November
+                </option>
+                <option
+                  value="12"
+                >
+                  December
+                </option>
+              </select>
+            </div>
+            <div
+              className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2"
+            >
+              <label
+                className="usa-label"
+                htmlFor="year"
+              >
+                Year
+                <abbr
+                  className="form-control usa-hint usa-hint--required"
+                  title="required"
+                >
+                  *
+                </abbr>
+              </label>
+              <select
+                className="usa-select"
+                id="year"
+                name="year"
+                onChange={[Function]}
+                required={true}
+                value=""
+              >
+                <option
+                  value={true}
+                >
+                  - Select a year -
+                </option>
+                <option
+                  value="2018"
+                >
+                  2018
+                </option>
+                <option
+                  value="2019"
+                >
+                  2019
+                </option>
+                <option
+                  value="2020"
+                >
+                  2020
+                </option>
+                <option
+                  value="2021"
+                >
+                  2021
+                </option>
+                <option
+                  value="2022"
+                >
+                  2022
+                </option>
+                <option
+                  value="2023"
+                >
+                  2023
+                </option>
+                <option
+                  value="2024"
+                >
+                  2024
+                </option>
+              </select>
+            </div>
+            <div
+              className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-3"
+            >
+              <label
+                className="usa-label"
+              >
+                Download
+              </label>
+              <div
+                className="submit-buttons"
+              >
+                <input
+                  className="usa-button"
+                  type="submit"
+                  value="CSV"
+                />
+                <input
+                  className="usa-button"
+                  type="submit"
+                  value="JSON"
+                />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</section>
+`;
