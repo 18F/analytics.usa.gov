@@ -1,7 +1,6 @@
 import d3 from "d3";
 
 import gaEventHandler from "./lib/eventhandler";
-require("./lib/touchpoints");
 require("./lib/react_setup");
 
 gaEventHandler();
