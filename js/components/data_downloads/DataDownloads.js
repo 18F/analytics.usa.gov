@@ -57,6 +57,27 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Every 30 minutes</td>
             </tr>
             <tr>
+              <td scope="row">Top pages and screens people are viewing</td>
+              <td>30 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-10000-pages-and-screens-30-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-10000-pages-and-screens-30-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-10000-pages-and-screens-30-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-10000-pages-and-screens-30-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
               <td scope="row">Top hostnames</td>
               <td>30 days</td>
               <td>
