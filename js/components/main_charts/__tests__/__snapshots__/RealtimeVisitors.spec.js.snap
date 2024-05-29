@@ -1,29 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RealtimeVisitors renders 1`] = `
-<section
-  className="chart-realtime__visitors-count"
-  data-refresh="15"
->
-  <div
-    className="grid-row"
-  >
-    <h2
-      className="chart-realtime__current-visitors data grid-col-12"
-    >
-      ...
-    </h2>
-  </div>
-  <div
-    className="grid-row"
+exports[`RealtimeVisitors when data is loaded renders a component with data loaded 1`] = `
+<DocumentFragment>
+  <section
+    class="chart-realtime__visitors-count loaded"
+    data-refresh="15"
   >
     <div
-      className="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2"
+      class="grid-row"
     >
-      people on 
-      Department of Defense
-       websites and apps in the last 30 minutes
+      <h2
+        class="chart-realtime__current-visitors data grid-col-12"
+      >
+        10,003,538
+      </h2>
     </div>
-  </div>
-</section>
+    <div
+      class="grid-row"
+    >
+      <div
+        class="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2"
+      >
+        people on Department of Defense websites and apps in the last 30 minutes
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`RealtimeVisitors when data is not loaded renders a component in loading state 1`] = `
+<DocumentFragment>
+  <section
+    class="chart-realtime__visitors-count loading"
+    data-refresh="15"
+  >
+    <div
+      class="grid-row"
+    >
+      <h2
+        class="chart-realtime__current-visitors data grid-col-12"
+      >
+        ...
+      </h2>
+    </div>
+    <div
+      class="grid-row"
+    >
+      <div
+        class="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2"
+      >
+        people on Department of Defense websites and apps in the last 30 minutes
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`RealtimeVisitors when data loading has an error renders a component in error state 1`] = `
+<DocumentFragment>
+  <section
+    class="chart-realtime__visitors-count error"
+    data-refresh="15"
+  >
+    <div
+      class="grid-row"
+    >
+      <h2
+        class="chart-realtime__current-visitors data grid-col-12"
+      >
+        ...
+      </h2>
+    </div>
+    <div
+      class="grid-row"
+    >
+      <div
+        class="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2"
+      >
+        people on Department of Defense websites and apps in the last 30 minutes
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;

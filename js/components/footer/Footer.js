@@ -16,15 +16,18 @@ function Footer({ siteDomain }) {
   return (
     <>
       <footer>
-        <section id="explanation" class="grid-row usa-prose">
-          <div class="tablet:grid-col-8 padding-2">
+        <section id="explanation" className="grid-row usa-prose">
+          <div className="tablet:grid-col-8 padding-2">
             <h3>About this Site</h3>
             <p>
               These data provide a window into how people are interacting with
               the government online. The data come from a unified Google
               Analytics account for U.S. federal government agencies known as
               the{" "}
-              <a href="https://digital.gov/guides/dap/" class="external-link">
+              <a
+                href="https://digital.gov/guides/dap/"
+                className="external-link"
+              >
                 Digital Analytics Program
               </a>
               . This program helps government agencies understand how people
@@ -39,14 +42,14 @@ function Footer({ siteDomain }) {
               approximately 7000 total hostnames, including every executive
               branch cabinet department. We continue to pursue and add more
               sites frequently; to add your site,{" "}
-              <a href="mailto:dap@gsa.gov" class="external-link">
+              <a href="mailto:dap@gsa.gov" className="external-link">
                 email the Digital Analytics Program
               </a>
               .
             </p>
-            <button id="contact-btn" class="usa-button--big">
+            <button id="contact-btn" className="usa-button--big">
               <svg
-                class="usa-icon"
+                className="usa-icon"
                 aria-hidden="false"
                 focusable="false"
                 role="img"
@@ -56,7 +59,7 @@ function Footer({ siteDomain }) {
               Feedback
             </button>
           </div>
-          <div class="tablet:grid-col-4 padding-2 margin-0">
+          <div className="tablet:grid-col-4 padding-2 margin-0">
             <h3>Download the data</h3>
             <p>
               You can <a href={`${siteDomain}/data`}>download the data here.</a>{" "}
@@ -83,42 +86,42 @@ function Footer({ siteDomain }) {
             </p>
           </div>
         </section>
-        <div class="github-section">
-          <div class="github-section__body grid-container-desktop">
-            <div class="grid-row">
-              <div class="tablet:grid-col-6">
+        <div className="github-section">
+          <div className="github-section__body grid-container-desktop">
+            <div className="grid-row">
+              <div className="tablet:grid-col-6">
                 <p>
                   Have a question or problem?{" "}
                   <a href="mailto:dap@gsa.gov">Get in touch</a>.
                 </p>
                 <a
-                  class="usa-button usa-button-secondary-inverse margin-y-2"
+                  className="usa-button usa-button-secondary-inverse margin-y-2"
                   href="https://github.com/18F/analytics.usa.gov/issues"
                 >
                   <img
                     src={`${siteDomain}/images/github-logo-white.svg`}
-                    class="github-icon"
+                    className="github-icon"
                     alt="Github Icon"
                   />{" "}
                   Suggest a feature or report an issue
                 </a>
               </div>
-              <div class="tablet:grid-col-6">
-                <p class="">
+              <div className="tablet:grid-col-6">
+                <p className="">
                   <a href="https://github.com/18F/analytics.usa.gov">
                     <img
                       src={`${siteDomain}/images/github-logo.svg`}
-                      class="github-icon"
+                      className="github-icon"
                       alt="Github Icon"
                     />{" "}
                     View application code on GitHub
                   </a>
                 </p>
-                <p class="margin-y-2">
+                <p className="margin-y-2">
                   <a href="https://github.com/18F/analytics-reporter">
                     <img
                       src={`${siteDomain}/images/github-logo.svg`}
-                      class="github-icon"
+                      className="github-icon"
                       alt="Github Icon"
                     />{" "}
                     View code for the data on GitHub
@@ -130,16 +133,16 @@ function Footer({ siteDomain }) {
         </div>
       </footer>
 
-      <div class="usa-identifier">
+      <div className="usa-identifier">
         <section
-          class="usa-identifier__section usa-identifier__section--masthead"
+          className="usa-identifier__section usa-identifier__section--masthead"
           aria-label="Agency identifier,"
         >
-          <div class="usa-identifier__container">
-            <div class="usa-identifier__logos">
-              <a href="" class="usa-identifier__logo">
+          <div className="usa-identifier__container">
+            <div className="usa-identifier__logos">
+              <a href="" className="usa-identifier__logo">
                 <img
-                  class="usa-identifier__logo-img"
+                  className="usa-identifier__logo-img"
                   src={`${siteDomain}/images/gsa-logo.svg`}
                   alt="GSA logo"
                   role="img"
@@ -147,7 +150,7 @@ function Footer({ siteDomain }) {
               </a>
             </div>
             <section
-              class="usa-identifier__identity"
+              className="usa-identifier__identity"
               aria-label="Agency description,"
             >
               <p class="usa-identifier__identity-domain">analytics.usa.gov</p>
@@ -162,63 +165,63 @@ function Footer({ siteDomain }) {
           </div>
         </section>
         <nav
-          class="usa-identifier__section usa-identifier__section--required-links"
+          className="usa-identifier__section usa-identifier__section--required-links"
           aria-label="Important links,"
         >
-          <div class="usa-identifier__container">
-            <ul class="usa-identifier__required-links-list">
-              <li class="usa-identifier__required-links-item">
+          <div className="usa-identifier__container">
+            <ul className="usa-identifier__required-links-list">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsa.gov/about-us"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   About GSA
                 </a>
               </li>
-              <li class="usa-identifier__required-links-item">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsa.gov/website-information/accessibility-statement"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   Accessibility statement
                 </a>
               </li>
-              <li class="usa-identifier__required-links-item">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsa.gov/reference/freedom-of-information-act-foia"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   FOIA requests
                 </a>
               </li>
-              <li class="usa-identifier__required-links-item">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsa.gov/reference/civil-rights-programs/the-no-fear-act"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   No FEAR Act data
                 </a>
               </li>
-              <li class="usa-identifier__required-links-item">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsaig.gov/"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   Office of the Inspector General
                 </a>
               </li>
-              <li class="usa-identifier__required-links-item">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsa.gov/reference/reports/budget-performance"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   Performance reports
                 </a>
               </li>
-              <li class="usa-identifier__required-links-item">
+              <li className="usa-identifier__required-links-item">
                 <a
                   href="https://www.gsa.gov/website-information/website-policies"
-                  class="usa-identifier__required-link usa-link"
+                  className="usa-identifier__required-link usa-link"
                 >
                   Privacy policy
                 </a>
@@ -227,14 +230,14 @@ function Footer({ siteDomain }) {
           </div>
         </nav>
         <section
-          class="usa-identifier__section usa-identifier__section--usagov"
+          className="usa-identifier__section usa-identifier__section--usagov"
           aria-label="U.S. government information and services,"
         >
-          <div class="usa-identifier__container">
-            <div class="usa-identifier__usagov-description">
+          <div className="usa-identifier__container">
+            <div className="usa-identifier__usagov-description">
               Looking for U.S. government information and services?
             </div>{" "}
-            <a href="https://www.usa.gov/" class="usa-link">
+            <a href="https://www.usa.gov/" className="usa-link">
               Visit USA.gov
             </a>
           </div>

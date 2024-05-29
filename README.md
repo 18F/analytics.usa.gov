@@ -7,6 +7,9 @@ which collects and publishes website analytics from thousands of public-facing
 US federal government websites per the ["Delivering a Digital-First Public Experience"](https://www.whitehouse.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf)
 requirement.
 
+The process for adding features to this project is described in
+[Development and deployment process](docs/development_and_deployment_process.md).
+
 ## About the components
 
 Ths app uses [Jekyll](https://jekyllrb.com) to build the site, and [Sass](https://sass-lang.com/)

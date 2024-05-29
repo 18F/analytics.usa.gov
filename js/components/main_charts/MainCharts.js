@@ -115,7 +115,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
 MainCharts.propTypes = {
   dataURL: PropTypes.string.isRequired,
   dataPrefix: PropTypes.string.isRequired,
-  agency: PropTypes.string,
+  agency: PropTypes.string.isRequired,
 };
 
 export default MainCharts;
