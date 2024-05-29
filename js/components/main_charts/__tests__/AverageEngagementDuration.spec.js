@@ -1,23 +1,20 @@
 import { render } from "@testing-library/react";
 import d3 from "d3";
-import RealtimeVisitors from "../RealtimeVisitors";
+import AverageEngagementDuration from "../AverageEngagementDuration";
 
 jest.mock("d3", () => ({
   ...jest.requireActual("d3"),
   json: jest.fn(),
 }));
 
-describe("RealtimeVisitors", () => {
+describe("AverageEngagementDuration", () => {
   let component;
   let data;
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <AverageEngagementDuration dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -29,38 +26,47 @@ describe("RealtimeVisitors", () => {
   describe("when data is loaded", () => {
     beforeEach(() => {
       data = {
-        name: "realtime",
+        name: "user-engagement-duration",
         query: {
           metrics: [
             {
-              name: "activeUsers",
+              name: "userEngagementDuration",
+            },
+            {
+              name: "sessions",
             },
           ],
-          samplingLevel: "HIGHER_PRECISION",
+          dateRanges: [
+            {
+              startDate: "30daysAgo",
+              endDate: "yesterday",
+            },
+          ],
           limit: "10000",
-          property: "properties/393249053",
+          property: "properties/397708109",
         },
         meta: {
-          name: "Active Users Right Now",
-          description: "Number of users currently visiting all sites.",
+          name: "User engagement duration (30 Days)",
+          description:
+            "Top 20 sources that initiated a session for the last 30 days, measured by visits, for all sites.",
         },
         data: [
           {
-            active_visitors: "10003538",
+            userEngagementDuration: "101105154773",
+            visits: "1616841012",
           },
         ],
-        totals: {},
-        taken_at: "2024-01-05T16:05:45.980Z",
+        totals: {
+          visits: 1616841012,
+        },
+        taken_at: "2024-03-19T20:58:28.812Z",
       };
 
       d3.json.mockImplementation((url, callback) => {
         callback(null, data);
       });
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <AverageEngagementDuration dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -75,10 +81,7 @@ describe("RealtimeVisitors", () => {
         callback(new Error("you broke it"), null);
       });
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <AverageEngagementDuration dataHrefBase="http://www.example.com/data/" />,
       );
     });
 

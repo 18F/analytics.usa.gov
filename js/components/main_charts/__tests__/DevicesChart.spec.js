@@ -1,23 +1,20 @@
 import { render } from "@testing-library/react";
 import d3 from "d3";
-import RealtimeVisitors from "../RealtimeVisitors";
+import DevicesChart from "../DevicesChart";
 
 jest.mock("d3", () => ({
   ...jest.requireActual("d3"),
   json: jest.fn(),
 }));
 
-describe("RealtimeVisitors", () => {
+describe("DevicesChart", () => {
   let component;
   let data;
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <DevicesChart dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -29,38 +26,30 @@ describe("RealtimeVisitors", () => {
   describe("when data is loaded", () => {
     beforeEach(() => {
       data = {
-        name: "realtime",
-        query: {
-          metrics: [
-            {
-              name: "activeUsers",
-            },
-          ],
-          samplingLevel: "HIGHER_PRECISION",
-          limit: "10000",
-          property: "properties/393249053",
-        },
+        name: "devices",
+        query: {},
         meta: {
-          name: "Active Users Right Now",
-          description: "Number of users currently visiting all sites.",
+          name: "Devices",
+          description: "30 days of desktop/mobile/tablet visits for all sites.",
         },
-        data: [
-          {
-            active_visitors: "10003538",
+        totals: {
+          visits: 1492377457,
+          by_device: {
+            mobile: 811958807,
+            desktop: 656318825,
+            "(other)": 1938220,
+            tablet: 19920488,
+            "smart tv": 2241117,
           },
-        ],
-        totals: {},
-        taken_at: "2024-01-05T16:05:45.980Z",
+        },
+        taken_at: "2024-03-11T13:59:08.677Z",
       };
 
       d3.json.mockImplementation((url, callback) => {
         callback(null, data);
       });
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <DevicesChart dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -75,10 +64,7 @@ describe("RealtimeVisitors", () => {
         callback(new Error("you broke it"), null);
       });
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <DevicesChart dataHrefBase="http://www.example.com/data/" />,
       );
     });
 

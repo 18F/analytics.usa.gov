@@ -1,23 +1,20 @@
 import { render } from "@testing-library/react";
 import d3 from "d3";
-import RealtimeVisitors from "../RealtimeVisitors";
+import EngagementRate from "../EngagementRate";
 
 jest.mock("d3", () => ({
   ...jest.requireActual("d3"),
   json: jest.fn(),
 }));
 
-describe("RealtimeVisitors", () => {
+describe("EngagementRate", () => {
   let component;
   let data;
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <EngagementRate dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -29,38 +26,41 @@ describe("RealtimeVisitors", () => {
   describe("when data is loaded", () => {
     beforeEach(() => {
       data = {
-        name: "realtime",
+        name: "engagement-rate",
         query: {
           metrics: [
             {
-              name: "activeUsers",
+              name: "engagementRate",
             },
           ],
-          samplingLevel: "HIGHER_PRECISION",
+          dateRanges: [
+            {
+              startDate: "30daysAgo",
+              endDate: "yesterday",
+            },
+          ],
           limit: "10000",
-          property: "properties/393249053",
+          property: "properties/397708109",
         },
         meta: {
-          name: "Active Users Right Now",
-          description: "Number of users currently visiting all sites.",
+          name: "Engagement rate (30 Days)",
+          description:
+            "Percent of sessions where the user was engaged over the past 30 days.",
         },
         data: [
           {
-            active_visitors: "10003538",
+            engagementRate: "0.567412736435461",
           },
         ],
         totals: {},
-        taken_at: "2024-01-05T16:05:45.980Z",
+        taken_at: "2024-03-20T02:14:07.426Z",
       };
 
       d3.json.mockImplementation((url, callback) => {
         callback(null, data);
       });
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <EngagementRate dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -75,10 +75,7 @@ describe("RealtimeVisitors", () => {
         callback(new Error("you broke it"), null);
       });
       component = render(
-        <RealtimeVisitors
-          dataHrefBase="http://www.example.com/data/"
-          agency="Department of Defense"
-        />,
+        <EngagementRate dataHrefBase="http://www.example.com/data/" />,
       );
     });
 

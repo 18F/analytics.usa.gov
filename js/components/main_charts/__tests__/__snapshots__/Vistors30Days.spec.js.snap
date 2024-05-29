@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Visitors30Days when data is loaded renders a component with data loaded 1`] = `
+<DocumentFragment>
+  <div
+    class="loaded"
+  >
+    There were 
+    <span
+      class="data"
+      id="total_visitors"
+    >
+      1.49 billion
+    </span>
+     sessions in the last 30 days.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Visitors30Days when data is not loaded renders a component in loading state 1`] = `
+<DocumentFragment>
+  <div
+    class="loading"
+  >
+    There were 
+    <span
+      class="data"
+      id="total_visitors"
+    >
+      ...
+    </span>
+     sessions in the last 30 days.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Visitors30Days when data loading has an error renders a component in error state 1`] = `
+<DocumentFragment>
+  <div
+    class="error"
+  >
+    There were 
+    <span
+      class="data"
+      id="total_visitors"
+    >
+      ...
+    </span>
+     sessions in the last 30 days.
+  </div>
+</DocumentFragment>
+`;

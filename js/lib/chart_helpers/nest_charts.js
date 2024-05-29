@@ -20,7 +20,12 @@ export default function nestCharts(selection, key, child) {
   const parent = selection.selectAll(".bin").filter(parentFilter);
 
   // Display and nest a sub-section if an entry exists in the parent chart
-  if (parent && parent[0].parentNode.innerHTML.includes(key) && child[0]) {
+  if (
+    parent &&
+    parent[0] &&
+    parent[0].parentNode.innerHTML.includes(key) &&
+    child[0]
+  ) {
     const scale = child.attr("data-scale-to-parent") === "true";
 
     child[0][0].classList.remove("hide");

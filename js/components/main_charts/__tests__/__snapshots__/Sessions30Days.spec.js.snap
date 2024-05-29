@@ -1,13 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sessions30Days renders 1`] = `
-<div
-  className="section__chart"
-  data-refresh="15"
-  id="time_series"
->
-  <svg
-    className="data time-series"
-  />
-</div>
+exports[`Sessions30Days when data is not loaded renders a component in loading state 1`] = `
+<DocumentFragment>
+  <div
+    class="section__chart loading"
+    data-refresh="15"
+    id="time_series"
+  >
+    <svg
+      class="data time-series"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Sessions30Days when data loading has an error renders a component in error state 1`] = `
+<DocumentFragment>
+  <div
+    class="section__chart error"
+    data-refresh="15"
+    id="time_series"
+  >
+    <svg
+      class="data time-series"
+    />
+  </div>
+</DocumentFragment>
 `;

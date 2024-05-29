@@ -58,6 +58,7 @@ export default function buildtimeSeries() {
     xScale.rangeRoundBands([margin.left, right], 0, 0);
 
     svg.attr("viewBox", [0, 0, width, height].join(" "));
+    svg.attr("data-testid", "timeseries-loaded");
 
     element(svg, "g.axis.y0")
       .attr("transform", `translate(${[margin.left, 0]})`)
