@@ -8,8 +8,7 @@ import Visitors30Days from "./Visitors30Days";
 import Engagement from "./Engagement";
 import TrafficSources from "./TrafficSources";
 import DeviceDemographics from "./DeviceDemographics";
-import TopPages from "./TopPages";
-import TopDownloads from "./TopDownloads";
+import TopPagesAndDownloads from "./TopPagesAndDownloads";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -94,19 +93,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
       </section>
 
       <section id="secondary_data" className="desktop:grid-col-4">
-        <section>
-          <TopPages dataHrefBase={dataHrefBase} />
-        </section>
-        <section className="top-downloads">
-          <div className="top-downloads__headline">
-            <h3>Top Downloads Yesterday</h3>
-          </div>
-
-          <h4>
-            <em>Total file downloads yesterday on {agency} hostnames.</em>
-          </h4>
-          <TopDownloads dataHrefBase={dataHrefBase} />
-        </section>
+        <TopPagesAndDownloads dataHrefBase={dataHrefBase} agency={agency} />
       </section>
     </>
   );

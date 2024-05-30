@@ -14,7 +14,10 @@ describe("TopDownloads", () => {
   describe("when data is not loaded", () => {
     beforeEach(() => {
       component = render(
-        <TopDownloads dataHrefBase="http://www.example.com/data/" />,
+        <TopDownloads
+          dataHrefBase="http://www.example.com/data/"
+          reportFileName="foobar.json"
+        />,
       );
     });
 
