@@ -142,6 +142,48 @@ function DataDownloads({ dataURL, dataPrefix }) {
               </td>
               <td>Daily</td>
             </tr>
+            <tr>
+              <td scope="row">Top downloads</td>
+              <td>7 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-downloads-7-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-7-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-downloads-7-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-7-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td scope="row">Top downloads</td>
+              <td>30 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-downloads-30-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-30-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-downloads-30-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-30-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
           </tbody>
         </table>
       </div>

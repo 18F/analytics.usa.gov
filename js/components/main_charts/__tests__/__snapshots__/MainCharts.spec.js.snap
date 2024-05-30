@@ -379,86 +379,85 @@ exports[`MainCharts renders 1`] = `
     className="desktop:grid-col-4"
     id="secondary_data"
   >
-    <section>
-      <section
-        className="top-pages"
+    <section
+      className="top-pages-and-downloads"
+    >
+      <div
+        className="top-pages-and-downloads__headline"
       >
-        <div
-          className="top-pages__headline"
+        <h2>
+          Top 
+          30
+           Web Pages and App Screens
+        </h2>
+      </div>
+      <div
+        className="react-tabs"
+        data-rttabs={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <ul
+          className="usa-button-group usa-button-group--segmented"
+          role="tablist"
         >
-          <h2>
-            Top 
-            <span
-              id="top_table_type"
-            >
-              Web Pages and App Screens
-            </span>
-          </h2>
-        </div>
-        <div
-          className="react-tabs"
-          data-rttabs={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-        >
-          <ul
-            className="usa-button-group usa-button-group--segmented"
-            role="tablist"
+          <li
+            aria-controls="panel:r0:0"
+            aria-disabled="false"
+            aria-selected="true"
+            className="usa-button-group__item react-tabs__tab--selected"
+            data-rttab={true}
+            id="tab:r0:0"
+            role="tab"
+            tabIndex="0"
           >
-            <li
-              aria-controls="panel:r0:0"
-              aria-disabled="false"
-              aria-selected="true"
-              className="usa-button-group__item react-tabs__tab--selected"
-              data-rttab={true}
-              id="tab:r0:0"
-              role="tab"
-              tabIndex="0"
+            <button
+              className="usa-button"
             >
-              <button
-                className="usa-button"
-              >
-                30 mins
-              </button>
-            </li>
-            <li
-              aria-controls="panel:r0:1"
-              aria-disabled="false"
-              aria-selected="false"
-              className="usa-button-group__item"
-              data-rttab={true}
-              id="tab:r0:1"
-              role="tab"
-              tabIndex={null}
+              30 mins
+            </button>
+          </li>
+          <li
+            aria-controls="panel:r0:1"
+            aria-disabled="false"
+            aria-selected="false"
+            className="usa-button-group__item"
+            data-rttab={true}
+            id="tab:r0:1"
+            role="tab"
+            tabIndex={null}
+          >
+            <button
+              className="usa-button"
             >
-              <button
-                className="usa-button"
-              >
-                7 days
-              </button>
-            </li>
-            <li
-              aria-controls="panel:r0:2"
-              aria-disabled="false"
-              aria-selected="false"
-              className="usa-button-group__item"
-              data-rttab={true}
-              id="tab:r0:2"
-              role="tab"
-              tabIndex={null}
+              7 days
+            </button>
+          </li>
+          <li
+            aria-controls="panel:r0:2"
+            aria-disabled="false"
+            aria-selected="false"
+            className="usa-button-group__item"
+            data-rttab={true}
+            id="tab:r0:2"
+            role="tab"
+            tabIndex={null}
+          >
+            <button
+              className="usa-button"
             >
-              <button
-                className="usa-button"
-              >
-                30 days
-              </button>
-            </li>
-          </ul>
-          <div
-            aria-labelledby="tab:r0:0"
-            className="react-tabs__tab-panel react-tabs__tab-panel--selected"
-            id="panel:r0:0"
-            role="tabpanel"
+              30 days
+            </button>
+          </li>
+        </ul>
+        <div
+          aria-labelledby="tab:r0:0"
+          className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+          id="panel:r0:0"
+          role="tabpanel"
+        >
+          <section
+            className="top-pages"
           >
             <p>
               <strong>
@@ -472,7 +471,7 @@ exports[`MainCharts renders 1`] = `
                in the last 30 minutes. Hostnames are not currently reported in real-time, so only page title and screen name information is available.
             </p>
             <figure
-              className="top-pages__realtime"
+              className="top-pages__realtime-bar-chart"
               data-refresh="15"
               data-source="http://www.example.com/interior/top-pages-realtime.json"
             >
@@ -480,46 +479,48 @@ exports[`MainCharts renders 1`] = `
                 className="data bar-chart"
               />
             </figure>
-          </div>
-          <div
-            aria-labelledby="tab:r0:1"
-            className="react-tabs__tab-panel"
-            id="panel:r0:1"
-            role="tabpanel"
-          />
-          <div
-            aria-labelledby="tab:r0:2"
-            className="react-tabs__tab-panel"
-            id="panel:r0:2"
-            role="tabpanel"
-          />
+          </section>
+          <section
+            className="top-downloads"
+          >
+            <div
+              className="top-downloads__headline"
+            >
+              <h3>
+                Top 
+                20
+                 Downloads
+              </h3>
+            </div>
+            <h4>
+              <em>
+                Total file downloads yesterday on 
+                Department of Interior
+                 hostnames.
+              </em>
+            </h4>
+            <figure
+              class="top-downloads__bar-chart"
+            >
+              <div
+                className="data bar-chart"
+              />
+            </figure>
+          </section>
         </div>
-      </section>
-    </section>
-    <section
-      className="top-downloads"
-    >
-      <div
-        className="top-downloads__headline"
-      >
-        <h3>
-          Top Downloads Yesterday
-        </h3>
-      </div>
-      <h4>
-        <em>
-          Total file downloads yesterday on 
-          Department of Interior
-           hostnames.
-        </em>
-      </h4>
-      <figure
-        id="top-downloads"
-      >
         <div
-          className="data bar-chart"
+          aria-labelledby="tab:r0:1"
+          className="react-tabs__tab-panel"
+          id="panel:r0:1"
+          role="tabpanel"
         />
-      </figure>
+        <div
+          aria-labelledby="tab:r0:2"
+          className="react-tabs__tab-panel"
+          id="panel:r0:2"
+          role="tabpanel"
+        />
+      </div>
     </section>
   </section>,
 ]
