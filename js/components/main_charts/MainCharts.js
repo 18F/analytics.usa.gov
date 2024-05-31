@@ -36,7 +36,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           <RealtimeVisitors dataHrefBase={dataHrefBase} agency={agency} />
         </article>
 
-        <article className="section">
+        <article className="section locations-and-languages-section">
           <LocationsAndLanguages dataHrefBase={dataHrefBase} />
         </article>
 
@@ -46,7 +46,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           </div>
         </article>
 
-        <article className="section">
+        <article className="section sessions-30-days-section">
           <div className="section__headline">
             <h3>Daily Sessions in the Past 30 Days</h3>
           </div>
@@ -67,7 +67,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           </section>
         </article>
 
-        <article className="section">
+        <article className="section traffic-sources-section">
           <div className="section__headline">
             <h2>Top Traffic Sources in the Last 30 Days</h2>
           </div>
@@ -79,7 +79,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           </section>
         </article>
 
-        <article className="section">
+        <article className="section device-demographics-section">
           <div className="section__headline">
             <h2>User Device Demographics in the Last 30 Days</h2>
           </div>

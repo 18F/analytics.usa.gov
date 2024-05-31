@@ -153,8 +153,10 @@ function Footer({ siteDomain }) {
               className="usa-identifier__identity"
               aria-label="Agency description,"
             >
-              <p class="usa-identifier__identity-domain">analytics.usa.gov</p>
-              <p class="usa-identifier__identity-disclaimer">
+              <p className="usa-identifier__identity-domain">
+                analytics.usa.gov
+              </p>
+              <p className="usa-identifier__identity-disclaimer">
                 Analytics.usa.gov is a product of GSA's{" "}
                 <a href="https://digital.gov/guides/dap/">
                   Digital Analytics Program
