@@ -1,5 +1,21 @@
 @use "uswds-core" as *;
 
+/**
+ * Styles for the secondary sidebar data section of the root page
+ */
+
+#secondary_data {
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid color("gray-cool-40");
+
+  @include at-media("tablet") {
+    border-bottom: 1px solid color("gray-cool-40");
+    border-left: 1px solid color("gray-cool-40");
+    border-top: none;
+  }
+}
+
 .top-pages-and-downloads {
   min-height: units("tablet-lg");
 
@@ -47,7 +63,7 @@
       }
 
       // targets the last <button> in the group
-      &:last-child > .usa-button {
+      &:last-child>.usa-button {
         margin-left: -2px;
         width: 100%;
       }
@@ -124,6 +140,8 @@
       }
 
       .label {
+        height: units(8);
+        height: 4rem;
         line-height: 1.6;
 
         .name {
@@ -146,32 +164,6 @@
       .bar {
         margin-top: units(2);
       }
-    }
-
-    .label {
-      height: units(8);
-      height: 4rem;
-      line-height: 1.6;
-
-      .name {
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .domain {
-        color: color("gray-cool-70");
-        text-transform: lowercase;
-      }
-
-      .filename {
-        text-transform: lowercase;
-      }
-    }
-
-    .bar {
-      margin-top: units(2);
     }
   }
 }
