@@ -37,13 +37,19 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
       <Tabs>
         <TabList className="usa-button-group usa-button-group--segmented">
           <Tab className="usa-button-group__item">
-            <button className="usa-button">30 mins</button>
+            <button type="button" className="usa-button">
+              30 mins
+            </button>
           </Tab>
           <Tab className="usa-button-group__item">
-            <button className="usa-button">7 days</button>
+            <button type="button" className="usa-button">
+              7 days
+            </button>
           </Tab>
           <Tab className="usa-button-group__item">
-            <button className="usa-button">30 days</button>
+            <button type="button" className="usa-button">
+              30 days
+            </button>
           </Tab>
         </TabList>
 

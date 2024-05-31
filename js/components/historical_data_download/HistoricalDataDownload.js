@@ -216,7 +216,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
             <h2>
               <svg
                 className="usa-icon"
-                aria-hidden="false"
+                aria-hidden="true"
                 focusable="false"
                 role="img"
               >
@@ -250,39 +250,39 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
         <div className="historical-analytics-data__form grid-row">
           <div className="grid-col-12">
             <form onSubmit={(e) => handleSubmit(e)}>
-              <legend className="form-control usa-legend">
-                Download data by month
-              </legend>
-              {error && (
-                <div className="grid-row">
-                  <div className="grid-col-12">
-                    <div className="usa-alert usa-alert--error" role="alert">
-                      <div className="usa-alert__body">
-                        <h4 className="usa-alert__heading">
-                          Error retrieving data
-                        </h4>
-                        <p className="usa-alert__text">
-                          Could not retrieve the requested data. DAP APIs are
-                          subject to rate limiting. Please try again later.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {invalid && (
-                <div className="grid-row">
-                  <div className="grid-col-12">
-                    <div className="usa-alert usa-alert--error" role="alert">
-                      <div className="usa-alert__body">
-                        <h4 className="usa-alert__heading">Input error</h4>
-                        <p className="usa-alert__text">{validationMessage}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
               <fieldset className="usa-fieldset">
+                <legend className="form-control usa-legend">
+                  Download data by month
+                </legend>
+                {error && (
+                  <div className="grid-row">
+                    <div className="grid-col-12">
+                      <div className="usa-alert usa-alert--error" role="alert">
+                        <div className="usa-alert__body">
+                          <h4 className="usa-alert__heading">
+                            Error retrieving data
+                          </h4>
+                          <p className="usa-alert__text">
+                            Could not retrieve the requested data. DAP APIs are
+                            subject to rate limiting. Please try again later.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {invalid && (
+                  <div className="grid-row">
+                    <div className="grid-col-12">
+                      <div className="usa-alert usa-alert--error" role="alert">
+                        <div className="usa-alert__body">
+                          <h4 className="usa-alert__heading">Input error</h4>
+                          <p className="usa-alert__text">{validationMessage}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="grid-row">
                   <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
                     <label className="usa-label" htmlFor="report">

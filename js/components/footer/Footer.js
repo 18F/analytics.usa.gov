@@ -50,7 +50,7 @@ function Footer({ siteDomain }) {
             <button id="contact-btn" className="usa-button--big">
               <svg
                 className="usa-icon"
-                aria-hidden="false"
+                aria-hidden="true"
                 focusable="false"
                 role="img"
               >

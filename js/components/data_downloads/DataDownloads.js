@@ -36,9 +36,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
           </thead>
           <tbody>
             <tr>
-              <td scope="row">
-                Top pages and screens users are viewing (Page Titles)
-              </td>
+              <td>Top pages and screens users are viewing (Page Titles)</td>
               <td>30 minutes</td>
               <td>
                 <a
@@ -59,7 +57,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Every 30 minutes</td>
             </tr>
             <tr>
-              <td scope="row">Top pages and screens (Full Page Path)</td>
+              <td>Top pages and screens (Full Page Path)</td>
               <td>30 days</td>
               <td>
                 <a
@@ -80,7 +78,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Top hostnames</td>
+              <td>Top hostnames</td>
               <td>30 days</td>
               <td>
                 <a
@@ -101,7 +99,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Top traffic sources</td>
+              <td>Top traffic sources</td>
               <td>30 days</td>
               <td>
                 <a
@@ -122,7 +120,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Top downloads</td>
+              <td>Top downloads</td>
               <td>Yesterday</td>
               <td>
                 <a
@@ -136,48 +134,6 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   href={hrefBase + "/top-downloads-yesterday.csv"}
                   className="download-data usa-button"
                   aria-label="top-downloads-yesterday.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
-            <tr>
-              <td scope="row">Top downloads</td>
-              <td>7 days</td>
-              <td>
-                <a
-                  href={hrefBase + "/top-downloads-7-days.json"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-7-days.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/top-downloads-7-days.csv"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-7-days.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
-            <tr>
-              <td scope="row">Top downloads</td>
-              <td>30 days</td>
-              <td>
-                <a
-                  href={hrefBase + "/top-downloads-30-days.json"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-30-days.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/top-downloads-30-days.csv"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-30-days.csv"
                 >
                   CSV
                 </a>
@@ -203,7 +159,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
           </thead>
           <tbody>
             <tr>
-              <td scope="row">Language</td>
+              <td>Language</td>
               <td>90 days</td>
               <td>
                 <a
@@ -224,7 +180,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Users per country</td>
+              <td>Users per country</td>
               <td>30 minutes</td>
               <td>
                 <a
@@ -247,7 +203,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Every 30 minutes</td>
             </tr>
             <tr>
-              <td scope="row">Users per city</td>
+              <td>Users per city</td>
               <td>30 minutes</td>
               <td>
                 <a
@@ -270,7 +226,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Every 30 minutes</td>
             </tr>
             <tr>
-              <td scope="row">Desktop, mobile, tablet</td>
+              <td>Desktop, mobile, tablet</td>
               <td>90 days</td>
               <td>
                 <a
@@ -291,7 +247,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Web Browsers (90 days)</td>
+              <td>Web Browsers (90 days)</td>
               <td>90 days</td>
               <td>
                 <a
@@ -312,7 +268,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Operating systems</td>
+              <td>Operating systems</td>
               <td>90 days</td>
               <td>
                 <a
@@ -333,7 +289,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Versions of Windows</td>
+              <td>Versions of Windows</td>
               <td>90 days</td>
               <td>
                 <a
@@ -354,7 +310,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">OS &amp; browser (combined)</td>
+              <td>OS &amp; browser (combined)</td>
               <td>90 days</td>
               <td>
                 <a
@@ -375,7 +331,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Windows &amp; browser (combined)</td>
+              <td>Windows &amp; browser (combined)</td>
               <td>90 days</td>
               <td>
                 <a
@@ -396,7 +352,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Screen sizes</td>
+              <td>Screen sizes</td>
               <td>90 days</td>
               <td>
                 <a
@@ -417,7 +373,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td scope="row">Device model</td>
+              <td>Device model</td>
               <td>90 days</td>
               <td>
                 <a

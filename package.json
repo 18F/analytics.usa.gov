@@ -18,7 +18,7 @@
     "lint:styles:fix": "stylelint ./sass/*.scss --fix",
     "lint:html": "prettier -c {**/*,*}.html",
     "lint:html:fix": "prettier -w {**/*,*}.html",
-    "pa11y": "pa11y http://localhost:4000/data",
+    "pa11y": "pa11y http://localhost:4000/historical-data-download",
     "start": "SCRIPT_DEBUG=true npm-run-all --parallel local:watch local:serve",
     "test": "jest",
     "install-git-hooks": "cp ./hooks/* .git/hooks/ && chmod -R a+x .git/hooks/"
