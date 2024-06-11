@@ -227,7 +227,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
             <p>
               These Universal Analytics historical reports represent only
               summary-level web traffic and user demographic data aggregated by
-              month and calendar year between January 1, 2018 and June 30, 2024.
+              month and calendar year between January 1, 2018 and June 24, 2024.
               The data is limited to DAP-participating, public-facing federal
               government websites at the time of the original data collection.
               The number of websites participating in DAP was increasing during
@@ -241,8 +241,12 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
               intended to represent trends and numbers may not be precise.
             </p>
             <p>
-              This directional information should only be used for general
-              insights into online visitor behavior trends.
+              <b>
+                <i>
+                  This directional information should only be used for general
+                  insights into online visitor behavior trends.
+                </i>
+              </b>
             </p>
           </div>
         </div>

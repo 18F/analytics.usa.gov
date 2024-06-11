@@ -57,6 +57,48 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Every 30 minutes</td>
             </tr>
             <tr>
+              <td>Top downloads</td>
+              <td>7 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-downloads-7-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-7-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-downloads-7-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-7-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Top downloads</td>
+              <td>30 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-downloads-30-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-30-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-downloads-30-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-downloads-30-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
               <td>Top pages and screens (Full Page Path)</td>
               <td>30 days</td>
               <td>
@@ -119,69 +161,6 @@ function DataDownloads({ dataURL, dataPrefix }) {
               </td>
               <td>Daily</td>
             </tr>
-            <tr>
-              <td>Top downloads</td>
-              <td>Yesterday</td>
-              <td>
-                <a
-                  href={hrefBase + "/top-downloads-yesterday.json"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-yesterday.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/top-downloads-yesterday.csv"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-yesterday.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
-            <tr>
-              <td>Top downloads</td>
-              <td>7 days</td>
-              <td>
-                <a
-                  href={hrefBase + "/top-downloads-7-days.json"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-7-days.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/top-downloads-7-days.csv"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-7-days.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
-            <tr>
-              <td>Top downloads</td>
-              <td>30 days</td>
-              <td>
-                <a
-                  href={hrefBase + "/top-downloads-30-days.json"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-30-days.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/top-downloads-30-days.csv"}
-                  className="download-data usa-button"
-                  aria-label="top-downloads-30-days.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -201,27 +180,6 @@ function DataDownloads({ dataURL, dataPrefix }) {
           </thead>
           <tbody>
             <tr>
-              <td>Language</td>
-              <td>90 days</td>
-              <td>
-                <a
-                  href={hrefBase + "/language.json"}
-                  className="download-data usa-button"
-                  aria-label="language.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/language.csv"}
-                  className="download-data usa-button"
-                  aria-label="language.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
-            <tr>
               <td>Users per country</td>
               <td>30 minutes</td>
               <td>
@@ -236,8 +194,6 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   href={hrefBase + "/top-countries-realtime.csv"}
                   className="download-data usa-button"
                   aria-label="top-countries-realtime.csv"
-                  disabled="disabled"
-                  aria-disabled="true"
                 >
                   CSV
                 </a>
@@ -259,13 +215,32 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   href={hrefBase + "/top-cities-realtime.csv"}
                   className="download-data usa-button"
                   aria-label="top-cities-realtime.csv"
-                  disabled="disabled"
-                  aria-disabled="true"
                 >
                   CSV
                 </a>
               </td>
               <td>Every 30 minutes</td>
+            </tr>
+            <tr>
+              <td>Language</td>
+              <td>90 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/language.json"}
+                  className="download-data usa-button"
+                  aria-label="language.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/language.csv"}
+                  className="download-data usa-button"
+                  aria-label="language.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
             </tr>
             <tr>
               <td>Desktop, mobile, tablet</td>
