@@ -1,0 +1,169 @@
+@use "uswds-core" as *;
+
+/**
+ * Styles for the secondary sidebar data section of the root page
+ */
+
+#secondary_data {
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid color("gray-cool-40");
+
+  @include at-media("tablet") {
+    border-bottom: 1px solid color("gray-cool-40");
+    border-left: 1px solid color("gray-cool-40");
+    border-top: none;
+  }
+}
+
+.top-pages-and-downloads {
+  min-height: units("tablet-lg");
+
+  &__headline {
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+  }
+
+  // overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
+  .usa-button-group--segmented {
+    padding: 0 units(2);
+    width: 100%;
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+
+    // make the buttons parent stretch to fill the parent container
+    .usa-button-group__item {
+      flex-grow: 1;
+      width: 33.3333%;
+
+      &[aria-selected="false"] {
+        button {
+          background-color: transparent;
+          box-shadow: inset 0 0 0 2px #005ea2;
+          color: #005ea2;
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      // make each button full width
+      .usa-button {
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      // targets the last <button> in the group
+      &:last-child>.usa-button {
+        margin-left: -2px;
+        width: 100%;
+      }
+    }
+  }
+
+  .top-pages {
+    border-bottom: 1px solid color("gray-cool-40");
+    // This prevents "jumping" in the sidebar when chart data is loading.
+    // Assumes there are 30 items in the top pages charts. Will need adjusted
+    // accordingly if the number of chart items changes.
+    min-height: 60rem;
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+
+    &__realtime-bar-chart {
+      .label {
+        text-transform: capitalize;
+      }
+    }
+
+    &__bar-chart {
+      .label {
+        text-transform: lowercase;
+      }
+    }
+
+    .bar-chart {
+      margin-top: 0;
+    }
+
+    .label {
+      color: color("gray-cool-70");
+      height: 2.2rem;
+      margin-right: units(8);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .value {
+      height: 1.25rem;
+      margin-bottom: 0.45rem;
+      margin-top: -2.2rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  .top-downloads {
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+
+    &__headline {
+      padding-top: 0;
+    }
+
+    h4 {
+      font-weight: font-weight("light");
+      margin: units(1) 0 units(1) 0;
+    }
+
+    &__bar-chart {
+      padding: 0;
+
+      .bar-chart {
+        margin-top: 0;
+      }
+
+      .label {
+        height: units(8);
+        height: 4rem;
+        line-height: 1.6;
+
+        .name {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .domain {
+          color: color("gray-cool-70");
+          text-transform: lowercase;
+        }
+
+        .filename {
+          text-transform: lowercase;
+        }
+      }
+
+      .bar {
+        margin-top: units(2);
+      }
+    }
+  }
+}

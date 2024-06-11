@@ -30,42 +30,6 @@
     }
   }
 
-  &__top-downloads {
-    padding: 0 units(3);
-
-    h4 {
-      font-weight: font-weight("light");
-    }
-
-    .bar-chart {
-      margin-top: 0;
-    }
-
-    .label {
-      line-height: 1.6;
-
-      .name {
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .domain {
-        color: color("gray-cool-70");
-        text-transform: lowercase;
-      }
-
-      .filename {
-        text-transform: lowercase;
-      }
-    }
-
-    .bar {
-      margin-top: units(2);
-    }
-  }
-
   .bar {
     background: color("blue-50v");
     height: units(1.5);
@@ -116,32 +80,6 @@
     margin-top: -2.2rem;
     text-align: right;
     white-space: nowrap;
-  }
-
-  &__top-pages {
-    .bar-chart {
-      margin-top: 0;
-    }
-
-    .label {
-      text-transform: lowercase;
-    }
-
-    &-realtime {
-      .label {
-        text-transform: capitalize;
-      }
-    }
-  }
-}
-
-.top-downloads {
-  &__headline {
-    padding-top: 0;
-  }
-
-  .label {
-    height: units(8);
   }
 }
 

@@ -16,8 +16,14 @@ import formatters from "../../lib/chart_helpers/formatters";
  * redirected to the S3 bucket URL.
  * @param {String} reportFileName the file name of the report to use as a data
  * source for the data visualization.
+ * @param {Number} numberOfListingsToDisplay the count of top page listings to
+ * display in the bar chart.
  */
-function TopPagesRealtime({ dataHrefBase, reportFileName }) {
+function TopPagesRealtime({
+  dataHrefBase,
+  reportFileName,
+  numberOfListingsToDisplay,
+}) {
   const dataURL = `${dataHrefBase}/${reportFileName}`;
   const ref = useRef(null);
 
@@ -32,7 +38,7 @@ function TopPagesRealtime({ dataHrefBase, reportFileName }) {
         .call(
           renderBlock
             .loadAndRender()
-            .transform((d) => d.data)
+            .transform((d) => d.data.slice(0, numberOfListingsToDisplay))
             .on("render", (selection) => {
               selection
                 .selectAll(".label")
@@ -62,7 +68,7 @@ function TopPagesRealtime({ dataHrefBase, reportFileName }) {
 
   return (
     <figure
-      className="top-pages__realtime"
+      className="top-pages__realtime-bar-chart"
       data-source={dataURL}
       data-refresh="15"
       ref={ref}
