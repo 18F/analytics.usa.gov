@@ -69,7 +69,7 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
           </section>
           <section className="top-downloads">
             <div className="top-downloads__headline">
-              <h3>Top {numberOfTopDownloadsToDisplay} Downloads</h3>
+              <h3>Top {numberOfTopDownloadsToDisplay} Downloads Yesterday</h3>
             </div>
             <h4>
               <em>Total file downloads yesterday on {agency} hostnames.</em>
