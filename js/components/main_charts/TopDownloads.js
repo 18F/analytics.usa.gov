@@ -14,9 +14,17 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
  * @param {String} dataHrefBase the URL of the base location of the data to be
  * downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @param {String} reportFileName the file name of the report to use as a data
+ * source for the data visualization.
+ * @param {Number} numberOfListingsToDisplay the count of downloads listings to
+ * display in the bar chart.
  */
-function TopDownloads({ dataHrefBase }) {
-  const reportURL = `${dataHrefBase}/top-downloads-yesterday.json`;
+function TopDownloads({
+  dataHrefBase,
+  reportFileName,
+  numberOfListingsToDisplay,
+}) {
+  const reportURL = `${dataHrefBase}/${reportFileName}`;
   const ref = useRef(null);
 
   useEffect(() => {
@@ -30,7 +38,7 @@ function TopDownloads({ dataHrefBase }) {
         .call(
           renderBlock
             .loadAndRender()
-            .transform((d) => d.data.slice(0, 10))
+            .transform((d) => d.data.slice(0, numberOfListingsToDisplay))
             .render(
               barChart()
                 .value((d) => +d.total_events)
@@ -70,7 +78,7 @@ function TopDownloads({ dataHrefBase }) {
   }, []);
 
   return (
-    <figure id="top-downloads" ref={ref}>
+    <figure className="top-downloads__bar-chart" ref={ref}>
       <div className="data bar-chart"></div>
     </figure>
   );

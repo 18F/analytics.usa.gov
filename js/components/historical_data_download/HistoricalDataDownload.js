@@ -216,7 +216,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
             <h2>
               <svg
                 className="usa-icon"
-                aria-hidden="false"
+                aria-hidden="true"
                 focusable="false"
                 role="img"
               >
@@ -227,7 +227,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
             <p>
               These Universal Analytics historical reports represent only
               summary-level web traffic and user demographic data aggregated by
-              month and calendar year between January 1, 2018 and June 30, 2024.
+              month and calendar year between January 1, 2018 and June 24, 2024.
               The data is limited to DAP-participating, public-facing federal
               government websites at the time of the original data collection.
               The number of websites participating in DAP was increasing during
@@ -241,8 +241,12 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
               intended to represent trends and numbers may not be precise.
             </p>
             <p>
-              This directional information should only be used for general
-              insights into online visitor behavior trends.
+              <b>
+                <i>
+                  This directional information should only be used for general
+                  insights into online visitor behavior trends.
+                </i>
+              </b>
             </p>
           </div>
         </div>
@@ -250,39 +254,39 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
         <div className="historical-analytics-data__form grid-row">
           <div className="grid-col-12">
             <form onSubmit={(e) => handleSubmit(e)}>
-              <legend className="form-control usa-legend">
-                Download data by month
-              </legend>
-              {error && (
-                <div className="grid-row">
-                  <div className="grid-col-12">
-                    <div className="usa-alert usa-alert--error" role="alert">
-                      <div className="usa-alert__body">
-                        <h4 className="usa-alert__heading">
-                          Error retrieving data
-                        </h4>
-                        <p className="usa-alert__text">
-                          Could not retrieve the requested data. DAP APIs are
-                          subject to rate limiting. Please try again later.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {invalid && (
-                <div className="grid-row">
-                  <div className="grid-col-12">
-                    <div className="usa-alert usa-alert--error" role="alert">
-                      <div className="usa-alert__body">
-                        <h4 className="usa-alert__heading">Input error</h4>
-                        <p className="usa-alert__text">{validationMessage}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
               <fieldset className="usa-fieldset">
+                <legend className="form-control usa-legend">
+                  Download data by month
+                </legend>
+                {error && (
+                  <div className="grid-row">
+                    <div className="grid-col-12">
+                      <div className="usa-alert usa-alert--error" role="alert">
+                        <div className="usa-alert__body">
+                          <h4 className="usa-alert__heading">
+                            Error retrieving data
+                          </h4>
+                          <p className="usa-alert__text">
+                            Could not retrieve the requested data. DAP APIs are
+                            subject to rate limiting. Please try again later.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {invalid && (
+                  <div className="grid-row">
+                    <div className="grid-col-12">
+                      <div className="usa-alert usa-alert--error" role="alert">
+                        <div className="usa-alert__body">
+                          <h4 className="usa-alert__heading">Input error</h4>
+                          <p className="usa-alert__text">{validationMessage}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="grid-row">
                   <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-2">
                     <label className="usa-label" htmlFor="report">

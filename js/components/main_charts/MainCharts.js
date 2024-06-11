@@ -8,8 +8,7 @@ import Visitors30Days from "./Visitors30Days";
 import Engagement from "./Engagement";
 import TrafficSources from "./TrafficSources";
 import DeviceDemographics from "./DeviceDemographics";
-import TopPages from "./TopPages";
-import TopDownloads from "./TopDownloads";
+import TopPagesAndDownloads from "./TopPagesAndDownloads";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -37,7 +36,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           <RealtimeVisitors dataHrefBase={dataHrefBase} agency={agency} />
         </article>
 
-        <article className="section">
+        <article className="section locations-and-languages-section">
           <LocationsAndLanguages dataHrefBase={dataHrefBase} />
         </article>
 
@@ -47,7 +46,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           </div>
         </article>
 
-        <article className="section">
+        <article className="section sessions-30-days-section">
           <div className="section__headline">
             <h3>Daily Sessions in the Past 30 Days</h3>
           </div>
@@ -68,7 +67,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           </section>
         </article>
 
-        <article className="section">
+        <article className="section traffic-sources-section">
           <div className="section__headline">
             <h2>Top Traffic Sources in the Last 30 Days</h2>
           </div>
@@ -80,7 +79,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
           </section>
         </article>
 
-        <article className="section">
+        <article className="section device-demographics-section">
           <div className="section__headline">
             <h2>User Device Demographics in the Last 30 Days</h2>
           </div>
@@ -94,19 +93,7 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
       </section>
 
       <section id="secondary_data" className="desktop:grid-col-4">
-        <section>
-          <TopPages dataHrefBase={dataHrefBase} />
-        </section>
-        <section className="top-downloads">
-          <div className="top-downloads__headline">
-            <h3>Top Downloads Yesterday</h3>
-          </div>
-
-          <h4>
-            <em>Total file downloads yesterday on {agency} hostnames.</em>
-          </h4>
-          <TopDownloads dataHrefBase={dataHrefBase} />
-        </section>
+        <TopPagesAndDownloads dataHrefBase={dataHrefBase} agency={agency} />
       </section>
     </>
   );

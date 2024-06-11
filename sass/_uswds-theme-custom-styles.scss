@@ -230,93 +230,6 @@ g.axis {
 }
 
 /*
-* Section Styles
-*/
-
-#main_data {
-  @include at-media("tablet") {
-    border-right: none;
-  }
-}
-
-#secondary_data {
-  border-left: none;
-  border-right: none;
-  border-top: 1px solid color("gray-cool-40");
-
-  @include at-media("tablet") {
-    border-bottom: 1px solid color("gray-cool-40");
-    border-left: 1px solid color("gray-cool-40");
-    border-top: none;
-  }
-}
-
-.top {
-  &-pages {
-    padding: 0 units(2);
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
-
-    &__headline {
-      padding-top: 0;
-    }
-
-    &__realtime {
-      .bar-chart {
-        margin-top: 0;
-      }
-
-      .label {
-        text-transform: capitalize;
-      }
-    }
-  }
-
-  &-downloads {
-    padding: 0 units(2);
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
-
-    h4 {
-      font-weight: font-weight("light");
-    }
-
-    &__headline {
-      padding-top: units(2.5);
-    }
-
-    .label {
-      height: 3rem;
-      line-height: 1.6;
-
-      .name {
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .domain {
-        color: $dark-gray;
-        text-transform: lowercase;
-      }
-
-      .filename {
-        text-transform: lowercase;
-      }
-    }
-
-    .bar {
-      margin-top: units(2);
-    }
-  }
-}
-
-/*
 * Section components (locations, 30-day-sessions, 90-day-sessions)
 */
 
@@ -393,30 +306,6 @@ g.axis {
         padding: units(1) units(3);
       }
     }
-  }
-}
-
-#top_100_table,
-#top_downloads_table {
-  padding: units(3) units(3) 0 units(3);
-
-  h3 {
-    font-size: 18px;
-  }
-
-  h5 {
-    color: $dark-gray;
-    font-weight: 300;
-  }
-}
-
-#top_downloads_table {
-  padding-top: 0;
-
-  h4 {
-    font-weight: font-weight("light");
-    margin-bottom: units(2);
-    margin-top: 0;
   }
 }
 

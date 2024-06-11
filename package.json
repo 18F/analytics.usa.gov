@@ -18,7 +18,7 @@
     "lint:styles:fix": "stylelint ./sass/*.scss --fix",
     "lint:html": "prettier -c {**/*,*}.html",
     "lint:html:fix": "prettier -w {**/*,*}.html",
-    "pa11y": "pa11y http://localhost:4000/data",
+    "pa11y": "pa11y http://localhost:4000/historical-data-download",
     "start": "SCRIPT_DEBUG=true npm-run-all --parallel local:watch local:serve",
     "test": "jest",
     "install-git-hooks": "cp ./hooks/* .git/hooks/ && chmod -R a+x .git/hooks/"
@@ -42,6 +42,7 @@
     "@eslint/js": "^8.57.0",
     "@faker-js/faker": "^8.4.1",
     "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
     "@uswds/compile": "^1.1.0",
     "babel-jest": "^29.7.0",
     "babel-loader": "^8.3.0",

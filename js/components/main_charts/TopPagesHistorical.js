@@ -17,8 +17,14 @@ import formatters from "../../lib/chart_helpers/formatters";
  * redirected to the S3 bucket URL.
  * @param {String} reportFileName the file name of the report to use as a data
  * source for the data visualization.
+ * @param {Number} numberOfListingsToDisplay the count of top page listings to
+ * display in the bar chart.
  */
-function TopPagesHistorical({ dataHrefBase, reportFileName }) {
+function TopPagesHistorical({
+  dataHrefBase,
+  reportFileName,
+  numberOfListingsToDisplay,
+}) {
   const dataURL = `${dataHrefBase}/${reportFileName}`;
   const ref = useRef(null);
 
@@ -33,7 +39,7 @@ function TopPagesHistorical({ dataHrefBase, reportFileName }) {
         .call(
           renderBlock
             .loadAndRender()
-            .transform((d) => d.data)
+            .transform((d) => d.data.slice(0, numberOfListingsToDisplay))
             .on("render", (selection) => {
               // turn the labels into links
               selection
@@ -70,7 +76,7 @@ function TopPagesHistorical({ dataHrefBase, reportFileName }) {
   });
 
   return (
-    <figure className="bar-chart__top-pages" data-source={dataURL} ref={ref}>
+    <figure className="top-pages__bar-chart" data-source={dataURL} ref={ref}>
       <div className="data bar-chart"></div>
     </figure>
   );
