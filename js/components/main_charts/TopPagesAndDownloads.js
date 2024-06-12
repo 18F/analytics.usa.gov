@@ -96,7 +96,7 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
           </section>
           <section className="top-downloads">
             <div className="top-downloads__headline">
-              <h3>Top {numberOfTopDownloadsToDisplay} Downloads Last Week</h3>
+              <h3>Top {numberOfTopDownloadsToDisplay} Downloads Last 7 Days</h3>
             </div>
             <h4>
               <em>
@@ -129,7 +129,9 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
           </section>
           <section className="top-downloads">
             <div className="top-downloads__headline">
-              <h3>Top {numberOfTopDownloadsToDisplay} Downloads Last Month</h3>
+              <h3>
+                Top {numberOfTopDownloadsToDisplay} Downloads Last 30 Days
+              </h3>
             </div>
             <h4>
               <em>
