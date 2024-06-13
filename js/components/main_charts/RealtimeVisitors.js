@@ -50,7 +50,7 @@ function RealtimeVisitors({ dataHrefBase, agency }) {
       </div>
       <div className="grid-row">
         <div className="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2">
-          people on {agency} websites and apps in the last 30 minutes
+          users on {agency} websites and apps in the last 30 minutes
         </div>
       </div>
     </section>

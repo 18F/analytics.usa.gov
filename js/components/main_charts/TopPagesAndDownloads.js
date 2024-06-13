@@ -56,7 +56,7 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
         <TabPanel>
           <section className="top-pages">
             <p>
-              <strong>People</strong> on a{" "}
+              <strong>Users</strong> on a{" "}
               <strong>single, specific page or app screen</strong> in the last
               30 minutes. Hostnames are not currently reported in real-time, so
               only page title and screen name information is available.
