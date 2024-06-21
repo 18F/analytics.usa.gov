@@ -20,8 +20,8 @@ jobs:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           repo-owner: 18F
           repo-name: analytics.usa.gov
-          issue-title: REMINDER! Review audit logs for week ending $TODAY
+          issue-title: REMINDER! Review audit logs for week ending ${{ env.TODAY }}
           issue-body: |
             This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.
           issue-labels: audit-log-review
-          issue-assignees: sanason, levinmr
+          issue-assignees: sanason
