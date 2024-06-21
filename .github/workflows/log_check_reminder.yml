@@ -14,14 +14,19 @@ jobs:
     steps:
       - name: Set current date
         run: echo "TODAY=$(date '+%Y-%m-%d')" >> "$GITHUB_ENV"
-      - name: Create issue
-        uses: GuillaumeFalourd/open-issue-action@v1
-        with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          repo-owner: 18F
-          repo-name: analytics.usa.gov
-          issue-title: REMINDER! Review audit logs for week ending ${{ env.TODAY }}
-          issue-body: |
+      - name: Create audit log review issue
+        run: |
+          gh issue create \
+          --title "$TITLE" \
+          --assignee "$ASSIGNEES" \
+          --label "$LABELS" \
+          --body "$BODY"
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TITLE: REMINDER! Review audit logs for week ending ${{ env.TODAY }}
+          ASSIGNEES: sanason
+          LABELS: audit-log-review
+          BODY: |
             This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.
-          issue-labels: audit-log-review
-          issue-assignees: sanason
+            - [ ] Review last weeks's Cloud Foundry events in the gsa-opp-analytics organization (available through the Cloud Foundry web UI). See https://cloud.gov/docs/compliance/auditing-activity/.
