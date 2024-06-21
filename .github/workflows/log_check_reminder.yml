@@ -1,6 +1,7 @@
 name: Weekly Reminder to Check Logs for Errors/Security Issues.
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * 3'
 
@@ -11,13 +12,16 @@ jobs:
     environment: develop
 
     steps:
-
-      - name: Open Issue Action
+      - name: Set current date
+        run: echo "TODAY=$(date '+%Y-%m-%d')" >> "$GITHUB_ENV"
+      - name: Create issue
         uses: GuillaumeFalourd/open-issue-action@v1
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           repo-owner: 18F
           repo-name: analytics.usa.gov
-          issue-title: REMINDER! Scan Logs for Security Issues and Other errors.
-          issue-body: This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.
+          issue-title: REMINDER! Review audit logs for week ending $TODAY
+          issue-body: |
+            This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.
+          issue-labels: audit-log-review
           issue-assignees: sanason, levinmr
