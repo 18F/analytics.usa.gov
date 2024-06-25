@@ -1,6 +1,8 @@
 @use "uswds-core" as *;
 
 .analytics-select {
+  display: flex;
+  flex-direction: column;
   order: 4;
   width: 100%;
 
@@ -20,6 +22,11 @@
       background-color: color("blue-50");
       border: units(1px) solid color("gray-1");
       color: color("gray-1");
+
+      // This media size is where the header items become spaced out horizontally.
+      @include at-media("tablet") {
+        margin-bottom: units(3);
+      }
     }
   }
 
@@ -30,12 +37,29 @@
       background-image: url("../css/img/arrow-down-black.svg");
       border: units(1px) solid color("blue-80v");
     }
+
+    label.usa-label {
+      text-align: left;
+    }
   }
 
-  // hide label needed for accessibility
   label {
-    left: -999em;
-    position: absolute;
+    margin-top: units(1);
+    margin-bottom: units(1);
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    vertical-align: middle;
+
+    @include at-media("mobile-lg") {
+      margin-top: units(2);
+      margin-bottom: 0;
+    }
+
+    // This media size is where the header items become spaced out horizontally.
+    @include at-media("tablet") {
+      margin-top: 0
+    }
   }
 
   // style the input drop down
