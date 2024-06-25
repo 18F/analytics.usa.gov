@@ -18,14 +18,19 @@ import DapApiDataFormatter from "../../lib/dap_api_data_formatter";
  * downloaded.
  * @param {String} mainAgencyName the option name to display for the default
  * option in the select.
- * @param {String} agencies a JSON string of an array of objects with slug
- * and name keys. 'slug' is the API name for the agency, and 'name' is the
- * display name for the option.
+ * @param {String} agencies a JSON string of an array of objects with slug,
+ * name, and api_v1 keys. 'slug' is the API name for the agency, 'name' is the
+ * display name for the option, and 'api_v1' is true if the agency is valid for
+ * the DAP API version 1.
  */
 function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
-  const parsedAgencies = JSON.parse(agencies).map(({ name, slug }) => {
-    return { name, value: slug };
-  });
+  const parsedAgencies = JSON.parse(agencies)
+    .filter(({ api_v1 }) => {
+      return api_v1 === true;
+    })
+    .map(({ name, slug }) => {
+      return { name, value: slug };
+    });
   const apiReports = [
     {
       value: "domain",
