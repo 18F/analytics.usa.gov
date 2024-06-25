@@ -9,7 +9,7 @@ describe("HistoricalDataDownload", () => {
   const apiURL = "http://www.example.com";
   const mainAgencyName = "foobar";
   const agencies =
-    '[{"name":"Agency for International Development","slug":"agency-international-development","_name":"Agency for International Development"}]';
+    '[{"name":"Agency for International Development","slug":"agency-international-development","_name":"Agency for International Development", "api_v1":true},{"name":"Department of Commerce","slug":"commerce","_name":"Department of Commerce", "api_v1":false}]';
   let component;
 
   // TODO: Write tests around form submit behavior (validation, success/error
