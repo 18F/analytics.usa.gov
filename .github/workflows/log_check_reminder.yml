@@ -1,9 +1,10 @@
-name: Weekly Reminder to Check Audit Logs.
+name: Monthly Reminder to Check Audit Logs.
 
 on:
   workflow_dispatch:
+  # Runs on the first day of the month
   schedule:
-    - cron: '0 0 * * 3'
+    - cron: '10 0 1 * *'
 
 jobs:
   #Add Reminder issue to github issues on analytics.usa.gov repo.
@@ -16,7 +17,7 @@ jobs:
 
     steps:
       - name: Set current date
-        run: echo "TODAY=$(date '+%Y-%m-%d')" >> "$GITHUB_ENV"
+        run: echo "YESTERDAY=$(date -v-1d '+%Y-%m-%d')" >> "$GITHUB_ENV"
       - name: Create audit log review issue
         run: |
           gh issue create \
@@ -27,11 +28,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: REMINDER! Review audit logs for week ending ${{ env.TODAY }}
+          TITLE: REMINDER! Review audit logs for month ending ${{ env.YESTERDAY }}
           ASSIGNEES: sanason
           LABELS: audit-log-review
           BODY: |
-            This issue is an automated weekly reminder to review the audit logs of all DAP systems for indications of inappropriate or unusual activity.
+            This issue is an automated monthly reminder to review the audit logs of all DAP systems for indications of inappropriate or unusual activity.
             
             # Acceptance criteria
             1. Complete and check off each of the tasks in the Audit Tasks list. Keep a list of any findings.
