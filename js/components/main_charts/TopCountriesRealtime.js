@@ -42,10 +42,13 @@ function TopCountriesRealtime({ dataHrefBase }) {
               }
             });
             const international = totalVisits - USVisits;
-            const data = {
-              "United States &amp; Territories": USVisits,
-              International: international,
-            };
+            const data = {};
+            if (USVisits) {
+              data["United States &amp; Territories"] = USVisits;
+            }
+            if (international) {
+              data["International"] = international;
+            }
             return transformers.findProportionsOfMetricFromValue(
               transformers.listify(data),
             );

@@ -29,7 +29,9 @@ function RealtimeVisitors({ dataHrefBase, agency }) {
         .call(
           renderBlock.loadAndRender().render((selection, data) => {
             const totals = data.data[0];
-            selection.text(formatters.addCommas(+totals.active_visitors));
+            selection.text(
+              totals ? formatters.addCommas(+totals.active_visitors) : 0,
+            );
           }),
         );
       return result;
