@@ -1,4 +1,4 @@
-name: Weekly Reminder to Check Logs for Errors/Security Issues.
+name: Weekly Reminder to Check Audit Logs.
 
 on:
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
           ASSIGNEES: sanason
           LABELS: audit-log-review
           BODY: |
-            This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.
+            This issue is an automated weekly reminder to review the audit logs of all DAP systems for indications of inappropriate or unusual activity.
             
             # Acceptance criteria
             1. Complete and check off each of the tasks in the Audit Tasks list. Keep a list of any findings.
