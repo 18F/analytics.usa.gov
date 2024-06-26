@@ -10,6 +10,9 @@ jobs:
   add_reminder:
     runs-on: ubuntu-latest
     environment: develop
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - name: Set current date
@@ -22,11 +25,27 @@ jobs:
           --label "$LABELS" \
           --body "$BODY"
         env:
-          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           TITLE: REMINDER! Review audit logs for week ending ${{ env.TODAY }}
           ASSIGNEES: sanason
           LABELS: audit-log-review
           BODY: |
             This issue is an automated weekly reminder to review logs for all Analytics systems for any security errors or other errors.
-            - [ ] Review last weeks's Cloud Foundry events in the gsa-opp-analytics organization (available through the Cloud Foundry web UI). See https://cloud.gov/docs/compliance/auditing-activity/.
+            
+            # Acceptance criteria
+            1. Complete and check off each of the tasks in the Audit Tasks list. Keep a list of any findings.
+            2. If there are any findings in your list, email them to:
+            - sergio.mendoza-jimenez@gsa.gov (ISSM)
+            - sue.frederick@gsa.gov (ISSO)
+            - marina.fox@gsa.gov (System owner)
+            3. Close the ticket with a comment "Closed with findings" or "Closed without findings", as appropriate. Feel free to add any other comments as well.
+            
+            # Audit Tasks
+            - [ ] Review Cloud Foundry events in the gsa-opp-analytics organization (available through the Cloud Foundry web UI). See https://cloud.gov/docs/compliance/auditing-activity/.
+            - [ ] Verify ssh disabled for production applications and spaces.
+            - [ ] Review application logs on https://login.fr.cloud.gov/ for organization gsa-opp-analytics.
+            - [ ] Review the GA4 Account Change History (viewing instructions at https://support.google.com/analytics/answer/9305465?hl=en).
+            - [ ] Review CloudTrail logs for AWS S3 and CloudFront.
+            - [ ] Review Github Organization Audit Logs for the following repos:
+            - [ ] Review NrAuditEvent events in New Relic.
