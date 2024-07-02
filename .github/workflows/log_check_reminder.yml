@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Set current date
-        run: echo "YESTERDAY=$(date -v-1d '+%Y-%m-%d')" >> "$GITHUB_ENV"
+        run: echo "YESTERDAY=$(date --date='1 day ago' '+%Y-%m-%d')" >> "$GITHUB_ENV"
       - name: Create audit log review issue
         run: |
           gh issue create \
