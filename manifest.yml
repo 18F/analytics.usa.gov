@@ -2,13 +2,15 @@ applications:
 - name: ${APP_NAME}
   instances: 1
   memory: 128M
-  buildpacks:
-  - https://github.com/cloudfoundry/apt-buildpack
-  - nginx_buildpack
+  buildpack: nginx_buildpack
   stack: cflinuxfs4
   services:
   - ${S3_SERVICE_NAME}
-  command: "chmod +x ./entrypoint.sh && ./entrypoint.sh"
+  path: .
   env:
+    API_FQDN: ${API_FQDN}
+    API_DATA_GOV_SECRET: ${API_DATA_GOV_SECRET}
+    API_PORT: ${API_PORT}
     NEW_RELIC_APP_NAME: ${NEW_RELIC_APP_NAME}
     NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}
+    S3_BUCKET_URL: ${S3_BUCKET_URL}
