@@ -4,6 +4,8 @@ applications:
   memory: 128M
   buildpack: nginx_buildpack
   stack: cflinuxfs4
+  routes:
+  - route: ${APP_NAME}.app.cloud.gov
   services:
   - ${S3_SERVICE_NAME}
   path: .
