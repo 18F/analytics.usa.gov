@@ -27,13 +27,13 @@ import TopPagesHistorical from "./TopPagesHistorical";
  * @param {string} props.agency the display name for the current agency.
  * @returns {import('react').ReactElement} The rendered element
  */
-function TopPagesAndDownloads({ dataHrefBase, agency }) {
+function SidebarContent({ dataHrefBase, agency }) {
   const numberOfTopPagesToDisplay = 30;
   const numberOfTopDownloadsToDisplay = 20;
 
   return (
-    <section className="top-pages-and-downloads">
-      <div className="top-pages-and-downloads__headline">
+    <section className="sidebar-content">
+      <div className="sidebar-content__headline">
         <h2>Top {numberOfTopPagesToDisplay} Web Pages and App Screens</h2>
       </div>
       <Tabs>
@@ -153,9 +153,9 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
   );
 }
 
-TopPagesAndDownloads.propTypes = {
+SidebarContent.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
   agency: PropTypes.string.isRequired,
 };
 
-export default TopPagesAndDownloads;
+export default SidebarContent;

@@ -8,7 +8,7 @@ import Visitors30Days from "./Visitors30Days";
 import Engagement from "./Engagement";
 import TrafficSources from "./TrafficSources";
 import DeviceDemographics from "./DeviceDemographics";
-import TopPagesAndDownloads from "./TopPagesAndDownloads";
+import SidebarContent from "./SidebarContent";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -28,7 +28,7 @@ import TopPagesAndDownloads from "./TopPagesAndDownloads";
  * @param {string} props.agency the display name for the current agency.
  * @returns {import('react').ReactElement} The rendered element
  */
-function MainCharts({ dataURL, dataPrefix, agency }) {
+function DashboardContent({ dataURL, dataPrefix, agency }) {
   const dataHrefBase = `${dataURL}/${dataPrefix}`;
 
   return (
@@ -99,16 +99,16 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
       </section>
 
       <section id="secondary_data" className="desktop:grid-col-4">
-        <TopPagesAndDownloads dataHrefBase={dataHrefBase} agency={agency} />
+        <SidebarContent dataHrefBase={dataHrefBase} agency={agency} />
       </section>
     </>
   );
 }
 
-MainCharts.propTypes = {
+DashboardContent.propTypes = {
   dataURL: PropTypes.string.isRequired,
   dataPrefix: PropTypes.string.isRequired,
   agency: PropTypes.string.isRequired,
 };
 
-export default MainCharts;
+export default DashboardContent;

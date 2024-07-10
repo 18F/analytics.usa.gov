@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TopPagesAndDownloads from "../TopPagesAndDownloads";
+import SidebarContent from "../SidebarContent";
 
-describe("TopPagesAndDownloads", () => {
+describe("SidebarContent", () => {
   let component;
 
   describe("when 30 minutes tab is selected", () => {
     beforeEach(async () => {
       component = render(
-        <TopPagesAndDownloads
+        <SidebarContent
           dataHrefBase="http://www.example.com/data/"
           agency="Department of Interior"
         />,
@@ -27,7 +27,7 @@ describe("TopPagesAndDownloads", () => {
       const user = userEvent.setup();
 
       component = render(
-        <TopPagesAndDownloads
+        <SidebarContent
           dataHrefBase="http://www.example.com/data/"
           agency="Department of Interior"
         />,
@@ -46,7 +46,7 @@ describe("TopPagesAndDownloads", () => {
       const user = userEvent.setup();
 
       component = render(
-        <TopPagesAndDownloads
+        <SidebarContent
           dataHrefBase="http://www.example.com/data/"
           agency="Department of Interior"
         />,

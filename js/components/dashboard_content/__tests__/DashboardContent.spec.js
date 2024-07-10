@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
-import MainCharts from "../MainCharts";
+import DashboardContent from "../DashboardContent";
 
 describe("MainCharts", () => {
   beforeEach(async () => {
     render(
-      <MainCharts
+      <DashboardContent
         dataURL="http://www.example.com"
         dataPrefix="interior"
         agency="Department of Interior"

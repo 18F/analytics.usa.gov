@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import MainCharts from "./MainCharts";
+import DashboardContent from "./DashboardContent";
 
 /**
- * Renders an MainCharts React component, when there is an element on the
+ * Renders an DashboardContent React component, when there is an element on the
  * current page with id 'main-charts-root'.
  *
  * The MainCharts component will be rendered as a child to the matching
@@ -18,7 +18,7 @@ if (domNode) {
   const dataPrefix = domNode.attributes.getNamedItem("dataprefix")?.value;
   const agency = domNode.attributes.getNamedItem("agency")?.value;
   root.render(
-    <MainCharts
+    <DashboardContent
       dataURL={dataURL}
       dataPrefix={dataPrefix}
       agency={agency ? agency : "U.S. Federal Government"}
