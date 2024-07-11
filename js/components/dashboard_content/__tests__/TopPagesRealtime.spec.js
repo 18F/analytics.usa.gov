@@ -22,7 +22,7 @@ describe("TopPagesRealtime", () => {
         <TopPagesRealtime
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={30}
+          numberOfListingsToDisplay={10}
           refreshSeconds={30}
         />,
       );
@@ -139,11 +139,11 @@ describe("TopPagesRealtime", () => {
         <TopPagesRealtime
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={30}
+          numberOfListingsToDisplay={10}
           refreshSeconds={30}
         />,
       );
-      await waitFor(() => screen.getByText("National Weather Service"));
+      await waitFor(() => screen.getByText("USAJOBS - Search"));
     });
 
     it("renders a component with data loaded", () => {
@@ -163,7 +163,7 @@ describe("TopPagesRealtime", () => {
         <TopPagesRealtime
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={30}
+          numberOfListingsToDisplay={10}
           refreshSeconds={30}
         />,
       );

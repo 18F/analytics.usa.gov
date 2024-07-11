@@ -5,20 +5,21 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TopDownloads from "./TopDownloads";
 import TopPagesRealtime from "./TopPagesRealtime";
 import TopPagesHistorical from "./TopPagesHistorical";
+import TopVideoPlays from "./TopVideoPlays";
 
 /**
- * Contains charts and other data visualizations for the top pages and top
- * downloads section of the site. This component is mainly laying out the
- * structure for the section, including tabs/panels, and passes props necessary
- * for getting data and displaying visualizations to child components. The top
- * pages chart and top downloads chart displayed correspond to the time interval
- * selected in the tabs.
+ * Contains charts and other data visualizations for the top pages, top
+ * downloads, and top video plays section of the site. This component is mainly
+ * laying out the structure for the section, including tabs/panels, and passes
+ * props necessary for getting data and displaying visualizations to child
+ * components. The top pages chart, top downloads chart, and top video plays
+ * displayed correspond to the time interval selected in the tabs.
  *
  * Note that the 30 minutes time interval is how often Google Analytics 4
  * updates realtime reports. The dimensions/metrics needed to report on file
  * downloads are not available in the realtime reporting API, so for the 30
- * minute time interval, show top downloads for the past day (the shortest time
- * interval allowed for the non-realtime reporting API.)
+ * minute time interval, show top downloads and top video plays for the past day
+ * (the shortest time interval allowed for the non-realtime reporting API.)
  *
  * @param {object} props the properties for the component
  * @param {string} props.dataHrefBase the URL of the base location of the data
@@ -29,7 +30,8 @@ import TopPagesHistorical from "./TopPagesHistorical";
  */
 function SidebarContent({ dataHrefBase, agency }) {
   const numberOfTopPagesToDisplay = 30;
-  const numberOfTopDownloadsToDisplay = 20;
+  const numberOfTopDownloadsToDisplay = 10;
+  const numberOfTopVideoPlaysToDisplay = 10;
 
   return (
     <section className="sidebar-content">
@@ -83,6 +85,21 @@ function SidebarContent({ dataHrefBase, agency }) {
               numberOfListingsToDisplay={numberOfTopDownloadsToDisplay}
             />
           </section>
+          <section className="top-video-plays">
+            <div className="top-video-plays__headline">
+              <h3>
+                Top {numberOfTopVideoPlaysToDisplay} Video Plays Yesterday
+              </h3>
+            </div>
+            <h4>
+              <em>Total videos played yesterday on {agency} hostnames.</em>
+            </h4>
+            <TopVideoPlays
+              dataHrefBase={dataHrefBase}
+              reportFileName="top-video-plays-yesterday.json"
+              numberOfListingsToDisplay={numberOfTopDownloadsToDisplay}
+            />
+          </section>
         </TabPanel>
         <TabPanel>
           <section className="top-pages">
@@ -109,6 +126,23 @@ function SidebarContent({ dataHrefBase, agency }) {
             <TopDownloads
               dataHrefBase={dataHrefBase}
               reportFileName="top-downloads-7-days.json"
+              numberOfListingsToDisplay={numberOfTopDownloadsToDisplay}
+            />
+          </section>
+          <section className="top-video-plays">
+            <div className="top-video-plays__headline">
+              <h3>
+                Top {numberOfTopVideoPlaysToDisplay} Video Plays Last 7 Days
+              </h3>
+            </div>
+            <h4>
+              <em>
+                Total videos played over the last week on {agency} hostnames.
+              </em>
+            </h4>
+            <TopVideoPlays
+              dataHrefBase={dataHrefBase}
+              reportFileName="top-video-plays-7-days.json"
               numberOfListingsToDisplay={numberOfTopDownloadsToDisplay}
             />
           </section>
@@ -144,6 +178,23 @@ function SidebarContent({ dataHrefBase, agency }) {
             <TopDownloads
               dataHrefBase={dataHrefBase}
               reportFileName="top-downloads-30-days.json"
+              numberOfListingsToDisplay={numberOfTopDownloadsToDisplay}
+            />
+          </section>
+          <section className="top-video-plays">
+            <div className="top-video-plays__headline">
+              <h3>
+                Top {numberOfTopVideoPlaysToDisplay} Video Plays Last 30 Days
+              </h3>
+            </div>
+            <h4>
+              <em>
+                Total videos played over the last month on {agency} hostnames.
+              </em>
+            </h4>
+            <TopVideoPlays
+              dataHrefBase={dataHrefBase}
+              reportFileName="top-video-plays-30-days.json"
               numberOfListingsToDisplay={numberOfTopDownloadsToDisplay}
             />
           </section>

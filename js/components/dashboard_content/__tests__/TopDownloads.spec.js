@@ -22,7 +22,7 @@ describe("TopDownloads", () => {
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={20}
+          numberOfListingsToDisplay={5}
         />,
       );
     });
@@ -126,7 +126,7 @@ describe("TopDownloads", () => {
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={20}
+          numberOfListingsToDisplay={5}
         />,
       );
       await waitFor(() => screen.getByText("Passport Fees"));
@@ -149,7 +149,7 @@ describe("TopDownloads", () => {
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={20}
+          numberOfListingsToDisplay={5}
         />,
       );
     });

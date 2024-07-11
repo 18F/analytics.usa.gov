@@ -22,7 +22,7 @@ describe("TopPagesHistorical", () => {
         <TopPagesHistorical
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={30}
+          numberOfListingsToDisplay={10}
         />,
       );
     });
@@ -168,7 +168,7 @@ describe("TopPagesHistorical", () => {
         <TopPagesHistorical
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={30}
+          numberOfListingsToDisplay={10}
         />,
       );
       await waitFor(() => screen.getByRole("link", { name: "www.time.gov" }));
@@ -191,7 +191,7 @@ describe("TopPagesHistorical", () => {
         <TopPagesHistorical
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
-          numberOfListingsToDisplay={30}
+          numberOfListingsToDisplay={10}
         />,
       );
     });
