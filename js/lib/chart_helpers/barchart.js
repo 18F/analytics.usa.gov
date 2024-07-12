@@ -1,5 +1,7 @@
 import d3 from "d3";
 
+const TRANSITION_DURATION = 200;
+
 /**
  * @returns {*} a D3 block which charts data
  */
@@ -39,6 +41,8 @@ export default function barChart() {
       : null;
     bin
       .select(".bar")
+      .transition()
+      .duration(TRANSITION_DURATION)
       .style(
         "width",
         componentScale

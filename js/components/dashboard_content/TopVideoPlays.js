@@ -21,6 +21,7 @@ import formatters from "../../lib/chart_helpers/formatters";
  * data source for the data visualization.
  * @param {number} props.numberOfListingsToDisplay the count of downloads
  * listings to display in the bar chart.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function TopVideoPlays({
   dataHrefBase,
