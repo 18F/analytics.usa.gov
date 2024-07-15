@@ -13,7 +13,7 @@ const ASSETS = "assets/uswds";
 /**
  * Copy USWDS 3 assets for build
  *
- * */
+ */
 
 function copyUswdsJS() {
   return src(`${USWDS}/js/**/*`).pipe(dest(`${ASSETS}/js`));

@@ -4,16 +4,16 @@ import formatters from "./formatters";
  * nested chart helper function:
  *
  * 1. finds the selection's `.bin` child with data matching the parentFilter
- *    function (the "parent bin")
+ * function (the "parent bin")
  * 2. determines that bin's share of the total (if `data-scale-to-parent` is "true")
  * 3. grabs all of the child `.bin`s of the child selection and updates their
- *    share (by multiplying it by the parent's)
+ * share (by multiplying it by the parent's)
  * 4. updates the `.bar` width  and `.value` text for each child bin
  * 5. moves the child node into the parent bin
  *
- * @param {Object} selection a D3 selected parent chart.
- * @param {String} key the key in the parent chart to nest within.
- * @param {Object} child a D3 selected child chart to nest under the key.
+ * @param {object} selection a D3 selected parent chart.
+ * @param {string} key the key in the parent chart to nest within.
+ * @param {object} child a D3 selected child chart to nest under the key.
  */
 export default function nestCharts(selection, key, child) {
   const parentFilter = (d) => d.key === key;

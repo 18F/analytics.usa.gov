@@ -7,6 +7,10 @@ const US_AND_TERRITORIES = [
   "Northern Mariana Islands",
 ];
 
+/**
+ * @param {string} name a name of a location
+ * @returns {boolean} true if the name is US or a US territory
+ */
 const isPartOfUnitedStates = function (name) {
   return new RegExp(name).test(US_AND_TERRITORIES.join("|"));
 };

@@ -6,7 +6,9 @@ import PropTypes from "prop-types";
  *
  * This component is using USWDS grid classes.
  *
- * @param {String} siteDomain the domain for the site.
+ * @param {object} props the properties for the component
+ * @param {string} props.siteDomain the domain for the site.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function Footer({ siteDomain }) {
   useEffect(() => {
@@ -70,7 +72,7 @@ function Footer({ siteDomain }) {
               <a
                 href="https://open.gsa.gov/api/dap/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 API
               </a>{" "}
@@ -157,7 +159,7 @@ function Footer({ siteDomain }) {
                 analytics.usa.gov
               </p>
               <p className="usa-identifier__identity-disclaimer">
-                Analytics.usa.gov is a product of GSA's{" "}
+                Analytics.usa.gov is a product of GSA&apos;s{" "}
                 <a href="https://digital.gov/guides/dap/">
                   Digital Analytics Program
                 </a>

@@ -14,7 +14,7 @@ class DapApiService {
   #apiURL;
 
   /**
-   * @param {String} apiURL the base route for the API.
+   * @param {string} apiURL the base route for the API.
    */
   constructor(apiURL) {
     this.#apiURL = apiURL;
@@ -27,14 +27,14 @@ class DapApiService {
    * If an agency is provided, the report will be limited to the data for that
    * agency.  Otherwise, data for all DAP agencies will be returned.
    *
-   * @param {String} report The report name. See the DAP API docs for the list
+   * @param {string} report The report name. See the DAP API docs for the list
    * of report names.
-   * @param {String} agency The agency name (optional). See the DAP API docs for
+   * @param {string} agency The agency name (optional). See the DAP API docs for
    * the list of agency names.
-   * @param {String} month The month of data (expects the digit version without
+   * @param {string} month The month of data (expects the digit version without
    * leading zero).
-   * @param {String} year The year of data (expects the 4 digit year).
-   * @returns {Promise<Object[]>} an array of JSON objects with the report data.
+   * @param {string} year The year of data (expects the 4 digit year).
+   * @returns {Promise<object[]>} an array of JSON objects with the report data.
    */
   getReportForMonth(report, agency, month, year) {
     if (!(report && month && year)) {
@@ -75,14 +75,15 @@ class DapApiService {
    * Get pages of data from the API until an API call returns less items than
    * the limit of data items per call.
    *
-   * @param {String} baseURL the API URL with query params.
-   * @returns {Object[]} the full JSON array with pages of data combined.
+   * @param {string} baseURL the API URL with query params.
+   * @returns {object[]} the full JSON array with pages of data combined.
    */
   async #getAllPages(baseURL) {
     const URL = `${baseURL}&limit=${DapApiService.#API_PAGE_LIMIT}`;
     let fullJsonArray = [];
 
     let page = 1;
+    /* eslint-disable no-constant-condition */
     while (true) {
       const jsonArrayPage = await this.#getPage(URL, page);
       fullJsonArray = fullJsonArray.concat(jsonArrayPage);
@@ -92,6 +93,7 @@ class DapApiService {
       }
       page++;
     }
+    /* eslint-enable no-constant-condition */
   }
 
   async #getPage(baseURL, page) {

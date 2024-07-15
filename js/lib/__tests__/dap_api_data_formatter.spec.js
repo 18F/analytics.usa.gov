@@ -1,6 +1,9 @@
 import DapApiDataFormatter from "../dap_api_data_formatter";
 import ApiDataItemFactory from "../../../spec/factories/api_data_item";
 
+// Eslint doesn't like the way we remove notice/id keys from the data objects.
+// TODO: Fix this to be compliant, or disable the ESLint rule in a better way.
+/* eslint-disable no-unused-vars */
 describe("DapApiDataFormatter", () => {
   const reports = [{ name: "Top Downloads", value: "download" }];
   const agencies = [{ name: "Department of Interior", value: "interior" }];
@@ -161,3 +164,4 @@ describe("DapApiDataFormatter", () => {
     });
   });
 });
+/* eslint-enable no-unused-vars */

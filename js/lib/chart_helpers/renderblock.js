@@ -2,17 +2,18 @@ import d3 from "d3";
 import barChart from "./barchart";
 import formatters from "./formatters";
 import transformers from "./transformers";
-/*
- * our block renderer is a d3 selection manipulator that does a bunch of
+
+/**
+ * Our block renderer is a d3 selection manipulator that does a bunch of
  * stuff:
  *
  * 1. it knows how to get the URL for a block by either looking at the
- *    `source` key of its bound data _or_ the node's data-source attribute.
+ * `source` key of its bound data _or_ the node's data-source attribute.
  * 2. it can be configured to transform the loaded data using a function
  * 3. it has a configurable rendering function that gets called on the first
- *    child of matching the `.data` selector.
+ * child of matching the `.data` selector.
  * 4. it dispatches events "loading", "load", "render" and "error" events to
- *    notify us of the state of data.
+ * notify us of the state of data.
  *
  * Example:
  *
@@ -24,6 +25,8 @@ import transformers from "./transformers";
  * d3.select("#foo")
  *   .call(block);
  * ```
+ *
+ * @returns {*} a D3 block which loads data automatically
  */
 function loadAndRender() {
   let url = function (d) {
@@ -32,7 +35,9 @@ function loadAndRender() {
 
   let transform = Object;
 
-  let renderer = function () {};
+  let renderer = () => {
+    return;
+  };
 
   const dispatch = d3.dispatch("loading", "load", "error", "render");
 
@@ -137,15 +142,25 @@ function buildBarChartWithLabel(transformMethod, labelKey) {
     );
 }
 
-// Builds a bar chart for the key with values that are below a threshold
-// combined into an Other category
+/**
+ * Builds a bar chart for the key with values that are below a threshold
+ * combined into an Other category
+ *
+ * @param {string} desiredKey the key of the data to use for the chart
+ * @returns {Promise} resolves when the chart renders
+ */
 function buildBarBasicChart(desiredKey) {
   const method = (d) => transformers.toTopPercents(d, desiredKey);
   return buildBarChart(method);
 }
 
-// Builds a bar chart for the key with values that are below a threshold
-// omitted from the chart
+/**
+ * Builds a bar chart for the key with values that are below a threshold
+ * omitted from the chart
+ *
+ * @param {string} desiredKey the key of the data to use for the chart
+ * @returns {Promise} resolves when the chart renders
+ */
 function buildCompactBarChart(desiredKey) {
   const method = (d) =>
     transformers.toTopPercentsWithoutConsolidation(d, desiredKey);
