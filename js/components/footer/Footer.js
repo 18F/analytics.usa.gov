@@ -142,12 +142,11 @@ function Footer({ siteDomain }) {
         >
           <div className="usa-identifier__container">
             <div className="usa-identifier__logos">
-              <a href="" className="usa-identifier__logo">
+              <a href="/" className="usa-identifier__logo">
                 <img
                   className="usa-identifier__logo-img"
                   src={`${siteDomain}/images/gsa-logo.svg`}
                   alt="GSA logo"
-                  role="img"
                 />
               </a>
             </div>

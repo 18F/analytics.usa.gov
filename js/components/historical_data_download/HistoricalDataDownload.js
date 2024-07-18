@@ -400,7 +400,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                     </select>
                   </div>
                   <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-3">
-                    <label className="usa-label">Download</label>
+                    <span className="usa-label">Download</span>
                     <div className="submit-buttons">
                       <input className="usa-button" type="submit" value="CSV" />
                       <input

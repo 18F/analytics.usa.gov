@@ -1,8 +1,9 @@
 const { configs: eslintConfigs } = require("@eslint/js");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 const globals = require("globals");
-const reactRecommended = require("eslint-plugin-react/configs/recommended");
+const jsxA11y = require("eslint-plugin-jsx-a11y");
 const jsdoc = require("eslint-plugin-jsdoc");
+const reactRecommended = require("eslint-plugin-react/configs/recommended");
 
 module.exports = [
   {
@@ -26,6 +27,7 @@ module.exports = [
   // When linting ignore the locally compiled minified JS, other assets, and
   // touchpoints JS which is third party code copied into this repo.
   {
+    ...eslintConfigs.recommended,
     ignores: [
       "_site/**/*.js",
       "assets/**/*",
@@ -33,7 +35,6 @@ module.exports = [
       "ga4-data/**/*",
       "js/lib/touchpoints.js",
     ],
-    ...eslintConfigs.recommended,
   },
   {
     ignores: [
@@ -48,9 +49,17 @@ module.exports = [
         version: "detect",
       },
     },
-    ...reactRecommended,
+    plugins: {
+      ...reactRecommended.plugins,
+    },
+    rules: {
+      ...reactRecommended.rules,
+    },
   },
   {
+    plugins: {
+      "jsx-a11y": jsxA11y,
+    },
     ignores: [
       "_site/**/*.js",
       "assets/**/*",
@@ -58,7 +67,19 @@ module.exports = [
       "ga4-data/**/*",
       "js/lib/touchpoints.js",
     ],
+    rules: {
+      ...jsxA11y.configs.recommended.rules,
+    },
+  },
+  {
     ...eslintPluginPrettierRecommended,
+    ignores: [
+      "_site/**/*.js",
+      "assets/**/*",
+      "sass/**/*",
+      "ga4-data/**/*",
+      "js/lib/touchpoints.js",
+    ],
   },
   {
     plugins: {
