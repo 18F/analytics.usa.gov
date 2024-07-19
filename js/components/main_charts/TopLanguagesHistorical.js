@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import transformers from "../../lib/chart_helpers/transformers";
 
 /**
@@ -19,17 +19,19 @@ import transformers from "../../lib/chart_helpers/transformers";
 function TopLanguagesHistorical({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/language.json`;
   const ref = useRef(null);
+  const [languageData, setLanguageData] = useState(null);
 
   useEffect(() => {
-    const initHistoricalLanguagesChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock.buildBarChartWithLabel((d) => {
+    const initLanguagesChart = async () => {
+      if (!languageData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setLanguageData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder.buildBarChartWithLabel(
+          ref.current,
+          languageData,
+          (d) => {
             // 1. filter out non-languages - (other)
             // 2. convert object into array of objects
             // 3. sort desc by visitors #
@@ -57,12 +59,13 @@ function TopLanguagesHistorical({ dataHrefBase }) {
             );
 
             return values.slice(0, 10);
-          }, "language"),
+          },
+          "language",
         );
-      return result;
+      }
     };
-    initHistoricalLanguagesChart().catch(console.error);
-  }, []);
+    initLanguagesChart().catch(console.error);
+  }, [languageData]);
 
   return (
     <>

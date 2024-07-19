@@ -1,15 +1,18 @@
 import React from "react";
-import { create, act } from "react-test-renderer";
+import { render, screen, waitFor } from "@testing-library/react";
 import Engagement from "../Engagement";
 
 describe("Engagement", () => {
+  let component;
+
+  beforeEach(async () => {
+    component = await render(
+      <Engagement dataHrefBase="http://www.example.com/data/" />,
+    );
+    await waitFor(() => screen.getByText("Percent of Engaged Sessions"));
+  });
+
   it("renders", () => {
-    let component;
-    act(() => {
-      component = create(
-        <Engagement dataHrefBase="http://www.example.com/data/" />,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(component.asFragment()).toMatchSnapshot();
   });
 });

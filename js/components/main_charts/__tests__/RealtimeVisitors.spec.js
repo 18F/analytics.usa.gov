@@ -1,11 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import d3 from "d3";
-import RealtimeVisitors from "../RealtimeVisitors";
+import { render, screen, waitFor } from "@testing-library/react";
 
-jest.mock("d3", () => ({
-  ...jest.requireActual("d3"),
-  json: jest.fn(),
+import RealtimeVisitors from "../RealtimeVisitors";
+import DataLoader from "../../../lib/data_loader";
+
+jest.mock("../../../lib/data_loader", () => ({
+  ...jest.requireActual("../../../lib/data_loader"),
+  loadJSON: jest.fn(),
 }));
 
 describe("RealtimeVisitors", () => {
@@ -14,10 +15,14 @@ describe("RealtimeVisitors", () => {
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(null);
+      });
       component = render(
         <RealtimeVisitors
           dataHrefBase="http://www.example.com/data/"
           agency="Department of Defense"
+          refreshSeconds={30}
         />,
       );
     });
@@ -28,7 +33,7 @@ describe("RealtimeVisitors", () => {
   });
 
   describe("when data is loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       data = {
         name: "realtime",
         query: {
@@ -54,15 +59,17 @@ describe("RealtimeVisitors", () => {
         taken_at: "2024-01-05T16:05:45.980Z",
       };
 
-      d3.json.mockImplementation((url, callback) => {
-        callback(null, data);
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(data);
       });
       component = render(
         <RealtimeVisitors
           dataHrefBase="http://www.example.com/data/"
           agency="Department of Defense"
+          refreshSeconds={30}
         />,
       );
+      await waitFor(() => screen.getByText("10,003,538"));
     });
 
     it("renders a component with data loaded", () => {
@@ -71,20 +78,28 @@ describe("RealtimeVisitors", () => {
   });
 
   describe("when data loading has an error", () => {
-    beforeEach(async () => {
-      d3.json.mockImplementation((url, callback) => {
-        callback(new Error("you broke it"), null);
+    const error = "you broke it";
+
+    beforeEach(() => {
+      console.error = jest.fn();
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.reject(error);
       });
       component = render(
         <RealtimeVisitors
           dataHrefBase="http://www.example.com/data/"
           agency="Department of Defense"
+          refreshSeconds={30}
         />,
       );
     });
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("logs the error to console", () => {
+      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

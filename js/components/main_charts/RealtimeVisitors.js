@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
@@ -14,39 +14,46 @@ import formatters from "../../lib/chart_helpers/formatters";
  * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
  * @param {string} props.agency the display name for the current agency.
+ * @param {number} props.refreshSeconds the number of seconds to wait before
+ * refreshing chart data.
  * @returns {import('react').ReactElement} The rendered element
  */
-function RealtimeVisitors({ dataHrefBase, agency }) {
-  const reportURL = `${dataHrefBase}/realtime.json`;
+function RealtimeVisitors({ dataHrefBase, agency, refreshSeconds }) {
+  const dataURL = `${dataHrefBase}/realtime.json`;
   const ref = useRef(null);
+  const [realtimeVisitorData, setRealtimeVisitorData] = useState(null);
 
   useEffect(() => {
     const initRealtimeVisitorsChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: reportURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock.loadAndRender().render((selection, data) => {
+      if (!realtimeVisitorData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setRealtimeVisitorData(data);
+        // Refresh data every interval. useEffect will run and update the chart
+        // when the state is changed.
+        setInterval(() => {
+          DataLoader.loadJSON(dataURL).then((data) => {
+            setRealtimeVisitorData(data);
+          });
+        }, refreshSeconds * 1000);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(realtimeVisitorData)
+          .setRenderer((selection, data) => {
             const totals = data.data[0];
             selection.text(
               totals ? formatters.addCommas(+totals.active_visitors) : 0,
             );
-          }),
-        );
-      return result;
+          })
+          .build();
+      }
     };
     initRealtimeVisitorsChart().catch(console.error);
-  });
+  }, [realtimeVisitorData]);
 
   return (
-    <section
-      className="chart-realtime__visitors-count"
-      data-refresh="15"
-      ref={ref}
-    >
+    <section className="chart-realtime__visitors-count" ref={ref}>
       <div className="grid-row">
         <h2 className="chart-realtime__current-visitors data grid-col-12">
           ...
@@ -64,6 +71,7 @@ function RealtimeVisitors({ dataHrefBase, agency }) {
 RealtimeVisitors.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
   agency: PropTypes.string.isRequired,
+  refreshSeconds: PropTypes.number.isRequired,
 };
 
 export default RealtimeVisitors;

@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
@@ -20,37 +20,32 @@ import formatters from "../../lib/chart_helpers/formatters";
 function AverageEngagementDuration({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/engagement-duration-30-days.json`;
   const ref = useRef(null);
+  const [engagementDurationData, setEngagementDurationData] = useState(null);
 
   useEffect(() => {
-    /**
-     * The average engagement duration block is the engagement duration in
-     * seconds divided by the number of sessions. The result is rounded and
-     * formatted to a readable amount of time.
-     *
-     * @returns {Promise} resolves when render is complete
-     */
-    const initEngagementDurationChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock.loadAndRender().render((selection, data) => {
-            const metrics = data.data[0];
+    const initEngagementDurationsChart = async () => {
+      if (!engagementDurationData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setEngagementDurationData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(engagementDurationData)
+          .setRenderer((selection, data) => {
+            const metrics = data.data[0] || {};
             const avgEngagementDuration =
               parseInt(metrics.userEngagementDuration) /
               parseInt(metrics.visits);
             selection.text(
               formatters.secondsToReadableTime(avgEngagementDuration),
             );
-          }),
-        );
-      return result;
+          })
+          .build();
+      }
     };
-    initEngagementDurationChart().catch(console.error);
-  }, []);
+    initEngagementDurationsChart().catch(console.error);
+  }, [engagementDurationData]);
 
   return (
     <>

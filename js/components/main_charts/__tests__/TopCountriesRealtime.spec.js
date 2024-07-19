@@ -1,11 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import d3 from "d3";
+import { render, screen, waitFor } from "@testing-library/react";
+
+import DataLoader from "../../../lib/data_loader";
 import TopCountriesRealtime from "../TopCountriesRealtime";
 
-jest.mock("d3", () => ({
-  ...jest.requireActual("d3"),
-  json: jest.fn(),
+jest.mock("../../../lib/data_loader", () => ({
+  ...jest.requireActual("../../../lib/data_loader"),
+  loadJSON: jest.fn(),
 }));
 
 describe("TopCountriesRealtime", () => {
@@ -14,8 +15,14 @@ describe("TopCountriesRealtime", () => {
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(null);
+      });
       component = render(
-        <TopCountriesRealtime dataHrefBase="http://www.example.com/data/" />,
+        <TopCountriesRealtime
+          dataHrefBase="http://www.example.com/data/"
+          refreshSeconds={30}
+        />,
       );
     });
 
@@ -111,15 +118,16 @@ describe("TopCountriesRealtime", () => {
         taken_at: "2024-01-05T16:05:49.789Z",
       };
 
-      d3.json.mockImplementation((url, callback) => {
-        callback(null, data);
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(data);
       });
       component = render(
-        <TopCountriesRealtime dataHrefBase="http://www.example.com/data/" />,
+        <TopCountriesRealtime
+          dataHrefBase="http://www.example.com/data/"
+          refreshSeconds={30}
+        />,
       );
-      // Delay so that the nested charts have time to render.
-      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-      await delay(1000);
+      await waitFor(() => screen.getByText("Spain"));
     });
 
     it("renders a component with data loaded", async () => {
@@ -128,17 +136,27 @@ describe("TopCountriesRealtime", () => {
   });
 
   describe("when data loading has an error", () => {
-    beforeEach(async () => {
-      d3.json.mockImplementation((url, callback) => {
-        callback(new Error("you broke it"), null);
+    const error = "you broke it";
+
+    beforeEach(() => {
+      console.error = jest.fn();
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.reject(error);
       });
       component = render(
-        <TopCountriesRealtime dataHrefBase="http://www.example.com/data/" />,
+        <TopCountriesRealtime
+          dataHrefBase="http://www.example.com/data/"
+          refreshSeconds={30}
+        />,
       );
     });
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("logs the error to console", () => {
+      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

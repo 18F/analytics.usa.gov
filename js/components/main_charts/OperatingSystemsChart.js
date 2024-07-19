@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import nestCharts from "../../lib/chart_helpers/nest_charts";
 
 /**
@@ -21,44 +22,39 @@ function OperatingSystemsChart({ dataHrefBase }) {
   const windowsDataURL = `${dataHrefBase}/windows.json`;
   const osRef = useRef(null);
   const windowsRef = useRef(null);
+  const [osData, setOsData] = useState(null);
+  const [chartsLoaded, setChartsLoaded] = useState(false);
+  const [windowsData, setWindowsData] = useState(null);
 
   useEffect(() => {
-    const initOperatingSystemsChart = async () => {
-      await d3
-        .select(osRef.current)
-        .datum({
-          source: osDataURL,
-          block: osRef.current,
-        })
-        .call(renderBlock.buildCompactBarChart("os"));
+    const initOsCharts = async () => {
+      if (!osData || !windowsData) {
+        await setOsData(await DataLoader.loadJSON(osDataURL));
+        await setWindowsData(await DataLoader.loadJSON(windowsDataURL));
+      } else {
+        let chartBuilder = new ChartBuilder();
+        await chartBuilder.buildCompactBarChart(osRef.current, osData, "os");
 
-      await d3
-        .select(windowsRef.current)
-        .datum({
-          source: windowsDataURL,
-          block: windowsRef.current,
-        })
-        .call(renderBlock.buildCompactBarChart("os_version"));
+        chartBuilder = new ChartBuilder();
+        await chartBuilder.buildCompactBarChart(
+          windowsRef.current,
+          windowsData,
+          "os_version",
+        );
 
-      /**
-       * Sleep for half a second because the above charts are still not loaded
-       * for some reason.  TODO: figure out why
-       * @param {number} ms milliseconds to wait
-       * @returns {Promise} resolves after the timeout
-       */
-      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-      await delay(500);
+        await setChartsLoaded(true);
+      }
 
       // nest the windows chart inside the OS chart once they're both rendered
       // TODO: Remove windows versions?
-      await d3
-        .select(osRef.current)
-        .call(nestCharts, "Windows", d3.select(windowsRef.current));
-
-      return;
+      if (chartsLoaded) {
+        await d3
+          .select(osRef.current)
+          .call(nestCharts, "Windows", d3.select(windowsRef.current));
+      }
     };
-    initOperatingSystemsChart().catch(console.error);
-  }, []);
+    initOsCharts().catch(console.error);
+  }, [windowsData, chartsLoaded]);
 
   return (
     <div>

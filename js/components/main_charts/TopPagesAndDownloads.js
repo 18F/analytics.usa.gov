@@ -67,6 +67,7 @@ function TopPagesAndDownloads({ dataHrefBase, agency }) {
               dataHrefBase={dataHrefBase}
               reportFileName="top-pages-realtime.json"
               numberOfListingsToDisplay={numberOfTopPagesToDisplay}
+              refreshSeconds={15}
             />
           </section>
           <section className="top-downloads">

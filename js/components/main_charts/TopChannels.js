@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 
 /**
  * Retrieves the top session channel group report from the passed data URL and
@@ -18,22 +18,24 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
 function TopChannels({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-session-channel-group-30-days.json`;
   const ref = useRef(null);
+  const [channelData, setChannelData] = useState(null);
 
   useEffect(() => {
-    const initTopChannelsChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock.buildCompactBarChart("session_default_channel_group"),
+    const initChannelsChart = async () => {
+      if (!channelData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setChannelData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder.buildCompactBarChart(
+          ref.current,
+          channelData,
+          "session_default_channel_group",
         );
-      return result;
+      }
     };
-    initTopChannelsChart().catch(console.error);
-  }, []);
+    initChannelsChart().catch(console.error);
+  }, [channelData]);
 
   return (
     <figure id="chart_session_channel_group" ref={ref}>

@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import buildTimeSeries from "../../lib/chart_helpers/timeseries";
-import renderBlock from "../../lib/chart_helpers/renderblock";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
@@ -17,53 +18,53 @@ import formatters from "../../lib/chart_helpers/formatters";
  * @returns {import('react').ReactElement} The rendered element
  */
 function Sessions30Days({ dataHrefBase }) {
-  const reportURL = `${dataHrefBase}/sessions-over-30-days.json`;
+  const dataURL = `${dataHrefBase}/sessions-over-30-days.json`;
   const ref = useRef(null);
+  const [sessionData, setSessionData] = useState(null);
 
   useEffect(() => {
-    const initSessions30DaysChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: reportURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock
-            .loadAndRender()
-            .transform((data) => data)
-            .render((svg, data) => {
-              const days = data.data;
-              days.forEach((d) => {
-                d.visits = +d.visits;
-              });
+    const initSessionsChart = async () => {
+      if (!sessionData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setSessionData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(sessionData)
+          .setTransformer((data) => data)
+          .setRenderer((svg, data) => {
+            const days = data.data;
+            days.forEach((d) => {
+              d.visits = +d.visits;
+            });
 
-              const y = function (d) {
-                return d.visits;
-              };
+            const y = function (d) {
+              return d.visits;
+            };
 
-              const series = buildTimeSeries()
-                .series([data.data])
-                .y(y)
-                .label((d) => formatters.formatDate(d.date))
-                .title(
-                  (d) =>
-                    `${formatters.addCommas(d.visits)} visits during the day of ${d.date}`,
-                );
+            const series = buildTimeSeries()
+              .series([data.data])
+              .y(y)
+              .label((d) => formatters.formatDate(d.date))
+              .title(
+                (d) =>
+                  `${formatters.addCommas(d.visits)} visits during the day of ${d.date}`,
+              );
 
-              series.xScale().domain(d3.range(0, days.length + 1));
+            series.xScale().domain(d3.range(0, days.length + 1));
 
-              series.yScale().domain([0, d3.max(days, y)]);
+            series.yScale().domain([0, d3.max(days, y)]);
 
-              series.yAxis().tickFormat(formatters.formatVisits());
+            series.yAxis().tickFormat(formatters.formatVisits());
 
-              svg.call(series);
-            }),
-        );
-      return result;
+            svg.call(series);
+          })
+          .build();
+      }
     };
-    initSessions30DaysChart().catch(console.error);
-  });
+    initSessionsChart().catch(console.error);
+  }, [sessionData]);
 
   return (
     <div

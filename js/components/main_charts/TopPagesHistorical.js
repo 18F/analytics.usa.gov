@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import DataLoader from "../../lib/data_loader";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import { exceptions, titleExceptions } from "../../lib/exceptions";
 import barChart from "../../lib/chart_helpers/barchart";
 import formatters from "../../lib/chart_helpers/formatters";
@@ -29,53 +30,49 @@ function TopPagesHistorical({
 }) {
   const dataURL = `${dataHrefBase}/${reportFileName}`;
   const ref = useRef(null);
+  const [topPagesData, setTopPagesData] = useState(null);
 
   useEffect(() => {
-    const initHistoricalChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock
-            .loadAndRender()
-            .transform((d) => d.data.slice(0, numberOfListingsToDisplay))
-            .on("render", (selection) => {
-              // turn the labels into links
-              selection
-                .selectAll(".label")
-                .each(function (d) {
-                  d.text = this.innerText;
-                })
-                .html("")
-                .append("a")
-                .attr("target", "_blank")
-                .attr("rel", "noopener")
-                .attr(
-                  "href",
-                  (d) => exceptions[d.domain] || `http://${d.domain}`,
-                )
-                .text((d) => titleExceptions[d.domain] || d.domain);
-            })
-            .render(
-              barChart()
-                .label((d) => d.domain)
-                .value((d) => +d.visits)
-                .scale((values) =>
-                  d3.scale
-                    .linear()
-                    .domain([0, 1, d3.max(values)])
-                    .rangeRound([0, 1, 100]),
-                )
-                .format(formatters.addCommas),
-            ),
-        );
-      return result;
+    const initTopPagessChart = async () => {
+      if (!topPagesData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setTopPagesData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(topPagesData)
+          .setTransformer((d) => d.data.slice(0, numberOfListingsToDisplay))
+          .setRenderer((selection) => {
+            const barchartRenderer = barChart()
+              .label((d) => d.domain)
+              .value((d) => +d.visits)
+              .scale((values) =>
+                d3.scale
+                  .linear()
+                  .domain([0, 1, d3.max(values)])
+                  .rangeRound([0, 1, 100]),
+              )
+              .format(formatters.addCommas);
+            barchartRenderer(selection);
+
+            selection
+              .selectAll(".label")
+              .each(function (d) {
+                d.text = this.innerText;
+              })
+              .html("")
+              .append("a")
+              .attr("target", "_blank")
+              .attr("rel", "noopener")
+              .attr("href", (d) => exceptions[d.domain] || `http://${d.domain}`)
+              .text((d) => titleExceptions[d.domain] || d.domain);
+          })
+          .build();
+      }
     };
-    initHistoricalChart().catch(console.error);
-  });
+    initTopPagessChart().catch(console.error);
+  }, [topPagesData]);
 
   return (
     <figure className="top-pages__bar-chart" data-source={dataURL} ref={ref}>

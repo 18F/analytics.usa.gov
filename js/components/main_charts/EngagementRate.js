@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
@@ -19,30 +19,28 @@ import formatters from "../../lib/chart_helpers/formatters";
 function EngagementRate({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/engagement-rate-30-days.json`;
   const ref = useRef(null);
+  const [engagementRateData, setEngagementRateData] = useState(null);
 
   useEffect(() => {
-    /**
-     * The engagement rate is rounded and formatted to a percentage.
-     * @returns {Promise} resolves when the chart is rendered.
-     */
     const initEngagementRateChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock.loadAndRender().render((selection, data) => {
-            const metrics = data.data[0];
+      if (!engagementRateData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setEngagementRateData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(engagementRateData)
+          .setRenderer((selection, data) => {
+            const metrics = data.data[0] || {};
             const engagementRate = parseFloat(metrics.engagementRate) * 100;
             selection.text(formatters.floatToPercent(engagementRate));
-          }),
-        );
-      return result;
+          })
+          .build();
+      }
     };
     initEngagementRateChart().catch(console.error);
-  }, []);
+  }, [engagementRateData]);
 
   return (
     <>

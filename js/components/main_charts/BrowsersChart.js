@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import DataLoader from "../../lib/data_loader";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 
 /**
  * Retrieves the browser report from the passed data URL and creates a
@@ -10,7 +10,7 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
  * current agency.
  *
  * @param {object} props the properties for the component
- * @param {string} props.dataHrefBase the URL of the base location of the data
+ * @param {*} props.dataHrefBase the URL of the base location of the data
  * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
  * @returns {import('react').ReactElement} The rendered element
@@ -18,20 +18,24 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
 function BrowsersChart({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/browsers.json`;
   const ref = useRef(null);
+  const [browserData, setBrowserData] = useState(null);
 
   useEffect(() => {
     const initBrowsersChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(renderBlock.buildCompactBarChart("browser"));
-      return result;
+      if (!browserData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setBrowserData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder.buildCompactBarChart(
+          ref.current,
+          browserData,
+          "browser",
+        );
+      }
     };
     initBrowsersChart().catch(console.error);
-  }, []);
+  }, [browserData]);
 
   return (
     <figure id="chart_browsers" ref={ref}>

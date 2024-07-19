@@ -1,15 +1,18 @@
 import React from "react";
-import { create, act } from "react-test-renderer";
+import { render, screen, waitFor } from "@testing-library/react";
 import DeviceDemographics from "../DeviceDemographics";
 
 describe("DeviceDemographics", () => {
+  let component;
+
+  beforeEach(async () => {
+    component = await render(
+      <DeviceDemographics dataHrefBase="http://www.example.com/data/" />,
+    );
+    await waitFor(() => screen.getByText("Web Browsers"));
+  });
+
   it("renders", () => {
-    let component;
-    act(() => {
-      component = create(
-        <DeviceDemographics dataHrefBase="http://www.example.com/data/" />,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(component.asFragment()).toMatchSnapshot();
   });
 });

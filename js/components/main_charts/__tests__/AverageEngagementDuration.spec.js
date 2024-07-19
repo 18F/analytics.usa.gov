@@ -1,11 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import d3 from "d3";
-import AverageEngagementDuration from "../AverageEngagementDuration";
+import { render, screen, waitFor } from "@testing-library/react";
 
-jest.mock("d3", () => ({
-  ...jest.requireActual("d3"),
-  json: jest.fn(),
+import AverageEngagementDuration from "../AverageEngagementDuration";
+import DataLoader from "../../../lib/data_loader";
+
+jest.mock("../../../lib/data_loader", () => ({
+  ...jest.requireActual("../../../lib/data_loader"),
+  loadJSON: jest.fn(),
 }));
 
 describe("AverageEngagementDuration", () => {
@@ -14,6 +15,9 @@ describe("AverageEngagementDuration", () => {
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(null);
+      });
       component = render(
         <AverageEngagementDuration dataHrefBase="http://www.example.com/data/" />,
       );
@@ -25,7 +29,7 @@ describe("AverageEngagementDuration", () => {
   });
 
   describe("when data is loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       data = {
         name: "user-engagement-duration",
         query: {
@@ -63,12 +67,13 @@ describe("AverageEngagementDuration", () => {
         taken_at: "2024-03-19T20:58:28.812Z",
       };
 
-      d3.json.mockImplementation((url, callback) => {
-        callback(null, data);
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(data);
       });
       component = render(
         <AverageEngagementDuration dataHrefBase="http://www.example.com/data/" />,
       );
+      await waitFor(() => screen.getByText("1 min 3 sec"));
     });
 
     it("renders a component with data loaded", () => {
@@ -77,9 +82,12 @@ describe("AverageEngagementDuration", () => {
   });
 
   describe("when data loading has an error", () => {
-    beforeEach(async () => {
-      d3.json.mockImplementation((url, callback) => {
-        callback(new Error("you broke it"), null);
+    const error = "you broke it";
+
+    beforeEach(() => {
+      console.error = jest.fn();
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.reject(error);
       });
       component = render(
         <AverageEngagementDuration dataHrefBase="http://www.example.com/data/" />,
@@ -88,6 +96,10 @@ describe("AverageEngagementDuration", () => {
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("logs the error to console", () => {
+      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

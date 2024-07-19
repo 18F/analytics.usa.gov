@@ -88,12 +88,16 @@ function toTopPercents(dataSet, desiredKey) {
  * removed
  */
 function toTopPercentsWithoutConsolidation(dataSet, desiredKey) {
-  const values = listify(dataSet.totals["by_" + desiredKey]);
-  const proportions = findProportionsOfMetricFromValue(values);
-  const filteredValues = values.filter((value, index) => {
-    return proportions[index].proportion >= DISPLAY_THRESHOLD;
-  });
-  return findProportionsOfMetricFromValue(filteredValues);
+  if (dataSet.totals) {
+    const values = listify(dataSet.totals["by_" + desiredKey]);
+    const proportions = findProportionsOfMetricFromValue(values);
+    const filteredValues = values.filter((value, index) => {
+      return proportions[index].proportion >= DISPLAY_THRESHOLD;
+    });
+    return findProportionsOfMetricFromValue(filteredValues);
+  } else {
+    return dataSet;
+  }
 }
 
 export default {

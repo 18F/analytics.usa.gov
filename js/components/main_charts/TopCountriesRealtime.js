@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import d3 from "d3";
 
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import nestCharts from "../../lib/chart_helpers/nest_charts";
-import renderBlock from "../../lib/chart_helpers/renderblock";
 import transformers from "../../lib/chart_helpers/transformers";
 import { isPartOfUnitedStates } from "../../lib/territories";
 
@@ -16,25 +17,38 @@ import { isPartOfUnitedStates } from "../../lib/territories";
  * @param {string} props.dataHrefBase the URL of the base location of the data
  * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @param {number} props.refreshSeconds the number of seconds to wait before
+ * refreshing chart data.
  * @returns {import('react').ReactElement} The rendered element
  */
-function TopCountriesRealtime({ dataHrefBase }) {
+function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
   const dataURL = `${dataHrefBase}/top-countries-realtime.json`;
   const countriesRef = useRef(null);
   const usTerritoriesRef = useRef(null);
   const internationalVisitsRef = useRef(null);
+  const [countryData, setCountryData] = useState(null);
+  const [chartsLoaded, setChartsLoaded] = useState(false);
 
   useEffect(() => {
     const initRealtimeCountriesChart = async () => {
-      // Create countries chart
-      await d3
-        .select(countriesRef.current)
-        .datum({
-          source: dataURL,
-          block: countriesRef.current,
-        })
-        .call(
-          renderBlock.buildBarChart((d) => {
+      if (!countryData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setCountryData(data);
+        // Refresh data every interval. useEffect will run and update the chart
+        // when the state is changed.
+        setInterval(() => {
+          DataLoader.loadJSON(dataURL).then((data) => {
+            setCountryData(data);
+            setChartsLoaded(false);
+          });
+        }, refreshSeconds * 1000);
+      } else {
+        // Create countries chart
+        let chartBuilder = new ChartBuilder();
+        await chartBuilder.buildBarChart(
+          countriesRef.current,
+          countryData,
+          (d) => {
             let totalVisits = 0;
             let USVisits = 0;
             d.data.forEach((c) => {
@@ -54,76 +68,66 @@ function TopCountriesRealtime({ dataHrefBase }) {
             return transformers.findProportionsOfMetricFromValue(
               transformers.listify(data),
             );
-          }, "country"),
+          },
         );
 
-      // Create us and territories breakdown chart
-      await d3
-        .select(usTerritoriesRef.current)
-        .datum({
-          source: dataURL,
-          block: usTerritoriesRef.current,
-        })
-        .call(
-          renderBlock.buildBarChartWithLabel((d) => {
+        // Create us and territories breakdown chart
+        chartBuilder = new ChartBuilder();
+        await chartBuilder.buildBarChartWithLabel(
+          usTerritoriesRef.current,
+          countryData,
+          (d) => {
             let values = transformers.findProportionsOfMetric(d.data, (list) =>
               list.map((x) => x.active_visitors),
             );
             values = values.filter((c) => isPartOfUnitedStates(c.country));
             return values.slice(0, 3);
-          }, "country"),
+          },
+          "country",
         );
 
-      // Create international breakdown chart
-      await d3
-        .select(internationalVisitsRef.current)
-        .datum({
-          source: dataURL,
-          block: internationalVisitsRef.current,
-        })
-        .call(
-          renderBlock.buildBarChartWithLabel((d) => {
+        // Create international breakdown chart
+        chartBuilder = new ChartBuilder();
+        await chartBuilder.buildBarChartWithLabel(
+          internationalVisitsRef.current,
+          countryData,
+          (d) => {
             let values = transformers.findProportionsOfMetric(d.data, (list) =>
               list.map((x) => x.active_visitors),
             );
             values = values.filter((c) => !isPartOfUnitedStates(c.country));
             return values.slice(0, 15);
-          }, "country"),
+          },
+          "country",
         );
 
-      /**
-       * Sleep for half a second because the above charts are still not loaded
-       * for some reason.  TODO: figure out why
-       * @param {number} ms milliseconds to wait
-       * @returns {Promise} resolves after the timeout
-       */
-      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-      await delay(500);
+        await setChartsLoaded(true);
+      }
 
-      // nest the US and territories chart inside the "US"
-      // chart once they're both rendered
-      await d3
-        .select(countriesRef.current)
-        .call(
-          nestCharts,
-          "United States &amp; Territories",
-          d3.select(usTerritoriesRef.current),
-        );
+      if (chartsLoaded) {
+        // nest the US and territories chart inside the "US"
+        // chart once they're both rendered
+        await d3
+          .select(countriesRef.current)
+          .call(
+            nestCharts,
+            "United States &amp; Territories",
+            d3.select(usTerritoriesRef.current),
+          );
 
-      // nest the international countries chart inside the "International"
-      // chart once they're both rendered
-      await d3
-        .select(countriesRef.current)
-        .call(
-          nestCharts,
-          "International",
-          d3.select(internationalVisitsRef.current),
-        );
-
-      return;
+        // nest the international countries chart inside the "International"
+        // chart once they're both rendered
+        await d3
+          .select(countriesRef.current)
+          .call(
+            nestCharts,
+            "International",
+            d3.select(internationalVisitsRef.current),
+          );
+      }
     };
     initRealtimeCountriesChart().catch(console.error);
-  }, []);
+  }, [countryData, chartsLoaded]);
 
   return (
     <div>
@@ -154,6 +158,7 @@ function TopCountriesRealtime({ dataHrefBase }) {
 
 TopCountriesRealtime.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
+  refreshSeconds: PropTypes.number.isRequired,
 };
 
 export default TopCountriesRealtime;

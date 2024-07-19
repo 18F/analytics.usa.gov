@@ -1,11 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import d3 from "d3";
+import { render, screen, waitFor } from "@testing-library/react";
+
+import DataLoader from "../../../lib/data_loader";
 import DevicesChart from "../DevicesChart";
 
-jest.mock("d3", () => ({
-  ...jest.requireActual("d3"),
-  json: jest.fn(),
+jest.mock("../../../lib/data_loader", () => ({
+  ...jest.requireActual("../../../lib/data_loader"),
+  loadJSON: jest.fn(),
 }));
 
 describe("DevicesChart", () => {
@@ -14,6 +15,9 @@ describe("DevicesChart", () => {
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(null);
+      });
       component = render(
         <DevicesChart dataHrefBase="http://www.example.com/data/" />,
       );
@@ -25,7 +29,7 @@ describe("DevicesChart", () => {
   });
 
   describe("when data is loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       data = {
         name: "devices",
         query: {},
@@ -46,12 +50,13 @@ describe("DevicesChart", () => {
         taken_at: "2024-03-11T13:59:08.677Z",
       };
 
-      d3.json.mockImplementation((url, callback) => {
-        callback(null, data);
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(data);
       });
       component = render(
         <DevicesChart dataHrefBase="http://www.example.com/data/" />,
       );
+      await waitFor(() => screen.getByText("mobile"));
     });
 
     it("renders a component with data loaded", () => {
@@ -60,9 +65,12 @@ describe("DevicesChart", () => {
   });
 
   describe("when data loading has an error", () => {
-    beforeEach(async () => {
-      d3.json.mockImplementation((url, callback) => {
-        callback(new Error("you broke it"), null);
+    const error = "you broke it";
+
+    beforeEach(() => {
+      console.error = jest.fn();
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.reject(error);
       });
       component = render(
         <DevicesChart dataHrefBase="http://www.example.com/data/" />,
@@ -71,6 +79,10 @@ describe("DevicesChart", () => {
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("logs the error to console", () => {
+      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

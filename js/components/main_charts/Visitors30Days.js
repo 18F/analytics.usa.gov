@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
@@ -19,27 +19,29 @@ function Visitors30Days({ dataHrefBase }) {
   // This was using devices 30 days and setting this value as a side effect of
   // creating the devices chart.  users.json is 90 days, so just stick with
   // devices.json for now.
-  const reportURL = `${dataHrefBase}/devices.json`;
+  const dataURL = `${dataHrefBase}/devices.json`;
   const ref = useRef(null);
+  const [visitorData, setVisitorData] = useState(null);
 
   useEffect(() => {
-    const initVisitors30DaysChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: reportURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock.loadAndRender().render((selection, data) => {
+    const initVisitorsChart = async () => {
+      if (!visitorData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setVisitorData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(visitorData)
+          .setRenderer((selection, data) => {
             const total = data.totals.visits;
             selection.text(formatters.readableBigNumber(total));
-          }),
-        );
-      return result;
+          })
+          .build();
+      }
     };
-    initVisitors30DaysChart().catch(console.error);
-  });
+    initVisitorsChart().catch(console.error);
+  }, [visitorData]);
 
   return (
     <div ref={ref}>

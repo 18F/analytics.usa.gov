@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
-import renderBlock from "../../lib/chart_helpers/renderblock";
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 
 /**
  * Retrieves the top source media report from the passed data URL and creates a
@@ -18,20 +18,24 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
 function TopSourceMedia({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-session-source-medium-30-days.json`;
   const ref = useRef(null);
+  const [sourceMediaData, setSourceMediaData] = useState(null);
 
   useEffect(() => {
-    const initTopSourceMediaChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(renderBlock.buildCompactBarChart("session_source_medium"));
-      return result;
+    const initSourceMediaChart = async () => {
+      if (!sourceMediaData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setSourceMediaData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder.buildCompactBarChart(
+          ref.current,
+          sourceMediaData,
+          "session_source_medium",
+        );
+      }
     };
-    initTopSourceMediaChart().catch(console.error);
-  }, []);
+    initSourceMediaChart().catch(console.error);
+  }, [sourceMediaData]);
 
   return (
     <figure id="chart_session_source_medium" ref={ref}>

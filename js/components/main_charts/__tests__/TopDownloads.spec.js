@@ -1,11 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import d3 from "d3";
+import { render, screen, waitFor } from "@testing-library/react";
+
+import DataLoader from "../../../lib/data_loader";
 import TopDownloads from "../TopDownloads";
 
-jest.mock("d3", () => ({
-  ...jest.requireActual("d3"),
-  json: jest.fn(),
+jest.mock("../../../lib/data_loader", () => ({
+  ...jest.requireActual("../../../lib/data_loader"),
+  loadJSON: jest.fn(),
 }));
 
 describe("TopDownloads", () => {
@@ -14,10 +15,14 @@ describe("TopDownloads", () => {
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(null);
+      });
       component = render(
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
           reportFileName="foobar.json"
+          numberOfListingsToDisplay={20}
         />,
       );
     });
@@ -28,7 +33,7 @@ describe("TopDownloads", () => {
   });
 
   describe("when data is loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       data = {
         name: "top-downloads-yesterday",
         query: {},
@@ -114,12 +119,17 @@ describe("TopDownloads", () => {
         taken_at: "2024-01-05T15:31:55.633Z",
       };
 
-      d3.json.mockImplementation((url, callback) => {
-        callback(null, data);
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(data);
       });
       component = render(
-        <TopDownloads dataHrefBase="http://www.example.com/data/" />,
+        <TopDownloads
+          dataHrefBase="http://www.example.com/data/"
+          reportFileName="foobar.json"
+          numberOfListingsToDisplay={20}
+        />,
       );
+      await waitFor(() => screen.getByText("Passport Fees"));
     });
 
     it("renders a component with data loaded", () => {
@@ -128,17 +138,28 @@ describe("TopDownloads", () => {
   });
 
   describe("when data loading has an error", () => {
-    beforeEach(async () => {
-      d3.json.mockImplementation((url, callback) => {
-        callback(new Error("you broke it"), null);
+    const error = "you broke it";
+
+    beforeEach(() => {
+      console.error = jest.fn();
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.reject(error);
       });
       component = render(
-        <TopDownloads dataHrefBase="http://www.example.com/data/" />,
+        <TopDownloads
+          dataHrefBase="http://www.example.com/data/"
+          reportFileName="foobar.json"
+          numberOfListingsToDisplay={20}
+        />,
       );
     });
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("logs the error to console", () => {
+      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

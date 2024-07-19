@@ -1,4 +1,4 @@
-import { act } from "react";
+import { act } from "@testing-library/react";
 
 describe("MainCharts root", () => {
   const dataPrefix = "";
@@ -15,14 +15,21 @@ describe("MainCharts root", () => {
   });
 
   describe("when an element with id: main-charts-root is present", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       container = document.createElement("div");
       container.id = "main-charts-root";
       container.setAttribute("dataprefix", dataPrefix);
       container.setAttribute("agency", agency);
       container.setAttribute("dataurl", dataURL);
       document.body.appendChild(container);
-      act(() => require("../index.js"));
+
+      await act(async () => {
+        require("../index.js");
+
+        // Delay so that charts have time to render.
+        const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        await delay(500);
+      });
     });
 
     it("should render", () => {
@@ -32,14 +39,21 @@ describe("MainCharts root", () => {
   });
 
   describe("when an element with id: main-charts-root is not present", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       container = document.createElement("div");
       container.id = "foobar";
       container.setAttribute("dataprefix", dataPrefix);
       container.setAttribute("agency", agency);
       container.setAttribute("dataurl", dataURL);
       document.body.appendChild(container);
-      act(() => require("../index.js"));
+
+      await act(async () => {
+        require("../index.js");
+
+        // Delay so that charts have time to render.
+        const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        await delay(500);
+      });
     });
 
     it("should not render", () => {

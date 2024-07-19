@@ -25,7 +25,7 @@ export default function barChart() {
   };
 
   const chart = function (selection) {
-    const bin = selection.selectAll(".bin").data(bars);
+    const bin = selection.selectAll(":scope > .bin").data(bars);
 
     bin.exit().remove();
 

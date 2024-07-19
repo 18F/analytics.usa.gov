@@ -35,7 +35,11 @@ function MainCharts({ dataURL, dataPrefix, agency }) {
     <>
       <section id="main_data" className="desktop:grid-col-8">
         <article className="chart-realtime">
-          <RealtimeVisitors dataHrefBase={dataHrefBase} agency={agency} />
+          <RealtimeVisitors
+            dataHrefBase={dataHrefBase}
+            agency={agency}
+            refreshSeconds={15}
+          />
         </article>
 
         <article className="section locations-and-languages-section">

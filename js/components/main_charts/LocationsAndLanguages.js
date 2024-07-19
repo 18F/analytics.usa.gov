@@ -30,7 +30,7 @@ function LocationsAndLanguages({ dataHrefBase }) {
           className="desktop:grid-col-4 padding-2 bar-chart-component"
         >
           <h4>Cities</h4>
-          <TopCitiesRealtime dataHrefBase={dataHrefBase} />
+          <TopCitiesRealtime dataHrefBase={dataHrefBase} refreshSeconds={15} />
         </section>
 
         <section
@@ -38,7 +38,10 @@ function LocationsAndLanguages({ dataHrefBase }) {
           className="desktop:grid-col-4 padding-2 bar-chart-component"
         >
           <h4>Countries</h4>
-          <TopCountriesRealtime dataHrefBase={dataHrefBase} />
+          <TopCountriesRealtime
+            dataHrefBase={dataHrefBase}
+            refreshSeconds={15}
+          />
         </section>
 
         <section

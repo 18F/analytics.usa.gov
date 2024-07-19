@@ -131,6 +131,60 @@ function buildBarChart(transformMethod) {
     );
 }
 
+function renderWithData() {
+  let transform = Object;
+
+  let renderer = () => {
+    return;
+  };
+
+  const block = function (selection) {
+    selection.each(function (d) {
+      d3.select(this).call(render, (d.transformedData = transform(d.data)));
+    });
+  };
+
+  block.render = function (x) {
+    if (!arguments.length) return renderer;
+    renderer = x;
+    return block;
+  };
+
+  block.transform = function (x) {
+    if (!arguments.length) return transform;
+    transform = d3.functor(x);
+    return block;
+  };
+
+  function render(selection, data) {
+    // populate meta elements
+    selection.select(".meta-name").text((d) => d.meta.name);
+    selection.select(".meta-desc").text((d) => d.meta.description);
+    //console.log(selection)
+    selection.select(".data").datum(data).call(renderer, data);
+  }
+
+  return d3.rebind(block);
+}
+
+function buildBarChartFromData(transformMethod) {
+  return renderWithData()
+    .transform(transformMethod)
+    .render(
+      barChart()
+        .value((d) => d.proportion)
+        .format(formatters.floatToPercent),
+    );
+}
+
+function buildCompactBarChartFromData(desiredKey) {
+  const method = (d) => {
+    d;
+    return transformers.toTopPercentsWithoutConsolidation(d, desiredKey);
+  };
+  return buildBarChartFromData(method);
+}
+
 function buildBarChartWithLabel(transformMethod, labelKey) {
   return loadAndRender()
     .transform(transformMethod)
@@ -173,4 +227,5 @@ export default {
   buildBarBasicChart,
   buildBarChartWithLabel,
   buildCompactBarChart,
+  buildCompactBarChartFromData,
 };

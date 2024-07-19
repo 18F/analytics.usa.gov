@@ -1,11 +1,12 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import d3 from "d3";
+import { render, screen, waitFor } from "@testing-library/react";
+
+import DataLoader from "../../../lib/data_loader";
 import Sessions30Days from "../Sessions30Days";
 
-jest.mock("d3", () => ({
-  ...jest.requireActual("d3"),
-  json: jest.fn(),
+jest.mock("../../../lib/data_loader", () => ({
+  ...jest.requireActual("../../../lib/data_loader"),
+  loadJSON: jest.fn(),
 }));
 
 describe("Sessions30Days", () => {
@@ -14,6 +15,9 @@ describe("Sessions30Days", () => {
 
   describe("when data is not loaded", () => {
     beforeEach(() => {
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(null);
+      });
       component = render(
         <Sessions30Days dataHrefBase="http://www.example.com/data/" />,
       );
@@ -25,7 +29,7 @@ describe("Sessions30Days", () => {
   });
 
   describe("when data is loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       data = {
         name: "sessions-over-30-days",
         query: {},
@@ -52,12 +56,14 @@ describe("Sessions30Days", () => {
         },
         taken_at: "2024-01-16T19:50:29.099Z",
       };
-      d3.json.mockImplementation((url, callback) => {
-        callback(null, data);
+
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.resolve(data);
       });
       component = render(
         <Sessions30Days dataHrefBase="http://www.example.com/data/" />,
       );
+      await waitFor(() => screen.getByText("12/17"));
     });
 
     // The timeseries data intermittently has slightly different values for
@@ -84,9 +90,12 @@ describe("Sessions30Days", () => {
   });
 
   describe("when data loading has an error", () => {
-    beforeEach(async () => {
-      d3.json.mockImplementation((url, callback) => {
-        callback(new Error("you broke it"), null);
+    const error = "you broke it";
+
+    beforeEach(() => {
+      console.error = jest.fn();
+      DataLoader.loadJSON.mockImplementation(() => {
+        return Promise.reject(error);
       });
       component = render(
         <Sessions30Days dataHrefBase="http://www.example.com/data/" />,
@@ -95,6 +104,10 @@ describe("Sessions30Days", () => {
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("logs the error to console", () => {
+      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

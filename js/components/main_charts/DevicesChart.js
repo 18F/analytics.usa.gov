@@ -1,10 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import d3 from "d3";
 
+import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import DataLoader from "../../lib/data_loader";
 import barChart from "../../lib/chart_helpers/barchart";
 import formatters from "../../lib/chart_helpers/formatters";
-import renderBlock from "../../lib/chart_helpers/renderblock";
 import transformers from "../../lib/chart_helpers/transformers";
 
 /**
@@ -21,37 +21,37 @@ import transformers from "../../lib/chart_helpers/transformers";
 function DevicesChart({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/devices.json`;
   const ref = useRef(null);
+  const [deviceData, setDeviceData] = useState(null);
 
   useEffect(() => {
     const initDevicesChart = async () => {
-      const result = await d3
-        .select(ref.current)
-        .datum({
-          source: dataURL,
-          block: ref.current,
-        })
-        .call(
-          renderBlock
-            .loadAndRender()
-            .transform((d) => {
-              const devices = transformers.listify(d.totals.by_device);
-              devices.forEach((device) => {
-                if (device.key === "smart tv") {
-                  device.key = "Smart TV";
-                }
-              });
-              return transformers.findProportionsOfMetricFromValue(devices);
-            })
-            .render(
-              barChart()
-                .value((d) => d.proportion)
-                .format(formatters.floatToPercent),
-            ),
-        );
-      return result;
+      if (!deviceData) {
+        const data = await DataLoader.loadJSON(dataURL);
+        await setDeviceData(data);
+      } else {
+        const chartBuilder = new ChartBuilder();
+        await chartBuilder
+          .setElement(ref.current)
+          .setData(deviceData)
+          .setTransformer((d) => {
+            const devices = transformers.listify(d.totals.by_device);
+            devices.forEach((device) => {
+              if (device.key === "smart tv") {
+                device.key = "Smart TV";
+              }
+            });
+            return transformers.findProportionsOfMetricFromValue(devices);
+          })
+          .setRenderer(
+            barChart()
+              .value((d) => d.proportion)
+              .format(formatters.floatToPercent),
+          )
+          .build();
+      }
     };
     initDevicesChart().catch(console.error);
-  }, []);
+  }, [deviceData]);
 
   return (
     <figure id="chart_device_types" ref={ref}>
