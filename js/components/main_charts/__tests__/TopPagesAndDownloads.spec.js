@@ -1,10 +1,10 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TopPagesAndDownloads from "../TopPagesAndDownloads";
 
 describe("TopPagesAndDownloads", () => {
   let component;
-  let data;
 
   describe("when 30 minutes tab is selected", () => {
     beforeEach(() => {

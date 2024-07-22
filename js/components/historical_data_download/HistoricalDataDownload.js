@@ -14,14 +14,16 @@ import DapApiDataFormatter from "../../lib/dap_api_data_formatter";
  * future; it displays an alert for validation errors. The component also
  * displays a message about rate limiting if an error occurs in the API call(s).
  *
- * @param {String} apiURL the URL of the API to access the data to be
+ * @param {object} props the properties for the component
+ * @param {string} props.apiURL the URL of the API to access the data to be
  * downloaded.
- * @param {String} mainAgencyName the option name to display for the default
+ * @param {string} props.mainAgencyName the option name to display for the default
  * option in the select.
- * @param {String} agencies a JSON string of an array of objects with slug,
- * name, and api_v1 keys. 'slug' is the API name for the agency, 'name' is the
- * display name for the option, and 'api_v1' is true if the agency is valid for
- * the DAP API version 1.
+ * @param {string} props.agencies a JSON string of an array of objects with
+ * slug, name, and api_v1 keys. 'slug' is the API name for the agency, 'name' is
+ * the display name for the option, and 'api_v1' is true if the agency is valid
+ * for the DAP API version 1.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
   const parsedAgencies = JSON.parse(agencies)
@@ -94,7 +96,9 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
    * requested month. If errors or form validation issues occur, displays
    * helpful messages to the user.
    *
-   * @param {Event} e the form submit event.
+   * @param {object} e the form submit event.
+   * @returns {Promise} resolves when the action completes. This may be
+   * validation message set, or API call made and data download completion.
    */
   function handleSubmit(e) {
     e.preventDefault();
@@ -139,9 +143,9 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
   }
 
   /**
-   * @returns false if report, month, and year do not have valid values. This
-   * also handles if the select was set to a valid value and then cleared, as
-   * the state value is set to 'true' in that case
+   * @returns {boolean} false if report, month, and year do not have valid
+   * values. This also handles if the select was set to a valid value and then
+   * cleared, as the state value is set to 'true' in that case
    */
   function hasInvalidInputs() {
     if (!(report && month && year)) {
@@ -166,9 +170,9 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
   /**
    * Transforms the API response body into a JSON or CSV string.
    *
-   * @param {Object[]} data the JSON array of objects to be transformed
-   * @param {String} format the format to transform the data into (JSON or CSV)
-   * @returns {String} the data in stringified JSON or CSV format
+   * @param {object[]} data the JSON array of objects to be transformed
+   * @param {string} format the format to transform the data into (JSON or CSV)
+   * @returns {string} the data in stringified JSON or CSV format
    */
   function formatResponseData(data, format) {
     const mappedData = dapApiDataFormatter.mapForDisplay(data);
@@ -187,9 +191,9 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
    * type, and file name as attributes on the element. Then, triggers a click
    * event on the element and removes the element from the page.
    *
-   * @param {String} data the formatted data to download
-   * @param {String} contentHeader the HTTP content type of the data
-   * @param {String} fileName the file name to download in the user's browser
+   * @param {string} data the formatted data to download
+   * @param {string} contentHeader the HTTP content type of the data
+   * @param {string} fileName the file name to download in the user's browser
    */
   function triggerBrowserDownload(data, contentHeader, fileName) {
     const element = document.createElement("a");
@@ -206,12 +210,6 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
     document.body.removeChild(element);
   }
 
-  /**
-   * Renders the full page including form elements for the API parameters. The
-   * report options are hard coded to the list of reports in the DAP API docs.
-   * The year options are hard coded to the years that the DAP API has been
-   * recording Universal Analytics data.
-   */
   return (
     <>
       <section className="historical-analytics-data">
@@ -402,7 +400,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                     </select>
                   </div>
                   <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-3">
-                    <label className="usa-label">Download</label>
+                    <span className="usa-label">Download</span>
                     <div className="submit-buttons">
                       <input className="usa-button" type="submit" value="CSV" />
                       <input
@@ -435,6 +433,8 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
 
 HistoricalDataDownloads.propTypes = {
   apiURL: PropTypes.string.isRequired,
+  mainAgencyName: PropTypes.string.isRequired,
+  agencies: PropTypes.string.isRequired,
 };
 
 export default HistoricalDataDownloads;

@@ -9,10 +9,12 @@ import formatters from "../../lib/chart_helpers/formatters";
  * Retrieves the realtime users report from the passed data URL and creates a
  * visualization for the count of users visiting sites for the current agency.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
- * @param {String} agency the display name for the current agency.
+ * @param {string} props.agency the display name for the current agency.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function RealtimeVisitors({ dataHrefBase, agency }) {
   const reportURL = `${dataHrefBase}/realtime.json`;

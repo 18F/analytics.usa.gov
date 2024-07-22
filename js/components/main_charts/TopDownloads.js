@@ -11,13 +11,15 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
  * visualization for the count of users downloading files for the current
  * agency.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
- * @param {String} reportFileName the file name of the report to use as a data
- * source for the data visualization.
- * @param {Number} numberOfListingsToDisplay the count of downloads listings to
- * display in the bar chart.
+ * @param {string} props.reportFileName the file name of the report to use as a
+ * data source for the data visualization.
+ * @param {number} props.numberOfListingsToDisplay the count of downloads
+ * listings to display in the bar chart.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function TopDownloads({
   dataHrefBase,
@@ -86,6 +88,8 @@ function TopDownloads({
 
 TopDownloads.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
+  reportFileName: PropTypes.string.isRequired,
+  numberOfListingsToDisplay: PropTypes.number.isRequired,
 };
 
 export default TopDownloads;

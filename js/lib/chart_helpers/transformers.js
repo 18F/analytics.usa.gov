@@ -1,29 +1,33 @@
 import d3 from "d3";
 
 const DISPLAY_THRESHOLD = 0.1;
-/*
+/**
  * listify an Object into its key/value pairs (entries) and sorting by
  * numeric value descending.
+ *
+ * @param {object} obj the object
+ * @returns {object[]} the listified object keys
  */
 function listify(obj) {
   return d3.entries(obj).sort((a, b) => d3.descending(+a.value, +b.value));
 }
 
-/*
- * @function extractArrayValue - given an object list returns a list of the values in the values key
- * @parameter list - a list of data listed as a proportion of the total visits
- * @return a list of the values in the values key
+/**
+ * Given an object list returns a list of the values in the values key
+ * @param {object[]} list - a list of data listed as a proportion of the total
+ * visits
+ * @returns {string|number|boolean[]} a list of the values in the values key
  */
 function extractArrayValue(list) {
   return list.map((item) => item.value);
 }
 
-/*
- * @function findProportionsOfMetric
- * @parameter list -  a list of objects with data values nested
- * @parameter valueExtractMethod - the function to attract the data from the list items
- * @return a list with the initial list keys and now a percentage of what share the list item is
- * of the total
+/**
+ * @param {object[]} list a list of objects with data values nested
+ * @param {Function} valueExtractMethod the function to extract the data from
+ * the list items
+ * @returns {object[]} a list with the initial list keys and now a percentage of
+ * what share the list item is of the total
  */
 function findProportionsOfMetric(list, valueExtractMethod) {
   const values = valueExtractMethod(list);
@@ -36,21 +40,21 @@ function findProportionsOfMetric(list, valueExtractMethod) {
   return newList;
 }
 
-/*
- * @function findProportionsOfMetricFromValue
- * @parameter list
- * @return a closure of findProportionsOfMetric with the valueExtract method
- * set to extractArrayValue
+/**
+ * @param {object[]} list the list of objects with data values nested
+ * @returns {object[]} a closure of findProportionsOfMetric with the valueExtract
+ * method set to extractArrayValue
  */
 function findProportionsOfMetricFromValue(list) {
   return findProportionsOfMetric(list, extractArrayValue);
 }
 
-/*
- * @function consolidateSmallValues
- * @parameter proportionsList - a list of data listed as a proportion of the total visits
- * @parameter threshold - threshold below which we consolidate the value into an 'Other"
- * @return a list of percentages above the threshold
+/**
+ * @param {object[]} proportionsList a list of data listed as a proportion of
+ * the total visits
+ * @param {number} threshold threshold below which we consolidate the value into
+ * an 'Other"
+ * @returns {object[]} a list of percentages above the threshold
  */
 function consolidateSmallValues(proportionsList, threshold) {
   const consolidatedList = [];
@@ -66,11 +70,10 @@ function consolidateSmallValues(proportionsList, threshold) {
   return consolidatedList;
 }
 
-/*
- * @function toTopPercents
- * @parameter dataSet - the data to be tranformed
- * @parameter desiredKey - the key that we are interested
- * @return a closure of consolidated smaller date from the proportions
+/**
+ * @param {object[]} dataSet the data to be tranformed
+ * @param {string} desiredKey the key that we are interested in
+ * @returns {object[]} a closure of consolidated smaller date from the proportions
  */
 function toTopPercents(dataSet, desiredKey) {
   const values = listify(dataSet.totals["by_" + desiredKey]);
@@ -78,11 +81,10 @@ function toTopPercents(dataSet, desiredKey) {
   return consolidateSmallValues(proportions, DISPLAY_THRESHOLD);
 }
 
-/*
- * @function toTopPercentsWithoutConsolidation
- * @parameter dataSet - the data to be tranformed
- * @parameter desiredKey - the key that we are interested
- * @return a closure of proportions with values below the display threshold
+/**
+ * @param {object[]} dataSet the data to be tranformed
+ * @param {string} desiredKey the key that we are interested in
+ * @returns {object[]} a closure of proportions with values below the display threshold
  * removed
  */
 function toTopPercentsWithoutConsolidation(dataSet, desiredKey) {

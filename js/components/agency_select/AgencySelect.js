@@ -5,13 +5,15 @@ import PropTypes from "prop-types";
  * Creates a select tag with options populated from the provided props. When an
  * option is chosen, the browser is redirected to the page for that agency.
  *
- * @param {String} mainAgencyName the option name to display for the default
- * option in the select.
- * @param {String} agencies a JSON string of an array of objects with slug
+ * @param {object} props the properties for the component
+ * @param {string} props.mainAgencyName the option name to display for the
+ * default option in the select.
+ * @param {string} props.agencies a JSON string of an array of objects with slug
  * and name keys. 'slug' is the page path for the agency, and 'name' is the
  * display name for the option.
- * @param {String} pathSuffix a URL path to append to the end of the
+ * @param {string} props.pathSuffix a URL path to append to the end of the
  * agency slug.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function AgencySelect({ mainAgencyName, agencies, pathSuffix = "" }) {
   function onChange(event) {

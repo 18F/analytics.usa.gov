@@ -9,9 +9,11 @@ import renderBlock from "../../lib/chart_helpers/renderblock";
  * visualization for the breakdown of browsers of users visiting sites for the
  * current agency.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function BrowsersChart({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/browsers.json`;

@@ -12,9 +12,11 @@ import { isPartOfUnitedStates } from "../../lib/territories";
  * creates a visualization for the count of users visiting sites for the current
  * agency from each country.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function TopCountriesRealtime({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-countries-realtime.json`;
@@ -89,8 +91,12 @@ function TopCountriesRealtime({ dataHrefBase }) {
           }, "country"),
         );
 
-      // Sleep for half a second because the above charts are still not loaded
-      // for some reason.  TODO: figure out why
+      /**
+       * Sleep for half a second because the above charts are still not loaded
+       * for some reason.  TODO: figure out why
+       * @param {number} ms milliseconds to wait
+       * @returns {Promise} resolves after the timeout
+       */
       const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
       await delay(500);
 

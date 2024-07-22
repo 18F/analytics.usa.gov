@@ -20,10 +20,12 @@ import TopPagesHistorical from "./TopPagesHistorical";
  * minute time interval, show top downloads for the past day (the shortest time
  * interval allowed for the non-realtime reporting API.)
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
- * @param {String} agency the display name for the current agency.
+ * @param {string} props.agency the display name for the current agency.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function TopPagesAndDownloads({ dataHrefBase, agency }) {
   const numberOfTopPagesToDisplay = 30;

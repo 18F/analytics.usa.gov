@@ -10,11 +10,13 @@ import PropTypes from "prop-types";
  * This component is using USWDS grid classes and expects it's parent element to
  * have class 'grid-row'
  *
- * @param {String} dataURL the URL of the base location of the data to be
+ * @param {object} props the properties for the component
+ * @param {string} props.dataURL the URL of the base location of the data to be
  * downloaded. In production this is proxied and redirected to the S3 bucket URL
  * by NGINX.
- * @param {String} dataPrefix the path to add to the base URL to find data for
- * the current agency.
+ * @param {string} props.dataPrefix the path to add to the base URL to find data
+ * for the current agency.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function DataDownloads({ dataURL, dataPrefix }) {
   const hrefBase = `${dataURL}/${dataPrefix}`;

@@ -10,9 +10,11 @@ import AverageEngagementDuration from "./AverageEngagementDuration";
  * section and passes props necessary for getting data and displaying
  * visualizations to child components.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function Engagement({ dataHrefBase }) {
   return (

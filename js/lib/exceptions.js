@@ -1,6 +1,8 @@
-// some hardcoded exceptions for consistently high-traffic
-// infrastructure. we will not add exceptions for any site
-// that happens to have trouble keeping permalinks.
+/**
+ * some hardcoded exceptions for consistently high-traffic
+ * infrastructure. we will not add exceptions for any site
+ * that happens to have trouble keeping permalinks.
+ */
 export const exceptions = {
   // for the Now tab
   "applicationmanager.gov/application.aspx": "https://applicationmanager.gov",
