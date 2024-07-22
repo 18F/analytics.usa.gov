@@ -1,3 +1,4 @@
+import React from "react";
 import { render } from "@testing-library/react";
 import d3 from "d3";
 import TopDownloads from "../TopDownloads";

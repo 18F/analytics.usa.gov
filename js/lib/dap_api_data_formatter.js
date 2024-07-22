@@ -6,11 +6,11 @@ class DapApiDataFormatter {
   #agencies;
 
   /**
-   * @param {Object[]} reports the report display names and API names for use in
+   * @param {object[]} reports the report display names and API names for use in
    * mapping the API response report_name column. Expects name and value keys
    * where name is the display name, and value is the API value for the
    * report_name.
-   * @param {Object[]} agencies the agency display names and API names for use
+   * @param {object[]} agencies the agency display names and API names for use
    * in mapping the API response report_agency column. Expects name and value
    * keys where name is the display name, and value is the API value for the
    * report_agency.
@@ -24,8 +24,8 @@ class DapApiDataFormatter {
    * Removes notice and id keys.  Maps report_name and report_agency keys to the
    * display names provided in the constructor.
    *
-   * @param {Object[]} jsonArray
-   * @returns {Object[]} JSON array with unneeded keys removed and report/agency
+   * @param {object[]} jsonArray the array to be mapped
+   * @returns {object[]} JSON array with unneeded keys removed and report/agency
    * values mapped.
    */
   mapForDisplay(jsonArray) {
@@ -39,8 +39,10 @@ class DapApiDataFormatter {
     const agency = this.#agencies.find((agency) => {
       return agency.value == jsonArray[0].report_agency;
     });
+    /* eslint-disable no-unused-vars */
     return jsonArray.map(
       ({ notice, id, report_name, report_agency, ...remainingAttributes }) => {
+        // Pull out notice and id keys here, because we want them filtered.
         return {
           report_name: report ? report.name : report_name,
           report_agency: agency ? agency.name : report_agency,
@@ -48,6 +50,7 @@ class DapApiDataFormatter {
         };
       },
     );
+    /* eslint-disable no-unused-vars */
   }
 }
 

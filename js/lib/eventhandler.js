@@ -1,5 +1,8 @@
 import d3 from "d3";
 
+/**
+ * Add event listeners to links and buttons to send Google Analytics events
+ */
 export default function () {
   document.addEventListener("DOMContentLoaded", () => {
     d3.selectAll(".download-data").on("click", function () {

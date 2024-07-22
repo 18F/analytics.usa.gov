@@ -10,9 +10,11 @@ import transformers from "../../lib/chart_helpers/transformers";
  * creates a visualization for the count of users visiting sites for the current
  * agency from each city.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function TopCitiesRealtime({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/top-cities-realtime.json`;

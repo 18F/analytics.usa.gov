@@ -19,12 +19,14 @@ import TopPagesAndDownloads from "./TopPagesAndDownloads";
  * This component is using USWDS grid classes and expects it's parent element to
  * have class 'grid-row'
  *
- * @param {String} dataURL the URL of the base location of the data to be
+ * @param {object} props the properties for the component
+ * @param {string} props.dataURL the URL of the base location of the data to be
  * displayed In production this is proxied and redirected to the S3 bucket URL
  * by NGINX.
- * @param {String} dataPrefix the path to add to the base URL to find data for
- * the current agency.
- * @param {String} agency the display name for the current agency.
+ * @param {string} props.dataPrefix the path to add to the base URL to find data
+ * for the current agency.
+ * @param {string} props.agency the display name for the current agency.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function MainCharts({ dataURL, dataPrefix, agency }) {
   const dataHrefBase = `${dataURL}/${dataPrefix}`;

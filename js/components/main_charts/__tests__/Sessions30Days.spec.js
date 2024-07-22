@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import d3 from "d3";
 import Sessions30Days from "../Sessions30Days";

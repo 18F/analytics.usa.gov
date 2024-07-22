@@ -13,6 +13,10 @@ function element(selection, selector) {
   return selection.append(name).attr("class", klass);
 }
 
+/**
+ * Create a D3 timeseries chart
+ * @returns {object} a built timeseries element
+ */
 export default function buildtimeSeries() {
   let series = function (d) {
     return [d];

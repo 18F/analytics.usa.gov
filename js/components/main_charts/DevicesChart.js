@@ -12,9 +12,11 @@ import transformers from "../../lib/chart_helpers/transformers";
  * visualization for the breakdown of devices of users visiting sites for the
  * current agency.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function DevicesChart({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/devices.json`;

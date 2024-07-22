@@ -1,5 +1,8 @@
 import d3 from "d3";
 
+/**
+ * @returns {*} a D3 block which charts data
+ */
 export default function barChart() {
   let bars = function (d) {
     return d;

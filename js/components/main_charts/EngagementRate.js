@@ -10,16 +10,21 @@ import formatters from "../../lib/chart_helpers/formatters";
  * visualization for the engagement of users visiting sites for the current
  * agency.
  *
- * @param {String} dataHrefBase the URL of the base location of the data to be
- * downloaded including the agency path. In production this is proxied and
+ * @param {object} props the properties for the component
+ * @param {string} props.dataHrefBase the URL of the base location of the data
+ * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @returns {import('react').ReactElement} The rendered element
  */
 function EngagementRate({ dataHrefBase }) {
   const dataURL = `${dataHrefBase}/engagement-rate-30-days.json`;
   const ref = useRef(null);
 
   useEffect(() => {
-    // The engagement rate is rounded and formatted to a percentage.
+    /**
+     * The engagement rate is rounded and formatted to a percentage.
+     * @returns {Promise} resolves when the chart is rendered.
+     */
     const initEngagementRateChart = async () => {
       const result = await d3
         .select(ref.current)

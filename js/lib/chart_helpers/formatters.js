@@ -1,16 +1,15 @@
 import d3 from "d3";
 // common parsing and formatting functions
 
-/*
- * @function trimZeros
- * removes additional zeros from big number
+/**
+ * @param {string} str stringified number to format
+ * @returns {string} the string with additional zeros removed
  */
 function trimZeroes(str) {
   return str.replace(/\.0+$/, "");
 }
 
-/*
- * @function addCommas
+/**
  * wrapper for the d3.format to put in commas
  */
 const addCommas = d3.format(",");
@@ -54,8 +53,8 @@ function formatHour(hour) {
 
 /**
  * Returns an ISO Date (2023-12-17) in dd/mm format for time series chart
- * @param {ISO Date} - date
- * @return {string} - formatted date as "1/12" in dd/mm format
+ * @param {string} isoDateString the date string to format
+ * @returns {string} formatted date as "1/12" in dd/mm format
  */
 function formatDate(isoDateString) {
   const realDate = isoDateString.split("-");
@@ -65,8 +64,8 @@ function formatDate(isoDateString) {
 }
 
 /**
- * remove leading 0 from date string
- * @param {string} - datefield that is passed "01"
+ * @param {string} dateField that is passed "01"
+ * @returns {string} date string with leading zero removed
  */
 function removeLeadingZero(dateField) {
   if (dateField.charAt(0) === "0") {
@@ -86,10 +85,11 @@ function formatURL(url) {
 }
 
 /**
- * @param {string} page is a url
- * return url with protocol
- * the page property from GA4 does not always contain the protocol,
- * this will cause jekyll to prepend the base url to the link, breaking it
+ * The page property from GA4 does not always contain the protocol, this will
+ * cause jekyll to prepend the base url to the link, breaking it
+ *
+ * @param {string} page a url from a GA page metric
+ * @returns {string|null} the url with protocol included
  */
 function formatProtocol(page) {
   page = formatURL(page);
@@ -101,10 +101,12 @@ function formatProtocol(page) {
 }
 
 /**
- * If filepath is a full URL we want to return the pathname to be consistent with the API
- * top-downloads-yesterday.json sometimes returns a URL instead of pathname for the file_name field
- * @param {string} filepath
- * @returns {string} pathname should be consistent with file_name
+ * If filepath is a full URL we want to return the pathname to be consistent
+ * with the API top-downloads-yesterday.json sometimes returns a URL instead of
+ * pathname for the file_name field
+ *
+ * @param {string} filepath the filepath
+ * @returns {string} pathname which is consistent with file_name
  */
 function formatFile(filepath) {
   try {
@@ -116,8 +118,8 @@ function formatFile(filepath) {
 }
 
 /**
- * @param {Number} paramSeconds a number of seconds (potentially a float) to convert
- * to readble time (e.g. 1 hour 43 min 16 sec)
+ * @param {number} paramSeconds a number of seconds (potentially a float) to
+ * convert to readble time (e.g. 1 hour 43 min 16 sec)
  * @returns {string} the readable time
  */
 function secondsToReadableTime(paramSeconds) {
