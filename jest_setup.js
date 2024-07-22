@@ -1,3 +1,10 @@
+import { faker } from "@faker-js/faker";
+
+global.faker_seed = 123456;
+
+// Set a seed so that faker generated data is consistent for snapshot tests
+faker.seed(global.faker_seed);
+
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
 // Define the fetch method because without this we get the error 'fetch is not

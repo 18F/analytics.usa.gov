@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
+import { delay } from "../../../../spec/support/test_utilities";
 import BrowsersChart from "../BrowsersChart";
 import DataLoader from "../../../lib/data_loader";
 
@@ -88,6 +89,9 @@ describe("BrowsersChart", () => {
       );
 
       await waitFor(() => screen.getByText("Chrome"));
+      // Wait for barchart transition animation to complete (200 ms, set in
+      // js/lib/chart_helpers/barchart.js)
+      await delay(300);
     });
 
     it("renders a component with data loaded", () => {

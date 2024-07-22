@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import RealtimeVisitors from "./RealtimeVisitors";
-import LocationsAndLanguages from "./LocationsAndLanguages";
-import Sessions30Days from "./Sessions30Days";
-import Visitors30Days from "./Visitors30Days";
-import Engagement from "./Engagement";
-import TrafficSources from "./TrafficSources";
+import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
+import Engagement from "./Engagement";
+import LocationsAndLanguages from "./LocationsAndLanguages";
+import RealtimeVisitors from "./RealtimeVisitors";
+import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
+import TrafficSources from "./TrafficSources";
+import Visitors30Days from "./Visitors30Days";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -38,7 +39,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           <RealtimeVisitors
             dataHrefBase={dataHrefBase}
             agency={agency}
-            refreshSeconds={15}
+            refreshSeconds={Config.realtimeDataRefreshSeconds}
           />
         </article>
 

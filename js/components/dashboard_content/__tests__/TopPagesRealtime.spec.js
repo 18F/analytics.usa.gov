@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
+import { delay } from "../../../../spec/support/test_utilities";
 import DataLoader from "../../../lib/data_loader";
 import TopPagesRealtime from "../TopPagesRealtime";
 
@@ -144,6 +145,9 @@ describe("TopPagesRealtime", () => {
         />,
       );
       await waitFor(() => screen.getByText("USAJOBS - Search"));
+      // Wait for barchart transition animation to complete (200 ms, set in
+      // js/lib/chart_helpers/barchart.js)
+      await delay(300);
     });
 
     it("renders a component with data loaded", () => {

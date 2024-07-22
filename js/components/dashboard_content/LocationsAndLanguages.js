@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Config from "../../lib/config";
 import TopCitiesRealtime from "./TopCitiesRealtime";
 import TopCountriesRealtime from "./TopCountriesRealtime";
 import TopLanguagesHistorical from "./TopLanguagesHistorical";
@@ -30,7 +31,10 @@ function LocationsAndLanguages({ dataHrefBase }) {
           className="desktop:grid-col-4 padding-2 bar-chart-component"
         >
           <h4>Cities</h4>
-          <TopCitiesRealtime dataHrefBase={dataHrefBase} refreshSeconds={15} />
+          <TopCitiesRealtime
+            dataHrefBase={dataHrefBase}
+            refreshSeconds={Config.realtimeDataRefreshSeconds}
+          />
         </section>
 
         <section
@@ -40,7 +44,7 @@ function LocationsAndLanguages({ dataHrefBase }) {
           <h4>Countries</h4>
           <TopCountriesRealtime
             dataHrefBase={dataHrefBase}
-            refreshSeconds={15}
+            refreshSeconds={Config.realtimeDataRefreshSeconds}
           />
         </section>
 

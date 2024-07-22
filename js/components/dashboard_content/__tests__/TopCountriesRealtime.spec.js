@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
+import { delay } from "../../../../spec/support/test_utilities";
 import DataLoader from "../../../lib/data_loader";
 import TopCountriesRealtime from "../TopCountriesRealtime";
 
@@ -51,7 +52,7 @@ describe("TopCountriesRealtime", () => {
           },
           {
             country: "Canada",
-            active_visitors: "8507",
+            active_visitors: "10002",
           },
           {
             country: "United Kingdom",
@@ -128,6 +129,9 @@ describe("TopCountriesRealtime", () => {
         />,
       );
       await waitFor(() => screen.getByText("Spain"));
+      // Wait for barchart transition animation to complete (200 ms, set in
+      // js/lib/chart_helpers/barchart.js)
+      await delay(300);
     });
 
     it("renders a component with data loaded", async () => {

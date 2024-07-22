@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
+import { delay } from "../../../../spec/support/test_utilities";
 import DataLoader from "../../../lib/data_loader";
 import OperatingSystemsChart from "../OperatingSystemsChart";
 
@@ -98,6 +99,9 @@ describe("OperatingSystemsChart", () => {
         <OperatingSystemsChart dataHrefBase="http://www.example.com/data/" />,
       );
       await waitFor(() => screen.getByText("8.1"));
+      // Wait for barchart transition animation to complete (200 ms, set in
+      // js/lib/chart_helpers/barchart.js)
+      await delay(300);
     });
 
     it("renders a component with data loaded", () => {

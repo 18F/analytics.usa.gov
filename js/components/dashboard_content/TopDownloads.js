@@ -78,7 +78,7 @@ function TopDownloads({
       }
     };
     initDownloadsChart().catch(console.error);
-  }, [downloadData]);
+  }, [downloadData, numberOfListingsToDisplay]);
 
   return (
     <figure className="top-downloads__bar-chart" ref={ref}>
