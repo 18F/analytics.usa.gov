@@ -80,6 +80,27 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
+              <td>Top video plays</td>
+              <td>7 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-video-plays-7-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-video-plays-7-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-downloads-7-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-video-plays-7-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
               <td>Top downloads</td>
               <td>30 days</td>
               <td>
@@ -94,27 +115,6 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   href={hrefBase + "/top-downloads-30-days.csv"}
                   className="download-data usa-button"
                   aria-label="top-downloads-30-days.csv"
-                >
-                  CSV
-                </a>
-              </td>
-              <td>Daily</td>
-            </tr>
-            <tr>
-              <td>Top pages and screens (Full Page Path)</td>
-              <td>30 days</td>
-              <td>
-                <a
-                  href={hrefBase + "/top-10000-pages-and-screens-30-days.json"}
-                  className="download-data usa-button"
-                  aria-label="top-10000-pages-and-screens-30-days.json"
-                >
-                  JSON
-                </a>
-                <a
-                  href={hrefBase + "/top-10000-pages-and-screens-30-days.csv"}
-                  className="download-data usa-button"
-                  aria-label="top-10000-pages-and-screens-30-days.csv"
                 >
                   CSV
                 </a>
@@ -143,6 +143,27 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
+              <td>Top pages and screens (Full Page Path)</td>
+              <td>30 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-10000-pages-and-screens-30-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-10000-pages-and-screens-30-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-10000-pages-and-screens-30-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-10000-pages-and-screens-30-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
               <td>Top traffic sources</td>
               <td>30 days</td>
               <td>
@@ -157,6 +178,27 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   href={hrefBase + "/top-traffic-sources-30-days.csv"}
                   className="download-data usa-button"
                   aria-label="top-traffic-sources-30-days.csv"
+                >
+                  CSV
+                </a>
+              </td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Top video plays</td>
+              <td>30 days</td>
+              <td>
+                <a
+                  href={hrefBase + "/top-video-plays-30-days.json"}
+                  className="download-data usa-button"
+                  aria-label="top-video-plays-30-days.json"
+                >
+                  JSON
+                </a>
+                <a
+                  href={hrefBase + "/top-downloads-30-days.csv"}
+                  className="download-data usa-button"
+                  aria-label="top-video-plays-30-days.csv"
                 >
                   CSV
                 </a>

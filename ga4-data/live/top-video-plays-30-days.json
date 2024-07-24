@@ -1,0 +1,692 @@
+{
+  "name": "top-video-plays-30-days",
+  "sampling": [],
+  "query": {
+    "dimensions": [
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "videoTitle"
+      },
+      {
+        "name": "videoUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "30daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "value": "video_start",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "videoTitle",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "videoTitle",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "videoTitle",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Top video plays 30 days",
+    "description": "Top 100 video plays in the last 30 days"
+  },
+  "data": [
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Astronauts Send Fourth of July Wishes From the International Space Station",
+      "video_url": "https://www.youtube.com/watch?v=ijkkPoXQukY",
+      "total_events": "22112"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?v=6cUe4oMk69E",
+      "total_events": "17997"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "How to Renew Your U.S.  Passport",
+      "video_url": "https://www.youtube.com/watch?v=0akd7xj6wec",
+      "total_events": "7568"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Applying in Person for a U.S. Passport 2022 [Audio Description]",
+      "video_url": "https://www.youtube.com/watch?v=FsQHz2ZdX6E",
+      "total_events": "3485"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "HRSA's Ryan White HIV/AIDS Program 30th Anniversary",
+      "video_url": "https://www.youtube.com/watch?v=iQrP4n-VeFg",
+      "total_events": "1808"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Primary Mirror Size Comparison Between Webb and Hubble",
+      "video_url": "https://www.youtube.com/watch?v=j3mk6tUokm4",
+      "total_events": "877"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Online Passport Renewal: Uploading Your Photo",
+      "video_url": "https://www.youtube.com/watch?v=N33FJaziUgY",
+      "total_events": "859"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkyNTA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "637"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation of Asteroid Apophis’ 2029 Close Approach with Earth",
+      "video_url": "https://www.youtube.com/watch?v=hjJIyZKbHqc",
+      "total_events": "390"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkyMzA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "343"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxOTA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "257"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxMzA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "224"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkyMDA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "211"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Pillars of Creation Star in New Visualization from NASA’s Hubble and Webb Telescopes",
+      "video_url": "https://www.youtube.com/watch?v=9ZooCy59rV0",
+      "total_events": "201"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "HRSA's Ryan White HIV/AIDS Program 30th Anniversary",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8F2js94CWDcyNDA2MjAyNA&v=iQrP4n-VeFg",
+      "total_events": "166"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkyNDA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "154"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "HRSA's Ryan White HIV/AIDS Program 30th Anniversary",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8F2js94CWDcyMTA2MjAyNA&v=iQrP4n-VeFg",
+      "total_events": "151"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Antarctic Ice Mass Loss 2002-2023",
+      "video_url": "https://www.youtube.com/watch?v=6PLBEz7o6wc",
+      "total_events": "146"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Primary Mirror Size Comparison Between Webb and Hubble",
+      "video_url": "https://www.youtube.com/watch?list=TLGG9AelNnPkoFQxODA2MjAyNA&v=j3mk6tUokm4",
+      "total_events": "146"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Global Warming from 1880 to 2022",
+      "video_url": "https://www.youtube.com/watch?v=LwRTw_7NNJs",
+      "total_events": "140"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkyMjA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "137"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "A Week of Rapid-Fire Solar Flares",
+      "video_url": "https://www.youtube.com/watch?v=xfpOh7OdzyE",
+      "total_events": "127"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Series of Lunar Impact Flashes",
+      "video_url": "https://www.youtube.com/watch?v=bBMxgyCpKnc",
+      "total_events": "126"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxODA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "104"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Animation Sizes Up the Biggest Black Holes",
+      "video_url": "https://www.youtube.com/watch?v=8GnSFAZD8YY",
+      "total_events": "89"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Applying in Person for a U.S. Passport 2022",
+      "video_url": "https://www.youtube.com/watch?v=rKHEKXuLNvk",
+      "total_events": "88"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "New Supercomputer Simulation Sheds Light on Moon’s Origin",
+      "video_url": "https://www.youtube.com/watch?v=kRlhlCWplqk",
+      "total_events": "79"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Back to Basics: How to Get Started in Exoplanet Watch and Use EXOTIC to Analyze Data",
+      "video_url": "https://www.youtube.com/watch?v=fcOr3RnxL_8",
+      "total_events": "78"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Sneak Peek at Simulated Mars Habitat at NASA’s Johnson Space Center",
+      "video_url": "https://www.youtube.com/watch?v=6afj68fLMJI",
+      "total_events": "71"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Picatinny Arsenal remembers September 11",
+      "video_url": "https://www.youtube.com/watch?v=_l43axqKdq4",
+      "total_events": "66"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Zoom-in to the Pleiades",
+      "video_url": "https://www.youtube.com/watch?v=V0qMKgeVR5M",
+      "total_events": "64"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "HRSA's Ryan White HIV/AIDS Program 30th Anniversary",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8F2js94CWDcxMjA2MjAyNA&v=iQrP4n-VeFg",
+      "total_events": "60"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "SOAR Case Study - Female Part 1",
+      "video_url": "https://www.youtube.com/watch?v=QIQs0gjhLTo",
+      "total_events": "58"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "2024 Total Solar Eclipse: Through the Eyes of NASA (Official Broadcast)",
+      "video_url": "https://www.youtube.com/watch?v=2MJY_ptQW1o",
+      "total_events": "57"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Hubble’s Inside the Image: Lensed Supernova Refsdal",
+      "video_url": "https://www.youtube.com/watch?v=eae1xORzV30",
+      "total_events": "55"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Primary Mirror Size Comparison Between Webb and Hubble",
+      "video_url": "https://www.youtube.com/watch?list=TLGG9AelNnPkoFQxNzA2MjAyNA&v=j3mk6tUokm4",
+      "total_events": "53"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Simulation’s Plunge Into a Black Hole: Explained",
+      "video_url": "https://www.youtube.com/watch?v=chhcwk4-esM",
+      "total_events": "51"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkyMTA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "48"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "ATF eForm4 Tutorial",
+      "video_url": "https://www.youtube.com/watch?v=PMI9Hx3pLAM",
+      "total_events": "46"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Sun Releases Largest Flare of this Solar Cycle",
+      "video_url": "https://www.youtube.com/watch?v=OuBa3TUND9E",
+      "total_events": "45"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Una lluvia de meteoros libera agua en la Luna",
+      "video_url": "https://www.youtube.com/watch?v=2y3PGqELwj8",
+      "total_events": "43"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Water Released from Moon: Director's Cut",
+      "video_url": "https://www.youtube.com/watch?v=X8Zz14hQzgg",
+      "total_events": "43"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "An Introduction to the James Webb Space Telescope Mission",
+      "video_url": "https://www.youtube.com/watch?v=YF22Ba-xrk8",
+      "total_events": "42"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxNjA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "40"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxNzA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "39"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA ScienceCasts: Water Recovery on the Space Station",
+      "video_url": "https://www.youtube.com/watch?v=I-Rc-kS9HPQ",
+      "total_events": "39"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Why my passport photo was rejected: Position",
+      "video_url": "https://www.youtube.com/watch?v=lZezaywXQOY",
+      "total_events": "39"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Data Sonification: Black Hole at the Center of the Perseus Galaxy Cluster (X-ray)",
+      "video_url": "https://www.youtube.com/watch?v=ioR5np1fmEc",
+      "total_events": "38"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Water Cycle Extremes: Droughts and Pluvials",
+      "video_url": "https://www.youtube.com/watch?v=QsbgZ9om0t8",
+      "total_events": "37"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxNTA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "35"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Sonification of the Mice Galaxies",
+      "video_url": "https://www.youtube.com/watch?v=KzwBOJi0PA4",
+      "total_events": "35"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Annual Arctic Sea Ice Minimum Area 1979-2022, With Graph",
+      "video_url": "https://www.youtube.com/watch?v=AuwOwqzT6rk",
+      "total_events": "33"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "3D virtual tour of the International Space Station",
+      "video_url": "https://www.youtube.com/watch?v=ktGPIsJbYng",
+      "total_events": "32"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxMjA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "32"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxMTA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "31"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "How Do You Deliver a 7,000-Pound Spacecraft",
+      "video_url": "https://www.youtube.com/watch?v=dk1rCCrW9NU",
+      "total_events": "30"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "“Impact Craters” Hands-on Activity Demonstration",
+      "video_url": "https://www.youtube.com/watch?v=K1AsC36nxi4",
+      "total_events": "30"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Picture Perfect Passport",
+      "video_url": "https://www.youtube.com/watch?v=WkKVjEUxIYM",
+      "total_events": "29"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Recientemente: Un módulo de aterrizaje comercial llega a la Luna",
+      "video_url": "https://www.youtube.com/watch?v=-PD6ks2u0-U",
+      "total_events": "29"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Vehicle (POV) Registration  - US Army Garrison Stuttgart - In Processing",
+      "video_url": "https://www.youtube.com/watch?v=OIPVpa-PKeY",
+      "total_events": "29"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Federal Judiciary Careers: Courtroom Deputy",
+      "video_url": "https://www.youtube.com/watch?v=VblEryUjFNw",
+      "total_events": "28"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Space Crafts: Create and Color An Airplane",
+      "video_url": "https://www.youtube.com/watch?v=UCKI9-clURM",
+      "total_events": "28"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Surgeon General’s Advisory on Firearm Violence | June 25, 2024",
+      "video_url": "https://www.youtube.com/watch?v=gI8HviyBw18",
+      "total_events": "28"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkwMzA3MjAyNA&v=6cUe4oMk69E",
+      "total_events": "27"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA's Next-Generation Solar Sail Mission",
+      "video_url": "https://www.youtube.com/watch?v=rfYLnbw7iu8",
+      "total_events": "25"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Hubble’s Inside the Image: Lensed Supernova Refsdal",
+      "video_url": "https://www.youtube.com/watch?list=PL3E861DC9F9A8F2E9&v=eae1xORzV30",
+      "total_events": "24"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Mars Report: Update on NASA's Perseverance Rover SHERLOC Instrument (September 23rd, 2021)",
+      "video_url": "https://www.youtube.com/watch?v=zAUzKTIsMNU",
+      "total_events": "24"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Harvesting Hope: Cultivating Scientific Solutions that Nourish People & Planet",
+      "video_url": "https://www.youtube.com/watch?v=I5Mn6NSvk4I",
+      "total_events": "23"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA's Mars Pathfinder & Sojourner Rover (360 View)",
+      "video_url": "https://www.youtube.com/watch?v=9HGRReKUzfU",
+      "total_events": "23"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "The National CLAS Standards, Health Literacy, and Communication",
+      "video_url": "https://www.youtube.com/watch?v=29rEtJcxku4",
+      "total_events": "23"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?list=TLGG8tIphgpDAHkxNDA2MjAyNA&v=6cUe4oMk69E",
+      "total_events": "22"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Tour of the EMS 01 - Introduction",
+      "video_url": "https://www.youtube.com/watch?v=lwfJPc-rSXw",
+      "total_events": "22"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Watch NASA's Perseverance Rover Land | Video from Mars!",
+      "video_url": "https://www.youtube.com/watch?v=GUqsH5y1j1M",
+      "total_events": "21"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Why the Moon",
+      "video_url": "https://www.youtube.com/watch?v=bmC-FwibsZg",
+      "total_events": "21"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Cómo ver un eclipse solar de forma segura",
+      "video_url": "https://www.youtube.com/watch?v=cRPtGmiqQLk",
+      "total_events": "20"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "EPIC View of Moon Transiting the Earth",
+      "video_url": "https://www.youtube.com/watch?v=DMdhQsHbWTs",
+      "total_events": "20"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Primary Mirror Size Comparison Between Webb and Hubble",
+      "video_url": "https://www.youtube.com/watch?list=TLGG9AelNnPkoFQyNDA2MjAyNA&v=j3mk6tUokm4",
+      "total_events": "20"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Flying by Ultima",
+      "video_url": "https://www.youtube.com/watch?v=ljk8Wc_MnyA",
+      "total_events": "19"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "To Bennu and Back: Journey’s End",
+      "video_url": "https://www.youtube.com/watch?v=O8R2hsoIgTc",
+      "total_events": "19"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "What is a black hole",
+      "video_url": "https://www.youtube.com/watch?v=nJ4d4QEDOYM",
+      "total_events": "18"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "How Planets Are Born",
+      "video_url": "https://www.youtube.com/watch?v=JFcvB1nFPaU",
+      "total_events": "17"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA | Understanding Lunar Eclipses",
+      "video_url": "https://www.youtube.com/watch?v=lNi5UFpales",
+      "total_events": "17"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "What determines when we have an eclipse",
+      "video_url": "https://www.youtube.com/watch?v=T_uUHCbZJmU",
+      "total_events": "17"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "A Guide to Gale Crater",
+      "video_url": "https://www.youtube.com/watch?v=Q-uAz82sH-E",
+      "total_events": "16"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Online Passport Renewal: Payment Process",
+      "video_url": "https://www.youtube.com/watch?v=ss_Ifqp5lq8",
+      "total_events": "16"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Passport Photo Tips",
+      "video_url": "https://www.youtube.com/watch?v=dPvuWlPh7BY",
+      "total_events": "16"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Explore Mars' Jezero Crater with NASA’s Perseverance Rover",
+      "video_url": "https://www.youtube.com/watch?v=yOplTCgnJFQ",
+      "total_events": "15"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Hubble Chronicles Brightening of Ring around Supernova 1987A",
+      "video_url": "https://www.youtube.com/watch?v=g12g2Nq3_2I",
+      "total_events": "15"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Primary Mirror Size Comparison Between Webb and Hubble",
+      "video_url": "https://www.youtube.com/watch?list=TLGG9AelNnPkoFQxMTA2MjAyNA&v=j3mk6tUokm4",
+      "total_events": "15"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "America’s Future: Commercial Space Destinations",
+      "video_url": "https://www.youtube.com/watch?v=v7sS4vVtHpI",
+      "total_events": "14"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Apply to be an Astronaut",
+      "video_url": "https://www.youtube.com/watch?v=08PvlnXtaNU",
+      "total_events": "14"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "The Video NASA’s Laser Communications Experiment Streamed From Deep Space",
+      "video_url": "https://www.youtube.com/watch?v=GvJtVOmFs5Q",
+      "total_events": "14"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Do Aliens Exist",
+      "video_url": "https://www.youtube.com/watch?v=iWrTGAReUdE",
+      "total_events": "13"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Our Milky Way Galaxy: How Big is Space?",
+      "video_url": "https://www.youtube.com/watch?v=MX3PIkbTQwQ",
+      "total_events": "13"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Propellant Tanks for Artemis III on the Move at Michoud",
+      "video_url": "https://www.youtube.com/watch?v=u4qugVqverc",
+      "total_events": "13"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Read Along with the Constitution’s Preamble",
+      "video_url": "https://www.youtube.com/watch?v=u_-mtDXtW0g",
+      "total_events": "13"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Tracking 30 Years of Sea Level Rise",
+      "video_url": "https://www.youtube.com/watch?v=5FU2DAREWbw",
+      "total_events": "13"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "A Poem for Europa by U.S. Poet Laureate Ada Limón",
+      "video_url": "https://www.youtube.com/watch?v=EgWbeDNPD6o",
+      "total_events": "12"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Earth Equinox Dayside",
+      "video_url": "https://www.youtube.com/watch?v=FRkVhCl97j0",
+      "total_events": "12"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "From GOES to GeoXO: Past Highlights to Future Horizons",
+      "video_url": "https://www.youtube.com/watch?v=eRY2ZPVBIqk",
+      "total_events": "12"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-07-11T14:36:05.272Z"
+}
