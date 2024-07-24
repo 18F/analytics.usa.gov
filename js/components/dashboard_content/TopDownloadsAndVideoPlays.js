@@ -68,7 +68,9 @@ function TopDownloadsAndVideoPlays({
       <section className="top-downloads">
         <div className="top-downloads__headline">
           <h3>
-            Top {__topDownloadsCount()} Downloads {timeIntervalHeader}
+            <a href="/definitions#report_yesterday_top_downloads">
+              Top {__topDownloadsCount()} Downloads {timeIntervalHeader}
+            </a>
           </h3>
         </div>
         <h4>

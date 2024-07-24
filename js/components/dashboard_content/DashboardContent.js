@@ -76,7 +76,11 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
 
         <article className="section traffic-sources-section">
           <div className="section__headline">
-            <h2>Top Traffic Sources in the Last 30 Days</h2>
+            <h2>
+              <a href="/definitions#report_historical_top_traffic_sources">
+                Top Traffic Sources in the Last 30 Days
+              </a>
+            </h2>
           </div>
 
           <section className="section__chart">
@@ -88,7 +92,11 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
 
         <article className="section device-demographics-section">
           <div className="section__headline">
-            <h2>User Device Demographics in the Last 30 Days</h2>
+            <h2>
+              <a href="/definitions#report_historical_device_demographics">
+                User Device Demographics in the Last 30 Days
+              </a>
+            </h2>
           </div>
 
           <section className="section__chart">
