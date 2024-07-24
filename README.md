@@ -40,6 +40,13 @@ bundle install
 npm install
 ```
 
+### Build and serve the site on your local machine
+
+```bash
+# Compile and serve the full site locally, watching for changes.
+npm start
+```
+
 ### Running the linters
 
 Linters run on the static files for the repo and ensure that the code is free
@@ -61,6 +68,9 @@ npm run lint:styles
 # HTML
 npm run lint:html
 ```
+
+You can add `:fix` to any above the above commands and the linter will attempt
+to automatically fix common lint issues.
 
 ### Run the unit tests
 
@@ -84,18 +94,23 @@ Install the provided hooks with the following command:
 npm run install-git-hooks
 ```
 
-### Build and serve the site on your local machine
-
-```bash
-# Compile JS initially with webpack
-npm run build-prod
-
-# Compile and serve the full site locally, watching for changes.
-npm start
-```
-
 Now the site will be served at http://localhost:4000 and will be reloaded if you
 make changes to the source files locally.
+
+### Check for accessibility issues
+
+With the site running locally, you can test for accessiblity issues with [pa11y](https://github.com/pa11y/pa11y)
+
+```bash
+# Run the site locally
+npm start
+
+# Run pa11y checks
+npm run pa11y
+```
+
+You can update the URL in the script definition to run pa11y for other pages. By
+default pa11y runs on the http://localhost:4000/ page.
 
 ### Developing with local data
 
