@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OperatingSystemsChart when data is loaded renders a component with data loaded 1`] = `
+<DocumentFragment>
+  <div>
+    <figure
+      id="chart_os"
+    >
+      <div
+        class="data bar-chart"
+      >
+        <div
+          class="bin"
+        >
+          <div
+            class="label"
+          >
+            iOS
+          </div>
+          <div
+            class="value"
+          >
+            36.6%
+          </div>
+          <div
+            class="bar"
+            style="width: 36.6%;"
+          />
+        </div>
+        <div
+          class="bin"
+        >
+          <div
+            class="label"
+          >
+            Windows
+          </div>
+          <div
+            class="value"
+          >
+            29.9%
+          </div>
+          <div
+            class="bar"
+            style="width: 29.9%;"
+          />
+          <figure
+            class=""
+            data-scale-to-parent="true"
+            id="chart_windows"
+          >
+            <h4>
+              Windows
+            </h4>
+            <div
+              class="data bar-chart"
+            >
+              <div
+                class="bin"
+                data-share="22.82190215063274"
+              >
+                <div
+                  class="label"
+                >
+                  10
+                </div>
+                <div
+                  class="value"
+                >
+                  22.8%
+                </div>
+                <div
+                  class="bar"
+                  style="width: 76.2%;"
+                />
+              </div>
+              <div
+                class="bin"
+                data-share="5.590931679869998"
+              >
+                <div
+                  class="label"
+                >
+                  11
+                </div>
+                <div
+                  class="value"
+                >
+                  5.6%
+                </div>
+                <div
+                  class="bar"
+                  style="width: 18.7%;"
+                />
+              </div>
+              <div
+                class="bin"
+                data-share="0.82591327878594"
+              >
+                <div
+                  class="label"
+                >
+                  2000
+                </div>
+                <div
+                  class="value"
+                >
+                  0.8%
+                </div>
+                <div
+                  class="bar"
+                  style="width: 2.8%;"
+                />
+              </div>
+              <div
+                class="bin"
+                data-share="0.31608292810730126"
+              >
+                <div
+                  class="label"
+                >
+                  8
+                </div>
+                <div
+                  class="value"
+                >
+                  0.3%
+                </div>
+                <div
+                  class="bar"
+                  style="width: 1.1%;"
+                />
+              </div>
+              <div
+                class="bin"
+                data-share="0.268696410359494"
+              >
+                <div
+                  class="label"
+                >
+                  7
+                </div>
+                <div
+                  class="value"
+                >
+                  0.3%
+                </div>
+                <div
+                  class="bar"
+                  style="width: 0.9%;"
+                />
+              </div>
+              <div
+                class="bin"
+                data-share="0.11880742089218736"
+              >
+                <div
+                  class="label"
+                >
+                  8.1
+                </div>
+                <div
+                  class="value"
+                >
+                  0.1%
+                </div>
+                <div
+                  class="bar"
+                  style="width: 0.4%;"
+                />
+              </div>
+            </div>
+          </figure>
+        </div>
+        <div
+          class="bin"
+        >
+          <div
+            class="label"
+          >
+            Android
+          </div>
+          <div
+            class="value"
+          >
+            19.3%
+          </div>
+          <div
+            class="bar"
+            style="width: 19.3%;"
+          />
+        </div>
+        <div
+          class="bin"
+        >
+          <div
+            class="label"
+          >
+            Macintosh
+          </div>
+          <div
+            class="value"
+          >
+            10%
+          </div>
+          <div
+            class="bar"
+            style="width: 10%;"
+          />
+        </div>
+        <div
+          class="bin"
+        >
+          <div
+            class="label"
+          >
+            Linux
+          </div>
+          <div
+            class="value"
+          >
+            2.2%
+          </div>
+          <div
+            class="bar"
+            style="width: 2.2%;"
+          />
+        </div>
+        <div
+          class="bin"
+        >
+          <div
+            class="label"
+          >
+            Chrome OS
+          </div>
+          <div
+            class="value"
+          >
+            1.9%
+          </div>
+          <div
+            class="bar"
+            style="width: 1.9%;"
+          />
+        </div>
+      </div>
+    </figure>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`OperatingSystemsChart when data is not loaded renders a component in loading state 1`] = `
+<DocumentFragment>
+  <div>
+    <figure
+      id="chart_os"
+    >
+      <div
+        class="data bar-chart"
+      />
+    </figure>
+    <figure
+      class="hide"
+      data-scale-to-parent="true"
+      id="chart_windows"
+    >
+      <h4>
+        Windows
+      </h4>
+      <div
+        class="data bar-chart"
+      />
+    </figure>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`OperatingSystemsChart when data loading has an error renders a component in error state 1`] = `
+<DocumentFragment>
+  <div>
+    <figure
+      id="chart_os"
+    >
+      <div
+        class="data bar-chart"
+      />
+    </figure>
+    <figure
+      class="hide"
+      data-scale-to-parent="true"
+      id="chart_windows"
+    >
+      <h4>
+        Windows
+      </h4>
+      <div
+        class="data bar-chart"
+      />
+    </figure>
+  </div>
+</DocumentFragment>
+`;
