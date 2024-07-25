@@ -61,7 +61,7 @@ jobs:
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
-      - name: Install ruby and gem dependencies
+      - name: Install ruby and bundle gem dependencies
         uses: ruby/setup-ruby@360dc864d5da99d54fcb8e9148c14a84b90d3e88
         with:
           bundler-cache: true
@@ -72,16 +72,12 @@ jobs:
           cache: 'npm'
       - name: Install node dependencies
         run: npm ci --timing
-      - name: Copy uswds assets
-        run: npm run copy-assets
       - name: Replace application URLs for the environment in jekyll config file before building the site
         run: |
           sed -i "s@url: https://analytics\.usa\.gov@url: ${APP_URL}@g" _config.yml
           cat _config.yml
-      - name: Bundle javascript for production
-        run: npm run build-prod
-      - name: Build jekyll site
-        run: bundle exec jekyll build
+      - name: Bundle javascript/css and build jekyll site for production
+        run: make production
       - name: Install cloud foundry CLI for interacting with cloud.gov
         run: |
           sudo curl -v -L -o cf8-cli-installer_8.7.4_x86-64.deb 'https://packages.cloudfoundry.org/stable?release=debian64&version=8.7.4'

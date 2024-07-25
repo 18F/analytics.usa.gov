@@ -4,13 +4,13 @@ import DashboardContent from "./DashboardContent";
 
 /**
  * Renders an DashboardContent React component, when there is an element on the
- * current page with id 'main-charts-root'.
+ * current page with id 'dashboard-content-root'.
  *
- * The MainCharts component will be rendered as a child to the matching
+ * The DashboardContent component will be rendered as a child to the matching
  * element.
  */
 
-const domNode = document.getElementById("main-charts-root");
+const domNode = document.getElementById("dashboard-content-root");
 
 if (domNode) {
   const root = createRoot(domNode);

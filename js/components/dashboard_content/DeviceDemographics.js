@@ -21,12 +21,16 @@ function DeviceDemographics({ dataHrefBase }) {
   return (
     <>
       <section id="devices" className="desktop:grid-col-4 bar-chart-component">
-        <h4>Devices</h4>
+        <h4>
+          <a href="/definitions#dimension_device_category">Devices</a>
+        </h4>
         <DevicesChart dataHrefBase={dataHrefBase} />
       </section>
 
       <section id="browsers" className="desktop:grid-col-4 bar-chart-component">
-        <h4>Web Browsers</h4>
+        <h4>
+          <a href="/definitions#dimension_browser">Web Browsers</a>
+        </h4>
         <BrowsersChart dataHrefBase={dataHrefBase} />
       </section>
 
@@ -34,7 +38,11 @@ function DeviceDemographics({ dataHrefBase }) {
         id="operating_systems"
         className="desktop:grid-col-4 bar-chart-component"
       >
-        <h4>Operating Systems</h4>
+        <h4>
+          <a href="/definitions#dimension_operating_system">
+            Operating Systems
+          </a>
+        </h4>
         <OperatingSystemsChart dataHrefBase={dataHrefBase} />
       </section>
     </>
