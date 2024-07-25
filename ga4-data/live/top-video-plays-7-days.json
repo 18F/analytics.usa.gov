@@ -1,0 +1,248 @@
+{
+  "name": "top-video-plays-7-days",
+  "sampling": [],
+  "query": {
+    "dimensions": [
+      {
+        "name": "eventName"
+      },
+      {
+        "name": "videoTitle"
+      },
+      {
+        "name": "videoUrl"
+      }
+    ],
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "dateRanges": [
+      {
+        "startDate": "7daysAgo",
+        "endDate": "yesterday"
+      }
+    ],
+    "orderBys": [
+      {
+        "metric": {
+          "metricName": "eventCount"
+        },
+        "desc": true
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "value": "video_start",
+          "caseSensitive": false
+        }
+      },
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "videoTitle",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "videoTitle",
+                "stringFilter": {
+                  "value": "null",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "videoTitle",
+                "stringFilter": {
+                  "value": "",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "100",
+    "property": "properties/393249053"
+  },
+  "meta": {
+    "name": "Top video plays 7 days",
+    "description": "Top 100 video plays in the last 7 days"
+  },
+  "data": [
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Astronauts Send Fourth of July Wishes From the International Space Station",
+      "video_url": "https://www.youtube.com/watch?v=ijkkPoXQukY",
+      "total_events": "17655"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "How to Renew Your U.S.  Passport",
+      "video_url": "https://www.youtube.com/watch?v=0akd7xj6wec",
+      "total_events": "3930"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation: The James Webb Space Telescope's Orbit",
+      "video_url": "https://www.youtube.com/watch?v=6cUe4oMk69E",
+      "total_events": "2716"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Applying in Person for a U.S. Passport 2022 [Audio Description]",
+      "video_url": "https://www.youtube.com/watch?v=FsQHz2ZdX6E",
+      "total_events": "1624"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Online Passport Renewal: Uploading Your Photo",
+      "video_url": "https://www.youtube.com/watch?v=N33FJaziUgY",
+      "total_events": "405"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Primary Mirror Size Comparison Between Webb and Hubble",
+      "video_url": "https://www.youtube.com/watch?v=j3mk6tUokm4",
+      "total_events": "310"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "HRSA's Ryan White HIV/AIDS Program 30th Anniversary",
+      "video_url": "https://www.youtube.com/watch?v=iQrP4n-VeFg",
+      "total_events": "147"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Animation of Asteroid Apophis’ 2029 Close Approach with Earth",
+      "video_url": "https://www.youtube.com/watch?v=hjJIyZKbHqc",
+      "total_events": "145"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Sneak Peek at Simulated Mars Habitat at NASA’s Johnson Space Center",
+      "video_url": "https://www.youtube.com/watch?v=6afj68fLMJI",
+      "total_events": "71"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "SOAR Case Study - Female Part 1",
+      "video_url": "https://www.youtube.com/watch?v=QIQs0gjhLTo",
+      "total_events": "58"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "An Introduction to the James Webb Space Telescope Mission",
+      "video_url": "https://www.youtube.com/watch?v=YF22Ba-xrk8",
+      "total_events": "28"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA's Next-Generation Solar Sail Mission",
+      "video_url": "https://www.youtube.com/watch?v=rfYLnbw7iu8",
+      "total_events": "25"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "The National CLAS Standards, Health Literacy, and Communication",
+      "video_url": "https://www.youtube.com/watch?v=29rEtJcxku4",
+      "total_events": "23"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA | Understanding Lunar Eclipses",
+      "video_url": "https://www.youtube.com/watch?v=lNi5UFpales",
+      "total_events": "17"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Simulation’s Plunge Into a Black Hole: Explained",
+      "video_url": "https://www.youtube.com/watch?v=chhcwk4-esM",
+      "total_events": "16"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Annual Arctic Sea Ice Minimum Area 1979-2022, With Graph",
+      "video_url": "https://www.youtube.com/watch?v=AuwOwqzT6rk",
+      "total_events": "14"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Flying by Ultima",
+      "video_url": "https://www.youtube.com/watch?v=ljk8Wc_MnyA",
+      "total_events": "14"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "The Video NASA’s Laser Communications Experiment Streamed From Deep Space",
+      "video_url": "https://www.youtube.com/watch?v=GvJtVOmFs5Q",
+      "total_events": "14"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Global Warming from 1880 to 2022",
+      "video_url": "https://www.youtube.com/watch?v=LwRTw_7NNJs",
+      "total_events": "12"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA Sees Definitive Evidence of the Montreal Protocol's Success",
+      "video_url": "https://www.youtube.com/watch?v=uVeTJSIbGm8",
+      "total_events": "3"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Sonification of the Mice Galaxies",
+      "video_url": "https://www.youtube.com/watch?v=KzwBOJi0PA4",
+      "total_events": "2"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Court Shorts: Rule of Law",
+      "video_url": "https://www.youtube.com/watch?v=bmAKAHDSnGs",
+      "total_events": "1"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "NASA’s The Quiet Crew | Jim Less",
+      "video_url": "https://www.youtube.com/watch?v=LEnV_PzI6GI",
+      "total_events": "1"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Read Along with the Constitution’s Preamble",
+      "video_url": "https://www.youtube.com/watch?v=u_-mtDXtW0g",
+      "total_events": "1"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Students Reflect on Promises of the Preamble",
+      "video_url": "https://www.youtube.com/watch?v=SG198OyY82c",
+      "total_events": "1"
+    },
+    {
+      "event_label": "video_start",
+      "video_title": "Using the Cultural Formulation Interview",
+      "video_url": "https://www.youtube.com/watch?v=1LXs_OTqh80",
+      "total_events": "1"
+    }
+  ],
+  "totals": {},
+  "taken_at": "2024-07-11T14:36:04.283Z"
+}

@@ -16,7 +16,7 @@
   }
 }
 
-.top-pages-and-downloads {
+.sidebar-content {
   min-height: units("tablet-lg");
 
   &__headline {
@@ -117,6 +117,7 @@
   }
 
   .top-downloads {
+    border-bottom: 1px solid color("gray-cool-40");
     padding: 0 units(2);
 
     @include at-media("tablet") {
@@ -164,6 +165,53 @@
       .bar {
         margin-top: units(2);
       }
+    }
+  }
+
+  .top-video-plays {
+    // This prevents "jumping" in the sidebar when chart data is loading.
+    // Assumes there are 30 items in the top pages charts. Will need adjusted
+    // accordingly if the number of chart items changes.
+    min-height: 10rem;
+    padding: 0 units(2);
+
+    @include at-media("tablet") {
+      padding: 0 units(3);
+    }
+
+    &__headline {
+      padding-top: 0;
+    }
+
+    h4 {
+      font-weight: font-weight("light");
+      margin: units(1) 0 units(1) 0;
+    }
+
+    .bar-chart {
+      margin-top: 0;
+    }
+
+    .label {
+      color: color("gray-cool-70");
+      height: auto;
+      line-height: normal;
+      margin-right: units(8);
+      // Override default chart label behavior to stop overflow with ellipsis so
+      // the full video title is shown with wrap
+      overflow: auto;
+      white-space: normal;
+    }
+
+    .value {
+      height: auto;
+      margin-top: -1.5rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .bar {
+      margin-top: units(1);
     }
   }
 }
