@@ -10,7 +10,7 @@ export default function barChart() {
   };
 
   let value = function (d) {
-    return d.value.toFixed(1);
+    return d.value;
   };
 
   let format = String;
@@ -22,7 +22,7 @@ export default function barChart() {
   let scale = null;
 
   const size = function (n) {
-    return `${(n || 0).toFixed(1)}%`;
+    return `${Math.round(n || 0)}%`;
   };
 
   const chart = function (selection) {

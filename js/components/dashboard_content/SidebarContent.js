@@ -35,7 +35,11 @@ function SidebarContent({ dataHrefBase, agency }) {
   return (
     <section className="sidebar-content">
       <div className="sidebar-content__headline">
-        <h2>Top {numberOfTopPagesToDisplay} Web Pages and App Screens</h2>
+        <h2>
+          <a href="/definitions#report_realtime_top_pages">
+            Top {numberOfTopPagesToDisplay} Web Pages and App Screens
+          </a>
+        </h2>
       </div>
       <Tabs>
         <TabList className="usa-button-group usa-button-group--segmented">

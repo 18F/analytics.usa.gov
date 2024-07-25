@@ -1,6 +1,6 @@
 import { act } from "@testing-library/react";
 
-describe("MainCharts root", () => {
+describe("DashboardContent root", () => {
   const dataPrefix = "";
   const dataURL = "https://www.example.com";
   const agency = "Department of Interior";
@@ -14,10 +14,10 @@ describe("MainCharts root", () => {
     document.body.removeChild(container);
   });
 
-  describe("when an element with id: main-charts-root is present", () => {
+  describe("when an element with id: dashboard-content-root is present", () => {
     beforeEach(async () => {
       container = document.createElement("div");
-      container.id = "main-charts-root";
+      container.id = "dashboard-content-root";
       container.setAttribute("dataprefix", dataPrefix);
       container.setAttribute("agency", agency);
       container.setAttribute("dataurl", dataURL);
@@ -38,7 +38,7 @@ describe("MainCharts root", () => {
     });
   });
 
-  describe("when an element with id: main-charts-root is not present", () => {
+  describe("when an element with id: dashboard-content-root is not present", () => {
     beforeEach(async () => {
       container = document.createElement("div");
       container.id = "foobar";
