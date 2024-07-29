@@ -16,8 +16,8 @@ jobs:
       issues: write
 
     steps:
-      - name: Set current date
-        run: echo "YESTERDAY=$(date --date='1 day ago' '+%Y-%m-%d')" >> "$GITHUB_ENV"
+      - name: Set yesterday's month
+        run: echo "YESTERDAY=$(date --date='1 day ago' '+%Y-%m')" >> "$GITHUB_ENV"
       - name: Create audit log review issue
         run: |
           gh issue create \
@@ -28,7 +28,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: REMINDER! Review audit logs for month ending ${{ env.YESTERDAY }}
+          TITLE: REMINDER! Review audit logs for month ${{ env.YESTERDAY }}
           ASSIGNEES: sanason
           LABELS: audit-log-review
           BODY: |
@@ -43,10 +43,9 @@ jobs:
             3. Close the ticket with a comment "Closed with findings" or "Closed without findings", as appropriate. Feel free to add any other comments as well.
             
             # Audit Tasks
-            - [ ] Review Cloud Foundry events in the gsa-opp-analytics organization (available through the Cloud Foundry web UI). See https://cloud.gov/docs/compliance/auditing-activity/.
-            - [ ] Verify ssh disabled for production applications and spaces.
-            - [ ] Review application logs on https://login.fr.cloud.gov/ for organization gsa-opp-analytics.
-            - [ ] Review the GA4 Account Change History (viewing instructions at https://support.google.com/analytics/answer/9305465?hl=en).
-            - [ ] Review CloudTrail logs for AWS S3 and CloudFront.
-            - [ ] Review Github Organization Audit Logs for the following repos:
-            - [ ] Review NrAuditEvent events in New Relic.
+            - [ ] **Cloud.gov**: Review Cloud Foundry events in the 'gsa-opp-analytics' organization. See https://cloud.gov/docs/compliance/auditing-activity/.
+            - [ ] **Cloud.gov**: Verify ssh disabled for production applications and spaces.
+            - [ ] **Google Analytics**: Review the GA4 Account Change History (viewing instructions at https://support.google.com/analytics/answer/9305465?hl=en).
+            - [ ] **AWS**: Review CloudTrail logs for AWS S3 and CloudFront.
+            - [ ] **GitHub**: Review Github Organization Audit Logs for all repos under the [analytics.usa.gov](https://github.com/orgs/18F/teams/analytics-usa-gov) team in the 18F organization.
+            - [ ] **New Relic**: Review NrAuditEvent events for 'analytics.usa.gov' account.
