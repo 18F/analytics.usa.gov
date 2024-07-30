@@ -65,7 +65,7 @@ jobs:
       - lint-js
       - lint-styles
       - test
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/feature/pie_chart_poc'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
       API_APP_NAME: ${{ vars.API_APP_NAME_DEV }}
