@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
+import DevicesPieChart from "./DevicesPieChart";
 import Engagement from "./Engagement";
 import LocationsAndLanguages from "./LocationsAndLanguages";
 import RealtimeVisitors from "./RealtimeVisitors";
@@ -10,6 +11,7 @@ import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
 import TrafficSources from "./TrafficSources";
 import Visitors30Days from "./Visitors30Days";
+import OperatingSystemsPieChart from "./OperatingSystemsPieChart";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -45,6 +47,27 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
 
         <article className="section locations-and-languages-section">
           <LocationsAndLanguages dataHrefBase={dataHrefBase} />
+        </article>
+
+        <article className="section">
+          <div className="section__chart grid-row">
+            <section
+              id="devices-pie"
+              className="desktop:grid-col-6 padding-2 bar-chart-component"
+            >
+              <div className="section__headline">
+                <h3>Devices Pie</h3>
+              </div>
+              <DevicesPieChart dataHrefBase={dataHrefBase} />
+            </section>
+
+            <section className="desktop:grid-col-6 padding-2">
+              <div className="section__headline">
+                <h3>Operating Systems Pie</h3>
+              </div>
+              <OperatingSystemsPieChart dataHrefBase={dataHrefBase} />
+            </section>
+          </div>
         </article>
 
         <article className="section">

@@ -1,5 +1,6 @@
 import d3 from "d3";
 import Config from "../config";
+import formatters from "./formatters";
 
 /**
  * @returns {*} a D3 block which charts data
@@ -21,15 +22,23 @@ export default function barChart() {
 
   let scale = null;
 
-  const size = function (n) {
-    return `${Math.round(n || 0)}%`;
-  };
-
   const chart = function (selection) {
+    // Remove all existing entries for the chart.
     const bin = selection.selectAll(":scope > .bin").data(bars);
-
     bin.exit().remove();
 
+    /**
+     * Create the bar HTML structure for each data entry
+     * <!-- The chart parent element -->
+     * <>
+     *   <!-- One of the following structures for each data item -->
+     *   <div class="bin">
+     *     <div class="label">foobar</div>
+     *     <div class="value">123%</div>
+     *     <div class="bar" width="123%"></div>
+     *   </div>
+     * </>
+     */
     const enter = bin.enter().append("div").attr("class", "bin");
     enter.append("div").attr("class", "label");
     enter.append("div").attr("class", "value");
@@ -45,8 +54,8 @@ export default function barChart() {
       .style(
         "width",
         componentScale
-          ? (d) => size(componentScale(value(d)))
-          : (d) => size(value(d)),
+          ? (d) => formatters.floatToPercent(componentScale(value(d)))
+          : (d) => formatters.floatToPercent(value(d)),
       );
 
     bin.select(".label").html(label);

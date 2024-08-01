@@ -2,6 +2,7 @@ import d3 from "d3";
 // common parsing and formatting functions
 
 /**
+ * TODO: remove this as not needed now that floatToPercent does this itself.
  * @param {string} str stringified number to format
  * @returns {string} the string with additional zeros removed
  */
@@ -41,8 +42,12 @@ function readableBigNumber(total) {
   return formatter(total);
 }
 
-function floatToPercent(p) {
-  return p >= 0.1 ? `${trimZeroes(p.toFixed(1))}%` : "< 0.1%";
+function floatToPercent(proportion, precision = 1) {
+  if (proportion < 0.1) {
+    return "< 0.1%";
+  } else {
+    return `${parseFloat((proportion || 0).toFixed(precision))}%`;
+  }
 }
 
 function formatHour(hour) {
