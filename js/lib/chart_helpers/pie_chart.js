@@ -9,10 +9,14 @@ import formatters from "./formatters";
  */
 function renderPieChart({ ref, data, width }) {
   // Setup pie chart data
-  const dataWithPieLabels = data.map((item) => {
-    item.key = `${item.key} ( ${formatters.floatToPercent(item.proportion)} )`;
-    return item;
-  });
+  const dataWithPieLabels = data
+    .filter((item) => {
+      return item.proportion > 0.1;
+    })
+    .map((item) => {
+      item.key = `${item.key} ( ${formatters.floatToPercent(item.proportion)} )`;
+      return item;
+    });
   const pie = d3.layout.pie().value((d) => {
     return d.value;
   });

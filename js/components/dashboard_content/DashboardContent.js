@@ -51,10 +51,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
 
         <article className="section">
           <div className="section__chart grid-row">
-            <section
-              id="devices-pie"
-              className="desktop:grid-col-6 padding-2 bar-chart-component"
-            >
+            <section className="desktop:grid-col-6 padding-2">
               <div className="section__headline">
                 <h3>Devices Pie</h3>
               </div>
