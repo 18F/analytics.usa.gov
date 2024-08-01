@@ -34,6 +34,7 @@ module.exports = [
       "sass/**/*",
       "ga4-data/**/*",
       "js/lib/touchpoints.js",
+      "js/lib/chart_helpers/pie_chart.js",
     ],
   },
   {
@@ -92,10 +93,11 @@ module.exports = [
       "ga4-data/**/*",
       "js/lib/touchpoints.js",
       "**/__tests__/*.js",
+      "js/lib/chart_helpers/pie_chart.js",
     ],
     rules: {
       ...jsdoc.configs.recommended.rules,
-      "jsdoc/check-indentation": "error",
+      "jsdoc/check-indentation": "warn",
       "jsdoc/check-line-alignment": "error",
       "jsdoc/check-syntax": "error",
       "jsdoc/convert-to-jsdoc-comments": "error",

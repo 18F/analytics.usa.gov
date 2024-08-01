@@ -7,6 +7,12 @@ faker.seed(global.faker_seed);
 
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
 // Define the fetch method because without this we get the error 'fetch is not
 // defined' in the tests.  TODO: figure out why node's native fetch doesn't
 // show as defined in the tests.
