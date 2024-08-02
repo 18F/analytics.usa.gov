@@ -1,4 +1,5 @@
 import d3 from "d3";
+import colorbrewer from "colorbrewer";
 import formatters from "./formatters";
 
 /**
@@ -7,7 +8,7 @@ import formatters from "./formatters";
  * @param root0.data
  * @param root0.width
  */
-function renderPieChart({ ref, data, width }) {
+function renderPieChart({ ref, data, width, colorSet }) {
   // Setup pie chart data
   const dataWithPieLabels = data
     .filter((item) => {
@@ -30,6 +31,9 @@ function renderPieChart({ ref, data, width }) {
     outerRadius: width / 4,
     labelRadius: width / 3.25,
   };
+
+  // Setup pie chart colors
+  const color = d3.scale.ordinal().range(colorSet);
 
   // Create pie chart
   return d3.select(ref).call((selection) => {
@@ -70,9 +74,6 @@ function renderPieChart({ ref, data, width }) {
     const slices = chart.select("g.slices");
     chart.append("g").attr("class", "labels");
     const labels = chart.select("g.labels");
-
-    // Setup pie chart dimensions and colors
-    const color = d3.scale.category20c();
 
     // Apply dimensions to the chart components
     //chart.attr('transform', 'translate(-50%, -50%)');
