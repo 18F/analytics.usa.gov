@@ -53,14 +53,14 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           <div className="section__chart grid-row">
             <section className="desktop:grid-col-6 padding-2">
               <div className="section__headline">
-                <h3>Devices Pie</h3>
+                <h3>Device</h3>
               </div>
               <DevicesPieChart dataHrefBase={dataHrefBase} />
             </section>
 
             <section className="desktop:grid-col-6 padding-2">
               <div className="section__headline">
-                <h3>Operating Systems Pie</h3>
+                <h3>Operating System</h3>
               </div>
               <OperatingSystemsPieChart dataHrefBase={dataHrefBase} />
             </section>

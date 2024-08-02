@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import colorbrewer from "colorbrewer";
 
 import DataLoader from "../../lib/data_loader";
 import renderPieChart from "../../lib/chart_helpers/pie_chart";
@@ -47,6 +48,7 @@ function DevicesPieChart({ dataHrefBase }) {
           ref: ref.current,
           data: dataWithProportions,
           width: pieSvgWidth,
+          colorSet: colorbrewer[colorbrewer.schemeGroups.qualitative[5]][8],
         });
       }
     };
