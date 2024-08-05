@@ -29,7 +29,7 @@ module.exports = [
   {
     ...eslintConfigs.recommended,
     ignores: [
-      "_site/**/*.js",
+      "_site/**/*",
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
@@ -38,7 +38,7 @@ module.exports = [
   },
   {
     ignores: [
-      "_site/**/*.js",
+      "_site/**/*",
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
@@ -61,7 +61,7 @@ module.exports = [
       "jsx-a11y": jsxA11y,
     },
     ignores: [
-      "_site/**/*.js",
+      "_site/**/*",
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
@@ -74,7 +74,7 @@ module.exports = [
   {
     ...eslintPluginPrettierRecommended,
     ignores: [
-      "_site/**/*.js",
+      "_site/**/*",
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
@@ -86,7 +86,7 @@ module.exports = [
       jsdoc,
     },
     ignores: [
-      "_site/**/*.js",
+      "_site/**/*",
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
