@@ -22,11 +22,26 @@ function AgencySelect({ mainAgencyName, agencies, pathSuffix = "" }) {
     );
   }
 
-  const parsedAgencies = JSON.parse(agencies);
-  const options = [{ slug: "", name: mainAgencyName }, ...parsedAgencies];
+  const options = nestAgencies(parseAgencies(agencies, mainAgencyName));
+  console.log(options);
   const currentPath = window.location.pathname;
   const defaultValue =
     currentPath.slice(-1) == "/" ? currentPath.slice(0, -1) : currentPath;
+
+  function parseAgencies(agencies, mainAgencyName) {
+    const parsedAgencies = JSON.parse(agencies);
+    return [{ slug: "", name: mainAgencyName }, ...parsedAgencies];
+  }
+
+  function nestAgencies(agencies) {
+    const nestChildren = (parent, list) => {
+      parent.children = list.filter((x) => x.parent == parent.slug);
+    };
+
+    const topLevel = agencies.filter((x) => x.parent === undefined);
+    topLevel.forEach((top) => nestChildren(top, agencies));
+    return topLevel;
+  }
 
   return (
     <>
@@ -42,19 +57,44 @@ function AgencySelect({ mainAgencyName, agencies, pathSuffix = "" }) {
         onChange={onChange}
         defaultValue={defaultValue}
       >
-        {options.map((option, index) => {
+        {options.map((option) => {
           let value = option.slug
             ? `/${option.slug}${pathSuffix}`
             : `${pathSuffix}`;
+
           return (
-            <option key={index} value={value}>
-              {option.name}
-            </option>
+            <React.Fragment key={option.slug}>
+              <option key={option.slug} value={value}>
+                {option.name}
+              </option>
+              {createChildrenOptGroup(option)}
+            </React.Fragment>
           );
         })}
       </select>
     </>
   );
+
+  function createChildrenOptGroup(option) {
+    if (option.children.length === 0) {
+      return;
+    }
+
+    return (
+      <optgroup
+        key={`${option.slug}-children`}
+        label={`${option.redirect_from[0].toUpperCase()} Sub-agencies`}
+      >
+        {option.children.map((child) => {
+          return (
+            <option key={child.slug} value={`/${child.slug}${pathSuffix}`}>
+              {child.name}
+            </option>
+          );
+        })}
+      </optgroup>
+    );
+  }
 }
 
 AgencySelect.propTypes = {
