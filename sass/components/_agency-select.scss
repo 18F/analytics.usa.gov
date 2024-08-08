@@ -1,20 +1,6 @@
 @use "uswds-core" as *;
 
 .analytics-select {
-  display: flex;
-  flex-direction: column;
-  order: 4;
-  width: 100%;
-
-  @include at-media("desktop-lg") {
-    order: 2;
-    width: 35%;
-  }
-
-  @include at-media("widescreen") {
-    width: 45%;
-  }
-
   &--main {
     color: color("gray-1");
 
