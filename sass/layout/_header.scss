@@ -5,11 +5,15 @@
 
   header
     h1
+      img
+      a
+    div
+      select
     nav
       about
+      definitions
       data
       api
-    form
 */
 
 .analytics-header {
@@ -17,38 +21,46 @@
   background: color("blue-80v");
   border-bottom: units(1) solid color("blue-50v");
   color: color("gray-1");
+  flex-direction: column;
   justify-content: center;
   padding: units(3);
 
   @include at-media("tablet") {
-    justify-content: flex-start;
+    flex-direction: row;
   }
 
-  img.analytics {
-    // filter equivalent of "blue-50"
-    filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg) brightness(88%) contrast(95%);
-    height: units(4);
-    margin-bottom: units(0.5);
-    padding-right: units(1);
-
-    @include at-media("tablet-lg") {
-      height: units(7);
-      margin-bottom: units(1);
-    }
+  @include at-media("desktop-lg") {
+    justify-content: flex-start;
   }
 
   h1 {
     font-size: size("sans", "lg");
-    margin: 0;
+    margin: 0 0 units(1) 0;
+    order: 1;
+
+    @include at-media("tablet") {
+      flex: 4;
+    }
 
     @include at-media("tablet-lg") {
       font-size: size("sans", "2xl");
       line-height: units(10);
-      margin: 0 units(3) 0 0;
     }
 
     strong {
       font-weight: font-weight(700);
+    }
+
+    img.analytics {
+      // filter equivalent of "blue-50"
+      filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg) brightness(88%) contrast(95%);
+      height: units(4);
+      margin-bottom: - units(.5);
+
+      @include at-media("tablet-lg") {
+        height: units(7);
+        margin-bottom: - units(1);
+      }
     }
   }
 
@@ -67,11 +79,22 @@
     }
   }
 
+  .analytics-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 4;
+
+    @include at-media("desktop-lg") {
+      order: 2;
+      flex: 4;
+    }
+  }
+
   nav.links {
     align-items: center;
     display: flex;
     flex-direction: row;
-    flex-grow: 3;
     justify-content: center;
     list-style: none;
     margin-bottom: 0;
@@ -80,10 +103,7 @@
     padding-bottom: units(1);
 
     @include at-media("tablet") {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      flex-grow: 3;
+      flex: 4;
       justify-content: flex-end;
     }
 
@@ -115,7 +135,7 @@
       a {
         font-size: 1.25rem;
 
-        @include at-media("tablet") {
+        @include at-media("tablet-lg") {
           font-size: units(3);
         }
       }

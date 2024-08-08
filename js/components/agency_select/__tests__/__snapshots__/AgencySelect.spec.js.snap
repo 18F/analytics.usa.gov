@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AgencySelect when all params are provided renders 1`] = `
+exports[`AgencySelect when all params are provided and subagencies do not exist renders 1`] = `
 [
   <label
     className="usa-label"
@@ -27,6 +27,51 @@ exports[`AgencySelect when all params are provided renders 1`] = `
     >
       Agency for International Development
     </option>
+  </select>,
+]
+`;
+
+exports[`AgencySelect when all params are provided and subagencies exist renders 1`] = `
+[
+  <label
+    className="usa-label"
+    htmlFor="analytics-agency-select"
+  >
+    Select an agency to display results
+  </label>,
+  <select
+    aria-label="Select an agency to display results"
+    className="usa-select"
+    defaultValue=""
+    id="analytics-agency-select"
+    name="agency-selector"
+    onChange={[Function]}
+    title="Agency Selection Dropdown"
+  >
+    <option
+      value="/data"
+    >
+      foobar
+    </option>
+    <option
+      value="/agency-international-development/data"
+    >
+      Agency for International Development
+    </option>
+    <option
+      value="/interior/data"
+    >
+      Department of the Interior
+    </option>
+    <optgroup
+      label="DOI Sub-agencies"
+    >
+      <option
+        value="/national-park-service/data"
+      >
+        National Park Service
+      </option>
+    </optgroup>
   </select>,
 ]
 `;

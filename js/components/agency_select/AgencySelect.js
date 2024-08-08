@@ -23,7 +23,6 @@ function AgencySelect({ mainAgencyName, agencies, pathSuffix = "" }) {
   }
 
   const options = nestAgencies(parseAgencies(agencies, mainAgencyName));
-  console.log(options);
   const currentPath = window.location.pathname;
   const defaultValue =
     currentPath.slice(-1) == "/" ? currentPath.slice(0, -1) : currentPath;
