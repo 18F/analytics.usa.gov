@@ -27,7 +27,7 @@ function renderPieChart({ ref, data, width, colorSet }) {
   const chartDimensions = {
     width,
     height: width * 0.65,
-    innerRadius: 0,
+    innerRadius: width / 7,
     outerRadius: width / 4,
     labelRadius: width / 3.25,
   };
