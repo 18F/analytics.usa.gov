@@ -22,6 +22,15 @@
     select.usa-select {
       background-image: url("../css/img/arrow-down-black.svg");
       border: units(1px) solid color("blue-80v");
+
+      @include at-media("desktop-lg") {
+        order: 2;
+        width: 35%;
+      }
+
+      @include at-media("widescreen") {
+        width: 45%;
+      }
     }
 
     label.usa-label {
