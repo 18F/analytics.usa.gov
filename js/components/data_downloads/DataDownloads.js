@@ -438,16 +438,16 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>90 days</td>
               <td>
                 <a
-                  href={hrefBase + "/device_model.json"}
+                  href={hrefBase + "/device-model.json"}
                   className="download-data usa-button"
-                  aria-label="device_model.json"
+                  aria-label="device-model.json"
                 >
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/device_model.csv"}
+                  href={hrefBase + "/device-model.csv"}
                   className="download-data usa-button"
-                  aria-label="device_model.csv"
+                  aria-label="device-model.csv"
                 >
                   CSV
                 </a>
