@@ -413,20 +413,20 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>Daily</td>
             </tr>
             <tr>
-              <td>Screen sizes</td>
+              <td>Screen resolutions</td>
               <td>90 days</td>
               <td>
                 <a
-                  href={hrefBase + "/screen-size.json"}
+                  href={hrefBase + "/screen-resolution.json"}
                   className="download-data usa-button"
-                  aria-label="screen-size.json"
+                  aria-label="screen-resolution.json"
                 >
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/screen-size.csv"}
+                  href={hrefBase + "/screen-resolution.csv"}
                   className="download-data usa-button"
-                  aria-label="screen-size.csv"
+                  aria-label="screen-resolution.csv"
                 >
                   CSV
                 </a>
