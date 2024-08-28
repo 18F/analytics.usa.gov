@@ -53,6 +53,9 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
             let USVisits = 0;
             d.data.forEach((c) => {
               totalVisits += parseInt(c.active_visitors, 10);
+              if (!c.country) {
+                c.country = "Unknown";
+              }
               if (isPartOfUnitedStates(c.country)) {
                 USVisits += parseInt(c.active_visitors, 10);
               }
@@ -81,7 +84,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
               list.map((x) => x.active_visitors),
             );
             values = values.filter((c) => isPartOfUnitedStates(c.country));
-            return values.slice(0, 3);
+            return values.slice(0, 2);
           },
           "country",
         );
