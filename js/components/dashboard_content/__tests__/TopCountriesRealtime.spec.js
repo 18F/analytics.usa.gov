@@ -33,26 +33,101 @@ describe("TopCountriesRealtime", () => {
   });
 
   describe("when data is loaded", () => {
-    const data = CountriesReportFactory.build();
+    let data;
 
-    beforeEach(async () => {
-      DataLoader.loadJSON.mockImplementation(() => {
-        return Promise.resolve(data);
+    describe("and all country names are valid", () => {
+      beforeEach(async () => {
+        data = CountriesReportFactory.build();
+        DataLoader.loadJSON.mockImplementation(() => {
+          return Promise.resolve(data);
+        });
+        component = render(
+          <TopCountriesRealtime
+            dataHrefBase="http://www.example.com/data/"
+            refreshSeconds={30}
+          />,
+        );
+        await waitFor(() => screen.getByText(data.data[0].country));
+        // Wait for barchart transition animation to complete (200 ms, set in
+        // js/lib/chart_helpers/barchart.js)
+        await delay(500);
       });
-      component = render(
-        <TopCountriesRealtime
-          dataHrefBase="http://www.example.com/data/"
-          refreshSeconds={30}
-        />,
-      );
-      await waitFor(() => screen.getByText(data.data[0].country));
-      // Wait for barchart transition animation to complete (200 ms, set in
-      // js/lib/chart_helpers/barchart.js)
-      await delay(500);
+
+      it("renders a component with data loaded", async () => {
+        expect(component.asFragment()).toMatchSnapshot();
+      });
     });
 
-    it("renders a component with data loaded", async () => {
-      expect(component.asFragment()).toMatchSnapshot();
+    describe('and a country with name "" exists', () => {
+      beforeEach(async () => {
+        data = CountriesReportFactory.build();
+        data.data[0].country = "";
+        DataLoader.loadJSON.mockImplementation(() => {
+          return Promise.resolve(data);
+        });
+        component = render(
+          <TopCountriesRealtime
+            dataHrefBase="http://www.example.com/data/"
+            refreshSeconds={30}
+          />,
+        );
+        await waitFor(() => screen.getByText(data.data[0].country));
+        // Wait for barchart transition animation to complete (200 ms, set in
+        // js/lib/chart_helpers/barchart.js)
+        await delay(500);
+      });
+
+      it("renders a component with data loaded", async () => {
+        expect(component.asFragment()).toMatchSnapshot();
+      });
+    });
+
+    describe("and a country with name null exists", () => {
+      beforeEach(async () => {
+        data = CountriesReportFactory.build();
+        data.data[0].country = null;
+        DataLoader.loadJSON.mockImplementation(() => {
+          return Promise.resolve(data);
+        });
+        component = render(
+          <TopCountriesRealtime
+            dataHrefBase="http://www.example.com/data/"
+            refreshSeconds={30}
+          />,
+        );
+        await waitFor(() => screen.getByText(data.data[0].country));
+        // Wait for barchart transition animation to complete (200 ms, set in
+        // js/lib/chart_helpers/barchart.js)
+        await delay(500);
+      });
+
+      it("renders a component with data loaded", async () => {
+        expect(component.asFragment()).toMatchSnapshot();
+      });
+    });
+
+    describe("and a country with name undefined exists", () => {
+      beforeEach(async () => {
+        data = CountriesReportFactory.build();
+        data.data[0].country = undefined;
+        DataLoader.loadJSON.mockImplementation(() => {
+          return Promise.resolve(data);
+        });
+        component = render(
+          <TopCountriesRealtime
+            dataHrefBase="http://www.example.com/data/"
+            refreshSeconds={30}
+          />,
+        );
+        await waitFor(() => screen.getByText(data.data[0].country));
+        // Wait for barchart transition animation to complete (200 ms, set in
+        // js/lib/chart_helpers/barchart.js)
+        await delay(500);
+      });
+
+      it("renders a component with data loaded", async () => {
+        expect(component.asFragment()).toMatchSnapshot();
+      });
     });
   });
 

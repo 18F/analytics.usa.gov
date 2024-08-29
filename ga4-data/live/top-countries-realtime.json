@@ -1,11 +1,6 @@
 {
   "name": "top-countries-realtime",
   "query": {
-    "dimensions": [
-      {
-        "name": "country"
-      }
-    ],
     "metrics": [
       {
         "name": "activeUsers"
@@ -13,15 +8,19 @@
     ],
     "orderBys": [
       {
+        "desc": true,
         "metric": {
           "metricName": "activeUsers"
-        },
-        "desc": true
+        }
       }
     ],
-    "samplingLevel": "HIGHER_PRECISION",
+    "dimensions": [
+      {
+        "name": "country"
+      }
+    ],
     "limit": "10000",
-    "property": "properties/393249053"
+    "property": "properties/397708109"
   },
   "meta": {
     "name": "Top Countries",
@@ -30,782 +29,846 @@
   "data": [
     {
       "country": "United States",
-      "active_visitors": "803775"
+      "active_visitors": "776899"
     },
     {
       "country": "India",
-      "active_visitors": "11231"
-    },
-    {
-      "country": "Canada",
-      "active_visitors": "8507"
-    },
-    {
-      "country": "United Kingdom",
-      "active_visitors": "8097"
-    },
-    {
-      "country": "Mexico",
-      "active_visitors": "7900"
-    },
-    {
-      "country": "Colombia",
-      "active_visitors": "3966"
-    },
-    {
-      "country": "Philippines",
-      "active_visitors": "3831"
-    },
-    {
-      "country": "Germany",
-      "active_visitors": "3163"
-    },
-    {
-      "country": "Puerto Rico",
-      "active_visitors": "2785"
-    },
-    {
-      "country": "France",
-      "active_visitors": "2453"
-    },
-    {
-      "country": "Spain",
-      "active_visitors": "2230"
-    },
-    {
-      "country": "Argentina",
-      "active_visitors": "1912"
-    },
-    {
-      "country": "Brazil",
-      "active_visitors": "1879"
-    },
-    {
-      "country": "Peru",
-      "active_visitors": "1579"
-    },
-    {
-      "country": "Pakistan",
-      "active_visitors": "1543"
-    },
-    {
-      "country": "Italy",
-      "active_visitors": "1527"
-    },
-    {
-      "country": "Chile",
-      "active_visitors": "1497"
-    },
-    {
-      "country": "Indonesia",
-      "active_visitors": "1392"
-    },
-    {
-      "country": "Netherlands",
-      "active_visitors": "1352"
-    },
-    {
-      "country": "Ecuador",
-      "active_visitors": "1302"
+      "active_visitors": "27392"
     },
     {
       "country": "China",
-      "active_visitors": "1130"
+      "active_visitors": "20619"
     },
     {
-      "country": "Dominican Republic",
-      "active_visitors": "1129"
+      "country": "United Kingdom",
+      "active_visitors": "18671"
     },
     {
-      "country": "Venezuela",
-      "active_visitors": "1038"
+      "country": "Canada",
+      "active_visitors": "14293"
     },
     {
-      "country": "Nigeria",
-      "active_visitors": "1030"
+      "country": "Germany",
+      "active_visitors": "11178"
+    },
+    {
+      "country": "Brazil",
+      "active_visitors": "9876"
+    },
+    {
+      "country": "Philippines",
+      "active_visitors": "9523"
     },
     {
       "country": "Japan",
-      "active_visitors": "989"
+      "active_visitors": "7933"
     },
     {
-      "country": "Ireland",
-      "active_visitors": "904"
-    },
-    {
-      "country": "Guatemala",
-      "active_visitors": "651"
-    },
-    {
-      "country": "Switzerland",
-      "active_visitors": "650"
-    },
-    {
-      "country": "Costa Rica",
-      "active_visitors": "647"
-    },
-    {
-      "country": "Singapore",
-      "active_visitors": "643"
-    },
-    {
-      "country": "El Salvador",
-      "active_visitors": "622"
-    },
-    {
-      "country": "Poland",
-      "active_visitors": "619"
-    },
-    {
-      "country": "Türkiye",
-      "active_visitors": "600"
-    },
-    {
-      "country": "South Africa",
-      "active_visitors": "572"
-    },
-    {
-      "country": "Hong Kong",
-      "active_visitors": "562"
-    },
-    {
-      "country": "South Korea",
-      "active_visitors": "535"
-    },
-    {
-      "country": "Malaysia",
-      "active_visitors": "523"
-    },
-    {
-      "country": "Sweden",
-      "active_visitors": "516"
-    },
-    {
-      "country": "Belgium",
-      "active_visitors": "494"
-    },
-    {
-      "country": "Jamaica",
-      "active_visitors": "491"
-    },
-    {
-      "country": "Portugal",
-      "active_visitors": "478"
-    },
-    {
-      "country": "Panama",
-      "active_visitors": "472"
-    },
-    {
-      "country": "Cuba",
-      "active_visitors": "467"
-    },
-    {
-      "country": "Australia",
-      "active_visitors": "450"
-    },
-    {
-      "country": "Bangladesh",
-      "active_visitors": "427"
-    },
-    {
-      "country": "United Arab Emirates",
-      "active_visitors": "419"
-    },
-    {
-      "country": "Taiwan",
-      "active_visitors": "417"
-    },
-    {
-      "country": "Egypt",
-      "active_visitors": "414"
-    },
-    {
-      "country": "Russia",
-      "active_visitors": "413"
-    },
-    {
-      "country": "Haiti",
-      "active_visitors": "410"
-    },
-    {
-      "country": "Vietnam",
-      "active_visitors": "410"
-    },
-    {
-      "country": "Honduras",
-      "active_visitors": "387"
-    },
-    {
-      "country": "Nicaragua",
-      "active_visitors": "372"
-    },
-    {
-      "country": "Ukraine",
-      "active_visitors": "368"
-    },
-    {
-      "country": "Hungary",
-      "active_visitors": "365"
-    },
-    {
-      "country": "Romania",
-      "active_visitors": "344"
-    },
-    {
-      "country": "Kenya",
-      "active_visitors": "340"
-    },
-    {
-      "country": "Israel",
-      "active_visitors": "336"
-    },
-    {
-      "country": "Denmark",
-      "active_visitors": "329"
-    },
-    {
-      "country": "Thailand",
-      "active_visitors": "328"
-    },
-    {
-      "country": "Bolivia",
-      "active_visitors": "326"
-    },
-    {
-      "country": "Greece",
-      "active_visitors": "319"
-    },
-    {
-      "country": "Ghana",
-      "active_visitors": "304"
-    },
-    {
-      "country": "Austria",
-      "active_visitors": "300"
-    },
-    {
-      "country": "Norway",
-      "active_visitors": "300"
-    },
-    {
-      "country": "Finland",
-      "active_visitors": "291"
-    },
-    {
-      "country": "Czechia",
-      "active_visitors": "279"
-    },
-    {
-      "country": "Nepal",
-      "active_visitors": "270"
-    },
-    {
-      "country": "Saudi Arabia",
-      "active_visitors": "265"
-    },
-    {
-      "country": "Iran",
-      "active_visitors": "254"
-    },
-    {
-      "country": "Morocco",
-      "active_visitors": "253"
-    },
-    {
-      "country": "Uzbekistan",
-      "active_visitors": "249"
-    },
-    {
-      "country": "Uruguay",
-      "active_visitors": "246"
-    },
-    {
-      "country": "Jordan",
-      "active_visitors": "212"
-    },
-    {
-      "country": "Paraguay",
-      "active_visitors": "204"
-    },
-    {
-      "country": "Sri Lanka",
-      "active_visitors": "187"
-    },
-    {
-      "country": "Serbia",
-      "active_visitors": "180"
-    },
-    {
-      "country": "Trinidad & Tobago",
-      "active_visitors": "179"
-    },
-    {
-      "country": "Bulgaria",
-      "active_visitors": "173"
-    },
-    {
-      "country": "U.S. Virgin Islands",
-      "active_visitors": "158"
+      "country": "Mexico",
+      "active_visitors": "7229"
     },
     {
       "country": "",
-      "active_visitors": "153"
+      "active_visitors": "7220"
     },
     {
-      "country": "Iraq",
-      "active_visitors": "153"
+      "country": "Australia",
+      "active_visitors": "6710"
     },
     {
-      "country": "New Zealand",
-      "active_visitors": "145"
+      "country": "France",
+      "active_visitors": "6685"
+    },
+    {
+      "country": "Colombia",
+      "active_visitors": "5703"
+    },
+    {
+      "country": "Italy",
+      "active_visitors": "4916"
+    },
+    {
+      "country": "Puerto Rico",
+      "active_visitors": "4577"
+    },
+    {
+      "country": "Spain",
+      "active_visitors": "4283"
+    },
+    {
+      "country": "Türkiye",
+      "active_visitors": "4199"
+    },
+    {
+      "country": "Netherlands",
+      "active_visitors": "4029"
+    },
+    {
+      "country": "Argentina",
+      "active_visitors": "3950"
+    },
+    {
+      "country": "Indonesia",
+      "active_visitors": "3792"
+    },
+    {
+      "country": "Pakistan",
+      "active_visitors": "3283"
+    },
+    {
+      "country": "Nigeria",
+      "active_visitors": "3115"
+    },
+    {
+      "country": "Chile",
+      "active_visitors": "2587"
+    },
+    {
+      "country": "South Africa",
+      "active_visitors": "2565"
+    },
+    {
+      "country": "Switzerland",
+      "active_visitors": "2556"
+    },
+    {
+      "country": "Russia",
+      "active_visitors": "2545"
+    },
+    {
+      "country": "Sweden",
+      "active_visitors": "2293"
+    },
+    {
+      "country": "South Korea",
+      "active_visitors": "2197"
+    },
+    {
+      "country": "Belgium",
+      "active_visitors": "2024"
+    },
+    {
+      "country": "Hong Kong",
+      "active_visitors": "2020"
+    },
+    {
+      "country": "Poland",
+      "active_visitors": "2004"
+    },
+    {
+      "country": "Peru",
+      "active_visitors": "1938"
+    },
+    {
+      "country": "Singapore",
+      "active_visitors": "1878"
+    },
+    {
+      "country": "Dominican Republic",
+      "active_visitors": "1849"
+    },
+    {
+      "country": "Egypt",
+      "active_visitors": "1662"
+    },
+    {
+      "country": "United Arab Emirates",
+      "active_visitors": "1624"
+    },
+    {
+      "country": "Ireland",
+      "active_visitors": "1578"
+    },
+    {
+      "country": "Denmark",
+      "active_visitors": "1521"
+    },
+    {
+      "country": "Norway",
+      "active_visitors": "1514"
+    },
+    {
+      "country": "Taiwan",
+      "active_visitors": "1483"
+    },
+    {
+      "country": "Malaysia",
+      "active_visitors": "1473"
+    },
+    {
+      "country": "Thailand",
+      "active_visitors": "1437"
+    },
+    {
+      "country": "Kenya",
+      "active_visitors": "1356"
+    },
+    {
+      "country": "Saudi Arabia",
+      "active_visitors": "1293"
+    },
+    {
+      "country": "Venezuela",
+      "active_visitors": "1255"
+    },
+    {
+      "country": "Iran",
+      "active_visitors": "1145"
+    },
+    {
+      "country": "Finland",
+      "active_visitors": "1132"
+    },
+    {
+      "country": "Austria",
+      "active_visitors": "1119"
+    },
+    {
+      "country": "Ecuador",
+      "active_visitors": "1035"
+    },
+    {
+      "country": "Vietnam",
+      "active_visitors": "983"
+    },
+    {
+      "country": "Greece",
+      "active_visitors": "980"
+    },
+    {
+      "country": "Israel",
+      "active_visitors": "941"
+    },
+    {
+      "country": "Portugal",
+      "active_visitors": "937"
+    },
+    {
+      "country": "Romania",
+      "active_visitors": "931"
+    },
+    {
+      "country": "Ukraine",
+      "active_visitors": "895"
+    },
+    {
+      "country": "Ghana",
+      "active_visitors": "830"
     },
     {
       "country": "Ethiopia",
-      "active_visitors": "138"
+      "active_visitors": "779"
     },
     {
-      "country": "Lebanon",
-      "active_visitors": "126"
+      "country": "Czechia",
+      "active_visitors": "748"
     },
     {
-      "country": "Moldova",
-      "active_visitors": "123"
+      "country": "Hungary",
+      "active_visitors": "743"
+    },
+    {
+      "country": "Bangladesh",
+      "active_visitors": "712"
+    },
+    {
+      "country": "Bolivia",
+      "active_visitors": "607"
+    },
+    {
+      "country": "Serbia",
+      "active_visitors": "558"
+    },
+    {
+      "country": "Uruguay",
+      "active_visitors": "550"
+    },
+    {
+      "country": "Jamaica",
+      "active_visitors": "537"
+    },
+    {
+      "country": "Jordan",
+      "active_visitors": "528"
+    },
+    {
+      "country": "Iraq",
+      "active_visitors": "518"
+    },
+    {
+      "country": "Guatemala",
+      "active_visitors": "499"
+    },
+    {
+      "country": "Nepal",
+      "active_visitors": "494"
     },
     {
       "country": "Uganda",
-      "active_visitors": "123"
+      "active_visitors": "493"
     },
     {
-      "country": "Algeria",
-      "active_visitors": "120"
+      "country": "El Salvador",
+      "active_visitors": "486"
     },
     {
-      "country": "Georgia",
-      "active_visitors": "110"
+      "country": "Panama",
+      "active_visitors": "478"
     },
     {
-      "country": "Albania",
-      "active_visitors": "102"
+      "country": "Bulgaria",
+      "active_visitors": "457"
+    },
+    {
+      "country": "Morocco",
+      "active_visitors": "451"
+    },
+    {
+      "country": "Lebanon",
+      "active_visitors": "443"
+    },
+    {
+      "country": "New Zealand",
+      "active_visitors": "439"
+    },
+    {
+      "country": "Costa Rica",
+      "active_visitors": "388"
     },
     {
       "country": "Croatia",
-      "active_visitors": "100"
+      "active_visitors": "385"
     },
     {
-      "country": "Kuwait",
-      "active_visitors": "96"
+      "country": "Sri Lanka",
+      "active_visitors": "365"
     },
     {
-      "country": "Slovakia",
-      "active_visitors": "96"
+      "country": "Trinidad & Tobago",
+      "active_visitors": "354"
+    },
+    {
+      "country": "Haiti",
+      "active_visitors": "328"
+    },
+    {
+      "country": "Uzbekistan",
+      "active_visitors": "322"
+    },
+    {
+      "country": "Paraguay",
+      "active_visitors": "312"
+    },
+    {
+      "country": "U.S. Virgin Islands",
+      "active_visitors": "303"
+    },
+    {
+      "country": "Honduras",
+      "active_visitors": "294"
     },
     {
       "country": "Tanzania",
-      "active_visitors": "95"
-    },
-    {
-      "country": "Bahamas",
-      "active_visitors": "92"
-    },
-    {
-      "country": "Lithuania",
-      "active_visitors": "89"
-    },
-    {
-      "country": "Qatar",
-      "active_visitors": "88"
+      "active_visitors": "291"
     },
     {
       "country": "Armenia",
-      "active_visitors": "80"
+      "active_visitors": "280"
+    },
+    {
+      "country": "Georgia",
+      "active_visitors": "275"
     },
     {
       "country": "Kazakhstan",
-      "active_visitors": "77"
-    },
-    {
-      "country": "Bosnia & Herzegovina",
-      "active_visitors": "75"
-    },
-    {
-      "country": "Guam",
-      "active_visitors": "74"
-    },
-    {
-      "country": "Cameroon",
-      "active_visitors": "73"
-    },
-    {
-      "country": "Barbados",
-      "active_visitors": "67"
-    },
-    {
-      "country": "Bahrain",
-      "active_visitors": "66"
-    },
-    {
-      "country": "Cyprus",
-      "active_visitors": "66"
-    },
-    {
-      "country": "Iceland",
-      "active_visitors": "65"
-    },
-    {
-      "country": "Latvia",
-      "active_visitors": "65"
-    },
-    {
-      "country": "North Macedonia",
-      "active_visitors": "65"
+      "active_visitors": "275"
     },
     {
       "country": "Tunisia",
-      "active_visitors": "65"
+      "active_visitors": "272"
     },
     {
-      "country": "Cambodia",
-      "active_visitors": "62"
-    },
-    {
-      "country": "Gabon",
-      "active_visitors": "62"
-    },
-    {
-      "country": "Zambia",
-      "active_visitors": "62"
-    },
-    {
-      "country": "Afghanistan",
-      "active_visitors": "61"
-    },
-    {
-      "country": "Belize",
-      "active_visitors": "59"
+      "country": "Lithuania",
+      "active_visitors": "269"
     },
     {
       "country": "Slovenia",
-      "active_visitors": "59"
+      "active_visitors": "266"
     },
     {
-      "country": "Yemen",
-      "active_visitors": "59"
+      "country": "Qatar",
+      "active_visitors": "265"
     },
     {
-      "country": "Cayman Islands",
-      "active_visitors": "57"
+      "country": "Guam",
+      "active_visitors": "262"
     },
     {
-      "country": "Guyana",
-      "active_visitors": "56"
+      "country": "Afghanistan",
+      "active_visitors": "252"
     },
     {
-      "country": "Myanmar (Burma)",
-      "active_visitors": "56"
+      "country": "Albania",
+      "active_visitors": "248"
     },
     {
-      "country": "Côte d’Ivoire",
-      "active_visitors": "55"
+      "country": "Cuba",
+      "active_visitors": "248"
     },
     {
-      "country": "Estonia",
-      "active_visitors": "53"
+      "country": "Zambia",
+      "active_visitors": "248"
     },
     {
-      "country": "Azerbaijan",
-      "active_visitors": "52"
+      "country": "Slovakia",
+      "active_visitors": "244"
     },
     {
-      "country": "Malta",
-      "active_visitors": "51"
-    },
-    {
-      "country": "Luxembourg",
-      "active_visitors": "49"
-    },
-    {
-      "country": "Senegal",
-      "active_visitors": "49"
-    },
-    {
-      "country": "Zimbabwe",
-      "active_visitors": "48"
-    },
-    {
-      "country": "Mongolia",
-      "active_visitors": "43"
-    },
-    {
-      "country": "Oman",
-      "active_visitors": "39"
-    },
-    {
-      "country": "Belarus",
-      "active_visitors": "38"
-    },
-    {
-      "country": "Cape Verde",
-      "active_visitors": "38"
-    },
-    {
-      "country": "Angola",
-      "active_visitors": "37"
-    },
-    {
-      "country": "Aruba",
-      "active_visitors": "36"
+      "country": "Algeria",
+      "active_visitors": "236"
     },
     {
       "country": "Congo - Kinshasa",
-      "active_visitors": "36"
+      "active_visitors": "210"
     },
     {
-      "country": "Malawi",
-      "active_visitors": "35"
+      "country": "Barbados",
+      "active_visitors": "193"
     },
     {
-      "country": "Burkina Faso",
-      "active_visitors": "33"
+      "country": "Nicaragua",
+      "active_visitors": "189"
     },
     {
-      "country": "Somalia",
-      "active_visitors": "32"
-    },
-    {
-      "country": "Liberia",
-      "active_visitors": "31"
-    },
-    {
-      "country": "St. Lucia",
-      "active_visitors": "31"
-    },
-    {
-      "country": "Mauritius",
-      "active_visitors": "30"
-    },
-    {
-      "country": "Sierra Leone",
-      "active_visitors": "30"
-    },
-    {
-      "country": "Kyrgyzstan",
-      "active_visitors": "29"
+      "country": "Bosnia & Herzegovina",
+      "active_visitors": "188"
     },
     {
       "country": "Rwanda",
-      "active_visitors": "29"
+      "active_visitors": "188"
     },
     {
-      "country": "Benin",
-      "active_visitors": "27"
+      "country": "Cameroon",
+      "active_visitors": "183"
     },
     {
-      "country": "Kosovo",
-      "active_visitors": "27"
+      "country": "Moldova",
+      "active_visitors": "183"
     },
     {
-      "country": "Libya",
-      "active_visitors": "27"
+      "country": "Zimbabwe",
+      "active_visitors": "181"
     },
     {
-      "country": "Montenegro",
-      "active_visitors": "27"
+      "country": "Belarus",
+      "active_visitors": "178"
     },
     {
-      "country": "Curaçao",
-      "active_visitors": "26"
+      "country": "Kuwait",
+      "active_visitors": "174"
     },
     {
-      "country": "Bermuda",
-      "active_visitors": "25"
+      "country": "Estonia",
+      "active_visitors": "172"
     },
     {
-      "country": "Madagascar",
-      "active_visitors": "25"
+      "country": "Cambodia",
+      "active_visitors": "169"
     },
     {
-      "country": "Antigua & Barbuda",
-      "active_visitors": "24"
+      "country": "Cyprus",
+      "active_visitors": "167"
+    },
+    {
+      "country": "North Macedonia",
+      "active_visitors": "167"
+    },
+    {
+      "country": "Latvia",
+      "active_visitors": "165"
+    },
+    {
+      "country": "Bahamas",
+      "active_visitors": "160"
+    },
+    {
+      "country": "Guyana",
+      "active_visitors": "160"
+    },
+    {
+      "country": "Iceland",
+      "active_visitors": "154"
+    },
+    {
+      "country": "Myanmar (Burma)",
+      "active_visitors": "143"
+    },
+    {
+      "country": "Palestine",
+      "active_visitors": "138"
+    },
+    {
+      "country": "Côte d’Ivoire",
+      "active_visitors": "131"
     },
     {
       "country": "Syria",
-      "active_visitors": "24"
+      "active_visitors": "129"
     },
     {
-      "country": "Turkmenistan",
-      "active_visitors": "21"
+      "country": "Senegal",
+      "active_visitors": "125"
     },
     {
-      "country": "Guadeloupe",
-      "active_visitors": "20"
+      "country": "Malta",
+      "active_visitors": "124"
     },
     {
-      "country": "Isle of Man",
-      "active_visitors": "20"
+      "country": "Azerbaijan",
+      "active_visitors": "122"
     },
     {
-      "country": "Mozambique",
-      "active_visitors": "20"
+      "country": "Bahrain",
+      "active_visitors": "120"
     },
     {
-      "country": "British Virgin Islands",
-      "active_visitors": "19"
+      "country": "Luxembourg",
+      "active_visitors": "103"
     },
     {
-      "country": "Mali",
-      "active_visitors": "18"
+      "country": "Malawi",
+      "active_visitors": "101"
     },
     {
-      "country": "Gambia",
-      "active_visitors": "17"
+      "country": "Oman",
+      "active_visitors": "99"
     },
     {
-      "country": "Laos",
-      "active_visitors": "17"
+      "country": "Kyrgyzstan",
+      "active_visitors": "97"
     },
     {
-      "country": "Namibia",
-      "active_visitors": "17"
+      "country": "Cayman Islands",
+      "active_visitors": "94"
+    },
+    {
+      "country": "Madagascar",
+      "active_visitors": "94"
     },
     {
       "country": "Togo",
-      "active_visitors": "17"
+      "active_visitors": "93"
     },
     {
-      "country": "St. Kitts & Nevis",
-      "active_visitors": "16"
+      "country": "Burkina Faso",
+      "active_visitors": "92"
     },
     {
-      "country": "Suriname",
-      "active_visitors": "15"
-    },
-    {
-      "country": "Grenada",
-      "active_visitors": "14"
-    },
-    {
-      "country": "Congo - Brazzaville",
-      "active_visitors": "13"
-    },
-    {
-      "country": "Djibouti",
-      "active_visitors": "13"
-    },
-    {
-      "country": "Dominica",
-      "active_visitors": "13"
-    },
-    {
-      "country": "Jersey",
-      "active_visitors": "13"
-    },
-    {
-      "country": "Maldives",
-      "active_visitors": "13"
-    },
-    {
-      "country": "Niger",
-      "active_visitors": "13"
-    },
-    {
-      "country": "St. Vincent & Grenadines",
-      "active_visitors": "13"
-    },
-    {
-      "country": "Andorra",
-      "active_visitors": "12"
+      "country": "Angola",
+      "active_visitors": "91"
     },
     {
       "country": "Botswana",
+      "active_visitors": "88"
+    },
+    {
+      "country": "Mauritius",
+      "active_visitors": "86"
+    },
+    {
+      "country": "Yemen",
+      "active_visitors": "82"
+    },
+    {
+      "country": "Aruba",
+      "active_visitors": "80"
+    },
+    {
+      "country": "Mozambique",
+      "active_visitors": "79"
+    },
+    {
+      "country": "Benin",
+      "active_visitors": "74"
+    },
+    {
+      "country": "Kosovo",
+      "active_visitors": "73"
+    },
+    {
+      "country": "Antigua & Barbuda",
+      "active_visitors": "72"
+    },
+    {
+      "country": "Bermuda",
+      "active_visitors": "72"
+    },
+    {
+      "country": "Sudan",
+      "active_visitors": "72"
+    },
+    {
+      "country": "South Sudan",
+      "active_visitors": "70"
+    },
+    {
+      "country": "Montenegro",
+      "active_visitors": "69"
+    },
+    {
+      "country": "Grenada",
+      "active_visitors": "68"
+    },
+    {
+      "country": "Liberia",
+      "active_visitors": "67"
+    },
+    {
+      "country": "Libya",
+      "active_visitors": "67"
+    },
+    {
+      "country": "Namibia",
+      "active_visitors": "67"
+    },
+    {
+      "country": "Brunei",
+      "active_visitors": "66"
+    },
+    {
+      "country": "Sierra Leone",
+      "active_visitors": "65"
+    },
+    {
+      "country": "Martinique",
+      "active_visitors": "64"
+    },
+    {
+      "country": "Mongolia",
+      "active_visitors": "62"
+    },
+    {
+      "country": "Curaçao",
+      "active_visitors": "61"
+    },
+    {
+      "country": "British Virgin Islands",
+      "active_visitors": "60"
+    },
+    {
+      "country": "Belize",
+      "active_visitors": "58"
+    },
+    {
+      "country": "Guadeloupe",
+      "active_visitors": "57"
+    },
+    {
+      "country": "St. Lucia",
+      "active_visitors": "56"
+    },
+    {
+      "country": "Cape Verde",
+      "active_visitors": "54"
+    },
+    {
+      "country": "Congo - Brazzaville",
+      "active_visitors": "50"
+    },
+    {
+      "country": "Gambia",
+      "active_visitors": "50"
+    },
+    {
+      "country": "Somalia",
+      "active_visitors": "47"
+    },
+    {
+      "country": "Mauritania",
+      "active_visitors": "45"
+    },
+    {
+      "country": "Chad",
+      "active_visitors": "44"
+    },
+    {
+      "country": "Suriname",
+      "active_visitors": "44"
+    },
+    {
+      "country": "Maldives",
+      "active_visitors": "43"
+    },
+    {
+      "country": "Sint Maarten",
+      "active_visitors": "42"
+    },
+    {
+      "country": "Macao",
+      "active_visitors": "40"
+    },
+    {
+      "country": "Guinea",
+      "active_visitors": "38"
+    },
+    {
+      "country": "Mali",
+      "active_visitors": "38"
+    },
+    {
+      "country": "Burundi",
+      "active_visitors": "35"
+    },
+    {
+      "country": "Lesotho",
+      "active_visitors": "35"
+    },
+    {
+      "country": "Turkmenistan",
+      "active_visitors": "31"
+    },
+    {
+      "country": "Papua New Guinea",
+      "active_visitors": "30"
+    },
+    {
+      "country": "Eswatini",
+      "active_visitors": "29"
+    },
+    {
+      "country": "Isle of Man",
+      "active_visitors": "29"
+    },
+    {
+      "country": "Tajikistan",
+      "active_visitors": "29"
+    },
+    {
+      "country": "St. Kitts & Nevis",
+      "active_visitors": "28"
+    },
+    {
+      "country": "St. Vincent & Grenadines",
+      "active_visitors": "28"
+    },
+    {
+      "country": "Fiji",
+      "active_visitors": "27"
+    },
+    {
+      "country": "Dominica",
+      "active_visitors": "24"
+    },
+    {
+      "country": "Réunion",
+      "active_visitors": "24"
+    },
+    {
+      "country": "Bhutan",
+      "active_visitors": "23"
+    },
+    {
+      "country": "Laos",
+      "active_visitors": "22"
+    },
+    {
+      "country": "St. Martin",
+      "active_visitors": "22"
+    },
+    {
+      "country": "Djibouti",
+      "active_visitors": "20"
+    },
+    {
+      "country": "Gabon",
+      "active_visitors": "19"
+    },
+    {
+      "country": "Guernsey",
+      "active_visitors": "18"
+    },
+    {
+      "country": "Jersey",
+      "active_visitors": "18"
+    },
+    {
+      "country": "Turks & Caicos Islands",
+      "active_visitors": "18"
+    },
+    {
+      "country": "Micronesia",
+      "active_visitors": "17"
+    },
+    {
+      "country": "Liechtenstein",
+      "active_visitors": "14"
+    },
+    {
+      "country": "Andorra",
+      "active_visitors": "13"
+    },
+    {
+      "country": "Gibraltar",
+      "active_visitors": "12"
+    },
+    {
+      "country": "Northern Mariana Islands",
+      "active_visitors": "12"
+    },
+    {
+      "country": "Timor-Leste",
       "active_visitors": "12"
     },
     {
       "country": "Equatorial Guinea",
-      "active_visitors": "12"
-    },
-    {
-      "country": "Palestine",
-      "active_visitors": "12"
-    },
-    {
-      "country": "Sint Maarten",
-      "active_visitors": "12"
-    },
-    {
-      "country": "Mauritania",
-      "active_visitors": "10"
-    },
-    {
-      "country": "Sudan",
-      "active_visitors": "10"
-    },
-    {
-      "country": "Tajikistan",
-      "active_visitors": "10"
-    },
-    {
-      "country": "Turks & Caicos Islands",
-      "active_visitors": "10"
-    },
-    {
-      "country": "Brunei",
-      "active_visitors": "9"
-    },
-    {
-      "country": "Eswatini",
-      "active_visitors": "9"
-    },
-    {
-      "country": "Guernsey",
-      "active_visitors": "9"
-    },
-    {
-      "country": "Réunion",
-      "active_visitors": "9"
-    },
-    {
-      "country": "Chad",
-      "active_visitors": "8"
-    },
-    {
-      "country": "Liechtenstein",
-      "active_visitors": "8"
-    },
-    {
-      "country": "Macao",
-      "active_visitors": "8"
-    },
-    {
-      "country": "St. Martin",
-      "active_visitors": "8"
-    },
-    {
-      "country": "Gibraltar",
-      "active_visitors": "7"
-    },
-    {
-      "country": "Martinique",
-      "active_visitors": "7"
-    },
-    {
-      "country": "South Sudan",
-      "active_visitors": "7"
-    },
-    {
-      "country": "Anguilla",
-      "active_visitors": "6"
+      "active_visitors": "11"
     },
     {
       "country": "Greenland",
-      "active_visitors": "6"
+      "active_visitors": "11"
+    },
+    {
+      "country": "Anguilla",
+      "active_visitors": "10"
+    },
+    {
+      "country": "Faroe Islands",
+      "active_visitors": "10"
+    },
+    {
+      "country": "Niger",
+      "active_visitors": "10"
     },
     {
       "country": "Caribbean Netherlands",
-      "active_visitors": "5"
+      "active_visitors": "8"
     },
     {
-      "country": "Guinea",
+      "country": "Monaco",
+      "active_visitors": "8"
+    },
+    {
+      "country": "Solomon Islands",
+      "active_visitors": "7"
+    },
+    {
+      "country": "American Samoa",
+      "active_visitors": "6"
+    },
+    {
+      "country": "Central African Republic",
+      "active_visitors": "6"
+    },
+    {
+      "country": "French Guiana",
+      "active_visitors": "6"
+    },
+    {
+      "country": "Palau",
+      "active_visitors": "6"
+    },
+    {
+      "country": "Marshall Islands",
       "active_visitors": "5"
     },
     {
@@ -813,47 +876,23 @@
       "active_visitors": "5"
     },
     {
-      "country": "Bhutan",
-      "active_visitors": "4"
+      "country": "Montserrat",
+      "active_visitors": "3"
+    },
+    {
+      "country": "Samoa",
+      "active_visitors": "3"
+    },
+    {
+      "country": "British Indian Ocean Territory",
+      "active_visitors": "2"
+    },
+    {
+      "country": "Eritrea",
+      "active_visitors": "2"
     },
     {
       "country": "French Polynesia",
-      "active_visitors": "4"
-    },
-    {
-      "country": "Lesotho",
-      "active_visitors": "4"
-    },
-    {
-      "country": "Fiji",
-      "active_visitors": "3"
-    },
-    {
-      "country": "Marshall Islands",
-      "active_visitors": "3"
-    },
-    {
-      "country": "Palau",
-      "active_visitors": "3"
-    },
-    {
-      "country": "St. Barthélemy",
-      "active_visitors": "3"
-    },
-    {
-      "country": "Antarctica",
-      "active_visitors": "2"
-    },
-    {
-      "country": "Burundi",
-      "active_visitors": "2"
-    },
-    {
-      "country": "Central African Republic",
-      "active_visitors": "2"
-    },
-    {
-      "country": "Faroe Islands",
       "active_visitors": "2"
     },
     {
@@ -861,27 +900,23 @@
       "active_visitors": "2"
     },
     {
-      "country": "Monaco",
-      "active_visitors": "2"
-    },
-    {
-      "country": "Northern Mariana Islands",
-      "active_visitors": "2"
-    },
-    {
-      "country": "Papua New Guinea",
-      "active_visitors": "2"
-    },
-    {
       "country": "San Marino",
       "active_visitors": "2"
     },
     {
-      "country": "Timor-Leste",
+      "country": "St. Barthélemy",
       "active_visitors": "2"
     },
     {
-      "country": "British Indian Ocean Territory",
+      "country": "Tonga",
+      "active_visitors": "2"
+    },
+    {
+      "country": "Western Sahara",
+      "active_visitors": "2"
+    },
+    {
+      "country": "Mayotte",
       "active_visitors": "1"
     },
     {
@@ -889,10 +924,10 @@
       "active_visitors": "1"
     },
     {
-      "country": "Tuvalu",
+      "country": "Vanuatu",
       "active_visitors": "1"
     }
   ],
   "totals": {},
-  "taken_at": "2024-01-05T16:05:49.789Z"
+  "taken_at": "2024-08-23T13:04:54.656Z"
 }
