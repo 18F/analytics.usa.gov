@@ -68,7 +68,7 @@ function Sessions30Days({ dataHrefBase }) {
 
   return (
     <>
-      <div className="chart__title">Daily Sessions in the Past 30 Days</div>
+      <div className="chart__title">Daily Sessions</div>
       <div
         className="chart__time-series__container"
         data-refresh="15"
