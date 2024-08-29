@@ -88,26 +88,11 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
               list.map((x) => x.active_visitors),
             );
             values = values.filter((c) => isPartOfUnitedStates(c.country));
-            console.log(values);
-            const topValues = values.slice(0, 2);
-            const other = {
-              country: "Other",
-              active_visitors: 0,
-              proportion: 0,
-            };
-            if (values.length > 2) {
-              console.log(values.slice(2, values.length - 1));
-              values.slice(2, values.length - 1).forEach((value) => {
-                other.active_visitors =
-                  other.active_visitors + parseInt(value.active_visitors);
-                other.proportion = other.proportion + value.proportion;
-              });
-
-              if (other.proportion > 0) {
-                topValues.push(other);
-              }
-            }
-            return topValues;
+            return transformers.consolidateValuesAfterListLength({
+              values,
+              maxItems: 3,
+              labelKey: "country",
+            });
           },
           "country",
         );
@@ -122,26 +107,11 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
               list.map((x) => x.active_visitors),
             );
             values = values.filter((c) => !isPartOfUnitedStates(c.country));
-            console.log(values);
-            const topValues = values.slice(0, 15);
-            const other = {
-              country: "Other",
-              active_visitors: 0,
-              proportion: 0,
-            };
-            if (values.length > 15) {
-              console.log(values.slice(15, values.length - 1));
-              values.slice(15, values.length - 1).forEach((value) => {
-                other.active_visitors =
-                  other.active_visitors + parseInt(value.active_visitors);
-                other.proportion = other.proportion + value.proportion;
-              });
-
-              if (other.proportion > 0) {
-                topValues.push(other);
-              }
-            }
-            return topValues;
+            return transformers.consolidateValuesAfterListLength({
+              values,
+              maxItems: 15,
+              labelKey: "country",
+            });
           },
           "country",
         );

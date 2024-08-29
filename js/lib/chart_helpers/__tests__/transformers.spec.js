@@ -119,4 +119,93 @@ describe("transformers", () => {
       );
     });
   });
+
+  describe("consolidateValuesAfterListLength", () => {
+    const values = [
+      { country: "United States", proportion: 76.70501259438775 },
+      { country: "Puerto Rico", proportion: 0.4809531514965014 },
+      { country: "U.S. Virgin Islands", proportion: 0.033111127115861824 },
+      { country: "Guam", proportion: 0.018613317220498596 },
+      {
+        country: "Northern Mariana Islands",
+        proportion: 0.0006547398017260811,
+      },
+      { country: "American Samoa", proportion: 0.000561205544336641 },
+    ];
+
+    describe("when maxItems is less than the array length", () => {
+      const expected = [
+        { country: "United States", proportion: 76.70501259438775 },
+        { country: "Puerto Rico", proportion: 0.4809531514965014 },
+        { country: "Other", proportion: 0.05294038968242314 },
+      ];
+
+      it('consolidates multiple items into the "Other" item', () => {
+        expect(
+          transformers.consolidateValuesAfterListLength({
+            values,
+            maxItems: 3,
+            labelKey: "country",
+          }),
+        ).toEqual(expected);
+      });
+    });
+    describe("when maxItems is equal to the array length", () => {
+      const expected = [
+        { country: "United States", proportion: 76.70501259438775 },
+        { country: "Puerto Rico", proportion: 0.4809531514965014 },
+        { country: "U.S. Virgin Islands", proportion: 0.033111127115861824 },
+        { country: "Guam", proportion: 0.018613317220498596 },
+        {
+          country: "Northern Mariana Islands",
+          proportion: 0.0006547398017260811,
+        },
+        { country: "Other", proportion: 0.000561205544336641 },
+      ];
+
+      it('consolidates multiple items into the "Other" item', () => {
+        expect(
+          transformers.consolidateValuesAfterListLength({
+            values,
+            maxItems: 6,
+            labelKey: "country",
+          }),
+        ).toEqual(expected);
+      });
+    });
+
+    describe("when maxItems is greater than the array length", () => {
+      it("returns the original array", () => {
+        expect(
+          transformers.consolidateValuesAfterListLength({
+            values,
+            maxItems: 7,
+            labelKey: "country",
+          }),
+        ).toEqual(values);
+      });
+    });
+
+    describe("when values is omitted", () => {
+      it("returns an empty array", () => {
+        expect(
+          transformers.consolidateValuesAfterListLength({
+            maxItems: 7,
+            labelKey: "country",
+          }),
+        ).toEqual([]);
+      });
+    });
+
+    describe("when maxItems is omitted", () => {
+      it("returns the original array", () => {
+        expect(
+          transformers.consolidateValuesAfterListLength({
+            values,
+            labelKey: "country",
+          }),
+        ).toEqual(values);
+      });
+    });
+  });
 });
