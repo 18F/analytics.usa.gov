@@ -100,6 +100,37 @@ function toTopPercentsWithoutConsolidation(dataSet, desiredKey) {
   }
 }
 
+/**
+ * @param {object} param the method parameters
+ * @param {object[]} param.values the list of objects with proportions and
+ * labels.
+ * @param {number} param.maxItems the maximum length of the values array after
+ * consolidating.
+ * @param {string} param.labelKey the key in the object which should be set to
+ * "Other" when creating a consolidated object to add to the array.
+ * @returns {object[]} the values array limited to the maxItems count and having
+ * items consolidated into an "other" object at the end of the array.
+ */
+function consolidateValuesAfterListLength({ values = [], maxItems, labelKey }) {
+  if (!maxItems || values.length < maxItems) {
+    return values;
+  }
+
+  const topValues = values.slice(0, maxItems - 1);
+  const other = {
+    [labelKey]: "Other",
+    proportion: 0,
+  };
+  values.slice(maxItems - 1, values.length).forEach((value) => {
+    other.proportion = other.proportion + value.proportion;
+  });
+
+  if (other.proportion > 0) {
+    topValues.push(other);
+  }
+  return topValues;
+}
+
 export default {
   listify,
   findProportionsOfMetric,
@@ -108,4 +139,5 @@ export default {
   toTopPercentsWithoutConsolidation,
   extractArrayValue,
   consolidateSmallValues,
+  consolidateValuesAfterListLength,
 };
