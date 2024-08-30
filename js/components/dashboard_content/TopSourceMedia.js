@@ -9,13 +9,15 @@ import DataLoader from "../../lib/data_loader";
  * visualization for the count of users visiting sites with from each type of
  * source media for the current agency.
  *
- * @param {object} props the properties for the component
+ * @param {object} props the properties for the component.
  * @param {string} props.dataHrefBase the URL of the base location of the data
  * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
+ * @param {number} props.maxItems the max number of items to be displayed in the
+ * bar chart after consolidating items beyond the maximum.
  * @returns {import('react').ReactElement} The rendered element
  */
-function TopSourceMedia({ dataHrefBase }) {
+function TopSourceMedia({ dataHrefBase, maxItems }) {
   const dataURL = `${dataHrefBase}/top-session-source-medium-30-days.json`;
   const ref = useRef(null);
   const [sourceMediaData, setSourceMediaData] = useState(null);
@@ -27,10 +29,11 @@ function TopSourceMedia({ dataHrefBase }) {
         await setSourceMediaData(data);
       } else {
         const chartBuilder = new ChartBuilder();
-        await chartBuilder.buildCompactBarChart(
+        await chartBuilder.buildConsolidatedBarchart(
           ref.current,
           sourceMediaData,
           "session_source_medium",
+          maxItems,
         );
       }
     };
@@ -51,6 +54,7 @@ function TopSourceMedia({ dataHrefBase }) {
 
 TopSourceMedia.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
+  maxItems: PropTypes.number.isRequired,
 };
 
 export default TopSourceMedia;

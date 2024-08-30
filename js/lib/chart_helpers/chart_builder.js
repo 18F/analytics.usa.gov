@@ -146,6 +146,23 @@ class ChartBuilder {
       transformers.toTopPercentsWithoutConsolidation(d, desiredKey);
     return this.buildBarChart(element, data, method);
   }
+
+  /**
+   * Builds a bar chart for the key with values that are below a threshold
+   * consolidated into an "Other" bar
+   *
+   * @param {object} element the HTML element where the chart should be built
+   * @param {*} data the JSON data for the chart
+   * @param {string} desiredKey the key of the data to use for the chart
+   * @param {number} maxItems the max number of items in the data array after
+   * consolidating
+   * @returns {Promise} resolves when the chart renders
+   */
+  buildConsolidatedBarchart(element, data, desiredKey, maxItems) {
+    const method = (d) =>
+      transformers.toTopPercentsWithMaxItems(d, desiredKey, maxItems);
+    return this.buildBarChart(element, data, method);
+  }
 }
 
 export default ChartBuilder;

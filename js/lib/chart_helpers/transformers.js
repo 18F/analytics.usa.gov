@@ -100,6 +100,16 @@ function toTopPercentsWithoutConsolidation(dataSet, desiredKey) {
   }
 }
 
+function toTopPercentsWithMaxItems(dataSet, desiredKey, maxItems) {
+  if (dataSet.totals) {
+    const values = listify(dataSet.totals["by_" + desiredKey]);
+    const proportions = findProportionsOfMetricFromValue(values);
+    return consolidateValuesAfterListLength({ values: proportions, maxItems });
+  } else {
+    return dataSet;
+  }
+}
+
 /**
  * @param {object} param the method parameters
  * @param {object[]} param.values the list of objects with proportions and
@@ -111,7 +121,11 @@ function toTopPercentsWithoutConsolidation(dataSet, desiredKey) {
  * @returns {object[]} the values array limited to the maxItems count and having
  * items consolidated into an "other" object at the end of the array.
  */
-function consolidateValuesAfterListLength({ values = [], maxItems, labelKey }) {
+function consolidateValuesAfterListLength({
+  values = [],
+  maxItems,
+  labelKey = "key",
+}) {
   if (!maxItems || values.length < maxItems) {
     return values;
   }
@@ -128,6 +142,7 @@ function consolidateValuesAfterListLength({ values = [], maxItems, labelKey }) {
   if (other.proportion > 0) {
     topValues.push(other);
   }
+  console.log(topValues);
   return topValues;
 }
 
@@ -137,6 +152,7 @@ export default {
   findProportionsOfMetricFromValue,
   toTopPercents,
   toTopPercentsWithoutConsolidation,
+  toTopPercentsWithMaxItems,
   extractArrayValue,
   consolidateSmallValues,
   consolidateValuesAfterListLength,
