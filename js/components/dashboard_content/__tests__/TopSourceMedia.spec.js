@@ -20,7 +20,10 @@ describe("TopSourceMedia", () => {
         return Promise.resolve(null);
       });
       component = render(
-        <TopSourceMedia dataHrefBase="http://www.example.com/data/" />,
+        <TopSourceMedia
+          dataHrefBase="http://www.example.com/data/"
+          maxItems={8}
+        />,
       );
     });
 
@@ -71,7 +74,10 @@ describe("TopSourceMedia", () => {
         return Promise.resolve(data);
       });
       component = render(
-        <TopSourceMedia dataHrefBase="http://www.example.com/data/" />,
+        <TopSourceMedia
+          dataHrefBase="http://www.example.com/data/"
+          maxItems={8}
+        />,
       );
       await waitFor(() => screen.getByText("google / organic"));
       // Wait for barchart transition animation to complete (200 ms, set in
@@ -93,7 +99,10 @@ describe("TopSourceMedia", () => {
         return Promise.reject(error);
       });
       component = render(
-        <TopSourceMedia dataHrefBase="http://www.example.com/data/" />,
+        <TopSourceMedia
+          dataHrefBase="http://www.example.com/data/"
+          maxItems={8}
+        />,
       );
     });
 
