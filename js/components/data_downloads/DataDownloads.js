@@ -91,7 +91,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/top-downloads-7-days.csv"}
+                  href={hrefBase + "/top-video-plays-7-days.csv"}
                   className="download-data usa-button"
                   aria-label="top-video-plays-7-days.csv"
                 >
@@ -196,7 +196,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/top-downloads-30-days.csv"}
+                  href={hrefBase + "/top-video-plays-30-days.csv"}
                   className="download-data usa-button"
                   aria-label="top-video-plays-30-days.csv"
                 >
