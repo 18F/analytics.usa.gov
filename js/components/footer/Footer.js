@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
  */
 function Footer({ siteDomain }) {
   useEffect(() => {
-    require("../../lib/touchpoints");
+    //require("../../lib/touchpoints_feedback_modal");
   });
 
   return (
@@ -49,17 +49,6 @@ function Footer({ siteDomain }) {
               </a>
               .
             </p>
-            <button id="contact-btn" className="usa-button--big">
-              <svg
-                className="usa-icon"
-                aria-hidden="true"
-                focusable="false"
-                role="img"
-              >
-                <use xlinkHref="/assets/uswds/img/sprite.svg#forum"></use>
-              </svg>
-              Feedback
-            </button>
           </div>
           <div className="tablet:grid-col-4 padding-2 margin-0">
             <h3>Download the data</h3>

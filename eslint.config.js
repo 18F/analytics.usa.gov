@@ -10,6 +10,7 @@ module.exports = [
     languageOptions: {
       globals: {
         ga: false,
+        gas4: false,
         ...globals.browser,
         ...globals.node,
         ...globals.mocha,
@@ -33,7 +34,8 @@ module.exports = [
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
-      "js/lib/touchpoints.js",
+      "js/lib/touchpoints_feedback_modal.js",
+      "js/lib/touchpoints_page_helpful_survey.js",
     ],
   },
   {
@@ -42,7 +44,8 @@ module.exports = [
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
-      "js/lib/touchpoints.js",
+      "js/lib/touchpoints_feedback_modal.js",
+      "js/lib/touchpoints_page_helpful_survey.js",
     ],
     settings: {
       react: {
@@ -65,7 +68,8 @@ module.exports = [
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
-      "js/lib/touchpoints.js",
+      "js/lib/touchpoints_feedback_modal.js",
+      "js/lib/touchpoints_page_helpful_survey.js",
     ],
     rules: {
       ...jsxA11y.configs.recommended.rules,
@@ -78,7 +82,8 @@ module.exports = [
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
-      "js/lib/touchpoints.js",
+      "js/lib/touchpoints_feedback_modal.js",
+      "js/lib/touchpoints_page_helpful_survey.js",
     ],
   },
   {
@@ -90,7 +95,8 @@ module.exports = [
       "assets/**/*",
       "sass/**/*",
       "ga4-data/**/*",
-      "js/lib/touchpoints.js",
+      "js/lib/touchpoints_feedback_modal.js",
+      "js/lib/touchpoints_page_helpful_survey.js",
       "**/__tests__/*.js",
     ],
     rules: {
