@@ -48,7 +48,9 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </article>
 
         <article className="padding-3 section section--bordered">
-          <div className="section__headline">Historical Data and Trends</div>
+          <div className="section__headline">
+            30 Day Historical Data and Trends
+          </div>
         </article>
 
         <article className="min-height-small padding-3 section section--bordered">
@@ -56,7 +58,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </article>
 
         <article className="section section--bordered">
-          <section className="section__subheader">
+          <section className="section__subheader padding-2 text--centered">
             <Visitors30Days dataHrefBase={dataHrefBase} />
           </section>
         </article>
@@ -70,7 +72,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
             <a href="/definitions#report_historical_top_traffic_sources">
-              Top Traffic Sources in the Last 30 Days
+              Top Traffic Sources
             </a>
           </div>
           <TrafficSources dataHrefBase={dataHrefBase} />
@@ -79,7 +81,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
             <a href="/definitions#report_historical_device_demographics">
-              User Device Demographics in the Last 30 Days
+              User Device Demographics
             </a>
           </div>
           <DeviceDemographics dataHrefBase={dataHrefBase} />

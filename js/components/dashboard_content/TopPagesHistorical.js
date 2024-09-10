@@ -76,7 +76,7 @@ function TopPagesHistorical({
 
   return (
     <figure data-source={dataURL} ref={ref}>
-      <div className="data chart__bar-chart"></div>
+      <div className="data chart__bar-chart text--lowercase"></div>
     </figure>
   );
 }
