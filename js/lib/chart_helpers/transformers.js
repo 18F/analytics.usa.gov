@@ -142,7 +142,6 @@ function consolidateValuesAfterListLength({
   if (other.proportion > 0) {
     topValues.push(other);
   }
-  console.log(topValues);
   return topValues;
 }
 
