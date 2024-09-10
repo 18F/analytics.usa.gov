@@ -419,16 +419,16 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>90 days</td>
               <td>
                 <a
-                  href={hrefBase + "/screen-resolution.json"}
+                  href={hrefBase + "/screen-resolution-90-days.json"}
                   className="analytics-data__download-button usa-button"
-                  aria-label="screen-resolution.json"
+                  aria-label="screen-resolution-90-days.json"
                 >
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/screen-resolution.csv"}
+                  href={hrefBase + "/screen-resolution-90-days.csv"}
                   className="analytics-data__download-button usa-button"
-                  aria-label="screen-resolution.csv"
+                  aria-label="screen-resolution-90-days.csv"
                 >
                   CSV
                 </a>
