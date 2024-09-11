@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
 import Engagement from "./Engagement";
+import FileDownloads from "./FileDownloads";
 import LocationsAndLanguages from "./LocationsAndLanguages";
 import RealtimeVisitors from "./RealtimeVisitors";
 import Sessions30Days from "./Sessions30Days";
@@ -85,6 +86,11 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
             </a>
           </div>
           <DeviceDemographics dataHrefBase={dataHrefBase} />
+        </article>
+
+        <article className="min-height-large padding-3 section section--bordered">
+          <div className="section__headline">File Downloads</div>
+          <FileDownloads dataHrefBase={dataHrefBase} />
         </article>
       </article>
 
