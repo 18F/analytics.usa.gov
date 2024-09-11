@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import DownloadFileExtensionChart from "./DownloadFileExtensionChart";
+import UsersWithFileDownloads from "./UsersWithFileDownloads";
 
 /**
  * Contains charts and other data visualizations for the file downloads
@@ -21,6 +22,16 @@ function FileDownloads({ dataHrefBase }) {
       <div id="file_extension_downloads" className="desktop:grid-col-6">
         <div className="chart__title">Downloads by File Extension</div>
         <DownloadFileExtensionChart dataHrefBase={dataHrefBase} maxItems={10} />
+      </div>
+
+      <div
+        id="file_download_counts"
+        className="desktop:grid-col-6 text--centered"
+      >
+        <div className="chart__title text--centered">
+          Users with File Downloads
+        </div>
+        <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
       </div>
     </div>
   );
