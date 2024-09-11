@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
 import Engagement from "./Engagement";
+import FileDownloads from "./FileDownloads";
 import LocationsAndLanguages from "./LocationsAndLanguages";
 import RealtimeVisitors from "./RealtimeVisitors";
 import Sessions30Days from "./Sessions30Days";
@@ -48,7 +49,9 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </article>
 
         <article className="padding-3 section section--bordered">
-          <div className="section__headline">Historical Data and Trends</div>
+          <div className="section__headline">
+            30 Day Historical Data and Trends
+          </div>
         </article>
 
         <article className="min-height-small padding-3 section section--bordered">
@@ -70,7 +73,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
             <a href="/definitions#report_historical_top_traffic_sources">
-              Top Traffic Sources in the Last 30 Days
+              Top Traffic Sources
             </a>
           </div>
           <TrafficSources dataHrefBase={dataHrefBase} />
@@ -79,10 +82,15 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
             <a href="/definitions#report_historical_device_demographics">
-              User Device Demographics in the Last 30 Days
+              User Device Demographics
             </a>
           </div>
           <DeviceDemographics dataHrefBase={dataHrefBase} />
+        </article>
+
+        <article className="min-height-large padding-3 section section--bordered">
+          <div className="section__headline">File Downloads</div>
+          <FileDownloads dataHrefBase={dataHrefBase} />
         </article>
       </article>
 
