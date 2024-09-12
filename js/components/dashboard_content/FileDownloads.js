@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import DownloadFileExtensionChart from "./DownloadFileExtensionChart";
 import UsersWithFileDownloads from "./UsersWithFileDownloads";
+import TotalFileDownloads from "./TotalFileDownloads";
 
 /**
  * Contains charts and other data visualizations for the file downloads
@@ -28,10 +29,26 @@ function FileDownloads({ dataHrefBase }) {
         id="file_download_counts"
         className="desktop:grid-col-6 text--centered"
       >
-        <div className="chart__title text--centered">
-          Users with File Downloads
+        <div className="grid-row">
+          <div className="chart__title text--centered grid-col-12">
+            Total File Downloads
+          </div>
         </div>
-        <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
+        <div className="grid-row">
+          <span className="data grid-col-12">
+            <TotalFileDownloads dataHrefBase={dataHrefBase} />
+          </span>
+        </div>
+        <div className="grid-row">
+          <div className="chart__title text--centered grid-col-12">
+            Users with File Downloads
+          </div>
+        </div>
+        <div className="grid-row">
+          <span className="data grid-col-12">
+            <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
+          </span>
+        </div>
       </div>
     </div>
   );
