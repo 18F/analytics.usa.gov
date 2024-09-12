@@ -21,7 +21,11 @@ function FileDownloads({ dataHrefBase }) {
   return (
     <div className="padding-top-4 grid-row">
       <div id="file_extension_downloads" className="desktop:grid-col-6">
-        <div className="chart__title">Downloads by File Extension</div>
+        <div className="chart__title">
+          <a href="/definitions#dimension_file_extension">
+            Downloads by File Extension
+          </a>
+        </div>
         <DownloadFileExtensionChart dataHrefBase={dataHrefBase} maxItems={10} />
       </div>
 
@@ -31,7 +35,9 @@ function FileDownloads({ dataHrefBase }) {
       >
         <div className="grid-row">
           <div className="chart__title text--centered grid-col-12">
-            Total File Downloads
+            <a href="/definitions#dimension_file_download">
+              Total File Downloads
+            </a>
           </div>
         </div>
         <div className="grid-row">
@@ -41,7 +47,9 @@ function FileDownloads({ dataHrefBase }) {
         </div>
         <div className="grid-row padding-top-3">
           <div className="chart__title text--centered grid-col-12">
-            Users with File Downloads
+            <a href="/definitions#dimension_file_download">
+              Total Users with File Downloads
+            </a>
           </div>
         </div>
         <div className="grid-row">

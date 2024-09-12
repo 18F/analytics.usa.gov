@@ -96,7 +96,11 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </article>
 
         <article className="min-height-large padding-3 section section--bordered">
-          <div className="section__headline">File Downloads</div>
+          <div className="section__headline">
+            <a href="/definitions#report_historical_file_downloads">
+              File Downloads
+            </a>
+          </div>
           <FileDownloads dataHrefBase={dataHrefBase} />
         </article>
       </article>

@@ -22,7 +22,9 @@ function TotalViewsAndUsers({ dataHrefBase }) {
       <section id="total-views" className="desktop:grid-col-6 text--centered">
         <div className="grid-row">
           <div className="chart__title text--centered grid-col-12">
-            Total Views (Page or App Screen)
+            <a href="/definitions#metric_screen_page_views">
+              Total Views (Page or App Screen)
+            </a>
           </div>
         </div>
         <div className="grid-row">
@@ -35,7 +37,7 @@ function TotalViewsAndUsers({ dataHrefBase }) {
       <section id="total-users" className="desktop:grid-col-6 text--centered">
         <div className="grid-row">
           <div className="chart__title text--centered grid-col-12">
-            Total Users
+            <a href="/definitions#metric_total_users">Total Users</a>
           </div>
         </div>
         <div className="grid-row">
