@@ -29,7 +29,7 @@ function DeviceDemographics({ dataHrefBase }) {
           </a>
         </div>
         <ConsolidatedBarChart
-          dataUrl={`${dataHrefBase}/screen-resolution.json`}
+          dataUrl={`${dataHrefBase}/screen-resolution-30-days.json`}
           chartDataKey={"screen_resolution"}
           maxItems={10}
         />
