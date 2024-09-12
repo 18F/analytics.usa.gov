@@ -36,7 +36,9 @@ function UsersWithFileDownloads({ dataHrefBase }) {
   return (
     <>
       <div ref={ref}>
-        <div className="data">{formattedData ? formattedData : "..."}</div>
+        <div className="data chart__rate padding-top-05">
+          {formattedData ? formattedData : "..."}
+        </div>
       </div>
     </>
   );

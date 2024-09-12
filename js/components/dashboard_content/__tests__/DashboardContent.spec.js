@@ -12,7 +12,7 @@ describe("MainCharts", () => {
         agency="Department of Interior"
       />,
     );
-    await waitFor(() => screen.getByText("NaN"));
+    await waitFor(() => screen.findByText("NaN"));
   });
 
   // Check for some subcomponents' text to ensure everything renders
