@@ -9,6 +9,7 @@ import LocationsAndLanguages from "./LocationsAndLanguages";
 import RealtimeVisitors from "./RealtimeVisitors";
 import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
+import TotalViewsAndUsers from "./TotalViewsAndUsers";
 import TrafficSources from "./TrafficSources";
 import Visitors30Days from "./Visitors30Days";
 
@@ -67,6 +68,12 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <article className="section section--bordered">
           <section>
             <Engagement dataHrefBase={dataHrefBase} />
+          </section>
+        </article>
+
+        <article className="min-height-large padding-3 section section--bordered">
+          <section>
+            <TotalViewsAndUsers dataHrefBase={dataHrefBase} />
           </section>
         </article>
 

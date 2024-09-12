@@ -39,7 +39,7 @@ function FileDownloads({ dataHrefBase }) {
             <TotalFileDownloads dataHrefBase={dataHrefBase} />
           </span>
         </div>
-        <div className="grid-row">
+        <div className="grid-row padding-top-3">
           <div className="chart__title text--centered grid-col-12">
             Users with File Downloads
           </div>
