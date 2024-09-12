@@ -5,8 +5,8 @@ import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
- * Retrieves the users with file downloads report from the passed data URL and
- * creates a visualization for the total users downloading files for the current
+ * Retrieves the file downloads by extension report from the passed data URL and
+ * creates a visualization for the total files downloaded for the current
  * agency.
  *
  * @param {object} props the properties for the component
@@ -15,8 +15,8 @@ import formatters from "../../lib/chart_helpers/formatters";
  * redirected to the S3 bucket URL.
  * @returns {import('react').ReactElement} The rendered element
  */
-function UsersWithFileDownloads({ dataHrefBase }) {
-  const dataURL = `${dataHrefBase}/users-with-file-downloads-30-days.json`;
+function TotalFileDownloads({ dataHrefBase }) {
+  const dataURL = `${dataHrefBase}/top-download-file-extensions-30-days.json`;
   const ref = useRef(null);
   const [rawData, setRawData] = useState(null);
   const [formattedData, setFormattedData] = useState(null);
@@ -27,7 +27,9 @@ function UsersWithFileDownloads({ dataHrefBase }) {
         const data = await DataLoader.loadJSON(dataURL);
         await setRawData(data);
       } else {
-        setFormattedData(formatters.readableBigNumber(rawData.totals.users));
+        setFormattedData(
+          formatters.readableBigNumber(rawData.totals.total_events),
+        );
       }
     };
     init().catch(console.error);
@@ -42,8 +44,8 @@ function UsersWithFileDownloads({ dataHrefBase }) {
   );
 }
 
-UsersWithFileDownloads.propTypes = {
+TotalFileDownloads.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
 };
 
-export default UsersWithFileDownloads;
+export default TotalFileDownloads;
