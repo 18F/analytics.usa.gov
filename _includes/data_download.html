@@ -4,12 +4,15 @@ capture page_title %} - {{ page.name }} - Data{% endcapture %} {% assign
 data_prefix = page.slug %} {% assign entity = page.name %} {% endif %}
 
 <main>
-  <section class="analytics-data analytics-data">
+  <section class="analytics-data">
     <div class="analytics-data__header desktop:grid-col-12">
       <h1>Download the data</h1>
 
-      <p class="historical-data-link">
-        <a href="/historical-data-download">
+      <p>
+        <a
+          class="analytics-data__historical-data-link"
+          href="/historical-data-download"
+        >
           <em
             >See options to download Universal Analytics legacy reports
             (2018-2024)</em

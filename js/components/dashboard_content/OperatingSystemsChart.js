@@ -58,17 +58,19 @@ function OperatingSystemsChart({ dataHrefBase }) {
 
   return (
     <div>
+      <div className="chart__title">
+        <a href="/definitions#dimension_operating_system">Operating Systems</a>
+      </div>
       <figure id="chart_os" ref={osRef}>
-        <div className="data bar-chart"></div>
+        <div className="data chart__bar-chart"></div>
       </figure>
       <figure
         id="chart_windows"
-        className="hide"
+        className="hide chart__bar-chart__nested"
         data-scale-to-parent="true"
         ref={windowsRef}
       >
-        <h4>Windows</h4>
-        <div className="data bar-chart"></div>
+        <div className="data chart__bar-chart"></div>
       </figure>
     </div>
   );

@@ -54,9 +54,14 @@ function DevicesChart({ dataHrefBase }) {
   }, [deviceData]);
 
   return (
-    <figure id="chart_device_types" ref={ref}>
-      <div className="data bar-chart"></div>
-    </figure>
+    <>
+      <div className="chart__title">
+        <a href="/definitions#dimension_device_category">Devices</a>
+      </div>
+      <figure id="chart_device_types" ref={ref}>
+        <div className="data chart__bar-chart"></div>
+      </figure>
+    </>
   );
 }
 

@@ -53,18 +53,16 @@ function RealtimeVisitors({ dataHrefBase, agency, refreshSeconds }) {
   }, [realtimeVisitorData]);
 
   return (
-    <section className="chart-realtime__visitors-count" ref={ref}>
+    <div className="text--centered tablet:padding-2" ref={ref}>
       <div className="grid-row">
-        <h2 className="chart-realtime__current-visitors data grid-col-12">
-          ...
-        </h2>
+        <span className="data text--bold text--xl grid-col-12">...</span>
       </div>
       <div className="grid-row">
-        <div className="chart-realtime__description desktop:grid-col-8 desktop:grid-offset-2">
+        <div className="text--large desktop:grid-col-8 desktop:grid-offset-2">
           users on {agency} websites and apps in the last 30 minutes
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

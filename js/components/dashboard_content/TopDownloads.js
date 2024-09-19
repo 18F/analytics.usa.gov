@@ -82,7 +82,7 @@ function TopDownloads({
 
   return (
     <figure className="top-downloads__bar-chart" ref={ref}>
-      <div className="data bar-chart"></div>
+      <div className="data chart__bar-chart"></div>
     </figure>
   );
 }

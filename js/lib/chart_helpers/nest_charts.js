@@ -17,7 +17,9 @@ import formatters from "./formatters";
  */
 export default function nestCharts(selection, key, child) {
   const parentFilter = (d) => d.key === key;
-  const parent = selection.selectAll(".bin").filter(parentFilter);
+  const parent = selection
+    .selectAll(".chart__bar-chart__item")
+    .filter(parentFilter);
 
   // Display and nest a sub-section if an entry exists in the parent chart
   if (
@@ -31,7 +33,7 @@ export default function nestCharts(selection, key, child) {
     child[0][0].classList.remove("hide");
 
     const bins = child
-      .selectAll(".bin")
+      .selectAll(".chart__bar-chart__item")
       // If the child data should be scaled to be %'s of its parent bin,
       // then multiple each child item's % share by its parent's % share.
       .each((d) => {
@@ -40,8 +42,12 @@ export default function nestCharts(selection, key, child) {
       .attr("data-share", (d) => d.proportion);
 
     // XXX we *could* call the renderer again here, but this works, so...
-    bins.select(".bar").style("width", (d) => `${d.proportion.toFixed(1)}%`);
-    bins.select(".value").text((d) => formatters.floatToPercent(d.proportion));
+    bins
+      .select(".chart__bar-chart__item__bar")
+      .style("width", (d) => `${d.proportion.toFixed(1)}%`);
+    bins
+      .select(".chart__bar-chart__item__value")
+      .text((d) => formatters.floatToPercent(d.proportion));
 
     parent.node().appendChild(child.node());
   }

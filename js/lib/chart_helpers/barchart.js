@@ -26,20 +26,28 @@ export default function barChart() {
   };
 
   const chart = function (selection) {
-    const bin = selection.selectAll(":scope > .bin").data(bars);
+    const bin = selection
+      .selectAll(":scope > .chart__bar-chart__item")
+      .data(bars);
 
     bin.exit().remove();
 
-    const enter = bin.enter().append("div").attr("class", "bin");
-    enter.append("div").attr("class", "label");
-    enter.append("div").attr("class", "value");
-    enter.append("div").attr("class", "bar").style("width", "0%");
+    const enter = bin
+      .enter()
+      .append("div")
+      .attr("class", "chart__bar-chart__item");
+    enter.append("div").attr("class", "chart__bar-chart__item__label");
+    enter.append("div").attr("class", "chart__bar-chart__item__value");
+    enter
+      .append("div")
+      .attr("class", "chart__bar-chart__item__bar")
+      .style("width", "0%");
 
     const componentScale = scale
       ? scale.call(selection, bin.data().map(value))
       : null;
     bin
-      .select(".bar")
+      .select(".chart__bar-chart__item__bar")
       .transition()
       .duration(Config.barchartTransitionDurationMs)
       .style(
@@ -49,8 +57,8 @@ export default function barChart() {
           : (d) => size(value(d)),
       );
 
-    bin.select(".label").html(label);
-    bin.select(".value").text(function (d, i) {
+    bin.select(".chart__bar-chart__item__label").html(label);
+    bin.select(".chart__bar-chart__item__value").text(function (d, i) {
       return format.call(this, value(d), d, i);
     });
   };

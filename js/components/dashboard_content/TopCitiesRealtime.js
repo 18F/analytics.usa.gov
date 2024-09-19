@@ -59,9 +59,14 @@ function TopCitiesRealtime({ dataHrefBase, refreshSeconds }) {
   }, [realtimeCitiesData]);
 
   return (
-    <figure id="chart_top-cities-realtime" ref={ref}>
-      <div className="data bar-chart"></div>
-    </figure>
+    <>
+      <div className="chart__title">
+        <a href="/definitions#dimension_city">Cities</a>
+      </div>
+      <figure id="chart_top-cities-realtime" ref={ref}>
+        <div className="data chart__bar-chart"></div>
+      </figure>
+    </>
   );
 }
 

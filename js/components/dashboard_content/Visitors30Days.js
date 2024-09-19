@@ -45,11 +45,8 @@ function Visitors30Days({ dataHrefBase }) {
 
   return (
     <div ref={ref}>
-      There were{" "}
-      <span id="total_visitors" className="data">
-        ...
-      </span>{" "}
-      sessions in the last 30 days.
+      There were <span className="data text--bold">...</span> sessions in the
+      last 30 days.
     </div>
   );
 }

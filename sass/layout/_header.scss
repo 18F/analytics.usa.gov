@@ -16,7 +16,7 @@
       api
 */
 
-.analytics-header {
+header#analytics-header {
   align-items: center;
   background: color("blue-80v");
   border-bottom: units(1) solid color("blue-50v");
@@ -35,7 +35,7 @@
 
   h1 {
     font-size: size("sans", "lg");
-    margin: 0 0 units(1) 0;
+    margin: 0 0 units(1);
     order: 1;
 
     @include at-media("tablet") {
@@ -53,9 +53,10 @@
 
     img.analytics {
       // filter equivalent of "blue-50"
-      filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg) brightness(88%) contrast(95%);
+      filter: invert(39%) sepia(97%) saturate(458%) hue-rotate(167deg)
+        brightness(88%) contrast(95%);
       height: units(4);
-      margin-bottom: - units(.5);
+      margin-bottom: - units(0.5);
 
       @include at-media("tablet-lg") {
         height: units(7);
@@ -86,8 +87,8 @@
     order: 4;
 
     @include at-media("desktop-lg") {
-      order: 2;
       flex: 4;
+      order: 2;
     }
   }
 
