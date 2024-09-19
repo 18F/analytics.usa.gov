@@ -34,82 +34,61 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
 
   return (
     <>
-      <section id="main_data" className="desktop:grid-col-8">
-        <article className="chart-realtime">
+      <article id="main_data" className="desktop:grid-col-8">
+        <section className="section padding-4">
           <RealtimeVisitors
             dataHrefBase={dataHrefBase}
             agency={agency}
             refreshSeconds={Config.realtimeDataRefreshSeconds}
           />
-        </article>
+        </section>
 
-        <article className="section locations-and-languages-section">
+        <article className="min-height-large padding-3 section section--bordered">
           <LocationsAndLanguages dataHrefBase={dataHrefBase} />
         </article>
 
-        <article className="section">
-          <div className="section__headline">
-            <h2>Historical Data and Trends</h2>
-          </div>
+        <article className="padding-3 section section--bordered">
+          <div className="section__headline">Historical Data and Trends</div>
         </article>
 
-        <article className="section sessions-30-days-section">
-          <div className="section__headline">
-            <h3>Daily Sessions in the Past 30 Days</h3>
-          </div>
+        <article className="min-height-small padding-3 section section--bordered">
           <Sessions30Days dataHrefBase={dataHrefBase} />
         </article>
 
-        <article className="section">
+        <article className="section section--bordered">
           <section className="section__subheader">
             <Visitors30Days dataHrefBase={dataHrefBase} />
           </section>
         </article>
 
-        <article className="section">
-          <section className="section__rate">
-            <div className="grid-row">
-              <Engagement dataHrefBase={dataHrefBase} />
-            </div>
+        <article className="section section--bordered">
+          <section>
+            <Engagement dataHrefBase={dataHrefBase} />
           </section>
         </article>
 
-        <article className="section traffic-sources-section">
+        <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
-            <h2>
-              <a href="/definitions#report_historical_top_traffic_sources">
-                Top Traffic Sources in the Last 30 Days
-              </a>
-            </h2>
+            <a href="/definitions#report_historical_top_traffic_sources">
+              Top Traffic Sources in the Last 30 Days
+            </a>
           </div>
-
-          <section className="section__chart">
-            <div className="grid-row">
-              <TrafficSources dataHrefBase={dataHrefBase} />
-            </div>
-          </section>
+          <TrafficSources dataHrefBase={dataHrefBase} />
         </article>
 
-        <article className="section device-demographics-section">
+        <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
-            <h2>
-              <a href="/definitions#report_historical_device_demographics">
-                User Device Demographics in the Last 30 Days
-              </a>
-            </h2>
+            <a href="/definitions#report_historical_device_demographics">
+              User Device Demographics in the Last 30 Days
+            </a>
           </div>
-
-          <section className="section__chart">
-            <div className="grid-row">
-              <DeviceDemographics dataHrefBase={dataHrefBase} />
-            </div>
-          </section>
+          <DeviceDemographics dataHrefBase={dataHrefBase} />
         </article>
-      </section>
+      </article>
 
-      <section id="secondary_data" className="desktop:grid-col-4">
+      <article id="secondary_data" className="desktop:grid-col-4">
         <SidebarContent dataHrefBase={dataHrefBase} agency={agency} />
-      </section>
+      </article>
     </>
   );
 }

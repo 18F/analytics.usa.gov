@@ -57,7 +57,7 @@ function TopPagesHistorical({
             barchartRenderer(selection);
 
             selection
-              .selectAll(".label")
+              .selectAll(".chart__bar-chart__item__label")
               .each(function (d) {
                 d.text = this.innerText;
               })
@@ -75,8 +75,8 @@ function TopPagesHistorical({
   }, [topPagesData]);
 
   return (
-    <figure className="top-pages__bar-chart" data-source={dataURL} ref={ref}>
-      <div className="data bar-chart"></div>
+    <figure data-source={dataURL} ref={ref}>
+      <div className="data chart__bar-chart"></div>
     </figure>
   );
 }

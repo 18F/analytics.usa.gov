@@ -43,7 +43,7 @@ function TopVideoPlays({ videoPlayData, numberOfListingsToDisplay }) {
 
           // turn the labels into links
           selection
-            .selectAll(".label")
+            .selectAll(".chart__bar-chart__item__label")
             .each(function (d) {
               d.text = this.innerText;
             })
@@ -61,7 +61,7 @@ function TopVideoPlays({ videoPlayData, numberOfListingsToDisplay }) {
 
   return (
     <figure className="top-video-plays__bar-chart" ref={ref}>
-      <div className="data bar-chart"></div>
+      <div className="data chart__bar-chart"></div>
     </figure>
   );
 }

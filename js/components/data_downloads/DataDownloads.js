@@ -23,9 +23,11 @@ function DataDownloads({ dataURL, dataPrefix }) {
   return (
     <>
       <div className="analytics-data__sessions desktop:grid-col-12">
-        <table className="usa-table usa-table--borderless desktop:grid-col-8">
+        <table className="analytics-data__table usa-table usa-table--borderless desktop:grid-col-8">
           <caption>
-            <h2>User traffic reports</h2>
+            <h2 className="analytics-data__table-caption">
+              User traffic reports
+            </h2>
             <a href="/definitions">See data fields and metrics descriptions</a>
           </caption>
           <thead>
@@ -43,14 +45,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/all-pages-realtime.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="all-pages-realtime.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/all-pages-realtime.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="all-pages-realtime.csv"
                 >
                   CSV
@@ -64,14 +66,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-downloads-7-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-downloads-7-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-downloads-7-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-downloads-7-days.csv"
                 >
                   CSV
@@ -85,14 +87,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-video-plays-7-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-video-plays-7-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-video-plays-7-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-video-plays-7-days.csv"
                 >
                   CSV
@@ -106,14 +108,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-downloads-30-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-downloads-30-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-downloads-30-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-downloads-30-days.csv"
                 >
                   CSV
@@ -127,14 +129,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-10000-domains-30-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-10000-domains-30-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-10000-domains-30-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-10000-domains-30-days.csv"
                 >
                   CSV
@@ -148,14 +150,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-10000-pages-and-screens-30-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-10000-pages-and-screens-30-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-10000-pages-and-screens-30-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-10000-pages-and-screens-30-days.csv"
                 >
                   CSV
@@ -169,14 +171,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-traffic-sources-30-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-traffic-sources-30-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-traffic-sources-30-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-traffic-sources-30-days.csv"
                 >
                   CSV
@@ -190,14 +192,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-video-plays-30-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-video-plays-30-days.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-video-plays-30-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-video-plays-30-days.csv"
                 >
                   CSV
@@ -210,9 +212,9 @@ function DataDownloads({ dataURL, dataPrefix }) {
       </div>
 
       <div className="analytics-data__demographics desktop:grid-col-12 padding-bottom-4">
-        <table className="usa-table usa-table--borderless desktop:grid-col-8">
+        <table className="analytics-data__table usa-table usa-table--borderless desktop:grid-col-8">
           <caption>
-            <h2>User demographics</h2>
+            <h2 className="analytics-data__table-caption">User demographics</h2>
           </caption>
           <thead>
             <tr>
@@ -229,14 +231,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-countries-realtime.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-countries-realtime.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-countries-realtime.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-countries-realtime.csv"
                 >
                   CSV
@@ -250,14 +252,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/top-cities-realtime.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-cities-realtime.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/top-cities-realtime.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="top-cities-realtime.csv"
                 >
                   CSV
@@ -271,14 +273,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/language.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="language.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/language.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="language.csv"
                 >
                   CSV
@@ -292,14 +294,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/devices-90-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="devices.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/devices-90-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="devices.csv"
                 >
                   CSV
@@ -313,14 +315,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/browsers-90-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="browsers.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/browsers-90-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="browsers.csv"
                 >
                   CSV
@@ -334,14 +336,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/os-90-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="os.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/os-90-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="os.csv"
                 >
                   CSV
@@ -355,14 +357,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/windows-90-days.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="windows.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/windows-90-days.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="windows.csv"
                 >
                   CSV
@@ -376,14 +378,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/os-browsers.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="os-browsers.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/os-browsers.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="os-browsers.csv"
                 >
                   CSV
@@ -397,14 +399,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/windows-browsers.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="windows-browsers.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/windows-browsers.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="windows-browsers.csv"
                 >
                   CSV
@@ -418,14 +420,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/screen-resolution.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="screen-resolution.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/screen-resolution.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="screen-resolution.csv"
                 >
                   CSV
@@ -439,14 +441,14 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/device-model.json"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="device-model.json"
                 >
                   JSON
                 </a>
                 <a
                   href={hrefBase + "/device-model.csv"}
-                  className="download-data usa-button"
+                  className="analytics-data__download-button usa-button"
                   aria-label="device-model.csv"
                 >
                   CSV

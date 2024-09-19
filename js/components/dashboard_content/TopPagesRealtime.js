@@ -80,8 +80,8 @@ function TopPagesRealtime({
   }, [topPagesData]);
 
   return (
-    <figure className="top-pages__realtime-bar-chart" ref={ref}>
-      <div className="data bar-chart"></div>
+    <figure ref={ref}>
+      <div className="data chart__bar-chart"></div>
     </figure>
   );
 }

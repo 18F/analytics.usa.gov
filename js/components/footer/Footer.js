@@ -17,7 +17,7 @@ function Footer({ siteDomain }) {
 
   return (
     <>
-      <footer>
+      <footer id="analytics-footer">
         <section id="explanation" className="grid-row usa-prose">
           <div className="tablet:grid-col-8 padding-2">
             <h3>About this Site</h3>
