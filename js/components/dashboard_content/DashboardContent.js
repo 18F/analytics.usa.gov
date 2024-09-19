@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
-import Engagement from "./Engagement";
-import FileDownloads from "./FileDownloads";
 import LocationsAndLanguages from "./LocationsAndLanguages";
 import RealtimeVisitors from "./RealtimeVisitors";
 import Sessions30Days from "./Sessions30Days";
@@ -12,6 +10,7 @@ import SidebarContent from "./SidebarContent";
 import TotalViewsAndUsers from "./TotalViewsAndUsers";
 import TrafficSources from "./TrafficSources";
 import Visitors30Days from "./Visitors30Days";
+import UserEngagement from "./UserEngagement";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -65,12 +64,6 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           </section>
         </article>
 
-        <article className="section section--bordered">
-          <section>
-            <Engagement dataHrefBase={dataHrefBase} />
-          </section>
-        </article>
-
         <article className="min-height-large padding-3 section section--bordered">
           <section>
             <TotalViewsAndUsers dataHrefBase={dataHrefBase} />
@@ -101,7 +94,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
               File Downloads
             </a>
           </div>
-          <FileDownloads dataHrefBase={dataHrefBase} />
+          <UserEngagement dataHrefBase={dataHrefBase} />
         </article>
       </article>
 
