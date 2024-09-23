@@ -1,4 +1,5 @@
 @use "uswds-core" as *;
+@use "colors";
 
 /**
  * Styles for the secondary sidebar data section of the root page
@@ -7,19 +8,19 @@
 #secondary_data {
   border-left: none;
   border-right: none;
-  border-top: 1px solid color("gray-cool-40");
+  border-top: 1px solid colors.$uswds-light-gray;
 
   @include at-media("tablet") {
-    border-bottom: 1px solid color("gray-cool-40");
-    border-left: 1px solid color("gray-cool-40");
+    border-bottom: 1px solid colors.$uswds-light-gray;
+    border-left: 1px solid colors.$uswds-light-gray;
     border-top: none;
   }
-}
 
-.sidebar-content {
-  min-height: units("tablet-lg");
+  .sidebar {
+    min-height: units("tablet-lg");
+  }
 
-  &__headline {
+  .sidebar__headline {
     padding: 0 units(2);
 
     @include at-media("tablet") {
@@ -27,51 +28,39 @@
     }
   }
 
+  .sidebar__tab-select__button {
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   // overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
-  .usa-button-group--segmented {
+  .sidebar__tab-select__button-group {
     padding: 0 units(2);
     width: 100%;
 
     @include at-media("tablet") {
       padding: 0 units(3);
     }
+  }
 
-    // make the buttons parent stretch to fill the parent container
-    .usa-button-group__item {
-      flex-grow: 1;
-      width: 33.3333%;
+  .sidebar__tab-select__button-group__item {
+    flex-grow: 1;
+    width: 33.3333%;
 
-      &[aria-selected="false"] {
-        button {
-          background-color: transparent;
-          box-shadow: inset 0 0 0 2px #005ea2;
-          color: #005ea2;
-        }
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      // make each button full width
-      .usa-button {
-        width: 100%;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      // targets the last <button> in the group
-      &:last-child>.usa-button {
-        margin-left: -2px;
-        width: 100%;
+    &[aria-selected="false"] {
+      button {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 2px colors.$dark-blue;
+        color: colors.$dark-blue;
       }
     }
   }
 
-  .top-pages {
-    border-bottom: 1px solid color("gray-cool-40");
+  .sidebar__tab__content {
+    border-bottom: 1px solid colors.$uswds-light-gray;
     // This prevents "jumping" in the sidebar when chart data is loading.
     // Assumes there are 30 items in the top pages charts. Will need adjusted
     // accordingly if the number of chart items changes.
@@ -82,24 +71,12 @@
       padding: 0 units(3);
     }
 
-    &__realtime-bar-chart {
-      .label {
-        text-transform: capitalize;
-      }
-    }
-
-    &__bar-chart {
-      .label {
-        text-transform: lowercase;
-      }
-    }
-
-    .bar-chart {
+    .chart__bar-chart {
       margin-top: 0;
     }
 
-    .label {
-      color: color("gray-cool-70");
+    .chart__bar-chart__item__label {
+      color: colors.$dark-gray;
       height: 2.2rem;
       margin-right: units(8);
       overflow: hidden;
@@ -107,7 +84,7 @@
       white-space: nowrap;
     }
 
-    .value {
+    .chart__bar-chart__item__value {
       height: 1.25rem;
       margin-bottom: 0.45rem;
       margin-top: -2.2rem;
@@ -117,7 +94,7 @@
   }
 
   .top-downloads {
-    border-bottom: 1px solid color("gray-cool-40");
+    border-bottom: 1px solid colors.$uswds-light-gray;
     padding: 0 units(2);
 
     @include at-media("tablet") {
@@ -136,11 +113,11 @@
     &__bar-chart {
       padding: 0;
 
-      .bar-chart {
+      .chart__bar-chart {
         margin-top: 0;
       }
 
-      .label {
+      .chart__bar-chart__item__label {
         height: units(8);
         height: 4rem;
         line-height: 1.6;
@@ -153,7 +130,7 @@
         }
 
         .domain {
-          color: color("gray-cool-70");
+          color: colors.$dark-gray;
           text-transform: lowercase;
         }
 
@@ -162,7 +139,7 @@
         }
       }
 
-      .bar {
+      .chart__bar-chart__item__bar {
         margin-top: units(2);
       }
     }
@@ -188,12 +165,12 @@
       margin: units(1) 0 units(1) 0;
     }
 
-    .bar-chart {
+    .chart__bar-chart {
       margin-top: 0;
     }
 
-    .label {
-      color: color("gray-cool-70");
+    .chart__bar-chart__item__label {
+      color: colors.$dark-gray;
       height: auto;
       line-height: normal;
       margin-right: units(8);
@@ -203,14 +180,14 @@
       white-space: normal;
     }
 
-    .value {
+    .chart__bar-chart__item__value {
       height: auto;
       margin-top: -1.5rem;
       text-align: right;
       white-space: nowrap;
     }
 
-    .bar {
+    .chart__bar-chart__item {
       margin-top: units(1);
     }
   }

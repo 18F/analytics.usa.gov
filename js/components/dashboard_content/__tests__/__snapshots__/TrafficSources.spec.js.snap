@@ -2,43 +2,51 @@
 
 exports[`TrafficSources renders 1`] = `
 <DocumentFragment>
-  <section
-    class="desktop:grid-col-6 bar-chart-component"
-    id="session_channel_groups"
+  <div
+    class="padding-top-4 grid-row"
   >
-    <h4>
-      <a
-        href="/definitions#dimension_default_channel_group"
-      >
-        Top Channels
-      </a>
-    </h4>
-    <figure
-      id="chart_session_channel_group"
+    <div
+      class="desktop:grid-col-6 desktop:padding-right-2"
+      id="session_channel_groups"
     >
       <div
-        class="data bar-chart"
-      />
-    </figure>
-  </section>
-  <section
-    class="desktop:grid-col-6 bar-chart-component"
-    id="session_source_mediums"
-  >
-    <h4>
-      <a
-        href="/definitions#dimension_source_medium"
+        class="chart__title"
       >
-        Top Sources/Media
-      </a>
-    </h4>
-    <figure
-      id="chart_session_source_medium"
+        <a
+          href="/definitions#dimension_default_channel_group"
+        >
+          Top Channels
+        </a>
+      </div>
+      <figure
+        id="chart_session_channel_group"
+      >
+        <div
+          class="data chart__bar-chart"
+        />
+      </figure>
+    </div>
+    <div
+      class="desktop:grid-col-6 desktop:padding-left-2"
+      id="session_source_mediums"
     >
       <div
-        class="data bar-chart"
-      />
-    </figure>
-  </section>
+        class="chart__title"
+      >
+        <a
+          href="/definitions#dimension_source_medium"
+        >
+          Top Sources/Media
+        </a>
+      </div>
+      <figure
+        id="chart_session_source_medium"
+      >
+        <div
+          class="data chart__bar-chart"
+        />
+      </figure>
+    </div>
+  </div>
 </DocumentFragment>
 `;
