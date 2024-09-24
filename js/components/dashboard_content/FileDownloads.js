@@ -19,44 +19,24 @@ import TotalFileDownloads from "./TotalFileDownloads";
  */
 function FileDownloads({ dataHrefBase }) {
   return (
-    <div className="padding-top-4 grid-row">
+    <div className="padding-top-3 grid-row">
       <div id="file_extension_downloads" className="desktop:grid-col-6">
-        <div className="chart__title">
-          <a href="/definitions#dimension_file_extension">
-            Downloads by File Extension
-          </a>
+        <div className="text--centered">
+          <TotalFileDownloads dataHrefBase={dataHrefBase} />
         </div>
-        <DownloadFileExtensionChart dataHrefBase={dataHrefBase} maxItems={10} />
+        <div className="padding-top-3">
+          <DownloadFileExtensionChart
+            dataHrefBase={dataHrefBase}
+            maxItems={10}
+          />
+        </div>
       </div>
 
       <div
         id="file_download_counts"
         className="desktop:grid-col-6 text--centered"
       >
-        <div className="grid-row">
-          <div className="chart__title text--centered grid-col-12">
-            <a href="/definitions#dimension_file_download">
-              Total File Downloads
-            </a>
-          </div>
-        </div>
-        <div className="grid-row">
-          <span className="data grid-col-12">
-            <TotalFileDownloads dataHrefBase={dataHrefBase} />
-          </span>
-        </div>
-        <div className="grid-row padding-top-3">
-          <div className="chart__title text--centered grid-col-12">
-            <a href="/definitions#dimension_file_download">
-              Total Users with File Downloads
-            </a>
-          </div>
-        </div>
-        <div className="grid-row">
-          <span className="data grid-col-12">
-            <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
-          </span>
-        </div>
+        <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
       </div>
     </div>
   );
