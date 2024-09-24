@@ -27,11 +27,13 @@ function TrafficSources({ dataHrefBase }) {
             Top Channels
           </a>
         </div>
-        <ConsolidatedBarChart
-          dataUrl={`${dataHrefBase}/top-session-channel-group-30-days.json`}
-          chartDataKey={"session_default_channel_group"}
-          maxItems={10}
-        />
+        <div className="text--captialize">
+          <ConsolidatedBarChart
+            dataUrl={`${dataHrefBase}/top-session-channel-group-30-days.json`}
+            chartDataKey={"session_default_channel_group"}
+            maxItems={10}
+          />
+        </div>
       </div>
 
       <div
@@ -41,11 +43,13 @@ function TrafficSources({ dataHrefBase }) {
         <div className="chart__title">
           <a href="/definitions#dimension_source_medium">Top Sources/Media</a>
         </div>
-        <ConsolidatedBarChart
-          dataUrl={`${dataHrefBase}/top-session-source-medium-30-days.json`}
-          chartDataKey={"session_source_medium"}
-          maxItems={10}
-        />
+        <div className="text--captialize">
+          <ConsolidatedBarChart
+            dataUrl={`${dataHrefBase}/top-session-source-medium-30-days.json`}
+            chartDataKey={"session_source_medium"}
+            maxItems={10}
+          />
+        </div>
       </div>
     </div>
   );

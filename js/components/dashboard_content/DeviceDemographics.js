@@ -28,11 +28,13 @@ function DeviceDemographics({ dataHrefBase }) {
             Top Screen Resolutions
           </a>
         </div>
-        <ConsolidatedBarChart
-          dataUrl={`${dataHrefBase}/screen-resolution-30-days.json`}
-          chartDataKey={"screen_resolution"}
-          maxItems={10}
-        />
+        <div className="text--captialize">
+          <ConsolidatedBarChart
+            dataUrl={`${dataHrefBase}/screen-resolution-30-days.json`}
+            chartDataKey={"screen_resolution"}
+            maxItems={10}
+          />
+        </div>
       </div>
 
       <div id="browsers" className="desktop:grid-col-4 desktop:padding-x-2">
