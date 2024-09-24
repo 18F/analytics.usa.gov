@@ -94,6 +94,12 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
               User Engagement
             </a>
           </div>
+          <div className="padding-top-1">
+            <em>
+              Providing a view into how users engage and interact with federal
+              government websites and digital services.
+            </em>
+          </div>
           <UserEngagement dataHrefBase={dataHrefBase} />
         </article>
       </article>
