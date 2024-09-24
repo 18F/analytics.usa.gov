@@ -52,9 +52,16 @@ function DownloadFileExtensionChart({ dataHrefBase, maxItems }) {
   }, [chartData]);
 
   return (
-    <figure id="chart_file_extension" ref={ref}>
-      <div className="data chart__bar-chart"></div>
-    </figure>
+    <>
+      <div className="chart__title">
+        <a href="/definitions#dimension_file_extension">
+          Downloads by File Extension
+        </a>
+      </div>
+      <figure id="chart_file_extension" ref={ref}>
+        <div className="data chart__bar-chart"></div>
+      </figure>
+    </>
   );
 }
 

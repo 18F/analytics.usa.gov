@@ -64,7 +64,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           </section>
         </article>
 
-        <article className="min-height-large padding-3 section section--bordered">
+        <article className="min-height-large padding-2 section section--bordered">
           <section>
             <TotalViewsAndUsers dataHrefBase={dataHrefBase} />
           </section>
@@ -91,7 +91,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <article className="min-height-large padding-3 section section--bordered">
           <div className="section__headline">
             <a href="/definitions#report_historical_file_downloads">
-              File Downloads
+              User Engagement
             </a>
           </div>
           <UserEngagement dataHrefBase={dataHrefBase} />
