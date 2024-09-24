@@ -5,7 +5,7 @@ ruby '3.1.4'
 gem 'jekyll', '~> 4.3.3'
 gem 'kramdown-parser-gfm'
 gem 'sass', '~> 3.4.24'
-gem "webrick", "~> 1.8"
+gem "webrick", "~> 1.8", ">= 1.8.2"
 gem 'newrelic_rpm', '~> 9.7', '>= 9.7.1'
 
 group :jekyll_plugins do
