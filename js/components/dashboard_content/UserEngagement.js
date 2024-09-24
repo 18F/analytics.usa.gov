@@ -20,46 +20,24 @@ import FileDownloads from "./FileDownloads";
 function UserEngagement({ dataHrefBase }) {
   return (
     <>
-      <section className="grid-row section__rate">
-        <section id="average_engagement_time" className="desktop:grid-col-6">
-          <div className="grid-row">
-            <h4 className="grid-col-12">
-              <a href="/definitions#report_historical_average_engagement_time">
-                Average Engagement Time Per Session
-              </a>
-            </h4>
-          </div>
-          <div className="grid-row">
-            <span className="grid-col-12">
-              <AverageEngagementDuration dataHrefBase={dataHrefBase} />
-            </span>
-          </div>
-        </section>
-
-        <section id="engagement_rate" className="desktop:grid-col-6">
-          <div className="grid-row">
-            <h4 className="grid-col-12">
-              <a href="/definitions#report_historical_engagement_rate">
-                Percent of Engaged Sessions
-              </a>
-            </h4>
-          </div>
-          <div className="grid-row">
-            <span className="data grid-col-12">
-              <EngagementRate dataHrefBase={dataHrefBase} />
-            </span>
-          </div>
-        </section>
-      </section>
-
-      <section className="grid-row">
-        <div className="grid-col-12">
-          <h3 className="grid-row">File Downloads</h3>
-          <div className="grid-row">
-            <FileDownloads dataHrefBase={dataHrefBase} />
-          </div>
+      <div className="grid-row padding-top-3">
+        <div
+          id="average_engagement_time"
+          className="desktop:grid-col-6 text--centered"
+        >
+          <AverageEngagementDuration dataHrefBase={dataHrefBase} />
         </div>
-      </section>
+
+        <div id="engagement_rate" className="desktop:grid-col-6 text--centered">
+          <EngagementRate dataHrefBase={dataHrefBase} />
+        </div>
+      </div>
+
+      <div className="grid-row">
+        <div className="grid-col-12">
+          <FileDownloads dataHrefBase={dataHrefBase} />
+        </div>
+      </div>
     </>
   );
 }

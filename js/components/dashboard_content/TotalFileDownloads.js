@@ -37,6 +37,9 @@ function TotalFileDownloads({ dataHrefBase }) {
 
   return (
     <>
+      <div className="chart__title">
+        <a href="/definitions#dimension_file_download">Total File Downloads</a>
+      </div>
       <div ref={ref}>
         <div className="data chart__rate padding-top-05">
           {formattedData ? formattedData : "..."}

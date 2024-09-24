@@ -1,13 +1,13 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
-import Engagement from "../Engagement";
+import UserEngagement from "../UserEngagement";
 
-describe("Engagement", () => {
+describe("UserEngagement", () => {
   let component;
 
   beforeEach(async () => {
     component = await render(
-      <Engagement dataHrefBase="http://www.example.com/data/" />,
+      <UserEngagement dataHrefBase="http://www.example.com/data/" />,
     );
     await waitFor(() => screen.getByText("Percent of Engaged Sessions"));
   });
