@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import DownloadFileExtensionChart from "./DownloadFileExtensionChart";
 import UsersWithFileDownloads from "./UsersWithFileDownloads";
 import TotalFileDownloads from "./TotalFileDownloads";
+import UsersPieChart from "./UsersPieChart";
 
 /**
  * Contains charts and other data visualizations for the file downloads
@@ -37,6 +38,9 @@ function FileDownloads({ dataHrefBase }) {
         className="desktop:grid-col-6 text--centered"
       >
         <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
+        <div className="padding-top-3">
+          <UsersPieChart dataHrefBase={dataHrefBase} />
+        </div>
       </div>
     </div>
   );
