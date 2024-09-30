@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import colorbrewer from "colorbrewer";
+import d3 from "d3";
 
 import DataLoader from "../../lib/data_loader";
 import pieChart from "../../lib/chart_helpers/pie_chart";
@@ -54,6 +55,11 @@ function UsersPieChartWithKey({ dataHrefBase }) {
           }),
         );
       } else {
+        await d3
+          .select(ref.current)
+          .selectAll(":scope > .chart__pie-chart__container")
+          .remove();
+
         const dataWithProportions =
           transformers.findProportionsOfMetricFromValue(pieData);
 

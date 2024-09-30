@@ -8,12 +8,13 @@ function render({ ref, data, width, colorSet }) {
   });
   const pieData = [pie(data)];
 
+  const actualWidth = width * 0.75;
   // Set pie chart dimensions
   const chartDimensions = {
-    width,
-    height: width * 0.65,
-    innerRadius: width / 3.5,
-    outerRadius: width / 2,
+    width: actualWidth,
+    height: actualWidth,
+    innerRadius: actualWidth / 3.5,
+    outerRadius: actualWidth / 2,
     labelRadius: 0,
   };
 
