@@ -5,6 +5,7 @@ import d3 from "d3";
 
 import DataLoader from "../../lib/data_loader";
 import pieChart from "../../lib/chart_helpers/pie_chart";
+import formatters from "../../lib/chart_helpers/formatters";
 import transformers from "../../lib/chart_helpers/transformers";
 import Square from "../chart/Square";
 
@@ -48,11 +49,18 @@ function UsersPieChartWithKey({ dataHrefBase }) {
         const usersWithoutFileDownloads =
           totalUsersData.totals.users - usersWithFileDownloadsData.totals.users;
         setPieData(
-          transformers.listify({
-            "Users with file downloads":
-              usersWithFileDownloadsData.totals.users,
-            "Users without file downloads": usersWithoutFileDownloads,
-          }),
+          transformers
+            .findProportionsOfMetricFromValue(
+              transformers.listify({
+                "Users with file downloads":
+                  usersWithFileDownloadsData.totals.users,
+                "Users without file downloads": usersWithoutFileDownloads,
+              }),
+            )
+            .map((item) => {
+              item.key = `${item.key} (${formatters.floatToPercent(item.proportion)})`;
+              return item;
+            }),
         );
       } else {
         await d3
@@ -60,12 +68,9 @@ function UsersPieChartWithKey({ dataHrefBase }) {
           .selectAll(":scope > .chart__pie-chart__container")
           .remove();
 
-        const dataWithProportions =
-          transformers.findProportionsOfMetricFromValue(pieData);
-
         await pieChart.render({
           ref: ref.current,
-          data: dataWithProportions,
+          data: pieData,
           width: pieSvgWidth,
           colorSet: colorbrewer[colorbrewer.schemeGroups.qualitative[2]][8],
         });
@@ -94,7 +99,7 @@ function UsersPieChartWithKey({ dataHrefBase }) {
             }
           />
         </div>
-        <div className="grid-col-11 padding-left-1 text--left">
+        <div className="grid-col-11 padding-left-1 text--medium text--left">
           {dataItem.key}
         </div>
       </div>
