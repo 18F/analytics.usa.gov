@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import colorbrewer from "colorbrewer";
 
 import DataLoader from "../../lib/data_loader";
-import renderPieChart from "../../lib/chart_helpers/pie_chart";
+import pieChart from "../../lib/chart_helpers/pie_chart";
 import transformers from "../../lib/chart_helpers/transformers";
 
 /**
@@ -17,7 +17,7 @@ import transformers from "../../lib/chart_helpers/transformers";
  * redirected to the S3 bucket URL.
  * @returns {import('react').ReactElement} The rendered element
  */
-function UsersPieChart({ dataHrefBase }) {
+function UsersPieChartWithLabels({ dataHrefBase }) {
   const totalUsersDataUrl = `${dataHrefBase}/users-30-days.json`;
   const usersWithFileDownloadsDataURL = `${dataHrefBase}/users-with-file-downloads-30-days.json`;
   const ref = useRef(null);
@@ -25,12 +25,12 @@ function UsersPieChart({ dataHrefBase }) {
   const [usersWithFileDownloadsData, setUsersWithFileDownloadsData] =
     useState(null);
   const [pieSvgWidth, setPieSvgWidth] = useState(null);
+  const [pieData, setPieData] = useState(null);
 
   useEffect(() => {
-    const initUsersPieChart = async () => {
+    const initUsersPieChartWithLabels = async () => {
       if (!pieSvgWidth) {
         const resizeObserver = new ResizeObserver((entries) => {
-          console.log(entries[0].target.getBoundingClientRect().width);
           const element = entries[0].target;
           setPieSvgWidth(element.getBoundingClientRect().width);
         });
@@ -42,20 +42,21 @@ function UsersPieChart({ dataHrefBase }) {
       } else if (!usersWithFileDownloadsData) {
         const data = await DataLoader.loadJSON(usersWithFileDownloadsDataURL);
         await setUsersWithFileDownloadsData(data);
-      } else {
-        console.log(totalUsersData);
-        console.log(usersWithFileDownloadsData);
+      } else if (!pieData) {
         const usersWithoutFileDownloads =
           totalUsersData.totals.users - usersWithFileDownloadsData.totals.users;
-        const userPieData = transformers.listify({
-          "Users with file downloads": usersWithFileDownloadsData.totals.users,
-          "Users without file downloads": usersWithoutFileDownloads,
-        });
+        setPieData(
+          transformers.listify({
+            "Users with file downloads":
+              usersWithFileDownloadsData.totals.users,
+            "Users without file downloads": usersWithoutFileDownloads,
+          }),
+        );
+      } else {
         const dataWithProportions =
-          transformers.findProportionsOfMetricFromValue(userPieData);
+          transformers.findProportionsOfMetricFromValue(pieData);
 
-        console.log(dataWithProportions);
-        await renderPieChart({
+        await pieChart.renderWithLabels({
           ref: ref.current,
           data: dataWithProportions,
           width: pieSvgWidth,
@@ -63,8 +64,8 @@ function UsersPieChart({ dataHrefBase }) {
         });
       }
     };
-    initUsersPieChart().catch(console.error);
-  }, [totalUsersData, usersWithFileDownloadsData, pieSvgWidth]);
+    initUsersPieChartWithLabels().catch(console.error);
+  }, [totalUsersData, usersWithFileDownloadsData, pieSvgWidth, pieData]);
 
   return (
     <>
@@ -73,8 +74,8 @@ function UsersPieChart({ dataHrefBase }) {
   );
 }
 
-UsersPieChart.propTypes = {
+UsersPieChartWithLabels.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
 };
 
-export default UsersPieChart;
+export default UsersPieChartWithLabels;
