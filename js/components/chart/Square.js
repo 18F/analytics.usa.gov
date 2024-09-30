@@ -23,6 +23,7 @@ function Square({ color }) {
         });
         resizeObserver.observe(ref.current);
       } else {
+        await d3.select(ref.current).selectAll(":scope > svg").remove();
         const svg = await d3
           .select(ref.current)
           .append("svg")
