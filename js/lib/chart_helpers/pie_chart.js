@@ -1,6 +1,82 @@
 import d3 from "d3";
 import formatters from "./formatters";
 
+function render({ ref, data, width, colorSet }) {
+  // Setup pie chart data
+  const pie = d3.layout.pie().value((d) => {
+    return d.value;
+  });
+  const pieData = [pie(data)];
+
+  // Set pie chart dimensions
+  const chartDimensions = {
+    width,
+    height: width * 0.65,
+    innerRadius: width / 3.5,
+    outerRadius: width / 2,
+    labelRadius: 0,
+  };
+
+  // Setup pie chart colors
+  const color = d3.scale.ordinal().range(colorSet);
+
+  // Create pie chart
+  return d3.select(ref).call((selection) => {
+    /*
+     * Create the svg structure for the pie chart
+     *
+     * <div class="pie-chart-container">
+     *   <svg class="pie-chart">
+     *     <g class="chart">
+     *       <g class="slices" />
+     *     </g>
+     *   </svg>
+     * </div>
+     */
+    const containerQuery = selection
+      .selectAll(":scope > .chart__pie-chart__container")
+      .data(pieData);
+    containerQuery.exit().remove();
+    const container = containerQuery
+      .enter()
+      .append("div")
+      .attr("class", "chart__pie-chart__container");
+    container.append("svg").attr({
+      class: "chart__pie-chart",
+      height: chartDimensions.height,
+      width: chartDimensions.width,
+      viewBox: `0 0 ${chartDimensions.height} ${chartDimensions.width}`,
+      preserveAspectRatio: "xMidYMid meet",
+    });
+    const svg = container.select("svg.chart__pie-chart");
+    svg.append("g").attr({
+      class: "chart__pie-chart__circle",
+      transform: `translate(${chartDimensions.height / 2}, ${chartDimensions.width / 2})`,
+    });
+    const chart = svg.select("g.chart__pie-chart__circle");
+    chart.append("g").attr("class", "chart__pie-chart__slices");
+    const slices = chart.select("g.chart__pie-chart__slices");
+
+    // Create the pie chart slices
+    const pieArc = d3.svg
+      .arc()
+      .innerRadius(chartDimensions.innerRadius)
+      .outerRadius(chartDimensions.outerRadius);
+    const enteringArcs = slices
+      .selectAll(".chart__pie-chart__slice")
+      .data(pieData[0])
+      .enter();
+
+    enteringArcs
+      .append("path")
+      .attr("class", "chart__pie-chart__slice")
+      .attr("d", pieArc)
+      .style("fill", function (d, i) {
+        return color(i);
+      });
+  });
+}
+
 /**
  * @param {object} params
  * @param params.ref
@@ -8,7 +84,7 @@ import formatters from "./formatters";
  * @param params.width
  * @param params.colorSet
  */
-function renderPieChart({ ref, data, width, colorSet }) {
+function renderWithLabels({ ref, data, width, colorSet }) {
   // Setup pie chart data
   const dataWithPieLabels = data
     .filter((item) => {
@@ -209,4 +285,4 @@ function renderPieChart({ ref, data, width, colorSet }) {
   });
 }
 
-export default renderPieChart;
+export default { render, renderWithLabels };
