@@ -38,7 +38,7 @@ function FileDownloads({ dataHrefBase }) {
         className="desktop:grid-col-6 text--centered"
       >
         <UsersWithFileDownloads dataHrefBase={dataHrefBase} />
-        <div className="padding-top-9">
+        <div className="padding-top-3 desktop:padding-top-9">
           <UsersPieChartWithKey dataHrefBase={dataHrefBase} />
         </div>
       </div>
