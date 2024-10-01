@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import EngagementRate from "./EngagementRate";
 import AverageEngagementDuration from "./AverageEngagementDuration";
 import FileDownloads from "./FileDownloads";
+import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
  * Contains charts and other data visualizations for the user engagement section
@@ -21,18 +22,23 @@ function UserEngagement({ dataHrefBase }) {
   return (
     <>
       <div className="grid-row padding-top-3">
-        <div
-          id="average_engagement_time"
-          className="desktop:grid-col-6 text--centered"
-        >
-          <AverageEngagementDuration dataHrefBase={dataHrefBase} />
+        <div className="desktop:grid-col-6">
+          <div className="chart__title">User Engagement Events</div>
+          <ConsolidatedBarChart
+            dataUrl={`${dataHrefBase}/top-user-engagement-events-30-days.json`}
+            chartDataKey={"event_label"}
+            maxItems={10}
+          />
         </div>
-
-        <div id="engagement_rate" className="desktop:grid-col-6 text--centered">
-          <EngagementRate dataHrefBase={dataHrefBase} />
+        <div className="desktop:grid-col-6 text--centered">
+          <div>
+            <AverageEngagementDuration dataHrefBase={dataHrefBase} />
+          </div>
+          <div className="padding-top-3">
+            <EngagementRate dataHrefBase={dataHrefBase} />
+          </div>
         </div>
       </div>
-
       <div className="grid-row">
         <div className="grid-col-12">
           <FileDownloads dataHrefBase={dataHrefBase} />
