@@ -1,0 +1,735 @@
+{
+  "name": "top-user-engagement-events-30-days",
+  "agency": null,
+  "sampling": [],
+  "query": {
+    "limit": "100",
+    "metrics": [
+      {
+        "name": "eventCount"
+      },
+      {
+        "name": "totalUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "desc": true,
+        "metric": {
+          "metricName": "eventCount"
+        }
+      }
+    ],
+    "dateRanges": [
+      {
+        "endDate": "yesterday",
+        "startDate": "30daysAgo"
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "eventName"
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "dap_event",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "session_start",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "custom",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "first_visit",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "user_engagement",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "(other)",
+                  "caseSensitive": false
+                }
+              }
+            }
+          },
+          {
+            "notExpression": {
+              "filter": {
+                "fieldName": "eventName",
+                "stringFilter": {
+                  "value": "other",
+                  "caseSensitive": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "property": "properties/397708109"
+  },
+  "meta": {
+    "name": "Top User Engagement Events (30 Days)",
+    "description": "Top 100 user engagement events in the last 30 days."
+  },
+  "data": [
+    {
+      "event_label": "page_view",
+      "total_events": "4652820695",
+      "users": "887454765"
+    },
+    {
+      "event_label": "scroll",
+      "total_events": "1079634774",
+      "users": "277793796"
+    },
+    {
+      "event_label": "click",
+      "total_events": "345252567",
+      "users": "110182005"
+    },
+    {
+      "event_label": "file_download",
+      "total_events": "69989102",
+      "users": "27271109"
+    },
+    {
+      "event_label": "view_search_results",
+      "total_events": "57526463",
+      "users": "20123773"
+    },
+    {
+      "event_label": "telephone_click",
+      "total_events": "3984734",
+      "users": "2195988"
+    },
+    {
+      "event_label": "video_progress",
+      "total_events": "2883947",
+      "users": "680401"
+    },
+    {
+      "event_label": "video_pause",
+      "total_events": "2096442",
+      "users": "581392"
+    },
+    {
+      "event_label": "video_play",
+      "total_events": "2055583",
+      "users": "387652"
+    },
+    {
+      "event_label": "email_click",
+      "total_events": "1821574",
+      "users": "894949"
+    },
+    {
+      "event_label": "video_start",
+      "total_events": "1460193",
+      "users": "841430"
+    },
+    {
+      "event_label": "official_usa_site_banner_click",
+      "total_events": "1405404",
+      "users": "850740"
+    },
+    {
+      "event_label": "Click",
+      "total_events": "450067",
+      "users": "183971"
+    },
+    {
+      "event_label": "video_complete",
+      "total_events": "385703",
+      "users": "274768"
+    },
+    {
+      "event_label": "screen_view",
+      "total_events": "385168",
+      "users": "111623"
+    },
+    {
+      "event_label": "video_error",
+      "total_events": "170555",
+      "users": "121318"
+    },
+    {
+      "event_label": "audio_progress",
+      "total_events": "127347",
+      "users": "12945"
+    },
+    {
+      "event_label": "JPG",
+      "total_events": "119771",
+      "users": "32259"
+    },
+    {
+      "event_label": "PNG",
+      "total_events": "77203",
+      "users": "25700"
+    },
+    {
+      "event_label": "audio_start",
+      "total_events": "72801",
+      "users": "14034"
+    },
+    {
+      "event_label": "select_content",
+      "total_events": "49533",
+      "users": "19223"
+    },
+    {
+      "event_label": "audio_pause",
+      "total_events": "39163",
+      "users": "5910"
+    },
+    {
+      "event_label": "GIF",
+      "total_events": "37892",
+      "users": "10706"
+    },
+    {
+      "event_label": "audio_complete",
+      "total_events": "34476",
+      "users": "8919"
+    },
+    {
+      "event_label": "pdf",
+      "total_events": "25759",
+      "users": "15114"
+    },
+    {
+      "event_label": "audio_play",
+      "total_events": "12981",
+      "users": "1848"
+    },
+    {
+      "event_label": "xlsx",
+      "total_events": "7503",
+      "users": "5997"
+    },
+    {
+      "event_label": "PDF",
+      "total_events": "4469",
+      "users": "1942"
+    },
+    {
+      "event_label": "Viewed",
+      "total_events": "3049",
+      "users": "2003"
+    },
+    {
+      "event_label": "XML",
+      "total_events": "1732",
+      "users": "378"
+    },
+    {
+      "event_label": "JPEG",
+      "total_events": "1540",
+      "users": "582"
+    },
+    {
+      "event_label": "Select",
+      "total_events": "1471",
+      "users": "63"
+    },
+    {
+      "event_label": "pptx",
+      "total_events": "1414",
+      "users": "1101"
+    },
+    {
+      "event_label": "ZIP",
+      "total_events": "1323",
+      "users": "932"
+    },
+    {
+      "event_label": "Cannot read properties of undefined (rea",
+      "total_events": "965",
+      "users": "163"
+    },
+    {
+      "event_label": "zip",
+      "total_events": "873",
+      "users": "510"
+    },
+    {
+      "event_label": "docx",
+      "total_events": "843",
+      "users": "527"
+    },
+    {
+      "event_label": "Search",
+      "total_events": "788",
+      "users": "111"
+    },
+    {
+      "event_label": "Update",
+      "total_events": "657",
+      "users": "651"
+    },
+    {
+      "event_label": "CSV",
+      "total_events": "485",
+      "users": "49"
+    },
+    {
+      "event_label": "Filter",
+      "total_events": "406",
+      "users": "14"
+    },
+    {
+      "event_label": "exe",
+      "total_events": "384",
+      "users": "248"
+    },
+    {
+      "event_label": "accessWidget",
+      "total_events": "365",
+      "users": "206"
+    },
+    {
+      "event_label": "XLSM",
+      "total_events": "272",
+      "users": "203"
+    },
+    {
+      "event_label": "Open",
+      "total_events": "268",
+      "users": "94"
+    },
+    {
+      "event_label": "Maximum call stack size exceeded",
+      "total_events": "228",
+      "users": "23"
+    },
+    {
+      "event_label": "was_this_helpful_submit",
+      "total_events": "216",
+      "users": "156"
+    },
+    {
+      "event_label": "View Content",
+      "total_events": "179",
+      "users": "101"
+    },
+    {
+      "event_label": "EXE",
+      "total_events": "164",
+      "users": "95"
+    },
+    {
+      "event_label": "WMV",
+      "total_events": "152",
+      "users": "78"
+    },
+    {
+      "event_label": "unknown error",
+      "total_events": "142",
+      "users": "8"
+    },
+    {
+      "event_label": "txt",
+      "total_events": "139",
+      "users": "115"
+    },
+    {
+      "event_label": "DOCX",
+      "total_events": "111",
+      "users": "77"
+    },
+    {
+      "event_label": "Network request failed",
+      "total_events": "95",
+      "users": "32"
+    },
+    {
+      "event_label": "Zoom",
+      "total_events": "89",
+      "users": "17"
+    },
+    {
+      "event_label": "Enable",
+      "total_events": "87",
+      "users": "9"
+    },
+    {
+      "event_label": "csv",
+      "total_events": "81",
+      "users": "23"
+    },
+    {
+      "event_label": "Link_Click_Titles",
+      "total_events": "80",
+      "users": "15"
+    },
+    {
+      "event_label": "Constructor for \"calcite-link#undefined\"",
+      "total_events": "77",
+      "users": "11"
+    },
+    {
+      "event_label": "user_activity",
+      "total_events": "69",
+      "users": "9"
+    },
+    {
+      "event_label": "Constructor for \"calcite-button#undefine",
+      "total_events": "67",
+      "users": "8"
+    },
+    {
+      "event_label": "Close",
+      "total_events": "66",
+      "users": "25"
+    },
+    {
+      "event_label": "xltx",
+      "total_events": "57",
+      "users": "28"
+    },
+    {
+      "event_label": "Disable",
+      "total_events": "56",
+      "users": "8"
+    },
+    {
+      "event_label": "Download",
+      "total_events": "56",
+      "users": "25"
+    },
+    {
+      "event_label": "could not fetch component message bundle",
+      "total_events": "52",
+      "users": "15"
+    },
+    {
+      "event_label": "More Info",
+      "total_events": "51",
+      "users": "14"
+    },
+    {
+      "event_label": "Constructor for \"calcite-loader#undefine",
+      "total_events": "46",
+      "users": "26"
+    },
+    {
+      "event_label": "Draw",
+      "total_events": "46",
+      "users": "7"
+    },
+    {
+      "event_label": "ppsx",
+      "total_events": "42",
+      "users": "31"
+    },
+    {
+      "event_label": "MOV",
+      "total_events": "40",
+      "users": "26"
+    },
+    {
+      "event_label": "Styling",
+      "total_events": "40",
+      "users": "4"
+    },
+    {
+      "event_label": "External",
+      "total_events": "38",
+      "users": "26"
+    },
+    {
+      "event_label": "xml",
+      "total_events": "38",
+      "users": "20"
+    },
+    {
+      "event_label": "xls",
+      "total_events": "37",
+      "users": "33"
+    },
+    {
+      "event_label": "signin",
+      "total_events": "32",
+      "users": "24"
+    },
+    {
+      "event_label": "xlsm",
+      "total_events": "32",
+      "users": "29"
+    },
+    {
+      "event_label": "gz",
+      "total_events": "30",
+      "users": "24"
+    },
+    {
+      "event_label": "Aborted",
+      "total_events": "28",
+      "users": "7"
+    },
+    {
+      "event_label": "doc",
+      "total_events": "27",
+      "users": "20"
+    },
+    {
+      "event_label": "HTTP 404: Not Found",
+      "total_events": "25",
+      "users": "18"
+    },
+    {
+      "event_label": "msi",
+      "total_events": "24",
+      "users": "14"
+    },
+    {
+      "event_label": "Show",
+      "total_events": "23",
+      "users": "15"
+    },
+    {
+      "event_label": "r is undefined",
+      "total_events": "23",
+      "users": "2"
+    },
+    {
+      "event_label": "Sort",
+      "total_events": "22",
+      "users": "9"
+    },
+    {
+      "event_label": "Constructor for \"calcite-modal#undefined",
+      "total_events": "21",
+      "users": "12"
+    },
+    {
+      "event_label": "undefined is not an object (evaluating '",
+      "total_events": "20",
+      "users": "8"
+    },
+    {
+      "event_label": "sch",
+      "total_events": "17",
+      "users": "11"
+    },
+    {
+      "event_label": "../../../../../../../../../../../../../.",
+      "total_events": "14",
+      "users": "5"
+    },
+    {
+      "event_label": "doccumet is not defined",
+      "total_events": "14",
+      "users": "1"
+    },
+    {
+      "event_label": "..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\.",
+      "total_events": "12",
+      "users": "5"
+    },
+    {
+      "event_label": "ics",
+      "total_events": "12",
+      "users": "9"
+    },
+    {
+      "event_label": "eps",
+      "total_events": "11",
+      "users": "8"
+    },
+    {
+      "event_label": "Click sign in",
+      "total_events": "10",
+      "users": "9"
+    },
+    {
+      "event_label": "tar",
+      "total_events": "10",
+      "users": "8"
+    },
+    {
+      "event_label": "xsd",
+      "total_events": "10",
+      "users": "9"
+    },
+    {
+      "event_label": "Constructor for \"calcite-icon#undefined\"",
+      "total_events": "9",
+      "users": "2"
+    },
+    {
+      "event_label": "Loading chunk 98663 failed.\n(error: http",
+      "total_events": "9",
+      "users": "1"
+    },
+    {
+      "event_label": "Outbound",
+      "total_events": "9",
+      "users": "6"
+    },
+    {
+      "event_label": "TGZ",
+      "total_events": "9",
+      "users": "7"
+    }
+  ],
+  "totals": {
+    "users": 1330113440,
+    "total_events": 6222951798,
+    "by_eventName": {
+      "undefined": 1330113440
+    },
+    "by_event_label": {
+      "page_view": 4652820695,
+      "scroll": 1079634774,
+      "click": 345252567,
+      "file_download": 69989102,
+      "view_search_results": 57526463,
+      "telephone_click": 3984734,
+      "video_progress": 2883947,
+      "video_pause": 2096442,
+      "video_play": 2055583,
+      "email_click": 1821574,
+      "video_start": 1460193,
+      "official_usa_site_banner_click": 1405404,
+      "Click": 450067,
+      "video_complete": 385703,
+      "screen_view": 385168,
+      "video_error": 170555,
+      "audio_progress": 127347,
+      "JPG": 119771,
+      "PNG": 77203,
+      "audio_start": 72801,
+      "select_content": 49533,
+      "audio_pause": 39163,
+      "GIF": 37892,
+      "audio_complete": 34476,
+      "pdf": 25759,
+      "audio_play": 12981,
+      "xlsx": 7503,
+      "PDF": 4469,
+      "Viewed": 3049,
+      "XML": 1732,
+      "JPEG": 1540,
+      "Select": 1471,
+      "pptx": 1414,
+      "ZIP": 1323,
+      "Cannot read properties of undefined (rea": 965,
+      "zip": 873,
+      "docx": 843,
+      "Search": 788,
+      "Update": 657,
+      "CSV": 485,
+      "Filter": 406,
+      "exe": 384,
+      "accessWidget": 365,
+      "XLSM": 272,
+      "Open": 268,
+      "Maximum call stack size exceeded": 228,
+      "was_this_helpful_submit": 216,
+      "View Content": 179,
+      "EXE": 164,
+      "WMV": 152,
+      "unknown error": 142,
+      "txt": 139,
+      "DOCX": 111,
+      "Network request failed": 95,
+      "Zoom": 89,
+      "Enable": 87,
+      "csv": 81,
+      "Link_Click_Titles": 80,
+      "Constructor for \"calcite-link#undefined\"": 77,
+      "user_activity": 69,
+      "Constructor for \"calcite-button#undefine": 67,
+      "Close": 66,
+      "xltx": 57,
+      "Disable": 56,
+      "Download": 56,
+      "could not fetch component message bundle": 52,
+      "More Info": 51,
+      "Constructor for \"calcite-loader#undefine": 46,
+      "Draw": 46,
+      "ppsx": 42,
+      "MOV": 40,
+      "Styling": 40,
+      "External": 38,
+      "xml": 38,
+      "xls": 37,
+      "signin": 32,
+      "xlsm": 32,
+      "gz": 30,
+      "Aborted": 28,
+      "doc": 27,
+      "HTTP 404: Not Found": 25,
+      "msi": 24,
+      "Show": 23,
+      "r is undefined": 23,
+      "Sort": 22,
+      "Constructor for \"calcite-modal#undefined": 21,
+      "undefined is not an object (evaluating '": 20,
+      "sch": 17,
+      "../../../../../../../../../../../../../.": 14,
+      "doccumet is not defined": 14,
+      "..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\.": 12,
+      "ics": 12,
+      "eps": 11,
+      "Click sign in": 10,
+      "tar": 10,
+      "xsd": 10,
+      "Constructor for \"calcite-icon#undefined\"": 9,
+      "Loading chunk 98663 failed.\n(error: http": 9,
+      "Outbound": 9,
+      "TGZ": 9
+    }
+  },
+  "taken_at": "2024-10-01T13:59:02.007Z"
+}
