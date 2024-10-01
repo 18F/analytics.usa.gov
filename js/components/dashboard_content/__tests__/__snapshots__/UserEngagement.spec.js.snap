@@ -6,35 +6,51 @@ exports[`UserEngagement renders 1`] = `
     class="grid-row padding-top-3"
   >
     <div
-      class="desktop:grid-col-6 text--centered"
-      id="average_engagement_time"
+      class="desktop:grid-col-6"
     >
-      <a
+      <div
         class="chart__title"
-        href="/definitions#report_historical_average_engagement_time"
       >
-        Average Engagement Time Per Session
-      </a>
-      <div>
-        <div
-          class="data chart__rate padding-top-05"
-        />
+        User Engagement Events
       </div>
+      <figure
+        id="chart_event_label"
+      >
+        <div
+          class="data chart__bar-chart"
+        />
+      </figure>
     </div>
     <div
       class="desktop:grid-col-6 text--centered"
-      id="engagement_rate"
     >
-      <a
-        class="chart__title"
-        href="/definitions#report_historical_engagement_rate"
-      >
-        Percent of Engaged Sessions
-      </a>
       <div>
-        <div
-          class="data chart__rate padding-top-05"
-        />
+        <a
+          class="chart__title"
+          href="/definitions#report_historical_average_engagement_time"
+        >
+          Average Engagement Time Per Session
+        </a>
+        <div>
+          <div
+            class="data chart__rate padding-top-05"
+          />
+        </div>
+      </div>
+      <div
+        class="padding-top-3"
+      >
+        <a
+          class="chart__title"
+          href="/definitions#report_historical_engagement_rate"
+        >
+          Percent of Engaged Sessions
+        </a>
+        <div>
+          <div
+            class="data chart__rate padding-top-05"
+          />
+        </div>
       </div>
     </div>
   </div>
