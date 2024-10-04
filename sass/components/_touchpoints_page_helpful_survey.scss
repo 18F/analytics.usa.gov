@@ -1,5 +1,6 @@
 @use "uswds-core" as *;
 
+/** Customized styles for the touchpoints form in this block. **/
 #touchpoints-yes-no-form {
   display: flex;
   align-items: center;
@@ -7,13 +8,26 @@
   margin-top: units(2);
   margin-bottom: units(2);
 
-  .section {
+  .fba-modal-dialog {
     border: none;
+  }
+
+  h1.fba-modal-title {
+    font-weight: 400;
+    font-size: units(3);
+  }
+
+  .usa-fieldset.radios.margin-top-3 {
+    margin-top: 0;
   }
 
   label {
     font-weight: 400;
     font-size: units(3);
+
+    &::before {
+      margin-top: .35rem;
+    }
   }
 
   .usa-button {
@@ -29,6 +43,8 @@
     margin-block-start: 0;
   }
 }
+
+/** Touchpoints provided styles below **/
 
 .fba-modal {
   background-color: rgb(0, 0, 0, 0.375);
