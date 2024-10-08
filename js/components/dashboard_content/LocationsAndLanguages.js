@@ -22,49 +22,32 @@ function LocationsAndLanguages({ dataHrefBase }) {
   return (
     <>
       <div className="section__headline">
-        <h2>
-          <a href="/definitions#report_realtime_locations_languages">
-            User Locations and Languages in the Last 30 Minutes
-          </a>
-        </h2>
+        <a href="/definitions#report_realtime_locations_languages">
+          User Locations and Languages in the Last 30 Minutes
+        </a>
       </div>
 
-      <div className="section__chart grid-row">
-        <section
-          id="cities"
-          className="desktop:grid-col-4 padding-2 bar-chart-component"
-        >
-          <h4>
-            <a href="/definitions#dimension_city">Cities</a>
-          </h4>
+      <div className="padding-top-4 grid-row">
+        <div id="cities" className="desktop:grid-col-4 desktop:padding-right-2">
           <TopCitiesRealtime
             dataHrefBase={dataHrefBase}
             refreshSeconds={Config.realtimeDataRefreshSeconds}
           />
-        </section>
+        </div>
 
-        <section
-          id="countries"
-          className="desktop:grid-col-4 padding-2 bar-chart-component"
-        >
-          <h4>
-            <a href="/definitions#dimension_country">Countries</a>
-          </h4>
+        <div id="countries" className="desktop:grid-col-4 desktop:padding-x-2">
           <TopCountriesRealtime
             dataHrefBase={dataHrefBase}
             refreshSeconds={Config.realtimeDataRefreshSeconds}
           />
-        </section>
+        </div>
 
-        <section
+        <div
           id="languages"
-          className="desktop:grid-col-4 padding-2 bar-chart-component"
+          className="desktop:grid-col-4 desktop:padding-left-2"
         >
-          <h4>
-            <a href="/definitions#dimension_language">Languages</a>
-          </h4>
           <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
-        </section>
+        </div>
       </div>
     </>
   );

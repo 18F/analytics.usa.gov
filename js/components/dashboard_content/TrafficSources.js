@@ -18,29 +18,21 @@ import TopSourceMedia from "./TopSourceMedia";
  */
 function TrafficSources({ dataHrefBase }) {
   return (
-    <>
-      <section
+    <div className="padding-top-4 grid-row">
+      <div
         id="session_channel_groups"
-        className="desktop:grid-col-6 bar-chart-component"
+        className="desktop:grid-col-6 desktop:padding-right-2"
       >
-        <h4>
-          <a href="/definitions#dimension_default_channel_group">
-            Top Channels
-          </a>
-        </h4>
         <TopChannels dataHrefBase={dataHrefBase} />
-      </section>
+      </div>
 
-      <section
+      <div
         id="session_source_mediums"
-        className="desktop:grid-col-6 bar-chart-component"
+        className="desktop:grid-col-6 desktop:padding-left-2"
       >
-        <h4>
-          <a href="/definitions#dimension_source_medium">Top Sources/Media</a>
-        </h4>
         <TopSourceMedia dataHrefBase={dataHrefBase} />
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 

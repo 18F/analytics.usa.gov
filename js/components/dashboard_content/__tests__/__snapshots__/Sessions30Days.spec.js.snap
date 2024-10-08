@@ -3,12 +3,16 @@
 exports[`Sessions30Days when data is not loaded renders a component in loading state 1`] = `
 <DocumentFragment>
   <div
-    class="section__chart"
+    class="chart__title"
+  >
+    Daily Sessions in the Past 30 Days
+  </div>
+  <div
+    class="chart__time-series__container"
     data-refresh="15"
-    id="time_series"
   >
     <svg
-      class="data time-series"
+      class="data chart__time-series"
     />
   </div>
 </DocumentFragment>
@@ -17,12 +21,16 @@ exports[`Sessions30Days when data is not loaded renders a component in loading s
 exports[`Sessions30Days when data loading has an error renders a component in error state 1`] = `
 <DocumentFragment>
   <div
-    class="section__chart"
+    class="chart__title"
+  >
+    Daily Sessions in the Past 30 Days
+  </div>
+  <div
+    class="chart__time-series__container"
     data-refresh="15"
-    id="time_series"
   >
     <svg
-      class="data time-series"
+      class="data chart__time-series"
     />
   </div>
 </DocumentFragment>

@@ -2,76 +2,83 @@
 
 exports[`DeviceDemographics renders 1`] = `
 <DocumentFragment>
-  <section
-    class="desktop:grid-col-4 bar-chart-component"
-    id="devices"
+  <div
+    class="padding-top-4 grid-row"
   >
-    <h4>
-      <a
-        href="/definitions#dimension_device_category"
-      >
-        Devices
-      </a>
-    </h4>
-    <figure
-      id="chart_device_types"
+    <div
+      class="desktop:grid-col-4 desktop:padding-right-2"
+      id="devices"
     >
       <div
-        class="data bar-chart"
-      />
-    </figure>
-  </section>
-  <section
-    class="desktop:grid-col-4 bar-chart-component"
-    id="browsers"
-  >
-    <h4>
-      <a
-        href="/definitions#dimension_browser"
+        class="chart__title"
       >
-        Web Browsers
-      </a>
-    </h4>
-    <figure
-      id="chart_browsers"
-    >
-      <div
-        class="data bar-chart"
-      />
-    </figure>
-  </section>
-  <section
-    class="desktop:grid-col-4 bar-chart-component"
-    id="operating_systems"
-  >
-    <h4>
-      <a
-        href="/definitions#dimension_operating_system"
-      >
-        Operating Systems
-      </a>
-    </h4>
-    <div>
+        <a
+          href="/definitions#dimension_device_category"
+        >
+          Devices
+        </a>
+      </div>
       <figure
-        id="chart_os"
+        id="chart_device_types"
       >
         <div
-          class="data bar-chart"
-        />
-      </figure>
-      <figure
-        class="hide"
-        data-scale-to-parent="true"
-        id="chart_windows"
-      >
-        <h4>
-          Windows
-        </h4>
-        <div
-          class="data bar-chart"
+          class="data chart__bar-chart"
         />
       </figure>
     </div>
-  </section>
+    <div
+      class="desktop:grid-col-4 desktop:padding-x-2"
+      id="browsers"
+    >
+      <div
+        class="chart__title"
+      >
+        <a
+          href="/definitions#dimension_browser"
+        >
+          Web Browsers
+        </a>
+      </div>
+      <figure
+        id="chart_browsers"
+      >
+        <div
+          class="data chart__bar-chart"
+        />
+      </figure>
+    </div>
+    <div
+      class="desktop:grid-col-4 desktop:padding-left-2"
+      id="operating_systems"
+    >
+      <div>
+        <div
+          class="chart__title"
+        >
+          <a
+            href="/definitions#dimension_operating_system"
+          >
+            Operating Systems
+          </a>
+        </div>
+        <figure
+          id="chart_os"
+        >
+          <div
+            class="data chart__bar-chart"
+          />
+        </figure>
+        <figure
+          class="hide chart__bar-chart__nested"
+          data-scale-to-parent="true"
+          id="chart_windows"
+        >
+          <div
+            class="data chart__bar-chart"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;

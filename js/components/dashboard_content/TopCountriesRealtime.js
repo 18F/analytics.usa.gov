@@ -146,26 +146,27 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
 
   return (
     <div>
+      <div className="chart__title padding-top-2 desktop:padding-top-0">
+        <a href="/definitions#dimension_country">Countries</a>
+      </div>
       <figure id="chart_us" ref={countriesRef}>
-        <div className="data bar-chart"></div>
+        <div className="data chart__bar-chart"></div>
       </figure>
 
       <figure
         id="chart_us_and_territories"
-        className="hide"
+        className="hide chart__bar-chart__nested"
         ref={usTerritoriesRef}
       >
-        <h4>United States &amp; Territories</h4>
-        <div className="data bar-chart"></div>
+        <div className="data chart__bar-chart"></div>
       </figure>
 
       <figure
         id="chart_countries"
-        className="hide"
+        className="hide chart__bar-chart__nested"
         ref={internationalVisitsRef}
       >
-        <h4>International</h4>
-        <div className="data bar-chart"></div>
+        <div className="data chart__bar-chart"></div>
       </figure>
     </div>
   );

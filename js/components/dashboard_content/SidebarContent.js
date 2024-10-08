@@ -33,8 +33,8 @@ function SidebarContent({ dataHrefBase, agency }) {
   const numberOfTopPagesToDisplay = 30;
 
   return (
-    <section className="sidebar-content">
-      <div className="sidebar-content__headline">
+    <section className="sidebar">
+      <div className="sidebar__headline">
         <h2>
           <a href="/definitions#report_realtime_top_pages">
             Top {numberOfTopPagesToDisplay} Web Pages and App Screens
@@ -42,26 +42,35 @@ function SidebarContent({ dataHrefBase, agency }) {
         </h2>
       </div>
       <Tabs>
-        <TabList className="usa-button-group usa-button-group--segmented">
-          <Tab className="usa-button-group__item">
-            <button type="button" className="usa-button">
+        <TabList className="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+            <button
+              type="button"
+              className="sidebar__tab-select__button usa-button"
+            >
               30 mins
             </button>
           </Tab>
-          <Tab className="usa-button-group__item">
-            <button type="button" className="usa-button">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+            <button
+              type="button"
+              className="sidebar__tab-select__button usa-button"
+            >
               7 days
             </button>
           </Tab>
-          <Tab className="usa-button-group__item">
-            <button type="button" className="usa-button">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+            <button
+              type="button"
+              className="sidebar__tab-select__button usa-button"
+            >
               30 days
             </button>
           </Tab>
         </TabList>
 
         <TabPanel>
-          <section className="top-pages">
+          <section className="sidebar__tab__content">
             <p>
               <strong>Users</strong> on a{" "}
               <strong>single, specific page or app screen</strong> in the last
@@ -85,7 +94,7 @@ function SidebarContent({ dataHrefBase, agency }) {
           />
         </TabPanel>
         <TabPanel>
-          <section className="top-pages">
+          <section className="sidebar__tab__content">
             <p>
               Sessions over the last week on <strong>hostnames</strong>,
               including traffic to all web pages and app screens within that
@@ -107,7 +116,7 @@ function SidebarContent({ dataHrefBase, agency }) {
           />
         </TabPanel>
         <TabPanel>
-          <section className="top-pages">
+          <section className="sidebar__tab__content">
             <p>
               Sessions over the last month on <strong>hostnames</strong>,
               including traffic to all web pages and app screens within that

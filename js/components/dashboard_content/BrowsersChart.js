@@ -38,9 +38,14 @@ function BrowsersChart({ dataHrefBase }) {
   }, [browserData]);
 
   return (
-    <figure id="chart_browsers" ref={ref}>
-      <div className="data bar-chart"></div>
-    </figure>
+    <>
+      <div className="chart__title">
+        <a href="/definitions#dimension_browser">Web Browsers</a>
+      </div>
+      <figure id="chart_browsers" ref={ref}>
+        <div className="data chart__bar-chart"></div>
+      </figure>
+    </>
   );
 }
 

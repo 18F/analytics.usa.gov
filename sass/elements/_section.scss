@@ -1,0 +1,52 @@
+@use "uswds-core" as *;
+@use "colors";
+
+/*
+  * Section components (locations, 30-day-sessions, 90-day-sessions)
+  */
+.section--bordered {
+  border-top: 1px solid colors.$medium-gray;
+
+  @include at-media("tablet") {
+    border-bottom: none;
+  }
+}
+
+.section__headline {
+  font-size: units(3);
+  font-weight: font-weight("bold");
+}
+
+.section__headline--bold {
+  font-weight: font-weight("bold");
+}
+
+.section__subheader {
+  font-size: units(3);
+  padding: units(2);
+  text-align: center;
+}
+
+.section__chart {
+  padding: 0;
+
+  @include at-media("tablet") {
+    padding: 0 units(2);
+  }
+
+  .bar-chart-component {
+    padding: units(2);
+
+    &:first-child {
+      padding-top: units(2);
+
+      @include at-media("tablet") {
+        padding-top: units(1);
+      }
+    }
+
+    @include at-media("tablet") {
+      padding: units(1) units(3);
+    }
+  }
+}

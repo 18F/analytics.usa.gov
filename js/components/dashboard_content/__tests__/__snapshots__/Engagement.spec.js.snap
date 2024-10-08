@@ -2,67 +2,41 @@
 
 exports[`Engagement renders 1`] = `
 <DocumentFragment>
-  <section
-    class="desktop:grid-col-6"
-    id="average_engagement_time"
+  <div
+    class="grid-row"
   >
     <div
-      class="grid-row"
+      class="grid-col-12 desktop:grid-col-6 padding-2 text--centered"
+      id="average_engagement_time"
     >
-      <h4
-        class="grid-col-12"
+      <a
+        class="chart__title"
+        href="/definitions#report_historical_average_engagement_time"
       >
-        <a
-          href="/definitions#report_historical_average_engagement_time"
-        >
-          Average Engagement Time Per Session
-        </a>
-      </h4>
+        Average Engagement Time Per Session
+      </a>
+      <div>
+        <div
+          class="data chart__rate padding-top-05"
+        />
+      </div>
     </div>
     <div
-      class="grid-row"
+      class="grid-col-12 desktop:grid-col-6 padding-2 text--centered"
+      id="engagement_rate"
     >
-      <span
-        class="grid-col-12"
+      <a
+        class="chart__title"
+        href="/definitions#report_historical_engagement_rate"
       >
-        <div>
-          <div
-            class="data"
-          />
-        </div>
-      </span>
+        Percent of Engaged Sessions
+      </a>
+      <div>
+        <div
+          class="data chart__rate padding-top-05"
+        />
+      </div>
     </div>
-  </section>
-  <section
-    class="desktop:grid-col-6"
-    id="engagement_rate"
-  >
-    <div
-      class="grid-row"
-    >
-      <h4
-        class="grid-col-12"
-      >
-        <a
-          href="/definitions#report_historical_engagement_rate"
-        >
-          Percent of Engaged Sessions
-        </a>
-      </h4>
-    </div>
-    <div
-      class="grid-row"
-    >
-      <span
-        class="data grid-col-12"
-      >
-        <div>
-          <div
-            class="data"
-          />
-        </div>
-      </span>
-    </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
