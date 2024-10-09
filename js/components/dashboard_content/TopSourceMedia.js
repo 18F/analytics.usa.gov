@@ -38,9 +38,14 @@ function TopSourceMedia({ dataHrefBase }) {
   }, [sourceMediaData]);
 
   return (
-    <figure id="chart_session_source_medium" ref={ref}>
-      <div className="data bar-chart"></div>
-    </figure>
+    <>
+      <div className="chart__title">
+        <a href="/definitions#dimension_source_medium">Top Sources/Media</a>
+      </div>
+      <figure id="chart_session_source_medium" ref={ref}>
+        <div className="data chart__bar-chart"></div>
+      </figure>
+    </>
   );
 }
 

@@ -44,8 +44,14 @@ function EngagementRate({ dataHrefBase }) {
 
   return (
     <>
+      <a
+        className="chart__title"
+        href="/definitions#report_historical_engagement_rate"
+      >
+        Percent of Engaged Sessions
+      </a>
       <div ref={ref}>
-        <div className="data"></div>
+        <div className="data chart__rate padding-top-05"></div>
       </div>
     </>
   );

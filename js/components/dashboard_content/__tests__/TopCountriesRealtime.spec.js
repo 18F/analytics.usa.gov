@@ -21,7 +21,7 @@ describe("TopCountriesRealtime", () => {
       });
       component = render(
         <TopCountriesRealtime
-          dataHrefBase="http://www.example.com/data/"
+          dataHrefBase={"http://www.example.com/data/"}
           refreshSeconds={30}
         />,
       );
@@ -43,7 +43,7 @@ describe("TopCountriesRealtime", () => {
         });
         component = render(
           <TopCountriesRealtime
-            dataHrefBase="http://www.example.com/data/"
+            dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
         );
@@ -67,7 +67,7 @@ describe("TopCountriesRealtime", () => {
         });
         component = render(
           <TopCountriesRealtime
-            dataHrefBase="http://www.example.com/data/"
+            dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
         );
@@ -91,7 +91,7 @@ describe("TopCountriesRealtime", () => {
         });
         component = render(
           <TopCountriesRealtime
-            dataHrefBase="http://www.example.com/data/"
+            dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
         );
@@ -115,7 +115,7 @@ describe("TopCountriesRealtime", () => {
         });
         component = render(
           <TopCountriesRealtime
-            dataHrefBase="http://www.example.com/data/"
+            dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
         );
@@ -141,7 +141,7 @@ describe("TopCountriesRealtime", () => {
       });
       component = render(
         <TopCountriesRealtime
-          dataHrefBase="http://www.example.com/data/"
+          dataHrefBase={"http://www.example.com/data/"}
           refreshSeconds={30}
         />,
       );

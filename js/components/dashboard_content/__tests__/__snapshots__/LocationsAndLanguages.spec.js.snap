@@ -5,99 +5,96 @@ exports[`LocationsAndLanguages renders 1`] = `
   <div
     class="section__headline"
   >
-    <h2>
-      <a
-        href="/definitions#report_realtime_locations_languages"
-      >
-        User Locations and Languages in the Last 30 Minutes
-      </a>
-    </h2>
+    <a
+      href="/definitions#report_realtime_locations_languages"
+    >
+      User Locations and Languages in the Last 30 Minutes
+    </a>
   </div>
   <div
-    class="section__chart grid-row"
+    class="padding-top-4 grid-row"
   >
-    <section
-      class="desktop:grid-col-4 padding-2 bar-chart-component"
+    <div
+      class="desktop:grid-col-4 desktop:padding-right-2"
       id="cities"
     >
-      <h4>
+      <div
+        class="chart__title"
+      >
         <a
           href="/definitions#dimension_city"
         >
           Cities
         </a>
-      </h4>
+      </div>
       <figure
         id="chart_top-cities-realtime"
       >
         <div
-          class="data bar-chart"
+          class="data chart__bar-chart"
         />
       </figure>
-    </section>
-    <section
-      class="desktop:grid-col-4 padding-2 bar-chart-component"
+    </div>
+    <div
+      class="desktop:grid-col-4 desktop:padding-x-2"
       id="countries"
     >
-      <h4>
-        <a
-          href="/definitions#dimension_country"
-        >
-          Countries
-        </a>
-      </h4>
       <div>
+        <div
+          class="chart__title padding-top-2 desktop:padding-top-0"
+        >
+          <a
+            href="/definitions#dimension_country"
+          >
+            Countries
+          </a>
+        </div>
         <figure
           id="chart_us"
         >
           <div
-            class="data bar-chart"
+            class="data chart__bar-chart"
           />
         </figure>
         <figure
-          class="hide"
+          class="hide chart__bar-chart__nested"
           id="chart_us_and_territories"
         >
-          <h4>
-            United States & Territories
-          </h4>
           <div
-            class="data bar-chart"
+            class="data chart__bar-chart"
           />
         </figure>
         <figure
-          class="hide"
+          class="hide chart__bar-chart__nested"
           id="chart_countries"
         >
-          <h4>
-            International
-          </h4>
           <div
-            class="data bar-chart"
+            class="data chart__bar-chart"
           />
         </figure>
       </div>
-    </section>
-    <section
-      class="desktop:grid-col-4 padding-2 bar-chart-component"
+    </div>
+    <div
+      class="desktop:grid-col-4 desktop:padding-left-2"
       id="languages"
     >
-      <h4>
+      <div
+        class="chart__title"
+      >
         <a
           href="/definitions#dimension_language"
         >
           Languages
         </a>
-      </h4>
+      </div>
       <figure
-        data-block="languages"
         id="chart_top-languages"
       >
         <div
-          class="data bar-chart"
+          class="data chart__bar-chart"
         />
       </figure>
-    </section>
+    </div>
   </div>
 </DocumentFragment>
 `;

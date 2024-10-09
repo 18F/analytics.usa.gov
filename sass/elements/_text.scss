@@ -1,0 +1,31 @@
+@use "uswds-core" as *;
+
+.text--bold {
+  font-weight: font-weight("bold");
+}
+
+.text--centered {
+  text-align: center;
+}
+
+.text--indented {
+  @include at_media("tablet") {
+    padding-left: units(3);
+  }
+}
+
+.text--large {
+  font-size: units(3);
+
+  @include at_media("tablet") {
+    font-size: units(4);
+  }
+}
+
+.text--xl {
+  font-size: 4em;
+
+  @include at_media("tablet") {
+    font-size: 8em;
+  }
+}

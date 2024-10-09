@@ -7,36 +7,34 @@
   @include at-media("tablet") {
     padding: units(2);
   }
+}
 
-  &__header {
-    padding: units(2);
+.analytics-data__table {
+  margin-top: 0;
+}
 
-    @include at-media("tablet") {
-      padding: 0;
-    }
+.analytics-data__table-caption {
+  padding: units(2) units(2) units(2) units(2);
 
-    p.historical-data-link {
-      a {
-        color: color("blue-50");
-        font-weight: font-weight(600);
-      }
-    }
+  @include at-media("tablet") {
+    padding: units(2) 0 units(2) 0;
+  }
+}
 
-    div {
-      font-size: units(2);
-      font-weight: font-weight(300);
-    }
+.analytics-data__header {
+  padding: units(2);
+
+  @include at-media("tablet") {
+    padding: 0;
   }
 
-  h2 {
-    padding: units(2) units(2) units(2) units(2);
-
-    @include at-media("tablet") {
-      padding: units(2) 0 units(2) 0;
-    }
+  div {
+    font-size: units(2);
+    font-weight: font-weight(300);
   }
+}
 
-  table {
-    margin-top: 0;
-  }
+a.analytics-data__historical-data-link {
+  color: color("blue-50");
+  font-weight: font-weight(600);
 }

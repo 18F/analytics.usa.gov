@@ -21,19 +21,7 @@ i.e.
 */
 
 @use "uswds-core" as *;
-
-// COLORS
-$red: color("red-70v");
-$orange: color("orange-30v");
-$light-blue: color("blue-50v");
-$light-blue-two: color("blue-50");
-$dark-blue: color("blue-80v");
-$light-gray: color("gray-2");
-$uswds-light-gray: color("gray-cool-30");
-$gray: color("gray-10");
-$dark-gray: color("gray-cool-70");
-$white: color("gray-1");
-$black: color("gray-90");
+@use "colors";
 
 // @include u-font("sans", "md");
 // '3xs'	13px
@@ -78,7 +66,7 @@ h5 {
 // Other Setup:
 body {
   background: #fff;
-  color: $dark-gray;
+  color: colors.$dark-gray;
   font-family: font-family("ui");
   font-weight: font-weight(300);
   margin: 0;
@@ -86,38 +74,7 @@ body {
 
 a,
 a:visited {
-  color: $dark-blue;
-}
-
-figure {
-  margin: 0;
-}
-
-// nested charts
-figure figure {
-  h4 {
-    display: none;
-  }
-
-  .bar-chart {
-    margin: units(1) 0;
-
-    .bin {
-      margin-bottom: units(1);
-    }
-  }
-}
-
-.data {
-  opacity: 1;
-  // transition opacity over a fraction of a second, with a delay
-  // (the delay guards against flashes when content switches really quickly
-  // from loading -> loaded -> loading again, e.g. when data loads quickly)
-  transition: opacity 0.5s ease-in;
-
-  &.loading {
-    opacity: 0.8;
-  }
+  color: colors.$dark-blue;
 }
 
 .hide {
@@ -125,8 +82,8 @@ figure figure {
 }
 
 .technical-difficulties {
-  background: $white;
-  color: $red;
+  background: colors.$white;
+  color: colors.$red;
   padding-top: units(2.5);
 }
 
@@ -162,170 +119,11 @@ ul li::before {
 }
 
 .dark-background {
-  background: $dark-blue;
+  background: colors.$dark-blue;
 
   &,
   a {
-    color: $white;
-  }
-}
-
-.chart-realtime {
-  color: $dark-blue;
-  padding: units(4);
-  text-align: center;
-
-  &__visitors-count {
-    padding: 0;
-
-    @include at-media("tablet") {
-      padding: units(2);
-    }
-  }
-
-  &__current-visitors {
-    font-size: 4em;
-    margin: 0;
-
-    @include at_media("tablet") {
-      font-size: 8em;
-    }
-  }
-
-  &__description {
-    font-size: units(3);
-
-    @include at_media("tablet") {
-      font-size: units(4);
-    }
-  }
-}
-
-g.axis {
-  path,
-  line {
-    fill: none;
-    stroke: none;
-  }
-
-  .tick text {
-    fill: $dark-blue;
-    font-size: units(1.5);
-  }
-}
-
-.time-series {
-  text-transform: uppercase;
-
-  rect {
-    fill: $light-blue;
-    stroke: $white;
-    stroke-width: 1;
-  }
-
-  text.label {
-    fill: $dark-blue;
-    font-size: 0.45rem; // use for 30 day dd/mm styles
-  }
-}
-
-/*
-* Section components (locations, 30-day-sessions, 90-day-sessions)
-*/
-
-.section {
-  border-top: 1px solid color("gray-cool-40");
-
-  @include at-media("tablet") {
-    border-bottom: none;
-  }
-
-  &__headline {
-    border-bottom: 1px solid color("gray-cool-40");
-
-    @include at-media("tablet") {
-      border-bottom: none;
-      padding-left: units(3);
-      padding-top: 0;
-    }
-
-    h2,
-    h3 {
-      padding: 0 units(2);
-    }
-  }
-
-  &__subheader {
-    font-size: units(3);
-    padding: units(2);
-    text-align: center;
-
-    #total_visitors {
-      font-weight: font-weight("bold");
-    }
-  }
-
-  &__rate {
-    padding: 0;
-    text-align: center;
-
-    section {
-      margin: units(2) 0;
-
-      h4 {
-        font-size: 18px;
-        margin: 0;
-      }
-
-      span {
-        font-size: 1.25rem;
-        padding-top: units(0.5);
-      }
-    }
-  }
-
-  &__chart {
-    padding: 0;
-
-    @include at-media("tablet") {
-      padding: 0 units(2);
-    }
-
-    .bar-chart-component {
-      padding: units(2);
-
-      &:first-child {
-        padding-top: units(2);
-
-        @include at-media("tablet") {
-          padding-top: units(1);
-        }
-      }
-
-      @include at-media("tablet") {
-        padding: units(1) units(3);
-      }
-    }
-  }
-}
-
-#time_series {
-  padding: units(4) 0;
-
-  @include at-media("tablet") {
-    padding: 0 units(2);
-  }
-
-  svg {
-    display: block;
-    height: auto;
-    margin: 0;
-    max-height: 300px;
-    width: 100%;
-
-    .axis[aria-hidden="true"] {
-      display: block !important; // WDS override
-    }
+    color: colors.$white;
   }
 }
 

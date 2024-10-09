@@ -1,0 +1,140 @@
+@use "uswds-core" as *;
+@use "colors";
+
+.chart {
+  min-height: 10rem;
+}
+
+.chart__title {
+  font-size: units(2.5);
+  font-weight: font-weight("bold");
+  text-align: left;
+}
+
+.chart__bar-chart {
+  margin-top: units(4);
+  position: relative;
+}
+
+.chart__bar-chart__item {
+  @include clearfix;
+
+  font-size: 1.25rem;
+  margin: 0 0 units(2);
+  overflow: hidden;
+  position: relative;
+}
+
+.chart__bar-chart__item__bar {
+  background: colors.$light-blue;
+  height: units(1.5);
+  min-width: 1px;
+  position: relative;
+  transition: width 0.5s linear;
+  z-index: 2;
+}
+
+.chart__bar-chart__item__bar::after {
+  background: #f9f9f9;
+  content: " ";
+  display: block;
+  height: 100%;
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 1000px;
+  z-index: 1;
+}
+
+.chart__bar-chart__item__label {
+  color: colors.$dark-gray;
+  height: 2.2rem;
+  margin-right: units(8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  white-space: nowrap;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.chart__bar-chart__item__value {
+  height: 1.25rem;
+  margin-bottom: 0.45rem;
+  margin-top: -2.2rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.chart__bar-chart__nested {
+  .chart__bar-chart {
+    font-size: 80%;
+    margin: units(1) 0;
+  }
+
+  .chart__bar-chart__item {
+    margin-bottom: 0;
+    margin-left: units(4);
+  }
+
+  .chart__bar-chart__item__bar {
+    display: none;
+  }
+}
+
+.chart__rate {
+  font-size: 1.25rem;
+}
+
+.chart__time-series__container {
+  padding-bottom: units(4);
+  padding-top: units(4);
+
+  @include at-media("tablet") {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.chart__time-series {
+  display: block;
+  height: auto;
+  margin: 0;
+  max-height: 300px;
+  text-transform: uppercase;
+  width: 100%;
+
+  .axis[aria-hidden="true"] {
+    display: block !important; // WDS override
+  }
+
+  rect {
+    fill: colors.$light-blue;
+    stroke: colors.$white;
+    stroke-width: 1;
+  }
+
+  text.label {
+    fill: colors.$dark-blue;
+    font-size: 0.45rem; // use for 30 day dd/mm styles
+  }
+
+  g.axis {
+    path,
+    line {
+      fill: none;
+      stroke: none;
+    }
+
+    .tick text {
+      fill: colors.$dark-blue;
+      font-size: units(1.5);
+    }
+  }
+}

@@ -19,33 +19,22 @@ import OperatingSystemsChart from "./OperatingSystemsChart";
  */
 function DeviceDemographics({ dataHrefBase }) {
   return (
-    <>
-      <section id="devices" className="desktop:grid-col-4 bar-chart-component">
-        <h4>
-          <a href="/definitions#dimension_device_category">Devices</a>
-        </h4>
+    <div className="padding-top-4 grid-row">
+      <div id="devices" className="desktop:grid-col-4 desktop:padding-right-2">
         <DevicesChart dataHrefBase={dataHrefBase} />
-      </section>
+      </div>
 
-      <section id="browsers" className="desktop:grid-col-4 bar-chart-component">
-        <h4>
-          <a href="/definitions#dimension_browser">Web Browsers</a>
-        </h4>
+      <div id="browsers" className="desktop:grid-col-4 desktop:padding-x-2">
         <BrowsersChart dataHrefBase={dataHrefBase} />
-      </section>
+      </div>
 
-      <section
+      <div
         id="operating_systems"
-        className="desktop:grid-col-4 bar-chart-component"
+        className="desktop:grid-col-4 desktop:padding-left-2"
       >
-        <h4>
-          <a href="/definitions#dimension_operating_system">
-            Operating Systems
-          </a>
-        </h4>
         <OperatingSystemsChart dataHrefBase={dataHrefBase} />
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 

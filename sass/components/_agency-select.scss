@@ -39,21 +39,21 @@
   }
 
   label {
-    margin-top: units(1);
     margin-bottom: units(1);
-    width: 100%;
+    margin-top: units(1);
     max-width: none;
     text-align: center;
     vertical-align: middle;
+    width: 100%;
 
     @include at-media("mobile-lg") {
-      margin-top: units(2);
       margin-bottom: 0;
+      margin-top: units(2);
     }
 
     // This media size is where the header items become spaced out horizontally.
     @include at-media("tablet") {
-      margin-top: 0
+      margin-top: 0;
     }
   }
 
