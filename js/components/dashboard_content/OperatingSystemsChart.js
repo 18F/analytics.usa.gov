@@ -62,7 +62,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
         <a href="/definitions#dimension_operating_system">Operating Systems</a>
       </div>
       <figure id="chart_os" ref={osRef}>
-        <div className="data chart__bar-chart"></div>
+        <div className="data chart__bar-chart text--capitalize"></div>
       </figure>
       <figure
         id="chart_windows"
@@ -70,7 +70,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
         data-scale-to-parent="true"
         ref={windowsRef}
       >
-        <div className="data chart__bar-chart"></div>
+        <div className="data chart__bar-chart text--capitalize"></div>
       </figure>
     </div>
   );

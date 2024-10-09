@@ -43,7 +43,7 @@ function BrowsersChart({ dataHrefBase }) {
         <a href="/definitions#dimension_browser">Web Browsers</a>
       </div>
       <figure id="chart_browsers" ref={ref}>
-        <div className="data chart__bar-chart"></div>
+        <div className="data chart__bar-chart text--capitalize"></div>
       </figure>
     </>
   );

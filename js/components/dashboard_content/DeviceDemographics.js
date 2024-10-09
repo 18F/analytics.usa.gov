@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import DevicesChart from "./DevicesChart";
 import BrowsersChart from "./BrowsersChart";
 import OperatingSystemsChart from "./OperatingSystemsChart";
+import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
  * Contains charts and other data visualizations for the user demographics
@@ -22,6 +23,18 @@ function DeviceDemographics({ dataHrefBase }) {
     <div className="padding-top-4 grid-row">
       <div id="devices" className="desktop:grid-col-4 desktop:padding-right-2">
         <DevicesChart dataHrefBase={dataHrefBase} />
+        <div className="chart__title desktop:padding-top-2">
+          <a href="/definitions#dimension_screen_resolution">
+            Top Screen Resolutions
+          </a>
+        </div>
+        <div className="text--capitalize">
+          <ConsolidatedBarChart
+            dataUrl={`${dataHrefBase}/screen-resolution-30-days.json`}
+            chartDataKey={"screen_resolution"}
+            maxItems={10}
+          />
+        </div>
       </div>
 
       <div id="browsers" className="desktop:grid-col-4 desktop:padding-x-2">

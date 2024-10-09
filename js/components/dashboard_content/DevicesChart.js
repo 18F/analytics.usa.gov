@@ -59,7 +59,7 @@ function DevicesChart({ dataHrefBase }) {
         <a href="/definitions#dimension_device_category">Devices</a>
       </div>
       <figure id="chart_device_types" ref={ref}>
-        <div className="data chart__bar-chart"></div>
+        <div className="data chart__bar-chart text--capitalize"></div>
       </figure>
     </>
   );
