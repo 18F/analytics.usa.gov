@@ -150,7 +150,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
         <a href="/definitions#dimension_country">Countries</a>
       </div>
       <figure id="chart_us" ref={countriesRef}>
-        <div className="data chart__bar-chart text--capitalize"></div>
+        <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
       </figure>
 
       <figure
@@ -158,7 +158,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
         className="hide chart__bar-chart__nested"
         ref={usTerritoriesRef}
       >
-        <div className="data chart__bar-chart text--capitalize"></div>
+        <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
       </figure>
 
       <figure
@@ -166,7 +166,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
         className="hide chart__bar-chart__nested"
         ref={internationalVisitsRef}
       >
-        <div className="data chart__bar-chart text--capitalize"></div>
+        <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
       </figure>
     </div>
   );
