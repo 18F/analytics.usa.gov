@@ -41,7 +41,7 @@ function ConsolidatedBarChart({ dataUrl, chartDataKey, maxItems }) {
 
   return (
     <figure id={`chart_${chartDataKey}`} ref={ref}>
-      <div className="data chart__bar-chart"></div>
+      <div className="data chart__bar-chart margin-top-4"></div>
     </figure>
   );
 }
