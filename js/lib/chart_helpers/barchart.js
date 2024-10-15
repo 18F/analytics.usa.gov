@@ -36,7 +36,12 @@ export default function barChart() {
       .enter()
       .append("div")
       .attr("class", "chart__bar-chart__item");
-    enter.append("div").attr("class", "chart__bar-chart__item__label");
+    enter
+      .append("div")
+      .attr(
+        "class",
+        "chart__bar-chart__item__label text--overflow-ellipsis text--wrap",
+      );
     enter.append("div").attr("class", "chart__bar-chart__item__value");
     enter
       .append("div")
