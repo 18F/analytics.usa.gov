@@ -18,10 +18,6 @@
   }
 }
 
-.text--medium {
-  font-size: units(2);
-}
-
 .text--large {
   font-size: units(3);
 
@@ -38,10 +34,24 @@
   text-transform: lowercase;
 }
 
+.text--medium {
+  font-size: units(2);
+}
+
 .text--xl {
   font-size: 4em;
 
   @include at_media("tablet") {
     font-size: 8em;
   }
+}
+
+.text--overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text--wrap {
+  overflow-wrap: break-word;
 }
