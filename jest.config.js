@@ -7,7 +7,7 @@ const config = {
     "js/**/*.js",
     "!js/lib/eventhandler.js",
     "!js/lib/react_setup.js",
-    "!js/lib/touchpoints.js",
+    "!js/lib/touchpoints_page_helpful_survey.js",
   ],
   coverageDirectory: "./coverage",
   setupFiles: ["./jest_setup.js"],
