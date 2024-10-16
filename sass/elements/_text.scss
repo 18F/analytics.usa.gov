@@ -4,6 +4,10 @@
   font-weight: font-weight("bold");
 }
 
+.text--capitalize {
+  text-transform: capitalize;
+}
+
 .text--centered {
   text-align: center;
 }
@@ -22,10 +26,28 @@
   }
 }
 
+.text--left {
+  text-align: left;
+}
+
+.text--lowercase {
+  text-transform: lowercase;
+}
+
+.text--medium {
+  font-size: units(2);
+}
+
 .text--xl {
   font-size: 4em;
 
   @include at_media("tablet") {
     font-size: 8em;
   }
+}
+
+.text--overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

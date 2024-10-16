@@ -36,11 +36,16 @@ export default function barChart() {
       .enter()
       .append("div")
       .attr("class", "chart__bar-chart__item");
-    enter.append("div").attr("class", "chart__bar-chart__item__label");
+    enter
+      .append("div")
+      .attr(
+        "class",
+        "chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8",
+      );
     enter.append("div").attr("class", "chart__bar-chart__item__value");
     enter
       .append("div")
-      .attr("class", "chart__bar-chart__item__bar")
+      .attr("class", "chart__bar-chart__item__bar bg-light-blue")
       .style("width", "0%");
 
     const componentScale = scale

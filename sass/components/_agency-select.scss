@@ -1,13 +1,14 @@
 @use "uswds-core" as *;
+@use "colors";
 
 .analytics-select {
   &--main {
-    color: color("gray-1");
+    color: colors.$white;
 
     select {
-      background-color: color("blue-50");
-      border: units(1px) solid color("gray-1");
-      color: color("gray-1");
+      background-color: colors.$light-blue-two;
+      border: units(1px) solid colors.$white;
+      color: colors.$white;
 
       // This media size is where the header items become spaced out horizontally.
       @include at-media("tablet") {
@@ -17,11 +18,11 @@
   }
 
   &--secondary {
-    color: color("gray-cool-70");
+    color: colors.$dark-gray;
 
     select.usa-select {
       background-image: url("../css/img/arrow-down-black.svg");
-      border: units(1px) solid color("blue-80v");
+      border: units(1px) solid colors.$dark-blue;
 
       @include at-media("desktop-lg") {
         order: 2;
@@ -39,10 +40,7 @@
   }
 
   label {
-    margin-bottom: units(1);
-    margin-top: units(1);
     max-width: none;
-    text-align: center;
     vertical-align: middle;
     width: 100%;
 

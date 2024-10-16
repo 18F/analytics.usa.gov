@@ -89,7 +89,7 @@ function formatURL(url) {
  * cause jekyll to prepend the base url to the link, breaking it
  *
  * @param {string} page a url from a GA page metric
- * @returns {string|null} the url with protocol included
+ * @returns {string|undefined} the url with protocol included
  */
 function formatProtocol(page) {
   page = formatURL(page);

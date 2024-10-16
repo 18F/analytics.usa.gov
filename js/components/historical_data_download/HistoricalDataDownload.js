@@ -97,8 +97,8 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
    * helpful messages to the user.
    *
    * @param {object} e the form submit event.
-   * @returns {Promise} resolves when the action completes. This may be
-   * validation message set, or API call made and data download completion.
+   * @returns {Promise|undefined} resolves when the action completes. This may
+   * be validation message set, or API call made and data download completion.
    */
   function handleSubmit(e) {
     e.preventDefault();
