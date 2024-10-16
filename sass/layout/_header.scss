@@ -1,4 +1,5 @@
 @use "uswds-core" as *;
+@use "colors";
 
 /*
   Top navigation header
@@ -18,12 +19,11 @@
 
 header#analytics-header {
   align-items: center;
-  background: color("blue-80v");
-  border-bottom: units(1) solid color("blue-50v");
-  color: color("gray-1");
+  background: colors.$dark-blue;
+  border-bottom: units(1) solid colors.$light-blue;
+  color: colors.$white;
   flex-direction: column;
   justify-content: center;
-  padding: units(3);
 
   @include at-media("tablet") {
     flex-direction: row;
@@ -66,17 +66,17 @@ header#analytics-header {
   }
 
   a {
-    color: color("gray-1");
+    color: colors.$white;
     font-weight: font-weight(300);
     text-decoration: none;
 
     &:hover {
-      color: color("gray-1");
+      color: colors.$white;
       text-decoration: underline;
     }
 
     &:visited {
-      color: color("gray-1");
+      color: colors.$white;
     }
   }
 

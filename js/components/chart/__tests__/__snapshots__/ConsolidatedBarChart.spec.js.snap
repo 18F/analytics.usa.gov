@@ -1,21 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopCitiesRealtime when data is loaded renders a component with data loaded 1`] = `
+exports[`ConsolidatedBarChart when data is loaded and the expected key does not exist in the loaded data renders a component without data 1`] = `
 <DocumentFragment>
-  <div
-    class="chart__title"
-  >
-    <a
-      href="/definitions#dimension_city"
-    >
-      Cities
-    </a>
-  </div>
   <figure
-    id="chart_top-cities-realtime"
+    id="chart_browser"
   >
     <div
-      class="data chart__bar-chart text--capitalize margin-top-4"
+      class="data chart__bar-chart margin-top-4"
+    />
+  </figure>
+</DocumentFragment>
+`;
+
+exports[`ConsolidatedBarChart when data is loaded and the expected key exists in the loaded data and the data items is greater than the max items param renders a component with data loaded with the max number of items including an 'other' item 1`] = `
+<DocumentFragment>
+  <figure
+    id="chart_browser"
+  >
+    <div
+      class="data chart__bar-chart margin-top-4"
     >
       <div
         class="chart__bar-chart__item"
@@ -23,12 +26,66 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
         <div
           class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
         >
-          Felixtown
+          Chrome
         </div>
         <div
           class="chart__bar-chart__item__value"
         >
-          2.1%
+          48.5%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 49%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Safari
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          35.7%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 36%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Edge
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          8.8%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 9%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Firefox
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          1.9%
         </div>
         <div
           class="chart__bar-chart__item__bar bg-light-blue"
@@ -41,48 +98,12 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
         <div
           class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
         >
-          New Alejandrachester
+          Safari (in-app)
         </div>
         <div
           class="chart__bar-chart__item__value"
         >
-          5%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 5%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          New Penelopeport
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          6.2%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 6%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          Erynfort
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          1.6%
+          1.9%
         </div>
         <div
           class="chart__bar-chart__item__bar bg-light-blue"
@@ -95,16 +116,16 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
         <div
           class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
         >
-          Palm Bay
+          Samsung Internet
         </div>
         <div
           class="chart__bar-chart__item__value"
         >
-          7.8%
+          1.4%
         </div>
         <div
           class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 8%;"
+          style="width: 1%;"
         />
       </div>
       <div
@@ -113,97 +134,7 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
         <div
           class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
         >
-          Lake Taya
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          0.5%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 0%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          Alexanebury
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          2%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 2%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          West Julianabury
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          8.1%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 8%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          Rodriguezshire
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          4.7%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 5%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          Fort Althea
-        </div>
-        <div
-          class="chart__bar-chart__item__value"
-        >
-          4.8%
-        </div>
-        <div
-          class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 5%;"
-        />
-      </div>
-      <div
-        class="chart__bar-chart__item"
-      >
-        <div
-          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
-        >
-          East Catalinachester
+          Android Webview
         </div>
         <div
           class="chart__bar-chart__item__value"
@@ -221,16 +152,16 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
         <div
           class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
         >
-          Port Reystad
+          Opera
         </div>
         <div
           class="chart__bar-chart__item__value"
         >
-          2.6%
+          0.2%
         </div>
         <div
           class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 3%;"
+          style="width: 0%;"
         />
       </div>
       <div
@@ -239,16 +170,34 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
         <div
           class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
         >
-          Franciscoboro
+          Amazon Silk
         </div>
         <div
           class="chart__bar-chart__item__value"
         >
-          5.9%
+          0.1%
         </div>
         <div
           class="chart__bar-chart__item__bar bg-light-blue"
-          style="width: 6%;"
+          style="width: 0%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Other
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          0.4%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 0%;"
         />
       </div>
     </div>
@@ -256,43 +205,200 @@ exports[`TopCitiesRealtime when data is loaded renders a component with data loa
 </DocumentFragment>
 `;
 
-exports[`TopCitiesRealtime when data is not loaded renders a component in loading state 1`] = `
+exports[`ConsolidatedBarChart when data is loaded and the expected key exists in the loaded data and the data items is less than the max items param renders a component with data loaded without an 'other' item 1`] = `
 <DocumentFragment>
-  <div
-    class="chart__title"
-  >
-    <a
-      href="/definitions#dimension_city"
-    >
-      Cities
-    </a>
-  </div>
   <figure
-    id="chart_top-cities-realtime"
+    id="chart_browser"
   >
     <div
-      class="data chart__bar-chart text--capitalize margin-top-4"
+      class="data chart__bar-chart margin-top-4"
+    >
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Chrome
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          48.7%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 49%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Safari
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          35.8%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 36%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Edge
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          8.8%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 9%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Firefox
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          1.9%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 2%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Safari (in-app)
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          1.9%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 2%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Samsung Internet
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          1.4%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 1%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Android Webview
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          1%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 1%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Opera
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          0.2%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 0%;"
+        />
+      </div>
+      <div
+        class="chart__bar-chart__item"
+      >
+        <div
+          class="chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8"
+        >
+          Amazon Silk
+        </div>
+        <div
+          class="chart__bar-chart__item__value"
+        >
+          0.1%
+        </div>
+        <div
+          class="chart__bar-chart__item__bar bg-light-blue"
+          style="width: 0%;"
+        />
+      </div>
+    </div>
+  </figure>
+</DocumentFragment>
+`;
+
+exports[`ConsolidatedBarChart when data is not loaded renders a component in loading state 1`] = `
+<DocumentFragment>
+  <figure
+    id="chart_browser"
+  >
+    <div
+      class="data chart__bar-chart margin-top-4"
     />
   </figure>
 </DocumentFragment>
 `;
 
-exports[`TopCitiesRealtime when data loading has an error renders a component in error state 1`] = `
+exports[`ConsolidatedBarChart when data loading has an error renders a component in error state 1`] = `
 <DocumentFragment>
-  <div
-    class="chart__title"
-  >
-    <a
-      href="/definitions#dimension_city"
-    >
-      Cities
-    </a>
-  </div>
   <figure
-    id="chart_top-cities-realtime"
+    id="chart_browser"
   >
     <div
-      class="data chart__bar-chart text--capitalize margin-top-4"
+      class="data chart__bar-chart margin-top-4"
     />
   </figure>
 </DocumentFragment>
