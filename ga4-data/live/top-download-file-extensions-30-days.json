@@ -1,0 +1,355 @@
+{
+  "name": "top-download-file-extensions-30-days",
+  "agency": null,
+  "sampling": [],
+  "query": {
+    "limit": "100",
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "orderBys": [
+      {
+        "desc": true,
+        "metric": {
+          "metricName": "eventCount"
+        }
+      }
+    ],
+    "dateRanges": [
+      {
+        "endDate": "yesterday",
+        "startDate": "30daysAgo"
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "fileExtension"
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "matchType": "FULL_REGEXP",
+          "caseSensitive": false
+        }
+      }
+    },
+    "property": "properties/397708109"
+  },
+  "meta": {
+    "name": "Top Downloaded File Extensions (30 Days)",
+    "description": "Top 100 downloaded file extensions in the last 30 days."
+  },
+  "data": [
+    {
+      "file_extension": "pdf",
+      "total_events": "33756170"
+    },
+    {
+      "file_extension": "jpg",
+      "total_events": "4410757"
+    },
+    {
+      "file_extension": "txt",
+      "total_events": "1117084"
+    },
+    {
+      "file_extension": "zip",
+      "total_events": "892034"
+    },
+    {
+      "file_extension": "xlsx",
+      "total_events": "788736"
+    },
+    {
+      "file_extension": "docx",
+      "total_events": "430761"
+    },
+    {
+      "file_extension": "csv",
+      "total_events": "228930"
+    },
+    {
+      "file_extension": "gz",
+      "total_events": "158395"
+    },
+    {
+      "file_extension": "mp4",
+      "total_events": "118306"
+    },
+    {
+      "file_extension": "xls",
+      "total_events": "117932"
+    },
+    {
+      "file_extension": "doc",
+      "total_events": "117494"
+    },
+    {
+      "file_extension": "pptx",
+      "total_events": "76602"
+    },
+    {
+      "file_extension": "mp3",
+      "total_events": "75527"
+    },
+    {
+      "file_extension": "exe",
+      "total_events": "33543"
+    },
+    {
+      "file_extension": "epub",
+      "total_events": "21657"
+    },
+    {
+      "file_extension": "xlsm",
+      "total_events": "20037"
+    },
+    {
+      "file_extension": "ppt",
+      "total_events": "15490"
+    },
+    {
+      "file_extension": "msi",
+      "total_events": "13655"
+    },
+    {
+      "file_extension": "wmv",
+      "total_events": "11511"
+    },
+    {
+      "file_extension": "png",
+      "total_events": "10243"
+    },
+    {
+      "file_extension": "avi",
+      "total_events": "8539"
+    },
+    {
+      "file_extension": "mov",
+      "total_events": "8248"
+    },
+    {
+      "file_extension": "tif",
+      "total_events": "6066"
+    },
+    {
+      "file_extension": "xml",
+      "total_events": "5033"
+    },
+    {
+      "file_extension": "gif",
+      "total_events": "4484"
+    },
+    {
+      "file_extension": "pl",
+      "total_events": "2913"
+    },
+    {
+      "file_extension": "tgz",
+      "total_events": "2896"
+    },
+    {
+      "file_extension": "swf",
+      "total_events": "1981"
+    },
+    {
+      "file_extension": "7z",
+      "total_events": "1027"
+    },
+    {
+      "file_extension": "mobi",
+      "total_events": "918"
+    },
+    {
+      "file_extension": "dwg",
+      "total_events": "828"
+    },
+    {
+      "file_extension": "brf",
+      "total_events": "544"
+    },
+    {
+      "file_extension": "wav",
+      "total_events": "433"
+    },
+    {
+      "file_extension": "js",
+      "total_events": "367"
+    },
+    {
+      "file_extension": "rar",
+      "total_events": "366"
+    },
+    {
+      "file_extension": "xsd",
+      "total_events": "246"
+    },
+    {
+      "file_extension": "au",
+      "total_events": "198"
+    },
+    {
+      "file_extension": "rtf",
+      "total_events": "143"
+    },
+    {
+      "file_extension": "tiff",
+      "total_events": "90"
+    },
+    {
+      "file_extension": "sps",
+      "total_events": "72"
+    },
+    {
+      "file_extension": "dxf",
+      "total_events": "39"
+    },
+    {
+      "file_extension": "c",
+      "total_events": "35"
+    },
+    {
+      "file_extension": "wma",
+      "total_events": "26"
+    },
+    {
+      "file_extension": "pub",
+      "total_events": "25"
+    },
+    {
+      "file_extension": "f",
+      "total_events": "22"
+    },
+    {
+      "file_extension": "stl",
+      "total_events": "22"
+    },
+    {
+      "file_extension": "kmz",
+      "total_events": "20"
+    },
+    {
+      "file_extension": "sas",
+      "total_events": "16"
+    },
+    {
+      "file_extension": "do",
+      "total_events": "15"
+    },
+    {
+      "file_extension": "svg",
+      "total_events": "13"
+    },
+    {
+      "file_extension": "rfa",
+      "total_events": "12"
+    },
+    {
+      "file_extension": "dct",
+      "total_events": "9"
+    },
+    {
+      "file_extension": "pps",
+      "total_events": "9"
+    },
+    {
+      "file_extension": "rvt",
+      "total_events": "7"
+    },
+    {
+      "file_extension": "eps",
+      "total_events": "5"
+    },
+    {
+      "file_extension": "wrl",
+      "total_events": "5"
+    },
+    {
+      "file_extension": "json",
+      "total_events": "2"
+    },
+    {
+      "file_extension": "mpg",
+      "total_events": "1"
+    },
+    {
+      "file_extension": "pdf'",
+      "total_events": "1"
+    },
+    {
+      "file_extension": "pdf''",
+      "total_events": "1"
+    }
+  ],
+  "totals": {
+    "total_events": 42460541,
+    "by_file_extension": {
+      "pdf": 33756170,
+      "jpg": 4410757,
+      "txt": 1117084,
+      "zip": 892034,
+      "xlsx": 788736,
+      "docx": 430761,
+      "csv": 228930,
+      "gz": 158395,
+      "mp4": 118306,
+      "xls": 117932,
+      "doc": 117494,
+      "pptx": 76602,
+      "mp3": 75527,
+      "exe": 33543,
+      "epub": 21657,
+      "xlsm": 20037,
+      "ppt": 15490,
+      "msi": 13655,
+      "wmv": 11511,
+      "png": 10243,
+      "avi": 8539,
+      "mov": 8248,
+      "tif": 6066,
+      "xml": 5033,
+      "gif": 4484,
+      "pl": 2913,
+      "tgz": 2896,
+      "swf": 1981,
+      "7z": 1027,
+      "mobi": 918,
+      "dwg": 828,
+      "brf": 544,
+      "wav": 433,
+      "js": 367,
+      "rar": 366,
+      "xsd": 246,
+      "au": 198,
+      "rtf": 143,
+      "tiff": 90,
+      "sps": 72,
+      "dxf": 39,
+      "c": 35,
+      "wma": 26,
+      "pub": 25,
+      "f": 22,
+      "stl": 22,
+      "kmz": 20,
+      "sas": 16,
+      "do": 15,
+      "svg": 13,
+      "rfa": 12,
+      "dct": 9,
+      "pps": 9,
+      "rvt": 7,
+      "eps": 5,
+      "wrl": 5,
+      "json": 2,
+      "mpg": 1,
+      "pdf'": 1,
+      "pdf''": 1
+    }
+  },
+  "taken_at": "2024-09-11T20:26:47.892Z"
+}
