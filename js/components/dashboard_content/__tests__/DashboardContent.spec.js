@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 
 import DashboardContent from "../DashboardContent";
 
-describe("MainCharts", () => {
+describe("DashboardContent", () => {
   beforeEach(async () => {
     render(
       <DashboardContent
@@ -12,7 +12,7 @@ describe("MainCharts", () => {
         agency="Department of Interior"
       />,
     );
-    await waitFor(() => screen.getByText("NaN"));
+    await waitFor(() => screen.findAllByText("NaN"));
   });
 
   // Check for some subcomponents' text to ensure everything renders

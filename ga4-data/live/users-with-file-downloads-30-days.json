@@ -1,0 +1,61 @@
+{
+  "name": "users-with-file-downloads-30-days",
+  "agency": null,
+  "sampling": [],
+  "query": {
+    "metrics": [
+      {
+        "name": "totalUsers"
+      }
+    ],
+    "orderBys": [
+      {
+        "desc": true,
+        "metric": {
+          "metricName": "totalUsers"
+        }
+      }
+    ],
+    "dateRanges": [
+      {
+        "endDate": "yesterday",
+        "startDate": "30daysAgo"
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "eventName"
+      }
+    ],
+    "dimensionFilter": {
+      "filter": {
+        "fieldName": "eventName",
+        "stringFilter": {
+          "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "matchType": "FULL_REGEXP",
+          "caseSensitive": false
+        }
+      }
+    },
+    "limit": "10000",
+    "property": "properties/397708109"
+  },
+  "meta": {
+    "name": "Users with File Downloads (30 Days)",
+    "description": "Count of total users with file download events in the last 30 days."
+  },
+  "data": [
+    {
+      "event_label": "file_download",
+      "users": "26522037"
+    },
+    {
+      "event_label": "Download",
+      "users": "19"
+    }
+  ],
+  "totals": {
+    "users": 26522056
+  },
+  "taken_at": "2024-09-11T20:26:48.295Z"
+}
