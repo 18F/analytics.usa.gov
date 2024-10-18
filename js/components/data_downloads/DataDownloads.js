@@ -128,16 +128,16 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>30 days</td>
               <td>
                 <a
-                  href={hrefBase + "/top-10000-domains-30-days.json"}
+                  href={hrefBase + "/top-100000-domains-30-days.json"}
                   className="analytics-data__download-button usa-button"
-                  aria-label="top-10000-domains-30-days.json"
+                  aria-label="top-100000-domains-30-days.json"
                 >
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/top-10000-domains-30-days.csv"}
+                  href={hrefBase + "/top-100000-domains-30-days.csv"}
                   className="analytics-data__download-button usa-button"
-                  aria-label="top-10000-domains-30-days.csv"
+                  aria-label="top-100000-domains-30-days.csv"
                 >
                   CSV
                 </a>
@@ -149,16 +149,16 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>30 days</td>
               <td>
                 <a
-                  href={hrefBase + "/top-10000-pages-and-screens-30-days.json"}
+                  href={hrefBase + "/top-100000-pages-and-screens-30-days.json"}
                   className="analytics-data__download-button usa-button"
-                  aria-label="top-10000-pages-and-screens-30-days.json"
+                  aria-label="top-100000-pages-and-screens-30-days.json"
                 >
                   JSON
                 </a>
                 <a
-                  href={hrefBase + "/top-10000-pages-and-screens-30-days.csv"}
+                  href={hrefBase + "/top-100000-pages-and-screens-30-days.csv"}
                   className="analytics-data__download-button usa-button"
-                  aria-label="top-10000-pages-and-screens-30-days.csv"
+                  aria-label="top-100000-pages-and-screens-30-days.csv"
                 >
                   CSV
                 </a>
