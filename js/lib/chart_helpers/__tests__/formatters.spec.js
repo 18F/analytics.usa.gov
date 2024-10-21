@@ -112,11 +112,24 @@ describe("Formatters", () => {
   });
 
   describe("formatFile", () => {
-    it("returns the file name from a given url", () => {
-      assert.equal(
-        formatters.formatFile("https://www.irs.gov:8443/ds82.pdf"),
-        "/ds82.pdf",
-      );
+    describe("when the URL string contains spaces", () => {
+      it("returns the file name from a given url", () => {
+        assert.equal(
+          formatters.formatFile(
+            "https://travel.state.gov/dv 2026 plain language instructions and faqs.pdf",
+          ),
+          "/dv%202026%20plain%20language%20instructions%20and%20faqs.pdf",
+        );
+      });
+    });
+
+    describe("when the URL string does not contain spaces", () => {
+      it("returns the file name from a given url", () => {
+        assert.equal(
+          formatters.formatFile("https://www.irs.gov:8443/ds82.pdf"),
+          "/ds82.pdf",
+        );
+      });
     });
 
     it("returns the same for a clean url", () => {

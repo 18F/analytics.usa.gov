@@ -41,6 +41,9 @@ describe("TopDownloads", () => {
         { transient: { dataItemCount: 20 } },
       );
 
+      data.data[0].file_name =
+        "https://travel.state.gov/dv 2026 plain language instructions and faqs.pdf";
+
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.resolve(data);
       });

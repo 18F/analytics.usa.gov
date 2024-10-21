@@ -1,10 +1,34 @@
 {
   "name": "top-downloads-yesterday",
+  "agency": null,
+  "sampling": [
+    {
+      "samplesReadCount": "99665609",
+      "samplingSpaceSize": "263594790"
+    }
+  ],
   "query": {
-    "dimensions": [
+    "limit": "100",
+    "metrics": [
       {
-        "name": "date"
-      },
+        "name": "eventCount"
+      }
+    ],
+    "orderBys": [
+      {
+        "desc": true,
+        "metric": {
+          "metricName": "eventCount"
+        }
+      }
+    ],
+    "dateRanges": [
+      {
+        "endDate": "yesterday",
+        "startDate": "yesterday"
+      }
+    ],
+    "dimensions": [
       {
         "name": "pageTitle"
       },
@@ -18,31 +42,12 @@
         "name": "fullPageUrl"
       }
     ],
-    "metrics": [
-      {
-        "name": "eventCount"
-      }
-    ],
-    "dateRanges": [
-      {
-        "startDate": "yesterday",
-        "endDate": "yesterday"
-      }
-    ],
-    "orderBys": [
-      {
-        "metric": {
-          "metricName": "eventCount"
-        },
-        "desc": true
-      }
-    ],
     "dimensionFilter": {
       "filter": {
         "fieldName": "eventName",
         "stringFilter": {
-          "matchType": "FULL_REGEXP",
           "value": "^(file_download|download|downloads|(outbound downloads))$",
+          "matchType": "FULL_REGEXP",
           "caseSensitive": false
         }
       },
@@ -53,8 +58,8 @@
               "filter": {
                 "fieldName": "fileName",
                 "stringFilter": {
-                  "matchType": "PARTIAL_REGEXP",
                   "value": ".*\\\\.(zip|doc)\\b.*",
+                  "matchType": "PARTIAL_REGEXP",
                   "caseSensitive": false
                 }
               }
@@ -65,8 +70,8 @@
               "filter": {
                 "fieldName": "fullPageUrl",
                 "stringFilter": {
-                  "matchType": "PARTIAL_REGEXP",
                   "value": ".*\\busps\\.com\\b.*",
+                  "matchType": "PARTIAL_REGEXP",
                   "caseSensitive": false
                 }
               }
@@ -75,824 +80,716 @@
         ]
       }
     },
-    "limit": "100",
-    "samplingLevel": "HIGHER_PRECISION",
-    "property": "properties/393249053"
+    "property": "properties/397708109"
   },
   "meta": {
     "name": "Top Downloads Yesterday",
-    "description": "Top downloads yesterday"
+    "description": "Top 100 downloads yesterday"
   },
   "data": [
     {
-      "date": "2024-01-04",
-      "page_title": "Inactivated Influenza Vaccine Information Statement | CDC",
+      "page_title": "Diversity Visa Instructions",
       "event_label": "file_download",
-      "file_name": "https://www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.pdf",
-      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.html",
-      "total_events": "30000000"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2026-instructions-translations/dv 2026 plain language instructions and faqs.pdf",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-instructions.html",
+      "total_events": "17358"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form W-9, Request for Taxpayer Identification Number and Certification | Internal Revenue Service",
+      "page_title": "Diversity Visa Instructions",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw9.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-w-9",
-      "total_events": "28634"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2025-instructions-translations/dv-2025-instructions.pdf",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-instructions.html",
+      "total_events": "16392"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Small Entity Compliance Guide | FinCEN.gov",
+      "page_title": "BrucePac Recalls Ready-To-Eat Meat and Poultry Products Due to Possible Listeria Contamination | Food Safety and Inspection Service",
       "event_label": "file_download",
-      "file_name": "/sites/default/files/shared/boi_small_compliance_guide.v1.1-final.pdf",
-      "page": "www.fincen.gov/boi/small-entity-compliance-guide",
-      "total_events": "9426"
+      "file_name": "/sites/default/files/food_label_pdf/2024-10/recall-028-2024-labels.pdf",
+      "page": "www.fsis.usda.gov/recalls-alerts/brucepac-recalls-ready-eat-meat-and-poultry-products-due-possible-listeria",
+      "total_events": "15038"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Passport Fees",
+      "page_title": "Mars Science Laboratory: Curiosity Rover - NASA Science",
       "event_label": "file_download",
-      "file_name": "/content/dam/passports/forms-fees/fee%20chart%202023.pdf",
-      "page": "travel.state.gov/content/travel/en/passports/how-apply/fees.html",
-      "total_events": "9295"
+      "file_name": "/wp-content/uploads/2024/04/msl-sci-team-key-papers-sept-20-2024.pdf",
+      "page": "science.nasa.gov/mission/msl-curiosity/",
+      "total_events": "5549"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Employment Eligibility Verification | USCIS",
+      "page_title": "BOI E-FILING",
       "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-9.pdf",
-      "page": "www.uscis.gov/i-9",
-      "total_events": "8984"
+      "file_name": "/c8576e94532490750200.pdf",
+      "page": "boiefiling.fincen.gov/",
+      "total_events": "4290"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
+      "page_title": "BrucePac Recalls Ready-To-Eat Meat and Poultry Products Due to Possible Listeria Contamination | Food Safety and Inspection Service",
       "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/dcb.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
-      "total_events": "8774"
+      "file_name": "/sites/default/files/distro_list/2024-10/rc-028-2024-retail-list.pdf",
+      "page": "www.fsis.usda.gov/recalls-alerts/brucepac-recalls-ready-eat-meat-and-poultry-products-due-possible-listeria",
+      "total_events": "3822"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
-      "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/rus.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
-      "total_events": "8174"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form W-4, Employee's Withholding Certificate | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw4.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-w-4",
-      "total_events": "6385"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Tax Withholding | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/n1036.pdf",
-      "page": "www.irs.gov/payments/tax-withholding",
-      "total_events": "6312"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Replace Social Security card | SSA",
-      "event_label": "file_download",
-      "file_name": "/forms/ss-5.pdf",
-      "page": "www.ssa.gov/number-card/replace-card",
-      "total_events": "5942"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form 1040, U.S. Individual Income Tax Return | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1040.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-1040",
-      "total_events": "5545"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Forms & Instructions | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1040.pdf",
-      "page": "www.irs.gov/forms-instructions",
-      "total_events": "5052"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-864.pdf",
       "page": "www.uscis.gov/i-864",
-      "total_events": "4976"
+      "total_events": "3335"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "page_title": "BrucePac Recalls Ready-To-Eat Meat and Poultry Products Due to Possible Listeria Contamination | Food Safety and Inspection Service",
       "event_label": "file_download",
-      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-e.pdf",
-      "page": "www.dol.gov/agencies/whd/fmla/forms",
-      "total_events": "4954"
+      "file_name": "/sites/default/files/distro_list/2024-10/rc-028-2024-school_distribution_list.pdf",
+      "page": "www.fsis.usda.gov/recalls-alerts/brucepac-recalls-ready-eat-meat-and-poultry-products-due-possible-listeria",
+      "total_events": "3084"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form 1099-NEC, Nonemployee Compensation | Internal Revenue Service",
+      "page_title": "Employment Eligibility Verification | USCIS",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1099nec.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-1099-nec",
-      "total_events": "4926"
+      "file_name": "/sites/default/files/document/forms/i-9.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "2716"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form W-2, Wage and Tax Statement | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw2.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-w-2",
-      "total_events": "4892"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Forms & Instructions | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/i1040gi.pdf",
-      "page": "www.irs.gov/forms-instructions",
-      "total_events": "4559"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Renew my Passport by Mail",
-      "event_label": "file_download",
-      "file_name": "/forms/ds82.pdf",
-      "page": "travel.state.gov/content/travel/en/passports/have-passport/renew.html",
-      "total_events": "4486"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "How to Apply in Person for a Passport",
-      "event_label": "file_download",
-      "file_name": "/forms/ds11.pdf",
-      "page": "travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html",
-      "total_events": "4254"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Beneficial Ownership Information Reporting | FinCEN.gov",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/shared/boi%20informational%20brochure%20508c.pdf",
-      "page": "www.fincen.gov/boi",
-      "total_events": "4075"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form 1099-MISC, Miscellaneous Information | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1099msc.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-1099-misc",
-      "total_events": "3996"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
-      "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/gs.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
-      "total_events": "3929"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Application for Employment Authorization | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-765.pdf",
-      "page": "www.uscis.gov/i-765",
-      "total_events": "3909"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-485.pdf",
       "page": "www.uscis.gov/i-485",
-      "total_events": "3828"
+      "total_events": "2645"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Recordkeeping - Recordkeeping Forms | Occupational Safety and Health Administration",
+      "page_title": "Diversity Visa Instructions",
       "event_label": "file_download",
-      "file_name": "/sites/default/files/osha-rk-forms-package.pdf",
-      "page": "www.osha.gov/recordkeeping/forms",
-      "total_events": "3722"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2026-instructions-translations/dv-2026 how_to_apply_infographic.pdf",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-instructions.html",
+      "total_events": "2483"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Boston/Norton, MA Weather Forecast Office Winter Weather Forecasts",
+      "page_title": "Replace Social Security card | SSA",
       "event_label": "file_download",
-      "file_name": "/images/box/winter/stormtotalsnowweb.jpg",
-      "page": "www.weather.gov/box/winter",
-      "total_events": "3573"
+      "file_name": "/forms/ss-5.pdf",
+      "page": "www.ssa.gov/number-card/replace-card",
+      "total_events": "2457"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Apply for a Child's U.S. Passport",
-      "event_label": "file_download",
-      "file_name": "/forms/ds11.pdf",
-      "page": "travel.state.gov/content/travel/en/passports/need-passport/under-16.html",
-      "total_events": "3568"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Petition for Alien Relative | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-130.pdf",
       "page": "www.uscis.gov/i-130",
-      "total_events": "2977"
+      "total_events": "2153"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Change name with Social Security | SSA",
-      "event_label": "file_download",
-      "file_name": "/forms/ss-5.pdf",
-      "page": "www.ssa.gov/personal-record/change-name",
-      "total_events": "2932"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form W-4V, Voluntary Withholding Request | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw4v.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-w-4-v",
-      "total_events": "2924"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Astronomy Picture of the Day",
-      "event_label": "file_download",
-      "file_name": "/apod/image/2401/zetaoph_spitzer_4015.jpg",
-      "page": "apod.nasa.gov/apod/astropix.html",
-      "total_events": "2722"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "FMLA: Forms | U.S. Department of Labor",
-      "event_label": "file_download",
-      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-380-f.pdf",
-      "page": "www.dol.gov/agencies/whd/fmla/forms",
-      "total_events": "2658"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form 941, Employer's Quarterly Federal Tax Return | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f941.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-941",
-      "total_events": "2627"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Boston/Norton, MA Weather Forecast Office Winter Weather Forecasts",
-      "event_label": "file_download",
-      "file_name": "/images/box/winter/snowamt90prcntl.jpg",
-      "page": "www.weather.gov/box/winter",
-      "total_events": "2557"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Replacement Card",
-      "event_label": "file_download",
-      "file_name": "/forms/ss-5.pdf",
-      "page": "www.ssa.gov/number-card/replace-card/get-started/applicant",
-      "total_events": "2532"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form 1040-ES, Estimated Tax for Individuals | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1040es.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-1040-es",
-      "total_events": "2520"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Army Publishing Directorate",
       "event_label": "file_download",
       "file_name": "/pub/eforms/dr_a/arn39139-da_form_4856-001-efile-2.pdf",
-      "page": "armypubs.army.mil/ProductMaps/PubForm/Details.aspx",
-      "total_events": "2372"
+      "page": "armypubs.army.mil/productmaps/pubform/details.aspx",
+      "total_events": "2044"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "IRIS Application for TCC | Internal Revenue Service",
+      "page_title": "Find out if you are eligible for the Diversity Visa (DV) Lottery and how to register | USAGov",
       "event_label": "file_download",
-      "file_name": "/pub/taxpros/irs-application-for-tcc-tutorial-1.pdf",
-      "page": "www.irs.gov/tax-professionals/iris-application-for-tcc",
-      "total_events": "2333"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2026-instructions-translations/dv 2026 plain language instructions and faqs.pdf",
+      "page": "www.usa.gov/dv-lottery-eligibility",
+      "total_events": "2034"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Snow and Ice Forecasts & Services",
+      "page_title": "Astronomy Picture of the Day",
       "event_label": "file_download",
-      "file_name": "/images/lwx/winter/stormtotalsnowweb1.jpg",
-      "page": "www.weather.gov/lwx/winter",
-      "total_events": "2252"
+      "file_name": "/apod/image/2410/darkmatter_kipacamnh_1200.jpg",
+      "page": "apod.nasa.gov/apod/astropix.html",
+      "total_events": "1965"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "page_title": "Passport Forms",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/i1040tt.pdf",
-      "page": "www.irs.gov/forms-instructions",
-      "total_events": "2156"
+      "file_name": "/forms/ds11_pdf.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/how-apply/forms.html",
+      "total_events": "1915"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "FMLA: Forms | U.S. Department of Labor",
+      "page_title": "Fee Schedule | USCIS",
       "event_label": "file_download",
-      "file_name": "/sites/dolgov/files/whd/legacy/files/wh-381.pdf",
-      "page": "www.dol.gov/agencies/whd/fmla/forms",
-      "total_events": "2142"
+      "file_name": "/sites/default/files/document/forms/g-1055.pdf",
+      "page": "www.uscis.gov/g-1055",
+      "total_events": "1912"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Fratelli Beretta USA, Inc. Recalls Busseto Foods Brand Ready-to-Eat Charcuterie Meat Products Due to Possible Salmonella Contamination | Food Safety and Inspection Service",
+      "page_title": "Application for Employment Authorization | USCIS",
       "event_label": "file_download",
-      "file_name": "/sites/default/files/food_label_pdf/2024-01/recall-001-2024-labels.pdf",
-      "page": "www.fsis.usda.gov/recalls-alerts/fratelli-beretta-usa-inc--recalls-busseto-foods-brand-ready-eat-charcuterie-meat",
-      "total_events": "2117"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Applicable Federal Rates | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-drop/rr-24-02.pdf",
-      "page": "www.irs.gov/applicable-federal-rates",
-      "total_events": "2100"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Snow and Ice Forecasts & Services",
-      "event_label": "file_download",
-      "file_name": "/images/lwx/winter/snowamt90prcntl.jpg",
-      "page": "www.weather.gov/lwx/winter",
-      "total_events": "2086"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Employment Eligibility Verification | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-9instr.pdf",
-      "page": "www.uscis.gov/i-9",
-      "total_events": "2083"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Recordkeeping - Recordkeeping Forms | Occupational Safety and Health Administration",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/new-osha300form.xlsx",
-      "page": "www.osha.gov/recordkeeping/forms",
-      "total_events": "2072"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Alien’s Change of Address Card | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/ar-11.pdf",
-      "page": "www.uscis.gov/ar-11",
-      "total_events": "2058"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Schedule A (Form 1040), Itemized Deductions | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1040sa.pdf",
-      "page": "www.irs.gov/forms-pubs/about-schedule-a-form-1040",
-      "total_events": "1952"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Application for Naturalization | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/n-400.pdf",
-      "page": "www.uscis.gov/n-400",
-      "total_events": "1943"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form 4506-T, Request for Transcript of Tax Return | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f4506t.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-4506-t",
-      "total_events": "1904"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Payroll Calendars | GSA",
-      "event_label": "file_download",
-      "file_name": "/system/files/2024_gsa_payroll_calendar.pdf",
-      "page": "www.gsa.gov/buy-through-us/purchasing-programs/shared-services/payroll-shared-services/payroll-calendars",
-      "total_events": "1865"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Application to Replace Permanent Resident Card (Green Card) | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-90.pdf",
-      "page": "www.uscis.gov/i-90",
-      "total_events": "1840"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form 940, Employer's Annual Federal Unemployment (FUTA) Tax Return | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f940.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-940",
+      "file_name": "/sites/default/files/document/forms/i-765.pdf",
+      "page": "www.uscis.gov/i-765",
       "total_events": "1809"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
-      "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/rus_h.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
-      "total_events": "1787"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Request for Fee Waiver | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-912.pdf",
       "page": "www.uscis.gov/i-912",
-      "total_events": "1756"
+      "total_events": "1706"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Form MCS-150 and Instructions - Motor Carrier Identification Report | FMCSA",
+      "page_title": "Growth Charts - Clinical Growth Charts",
       "event_label": "file_download",
-      "file_name": "/sites/fmcsa.dot.gov/files/2023-06/mcs-150%20form.pdf",
-      "page": "www.fmcsa.dot.gov/registration/form-mcs-150-and-instructions-motor-carrier-identification-report",
-      "total_events": "1736"
+      "file_name": "/growthcharts/data/set1clinical/cj41c021.pdf",
+      "page": "www.cdc.gov/growthcharts/cdc-charts.htm",
+      "total_events": "1669"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Disability Benefits | SSA",
+      "page_title": "Diversity Visa Instructions",
       "event_label": "file_download",
-      "file_name": "/hlp/radr/10/ovw001-checklist.pdf",
-      "page": "www.ssa.gov/benefits/disability/",
-      "total_events": "1717"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2026-instructions-translations/dv_2026_instructions_ukr.pdf",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-instructions.html",
+      "total_events": "1640"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form 8822, Change of Address | Internal Revenue Service",
+      "page_title": "Change name with Social Security | SSA",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f8822.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-8822",
-      "total_events": "1691"
+      "file_name": "/forms/ss-5.pdf",
+      "page": "www.ssa.gov/personal-record/change-name",
+      "total_events": "1595"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Winter Weather Experimental Probabilistic Snow and Ice",
+      "page_title": "About Form W-8 IMY, Certificate of Foreign Intermediary, Foreign Flow-Through Entity, or Certain U.S. Branches for United States Tax Withholding and Reporting | Internal Revenue Service",
       "event_label": "file_download",
-      "file_name": "/images/phi/winter/stormtotalsnowweb.jpg",
-      "page": "www.weather.gov/phi/winter",
-      "total_events": "1683"
+      "file_name": "/pub/irs-pdf/fw8imy.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-8-imy",
+      "total_events": "1500"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "CMS 40B | CMS",
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
       "event_label": "file_download",
-      "file_name": "/medicare/cms-forms/cms-forms/downloads/cms40b-e.pdf",
-      "page": "www.cms.gov/Medicare/CMS-Forms/CMS-Forms/CMS-Forms-Items/CMS017339",
-      "total_events": "1658"
+      "file_name": "/jtwc/products/wp2224web.txt",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "1492"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Schedule C (Form 1040), Profit or Loss from Business (Sole Proprietorship) | Internal Revenue Service",
+      "page_title": "Army Publishing Directorate",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1040sc.pdf",
-      "page": "www.irs.gov/forms-pubs/about-schedule-c-form-1040",
-      "total_events": "1655"
+      "file_name": "/pub/eforms/dr_a/arn34523-da_form_5960-000-efile-1.pdf",
+      "page": "armypubs.army.mil/productmaps/pubform/details.aspx",
+      "total_events": "1449"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Application for Travel Document | USCIS",
+      "page_title": "Welcome to the Health Insurance Marketplace® | HealthCare.gov",
+      "event_label": "file_download",
+      "file_name": "/downloads/apply-for-or-renew-coverage.pdf",
+      "page": "www.healthcare.gov/",
+      "total_events": "1412"
+    },
+    {
+      "page_title": "About Form W-9, Request for Taxpayer Identification Number and Certification | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw9.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-9",
+      "total_events": "1389"
+    },
+    {
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-400.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "1381"
+    },
+    {
+      "page_title": "ALEXIS FLORES — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/alexis-flores/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/alexis-flores",
+      "total_events": "1259"
+    },
+    {
+      "page_title": "Application for Travel Documents, Parole Documents, and Arrival/Departure Records | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-131.pdf",
       "page": "www.uscis.gov/i-131",
-      "total_events": "1655"
+      "total_events": "1222"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Site Index Search | Internal Revenue Service",
+      "page_title": "Small Entity Compliance Guide | FinCEN.gov",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f941.pdf",
-      "page": "www.irs.gov/site-index-search?query=941",
-      "total_events": "1652"
+      "file_name": "/sites/default/files/shared/boi_small_compliance_guide.v1.1-final.pdf",
+      "page": "www.fincen.gov/boi/small-entity-compliance-guide",
+      "total_events": "1217"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Apply for a Child's U.S. Passport",
+      "page_title": "About Form 1040, U.S. Individual Income Tax Return | Internal Revenue Service",
       "event_label": "file_download",
-      "file_name": "/forms/ds3053.pdf",
-      "page": "travel.state.gov/content/travel/en/passports/need-passport/under-16.html",
-      "total_events": "1649"
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040",
+      "total_events": "1214"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Passport Forms",
+      "page_title": "Diversity Visa Instructions",
       "event_label": "file_download",
-      "file_name": "/forms/ds11.pdf",
-      "page": "travel.state.gov/content/travel/en/passports/how-apply/forms.html",
-      "total_events": "1624"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2026-instructions-translations/dv-2026 instructions_turkish.pdf",
+      "page": "travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-instructions.html",
+      "total_events": "1209"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Notice of Entry of Appearance as Attorney or Accredited Representative | USCIS",
+      "page_title": "Latest Satellite Imagery",
       "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/g-28.pdf",
-      "page": "www.uscis.gov/g-28",
-      "total_events": "1596"
+      "file_name": "/goes16/abi/sector/taw/13/1800x1080.jpg",
+      "page": "www.nhc.noaa.gov/satellite.php",
+      "total_events": "1203"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Publication 15-T, Federal Income Tax Withholding Methods | Internal Revenue Service",
+      "page_title": "Latest Satellite Imagery",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/p15t.pdf",
-      "page": "www.irs.gov/forms-pubs/about-publication-15-t",
-      "total_events": "1588"
+      "file_name": "/goes16/abi/sector/car/13/1000x1000.jpg",
+      "page": "www.nhc.noaa.gov/satellite.php",
+      "total_events": "1108"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
       "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-693.pdf",
-      "page": "www.uscis.gov/i-693",
-      "total_events": "1571"
+      "file_name": "/jtwc/products/abpwweb.txt",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "1098"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form 5695, Residential Energy Credits | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f5695.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-5695",
-      "total_events": "1565"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About VA Form 21-526EZ | Veterans Affairs",
-      "event_label": "file_download",
-      "file_name": "/pubs/forms/vba-21-526ez-are.pdf",
-      "page": "www.va.gov/find-forms/about-form-21-526ez/",
-      "total_events": "1557"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Boston/Norton, MA Weather Forecast Office Winter Weather Forecasts",
-      "event_label": "file_download",
-      "file_name": "/images/box/winter/stormtotalsnow.jpg",
-      "page": "www.weather.gov/box/winter",
-      "total_events": "1551"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Application to Register Permanent Residence or Adjust Status | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-485instr.pdf",
       "page": "www.uscis.gov/i-485",
-      "total_events": "1549"
+      "total_events": "1084"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "page_title": "BHADRESHKUMAR CHETANBHAI PATEL — FBI",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw9.pdf",
-      "page": "www.irs.gov/forms-instructions",
-      "total_events": "1549"
+      "file_name": "/wanted/topten/bhadreshkumar-chetanbhai-patel/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/bhadreshkumar-chetanbhai-patel",
+      "total_events": "1034"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form 2553, Election by a Small Business Corporation | Internal Revenue Service",
+      "page_title": "Replacement card | SSA",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f2553.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-2553",
-      "total_events": "1515"
+      "file_name": "/forms/ss-5.pdf",
+      "page": "www.ssa.gov/number-card/replace-card/get-started/applicant",
+      "total_events": "1024"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Forms & Instructions | Internal Revenue Service",
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw4.pdf",
-      "page": "www.irs.gov/forms-instructions",
-      "total_events": "1462"
+      "file_name": "/jtwc/products/wp9624web.txt",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "1018"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
+      "page_title": "Application to Replace Permanent Resident Card (Green Card) | USCIS",
       "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/23tables/pdf/dcb.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2023/general-schedule/",
-      "total_events": "1456"
+      "file_name": "/sites/default/files/document/forms/i-90.pdf",
+      "page": "www.uscis.gov/i-90",
+      "total_events": "1005"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
+      "page_title": "RUJA IGNATOVA — FBI",
       "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/ny.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
-      "total_events": "1456"
+      "file_name": "/wanted/topten/ruja-ignatova/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/ruja-ignatova",
+      "total_events": "1000"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About VA Form 21-4138 | Veterans Affairs",
-      "event_label": "file_download",
-      "file_name": "/pubs/forms/vba-21-4138-are.pdf",
-      "page": "www.va.gov/find-forms/about-form-21-4138/",
-      "total_events": "1445"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Inactivated Influenza Vaccine Information Statement | CDC",
-      "event_label": "file_download",
-      "file_name": "https://www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.pdf",
-      "page": "www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.html",
-      "total_events": "1445"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Application for Asylum and for Withholding of Removal | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-589.pdf",
       "page": "www.uscis.gov/i-589",
-      "total_events": "1439"
+      "total_events": "997"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Declaration of Financial Support | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-134.pdf",
-      "page": "www.uscis.gov/i-134",
-      "total_events": "1425"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "General Schedule",
-      "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/atl.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule",
-      "total_events": "1425"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Probabilistic Winter Weather Forecasts",
-      "event_label": "file_download",
-      "file_name": "/images/okx/winter/stormtotalsnowweb.jpg",
-      "page": "www.weather.gov/okx/winter",
-      "total_events": "1417"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Forms & Instructions | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f1040s.pdf",
-      "page": "www.irs.gov/forms-instructions",
-      "total_events": "1403"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "E-Notification of Application/Petition Acceptance | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/g-1145.pdf",
       "page": "www.uscis.gov/g-1145",
-      "total_events": "1395"
+      "total_events": "987"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form SS-4, Application for Employer Identification Number (EIN) | Internal Revenue Service",
+      "page_title": "About Form W-4, Employee's Withholding Certificate | Internal Revenue Service",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fss4.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-ss-4",
-      "total_events": "1392"
+      "file_name": "/pub/irs-pdf/fw4.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4",
+      "total_events": "979"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Federal Pell Grants | Federal Student Aid",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/2023-01/2023-24paymentschedule.pdf",
-      "page": "studentaid.gov/understand-aid/types/grants/pell",
-      "total_events": "1386"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Renew an adult passport | USAGov",
-      "event_label": "file_download",
-      "file_name": "/forms/ds82.pdf",
-      "page": "www.usa.gov/renew-adult-passport",
-      "total_events": "1369"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Form W-7, Application for IRS Individual Taxpayer Identification Number | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/fw7.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-w-7",
-      "total_events": "1367"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Application for Employment Authorization | USCIS",
-      "event_label": "file_download",
-      "file_name": "/sites/default/files/document/forms/i-765instr.pdf",
-      "page": "www.uscis.gov/i-765",
-      "total_events": "1367"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "CBP DTOPS - Checkout Payment Confirmation",
-      "event_label": "file_download",
-      "file_name": "/main/paymentreceipt.pdf",
-      "page": "dtops.cbp.dhs.gov/main/paymentReturn.html",
-      "total_events": "1358"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "Site Index Search | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f940.pdf",
-      "page": "www.irs.gov/site-index-search?query=940",
-      "total_events": "1358"
-    },
-    {
-      "date": "2024-01-04",
-      "page_title": "About Publication 15, (Circular E), Employer's Tax Guide | Internal Revenue Service",
-      "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/p15.pdf",
-      "page": "www.irs.gov/forms-pubs/about-publication-15",
-      "total_events": "1353"
-    },
-    {
-      "date": "2024-01-04",
       "page_title": "Military Compensation > Pay > Basic Pay > Active Duty Pay",
       "event_label": "file_download",
-      "file_name": "/Portals/3/Documents/ActiveDutyTables/2024%20Pay%20Table-Capped-FINAL.pdf",
-      "page": "militarypay.defense.gov/Pay/Basic-Pay/Active-Duty-Pay/",
-      "total_events": "1353"
+      "file_name": "/portals/3/documents/activedutytables/2024 pay table-capped-final.pdf",
+      "page": "militarypay.defense.gov/pay/basic-pay/active-duty-pay/",
+      "total_events": "973"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Visa Bulletin For January 2024",
+      "page_title": "“Lotería de visas”: averigüe si es elegible y cómo participar | USAGov",
       "event_label": "file_download",
-      "file_name": "/content/dam/visas/bulletins/visabulletin_january2024.pdf",
-      "page": "travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2024/visa-bulletin-for-january-2024.html",
-      "total_events": "1344"
+      "file_name": "/content/dam/visas/diversity-visa/dv-instructions-translations/dv-2026-instructions-translations/dv 2026 plain language instructions and faqs.pdf",
+      "page": "www.usa.gov/es/participar-loteria-visas",
+      "total_events": "960"
     },
     {
-      "date": "2024-01-04",
       "page_title": "Affidavit of Support Under Section 213A of the INA | USCIS",
       "event_label": "file_download",
       "file_name": "/sites/default/files/document/forms/i-864instr.pdf",
       "page": "www.uscis.gov/i-864",
-      "total_events": "1302"
+      "total_events": "915"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form 8936, Qualified Plug-In Electric Drive Motor Vehicle Credit | Internal Revenue Service",
+      "page_title": "BOI E-FILING",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f8936.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-8936",
-      "total_events": "1291"
+      "file_name": "/c8576e94532490750200.pdf",
+      "page": "boiefiling.fincen.gov/fileboir",
+      "total_events": "915"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About Form 8832, Entity Classification Election | Internal Revenue Service",
+      "page_title": "Cost-of-Living Adjustment (COLA) Information | SSA",
       "event_label": "file_download",
-      "file_name": "/pub/irs-pdf/f8832.pdf",
-      "page": "www.irs.gov/forms-pubs/about-form-8832",
-      "total_events": "1285"
+      "file_name": "/news/press/factsheets/colafacts2025.pdf",
+      "page": "www.ssa.gov/cola/",
+      "total_events": "905"
     },
     {
-      "date": "2024-01-04",
+      "page_title": "Latest Satellite Imagery",
+      "event_label": "file_download",
+      "file_name": "/goes16/abi/sector/car/geocolor/1000x1000.jpg",
+      "page": "www.nhc.noaa.gov/satellite.php",
+      "total_events": "899"
+    },
+    {
+      "page_title": "APOD: 2024 October 20 – Dark Matter in a Simulated Universe",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2410/darkmatter_kipacamnh_1200.jpg",
+      "page": "apod.nasa.gov/apod/ap241020.html",
+      "total_events": "894"
+    },
+    {
+      "page_title": "Petition to Remove Conditions on Residence | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-751.pdf",
+      "page": "www.uscis.gov/i-751",
+      "total_events": "891"
+    },
+    {
       "page_title": "General Schedule",
       "event_label": "file_download",
-      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/23tables/pdf/rus.pdf",
-      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2023/general-schedule/",
-      "total_events": "1277"
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/rus.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule/",
+      "total_events": "883"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "Snow and Ice Forecasts & Services",
+      "page_title": "General Schedule",
       "event_label": "file_download",
-      "file_name": "/images/lwx/winter/stormtotalsnow.jpg",
-      "page": "www.weather.gov/lwx/winter",
-      "total_events": "1266"
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/dcb.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule/",
+      "total_events": "873"
     },
     {
-      "date": "2024-01-04",
-      "page_title": "About VA Form 21-2680 | Veterans Affairs",
+      "page_title": "ALEJANDRO ROSALES CASTILLO — FBI",
       "event_label": "file_download",
-      "file_name": "/pubs/forms/vba-21-2680-are.pdf",
-      "page": "www.va.gov/find-forms/about-form-21-2680/",
-      "total_events": "1255"
+      "file_name": "/wanted/topten/alejandro-castillo/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/alejandro-castillo",
+      "total_events": "862"
+    },
+    {
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
+      "event_label": "file_download",
+      "file_name": "/jtwc/products/wp2224prog.txt",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "860"
+    },
+    {
+      "page_title": "Premiums",
+      "event_label": "file_download",
+      "file_name": "/healthcare-insurance/healthcare/plan-information/premiums/2025/fehb/2025-fehb-ffs-premium-rates.xlsx",
+      "page": "www.opm.gov/healthcare-insurance/healthcare/plan-information/premiums/",
+      "total_events": "854"
+    },
+    {
+      "page_title": "VITEL'HOMME INNOCENT — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/vitelhomme-innocent/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/vitelhomme-innocent",
+      "total_events": "825"
+    },
+    {
+      "page_title": "Petition for Alien Fiancé(e) | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-129f.pdf",
+      "page": "www.uscis.gov/i-129f",
+      "total_events": "778"
+    },
+    {
+      "page_title": "Declaration of Financial Support | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-134.pdf",
+      "page": "www.uscis.gov/i-134",
+      "total_events": "767"
+    },
+    {
+      "page_title": "About Form W-2, Wage and Tax Statement | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw2.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-2",
+      "total_events": "754"
+    },
+    {
+      "page_title": "Premiums",
+      "event_label": "file_download",
+      "file_name": "/healthcare-insurance/healthcare/plan-information/premiums/2025/fehb/2025-fehb-hmo-premium-rates.xlsx",
+      "page": "www.opm.gov/healthcare-insurance/healthcare/plan-information/premiums/",
+      "total_events": "751"
+    },
+    {
+      "page_title": "About Form 941, Employer's Quarterly Federal Tax Return | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f941.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-941",
+      "total_events": "748"
+    },
+    {
+      "page_title": "Alien’s Change of Address Card | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/ar-11.pdf",
+      "page": "www.uscis.gov/ar-11",
+      "total_events": "738"
+    },
+    {
+      "page_title": "Green Card | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/guides/greencard_comparison_en.pdf.pdf",
+      "page": "www.uscis.gov/green-card",
+      "total_events": "738"
+    },
+    {
+      "page_title": "About Form 1040-ES, Estimated Tax for Individuals | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040es.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-1040-es",
+      "total_events": "714"
+    },
+    {
+      "page_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-693.pdf",
+      "page": "www.uscis.gov/i-693",
+      "total_events": "701"
+    },
+    {
+      "page_title": "CBP Form 6059B Customs Declaration - English (Fillable) | U.S. Customs and Border Protection",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2024-07/cbp_form_6059b_english_0.pdf",
+      "page": "www.cbp.gov/document/forms/form-6059b-customs-declaration-english-fillable",
+      "total_events": "698"
+    },
+    {
+      "page_title": "Medicare & You | Medicare",
+      "event_label": "file_download",
+      "file_name": "/publications/10050-medicare-and-you.pdf",
+      "page": "www.medicare.gov/medicare-and-you",
+      "total_events": "696"
+    },
+    {
+      "page_title": "Authorization for Credit Card Transactions | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/g-1450.pdf",
+      "page": "www.uscis.gov/g-1450",
+      "total_events": "688"
+    },
+    {
+      "page_title": "DONALD EUGENE FIELDS II — FBI",
+      "event_label": "file_download",
+      "file_name": "/wanted/topten/donald-eugene-fields-ii/@@download.pdf",
+      "page": "www.fbi.gov/wanted/topten/donald-eugene-fields-ii",
+      "total_events": "688"
+    },
+    {
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
+      "event_label": "file_download",
+      "file_name": "/jtwc/products/96w_191500sair.jpg",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "688"
+    },
+    {
+      "page_title": "Employment Eligibility Verification | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-9instr.pdf",
+      "page": "www.uscis.gov/i-9",
+      "total_events": "685"
+    },
+    {
+      "page_title": "Latest Satellite Imagery",
+      "event_label": "file_download",
+      "file_name": "/goes16/abi/sector/taw/geocolor/1800x1080.jpg",
+      "page": "www.nhc.noaa.gov/satellite.php",
+      "total_events": "685"
+    },
+    {
+      "page_title": "Premiums",
+      "event_label": "file_download",
+      "file_name": "/healthcare-insurance/healthcare/plan-information/premiums/2025/pshb/2025-pshb-ffs-premium-rates.xlsx",
+      "page": "www.opm.gov/healthcare-insurance/healthcare/plan-information/premiums/",
+      "total_events": "682"
+    },
+    {
+      "page_title": "About Form W-4V, Voluntary Withholding Request | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/fw4v.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-w-4-v",
+      "total_events": "677"
+    },
+    {
+      "page_title": "Apply for a Child's U.S. Passport",
+      "event_label": "file_download",
+      "file_name": "/forms/ds3053.pdf",
+      "page": "travel.state.gov/content/travel/en/passports/need-passport/under-16.html",
+      "total_events": "669"
+    },
+    {
+      "page_title": "APOD: 2024 October 19 - Comet Tsuchinshan ATLAS Flys Away",
+      "event_label": "file_download",
+      "file_name": "/apod/image/2410/c2023a3-in-the-past-6-days.jpg",
+      "page": "apod.nasa.gov/apod/ap241019.html",
+      "total_events": "666"
+    },
+    {
+      "page_title": "Forms & instructions | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f1040.pdf",
+      "page": "www.irs.gov/forms-instructions",
+      "total_events": "666"
+    },
+    {
+      "page_title": "Application for Naturalization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/n-400instr.pdf",
+      "page": "www.uscis.gov/n-400",
+      "total_events": "664"
+    },
+    {
+      "page_title": "Growth Charts - Clinical Growth Charts",
+      "event_label": "file_download",
+      "file_name": "/growthcharts/data/set1clinical/cj41c022.pdf",
+      "page": "www.cdc.gov/growthcharts/cdc-charts.htm",
+      "total_events": "645"
+    },
+    {
+      "page_title": "Premiums",
+      "event_label": "file_download",
+      "file_name": "/healthcare-insurance/healthcare/plan-information/premiums/2025/pshb/2025-pshb-hmo-premium-rates.xlsx",
+      "page": "www.opm.gov/healthcare-insurance/healthcare/plan-information/premiums/",
+      "total_events": "624"
+    },
+    {
+      "page_title": "Latest Satellite Imagery",
+      "event_label": "file_download",
+      "file_name": "/goes16/abi/sector/gm/geocolor/1000x1000.jpg",
+      "page": "www.nhc.noaa.gov/satellite.php",
+      "total_events": "614"
+    },
+    {
+      "page_title": "Immigrant Petition for Alien Workers | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-140.pdf",
+      "page": "www.uscis.gov/i-140",
+      "total_events": "611"
+    },
+    {
+      "page_title": "Applicable Federal Rates | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-drop/rr-24-24.pdf",
+      "page": "www.irs.gov/applicable-federal-rates",
+      "total_events": "608"
+    },
+    {
+      "page_title": "Application for Employment Authorization | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-765instr.pdf",
+      "page": "www.uscis.gov/i-765",
+      "total_events": "598"
+    },
+    {
+      "page_title": "About Form 8822, Change of Address | Internal Revenue Service",
+      "event_label": "file_download",
+      "file_name": "/pub/irs-pdf/f8822.pdf",
+      "page": "www.irs.gov/forms-pubs/about-form-8822",
+      "total_events": "587"
+    },
+    {
+      "page_title": "Reserve Drill Pay",
+      "event_label": "file_download",
+      "file_name": "/portals/3/documents/activedutytables/2024 pay table w drill pay - 1 drill period.pdf",
+      "page": "militarypay.defense.gov/pay/basic-pay/reserve-drill-pay/",
+      "total_events": "584"
+    },
+    {
+      "page_title": "A Week With the DASH Eating Plan | NHLBI, NIH",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/publications/weekondash.pdf",
+      "page": "www.nhlbi.nih.gov/resources/week-dash-eating-plan",
+      "total_events": "579"
+    },
+    {
+      "page_title": "Petition to Remove Conditions on Residence | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-751instr.pdf",
+      "page": "www.uscis.gov/i-751",
+      "total_events": "555"
+    },
+    {
+      "page_title": "General Schedule",
+      "event_label": "file_download",
+      "file_name": "/policy-data-oversight/pay-leave/salaries-wages/salary-tables/24tables/pdf/gs.pdf",
+      "page": "www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2024/general-schedule/",
+      "total_events": "553"
+    },
+    {
+      "page_title": "Rebecca's Business Plan Template - Traditional | U.S. Small Business Administration",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/2023-08/sample business plan - we can do it consulting (4).doc",
+      "page": "www.sba.gov/document/support-rebeccas-business-plan-template-traditional",
+      "total_events": "550"
+    },
+    {
+      "page_title": "BOI E-FILING",
+      "event_label": "file_download",
+      "file_name": "/resources/boir_filing_instructions.pdf",
+      "page": "boiefiling.fincen.gov/",
+      "total_events": "547"
+    },
+    {
+      "page_title": "Joint Typhoon Warning Center (JTWC)",
+      "event_label": "file_download",
+      "file_name": "/jtwc/products/abioweb.txt",
+      "page": "www.metoc.navy.mil/jtwc/jtwc.html",
+      "total_events": "540"
+    },
+    {
+      "page_title": "(not set)",
+      "event_label": "file_download",
+      "file_name": "/pitqj5emwdvc/41irxjcdfdpsj9qswibajo/e92c2ae04802641223f63589926d080e/philippines_imp.notice_english.pdf",
+      "page": "www.ustraveldocs.com/ph/en/nonimmigrant-visa",
+      "total_events": "534"
+    },
+    {
+      "page_title": "Contract Between Sponsor and Household Member | USCIS",
+      "event_label": "file_download",
+      "file_name": "/sites/default/files/document/forms/i-864a.pdf",
+      "page": "www.uscis.gov/i-864a",
+      "total_events": "532"
+    },
+    {
+      "page_title": "Ramstein AB Passenger Terminal",
+      "event_label": "file_download",
+      "file_name": "/portals/12/amc tvl pg/passenger terminals/european command terminals/ramstein ab passenger terminal/72 hr - ramstein afpims with pet info (1).pdf",
+      "page": "www.amc.af.mil/amc-travel-site/terminals/eucom-terminals/ramstein-ab-passenger-terminal/",
+      "total_events": "526"
+    },
+    {
+      "page_title": "Schedule of Social Security Payments | SSA",
+      "event_label": "file_download",
+      "file_name": "/pubs/en-05-10031-2024.pdf",
+      "page": "www.ssa.gov/pubs/calendar.htm",
+      "total_events": "524"
     }
   ],
-  "totals": {},
-  "taken_at": "2024-01-05T15:31:55.633Z"
+  "totals": {
+    "total_events": 165253
+  },
+  "taken_at": "2024-10-21T14:40:33.108Z"
 }
