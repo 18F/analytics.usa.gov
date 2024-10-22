@@ -47,17 +47,17 @@ function TopDownloads({
               .value((d) => +d.total_events)
               .label(
                 (d) =>
-                  `<span class="name">
-                    <a class="top-download-page" target="_blank" rel="noopener" href="http://${d.page}">
+                  `<span class="top-download__page-name">
+                    <a target="_blank" rel="noopener" href="http://${d.page}">
                       ${d.page_title}
                     </a>
                   </span>
-                  <span class="domain">
+                  <span class="top-download__page-domain">
                     ${formatters.formatURL(d.page)}
                   </span>
                   <span class="divider">/</span>
-                  <span class="filename">
-                    <a class="top-download-file" target="_blank" aria-label="${formatters.formatFile(d.file_name)}" rel="noopener" href="${formatters.formatProtocol(d.page)}${formatters.formatFile(d.file_name)}">
+                  <span class="top-download__file-location">
+                    <a target="_blank" rel="noopener" href="${d.linkUrl}">
                       download file
                     </a>
                   </span>`,
