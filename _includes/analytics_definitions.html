@@ -317,6 +317,95 @@
               </li>
             </ul>
           </div>
+
+          <h3 id="report_historical_total_views" class="usa-accordion__heading">
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section10"
+            >
+              Total views (historical)
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section10"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>
+                Metrics:
+                <a href="#metric_screen_page_views">screen page views</a>
+              </li>
+              <li>
+                Description: the number of mobile app screens or web pages users
+                saw in the last 30 days. Repeated views of a single screen or
+                page are counted.
+              </li>
+            </ul>
+          </div>
+
+          <h3 id="report_historical_total_users" class="usa-accordion__heading">
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section11"
+            >
+              Total users (historical)
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section11"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>
+                Metrics:
+                <a href="#metric_total_users">total users</a>
+              </li>
+              <li>
+                Description: the number of unique users who logged an event on a
+                website or app screen in the last 30 days.
+              </li>
+            </ul>
+          </div>
+
+          <h3
+            id="report_historical_file_downloads"
+            class="usa-accordion__heading"
+          >
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section12"
+            >
+              File downloads (historical)
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section12"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>
+                Metrics:
+                <a href="#metric_event_count">event_count</a>,
+                <a href="#metric_total_users">total users</a>
+              </li>
+              <li>
+                Dimensions:
+                <a href="#dimension_file_download">file download</a>,
+                <a href="#dimension_file_extension">file_extension</a>
+              </li>
+              <li>
+                Description: the number of file download events, number of users
+                who initiated file download events, and top downloaded file
+                extensions in the last 30 days.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -510,18 +599,58 @@
               </span>
             </div>
 
-            <h4 id="dimension_file_name" class="usa-accordion__heading">
+            <h4 id="dimension_file_download" class="usa-accordion__heading">
               <button
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
                 aria-controls="dimensions__section9"
               >
-                File name
+                File download
               </button>
             </h4>
             <div
               id="dimensions__section9"
+              class="usa-accordion__content usa-prose"
+            >
+              <span>
+                A user interaction event where the
+                <a href="#dimension_event_name">event name</a> matches a file
+                download event.
+              </span>
+            </div>
+
+            <h4 id="dimension_file_extension" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="dimensions__section10"
+              >
+                File extension
+              </button>
+            </h4>
+            <div
+              id="dimensions__section10"
+              class="usa-accordion__content usa-prose"
+            >
+              <span>
+                The file extension for a file download (for example 'pdf').
+              </span>
+            </div>
+
+            <h4 id="dimension_file_name" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="dimensions__section11"
+              >
+                File name
+              </button>
+            </h4>
+            <div
+              id="dimensions__section11"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -535,13 +664,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section10"
+                aria-controls="dimensions__section12"
               >
                 Host name
               </button>
             </h4>
             <div
-              id="dimensions__section10"
+              id="dimensions__section12"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -556,13 +685,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section11"
+                aria-controls="dimensions__section13"
               >
                 Language
               </button>
             </h4>
             <div
-              id="dimensions__section11"
+              id="dimensions__section13"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -575,13 +704,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section12"
+                aria-controls="dimensions__section14"
               >
                 Link URL
               </button>
             </h4>
             <div
-              id="dimensions__section12"
+              id="dimensions__section14"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -594,13 +723,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section13"
+                aria-controls="dimensions__section15"
               >
                 Operating system
               </button>
             </h4>
             <div
-              id="dimensions__section13"
+              id="dimensions__section15"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -615,13 +744,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section14"
+                aria-controls="dimensions__section16"
               >
                 Page title
               </button>
             </h4>
             <div
-              id="dimensions__section14"
+              id="dimensions__section16"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -637,13 +766,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section15"
+                aria-controls="dimensions__section17"
               >
                 Screen name
               </button>
             </h4>
             <div
-              id="dimensions__section15"
+              id="dimensions__section17"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -656,13 +785,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section16"
+                aria-controls="dimensions__section18"
               >
                 Screen resolution
               </button>
             </h4>
             <div
-              id="dimensions__section16"
+              id="dimensions__section18"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -676,13 +805,13 @@
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
-                aria-controls="dimensions__section17"
+                aria-controls="dimensions__section19"
               >
                 Source medium
               </button>
             </h4>
             <div
-              id="dimensions__section17"
+              id="dimensions__section19"
               class="usa-accordion__content usa-prose"
             >
               <span>
@@ -723,8 +852,8 @@
               class="usa-accordion__content usa-prose"
             >
               <span>
-                The number of unique users who visited websites or applications
-                within a specified date range.
+                The number of unique users who engaged with websites or
+                applications within a specified date range.
               </span>
             </div>
 
@@ -805,14 +934,14 @@
               <span> The number of times users triggered an event. </span>
             </div>
 
-            <h4 id="metric_sessions" class="usa-accordion__heading">
+            <h4 id="metric_screen_page_views" class="usa-accordion__heading">
               <button
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
                 aria-controls="metrics__section6"
               >
-                Sessions
+                Screen page views
               </button>
             </h4>
             <div
@@ -820,9 +949,49 @@
               class="usa-accordion__content usa-prose"
             >
               <span>
+                The number of app screens or web pages viewed by users. Repeated
+                views of a single page or screen are counted.
+              </span>
+            </div>
+
+            <h4 id="metric_sessions" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="metrics__section7"
+              >
+                Sessions
+              </button>
+            </h4>
+            <div
+              id="metrics__section7"
+              class="usa-accordion__content usa-prose"
+            >
+              <span>
                 The number of sessions that began on websites or applications. A
                 session is a period of time during which a user interacts with a
                 website or app.
+              </span>
+            </div>
+
+            <h4 id="metric_total_users" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="metrics__section8"
+              >
+                Total users
+              </button>
+            </h4>
+            <div
+              id="metrics__section8"
+              class="usa-accordion__content usa-prose"
+            >
+              <span>
+                The number of unique users who visited websites or applications
+                within a specified date range.
               </span>
             </div>
           </div>
