@@ -7,8 +7,7 @@ const downloadReportDataItemFactory = Factory.define(({ sequence }) => {
   faker.seed(global.faker_seed + sequence);
   const item = {
     page_title: faker.company.buzzPhrase(),
-    event_label: "file_download",
-    file_name: faker.system.fileName(),
+    linkUrl: faker.internet.url({ appendSlash: false }),
     page: faker.internet.url({ appendSlash: false }).replace("https://", ""),
     total_events: faker.number.int({ max: 10000 }),
   };
@@ -23,13 +22,10 @@ const DownloadReportFactory = ReportFactory.params({
         name: "pageTitle",
       },
       {
-        name: "eventName",
-      },
-      {
-        name: "fileName",
-      },
-      {
         name: "fullPageUrl",
+      },
+      {
+        name: "linkUrl",
       },
     ],
     metrics: [
