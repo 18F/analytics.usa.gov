@@ -1,0 +1,24 @@
+name: Manual deploy to dev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  manual_deploy_to_dev:
+    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
+    with:
+      API_APP_NAME: ${{ vars.API_APP_NAME_DEV }}
+      API_FQDN: ${{ vars.API_FQDN_DEV }}
+      API_PORT: ${{ vars.API_PORT }}
+      APP_NAME: ${{ vars.APP_NAME_DEV }}
+      APP_URL: ${{ vars.APP_URL_DEV }}
+      CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
+      CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_DEV }}
+      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
+      S3_BUCKET_URL: ${{ vars.S3_BUCKET_URL_DEV }}
+      S3_SERVICE_NAME: ${{ vars.S3_SERVICE_NAME_DEV }}
+    secrets:
+      API_DATA_GOV_SECRET: ${{ secrets.API_DATA_GOV_SECRET_DEV }}
+      CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
+      CF_PASSWORD: ${{ secrets.CF_PASSWORD_DEV }}
+      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_DEV }}

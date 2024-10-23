@@ -19,9 +19,7 @@
 
 header#analytics-header {
   align-items: center;
-  background: colors.$dark-blue;
   border-bottom: units(1) solid colors.$light-blue;
-  color: colors.$white;
   flex-direction: column;
   justify-content: center;
 
@@ -35,7 +33,6 @@ header#analytics-header {
 
   h1 {
     font-size: size("sans", "lg");
-    margin: 0 0 units(1);
     order: 1;
 
     @include at-media("tablet") {
@@ -98,10 +95,7 @@ header#analytics-header {
     flex-direction: row;
     justify-content: center;
     list-style: none;
-    margin-bottom: 0;
-    margin-top: units(1);
     order: 3;
-    padding-bottom: units(1);
 
     @include at-media("tablet") {
       flex: 4;
