@@ -6,8 +6,8 @@ import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
- * Retrieves the device report from the passed data URL and creates a
- * visualization for the count of users visiting sites for the current agency.
+ * Retrieves the top traffic sources report from the passed data URL and creates
+ * a visualization for the count of users visiting sites for the current agency.
  *
  * @param {object} props the properties for the component
  * @param {string} props.dataHrefBase the URL of the base location of the data
@@ -16,10 +16,9 @@ import formatters from "../../lib/chart_helpers/formatters";
  * @returns {import('react').ReactElement} The rendered element
  */
 function Visitors30Days({ dataHrefBase }) {
-  // This was using devices 30 days and setting this value as a side effect of
-  // creating the devices chart.  users.json is 90 days, so just stick with
-  // devices.json for now.
-  const dataURL = `${dataHrefBase}/devices.json`;
+  // Use traffic sources 30 days because it has a total session count rather
+  // than pull a separate report just for this.
+  const dataURL = `${dataHrefBase}/top-traffic-sources-30-days.json`;
   const ref = useRef(null);
   const [visitorData, setVisitorData] = useState(null);
 
