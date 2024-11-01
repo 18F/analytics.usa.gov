@@ -18,38 +18,25 @@ function TouchpointsPageHelpfulSurvey() {
           .formComponent()
           .getAttribute("data-touchpoints-form-id") === "8fc3c209"
       ) {
-        /**
-         * Set an initial timeout for the form. If the form is submitted too
-         * quickly (because it's a bot), then sendFeedback is a no-op
-         */
-        const originalSendFeedbackFunction =
-          e.detail.formComponent.sendFeedback;
-        /* eslint-disable no-empty */
-        e.detail.formComponent.sendFeedback = () => {};
-        /* eslint-enable no-empty */
+        const formComponent = e.detail.formComponent;
+        const formElement = formComponent.formComponent();
+        _delayFormSubmit(formComponent, initialFormDelayMilliseconds);
 
-        setTimeout(() => {
-          e.detail.formComponent.sendFeedback = originalSendFeedbackFunction;
-        }, initialFormDelayMilliseconds);
-
-        const touchpointsFooter = e.detail.formComponent
-          .formComponent()
-          .querySelector("footer.touchpoints-footer-banner");
-        const yesButton = e.detail.formComponent
-          .formComponent()
-          .querySelector('input.usa-radio__input[value="Yes"]');
-        const noButton = e.detail.formComponent
-          .formComponent()
-          .querySelector('input.usa-radio__input[value="No"]');
-        const questions = e.detail.formComponent
-          .formComponent()
-          .querySelectorAll(".questions .question");
-        const header = e.detail.formComponent
-          .formComponent()
-          .querySelector("header");
-        const submitButton = e.detail.formComponent
-          .formComponent()
-          .querySelector('button.submit_form_button[type="submit"]');
+        const touchpointsFooter = formElement.querySelector(
+          "footer.touchpoints-footer-banner",
+        );
+        const yesButton = formElement.querySelector(
+          'input.usa-radio__input[value="Yes"]',
+        );
+        const noButton = formElement.querySelector(
+          'input.usa-radio__input[value="No"]',
+        );
+        const feedbackTextArea = formElement.querySelector("textarea");
+        const questions = formElement.querySelectorAll(".questions .question");
+        const header = formElement.querySelector("header");
+        const submitButton = formElement.querySelector(
+          'button.submit_form_button[type="submit"]',
+        );
 
         // Hide the touchpoints footer always
         if (touchpointsFooter) {
@@ -62,7 +49,7 @@ function TouchpointsPageHelpfulSurvey() {
           submitButton.classList.add("hide");
         }
 
-        const handleYesNoButtonClick = (clickEvent, response) => {
+        const handleYesNoButtonClick = () => {
           if (questions.length > 0 && header && submitButton) {
             // Hide the first form question and the header. Show the second along
             // with the submit button.
@@ -71,24 +58,24 @@ function TouchpointsPageHelpfulSurvey() {
             questions[1].classList.remove("hide");
             submitButton.classList.remove("hide");
           }
-
-          // Send metrics for the yes/no button click
-          gas4("was_this_helpful_submit", {
-            event_category: "cx_feedback",
-            event_action: "was_this_page_helpful_v2.0",
-            event_label: response,
-          });
         };
 
         if (yesButton) {
-          yesButton.addEventListener("click", (event) => {
-            handleYesNoButtonClick(event, "yes");
-          });
+          yesButton.addEventListener("click", handleYesNoButtonClick);
         }
 
         if (noButton) {
-          noButton.addEventListener("click", (event) => {
-            handleYesNoButtonClick(event, "no");
+          noButton.addEventListener("click", handleYesNoButtonClick);
+        }
+
+        if (submitButton) {
+          submitButton.addEventListener("click", () => {
+            gas4("was_this_helpful_submit", {
+              event_category: "cx_feedback",
+              event_action: "was_this_page_helpful_v3.0",
+              event_label: yesButton.checked ? "yes" : "no",
+              reason: feedbackTextArea.value,
+            });
           });
         }
       }
@@ -101,6 +88,21 @@ function TouchpointsPageHelpfulSurvey() {
       <div id="touchpoints-yes-no-form"></div>
     </>
   );
+}
+
+function _delayFormSubmit(formComponent, delayMilliseconds) {
+  /**
+   * Set an initial timeout for the form. If the form is submitted too
+   * quickly (because it's a bot), then sendFeedback is a no-op
+   */
+  const originalSendFeedbackFunction = formComponent.sendFeedback;
+  /* eslint-disable no-empty */
+  formComponent.sendFeedback = () => {};
+  /* eslint-enable no-empty */
+
+  setTimeout(() => {
+    formComponent.sendFeedback = originalSendFeedbackFunction;
+  }, delayMilliseconds);
 }
 
 TouchpointsPageHelpfulSurvey.propTypes = {};
