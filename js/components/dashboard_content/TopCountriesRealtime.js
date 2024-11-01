@@ -51,17 +51,17 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
           (d) => {
             let totalVisits = 0;
             let USVisits = 0;
-            // Sort items by active_visitors descending.
+            // Sort items by activeUsers descending.
             d.data.sort((a, b) => {
-              return b.active_visitors - a.active_visitors;
+              return b.activeUsers - a.activeUsers;
             });
             d.data.forEach((c) => {
-              totalVisits += parseInt(c.active_visitors, 10);
+              totalVisits += parseInt(c.activeUsers, 10);
               if (!c.country) {
                 c.country = "Unknown";
               }
               if (isPartOfUnitedStates(c.country)) {
-                USVisits += parseInt(c.active_visitors, 10);
+                USVisits += parseInt(c.activeUsers, 10);
               }
             });
             const international = totalVisits - USVisits;
@@ -85,7 +85,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
           countryData,
           (d) => {
             let values = transformers.findProportionsOfMetric(d.data, (list) =>
-              list.map((x) => x.active_visitors),
+              list.map((x) => x.activeUsers),
             );
             values = values.filter((c) => isPartOfUnitedStates(c.country));
             return transformers.consolidateValuesAfterListLength({
@@ -104,7 +104,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
           countryData,
           (d) => {
             let values = transformers.findProportionsOfMetric(d.data, (list) =>
-              list.map((x) => x.active_visitors),
+              list.map((x) => x.activeUsers),
             );
             values = values.filter((c) => !isPartOfUnitedStates(c.country));
             return transformers.consolidateValuesAfterListLength({
