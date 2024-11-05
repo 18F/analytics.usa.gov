@@ -7,7 +7,7 @@ const topPagesRealtimeReportDataItemFactory = Factory.define(({ sequence }) => {
   faker.seed(global.faker_seed + sequence);
   const item = {
     page_title: faker.company.buzzPhrase(),
-    active_visitors: faker.number.int({ max: 100000 }),
+    activeUsers: faker.number.int({ max: 100000 }),
   };
   faker.seed(global.faker_seed);
   return item;

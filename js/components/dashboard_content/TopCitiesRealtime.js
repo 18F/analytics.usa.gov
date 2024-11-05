@@ -47,7 +47,7 @@ function TopCitiesRealtime({ dataHrefBase, refreshSeconds }) {
             );
             const proportions = transformers.findProportionsOfMetric(
               cityListFiltered,
-              (list) => list.map((x) => x.active_visitors),
+              (list) => list.map((x) => x.activeUsers),
             );
             return proportions.slice(0, 13);
           },

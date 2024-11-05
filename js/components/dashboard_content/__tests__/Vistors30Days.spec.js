@@ -39,13 +39,6 @@ describe("Visitors30Days", () => {
         },
         totals: {
           visits: 1492377457,
-          by_device: {
-            mobile: 811958807,
-            desktop: 656318825,
-            "(other)": 1938220,
-            tablet: 19920488,
-            "smart tv": 2241117,
-          },
         },
         taken_at: "2024-03-11T13:59:08.677Z",
       };

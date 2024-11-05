@@ -7,7 +7,7 @@ const CitiesReportDataItemFactory = Factory.define(({ sequence }) => {
   faker.seed(global.faker_seed + sequence);
   const item = {
     city: faker.location.city(),
-    active_visitors: faker.number.int({ max: 1000000 }),
+    activeUsers: faker.number.int({ max: 1000000 }),
   };
   faker.seed(global.faker_seed);
   return item;

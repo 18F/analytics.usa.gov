@@ -43,7 +43,7 @@ function RealtimeVisitors({ dataHrefBase, agency, refreshSeconds }) {
           .setRenderer((selection, data) => {
             const totals = data.data[0];
             selection.text(
-              totals ? formatters.addCommas(+totals.active_visitors) : 0,
+              totals ? formatters.addCommas(+totals.activeUsers) : 0,
             );
           })
           .build();

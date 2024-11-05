@@ -7,7 +7,7 @@ const CountriesReportDataItemFactory = Factory.define(({ sequence }) => {
   faker.seed(global.faker_seed + sequence);
   const item = {
     country: faker.location.country(),
-    active_visitors: faker.number.int({ max: 10000 }),
+    activeUsers: faker.number.int({ max: 10000 }),
   };
   if (item.country == "United States of America") {
     item.country = "United States";
