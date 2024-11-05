@@ -55,7 +55,7 @@ function TopPagesRealtime({
           .setRenderer((selection) => {
             const barchartRenderer = barChart()
               .label((d) => d.page_title)
-              .value((d) => +d.active_visitors)
+              .value((d) => +d.activeUsers)
               .scale((values) =>
                 d3.scale
                   .linear()

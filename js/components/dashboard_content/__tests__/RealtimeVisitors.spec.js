@@ -52,7 +52,7 @@ describe("RealtimeVisitors", () => {
         },
         data: [
           {
-            active_visitors: "10003538",
+            activeUsers: "10003538",
           },
         ],
         totals: {},

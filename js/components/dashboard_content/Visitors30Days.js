@@ -6,8 +6,8 @@ import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
 
 /**
- * Retrieves the device report from the passed data URL and creates a
- * visualization for the count of users visiting sites for the current agency.
+ * Retrieves the total sessions report from the passed data URL and creates
+ * a visualization for the count of site visits for the current agency.
  *
  * @param {object} props the properties for the component
  * @param {string} props.dataHrefBase the URL of the base location of the data
@@ -16,10 +16,7 @@ import formatters from "../../lib/chart_helpers/formatters";
  * @returns {import('react').ReactElement} The rendered element
  */
 function Visitors30Days({ dataHrefBase }) {
-  // This was using devices 30 days and setting this value as a side effect of
-  // creating the devices chart.  users.json is 90 days, so just stick with
-  // devices.json for now.
-  const dataURL = `${dataHrefBase}/devices.json`;
+  const dataURL = `${dataHrefBase}/total-sessions-30-days.json`;
   const ref = useRef(null);
   const [visitorData, setVisitorData] = useState(null);
 

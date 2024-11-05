@@ -18,7 +18,7 @@ import formatters from "../../lib/chart_helpers/formatters";
  * @returns {import('react').ReactElement} The rendered element
  */
 function Sessions30Days({ dataHrefBase }) {
-  const dataURL = `${dataHrefBase}/sessions-over-30-days.json`;
+  const dataURL = `${dataHrefBase}/daily-sessions-30-days.json`;
   const ref = useRef(null);
   const [sessionData, setSessionData] = useState(null);
 
