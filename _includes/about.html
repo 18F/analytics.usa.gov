@@ -1,18 +1,18 @@
 <main class="analytics-about usa-prose padding-x-4 padding-y-2">
   <div class="margin-0 padding-1">
     <h1 class="analytics-about__header margin-0 padding-bottom-1">
-      On This Page
+      On this page
     </h1>
     <ul class="analytics-definitions__table-of-contents usa-list margin-top-0">
       <li><a href="#about-this-site">About this site</a></li>
       <li>
-        <a href="#download-ua-data">
-          Download Universal Analytics (UA) historical data
+        <a href="#download-ga4-data">
+          Download Google Analytics 4 (GA4) realtime and historical data
         </a>
       </li>
       <li>
-        <a href="#download-ga4-data">
-          Download Google Analytics 4 (GA4) data
+        <a href="#download-ua-data">
+          Download Universal Analytics (UA) historical data
         </a>
       </li>
     </ul>
@@ -45,6 +45,33 @@
     </div>
   </div>
   <div>
+    <h2 id="download-ga4-data" class="margin-0">
+      Download Google Analytics 4 (GA4) realtime and historical data
+    </h2>
+    <div class="padding-left-2 font-ui-md">
+      <p>
+        You can <a href="/data">download the data here</a>. Available in JSON
+        and CSV format. Additionally, you can access data via
+        <a
+          href="https://open.gsa.gov/api/dap/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          API
+        </a>
+        (currently in Beta).
+      </p>
+      <h3 class="margin-0">A note on sampling</h3>
+      <p>
+        Due to varying GA4 sampling thresholds, high data cardinality, and the
+        volume of DAP data across its sub-properties, real-time and historical
+        data reports are subject to sampling. These data are intended to
+        represent high-level trends only and provide general insights into
+        online visitor behavior.
+      </p>
+    </div>
+  </div>
+  <div>
     <h2 id="download-ua-data" class="margin-0">
       Download Universal Analytics (UA) historical data
     </h2>
@@ -68,33 +95,6 @@
         volume of data in the Digital Analytics Program Universal Analytics
         property, reports are subject to sampling. The data are intended to
         represent trends and numbers may not be precise.
-      </p>
-    </div>
-  </div>
-  <div>
-    <h2 id="download-ga4-data" class="margin-0">
-      Download Google Analytics 4 (GA4) data
-    </h2>
-    <div class="padding-left-2 font-ui-md">
-      <p>
-        You can <a href="/data">download the data here</a>. Available in JSON
-        and CSV format. Additionally, you can access data via
-        <a
-          href="https://open.gsa.gov/api/dap/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          API
-        </a>
-        (currently in Beta).
-      </p>
-      <h3 class="margin-0">A note on sampling</h3>
-      <p>
-        Due to varying GA4 sampling thresholds, high data cardinality, and the
-        volume of DAP data across its sub-properties, real-time and historical
-        data reports are subject to sampling. These data are intended to
-        represent high-level trends only and provide general insights into
-        online visitor behavior.
       </p>
     </div>
   </div>
