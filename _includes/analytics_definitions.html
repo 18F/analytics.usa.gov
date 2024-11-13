@@ -1,8 +1,12 @@
 <main>
-  <section class="analytics-definitions usa-prose">
-    <div>
-      <h1 class="analytics-definitions__header">On This Page</h1>
-      <ul class="analytics-definitions__table_of_contents usa-list">
+  <section class="analytics-definitions padding-x-4 padding-y-2 usa-prose">
+    <div class="margin-0 padding-1">
+      <h1 class="analytics-definitions__header margin-0 padding-bottom-1">
+        On This Page
+      </h1>
+      <ul
+        class="analytics-definitions__table-of-contents usa-list margin-top-0"
+      >
         <li><a href="#report-descriptions">Description of reports</a></li>
         <li>
           <a href="#data-definitions">Data definitions</a>
@@ -14,7 +18,7 @@
       </ul>
     </div>
 
-    <hr />
+    <hr class="margin-y-2" />
 
     <div
       id="report-descriptions-accordion"
@@ -27,7 +31,7 @@
       >
         <button
           type="button"
-          class="usa-accordion__button"
+          class="usa-accordion__button white bg-dark-blue"
           aria-expanded="true"
           aria-controls="report-descriptions-content"
         >
@@ -326,7 +330,7 @@
       >
         <button
           type="button"
-          class="usa-accordion__button"
+          class="usa-accordion__button white bg-dark-blue"
           aria-expanded="true"
           aria-controls="data-definitions-content"
         >
@@ -335,14 +339,16 @@
       </h2>
       <div id="data-definitions-content" class="usa-accordion__content">
         <div id="dimensions">
-          <h3>Dimensions</h3>
-          <span class="data-definitions__heading-description">
+          <h3 class="margin-0">Dimensions</h3>
+          <p
+            class="data-definitions__heading-description margin-top-1 margin-bottom-2"
+          >
             A dimension is an attribute of data that describes data (e.g. device
             type) as opposed to numbers (metrics).
             <br />
             Below is the list of dimensions used in analytics.usa.gov
             <a href="#report-descriptions">reports</a>.
-          </span>
+          </p>
           <div
             class="usa-accordion usa-accordion--multiselectable"
             data-allow-multiple
@@ -695,15 +701,17 @@
         </div>
 
         <div id="metrics">
-          <h3>Metrics</h3>
-          <span class="data-definitions__heading-description">
+          <h3 class="margin-top-2 margin-bottom-0">Metrics</h3>
+          <p
+            class="data-definitions__heading-description margin-top-1 margin-bottom-2"
+          >
             A metric is a quantitative measure (e.g. total number, average,
             ratio, percentage). A metric is always a number as opposed to text
             or a description (e.g. dimensions).
             <br />
             Below is the list of metrics used in analytics.usa.gov
             <a href="#report-descriptions">reports</a>.
-          </span>
+          </p>
           <div
             class="usa-accordion usa-accordion--multiselectable"
             data-allow-multiple
