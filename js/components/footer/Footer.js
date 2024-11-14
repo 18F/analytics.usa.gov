@@ -18,106 +18,119 @@ function Footer({ siteDomain }) {
   return (
     <>
       <footer id="analytics-footer">
-        <section id="explanation" className="grid-row usa-prose">
-          <div className="tablet:grid-col-8 padding-2">
-            <h3>About this Site</h3>
-            <p>
-              These data provide a window into how people are interacting with
-              the government online. The data come from a unified Google
-              Analytics account for U.S. federal government agencies known as
-              the{" "}
-              <a
-                href="https://digital.gov/guides/dap/"
-                className="external-link"
-              >
-                Digital Analytics Program
-              </a>
-              . This program helps government agencies understand how people
-              find, access, and use government services online. The program does
-              not track individuals and anonymizes the IP addresses of visitors.
-            </p>
-
-            <p>
-              Not every government website is represented in these data.
-              Currently, the Digital Analytics Program collects web traffic from
-              more than 500 federal government second level domains, across
-              approximately 7000 total hostnames, including every executive
-              branch cabinet department. We continue to pursue and add more
-              sites frequently; to add your site,{" "}
-              <a href="mailto:dap@gsa.gov" className="external-link">
-                email the Digital Analytics Program
-              </a>
-              .
-            </p>
-          </div>
-          <div className="tablet:grid-col-4 padding-2 margin-0">
-            <h3>Download the data</h3>
-            <p>
-              You can <a href={`${siteDomain}/data`}>download the data here.</a>{" "}
-              Available in JSON and CSV format.
-            </p>
-            <p>
-              Additionally, you can access data via{" "}
-              <a
-                href="https://open.gsa.gov/api/dap/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                API
-              </a>{" "}
-              (currently in Beta).
-            </p>
-            <h3>A note on sampling</h3>
-            <p>
-              Due to varying GA4 sampling thresholds, high data cardinality, and
-              the volume of DAP data across its sub-properties, real-time and
-              historical data reports are subject to sampling. These data are
-              intended to represent high-level trends only and provide general
-              insights into online visitor behavior.
-            </p>
-          </div>
-        </section>
         <div className="github-section">
-          <div className="github-section__body grid-container-desktop">
+          <div className="github-section__body grid-container-widescreen">
             <div className="grid-row">
-              <div className="tablet:grid-col-6">
-                <p>
-                  Have a question or problem?{" "}
-                  <a href="mailto:dap@gsa.gov">Get in touch</a>.
-                </p>
-                <a
-                  className="usa-button usa-button-secondary-inverse margin-y-2"
-                  href="https://github.com/18F/analytics.usa.gov/issues"
-                >
-                  <img
-                    src={`${siteDomain}/images/github-logo-white.svg`}
-                    className="github-icon"
-                    alt="Github Icon"
-                  />{" "}
-                  Suggest a feature or report an issue
-                </a>
+              <div className="tablet:grid-col">
+                <div className="usa-media-block margin-y-1">
+                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                    <svg
+                      className="usa-icon usa-icon--size-4"
+                      aria-hidden="true"
+                      role="img"
+                      focusable="false"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#help"></use>
+                    </svg>
+                  </div>
+                  <div className="usa-media-block__body">
+                    <h3 className="margin-0 text-normal">
+                      Have an idea or issue?
+                    </h3>
+                    <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
+                      <a
+                        href="https://github.com/18F/analytics.usa.gov/issues"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Reach out on GitHub
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="tablet:grid-col-6">
-                <p className="">
-                  <a href="https://github.com/18F/analytics.usa.gov">
-                    <img
-                      src={`${siteDomain}/images/github-logo.svg`}
-                      className="github-icon"
-                      alt="Github Icon"
-                    />{" "}
-                    View application code on GitHub
-                  </a>
-                </p>
-                <p className="margin-y-2">
-                  <a href="https://github.com/18F/analytics-reporter">
-                    <img
-                      src={`${siteDomain}/images/github-logo.svg`}
-                      className="github-icon"
-                      alt="Github Icon"
-                    />{" "}
-                    View code for the data on GitHub
-                  </a>
-                </p>
+              <div className="tablet:grid-col">
+                <div className="usa-media-block margin-y-1">
+                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                    <svg
+                      className="usa-icon usa-icon--size-4"
+                      aria-hidden="true"
+                      role="img"
+                      focusable="false"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#github"></use>
+                    </svg>
+                  </div>
+                  <div className="usa-media-block__body">
+                    <h3 className="margin-0 text-normal">
+                      View code on GitHub
+                    </h3>
+                    <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
+                      <a
+                        href="https://github.com/18F/analytics-reporter"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Code for the data
+                      </a>
+                    </p>
+                    <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
+                      <a
+                        href="https://github.com/18F/analytics.usa.gov"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Code for the application
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="tablet:grid-col">
+                <div className="usa-media-block margin-y-1">
+                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                    <svg
+                      className="usa-icon usa-icon--size-4"
+                      aria-hidden="true"
+                      role="img"
+                      focusable="false"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#mail"></use>
+                    </svg>
+                  </div>
+                  <div className="usa-media-block__body">
+                    <h3 className="margin-0 text-normal">
+                      Questions or website feedback
+                    </h3>
+                    <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
+                      <a href="mailto:analytics.usa.gov@gsa.gov">
+                        Get in touch
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="tablet:grid-col">
+                <div className="usa-media-block margin-y-1">
+                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                    <svg
+                      className="usa-icon usa-icon--size-4"
+                      aria-hidden="true"
+                      role="img"
+                      focusable="false"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#support"></use>
+                    </svg>
+                  </div>
+                  <div className="usa-media-block__body">
+                    <h3 className="margin-0 text-normal">
+                      Add an agency website to DAP
+                    </h3>
+                    <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
+                      <a href="mailto:dap@gsa.gov">Email the DAP help desk</a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
