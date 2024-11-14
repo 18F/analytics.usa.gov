@@ -23,7 +23,7 @@ describe("Footer root", () => {
 
     it("should render", () => {
       // Check that the top level element of the component exists
-      expect(document.getElementById("explanation")).not.toBeNull();
+      expect(document.getElementById("analytics-footer")).not.toBeNull();
     });
   });
 
@@ -37,7 +37,7 @@ describe("Footer root", () => {
     });
 
     it("should not render", () => {
-      expect(document.getElementById("explanation")).toBeNull();
+      expect(document.getElementById("analytics-footer")).toBeNull();
     });
   });
 });

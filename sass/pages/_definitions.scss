@@ -1,0 +1,24 @@
+@use "uswds-core" as *;
+
+.analytics-definitions {
+  &__table-of-contents {
+    font-size: 1.25rem;
+    font-weight: 350;
+
+    @include at-media("mobile-lg") {
+      font-size: units(3);
+    }
+  }
+
+  .usa-accordion__heading.usa-accordion__primary-heading {
+    .usa-accordion__button {
+      &[aria-expanded="true"] {
+        background-image: url("../css/img/remove-white.svg");
+      }
+
+      &[aria-expanded="false"] {
+        background-image: url("../css/img/add-white.svg");
+      }
+    }
+  }
+}
