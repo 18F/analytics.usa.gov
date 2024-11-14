@@ -8,7 +8,8 @@
     <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
   </h1>
 
-  {% unless page.url contains 'data' or page.url contains 'definitions' %}
+  {% unless page.url contains 'data' or page.url contains 'definitions' or
+  page.url contains 'about' %}
   <!-- prettier-ignore -->
   <div
     id="analytics-agency-select-root"
@@ -21,7 +22,7 @@
   <nav class="links margin-top-1 margin-bottom-0 padding-bottom-1">
     <ul>
       <li>
-        <a href="#explanation">About</a>
+        <a href="/about">About</a>
         <span class="link-bullet link-bullet--hide">&#8226;</span>
       </li>
       <li>
