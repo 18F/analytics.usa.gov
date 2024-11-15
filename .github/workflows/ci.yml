@@ -13,7 +13,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         # Fix for installing puppeteer which is a pa11y dependency.
@@ -31,7 +31,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         # Fix for installing puppeteer which is a pa11y dependency.
@@ -41,15 +41,15 @@ jobs:
         run: npm ci --verbose --timing
       - name: Lint SCSS
         run: npm run lint:styles
-  audit-npm-dependencies:
+  audit-dependencies:
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
         uses: actions/checkout@v4
-      - name: Install node
+      - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         run: npm ci
@@ -59,7 +59,7 @@ jobs:
     needs:
       - lint-js
       - lint-styles
-      - audit-npm-dependencies
+      - audit-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
@@ -67,7 +67,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         # Fix for installing puppeteer which is a pa11y dependency.
@@ -81,6 +81,7 @@ jobs:
     needs:
       - lint-js
       - lint-styles
+      - audit-dependencies
       - test
     if: github.ref == 'refs/heads/develop'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
@@ -104,6 +105,7 @@ jobs:
     needs:
       - lint-js
       - lint-styles
+      - audit-dependencies
       - test
     if: github.ref == 'refs/heads/staging'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
@@ -127,6 +129,7 @@ jobs:
     needs:
       - lint-js
       - lint-styles
+      - audit-dependencies
       - test
     if: github.ref == 'refs/heads/master'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
