@@ -13,7 +13,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         # Fix for installing puppeteer which is a pa11y dependency.
@@ -31,7 +31,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         # Fix for installing puppeteer which is a pa11y dependency.
@@ -52,7 +52,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: ".nvmrc"
           cache: 'npm'
       - name: Install node dependencies
         # Fix for installing puppeteer which is a pa11y dependency.
