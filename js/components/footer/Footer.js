@@ -23,7 +23,7 @@ function Footer({ siteDomain }) {
             <div className="grid-row">
               <div className="tablet:grid-col">
                 <div className="usa-media-block margin-y-1">
-                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                  <div className="usa-media-block__img circle-7 bg-palette-color-6 display-flex flex-row flex-align-center flex-justify-center text-white">
                     <svg
                       className="usa-icon usa-icon--size-4"
                       aria-hidden="true"
@@ -51,7 +51,7 @@ function Footer({ siteDomain }) {
               </div>
               <div className="tablet:grid-col">
                 <div className="usa-media-block margin-y-1">
-                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                  <div className="usa-media-block__img circle-7 bg-palette-color-6 display-flex flex-row flex-align-center flex-justify-center text-white">
                     <svg
                       className="usa-icon usa-icon--size-4"
                       aria-hidden="true"
@@ -88,7 +88,7 @@ function Footer({ siteDomain }) {
               </div>
               <div className="tablet:grid-col">
                 <div className="usa-media-block margin-y-1">
-                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                  <div className="usa-media-block__img circle-7 bg-palette-color-6 display-flex flex-row flex-align-center flex-justify-center text-white">
                     <svg
                       className="usa-icon usa-icon--size-4"
                       aria-hidden="true"
@@ -112,7 +112,7 @@ function Footer({ siteDomain }) {
               </div>
               <div className="tablet:grid-col">
                 <div className="usa-media-block margin-y-1">
-                  <div className="usa-media-block__img circle-7 bg-light-blue display-flex flex-row flex-align-center flex-justify-center text-white">
+                  <div className="usa-media-block__img circle-7 bg-palette-color-6 display-flex flex-row flex-align-center flex-justify-center text-white">
                     <svg
                       className="usa-icon usa-icon--size-4"
                       aria-hidden="true"
@@ -137,7 +137,7 @@ function Footer({ siteDomain }) {
         </div>
       </footer>
 
-      <div className="usa-identifier">
+      <div className="usa-identifier bg-palette-color-1">
         <section
           className="usa-identifier__section usa-identifier__section--masthead"
           aria-label="Agency identifier,"

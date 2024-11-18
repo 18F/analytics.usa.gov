@@ -216,7 +216,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
         <div className="historical-analytics-data__header grid-row">
           <div className="desktop:grid-col-8">
             <h1>Download Universal Analytics historical data</h1>
-            <h2>
+            <h2 className="palette-color-5">
               <svg
                 className="usa-icon"
                 aria-hidden="true"
@@ -402,9 +402,13 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
                   <div className="form-control grid-col-12 tablet:grid-col-8 desktop:grid-col-3">
                     <span className="usa-label">Download</span>
                     <div className="submit-buttons">
-                      <input className="usa-button" type="submit" value="CSV" />
                       <input
-                        className="usa-button"
+                        className="usa-button bg-palette-color-2"
+                        type="submit"
+                        value="CSV"
+                      />
+                      <input
+                        className="usa-button bg-palette-color-2"
                         type="submit"
                         value="JSON"
                       />
