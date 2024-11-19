@@ -145,12 +145,12 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
   }, [countryData, chartsLoaded]);
 
   return (
-    <div>
-      <div className="chart__title padding-top-2 desktop:padding-top-0">
+    <div className="padding-0">
+      <div className="chart__title">
         <a href="/definitions#dimension_country">Countries</a>
       </div>
       <figure id="chart_us" ref={countriesRef}>
-        <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
+        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
       </figure>
 
       <figure

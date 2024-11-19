@@ -5,6 +5,9 @@ import Config from "../../lib/config";
 import TopCitiesRealtime from "./TopCitiesRealtime";
 import TopCountriesRealtime from "./TopCountriesRealtime";
 import TopLanguagesHistorical from "./TopLanguagesHistorical";
+import CardGroup from "../card/CardGroup";
+import Card from "../card/Card";
+import CardContent from "../card/CardContent";
 
 /**
  * Contains charts and other data visualizations for the user locations and
@@ -26,29 +29,29 @@ function LocationsAndLanguages({ dataHrefBase }) {
           User Locations and Languages in the Last 30 Minutes
         </a>
       </div>
-
-      <div className="padding-top-4 grid-row">
-        <div id="cities" className="desktop:grid-col-4 desktop:padding-right-2">
-          <TopCitiesRealtime
-            dataHrefBase={dataHrefBase}
-            refreshSeconds={Config.realtimeDataRefreshSeconds}
-          />
-        </div>
-
-        <div id="countries" className="desktop:grid-col-4 desktop:padding-x-2">
-          <TopCountriesRealtime
-            dataHrefBase={dataHrefBase}
-            refreshSeconds={Config.realtimeDataRefreshSeconds}
-          />
-        </div>
-
-        <div
-          id="languages"
-          className="desktop:grid-col-4 desktop:padding-left-2"
-        >
-          <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
-        </div>
-      </div>
+      <CardGroup className="padding-top-2">
+        <Card className="card:grid-col-12 desktop:grid-col-4">
+          <CardContent className="no-border desktop:padding-right-1">
+            <TopCitiesRealtime
+              dataHrefBase={dataHrefBase}
+              refreshSeconds={Config.realtimeDataRefreshSeconds}
+            />
+          </CardContent>
+        </Card>
+        <Card className="card:grid-col-12 desktop:grid-col-4">
+          <CardContent className="no-border desktop:padding-x-1">
+            <TopCountriesRealtime
+              dataHrefBase={dataHrefBase}
+              refreshSeconds={Config.realtimeDataRefreshSeconds}
+            />
+          </CardContent>
+        </Card>
+        <Card className="card:grid-col-12 desktop:grid-col-4">
+          <CardContent className="no-border desktop:padding-left-1">
+            <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
+          </CardContent>
+        </Card>
+      </CardGroup>
     </>
   );
 }
