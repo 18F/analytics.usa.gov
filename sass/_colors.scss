@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "uswds-core" as *;
 
 // COLORS
@@ -13,6 +14,46 @@ $gray: color("gray-10");
 $dark-gray: color("gray-cool-70");
 $white: color("gray-1");
 $black: color("gray-90");
+
+$palette-color-1: #03045e;
+$palette-color-2: #023E8A;
+$palette-color-3: #0077b6;
+$palette-color-4: #0096C7;
+$palette-color-5: #00b4d8;
+$palette-color-6: #48CAE4;
+$palette-color-7: #90e0ef;
+$palette-color-8: #ADE8F4;
+$palette-color-9: #caf0f8;
+
+$palette-colors: (
+  "1": $palette-color-1,
+  "2": $palette-color-2,
+  "3": $palette-color-3,
+  "4": $palette-color-4,
+  "5": $palette-color-5,
+  "6": $palette-color-6,
+  "7": $palette-color-7,
+  "8": $palette-color-8,
+  "9": $palette-color-9
+);
+
+@each $id, $palette-color in $palette-colors {
+  .palette-color-#{$id} {
+    color: $palette-color;
+
+    &:hover {
+      color: $palette-color;
+    }
+  }
+
+  .bg-palette-color-#{$id} {
+    background-color: $palette-color;
+
+    &:hover {
+      background-color: $palette-color;
+    }
+  }
+}
 
 .bg-dark-blue {
   background-color: $dark-blue;

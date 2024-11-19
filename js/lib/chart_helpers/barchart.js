@@ -45,7 +45,7 @@ export default function barChart() {
     enter.append("div").attr("class", "chart__bar-chart__item__value");
     enter
       .append("div")
-      .attr("class", "chart__bar-chart__item__bar bg-light-blue")
+      .attr("class", "chart__bar-chart__item__bar bg-palette-color-5")
       .style("width", "0%");
 
     const componentScale = scale

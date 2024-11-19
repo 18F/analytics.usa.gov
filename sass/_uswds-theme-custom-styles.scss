@@ -22,6 +22,7 @@ i.e.
 
 @use "uswds-core" as *;
 @use "colors";
+@use "text-theme";
 
 // @include u-font("sans", "md");
 // '3xs'	13px
@@ -60,15 +61,15 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: family("sans");
+  font-family: text-theme.$header-font-family;
 }
 
 // Other Setup:
 body {
   background: #fff;
   color: colors.$dark-gray;
-  font-family: font-family("ui");
-  font-weight: font-weight(300);
+  font-family: text-theme.$default-font-family;
+  font-weight: text-theme.$default-font-weight;
   margin: 0;
 }
 
