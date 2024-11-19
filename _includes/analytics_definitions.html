@@ -31,7 +31,7 @@
       >
         <button
           type="button"
-          class="usa-accordion__button white bg-dark-blue"
+          class="usa-accordion__button white bg-palette-color-2"
           aria-expanded="true"
           aria-controls="report-descriptions-content"
         >
@@ -179,15 +179,18 @@
             class="usa-accordion__content usa-prose"
           >
             <ul>
-              <li>Metric: <a href="#metric_sessions">sessions</a></li>
+              <li>
+                Metric:
+                <a href="#metric_screen_page_views">screen page views</a>
+              </li>
               <li>
                 Dimensions: <a href="#dimension_host_name">hostname</a>, full
                 page URL, <a href="#dimension_page_title">page title</a>
               </li>
               <li>
                 Description: top 30 second-level domain websites and/or
-                subdomains based on the number of total sessions. Updated daily
-                for 7 and 30-day aggregate reports.
+                subdomains based on the number of total page views. Updated
+                daily for 7 and 30-day aggregate reports.
               </li>
             </ul>
           </div>
@@ -330,7 +333,7 @@
       >
         <button
           type="button"
-          class="usa-accordion__button white bg-dark-blue"
+          class="usa-accordion__button white bg-palette-color-2"
           aria-expanded="true"
           aria-controls="data-definitions-content"
         >
@@ -813,18 +816,39 @@
               <span> The number of times users triggered an event. </span>
             </div>
 
-            <h4 id="metric_sessions" class="usa-accordion__heading">
+            <h4 id="metric_screen_page_views" class="usa-accordion__heading">
               <button
                 type="button"
                 class="usa-accordion__button"
                 aria-expanded="false"
                 aria-controls="metrics__section6"
               >
-                Sessions
+                Screen page views
               </button>
             </h4>
             <div
               id="metrics__section6"
+              class="usa-accordion__content usa-prose"
+            >
+              <span>
+                The number of app screens or web pages your users viewed.
+                Repeated views of a single page or screen are counted.
+                (screen_view + page_view events).
+              </span>
+            </div>
+
+            <h4 id="metric_sessions" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="metrics__section7"
+              >
+                Sessions
+              </button>
+            </h4>
+            <div
+              id="metrics__section7"
               class="usa-accordion__content usa-prose"
             >
               <span>

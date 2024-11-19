@@ -1,5 +1,6 @@
 @use "uswds-core" as *;
 @use "colors";
+@use "text-theme";
 
 /*
   Top navigation header
@@ -19,7 +20,7 @@
 
 header#analytics-header {
   align-items: center;
-  border-bottom: units(1) solid colors.$light-blue;
+  border-bottom: units(1) solid colors.$palette-color-4;
   flex-direction: column;
   justify-content: center;
 
@@ -64,7 +65,7 @@ header#analytics-header {
 
   a {
     color: colors.$white;
-    font-weight: font-weight(300);
+    font-weight: text-theme.$default-font-weight;
     text-decoration: none;
 
     &:hover {
