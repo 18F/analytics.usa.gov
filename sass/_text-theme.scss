@@ -1,5 +1,9 @@
 @use "uswds-core" as *;
 
+$default-font-family-name: "ui";
+$header-font-family-name: "sans";
+$font-size-names: "3xs", "2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl";
+
 $default-font-weight: font-weight(400);
-$default-font-family: font-family("ui");
-$header-font-family: font-family("sans");
+$default-font-family: font-family($default-font-family-name);
+$header-font-family: font-family($header-font-family-name);
