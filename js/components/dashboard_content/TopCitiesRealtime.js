@@ -64,7 +64,7 @@ function TopCitiesRealtime({ dataHrefBase, refreshSeconds }) {
         <a href="/definitions#dimension_city">Cities</a>
       </div>
       <figure id="chart_top-cities-realtime" ref={ref}>
-        <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
+        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
       </figure>
     </>
   );
