@@ -11,90 +11,101 @@ exports[`LocationsAndLanguages renders 1`] = `
       User Locations and Languages in the Last 30 Minutes
     </a>
   </div>
-  <div
-    class="padding-top-4 grid-row"
+  <ul
+    class="usa-card-group padding-top-2"
   >
-    <div
-      class="desktop:grid-col-4 desktop:padding-right-2"
-      id="cities"
+    <li
+      class="usa-card card:grid-col-12 desktop:grid-col-4"
     >
       <div
-        class="chart__title"
-      >
-        <a
-          href="/definitions#dimension_city"
-        >
-          Cities
-        </a>
-      </div>
-      <figure
-        id="chart_top-cities-realtime"
+        class="usa-card__container no-border desktop:padding-right-1"
       >
         <div
-          class="data chart__bar-chart text--capitalize margin-top-4"
-        />
-      </figure>
-    </div>
-    <div
-      class="desktop:grid-col-4 desktop:padding-x-2"
-      id="countries"
-    >
-      <div>
-        <div
-          class="chart__title padding-top-2 desktop:padding-top-0"
+          class="chart__title"
         >
           <a
-            href="/definitions#dimension_country"
+            href="/definitions#dimension_city"
           >
-            Countries
+            Cities
           </a>
         </div>
         <figure
-          id="chart_us"
+          id="chart_top-cities-realtime"
         >
           <div
-            class="data chart__bar-chart text--capitalize margin-top-4"
-          />
-        </figure>
-        <figure
-          class="hide chart__bar-chart__nested"
-          id="chart_us_and_territories"
-        >
-          <div
-            class="data chart__bar-chart text--capitalize margin-top-4"
-          />
-        </figure>
-        <figure
-          class="hide chart__bar-chart__nested"
-          id="chart_countries"
-        >
-          <div
-            class="data chart__bar-chart text--capitalize margin-top-4"
+            class="data chart__bar-chart text--capitalize margin-top-2"
           />
         </figure>
       </div>
-    </div>
-    <div
-      class="desktop:grid-col-4 desktop:padding-left-2"
-      id="languages"
+    </li>
+    <li
+      class="usa-card card:grid-col-12 desktop:grid-col-4"
     >
       <div
-        class="chart__title"
-      >
-        <a
-          href="/definitions#dimension_language"
-        >
-          Languages
-        </a>
-      </div>
-      <figure
-        id="chart_top-languages"
+        class="usa-card__container no-border desktop:padding-x-1"
       >
         <div
-          class="data chart__bar-chart text--capitalize margin-top-4"
-        />
-      </figure>
-    </div>
-  </div>
+          class="padding-0"
+        >
+          <div
+            class="chart__title"
+          >
+            <a
+              href="/definitions#dimension_country"
+            >
+              Countries
+            </a>
+          </div>
+          <figure
+            id="chart_us"
+          >
+            <div
+              class="data chart__bar-chart text--capitalize margin-top-2"
+            />
+          </figure>
+          <figure
+            class="hide chart__bar-chart__nested"
+            id="chart_us_and_territories"
+          >
+            <div
+              class="data chart__bar-chart text--capitalize margin-top-4"
+            />
+          </figure>
+          <figure
+            class="hide chart__bar-chart__nested"
+            id="chart_countries"
+          >
+            <div
+              class="data chart__bar-chart text--capitalize margin-top-4"
+            />
+          </figure>
+        </div>
+      </div>
+    </li>
+    <li
+      class="usa-card card:grid-col-12 desktop:grid-col-4"
+    >
+      <div
+        class="usa-card__container no-border desktop:padding-left-1"
+      >
+        <div
+          class="chart__title"
+        >
+          <a
+            href="/definitions#dimension_language"
+          >
+            Languages
+          </a>
+        </div>
+        <figure
+          id="chart_top-languages"
+        >
+          <div
+            class="data chart__bar-chart text--capitalize margin-top-2"
+          />
+        </figure>
+      </div>
+    </li>
+  </ul>
 </DocumentFragment>
 `;

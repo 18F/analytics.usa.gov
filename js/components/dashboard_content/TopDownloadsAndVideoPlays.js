@@ -65,7 +65,7 @@ function TopDownloadsAndVideoPlays({
 
   return (
     <>
-      <section className="top-downloads">
+      <section className="top-downloads padding-bottom-1">
         <div className="top-downloads__headline">
           <h3>
             <a href="/definitions#report_yesterday_top_downloads">
@@ -73,7 +73,7 @@ function TopDownloadsAndVideoPlays({
             </a>
           </h3>
         </div>
-        <h4>
+        <h4 className="text--normal">
           <em>
             Top file downloads {timeIntervalDescription} on {agency} hostnames.
           </em>
@@ -92,7 +92,7 @@ function TopDownloadsAndVideoPlays({
               : `Top Video Plays ${timeIntervalHeader}`}
           </h3>
         </div>
-        <h4>
+        <h4 className="text--normal">
           <em>
             {__shouldDisplayVideoPlays()
               ? `Top videos played ${timeIntervalDescription} on ${agency} hostnames.`

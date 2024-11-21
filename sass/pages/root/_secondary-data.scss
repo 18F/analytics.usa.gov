@@ -6,26 +6,8 @@
  */
 
 #secondary_data {
-  border-left: none;
-  border-right: none;
-  border-top: 1px solid colors.$uswds-light-gray;
-
-  @include at-media("tablet") {
-    border-bottom: 1px solid colors.$uswds-light-gray;
-    border-left: 1px solid colors.$uswds-light-gray;
-    border-top: none;
-  }
-
   .sidebar {
     min-height: units("tablet-lg");
-  }
-
-  .sidebar__headline {
-    padding: 0 units(2);
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
   }
 
   .sidebar__tab-select__button {
@@ -39,12 +21,7 @@
 
   // overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
   .sidebar__tab-select__button-group {
-    padding: 0 units(2);
     width: 100%;
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
   }
 
   .sidebar__tab-select__button-group__item {
@@ -61,16 +38,11 @@
   }
 
   .sidebar__tab__content {
-    border-bottom: 1px solid colors.$uswds-light-gray;
     // This prevents "jumping" in the sidebar when chart data is loading.
     // Assumes there are 30 items in the top pages charts. Will need adjusted
     // accordingly if the number of chart items changes.
     min-height: 60rem;
-    padding: 0 units(2);
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
+    border-bottom: 1px solid colors.$uswds-light-gray;
 
     .chart__bar-chart {
       margin-top: 0;
@@ -92,18 +64,12 @@
 
   .top-downloads {
     border-bottom: 1px solid colors.$uswds-light-gray;
-    padding: 0 units(2);
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
 
     &__headline {
       padding-top: 0;
     }
 
     h4 {
-      font-weight: font-weight("light");
       margin: units(1) 0 units(1) 0;
     }
 
@@ -147,18 +113,12 @@
     // Assumes there are 30 items in the top pages charts. Will need adjusted
     // accordingly if the number of chart items changes.
     min-height: 10rem;
-    padding: 0 units(2);
-
-    @include at-media("tablet") {
-      padding: 0 units(3);
-    }
 
     &__headline {
       padding-top: 0;
     }
 
     h4 {
-      font-weight: font-weight("light");
       margin: units(1) 0 units(1) 0;
     }
 

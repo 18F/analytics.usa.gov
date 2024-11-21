@@ -5,11 +5,15 @@ import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
 import Engagement from "./Engagement";
 import LocationsAndLanguages from "./LocationsAndLanguages";
-import RealtimeVisitors from "./RealtimeVisitors";
 import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
 import TrafficSources from "./TrafficSources";
 import Visitors30Days from "./Visitors30Days";
+import Card from "../card/Card";
+import CardContent from "../card/CardContent";
+import CardGroup from "../card/CardGroup";
+import RealtimeMetricCount from "../data_visualization/RealtimeMetricCount";
+import RealtimeEventCount from "../data_visualization/RealtimeEventCount";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -34,63 +38,131 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
 
   return (
     <>
-      <article id="main_data" className="desktop:grid-col-8">
-        <section className="section padding-4">
-          <RealtimeVisitors
-            dataHrefBase={dataHrefBase}
-            agency={agency}
-            refreshSeconds={Config.realtimeDataRefreshSeconds}
-          />
-        </section>
+      <div className="grid-row">
+        <div className="grid-col-12">
+          <h1 className="margin-top-0 text--semibold">
+            {agency} Website and App Analytics
+          </h1>
+        </div>
+      </div>
+      <CardGroup>
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+          <CardContent className="white bg-palette-color-2 text--centered text--bold">
+            <div className="usa-card__body">
+              <p className="text--header-xl margin-0">Total Users</p>
+              <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
+                <RealtimeMetricCount
+                  dataHrefBase={dataHrefBase}
+                  refreshSeconds={Config.realtimeDataRefreshSeconds}
+                  metricName={"activeUsers"}
+                />
+              </p>
+              <p className="text--header-lg margin-0">in the last 30 minutes</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+          <CardContent className="white bg-palette-color-3 text--centered text--bold">
+            <div className="usa-card__body">
+              <p className="text--header-xl margin-0">First Time Users</p>
+              <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
+                <RealtimeEventCount
+                  dataHrefBase={dataHrefBase}
+                  refreshSeconds={Config.realtimeDataRefreshSeconds}
+                  eventName={"first_visit"}
+                />
+              </p>
+              <p className="text--header-lg margin-0">in the last 30 minutes</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+          <CardContent className="white bg-palette-color-4 text--centered text--bold">
+            <div className="usa-card__body">
+              <p className="text--header-xl margin-0">Total Views</p>
+              <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
+                <RealtimeMetricCount
+                  dataHrefBase={dataHrefBase}
+                  refreshSeconds={Config.realtimeDataRefreshSeconds}
+                  metricName={"pageviews"}
+                />
+              </p>
+              <p className="text--header-lg margin-0">in the last 30 minutes</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+          <CardContent className="white bg-palette-color-5 text--centered text--bold">
+            <div className="usa-card__body">
+              <p className="text--header-xl margin-0">Files Downloaded</p>
+              <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
+                <RealtimeEventCount
+                  dataHrefBase={dataHrefBase}
+                  refreshSeconds={Config.realtimeDataRefreshSeconds}
+                  eventName={"file_download"}
+                />
+              </p>
+              <p className="text--header-lg margin-0">in the last 30 minutes</p>
+            </div>
+          </CardContent>
+        </Card>
+      </CardGroup>
+      <CardGroup>
+        <Card className="card:grid-col-12 desktop:grid-col-8">
+          <CardContent>
+            <div id="main_data">
+              <article className="min-height-large section">
+                <LocationsAndLanguages dataHrefBase={dataHrefBase} />
+              </article>
 
-        <article className="min-height-large padding-3 section section--bordered">
-          <LocationsAndLanguages dataHrefBase={dataHrefBase} />
-        </article>
+              <article className="padding-y-3 section section--bordered">
+                <div className="section__headline">
+                  30 Day Historical Data and Trends
+                </div>
+              </article>
 
-        <article className="padding-3 section section--bordered">
-          <div className="section__headline">
-            30 Day Historical Data and Trends
-          </div>
-        </article>
+              <article className="min-height-small padding-y-3 section section--bordered">
+                <Sessions30Days dataHrefBase={dataHrefBase} />
+              </article>
 
-        <article className="min-height-small padding-3 section section--bordered">
-          <Sessions30Days dataHrefBase={dataHrefBase} />
-        </article>
+              <article className="section section--bordered">
+                <section className="section__subheader padding-2 text--centered">
+                  <Visitors30Days dataHrefBase={dataHrefBase} />
+                </section>
+              </article>
 
-        <article className="section section--bordered">
-          <section className="section__subheader padding-2 text--centered">
-            <Visitors30Days dataHrefBase={dataHrefBase} />
-          </section>
-        </article>
+              <article className="section section--bordered">
+                <section>
+                  <Engagement dataHrefBase={dataHrefBase} />
+                </section>
+              </article>
 
-        <article className="section section--bordered">
-          <section>
-            <Engagement dataHrefBase={dataHrefBase} />
-          </section>
-        </article>
+              <article className="min-height-large padding-y-3 section section--bordered">
+                <div className="section__headline">
+                  <a href="/definitions#report_historical_top_traffic_sources">
+                    Top Traffic Sources
+                  </a>
+                </div>
+                <TrafficSources dataHrefBase={dataHrefBase} />
+              </article>
 
-        <article className="min-height-large padding-3 section section--bordered">
-          <div className="section__headline">
-            <a href="/definitions#report_historical_top_traffic_sources">
-              Top Traffic Sources
-            </a>
-          </div>
-          <TrafficSources dataHrefBase={dataHrefBase} />
-        </article>
-
-        <article className="min-height-large padding-3 section section--bordered">
-          <div className="section__headline">
-            <a href="/definitions#report_historical_device_demographics">
-              User Device Demographics
-            </a>
-          </div>
-          <DeviceDemographics dataHrefBase={dataHrefBase} />
-        </article>
-      </article>
-
-      <article id="secondary_data" className="desktop:grid-col-4">
-        <SidebarContent dataHrefBase={dataHrefBase} agency={agency} />
-      </article>
+              <article className="min-height-large padding-y-3 section section--bordered">
+                <div className="section__headline">
+                  <a href="/definitions#report_historical_device_demographics">
+                    User Device Demographics
+                  </a>
+                </div>
+                <DeviceDemographics dataHrefBase={dataHrefBase} />
+              </article>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="card:grid-col-12 desktop:grid-col-4">
+          <CardContent>
+            <SidebarContent dataHrefBase={dataHrefBase} agency={agency} />
+          </CardContent>
+        </Card>
+      </CardGroup>
     </>
   );
 }

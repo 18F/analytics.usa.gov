@@ -73,7 +73,7 @@ function TopLanguagesHistorical({ dataHrefBase }) {
         <a href="/definitions#dimension_language">Languages</a>
       </div>
       <figure id="chart_top-languages" ref={ref}>
-        <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
+        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
       </figure>
     </>
   );

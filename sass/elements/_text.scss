@@ -1,4 +1,17 @@
 @use "uswds-core" as *;
+@use "text-theme";
+
+@each $font-size-name in text-theme.$font-size-names {
+  .text--header-#{$font-size-name} {
+    font-family: family(text-theme.$header-font-family-name);
+    font-size: size(text-theme.$header-font-family-name, $font-size-name);
+  }
+
+  .text--#{$font-size-name} {
+    font-family: family(text-theme.$default-font-family-name);
+    font-size: size(text-theme.$default-font-family-name, $font-size-name);
+  }
+}
 
 .text--bold {
   font-weight: font-weight("bold");
@@ -6,6 +19,10 @@
 
 .text--semibold {
   font-weight: 500;
+}
+
+.text--normal {
+  font-weight: text-theme.$default-font-weight;
 }
 
 .text--capitalize {
