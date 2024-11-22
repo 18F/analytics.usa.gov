@@ -44,28 +44,28 @@ function SidebarContent({ dataHrefBase, agency }) {
       <Tabs>
         <TabList className="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented">
           <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
-            <button
-              type="button"
+            <a
               className="sidebar__tab-select__button usa-button"
+              aria-label="30 mins"
             >
               30 mins
-            </button>
+            </a>
           </Tab>
           <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
-            <button
-              type="button"
+            <a
               className="sidebar__tab-select__button usa-button"
+              aria-label="7 days"
             >
               7 days
-            </button>
+            </a>
           </Tab>
           <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
-            <button
-              type="button"
+            <a
               className="sidebar__tab-select__button usa-button"
+              aria-label="30 days"
             >
               30 days
-            </button>
+            </a>
           </Tab>
         </TabList>
 
