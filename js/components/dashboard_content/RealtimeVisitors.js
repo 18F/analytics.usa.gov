@@ -53,7 +53,7 @@ function RealtimeVisitors({ dataHrefBase, agency, refreshSeconds }) {
   }, [realtimeVisitorData]);
 
   return (
-    <div className="text--centered tablet:padding-2" ref={ref}>
+    <div className="text-center tablet:padding-2" ref={ref}>
       <div className="grid-row">
         <span className="data text--bold text--xl grid-col-12">...</span>
       </div>

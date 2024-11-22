@@ -33,118 +33,116 @@ function SidebarContent({ dataHrefBase, agency }) {
   const numberOfTopPagesToDisplay = 30;
 
   return (
-    <div id="secondary_data">
-      <section className="sidebar">
-        <div className="sidebar__headline">
-          <h2 className="margin-top-0">
-            <a href="/definitions#report_realtime_top_pages">
-              Top {numberOfTopPagesToDisplay} Web Pages and App Screens
-            </a>
-          </h2>
-        </div>
-        <Tabs>
-          <TabList className="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented">
-            <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
-              <button
-                type="button"
-                className="sidebar__tab-select__button usa-button"
-              >
-                30 mins
-              </button>
-            </Tab>
-            <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
-              <button
-                type="button"
-                className="sidebar__tab-select__button usa-button"
-              >
-                7 days
-              </button>
-            </Tab>
-            <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
-              <button
-                type="button"
-                className="sidebar__tab-select__button usa-button"
-              >
-                30 days
-              </button>
-            </Tab>
-          </TabList>
+    <section className="sidebar">
+      <div className="sidebar__headline">
+        <h2 className="margin-top-0">
+          <a href="/definitions#report_realtime_top_pages">
+            Top {numberOfTopPagesToDisplay} Web Pages and App Screens
+          </a>
+        </h2>
+      </div>
+      <Tabs>
+        <TabList className="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+            <button
+              type="button"
+              className="sidebar__tab-select__button usa-button"
+            >
+              30 mins
+            </button>
+          </Tab>
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+            <button
+              type="button"
+              className="sidebar__tab-select__button usa-button"
+            >
+              7 days
+            </button>
+          </Tab>
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+            <button
+              type="button"
+              className="sidebar__tab-select__button usa-button"
+            >
+              30 days
+            </button>
+          </Tab>
+        </TabList>
 
-          <TabPanel>
-            <section className="sidebar__tab__content padding-bottom-1">
-              <p>
-                <strong>Users</strong> on a{" "}
-                <strong>single, specific page or app screen</strong> in the last
-                30 minutes. Hostnames are not currently reported in real-time,
-                so only page title and screen name information is available.
-              </p>
-              <TopPagesRealtime
-                dataHrefBase={dataHrefBase}
-                reportFileName="top-pages-realtime.json"
-                numberOfListingsToDisplay={numberOfTopPagesToDisplay}
-                refreshSeconds={Config.realtimeDataRefreshSeconds}
-              />
-            </section>
-            <TopDownloadsAndVideoPlays
+        <TabPanel>
+          <section className="sidebar__tab__content padding-bottom-1">
+            <p>
+              <strong>Users</strong> on a{" "}
+              <strong>single, specific page or app screen</strong> in the last
+              30 minutes. Hostnames are not currently reported in real-time, so
+              only page title and screen name information is available.
+            </p>
+            <TopPagesRealtime
               dataHrefBase={dataHrefBase}
-              agency={agency}
-              downloadsReportFileName="top-downloads-yesterday.json"
-              videoPlaysReportFileName="top-video-plays-yesterday.json"
-              timeIntervalHeader="Yesterday"
-              timeIntervalDescription="yesterday"
+              reportFileName="top-pages-realtime.json"
+              numberOfListingsToDisplay={numberOfTopPagesToDisplay}
+              refreshSeconds={Config.realtimeDataRefreshSeconds}
             />
-          </TabPanel>
-          <TabPanel>
-            <section className="sidebar__tab__content">
-              <p>
-                Sessions over the last week on <strong>hostnames</strong>,
-                including traffic to all web pages and app screens within that
-                hostname.
-              </p>
-              <TopPagesHistorical
-                dataHrefBase={dataHrefBase}
-                reportFileName="top-domains-7-days.json"
-                numberOfListingsToDisplay={numberOfTopPagesToDisplay}
-              />
-            </section>
-            <TopDownloadsAndVideoPlays
+          </section>
+          <TopDownloadsAndVideoPlays
+            dataHrefBase={dataHrefBase}
+            agency={agency}
+            downloadsReportFileName="top-downloads-yesterday.json"
+            videoPlaysReportFileName="top-video-plays-yesterday.json"
+            timeIntervalHeader="Yesterday"
+            timeIntervalDescription="yesterday"
+          />
+        </TabPanel>
+        <TabPanel>
+          <section className="sidebar__tab__content">
+            <p>
+              Sessions over the last week on <strong>hostnames</strong>,
+              including traffic to all web pages and app screens within that
+              hostname.
+            </p>
+            <TopPagesHistorical
               dataHrefBase={dataHrefBase}
-              agency={agency}
-              downloadsReportFileName="top-downloads-7-days.json"
-              videoPlaysReportFileName="top-video-plays-7-days.json"
-              timeIntervalHeader="Last 7 Days"
-              timeIntervalDescription="over the last week"
+              reportFileName="top-domains-7-days.json"
+              numberOfListingsToDisplay={numberOfTopPagesToDisplay}
             />
-          </TabPanel>
-          <TabPanel>
-            <section className="sidebar__tab__content">
-              <p>
-                Sessions over the last month on <strong>hostnames</strong>,
-                including traffic to all web pages and app screens within that
-                hostname.{" "}
-                <a href={dataHrefBase + "/top-10000-domains-30-days.csv"}>
-                  Download the full dataset
-                </a>
-                .
-              </p>
-              <TopPagesHistorical
-                dataHrefBase={dataHrefBase}
-                reportFileName="top-domains-30-days.json"
-                numberOfListingsToDisplay={numberOfTopPagesToDisplay}
-              />
-            </section>
-            <TopDownloadsAndVideoPlays
+          </section>
+          <TopDownloadsAndVideoPlays
+            dataHrefBase={dataHrefBase}
+            agency={agency}
+            downloadsReportFileName="top-downloads-7-days.json"
+            videoPlaysReportFileName="top-video-plays-7-days.json"
+            timeIntervalHeader="Last 7 Days"
+            timeIntervalDescription="over the last week"
+          />
+        </TabPanel>
+        <TabPanel>
+          <section className="sidebar__tab__content">
+            <p>
+              Sessions over the last month on <strong>hostnames</strong>,
+              including traffic to all web pages and app screens within that
+              hostname.{" "}
+              <a href={dataHrefBase + "/top-10000-domains-30-days.csv"}>
+                Download the full dataset
+              </a>
+              .
+            </p>
+            <TopPagesHistorical
               dataHrefBase={dataHrefBase}
-              agency={agency}
-              downloadsReportFileName="top-downloads-30-days.json"
-              videoPlaysReportFileName="top-video-plays-30-days.json"
-              timeIntervalHeader="Last 30 Days"
-              timeIntervalDescription="over the last month"
+              reportFileName="top-domains-30-days.json"
+              numberOfListingsToDisplay={numberOfTopPagesToDisplay}
             />
-          </TabPanel>
-        </Tabs>
-      </section>
-    </div>
+          </section>
+          <TopDownloadsAndVideoPlays
+            dataHrefBase={dataHrefBase}
+            agency={agency}
+            downloadsReportFileName="top-downloads-30-days.json"
+            videoPlaysReportFileName="top-video-plays-30-days.json"
+            timeIntervalHeader="Last 30 Days"
+            timeIntervalDescription="over the last month"
+          />
+        </TabPanel>
+      </Tabs>
+    </section>
   );
 }
 

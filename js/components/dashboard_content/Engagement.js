@@ -21,13 +21,13 @@ function Engagement({ dataHrefBase }) {
     <div className="grid-row">
       <div
         id="average_engagement_time"
-        className="grid-col-12 desktop:grid-col-6 padding-2 text--centered"
+        className="grid-col-12 desktop:grid-col-6 padding-2 text-center"
       >
         <AverageEngagementDuration dataHrefBase={dataHrefBase} />
       </div>
       <div
         id="engagement_rate"
-        className="grid-col-12 desktop:grid-col-6 padding-2 text--centered"
+        className="grid-col-12 desktop:grid-col-6 padding-2 text-center"
       >
         <EngagementRate dataHrefBase={dataHrefBase} />
       </div>

@@ -2,517 +2,505 @@
 
 exports[`SidebarContent when 7 days tab is selected renders a component with top pages for 7 days, and top downloads for 7 days 1`] = `
 <DocumentFragment>
-  <div
-    id="secondary_data"
+  <section
+    class="sidebar"
   >
-    <section
-      class="sidebar"
+    <div
+      class="sidebar__headline"
     >
-      <div
-        class="sidebar__headline"
+      <h2
+        class="margin-top-0"
       >
-        <h2
-          class="margin-top-0"
+        <a
+          href="/definitions#report_realtime_top_pages"
         >
-          <a
-            href="/definitions#report_realtime_top_pages"
-          >
-            Top 30 Web Pages and App Screens
-          </a>
-        </h2>
-      </div>
-      <div
-        class="react-tabs"
-        data-rttabs="true"
+          Top 30 Web Pages and App Screens
+        </a>
+      </h2>
+    </div>
+    <div
+      class="react-tabs"
+      data-rttabs="true"
+    >
+      <ul
+        class="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented"
+        role="tablist"
       >
-        <ul
-          class="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented"
-          role="tablist"
+        <li
+          aria-controls="panel:r1:0"
+          aria-disabled="false"
+          aria-selected="false"
+          class="sidebar__tab-select__button-group__item usa-button-group__item"
+          data-rttab="true"
+          id="tab:r1:0"
+          role="tab"
         >
-          <li
-            aria-controls="panel:r1:0"
-            aria-disabled="false"
-            aria-selected="false"
-            class="sidebar__tab-select__button-group__item usa-button-group__item"
-            data-rttab="true"
-            id="tab:r1:0"
-            role="tab"
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
           >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              30 mins
-            </button>
-          </li>
-          <li
-            aria-controls="panel:r1:1"
-            aria-disabled="false"
-            aria-selected="true"
-            class="sidebar__tab-select__button-group__item usa-button-group__item react-tabs__tab--selected"
-            data-rttab="true"
-            id="tab:r1:1"
-            role="tab"
-            tabindex="0"
-          >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              7 days
-            </button>
-          </li>
-          <li
-            aria-controls="panel:r1:2"
-            aria-disabled="false"
-            aria-selected="false"
-            class="sidebar__tab-select__button-group__item usa-button-group__item"
-            data-rttab="true"
-            id="tab:r1:2"
-            role="tab"
-          >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              30 days
-            </button>
-          </li>
-        </ul>
-        <div
-          aria-labelledby="tab:r1:0"
-          class="react-tabs__tab-panel"
-          id="panel:r1:0"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="tab:r1:1"
-          class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-          id="panel:r1:1"
-          role="tabpanel"
+            30 mins
+          </button>
+        </li>
+        <li
+          aria-controls="panel:r1:1"
+          aria-disabled="false"
+          aria-selected="true"
+          class="sidebar__tab-select__button-group__item usa-button-group__item react-tabs__tab--selected"
+          data-rttab="true"
+          id="tab:r1:1"
+          role="tab"
+          tabindex="0"
         >
-          <section
-            class="sidebar__tab__content"
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
           >
-            <p>
-              Sessions over the last week on 
-              <strong>
-                hostnames
-              </strong>
-              , including traffic to all web pages and app screens within that hostname.
-            </p>
-            <figure
-              data-source="http://www.example.com/data//top-domains-7-days.json"
-            >
-              <div
-                class="data chart__bar-chart text--lowercase margin-top-4"
-              />
-            </figure>
-          </section>
-          <section
-            class="top-downloads padding-bottom-1"
+            7 days
+          </button>
+        </li>
+        <li
+          aria-controls="panel:r1:2"
+          aria-disabled="false"
+          aria-selected="false"
+          class="sidebar__tab-select__button-group__item usa-button-group__item"
+          data-rttab="true"
+          id="tab:r1:2"
+          role="tab"
+        >
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
+          >
+            30 days
+          </button>
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab:r1:0"
+        class="react-tabs__tab-panel"
+        id="panel:r1:0"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r1:1"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="panel:r1:1"
+        role="tabpanel"
+      >
+        <section
+          class="sidebar__tab__content"
+        >
+          <p>
+            Sessions over the last week on 
+            <strong>
+              hostnames
+            </strong>
+            , including traffic to all web pages and app screens within that hostname.
+          </p>
+          <figure
+            data-source="http://www.example.com/data//top-domains-7-days.json"
           >
             <div
-              class="top-downloads__headline"
-            >
-              <h3>
-                <a
-                  href="/definitions#report_yesterday_top_downloads"
-                >
-                  Top 20 Downloads Last 7 Days
-                </a>
-              </h3>
-            </div>
-            <h4
-              class="text--normal"
-            >
-              <em>
-                Top file downloads over the last week on Department of Interior hostnames.
-              </em>
-            </h4>
-            <figure
-              class="top-downloads__bar-chart"
-            >
-              <div
-                class="data chart__bar-chart text--capitalize margin-top-4"
-              />
-            </figure>
-          </section>
-          <section
-            class="top-video-plays"
+              class="data chart__bar-chart text--lowercase margin-top-4"
+            />
+          </figure>
+        </section>
+        <section
+          class="top-downloads padding-bottom-1"
+        >
+          <div
+            class="top-downloads__headline"
+          >
+            <h3>
+              <a
+                href="/definitions#report_yesterday_top_downloads"
+              >
+                Top 20 Downloads Last 7 Days
+              </a>
+            </h3>
+          </div>
+          <h4
+            class="text--normal"
+          >
+            <em>
+              Top file downloads over the last week on Department of Interior hostnames.
+            </em>
+          </h4>
+          <figure
+            class="top-downloads__bar-chart"
           >
             <div
-              class="top-video-plays__headline"
-            >
-              <h3>
-                Top Video Plays Last 7 Days
-              </h3>
-            </div>
-            <h4
-              class="text--normal"
-            >
-              <em>
-                Video play data is unavailable for Department of Interior hostnames.
-              </em>
-            </h4>
-            <div />
-          </section>
-        </div>
-        <div
-          aria-labelledby="tab:r1:2"
-          class="react-tabs__tab-panel"
-          id="panel:r1:2"
-          role="tabpanel"
-        />
+              class="data chart__bar-chart text--capitalize margin-top-4"
+            />
+          </figure>
+        </section>
+        <section
+          class="top-video-plays"
+        >
+          <div
+            class="top-video-plays__headline"
+          >
+            <h3>
+              Top Video Plays Last 7 Days
+            </h3>
+          </div>
+          <h4
+            class="text--normal"
+          >
+            <em>
+              Video play data is unavailable for Department of Interior hostnames.
+            </em>
+          </h4>
+          <div />
+        </section>
       </div>
-    </section>
-  </div>
+      <div
+        aria-labelledby="tab:r1:2"
+        class="react-tabs__tab-panel"
+        id="panel:r1:2"
+        role="tabpanel"
+      />
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`SidebarContent when 30 days tab is selected renders a component with top pages for 30 days, and top downloads for 30 days 1`] = `
 <DocumentFragment>
-  <div
-    id="secondary_data"
+  <section
+    class="sidebar"
   >
-    <section
-      class="sidebar"
+    <div
+      class="sidebar__headline"
     >
-      <div
-        class="sidebar__headline"
+      <h2
+        class="margin-top-0"
       >
-        <h2
-          class="margin-top-0"
+        <a
+          href="/definitions#report_realtime_top_pages"
         >
-          <a
-            href="/definitions#report_realtime_top_pages"
-          >
-            Top 30 Web Pages and App Screens
-          </a>
-        </h2>
-      </div>
-      <div
-        class="react-tabs"
-        data-rttabs="true"
+          Top 30 Web Pages and App Screens
+        </a>
+      </h2>
+    </div>
+    <div
+      class="react-tabs"
+      data-rttabs="true"
+    >
+      <ul
+        class="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented"
+        role="tablist"
       >
-        <ul
-          class="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented"
-          role="tablist"
+        <li
+          aria-controls="panel:r2:0"
+          aria-disabled="false"
+          aria-selected="false"
+          class="sidebar__tab-select__button-group__item usa-button-group__item"
+          data-rttab="true"
+          id="tab:r2:0"
+          role="tab"
         >
-          <li
-            aria-controls="panel:r2:0"
-            aria-disabled="false"
-            aria-selected="false"
-            class="sidebar__tab-select__button-group__item usa-button-group__item"
-            data-rttab="true"
-            id="tab:r2:0"
-            role="tab"
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
           >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              30 mins
-            </button>
-          </li>
-          <li
-            aria-controls="panel:r2:1"
-            aria-disabled="false"
-            aria-selected="false"
-            class="sidebar__tab-select__button-group__item usa-button-group__item"
-            data-rttab="true"
-            id="tab:r2:1"
-            role="tab"
-          >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              7 days
-            </button>
-          </li>
-          <li
-            aria-controls="panel:r2:2"
-            aria-disabled="false"
-            aria-selected="true"
-            class="sidebar__tab-select__button-group__item usa-button-group__item react-tabs__tab--selected"
-            data-rttab="true"
-            id="tab:r2:2"
-            role="tab"
-            tabindex="0"
-          >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              30 days
-            </button>
-          </li>
-        </ul>
-        <div
-          aria-labelledby="tab:r2:0"
-          class="react-tabs__tab-panel"
-          id="panel:r2:0"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="tab:r2:1"
-          class="react-tabs__tab-panel"
-          id="panel:r2:1"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="tab:r2:2"
-          class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-          id="panel:r2:2"
-          role="tabpanel"
+            30 mins
+          </button>
+        </li>
+        <li
+          aria-controls="panel:r2:1"
+          aria-disabled="false"
+          aria-selected="false"
+          class="sidebar__tab-select__button-group__item usa-button-group__item"
+          data-rttab="true"
+          id="tab:r2:1"
+          role="tab"
         >
-          <section
-            class="sidebar__tab__content"
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
           >
-            <p>
-              Sessions over the last month on 
-              <strong>
-                hostnames
-              </strong>
-              , including traffic to all web pages and app screens within that hostname. 
+            7 days
+          </button>
+        </li>
+        <li
+          aria-controls="panel:r2:2"
+          aria-disabled="false"
+          aria-selected="true"
+          class="sidebar__tab-select__button-group__item usa-button-group__item react-tabs__tab--selected"
+          data-rttab="true"
+          id="tab:r2:2"
+          role="tab"
+          tabindex="0"
+        >
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
+          >
+            30 days
+          </button>
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab:r2:0"
+        class="react-tabs__tab-panel"
+        id="panel:r2:0"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r2:1"
+        class="react-tabs__tab-panel"
+        id="panel:r2:1"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r2:2"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="panel:r2:2"
+        role="tabpanel"
+      >
+        <section
+          class="sidebar__tab__content"
+        >
+          <p>
+            Sessions over the last month on 
+            <strong>
+              hostnames
+            </strong>
+            , including traffic to all web pages and app screens within that hostname. 
+            <a
+              href="http://www.example.com/data//top-10000-domains-30-days.csv"
+            >
+              Download the full dataset
+            </a>
+            .
+          </p>
+          <figure
+            data-source="http://www.example.com/data//top-domains-30-days.json"
+          >
+            <div
+              class="data chart__bar-chart text--lowercase margin-top-4"
+            />
+          </figure>
+        </section>
+        <section
+          class="top-downloads padding-bottom-1"
+        >
+          <div
+            class="top-downloads__headline"
+          >
+            <h3>
               <a
-                href="http://www.example.com/data//top-10000-domains-30-days.csv"
+                href="/definitions#report_yesterday_top_downloads"
               >
-                Download the full dataset
+                Top 20 Downloads Last 30 Days
               </a>
-              .
-            </p>
-            <figure
-              data-source="http://www.example.com/data//top-domains-30-days.json"
-            >
-              <div
-                class="data chart__bar-chart text--lowercase margin-top-4"
-              />
-            </figure>
-          </section>
-          <section
-            class="top-downloads padding-bottom-1"
+            </h3>
+          </div>
+          <h4
+            class="text--normal"
+          >
+            <em>
+              Top file downloads over the last month on Department of Interior hostnames.
+            </em>
+          </h4>
+          <figure
+            class="top-downloads__bar-chart"
           >
             <div
-              class="top-downloads__headline"
-            >
-              <h3>
-                <a
-                  href="/definitions#report_yesterday_top_downloads"
-                >
-                  Top 20 Downloads Last 30 Days
-                </a>
-              </h3>
-            </div>
-            <h4
-              class="text--normal"
-            >
-              <em>
-                Top file downloads over the last month on Department of Interior hostnames.
-              </em>
-            </h4>
-            <figure
-              class="top-downloads__bar-chart"
-            >
-              <div
-                class="data chart__bar-chart text--capitalize margin-top-4"
-              />
-            </figure>
-          </section>
-          <section
-            class="top-video-plays"
+              class="data chart__bar-chart text--capitalize margin-top-4"
+            />
+          </figure>
+        </section>
+        <section
+          class="top-video-plays"
+        >
+          <div
+            class="top-video-plays__headline"
           >
-            <div
-              class="top-video-plays__headline"
-            >
-              <h3>
-                Top Video Plays Last 30 Days
-              </h3>
-            </div>
-            <h4
-              class="text--normal"
-            >
-              <em>
-                Video play data is unavailable for Department of Interior hostnames.
-              </em>
-            </h4>
-            <div />
-          </section>
-        </div>
+            <h3>
+              Top Video Plays Last 30 Days
+            </h3>
+          </div>
+          <h4
+            class="text--normal"
+          >
+            <em>
+              Video play data is unavailable for Department of Interior hostnames.
+            </em>
+          </h4>
+          <div />
+        </section>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`SidebarContent when 30 minutes tab is selected renders a component with top pages realtime, and top downloads yesterday 1`] = `
 <DocumentFragment>
-  <div
-    id="secondary_data"
+  <section
+    class="sidebar"
   >
-    <section
-      class="sidebar"
+    <div
+      class="sidebar__headline"
     >
-      <div
-        class="sidebar__headline"
+      <h2
+        class="margin-top-0"
       >
-        <h2
-          class="margin-top-0"
+        <a
+          href="/definitions#report_realtime_top_pages"
         >
-          <a
-            href="/definitions#report_realtime_top_pages"
-          >
-            Top 30 Web Pages and App Screens
-          </a>
-        </h2>
-      </div>
-      <div
-        class="react-tabs"
-        data-rttabs="true"
+          Top 30 Web Pages and App Screens
+        </a>
+      </h2>
+    </div>
+    <div
+      class="react-tabs"
+      data-rttabs="true"
+    >
+      <ul
+        class="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented"
+        role="tablist"
       >
-        <ul
-          class="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented"
-          role="tablist"
+        <li
+          aria-controls="panel:r0:0"
+          aria-disabled="false"
+          aria-selected="true"
+          class="sidebar__tab-select__button-group__item usa-button-group__item react-tabs__tab--selected"
+          data-rttab="true"
+          id="tab:r0:0"
+          role="tab"
+          tabindex="0"
         >
-          <li
-            aria-controls="panel:r0:0"
-            aria-disabled="false"
-            aria-selected="true"
-            class="sidebar__tab-select__button-group__item usa-button-group__item react-tabs__tab--selected"
-            data-rttab="true"
-            id="tab:r0:0"
-            role="tab"
-            tabindex="0"
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
           >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              30 mins
-            </button>
-          </li>
-          <li
-            aria-controls="panel:r0:1"
-            aria-disabled="false"
-            aria-selected="false"
-            class="sidebar__tab-select__button-group__item usa-button-group__item"
-            data-rttab="true"
-            id="tab:r0:1"
-            role="tab"
-          >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              7 days
-            </button>
-          </li>
-          <li
-            aria-controls="panel:r0:2"
-            aria-disabled="false"
-            aria-selected="false"
-            class="sidebar__tab-select__button-group__item usa-button-group__item"
-            data-rttab="true"
-            id="tab:r0:2"
-            role="tab"
-          >
-            <button
-              class="sidebar__tab-select__button usa-button"
-              type="button"
-            >
-              30 days
-            </button>
-          </li>
-        </ul>
-        <div
-          aria-labelledby="tab:r0:0"
-          class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-          id="panel:r0:0"
-          role="tabpanel"
+            30 mins
+          </button>
+        </li>
+        <li
+          aria-controls="panel:r0:1"
+          aria-disabled="false"
+          aria-selected="false"
+          class="sidebar__tab-select__button-group__item usa-button-group__item"
+          data-rttab="true"
+          id="tab:r0:1"
+          role="tab"
         >
-          <section
-            class="sidebar__tab__content padding-bottom-1"
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
           >
-            <p>
-              <strong>
-                Users
-              </strong>
-               on a 
-              <strong>
-                single, specific page or app screen
-              </strong>
-               in the last 30 minutes. Hostnames are not currently reported in real-time, so only page title and screen name information is available.
-            </p>
-            <figure>
-              <div
-                class="data chart__bar-chart text--capitalize margin-top-4"
-              />
-            </figure>
-          </section>
-          <section
-            class="top-downloads padding-bottom-1"
+            7 days
+          </button>
+        </li>
+        <li
+          aria-controls="panel:r0:2"
+          aria-disabled="false"
+          aria-selected="false"
+          class="sidebar__tab-select__button-group__item usa-button-group__item"
+          data-rttab="true"
+          id="tab:r0:2"
+          role="tab"
+        >
+          <button
+            class="sidebar__tab-select__button usa-button"
+            type="button"
+          >
+            30 days
+          </button>
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab:r0:0"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="panel:r0:0"
+        role="tabpanel"
+      >
+        <section
+          class="sidebar__tab__content padding-bottom-1"
+        >
+          <p>
+            <strong>
+              Users
+            </strong>
+             on a 
+            <strong>
+              single, specific page or app screen
+            </strong>
+             in the last 30 minutes. Hostnames are not currently reported in real-time, so only page title and screen name information is available.
+          </p>
+          <figure>
+            <div
+              class="data chart__bar-chart text--capitalize margin-top-4"
+            />
+          </figure>
+        </section>
+        <section
+          class="top-downloads padding-bottom-1"
+        >
+          <div
+            class="top-downloads__headline"
+          >
+            <h3>
+              <a
+                href="/definitions#report_yesterday_top_downloads"
+              >
+                Top 20 Downloads Yesterday
+              </a>
+            </h3>
+          </div>
+          <h4
+            class="text--normal"
+          >
+            <em>
+              Top file downloads yesterday on Department of Interior hostnames.
+            </em>
+          </h4>
+          <figure
+            class="top-downloads__bar-chart"
           >
             <div
-              class="top-downloads__headline"
-            >
-              <h3>
-                <a
-                  href="/definitions#report_yesterday_top_downloads"
-                >
-                  Top 20 Downloads Yesterday
-                </a>
-              </h3>
-            </div>
-            <h4
-              class="text--normal"
-            >
-              <em>
-                Top file downloads yesterday on Department of Interior hostnames.
-              </em>
-            </h4>
-            <figure
-              class="top-downloads__bar-chart"
-            >
-              <div
-                class="data chart__bar-chart text--capitalize margin-top-4"
-              />
-            </figure>
-          </section>
-          <section
-            class="top-video-plays"
+              class="data chart__bar-chart text--capitalize margin-top-4"
+            />
+          </figure>
+        </section>
+        <section
+          class="top-video-plays"
+        >
+          <div
+            class="top-video-plays__headline"
           >
-            <div
-              class="top-video-plays__headline"
-            >
-              <h3>
-                Top Video Plays Yesterday
-              </h3>
-            </div>
-            <h4
-              class="text--normal"
-            >
-              <em>
-                Video play data is unavailable for Department of Interior hostnames.
-              </em>
-            </h4>
-            <div />
-          </section>
-        </div>
-        <div
-          aria-labelledby="tab:r0:1"
-          class="react-tabs__tab-panel"
-          id="panel:r0:1"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="tab:r0:2"
-          class="react-tabs__tab-panel"
-          id="panel:r0:2"
-          role="tabpanel"
-        />
+            <h3>
+              Top Video Plays Yesterday
+            </h3>
+          </div>
+          <h4
+            class="text--normal"
+          >
+            <em>
+              Video play data is unavailable for Department of Interior hostnames.
+            </em>
+          </h4>
+          <div />
+        </section>
       </div>
-    </section>
-  </div>
+      <div
+        aria-labelledby="tab:r0:1"
+        class="react-tabs__tab-panel"
+        id="panel:r0:1"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r0:2"
+        class="react-tabs__tab-panel"
+        id="panel:r0:2"
+        role="tabpanel"
+      />
+    </div>
+  </section>
 </DocumentFragment>
 `;

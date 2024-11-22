@@ -67,16 +67,9 @@ function Sessions30Days({ dataHrefBase }) {
   }, [sessionData]);
 
   return (
-    <>
-      <div className="chart__title">Daily Sessions</div>
-      <div
-        className="chart__time-series__container"
-        data-refresh="15"
-        ref={ref}
-      >
-        <svg className="data chart__time-series"></svg>
-      </div>
-    </>
+    <div className="chart__time-series__container" ref={ref}>
+      <svg className="data chart__time-series"></svg>
+    </div>
   );
 }
 
