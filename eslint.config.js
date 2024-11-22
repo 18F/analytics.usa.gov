@@ -73,6 +73,10 @@ module.exports = [
     ],
     rules: {
       ...jsxA11y.configs.recommended.rules,
+      // This doesn't allow anchor tags without HREF attributes, which are
+      // sometimes required to avoid other accessibility concerns like needing
+      // non-focusable buttons.
+      "jsx-a11y/anchor-is-valid": "off",
     },
   },
   {
