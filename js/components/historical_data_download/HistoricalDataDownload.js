@@ -216,7 +216,7 @@ function HistoricalDataDownloads({ apiURL, mainAgencyName, agencies }) {
         <div className="historical-analytics-data__header grid-row">
           <div className="desktop:grid-col-8">
             <h1>Download Universal Analytics historical data</h1>
-            <h2 className="palette-color-5">
+            <h2 className="palette-color-4">
               <svg
                 className="usa-icon"
                 aria-hidden="true"
