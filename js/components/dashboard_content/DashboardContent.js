@@ -115,6 +115,14 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
             <div id="main_data" className="usa-card__body">
               <article className="min-height-large section">
                 <h2 className="section__headline margin-0">
+                  <svg
+                    className="usa-icon margin-bottom-neg-05 margin-right-05"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
+                  </svg>
                   <a href="/definitions#report_realtime_locations_languages">
                     User Locations and Languages in the Last 30 Minutes
                   </a>
