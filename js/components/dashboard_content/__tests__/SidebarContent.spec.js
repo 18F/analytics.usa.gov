@@ -14,7 +14,7 @@ describe("SidebarContent", () => {
           agency="Department of Interior"
         />,
       );
-      await waitFor(() => screen.getByRole("button", { name: "30 mins" }));
+      await waitFor(() => screen.getByRole("generic", { name: "30 mins" }));
     });
 
     it("renders a component with top pages realtime, and top downloads yesterday", () => {
@@ -32,8 +32,8 @@ describe("SidebarContent", () => {
           agency="Department of Interior"
         />,
       );
-      await waitFor(() => screen.getByRole("button", { name: "7 days" }));
-      await user.click(screen.getByRole("button", { name: "7 days" }));
+      await waitFor(() => screen.getByRole("generic", { name: "7 days" }));
+      await user.click(screen.getByRole("generic", { name: "7 days" }));
     });
 
     it("renders a component with top pages for 7 days, and top downloads for 7 days", () => {
@@ -51,8 +51,8 @@ describe("SidebarContent", () => {
           agency="Department of Interior"
         />,
       );
-      await waitFor(() => screen.getByRole("button", { name: "30 days" }));
-      await user.click(screen.getByRole("button", { name: "30 days" }));
+      await waitFor(() => screen.getByRole("generic", { name: "30 days" }));
+      await user.click(screen.getByRole("generic", { name: "30 days" }));
     });
 
     it("renders a component with top pages for 30 days, and top downloads for 30 days", () => {

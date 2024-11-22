@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Config from "../../lib/config";
 import DeviceDemographics from "./DeviceDemographics";
 import Engagement from "./Engagement";
-import LocationsAndLanguages from "./LocationsAndLanguages";
 import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
 import TrafficSources from "./TrafficSources";
@@ -14,6 +13,9 @@ import CardContent from "../card/CardContent";
 import CardGroup from "../card/CardGroup";
 import RealtimeMetricCount from "../data_visualization/RealtimeMetricCount";
 import RealtimeEventCount from "../data_visualization/RealtimeEventCount";
+import TopCitiesRealtime from "./TopCitiesRealtime";
+import TopCountriesRealtime from "./TopCountriesRealtime";
+import TopLanguagesHistorical from "./TopLanguagesHistorical";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -47,7 +49,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
       </div>
       <CardGroup>
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
-          <CardContent className="white bg-palette-color-2 text--centered text--bold">
+          <CardContent className="white bg-palette-color-1 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">Total Users</p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
@@ -62,7 +64,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           </CardContent>
         </Card>
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
-          <CardContent className="white bg-palette-color-3 text--centered text--bold">
+          <CardContent className="white bg-palette-color-2 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">First Time Users</p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
@@ -77,7 +79,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           </CardContent>
         </Card>
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
-          <CardContent className="white bg-palette-color-4 text--centered text--bold">
+          <CardContent className="white bg-palette-color-3 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">Total Views</p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
@@ -92,7 +94,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
           </CardContent>
         </Card>
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
-          <CardContent className="white bg-palette-color-5 text--centered text--bold">
+          <CardContent className="white bg-palette-color-4 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">Files Downloaded</p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
@@ -110,23 +112,59 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
       <CardGroup>
         <Card className="card:grid-col-12 desktop:grid-col-8">
           <CardContent>
-            <div id="main_data">
+            <div id="main_data" className="usa-card__body">
               <article className="min-height-large section">
-                <LocationsAndLanguages dataHrefBase={dataHrefBase} />
+                <h2 className="section__headline margin-0">
+                  <svg
+                    className="usa-icon margin-bottom-neg-05 margin-right-05"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
+                  </svg>
+                  <a href="/definitions#report_realtime_locations_languages">
+                    User Locations and Languages in the Last 30 Minutes
+                  </a>
+                </h2>
+                <CardGroup className="padding-top-2">
+                  <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                    <CardContent className="no-border desktop:padding-right-1">
+                      <TopCitiesRealtime
+                        dataHrefBase={dataHrefBase}
+                        refreshSeconds={Config.realtimeDataRefreshSeconds}
+                      />
+                    </CardContent>
+                  </Card>
+                  <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                    <CardContent className="no-border desktop:padding-x-1">
+                      <TopCountriesRealtime
+                        dataHrefBase={dataHrefBase}
+                        refreshSeconds={Config.realtimeDataRefreshSeconds}
+                      />
+                    </CardContent>
+                  </Card>
+                  <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                    <CardContent className="no-border desktop:padding-left-1">
+                      <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
+                    </CardContent>
+                  </Card>
+                </CardGroup>
               </article>
 
               <article className="padding-y-3 section section--bordered">
-                <div className="section__headline">
+                <h2 className="section__headline margin-0">
                   30 Day Historical Data and Trends
-                </div>
+                </h2>
               </article>
 
               <article className="min-height-small padding-y-3 section section--bordered">
+                <h3 className="chart__title margin-0">Daily Sessions</h3>
                 <Sessions30Days dataHrefBase={dataHrefBase} />
               </article>
 
               <article className="section section--bordered">
-                <section className="section__subheader padding-2 text--centered">
+                <section className="section__subheader padding-2 text-center">
                   <Visitors30Days dataHrefBase={dataHrefBase} />
                 </section>
               </article>
@@ -159,7 +197,9 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </Card>
         <Card className="card:grid-col-12 desktop:grid-col-4">
           <CardContent>
-            <SidebarContent dataHrefBase={dataHrefBase} agency={agency} />
+            <div id="secondary_data" className="usa-card__body">
+              <SidebarContent dataHrefBase={dataHrefBase} agency={agency} />
+            </div>
           </CardContent>
         </Card>
       </CardGroup>
