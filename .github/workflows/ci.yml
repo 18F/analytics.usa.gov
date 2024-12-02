@@ -77,7 +77,7 @@ jobs:
         run: npm ci --timing
       - name: Run tests
         run: npm test
-  accessibility:
+  accessibility-axe:
     needs:
       - lint-js
       - lint-styles
@@ -103,14 +103,42 @@ jobs:
           PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
         run: npm ci --timing
       - name: Run the local server and run axe-cli against each page
-        run: npm start & sleep 30 && npm run accessibility:axe
+        run: npm start & sleep 30; npm run accessibility:axe
+  accessibility-pa11y:
+    needs:
+      - lint-js
+      - lint-styles
+      - audit-dependencies
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Install ruby and bundle gem dependencies
+        uses: ruby/setup-ruby@360dc864d5da99d54fcb8e9148c14a84b90d3e88
+        with:
+          bundler-cache: true
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: 'npm'
+      - name: Install node dependencies
+        # Fix for installing puppeteer which is a pa11y dependency.
+        # Remove when this GitHub issue is resolved: https://github.com/puppeteer/puppeteer/issues/12094
+        env:
+          PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
+        run: npm ci --timing
+      - name: Run the local server and run pa11y-cli against each page
+        run: npm start & sleep 30; npm run accessibility:pa11y
   deploy_dev:
     needs:
       - lint-js
       - lint-styles
       - audit-dependencies
       - test
-      - accessibility
+      - accessibility-axe
+      - accessibility-pa11y
     if: github.ref == 'refs/heads/develop'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
@@ -135,7 +163,8 @@ jobs:
       - lint-styles
       - audit-dependencies
       - test
-      - accessibility
+      - accessibility-axe
+      - accessibility-pa11y
     if: github.ref == 'refs/heads/staging'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
@@ -160,7 +189,8 @@ jobs:
       - lint-styles
       - audit-dependencies
       - test
-      - accessibility
+      - accessibility-axe
+      - accessibility-pa11y
     if: github.ref == 'refs/heads/master'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
