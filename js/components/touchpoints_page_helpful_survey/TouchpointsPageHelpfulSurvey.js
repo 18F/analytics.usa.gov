@@ -33,7 +33,7 @@ function TouchpointsPageHelpfulSurvey() {
         );
         const feedbackTextArea = formElement.querySelector("textarea");
         const questions = formElement.querySelectorAll(".questions .question");
-        const header = formElement.querySelector("header");
+        const header = formElement.querySelector("#fba-form-title-8fc3c209");
         const submitButton = formElement.querySelector(
           'button.submit_form_button[type="submit"]',
         );
