@@ -20,6 +20,7 @@
     "pa11y": "pa11y http://localhost:4000",
     "start": "SCRIPT_DEBUG=true npm-run-all --parallel build:local watch:local serve:local",
     "test": "jest",
+    "test:debug": "NODE_ENV=test node --inspect-brk node_modules/jest/bin/jest.js",
     "install-git-hooks": "cp ./hooks/* .git/hooks/ && chmod -R a+x .git/hooks/"
   },
   "repository": {
