@@ -1,0 +1,15 @@
+# Snyk (https://snyk.io) policy file
+exclude:
+ global:
+   - docs
+   - ga4-data
+   - hooks
+  code: # Ignore unit test code and configuration files (not included in production bundle)
+    - js/**/__tests__/*.spec.js
+    - js/**/__tests__/__snapshots__/*.spec.js.snap
+    - spec/**/*.js
+    - eslint.config.js
+    - jest_setup.js
+    - jest.config.js
+    - nyc.config.js
+
