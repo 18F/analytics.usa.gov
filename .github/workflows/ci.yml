@@ -41,25 +41,10 @@ jobs:
         run: npm ci --verbose --timing
       - name: Lint SCSS
         run: npm run lint:styles
-  audit-dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
-      - name: Install Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-          cache: 'npm'
-      - name: Install node dependencies
-        run: npm ci
-      - name: Validate npm package signatures
-        run: npm audit signatures
   test:
     needs:
       - lint-js
       - lint-styles
-      - audit-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
@@ -77,11 +62,28 @@ jobs:
         run: npm ci --timing
       - name: Run tests
         run: npm test
+  audit-dependencies:
+    needs:
+      - lint-js
+      - lint-styles
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: 'npm'
+      - name: Install node dependencies
+        run: npm ci
+      - name: Validate npm package signatures
+        run: npm audit signatures
   accessibility-axe:
     needs:
       - lint-js
       - lint-styles
-      - audit-dependencies
       - test
     runs-on: ubuntu-latest
     steps:
@@ -108,7 +110,6 @@ jobs:
     needs:
       - lint-js
       - lint-styles
-      - audit-dependencies
       - test
     runs-on: ubuntu-latest
     steps:
@@ -135,8 +136,8 @@ jobs:
     needs:
       - lint-js
       - lint-styles
-      - audit-dependencies
       - test
+      - audit-dependencies
       - accessibility-axe
       - accessibility-pa11y
     if: github.ref == 'refs/heads/develop'
@@ -161,8 +162,8 @@ jobs:
     needs:
       - lint-js
       - lint-styles
-      - audit-dependencies
       - test
+      - audit-dependencies
       - accessibility-axe
       - accessibility-pa11y
     if: github.ref == 'refs/heads/staging'
@@ -187,8 +188,8 @@ jobs:
     needs:
       - lint-js
       - lint-styles
-      - audit-dependencies
       - test
+      - audit-dependencies
       - accessibility-axe
       - accessibility-pa11y
     if: github.ref == 'refs/heads/master'
