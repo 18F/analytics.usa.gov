@@ -34,9 +34,9 @@ function Footer({ siteDomain }) {
                     </svg>
                   </div>
                   <div className="usa-media-block__body">
-                    <h3 className="margin-0 text-normal">
+                    <h1 className="margin-0 text-normal font-sans-md">
                       Have an idea or issue?
-                    </h3>
+                    </h1>
                     <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
                       <a
                         href="https://github.com/18F/analytics.usa.gov/issues"
@@ -62,9 +62,9 @@ function Footer({ siteDomain }) {
                     </svg>
                   </div>
                   <div className="usa-media-block__body">
-                    <h3 className="margin-0 text-normal">
+                    <h1 className="margin-0 text-normal font-sans-md">
                       View code on GitHub
-                    </h3>
+                    </h1>
                     <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
                       <a
                         href="https://github.com/18F/analytics-reporter"
@@ -99,9 +99,9 @@ function Footer({ siteDomain }) {
                     </svg>
                   </div>
                   <div className="usa-media-block__body">
-                    <h3 className="margin-0 text-normal">
+                    <h1 className="margin-0 text-normal font-sans-md">
                       Questions or website feedback
-                    </h3>
+                    </h1>
                     <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
                       <a href="mailto:analytics.usa.gov@gsa.gov">
                         Get in touch
@@ -123,9 +123,9 @@ function Footer({ siteDomain }) {
                     </svg>
                   </div>
                   <div className="usa-media-block__body">
-                    <h3 className="margin-0 text-normal">
+                    <h1 className="margin-0 text-normal font-sans-md">
                       Add an agency website to DAP
-                    </h3>
+                    </h1>
                     <p className="margin-top-1 margin-bottom-0 text--semibold font-sans-md">
                       <a href="mailto:dap@gsa.gov">Email the DAP help desk</a>
                     </p>
