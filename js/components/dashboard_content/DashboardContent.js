@@ -16,6 +16,9 @@ import RealtimeEventCount from "../data_visualization/RealtimeEventCount";
 import TopCitiesRealtime from "./TopCitiesRealtime";
 import TopCountriesRealtime from "./TopCountriesRealtime";
 import TopLanguagesHistorical from "./TopLanguagesHistorical";
+import Accordion from "../accordion/Accordion";
+import AccordionHeader from "../accordion/AccordionHeader";
+import AccordionContent from "../accordion/AccordionContent";
 
 /**
  * Contains charts and other data visualizations for the main page of the site.
@@ -113,85 +116,133 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <Card className="card:grid-col-12 desktop:grid-col-8">
           <CardContent>
             <div id="main_data" className="usa-card__body">
-              <article className="min-height-large section">
-                <h2 className="section__headline margin-0">
-                  <svg
-                    className="usa-icon margin-bottom-neg-05 margin-right-05"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
+              <Accordion className="usa-accordion--bordered">
+                <AccordionHeader className="section__headline margin-0">
+                  <button
+                    type="button"
+                    className="usa-accordion__button white bg-palette-color-2"
+                    aria-expanded="true"
+                    aria-controls="user-locations-languages-group"
                   >
-                    <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
-                  </svg>
-                  <a href="/definitions#report_realtime_locations_languages">
-                    User Locations and Languages in the Last 30 Minutes
-                  </a>
-                </h2>
-                <CardGroup className="padding-top-2">
-                  <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
-                    <CardContent className="no-border desktop:padding-right-1">
-                      <TopCitiesRealtime
-                        dataHrefBase={dataHrefBase}
-                        refreshSeconds={Config.realtimeDataRefreshSeconds}
-                      />
-                    </CardContent>
-                  </Card>
-                  <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
-                    <CardContent className="no-border desktop:padding-x-1">
-                      <TopCountriesRealtime
-                        dataHrefBase={dataHrefBase}
-                        refreshSeconds={Config.realtimeDataRefreshSeconds}
-                      />
-                    </CardContent>
-                  </Card>
-                  <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
-                    <CardContent className="no-border desktop:padding-left-1">
-                      <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
-                    </CardContent>
-                  </Card>
-                </CardGroup>
-              </article>
+                    <svg
+                      className="usa-icon white margin-bottom-neg-05 margin-right-05"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
+                    </svg>
+                    <a
+                      className="white"
+                      href="/definitions#report_realtime_locations_languages"
+                    >
+                      User Locations and Languages in the Last 30 Minutes
+                    </a>
+                  </button>
+                </AccordionHeader>
+                <AccordionContent id="user-locations-languages-group">
+                  <CardGroup className="padding-top-2">
+                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                      <CardContent className="no-border desktop:padding-right-1">
+                        <TopCitiesRealtime
+                          dataHrefBase={dataHrefBase}
+                          refreshSeconds={Config.realtimeDataRefreshSeconds}
+                        />
+                      </CardContent>
+                    </Card>
+                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                      <CardContent className="no-border desktop:padding-x-1">
+                        <TopCountriesRealtime
+                          dataHrefBase={dataHrefBase}
+                          refreshSeconds={Config.realtimeDataRefreshSeconds}
+                        />
+                      </CardContent>
+                    </Card>
+                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                      <CardContent className="no-border desktop:padding-left-1">
+                        <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
+                      </CardContent>
+                    </Card>
+                  </CardGroup>
+                </AccordionContent>
+                <AccordionHeader className="section__headline margin-0">
+                  <button
+                    type="button"
+                    className="usa-accordion__button white bg-palette-color-2"
+                    aria-expanded="true"
+                    aria-controls="30-day-sessions-users"
+                  >
+                    30 Day Sessions and Users
+                  </button>
+                </AccordionHeader>
+                <AccordionContent id="30-day-sessions-users">
+                  <article className="min-height-small padding-y-3 section">
+                    <h3 className="chart__title margin-0">Daily Sessions</h3>
+                    <Sessions30Days dataHrefBase={dataHrefBase} />
+                  </article>
 
-              <article className="padding-y-3 section section--bordered">
-                <h2 className="section__headline margin-0">
-                  30 Day Historical Data and Trends
-                </h2>
-              </article>
-
-              <article className="min-height-small padding-y-3 section section--bordered">
-                <h3 className="chart__title margin-0">Daily Sessions</h3>
-                <Sessions30Days dataHrefBase={dataHrefBase} />
-              </article>
-
-              <article className="section section--bordered">
-                <section className="section__subheader padding-2 text-center">
-                  <Visitors30Days dataHrefBase={dataHrefBase} />
-                </section>
-              </article>
-
-              <article className="section section--bordered">
-                <section>
-                  <Engagement dataHrefBase={dataHrefBase} />
-                </section>
-              </article>
-
-              <article className="min-height-large padding-y-3 section section--bordered">
-                <div className="section__headline">
-                  <a href="/definitions#report_historical_top_traffic_sources">
-                    Top Traffic Sources
-                  </a>
-                </div>
-                <TrafficSources dataHrefBase={dataHrefBase} />
-              </article>
-
-              <article className="min-height-large padding-y-3 section section--bordered">
-                <div className="section__headline">
-                  <a href="/definitions#report_historical_device_demographics">
-                    User Device Demographics
-                  </a>
-                </div>
-                <DeviceDemographics dataHrefBase={dataHrefBase} />
-              </article>
+                  <article className="section section--bordered">
+                    <section className="section__subheader padding-2 text-center">
+                      <Visitors30Days dataHrefBase={dataHrefBase} />
+                    </section>
+                  </article>
+                </AccordionContent>
+                <AccordionHeader className="section__headline margin-0">
+                  <button
+                    type="button"
+                    className="usa-accordion__button white bg-palette-color-2"
+                    aria-expanded="true"
+                    aria-controls="30-day-user-engagement"
+                  >
+                    30 Day User Engagement
+                  </button>
+                </AccordionHeader>
+                <AccordionContent id="30-day-user-engagement">
+                  <section>
+                    <Engagement dataHrefBase={dataHrefBase} />
+                  </section>
+                </AccordionContent>
+                <AccordionHeader className="section__headline margin-0">
+                  <button
+                    type="button"
+                    className="usa-accordion__button white bg-palette-color-2"
+                    aria-expanded="true"
+                    aria-controls="30-day-traffic-sources"
+                  >
+                    <a
+                      className="white"
+                      href="/definitions#report_historical_top_traffic_sources"
+                    >
+                      30 Day Traffic Sources
+                    </a>
+                  </button>
+                </AccordionHeader>
+                <AccordionContent id="30-day-traffic-sources">
+                  <article className="min-height-large section">
+                    <TrafficSources dataHrefBase={dataHrefBase} />
+                  </article>
+                </AccordionContent>
+                <AccordionHeader className="section__headline margin-0">
+                  <button
+                    type="button"
+                    className="usa-accordion__button white bg-palette-color-2"
+                    aria-expanded="true"
+                    aria-controls="30-day-demographics"
+                  >
+                    <a
+                      className="white"
+                      href="/definitions#report_historical_device_demographics"
+                    >
+                      30 Day User Device Demographics
+                    </a>
+                  </button>
+                </AccordionHeader>
+                <AccordionContent id="30-day-demographics">
+                  <article className="min-height-large section">
+                    <DeviceDemographics dataHrefBase={dataHrefBase} />
+                  </article>
+                </AccordionContent>
+              </Accordion>
             </div>
           </CardContent>
         </Card>
