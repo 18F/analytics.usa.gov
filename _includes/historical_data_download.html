@@ -8,9 +8,11 @@
   the JSON passed to the agencies property, so ignore this div for linting
 -->
 <!-- prettier-ignore -->
-<main
-  id="historical-data-download-root"
-  apiURL="{{ site.api_url }}"
-  mainAgencyName="{{ site.dropdown_title }}"
-  agencies='{{ site.data.agencies | jsonify }}'
-></main>
+<main>
+  <div
+    id="historical-data-download-root"
+    apiURL="{{ site.api_url }}"
+    mainAgencyName="{{ site.dropdown_title }}"
+    agencies='{{ site.data.agencies | jsonify }}'
+  ></div>
+</main>
