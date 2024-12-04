@@ -140,7 +140,7 @@ jobs:
       - audit-dependencies
       - accessibility-axe
       - accessibility-pa11y
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/develop' && !github.event_name == 'pull_request'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
       API_APP_NAME: ${{ vars.API_APP_NAME_DEV }}
@@ -166,7 +166,7 @@ jobs:
       - audit-dependencies
       - accessibility-axe
       - accessibility-pa11y
-    if: github.ref == 'refs/heads/staging'
+    if: github.ref == 'refs/heads/staging' && !github.event_name == 'pull_request'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
       API_APP_NAME: ${{ vars.API_APP_NAME_STG }}
@@ -192,7 +192,7 @@ jobs:
       - audit-dependencies
       - accessibility-axe
       - accessibility-pa11y
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && !github.event_name == 'pull_request'
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
     with:
       API_APP_NAME: ${{ vars.API_APP_NAME_PRD }}
