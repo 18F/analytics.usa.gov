@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import DataLoader from "../../lib/data_loader";
 import ChartBuilder from "../../lib/chart_helpers/chart_builder";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the browser report from the passed data URL and creates a
@@ -40,7 +41,14 @@ function BrowsersChart({ dataHrefBase }) {
   return (
     <>
       <div className="chart__title">
-        <a href="/definitions#dimension_browser">Web Browsers</a>
+        <a href="/definitions#dimension_browser">
+          <Tooltip
+            position="top"
+            content="The name of the web browser used by the user to access the site."
+          >
+            Web Browsers
+          </Tooltip>
+        </a>
       </div>
       <figure id="chart_browsers" ref={ref}>
         <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
