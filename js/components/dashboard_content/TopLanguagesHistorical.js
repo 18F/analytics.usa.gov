@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
 import transformers from "../../lib/chart_helpers/transformers";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the top languages report from the passed data URL and creates a
@@ -70,7 +71,14 @@ function TopLanguagesHistorical({ dataHrefBase }) {
   return (
     <>
       <div className="chart__title">
-        <a href="/definitions#dimension_language">Languages</a>
+        <a href="/definitions#dimension_language">
+          <Tooltip
+            position="top"
+            content="The name of the language of a user's browser or device."
+          >
+            Languages
+          </Tooltip>
+        </a>
       </div>
       <figure id="chart_top-languages" ref={ref}>
         <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
