@@ -5,6 +5,7 @@ import DevicesChart from "./DevicesChart";
 import BrowsersChart from "./BrowsersChart";
 import OperatingSystemsChart from "./OperatingSystemsChart";
 import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Contains charts and other data visualizations for the user demographics
@@ -25,7 +26,12 @@ function DeviceDemographics({ dataHrefBase }) {
         <DevicesChart dataHrefBase={dataHrefBase} />
         <div className="chart__title desktop:padding-top-2">
           <a href="/definitions#dimension_screen_resolution">
-            Top Screen Resolutions
+            <Tooltip
+              position="top"
+              content="The width and height (in pixels) of the screen from which user activity originates."
+            >
+              Top Screen Resolutions
+            </Tooltip>
           </a>
         </div>
         <div className="text--capitalize">
