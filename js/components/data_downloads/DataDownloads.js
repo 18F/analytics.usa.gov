@@ -45,7 +45,7 @@ function DataDownloads({ dataURL, dataPrefix }) {
               <td>
                 <a
                   href={hrefBase + "/all-pages-realtime.json"}
-                  className="analytics-data__download-button usa-button bg-palette-color-2"
+                  className="analytics-data__download-button usa-button usa-tooltip bg-palette-color-2"
                   aria-label="all-pages-realtime.json"
                 >
                   JSON

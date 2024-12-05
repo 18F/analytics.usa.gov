@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import DataLoader from "../../lib/data_loader";
 import TopDownloads from "./TopDownloads";
 import TopVideoPlays from "./TopVideoPlays";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Contains charts and other data visualizations for the top downloads and top
@@ -68,9 +69,22 @@ function TopDownloadsAndVideoPlays({
       <section className="top-downloads padding-bottom-1">
         <div className="top-downloads__headline">
           <h3>
-            <a href="/definitions#report_yesterday_top_downloads">
+            <a href="/definitions#report_top_downloads">
               Top {__topDownloadsCount()} Downloads {timeIntervalHeader}
             </a>
+            <Tooltip
+              position="top"
+              content="Top files downloaded across all DAP participating government publicly-available websites. Updated daily for the yesterday, last 7 days, and last 30 days aggregate reports."
+            >
+              <svg
+                className="usa-icon margin-bottom-neg-05 margin-left-05"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+              </svg>
+            </Tooltip>
           </h3>
         </div>
         <h4 className="text--normal">
@@ -87,9 +101,24 @@ function TopDownloadsAndVideoPlays({
       <section className="top-video-plays">
         <div className="top-video-plays__headline">
           <h3>
-            {__shouldDisplayVideoPlays()
-              ? `Top ${numberOfTopVideoPlaysToDisplay} Video Plays ${timeIntervalHeader}`
-              : `Top Video Plays ${timeIntervalHeader}`}
+            <a href="/definitions#report_top_video_plays">
+              {__shouldDisplayVideoPlays()
+                ? `Top ${numberOfTopVideoPlaysToDisplay} Video Plays ${timeIntervalHeader}`
+                : `Top Video Plays ${timeIntervalHeader}`}
+            </a>
+            <Tooltip
+              position="top"
+              content="Top videos played across all DAP participating government publicly-available websites. Updated daily for the yesterday, last 7 days, and last 30 days aggregate reports"
+            >
+              <svg
+                className="usa-icon margin-bottom-neg-05 margin-left-05"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+              </svg>
+            </Tooltip>
           </h3>
         </div>
         <h4 className="text--normal">
