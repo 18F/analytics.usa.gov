@@ -121,7 +121,7 @@ function SidebarContent({ dataHrefBase, agency }) {
               Sessions over the last month on <strong>hostnames</strong>,
               including traffic to all web pages and app screens within that
               hostname.{" "}
-              <a href={dataHrefBase + "/top-10000-domains-30-days.csv"}>
+              <a href={dataHrefBase + "/top-100000-domains-30-days.csv"}>
                 Download the full dataset
               </a>
               .
