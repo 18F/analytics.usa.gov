@@ -8,6 +8,7 @@ import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
 import TrafficSources from "./TrafficSources";
 import Visitors30Days from "./Visitors30Days";
+import Tooltip from "../tooltip/Tooltip";
 import Card from "../card/Card";
 import CardContent from "../card/CardContent";
 import CardGroup from "../card/CardGroup";
@@ -115,17 +116,20 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
             <div id="main_data" className="usa-card__body">
               <article className="min-height-large section">
                 <h2 className="section__headline margin-0">
-                  <svg
-                    className="usa-icon margin-bottom-neg-05 margin-right-05"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
+                  User Locations and Languages in the Last 30 Minutes
+                  <Tooltip
+                    position="top"
+                    content="Top cities and countries from which user activity originated, and top language settings in user browsers. Location data may be affected by a user's VPN usage."
                   >
-                    <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
-                  </svg>
-                  <a href="/definitions#report_realtime_locations_languages">
-                    User Locations and Languages in the Last 30 Minutes
-                  </a>
+                    <svg
+                      className="usa-icon margin-bottom-neg-05 margin-left-05"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                    </svg>
+                  </Tooltip>
                 </h2>
                 <CardGroup className="padding-top-2">
                   <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
