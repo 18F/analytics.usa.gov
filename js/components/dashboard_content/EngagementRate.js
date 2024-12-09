@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the engagement rate report from the passed data URL and creates a
@@ -48,7 +49,12 @@ function EngagementRate({ dataHrefBase }) {
         className="chart__title"
         href="/definitions#report_historical_engagement_rate"
       >
-        Percent of Engaged Sessions
+        <Tooltip
+          position="top"
+          content="The percentage of sessions where users were engaged with the site or application."
+        >
+          Percent of Engaged Sessions
+        </Tooltip>
       </a>
       <div ref={ref}>
         <div className="data chart__rate padding-top-05"></div>

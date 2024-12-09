@@ -5,6 +5,7 @@ import d3 from "d3";
 import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
 import nestCharts from "../../lib/chart_helpers/nest_charts";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the operating systems report from the passed data URL and creates a
@@ -59,7 +60,14 @@ function OperatingSystemsChart({ dataHrefBase }) {
   return (
     <div>
       <div className="chart__title">
-        <a href="/definitions#dimension_operating_system">Operating Systems</a>
+        <a href="/definitions#dimension_operating_system">
+          <Tooltip
+            position="top"
+            content="The name of the operating system used by the user's device."
+          >
+            Operating Systems
+          </Tooltip>
+        </a>
       </div>
       <figure id="chart_os" ref={osRef}>
         <div className="data chart__bar-chart text--capitalize margin-top-4"></div>

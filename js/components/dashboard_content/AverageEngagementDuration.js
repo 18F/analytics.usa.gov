@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
 import formatters from "../../lib/chart_helpers/formatters";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the engagement duration report from the passed data URL and creates
@@ -53,7 +54,12 @@ function AverageEngagementDuration({ dataHrefBase }) {
         className="chart__title"
         href="/definitions#report_historical_average_engagement_time"
       >
-        Average Engagement Time Per Session
+        <Tooltip
+          position="top"
+          content="The average length of time in which users were engaged with the site or application per session."
+        >
+          Average Engagement Time Per Session
+        </Tooltip>
       </a>
       <div ref={ref}>
         <div className="data chart__rate padding-top-05"></div>
