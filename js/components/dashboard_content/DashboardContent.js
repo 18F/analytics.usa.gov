@@ -51,12 +51,12 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
           <CardContent className="white bg-palette-color-1 text-center text--bold">
             <div className="usa-card__body">
-              <p className="text--header-xl margin-0">Total Users</p>
+              <p className="text--header-xl margin-0">Active Users</p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
-                <RealtimeEventCount
+                <RealtimeMetricCount
                   dataHrefBase={dataHrefBase}
                   refreshSeconds={Config.realtimeDataRefreshSeconds}
-                  eventName={"session_start"}
+                  metricName={"activeUsers"}
                 />
               </p>
               <p className="text--header-lg margin-0">in the last 30 minutes</p>

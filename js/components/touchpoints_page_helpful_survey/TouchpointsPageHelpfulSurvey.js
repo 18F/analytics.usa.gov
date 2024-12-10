@@ -70,12 +70,23 @@ function TouchpointsPageHelpfulSurvey() {
 
         if (submitButton) {
           submitButton.addEventListener("click", () => {
-            gas4("was_this_helpful_submit", {
+            const eventDetails = {
               event_category: "cx_feedback",
               event_action: "was_this_page_helpful_v3.0",
-              event_label: yesButton.checked ? "yes" : "no",
-              reason: feedbackTextArea.value,
-            });
+            };
+
+            if (feedbackTextArea.value) {
+              eventDetails.reason = feedbackTextArea.value;
+            }
+
+            // Only send the event if the yes/no radio option has been set.
+            if (yesButton.checked) {
+              eventDetails.event_label = "yes";
+              gas4("was_this_helpful_submit", eventDetails);
+            } else if (noButton.checked) {
+              eventDetails.event_label = "no";
+              gas4("was_this_helpful_submit", eventDetails);
+            }
           });
         }
       }
