@@ -6,6 +6,7 @@ import DataLoader from "../../lib/data_loader";
 import barChart from "../../lib/chart_helpers/barchart";
 import formatters from "../../lib/chart_helpers/formatters";
 import transformers from "../../lib/chart_helpers/transformers";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the devices report from the passed data URL and creates a
@@ -56,7 +57,14 @@ function DevicesChart({ dataHrefBase }) {
   return (
     <>
       <div className="chart__title">
-        <a href="/definitions#dimension_device_category">Devices</a>
+        <a href="/definitions#dimension_device_category">
+          <Tooltip
+            position="top"
+            content="The type category of the device used by the user to access the site or application."
+          >
+            Devices
+          </Tooltip>
+        </a>
       </div>
       <figure id="chart_device_types" ref={ref}>
         <div className="data chart__bar-chart text--capitalize margin-top-4"></div>
