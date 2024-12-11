@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
 import transformers from "../../lib/chart_helpers/transformers";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the realtime top cities report from the passed data URL and
@@ -61,7 +62,14 @@ function TopCitiesRealtime({ dataHrefBase, refreshSeconds }) {
   return (
     <>
       <div className="chart__title">
-        <a href="/definitions#dimension_city">Cities</a>
+        <a href="/definitions#dimension_city">
+          <Tooltip
+            position="top"
+            content="The city from which user activity originates. Location data may be affected by a user's VPN usage."
+          >
+            Cities
+          </Tooltip>
+        </a>
       </div>
       <figure id="chart_top-cities-realtime" ref={ref}>
         <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
