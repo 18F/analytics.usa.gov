@@ -44,10 +44,7 @@ function AgencySelect({ mainAgencyName, agencies, pathSuffix = "" }) {
 
   return (
     <>
-      <label
-        className="usa-label text-center margin-y-1"
-        htmlFor="analytics-agency-select"
-      >
+      <label className="usa-label margin-y-1" htmlFor="analytics-agency-select">
         Select an agency to display results
       </label>
       <select

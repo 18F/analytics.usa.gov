@@ -11,17 +11,6 @@
     <a href="/" class="external-link"> <strong>analytics</strong>.usa.gov </a>
   </h1>
 
-  {% unless page.url contains 'data' or page.url contains 'definitions' or
-  page.url contains 'about' %}
-  <!-- prettier-ignore -->
-  <div
-    id="analytics-agency-select-root"
-    class="analytics-select analytics-select--main"
-    mainAgencyName="{{site.dropdown_title}}"
-    agencies='{{ site.data.agencies | jsonify }}'
-  ></div>
-  {% endunless %}
-
   <nav class="links margin-top-1 margin-bottom-0 padding-bottom-1">
     <ul>
       <li>
