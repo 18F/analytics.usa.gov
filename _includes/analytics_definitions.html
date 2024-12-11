@@ -43,15 +43,14 @@
           class="usa-accordion usa-accordion--multiselectable"
           data-allow-multiple
         >
-          <h3 id="report_realtime_user_count" class="usa-accordion__heading">
+          <h3 id="report_active_user_count" class="usa-accordion__heading">
             <button
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
               aria-controls="report-descriptions__section1"
             >
-              Number of users on federal government websites and apps
-              (real-time)
+              Active Users
             </button>
           </h3>
           <div
@@ -61,9 +60,83 @@
             <ul>
               <li>Metric: <a href="#metric_active_users">active users</a></li>
               <li>
-                Description: users visiting federal government
-                publicly-available websites tagged by DAP in real-time (within
-                the last 30 minutes).
+                Description: the number of unique users who engaged with a
+                website or app within a specified reporting timeframe.
+              </li>
+            </ul>
+          </div>
+
+          <h3 id="report_first_time_user_count" class="usa-accordion__heading">
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section2"
+            >
+              First Time Users
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section2"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>Dimension: <a href="#dimension_event_name">event name</a></li>
+              <li>Metric: <a href="#metric_event_count">event count</a></li>
+              <li>
+                Description: the number of unique users who visited a website or
+                app for the first time within a specified reporting timeframe.
+              </li>
+            </ul>
+          </div>
+
+          <h3 id="report_page_view_count" class="usa-accordion__heading">
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section3"
+            >
+              Total Views
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section3"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>
+                Metric:
+                <a href="#metric_screen_page_views">screen page views</a>
+              </li>
+              <li>
+                Description: the total number of times a web page or or screen
+                was viewed within a specified reporting timeframe.
+              </li>
+            </ul>
+          </div>
+
+          <h3 id="report_file_download_count" class="usa-accordion__heading">
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section4"
+            >
+              Files Downloaded
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section4"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>Dimension: <a href="#dimension_event_name">event name</a></li>
+              <li>Metric: <a href="#metric_event_count">event count</a></li>
+              <li>
+                Description: the total number of times any file (e.g. .pdf,
+                .xls, .xlsx) was downloaded within a specified reporting
+                timeframe.
               </li>
             </ul>
           </div>
@@ -73,13 +146,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section2"
+              aria-controls="report-descriptions__section5"
             >
               Top web pages and app screens (real-time)
             </button>
           </h3>
           <div
-            id="report-descriptions__section2"
+            id="report-descriptions__section5"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -104,13 +177,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section3"
+              aria-controls="report-descriptions__section6"
             >
               User locations and languages (real-time)
             </button>
           </h3>
           <div
-            id="report-descriptions__section3"
+            id="report-descriptions__section6"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -140,21 +213,18 @@
             </ul>
           </div>
 
-          <h3
-            id="report_yesterday_top_downloads"
-            class="usa-accordion__heading"
-          >
+          <h3 id="report_top_downloads" class="usa-accordion__heading">
             <button
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section4"
+              aria-controls="report-descriptions__section7"
             >
-              Top downloads (yesterday)
+              Top downloads
             </button>
           </h3>
           <div
-            id="report-descriptions__section4"
+            id="report-descriptions__section7"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -167,8 +237,10 @@
                 <a href="#dimension_host_name">hostname</a>
               </li>
               <li>
-                Description: top 10 files downloaded for the previous day across
-                all DAP participating government publicly-available websites.
+                Description: top 10 files downloaded across all DAP
+                participating government publicly-available websites. Updated
+                daily for the yesterday, last 7 days, and last 30 days aggregate
+                reports.
               </li>
             </ul>
           </div>
@@ -181,13 +253,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section5"
+              aria-controls="report-descriptions__section8"
             >
               Top hostnames (historical)
             </button>
           </h3>
           <div
-            id="report-descriptions__section5"
+            id="report-descriptions__section8"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -215,13 +287,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section6"
+              aria-controls="report-descriptions__section9"
             >
               Top traffic sources (historical)
             </button>
           </h3>
           <div
-            id="report-descriptions__section6"
+            id="report-descriptions__section9"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -244,13 +316,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section7"
+              aria-controls="report-descriptions__section10"
             >
               User device demographics (historical)
             </button>
           </h3>
           <div
-            id="report-descriptions__section7"
+            id="report-descriptions__section10"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -283,13 +355,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section8"
+              aria-controls="report-descriptions__section11"
             >
               Average engagement time per session (historical)
             </button>
           </h3>
           <div
-            id="report-descriptions__section8"
+            id="report-descriptions__section11"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -315,13 +387,13 @@
               type="button"
               class="usa-accordion__button"
               aria-expanded="false"
-              aria-controls="report-descriptions__section9"
+              aria-controls="report-descriptions__section12"
             >
               Engagement rate (historical)
             </button>
           </h3>
           <div
-            id="report-descriptions__section9"
+            id="report-descriptions__section12"
             class="usa-accordion__content usa-prose"
           >
             <ul>
@@ -333,6 +405,37 @@
                 Description: the percentage of engaged sessions on websites or
                 mobile applications for the past 30 days across
                 DAP-participating websites and apps.
+              </li>
+            </ul>
+          </div>
+
+          <h3 id="report_top_video_plays" class="usa-accordion__heading">
+            <button
+              type="button"
+              class="usa-accordion__button"
+              aria-expanded="false"
+              aria-controls="report-descriptions__section13"
+            >
+              Top videos
+            </button>
+          </h3>
+          <div
+            id="report-descriptions__section13"
+            class="usa-accordion__content usa-prose"
+          >
+            <ul>
+              <li>Metric: <a href="#metric_event_count">event count</a>.</li>
+              <li>
+                Dimensions:
+                <a href="#dimension_event_name">event name</a>,
+                <a href="#dimension_video_title">video title</a>,
+                <a href="#dimension_video_url">video url</a>,
+                <a href="#dimension_host_name">hostname</a>
+              </li>
+              <li>
+                Description: top 10 videos played across all DAP participating
+                government publicly-available websites. Updated daily for the
+                yesterday, last 7 days, and last 30 days aggregate reports.
               </li>
             </ul>
           </div>
@@ -524,7 +627,8 @@
             >
               <span>
                 An event allows measurement of a specific interaction or
-                occurrence on websites or applications.
+                occurrence on websites or applications. Some key events include
+                session start, first visit, file download, and video play.
               </span>
             </div>
 
@@ -734,6 +838,40 @@
                 acquiring users to websites or applications.
               </span>
             </div>
+
+            <h4 id="dimension_video_title" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="dimensions__section18"
+              >
+                Video title
+              </button>
+            </h4>
+            <div
+              id="dimensions__section18"
+              class="usa-accordion__content usa-prose"
+            >
+              <span> The title of the video which was played. </span>
+            </div>
+
+            <h4 id="dimension_video_url" class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="dimensions__section19"
+              >
+                Video URL
+              </button>
+            </h4>
+            <div
+              id="dimensions__section19"
+              class="usa-accordion__content usa-prose"
+            >
+              <span> The full URL for the video which was played. </span>
+            </div>
           </div>
         </div>
 
@@ -847,7 +985,7 @@
               id="metrics__section5"
               class="usa-accordion__content usa-prose"
             >
-              <span> The number of times users triggered an event. </span>
+              <span> The number of times that users triggered an event. </span>
             </div>
 
             <h4 id="metric_screen_page_views" class="usa-accordion__heading">
