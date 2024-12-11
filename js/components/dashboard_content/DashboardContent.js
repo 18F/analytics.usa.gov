@@ -8,6 +8,7 @@ import Sessions30Days from "./Sessions30Days";
 import SidebarContent from "./SidebarContent";
 import TrafficSources from "./TrafficSources";
 import Visitors30Days from "./Visitors30Days";
+import Tooltip from "../tooltip/Tooltip";
 import Card from "../card/Card";
 import CardContent from "../card/CardContent";
 import CardGroup from "../card/CardGroup";
@@ -51,7 +52,19 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
           <CardContent className="white bg-palette-color-1 text-center text--bold">
             <div className="usa-card__body">
-              <p className="text--header-xl margin-0">Active Users</p>
+              <p className="text--header-xl margin-0">
+                <a
+                  href="/definitions#report_active_user_count"
+                  className="white"
+                >
+                  <Tooltip
+                    position="top"
+                    content="The number of unique users who engaged with a website or app within a specified reporting timeframe."
+                  >
+                    Active Users
+                  </Tooltip>
+                </a>
+              </p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
                 <RealtimeMetricCount
                   dataHrefBase={dataHrefBase}
@@ -66,7 +79,19 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
           <CardContent className="white bg-palette-color-2 text-center text--bold">
             <div className="usa-card__body">
-              <p className="text--header-xl margin-0">First Time Users</p>
+              <p className="text--header-xl margin-0">
+                <a
+                  href="/definitions#report_first_time_user_count"
+                  className="white"
+                >
+                  <Tooltip
+                    position="top"
+                    content="The number of unique users who visited a website or app for the first time within the specified reporting timeframe."
+                  >
+                    First Time Users
+                  </Tooltip>
+                </a>
+              </p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
                 <RealtimeEventCount
                   dataHrefBase={dataHrefBase}
@@ -81,7 +106,16 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
           <CardContent className="white bg-palette-color-3 text-center text--bold">
             <div className="usa-card__body">
-              <p className="text--header-xl margin-0">Total Views</p>
+              <p className="text--header-xl margin-0">
+                <a href="/definitions#report_page_view_count" className="white">
+                  <Tooltip
+                    position="top"
+                    content="The total number of times a web page or or screen was viewed in a specified reporting timeframe."
+                  >
+                    Total Views
+                  </Tooltip>
+                </a>
+              </p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
                 <RealtimeMetricCount
                   dataHrefBase={dataHrefBase}
@@ -96,7 +130,19 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
           <CardContent className="white bg-palette-color-4 text-center text--bold">
             <div className="usa-card__body">
-              <p className="text--header-xl margin-0">Files Downloaded</p>
+              <p className="text--header-xl margin-0">
+                <a
+                  href="/definitions#report_file_download_count"
+                  className="white"
+                >
+                  <Tooltip
+                    position="top"
+                    content="The total number of times any file (e.g. .pdf, .xls, .xlsx) was downloaded in a specified reporting timeframe."
+                  >
+                    Files Downloaded
+                  </Tooltip>
+                </a>
+              </p>
               <p className="text--header-3xl margin-bottom-0 margin-top-neg-1">
                 <RealtimeEventCount
                   dataHrefBase={dataHrefBase}
@@ -115,17 +161,22 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
             <div id="main_data" className="usa-card__body">
               <article className="min-height-large section">
                 <h2 className="section__headline margin-0">
-                  <svg
-                    className="usa-icon margin-bottom-neg-05 margin-right-05"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use xlinkHref="/assets/uswds/img/sprite.svg#warning"></use>
-                  </svg>
                   <a href="/definitions#report_realtime_locations_languages">
                     User Locations and Languages in the Last 30 Minutes
                   </a>
+                  <Tooltip
+                    position="top"
+                    content="Top cities and countries from which user activity originated, and top language settings in user browsers. Location data may be affected by a user's VPN usage."
+                  >
+                    <svg
+                      className="usa-icon margin-bottom-neg-05 margin-left-05"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                    </svg>
+                  </Tooltip>
                 </h2>
                 <CardGroup className="padding-top-2">
                   <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
@@ -180,6 +231,19 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   <a href="/definitions#report_historical_top_traffic_sources">
                     Top Traffic Sources
                   </a>
+                  <Tooltip
+                    position="top"
+                    content="Top traffic sources for the last 30 days."
+                  >
+                    <svg
+                      className="usa-icon margin-bottom-neg-05 margin-left-05"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                    </svg>
+                  </Tooltip>
                 </div>
                 <TrafficSources dataHrefBase={dataHrefBase} />
               </article>
@@ -189,6 +253,19 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   <a href="/definitions#report_historical_device_demographics">
                     User Device Demographics
                   </a>
+                  <Tooltip
+                    position="top"
+                    content="Devices, web browsers, operating systems, and screen resolutions that users were on when interacting with DAP-participating government websites in the past 30 days."
+                  >
+                    <svg
+                      className="usa-icon margin-bottom-neg-05 margin-left-05"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                    </svg>
+                  </Tooltip>
                 </div>
                 <DeviceDemographics dataHrefBase={dataHrefBase} />
               </article>

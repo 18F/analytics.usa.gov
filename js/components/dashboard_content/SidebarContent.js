@@ -6,6 +6,7 @@ import Config from "../../lib/config";
 import TopDownloadsAndVideoPlays from "./TopDownloadsAndVideoPlays";
 import TopPagesRealtime from "./TopPagesRealtime";
 import TopPagesHistorical from "./TopPagesHistorical";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Contains charts and other data visualizations for the top pages, top
@@ -39,6 +40,19 @@ function SidebarContent({ dataHrefBase, agency }) {
           <a href="/definitions#report_realtime_top_pages">
             Top {numberOfTopPagesToDisplay} Web Pages and App Screens
           </a>
+          <Tooltip
+            position="top"
+            content="The top webpages and/or applications based on the number of sessions for the page or hostname."
+          >
+            <svg
+              className="usa-icon margin-bottom-neg-05 margin-left-05"
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+            >
+              <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+            </svg>
+          </Tooltip>
         </h2>
       </div>
       <Tabs>

@@ -7,6 +7,7 @@ import DataLoader from "../../lib/data_loader";
 import nestCharts from "../../lib/chart_helpers/nest_charts";
 import transformers from "../../lib/chart_helpers/transformers";
 import { isPartOfUnitedStates } from "../../lib/territories";
+import Tooltip from "../tooltip/Tooltip";
 
 /**
  * Retrieves the realtime top countries report from the passed data URL and
@@ -147,7 +148,14 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
   return (
     <div className="padding-0">
       <div className="chart__title">
-        <a href="/definitions#dimension_country">Countries</a>
+        <a href="/definitions#dimension_country">
+          <Tooltip
+            position="top"
+            content="The country from which user activity originates. Location data may be affected by a user's VPN usage."
+          >
+            Countries
+          </Tooltip>
+        </a>
       </div>
       <figure id="chart_us" ref={countriesRef}>
         <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
