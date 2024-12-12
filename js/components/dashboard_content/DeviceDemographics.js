@@ -21,7 +21,7 @@ import Tooltip from "../tooltip/Tooltip";
  */
 function DeviceDemographics({ dataHrefBase }) {
   return (
-    <div className="padding-top-4 grid-row">
+    <div className="padding-top-1 grid-row">
       <div id="devices" className="desktop:grid-col-4 desktop:padding-right-2">
         <DevicesChart dataHrefBase={dataHrefBase} />
         <div className="chart__title desktop:padding-top-2">

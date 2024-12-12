@@ -61,3 +61,25 @@ a {
     }
   }
 }
+
+// Use the white open/close button for accordions when the .white class is
+// applied
+.usa-accordion__heading {
+  .usa-accordion__button.white {
+    &[aria-expanded="true"] {
+      background-image: url("../css/img/remove-white.svg");
+    }
+
+    &[aria-expanded="false"] {
+      background-image: url("../css/img/add-white.svg");
+    }
+  }
+}
+
+// The USWDS style for overflow is "auto" which cuts off things like tooltips
+// that may overflow the accordion content element. Using "visibile" will let
+// tooltip content be shown. We just have to be careful not to let regular
+// content also overflow.
+.usa-accordion__content {
+  overflow: visible;
+}
