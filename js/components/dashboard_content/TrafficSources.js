@@ -18,7 +18,7 @@ import Tooltip from "../tooltip/Tooltip";
  */
 function TrafficSources({ dataHrefBase }) {
   return (
-    <div className="padding-top-4 grid-row">
+    <div className="padding-top-1 grid-row">
       <div
         id="session_channel_groups"
         className="desktop:grid-col-6 desktop:padding-right-2"
