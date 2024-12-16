@@ -10,7 +10,7 @@
       img
       a
     div
-      select
+      search input
     nav
       about
       definitions
@@ -24,11 +24,11 @@ header#analytics-header {
   flex-direction: column;
   justify-content: center;
 
-  @include at-media("tablet") {
+  @include at-media("desktop") {
     flex-direction: row;
   }
 
-  @include at-media("desktop-lg") {
+  @include at-media("widescreen") {
     justify-content: flex-start;
   }
 
@@ -40,7 +40,15 @@ header#analytics-header {
       flex: 4;
     }
 
-    @include at-media("tablet-lg") {
+    @include at-media("desktop") {
+      flex: 5;
+    }
+
+    @include at-media("widescreen") {
+      flex: 6;
+    }
+
+    @include at-media("tablet") {
       font-size: size("sans", "2xl");
       line-height: units(10);
     }
@@ -56,7 +64,7 @@ header#analytics-header {
       height: units(4);
       margin-bottom: - units(0.5);
 
-      @include at-media("tablet-lg") {
+      @include at-media("tablet") {
         height: units(7);
         margin-bottom: - units(1);
       }
@@ -78,15 +86,21 @@ header#analytics-header {
     }
   }
 
-  .analytics-select {
+  #site-search-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     order: 4;
+    padding-top: units(2);
 
-    @include at-media("desktop-lg") {
-      flex: 4;
+    @include at-media("desktop") {
+      flex: 3;
       order: 2;
+      padding-top: 0;
+    }
+
+    button {
+      width: auto;
     }
   }
 
@@ -99,8 +113,16 @@ header#analytics-header {
     order: 3;
 
     @include at-media("tablet") {
+      flex: 5;
+    }
+
+    @include at-media("desktop-lg") {
       flex: 4;
       justify-content: flex-end;
+    }
+
+    @include at-media("widescreen") {
+      flex: 3;
     }
 
     ul {
@@ -108,7 +130,7 @@ header#analytics-header {
       list-style: none;
 
       li {
-        @include at-media("tablet") {
+        @include at-media("desktop") {
           display: block;
           padding: 0;
 
@@ -131,7 +153,7 @@ header#analytics-header {
       a {
         font-size: 1.25rem;
 
-        @include at-media("tablet-lg") {
+        @include at-media("tablet") {
           font-size: units(3);
         }
       }
