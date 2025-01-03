@@ -90,7 +90,7 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v4
       - name: Install ruby and bundle gem dependencies
-        uses: ruby/setup-ruby@360dc864d5da99d54fcb8e9148c14a84b90d3e88
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Install Node
@@ -116,7 +116,7 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v4
       - name: Install ruby and bundle gem dependencies
-        uses: ruby/setup-ruby@360dc864d5da99d54fcb8e9148c14a84b90d3e88
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Install Node
