@@ -28,8 +28,8 @@ Additional repositories are:
 
 ### Prerequisites
 
-* [Ruby 3.1.4](https://www.ruby-lang.org/en/)
-* [NodeJS 20.x.x](https://nodejs.org/en)
+* [Ruby 3.3.6](https://www.ruby-lang.org/en/)
+* [NodeJS 22.x.x](https://nodejs.org/en)
 
 Install ruby and node libraries before attempting to run other development
 commands:
