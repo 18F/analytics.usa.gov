@@ -19,14 +19,14 @@ import Tooltip from "../tooltip/Tooltip";
  * @returns {import('react').ReactElement} The rendered element
  */
 function AverageEngagementDuration({ dataHrefBase }) {
-  const dataURL = `${dataHrefBase}/engagement-duration-30-days.json`;
+  const jsonDataURL = `${dataHrefBase}/engagement-duration-30-days.json`;
   const ref = useRef(null);
   const [engagementDurationData, setEngagementDurationData] = useState(null);
 
   useEffect(() => {
     const initEngagementDurationsChart = async () => {
       if (!engagementDurationData) {
-        const data = await DataLoader.loadJSON(dataURL);
+        const data = await DataLoader.loadJSON(jsonDataURL);
         await setEngagementDurationData(data);
       } else {
         const chartBuilder = new ChartBuilder();
