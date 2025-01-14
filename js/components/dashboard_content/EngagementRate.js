@@ -18,14 +18,14 @@ import Tooltip from "../tooltip/Tooltip";
  * @returns {import('react').ReactElement} The rendered element
  */
 function EngagementRate({ dataHrefBase }) {
-  const dataURL = `${dataHrefBase}/engagement-rate-30-days.json`;
+  const jsonDataURL = `${dataHrefBase}/engagement-rate-30-days.json`;
   const ref = useRef(null);
   const [engagementRateData, setEngagementRateData] = useState(null);
 
   useEffect(() => {
     const initEngagementRateChart = async () => {
       if (!engagementRateData) {
-        const data = await DataLoader.loadJSON(dataURL);
+        const data = await DataLoader.loadJSON(jsonDataURL);
         await setEngagementRateData(data);
       } else {
         const chartBuilder = new ChartBuilder();
