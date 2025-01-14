@@ -20,7 +20,7 @@ describe("DevicesChart", () => {
         return Promise.resolve(null);
       });
       component = render(
-        <DevicesChart dataHrefBase="http://www.example.com/data/" />,
+        <DevicesChart dataHrefBase="http://www.example.com/data" />,
       );
     });
 
@@ -55,7 +55,7 @@ describe("DevicesChart", () => {
         return Promise.resolve(data);
       });
       component = render(
-        <DevicesChart dataHrefBase="http://www.example.com/data/" />,
+        <DevicesChart dataHrefBase="http://www.example.com/data" />,
       );
       await waitFor(() => screen.getByText("mobile"));
       // Wait for barchart transition animation to complete (200 ms, set in
@@ -77,16 +77,12 @@ describe("DevicesChart", () => {
         return Promise.reject(error);
       });
       component = render(
-        <DevicesChart dataHrefBase="http://www.example.com/data/" />,
+        <DevicesChart dataHrefBase="http://www.example.com/data" />,
       );
     });
 
-    it("renders a component in error state", () => {
+    it("renders a component with an empty chart", () => {
       expect(component.asFragment()).toMatchSnapshot();
-    });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

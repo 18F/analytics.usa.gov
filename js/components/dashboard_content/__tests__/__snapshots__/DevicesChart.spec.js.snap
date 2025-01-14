@@ -30,8 +30,8 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
       </span>
     </a>
     <a
-      aria-label="devices.csv"
-      href="http://www.example.com/data//devices.csv"
+      aria-label="http://www.example.com/data/devices.csv"
+      href="http://www.example.com/data/devices.csv"
     >
       <svg
         aria-hidden="true"
@@ -143,6 +143,26 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
       </div>
     </div>
   </figure>
+  <select
+    aria-label="Device chart time filter"
+    class="usa-select"
+  >
+    <option
+      value="devices"
+    >
+      30 Days
+    </option>
+    <option
+      value="devices-7-days"
+    >
+      7 Days
+    </option>
+    <option
+      value="devices-90-days"
+    >
+      90 Days
+    </option>
+  </select>
 </DocumentFragment>
 `;
 
@@ -176,8 +196,8 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
       </span>
     </a>
     <a
-      aria-label="devices.csv"
-      href="http://www.example.com/data//devices.csv"
+      aria-label="http://www.example.com/data/devices.csv"
+      href="http://www.example.com/data/devices.csv"
     >
       <svg
         aria-hidden="true"
@@ -198,10 +218,30 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
       class="data chart__bar-chart text--capitalize margin-top-2"
     />
   </figure>
+  <select
+    aria-label="Device chart time filter"
+    class="usa-select"
+  >
+    <option
+      value="devices"
+    >
+      30 Days
+    </option>
+    <option
+      value="devices-7-days"
+    >
+      7 Days
+    </option>
+    <option
+      value="devices-90-days"
+    >
+      90 Days
+    </option>
+  </select>
 </DocumentFragment>
 `;
 
-exports[`DevicesChart when data loading has an error renders a component in error state 1`] = `
+exports[`DevicesChart when data loading has an error renders a component with an empty chart 1`] = `
 <DocumentFragment>
   <div
     class="chart__title"
@@ -231,8 +271,8 @@ exports[`DevicesChart when data loading has an error renders a component in erro
       </span>
     </a>
     <a
-      aria-label="devices.csv"
-      href="http://www.example.com/data//devices.csv"
+      aria-label="http://www.example.com/data/devices.csv"
+      href="http://www.example.com/data/devices.csv"
     >
       <svg
         aria-hidden="true"
@@ -253,5 +293,25 @@ exports[`DevicesChart when data loading has an error renders a component in erro
       class="data chart__bar-chart text--capitalize margin-top-2"
     />
   </figure>
+  <select
+    aria-label="Device chart time filter"
+    class="usa-select"
+  >
+    <option
+      value="devices"
+    >
+      30 Days
+    </option>
+    <option
+      value="devices-7-days"
+    >
+      7 Days
+    </option>
+    <option
+      value="devices-90-days"
+    >
+      90 Days
+    </option>
+  </select>
 </DocumentFragment>
 `;
