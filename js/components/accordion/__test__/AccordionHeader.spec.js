@@ -14,7 +14,7 @@ describe("AccordionHeader", () => {
           <AccordionHeader
             id="foobar-id"
             className="foobar-class"
-            headingLevel="3"
+            headingLevel={3}
           >
             <button>child button</button>
           </AccordionHeader>,

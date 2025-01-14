@@ -2,6 +2,69 @@
 
 exports[`TopVideoPlays renders a component with data loaded 1`] = `
 <DocumentFragment>
+  <p
+    class="margin-top-0 margin-bottom-1"
+  >
+    <em>
+      Top videos played yesterday on Interior hostnames.
+    </em>
+  </p>
+  <div
+    class="grid-row"
+  >
+    <div
+      class="display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+    >
+      <p
+        class="margin-top-05 margin-bottom-05"
+      >
+        <a
+          aria-label="top-video-plays-yesterday.csv"
+          href="http://www.example.com/data//top-video-plays-yesterday.csv"
+        >
+          Download the data
+          <svg
+            aria-hidden="true"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
+          >
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </p>
+    </div>
+    <div
+      class="card:grid-col-12 mobile-lg:grid-col-5"
+    >
+      <div
+        class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
+      >
+        <select
+          aria-label="top video plays chart time filter"
+          class="usa-select chart__filter margin-top-0"
+        >
+          <option
+            value="top-video-plays-yesterday"
+          >
+            Yesterday
+          </option>
+          <option
+            value="top-video-plays-7-days"
+          >
+            7 Days
+          </option>
+          <option
+            value="top-video-plays-30-days"
+          >
+            30 Days
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
   <figure
     class="top-video-plays__bar-chart"
   >

@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import Card from "../Card";
 
 describe("Card", () => {
-  describe("when the component has children", () => {
+  describe("when the component has all properties", () => {
     beforeEach(async () => {
       await render(
         <Card id="foobar-id" className="foobar-class">
@@ -31,11 +31,21 @@ describe("Card", () => {
     });
   });
 
-  describe("when the component does not have children", () => {
+  describe("when the component does not have all properties", () => {
     describe("and the component has no id or class name", () => {
       beforeEach(async () => {
-        await render(<Card />);
+        await render(
+          <Card>
+            <button>child button</button>
+          </Card>,
+        );
         await waitFor(() => screen.getByRole("listitem"));
+      });
+
+      it("renders the children", () => {
+        expect(
+          screen.getByRole("button", { name: "child button" }),
+        ).toBeInTheDocument();
       });
 
       it("has no id", () => {
@@ -46,24 +56,6 @@ describe("Card", () => {
         expect(screen.getByRole("listitem")).toHaveAttribute(
           "class",
           "usa-card ",
-        );
-      });
-    });
-
-    describe("and the component has an id and className props", () => {
-      beforeEach(async () => {
-        await render(<Card id="foobar-id" className="foobar-class" />);
-        await waitFor(() => screen.getByRole("listitem"));
-      });
-
-      it("has the passed id on the rendered element", () => {
-        expect(screen.getByRole("listitem")).toHaveAttribute("id", "foobar-id");
-      });
-
-      it("has the passed class name on the rendered element", () => {
-        expect(screen.getByRole("listitem")).toHaveAttribute(
-          "class",
-          "usa-card foobar-class",
         );
       });
     });

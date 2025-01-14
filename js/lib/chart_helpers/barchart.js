@@ -51,9 +51,8 @@ export default function barChart() {
       )
       .style("width", "0%");
 
-    const componentScale = scale
-      ? scale.call(selection, bin.data().map(value))
-      : null;
+    const componentScale =
+      scale && bin[0] ? scale.call(selection, bin.data().map(value)) : null;
     bin
       .select(".chart__bar-chart__item__bar")
       .transition()
