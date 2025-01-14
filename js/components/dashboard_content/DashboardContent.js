@@ -176,7 +176,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                       content="Top cities and countries from which user activity originated, and top language settings in user browsers. Location data may be affected by a user's VPN usage."
                     >
                       <svg
-                        className="usa-icon margin-bottom-neg-05 margin-left-05"
+                        className="usa-icon margin-bottom-neg-1 margin-left-05"
                         aria-hidden="true"
                         focusable="false"
                         role="img"
@@ -223,7 +223,6 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                 </AccordionHeader>
                 <AccordionContent id="30-day-sessions-users">
                   <article className="min-height-small padding-top-1 padding-bottom-2 section">
-                    <h3 className="chart__title margin-0">Daily Sessions</h3>
                     <Sessions30Days dataHrefBase={dataHrefBase} />
                   </article>
 
@@ -261,7 +260,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                       content="Top traffic sources for the last 30 days."
                     >
                       <svg
-                        className="usa-icon margin-bottom-neg-05 margin-left-05"
+                        className="usa-icon margin-bottom-neg-1 margin-left-05"
                         aria-hidden="true"
                         focusable="false"
                         role="img"
@@ -289,7 +288,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                       content="Devices, web browsers, operating systems, and screen resolutions that users were on when interacting with DAP-participating government websites in the past 30 days."
                     >
                       <svg
-                        className="usa-icon margin-bottom-neg-05 margin-left-05"
+                        className="usa-icon margin-bottom-neg-1 margin-left-05"
                         aria-hidden="true"
                         focusable="false"
                         role="img"
