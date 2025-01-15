@@ -37,10 +37,10 @@
 // put an extra margin at the bottom of the last child card in a card group.
 ul.usa-card-group {
   li.usa-card {
-    margin-bottom: units(2);
+    margin-bottom: 0;
 
     &:last-child {
-      margin-bottom: units(2);
+      margin-bottom: 0;
     }
   }
 }
@@ -48,6 +48,10 @@ ul.usa-card-group {
 // USWDS wants to add padding when there is a single element in the card
 // container, but if we add padding-0 class, it should not have padding
 .usa-card:not(.usa-card--flag) .usa-card__container>.padding-0 {
+  padding: 0;
+}
+
+.usa-card:not(.usa-card--flag) .usa-card__container>:only-child {
   padding: 0;
 }
 

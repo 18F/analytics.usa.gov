@@ -40,7 +40,7 @@ export default function barChart() {
       .append("div")
       .attr(
         "class",
-        "chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8",
+        "chart__bar-chart__item__label dark-gray text--overflow-ellipsis margin-right-8",
       );
     enter.append("div").attr("class", "chart__bar-chart__item__value");
     enter

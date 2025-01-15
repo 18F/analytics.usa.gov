@@ -59,7 +59,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
   }, [windowsData, chartsLoaded]);
 
   return (
-    <div>
+    <div className="padding-0">
       <div className="chart__title">
         <a href="/definitions#dimension_operating_system">
           <Tooltip

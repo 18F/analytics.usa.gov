@@ -7,6 +7,9 @@ import TopDownloadsAndVideoPlays from "./TopDownloadsAndVideoPlays";
 import TopPagesRealtime from "./TopPagesRealtime";
 import TopPagesHistorical from "./TopPagesHistorical";
 import Tooltip from "../tooltip/Tooltip";
+import Card from "../card/Card";
+import CardGroup from "../card/CardGroup";
+import CardContent from "../card/CardContent";
 
 /**
  * Contains charts and other data visualizations for the top pages, top
@@ -35,47 +38,27 @@ function SidebarContent({ dataHrefBase, agency }) {
 
   return (
     <section className="sidebar">
-      <div className="sidebar__headline">
-        <h2 className="margin-top-0">
-          <a href="/definitions#report_realtime_top_pages">
-            Top {numberOfTopPagesToDisplay} Web Pages and App Screens
-          </a>
-          <Tooltip
-            position="top"
-            content="The top webpages and/or applications based on the number of sessions for the page or hostname."
-          >
-            <svg
-              className="usa-icon margin-bottom-neg-05 margin-left-05"
-              aria-hidden="true"
-              focusable="false"
-              role="img"
-            >
-              <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
-            </svg>
-          </Tooltip>
-        </h2>
-      </div>
       <Tabs>
         <TabList className="sidebar__tab-select__button-group usa-button-group usa-button-group--segmented">
-          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item margin-0">
             <a
-              className="sidebar__tab-select__button usa-button"
+              className="sidebar__tab-select__button usa-button section__headline padding-y-2"
               aria-label="30 mins"
             >
               30 mins
             </a>
           </Tab>
-          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item margin-0">
             <a
-              className="sidebar__tab-select__button usa-button"
+              className="sidebar__tab-select__button usa-button section__headline padding-y-2"
               aria-label="7 days"
             >
               7 days
             </a>
           </Tab>
-          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item">
+          <Tab className="sidebar__tab-select__button-group__item usa-button-group__item margin-0">
             <a
-              className="sidebar__tab-select__button usa-button"
+              className="sidebar__tab-select__button usa-button section__headline padding-y-2"
               aria-label="30 days"
             >
               30 days
@@ -84,120 +67,199 @@ function SidebarContent({ dataHrefBase, agency }) {
         </TabList>
 
         <TabPanel>
-          <section className="sidebar__tab__content padding-bottom-1 border-bottom-1px border-base-light">
-            <p className="margin-bottom-1">
-              <strong>Users</strong> on a{" "}
-              <strong>single, specific page or app screen</strong> in the last
-              30 minutes. Hostnames are not currently reported in real-time, so
-              only page title and screen name information is available.
-            </p>
-            <p className="margin-top-05 margin-bottom-105">
-              <a
-                href={`${dataHrefBase}/top-pages-realtime.csv`}
-                aria-label="top-pages-realtime.csv"
-              >
-                Download the data
-                <svg
-                  className="usa-icon margin-bottom-neg-05 margin-left-05"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-                </svg>
-              </a>
-            </p>
-            <TopPagesRealtime
-              dataHrefBase={dataHrefBase}
-              reportFileName="top-pages-realtime.json"
-              numberOfListingsToDisplay={numberOfTopPagesToDisplay}
-              refreshSeconds={Config.realtimeDataRefreshSeconds}
-            />
-          </section>
-          <TopDownloadsAndVideoPlays
-            dataHrefBase={dataHrefBase}
-            agency={agency}
-            downloadsReportFileName="top-downloads-yesterday"
-            videoPlaysReportFileName="top-video-plays-yesterday"
-            timeIntervalHeader="Yesterday"
-            timeIntervalDescription="yesterday"
-          />
+          <div className="bg-light-gray border-top-width-0 border-05 border-gray-5">
+            <CardGroup className="padding-2">
+              <Card className="grid-col-12 padding-bottom-2">
+                <CardContent className="padding-2 border-0">
+                  <div className="chart__title">
+                    <a href="/definitions#report_realtime_top_pages">
+                      Top {numberOfTopPagesToDisplay} Web Pages and App Screens
+                    </a>
+                    <Tooltip
+                      position="top"
+                      content="The top webpages and/or applications based on the number of sessions for the page or hostname."
+                    >
+                      <svg
+                        className="usa-icon margin-bottom-neg-05 margin-left-05"
+                        aria-hidden="true"
+                        focusable="false"
+                        role="img"
+                      >
+                        <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                      </svg>
+                    </Tooltip>
+                  </div>
+                  <section className="sidebar__tab__content">
+                    <p className="margin-y-1">
+                      <strong>Users</strong> on a{" "}
+                      <strong>single, specific page or app screen</strong> in
+                      the last 30 minutes. Hostnames are not currently reported
+                      in real-time, so only page title and screen name
+                      information is available.
+                    </p>
+                    <p className="margin-top-05 margin-bottom-105">
+                      <a
+                        href={`${dataHrefBase}/top-pages-realtime.csv`}
+                        aria-label="top-pages-realtime.csv"
+                      >
+                        Download the data
+                        <svg
+                          className="usa-icon margin-bottom-neg-05 margin-left-05"
+                          aria-hidden="true"
+                          focusable="false"
+                          role="img"
+                        >
+                          <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                        </svg>
+                      </a>
+                    </p>
+                    <TopPagesRealtime
+                      dataHrefBase={dataHrefBase}
+                      reportFileName="top-pages-realtime.json"
+                      numberOfListingsToDisplay={numberOfTopPagesToDisplay}
+                      refreshSeconds={Config.realtimeDataRefreshSeconds}
+                    />
+                  </section>
+                </CardContent>
+              </Card>
+              <TopDownloadsAndVideoPlays
+                dataHrefBase={dataHrefBase}
+                agency={agency}
+                downloadsReportFileName="top-downloads-yesterday"
+                videoPlaysReportFileName="top-video-plays-yesterday"
+                timeIntervalHeader="Yesterday"
+                timeIntervalDescription="yesterday"
+              />
+            </CardGroup>
+          </div>
         </TabPanel>
         <TabPanel>
-          <section className="sidebar__tab__content padding-bottom-1 border-bottom-1px border-base-light">
-            <p className="margin-bottom-1">
-              Sessions over the last week on <strong>hostnames</strong>,
-              including traffic to all web pages and app screens within that
-              hostname.
-            </p>
-            <p className="margin-top-05 margin-bottom-105">
-              <a
-                href={`${dataHrefBase}/top-domains-7-days.csv`}
-                aria-label="top-domains-7-days.csv"
-              >
-                Download the data
-                <svg
-                  className="usa-icon margin-bottom-neg-05 margin-left-05"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-                </svg>
-              </a>
-            </p>
-            <TopPagesHistorical
-              dataHrefBase={dataHrefBase}
-              reportFileName="top-domains-7-days.json"
-              numberOfListingsToDisplay={numberOfTopPagesToDisplay}
-            />
-          </section>
-          <TopDownloadsAndVideoPlays
-            dataHrefBase={dataHrefBase}
-            agency={agency}
-            downloadsReportFileName="top-downloads-7-days"
-            videoPlaysReportFileName="top-video-plays-7-days"
-            timeIntervalHeader="Last 7 Days"
-            timeIntervalDescription="over the last week"
-          />
+          <div className="bg-light-gray border-top-width-0 border-05 border-gray-5">
+            <CardGroup className="padding-2">
+              <Card className="grid-col-12 padding-bottom-2">
+                <CardContent className="padding-2 border-0">
+                  <div className="chart__title">
+                    <a href="/definitions#report_realtime_top_pages">
+                      Top {numberOfTopPagesToDisplay} Web Pages and App Screens
+                    </a>
+                    <Tooltip
+                      position="top"
+                      content="The top webpages and/or applications based on the number of sessions for the page or hostname."
+                    >
+                      <svg
+                        className="usa-icon margin-bottom-neg-05 margin-left-05"
+                        aria-hidden="true"
+                        focusable="false"
+                        role="img"
+                      >
+                        <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                      </svg>
+                    </Tooltip>
+                  </div>
+                  <section className="sidebar__tab__content">
+                    <p className="margin-y-1">
+                      Sessions over the last week on <strong>hostnames</strong>,
+                      including traffic to all web pages and app screens within
+                      that hostname.
+                    </p>
+                    <p className="margin-top-05 margin-bottom-105">
+                      <a
+                        href={`${dataHrefBase}/top-domains-7-days.csv`}
+                        aria-label="top-domains-7-days.csv"
+                      >
+                        Download the data
+                        <svg
+                          className="usa-icon margin-bottom-neg-05 margin-left-05"
+                          aria-hidden="true"
+                          focusable="false"
+                          role="img"
+                        >
+                          <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                        </svg>
+                      </a>
+                    </p>
+                    <TopPagesHistorical
+                      dataHrefBase={dataHrefBase}
+                      reportFileName="top-domains-7-days.json"
+                      numberOfListingsToDisplay={numberOfTopPagesToDisplay}
+                    />
+                  </section>
+                </CardContent>
+              </Card>
+              <TopDownloadsAndVideoPlays
+                dataHrefBase={dataHrefBase}
+                agency={agency}
+                downloadsReportFileName="top-downloads-7-days"
+                videoPlaysReportFileName="top-video-plays-7-days"
+                timeIntervalHeader="Last 7 Days"
+                timeIntervalDescription="over the last week"
+              />
+            </CardGroup>
+          </div>
         </TabPanel>
         <TabPanel>
-          <section className="sidebar__tab__content padding-bottom-1 border-bottom-1px border-base-light">
-            <p className="margin-bottom-1">
-              Sessions over the last month on <strong>hostnames</strong>,
-              including traffic to all web pages and app screens within that
-              hostname.
-            </p>
-            <p className="margin-top-05 margin-bottom-105">
-              <a
-                href={`${dataHrefBase}/top-100000-domains-30-days.csv`}
-                aria-label="top-100000-domains-30-days.csv"
-              >
-                Download the data
-                <svg
-                  className="usa-icon margin-bottom-neg-05 margin-left-05"
-                  aria-hidden="true"
-                  focusable="false"
-                  role="img"
-                >
-                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-                </svg>
-              </a>
-            </p>
-            <TopPagesHistorical
-              dataHrefBase={dataHrefBase}
-              reportFileName="top-domains-30-days.json"
-              numberOfListingsToDisplay={numberOfTopPagesToDisplay}
-            />
-          </section>
-          <TopDownloadsAndVideoPlays
-            dataHrefBase={dataHrefBase}
-            agency={agency}
-            downloadsReportFileName="top-downloads-30-days"
-            videoPlaysReportFileName="top-video-plays-30-days"
-            timeIntervalHeader="Last 30 Days"
-            timeIntervalDescription="over the last month"
-          />
+          <div className="bg-light-gray border-top-width-0 border-05 border-gray-5">
+            <CardGroup className="padding-2">
+              <Card className="grid-col-12 padding-bottom-2">
+                <CardContent className="padding-2 border-0">
+                  <div className="chart__title">
+                    <a href="/definitions#report_realtime_top_pages">
+                      Top {numberOfTopPagesToDisplay} Web Pages and App Screens
+                    </a>
+                    <Tooltip
+                      position="top"
+                      content="The top webpages and/or applications based on the number of sessions for the page or hostname."
+                    >
+                      <svg
+                        className="usa-icon margin-bottom-neg-05 margin-left-05"
+                        aria-hidden="true"
+                        focusable="false"
+                        role="img"
+                      >
+                        <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                      </svg>
+                    </Tooltip>
+                  </div>
+                  <section className="sidebar__tab__content">
+                    <p className="margin-y-1">
+                      Sessions over the last month on <strong>hostnames</strong>
+                      , including traffic to all web pages and app screens
+                      within that hostname.
+                    </p>
+                    <p className="margin-top-05 margin-bottom-105">
+                      <a
+                        href={`${dataHrefBase}/top-100000-domains-30-days.csv`}
+                        aria-label="top-100000-domains-30-days.csv"
+                      >
+                        Download the data
+                        <svg
+                          className="usa-icon margin-bottom-neg-05 margin-left-05"
+                          aria-hidden="true"
+                          focusable="false"
+                          role="img"
+                        >
+                          <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                        </svg>
+                      </a>
+                    </p>
+                    <TopPagesHistorical
+                      dataHrefBase={dataHrefBase}
+                      reportFileName="top-domains-30-days.json"
+                      numberOfListingsToDisplay={numberOfTopPagesToDisplay}
+                    />
+                  </section>
+                </CardContent>
+              </Card>
+              <TopDownloadsAndVideoPlays
+                dataHrefBase={dataHrefBase}
+                agency={agency}
+                downloadsReportFileName="top-downloads-30-days"
+                videoPlaysReportFileName="top-video-plays-30-days"
+                timeIntervalHeader="Last 30 Days"
+                timeIntervalDescription="over the last month"
+              />
+            </CardGroup>
+          </div>
         </TabPanel>
       </Tabs>
     </section>

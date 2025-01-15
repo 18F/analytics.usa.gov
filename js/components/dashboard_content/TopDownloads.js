@@ -54,7 +54,7 @@ function TopDownloads({
                     </a>
                   </div>
                   <div>
-                  <span class="top-download__page-domain text--lowercase dark-grey">
+                  <span class="top-download__page-domain text--lowercase dark-gray">
                     ${formatters.formatURL(d.page)}
                   </span>
                   <span class="divider">/</span>
