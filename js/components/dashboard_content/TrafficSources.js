@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 import Tooltip from "../tooltip/Tooltip";
+import Card from "../card/Card";
+import CardContent from "../card/CardContent";
 
 /**
  * Contains charts and other data visualizations for the traffic sources
@@ -18,77 +20,79 @@ import Tooltip from "../tooltip/Tooltip";
  */
 function TrafficSources({ dataHrefBase }) {
   return (
-    <div className="padding-top-1 grid-row">
-      <div
-        id="session_channel_groups"
-        className="desktop:grid-col-6 desktop:padding-right-2"
-      >
-        <div className="chart__title">
-          <a href="/definitions#dimension_default_channel_group">
-            <Tooltip
-              position="top"
-              content="Channel groupings are rule-based definitions of your traffic sources."
-            >
-              Top Channels
-            </Tooltip>
-          </a>
-          <a
-            href={`${dataHrefBase}/top-session-channel-group-30-days.csv`}
-            aria-label="top-session-channel-group-30-days.csv"
-          >
-            <svg
-              className="usa-icon margin-bottom-neg-05 margin-left-05"
-              aria-hidden="true"
-              focusable="false"
-              role="img"
-            >
-              <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-            </svg>
-          </a>
-        </div>
-        <div className="text--capitalize">
-          <ConsolidatedBarChart
-            dataUrl={`${dataHrefBase}/top-session-channel-group-30-days.json`}
-            chartDataKey={"session_default_channel_group"}
-            maxItems={10}
-          />
-        </div>
+    <div className="grid-row padding-y-1">
+      <div id="session_channel_groups" className="desktop:grid-col-6">
+        <Card>
+          <CardContent className="padding-105">
+            <div className="chart__title">
+              <a href="/definitions#dimension_default_channel_group">
+                <Tooltip
+                  position="top"
+                  content="Channel groupings are rule-based definitions of your traffic sources."
+                >
+                  Top Channels
+                </Tooltip>
+              </a>
+              <a
+                href={`${dataHrefBase}/top-session-channel-group-30-days.csv`}
+                aria-label="top-session-channel-group-30-days.csv"
+              >
+                <svg
+                  className="usa-icon margin-bottom-neg-05 margin-left-05"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                </svg>
+              </a>
+            </div>
+            <div className="text--capitalize">
+              <ConsolidatedBarChart
+                dataUrl={`${dataHrefBase}/top-session-channel-group-30-days.json`}
+                chartDataKey={"session_default_channel_group"}
+                maxItems={10}
+              />
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
-      <div
-        id="session_source_mediums"
-        className="desktop:grid-col-6 desktop:padding-left-2"
-      >
-        <div className="chart__title">
-          <a href="/definitions#dimension_source_medium">
-            <Tooltip
-              position="top"
-              content="A source is a representation of the publisher or inventory source from which traffic originated. A medium is a method for acquiring users to websites or applications."
-            >
-              Top Sources/Media
-            </Tooltip>
-          </a>
-          <a
-            href={`${dataHrefBase}/top-session-source-medium-30-days.csv`}
-            aria-label="top-session-source-medium-30-days.csv"
-          >
-            <svg
-              className="usa-icon margin-bottom-neg-05 margin-left-05"
-              aria-hidden="true"
-              focusable="false"
-              role="img"
-            >
-              <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-            </svg>
-          </a>
-        </div>
-        <div className="text--capitalize">
-          <ConsolidatedBarChart
-            dataUrl={`${dataHrefBase}/top-session-source-medium-30-days.json`}
-            chartDataKey={"session_source_medium"}
-            maxItems={10}
-          />
-        </div>
+      <div id="session_source_mediums" className="desktop:grid-col-6">
+        <Card>
+          <CardContent className="padding-105">
+            <div className="chart__title">
+              <a href="/definitions#dimension_source_medium">
+                <Tooltip
+                  position="top"
+                  content="A source is a representation of the publisher or inventory source from which traffic originated. A medium is a method for acquiring users to websites or applications."
+                >
+                  Top Sources/Media
+                </Tooltip>
+              </a>
+              <a
+                href={`${dataHrefBase}/top-session-source-medium-30-days.csv`}
+                aria-label="top-session-source-medium-30-days.csv"
+              >
+                <svg
+                  className="usa-icon margin-bottom-neg-05 margin-left-05"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                </svg>
+              </a>
+            </div>
+            <div className="text--capitalize">
+              <ConsolidatedBarChart
+                dataUrl={`${dataHrefBase}/top-session-source-medium-30-days.json`}
+                chartDataKey={"session_source_medium"}
+                maxItems={10}
+              />
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
