@@ -51,6 +51,10 @@ ul.usa-card-group {
   padding: 0;
 }
 
+.usa-card:not(.usa-card--flag) .usa-card__container>:only-child {
+  padding: 0;
+}
+
 // USWDS Tooltips don't work when wrapping an anchor tag. A workaround is to put
 // the tooltip within the anchor, wrapping the text for the anchor. Add styles
 // for this specific scenario so that the text is styled like other anchor tags.
