@@ -23,15 +23,18 @@ import CardContent from "../card/CardContent";
  */
 function DeviceDemographics({ dataHrefBase }) {
   return (
-    <div className="grid-row padding-y-1">
-      <div id="devices" className="desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
+    <div className="grid-row desktop:grid-gap-2">
+      <div
+        id="devices"
+        className="desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0"
+      >
         <Card>
-          <CardContent className="padding-105">
+          <CardContent className="padding-105 margin-0 border-0">
             <DevicesChart dataHrefBase={dataHrefBase} />
           </CardContent>
         </Card>
         <Card className="padding-top-2">
-          <CardContent className="padding-105">
+          <CardContent className="padding-105 margin-0 border-0">
             <div className="chart__title">
               <a href="/definitions#dimension_screen_resolution">
                 <Tooltip
@@ -66,9 +69,12 @@ function DeviceDemographics({ dataHrefBase }) {
         </Card>
       </div>
 
-      <div id="browsers" className="desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
+      <div
+        id="browsers"
+        className="desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0"
+      >
         <Card>
-          <CardContent className="padding-105">
+          <CardContent className="padding-105 margin-0 border-0">
             <BrowsersChart dataHrefBase={dataHrefBase} />
           </CardContent>
         </Card>
@@ -76,7 +82,7 @@ function DeviceDemographics({ dataHrefBase }) {
 
       <div id="operating_systems" className="desktop:grid-col-4">
         <Card>
-          <CardContent className="padding-105">
+          <CardContent className="padding-105 margin-0 border-0">
             <OperatingSystemsChart dataHrefBase={dataHrefBase} />
           </CardContent>
         </Card>

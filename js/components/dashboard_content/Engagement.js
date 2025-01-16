@@ -20,13 +20,13 @@ import CardContent from "../card/CardContent";
  */
 function Engagement({ dataHrefBase }) {
   return (
-    <div className="grid-row padding-y-1">
+    <div className="grid-row">
       <div
         id="average_engagement_time"
         className="grid-col-12 desktop:grid-col-6 text-center card:padding-bottom-2 desktop:padding-bottom-0"
       >
         <Card>
-          <CardContent className="padding-105">
+          <CardContent className="padding-105 margin-0 border-0">
             <AverageEngagementDuration dataHrefBase={dataHrefBase} />
           </CardContent>
         </Card>
@@ -36,7 +36,7 @@ function Engagement({ dataHrefBase }) {
         className="grid-col-12 desktop:grid-col-6 text-center"
       >
         <Card>
-          <CardContent className="padding-105">
+          <CardContent className="padding-105 margin-0 border-0">
             <EngagementRate dataHrefBase={dataHrefBase} />
           </CardContent>
         </Card>
