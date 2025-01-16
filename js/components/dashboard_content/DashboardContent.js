@@ -160,8 +160,8 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
       </CardGroup>
       <CardGroup>
         <Card className="card:grid-col-12 desktop:grid-col-8">
-          <CardContent>
-            <div id="main_data" className="usa-card__body">
+          <CardContent className="border-0">
+            <div id="main_data" className="usa-card__body padding-0">
               <Accordion className="usa-accordion--bordered" multiselect={true}>
                 <AccordionHeader className="section__headline margin-0">
                   <button
