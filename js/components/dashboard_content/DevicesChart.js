@@ -7,6 +7,7 @@ import barChart from "../../lib/chart_helpers/barchart";
 import formatters from "../../lib/chart_helpers/formatters";
 import transformers from "../../lib/chart_helpers/transformers";
 import Tooltip from "../tooltip/Tooltip";
+import FilterSelect from "../select/FilterSelect";
 
 /**
  * Retrieves the devices report from the passed data URL and creates a
@@ -20,40 +21,59 @@ import Tooltip from "../tooltip/Tooltip";
  * @returns {import('react').ReactElement} The rendered element
  */
 function DevicesChart({ dataHrefBase }) {
-  const jsonDataURL = `${dataHrefBase}/devices.json`;
-  const csvDataURL = `${dataHrefBase}/devices.csv`;
+  const chartBuilder = new ChartBuilder();
+  const reportFilters = [
+    ["30 Days", "devices"],
+    ["7 Days", "devices-7-days"],
+    ["90 Days", "devices-90-days"],
+  ];
+  const [dataFileName, setDataFileName] = useState("devices");
   const ref = useRef(null);
-  const [deviceData, setDeviceData] = useState(null);
 
   useEffect(() => {
     const initDevicesChart = async () => {
-      if (!deviceData) {
-        const data = await DataLoader.loadJSON(jsonDataURL);
-        await setDeviceData(data);
-      } else {
-        const chartBuilder = new ChartBuilder();
-        await chartBuilder
-          .setElement(ref.current)
-          .setData(deviceData)
-          .setTransformer((d) => {
-            const devices = transformers.listify(d.totals.by_device);
-            devices.forEach((device) => {
-              if (device.key === "smart tv") {
-                device.key = "Smart TV";
-              }
-            });
-            return transformers.findProportionsOfMetricFromValue(devices);
-          })
-          .setRenderer(
-            barChart()
-              .value((d) => d.proportion)
-              .format(formatters.floatToPercent),
-          )
-          .build();
+      if (dataFileName) {
+        let data;
+
+        try {
+          data = await DataLoader.loadJSON(
+            `${dataHrefBase}/${dataFileName}.json`,
+          );
+        } catch (e) {
+          data = { totals: {} };
+        }
+        await buildChartForDeviceData(data);
       }
     };
     initDevicesChart().catch(console.error);
-  }, [deviceData]);
+  }, [dataFileName]);
+
+  function buildChartForDeviceData(data) {
+    return chartBuilder
+      .setElement(ref.current)
+      .setData(data)
+      .setTransformer((d) => {
+        const devices = transformers.listify(d.totals.by_device);
+        devices.forEach((device) => {
+          if (device.key === "smart tv") {
+            device.key = "Smart TV";
+          }
+        });
+        return transformers.findProportionsOfMetricFromValue(devices);
+      })
+      .setRenderer(
+        barChart()
+          .value((d) => d.proportion)
+          .format(formatters.floatToPercent),
+      )
+      .build();
+  }
+
+  async function dataFileChangeHandler(fileName) {
+    if (!fileName) return;
+
+    await setDataFileName(fileName);
+  }
 
   return (
     <>
@@ -66,7 +86,10 @@ function DevicesChart({ dataHrefBase }) {
             Devices
           </Tooltip>
         </a>
-        <a href={csvDataURL} aria-label="devices.csv">
+        <a
+          href={`${dataHrefBase}/${dataFileName}.csv`}
+          aria-label={`${dataHrefBase}/${dataFileName}.csv`}
+        >
           <svg
             className="usa-icon margin-bottom-neg-05 margin-left-05"
             aria-hidden="true"
@@ -80,6 +103,12 @@ function DevicesChart({ dataHrefBase }) {
       <figure id="chart_device_types" ref={ref}>
         <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
       </figure>
+      <FilterSelect
+        filters={reportFilters}
+        defaultFilterValue={dataFileName || ""}
+        onChange={dataFileChangeHandler}
+        name={"Device chart time filter"}
+      />
     </>
   );
 }

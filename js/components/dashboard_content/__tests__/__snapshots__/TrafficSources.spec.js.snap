@@ -2,127 +2,133 @@
 
 exports[`TrafficSources renders 1`] = `
 <DocumentFragment>
-  <div
-    class="padding-top-1 grid-row"
+  <ul
+    class="usa-card-group grid-row tablet:grid-gap-2 card:padding-x-1 tablet:padding-x-0"
   >
-    <div
-      class="desktop:grid-col-6 desktop:padding-right-2"
-      id="session_channel_groups"
+    <li
+      class="usa-card card:grid-col-12 desktop:grid-col-6 card:padding-bottom-2 desktop:padding-bottom-0"
     >
       <div
-        class="chart__title"
+        class="usa-card__container padding-105 margin-0 border-0"
       >
-        <a
-          href="/definitions#dimension_default_channel_group"
+        <div
+          class="chart__title"
         >
-          <span
-            class="usa-tooltip"
+          <a
+            href="/definitions#dimension_default_channel_group"
           >
             <span
-              aria-describedby="tooltip-550000"
-              class="usa-tooltip__trigger"
-              data-position="top"
-              tabindex="0"
+              class="usa-tooltip"
             >
-              Top Channels
+              <span
+                aria-describedby="tooltip-550000"
+                class="usa-tooltip__trigger"
+                data-position="top"
+                tabindex="0"
+              >
+                Top Channels
+              </span>
+              <span
+                aria-hidden="true"
+                class="usa-tooltip__body"
+                id="tooltip-550000"
+                role="tooltip"
+              >
+                Channel groupings are rule-based definitions of your traffic sources.
+              </span>
             </span>
-            <span
+          </a>
+          <a
+            aria-label="top-session-channel-group-30-days.csv"
+            href="http://www.example.com/data//top-session-channel-group-30-days.csv"
+          >
+            <svg
               aria-hidden="true"
-              class="usa-tooltip__body"
-              id="tooltip-550000"
-              role="tooltip"
+              class="usa-icon margin-bottom-neg-05 margin-left-05"
+              focusable="false"
+              role="img"
             >
-              Channel groupings are rule-based definitions of your traffic sources.
-            </span>
-          </span>
-        </a>
-        <a
-          aria-label="top-session-channel-group-30-days.csv"
-          href="http://www.example.com/data//top-session-channel-group-30-days.csv"
+              <use
+                xlink:href="/assets/uswds/img/sprite.svg#file_present"
+              />
+            </svg>
+          </a>
+        </div>
+        <div
+          class="text--capitalize"
         >
-          <svg
-            aria-hidden="true"
-            class="usa-icon margin-bottom-neg-05 margin-left-05"
-            focusable="false"
-            role="img"
+          <figure
+            id="chart_session_default_channel_group"
           >
-            <use
-              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            <div
+              class="data chart__bar-chart margin-top-2"
             />
-          </svg>
-        </a>
+          </figure>
+        </div>
       </div>
-      <div
-        class="text--capitalize"
-      >
-        <figure
-          id="chart_session_default_channel_group"
-        >
-          <div
-            class="data chart__bar-chart margin-top-2"
-          />
-        </figure>
-      </div>
-    </div>
-    <div
-      class="desktop:grid-col-6 desktop:padding-left-2"
-      id="session_source_mediums"
+    </li>
+    <li
+      class="usa-card card:grid-col-12 desktop:grid-col-6"
     >
       <div
-        class="chart__title"
+        class="usa-card__container padding-105 margin-0 border-0"
       >
-        <a
-          href="/definitions#dimension_source_medium"
+        <div
+          class="chart__title"
         >
-          <span
-            class="usa-tooltip"
+          <a
+            href="/definitions#dimension_source_medium"
           >
             <span
-              aria-describedby="tooltip-550000"
-              class="usa-tooltip__trigger"
-              data-position="top"
-              tabindex="0"
+              class="usa-tooltip"
             >
-              Top Sources/Media
+              <span
+                aria-describedby="tooltip-550000"
+                class="usa-tooltip__trigger"
+                data-position="top"
+                tabindex="0"
+              >
+                Top Sources/Media
+              </span>
+              <span
+                aria-hidden="true"
+                class="usa-tooltip__body"
+                id="tooltip-550000"
+                role="tooltip"
+              >
+                A source is a representation of the publisher or inventory source from which traffic originated. A medium is a method for acquiring users to websites or applications.
+              </span>
             </span>
-            <span
+          </a>
+          <a
+            aria-label="top-session-source-medium-30-days.csv"
+            href="http://www.example.com/data//top-session-source-medium-30-days.csv"
+          >
+            <svg
               aria-hidden="true"
-              class="usa-tooltip__body"
-              id="tooltip-550000"
-              role="tooltip"
+              class="usa-icon margin-bottom-neg-05 margin-left-05"
+              focusable="false"
+              role="img"
             >
-              A source is a representation of the publisher or inventory source from which traffic originated. A medium is a method for acquiring users to websites or applications.
-            </span>
-          </span>
-        </a>
-        <a
-          aria-label="top-session-source-medium-30-days.csv"
-          href="http://www.example.com/data//top-session-source-medium-30-days.csv"
+              <use
+                xlink:href="/assets/uswds/img/sprite.svg#file_present"
+              />
+            </svg>
+          </a>
+        </div>
+        <div
+          class="text--capitalize"
         >
-          <svg
-            aria-hidden="true"
-            class="usa-icon margin-bottom-neg-05 margin-left-05"
-            focusable="false"
-            role="img"
+          <figure
+            id="chart_session_source_medium"
           >
-            <use
-              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            <div
+              class="data chart__bar-chart margin-top-2"
             />
-          </svg>
-        </a>
+          </figure>
+        </div>
       </div>
-      <div
-        class="text--capitalize"
-      >
-        <figure
-          id="chart_session_source_medium"
-        >
-          <div
-            class="data chart__bar-chart margin-top-2"
-          />
-        </figure>
-      </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </DocumentFragment>
 `;
