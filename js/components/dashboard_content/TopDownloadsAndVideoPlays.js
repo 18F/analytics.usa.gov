@@ -70,7 +70,7 @@ function TopDownloadsAndVideoPlays({
   return (
     <>
       <Card className="grid-col-12 padding-bottom-2">
-        <CardContent className="padding-2">
+        <CardContent className="padding-2 border-0">
           <section className="top-downloads">
             <div className="top-downloads__headline">
               <h3 className="margin-top-0">
@@ -123,7 +123,7 @@ function TopDownloadsAndVideoPlays({
         </CardContent>
       </Card>
       <Card className="grid-col-12">
-        <CardContent className="padding-2">
+        <CardContent className="padding-2 border-0">
           <section className="top-video-plays">
             <div className="top-video-plays__headline">
               <h3 className="margin-top-0">

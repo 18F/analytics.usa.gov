@@ -70,7 +70,7 @@ function SidebarContent({ dataHrefBase, agency }) {
           <div className="bg-light-gray border-top-width-0 border-05 border-gray-5">
             <CardGroup className="padding-2">
               <Card className="grid-col-12 padding-bottom-2">
-                <CardContent className="padding-2">
+                <CardContent className="padding-2 border-0">
                   <div className="chart__title">
                     <a href="/definitions#report_realtime_top_pages">
                       Top {numberOfTopPagesToDisplay} Web Pages and App Screens
@@ -137,7 +137,7 @@ function SidebarContent({ dataHrefBase, agency }) {
           <div className="bg-light-gray border-top-width-0 border-05 border-gray-5">
             <CardGroup className="padding-2">
               <Card className="grid-col-12 padding-bottom-2">
-                <CardContent className="padding-2">
+                <CardContent className="padding-2 border-0">
                   <div className="chart__title">
                     <a href="/definitions#report_realtime_top_pages">
                       Top {numberOfTopPagesToDisplay} Web Pages and App Screens
@@ -201,7 +201,7 @@ function SidebarContent({ dataHrefBase, agency }) {
           <div className="bg-light-gray border-top-width-0 border-05 border-gray-5">
             <CardGroup className="padding-2">
               <Card className="grid-col-12 padding-bottom-2">
-                <CardContent className="padding-2">
+                <CardContent className="padding-2 border-0">
                   <div className="chart__title">
                     <a href="/definitions#report_realtime_top_pages">
                       Top {numberOfTopPagesToDisplay} Web Pages and App Screens
