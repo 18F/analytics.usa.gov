@@ -90,7 +90,7 @@ function SidebarContent({ dataHrefBase, agency }) {
                     </Tooltip>
                   </div>
                   <section className="sidebar__tab__content">
-                    <p className="margin-bottom-1">
+                    <p className="margin-y-1">
                       <strong>Users</strong> on a{" "}
                       <strong>single, specific page or app screen</strong> in
                       the last 30 minutes. Hostnames are not currently reported
@@ -157,7 +157,7 @@ function SidebarContent({ dataHrefBase, agency }) {
                     </Tooltip>
                   </div>
                   <section className="sidebar__tab__content">
-                    <p className="margin-bottom-1">
+                    <p className="margin-y-1">
                       Sessions over the last week on <strong>hostnames</strong>,
                       including traffic to all web pages and app screens within
                       that hostname.
@@ -221,7 +221,7 @@ function SidebarContent({ dataHrefBase, agency }) {
                     </Tooltip>
                   </div>
                   <section className="sidebar__tab__content">
-                    <p className="margin-bottom-1">
+                    <p className="margin-y-1">
                       Sessions over the last month on <strong>hostnames</strong>
                       , including traffic to all web pages and app screens
                       within that hostname.
