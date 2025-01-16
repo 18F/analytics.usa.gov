@@ -190,9 +190,9 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   id="user-locations-languages-group"
                   className="bg-light-gray padding-2"
                 >
-                  <div className="grid-row tablet:grid-gap-2">
+                  <CardGroup className="grid-row tablet:grid-gap-2 card:padding-x-1 tablet:padding-x-0">
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
-                      <CardContent className="padding-105 margin-0 border-0">
+                      <CardContent className="padding-105 margin-0 border-0 height-auto">
                         <TopCitiesRealtime
                           dataHrefBase={dataHrefBase}
                           refreshSeconds={Config.realtimeDataRefreshSeconds}
@@ -200,7 +200,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                       </CardContent>
                     </Card>
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
-                      <CardContent className="padding-105 margin-0 border-0">
+                      <CardContent className="padding-105 margin-0 border-0 height-auto">
                         <TopCountriesRealtime
                           dataHrefBase={dataHrefBase}
                           refreshSeconds={Config.realtimeDataRefreshSeconds}
@@ -208,11 +208,11 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                       </CardContent>
                     </Card>
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
-                      <CardContent className="padding-105 margin-0 border-0">
+                      <CardContent className="padding-105 margin-0 border-0 height-auto">
                         <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
                       </CardContent>
                     </Card>
-                  </div>
+                  </CardGroup>
                 </AccordionContent>
                 <AccordionHeader className="section__headline margin-0">
                   <button
@@ -228,17 +228,19 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   id="30-day-sessions-users"
                   className="bg-light-gray padding-2"
                 >
-                  <Card className="min-height-small">
-                    <CardContent className="padding-105 margin-0 border-0">
-                      <Sessions30Days dataHrefBase={dataHrefBase} />
-                    </CardContent>
-                  </Card>
+                  <CardGroup className="grid-row margin-0">
+                    <Card className="grid-col-12 min-height-small">
+                      <CardContent className="padding-105 margin-0 border-0 height-auto">
+                        <Sessions30Days dataHrefBase={dataHrefBase} />
+                      </CardContent>
+                    </Card>
 
-                  <Card className="padding-top-2 text-center">
-                    <CardContent className="padding-105 margin-0 border-0">
-                      <Visitors30Days dataHrefBase={dataHrefBase} />
-                    </CardContent>
-                  </Card>
+                    <Card className="grid-col-12 padding-top-2 text-center">
+                      <CardContent className="padding-105 margin-0 border-0 height-auto">
+                        <Visitors30Days dataHrefBase={dataHrefBase} />
+                      </CardContent>
+                    </Card>
+                  </CardGroup>
                 </AccordionContent>
                 <AccordionHeader className="section__headline margin-0">
                   <button
