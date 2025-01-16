@@ -20,7 +20,7 @@ import CardContent from "../card/CardContent";
  */
 function Engagement({ dataHrefBase }) {
   return (
-    <div className="grid-row">
+    <div className="grid-row grid-gap-2">
       <div
         id="average_engagement_time"
         className="grid-col-12 desktop:grid-col-6 text-center card:padding-bottom-2 desktop:padding-bottom-0"
