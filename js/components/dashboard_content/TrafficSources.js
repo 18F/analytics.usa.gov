@@ -21,7 +21,7 @@ import CardContent from "../card/CardContent";
 function TrafficSources({ dataHrefBase }) {
   return (
     <div className="grid-row padding-y-1">
-      <div id="session_channel_groups" className="desktop:grid-col-6">
+      <div id="session_channel_groups" className="card:grid-col-12 desktop:grid-col-6 card:padding-bottom-2 desktop:padding-bottom-0">
         <Card>
           <CardContent className="padding-105">
             <div className="chart__title">
@@ -58,7 +58,7 @@ function TrafficSources({ dataHrefBase }) {
         </Card>
       </div>
 
-      <div id="session_source_mediums" className="desktop:grid-col-6">
+      <div id="session_source_mediums" className="card:grid-col-12 desktop:grid-col-6">
         <Card>
           <CardContent className="padding-105">
             <div className="chart__title">

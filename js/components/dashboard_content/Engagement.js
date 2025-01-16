@@ -23,7 +23,7 @@ function Engagement({ dataHrefBase }) {
     <div className="grid-row padding-y-1">
       <div
         id="average_engagement_time"
-        className="grid-col-12 desktop:grid-col-6 text-center"
+        className="grid-col-12 desktop:grid-col-6 text-center card:padding-bottom-2 desktop:padding-bottom-0"
       >
         <Card>
           <CardContent className="padding-105">

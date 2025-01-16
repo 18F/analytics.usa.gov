@@ -52,7 +52,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </div>
       </div>
       <CardGroup className="margin-bottom-2">
-        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3 card:padding-bottom-2 desktop:padding-bottom-0">
           <CardContent className="white bg-palette-color-1 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">
@@ -79,7 +79,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
             </div>
           </CardContent>
         </Card>
-        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3 card:padding-bottom-2 desktop:padding-bottom-0">
           <CardContent className="white bg-palette-color-2 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">
@@ -106,7 +106,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
             </div>
           </CardContent>
         </Card>
-        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3">
+        <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-3 card:padding-bottom-2 tablet:padding-bottom-0">
           <CardContent className="white bg-palette-color-3 text-center text--bold">
             <div className="usa-card__body">
               <p className="text--header-xl margin-0">
@@ -191,7 +191,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   className="bg-light-gray"
                 >
                   <CardGroup className="padding-1">
-                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
                       <CardContent className="padding-105">
                         <TopCitiesRealtime
                           dataHrefBase={dataHrefBase}
@@ -199,7 +199,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                         />
                       </CardContent>
                     </Card>
-                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+                    <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
                       <CardContent className="padding-105">
                         <TopCountriesRealtime
                           dataHrefBase={dataHrefBase}
