@@ -159,7 +159,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
         </Card>
       </CardGroup>
       <CardGroup>
-        <Card className="card:grid-col-12 desktop:grid-col-8">
+        <Card className="card:grid-col-12 desktop:grid-col-8 card:padding-bottom-2 desktop:padding-bottom-0">
           <CardContent className="border-0">
             <div id="main_data" className="usa-card__body padding-0">
               <Accordion className="usa-accordion--bordered" multiselect={true}>
