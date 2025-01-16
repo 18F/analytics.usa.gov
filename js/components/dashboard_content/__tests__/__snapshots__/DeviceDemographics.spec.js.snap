@@ -2,183 +2,152 @@
 
 exports[`DeviceDemographics renders 1`] = `
 <DocumentFragment>
-  <div
-    class="padding-top-1 grid-row"
+  <ul
+    class="usa-card-group grid-row desktop:grid-gap-2 card:padding-x-1 desktop:padding-x-0"
   >
-    <div
-      class="desktop:grid-col-4 desktop:padding-right-2"
-      id="devices"
+    <li
+      class="usa-card desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0"
     >
       <div
-        class="chart__title"
+        class="usa-card__container height-auto"
       >
-        <a
-          href="/definitions#dimension_device_category"
+        <ul
+          class="usa-card-group grid-row padding-0 bg-light-gray"
         >
-          <span
-            class="usa-tooltip"
+          <li
+            class="usa-card grid-col-12"
           >
-            <span
-              aria-describedby="tooltip-550000"
-              class="usa-tooltip__trigger"
-              data-position="top"
-              tabindex="0"
+            <div
+              class="usa-card__container padding-105 margin-0 border-0 height-auto"
             >
-              Devices
-            </span>
-            <span
-              aria-hidden="true"
-              class="usa-tooltip__body"
-              id="tooltip-550000"
-              role="tooltip"
-            >
-              The type category of the device used by the user to access the site or application.
-            </span>
-          </span>
-        </a>
-        <a
-          aria-label="devices.csv"
-          href="http://www.example.com/data//devices.csv"
-        >
-          <svg
-            aria-hidden="true"
-            class="usa-icon margin-bottom-neg-05 margin-left-05"
-            focusable="false"
-            role="img"
+              <div
+                class="chart__title"
+              >
+                <a
+                  href="/definitions#dimension_device_category"
+                >
+                  <span
+                    class="usa-tooltip"
+                  >
+                    <span
+                      aria-describedby="tooltip-550000"
+                      class="usa-tooltip__trigger"
+                      data-position="top"
+                      tabindex="0"
+                    >
+                      Devices
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      class="usa-tooltip__body"
+                      id="tooltip-550000"
+                      role="tooltip"
+                    >
+                      The type category of the device used by the user to access the site or application.
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-label="devices.csv"
+                  href="http://www.example.com/data//devices.csv"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="usa-icon margin-bottom-neg-05 margin-left-05"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use
+                      xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <figure
+                id="chart_device_types"
+              >
+                <div
+                  class="data chart__bar-chart text--capitalize margin-top-2"
+                />
+              </figure>
+            </div>
+          </li>
+          <li
+            class="usa-card grid-col-12 padding-top-2"
           >
-            <use
-              xlink:href="/assets/uswds/img/sprite.svg#file_present"
-            />
-          </svg>
-        </a>
+            <div
+              class="usa-card__container padding-105 margin-0 border-0 height-auto"
+            >
+              <div
+                class="chart__title"
+              >
+                <a
+                  href="/definitions#dimension_screen_resolution"
+                >
+                  <span
+                    class="usa-tooltip"
+                  >
+                    <span
+                      aria-describedby="tooltip-550000"
+                      class="usa-tooltip__trigger"
+                      data-position="top"
+                      tabindex="0"
+                    >
+                      Top Screen Resolutions
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      class="usa-tooltip__body"
+                      id="tooltip-550000"
+                      role="tooltip"
+                    >
+                      The width and height (in pixels) of the screen from which user activity originates.
+                    </span>
+                  </span>
+                </a>
+                <a
+                  aria-label="screen-resolution-30-days.csv"
+                  href="http://www.example.com/data//screen-resolution-30-days.csv"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="usa-icon margin-bottom-neg-05 margin-left-05"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use
+                      xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div
+                class="text--capitalize"
+              >
+                <figure
+                  id="chart_screen_resolution"
+                >
+                  <div
+                    class="data chart__bar-chart margin-top-2"
+                  />
+                </figure>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-      <figure
-        id="chart_device_types"
-      >
-        <div
-          class="data chart__bar-chart text--capitalize margin-top-2"
-        />
-      </figure>
-      <div
-        class="chart__title desktop:padding-top-2"
-      >
-        <a
-          href="/definitions#dimension_screen_resolution"
-        >
-          <span
-            class="usa-tooltip"
-          >
-            <span
-              aria-describedby="tooltip-550000"
-              class="usa-tooltip__trigger"
-              data-position="top"
-              tabindex="0"
-            >
-              Top Screen Resolutions
-            </span>
-            <span
-              aria-hidden="true"
-              class="usa-tooltip__body"
-              id="tooltip-550000"
-              role="tooltip"
-            >
-              The width and height (in pixels) of the screen from which user activity originates.
-            </span>
-          </span>
-        </a>
-        <a
-          aria-label="screen-resolution-30-days.csv"
-          href="http://www.example.com/data//screen-resolution-30-days.csv"
-        >
-          <svg
-            aria-hidden="true"
-            class="usa-icon margin-bottom-neg-05 margin-left-05"
-            focusable="false"
-            role="img"
-          >
-            <use
-              xlink:href="/assets/uswds/img/sprite.svg#file_present"
-            />
-          </svg>
-        </a>
-      </div>
-      <div
-        class="text--capitalize"
-      >
-        <figure
-          id="chart_screen_resolution"
-        >
-          <div
-            class="data chart__bar-chart margin-top-2"
-          />
-        </figure>
-      </div>
-    </div>
-    <div
-      class="desktop:grid-col-4 desktop:padding-x-2"
-      id="browsers"
+    </li>
+    <li
+      class="usa-card desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0"
     >
       <div
-        class="chart__title"
+        class="usa-card__container padding-105 margin-0 border-0 height-auto"
       >
-        <a
-          href="/definitions#dimension_browser"
-        >
-          <span
-            class="usa-tooltip"
-          >
-            <span
-              aria-describedby="tooltip-550000"
-              class="usa-tooltip__trigger"
-              data-position="top"
-              tabindex="0"
-            >
-              Web Browsers
-            </span>
-            <span
-              aria-hidden="true"
-              class="usa-tooltip__body"
-              id="tooltip-550000"
-              role="tooltip"
-            >
-              The name of the web browser used by the user to access the site.
-            </span>
-          </span>
-        </a>
-        <a
-          aria-label="browsers.csv"
-          href="http://www.example.com/data//browsers.csv"
-        >
-          <svg
-            aria-hidden="true"
-            class="usa-icon margin-bottom-neg-05 margin-left-05"
-            focusable="false"
-            role="img"
-          >
-            <use
-              xlink:href="/assets/uswds/img/sprite.svg#file_present"
-            />
-          </svg>
-        </a>
-      </div>
-      <figure
-        id="chart_browsers"
-      >
-        <div
-          class="data chart__bar-chart text--capitalize margin-top-2"
-        />
-      </figure>
-    </div>
-    <div
-      class="desktop:grid-col-4 desktop:padding-left-2"
-      id="operating_systems"
-    >
-      <div>
         <div
           class="chart__title"
         >
           <a
-            href="/definitions#dimension_operating_system"
+            href="/definitions#dimension_browser"
           >
             <span
               class="usa-tooltip"
@@ -189,7 +158,7 @@ exports[`DeviceDemographics renders 1`] = `
                 data-position="top"
                 tabindex="0"
               >
-                Operating Systems
+                Web Browsers
               </span>
               <span
                 aria-hidden="true"
@@ -197,13 +166,13 @@ exports[`DeviceDemographics renders 1`] = `
                 id="tooltip-550000"
                 role="tooltip"
               >
-                The name of the operating system used by the user's device.
+                The name of the web browser used by the user to access the site.
               </span>
             </span>
           </a>
           <a
-            aria-label="os.csv"
-            href="http://www.example.com/data//os.csv"
+            aria-label="browsers.csv"
+            href="http://www.example.com/data//browsers.csv"
           >
             <svg
               aria-hidden="true"
@@ -218,23 +187,85 @@ exports[`DeviceDemographics renders 1`] = `
           </a>
         </div>
         <figure
-          id="chart_os"
+          id="chart_browsers"
         >
           <div
             class="data chart__bar-chart text--capitalize margin-top-2"
           />
         </figure>
-        <figure
-          class="hide chart__bar-chart__nested"
-          data-scale-to-parent="true"
-          id="chart_windows"
+      </div>
+    </li>
+    <li
+      class="usa-card desktop:grid-col-4"
+    >
+      <div
+        class="usa-card__container padding-105 margin-0 border-0 height-auto"
+      >
+        <div
+          class="padding-0"
         >
           <div
-            class="data chart__bar-chart text--capitalize"
-          />
-        </figure>
+            class="chart__title"
+          >
+            <a
+              href="/definitions#dimension_operating_system"
+            >
+              <span
+                class="usa-tooltip"
+              >
+                <span
+                  aria-describedby="tooltip-550000"
+                  class="usa-tooltip__trigger"
+                  data-position="top"
+                  tabindex="0"
+                >
+                  Operating Systems
+                </span>
+                <span
+                  aria-hidden="true"
+                  class="usa-tooltip__body"
+                  id="tooltip-550000"
+                  role="tooltip"
+                >
+                  The name of the operating system used by the user's device.
+                </span>
+              </span>
+            </a>
+            <a
+              aria-label="os.csv"
+              href="http://www.example.com/data//os.csv"
+            >
+              <svg
+                aria-hidden="true"
+                class="usa-icon margin-bottom-neg-05 margin-left-05"
+                focusable="false"
+                role="img"
+              >
+                <use
+                  xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                />
+              </svg>
+            </a>
+          </div>
+          <figure
+            id="chart_os"
+          >
+            <div
+              class="data chart__bar-chart text--capitalize margin-top-2"
+            />
+          </figure>
+          <figure
+            class="hide chart__bar-chart__nested"
+            data-scale-to-parent="true"
+            id="chart_windows"
+          >
+            <div
+              class="data chart__bar-chart text--capitalize"
+            />
+          </figure>
+        </div>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </DocumentFragment>
 `;

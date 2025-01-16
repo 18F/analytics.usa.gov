@@ -41,7 +41,7 @@ function Visitors30Days({ dataHrefBase }) {
   }, [visitorData]);
 
   return (
-    <div ref={ref}>
+    <div className="padding-0 section__subheader" ref={ref}>
       There were <span className="data text--bold">...</span> sessions in the
       last 30 days.
     </div>

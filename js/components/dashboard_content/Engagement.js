@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 
 import EngagementRate from "./EngagementRate";
 import AverageEngagementDuration from "./AverageEngagementDuration";
+import Card from "../card/Card";
+import CardContent from "../card/CardContent";
+import CardGroup from "../card/CardGroup";
 
 /**
  * Contains charts and other data visualizations for the user engagement section
@@ -18,20 +21,19 @@ import AverageEngagementDuration from "./AverageEngagementDuration";
  */
 function Engagement({ dataHrefBase }) {
   return (
-    <div className="grid-row">
-      <div
-        id="average_engagement_time"
-        className="grid-col-12 desktop:grid-col-6 padding-2 text-center"
-      >
-        <AverageEngagementDuration dataHrefBase={dataHrefBase} />
-      </div>
-      <div
-        id="engagement_rate"
-        className="grid-col-12 desktop:grid-col-6 padding-2 text-center"
-      >
-        <EngagementRate dataHrefBase={dataHrefBase} />
-      </div>
-    </div>
+    <CardGroup className="grid-row grid-gap-2">
+      <Card className="grid-col-12 desktop:grid-col-6 text-center card:padding-bottom-2 desktop:padding-bottom-0">
+        <CardContent className="padding-105 margin-0 border-0">
+          <AverageEngagementDuration dataHrefBase={dataHrefBase} />
+        </CardContent>
+      </Card>
+
+      <Card className="grid-col-12 desktop:grid-col-6 text-center">
+        <CardContent className="padding-105 margin-0 border-0">
+          <EngagementRate dataHrefBase={dataHrefBase} />
+        </CardContent>
+      </Card>
+    </CardGroup>
   );
 }
 

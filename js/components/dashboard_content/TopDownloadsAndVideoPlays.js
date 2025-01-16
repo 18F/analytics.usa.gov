@@ -5,6 +5,8 @@ import DataLoader from "../../lib/data_loader";
 import TopDownloads from "./TopDownloads";
 import TopVideoPlays from "./TopVideoPlays";
 import Tooltip from "../tooltip/Tooltip";
+import CardContent from "../card/CardContent";
+import Card from "../card/Card";
 
 /**
  * Contains charts and other data visualizations for the top downloads and top
@@ -67,109 +69,118 @@ function TopDownloadsAndVideoPlays({
 
   return (
     <>
-      <section className="top-downloads padding-bottom-1 border-bottom-1px border-base-light">
-        <div className="top-downloads__headline">
-          <h3>
-            <a href="/definitions#report_top_downloads">
-              Top {__topDownloadsCount()} Downloads {timeIntervalHeader}
-            </a>
-            <Tooltip
-              position="top"
-              content="Top files downloaded across all DAP participating government publicly-available websites. Updated daily for the yesterday, last 7 days, and last 30 days aggregate reports."
-            >
-              <svg
-                className="usa-icon margin-bottom-neg-05 margin-left-05"
-                aria-hidden="true"
-                focusable="false"
-                role="img"
+      <Card className="grid-col-12 padding-bottom-2">
+        <CardContent className="padding-2 border-0">
+          <section className="top-downloads">
+            <div className="top-downloads__headline">
+              <h3 className="margin-top-0">
+                <a href="/definitions#report_top_downloads">
+                  Top {__topDownloadsCount()} Downloads {timeIntervalHeader}
+                </a>
+                <Tooltip
+                  position="top"
+                  content="Top files downloaded across all DAP participating government publicly-available websites. Updated daily for the yesterday, last 7 days, and last 30 days aggregate reports."
+                >
+                  <svg
+                    className="usa-icon margin-bottom-neg-05 margin-left-05"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                  </svg>
+                </Tooltip>
+              </h3>
+            </div>
+            <p className="text--normal margin-top-neg-1 margin-bottom-0">
+              <em>
+                Top file downloads {timeIntervalDescription} on {agency}{" "}
+                hostnames.
+              </em>
+            </p>
+            <p className="margin-top-1 margin-bottom-0">
+              <a
+                href={`${dataHrefBase}/${downloadsReportFileName}.csv`}
+                aria-label={`${downloadsReportFileName}.csv`}
               >
-                <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
-              </svg>
-            </Tooltip>
-          </h3>
-        </div>
-        <p className="text--normal margin-top-neg-1 margin-bottom-0">
-          <em>
-            Top file downloads {timeIntervalDescription} on {agency} hostnames.
-          </em>
-        </p>
-        <p className="margin-top-1 margin-bottom-0">
-          <a
-            href={`${dataHrefBase}/${downloadsReportFileName}.csv`}
-            aria-label={`${downloadsReportFileName}.csv`}
-          >
-            Download the data
-            <svg
-              className="usa-icon margin-bottom-neg-05 margin-left-05"
-              aria-hidden="true"
-              focusable="false"
-              role="img"
-            >
-              <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-            </svg>
-          </a>
-        </p>
-        <TopDownloads
-          dataHrefBase={dataHrefBase}
-          reportFileName={`${downloadsReportFileName}.json`}
-          numberOfListingsToDisplay={__topDownloadsCount()}
-        />
-      </section>
-      <section className="top-video-plays">
-        <div className="top-video-plays__headline">
-          <h3>
-            <a href="/definitions#report_top_video_plays">
-              {__shouldDisplayVideoPlays()
-                ? `Top ${numberOfTopVideoPlaysToDisplay} Video Plays ${timeIntervalHeader}`
-                : `Top Video Plays ${timeIntervalHeader}`}
-            </a>
-            <Tooltip
-              position="top"
-              content="Top videos played across all DAP participating government publicly-available websites. Updated daily for the yesterday, last 7 days, and last 30 days aggregate reports"
-            >
-              <svg
-                className="usa-icon margin-bottom-neg-05 margin-left-05"
-                aria-hidden="true"
-                focusable="false"
-                role="img"
+                Download the data
+                <svg
+                  className="usa-icon margin-bottom-neg-05 margin-left-05"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                </svg>
+              </a>
+            </p>
+            <TopDownloads
+              dataHrefBase={dataHrefBase}
+              reportFileName={`${downloadsReportFileName}.json`}
+              numberOfListingsToDisplay={__topDownloadsCount()}
+            />
+          </section>
+        </CardContent>
+      </Card>
+      <Card className="grid-col-12">
+        <CardContent className="padding-2 border-0">
+          <section className="top-video-plays">
+            <div className="top-video-plays__headline">
+              <h3 className="margin-top-0">
+                <a href="/definitions#report_top_video_plays">
+                  {__shouldDisplayVideoPlays()
+                    ? `Top ${numberOfTopVideoPlaysToDisplay} Video Plays ${timeIntervalHeader}`
+                    : `Top Video Plays ${timeIntervalHeader}`}
+                </a>
+                <Tooltip
+                  position="top"
+                  content="Top videos played across all DAP participating government publicly-available websites. Updated daily for the yesterday, last 7 days, and last 30 days aggregate reports"
+                >
+                  <svg
+                    className="usa-icon margin-bottom-neg-05 margin-left-05"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                  >
+                    <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
+                  </svg>
+                </Tooltip>
+              </h3>
+            </div>
+            <p className="text--normal margin-top-neg-1 margin-bottom-0">
+              <em>
+                {__shouldDisplayVideoPlays()
+                  ? `Top videos played ${timeIntervalDescription} on ${agency} hostnames.`
+                  : `Video play data is unavailable for ${agency} hostnames.`}
+              </em>
+            </p>
+            <p className="margin-top-1 margin-bottom-0">
+              <a
+                href={csvVideoDataURL}
+                aria-label={`${videoPlaysReportFileName}.csv`}
               >
-                <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
-              </svg>
-            </Tooltip>
-          </h3>
-        </div>
-        <p className="text--normal margin-top-neg-1 margin-bottom-0">
-          <em>
-            {__shouldDisplayVideoPlays()
-              ? `Top videos played ${timeIntervalDescription} on ${agency} hostnames.`
-              : `Video play data is unavailable for ${agency} hostnames.`}
-          </em>
-        </p>
-        <p className="margin-top-1 margin-bottom-0">
-          <a
-            href={csvVideoDataURL}
-            aria-label={`${videoPlaysReportFileName}.csv`}
-          >
-            Download the data
-            <svg
-              className="usa-icon margin-bottom-neg-05 margin-left-05"
-              aria-hidden="true"
-              focusable="false"
-              role="img"
-            >
-              <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-            </svg>
-          </a>
-        </p>
-        {__shouldDisplayVideoPlays() ? (
-          <TopVideoPlays
-            videoPlayData={videoPlayData}
-            numberOfListingsToDisplay={numberOfTopVideoPlaysToDisplay}
-          />
-        ) : (
-          <div></div>
-        )}
-      </section>
+                Download the data
+                <svg
+                  className="usa-icon margin-bottom-neg-05 margin-left-05"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+                </svg>
+              </a>
+            </p>
+            {__shouldDisplayVideoPlays() ? (
+              <TopVideoPlays
+                videoPlayData={videoPlayData}
+                numberOfListingsToDisplay={numberOfTopVideoPlaysToDisplay}
+              />
+            ) : (
+              <div></div>
+            )}
+          </section>
+        </CardContent>
+      </Card>
     </>
   );
 }

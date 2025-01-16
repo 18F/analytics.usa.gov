@@ -2,79 +2,85 @@
 
 exports[`Engagement renders 1`] = `
 <DocumentFragment>
-  <div
-    class="grid-row"
+  <ul
+    class="usa-card-group grid-row grid-gap-2"
   >
-    <div
-      class="grid-col-12 desktop:grid-col-6 padding-2 text-center"
-      id="average_engagement_time"
+    <li
+      class="usa-card grid-col-12 desktop:grid-col-6 text-center card:padding-bottom-2 desktop:padding-bottom-0"
     >
-      <a
-        class="chart__title"
-        href="/definitions#report_historical_average_engagement_time"
+      <div
+        class="usa-card__container padding-105 margin-0 border-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          class="chart__title"
+          href="/definitions#report_historical_average_engagement_time"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Average Engagement Time Per Session
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Average Engagement Time Per Session
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The average length of time in which users were engaged with the site or application per session.
+            </span>
           </span>
-          <span
-            aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
-          >
-            The average length of time in which users were engaged with the site or application per session.
-          </span>
-        </span>
-      </a>
-      <div>
-        <div
-          class="data chart__rate padding-top-05"
-        />
+        </a>
+        <div>
+          <div
+            class="data chart__rate padding-top-05"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      class="grid-col-12 desktop:grid-col-6 padding-2 text-center"
-      id="engagement_rate"
+    </li>
+    <li
+      class="usa-card grid-col-12 desktop:grid-col-6 text-center"
     >
-      <a
-        class="chart__title"
-        href="/definitions#report_historical_engagement_rate"
+      <div
+        class="usa-card__container padding-105 margin-0 border-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          class="chart__title"
+          href="/definitions#report_historical_engagement_rate"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Percent of Engaged Sessions
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Percent of Engaged Sessions
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The percentage of sessions where users were engaged with the site or application.
+            </span>
           </span>
-          <span
-            aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
-          >
-            The percentage of sessions where users were engaged with the site or application.
-          </span>
-        </span>
-      </a>
-      <div>
-        <div
-          class="data chart__rate padding-top-05"
-        />
+        </a>
+        <div>
+          <div
+            class="data chart__rate padding-top-05"
+          />
+        </div>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </DocumentFragment>
 `;
