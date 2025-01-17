@@ -10,7 +10,7 @@ const config = {
     "!js/lib/touchpoints_page_helpful_survey.js",
   ],
   coverageDirectory: "./coverage",
-  setupFiles: ["./jest_setup.js"],
+  setupFilesAfterEnv: ["./jest_setup.js"],
   testEnvironment: "jest-environment-jsdom",
   transformIgnorePatterns: [],
 };
