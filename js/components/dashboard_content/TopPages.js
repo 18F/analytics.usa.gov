@@ -204,7 +204,7 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
       </p>
       <div className="grid-row">
         <div className="display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-05 mobile-lg:padding-bottom-0">
-          {shouldDisplayPages ? (
+          {shouldDisplayPages && (
             <p className="margin-top-05 margin-bottom-105">
               <a
                 href={`${dataHrefBase}/${currentFilter[1]}.csv`}
@@ -221,8 +221,6 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
                 </svg>
               </a>
             </p>
-          ) : (
-            ""
           )}
         </div>
         <div className="card:grid-col-12 mobile-lg:grid-col-5">
@@ -236,15 +234,15 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
           </div>
         </div>
       </div>
-      {isRealtime && (
-        <figure ref={realtimeRef}>
+      {shouldDisplayPages && isRealtime && (
+        <figure ref={realtimeRef} className="top-pages__bar-chart">
           <div
             className={"data chart__bar-chart margin-top-1 text--capitalize"}
           ></div>
         </figure>
       )}
-      {!isRealtime && (
-        <figure ref={nonRealtimeRef}>
+      {shouldDisplayPages && !isRealtime && (
+        <figure ref={nonRealtimeRef} className="top-pages__bar-chart">
           <div
             className={"data chart__bar-chart margin-top-1 text--lowercase"}
           ></div>

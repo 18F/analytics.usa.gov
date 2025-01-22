@@ -85,7 +85,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
       </figure>
       <figure
         id="chart_windows"
-        className="hide chart__bar-chart__nested"
+        className="hide chart__bar-chart__nested grid-col-12"
         data-scale-to-parent="true"
         ref={windowsRef}
       >

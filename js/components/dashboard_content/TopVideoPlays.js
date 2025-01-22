@@ -129,7 +129,7 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
       </p>
       <div className="grid-row">
         <div className="display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
-          {shouldDisplayVideoPlays ? (
+          {shouldDisplayVideoPlays && (
             <p className="margin-top-05 margin-bottom-05">
               <a
                 href={`${dataHrefBase}/${currentFilter[1]}.csv`}
@@ -146,8 +146,6 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
                 </svg>
               </a>
             </p>
-          ) : (
-            ""
           )}
         </div>
         <div className="card:grid-col-12 mobile-lg:grid-col-5">
@@ -161,9 +159,11 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
           </div>
         </div>
       </div>
-      <figure className="top-video-plays__bar-chart" ref={ref}>
-        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
-      </figure>
+      {shouldDisplayVideoPlays && (
+        <figure className="top-video-plays__bar-chart" ref={ref}>
+          <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
+        </figure>
+      )}
     </>
   );
 }

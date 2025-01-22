@@ -75,24 +75,25 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
           .value((d) => +d.total_events)
           .label(
             (d) =>
-              `<div>
-                  <div class="top-download__page-name text--overflow-ellipsis">
-                    <a target="_blank" rel="noopener" href="http://${d.page}">
-                      ${d.page_title}
-                    </a>
+              `<div class="grid-row">
+                <div class="grid-col-12 text--overflow-ellipsis">
+                  <a target="_blank" rel="noopener" href="http://${d.page}">
+                    ${d.page_title}
+                  </a>
+                </div>
+                <div class="grid-col-12">
+                  <div class="grid-row text--overflow-wrap">
+                    <div class="grid-col-auto text--lowercase dark-gray">
+                      <span>${formatters.formatURL(d.page).trim()}</span><span class="padding-x-05">/</span>
+                    </div>
+                    <div class="grid-col-auto text--lowercase">
+                      <a target="_blank" rel="noopener" href="${d.linkUrl}">
+                        download file
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                  <span class="top-download__page-domain text--lowercase dark-gray">
-                    ${formatters.formatURL(d.page)}
-                  </span>
-                  <span class="divider">/</span>
-                  <span class="top-download__file-location text--lowercase">
-                    <a target="_blank" rel="noopener" href="${d.linkUrl}">
-                      download file
-                    </a>
-                  </span>
-                  </div>
-                  </div>`,
+                </div>
+              </div>`,
           )
           .scale((values) =>
             d3.scale
@@ -133,7 +134,7 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
       </p>
       <div className="grid-row">
         <div className="display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
-          {shouldDisplayDownloads ? (
+          {shouldDisplayDownloads && (
             <p className="margin-top-05 margin-bottom-05">
               <a
                 href={`${dataHrefBase}/${currentFilter[1]}.csv`}
@@ -150,8 +151,6 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
                 </svg>
               </a>
             </p>
-          ) : (
-            ""
           )}
         </div>
         <div className="card:grid-col-12 mobile-lg:grid-col-5">
@@ -165,9 +164,11 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
           </div>
         </div>
       </div>
-      <figure className="top-downloads__bar-chart" ref={ref}>
-        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
-      </figure>
+      {shouldDisplayDownloads && (
+        <figure className="top-downloads__bar-chart" ref={ref}>
+          <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
+        </figure>
+      )}
     </>
   );
 }
