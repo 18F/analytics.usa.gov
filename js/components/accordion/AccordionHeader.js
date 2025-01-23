@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 /**
  * Wrapper react component which creates a USWDS accordion header component.
+ * Top level child element should be a <button>.
  *
  * @param {object} props the properties for the component.
  * @param {import('react').ReactNode} props.children the wrapped elements.
@@ -44,7 +45,9 @@ function AccordionHeader({
 
   return (
     <HeaderTag id={id} className={`usa-accordion__heading ${className}`}>
-      {React.cloneElement(children, { onClick: accordionButtonClickHandler })}
+      {React.cloneElement(children, {
+        onClick: accordionButtonClickHandler,
+      })}
     </HeaderTag>
   );
 }

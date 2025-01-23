@@ -22,7 +22,7 @@ function Accordion({
   return (
     <div
       id={id}
-      className={`usa-accordion ${multiselect ? "usa-accordion--multiselectable" : ""} ${className}`}
+      className={`usa-accordion${multiselect ? " usa-accordion--multiselectable" : ""} ${className}`}
       data-allow-multiple={multiselect}
     >
       {children}

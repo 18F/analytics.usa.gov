@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import "@testing-library/jest-dom";
 
 global.faker_seed = 123456;
 

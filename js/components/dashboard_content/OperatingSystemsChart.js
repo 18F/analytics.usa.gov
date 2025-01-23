@@ -59,7 +59,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
   }, [windowsData, chartsLoaded]);
 
   return (
-    <div>
+    <div className="padding-0">
       <div className="chart__title">
         <a href="/definitions#dimension_operating_system">
           <Tooltip
@@ -85,7 +85,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
       </figure>
       <figure
         id="chart_windows"
-        className="hide chart__bar-chart__nested"
+        className="hide chart__bar-chart__nested grid-col-12"
         data-scale-to-parent="true"
         ref={windowsRef}
       >

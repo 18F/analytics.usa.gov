@@ -16,16 +16,21 @@ describe("TopDownloads", () => {
   let data;
 
   describe("when data is not loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.resolve(null);
       });
       component = render(
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
-          reportFileName="foobar.json"
+          agency="Interior"
           numberOfListingsToDisplay={5}
         />,
+      );
+      await waitFor(() =>
+        screen.getByText(
+          "Top downloads data yesterday is unavailable for Interior hostnames.",
+        ),
       );
     });
 
@@ -50,7 +55,7 @@ describe("TopDownloads", () => {
       component = render(
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
-          reportFileName="foobar.json"
+          agency="Interior"
           numberOfListingsToDisplay={5}
         />,
       );
@@ -68,7 +73,7 @@ describe("TopDownloads", () => {
   describe("when data loading has an error", () => {
     const error = "you broke it";
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.error = jest.fn();
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.reject(error);
@@ -76,18 +81,19 @@ describe("TopDownloads", () => {
       component = render(
         <TopDownloads
           dataHrefBase="http://www.example.com/data/"
-          reportFileName="foobar.json"
+          agency="Interior"
           numberOfListingsToDisplay={5}
         />,
+      );
+      await waitFor(() =>
+        screen.getByText(
+          "Top downloads data yesterday is unavailable for Interior hostnames.",
+        ),
       );
     });
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
-    });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

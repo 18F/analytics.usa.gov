@@ -81,7 +81,7 @@ function formatURL(url) {
     index = 2;
   }
   // find & remove port number
-  return url.split("/")[index].split(":")[0].replace(/%20/g, " ");
+  return url.split("/")[index].split(":")[0].replace(/%20/g, "");
 }
 
 /**
