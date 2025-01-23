@@ -7,12 +7,20 @@ in the form $setting: value,
 ----------------------------------------
 */
 
-@use "uswds-core" with (
-  $theme-image-path: "../assets/uswds/img",
+@use "uswds-core" with ($theme-image-path: "../assets/uswds/img",
   $theme-font-path: "../assets/uswds/fonts",
   $theme-show-compile-warnings: false,
   $theme-show-notifications: false,
   $theme-identifier-background-color: "blue-80v",
   $theme-identifier-primary-link-color: "gray-1",
-  $theme-identifier-secondary-link-color: "gray-1"
-);
+  $theme-identifier-secondary-link-color: "gray-1",
+  $theme-utility-breakpoints: ('card': true,
+    'card-lg': true,
+    'mobile': true,
+    'mobile-lg': true,
+    'tablet': true,
+    'tablet-lg': true,
+    'desktop': true,
+    'desktop-lg': true,
+    'widescreen': true,
+  ));

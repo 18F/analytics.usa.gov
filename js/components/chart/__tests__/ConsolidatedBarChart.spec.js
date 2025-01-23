@@ -15,7 +15,7 @@ describe("ConsolidatedBarChart", () => {
   let data;
 
   describe("when data is not loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.resolve(null);
       });
@@ -26,6 +26,8 @@ describe("ConsolidatedBarChart", () => {
           maxItems={10}
         />,
       );
+      // Wait some time so that the component is not updated after the expects.
+      await delay(300);
     });
 
     it("renders a component in loading state", () => {
@@ -202,11 +204,11 @@ describe("ConsolidatedBarChart", () => {
         component = render(
           <ConsolidatedBarChart
             dataUrl="http://www.example.com/data/"
-            chartDataKey="browser"
+            chartDataKey="os"
             maxItems={10}
           />,
         );
-
+        await waitFor(() => screen.getByText("Chrome OS"));
         // Wait for barchart transition animation to complete (200 ms, set in
         // js/lib/chart_helpers/barchart.js)
         await delay(300);
@@ -221,7 +223,7 @@ describe("ConsolidatedBarChart", () => {
   describe("when data loading has an error", () => {
     const error = "you broke it";
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.error = jest.fn();
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.reject(error);
@@ -233,6 +235,8 @@ describe("ConsolidatedBarChart", () => {
           maxItems={10}
         />,
       );
+      // Wait some time so that the component is not updated after the expects.
+      await delay(300);
     });
 
     it("renders a component in error state", () => {
