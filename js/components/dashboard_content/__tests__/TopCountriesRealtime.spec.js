@@ -48,6 +48,7 @@ describe("TopCountriesRealtime", () => {
           />,
         );
         await waitFor(() => screen.getByText(data.data[0].country));
+        await waitFor(() => screen.getByText("International"));
         // Wait for barchart transition animation to complete (200 ms, set in
         // js/lib/chart_helpers/barchart.js)
         await delay(500);
@@ -72,6 +73,7 @@ describe("TopCountriesRealtime", () => {
           />,
         );
         await waitFor(() => screen.getByText(data.data[0].country));
+        await waitFor(() => screen.getByText("International"));
         // Wait for barchart transition animation to complete (200 ms, set in
         // js/lib/chart_helpers/barchart.js)
         await delay(500);
@@ -96,6 +98,7 @@ describe("TopCountriesRealtime", () => {
           />,
         );
         await waitFor(() => screen.getByText(data.data[0].country));
+        await waitFor(() => screen.getByText("International"));
         // Wait for barchart transition animation to complete (200 ms, set in
         // js/lib/chart_helpers/barchart.js)
         await delay(500);
@@ -120,6 +123,7 @@ describe("TopCountriesRealtime", () => {
           />,
         );
         await waitFor(() => screen.getByText(data.data[0].country));
+        await waitFor(() => screen.getByText("International"));
         // Wait for barchart transition animation to complete (200 ms, set in
         // js/lib/chart_helpers/barchart.js)
         await delay(500);

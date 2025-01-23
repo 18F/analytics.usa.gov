@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
 import { delay } from "../../../../spec/support/test_utilities";
+import DataLoader from "../../../lib/data_loader";
 import TopVideoPlays from "../TopVideoPlays";
 
 jest.mock("../../../lib/data_loader", () => ({
@@ -159,9 +160,16 @@ describe("TopVideoPlays", () => {
       totals: {},
       taken_at: "2024-07-11T14:36:05.272Z",
     };
+    DataLoader.loadJSON.mockImplementation(() => {
+      return Promise.resolve(data);
+    });
 
     component = render(
-      <TopVideoPlays videoPlayData={data} numberOfListingsToDisplay={10} />,
+      <TopVideoPlays
+        agency={"Interior"}
+        dataHrefBase={"http://www.example.com/data/"}
+        numberOfListingsToDisplay={10}
+      />,
     );
     await waitFor(() =>
       screen.getByRole("link", {

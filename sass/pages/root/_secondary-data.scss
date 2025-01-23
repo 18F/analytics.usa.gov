@@ -6,55 +6,24 @@
  */
 
 #secondary_data {
-  .sidebar {
-    min-height: units("tablet-lg");
-  }
-
-  .sidebar__tab-select__button {
-    background-color: colors.$palette-color-3;
-    width: 100%;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  // overrides some default uswds styles, see https://designsystem.digital.gov/components/button-group/#segmented-button-group-2
-  .sidebar__tab-select__button-group {
-    width: 100%;
-  }
-
-  .sidebar__tab-select__button-group__item {
-    flex-grow: 1;
-    width: 33.3333%;
-
-    &[aria-selected="false"] {
-      .sidebar__tab-select__button {
-        background-color: transparent;
-        box-shadow: inset 0 0 0 2px colors.$palette-color-1;
-        color: colors.$palette-color-1;
-      }
-    }
-  }
-
-  .sidebar__tab__content {
+  .top-pages__bar-chart {
     // This prevents "jumping" in the sidebar when chart data is loading.
     // Assumes there are 30 items in the top pages charts. Will need adjusted
     // accordingly if the number of chart items changes.
-    min-height: 60rem;
+    min-height: 1100px;
   }
 
-  .top-downloads {
+  .top-downloads__bar-chart {
     // This prevents "jumping" in the sidebar when chart data is loading.
     // Assumes there are 30 items in the top pages charts. Will need adjusted
     // accordingly if the number of chart items changes.
-    min-height: 10rem;
+    min-height: 850px;
   }
 
-  .top-video-plays {
+  .top-video-plays__bar-chart {
     // This prevents "jumping" in the sidebar when chart data is loading.
     // Assumes there are 30 items in the top pages charts. Will need adjusted
     // accordingly if the number of chart items changes.
-    min-height: 10rem;
+    min-height: 580px;
   }
 }

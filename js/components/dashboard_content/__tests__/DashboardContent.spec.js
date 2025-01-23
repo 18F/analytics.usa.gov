@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 
 import DashboardContent from "../DashboardContent";
 
-describe("MainCharts", () => {
+describe("DashboardContent", () => {
   beforeEach(async () => {
     render(
       <DashboardContent
@@ -18,7 +18,7 @@ describe("MainCharts", () => {
   // Check for some subcomponents' text to ensure everything renders
   it("renders", () => {
     expect(screen.getByText("Operating Systems"));
-    expect(screen.getByText("Top 30 Web Pages and App Screens"));
+    expect(screen.getByText("Top Web Pages and App Screens"));
     expect(screen.getByText("Languages"));
     expect(screen.getByText("Top Channels"));
   });

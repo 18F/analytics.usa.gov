@@ -174,7 +174,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
 
       <figure
         id="chart_us_and_territories"
-        className="hide chart__bar-chart__nested"
+        className="hide chart__bar-chart__nested grid-col-12"
         ref={usTerritoriesRef}
       >
         <div className="data chart__bar-chart text--capitalize"></div>
@@ -182,7 +182,7 @@ function TopCountriesRealtime({ dataHrefBase, refreshSeconds }) {
 
       <figure
         id="chart_countries"
-        className="hide chart__bar-chart__nested"
+        className="hide chart__bar-chart__nested grid-col-12"
         ref={internationalVisitsRef}
       >
         <div className="data chart__bar-chart text--capitalize"></div>

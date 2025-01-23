@@ -36,24 +36,34 @@ export default function barChart() {
       .enter()
       .append("div")
       .attr("class", "chart__bar-chart__item margin-bottom-2");
-    enter
+    const labelAndValue = enter
+      .append("div")
+      .attr("class", "chart__bar-chart__item__label-wrapper grid-row");
+    const bar = enter
+      .append("div")
+      .attr("class", "chart__bar-chart__item__bar-wrapper grid-row");
+    labelAndValue
       .append("div")
       .attr(
         "class",
-        "chart__bar-chart__item__label dark-grey text--overflow-ellipsis margin-right-8",
+        "chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1",
       );
-    enter.append("div").attr("class", "chart__bar-chart__item__value");
-    enter
+    labelAndValue
       .append("div")
       .attr(
         "class",
-        "chart__bar-chart__item__bar bg-palette-color-5 margin-top-0",
+        "chart__bar-chart__item__value grid-col-auto text--align-right",
+      );
+    bar
+      .append("div")
+      .attr(
+        "class",
+        "chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12",
       )
       .style("width", "0%");
 
-    const componentScale = scale
-      ? scale.call(selection, bin.data().map(value))
-      : null;
+    const componentScale =
+      scale && bin[0] ? scale.call(selection, bin.data().map(value)) : null;
     bin
       .select(".chart__bar-chart__item__bar")
       .transition()
