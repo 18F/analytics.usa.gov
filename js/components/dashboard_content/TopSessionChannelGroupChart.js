@@ -62,7 +62,7 @@ function TopSessionChannelGroupChart({ dataHrefBase }) {
   return (
     <>
       <div className="grid-row">
-        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
           <a href="/definitions#dimension_default_channel_group">
             <Tooltip
               position="top"
@@ -85,7 +85,7 @@ function TopSessionChannelGroupChart({ dataHrefBase }) {
             </svg>
           </a>
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-5">
+        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}

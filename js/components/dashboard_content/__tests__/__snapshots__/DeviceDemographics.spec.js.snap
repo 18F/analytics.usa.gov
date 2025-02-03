@@ -24,7 +24,7 @@ exports[`DeviceDemographics renders 1`] = `
                 class="grid-row"
               >
                 <div
-                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
                 >
                   <a
                     href="/definitions#dimension_device_category"
@@ -67,7 +67,7 @@ exports[`DeviceDemographics renders 1`] = `
                   </a>
                 </div>
                 <div
-                  class="card:grid-col-12 mobile-lg:grid-col-5"
+                  class="card:grid-col-12 mobile-lg:grid-col-auto"
                 >
                   <div
                     class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
@@ -119,7 +119,7 @@ exports[`DeviceDemographics renders 1`] = `
                 class="grid-row"
               >
                 <div
-                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
                 >
                   <a
                     href="/definitions#dimension_screen_resolution"
@@ -162,7 +162,7 @@ exports[`DeviceDemographics renders 1`] = `
                   </a>
                 </div>
                 <div
-                  class="card:grid-col-12 mobile-lg:grid-col-5"
+                  class="card:grid-col-12 mobile-lg:grid-col-auto"
                 >
                   <div
                     class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
@@ -210,7 +210,7 @@ exports[`DeviceDemographics renders 1`] = `
           class="grid-row"
         >
           <div
-            class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+            class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
           >
             <a
               href="/definitions#dimension_browser"
@@ -253,7 +253,7 @@ exports[`DeviceDemographics renders 1`] = `
             </a>
           </div>
           <div
-            class="card:grid-col-12 mobile-lg:grid-col-5"
+            class="card:grid-col-12 mobile-lg:grid-col-auto"
           >
             <div
               class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
@@ -305,47 +305,84 @@ exports[`DeviceDemographics renders 1`] = `
           class="padding-0"
         >
           <div
-            class="chart__title"
+            class="grid-row"
           >
-            <a
-              href="/definitions#dimension_operating_system"
+            <div
+              class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
             >
-              <span
-                class="usa-tooltip"
+              <a
+                href="/definitions#dimension_operating_system"
               >
                 <span
-                  aria-describedby="tooltip-550000"
-                  class="usa-tooltip__trigger"
-                  data-position="top"
-                  tabindex="0"
+                  class="usa-tooltip"
                 >
-                  Operating Systems
+                  <span
+                    aria-describedby="tooltip-550000"
+                    class="usa-tooltip__trigger"
+                    data-position="top"
+                    tabindex="0"
+                  >
+                    Operating Systems
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    class="usa-tooltip__body"
+                    id="tooltip-550000"
+                    role="tooltip"
+                  >
+                    The name of the operating system used by the user's device.
+                  </span>
                 </span>
-                <span
+              </a>
+              <a
+                aria-label="os-yesterday.csv"
+                href="http://www.example.com/data//os-yesterday.csv"
+              >
+                <svg
                   aria-hidden="true"
-                  class="usa-tooltip__body"
-                  id="tooltip-550000"
-                  role="tooltip"
+                  class="usa-icon margin-bottom-neg-05 margin-left-05"
+                  focusable="false"
+                  role="img"
                 >
-                  The name of the operating system used by the user's device.
-                </span>
-              </span>
-            </a>
-            <a
-              aria-label="os.csv"
-              href="http://www.example.com/data//os.csv"
+                  <use
+                    xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div
+              class="card:grid-col-12 mobile-lg:grid-col-auto"
             >
-              <svg
-                aria-hidden="true"
-                class="usa-icon margin-bottom-neg-05 margin-left-05"
-                focusable="false"
-                role="img"
+              <div
+                class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
               >
-                <use
-                  xlink:href="/assets/uswds/img/sprite.svg#file_present"
-                />
-              </svg>
-            </a>
+                <select
+                  aria-label="devices chart time filter"
+                  class="usa-select chart__filter margin-top-0"
+                >
+                  <option
+                    value="yesterday"
+                  >
+                    Yesterday
+                  </option>
+                  <option
+                    value="7-days"
+                  >
+                    7 Days
+                  </option>
+                  <option
+                    value="30-days"
+                  >
+                    30 Days
+                  </option>
+                  <option
+                    value="90-days"
+                  >
+                    90 Days
+                  </option>
+                </select>
+              </div>
+            </div>
           </div>
           <figure
             id="chart_os"

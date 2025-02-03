@@ -14,7 +14,7 @@ import CardContent from "../card/CardContent";
 import CardGroup from "../card/CardGroup";
 import RealtimeMetricCount from "../data_visualization/RealtimeMetricCount";
 import RealtimeEventCount from "../data_visualization/RealtimeEventCount";
-import TopCitiesRealtime from "./TopCitiesRealtime";
+import TopCities from "./TopCities";
 import TopCountriesRealtime from "./TopCountriesRealtime";
 import TopLanguagesHistorical from "./TopLanguagesHistorical";
 import Accordion from "../accordion/Accordion";
@@ -193,7 +193,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   <CardGroup className="grid-row tablet:grid-gap-2 card:padding-x-1 tablet:padding-x-0">
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
                       <CardContent className="padding-105 margin-0 border-0 height-auto">
-                        <TopCitiesRealtime
+                        <TopCities
                           dataHrefBase={dataHrefBase}
                           refreshSeconds={Config.realtimeDataRefreshSeconds}
                         />

@@ -79,7 +79,7 @@ function DevicesChart({ dataHrefBase }) {
       .build();
   }
 
-  async function dataFileChangeHandler(fileName) {
+  async function filterChangeHandler(fileName) {
     if (!fileName) return;
 
     const selectedFilter = reportFilters.find((reportFilter) => {
@@ -91,7 +91,7 @@ function DevicesChart({ dataHrefBase }) {
   return (
     <>
       <div className="grid-row">
-        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
           <a href="/definitions#dimension_device_category">
             <Tooltip
               position="top"
@@ -114,12 +114,12 @@ function DevicesChart({ dataHrefBase }) {
             </svg>
           </a>
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-5">
+        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
-              onChange={dataFileChangeHandler}
+              onChange={filterChangeHandler}
               name={"devices chart time filter"}
             />
           </div>

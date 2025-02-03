@@ -101,7 +101,7 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
       .build();
   }
 
-  async function dataFileChangeHandler(fileName) {
+  async function filterChangeHandler(fileName) {
     if (!fileName) return;
 
     const selectedFilter = reportFilters.find((reportFilter) => {
@@ -128,7 +128,7 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
         </em>
       </p>
       <div className="grid-row">
-        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
           {shouldDisplayVideoPlays && (
             <p className="margin-top-05 margin-bottom-05">
               <a
@@ -148,12 +148,12 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
             </p>
           )}
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-5">
+        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
-              onChange={dataFileChangeHandler}
+              onChange={filterChangeHandler}
               name={"top video plays chart time filter"}
             />
           </div>
