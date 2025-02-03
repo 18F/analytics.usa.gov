@@ -29,7 +29,7 @@ function TopCities({ dataHrefBase, refreshSeconds }) {
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [refreshInterval, setRefreshInterval] = useState(null);
   const [isRealtime, setIsRealtime] = useState(true);
-  const [data, setData] = useState(true);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const initChart = async () => {

@@ -1,52 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopCountriesRealtime when data is loaded and a country with name "" exists renders a component with data loaded 1`] = `
+exports[`TopCountries when data is loaded and a country with name "" exists renders a component with data loaded 1`] = `
 <DocumentFragment>
   <div
     class="padding-0"
   >
     <div
-      class="chart__title"
+      class="grid-row"
     >
-      <a
-        href="/definitions#dimension_country"
+      <div
+        class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          href="/definitions#dimension_country"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Countries
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Countries
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The country from which user activity originates. Location data may be affected by a user's VPN usage.
+            </span>
           </span>
-          <span
+        </a>
+        <a
+          aria-label="top-countries-realtime.csv"
+          href="http://www.example.com/data//top-countries-realtime.csv"
+        >
+          <svg
             aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
           >
-            The country from which user activity originates. Location data may be affected by a user's VPN usage.
-          </span>
-        </span>
-      </a>
-      <a
-        aria-label="top-countries-realtime.csv"
-        href="http://www.example.com/data//top-countries-realtime.csv"
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="card:grid-col-12 mobile-lg:grid-col-auto"
       >
-        <svg
-          aria-hidden="true"
-          class="usa-icon margin-bottom-neg-05 margin-left-05"
-          focusable="false"
-          role="img"
+        <div
+          class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
         >
-          <use
-            xlink:href="/assets/uswds/img/sprite.svg#file_present"
-          />
-        </svg>
-      </a>
+          <select
+            aria-label="cities chart time filter"
+            class="usa-select chart__filter margin-top-0"
+          >
+            <option
+              value="top-countries-realtime"
+            >
+              30 Minutes
+            </option>
+            <option
+              value="top-countries-7-days"
+            >
+              7 Days
+            </option>
+            <option
+              value="top-countries-30-days"
+            >
+              30 Days
+            </option>
+            <option
+              value="top-countries-90-days"
+            >
+              90 Days
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <figure
       id="chart_us"
@@ -508,53 +545,90 @@ exports[`TopCountriesRealtime when data is loaded and a country with name "" exi
 </DocumentFragment>
 `;
 
-exports[`TopCountriesRealtime when data is loaded and a country with name null exists renders a component with data loaded 1`] = `
+exports[`TopCountries when data is loaded and a country with name null exists renders a component with data loaded 1`] = `
 <DocumentFragment>
   <div
     class="padding-0"
   >
     <div
-      class="chart__title"
+      class="grid-row"
     >
-      <a
-        href="/definitions#dimension_country"
+      <div
+        class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          href="/definitions#dimension_country"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Countries
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Countries
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The country from which user activity originates. Location data may be affected by a user's VPN usage.
+            </span>
           </span>
-          <span
+        </a>
+        <a
+          aria-label="top-countries-realtime.csv"
+          href="http://www.example.com/data//top-countries-realtime.csv"
+        >
+          <svg
             aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
           >
-            The country from which user activity originates. Location data may be affected by a user's VPN usage.
-          </span>
-        </span>
-      </a>
-      <a
-        aria-label="top-countries-realtime.csv"
-        href="http://www.example.com/data//top-countries-realtime.csv"
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="card:grid-col-12 mobile-lg:grid-col-auto"
       >
-        <svg
-          aria-hidden="true"
-          class="usa-icon margin-bottom-neg-05 margin-left-05"
-          focusable="false"
-          role="img"
+        <div
+          class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
         >
-          <use
-            xlink:href="/assets/uswds/img/sprite.svg#file_present"
-          />
-        </svg>
-      </a>
+          <select
+            aria-label="cities chart time filter"
+            class="usa-select chart__filter margin-top-0"
+          >
+            <option
+              value="top-countries-realtime"
+            >
+              30 Minutes
+            </option>
+            <option
+              value="top-countries-7-days"
+            >
+              7 Days
+            </option>
+            <option
+              value="top-countries-30-days"
+            >
+              30 Days
+            </option>
+            <option
+              value="top-countries-90-days"
+            >
+              90 Days
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <figure
       id="chart_us"
@@ -1016,53 +1090,90 @@ exports[`TopCountriesRealtime when data is loaded and a country with name null e
 </DocumentFragment>
 `;
 
-exports[`TopCountriesRealtime when data is loaded and a country with name undefined exists renders a component with data loaded 1`] = `
+exports[`TopCountries when data is loaded and a country with name undefined exists renders a component with data loaded 1`] = `
 <DocumentFragment>
   <div
     class="padding-0"
   >
     <div
-      class="chart__title"
+      class="grid-row"
     >
-      <a
-        href="/definitions#dimension_country"
+      <div
+        class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          href="/definitions#dimension_country"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Countries
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Countries
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The country from which user activity originates. Location data may be affected by a user's VPN usage.
+            </span>
           </span>
-          <span
+        </a>
+        <a
+          aria-label="top-countries-realtime.csv"
+          href="http://www.example.com/data//top-countries-realtime.csv"
+        >
+          <svg
             aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
           >
-            The country from which user activity originates. Location data may be affected by a user's VPN usage.
-          </span>
-        </span>
-      </a>
-      <a
-        aria-label="top-countries-realtime.csv"
-        href="http://www.example.com/data//top-countries-realtime.csv"
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="card:grid-col-12 mobile-lg:grid-col-auto"
       >
-        <svg
-          aria-hidden="true"
-          class="usa-icon margin-bottom-neg-05 margin-left-05"
-          focusable="false"
-          role="img"
+        <div
+          class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
         >
-          <use
-            xlink:href="/assets/uswds/img/sprite.svg#file_present"
-          />
-        </svg>
-      </a>
+          <select
+            aria-label="cities chart time filter"
+            class="usa-select chart__filter margin-top-0"
+          >
+            <option
+              value="top-countries-realtime"
+            >
+              30 Minutes
+            </option>
+            <option
+              value="top-countries-7-days"
+            >
+              7 Days
+            </option>
+            <option
+              value="top-countries-30-days"
+            >
+              30 Days
+            </option>
+            <option
+              value="top-countries-90-days"
+            >
+              90 Days
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <figure
       id="chart_us"
@@ -1605,53 +1716,90 @@ exports[`TopCountriesRealtime when data is loaded and a country with name undefi
 </DocumentFragment>
 `;
 
-exports[`TopCountriesRealtime when data is loaded and all country names are valid renders a component with data loaded 1`] = `
+exports[`TopCountries when data is loaded and all country names are valid renders a component with data loaded 1`] = `
 <DocumentFragment>
   <div
     class="padding-0"
   >
     <div
-      class="chart__title"
+      class="grid-row"
     >
-      <a
-        href="/definitions#dimension_country"
+      <div
+        class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          href="/definitions#dimension_country"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Countries
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Countries
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The country from which user activity originates. Location data may be affected by a user's VPN usage.
+            </span>
           </span>
-          <span
+        </a>
+        <a
+          aria-label="top-countries-realtime.csv"
+          href="http://www.example.com/data//top-countries-realtime.csv"
+        >
+          <svg
             aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
           >
-            The country from which user activity originates. Location data may be affected by a user's VPN usage.
-          </span>
-        </span>
-      </a>
-      <a
-        aria-label="top-countries-realtime.csv"
-        href="http://www.example.com/data//top-countries-realtime.csv"
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="card:grid-col-12 mobile-lg:grid-col-auto"
       >
-        <svg
-          aria-hidden="true"
-          class="usa-icon margin-bottom-neg-05 margin-left-05"
-          focusable="false"
-          role="img"
+        <div
+          class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
         >
-          <use
-            xlink:href="/assets/uswds/img/sprite.svg#file_present"
-          />
-        </svg>
-      </a>
+          <select
+            aria-label="cities chart time filter"
+            class="usa-select chart__filter margin-top-0"
+          >
+            <option
+              value="top-countries-realtime"
+            >
+              30 Minutes
+            </option>
+            <option
+              value="top-countries-7-days"
+            >
+              7 Days
+            </option>
+            <option
+              value="top-countries-30-days"
+            >
+              30 Days
+            </option>
+            <option
+              value="top-countries-90-days"
+            >
+              90 Days
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <figure
       id="chart_us"
@@ -2194,53 +2342,90 @@ exports[`TopCountriesRealtime when data is loaded and all country names are vali
 </DocumentFragment>
 `;
 
-exports[`TopCountriesRealtime when data is not loaded renders a component in loading state 1`] = `
+exports[`TopCountries when data is not loaded renders a component in loading state 1`] = `
 <DocumentFragment>
   <div
     class="padding-0"
   >
     <div
-      class="chart__title"
+      class="grid-row"
     >
-      <a
-        href="/definitions#dimension_country"
+      <div
+        class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          href="/definitions#dimension_country"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Countries
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Countries
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The country from which user activity originates. Location data may be affected by a user's VPN usage.
+            </span>
           </span>
-          <span
+        </a>
+        <a
+          aria-label="top-countries-realtime.csv"
+          href="http://www.example.com/data//top-countries-realtime.csv"
+        >
+          <svg
             aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
           >
-            The country from which user activity originates. Location data may be affected by a user's VPN usage.
-          </span>
-        </span>
-      </a>
-      <a
-        aria-label="top-countries-realtime.csv"
-        href="http://www.example.com/data//top-countries-realtime.csv"
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="card:grid-col-12 mobile-lg:grid-col-auto"
       >
-        <svg
-          aria-hidden="true"
-          class="usa-icon margin-bottom-neg-05 margin-left-05"
-          focusable="false"
-          role="img"
+        <div
+          class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
         >
-          <use
-            xlink:href="/assets/uswds/img/sprite.svg#file_present"
-          />
-        </svg>
-      </a>
+          <select
+            aria-label="cities chart time filter"
+            class="usa-select chart__filter margin-top-0"
+          >
+            <option
+              value="top-countries-realtime"
+            >
+              30 Minutes
+            </option>
+            <option
+              value="top-countries-7-days"
+            >
+              7 Days
+            </option>
+            <option
+              value="top-countries-30-days"
+            >
+              30 Days
+            </option>
+            <option
+              value="top-countries-90-days"
+            >
+              90 Days
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <figure
       id="chart_us"
@@ -2269,53 +2454,90 @@ exports[`TopCountriesRealtime when data is not loaded renders a component in loa
 </DocumentFragment>
 `;
 
-exports[`TopCountriesRealtime when data loading has an error renders a component in error state 1`] = `
+exports[`TopCountries when data loading has an error renders a component in error state 1`] = `
 <DocumentFragment>
   <div
     class="padding-0"
   >
     <div
-      class="chart__title"
+      class="grid-row"
     >
-      <a
-        href="/definitions#dimension_country"
+      <div
+        class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
       >
-        <span
-          class="usa-tooltip"
+        <a
+          href="/definitions#dimension_country"
         >
           <span
-            aria-describedby="tooltip-550000"
-            class="usa-tooltip__trigger"
-            data-position="top"
-            tabindex="0"
+            class="usa-tooltip"
           >
-            Countries
+            <span
+              aria-describedby="tooltip-550000"
+              class="usa-tooltip__trigger"
+              data-position="top"
+              tabindex="0"
+            >
+              Countries
+            </span>
+            <span
+              aria-hidden="true"
+              class="usa-tooltip__body"
+              id="tooltip-550000"
+              role="tooltip"
+            >
+              The country from which user activity originates. Location data may be affected by a user's VPN usage.
+            </span>
           </span>
-          <span
+        </a>
+        <a
+          aria-label="top-countries-realtime.csv"
+          href="http://www.example.com/data//top-countries-realtime.csv"
+        >
+          <svg
             aria-hidden="true"
-            class="usa-tooltip__body"
-            id="tooltip-550000"
-            role="tooltip"
+            class="usa-icon margin-bottom-neg-05 margin-left-05"
+            focusable="false"
+            role="img"
           >
-            The country from which user activity originates. Location data may be affected by a user's VPN usage.
-          </span>
-        </span>
-      </a>
-      <a
-        aria-label="top-countries-realtime.csv"
-        href="http://www.example.com/data//top-countries-realtime.csv"
+            <use
+              xlink:href="/assets/uswds/img/sprite.svg#file_present"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="card:grid-col-12 mobile-lg:grid-col-auto"
       >
-        <svg
-          aria-hidden="true"
-          class="usa-icon margin-bottom-neg-05 margin-left-05"
-          focusable="false"
-          role="img"
+        <div
+          class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
         >
-          <use
-            xlink:href="/assets/uswds/img/sprite.svg#file_present"
-          />
-        </svg>
-      </a>
+          <select
+            aria-label="cities chart time filter"
+            class="usa-select chart__filter margin-top-0"
+          >
+            <option
+              value="top-countries-realtime"
+            >
+              30 Minutes
+            </option>
+            <option
+              value="top-countries-7-days"
+            >
+              7 Days
+            </option>
+            <option
+              value="top-countries-30-days"
+            >
+              30 Days
+            </option>
+            <option
+              value="top-countries-90-days"
+            >
+              90 Days
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <figure
       id="chart_us"
