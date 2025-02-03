@@ -4,11 +4,10 @@ import PropTypes from "prop-types";
 import DevicesChart from "./DevicesChart";
 import BrowsersChart from "./BrowsersChart";
 import OperatingSystemsChart from "./OperatingSystemsChart";
-import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
-import Tooltip from "../tooltip/Tooltip";
 import Card from "../card/Card";
 import CardContent from "../card/CardContent";
 import CardGroup from "../card/CardGroup";
+import ScreenResolutionsChart from "./ScreenResolutionsChart";
 
 /**
  * Contains charts and other data visualizations for the user demographics
@@ -35,36 +34,7 @@ function DeviceDemographics({ dataHrefBase }) {
             </Card>
             <Card className="grid-col-12 padding-top-2">
               <CardContent className="padding-105 margin-0 border-0 height-auto">
-                <div className="chart__title">
-                  <a href="/definitions#dimension_screen_resolution">
-                    <Tooltip
-                      position="top"
-                      content="The width and height (in pixels) of the screen from which user activity originates."
-                    >
-                      Top Screen Resolutions
-                    </Tooltip>
-                  </a>
-                  <a
-                    href={`${dataHrefBase}/screen-resolution-30-days.csv`}
-                    aria-label="screen-resolution-30-days.csv"
-                  >
-                    <svg
-                      className="usa-icon margin-bottom-neg-05 margin-left-05"
-                      aria-hidden="true"
-                      focusable="false"
-                      role="img"
-                    >
-                      <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div className="text--capitalize">
-                  <ConsolidatedBarChart
-                    dataUrl={`${dataHrefBase}/screen-resolution-30-days.json`}
-                    chartDataKey={"screen_resolution"}
-                    maxItems={10}
-                  />
-                </div>
+                <ScreenResolutionsChart dataHrefBase={dataHrefBase} />
               </CardContent>
             </Card>
           </CardGroup>
