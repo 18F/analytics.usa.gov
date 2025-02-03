@@ -116,58 +116,84 @@ exports[`DeviceDemographics renders 1`] = `
               class="usa-card__container padding-105 margin-0 border-0 height-auto"
             >
               <div
-                class="chart__title"
+                class="grid-row"
               >
-                <a
-                  href="/definitions#dimension_screen_resolution"
+                <div
+                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
                 >
-                  <span
-                    class="usa-tooltip"
+                  <a
+                    href="/definitions#dimension_screen_resolution"
                   >
                     <span
-                      aria-describedby="tooltip-550000"
-                      class="usa-tooltip__trigger"
-                      data-position="top"
-                      tabindex="0"
+                      class="usa-tooltip"
                     >
-                      Top Screen Resolutions
+                      <span
+                        aria-describedby="tooltip-550000"
+                        class="usa-tooltip__trigger"
+                        data-position="top"
+                        tabindex="0"
+                      >
+                        Top Screen Resolutions
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        class="usa-tooltip__body"
+                        id="tooltip-550000"
+                        role="tooltip"
+                      >
+                        The width and height (in pixels) of the screen from which user activity originates.
+                      </span>
                     </span>
-                    <span
+                  </a>
+                  <a
+                    aria-label="screen-resolution-yesterday.csv"
+                    href="http://www.example.com/data//screen-resolution-yesterday.csv"
+                  >
+                    <svg
                       aria-hidden="true"
-                      class="usa-tooltip__body"
-                      id="tooltip-550000"
-                      role="tooltip"
+                      class="usa-icon margin-bottom-neg-05 margin-left-05"
+                      focusable="false"
+                      role="img"
                     >
-                      The width and height (in pixels) of the screen from which user activity originates.
-                    </span>
-                  </span>
-                </a>
-                <a
-                  aria-label="screen-resolution-30-days.csv"
-                  href="http://www.example.com/data//screen-resolution-30-days.csv"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="usa-icon margin-bottom-neg-05 margin-left-05"
-                    focusable="false"
-                    role="img"
-                  >
-                    <use
-                      xlink:href="/assets/uswds/img/sprite.svg#file_present"
-                    />
-                  </svg>
-                </a>
-              </div>
-              <div
-                class="text--capitalize"
-              >
-                <figure
-                  id="chart_screen_resolution"
+                      <use
+                        xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div
+                  class="card:grid-col-12 mobile-lg:grid-col-5"
                 >
                   <div
-                    class="data chart__bar-chart margin-top-2"
-                  />
-                </figure>
+                    class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
+                  >
+                    <select
+                      aria-label="screen resolution chart time filter"
+                      class="usa-select chart__filter margin-top-0"
+                    >
+                      <option
+                        value="screen-resolution-yesterday"
+                      >
+                        Yesterday
+                      </option>
+                      <option
+                        value="screen-resolution-7-days"
+                      >
+                        7 Days
+                      </option>
+                      <option
+                        value="screen-resolution-30-days"
+                      >
+                        30 Days
+                      </option>
+                      <option
+                        value="screen-resolution-90-days"
+                      >
+                        90 Days
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </li>

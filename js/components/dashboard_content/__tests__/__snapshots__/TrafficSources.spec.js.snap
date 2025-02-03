@@ -12,47 +12,84 @@ exports[`TrafficSources renders 1`] = `
         class="usa-card__container padding-105 margin-0 border-0"
       >
         <div
-          class="chart__title"
+          class="grid-row"
         >
-          <a
-            href="/definitions#dimension_default_channel_group"
+          <div
+            class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
           >
-            <span
-              class="usa-tooltip"
+            <a
+              href="/definitions#dimension_default_channel_group"
             >
               <span
-                aria-describedby="tooltip-550000"
-                class="usa-tooltip__trigger"
-                data-position="top"
-                tabindex="0"
+                class="usa-tooltip"
               >
-                Top Channels
+                <span
+                  aria-describedby="tooltip-550000"
+                  class="usa-tooltip__trigger"
+                  data-position="top"
+                  tabindex="0"
+                >
+                  Top Channels
+                </span>
+                <span
+                  aria-hidden="true"
+                  class="usa-tooltip__body"
+                  id="tooltip-550000"
+                  role="tooltip"
+                >
+                  Channel groupings are rule-based definitions of your traffic sources.
+                </span>
               </span>
-              <span
+            </a>
+            <a
+              aria-label="top-session-channel-group-yesterday.csv"
+              href="http://www.example.com/data//top-session-channel-group-yesterday.csv"
+            >
+              <svg
                 aria-hidden="true"
-                class="usa-tooltip__body"
-                id="tooltip-550000"
-                role="tooltip"
+                class="usa-icon margin-bottom-neg-05 margin-left-05"
+                focusable="false"
+                role="img"
               >
-                Channel groupings are rule-based definitions of your traffic sources.
-              </span>
-            </span>
-          </a>
-          <a
-            aria-label="top-session-channel-group-30-days.csv"
-            href="http://www.example.com/data//top-session-channel-group-30-days.csv"
+                <use
+                  xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                />
+              </svg>
+            </a>
+          </div>
+          <div
+            class="card:grid-col-12 mobile-lg:grid-col-5"
           >
-            <svg
-              aria-hidden="true"
-              class="usa-icon margin-bottom-neg-05 margin-left-05"
-              focusable="false"
-              role="img"
+            <div
+              class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
             >
-              <use
-                xlink:href="/assets/uswds/img/sprite.svg#file_present"
-              />
-            </svg>
-          </a>
+              <select
+                aria-label="session channel group chart time filter"
+                class="usa-select chart__filter margin-top-0"
+              >
+                <option
+                  value="top-session-channel-group-yesterday"
+                >
+                  Yesterday
+                </option>
+                <option
+                  value="top-session-channel-group-7-days"
+                >
+                  7 Days
+                </option>
+                <option
+                  value="top-session-channel-group-30-days"
+                >
+                  30 Days
+                </option>
+                <option
+                  value="top-session-channel-group-90-days"
+                >
+                  90 Days
+                </option>
+              </select>
+            </div>
+          </div>
         </div>
         <div
           class="text--capitalize"
@@ -74,47 +111,84 @@ exports[`TrafficSources renders 1`] = `
         class="usa-card__container padding-105 margin-0 border-0"
       >
         <div
-          class="chart__title"
+          class="grid-row"
         >
-          <a
-            href="/definitions#dimension_source_medium"
+          <div
+            class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
           >
-            <span
-              class="usa-tooltip"
+            <a
+              href="/definitions#dimension_source_medium"
             >
               <span
-                aria-describedby="tooltip-550000"
-                class="usa-tooltip__trigger"
-                data-position="top"
-                tabindex="0"
+                class="usa-tooltip"
               >
-                Top Sources/Media
+                <span
+                  aria-describedby="tooltip-550000"
+                  class="usa-tooltip__trigger"
+                  data-position="top"
+                  tabindex="0"
+                >
+                  Top Sources/Media
+                </span>
+                <span
+                  aria-hidden="true"
+                  class="usa-tooltip__body"
+                  id="tooltip-550000"
+                  role="tooltip"
+                >
+                  A source is a representation of the publisher or inventory source from which traffic originated. A medium is a method for acquiring users to websites or applications.
+                </span>
               </span>
-              <span
+            </a>
+            <a
+              aria-label="top-session-source-medium-yesterday.csv"
+              href="http://www.example.com/data//top-session-source-medium-yesterday.csv"
+            >
+              <svg
                 aria-hidden="true"
-                class="usa-tooltip__body"
-                id="tooltip-550000"
-                role="tooltip"
+                class="usa-icon margin-bottom-neg-05 margin-left-05"
+                focusable="false"
+                role="img"
               >
-                A source is a representation of the publisher or inventory source from which traffic originated. A medium is a method for acquiring users to websites or applications.
-              </span>
-            </span>
-          </a>
-          <a
-            aria-label="top-session-source-medium-30-days.csv"
-            href="http://www.example.com/data//top-session-source-medium-30-days.csv"
+                <use
+                  xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                />
+              </svg>
+            </a>
+          </div>
+          <div
+            class="card:grid-col-12 mobile-lg:grid-col-5"
           >
-            <svg
-              aria-hidden="true"
-              class="usa-icon margin-bottom-neg-05 margin-left-05"
-              focusable="false"
-              role="img"
+            <div
+              class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
             >
-              <use
-                xlink:href="/assets/uswds/img/sprite.svg#file_present"
-              />
-            </svg>
-          </a>
+              <select
+                aria-label="session source medium chart time filter"
+                class="usa-select chart__filter margin-top-0"
+              >
+                <option
+                  value="top-session-source-medium-yesterday"
+                >
+                  Yesterday
+                </option>
+                <option
+                  value="top-session-source-medium-7-days"
+                >
+                  7 Days
+                </option>
+                <option
+                  value="top-session-source-medium-30-days"
+                >
+                  30 Days
+                </option>
+                <option
+                  value="top-session-source-medium-90-days"
+                >
+                  90 Days
+                </option>
+              </select>
+            </div>
+          </div>
         </div>
         <div
           class="text--capitalize"
