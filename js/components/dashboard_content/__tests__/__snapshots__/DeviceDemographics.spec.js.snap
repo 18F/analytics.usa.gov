@@ -51,8 +51,8 @@ exports[`DeviceDemographics renders 1`] = `
                     </span>
                   </a>
                   <a
-                    aria-label="devices-yesterday.csv"
-                    href="http://www.example.com/data//devices-yesterday.csv"
+                    aria-label="devices-realtime.csv"
+                    href="http://www.example.com/data//devices-realtime.csv"
                   >
                     <svg
                       aria-hidden="true"
@@ -76,6 +76,11 @@ exports[`DeviceDemographics renders 1`] = `
                       aria-label="devices chart time filter"
                       class="usa-select chart__filter margin-top-0"
                     >
+                      <option
+                        value="devices-realtime"
+                      >
+                        30 Minutes
+                      </option>
                       <option
                         value="devices-yesterday"
                       >

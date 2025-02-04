@@ -221,7 +221,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="30-day-sessions-users"
                   >
-                    30 Day Sessions and Users
+                    30 Day Sessions
                   </button>
                 </AccordionHeader>
                 <AccordionContent

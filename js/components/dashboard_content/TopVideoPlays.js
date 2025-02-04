@@ -29,6 +29,7 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
     ["Yesterday", "top-video-plays-yesterday"],
     ["7 Days", "top-video-plays-7-days"],
     ["30 Days", "top-video-plays-30-days"],
+    ["90 Days", "top-video-plays-90-days"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [shouldDisplayVideoPlays, setShouldDisplayVideoPlays] = useState(true);

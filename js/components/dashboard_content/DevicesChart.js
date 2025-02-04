@@ -19,6 +19,7 @@ import CompactBarChart from "../chart/CompactBarChart";
  */
 function DevicesChart({ dataHrefBase }) {
   const reportFilters = [
+    ["30 Minutes", "devices-realtime"],
     ["Yesterday", "devices-yesterday"],
     ["7 Days", "devices-7-days"],
     ["30 Days", "devices-30-days"],

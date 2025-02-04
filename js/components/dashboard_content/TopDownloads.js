@@ -28,6 +28,7 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
     ["Yesterday", "top-downloads-yesterday"],
     ["7 Days", "top-downloads-7-days"],
     ["30 Days", "top-downloads-30-days"],
+    ["90 Days", "top-downloads-90-days"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [shouldDisplayDownloads, setShouldDisplayDownloads] = useState(true);

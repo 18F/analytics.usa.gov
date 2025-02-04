@@ -26,8 +26,10 @@ import FilterSelect from "../select/FilterSelect";
 function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-pages-realtime"],
+    ["Yesterday", "top-domains-yesterday"],
     ["7 Days", "top-domains-7-days"],
     ["30 Days", "top-domains-30-days"],
+    ["90 Days", "top-domains-90-days"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [refreshInterval, setRefreshInterval] = useState(null);
