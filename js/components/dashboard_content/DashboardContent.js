@@ -170,7 +170,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="user-locations-languages-group"
                   >
-                    User Locations and Languages in the Last 30 Minutes
+                    User Locations and Languages
                     <Tooltip
                       position="top"
                       content="Top cities and countries from which user activity originated, and top language settings in user browsers. Location data may be affected by a user's VPN usage."
@@ -267,7 +267,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="30-day-traffic-sources"
                   >
-                    30 Day Traffic Sources
+                    Traffic Sources
                     <Tooltip
                       position="top"
                       content="Top traffic sources for the last 30 days."
@@ -298,7 +298,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="30-day-demographics"
                   >
-                    30 Day User Device Demographics
+                    User Device Demographics
                     <Tooltip
                       position="top"
                       content="Devices, web browsers, operating systems, and screen resolutions that users were on when interacting with DAP-participating government websites in the past 30 days."
