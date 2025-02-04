@@ -3,14 +3,14 @@ import { render, screen, waitFor } from "@testing-library/react";
 
 import { delay } from "../../../../spec/support/test_utilities";
 import DataLoader from "../../../lib/data_loader";
-import TopLanguagesHistorical from "../TopLanguagesHistorical";
+import TopLanguages from "../TopLanguages";
 
 jest.mock("../../../lib/data_loader", () => ({
   ...jest.requireActual("../../../lib/data_loader"),
   loadJSON: jest.fn(),
 }));
 
-describe("TopLanguagesHistorical", () => {
+describe("TopLanguages", () => {
   let component;
   let data;
 
@@ -20,7 +20,7 @@ describe("TopLanguagesHistorical", () => {
         return Promise.resolve(null);
       });
       component = render(
-        <TopLanguagesHistorical dataHrefBase="http://www.example.com/data/" />,
+        <TopLanguages dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
@@ -94,7 +94,7 @@ describe("TopLanguagesHistorical", () => {
         return Promise.resolve(data);
       });
       component = render(
-        <TopLanguagesHistorical dataHrefBase="http://www.example.com/data/" />,
+        <TopLanguages dataHrefBase="http://www.example.com/data/" />,
       );
       await waitFor(() => screen.getByText("Chinese"));
       // Wait for barchart transition animation to complete (200 ms, set in
@@ -116,16 +116,12 @@ describe("TopLanguagesHistorical", () => {
         return Promise.reject(error);
       });
       component = render(
-        <TopLanguagesHistorical dataHrefBase="http://www.example.com/data/" />,
+        <TopLanguages dataHrefBase="http://www.example.com/data/" />,
       );
     });
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
-    });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

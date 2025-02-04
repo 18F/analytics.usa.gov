@@ -16,7 +16,7 @@ import RealtimeMetricCount from "../data_visualization/RealtimeMetricCount";
 import RealtimeEventCount from "../data_visualization/RealtimeEventCount";
 import TopCities from "./TopCities";
 import TopCountries from "./TopCountries";
-import TopLanguagesHistorical from "./TopLanguagesHistorical";
+import TopLanguages from "./TopLanguages";
 import Accordion from "../accordion/Accordion";
 import AccordionHeader from "../accordion/AccordionHeader";
 import AccordionContent from "../accordion/AccordionContent";
@@ -209,7 +209,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     </Card>
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
                       <CardContent className="padding-105 margin-0 border-0 height-auto">
-                        <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
+                        <TopLanguages dataHrefBase={dataHrefBase} />
                       </CardContent>
                     </Card>
                   </CardGroup>

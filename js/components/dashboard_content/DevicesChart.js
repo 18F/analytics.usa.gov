@@ -1,13 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
-import barChart from "../../lib/chart_helpers/barchart";
-import formatters from "../../lib/chart_helpers/formatters";
-import transformers from "../../lib/chart_helpers/transformers";
 import Tooltip from "../tooltip/Tooltip";
 import FilterSelect from "../select/FilterSelect";
+import CompactBarChart from "../chart/CompactBarChart";
 
 /**
  * Retrieves the devices report from the passed data URL and creates a
@@ -28,18 +25,18 @@ function DevicesChart({ dataHrefBase }) {
     ["90 Days", "devices-90-days"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
-  const ref = useRef(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const initChart = async () => {
       if (currentFilter) {
-        await loadDataAndBuildChart();
+        await loadData();
       }
     };
     initChart().catch(console.error);
   }, [currentFilter]);
 
-  async function loadDataAndBuildChart() {
+  async function loadData() {
     let data;
 
     try {
@@ -50,33 +47,14 @@ function DevicesChart({ dataHrefBase }) {
       data = { data: [] };
     }
 
-    await buildChartForData(data);
-  }
+    if (data && data.totals && data.totals.by_device) {
+      // Rename "smart tv" to "Smart TV"
+      delete Object.assign(data.totals.by_device, {
+        ["Smart TV"]: data.totals.by_device["smart tv"],
+      })["smart tv"];
+    }
 
-  async function buildChartForData(data) {
-    const chartBuilder = new ChartBuilder();
-    await chartBuilder
-      .setElement(ref.current)
-      .setData(data)
-      .setTransformer((d) => {
-        if (!d.totals) {
-          return d;
-        }
-
-        const devices = transformers.listify(d.totals.by_device);
-        devices.forEach((device) => {
-          if (device.key === "smart tv") {
-            device.key = "Smart TV";
-          }
-        });
-        return transformers.findProportionsOfMetricFromValue(devices);
-      })
-      .setRenderer(
-        barChart()
-          .value((d) => d.proportion)
-          .format(formatters.floatToPercent),
-      )
-      .build();
+    await setData(data);
   }
 
   async function filterChangeHandler(fileName) {
@@ -125,9 +103,11 @@ function DevicesChart({ dataHrefBase }) {
           </div>
         </div>
       </div>
-      <figure id="chart_device_types" ref={ref}>
-        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
-      </figure>
+      {data && (
+        <div className="text--capitalize">
+          <CompactBarChart data={data} chartDataKey={"device"} maxItems={10} />
+        </div>
+      )}
     </>
   );
 }
