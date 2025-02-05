@@ -2,13 +2,13 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 
 import { delay } from "../../../../spec/support/test_utilities";
-import ConsolidatedBarChart from "../ConsolidatedBarChart";
+import CompactBarChart from "../CompactBarChart";
 
-describe("ConsolidatedBarChart", () => {
+describe("CompactBarChart", () => {
   let component;
   let data;
 
-  describe("when the expected key exists in the loaded data", () => {
+  describe("when the expected key exists in the data", () => {
     describe("and the data items is greater than the max items param", () => {
       beforeEach(async () => {
         data = {
@@ -61,11 +61,7 @@ describe("ConsolidatedBarChart", () => {
         };
 
         component = render(
-          <ConsolidatedBarChart
-            data={data}
-            chartDataKey="browser"
-            maxItems={10}
-          />,
+          <CompactBarChart data={data} chartDataKey="browser" maxItems={10} />,
         );
 
         await waitFor(() => screen.getByText("Chrome"));
@@ -74,7 +70,7 @@ describe("ConsolidatedBarChart", () => {
         await delay(300);
       });
 
-      it("renders a component with data loaded with the max number of items including an 'other' item", () => {
+      it("renders a component with data loaded with the max number of items", () => {
         expect(component.asFragment()).toMatchSnapshot();
       });
     });
@@ -107,11 +103,7 @@ describe("ConsolidatedBarChart", () => {
         };
 
         component = render(
-          <ConsolidatedBarChart
-            data={data}
-            chartDataKey="browser"
-            maxItems={10}
-          />,
+          <CompactBarChart data={data} chartDataKey="browser" maxItems={10} />,
         );
 
         await waitFor(() => screen.getByText("Chrome"));
@@ -120,7 +112,7 @@ describe("ConsolidatedBarChart", () => {
         await delay(300);
       });
 
-      it("renders a component with data loaded without an 'other' item", () => {
+      it("renders a component with data loaded without items missing", () => {
         expect(component.asFragment()).toMatchSnapshot();
       });
     });
@@ -162,11 +154,7 @@ describe("ConsolidatedBarChart", () => {
       };
 
       component = render(
-        <ConsolidatedBarChart
-          data={data}
-          chartDataKey="browser"
-          maxItems={10}
-        />,
+        <CompactBarChart data={data} chartDataKey="browser" maxItems={10} />,
       );
       // Wait for barchart transition animation to complete (200 ms, set in
       // js/lib/chart_helpers/barchart.js)

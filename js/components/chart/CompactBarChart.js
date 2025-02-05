@@ -14,13 +14,13 @@ import ChartBuilder from "../../lib/chart_helpers/chart_builder";
  * bar chart after consolidating items beyond the maximum.
  * @returns {import('react').ReactElement} The rendered element
  */
-function ConsolidatedBarChart({ data, chartDataKey, maxItems }) {
+function CompactBarChart({ data, chartDataKey, maxItems }) {
   const ref = useRef(null);
 
   useEffect(() => {
     const initChart = async () => {
       const chartBuilder = new ChartBuilder();
-      await chartBuilder.buildConsolidatedBarchart(
+      await chartBuilder.buildCompactBarChart(
         ref.current,
         data,
         chartDataKey,
@@ -37,10 +37,10 @@ function ConsolidatedBarChart({ data, chartDataKey, maxItems }) {
   );
 }
 
-ConsolidatedBarChart.propTypes = {
+CompactBarChart.propTypes = {
   data: PropTypes.object.isRequired,
   chartDataKey: PropTypes.string.isRequired,
-  maxItems: PropTypes.number.isRequired,
+  maxItems: PropTypes.number,
 };
 
-export default ConsolidatedBarChart;
+export default CompactBarChart;

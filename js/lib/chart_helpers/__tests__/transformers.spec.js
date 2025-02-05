@@ -75,7 +75,6 @@ describe("transformers", () => {
   describe("consolidateSmallValues", () => {
     it("does nothing to values that are all greater than the given hold", () => {
       proportionArray[2].proportion = 1.5;
-      proportionArray.push({ key: "Other", proportion: 0, children: [] });
       assert.deepEqual(
         transformers.consolidateSmallValues(proportionArray, 1),
         proportionArray,
@@ -103,20 +102,119 @@ describe("transformers", () => {
   });
 
   describe("toTopPercents", () => {
-    it("returns the top percents given some data", () => {
-      const resultsArray = [
+    describe("when the data has items which are less than the display threshold", () => {
+      const params = {
+        totals: { by_os: { bob: 1000, tom: 0.02, harry: 300 } },
+      };
+      const expected = [
         { key: "bob", value: 1000, proportion: 76.92189350933063 },
         { key: "harry", value: 300, proportion: 23.07656805279919 },
         { key: "Other", proportion: 0.0015384378701866124, children: [] },
       ];
 
-      assert.deepEqual(
-        transformers.toTopPercents(
-          { totals: { by_os: { bob: 1000, tom: 0.02, harry: 300 } } },
-          "os",
-        ),
-        resultsArray,
-      );
+      it("returns the top percents with items under the display threshold consolidated", () => {
+        expect(transformers.toTopPercents(params, "os")).toEqual(expected);
+      });
+    });
+
+    describe("when the data does not have items which are less than the display threshold", () => {
+      const params = { totals: { by_os: { bob: 1000, tom: 500, harry: 300 } } };
+      const expected = [
+        { key: "bob", value: 1000, proportion: 55.55555555555556 },
+        { key: "tom", value: 500, proportion: 27.77777777777778 },
+        { key: "harry", value: 300, proportion: 16.666666666666664 },
+      ];
+
+      it("returns the top percents with items under the display threshold consolidated", () => {
+        expect(transformers.toTopPercents(params, "os")).toEqual(expected);
+      });
+    });
+  });
+
+  describe("toTopPercentsWithMaxItems", () => {
+    const params = {
+      totals: {
+        by_country: {
+          "United States": 1000000,
+          "Puerto Rico": 5000,
+          "U.S. Virgin Islands": 4000,
+          Guam: 3000,
+          "Northern Mariana Islands": 2000,
+          "American Samoa": 500,
+        },
+      },
+    };
+
+    const topPercents = [
+      { key: "United States", proportion: 98.57072449482503, value: 1000000 },
+      { key: "Puerto Rico", proportion: 0.4928536224741252, value: 5000 },
+      {
+        key: "U.S. Virgin Islands",
+        proportion: 0.39428289797930016,
+        value: 4000,
+      },
+      { key: "Guam", proportion: 0.2957121734844751, value: 3000 },
+      {
+        key: "Northern Mariana Islands",
+        proportion: 0.19714144898965008,
+        value: 2000,
+      },
+      { children: [], key: "Other", proportion: 0.04928536224741252 },
+    ];
+
+    describe("when maxItems is less than the array length", () => {
+      const expected = [
+        { key: "United States", proportion: 98.57072449482503, value: 1000000 },
+        { key: "Puerto Rico", proportion: 0.4928536224741252, value: 5000 },
+        { key: "Other", proportion: 0.9364218827008379 },
+      ];
+
+      it('consolidates multiple items into the "Other" item', () => {
+        expect(
+          transformers.toTopPercentsWithMaxItems(params, "country", 3),
+        ).toEqual(expected);
+      });
+    });
+
+    describe("when maxItems is equal to the array length", () => {
+      const expected = [
+        { key: "United States", proportion: 98.57072449482503, value: 1000000 },
+        { key: "Puerto Rico", proportion: 0.4928536224741252, value: 5000 },
+        {
+          key: "U.S. Virgin Islands",
+          proportion: 0.39428289797930016,
+          value: 4000,
+        },
+        { key: "Guam", proportion: 0.2957121734844751, value: 3000 },
+        {
+          key: "Northern Mariana Islands",
+          proportion: 0.19714144898965008,
+          value: 2000,
+        },
+        { key: "Other", proportion: 0.04928536224741252 },
+      ];
+
+      it('consolidates the last item into the "Other" item', () => {
+        expect(
+          transformers.toTopPercentsWithMaxItems(params, "country", 6),
+        ).toEqual(expected);
+      });
+    });
+
+    describe("when maxItems is greater than the array length", () => {
+      it("returns the full dataSet converted to proportions", () => {
+        expect(
+          transformers.toTopPercentsWithMaxItems(params, "country", 7),
+        ).toEqual(topPercents);
+      });
+    });
+
+    describe("when maxItems is omitted", () => {
+      it("returns the original array", () => {
+        expect(
+          transformers.toTopPercentsWithMaxItems(params, "country"),
+        ).toEqual(topPercents);
+      });
     });
   });
 

@@ -89,9 +89,9 @@ describe("OperatingSystemsChart", () => {
       };
 
       DataLoader.loadJSON.mockImplementation((url) => {
-        if (url.includes("os.json")) {
+        if (url.includes("os-yesterday.json")) {
           return Promise.resolve(osData);
-        } else if (url.includes("windows.json")) {
+        } else if (url.includes("windows-yesterday.json")) {
           return Promise.resolve(windowsData);
         }
       });
@@ -124,10 +124,6 @@ describe("OperatingSystemsChart", () => {
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
-    });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

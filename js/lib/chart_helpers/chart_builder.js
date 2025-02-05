@@ -139,11 +139,13 @@ class ChartBuilder {
    * @param {object} element the HTML element where the chart should be built
    * @param {*} data the JSON data for the chart
    * @param {string} desiredKey the key of the data to use for the chart
+   * @param {number} maxItems the max number of items to be displayed in the
+   * data array. Optional argument.
    * @returns {Promise} resolves when the chart renders
    */
-  buildCompactBarChart(element, data, desiredKey) {
+  buildCompactBarChart(element, data, desiredKey, maxItems) {
     const method = (d) =>
-      transformers.toTopPercentsWithoutConsolidation(d, desiredKey);
+      transformers.toTopPercentsWithoutConsolidation(d, desiredKey, maxItems);
     return this.buildBarChart(element, data, method);
   }
 

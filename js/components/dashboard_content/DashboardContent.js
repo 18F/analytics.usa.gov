@@ -14,9 +14,9 @@ import CardContent from "../card/CardContent";
 import CardGroup from "../card/CardGroup";
 import RealtimeMetricCount from "../data_visualization/RealtimeMetricCount";
 import RealtimeEventCount from "../data_visualization/RealtimeEventCount";
-import TopCitiesRealtime from "./TopCitiesRealtime";
-import TopCountriesRealtime from "./TopCountriesRealtime";
-import TopLanguagesHistorical from "./TopLanguagesHistorical";
+import TopCities from "./TopCities";
+import TopCountries from "./TopCountries";
+import TopLanguages from "./TopLanguages";
 import Accordion from "../accordion/Accordion";
 import AccordionHeader from "../accordion/AccordionHeader";
 import AccordionContent from "../accordion/AccordionContent";
@@ -170,7 +170,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="user-locations-languages-group"
                   >
-                    User Locations and Languages in the Last 30 Minutes
+                    User Locations and Languages
                     <Tooltip
                       position="top"
                       content="Top cities and countries from which user activity originated, and top language settings in user browsers. Location data may be affected by a user's VPN usage."
@@ -193,7 +193,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                   <CardGroup className="grid-row tablet:grid-gap-2 card:padding-x-1 tablet:padding-x-0">
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
                       <CardContent className="padding-105 margin-0 border-0 height-auto">
-                        <TopCitiesRealtime
+                        <TopCities
                           dataHrefBase={dataHrefBase}
                           refreshSeconds={Config.realtimeDataRefreshSeconds}
                         />
@@ -201,7 +201,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     </Card>
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4 card:padding-bottom-2 desktop:padding-bottom-0">
                       <CardContent className="padding-105 margin-0 border-0 height-auto">
-                        <TopCountriesRealtime
+                        <TopCountries
                           dataHrefBase={dataHrefBase}
                           refreshSeconds={Config.realtimeDataRefreshSeconds}
                         />
@@ -209,7 +209,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     </Card>
                     <Card className="card:grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
                       <CardContent className="padding-105 margin-0 border-0 height-auto">
-                        <TopLanguagesHistorical dataHrefBase={dataHrefBase} />
+                        <TopLanguages dataHrefBase={dataHrefBase} />
                       </CardContent>
                     </Card>
                   </CardGroup>
@@ -221,7 +221,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="30-day-sessions-users"
                   >
-                    30 Day Sessions and Users
+                    30 Day Sessions
                   </button>
                 </AccordionHeader>
                 <AccordionContent
@@ -267,7 +267,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="30-day-traffic-sources"
                   >
-                    30 Day Traffic Sources
+                    Traffic Sources
                     <Tooltip
                       position="top"
                       content="Top traffic sources for the last 30 days."
@@ -298,7 +298,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-expanded="true"
                     aria-controls="30-day-demographics"
                   >
-                    30 Day User Device Demographics
+                    User Device Demographics
                     <Tooltip
                       position="top"
                       content="Devices, web browsers, operating systems, and screen resolutions that users were on when interacting with DAP-participating government websites in the past 30 days."
