@@ -7,22 +7,22 @@ import FilterSelect from "../select/FilterSelect";
 import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
- * Retrieves the browser report from the passed data URL and creates a
- * visualization for the breakdown of browsers of users visiting sites for the
- * current agency.
+ * Retrieves the screen resolution report from the passed data URL and creates a
+ * visualization for the breakdown of screen resolutions of users visiting sites
+ * for the current agency.
  *
  * @param {object} props the properties for the component
- * @param {*} props.dataHrefBase the URL of the base location of the data
+ * @param {string} props.dataHrefBase the URL of the base location of the data
  * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
  * @returns {import('react').ReactElement} The rendered element
  */
-function BrowsersChart({ dataHrefBase }) {
+function ScreenResolutionsChart({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "browsers-yesterday"],
-    ["7 Days", "browsers-7-days"],
-    ["30 Days", "browsers-30-days"],
-    ["90 Days", "browsers-90-days"],
+    ["Yesterday", "screen-resolution-yesterday"],
+    ["7 Days", "screen-resolution-7-days"],
+    ["30 Days", "screen-resolution-30-days"],
+    ["90 Days", "screen-resolution-90-days"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [data, setData] = useState(null);
@@ -63,12 +63,12 @@ function BrowsersChart({ dataHrefBase }) {
     <>
       <div className="grid-row">
         <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
-          <a href="/definitions#dimension_browser">
+          <a href="/definitions#dimension_screen_resolution">
             <Tooltip
               position="top"
-              content="The name of the web browser used by the user to access the site."
+              content="The width and height (in pixels) of the screen from which user activity originates."
             >
-              Web Browsers
+              Top Screen Resolutions
             </Tooltip>
           </a>
           <a
@@ -91,7 +91,7 @@ function BrowsersChart({ dataHrefBase }) {
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
-              name={"browsers chart time filter"}
+              name={"screen resolution chart time filter"}
             />
           </div>
         </div>
@@ -100,8 +100,8 @@ function BrowsersChart({ dataHrefBase }) {
         <div className="text--capitalize">
           <ConsolidatedBarChart
             data={data}
-            chartDataKey={"browser"}
-            maxItems={11}
+            chartDataKey={"screen_resolution"}
+            maxItems={10}
           />
         </div>
       )}
@@ -109,8 +109,8 @@ function BrowsersChart({ dataHrefBase }) {
   );
 }
 
-BrowsersChart.propTypes = {
+ScreenResolutionsChart.propTypes = {
   dataHrefBase: PropTypes.string.isRequired,
 };
 
-export default BrowsersChart;
+export default ScreenResolutionsChart;

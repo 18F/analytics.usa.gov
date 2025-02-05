@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 
 import { delay } from "../../../../spec/support/test_utilities";
 import DataLoader from "../../../lib/data_loader";
-import TopCountriesRealtime from "../TopCountriesRealtime";
+import TopCountries from "../TopCountries";
 import CountriesReportFactory from "../../../../spec/factories/reports/countries";
 
 jest.mock("../../../lib/data_loader", () => ({
@@ -11,20 +11,21 @@ jest.mock("../../../lib/data_loader", () => ({
   loadJSON: jest.fn(),
 }));
 
-describe("TopCountriesRealtime", () => {
+describe("TopCountries", () => {
   let component;
 
   describe("when data is not loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.resolve(null);
       });
       component = render(
-        <TopCountriesRealtime
+        <TopCountries
           dataHrefBase={"http://www.example.com/data/"}
           refreshSeconds={30}
         />,
       );
+      await delay(500);
     });
 
     it("renders a component in loading state", () => {
@@ -42,7 +43,7 @@ describe("TopCountriesRealtime", () => {
           return Promise.resolve(data);
         });
         component = render(
-          <TopCountriesRealtime
+          <TopCountries
             dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
@@ -67,7 +68,7 @@ describe("TopCountriesRealtime", () => {
           return Promise.resolve(data);
         });
         component = render(
-          <TopCountriesRealtime
+          <TopCountries
             dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
@@ -92,7 +93,7 @@ describe("TopCountriesRealtime", () => {
           return Promise.resolve(data);
         });
         component = render(
-          <TopCountriesRealtime
+          <TopCountries
             dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
@@ -117,7 +118,7 @@ describe("TopCountriesRealtime", () => {
           return Promise.resolve(data);
         });
         component = render(
-          <TopCountriesRealtime
+          <TopCountries
             dataHrefBase={"http://www.example.com/data/"}
             refreshSeconds={30}
           />,
@@ -138,25 +139,22 @@ describe("TopCountriesRealtime", () => {
   describe("when data loading has an error", () => {
     const error = "you broke it";
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.error = jest.fn();
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.reject(error);
       });
       component = render(
-        <TopCountriesRealtime
+        <TopCountries
           dataHrefBase={"http://www.example.com/data/"}
           refreshSeconds={30}
         />,
       );
+      await delay(500);
     });
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
-    });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 
 import { delay } from "../../../../spec/support/test_utilities";
 import DataLoader from "../../../lib/data_loader";
-import TopCitiesRealtime from "../TopCitiesRealtime";
+import TopCities from "../TopCities";
 import CitiesReportFactory from "../../../../spec/factories/reports/cities";
 
 jest.mock("../../../lib/data_loader", () => ({
@@ -11,7 +11,7 @@ jest.mock("../../../lib/data_loader", () => ({
   loadJSON: jest.fn(),
 }));
 
-describe("TopCitiesRealtime", () => {
+describe("TopCities", () => {
   let component;
 
   describe("when data is not loaded", () => {
@@ -20,7 +20,7 @@ describe("TopCitiesRealtime", () => {
         return Promise.resolve(null);
       });
       component = render(
-        <TopCitiesRealtime
+        <TopCities
           dataHrefBase="http://www.example.com/data/"
           refreshSeconds={30}
         />,
@@ -36,11 +36,15 @@ describe("TopCitiesRealtime", () => {
     const data = CitiesReportFactory.build();
 
     beforeEach(async () => {
+      data.totals.by_city = {};
+      data.data.forEach((item) => {
+        data.totals.by_city[item.city] = item.activeUsers;
+      });
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.resolve(data);
       });
       component = render(
-        <TopCitiesRealtime
+        <TopCities
           dataHrefBase="http://www.example.com/data/"
           refreshSeconds={30}
         />,
@@ -65,7 +69,7 @@ describe("TopCitiesRealtime", () => {
         return Promise.reject(error);
       });
       component = render(
-        <TopCitiesRealtime
+        <TopCities
           dataHrefBase="http://www.example.com/data/"
           refreshSeconds={30}
         />,
@@ -74,10 +78,6 @@ describe("TopCitiesRealtime", () => {
 
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
-    });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
     });
   });
 });

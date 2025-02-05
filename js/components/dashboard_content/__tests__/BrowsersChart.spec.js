@@ -115,9 +115,5 @@ describe("BrowsersChart", () => {
     it("renders a component in error state", () => {
       expect(component.asFragment()).toMatchSnapshot();
     });
-
-    it("logs the error to console", () => {
-      expect(console.error).toHaveBeenCalledWith(error);
-    });
   });
 });

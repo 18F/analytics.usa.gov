@@ -66,7 +66,9 @@ function consolidateSmallValues(proportionsList, threshold) {
       other.proportion += item.proportion;
     }
   });
-  consolidatedList.push(other);
+  if (other.proportion != 0) {
+    consolidatedList.push(other);
+  }
   return consolidatedList;
 }
 
@@ -84,27 +86,46 @@ function toTopPercents(dataSet, desiredKey) {
 /**
  * @param {object[]} dataSet the data to be tranformed
  * @param {string} desiredKey the key that we are interested in
- * @returns {object[]} a closure of proportions with values below the display threshold
- * removed
+ * @param {number} maxItems the maximum amount of items in the dataSet after
+ * proportions have been determined. Optional argument.
+ * @returns {object[]} a closure of proportions with values below the display
+ * threshold removed
  */
-function toTopPercentsWithoutConsolidation(dataSet, desiredKey) {
+function toTopPercentsWithoutConsolidation(dataSet, desiredKey, maxItems) {
   if (dataSet.totals) {
     const values = listify(dataSet.totals["by_" + desiredKey]);
     const proportions = findProportionsOfMetricFromValue(values);
     const filteredValues = values.filter((value, index) => {
       return proportions[index].proportion >= DISPLAY_THRESHOLD;
     });
-    return findProportionsOfMetricFromValue(filteredValues);
+    const filteredProportions =
+      findProportionsOfMetricFromValue(filteredValues);
+    if (maxItems && filteredProportions.length > maxItems) {
+      return filteredProportions.slice(0, maxItems);
+    } else {
+      return filteredProportions;
+    }
   } else {
     return dataSet;
   }
 }
 
+/**
+ * @param {object[]} dataSet the data to be tranformed
+ * @param {string} desiredKey the key that we are interested in
+ * @param {number} maxItems the maximum amount of items in the dataSet after
+ * proportions have been determined .
+ * @returns {object[]} a closure of proportions with values below the display
+ * threshold removed
+ */
 function toTopPercentsWithMaxItems(dataSet, desiredKey, maxItems) {
   if (dataSet.totals) {
     const values = listify(dataSet.totals["by_" + desiredKey]);
     const proportions = findProportionsOfMetricFromValue(values);
-    return consolidateValuesAfterListLength({ values: proportions, maxItems });
+    return consolidateValuesAfterListLength({
+      values: consolidateSmallValues(proportions, DISPLAY_THRESHOLD),
+      maxItems,
+    });
   } else {
     return dataSet;
   }
@@ -139,7 +160,7 @@ function consolidateValuesAfterListLength({
     other.proportion = other.proportion + value.proportion;
   });
 
-  if (other.proportion > 0) {
+  if (other.proportion != 0) {
     topValues.push(other);
   }
   return topValues;
