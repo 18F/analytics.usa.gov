@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DevicesChart when data is loaded renders a component with data loaded 1`] = `
+exports[`TopLanguages when data is loaded renders a component with data loaded 1`] = `
 <DocumentFragment>
   <div
     class="grid-row"
@@ -9,7 +9,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
       class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
     >
       <a
-        href="/definitions#dimension_device_category"
+        href="/definitions#dimension_language"
       >
         <span
           class="usa-tooltip"
@@ -20,7 +20,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             data-position="top"
             tabindex="0"
           >
-            Devices
+            Languages
           </span>
           <span
             aria-hidden="true"
@@ -28,13 +28,13 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             id="tooltip-550000"
             role="tooltip"
           >
-            The type category of the device used by the user to access the site or application.
+            The name of the language of a user's browser or device.
           </span>
         </span>
       </a>
       <a
-        aria-label="devices-realtime.csv"
-        href="http://www.example.com/data//devices-realtime.csv"
+        aria-label="languages-yesterday.csv"
+        href="http://www.example.com/data//languages-yesterday.csv"
       >
         <svg
           aria-hidden="true"
@@ -55,31 +55,26 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
         class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
       >
         <select
-          aria-label="devices chart time filter"
+          aria-label="language chart time filter"
           class="usa-select chart__filter margin-top-0"
         >
           <option
-            value="devices-realtime"
-          >
-            30 Minutes
-          </option>
-          <option
-            value="devices-yesterday"
+            value="languages-yesterday"
           >
             Yesterday
           </option>
           <option
-            value="devices-7-days"
+            value="languages-7-days"
           >
             7 Days
           </option>
           <option
-            value="devices-30-days"
+            value="languages-30-days"
           >
             30 Days
           </option>
           <option
-            value="devices-90-days"
+            value="languages-90-days"
           >
             90 Days
           </option>
@@ -91,7 +86,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
     class="text--capitalize"
   >
     <figure
-      id="chart_device"
+      id="chart_language"
     >
       <div
         class="data chart__bar-chart margin-top-2"
@@ -105,12 +100,12 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             <div
               class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
             >
-              mobile
+              English
             </div>
             <div
               class="chart__bar-chart__item__value grid-col-auto text--align-right"
             >
-              54.4%
+              91.2%
             </div>
           </div>
           <div
@@ -118,7 +113,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
           >
             <div
               class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
-              style="width: 54%;"
+              style="width: 91%;"
             />
           </div>
         </div>
@@ -131,12 +126,12 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             <div
               class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
             >
-              desktop
+              Spanish
             </div>
             <div
               class="chart__bar-chart__item__value grid-col-auto text--align-right"
             >
-              44%
+              5.3%
             </div>
           </div>
           <div
@@ -144,7 +139,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
           >
             <div
               class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
-              style="width: 44%;"
+              style="width: 5%;"
             />
           </div>
         </div>
@@ -157,12 +152,12 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             <div
               class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
             >
-              tablet
+              Chinese
             </div>
             <div
               class="chart__bar-chart__item__value grid-col-auto text--align-right"
             >
-              1.3%
+              0.9%
             </div>
           </div>
           <div
@@ -183,7 +178,163 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             <div
               class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
             >
-              Smart TV
+              French
+            </div>
+            <div
+              class="chart__bar-chart__item__value grid-col-auto text--align-right"
+            >
+              0.5%
+            </div>
+          </div>
+          <div
+            class="chart__bar-chart__item__bar-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
+              style="width: 0%;"
+            />
+          </div>
+        </div>
+        <div
+          class="chart__bar-chart__item margin-bottom-2"
+        >
+          <div
+            class="chart__bar-chart__item__label-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
+            >
+              German
+            </div>
+            <div
+              class="chart__bar-chart__item__value grid-col-auto text--align-right"
+            >
+              0.3%
+            </div>
+          </div>
+          <div
+            class="chart__bar-chart__item__bar-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
+              style="width: 0%;"
+            />
+          </div>
+        </div>
+        <div
+          class="chart__bar-chart__item margin-bottom-2"
+        >
+          <div
+            class="chart__bar-chart__item__label-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
+            >
+              Portuguese
+            </div>
+            <div
+              class="chart__bar-chart__item__value grid-col-auto text--align-right"
+            >
+              0.3%
+            </div>
+          </div>
+          <div
+            class="chart__bar-chart__item__bar-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
+              style="width: 0%;"
+            />
+          </div>
+        </div>
+        <div
+          class="chart__bar-chart__item margin-bottom-2"
+        >
+          <div
+            class="chart__bar-chart__item__label-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
+            >
+              Japanese
+            </div>
+            <div
+              class="chart__bar-chart__item__value grid-col-auto text--align-right"
+            >
+              0.2%
+            </div>
+          </div>
+          <div
+            class="chart__bar-chart__item__bar-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
+              style="width: 0%;"
+            />
+          </div>
+        </div>
+        <div
+          class="chart__bar-chart__item margin-bottom-2"
+        >
+          <div
+            class="chart__bar-chart__item__label-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
+            >
+              Russian
+            </div>
+            <div
+              class="chart__bar-chart__item__value grid-col-auto text--align-right"
+            >
+              0.2%
+            </div>
+          </div>
+          <div
+            class="chart__bar-chart__item__bar-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
+              style="width: 0%;"
+            />
+          </div>
+        </div>
+        <div
+          class="chart__bar-chart__item margin-bottom-2"
+        >
+          <div
+            class="chart__bar-chart__item__label-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
+            >
+              Korean
+            </div>
+            <div
+              class="chart__bar-chart__item__value grid-col-auto text--align-right"
+            >
+              0.2%
+            </div>
+          </div>
+          <div
+            class="chart__bar-chart__item__bar-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
+              style="width: 0%;"
+            />
+          </div>
+        </div>
+        <div
+          class="chart__bar-chart__item margin-bottom-2"
+        >
+          <div
+            class="chart__bar-chart__item__label-wrapper grid-row"
+          >
+            <div
+              class="chart__bar-chart__item__label dark-gray text--overflow-ellipsis grid-col-fill padding-right-1"
+            >
+              Italian
             </div>
             <div
               class="chart__bar-chart__item__value grid-col-auto text--align-right"
@@ -214,7 +365,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
             <div
               class="chart__bar-chart__item__value grid-col-auto text--align-right"
             >
-              0.1%
+              0.7%
             </div>
           </div>
           <div
@@ -222,7 +373,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
           >
             <div
               class="chart__bar-chart__item__bar bg-palette-color-5 margin-top-0 grid-col-12"
-              style="width: 0%;"
+              style="width: 1%;"
             />
           </div>
         </div>
@@ -232,7 +383,7 @@ exports[`DevicesChart when data is loaded renders a component with data loaded 1
 </DocumentFragment>
 `;
 
-exports[`DevicesChart when data is not loaded renders a component in loading state 1`] = `
+exports[`TopLanguages when data is not loaded renders a component in loading state 1`] = `
 <DocumentFragment>
   <div
     class="grid-row"
@@ -241,7 +392,7 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
       class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
     >
       <a
-        href="/definitions#dimension_device_category"
+        href="/definitions#dimension_language"
       >
         <span
           class="usa-tooltip"
@@ -252,7 +403,7 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
             data-position="top"
             tabindex="0"
           >
-            Devices
+            Languages
           </span>
           <span
             aria-hidden="true"
@@ -260,13 +411,13 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
             id="tooltip-550000"
             role="tooltip"
           >
-            The type category of the device used by the user to access the site or application.
+            The name of the language of a user's browser or device.
           </span>
         </span>
       </a>
       <a
-        aria-label="devices-realtime.csv"
-        href="http://www.example.com/data//devices-realtime.csv"
+        aria-label="languages-yesterday.csv"
+        href="http://www.example.com/data//languages-yesterday.csv"
       >
         <svg
           aria-hidden="true"
@@ -287,31 +438,26 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
         class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
       >
         <select
-          aria-label="devices chart time filter"
+          aria-label="language chart time filter"
           class="usa-select chart__filter margin-top-0"
         >
           <option
-            value="devices-realtime"
-          >
-            30 Minutes
-          </option>
-          <option
-            value="devices-yesterday"
+            value="languages-yesterday"
           >
             Yesterday
           </option>
           <option
-            value="devices-7-days"
+            value="languages-7-days"
           >
             7 Days
           </option>
           <option
-            value="devices-30-days"
+            value="languages-30-days"
           >
             30 Days
           </option>
           <option
-            value="devices-90-days"
+            value="languages-90-days"
           >
             90 Days
           </option>
@@ -322,7 +468,7 @@ exports[`DevicesChart when data is not loaded renders a component in loading sta
 </DocumentFragment>
 `;
 
-exports[`DevicesChart when data loading has an error renders a component in error state 1`] = `
+exports[`TopLanguages when data loading has an error renders a component in error state 1`] = `
 <DocumentFragment>
   <div
     class="grid-row"
@@ -331,7 +477,7 @@ exports[`DevicesChart when data loading has an error renders a component in erro
       class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
     >
       <a
-        href="/definitions#dimension_device_category"
+        href="/definitions#dimension_language"
       >
         <span
           class="usa-tooltip"
@@ -342,7 +488,7 @@ exports[`DevicesChart when data loading has an error renders a component in erro
             data-position="top"
             tabindex="0"
           >
-            Devices
+            Languages
           </span>
           <span
             aria-hidden="true"
@@ -350,13 +496,13 @@ exports[`DevicesChart when data loading has an error renders a component in erro
             id="tooltip-550000"
             role="tooltip"
           >
-            The type category of the device used by the user to access the site or application.
+            The name of the language of a user's browser or device.
           </span>
         </span>
       </a>
       <a
-        aria-label="devices-realtime.csv"
-        href="http://www.example.com/data//devices-realtime.csv"
+        aria-label="languages-yesterday.csv"
+        href="http://www.example.com/data//languages-yesterday.csv"
       >
         <svg
           aria-hidden="true"
@@ -377,31 +523,26 @@ exports[`DevicesChart when data loading has an error renders a component in erro
         class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
       >
         <select
-          aria-label="devices chart time filter"
+          aria-label="language chart time filter"
           class="usa-select chart__filter margin-top-0"
         >
           <option
-            value="devices-realtime"
-          >
-            30 Minutes
-          </option>
-          <option
-            value="devices-yesterday"
+            value="languages-yesterday"
           >
             Yesterday
           </option>
           <option
-            value="devices-7-days"
+            value="languages-7-days"
           >
             7 Days
           </option>
           <option
-            value="devices-30-days"
+            value="languages-30-days"
           >
             30 Days
           </option>
           <option
-            value="devices-90-days"
+            value="languages-90-days"
           >
             90 Days
           </option>

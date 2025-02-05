@@ -26,8 +26,10 @@ import FilterSelect from "../select/FilterSelect";
 function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-pages-realtime"],
+    ["Yesterday", "top-domains-yesterday"],
     ["7 Days", "top-domains-7-days"],
     ["30 Days", "top-domains-30-days"],
+    ["90 Days", "top-domains-90-days"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [refreshInterval, setRefreshInterval] = useState(null);
@@ -154,7 +156,7 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
       .build();
   }
 
-  async function dataFileChangeHandler(fileName) {
+  async function filterChangeHandler(fileName) {
     if (!fileName) return;
 
     const selectedFilter = reportFilters.find((reportFilter) => {
@@ -203,7 +205,7 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
           : `Top pages data ${timeIntervalDescription()} is unavailable.`}
       </p>
       <div className="grid-row">
-        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-7 card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-05 mobile-lg:padding-bottom-0">
+        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-05 mobile-lg:padding-bottom-0">
           {shouldDisplayPages && (
             <p className="margin-top-05 margin-bottom-105">
               <a
@@ -223,12 +225,12 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
             </p>
           )}
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-5">
+        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
-              onChange={dataFileChangeHandler}
+              onChange={filterChangeHandler}
               name={"top pages chart time filter"}
             />
           </div>

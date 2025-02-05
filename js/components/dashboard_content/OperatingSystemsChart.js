@@ -6,6 +6,7 @@ import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
 import nestCharts from "../../lib/chart_helpers/nest_charts";
 import Tooltip from "../tooltip/Tooltip";
+import FilterSelect from "../select/FilterSelect";
 
 /**
  * Retrieves the operating systems report from the passed data URL and creates a
@@ -19,66 +20,117 @@ import Tooltip from "../tooltip/Tooltip";
  * @returns {import('react').ReactElement} The rendered element
  */
 function OperatingSystemsChart({ dataHrefBase }) {
-  const osJsonDataURL = `${dataHrefBase}/os.json`;
-  const osCsvDataURL = `${dataHrefBase}/os.csv`;
-  const windowsDataURL = `${dataHrefBase}/windows.json`;
+  const reportFilters = [
+    ["Yesterday", "yesterday"],
+    ["7 Days", "7-days"],
+    ["30 Days", "30-days"],
+    ["90 Days", "90-days"],
+  ];
+  const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const osRef = useRef(null);
   const windowsRef = useRef(null);
-  const [osData, setOsData] = useState(null);
-  const [chartsLoaded, setChartsLoaded] = useState(false);
-  const [windowsData, setWindowsData] = useState(null);
 
   useEffect(() => {
-    const initOsCharts = async () => {
-      if (!osData || !windowsData) {
-        await setOsData(await DataLoader.loadJSON(osJsonDataURL));
-        await setWindowsData(await DataLoader.loadJSON(windowsDataURL));
-      } else {
-        let chartBuilder = new ChartBuilder();
-        await chartBuilder.buildCompactBarChart(osRef.current, osData, "os");
-
-        chartBuilder = new ChartBuilder();
-        await chartBuilder.buildCompactBarChart(
-          windowsRef.current,
-          windowsData,
-          "os_version",
-        );
-
-        await setChartsLoaded(true);
-      }
-
-      // nest the windows chart inside the OS chart once they're both rendered
-      // TODO: Remove windows versions?
-      if (chartsLoaded) {
-        await d3
-          .select(osRef.current)
-          .call(nestCharts, "Windows", d3.select(windowsRef.current));
+    const initChart = async () => {
+      if (currentFilter) {
+        await loadDataAndBuildCharts();
       }
     };
-    initOsCharts().catch(console.error);
-  }, [windowsData, chartsLoaded]);
+    initChart().catch(console.error);
+  }, [currentFilter]);
+
+  async function loadDataAndBuildCharts() {
+    let osData;
+    let windowsData;
+
+    try {
+      osData = await DataLoader.loadJSON(
+        `${dataHrefBase}/os-${currentFilter[1]}.json`,
+      );
+    } catch (e) {
+      osData = { data: [], totals: {} };
+    }
+    await buildOsChartForData(osData);
+
+    try {
+      windowsData = await DataLoader.loadJSON(
+        `${dataHrefBase}/windows-${currentFilter[1]}.json`,
+      );
+    } catch (e) {
+      windowsData = { data: [], totals: {} };
+    }
+    await buildWindowsChartForData(windowsData);
+
+    // nest the windows chart inside the OS chart once they're both rendered
+    // TODO: Remove windows versions?
+    await d3
+      .select(osRef.current)
+      .call(nestCharts, "Windows", d3.select(windowsRef.current));
+  }
+
+  async function buildOsChartForData(data) {
+    if (!data) return;
+
+    const chartBuilder = new ChartBuilder();
+    await chartBuilder.buildConsolidatedBarchart(osRef.current, data, "os", 10);
+  }
+
+  async function buildWindowsChartForData(data) {
+    if (!data) return;
+
+    const chartBuilder = new ChartBuilder();
+    await chartBuilder.buildCompactBarChart(
+      windowsRef.current,
+      data,
+      "os_version",
+    );
+  }
+
+  async function filterChangeHandler(fileName) {
+    if (!fileName) return;
+
+    const selectedFilter = reportFilters.find((reportFilter) => {
+      return reportFilter[1] == fileName;
+    });
+    await setCurrentFilter(selectedFilter);
+  }
 
   return (
     <div className="padding-0">
-      <div className="chart__title">
-        <a href="/definitions#dimension_operating_system">
-          <Tooltip
-            position="top"
-            content="The name of the operating system used by the user's device."
+      <div className="grid-row">
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+          <a href="/definitions#dimension_operating_system">
+            <Tooltip
+              position="top"
+              content="The name of the operating system used by the user's device."
+            >
+              Operating Systems
+            </Tooltip>
+          </a>
+          <a
+            href={`${dataHrefBase}/os-${currentFilter[1]}.csv`}
+            aria-label={`os-${currentFilter[1]}.csv`}
           >
-            Operating Systems
-          </Tooltip>
-        </a>
-        <a href={osCsvDataURL} aria-label="os.csv">
-          <svg
-            className="usa-icon margin-bottom-neg-05 margin-left-05"
-            aria-hidden="true"
-            focusable="false"
-            role="img"
-          >
-            <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-          </svg>
-        </a>
+            <svg
+              className="usa-icon margin-bottom-neg-05 margin-left-05"
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+            >
+              <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+            </svg>
+          </a>
+        </div>
+        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+          <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
+            <FilterSelect
+              filters={reportFilters}
+              defaultFilterValue={reportFilters[0][1] || ""}
+              onChange={filterChangeHandler}
+              name={"devices chart time filter"}
+            />
+          </div>
+        </div>
       </div>
       <figure id="chart_os" ref={osRef}>
         <div className="data chart__bar-chart text--capitalize margin-top-2"></div>

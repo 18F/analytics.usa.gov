@@ -1,12 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import ChartBuilder from "../../lib/chart_helpers/chart_builder";
 import DataLoader from "../../lib/data_loader";
-import barChart from "../../lib/chart_helpers/barchart";
-import formatters from "../../lib/chart_helpers/formatters";
-import transformers from "../../lib/chart_helpers/transformers";
 import Tooltip from "../tooltip/Tooltip";
+import FilterSelect from "../select/FilterSelect";
+import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
  * Retrieves the devices report from the passed data URL and creates a
@@ -20,66 +18,101 @@ import Tooltip from "../tooltip/Tooltip";
  * @returns {import('react').ReactElement} The rendered element
  */
 function DevicesChart({ dataHrefBase }) {
-  const jsonDataURL = `${dataHrefBase}/devices.json`;
-  const csvDataURL = `${dataHrefBase}/devices.csv`;
-  const ref = useRef(null);
-  const [deviceData, setDeviceData] = useState(null);
+  const reportFilters = [
+    ["30 Minutes", "devices-realtime"],
+    ["Yesterday", "devices-yesterday"],
+    ["7 Days", "devices-7-days"],
+    ["30 Days", "devices-30-days"],
+    ["90 Days", "devices-90-days"],
+  ];
+  const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    const initDevicesChart = async () => {
-      if (!deviceData) {
-        const data = await DataLoader.loadJSON(jsonDataURL);
-        await setDeviceData(data);
-      } else {
-        const chartBuilder = new ChartBuilder();
-        await chartBuilder
-          .setElement(ref.current)
-          .setData(deviceData)
-          .setTransformer((d) => {
-            const devices = transformers.listify(d.totals.by_device);
-            devices.forEach((device) => {
-              if (device.key === "smart tv") {
-                device.key = "Smart TV";
-              }
-            });
-            return transformers.findProportionsOfMetricFromValue(devices);
-          })
-          .setRenderer(
-            barChart()
-              .value((d) => d.proportion)
-              .format(formatters.floatToPercent),
-          )
-          .build();
+    const initChart = async () => {
+      if (currentFilter) {
+        await loadData();
       }
     };
-    initDevicesChart().catch(console.error);
-  }, [deviceData]);
+    initChart().catch(console.error);
+  }, [currentFilter]);
+
+  async function loadData() {
+    let data;
+
+    try {
+      data = await DataLoader.loadJSON(
+        `${dataHrefBase}/${currentFilter[1]}.json`,
+      );
+    } catch (e) {
+      data = { data: [] };
+    }
+
+    if (data && data.totals && data.totals.by_device) {
+      // Rename "smart tv" to "Smart TV"
+      delete Object.assign(data.totals.by_device, {
+        ["Smart TV"]: data.totals.by_device["smart tv"],
+      })["smart tv"];
+    }
+
+    await setData(data);
+  }
+
+  async function filterChangeHandler(fileName) {
+    if (!fileName) return;
+
+    const selectedFilter = reportFilters.find((reportFilter) => {
+      return reportFilter[1] == fileName;
+    });
+    await setCurrentFilter(selectedFilter);
+  }
 
   return (
     <>
-      <div className="chart__title">
-        <a href="/definitions#dimension_device_category">
-          <Tooltip
-            position="top"
-            content="The type category of the device used by the user to access the site or application."
+      <div className="grid-row">
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+          <a href="/definitions#dimension_device_category">
+            <Tooltip
+              position="top"
+              content="The type category of the device used by the user to access the site or application."
+            >
+              Devices
+            </Tooltip>
+          </a>
+          <a
+            href={`${dataHrefBase}/${currentFilter[1]}.csv`}
+            aria-label={`${currentFilter[1]}.csv`}
           >
-            Devices
-          </Tooltip>
-        </a>
-        <a href={csvDataURL} aria-label="devices.csv">
-          <svg
-            className="usa-icon margin-bottom-neg-05 margin-left-05"
-            aria-hidden="true"
-            focusable="false"
-            role="img"
-          >
-            <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
-          </svg>
-        </a>
+            <svg
+              className="usa-icon margin-bottom-neg-05 margin-left-05"
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+            >
+              <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
+            </svg>
+          </a>
+        </div>
+        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+          <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
+            <FilterSelect
+              filters={reportFilters}
+              defaultFilterValue={reportFilters[0][1] || ""}
+              onChange={filterChangeHandler}
+              name={"devices chart time filter"}
+            />
+          </div>
+        </div>
       </div>
-      <figure id="chart_device_types" ref={ref}>
-        <div className="data chart__bar-chart text--capitalize margin-top-2"></div>
-      </figure>
+      {data && (
+        <div className="text--capitalize">
+          <ConsolidatedBarChart
+            data={data}
+            chartDataKey={"device"}
+            maxItems={5}
+          />
+        </div>
+      )}
     </>
   );
 }

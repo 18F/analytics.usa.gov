@@ -44,7 +44,7 @@ const CitiesReportFactory = ReportFactory.params({
   },
 }).transient({
   reportDataItemFactory: CitiesReportDataItemFactory,
-  dataItemCount: 20,
+  dataItemCount: 10,
 });
 
 export default CitiesReportFactory;
