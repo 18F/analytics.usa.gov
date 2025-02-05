@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import DataLoader from "../../lib/data_loader";
 import Tooltip from "../tooltip/Tooltip";
 import FilterSelect from "../select/FilterSelect";
-import CompactBarChart from "../chart/CompactBarChart";
+import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
  * Retrieves the devices report from the passed data URL and creates a
@@ -106,7 +106,11 @@ function DevicesChart({ dataHrefBase }) {
       </div>
       {data && (
         <div className="text--capitalize">
-          <CompactBarChart data={data} chartDataKey={"device"} maxItems={10} />
+          <ConsolidatedBarChart
+            data={data}
+            chartDataKey={"device"}
+            maxItems={5}
+          />
         </div>
       )}
     </>

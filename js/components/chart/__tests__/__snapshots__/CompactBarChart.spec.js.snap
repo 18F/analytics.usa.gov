@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CompactBarChart when data is loaded and the expected key does not exist in the loaded data renders a component without data 1`] = `
+exports[`CompactBarChart when the expected key does not exist in the loaded data renders a component without data 1`] = `
 <DocumentFragment>
   <figure
     id="chart_browser"
@@ -12,7 +12,7 @@ exports[`CompactBarChart when data is loaded and the expected key does not exist
 </DocumentFragment>
 `;
 
-exports[`CompactBarChart when data is loaded and the expected key exists in the loaded data and the data items is greater than the max items param renders a component with data loaded with the max number of items 1`] = `
+exports[`CompactBarChart when the expected key exists in the data and the data items is greater than the max items param renders a component with data loaded with the max number of items 1`] = `
 <DocumentFragment>
   <figure
     id="chart_browser"
@@ -285,7 +285,7 @@ exports[`CompactBarChart when data is loaded and the expected key exists in the 
 </DocumentFragment>
 `;
 
-exports[`CompactBarChart when data is loaded and the expected key exists in the loaded data and the data items is less than the max items param renders a component with data loaded without items missing 1`] = `
+exports[`CompactBarChart when the expected key exists in the data and the data items is less than the max items param renders a component with data loaded without items missing 1`] = `
 <DocumentFragment>
   <figure
     id="chart_browser"
@@ -528,18 +528,6 @@ exports[`CompactBarChart when data is loaded and the expected key exists in the 
         </div>
       </div>
     </div>
-  </figure>
-</DocumentFragment>
-`;
-
-exports[`CompactBarChart when data is not loaded renders a component in loading state 1`] = `
-<DocumentFragment>
-  <figure
-    id="chart_browser"
-  >
-    <div
-      class="data chart__bar-chart margin-top-2"
-    />
   </figure>
 </DocumentFragment>
 `;

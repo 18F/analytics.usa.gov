@@ -68,7 +68,7 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
         `${dataHrefBase}/${currentFilter[1]}.json`,
       );
     } catch (e) {
-      data = { data: [] };
+      data = { data: [], totals: {} };
     }
     await buildCountriesChartForData(data);
     await buildUSChartForData(data);
@@ -96,6 +96,8 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
   }
 
   async function buildCountriesChartForData(data) {
+    if (!data) return;
+
     // Create countries chart
     const chartBuilder = new ChartBuilder();
     await chartBuilder.buildBarChart(countriesRef.current, data, (d) => {
@@ -133,6 +135,8 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
   }
 
   async function buildUSChartForData(data) {
+    if (!data) return;
+
     // Create us and territories breakdown chart
     const chartBuilder = new ChartBuilder();
     await chartBuilder.buildBarChartWithLabel(
@@ -158,6 +162,8 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
   }
 
   async function buildInternationalChartForData(data) {
+    if (!data) return;
+
     // Create international breakdown chart
     const chartBuilder = new ChartBuilder();
     await chartBuilder.buildBarChartWithLabel(

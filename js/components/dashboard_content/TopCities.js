@@ -62,7 +62,7 @@ function TopCities({ dataHrefBase, refreshSeconds }) {
         `${dataHrefBase}/${currentFilter[1]}.json`,
       );
     } catch (e) {
-      data = { data: [] };
+      data = { data: [], totals: {} };
     }
 
     await setData(data);

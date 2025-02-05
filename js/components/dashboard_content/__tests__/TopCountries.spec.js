@@ -15,7 +15,7 @@ describe("TopCountries", () => {
   let component;
 
   describe("when data is not loaded", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.resolve(null);
       });
@@ -25,6 +25,7 @@ describe("TopCountries", () => {
           refreshSeconds={30}
         />,
       );
+      await delay(500);
     });
 
     it("renders a component in loading state", () => {
@@ -138,7 +139,7 @@ describe("TopCountries", () => {
   describe("when data loading has an error", () => {
     const error = "you broke it";
 
-    beforeEach(() => {
+    beforeEach(async () => {
       console.error = jest.fn();
       DataLoader.loadJSON.mockImplementation(() => {
         return Promise.reject(error);
@@ -149,6 +150,7 @@ describe("TopCountries", () => {
           refreshSeconds={30}
         />,
       );
+      await delay(500);
     });
 
     it("renders a component in error state", () => {

@@ -66,7 +66,9 @@ function consolidateSmallValues(proportionsList, threshold) {
       other.proportion += item.proportion;
     }
   });
-  consolidatedList.push(other);
+  if (other.proportion != 0) {
+    consolidatedList.push(other);
+  }
   return consolidatedList;
 }
 
@@ -120,7 +122,10 @@ function toTopPercentsWithMaxItems(dataSet, desiredKey, maxItems) {
   if (dataSet.totals) {
     const values = listify(dataSet.totals["by_" + desiredKey]);
     const proportions = findProportionsOfMetricFromValue(values);
-    return consolidateValuesAfterListLength({ values: proportions, maxItems });
+    return consolidateValuesAfterListLength({
+      values: consolidateSmallValues(proportions, DISPLAY_THRESHOLD),
+      maxItems,
+    });
   } else {
     return dataSet;
   }
@@ -155,7 +160,7 @@ function consolidateValuesAfterListLength({
     other.proportion = other.proportion + value.proportion;
   });
 
-  if (other.proportion > 0) {
+  if (other.proportion != 0) {
     topValues.push(other);
   }
   return topValues;

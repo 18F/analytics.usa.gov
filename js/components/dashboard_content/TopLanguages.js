@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import DataLoader from "../../lib/data_loader";
 import Tooltip from "../tooltip/Tooltip";
 import FilterSelect from "../select/FilterSelect";
-import CompactBarChart from "../chart/CompactBarChart";
+import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
  * Retrieves the top languages report from the passed data URL and creates a
@@ -98,7 +98,7 @@ function TopLanguages({ dataHrefBase }) {
       </div>
       {data && (
         <div className="text--capitalize">
-          <CompactBarChart
+          <ConsolidatedBarChart
             data={data}
             chartDataKey={"language"}
             maxItems={11}

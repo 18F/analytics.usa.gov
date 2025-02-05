@@ -48,7 +48,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
         `${dataHrefBase}/os-${currentFilter[1]}.json`,
       );
     } catch (e) {
-      osData = { data: [] };
+      osData = { data: [], totals: {} };
     }
     await buildOsChartForData(osData);
 
@@ -57,7 +57,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
         `${dataHrefBase}/windows-${currentFilter[1]}.json`,
       );
     } catch (e) {
-      windowsData = { data: [] };
+      windowsData = { data: [], totals: {} };
     }
     await buildWindowsChartForData(windowsData);
 
@@ -69,11 +69,15 @@ function OperatingSystemsChart({ dataHrefBase }) {
   }
 
   async function buildOsChartForData(data) {
+    if (!data) return;
+
     const chartBuilder = new ChartBuilder();
-    await chartBuilder.buildCompactBarChart(osRef.current, data, "os");
+    await chartBuilder.buildConsolidatedBarchart(osRef.current, data, "os", 10);
   }
 
   async function buildWindowsChartForData(data) {
+    if (!data) return;
+
     const chartBuilder = new ChartBuilder();
     await chartBuilder.buildCompactBarChart(
       windowsRef.current,

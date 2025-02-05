@@ -23,12 +23,12 @@ function TrafficSources({ dataHrefBase }) {
   return (
     <CardGroup className="grid-row tablet:grid-gap-2 card:padding-x-1 tablet:padding-x-0">
       <Card className="card:grid-col-12 desktop:grid-col-6 card:padding-bottom-2 desktop:padding-bottom-0">
-        <CardContent className="padding-105 margin-0 border-0">
+        <CardContent className="padding-105 margin-0 border-0 height-auto">
           <TopSessionChannelGroupChart dataHrefBase={dataHrefBase} />
         </CardContent>
       </Card>
       <Card className="card:grid-col-12 desktop:grid-col-6">
-        <CardContent className="padding-105 margin-0 border-0">
+        <CardContent className="padding-105 margin-0 border-0 height-auto">
           <TopSessionSourceMediumChart dataHrefBase={dataHrefBase} />
         </CardContent>
       </Card>
