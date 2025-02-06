@@ -129,7 +129,7 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
       <p className="margin-top-0 margin-bottom-1">
         <em>
           {shouldDisplayDownloads
-            ? `Top downloads played ${timeIntervalDescription()} on ${agency} hostnames.`
+            ? `Top files downloaded ${timeIntervalDescription()} on ${agency} hostnames.`
             : `Top downloads data ${timeIntervalDescription()} is unavailable for ${agency} hostnames.`}
         </em>
       </p>
