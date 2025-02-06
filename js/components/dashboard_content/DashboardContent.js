@@ -268,19 +268,6 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     aria-controls="30-day-traffic-sources"
                   >
                     Traffic Sources
-                    <Tooltip
-                      position="top"
-                      content="Top traffic sources for the last 30 days."
-                    >
-                      <svg
-                        className="usa-icon margin-bottom-neg-05 margin-left-05"
-                        aria-hidden="true"
-                        focusable="false"
-                        role="img"
-                      >
-                        <use xlinkHref="/assets/uswds/img/sprite.svg#info"></use>
-                      </svg>
-                    </Tooltip>
                   </button>
                 </AccordionHeader>
                 <AccordionContent
@@ -301,7 +288,7 @@ function DashboardContent({ dataURL, dataPrefix, agency }) {
                     User Device Demographics
                     <Tooltip
                       position="top"
-                      content="Devices, web browsers, operating systems, and screen resolutions that users were on when interacting with DAP-participating government websites in the past 30 days."
+                      content="Devices, web browsers, operating systems, and screen resolutions that users were on when interacting with DAP-participating government websites."
                     >
                       <svg
                         className="usa-icon margin-bottom-neg-05 margin-left-05"
