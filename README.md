@@ -1,4 +1,5 @@
-[![Code Climate](https://codeclimate.com/github/18F/analytics.usa.gov/badges/gpa.svg)](https://codeclimate.com/github/18F/analytics.usa.gov)  [![CircleCI](https://circleci.com/gh/18F/analytics.usa.gov.svg?style=shield)](https://circleci.com/gh/18F/analytics.usa.gov)
+![Build Status](https://github.com/18F/analytics.usa.gov/actions/workflows/ci.yml/badge.svg?branch=master)
+[![Snyk](https://snyk.io/test/github/18F/analytics.usa.gov/badge.svg)](https://snyk.io/test/github/18F/analytics.usa.gov)
 
 ## analytics.usa.gov
 
