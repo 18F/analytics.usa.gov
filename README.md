@@ -4,8 +4,8 @@
 ## analytics.usa.gov
 
 Analytics.usa.gov is a product of the [Digital Analytics Program (DAP)](https://github.com/digital-analytics-program/gov-wide-code),
-which collects and publishes website analytics from thousands of public-facing
-US federal government websites per the ["Delivering a Digital-First Public Experience"](https://www.whitehouse.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf)
+which collects and publishes web analytics from thousands of public-facing US
+federal government websites per the ["Delivering a Digital-First Public Experience"](https://www.whitehouse.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf)
 requirement.
 
 The process for adding features to this project is described in
@@ -101,13 +101,17 @@ make changes to the source files locally.
 ### Check for accessibility issues
 
 With the site running locally, you can test for accessiblity issues with [pa11y](https://github.com/pa11y/pa11y)
+or with [Axe](https://github.com/dequelabs/axe-core-npm)
 
 ```bash
 # Run the site locally
 npm start
 
 # Run pa11y checks
-npm run pa11y
+npm run accessibility:pa11y
+
+# Run axe checks
+npm run accessibility:axe
 ```
 
 You can update the URL in the script definition to run pa11y for other pages. By
@@ -151,7 +155,7 @@ ID. Visit [18F's analytics-reporter](https://github.com/18F/analytics-reporter)
 for more information. Save the url path for the data collection path.
 1. Create a new json object in the `/_data/agencies.json` file. The `slug`
 attribute of the object will be the url path. The `name` attribute is the
-Agency's name.
+agency's display name.
 
 ### Javascript Modules
 
@@ -171,7 +175,7 @@ problems from remote-hosted scripts.
 
 ### Deploying the app
 
-Production and staging applications are deployed via CI automatically. Any
+Production, staging, and dev applications are deployed via CI automatically. Any
 commits to the `master` branch will be deployed to production after passing
 automated tests in CI. Any commits to the `staging` branch will be deployed to
 the staging environment. Any commits to the `develop` branch will be deployed to
@@ -205,9 +209,10 @@ make deploy_staging
 #### API key
 
 The historical data downloads page of the site makes API calls (proxied through
-the site's NGINX server) which include an api.data.gov API key. This key is
-provided as configuration by CI during deployment and can be updated as needed
-in the CI deployment variables.
+the site's NGINX server) to the DAP API (handled by the analytics-reporter-api
+application) which include an api.data.gov API key. This key is provided as
+configuration by CI during deployment and can be updated as needed in the CI
+deployment variables.
 
 ### Webpack Configuration
 
@@ -231,8 +236,8 @@ The resulting uglified bundle is built into `assest/bundle.js`.
 
 | Command | purpose |
 |-------------| ------ |
-| npm run build-dev | a watch command rebuilding the webpack with a development configuration (i.e. no minifiecation) |
-| npm run build-prod | a webpack command to build a minified and transpiled bundle.js |
+| npm run build:local | a watch command rebuilding the webpack with a development configuration (i.e. no minifiecation) |
+| npm run build:prod | a webpack command to build a minified and transpiled bundle.js |
 
 ### Blog and usage by other organizations
 
