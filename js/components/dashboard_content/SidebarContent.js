@@ -57,7 +57,7 @@ function SidebarContent({ dataHrefBase, agency }) {
               <CardContent className="padding-105 margin-0 border-0 height-auto">
                 <TopPages
                   dataHrefBase={dataHrefBase}
-                  numberOfListingsToDisplay={30}
+                  numberOfListingsToDisplay={20}
                   refreshSeconds={Config.realtimeDataRefreshSeconds}
                 />
               </CardContent>
