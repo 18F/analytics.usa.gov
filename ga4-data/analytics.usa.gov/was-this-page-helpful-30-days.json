@@ -1,0 +1,210 @@
+{
+  "name": "was_this_page_helpful-60-days",
+  "agency": "analytics.usa.gov",
+  "sampling": [],
+  "query": {
+    "meta": {
+      "name": "Was this page helpful - 60 Days",
+      "description": "60 days of event counts and labels (yes/no) for was this page helpful for analytics.usa.gov"
+    },
+    "metrics": [
+      {
+        "name": "eventCount"
+      }
+    ],
+    "orderBys": [
+      {
+        "desc": true,
+        "metric": {
+          "metricName": "eventCount"
+        }
+      }
+    ],
+    "dateRanges": [
+      {
+        "endDate": "yesterday",
+        "startDate": "60daysAgo"
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "customEvent:event_label"
+      },
+      {
+        "name": "pagePath"
+      }
+    ],
+    "dimensionFilter": {
+      "andGroup": {
+        "expressions": [
+          {
+            "filter": {
+              "fieldName": "eventName",
+              "stringFilter": {
+                "value": "was_this_helpful_submit"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "hostName",
+              "stringFilter": {
+                "value": "analytics.usa.gov"
+              }
+            }
+          },
+          {
+            "filter": {
+              "fieldName": "customEvent:event_action",
+              "stringFilter": {
+                "value": "was_this_page_helpful_v3.0"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "limit": "10000",
+    "property": "properties/451665844"
+  },
+  "data": [
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/",
+      "total_events": "20"
+    },
+    {
+      "customEvent:event_label": "no",
+      "pagePath": "/",
+      "total_events": "4"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/national-library-medicine",
+      "total_events": "4"
+    },
+    {
+      "customEvent:event_label": "no",
+      "pagePath": "/definitions",
+      "total_events": "3"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/definitions",
+      "total_events": "3"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/commerce",
+      "total_events": "2"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/defense",
+      "total_events": "2"
+    },
+    {
+      "customEvent:event_label": "no",
+      "pagePath": "/commerce",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "no",
+      "pagePath": "/health-human-services",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "no",
+      "pagePath": "/health-human-services/",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "no",
+      "pagePath": "/state",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/about",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/access-board",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/army",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/consumer-financial-protection-bureau",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/corporation-national-community-service",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/data",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/defense-health-agency",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/energy",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/federal-trade-commission",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/forest-service",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/health-human-services",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/historical-data-download",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/interior/data",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/nuclear-regulatory-commission",
+      "total_events": "1"
+    },
+    {
+      "customEvent:event_label": "yes",
+      "pagePath": "/social-security-administration",
+      "total_events": "1"
+    }
+  ],
+  "totals": {
+    "total_events": 57,
+    "by_customEvent:event_label": {
+      "yes": 46,
+      "no": 11
+    }
+  },
+  "taken_at": "2025-02-13T18:40:09.553Z"
+}
