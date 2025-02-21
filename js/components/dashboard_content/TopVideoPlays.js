@@ -30,9 +30,9 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
     ["7 Days", "top-video-plays-7-days"],
     ["30 Days", "top-video-plays-30-days"],
     ["90 Days", "top-video-plays-90-days"],
-    ["Current Year", "top-video-plays-current-year"],
+    ["Current Calendar Year", "top-video-plays-current-year"],
     ["Current Fiscal Year", "top-video-plays-current-fiscal-year"],
-    ["Previous Year", "top-video-plays-previous-year"],
+    ["Previous Calendar Year", "top-video-plays-previous-year"],
     ["Previous Fiscal Year", "top-video-plays-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
@@ -133,7 +133,7 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
         </em>
       </p>
       <div className="grid-row">
-        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1">
           {shouldDisplayVideoPlays && (
             <p className="margin-top-05 margin-bottom-05">
               <a
@@ -153,13 +153,14 @@ function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
             </p>
           )}
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"top video plays chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>

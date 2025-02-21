@@ -25,9 +25,9 @@ function OperatingSystemsChart({ dataHrefBase }) {
     ["7 Days", "7-days"],
     ["30 Days", "30-days"],
     ["90 Days", "90-days"],
-    ["Current Year", "current-year"],
+    ["Current Calendar Year", "current-year"],
     ["Current Fiscal Year", "current-fiscal-year"],
-    ["Previous Year", "previous-year"],
+    ["Previous Calendar Year", "previous-year"],
     ["Previous Fiscal Year", "previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
@@ -102,7 +102,7 @@ function OperatingSystemsChart({ dataHrefBase }) {
   return (
     <div className="padding-0">
       <div className="grid-row">
-        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1">
           <a
             href={`${dataHrefBase}/os-${currentFilter[1]}.csv`}
             aria-label={`os-${currentFilter[1]}.csv`}
@@ -125,13 +125,14 @@ function OperatingSystemsChart({ dataHrefBase }) {
             </Tooltip>
           </a>
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"devices chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>

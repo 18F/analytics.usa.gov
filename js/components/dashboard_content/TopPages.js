@@ -30,9 +30,9 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
     ["7 Days", "top-domains-7-days"],
     ["30 Days", "top-domains-30-days"],
     ["90 Days", "top-domains-90-days"],
-    ["Current Year", "top-domains-current-year"],
+    ["Current Calendar Year", "top-domains-current-year"],
     ["Current Fiscal Year", "top-domains-current-fiscal-year"],
-    ["Previous Year", "top-domains-previous-year"],
+    ["Previous Calendar Year", "top-domains-previous-year"],
     ["Previous Fiscal Year", "top-domains-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
@@ -210,6 +210,13 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
       </p>
       <div className="grid-row">
         <div className="display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-05 mobile-lg:padding-bottom-0">
+          <a href="/visualizations" aria-label="/visualizations">
+            Visualize the data
+          </a>
+        </div>
+      </div>
+      <div className="grid-row">
+        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-05 mobile-lg:padding-bottom-0 padding-right-1">
           {shouldDisplayPages && (
             <p className="margin-top-05 margin-bottom-105">
               <a
@@ -229,13 +236,14 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
             </p>
           )}
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"top pages chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>

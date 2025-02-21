@@ -23,9 +23,9 @@ function TopSessionSourceMediumChart({ dataHrefBase }) {
     ["7 Days", "top-session-source-medium-7-days"],
     ["30 Days", "top-session-source-medium-30-days"],
     ["90 Days", "top-session-source-medium-90-days"],
-    ["Current Year", "top-session-source-medium-current-year"],
+    ["Current Calendar Year", "top-session-source-medium-current-year"],
     ["Current Fiscal Year", "top-session-source-medium-current-fiscal-year"],
-    ["Previous Year", "top-session-source-medium-previous-year"],
+    ["Previous Calendar Year", "top-session-source-medium-previous-year"],
     ["Previous Fiscal Year", "top-session-source-medium-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
@@ -66,7 +66,7 @@ function TopSessionSourceMediumChart({ dataHrefBase }) {
   return (
     <>
       <div className="grid-row">
-        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1">
           <a
             href={`${dataHrefBase}/${currentFilter[1]}.csv`}
             aria-label={`${currentFilter[1]}.csv`}
@@ -89,13 +89,14 @@ function TopSessionSourceMediumChart({ dataHrefBase }) {
             </Tooltip>
           </a>
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"session source medium chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>
