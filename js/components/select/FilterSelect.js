@@ -12,9 +12,17 @@ import PropTypes from "prop-types";
  * @param {Function} props.onChange a function to call when the selected option
  * is changed.
  * @param {string} props.name an accessible name for the select element.
+ * @param {string} props.className the class names to append to the rendered
+ * element.
  * @returns {import('react').ReactElement} The rendered element
  */
-function FilterSelect({ filters, defaultFilterValue, onChange, name }) {
+function FilterSelect({
+  filters,
+  defaultFilterValue,
+  onChange,
+  name,
+  className = "",
+}) {
   const [selectedFilter, setSelectedFilter] = useState(defaultFilterValue);
 
   useEffect(() => {
@@ -23,7 +31,7 @@ function FilterSelect({ filters, defaultFilterValue, onChange, name }) {
 
   return (
     <select
-      className="usa-select chart__filter margin-top-0"
+      className={`usa-select chart__filter margin-top-0 ${className}`}
       value={selectedFilter}
       onChange={(e) => setSelectedFilter(e.target.value)}
       aria-label={name}
@@ -44,6 +52,7 @@ FilterSelect.propTypes = {
   defaultFilterValue: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default FilterSelect;
