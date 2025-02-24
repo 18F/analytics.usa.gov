@@ -23,6 +23,10 @@ function ScreenResolutionsChart({ dataHrefBase }) {
     ["7 Days", "screen-resolution-7-days"],
     ["30 Days", "screen-resolution-30-days"],
     ["90 Days", "screen-resolution-90-days"],
+    ["Current Calendar Year", "screen-resolution-current-year"],
+    ["Current Fiscal Year", "screen-resolution-current-fiscal-year"],
+    ["Previous Calendar Year", "screen-resolution-previous-year"],
+    ["Previous Fiscal Year", "screen-resolution-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [data, setData] = useState(null);
@@ -62,15 +66,7 @@ function ScreenResolutionsChart({ dataHrefBase }) {
   return (
     <>
       <div className="grid-row">
-        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
-          <a href="/definitions#dimension_screen_resolution">
-            <Tooltip
-              position="top"
-              content="The width and height (in pixels) of the screen from which user activity originates."
-            >
-              Top Screen Resolutions
-            </Tooltip>
-          </a>
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1">
           <a
             href={`${dataHrefBase}/${currentFilter[1]}.csv`}
             aria-label={`${currentFilter[1]}.csv`}
@@ -84,14 +80,23 @@ function ScreenResolutionsChart({ dataHrefBase }) {
               <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
             </svg>
           </a>
+          <a href="/definitions#dimension_screen_resolution">
+            <Tooltip
+              position="top"
+              content="The width and height (in pixels) of the screen from which user activity originates."
+            >
+              Top Screen Resolutions
+            </Tooltip>
+          </a>
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"screen resolution chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>

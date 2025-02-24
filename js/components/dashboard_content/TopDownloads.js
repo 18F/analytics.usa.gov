@@ -29,6 +29,10 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
     ["7 Days", "top-downloads-7-days"],
     ["30 Days", "top-downloads-30-days"],
     ["90 Days", "top-downloads-90-days"],
+    ["Current Calendar Year", "top-downloads-current-year"],
+    ["Current Fiscal Year", "top-downloads-current-fiscal-year"],
+    ["Previous Calendar Year", "top-downloads-previous-year"],
+    ["Previous Fiscal Year", "top-downloads-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [shouldDisplayDownloads, setShouldDisplayDownloads] = useState(true);
@@ -134,7 +138,7 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
         </em>
       </p>
       <div className="grid-row">
-        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
+        <div className="display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1">
           {shouldDisplayDownloads && (
             <p className="margin-top-05 margin-bottom-05">
               <a
@@ -154,13 +158,14 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
             </p>
           )}
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"top downloads chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>

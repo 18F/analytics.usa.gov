@@ -27,6 +27,21 @@ exports[`DeviceDemographics renders 1`] = `
                   class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
                 >
                   <a
+                    aria-label="devices-realtime.csv"
+                    href="http://www.example.com/data//devices-realtime.csv"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="usa-icon margin-bottom-neg-05 margin-left-05"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use
+                        xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                      />
+                    </svg>
+                  </a>
+                  <a
                     href="/definitions#dimension_device_category"
                   >
                     <span
@@ -50,21 +65,6 @@ exports[`DeviceDemographics renders 1`] = `
                       </span>
                     </span>
                   </a>
-                  <a
-                    aria-label="devices-realtime.csv"
-                    href="http://www.example.com/data//devices-realtime.csv"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="usa-icon margin-bottom-neg-05 margin-left-05"
-                      focusable="false"
-                      role="img"
-                    >
-                      <use
-                        xlink:href="/assets/uswds/img/sprite.svg#file_present"
-                      />
-                    </svg>
-                  </a>
                 </div>
                 <div
                   class="card:grid-col-12 mobile-lg:grid-col-auto"
@@ -74,7 +74,7 @@ exports[`DeviceDemographics renders 1`] = `
                   >
                     <select
                       aria-label="devices chart time filter"
-                      class="usa-select chart__filter margin-top-0"
+                      class="usa-select chart__filter margin-top-0 "
                     >
                       <option
                         value="devices-realtime"
@@ -101,6 +101,26 @@ exports[`DeviceDemographics renders 1`] = `
                       >
                         90 Days
                       </option>
+                      <option
+                        value="devices-current-year"
+                      >
+                        Current Year
+                      </option>
+                      <option
+                        value="devices-current-fiscal-year"
+                      >
+                        Current Fiscal Year
+                      </option>
+                      <option
+                        value="devices-previous-year"
+                      >
+                        Previous Year
+                      </option>
+                      <option
+                        value="devices-previous-fiscal-year"
+                      >
+                        Previous Fiscal Year
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -117,8 +137,23 @@ exports[`DeviceDemographics renders 1`] = `
                 class="grid-row"
               >
                 <div
-                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+                  class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1"
                 >
+                  <a
+                    aria-label="screen-resolution-yesterday.csv"
+                    href="http://www.example.com/data//screen-resolution-yesterday.csv"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="usa-icon margin-bottom-neg-05 margin-left-05"
+                      focusable="false"
+                      role="img"
+                    >
+                      <use
+                        xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                      />
+                    </svg>
+                  </a>
                   <a
                     href="/definitions#dimension_screen_resolution"
                   >
@@ -143,31 +178,16 @@ exports[`DeviceDemographics renders 1`] = `
                       </span>
                     </span>
                   </a>
-                  <a
-                    aria-label="screen-resolution-yesterday.csv"
-                    href="http://www.example.com/data//screen-resolution-yesterday.csv"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="usa-icon margin-bottom-neg-05 margin-left-05"
-                      focusable="false"
-                      role="img"
-                    >
-                      <use
-                        xlink:href="/assets/uswds/img/sprite.svg#file_present"
-                      />
-                    </svg>
-                  </a>
                 </div>
                 <div
-                  class="card:grid-col-12 mobile-lg:grid-col-auto"
+                  class="card:grid-col-12 mobile-lg:grid-col-fill"
                 >
                   <div
                     class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
                   >
                     <select
                       aria-label="screen resolution chart time filter"
-                      class="usa-select chart__filter margin-top-0"
+                      class="usa-select chart__filter margin-top-0 maxw-full text--overflow-ellipsis"
                     >
                       <option
                         value="screen-resolution-yesterday"
@@ -189,6 +209,26 @@ exports[`DeviceDemographics renders 1`] = `
                       >
                         90 Days
                       </option>
+                      <option
+                        value="screen-resolution-current-year"
+                      >
+                        Current Calendar Year
+                      </option>
+                      <option
+                        value="screen-resolution-current-fiscal-year"
+                      >
+                        Current Fiscal Year
+                      </option>
+                      <option
+                        value="screen-resolution-previous-year"
+                      >
+                        Previous Calendar Year
+                      </option>
+                      <option
+                        value="screen-resolution-previous-fiscal-year"
+                      >
+                        Previous Fiscal Year
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -208,8 +248,23 @@ exports[`DeviceDemographics renders 1`] = `
           class="grid-row"
         >
           <div
-            class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+            class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1"
           >
+            <a
+              aria-label="browsers-yesterday.csv"
+              href="http://www.example.com/data//browsers-yesterday.csv"
+            >
+              <svg
+                aria-hidden="true"
+                class="usa-icon margin-bottom-neg-05 margin-left-05"
+                focusable="false"
+                role="img"
+              >
+                <use
+                  xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                />
+              </svg>
+            </a>
             <a
               href="/definitions#dimension_browser"
             >
@@ -234,31 +289,16 @@ exports[`DeviceDemographics renders 1`] = `
                 </span>
               </span>
             </a>
-            <a
-              aria-label="browsers-yesterday.csv"
-              href="http://www.example.com/data//browsers-yesterday.csv"
-            >
-              <svg
-                aria-hidden="true"
-                class="usa-icon margin-bottom-neg-05 margin-left-05"
-                focusable="false"
-                role="img"
-              >
-                <use
-                  xlink:href="/assets/uswds/img/sprite.svg#file_present"
-                />
-              </svg>
-            </a>
           </div>
           <div
-            class="card:grid-col-12 mobile-lg:grid-col-auto"
+            class="card:grid-col-12 mobile-lg:grid-col-fill"
           >
             <div
               class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
             >
               <select
                 aria-label="browsers chart time filter"
-                class="usa-select chart__filter margin-top-0"
+                class="usa-select chart__filter margin-top-0 maxw-full text--overflow-ellipsis"
               >
                 <option
                   value="browsers-yesterday"
@@ -280,6 +320,26 @@ exports[`DeviceDemographics renders 1`] = `
                 >
                   90 Days
                 </option>
+                <option
+                  value="browsers-current-year"
+                >
+                  Current Calendar Year
+                </option>
+                <option
+                  value="browsers-current-fiscal-year"
+                >
+                  Current Fiscal Year
+                </option>
+                <option
+                  value="browsers-previous-year"
+                >
+                  Previous Calendar Year
+                </option>
+                <option
+                  value="browsers-previous-fiscal-year"
+                >
+                  Previous Fiscal Year
+                </option>
               </select>
             </div>
           </div>
@@ -299,8 +359,23 @@ exports[`DeviceDemographics renders 1`] = `
             class="grid-row"
           >
             <div
-              class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0"
+              class="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1"
             >
+              <a
+                aria-label="os-yesterday.csv"
+                href="http://www.example.com/data//os-yesterday.csv"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="usa-icon margin-bottom-neg-05 margin-left-05"
+                  focusable="false"
+                  role="img"
+                >
+                  <use
+                    xlink:href="/assets/uswds/img/sprite.svg#file_present"
+                  />
+                </svg>
+              </a>
               <a
                 href="/definitions#dimension_operating_system"
               >
@@ -325,31 +400,16 @@ exports[`DeviceDemographics renders 1`] = `
                   </span>
                 </span>
               </a>
-              <a
-                aria-label="os-yesterday.csv"
-                href="http://www.example.com/data//os-yesterday.csv"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="usa-icon margin-bottom-neg-05 margin-left-05"
-                  focusable="false"
-                  role="img"
-                >
-                  <use
-                    xlink:href="/assets/uswds/img/sprite.svg#file_present"
-                  />
-                </svg>
-              </a>
             </div>
             <div
-              class="card:grid-col-12 mobile-lg:grid-col-auto"
+              class="card:grid-col-12 mobile-lg:grid-col-fill"
             >
               <div
                 class="display-flex card:flex-justify-center mobile-lg:flex-justify-end"
               >
                 <select
                   aria-label="devices chart time filter"
-                  class="usa-select chart__filter margin-top-0"
+                  class="usa-select chart__filter margin-top-0 maxw-full text--overflow-ellipsis"
                 >
                   <option
                     value="yesterday"
@@ -370,6 +430,26 @@ exports[`DeviceDemographics renders 1`] = `
                     value="90-days"
                   >
                     90 Days
+                  </option>
+                  <option
+                    value="current-year"
+                  >
+                    Current Calendar Year
+                  </option>
+                  <option
+                    value="current-fiscal-year"
+                  >
+                    Current Fiscal Year
+                  </option>
+                  <option
+                    value="previous-year"
+                  >
+                    Previous Calendar Year
+                  </option>
+                  <option
+                    value="previous-fiscal-year"
+                  >
+                    Previous Fiscal Year
                   </option>
                 </select>
               </div>

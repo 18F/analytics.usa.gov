@@ -30,6 +30,10 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
     ["7 Days", "top-countries-7-days"],
     ["30 Days", "top-countries-30-days"],
     ["90 Days", "top-countries-90-days"],
+    ["Current Calendar Year", "top-countries-current-year"],
+    ["Current Fiscal Year", "top-countries-current-fiscal-year"],
+    ["Previous Calendar Year", "top-countries-previous-year"],
+    ["Previous Fiscal Year", "top-countries-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
   const [refreshInterval, setRefreshInterval] = useState(null);
@@ -202,15 +206,7 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
   return (
     <div className="padding-0">
       <div className="grid-row">
-        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-fill card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0">
-          <a href="/definitions#dimension_country">
-            <Tooltip
-              position="top"
-              content="The country from which user activity originates. Location data may be affected by a user's VPN usage."
-            >
-              Countries
-            </Tooltip>
-          </a>
+        <div className="chart__title display-flex card:grid-col-12 mobile-lg:grid-col-auto card:flex-justify-center mobile-lg:flex-justify-start card:padding-bottom-105 mobile-lg:padding-bottom-0 padding-right-1">
           <a
             href={`${dataHrefBase}/${currentFilter[1]}.csv`}
             aria-label={`${currentFilter[1]}.csv`}
@@ -224,14 +220,23 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
               <use xlinkHref="/assets/uswds/img/sprite.svg#file_present"></use>
             </svg>
           </a>
+          <a href="/definitions#dimension_country">
+            <Tooltip
+              position="top"
+              content="The country from which user activity originates. Location data may be affected by a user's VPN usage."
+            >
+              Countries
+            </Tooltip>
+          </a>
         </div>
-        <div className="card:grid-col-12 mobile-lg:grid-col-auto">
+        <div className="card:grid-col-12 mobile-lg:grid-col-fill">
           <div className="display-flex card:flex-justify-center mobile-lg:flex-justify-end">
             <FilterSelect
               filters={reportFilters}
               defaultFilterValue={reportFilters[0][1] || ""}
               onChange={filterChangeHandler}
               name={"cities chart time filter"}
+              className="maxw-full text--overflow-ellipsis"
             />
           </div>
         </div>
