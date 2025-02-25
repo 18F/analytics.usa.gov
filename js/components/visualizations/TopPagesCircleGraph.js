@@ -213,6 +213,15 @@ function TopPagesCircleGraph({ dataHrefBase }) {
       .style("display", (d) => (d.parent === root ? "inline" : "none"))
       .text((d) => d.data.name);
 
+    // Add DAP watermark SVG
+    svg
+      .append("image")
+      .attr("xlink:href", "/images/dap-watermark.svg")
+      .attr("width", 175)
+      .attr("height", 175)
+      .attr("x", "300")
+      .attr("y", "300");
+
     // Create the zoom behavior and zoom immediately in to the initial focus node.
     svg.on("click", (event) => zoom(event, root));
     let focus = root;
