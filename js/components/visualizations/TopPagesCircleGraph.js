@@ -17,14 +17,14 @@ import FilterSelect from "../select/FilterSelect";
  */
 function TopPagesCircleGraph({ dataHrefBase }) {
   const reportNameFilters = [
-    ["Page Views", "top-viewed-pages"],
     ["Active Users", "top-pages-by-active-user"],
+    ["Page Views", "top-viewed-pages"],
   ];
   const reportPeriodFilters = [
     ["Yesterday", "yesterday"],
-    ["7 Days", "7-days"],
-    ["30 Days", "30-days"],
-    ["90 Days", "90-days"],
+    ["Last 7 Days", "7-days"],
+    ["Last 30 Days", "30-days"],
+    ["Last 90 Days", "90-days"],
     ["Current Calendar Year", "current-year"],
     ["Current Fiscal Year", "current-fiscal-year"],
     ["Previous Calendar Year", "previous-year"],
@@ -47,7 +47,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
     reportNameFilters[0],
   );
   const [currentReportPeriodFilter, setCurrentReportPeriodFilter] = useState(
-    reportPeriodFilters[2],
+    reportPeriodFilters[1],
   );
   const ref = useRef(null);
   const [maxHostnameFilter, setMaxHostnameFilter] = useState(
@@ -349,7 +349,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
               <h3 className="text-center">Time Period</h3>
               <FilterSelect
                 filters={reportPeriodFilters}
-                defaultFilterValue={reportPeriodFilters[2][1] || ""}
+                defaultFilterValue={reportPeriodFilters[1][1] || ""}
                 onChange={reportPeriodFilterChangeHandler}
                 name={"top pages chart time period filter"}
                 className="margin-x-auto maxw-full text--overflow-ellipsis"
