@@ -27,9 +27,9 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-pages-realtime"],
     ["Yesterday", "top-domains-yesterday"],
-    ["7 Days", "top-domains-7-days"],
-    ["30 Days", "top-domains-30-days"],
-    ["90 Days", "top-domains-90-days"],
+    ["Last 7 Days", "top-domains-7-days"],
+    ["Last 30 Days", "top-domains-30-days"],
+    ["Last 90 Days", "top-domains-90-days"],
     ["Current Calendar Year", "top-domains-current-year"],
     ["Current Fiscal Year", "top-domains-current-fiscal-year"],
     ["Previous Calendar Year", "top-domains-previous-year"],
