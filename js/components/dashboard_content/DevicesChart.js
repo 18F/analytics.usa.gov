@@ -24,9 +24,9 @@ function DevicesChart({ dataHrefBase }) {
     ["Last 7 Days", "devices-7-days"],
     ["Last 30 Days", "devices-30-days"],
     ["Last 90 Days", "devices-90-days"],
-    ["Current Year", "devices-current-year"],
+    ["Current Calendar Year", "devices-current-year"],
     ["Current Fiscal Year", "devices-current-fiscal-year"],
-    ["Previous Year", "devices-previous-year"],
+    ["Previous Calendar Year", "devices-previous-year"],
     ["Previous Fiscal Year", "devices-previous-fiscal-year"],
   ];
   const [currentFilter, setCurrentFilter] = useState(reportFilters[0]);
