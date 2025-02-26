@@ -20,9 +20,9 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 function BrowsersChart({ dataHrefBase }) {
   const reportFilters = [
     ["Yesterday", "browsers-yesterday"],
-    ["7 Days", "browsers-7-days"],
-    ["30 Days", "browsers-30-days"],
-    ["90 Days", "browsers-90-days"],
+    ["Last 7 Days", "browsers-7-days"],
+    ["Last 30 Days", "browsers-30-days"],
+    ["Last 90 Days", "browsers-90-days"],
     ["Current Calendar Year", "browsers-current-year"],
     ["Current Fiscal Year", "browsers-current-fiscal-year"],
     ["Previous Calendar Year", "browsers-previous-year"],

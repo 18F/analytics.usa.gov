@@ -20,9 +20,9 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 function TopLanguages({ dataHrefBase }) {
   const reportFilters = [
     ["Yesterday", "languages-yesterday"],
-    ["7 Days", "languages-7-days"],
-    ["30 Days", "languages-30-days"],
-    ["90 Days", "languages-90-days"],
+    ["Last 7 Days", "languages-7-days"],
+    ["Last 30 Days", "languages-30-days"],
+    ["Last 90 Days", "languages-90-days"],
     ["Current Calendar Year", "languages-current-year"],
     ["Current Fiscal Year", "languages-current-fiscal-year"],
     ["Previous Calendar Year", "languages-previous-year"],

@@ -20,9 +20,9 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 function TopSessionSourceMediumChart({ dataHrefBase }) {
   const reportFilters = [
     ["Yesterday", "top-session-source-medium-yesterday"],
-    ["7 Days", "top-session-source-medium-7-days"],
-    ["30 Days", "top-session-source-medium-30-days"],
-    ["90 Days", "top-session-source-medium-90-days"],
+    ["Last 7 Days", "top-session-source-medium-7-days"],
+    ["Last 30 Days", "top-session-source-medium-30-days"],
+    ["Last 90 Days", "top-session-source-medium-90-days"],
     ["Current Calendar Year", "top-session-source-medium-current-year"],
     ["Current Fiscal Year", "top-session-source-medium-current-fiscal-year"],
     ["Previous Calendar Year", "top-session-source-medium-previous-year"],

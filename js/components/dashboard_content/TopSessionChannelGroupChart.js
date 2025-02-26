@@ -20,9 +20,9 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 function TopSessionChannelGroupChart({ dataHrefBase }) {
   const reportFilters = [
     ["Yesterday", "top-session-channel-group-yesterday"],
-    ["7 Days", "top-session-channel-group-7-days"],
-    ["30 Days", "top-session-channel-group-30-days"],
-    ["90 Days", "top-session-channel-group-90-days"],
+    ["Last 7 Days", "top-session-channel-group-7-days"],
+    ["Last 30 Days", "top-session-channel-group-30-days"],
+    ["Last 90 Days", "top-session-channel-group-90-days"],
     ["Current Calendar Year", "top-session-channel-group-current-year"],
     ["Current Fiscal Year", "top-session-channel-group-current-fiscal-year"],
     ["Previous Calendar Year", "top-session-channel-group-previous-year"],

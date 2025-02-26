@@ -27,9 +27,9 @@ import FilterSelect from "../select/FilterSelect";
 function TopVideoPlays({ agency, dataHrefBase, numberOfListingsToDisplay }) {
   const reportFilters = [
     ["Yesterday", "top-video-plays-yesterday"],
-    ["7 Days", "top-video-plays-7-days"],
-    ["30 Days", "top-video-plays-30-days"],
-    ["90 Days", "top-video-plays-90-days"],
+    ["Last 7 Days", "top-video-plays-7-days"],
+    ["Last 30 Days", "top-video-plays-30-days"],
+    ["Last 90 Days", "top-video-plays-90-days"],
     ["Current Calendar Year", "top-video-plays-current-year"],
     ["Current Fiscal Year", "top-video-plays-current-fiscal-year"],
     ["Previous Calendar Year", "top-video-plays-previous-year"],

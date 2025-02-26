@@ -39,23 +39,49 @@
     </form>
   </div>
 
-  <nav class="links margin-top-1 margin-bottom-0 padding-bottom-1">
-    <ul>
-      <li>
-        <a href="/about">About</a>
-        <span class="link-bullet link-bullet--hide">&#8226;</span>
-      </li>
-      <li>
-        <a href="/definitions">Definitions</a>
-        <span class="link-bullet link-bullet--hide">&#8226;</span>
-      </li>
-      <li>
-        <a href="{{ site.baseurl }}/data">Data</a>
-        <span class="link-bullet">&#8226;</span>
-        <a href="https://open.gsa.gov/api/dap/" target="_blank" rel="noopener"
-          >API</a
-        >
-      </li>
-    </ul>
+  <nav
+    class="links margin-top-1 desktop:padding-left-3 margin-bottom-0 padding-bottom-1"
+  >
+    <div class="grid-row">
+      <div class="grid-offset-2 grid-col-8">
+        <div class="grid-row">
+          <div class="grid-col-3 text-center">
+            <a href="/about">About</a>
+          </div>
+          <div class="grid-col-1 text-right">
+            <span class="link-bullet link-bullet--hide">&#8226;</span>
+          </div>
+          <div class="grid-col-5 text-center">
+            <a href="/definitions">Definitions</a>
+          </div>
+          <div class="grid-col-1 text-left">
+            <span class="link-bullet link-bullet--hide">&#8226;</span>
+          </div>
+          <div class="grid-col-2 text-center">
+            <a
+              href="https://open.gsa.gov/api/dap/"
+              target="_blank"
+              rel="noopener"
+              >API</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="desktop:grid-offset-1 card:grid-col-12 desktop-lg:grid-col-11 widescreen:grid-col-10"
+      >
+        <div class="grid-row">
+          <div class="grid-col-5 text-right">
+            <a href="{{ site.baseurl }}/visualizations">Visualize Data</a>
+          </div>
+          <div class="grid-col-2 text-center">
+            <span class="link-bullet link-bullet--hide">&#8226;</span>
+          </div>
+          <div class="card:grid-col-5 text-left">
+            <a href="{{ site.baseurl }}/data">Download Data</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
 </header>

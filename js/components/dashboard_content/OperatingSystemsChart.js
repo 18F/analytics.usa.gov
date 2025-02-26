@@ -22,9 +22,9 @@ import FilterSelect from "../select/FilterSelect";
 function OperatingSystemsChart({ dataHrefBase }) {
   const reportFilters = [
     ["Yesterday", "yesterday"],
-    ["7 Days", "7-days"],
-    ["30 Days", "30-days"],
-    ["90 Days", "90-days"],
+    ["Last 7 Days", "7-days"],
+    ["Last 30 Days", "30-days"],
+    ["Last 90 Days", "90-days"],
     ["Current Calendar Year", "current-year"],
     ["Current Fiscal Year", "current-fiscal-year"],
     ["Previous Calendar Year", "previous-year"],
