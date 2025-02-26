@@ -27,9 +27,9 @@ function TopCountries({ dataHrefBase, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-countries-realtime"],
     ["Yesterday", "top-countries-yesterday"],
-    ["7 Days", "top-countries-7-days"],
-    ["30 Days", "top-countries-30-days"],
-    ["90 Days", "top-countries-90-days"],
+    ["Last 7 Days", "top-countries-7-days"],
+    ["Last 30 Days", "top-countries-30-days"],
+    ["Last 90 Days", "top-countries-90-days"],
     ["Current Calendar Year", "top-countries-current-year"],
     ["Current Fiscal Year", "top-countries-current-fiscal-year"],
     ["Previous Calendar Year", "top-countries-previous-year"],

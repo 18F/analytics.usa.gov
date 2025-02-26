@@ -26,9 +26,9 @@ import FilterSelect from "../select/FilterSelect";
 function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
   const reportFilters = [
     ["Yesterday", "top-downloads-yesterday"],
-    ["7 Days", "top-downloads-7-days"],
-    ["30 Days", "top-downloads-30-days"],
-    ["90 Days", "top-downloads-90-days"],
+    ["Last 7 Days", "top-downloads-7-days"],
+    ["Last 30 Days", "top-downloads-30-days"],
+    ["Last 90 Days", "top-downloads-90-days"],
     ["Current Calendar Year", "top-downloads-current-year"],
     ["Current Fiscal Year", "top-downloads-current-fiscal-year"],
     ["Previous Calendar Year", "top-downloads-previous-year"],
