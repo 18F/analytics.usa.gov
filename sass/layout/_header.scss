@@ -88,6 +88,7 @@ header#analytics-header {
 
   #site-search-form {
     display: flex;
+    flex: 2;
     flex-direction: column;
     justify-content: center;
     order: 4;
@@ -114,48 +115,27 @@ header#analytics-header {
 
     @include at-media("tablet") {
       flex: 5;
-    }
-
-    @include at-media("desktop-lg") {
-      flex: 4;
       justify-content: flex-end;
     }
 
-    @include at-media("widescreen") {
-      flex: 3;
+    @include at-media("tablet-lg") {
+      flex: 5;
     }
 
-    ul {
-      display: contents;
-      list-style: none;
+    span.link-bullet {
+      font-size: 1.25rem;
+      padding: 0 units(1);
 
-      li {
-        @include at-media("desktop") {
-          display: block;
-          padding: 0;
-
-          &:nth-child(odd) a::after {
-            content: "";
-            padding: 0;
-          }
-        }
+      @include at-media("tablet") {
+        font-size: units(3);
       }
+    }
 
-      span.link-bullet {
-        font-size: 1.25rem;
-        padding: 0 units(1);
+    a {
+      font-size: 1.25rem;
 
-        @include at-media("tablet") {
-          font-size: units(3);
-        }
-      }
-
-      a {
-        font-size: 1.25rem;
-
-        @include at-media("tablet") {
-          font-size: units(3);
-        }
+      @include at-media("tablet") {
+        font-size: units(3);
       }
     }
   }
