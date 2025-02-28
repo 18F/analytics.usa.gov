@@ -21,7 +21,6 @@ import FilterSelect from "../select/FilterSelect";
  */
 function OperatingSystemsChart({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "yesterday"],
     ["Last 7 Days", "7-days"],
     ["Last 30 Days", "30-days"],
     ["Last 90 Days", "90-days"],

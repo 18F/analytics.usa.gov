@@ -89,9 +89,9 @@ describe("OperatingSystemsChart", () => {
       };
 
       DataLoader.loadJSON.mockImplementation((url) => {
-        if (url.includes("os-yesterday.json")) {
+        if (url.includes("os-7-days.json")) {
           return Promise.resolve(osData);
-        } else if (url.includes("windows-yesterday.json")) {
+        } else if (url.includes("windows-7-days.json")) {
           return Promise.resolve(windowsData);
         }
       });

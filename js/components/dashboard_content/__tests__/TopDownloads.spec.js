@@ -29,7 +29,7 @@ describe("TopDownloads", () => {
       );
       await waitFor(() =>
         screen.getByText(
-          "Top downloads data yesterday is unavailable for Interior hostnames.",
+          "Top downloads data over the last 7 days is unavailable for Interior hostnames.",
         ),
       );
     });
@@ -87,7 +87,7 @@ describe("TopDownloads", () => {
       );
       await waitFor(() =>
         screen.getByText(
-          "Top downloads data yesterday is unavailable for Interior hostnames.",
+          "Top downloads data over the last 7 days is unavailable for Interior hostnames.",
         ),
       );
     });

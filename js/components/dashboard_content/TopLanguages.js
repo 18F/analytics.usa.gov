@@ -19,7 +19,6 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
  */
 function TopLanguages({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "languages-yesterday"],
     ["Last 7 Days", "languages-7-days"],
     ["Last 30 Days", "languages-30-days"],
     ["Last 90 Days", "languages-90-days"],
