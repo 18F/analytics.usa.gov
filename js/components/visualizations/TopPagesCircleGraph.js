@@ -21,7 +21,6 @@ function TopPagesCircleGraph({ dataHrefBase }) {
     ["Page Views", "top-viewed-pages"],
   ];
   const reportPeriodFilters = [
-    ["Yesterday", "yesterday"],
     ["Last 7 Days", "7-days"],
     ["Last 30 Days", "30-days"],
     ["Last 90 Days", "90-days"],
@@ -77,7 +76,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
     }
 
     if (shouldDisplayPages) {
-      drawChart(transformData(report.data));
+      await drawChart(transformData(report.data));
     }
   }
 
@@ -136,7 +135,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
     return transformedData;
   }
 
-  function drawChart(transformedData) {
+  async function drawChart(transformedData) {
     // Specify the chart’s dimensions.  The numbers don't matter, it will scale
     // to the width of the container
     const width = 928;
@@ -307,11 +306,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
   }
 
   function timeIntervalDescription() {
-    if (currentReportPeriodFilter[0] == "Yesterday") {
-      return currentReportPeriodFilter[0].toLowerCase();
-    } else {
-      return `over the last ${currentReportPeriodFilter[0].toLowerCase()}`;
-    }
+    return `over the ${currentReportPeriodFilter[0].toLowerCase()}`;
   }
 
   return (
@@ -358,7 +353,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
               <h3 className="text-center">Time Period</h3>
               <FilterSelect
                 filters={reportPeriodFilters}
-                defaultFilterValue={reportPeriodFilters[1][1] || ""}
+                defaultFilterValue={reportPeriodFilters[0][1] || ""}
                 onChange={reportPeriodFilterChangeHandler}
                 name={"top pages chart time period filter"}
                 className="margin-x-auto maxw-full text--overflow-ellipsis"

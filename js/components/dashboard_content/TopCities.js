@@ -22,7 +22,6 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 function TopCities({ dataHrefBase, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-cities-realtime"],
-    ["Yesterday", "top-cities-yesterday"],
     ["Last 7 Days", "top-cities-7-days"],
     ["Last 30 Days", "top-cities-30-days"],
     ["Last 90 Days", "top-cities-90-days"],
