@@ -19,7 +19,6 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
  */
 function TopSessionSourceMediumChart({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "top-session-source-medium-yesterday"],
     ["Last 7 Days", "top-session-source-medium-7-days"],
     ["Last 30 Days", "top-session-source-medium-30-days"],
     ["Last 90 Days", "top-session-source-medium-90-days"],

@@ -19,7 +19,6 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
  */
 function TopSessionChannelGroupChart({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "top-session-channel-group-yesterday"],
     ["Last 7 Days", "top-session-channel-group-7-days"],
     ["Last 30 Days", "top-session-channel-group-30-days"],
     ["Last 90 Days", "top-session-channel-group-90-days"],

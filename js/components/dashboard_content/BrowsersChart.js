@@ -19,7 +19,6 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
  */
 function BrowsersChart({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "browsers-yesterday"],
     ["Last 7 Days", "browsers-7-days"],
     ["Last 30 Days", "browsers-30-days"],
     ["Last 90 Days", "browsers-90-days"],

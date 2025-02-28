@@ -19,7 +19,6 @@ import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
  */
 function ScreenResolutionsChart({ dataHrefBase }) {
   const reportFilters = [
-    ["Yesterday", "screen-resolution-yesterday"],
     ["Last 7 Days", "screen-resolution-7-days"],
     ["Last 30 Days", "screen-resolution-30-days"],
     ["Last 90 Days", "screen-resolution-90-days"],

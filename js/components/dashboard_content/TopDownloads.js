@@ -25,7 +25,6 @@ import FilterSelect from "../select/FilterSelect";
  */
 function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
   const reportFilters = [
-    ["Yesterday", "top-downloads-yesterday"],
     ["Last 7 Days", "top-downloads-7-days"],
     ["Last 30 Days", "top-downloads-30-days"],
     ["Last 90 Days", "top-downloads-90-days"],
@@ -121,11 +120,7 @@ function TopDownloads({ agency, dataHrefBase, numberOfListingsToDisplay }) {
   }
 
   function timeIntervalDescription() {
-    if (currentFilter[0] == "Yesterday") {
-      return currentFilter[0].toLowerCase();
-    } else {
-      return `over the last ${currentFilter[0].toLowerCase()}`;
-    }
+    return `over the ${currentFilter[0].toLowerCase()}`;
   }
 
   return (
