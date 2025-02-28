@@ -26,7 +26,6 @@ import FilterSelect from "../select/FilterSelect";
 function TopCountries({ dataHrefBase, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-countries-realtime"],
-    ["Yesterday", "top-countries-yesterday"],
     ["Last 7 Days", "top-countries-7-days"],
     ["Last 30 Days", "top-countries-30-days"],
     ["Last 90 Days", "top-countries-90-days"],

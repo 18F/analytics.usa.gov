@@ -26,7 +26,6 @@ import FilterSelect from "../select/FilterSelect";
 function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
   const reportFilters = [
     ["30 Minutes", "top-pages-realtime"],
-    ["Yesterday", "top-domains-yesterday"],
     ["Last 7 Days", "top-domains-7-days"],
     ["Last 30 Days", "top-domains-30-days"],
     ["Last 90 Days", "top-domains-90-days"],
@@ -194,11 +193,7 @@ function TopPages({ dataHrefBase, numberOfListingsToDisplay, refreshSeconds }) {
   }
 
   function timeIntervalDescription() {
-    if (currentFilter[0] == "Yesterday") {
-      return currentFilter[0].toLowerCase();
-    } else {
-      return `over the last ${currentFilter[0].toLowerCase()}`;
-    }
+    return `over the ${currentFilter[0].toLowerCase()}`;
   }
 
   return (
