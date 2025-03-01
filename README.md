@@ -6,7 +6,7 @@
 Analytics.usa.gov is a product of the [Digital Analytics Program (DAP)](https://github.com/digital-analytics-program/gov-wide-code),
 which collects and publishes web analytics from thousands of public-facing US
 federal government websites per the ["Delivering a Digital-First Public Experience"](https://www.whitehouse.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf)
-requirement.
+requirement built in support of the 21st Century Integrated Digital Experience Act (IDEA). 
 
 The process for adding features to this project is described in
 [Development and deployment process](docs/development_and_deployment_process.md).
@@ -239,9 +239,7 @@ The resulting uglified bundle is built into `assest/bundle.js`.
 | npm run build:local | a watch command rebuilding the webpack with a development configuration (i.e. no minifiecation) |
 | npm run build:prod | a webpack command to build a minified and transpiled bundle.js |
 
-### Blog and usage by other organizations
-
-For a detailed description of how the site works, read [18F's blog post on analytics.usa.gov](https://18f.gsa.gov/2015/03/19/how-we-built-analytics-usa-gov/).
+### Usage by other organizations
 
 Other organizations who have reused this project for their analytics dashboard:
 
