@@ -241,7 +241,7 @@ The resulting uglified bundle is built into `assest/bundle.js`.
 
 ### Usage by other organizations
 
-Other organizations who have reused this project for their analytics dashboard:
+Organizations who have reused this project for their analytics dashboard:
 
 |                                                                       |                                                                                        |
 |:---------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
@@ -249,7 +249,7 @@ Other organizations who have reused this project for their analytics dashboard:
 | [The City of Sacramento, CA](https://analytics.cityofsacramento.org/) | [Carbarrus County, NC](http://analytics.cabarruscounty.us/) |
 | [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) | [State of Georgia](https://analytics.georgia.gov/)    
 | [Douglas County, NE](http://analytics.douglascounty-ne.gov/)          | [State of Indiana](https://analytics.in.gov/)  
-| [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/) |
+| [USA.gov - GSA](https://www.usa.gov/website-analytics/) |
 
 ### Public domain
 
