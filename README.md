@@ -247,12 +247,9 @@ Other organizations who have reused this project for their analytics dashboard:
 |:---------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
 | [The City of Anchorage, AK](https://analytics.muni.org/)              | [The City of Omaha, NE](https://analytics.cityofomaha.org/) |
 | [The City of Sacramento, CA](https://analytics.cityofsacramento.org/) | [Carbarrus County, NC](http://analytics.cabarruscounty.us/) |
-| [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)        | [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) |
-| [Douglas County, NE](http://analytics.douglascounty-ne.gov/)          | [Washington State University](https://analytics.wsu.edu/) |
-| [State of Indiana](https://analytics.in.gov/)                         | [U.S. Department of Education](http://www2.ed.gov/analytics) |
-| [State of Georgia](https://analytics.georgia.gov/)                    | [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/) |
-
-[This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
+| [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) | [State of Georgia](https://analytics.georgia.gov/)    
+| [Douglas County, NE](http://analytics.douglascounty-ne.gov/)          | [State of Indiana](https://analytics.in.gov/)  
+| [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/) |
 
 ### Public domain
 
