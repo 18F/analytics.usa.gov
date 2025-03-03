@@ -6,7 +6,7 @@
 Analytics.usa.gov is a product of the [Digital Analytics Program (DAP)](https://github.com/digital-analytics-program/gov-wide-code),
 which collects and publishes web analytics from thousands of public-facing US
 federal government websites per the ["Delivering a Digital-First Public Experience"](https://www.whitehouse.gov/wp-content/uploads/2023/09/M-23-22-Delivering-a-Digital-First-Public-Experience.pdf)
-requirement.
+requirement built in support of the 21st Century Integrated Digital Experience Act (IDEA). 
 
 The process for adding features to this project is described in
 [Development and deployment process](docs/development_and_deployment_process.md).
@@ -239,22 +239,17 @@ The resulting uglified bundle is built into `assest/bundle.js`.
 | npm run build:local | a watch command rebuilding the webpack with a development configuration (i.e. no minifiecation) |
 | npm run build:prod | a webpack command to build a minified and transpiled bundle.js |
 
-### Blog and usage by other organizations
+### Usage by other organizations
 
-For a detailed description of how the site works, read [18F's blog post on analytics.usa.gov](https://18f.gsa.gov/2015/03/19/how-we-built-analytics-usa-gov/).
-
-Other organizations who have reused this project for their analytics dashboard:
+Organizations who have reused this project for their analytics dashboard:
 
 |                                                                       |                                                                                        |
 |:---------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
 | [The City of Anchorage, AK](https://analytics.muni.org/)              | [The City of Omaha, NE](https://analytics.cityofomaha.org/) |
 | [The City of Sacramento, CA](https://analytics.cityofsacramento.org/) | [Carbarrus County, NC](http://analytics.cabarruscounty.us/) |
-| [Cook County, IL](http://opendocs.cookcountyil.gov/analytics/)        | [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) |
-| [Douglas County, NE](http://analytics.douglascounty-ne.gov/)          | [Washington State University](https://analytics.wsu.edu/) |
-| [State of Indiana](https://analytics.in.gov/)                         | [U.S. Department of Education](http://www2.ed.gov/analytics) |
-| [State of Georgia](https://analytics.georgia.gov/)                    | [USA.gov - General Services Administration](https://www.usa.gov/website-analytics/) |
-
-[This blog post details their implementations and lessons learned](https://18f.gsa.gov/2016/01/05/tips-for-adapting-analytics-usa-gov/).
+| [City of Seattle](https://www.seattle.gov/about-our-digital-properties/web-analytics) | [State of Georgia](https://analytics.georgia.gov/)    
+| [Douglas County, NE](http://analytics.douglascounty-ne.gov/)          | [State of Indiana](https://analytics.in.gov/)  
+| [USA.gov - GSA](https://www.usa.gov/website-analytics/) |
 
 ### Public domain
 
