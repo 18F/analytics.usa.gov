@@ -46,14 +46,14 @@ function TopPagesCircleGraph({ dataHrefBase }) {
     reportNameFilters[0],
   );
   const [currentReportPeriodFilter, setCurrentReportPeriodFilter] = useState(
-    reportPeriodFilters[1],
+    reportPeriodFilters[0],
   );
   const ref = useRef(null);
   const [maxHostnameFilter, setMaxHostnameFilter] = useState(
     maxHostnameFilters[2][1],
   );
   const [maxPageFilter, setMaxPageFilter] = useState(maxPageFilters[1][1]);
-  const [shouldDisplayPages, setShouldDisplayPages] = useState(true);
+  const [shouldDisplayPages, setShouldDisplayPages] = useState(false);
 
   useEffect(() => {
     const initChart = async () => {
@@ -69,14 +69,22 @@ function TopPagesCircleGraph({ dataHrefBase }) {
   ]);
 
   async function loadDataAndBuildChart() {
-    const report = await loadData();
-
     if (ref.current) {
       ref.current.innerHTML = "";
     }
 
-    if (shouldDisplayPages) {
+    const report = await loadData();
+
+    if (
+      report &&
+      report.data &&
+      Array.isArray(report.data) &&
+      report.data.length > 0
+    ) {
       await drawChart(transformData(report.data));
+      setShouldDisplayPages(true);
+    } else {
+      setShouldDisplayPages(false);
     }
   }
 
@@ -89,17 +97,6 @@ function TopPagesCircleGraph({ dataHrefBase }) {
       );
     } catch (e) {
       report = { data: [] };
-    }
-
-    if (
-      report &&
-      report.data &&
-      Array.isArray(report.data) &&
-      report.data.length > 0
-    ) {
-      await setShouldDisplayPages(true);
-    } else {
-      await setShouldDisplayPages(false);
     }
 
     return report;
