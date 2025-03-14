@@ -65,7 +65,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
     currentReportPeriodFilter,
     dataHrefBase,
     maxHostnameFilter,
-    maxPageFilter
+    maxPageFilter,
   ]);
 
   async function loadDataAndBuildChart() {
@@ -84,7 +84,7 @@ function TopPagesCircleGraph({ dataHrefBase }) {
       await drawChart(transformData(report.data));
       setShouldDisplayPages(true);
     } else {
-      setShouldDisplayPages(false)
+      setShouldDisplayPages(false);
     }
   }
 
