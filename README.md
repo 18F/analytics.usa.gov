@@ -100,7 +100,7 @@ make changes to the source files locally.
 
 ### Check for accessibility issues
 
-With the site running locally, you can test for accessiblity issues with [pa11y](https://github.com/pa11y/pa11y)
+With the site running locally, you can test for accessibility issues with [pa11y](https://github.com/pa11y/pa11y)
 or with [Axe](https://github.com/dequelabs/axe-core-npm)
 
 ```bash
