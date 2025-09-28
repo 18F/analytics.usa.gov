@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby '3.3.6'
 
-gem 'jekyll', '~> 4.3.3'
+gem 'jekyll', '~> 4.4.0'
 gem 'kramdown-parser-gfm'
 gem 'sass', '~> 3.7.4'
 # This is a sass dependency which has a security issue. This can be removed
