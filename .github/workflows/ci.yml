@@ -105,7 +105,7 @@ jobs:
           PUPPETEER_DOWNLOAD_BASE_URL: https://storage.googleapis.com/chrome-for-testing-public
         run: npm ci --timing
       - name: Run the local server and run axe-cli against each page
-        run: npm start & sleep 30; npm run accessibility:axe
+        run: npm start & sleep 30; npm run accessibility:axe:ci
   accessibility-pa11y:
     needs:
       - lint-js
