@@ -3,6 +3,9 @@ name: Manual deploy to dev
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   manual_deploy_to_dev:
     uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
