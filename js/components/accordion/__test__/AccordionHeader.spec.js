@@ -124,7 +124,7 @@ describe("AccordionHeader", () => {
       beforeEach(async () => {
         await render(
           <AccordionHeader>
-            <button aria-expanded="false">child button</button>
+            <button>child button</button>
           </AccordionHeader>,
         );
         await waitFor(() => screen.getByRole("heading"));
