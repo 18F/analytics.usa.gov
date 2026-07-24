@@ -135,32 +135,7 @@ jobs:
         run: npm ci --timing
       - name: Run the local server and run pa11y-cli against each page
         run: npm start & sleep 30; npm run accessibility:pa11y
-  deploy_dev:
-    needs:
-      - lint-js
-      - lint-styles
-      - test
-      - audit-dependencies
-      - accessibility-axe
-      - accessibility-pa11y
-    if: github.ref == 'refs/heads/develop' && github.event_name != 'pull_request'
-    uses: 18F/analytics.usa.gov/.github/workflows/deploy.yml@develop
-    with:
-      API_APP_NAME: ${{ vars.API_APP_NAME_DEV }}
-      API_FQDN: ${{ vars.API_FQDN_DEV }}
-      API_PORT: ${{ vars.API_PORT }}
-      APP_NAME: ${{ vars.APP_NAME_DEV }}
-      APP_URL: ${{ vars.APP_URL_DEV }}
-      CF_ORGANIZATION_NAME: ${{ vars.CF_ORGANIZATION_NAME }}
-      CF_SPACE_NAME: ${{ vars.CF_SPACE_NAME_DEV }}
-      NEW_RELIC_APP_NAME: ${{ vars.NEW_RELIC_APP_NAME_DEV }}
-      S3_BUCKET_URL: ${{ vars.S3_BUCKET_URL_DEV }}
-      S3_SERVICE_NAME: ${{ vars.S3_SERVICE_NAME_DEV }}
-    secrets:
-      API_DATA_GOV_SECRET: ${{ secrets.API_DATA_GOV_SECRET_DEV }}
-      CF_USERNAME: ${{ secrets.CF_USERNAME_DEV }}
-      CF_PASSWORD: ${{ secrets.CF_PASSWORD_DEV }}
-      NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY_DEV }}
+
   deploy_stg:
     needs:
       - lint-js
