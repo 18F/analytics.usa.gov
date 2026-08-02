@@ -7,11 +7,11 @@
 * [System Diagram](https://docs.google.com/drawings/d/1eKmjl1ht0QLXU3PaFZ-FHuudK-4AtxkU8-rjUH8Com0/edit)
 * [Install Instructions](https://github.com/18f/analytics.usa.gov#setup-using-docker)
 * Credentials
-  * Cloud.gov (Deployer) - Gray Brooks and Jonathan Hooper have access to manage this.
-  * Cloud.gov (Access) - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this.
-  * New Relic (APM and Synthetics) - Gray Brooks, Jonathan Hooper, and Eric Mill have access to manage this.
-  * Circle CI - Gray Brooks, Jonathan Hooper, and Tim Lowden have access to manage this, as access is managed through github permissions.
-  * Google Analytics API - They are stored in the `analytics-reporter` environment and can be found by runnning `cf env analytics-reporter` when logged into cloud.gov on the command line and targeting the `gsa-opp-analytics` org and the `analytics-dev` space.  Gray Brooks, Jonathan Hooper, and Tim Lowden also have the keys stored.
+  * Cloud.gov (Deployer) - Fabian Athayde has operational ownership and access to manage this.
+  * Cloud.gov (Access) - Fabian Athayde has operational ownership and access to manage this.
+  * New Relic (APM and Synthetics) - Fabian Athayde has operational ownership and access to manage this.
+  * Circle CI - Fabian Athayde has operational ownership and access to manage this, as access is managed through GitHub permissions.
+  * Google Analytics API - They are stored in the `analytics-reporter` environment and can be found by runnning `cf env analytics-reporter` when logged into cloud.gov on the command line and targeting the `gsa-opp-analytics` org and the `analytics-dev` space. Fabian Athayde also maintains the keys.
   * AWS - Provided by a cloud.gov service.
   * Google Analytics (Digital Analytics Program)
 
