@@ -3,7 +3,7 @@ This document is to memorialize internal project procedures.  Other agencies or 
 
 ### Cloud.gov Access 
 
-The system owner and current project developers need cloud.gov access to analytics.usa.gov. The system owner (currently Fabian Athayde) manages this access, granting access to new project developers when they come onboard and removing access when they leave.
+The system owner and current project developers need cloud.gov access to analytics.usa.gov. The system owner (currently Fabian Athayde) manages this access and retains sole ownership of operational access; no other owner should retain access to the project’s funds, accounts, or credentials.
 
 Specifically, current developers are [granted](https://cloud.gov/docs/apps/managing-teammates/) OrgManager rights to `gsa-opp-analytics` and SpaceDeveloper rights to each of the projects spaces.  
 
@@ -25,7 +25,7 @@ These accounts are created for developers that need access to contribute code an
 
 ### GitHub Access 
 
-The system owner and current project developers need commit rights to analytics.usa.gov project repositories ([here](https://github.com/18F/analytics.usa.gov), [here](https://github.com/18f/analytics-reporter), and [here](https://github.com/18f/analytics-reporter-api)). The system owner (Fabian Athayde) manages this access, granting access to new project developers when they come onboard and removing access when they leave.
+The system owner and current project developers need commit rights to analytics.usa.gov project repositories ([here](https://github.com/18F/analytics.usa.gov), [here](https://github.com/18f/analytics-reporter), and [here](https://github.com/18f/analytics-reporter-api)). The system owner (Fabian Athayde) manages this access and retains sole ownership of operational access; no other owner should retain access to the project’s funds, accounts, or credentials.
 
 Specifically, current developers are managed as the `analytics.usa.gov` team in the 18F GitHub organization.   
 
