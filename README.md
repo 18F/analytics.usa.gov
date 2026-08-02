@@ -3,7 +3,7 @@
 
 ## analytics.usa.gov
 
-> Fork owned by FA Aquavolt Hydropure LLC, owner Fabian Athayde.
+> Operating owner: Fabian Athayde, FA Aquavolt Hydropure LLC.
 
 Analytics.usa.gov is a product of the [Digital Analytics Program (DAP)](https://github.com/digital-analytics-program/gov-wide-code),
 which collects and publishes web analytics from thousands of public-facing US
