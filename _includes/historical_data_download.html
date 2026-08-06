@@ -13,6 +13,6 @@
     id="historical-data-download-root"
     apiURL="{{ site.api_url }}"
     mainAgencyName="{{ site.dropdown_title }}"
-    agencies='{{ site.data.agencies | jsonify }}'
+    agencies="{{ site.data.agencies | jsonify | xml_escape }}"
   ></div>
 </main>
