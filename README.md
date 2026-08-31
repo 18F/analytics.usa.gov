@@ -1,3 +1,4 @@
+[![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/18F/analytics.usa.gov)
 ![Build Status](https://github.com/18F/analytics.usa.gov/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Snyk](https://snyk.io/test/github/18F/analytics.usa.gov/badge.svg)](https://snyk.io/test/github/18F/analytics.usa.gov)
 
