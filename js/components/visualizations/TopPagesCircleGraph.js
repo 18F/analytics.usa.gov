@@ -50,9 +50,9 @@ function TopPagesCircleGraph({ dataHrefBase }) {
   );
   const ref = useRef(null);
   const [maxHostnameFilter, setMaxHostnameFilter] = useState(
-    maxHostnameFilters[2][1],
+    maxHostnameFilters[2],
   );
-  const [maxPageFilter, setMaxPageFilter] = useState(maxPageFilters[1][1]);
+  const [maxPageFilter, setMaxPageFilter] = useState(maxPageFilters[2]);
   const [shouldDisplayPages, setShouldDisplayPages] = useState(false);
 
   useEffect(() => {
