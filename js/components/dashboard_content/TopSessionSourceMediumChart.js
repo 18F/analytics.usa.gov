@@ -7,7 +7,7 @@ import FilterSelect from "../select/FilterSelect";
 import ConsolidatedBarChart from "../chart/ConsolidatedBarChart";
 
 /**
- * Retrieves the session source media report from the passed data URL and
+ * Retrieves the session source medium report from the passed data URL and
  * creates a visualization for the breakdown of session source media of users
  * visiting sites for the current agency.
  *

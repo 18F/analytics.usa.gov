@@ -10,7 +10,7 @@ import formatters from "../../lib/chart_helpers/formatters";
 import FilterSelect from "../select/FilterSelect";
 
 /**
- * Retrieves the realitme top page report from the passed data URL and creates a
+ * Retrieves the realtime top page report from the passed data URL and creates a
  * visualization for the count of users visiting sites for the current agency.
  *
  * @param {object} props the properties for the component
