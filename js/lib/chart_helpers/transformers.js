@@ -73,7 +73,7 @@ function consolidateSmallValues(proportionsList, threshold) {
 }
 
 /**
- * @param {object[]} dataSet the data to be tranformed
+ * @param {object[]} dataSet the data to be transformed
  * @param {string} desiredKey the key that we are interested in
  * @returns {object[]} a closure of consolidated smaller date from the proportions
  */
@@ -84,7 +84,7 @@ function toTopPercents(dataSet, desiredKey) {
 }
 
 /**
- * @param {object[]} dataSet the data to be tranformed
+ * @param {object[]} dataSet the data to be transformed
  * @param {string} desiredKey the key that we are interested in
  * @param {number} maxItems the maximum amount of items in the dataSet after
  * proportions have been determined. Optional argument.
@@ -111,7 +111,7 @@ function toTopPercentsWithoutConsolidation(dataSet, desiredKey, maxItems) {
 }
 
 /**
- * @param {object[]} dataSet the data to be tranformed
+ * @param {object[]} dataSet the data to be transformed
  * @param {string} desiredKey the key that we are interested in
  * @param {number} maxItems the maximum amount of items in the dataSet after
  * proportions have been determined .

@@ -10,8 +10,8 @@ import formatters from "../../lib/chart_helpers/formatters";
 import FilterSelect from "../select/FilterSelect";
 
 /**
- * Retrieves the top downloads report from the passed data URL and creates a
- * visualization for the count of users downloading files for the current
+ * Retrieves the top video plays report from the passed data URL and creates a
+ * visualization for the count of video plays for the current
  * agency.
  *
  * @param {object} props the properties for the component
@@ -20,7 +20,7 @@ import FilterSelect from "../select/FilterSelect";
  * @param {string} props.dataHrefBase the URL of the base location of the data
  * to be downloaded including the agency path. In production this is proxied and
  * redirected to the S3 bucket URL.
- * @param {number} props.numberOfListingsToDisplay the count of downloads
+ * @param {number} props.numberOfListingsToDisplay the count of video
  * listings to display in the bar chart.
  * @returns {import('react').ReactElement} The rendered element
  */

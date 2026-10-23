@@ -52,9 +52,9 @@ function formatHour(hour) {
 }
 
 /**
- * Returns an ISO Date (2023-12-17) in dd/mm format for time series chart
+ * Returns an ISO Date (2023-12-17) in mm/dd format for time series chart
  * @param {string} isoDateString the date string to format
- * @returns {string} formatted date as "1/12" in dd/mm format
+ * @returns {string} formatted date as "1/12" in mm/dd format
  */
 function formatDate(isoDateString) {
   const realDate = isoDateString.split("-");
@@ -119,7 +119,7 @@ function formatFile(filepath) {
 
 /**
  * @param {number} paramSeconds a number of seconds (potentially a float) to
- * convert to readble time (e.g. 1 hour 43 min 16 sec)
+ * convert to readable time (e.g. 1 hour 43 min 16 sec)
  * @returns {string} the readable time
  */
 function secondsToReadableTime(paramSeconds) {
